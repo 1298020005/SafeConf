@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>01 从零认识单细胞</title>
+<link rel="stylesheet" href="assets/tutorial.css">
+</head>
+<body>
+<header class="top">
+<div class="topin">
+<a class="brand" href="index.html">SafeConf 完整项目讲解</a>
+<a class="back" href="../../SafeConf_统一研究工作台.html">返回工作台</a>
+</div>
+</header>
+<div class="layout">
+<aside class="side" id="chapterNav">
+</aside>
+<main class="content">
+<section class="hero">
+<p class="eyebrow">CHAPTER 01</p>
+<h1>从零认识单细胞组学</h1>
+<p class="lead">先不讲模型。先弄清数据里的“细胞”、“基因”、“表达”和“扰动”到底是什么。</p>
+</section>
+<h2>1. 人体包含许多类细胞</h2>
+<div class="grid3">
+<div class="mini">
+<h3>细胞</h3>
+<p>生物体的基本单位。不同细胞虽然大多拥有相同 DNA，却会启用不同基因。</p>
+</div>
+<div class="mini">
+<h3>基因</h3>
+<p>DNA 上的功能片段，在细胞功能说明中对应一个条目。</p>
+</div>
+<div class="mini">
+<h3>RNA</h3>
+<p>基因被使用时产生的中间分子。单细胞 RNA 测序通过 RNA 量估计基因的活跃程度。</p>
+</div>
+</div>
+<figure class="figure">
+<div class="flow">
+<div class="node">
+<b>DNA</b>
+<small>细胞的完整说明书</small>
+</div>
+<div class="node">
+<b>某些基因被启用</b>
+<small>不同细胞选择不同章节</small>
+</div>
+<div class="node">
+<b>RNA</b>
+<small>被读取的中间产物</small>
+</div>
+<div class="node">
+<b>基因表达量</b>
+<small>测到每个基因有多活跃</small>
+</div>
+</div>
+<figcaption>“表达高”指这个基因当前产生了更多 RNA；DNA 数量没有因此增加。</figcaption>
+</figure>
+<div class="term">
+<b>Single-cell transcriptomics<br>单细胞转录组学</b>
+<p>在单个细胞粒度上测量大量 RNA，从而比较不同细胞的基因表达状态。“转录组”就是某个细胞当时全部 RNA 的集合。</p>
+</div>
+
+<h2>2. 为什么一定要“单细胞”</h2>
+<div class="grid2">
+<div class="card">
+<h3>混在一起测</h3>
+<div class="matrix">
+<div class="head">样本</div>
+<div class="head">A</div>
+<div class="head">B</div>
+<div class="head">C</div>
+<div class="head">D</div>
+<div>平均</div>
+<div>5</div>
+<div>5</div>
+<div>5</div>
+<div>5</div>
+</div>
+<p>平均值看起来非常平滑，但可能掩盖两类完全不同的细胞。</p>
+</div>
+<div class="card">
+<h3>逐个细胞测</h3>
+<div class="matrix">
+<div class="head">细胞</div>
+<div class="head">A</div>
+<div class="head">B</div>
+<div class="head">C</div>
+<div class="head">D</div>
+<div>细胞1</div>
+<div class="up">9</div>
+<div class="up">8</div>
+<div>1</div>
+<div>2</div>
+<div>细胞2</div>
+<div>1</div>
+<div>2</div>
+<div class="up">9</div>
+<div class="up">8</div>
+</div>
+<p>单细胞数据保留了异质性：不同细胞可能对同一药物反应不同。</p>
+</div>
+</div>
+<div class="term">
+<b>Heterogeneity<br>异质性</b>
+<p>同一个样本内部的细胞并不相同。它们可能是不同类型、不同状态，也可能对扰动产生不同反应。</p>
+</div>
+
+<h2>3. SafeConf 中的一道“预测题”</h2>
+<figure class="figure">
+<div class="flow">
+<div class="node">
+<b>Context</b>
+<small>背景：细胞系/细胞类型/实验条件</small>
+</div>
+<div class="node">
+<b>Perturbation</b>
+<small>扰动：药物、敲基因、刺激</small>
+</div>
+<div class="node">
+<b>Task</b>
+<small>任务：这个背景加这个扰动</small>
+</div>
+<div class="node">
+<b>Effect vector</b>
+<small>效应向量：成千基因各变多少</small>
+</div>
+</div>
+</figure>
+<div class="term">
+<b>Context<br>细胞背景</b>
+<p>扰动发生在哪种细胞或实验环境中。例如 McFarland 数据中的 22RV1 是一种前列腺癌细胞系。</p>
+</div>
+<div class="term">
+<b>Perturbation<br>扰动</b>
+<p>人为对细胞施加的改变。例如加 Trametinib 药物，或用 CRISPR 敲除一个基因。</p>
+</div>
+<div class="term">
+<b>Control<br>对照</b>
+<p>没有接受目标扰动的细胞。它是计算“变化了多少”的基准线。</p>
+</div>
+<div class="term">
+<b>Effect vector<br>效应向量</b>
+<p>一长串数字，每个位置对应一个基因的变化量，信息量多于“有效/无效”标签。</p>
+</div>
+
+<h2>4. 从对照到真实效应</h2>
+<div class="card">
+<div class="flow">
+<div class="node">
+<b>Control 细胞</b>
+<small>每个基因求平均</small>
+</div>
+<div class="node">
+<b>Perturbed 细胞</b>
+<small>每个基因求平均</small>
+</div>
+<div class="node">
+<b>扰动平均 - 对照平均</b>
+<small>对每个基因相减</small>
+</div>
+<div class="node">
+<b>True effect</b>
+<small>实验给出的“标准答案”</small>
+</div>
+</div>
+<div class="code">control_mean   = [10, 8, 3, 6]
+perturbed_mean = [13, 7, 4, 10]
+true_effect    = [ 3,-1, 1,  4]</div>
+<p>正数表示扰动后表达升高，负数表示降低。图中只画 4 个位置；项目配置可使用 5,000 个基因位置。</p>
+</div>
+<div class="callout">
+<b>本章结论：</b>SafeConf 处理“某个 context 下某个 perturbation 的效应预测”。输入已经从单个细胞汇总到任务层。</div>
+<div class="pager">
+<a href="index.html">← 总入口</a>
+<a href="02_数据如何一步步变化.html">下一章：数据如何变化 →</a>
+</div>
+</main>
+</div>
+<script src="assets/tutorial.js">
+</script>
+</body>
+</html>

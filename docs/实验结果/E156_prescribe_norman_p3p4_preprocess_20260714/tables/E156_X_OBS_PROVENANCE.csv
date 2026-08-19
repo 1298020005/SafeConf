@@ -1,0 +1,8 @@
+component,source,operation,fit_scope,test_role
+obs/task membership,/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/NormanWeissman2019_filtered.h5ad,normalize labels; exact E155 condition membership,none,obs metadata only; test-X rows not indexed or materialized
+gene detection + HVG,raw X of E155 shared train conditions,train detection>=50; seurat_v3 top2000; union frozen perturbation identities,train only,test-X rows not indexed or materialized
+normalization,each cell count vector,"fixed per-cell target_sum=10000, log1p",no cross-cell fitted parameter,same fixed row-wise transform; no threshold/selection
+PCA,normalized shared-train X on frozen model gene axis,randomized PCA10 seed3407,train only,components/mean transform only
+E-distance rank label,balanced shared-train PCA coordinates,squared-Euclidean energy distance to train control,train only,test X absent from E156; validation uses NaN sentinel
+rank_genes_groups_cov_all compatibility field,train-HVG order,fixed placeholder required by upstream test callback,train only,not test DE; forbidden as biological top-DE endpoint
+validation Y and PCA targets,raw validation X,fixed normalization and frozen PCA transform,none,"test-X rows are not indexed, materialized, or transformed in E156"

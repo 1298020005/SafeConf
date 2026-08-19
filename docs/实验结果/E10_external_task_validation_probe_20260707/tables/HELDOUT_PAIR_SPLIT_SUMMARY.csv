@@ -1,0 +1,16 @@
+dataset_name,fold_id,n_tasks_total,n_candidate_test_pairs,n_skipped_candidate_pairs,n_train,n_val,n_test,n_contexts,n_perturbations,support_check_pass,support_errors,n_folds
+KaggleCrossCell,0,24,23,0,16,3,5,5,10,True,,5
+KaggleCrossCell,1,24,23,0,16,3,5,5,10,True,,5
+KaggleCrossCell,2,24,23,0,16,3,5,5,10,True,,5
+KaggleCrossCell,3,24,23,0,17,3,4,5,10,True,,5
+KaggleCrossCell,4,24,23,0,17,3,4,5,10,True,,5
+Haber,0,24,24,0,16,3,5,8,3,True,,5
+Haber,1,24,24,0,17,3,4,8,3,True,,5
+Haber,2,24,24,0,16,3,5,8,3,True,,5
+Haber,3,24,24,0,16,3,5,8,3,True,,5
+Haber,4,24,24,0,16,3,5,8,3,True,,5
+Parekh,0,30,30,0,20,4,6,3,10,True,,5
+Parekh,1,30,30,0,20,4,6,3,10,True,,5
+Parekh,2,30,30,0,20,4,6,3,10,True,,5
+Parekh,3,30,30,0,20,4,6,3,10,True,,5
+Parekh,4,30,30,0,20,4,6,3,10,True,,5

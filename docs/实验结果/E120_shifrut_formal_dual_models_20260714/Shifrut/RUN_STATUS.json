@@ -1,0 +1,11 @@
+{
+  "dataset": "Shifrut",
+  "status": "complete",
+  "generated_at": "2026-07-14T00:24:30",
+  "n_folds": 4,
+  "n_test_tasks": 172,
+  "n_records": 344,
+  "strict_issue_count": 0,
+  "test_truth_used_for_training_calibration_score_or_threshold": false,
+  "wall_seconds": 28.006635665893555
+}

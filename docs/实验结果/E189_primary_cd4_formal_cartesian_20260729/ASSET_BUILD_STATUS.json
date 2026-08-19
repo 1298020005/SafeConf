@@ -1,0 +1,20 @@
+{
+  "experiment": "E189_asset_build",
+  "status": "PASS",
+  "panels": [
+    "H01",
+    "H02",
+    "H03",
+    "H04"
+  ],
+  "support_levels": [
+    1,
+    2,
+    3,
+    5
+  ],
+  "tasks_per_panel_per_support": 840,
+  "total_planned_task_instances": 13440,
+  "model_assets_contain_evaluation_truth": false,
+  "split_selection_uses_effect_values": false
+}

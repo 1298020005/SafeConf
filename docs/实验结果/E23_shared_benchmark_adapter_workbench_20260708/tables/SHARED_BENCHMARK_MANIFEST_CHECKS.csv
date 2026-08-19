@@ -1,0 +1,6 @@
+check,status,value,why_it_matters
+one_true_key_per_task_group,pass,120/120,不同模型必须共享同一个 true effect，才能比较模型特异错误。
+records_are_two_predictor_reference,pass,"ContextSimBaseline,V0StrongBaseline",adapter 开发时保留参考预测器，便于 sanity check。
+single_gene_space,pass,1,跨模型向量必须处在同一 gene order 上。
+single_effect_definition,pass,mean_diff,mean_diff、logFC 等 effect 定义不能混用。
+contains_test_split,pass,"test,train,val",adapter smoke 至少要覆盖 test 行。

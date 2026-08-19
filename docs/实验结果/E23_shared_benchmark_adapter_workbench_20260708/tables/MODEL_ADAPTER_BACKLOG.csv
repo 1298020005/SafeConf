@@ -1,0 +1,5 @@
+model,current_state,next_adapter_step,claim_allowed_now,claim_not_allowed,priority
+SafeConf reference baselines,E22 strict-pass generator output available,Use E23 manifest as the shared reference input.,Can be used as adapter smoke and sanity baseline.,Not a deep model comparison.,1
+GEARS,Legacy vectors exist; exporter patched for provenance,Add a GEARS runner that reads SHARED_BENCHMARK_TASK_MANIFEST.csv and writes strict PredictionRecord on the same gene order.,GEARS-only supplementary legacy evidence exists.,Unified GEARS/scGPT/CPA validation.,2
+scGPT,Source zip exists; env exists; package import currently false,Unpack/install source or point PYTHONPATH to source; locate perturbation checkpoint/tutorial assets; export predicted_effects on E23 manifest.,Local source availability only.,scGPT prediction-vector validation.,3
+CPA / chemCPA,Only literature PDF trace found locally,Acquire executable implementation/checkpoint or replace with another accessible perturbation model for shared benchmark.,Future adapter target.,CPA validation or comparison.,4

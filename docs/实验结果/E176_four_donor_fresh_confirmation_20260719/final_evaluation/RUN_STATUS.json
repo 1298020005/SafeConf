@@ -1,0 +1,31 @@
+{
+  "calibration_gate_commit": "2a6f2aba4039b410bc11b7c6f7fa36a72bc76685",
+  "calibration_gate_remote_heads": {
+    "github": "ed8eb192dd2b5fd1918a7f4cfe08a7a86d3076b4",
+    "origin": "ed8eb192dd2b5fd1918a7f4cfe08a7a86d3076b4"
+  },
+  "decision": "CERTIFICATE_AND_EMPIRICAL_COVERAGE_AUDIT_PASS",
+  "deployment_authorized": false,
+  "empirical_coverage_at_or_above_nominal_for_both": true,
+  "ensemble_rmse_target_simultaneous_coverage": 0.903125,
+  "evaluation_truth_used_to_select_model_or_recalibrate_quantile": false,
+  "experiment": "E176_four_donor_fresh_confirmation",
+  "legacy_fixed_safeconf_increment_claim_supported": false,
+  "manifest_sha256": "45f35b9d027d06f576dcc758e1d04c000e9e81c6fd6b5b6614e5e57d51d0991a",
+  "n_calibration_targets_excluded_from_primary": 160,
+  "n_heldout_donors": 4,
+  "n_hidden_evaluation_targets": 640,
+  "n_hidden_evaluation_tasks": 1920,
+  "pair_max_bound_violations": 0,
+  "pair_mean_bound_violations": 0,
+  "pair_mean_rmse_target_simultaneous_coverage": 0.903125,
+  "platform": "Linux-6.8.0-45-generic-x86_64-with-glibc2.35",
+  "posttruth_implementation_repair_commit": "ed8eb192dd2b5fd1918a7f4cfe08a7a86d3076b4",
+  "python": "3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 15:12:24) [GCC 11.2.0]",
+  "same_study_multi_donor_not_independent_study": true,
+  "schema": "safeconf_e176_final_evaluation_status_v1",
+  "squared_error_decomposition_max_abs_residual": 9.809094161927767e-11,
+  "stage": "F4_FINAL_HIDDEN_EVALUATION",
+  "status": "COMPLETE",
+  "wall_seconds": 367.1091194152832
+}

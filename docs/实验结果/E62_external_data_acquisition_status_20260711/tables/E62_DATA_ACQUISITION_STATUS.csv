@@ -1,0 +1,5 @@
+data_line,source,status_20260711,usable_now,reason_or_next_action
+scPerturb_and_scPerturBench,Zenodo_Figshare_official_releases,83_of_83_verified_readable,yes,Already covers genetic chemical combinatorial dose regulatory and multimodal settings
+OpenProblems_NeurIPS2023,openproblems_official_S3,35_of_35_complete_53.421GB_size_and_HDF5_root_verified,yes_for_raw_and_DGE,Download is complete; next step is chemical predictor and compound/context holdout contract
+Tahoe_100M,HuggingFace_tahoebio,3388_of_3388_raw_parquet_complete_337.645GB,yes_for_raw_cell_level,Download is complete; next step is field audit and a strict prediction-record split
+X_Atlas_Orion,Figshare_29190726,identified_download_blocked,no,Figshare 10-second signed redirect plus TLS EOF/403; retain manifest and retry via a lower-latency route

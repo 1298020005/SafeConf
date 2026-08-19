@@ -1,0 +1,12 @@
+{
+  "adamson_source": {
+    "path": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/AdamsonWeissman2016_GSM2406681_10X010.h5ad",
+    "bytes": 471286951,
+    "sha256": "e70fcd49808cab8d724de8d5a332940911206e1c8ef44cc7b568d048ed795c85"
+  },
+  "replogle_rpe1_target": {
+    "path": "/home/yyf/data/singlecell_perturbation_atlas/official_generalization/Replogle_RPE1essential.h5ad",
+    "bytes": 11890779568,
+    "sha256": "66c7d7c50ebf3d424162b31c0645797753455da760ced856dd309c9f957ba37b"
+  }
+}

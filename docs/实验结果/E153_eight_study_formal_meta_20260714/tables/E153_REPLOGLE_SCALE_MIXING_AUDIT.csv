@@ -1,0 +1,3 @@
+context,fold_id,n_tasks,mean_error,mean_calibrated_safeconf,within_fold_spearman,pooled_cross_context_spearman
+K562,Replogle_cellline_holdout_1_K562,128,0.08819280966159872,0.6540600683356215,0.158255842327384,-0.26690430312552466
+RPE1,Replogle_cellline_holdout_2_RPE1,128,0.13689045936552827,0.11250284106734887,0.1869541834337769,-0.26690430312552466

@@ -1,0 +1,42 @@
+{
+  "experiment": "E201_txpert_multitarget_retraining",
+  "stage": "PRETRUTH_TASK_BASE",
+  "status": "PASS",
+  "generated_at": "2026-08-02T08:44:04+08:00",
+  "safeconf_commit": "6ea03e01c0a2f7b06597651716f7904bf3be8c77",
+  "n_tasks": 2008,
+  "n_primary_tasks": 1808,
+  "n_sensitivity_tasks": 200,
+  "n_source_support_rows": 5238,
+  "n_source_access_records": 24,
+  "target_perturbed_expression_rows_opened": 0,
+  "target_predictions_opened": false,
+  "target_outcomes_evaluated": false,
+  "source_mean_delta_file": {
+    "path": "DATA/txpert_official_20260802/e201/pretruth_base/E201_SOURCE_MEAN_DELTAS.npy",
+    "bytes": 26923392,
+    "sha256": "b068834e49d73aa74cae54154d047c1897611526cb186c40d0dc9ec274a9141a",
+    "shape": [
+      2008,
+      3352
+    ],
+    "dtype": "float32"
+  },
+  "tracked_outputs": [
+    {
+      "path": "docs/实验结果/E201_txpert_multitarget_retraining_20260802/tables/E201_PRETRUTH_TASK_BASE.csv",
+      "bytes": 316004,
+      "sha256": "1d5f068fea76138ee9ba42d1e1a4f9674850fab923e36732d24aae73f8fcdab0"
+    },
+    {
+      "path": "docs/实验结果/E201_txpert_multitarget_retraining_20260802/tables/E201_SOURCE_CONTEXT_SUPPORT.csv",
+      "bytes": 181289,
+      "sha256": "6e1df0403f74ad01c53cc0d3d2364afda5dcaae8c413afde64a290404f3fd5d7"
+    },
+    {
+      "path": "docs/实验结果/E201_txpert_multitarget_retraining_20260802/tables/E201_SOURCE_EXPRESSION_ACCESS_AUDIT.csv",
+      "bytes": 1028,
+      "sha256": "4f1edc2d55a2ebafb181fb0b2d9783168441b236bffe278cc357cee7608d42e5"
+    }
+  ]
+}

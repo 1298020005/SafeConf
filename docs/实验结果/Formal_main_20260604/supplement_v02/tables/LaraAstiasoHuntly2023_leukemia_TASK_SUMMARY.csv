@@ -1,0 +1,2 @@
+path,dataset,n_tasks,n_contexts,n_perturbations,context_col,perturbation_col,n_genes
+/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/LaraAstiasoHuntly2023_leukemia.h5ad,LaraAstiasoHuntly2023_leukemia,0,0,0,celltype,guide_id,5000

@@ -1,0 +1,3 @@
+split_setting,status,blocker,required_action
+row_holdout_new_context,not_done_under_dual_model,current formal panels are single-context,retrain GEARS+scGPT with multi-context gene datasets and hold out whole contexts
+train_submatrix_25_50_75,not_done_under_dual_model,predictions were trained on full train splits; cannot fake submatrix without retrain,freeze submatrix manifests then retrain GEARS+scGPT; reuse E90 schema

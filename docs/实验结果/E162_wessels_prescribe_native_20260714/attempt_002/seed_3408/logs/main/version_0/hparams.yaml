@@ -1,0 +1,16 @@
+change_step: 2
+control_gene: null
+data_name: wessels_e160
+interval: epoch
+lam1: 1.0e-07
+lam2: 0.1
+lam3: 1.0e-05
+learning_rate: 0.0001
+learning_rate_decay: true
+patience: 3
+reduce_rate: 0.99
+save_value_only: false
+scheduler: plateau
+transformer: null
+warmup_max_steps: 1093
+warmup_steps: 0

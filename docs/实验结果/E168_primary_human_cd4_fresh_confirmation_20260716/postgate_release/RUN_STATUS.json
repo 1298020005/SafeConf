@@ -1,0 +1,67 @@
+{
+  "decision": "NO_CONFIRMATION",
+  "decision_checks": {
+    "all_200_inference_passed": false,
+    "ensemble_beats_nochange_each_state": true,
+    "positive_state_delta_count": 2,
+    "seen_160_hierarchical_passed": false
+  },
+  "deployment_authorized": false,
+  "experiment": "E168_primary_human_cd4_fresh_confirmation",
+  "f2_manifest_sha256": "10e84e09881f7d085f328c6dd3db7ac2cd4cadbf73191546ed5c84b1dcfa2c2f",
+  "f3_manifest_sha256": "e47ea65e04e48d4a6d31bb7d35bb6d596e00191796b62ed765259a3175219800",
+  "gate_commit": "270ed9556887ed187d469d3e78e976a48a235f6a",
+  "gate_remote_heads": {
+    "github": "270ed9556887ed187d469d3e78e976a48a235f6a",
+    "origin": "270ed9556887ed187d469d3e78e976a48a235f6a"
+  },
+  "gate_snapshot_sha256": "aaba6bffc0789a82360a7016eb921379a4a35dd7693c826d4e11f4f78881188e",
+  "gene_order_hash": "sha256:047ef210eaa1f40e3ab18f1f965668f2dcfe84618aa8b756243350c083a59ba5",
+  "gene_panel_size": 512,
+  "n_prediction_records": 6480,
+  "n_test_tasks": 600,
+  "prediction_record_contract_issues": [],
+  "pretruth_gate_certificates": {
+    "G2_SCORE_CERTIFICATES.csv": {
+      "passed": 6,
+      "rows": 6
+    },
+    "G3_PREDICTOR_CERTIFICATES.csv": {
+      "passed": 24,
+      "rows": 24
+    },
+    "G4_SEED_STABILITY.csv": {
+      "passed": 6,
+      "rows": 6
+    },
+    "G5_MAGNITUDE_EQUIVALENCE.csv": {
+      "equivalent_units": 0,
+      "rows": 6
+    },
+    "SYNTHETIC_REGRESSION_TESTS.csv": {
+      "passed": 10,
+      "rows": 10
+    }
+  },
+  "primary_ci95": [
+    -0.003180337570569242,
+    0.004974497681986084
+  ],
+  "primary_delta": 0.0010605309389236928,
+  "primary_permutation_p_one_sided": 0.4127658723412766,
+  "risk_magnitude_equivalent_registered_units": 0,
+  "schema": "safeconf_e168_postgate_result_v1",
+  "seen_ci95": [
+    -0.0010045638180924026,
+    0.005559308254293607
+  ],
+  "seen_delta": 0.002044978685727792,
+  "seen_permutation_p_one_sided": 0.34980650193498064,
+  "single_test_donor_population_generalization_claim": false,
+  "source_full_sha256": "fd2b8c21d357f8699ec34e2d5ebc1639612c27a0147a9ca94d4983822d93247e",
+  "stage": "F3_POSTGATE_FORMAL_EVALUATION",
+  "status": "COMPLETE",
+  "test_truth_first_used_after_committed_dual_remote_gate": true,
+  "test_truth_used_for_training_scoring_or_threshold": false,
+  "wall_seconds": 185.52277326583862
+}

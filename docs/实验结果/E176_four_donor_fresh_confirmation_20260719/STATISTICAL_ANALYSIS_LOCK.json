@@ -1,0 +1,22 @@
+{
+  "all_four_donor_panels_required": true,
+  "alpha": 0.05,
+  "bootstrap_draws": 10000,
+  "bootstrap_seed": 2026071906,
+  "calibration_population": "E176_40_targets_per_heldout_donor_160_total",
+  "calibration_target_count_each_donor": 40,
+  "conformal_target": "pair_mean_rmse_and_ensemble_rmse",
+  "deployment_authorized": false,
+  "development_population": "E168_plus_E172_outcomes_and_E174_truth_blind_predictions",
+  "evaluation_target_count_each_donor": 160,
+  "evaluation_truth_may_select_or_modify_method": false,
+  "finite_sample_order_rank_each_donor": 37,
+  "miscoverage_alpha": 0.1,
+  "optional_stopping_or_panel_dropping_allowed": false,
+  "pair_lower_certificate": "rmse(p1,p2)/2",
+  "primary_evaluation_population": "E176_160_targets_per_heldout_donor_640_total",
+  "same_study_multi_donor_not_independent_study": true,
+  "target_cluster": "target_gene_three_states_simultaneously",
+  "target_coverage": 0.9,
+  "total_evaluation_target_count": 640
+}

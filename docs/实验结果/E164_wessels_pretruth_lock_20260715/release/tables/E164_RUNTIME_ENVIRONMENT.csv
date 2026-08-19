@@ -1,0 +1,6 @@
+component,expected_version,observed_version,executable,gate_passed
+python,3.9.25,3.9.25,/home/yyf/.conda/envs/prescribe_env/bin/python3.9,True
+numpy,1.26.4,1.26.4,/home/yyf/.conda/envs/prescribe_env/bin/python3.9,True
+pandas,2.3.3,2.3.3,/home/yyf/.conda/envs/prescribe_env/bin/python3.9,True
+scipy,1.13.1,1.13.1,/home/yyf/.conda/envs/prescribe_env/bin/python3.9,True
+h5py,3.14.0,3.14.0,/home/yyf/.conda/envs/prescribe_env/bin/python3.9,True

@@ -1,0 +1,63 @@
+{
+  "schema": "safeconf_e174_joint_pretruth_abort_v1",
+  "experiment": "E174_rotated_donor_conformal_certificate",
+  "stage": "F2_JOINT_PRETRUTH_GATE",
+  "status": "ABORTED_PRETRUTH_GATE",
+  "decision": "NO_CALIBRATION_OR_EVALUATION_TRUTH_ACCESS",
+  "all_four_panels_passed": false,
+  "panels_passed": 1,
+  "panels_failed": 3,
+  "failed_panels": [
+    "R01",
+    "R03",
+    "R04"
+  ],
+  "failure_gate": "G4_LEAVE_ONE_SEED_OUT_FAMILY_MEAN_RANK_STABILITY",
+  "failed_g2_units": 0,
+  "failed_g3_units": 0,
+  "failed_g4_units": 8,
+  "failed_synthetic_tests": 0,
+  "test_query_graphs_containing_y": 0,
+  "heldout_donor_targeting_x_values_read": 0,
+  "calibration_targeting_x_values_read": 0,
+  "evaluation_targeting_x_values_read": 0,
+  "calibration_runner_authorized": false,
+  "final_evaluator_authorized": false,
+  "panel_evidence": {
+    "R01": {
+      "status": "FAIL",
+      "snapshot_sha256": "d7b79a740988a2de22496f03a55f46f1f0a1b456ffc07025233a2dffb3399d5c",
+      "f2_manifest_sha256": "b36d08d00429584fb15d080eefd8d60a2277c6907341c2f894adf833b84db4d3",
+      "failed_g4_units": 3,
+      "minimum_g4_median_spearman": 0.3241972342669635,
+      "minimum_g4_ci95_lower": 0.1880579087927468
+    },
+    "R02": {
+      "status": "PASS",
+      "snapshot_sha256": "30ec8f98c9b472fb2b92266885c7ef3a91ef45c61015acee19fbb2b48318deb0",
+      "f2_manifest_sha256": "9f27f7ea6766c9325595a91261df274419a075c5cd659a1fde563239260a699e",
+      "failed_g4_units": 0,
+      "minimum_g4_median_spearman": 0.8077317473338803,
+      "minimum_g4_ci95_lower": 0.7330806614656185
+    },
+    "R03": {
+      "status": "FAIL",
+      "snapshot_sha256": "1175059dadf1ec5334a7c6bc6df5e7e7047a5625766874012097bbbc54978ebe",
+      "f2_manifest_sha256": "621513e77206f0ed9b6dd37d4010319bf4ecfe1cb659e97d5bbca2c7f89052ba",
+      "failed_g4_units": 3,
+      "minimum_g4_median_spearman": 0.4771065275987343,
+      "minimum_g4_ci95_lower": 0.3362527866400701
+    },
+    "R04": {
+      "status": "FAIL",
+      "snapshot_sha256": "68ffed1b002caa2377ee9f8d24199d48b0ad68b5336c3e7ffc64c497eb74f9ca",
+      "f2_manifest_sha256": "e5549374bb6e1e7a8bee98279d47dc91225df552120dbf398afd3410d10b7162",
+      "failed_g4_units": 2,
+      "minimum_g4_median_spearman": 0.4975477557717098,
+      "minimum_g4_ci95_lower": 0.3642390084779281
+    }
+  },
+  "optional_panel_dropping_used": false,
+  "g4_threshold_relaxed_after_result": false,
+  "deployment_authorized": false
+}

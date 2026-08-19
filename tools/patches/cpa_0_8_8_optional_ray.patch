@@ -1,0 +1,18 @@
+diff --git a/cpa/__init__.py b/cpa/__init__.py
+index 22d9e82..a7c0579 100644
+--- a/cpa/__init__.py
++++ b/cpa/__init__.py
+@@ -6,7 +6,12 @@ from ._model import CPA
+ from ._module import CPAModule
+ from . import _plotting as pl
+ from ._api import ComPertAPI
+-from ._tuner import run_autotune
++try:
++    from ._tuner import run_autotune
++except ModuleNotFoundError as exc:
++    if exc.name != "ray":
++        raise
++    run_autotune = None
+ 
+ from importlib.metadata import version
+

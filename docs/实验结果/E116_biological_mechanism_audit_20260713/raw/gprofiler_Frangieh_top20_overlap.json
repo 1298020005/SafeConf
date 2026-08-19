@@ -1,0 +1,355 @@
+{
+  "payload": {
+    "organism": "hsapiens",
+    "query": [
+      "ATP1B1",
+      "C19orf48",
+      "DAG1",
+      "FMN1",
+      "GPNMB",
+      "IFNGR1",
+      "IRF3",
+      "JAK2",
+      "NGFR",
+      "RAB27A",
+      "SLC19A1",
+      "SLC25A13",
+      "SLC26A2",
+      "SLC5A3",
+      "TGFB1",
+      "UCN2"
+    ],
+    "sources": [
+      "GO:BP",
+      "REAC"
+    ],
+    "user_threshold": 0.05,
+    "significance_threshold_method": "g_SCS",
+    "domain_scope": "custom",
+    "background": [
+      "A2M",
+      "ACSL3",
+      "ACTA2",
+      "AEBP1",
+      "AGA",
+      "AHNAK",
+      "APOD",
+      "APOE",
+      "ARMC6",
+      "ATP1B1",
+      "B2M",
+      "BOLA2",
+      "BOLA2B",
+      "BZW2",
+      "C19orf48",
+      "C1QBP",
+      "C6orf226",
+      "CCND1",
+      "CCND2",
+      "CCR10",
+      "CD151",
+      "CD274",
+      "CD44",
+      "CD47",
+      "CD58",
+      "CD59",
+      "CD63",
+      "CDH19",
+      "CDK4",
+      "CDK6",
+      "CDKN1A",
+      "CDKN2A",
+      "CDKN2B",
+      "CHCHD2",
+      "CITED1",
+      "CKS1B",
+      "CMSS1",
+      "CORO1A",
+      "CSPG4",
+      "CST3",
+      "CTPS1",
+      "CTSA",
+      "CTSB",
+      "CTSD",
+      "CTSL",
+      "CTSO",
+      "CXCR4",
+      "CYP27A1",
+      "DAG1",
+      "DDR1",
+      "DDX17",
+      "DDX39A",
+      "DLL3",
+      "DNMT1",
+      "E2F1",
+      "EEA1",
+      "EIF3K",
+      "EMP1",
+      "ENPP1",
+      "EVA1A",
+      "FBL",
+      "FBXO32",
+      "FGFR1",
+      "FKBP4",
+      "FMN1",
+      "FOS",
+      "FRZB",
+      "FSTL3",
+      "GAA",
+      "GPATCH4",
+      "GPNMB",
+      "GRN",
+      "GSN",
+      "HLA-A",
+      "HLA-B",
+      "HLA-C",
+      "HLA-DRB5",
+      "HLA-E",
+      "HLA-F",
+      "HNRNPA1",
+      "HSPA1A",
+      "IDH2",
+      "IFNGR1",
+      "IFNGR2",
+      "IRF3",
+      "IRF4",
+      "ISYNA1",
+      "ITGA3",
+      "JAK1",
+      "JAK2",
+      "JMJD7",
+      "KCNN4",
+      "KDR",
+      "KLF4",
+      "LAMP2",
+      "LCP1",
+      "LGALS3",
+      "LGALS3BP",
+      "LRPAP1",
+      "LY96",
+      "MC1R",
+      "MDH2",
+      "MFGE8",
+      "MIA",
+      "MRPL47",
+      "MT2A",
+      "NDUFA13",
+      "NGFR",
+      "NME1",
+      "NMRK1",
+      "NOLC1",
+      "NONO",
+      "NPC1",
+      "NPC2",
+      "NSG1",
+      "NT5E",
+      "P2RX4",
+      "PAICS",
+      "PET100",
+      "PFDN4",
+      "PFN1",
+      "PIK3IP1",
+      "PPIA",
+      "PROS1",
+      "PSAP",
+      "PTMA",
+      "PUF60",
+      "PYGB",
+      "RAB27A",
+      "RB1",
+      "RBP7",
+      "RNASEH2A",
+      "RNF213",
+      "RPSA",
+      "RTP4",
+      "S100A6",
+      "S100B",
+      "SAT1",
+      "SCARB2",
+      "SDC3",
+      "SDCBP",
+      "SEC11C",
+      "SERPINA3",
+      "SERPINE2",
+      "SERPINF1",
+      "SET",
+      "SGK1",
+      "SHMT2",
+      "SLC19A1",
+      "SLC22A18",
+      "SLC25A13",
+      "SLC26A2",
+      "SLC5A3",
+      "SLIRP",
+      "SMAD3",
+      "SMAD4",
+      "SOX4",
+      "SP100",
+      "SPESP1",
+      "SPINT1",
+      "SSR2",
+      "ST6GALNAC2",
+      "STAT1",
+      "STAT3",
+      "STOM",
+      "STX7",
+      "TAPBP",
+      "TAPBPL",
+      "TFAP2A",
+      "TGFB1",
+      "TIMM50",
+      "TIMP1",
+      "TIMP2",
+      "TIMP3",
+      "TM4SF1",
+      "TOP1MT",
+      "TP53",
+      "TPP1",
+      "TRIM22",
+      "TSC22D3",
+      "TTLL1",
+      "TXNDC17",
+      "UBC",
+      "UCN2",
+      "UQCRFS1",
+      "UQCRH",
+      "VAT1",
+      "VDAC2",
+      "WBP2"
+    ],
+    "no_evidences": false
+  },
+  "response": {
+    "result": [],
+    "meta": {
+      "query_metadata": {
+        "queries": {
+          "query_1": [
+            "ATP1B1",
+            "C19orf48",
+            "DAG1",
+            "FMN1",
+            "GPNMB",
+            "IFNGR1",
+            "IRF3",
+            "JAK2",
+            "NGFR",
+            "RAB27A",
+            "SLC19A1",
+            "SLC25A13",
+            "SLC26A2",
+            "SLC5A3",
+            "TGFB1",
+            "UCN2"
+          ]
+        },
+        "organism": "hsapiens",
+        "all_results": false,
+        "ordered": false,
+        "no_iea": false,
+        "sources": [
+          "GO:BP",
+          "REAC"
+        ],
+        "combined": false,
+        "aresolve": {},
+        "numeric_ns": "ENTREZGENE_ACC",
+        "domain_scope": "custom",
+        "measure_underrepresentation": false,
+        "significance_threshold_method": "g_SCS",
+        "user_threshold": 0.05,
+        "no_evidences": false,
+        "highlight": null
+      },
+      "result_metadata": {
+        "GO:BP": {
+          "domain_size": 20972,
+          "number_of_terms": 24546,
+          "threshold": 1e-06
+        },
+        "REAC": {
+          "domain_size": 11056,
+          "number_of_terms": 2849,
+          "threshold": 1e-06
+        }
+      },
+      "genes_metadata": {
+        "failed": [
+          "C19orf48"
+        ],
+        "ambiguous": {},
+        "duplicates": [],
+        "query": {
+          "query_1": {
+            "mapping": {
+              "ATP1B1": [
+                "ENSG00000143153"
+              ],
+              "DAG1": [
+                "ENSG00000173402"
+              ],
+              "FMN1": [
+                "ENSG00000248905"
+              ],
+              "GPNMB": [
+                "ENSG00000136235"
+              ],
+              "IFNGR1": [
+                "ENSG00000027697"
+              ],
+              "IRF3": [
+                "ENSG00000126456"
+              ],
+              "JAK2": [
+                "ENSG00000096968"
+              ],
+              "NGFR": [
+                "ENSG00000064300"
+              ],
+              "RAB27A": [
+                "ENSG00000069974"
+              ],
+              "SLC19A1": [
+                "ENSG00000173638"
+              ],
+              "SLC25A13": [
+                "ENSG00000004864"
+              ],
+              "SLC26A2": [
+                "ENSG00000155850"
+              ],
+              "SLC5A3": [
+                "ENSG00000198743"
+              ],
+              "TGFB1": [
+                "ENSG00000105329"
+              ],
+              "UCN2": [
+                "ENSG00000145040"
+              ]
+            },
+            "ensgs": [
+              "ENSG00000143153",
+              "ENSG00000173402",
+              "ENSG00000248905",
+              "ENSG00000136235",
+              "ENSG00000027697",
+              "ENSG00000126456",
+              "ENSG00000096968",
+              "ENSG00000064300",
+              "ENSG00000069974",
+              "ENSG00000173638",
+              "ENSG00000004864",
+              "ENSG00000155850",
+              "ENSG00000198743",
+              "ENSG00000105329",
+              "ENSG00000145040"
+            ]
+          }
+        }
+      },
+      "timestamp": "2026-07-13T16:08:02.771601+00:00",
+      "version": "e114_eg62_p19_27110d83"
+    }
+  }
+}

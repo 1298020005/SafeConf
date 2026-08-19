@@ -1,0 +1,11 @@
+record_id,dataset_name,fold_id,split,context,perturbation,predictor_name,score_name,score_type,score_value,true_error_rmse,true_error_cosine,true_error_top20
+v2_rec_000930,McFarlandTsherniak2020,0,test,22RV1,Trametinib,V0StrongBaseline,random_score,confidence,0.4657393052893382,0.5776326701112968,0.1539217189347875,0.35
+v2_rec_000930,McFarlandTsherniak2020,0,test,22RV1,Trametinib,V0StrongBaseline,context_similarity_score,confidence,0.9677310027962835,0.5776326701112968,0.1539217189347875,0.35
+v2_rec_000930,McFarlandTsherniak2020,0,test,22RV1,Trametinib,V0StrongBaseline,perturbation_stability_score,confidence,0.1044841358608925,0.5776326701112968,0.1539217189347875,0.35
+v2_rec_000930,McFarlandTsherniak2020,0,test,22RV1,Trametinib,V0StrongBaseline,support_count_score,confidence,4.804021044733257,0.5776326701112968,0.1539217189347875,0.35
+v2_rec_000930,McFarlandTsherniak2020,0,test,22RV1,Trametinib,V0StrongBaseline,prediction_magnitude_risk,risk,0.7474373161127279,0.5776326701112968,0.1539217189347875,0.35
+v2_rec_000930,McFarlandTsherniak2020,0,test,22RV1,Trametinib,V0StrongBaseline,model_disagreement_risk,risk,0.36919982806737,0.5776326701112968,0.1539217189347875,0.35
+v2_rec_000930,McFarlandTsherniak2020,0,test,22RV1,Trametinib,V0StrongBaseline,ood_distance_risk,risk,0.086193713687658,0.5776326701112968,0.1539217189347875,0.35
+v2_rec_000930,McFarlandTsherniak2020,0,test,22RV1,Trametinib,V0StrongBaseline,historical_residual_risk,risk,2.2128849153667858,0.5776326701112968,0.1539217189347875,0.35
+v2_rec_000930,McFarlandTsherniak2020,0,test,22RV1,Trametinib,V0StrongBaseline,simple_combined_confidence,confidence,-0.8522587250621545,0.5776326701112968,0.1539217189347875,0.35
+v2_rec_000930,McFarlandTsherniak2020,0,test,22RV1,Trametinib,V0StrongBaseline,learned_risk_score,risk,1.591806366409738,0.5776326701112968,0.1539217189347875,0.35

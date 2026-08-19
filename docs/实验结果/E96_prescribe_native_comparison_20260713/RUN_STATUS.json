@@ -1,0 +1,15 @@
+{
+  "experiment": "E96_prescribe_native_comparison",
+  "generated_at": "2026-07-13T03:26:56",
+  "panels": [
+    "Norman_P1",
+    "Norman_P2"
+  ],
+  "n_tasks": 48,
+  "n_boot": 10000,
+  "primary_target": "task_mean_profile_rmse",
+  "target_truth_used_to_change_score_or_task_selection": false,
+  "different_predictor_errors_not_pooled": true,
+  "strict_prediction_records": 48,
+  "strict_issue_count": 0
+}

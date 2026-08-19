@@ -1,0 +1,9 @@
+score,target,n_tasks,spearman,pearson
+seed_pairwise_pred_rmse_mean,seed_rmse_mean,7,0.5,0.3808213070047332
+seed_pairwise_pred_rmse_mean,seed_rmse_max,7,0.5,0.4482510598982399
+seed_disagreement_rmse,seed_rmse_mean,7,0.6785714285714287,0.488919236244304
+seed_disagreement_rmse,seed_rmse_max,7,0.6785714285714287,0.5457759479194552
+pred_l2_mean,seed_rmse_mean,7,0.6785714285714287,0.1820911203533874
+pred_l2_mean,seed_rmse_max,7,0.6785714285714287,0.28073269596722644
+true_l2_mean,seed_rmse_mean,7,0.9642857142857145,0.9762235631534769
+true_l2_mean,seed_rmse_max,7,0.9642857142857145,0.9512449096253791

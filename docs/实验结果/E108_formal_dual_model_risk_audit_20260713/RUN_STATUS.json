@@ -1,0 +1,22 @@
+{
+  "experiment": "E108_formal_dual_model_risk_audit",
+  "generated_at": "2026-07-13T10:35:53",
+  "status": "complete",
+  "models": [
+    "scGPT_context_mean_finetuned",
+    "GEARS_context_mean_trainonly_graphs"
+  ],
+  "n_outer_folds": 3,
+  "n_test_task_rows": 837,
+  "n_prediction_records": 1674,
+  "strict_issue_count": 0,
+  "test_truth_used_for_prediction_score_or_threshold": false,
+  "validation_truth_used_for_calibration_and_q80_threshold": true,
+  "primary_score": "safeconf_calibrated_pair_risk",
+  "pooled_setting_macro_spearman": {
+    "safeconf_calibrated_pair_risk": 0.25300639357974863,
+    "safeconf_frozen_pair_risk": 0.24181226447413495,
+    "baseline_predicted_magnitude": 0.14814820954296473,
+    "risk_model_disagreement": 0.13729477247694932
+  }
+}

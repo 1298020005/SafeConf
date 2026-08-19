@@ -1,0 +1,40 @@
+{
+  "constant_centroid_upper": 0.18978567801751686,
+  "covered_targets": 16,
+  "evaluation_x_rows_read": 1051,
+  "experiment": "E182_gse225807_registered_family",
+  "family_rms_lower_violations": 0,
+  "family_upper_task_coverage": 0.9,
+  "gates": {
+    "family_rms_lower_violations_zero": true,
+    "hilbert_identity_residual_at_most_1e_10": true,
+    "no_adaptive_upper_used": true,
+    "target_simultaneous_coverage_at_least_0_85": false,
+    "truth_access_violations_zero": true,
+    "worst_member_lower_violations_zero": true
+  },
+  "git_branch": "exp/task-risk-audit-20260611",
+  "git_head": "420e536f31c9148fdeea8dd93cf80cd3ebee3ea6",
+  "learned_or_adaptive_upper_used": false,
+  "max_hilbert_identity_absolute_residual": 2.2551405187698492e-17,
+  "median_family_lower_tightness": 0.5133980714225901,
+  "median_worst_member_lower_tightness": 0.46742884177021893,
+  "n_evaluation_guide_tasks": 40,
+  "n_evaluation_targets": 20,
+  "registered_family_size": 10,
+  "remote_heads": {
+    "github": "420e536f31c9148fdeea8dd93cf80cd3ebee3ea6",
+    "origin": "420e536f31c9148fdeea8dd93cf80cd3ebee3ea6"
+  },
+  "schema": "safeconf_e182_final_summary_v1",
+  "status": "FAIL",
+  "study": "GSE225807",
+  "target_coverage_clopper_pearson_ci95": [
+    0.5633859970033317,
+    0.9426660029499672
+  ],
+  "target_simultaneous_coverage": 0.8,
+  "truth_access_violations": 0,
+  "worst_member_lower_violations": 0,
+  "worst_member_upper_task_coverage": 0.975
+}

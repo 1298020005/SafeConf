@@ -1,0 +1,118 @@
+{
+  "experiment": "E159_prescribe_saturation_forensics",
+  "phase": "complete_post_unseal_saturation_forensics",
+  "started_at": "2026-07-14T20:53:16+08:00",
+  "analysis_timing": "post_unseal_forensic_not_preregistered",
+  "runner": "/home/yyf/proj/tools/scripts/run_e159_prescribe_saturation_forensics.py",
+  "runner_sha256": "f64e25a60932bd229937912f7837b35d5926e838829c70f8720b079319f71653",
+  "certainty_budget": "exp",
+  "output_dim": 10,
+  "log_scale": 10.0,
+  "evidence_bound": 30.0,
+  "read_boundary": {
+    "allowlisted_inputs_only": true,
+    "raw_h5ad_accessed": false,
+    "hdf5_container_opened": false,
+    "test_X_materialized_by_E159": false,
+    "expression_matrix_read_by_E159": false,
+    "allowlisted_input_count": 10,
+    "allowed_suffixes_observed": [
+      ".csv",
+      ".json",
+      ".py"
+    ]
+  },
+  "completed_at": "2026-07-14T20:53:16+08:00",
+  "input_manifest_sha256": "cb0bcb700517ff5a96ab37d1ac99a1c5f4ca55787de8a5b939377f79463b7bdd",
+  "output_manifest_sha256": "f0c08daef22f78d70423a6ea0ec1eafa3c009ba9d4bc7bd561a4011d34c81c8a",
+  "output_manifest_excludes": [
+    "OUTPUT_MANIFEST.csv (self-hash recursion)",
+    "RUN_STATUS.json (written after manifest)"
+  ],
+  "e158_source_attempt": {
+    "phase": "failed_after_irreversible_test_unseal_preserve_attempt",
+    "test_data_unsealed": true,
+    "test_X_rows_materialized": true,
+    "error": "RuntimeError('Only 0 valid bootstrap replicates; need 9500')",
+    "unseal_event_sha256_reported_by_E158": "40b1418002c8f32d0dbac67bd0260ed47d23645ff92f60c25c97d4ef38322f08",
+    "unseal_event_top_level_keys": [
+      "contract_sha256",
+      "event",
+      "expected_raw_sha256",
+      "git_head_at_unseal",
+      "input_manifest_sha256",
+      "irreversible_record",
+      "locked_score_semantics_audit",
+      "panels",
+      "raw_path",
+      "runner_sha256",
+      "unsealed_at"
+    ]
+  },
+  "forensic_findings": {
+    "n_panels": 2,
+    "n_tasks": 48,
+    "all_official_and_magnitude_scores_constant_within_panel": true,
+    "all_ten_predicted_pca_coordinates_constant_within_panel": true,
+    "all_tasks_hit_lower_clamp": true,
+    "unstable_float32_evidence_proportion_exactly_zero": true,
+    "E158_primary_gate_estimable": false,
+    "E158_primary_gate_result": "failed_non_estimable_constant_score",
+    "undefined_rho_zero_filled": false,
+    "P3_P4_can_be_rescued_posthoc": false,
+    "raw_log_prob_analysis_role": "posthoc_hypothesis_generating_only"
+  },
+  "posthoc_primary_panel_rhos": [
+    {
+      "scope": "Norman_P3",
+      "endpoint": "pearson_effect_accuracy",
+      "rho": 0.17739130434782607,
+      "status": "estimable_posthoc"
+    },
+    {
+      "scope": "Norman_P4",
+      "endpoint": "pearson_effect_accuracy",
+      "rho": 0.2904347826086956,
+      "status": "estimable_posthoc"
+    },
+    {
+      "scope": "Norman_P3",
+      "endpoint": "frac_correct_direction_all",
+      "rho": 0.136551427450701,
+      "status": "estimable_posthoc"
+    },
+    {
+      "scope": "Norman_P4",
+      "endpoint": "frac_correct_direction_all",
+      "rho": 0.40956521739130425,
+      "status": "estimable_posthoc"
+    },
+    {
+      "scope": "Norman_P3",
+      "endpoint": "rmse_effect_error",
+      "rho": -0.1652173913043478,
+      "status": "estimable_posthoc"
+    },
+    {
+      "scope": "Norman_P4",
+      "endpoint": "rmse_effect_error",
+      "rho": -0.3078260869565217,
+      "status": "estimable_posthoc"
+    }
+  ],
+  "outputs": [
+    "E159_事后饱和取证报告.md",
+    "INPUT_MANIFEST.csv",
+    "figures/E159_SATURATION_FLOW.svg",
+    "tables/E159_JOIN_AUDIT.csv",
+    "tables/E159_PCA_PREDICTION_SUMMARY.csv",
+    "tables/E159_POSTHOC_JOINED_TASKS.csv",
+    "tables/E159_POSTHOC_SPEARMAN.csv",
+    "tables/E159_PREREGISTERED_ESTIMABILITY.csv",
+    "tables/E159_SCALER_CHAIN_SUMMARY.csv",
+    "tables/E159_SCALER_CHAIN_TASKS.csv",
+    "tables/E159_SCORE_SUMMARY.csv",
+    "OUTPUT_MANIFEST.csv",
+    "RUN_STATUS.json"
+  ]
+}

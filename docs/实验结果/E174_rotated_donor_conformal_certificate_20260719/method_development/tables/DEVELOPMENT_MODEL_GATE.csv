@@ -1,0 +1,3 @@
+outcome,candidate,fallback,candidate_mean_upper,fallback_mean_upper,relative_mean_upper_improvement,candidate_repeat_win_fraction,required_relative_improvement,required_repeat_win_fraction,incremental_gate_passed,selected_model_spec
+ensemble_rmse,magnitude_plus_pair_lower,magnitude,0.24829032508372739,0.2482682254962732,-8.9014965205548582e-05,0.45000000000000001,0.0050000000000000001,0.75,False,magnitude
+pair_mean_rmse,magnitude_plus_pair_lower,magnitude,0.24908529829755346,0.24907967421602445,-2.2579447908453893e-05,0.45000000000000001,0.0050000000000000001,0.75,False,magnitude

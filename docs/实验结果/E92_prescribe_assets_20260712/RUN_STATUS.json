@@ -1,0 +1,18 @@
+{
+  "experiment": "E92_prescribe_assets",
+  "phase": "scgpt_embeddings_ready",
+  "generated_at": "2026-07-12T17:24:00",
+  "prescribe_commit": "6f7264a205aaff654a9594863c5c10b656f88ebe",
+  "checkpoint": "/home/yyf/archive/code/20260519_0958_home_cleanup/moved_top_level/codex_scgpt_attnres_workspace/checkpoints/whole-human/best_model.pt",
+  "checkpoint_sha256": "sha256:6cb5d451ab5c4b33eb673adbe4fddc61d2389df1b89b7651a9fe2e557572b922",
+  "vocab": "/home/yyf/archive/code/20260519_0958_home_cleanup/moved_top_level/codex_scgpt_attnres_workspace/checkpoints/whole-human/vocab.json",
+  "vocab_sha256": "sha256:acca93d114ca62c3f0f50debbd23e8c87f0714f4737764454f6b2b13f2e8580f",
+  "n_tokens": 60697,
+  "embedding_dim": 512,
+  "extraction": "encoder.embedding.weight followed by frozen encoder.enc_norm",
+  "embedding_path": "/home/yyf/archive/external/PRESCRIBE/scLLM_weights/scGPT/embedding.pkl",
+  "gene_embedding_path": "/home/yyf/archive/external/PRESCRIBE/scLLM_weights/scGPT/gene_emb.pkl",
+  "same_inode": true,
+  "embedding_sha256": "sha256:9a5be69676bc09fbf996ae7be1d4faa09c9f32abbf733f33fc130153829ad8ce",
+  "downloaded_google_drive_embedding_used": false
+}

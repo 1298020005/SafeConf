@@ -1,0 +1,19 @@
+{
+  "dataset": "Frangieh",
+  "benchmark_perturbations": 74,
+  "safeconf_scored_perturbations": 211,
+  "joined_perturbations": 74,
+  "join_complete": true,
+  "joined_score_non_null": 74,
+  "score_coverage_complete": true,
+  "seed_coverage_distribution": {
+    "1": 57,
+    "2": 15,
+    "3": 2
+  },
+  "nstimulated_source": "scPerturBench aggregate CSV column Nstimulated",
+  "nstimulated_is_benchmark_metadata": true,
+  "nstimulated_missing_rows": 0,
+  "nstimulated_unique_per_perturbation": true,
+  "association_computed": false
+}

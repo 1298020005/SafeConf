@@ -1,0 +1,49 @@
+{
+  "all_registered_gates_passed": true,
+  "asset_builder_sha256": "f3496ea8387c09d7a2aa6f2c67f0628baae7e8d5e2b6189963e6304f0e90f1ac",
+  "calibration_target_x_rows_read": 0,
+  "code_freeze_remote_heads": {
+    "github": "1722d76bc832f823841b481d40b0269253c8940d",
+    "origin": "1722d76bc832f823841b481d40b0269253c8940d"
+  },
+  "created_at": "2026-07-20T00:12:02.573191+08:00",
+  "deployment_authorized": false,
+  "evaluation_target_x_rows_read": 0,
+  "experiment": "E177_sunshine_external_certificate",
+  "f2_manifest_sha256": "eccb5f9c82eb49df0bceb0080781d0b172a1bed70100745e68547b7efe633f29",
+  "git_branch": "exp/task-risk-audit-20260611",
+  "git_head": "1722d76bc832f823841b481d40b0269253c8940d",
+  "logical_x_rows_read_by_f2": {
+    "PRETRUTH_CONTROL_X": 2500,
+    "PRETRUTH_TRAIN_X": 8146,
+    "PRETRUTH_VALIDATION_X": 1193
+  },
+  "n_hidden_query_tasks": 640,
+  "n_train_tasks": 432,
+  "n_validation_tasks": 80,
+  "operational_wetlab_protocol_in_scope": false,
+  "pretruth_files_sha256": {
+    "RUNTIME_ENVIRONMENT.json": "85216c2d0ac4cf9f47b0dfaaeccf509200e05c22c5a4c1ff15bb05bff81b9671",
+    "arrays/PRETRUTH_PREDICTIONS.npz": "fc79502db86a7525aadfa54b7c960cf9b6b5c766662529b15d98a50e982c071a",
+    "tables/G2_SCORE_CERTIFICATES.csv": "c322fc0d3fb33992f9ccf006bc3bde1afa14c033bff09f5cb466c408f35c8dba",
+    "tables/G3_PREDICTOR_CERTIFICATES.csv": "06583891f6dd8ea8492dcd05f50d636c9788c0f11efb9979cb041bba625ab14a",
+    "tables/G4_SEED_STABILITY.csv": "2b321726ae8f90a035302d0d1aff345b2e0e31ccee30f3b326ce4552b7d76119",
+    "tables/G5_MAGNITUDE_EQUIVALENCE.csv": "50e0baefeb60b7b4c2456bdc42b8d0a17ae3c0b5919c9b21b58f939de63eabad",
+    "tables/INPUT_HASHES.csv": "4286ab65457554ad25a17d1b5c1b25d0915ff04b0b2c0e7d1319be590104227a",
+    "tables/MODEL_AUDIT.csv": "cc7400656f75dabe1491a2d572500ccbf657baaf8be947106f46b6f635a09899",
+    "tables/PRETRUTH_SCORING_INTERFACE.csv": "2eabb34234ea41e2a9ea47e2778925b1101cefbb6493fb1ab525c234543aaa68",
+    "tables/QUERY_GRAPH_AUDIT.csv": "6a8de601e6fada3353544d8fcf1f068d31306a7cf64815cd8fe36a7754fc4db8",
+    "tables/SYNTHETIC_REGRESSION_TESTS.csv": "86901c5908553e36fd046333942fd2da42eb0c1fe4b3d9e62228f1f5fa1b3f2c",
+    "tables/TRAINING_HISTORY.csv": "a6753e6c73cd4b7aa85176ed2ebde50ff9f9934b66bfa51aab4baef2f17095ca"
+  },
+  "public_processed_data_only": true,
+  "query_graphs_containing_y": 0,
+  "registered_g2_units": 11,
+  "registered_g4_units": 11,
+  "runner_sha256": "6d9f06c7e7a6f1c43bdf283dfef58378ed358c26411d1aa16dda0a460a59797d",
+  "schema": "safeconf_e177_pretruth_gate_snapshot_v1",
+  "stage": "F3_PRETRUTH_GATE",
+  "status": "PASS",
+  "synthetic_tests_passed": 7,
+  "wall_seconds": 254.41268467903137
+}

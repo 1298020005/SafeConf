@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="650">
+<rect width="100%" height="100%" fill="#fff"/>
+<style>text{font-family:Arial,"Noto Sans CJK SC",sans-serif;fill:#27343c}.t{font-size:26px;font-weight:700}.s{font-size:14px;fill:#647078}.l{font-size:15px}</style>
+<text x="48" y="40" class="t">E110｜困难设置内层校准</text>
+<text x="48" y="68" class="s">校准数据来自 E109；外层 Frangieh 测试标签不参与拟合。柱高为 3 个外层 fold 的 Spearman 宏平均。</text>
+<line x1="95" y1="495.9" x2="1105" y2="495.9" stroke="#dde4e7"/>
+<text x="83" y="500.9" text-anchor="end" class="s">-0.2</text>
+<line x1="95" y1="417.7" x2="1105" y2="417.7" stroke="#dde4e7"/>
+<text x="83" y="422.7" text-anchor="end" class="s">0.0</text>
+<line x1="95" y1="339.5" x2="1105" y2="339.5" stroke="#dde4e7"/>
+<text x="83" y="344.5" text-anchor="end" class="s">0.2</text>
+<line x1="95" y1="261.4" x2="1105" y2="261.4" stroke="#dde4e7"/>
+<text x="83" y="266.4" text-anchor="end" class="s">0.4</text>
+<line x1="95" y1="183.2" x2="1105" y2="183.2" stroke="#dde4e7"/>
+<text x="83" y="188.2" text-anchor="end" class="s">0.6</text>
+<line x1="95" y1="105.0" x2="1105" y2="105.0" stroke="#dde4e7"/>
+<text x="83" y="110.0" text-anchor="end" class="s">0.8</text>
+<rect x="132.0" y="394.4" width="36" height="23.3" fill="#285f78"/>
+<text x="150.0" y="388.4" text-anchor="middle" class="s">0.06</text>
+<rect x="178.0" y="363.8" width="36" height="53.9" fill="#78a091"/>
+<text x="196.0" y="357.8" text-anchor="middle" class="s">0.14</text>
+<rect x="224.0" y="397.1" width="36" height="20.6" fill="#b18458"/>
+<text x="242.0" y="391.1" text-anchor="middle" class="s">0.05</text>
+<text x="196.0" y="570" text-anchor="middle" class="l">随机缺失</text>
+<rect x="334.0" y="336.6" width="36" height="81.2" fill="#285f78"/>
+<text x="352.0" y="330.6" text-anchor="middle" class="s">0.21</text>
+<rect x="380.0" y="357.0" width="36" height="60.7" fill="#78a091"/>
+<text x="398.0" y="351.0" text-anchor="middle" class="s">0.16</text>
+<rect x="426.0" y="332.4" width="36" height="85.4" fill="#b18458"/>
+<text x="444.0" y="326.4" text-anchor="middle" class="s">0.22</text>
+<text x="398.0" y="570" text-anchor="middle" class="l">新背景</text>
+<rect x="536.0" y="376.9" width="36" height="40.9" fill="#285f78"/>
+<text x="554.0" y="370.9" text-anchor="middle" class="s">0.10</text>
+<rect x="582.0" y="367.3" width="36" height="50.4" fill="#78a091"/>
+<text x="600.0" y="361.3" text-anchor="middle" class="s">0.13</text>
+<rect x="628.0" y="379.1" width="36" height="38.6" fill="#b18458"/>
+<text x="646.0" y="373.1" text-anchor="middle" class="s">0.10</text>
+<text x="600.0" y="570" text-anchor="middle" class="l">新扰动</text>
+<rect x="738.0" y="396.1" width="36" height="21.6" fill="#285f78"/>
+<text x="756.0" y="390.1" text-anchor="middle" class="s">0.06</text>
+<rect x="784.0" y="390.5" width="36" height="27.2" fill="#78a091"/>
+<text x="802.0" y="384.5" text-anchor="middle" class="s">0.07</text>
+<rect x="830.0" y="396.5" width="36" height="21.2" fill="#b18458"/>
+<text x="848.0" y="390.5" text-anchor="middle" class="s">0.05</text>
+<text x="802.0" y="570" text-anchor="middle" class="l">双未见</text>
+<rect x="940.0" y="349.0" width="36" height="68.7" fill="#285f78"/>
+<text x="958.0" y="343.0" text-anchor="middle" class="s">0.18</text>
+<rect x="986.0" y="318.8" width="36" height="98.9" fill="#78a091"/>
+<text x="1004.0" y="312.8" text-anchor="middle" class="s">0.25</text>
+<rect x="1032.0" y="359.8" width="36" height="57.9" fill="#b18458"/>
+<text x="1050.0" y="353.8" text-anchor="middle" class="s">0.15</text>
+<text x="1004.0" y="570" text-anchor="middle" class="l">全部任务</text>
+<rect x="250" y="610" width="18" height="12" fill="#285f78"/><text x="277" y="622" class="s">内层困难设置校准</text>
+<rect x="500" y="610" width="18" height="12" fill="#78a091"/><text x="527" y="622" class="s">原随机 pair 校准</text>
+<rect x="750" y="610" width="18" height="12" fill="#b18458"/><text x="777" y="622" class="s">预测幅度</text>
+</svg>

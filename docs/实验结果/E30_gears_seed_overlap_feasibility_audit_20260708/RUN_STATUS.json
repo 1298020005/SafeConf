@@ -1,0 +1,16 @@
+{
+  "status": "ok",
+  "generated_at": "2026-07-08T13:04:59",
+  "git_head": "03db3ef83b011d2e7348fdbad3487fcaaa3c1ae4",
+  "git_dirty": true,
+  "out": "docs/实验结果/E30_gears_seed_overlap_feasibility_audit_20260708",
+  "source": "docs/实验结果/E25_gears_strict_prediction_records_20260708",
+  "n_records": 54,
+  "n_task_groups": 47,
+  "singleton_tasks": 42,
+  "repeat_ge2_tasks": 5,
+  "repeat_ge3_tasks": 2,
+  "max_true_diff": 0.0,
+  "claim_allowed_now": "E25 repeated tasks have consistent true effects; seed-disagreement can be explored only on sparse repeated tasks.",
+  "claim_not_allowed": "Do not claim formal GEARS seed-ensemble uncertainty from E25 because most tasks are singletons."
+}

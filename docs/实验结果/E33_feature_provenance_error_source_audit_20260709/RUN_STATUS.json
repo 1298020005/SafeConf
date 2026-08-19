@@ -1,0 +1,14 @@
+{
+  "run_id": "E33_feature_provenance_error_source_audit_20260709",
+  "created_at": "2026-07-09T20:16:20",
+  "git_head": "c9097519bb469018c9d14a5f012cee3fddce9b20",
+  "git_dirty": true,
+  "status": "completed",
+  "outputs": [
+    "tables/E33_FEATURE_PROVENANCE.csv",
+    "tables/E33_ERROR_SOURCE_MAP.csv",
+    "tables/E33_MAGNITUDE_SPLIT_TABLE.csv",
+    "tables/E33_LEAKAGE_CHECKLIST.csv",
+    "reports/E33_ADVISOR_QA.md"
+  ]
+}

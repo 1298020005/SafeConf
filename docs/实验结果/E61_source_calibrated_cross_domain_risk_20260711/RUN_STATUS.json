@@ -1,0 +1,27 @@
+{
+  "experiment": "E61_source_calibrated_cross_domain_risk",
+  "generated_at": "2026-07-11T04:18:20",
+  "git_head_before_run": "6cb6109584a67860626d24742072b8e639833800",
+  "n_planned_pairs": 10,
+  "n_scored_pairs": 10,
+  "n_target_task_rows": 2329,
+  "n_source_oof_rows": 2305,
+  "n_folds": 5,
+  "n_boot": 2000,
+  "target_truth_used_in_training_or_scoring": false,
+  "features": [
+    "log1p_source_support",
+    "nearest_context_similarity",
+    "prediction_disagreement_rmse",
+    "predicted_l2_combined"
+  ],
+  "outputs": [
+    "tables/E61_TARGET_TASK_SCORES.csv",
+    "tables/E61_SOURCE_OOF_CALIBRATION_ROWS.csv",
+    "tables/E61_CALIBRATOR_COEFFICIENTS.csv",
+    "tables/E61_SUMMARY.csv",
+    "tables/E61_PAIR_STATUS.json",
+    "figures/F1_calibrated_vs_magnitude.svg",
+    "reports/E61_SOURCE_CALIBRATED_RISK_REPORT.md"
+  ]
+}

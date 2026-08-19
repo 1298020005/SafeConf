@@ -1,0 +1,145 @@
+{
+  "payload": {
+    "organism": "mmusculus",
+    "query": [
+      "Ash1l",
+      "Hmgxb4",
+      "Kdm6a",
+      "Kmt2d",
+      "Prmt1",
+      "Spi1",
+      "Stag2"
+    ],
+    "sources": [
+      "GO:BP",
+      "REAC"
+    ],
+    "user_threshold": 0.05,
+    "significance_threshold_method": "g_SCS",
+    "domain_scope": "custom",
+    "background": [
+      "Ash1l",
+      "Brd9",
+      "Carm1",
+      "Cbx3",
+      "Cebpa",
+      "Chd4",
+      "Crebbp",
+      "Ehmt1",
+      "Ehmt2",
+      "Ezh2",
+      "Gltscr1",
+      "Hdac1",
+      "Hmgxb4",
+      "Kdm6a",
+      "Kmt2a",
+      "Kmt2d",
+      "Mbd2",
+      "Mbd3",
+      "Men1",
+      "Phf10",
+      "Prmt1",
+      "Prmt5",
+      "Rbbp4",
+      "Rcor1",
+      "Setdb1",
+      "Setdb2",
+      "Smarcd1",
+      "Smarcd2",
+      "Smc2",
+      "Spi1",
+      "Stag2"
+    ],
+    "no_evidences": false
+  },
+  "response": {
+    "result": [],
+    "meta": {
+      "query_metadata": {
+        "queries": {
+          "query_1": [
+            "Ash1l",
+            "Hmgxb4",
+            "Kdm6a",
+            "Kmt2d",
+            "Prmt1",
+            "Spi1",
+            "Stag2"
+          ]
+        },
+        "organism": "mmusculus",
+        "all_results": false,
+        "ordered": false,
+        "no_iea": false,
+        "sources": [
+          "GO:BP",
+          "REAC"
+        ],
+        "combined": false,
+        "aresolve": {},
+        "numeric_ns": "ENTREZGENE_ACC",
+        "domain_scope": "custom",
+        "measure_underrepresentation": false,
+        "significance_threshold_method": "g_SCS",
+        "user_threshold": 0.05,
+        "no_evidences": false,
+        "highlight": null
+      },
+      "result_metadata": {
+        "GO:BP": {
+          "domain_size": 24936,
+          "number_of_terms": 24546,
+          "threshold": 1e-06
+        },
+        "REAC": {
+          "domain_size": 8514,
+          "number_of_terms": 1823,
+          "threshold": 1e-06
+        }
+      },
+      "genes_metadata": {
+        "failed": [],
+        "ambiguous": {},
+        "duplicates": [],
+        "query": {
+          "query_1": {
+            "mapping": {
+              "Ash1l": [
+                "ENSMUSG00000028053"
+              ],
+              "Hmgxb4": [
+                "ENSMUSG00000034518"
+              ],
+              "Kdm6a": [
+                "ENSMUSG00000037369"
+              ],
+              "Kmt2d": [
+                "ENSMUSG00000048154"
+              ],
+              "Prmt1": [
+                "ENSMUSG00000109324"
+              ],
+              "Spi1": [
+                "ENSMUSG00000002111"
+              ],
+              "Stag2": [
+                "ENSMUSG00000025862"
+              ]
+            },
+            "ensgs": [
+              "ENSMUSG00000028053",
+              "ENSMUSG00000034518",
+              "ENSMUSG00000037369",
+              "ENSMUSG00000048154",
+              "ENSMUSG00000109324",
+              "ENSMUSG00000002111",
+              "ENSMUSG00000025862"
+            ]
+          }
+        }
+      },
+      "timestamp": "2026-07-13T16:08:05.926048+00:00",
+      "version": "e114_eg62_p19_27110d83"
+    }
+  }
+}

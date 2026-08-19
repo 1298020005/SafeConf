@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>E11 Selective prediction audit</title>
+<style>
+body{margin:0;background:#f7f8f6;color:#17202a;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,"Noto Sans SC",sans-serif;line-height:1.7}
+.top{background:#12312b;color:white;padding:28px 42px}.wrap{max-width:1120px;margin:0 auto;padding:28px}
+.card{background:white;border:1px solid #d8e0dc;border-radius:16px;padding:22px;margin:18px 0;box-shadow:0 8px 22px rgba(15,23,42,.06);overflow-x:auto}
+h2{border-bottom:3px solid #0f766e;padding-bottom:8px}.ok{border-left:6px solid #047857;background:#f1fbf6}.warn{border-left:6px solid #b45309;background:#fff8eb}
+img{max-width:100%;background:white;border:1px solid #d8e0dc;border-radius:12px}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #dbe3df;padding:7px;vertical-align:top}th{background:#eef6f3}
+</style></head><body>
+<div class="top"><h1>E11 Selective prediction audit</h1><p>把 SafeConf 从风险相关性推进到 risk-coverage / selective verification。</p></div>
+<div class="wrap">
+<div class="card ok"><h2>结论</h2><p>80% coverage 下，7/7 个数据集平均 RMSE 下降；宏平均 improvement = 16.67%。这支持 selective prediction 方向，但还不是 conformal guarantee。</p></div>
+<div class="card warn"><h2>边界</h2><p>McFarland 在部分 coverage 下不稳定，需要保留为 failure/boundary case。CCF-A 版本还要补 calibration split 和 risk-control guarantee。</p></div>
+<div class="card"><h2>Risk-coverage curves</h2><img src="../figures/E11_fig1_risk_coverage_curves.svg"></div>
+<div class="card"><h2>80% coverage improvement</h2><img src="../figures/E11_fig2_improvement_at_80pct_coverage.svg"></div>
+<div class="card"><h2>Macro gain</h2><img src="../figures/E11_fig3_macro_selective_gain.svg"></div>
+<div class="card"><h2>Dataset summary</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataset_name</th>
+      <th>full_mean_rmse</th>
+      <th>best_improve_pct</th>
+      <th>worst_improve_pct</th>
+      <th>positive_coverage_points</th>
+      <th>n_coverage_points</th>
+      <th>improve_at_90pct_coverage</th>
+      <th>mean_rmse_at_90pct_coverage</th>
+      <th>improve_at_80pct_coverage</th>
+      <th>mean_rmse_at_80pct_coverage</th>
+      <th>improve_at_70pct_coverage</th>
+      <th>mean_rmse_at_70pct_coverage</th>
+      <th>improve_at_60pct_coverage</th>
+      <th>mean_rmse_at_60pct_coverage</th>
+      <th>improve_at_50pct_coverage</th>
+      <th>mean_rmse_at_50pct_coverage</th>
+      <th>selective_prediction_call</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SantinhaPlatt2023</td>
+      <td>0.378206</td>
+      <td>5.819220</td>
+      <td>0.000000</td>
+      <td>5</td>
+      <td>6</td>
+      <td>1.920346</td>
+      <td>0.370943</td>
+      <td>2.078644</td>
+      <td>0.370344</td>
+      <td>2.466455</td>
+      <td>0.368877</td>
+      <td>4.217991</td>
+      <td>0.362253</td>
+      <td>5.819220</td>
+      <td>0.356197</td>
+      <td>selective prediction reduces RMSE at 80% coverage</td>
+    </tr>
+    <tr>
+      <td>McFarlandTsherniak2020</td>
+      <td>1.540976</td>
+      <td>3.950613</td>
+      <td>-2.162896</td>
+      <td>3</td>
+      <td>6</td>
+      <td>-1.028301</td>
+      <td>1.556821</td>
+      <td>3.950613</td>
+      <td>1.480098</td>
+      <td>2.916546</td>
+      <td>1.496032</td>
+      <td>1.326404</td>
+      <td>1.520536</td>
+      <td>-2.162896</td>
+      <td>1.574305</td>
+      <td>selective prediction reduces RMSE at 80% coverage</td>
+    </tr>
+    <tr>
+      <td>Frangieh</td>
+      <td>0.056114</td>
+      <td>10.382798</td>
+      <td>0.000000</td>
+      <td>5</td>
+      <td>6</td>
+      <td>2.902354</td>
+      <td>0.054486</td>
+      <td>5.033196</td>
+      <td>0.053290</td>
+      <td>9.429443</td>
+      <td>0.050823</td>
+      <td>9.788337</td>
+      <td>0.050622</td>
+      <td>10.382798</td>
+      <td>0.050288</td>
+      <td>selective prediction reduces RMSE at 80% coverage</td>
+    </tr>
+    <tr>
+      <td>LaraAstiasoHuntly2023_invivo</td>
+      <td>4.889280</td>
+      <td>30.840832</td>
+      <td>0.000000</td>
+      <td>5</td>
+      <td>6</td>
+      <td>11.603794</td>
+      <td>4.321938</td>
+      <td>12.826016</td>
+      <td>4.262181</td>
+      <td>17.964469</td>
+      <td>4.010947</td>
+      <td>19.711357</td>
+      <td>3.925537</td>
+      <td>30.840832</td>
+      <td>3.381386</td>
+      <td>selective prediction reduces RMSE at 80% coverage</td>
+    </tr>
+    <tr>
+      <td>SrivatsanTrapnell2020_sciplex3</td>
+      <td>0.058143</td>
+      <td>15.231384</td>
+      <td>0.000000</td>
+      <td>5</td>
+      <td>6</td>
+      <td>11.613655</td>
+      <td>0.051390</td>
+      <td>15.102695</td>
+      <td>0.049362</td>
+      <td>15.181472</td>
+      <td>0.049316</td>
+      <td>15.231384</td>
+      <td>0.049287</td>
+      <td>14.306947</td>
+      <td>0.049825</td>
+      <td>selective prediction reduces RMSE at 80% coverage</td>
+    </tr>
+    <tr>
+      <td>CuiHacohen2023</td>
+      <td>0.211044</td>
+      <td>29.508864</td>
+      <td>0.000000</td>
+      <td>5</td>
+      <td>6</td>
+      <td>10.043249</td>
+      <td>0.189849</td>
+      <td>21.588637</td>
+      <td>0.165483</td>
+      <td>25.557951</td>
+      <td>0.157106</td>
+      <td>27.988098</td>
+      <td>0.151977</td>
+      <td>29.508864</td>
+      <td>0.148768</td>
+      <td>selective prediction reduces RMSE at 80% coverage</td>
+    </tr>
+    <tr>
+      <td>LaraAstiasoHuntly2023_exvivo</td>
+      <td>1.235042</td>
+      <td>63.309859</td>
+      <td>0.000000</td>
+      <td>5</td>
+      <td>6</td>
+      <td>39.567708</td>
+      <td>0.746364</td>
+      <td>56.119896</td>
+      <td>0.541938</td>
+      <td>60.481407</td>
+      <td>0.488071</td>
+      <td>61.748448</td>
+      <td>0.472423</td>
+      <td>63.309859</td>
+      <td>0.453139</td>
+      <td>selective prediction reduces RMSE at 80% coverage</td>
+    </tr>
+  </tbody>
+</table></div>
+</div></body></html>

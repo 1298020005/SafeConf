@@ -1,0 +1,15 @@
+{
+  "dataset": "frangieh",
+  "split": "single",
+  "seed": 3,
+  "epochs": 1,
+  "status": "ok",
+  "test_mse": 0.0014481309086217412,
+  "test_mse_de": 0.004472213342697138,
+  "test_pearson": 0.9957657737292325,
+  "test_pearson_de": 0.9289360543720979,
+  "n_prediction_records": 21,
+  "records_csv": "/home/yyf/proj/code/20260426_154505_perturb_transport_final_push/outputs/gears_frangieh_adapter_smoke_20260605/frangieh/seed_3/tables/PREDICTION_RECORDS.csv",
+  "predicted_npz": "/home/yyf/proj/code/20260426_154505_perturb_transport_final_push/outputs/gears_frangieh_adapter_smoke_20260605/frangieh/seed_3/arrays/gears_predicted_effects.npz",
+  "true_npz": "/home/yyf/proj/code/20260426_154505_perturb_transport_final_push/outputs/gears_frangieh_adapter_smoke_20260605/frangieh/seed_3/arrays/gears_true_effects.npz"
+}

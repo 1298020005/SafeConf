@@ -1,0 +1,32 @@
+{
+  "column_unseen_each": 40,
+  "deployed_seed_estimator": "three_seed_family_mean",
+  "deployment_authorized": false,
+  "g4_seed_estimator": "three_leave_one_seed_out_two_seed_family_means",
+  "g4_thresholds_changed_from_e170": false,
+  "gears_external_go_file": {
+    "path": "/home/yyf/data/gears_formal_baselines_v2/frangieh_local_atlas/go.csv",
+    "sha256": "c84cbbd58ba5e221fa328ca3d4b281ca2dd8b1a20de01ee961009f5d8476cb72"
+  },
+  "gene_panel_size_each": 512,
+  "metadata_freeze_script_sha256": "664a857e2a550606402c0d5f806a0befd32672b1e540830508b3cfddf50ad503",
+  "model_seeds": [
+    3407,
+    3408,
+    3409
+  ],
+  "panels": [
+    "Q01",
+    "Q02",
+    "Q03",
+    "Q04"
+  ],
+  "pretruth_test_targeting_x_access_count_required": 0,
+  "registered_targets_each": 200,
+  "safeconf_score_formula_changed_from_e170": false,
+  "scgpt_checkpoint_files": {
+    "/home/yyf/archive/code/20260519_0958_home_cleanup/moved_top_level/codex_scgpt_attnres_workspace/checkpoints/whole-human/args.json": "c18e075e018140cb8b2d9029387b9de26607a5ce6a8ccabd6ead70cd76b95d60",
+    "/home/yyf/archive/code/20260519_0958_home_cleanup/moved_top_level/codex_scgpt_attnres_workspace/checkpoints/whole-human/best_model.pt": "6cb5d451ab5c4b33eb673adbe4fddc61d2389df1b89b7651a9fe2e557572b922",
+    "/home/yyf/archive/code/20260519_0958_home_cleanup/moved_top_level/codex_scgpt_attnres_workspace/checkpoints/whole-human/vocab.json": "acca93d114ca62c3f0f50debbd23e8c87f0714f4737764454f6b2b13f2e8580f"
+  }
+}

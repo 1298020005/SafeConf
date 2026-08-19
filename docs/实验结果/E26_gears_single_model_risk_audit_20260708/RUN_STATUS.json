@@ -1,0 +1,15 @@
+{
+  "status": "ok",
+  "generated_at": "2026-07-08T02:59:59",
+  "git_head": "f4442c2624304cf29488db79ae0c6b47b220a7de",
+  "git_dirty": true,
+  "input": "docs/实验结果/E25_gears_strict_prediction_records_20260708",
+  "out": "docs/实验结果/E26_gears_single_model_risk_audit_20260708",
+  "n_records": 54,
+  "n_datasets": 3,
+  "n_scores": 324,
+  "n_deployable_scores": 4,
+  "strict_issue_count": 0,
+  "strict_issues": [],
+  "native_uncertainty_status": "absent_in_e25_formal_records"
+}

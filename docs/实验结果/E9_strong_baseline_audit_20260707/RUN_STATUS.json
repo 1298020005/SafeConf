@@ -1,0 +1,12 @@
+{
+  "status": "ok",
+  "generated_at": "2026-07-07T05:55:29",
+  "script": "tools/scripts/run_e9_strong_baseline_audit.py",
+  "output_dir": "docs/实验结果/E9_strong_baseline_audit_20260707",
+  "input_git_commit": "a8a80664ffc0c268aa11ffa1541f22a3047423ce",
+  "source_files": {
+    "baseline_ladder": "docs/实验结果/Reliability_model_corrected_20260610/tables/RELIABILITY_BASELINE_LADDER.csv",
+    "e2_magnitude_residual": "docs/实验结果/E1_E4_preregistered_20260614/E2_magnitude_residual/E2_MAGNITUDE_RESIDUAL_SUMMARY.csv",
+    "tahoe_d5": "docs/实验结果/Tahoe_D5_combined_triage_20260627/tables/TAHOE_D5_POINT_SUMMARY.csv"
+  }
+}

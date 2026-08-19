@@ -1,0 +1,11 @@
+{
+  "dataset": "Santinha",
+  "status": "complete",
+  "generated_at": "2026-07-13T11:21:27",
+  "n_folds": 5,
+  "n_test_tasks": 255,
+  "n_records": 510,
+  "strict_issue_count": 0,
+  "test_truth_used_for_training_calibration_score_or_threshold": false,
+  "wall_seconds": 146.98822784423828
+}

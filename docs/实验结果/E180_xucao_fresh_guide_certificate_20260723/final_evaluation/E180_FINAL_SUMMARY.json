@@ -1,0 +1,36 @@
+{
+  "bootstrap_ci95_primary_minus_constant_mean_upper": [
+    0.010714185224566559,
+    0.01881900340846506
+  ],
+  "constant_mean_upper": 0.21680902990693987,
+  "constant_target_simultaneous_coverage": 1.0,
+  "evaluation_truth_opened_once": true,
+  "evaluation_x_rows_read": 15278,
+  "experiment": "E180_xucao_fresh_guide_certificate",
+  "generated_at": "2026-07-24T00:08:55.419995+08:00",
+  "git_branch": "exp/task-risk-audit-20260611",
+  "git_head_before_truth_open": "a9379ac79695f10908989b1a244910700d9679cc",
+  "median_pair_lower_tightness": 0.1400420568617943,
+  "n_evaluation_guide_tasks": 73,
+  "n_evaluation_targets": 27,
+  "pair_lower_max_violations": 0,
+  "pair_lower_mean_violations": 0,
+  "posttruth_method_or_target_change": false,
+  "primary_mean_upper": 0.23146740419096629,
+  "primary_minus_constant_mean_upper": 0.014658374284026415,
+  "primary_target_simultaneous_coverage": 1.0,
+  "prospective_success_gates": {
+    "adaptive_mean_upper_not_above_constant": false,
+    "evaluation_target_simultaneous_coverage_minimum_0_85": true,
+    "pair_lower_bound_violations": true,
+    "truth_access_or_split_violation_zero": true
+  },
+  "remote_heads_before_truth_open": {
+    "github": "a9379ac79695f10908989b1a244910700d9679cc",
+    "origin": "a9379ac79695f10908989b1a244910700d9679cc"
+  },
+  "scgpt_gears_error_spearman": 0.9956189065778107,
+  "schema": "safeconf_e180_final_summary_v1",
+  "status": "FAIL"
+}

@@ -1,0 +1,8 @@
+
+$ /home/yyf/.conda/envs/scgpt_env/bin/python run_gate.py --root /home/yyf/codex_cout/20260426_154505_perturb_transport_final_push --seeds 11,22,33 --max-datasets 3
+
+exit_code=0
+
+$ /home/yyf/.conda/envs/scgpt_env/bin/python run_gate.py --root /home/yyf/codex_cout/20260426_154505_perturb_transport_final_push --seeds 11,22,33 --max-datasets 3
+
+exit_code=0

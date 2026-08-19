@@ -1,0 +1,7 @@
+run_id,seed,train_fraction,reused_e151,manifest
+seed1_frac100_reused_e151,202607151,100,True,docs/实验结果/E149_replogle_two_cellline_contract_20260714/manifests/E149_TASK_MANIFEST.csv
+seed2_frac25,2026071542,25,False,docs/实验结果/E154_replogle_robustness_20260714/manifests/E154_TRAIN_FRACTION_25_MANIFEST.csv
+seed2_frac50,2026071542,50,False,docs/实验结果/E154_replogle_robustness_20260714/manifests/E154_TRAIN_FRACTION_50_MANIFEST.csv
+seed2_frac75,2026071542,75,False,docs/实验结果/E154_replogle_robustness_20260714/manifests/E154_TRAIN_FRACTION_75_MANIFEST.csv
+seed2_frac100,2026071542,100,False,docs/实验结果/E154_replogle_robustness_20260714/manifests/E154_TRAIN_FRACTION_100_MANIFEST.csv
+seed3_frac100,2026071543,100,False,docs/实验结果/E154_replogle_robustness_20260714/manifests/E154_TRAIN_FRACTION_100_MANIFEST.csv

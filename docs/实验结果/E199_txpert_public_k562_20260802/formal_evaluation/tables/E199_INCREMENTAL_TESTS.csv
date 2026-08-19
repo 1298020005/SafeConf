@@ -1,0 +1,3 @@
+estimator,baseline,outcome,measure,estimate,ci95_lower,ci95_upper,bootstrap_valid
+diversity_lower_bound,predicted_magnitude,family_rms_error,delta_spearman,0.29937622531881375,0.16114291160829838,0.4320068451671362,5000
+diversity_lower_bound,predicted_magnitude,family_rms_error,delta_oracle_normalized_utility,0.1686277908838383,-0.02831733349671434,0.3525439038142494,5000

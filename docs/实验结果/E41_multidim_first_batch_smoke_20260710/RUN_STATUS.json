@@ -1,0 +1,53 @@
+{
+  "generated_at": "2026-07-10T16:50:14",
+  "git_head": "900abafd5dad7e3f8f135a14e2cf7b1675610494",
+  "git_dirty": true,
+  "openproblems_status": {
+    "status": "ok",
+    "train_shape": [
+      614,
+      18211
+    ],
+    "test_shape": [
+      255,
+      18211
+    ],
+    "prediction_shape": [
+      255,
+      18211
+    ],
+    "n_train_drugs": 146,
+    "n_test_drugs": 129,
+    "n_test_tasks": 255,
+    "test_cell_types": [
+      "B cells",
+      "Myeloid cells"
+    ],
+    "train_cell_types": [
+      "B cells",
+      "Myeloid cells",
+      "NK cells",
+      "T cells CD4+",
+      "T cells CD8+",
+      "T regulatory cells"
+    ]
+  },
+  "tahoe_raw_status": {
+    "status": "ok",
+    "complete_shards_seen": 343,
+    "partial_shard_markers": 602,
+    "audited_shards": 24,
+    "audited_rows": 677400,
+    "gene_metadata_rows": 62710,
+    "obs_metadata_rows": 100648790
+  },
+  "output_dir": "docs/实验结果/E41_multidim_first_batch_smoke_20260710",
+  "tables": [
+    "tables/OPENPROBLEMS_DGE_TASK_RISK.csv",
+    "tables/OPENPROBLEMS_DGE_RISK_SUMMARY.csv",
+    "tables/TAHOE_RAW_SHARD_METADATA_SUMMARY.csv",
+    "tables/TAHOE_RAW_FIELD_COUNTS.csv",
+    "tables/TAHOE_RAW_SCHEMA_BY_SHARD.csv",
+    "tables/FIRST_BATCH_EXPERIMENT_QUEUE.csv"
+  ]
+}

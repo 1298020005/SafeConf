@@ -1,0 +1,8 @@
+hdf5_path,value_access,n_values,encoding,purpose,expression_or_outcome_value
+obs/10xrun_id,True,278684,categorical/categories+codes,identity-only E170 panel and row-access freeze,False
+obs/donor_id,True,278684,categorical/categories+codes,identity-only E170 panel and row-access freeze,False
+obs/culture_condition,True,278684,categorical/categories+codes,identity-only E170 panel and row-access freeze,False
+obs/guide_id,True,278684,categorical/categories+codes,identity-only E170 panel and row-access freeze,False
+obs/perturbed_gene_name,True,278684,categorical/categories+codes,identity-only E170 panel and row-access freeze,False
+obs/perturbed_gene_id,True,278684,categorical/categories+codes,identity-only E170 panel and row-access freeze,False
+obs/guide_type,True,278684,categorical/categories+codes,identity-only E170 panel and row-access freeze,False

@@ -1,0 +1,2 @@
+matrix,rows,columns,minimum,maximum,mean,median,fraction_zero,all_finite,all_nonnegative,normalization
+target_perturbation,4959,512,0.0,6.968600273132324,1.687233567237854,1.53961181640625,0.11274836471566849,True,True,"per-cell full-library scale to 10000, then log1p"

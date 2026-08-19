@@ -1,0 +1,20 @@
+{
+  "fold_id": "frangieh_context_holdout_1_Co-culture",
+  "finished_at": "2026-07-13T10:29:36",
+  "status": "complete",
+  "seed": 202607106,
+  "device": "cuda:0",
+  "epochs_requested": 12,
+  "epochs_completed": 7,
+  "best_epoch": 4,
+  "best_validation_mse": 0.0029614469967782497,
+  "batch_size": 16,
+  "learning_rate": 0.0001,
+  "n_train_tasks": 258,
+  "n_validation_tasks": 30,
+  "n_test_tasks": 279,
+  "pretrained_tensors_loaded": 129,
+  "basal_input": "same-context control mean; available at prediction time",
+  "test_target_used_for_training_or_selection": false,
+  "wall_seconds": 42.093501329422
+}

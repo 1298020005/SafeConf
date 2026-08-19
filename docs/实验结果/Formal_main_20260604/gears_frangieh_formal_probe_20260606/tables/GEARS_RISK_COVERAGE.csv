@@ -1,0 +1,13 @@
+dataset_family,dataset_name,score_name,score_type,coverage,mean_rmse,full_mean_rmse,risk_cov_improve_pct
+gears_supplement,frangieh,gears_prediction_magnitude_risk,risk,1.0,0.03492183884185164,0.03492183884185164,0.0
+gears_supplement,frangieh,gears_prediction_magnitude_risk,risk,0.9,0.031269314199952096,0.03492183884185164,10.459141795025474
+gears_supplement,frangieh,gears_prediction_magnitude_risk,risk,0.8,0.029750113449990696,0.03492183884185164,14.809430326054182
+gears_supplement,frangieh,gears_prediction_magnitude_risk,risk,0.7,0.029071231668984298,0.03492183884185164,16.753433859432842
+gears_supplement,frangieh,gears_prediction_magnitude_risk,risk,0.6,0.028831725204853588,0.03492183884185164,17.43926963462025
+gears_supplement,frangieh,gears_prediction_magnitude_risk,risk,0.5,0.028429098307124975,0.03492183884185164,18.592206911354058
+gears_supplement,frangieh,gears_uncertainty_confidence,confidence,1.0,0.03492183884185164,0.03492183884185164,0.0
+gears_supplement,frangieh,gears_uncertainty_confidence,confidence,0.9,0.03520238416136371,0.03492183884185164,-0.8033520822960034
+gears_supplement,frangieh,gears_uncertainty_confidence,confidence,0.8,0.03520985092967744,0.03492183884185164,-0.82473345441545
+gears_supplement,frangieh,gears_uncertainty_confidence,confidence,0.7,0.03438291825692757,0.03492183884185164,1.5432193801839842
+gears_supplement,frangieh,gears_uncertainty_confidence,confidence,0.6,0.03522159291529337,0.03492183884185164,-0.858357072201177
+gears_supplement,frangieh,gears_uncertainty_confidence,confidence,0.5,0.0333560606644999,0.03492183884185164,4.483664747559782

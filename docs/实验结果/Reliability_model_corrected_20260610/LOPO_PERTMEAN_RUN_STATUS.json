@@ -1,0 +1,24 @@
+{
+  "out_dir": "outputs/safeconf_lopo_pertmean_corrected_20260610",
+  "third_predictor": "PertMeanPredictor",
+  "n_datasets": 7,
+  "n_train_rows_existing_predictors": 36682,
+  "n_third_predictor_test_rows": 4584,
+  "norm_cols": [
+    "context_similarity_max_qnorm",
+    "context_similarity_mean_qnorm",
+    "perturbation_support_count_qnorm",
+    "perturbation_effect_stability_qnorm",
+    "perturbation_effect_variance_qnorm",
+    "historical_residual_risk_qnorm",
+    "model_disagreement_rmse_qnorm",
+    "model_disagreement_cosine_qnorm",
+    "ood_nearest_distance_qnorm",
+    "ood_mean_k_distance_qnorm",
+    "prediction_l2_norm_qnorm",
+    "prediction_abs_mean_qnorm",
+    "prediction_magnitude_deviation_qnorm",
+    "prediction_norm_ratio_qnorm"
+  ],
+  "status": "ok"
+}

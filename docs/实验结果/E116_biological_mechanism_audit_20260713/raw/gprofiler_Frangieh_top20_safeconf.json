@@ -1,0 +1,487 @@
+{
+  "payload": {
+    "organism": "hsapiens",
+    "query": [
+      "ATP1B1",
+      "C19orf48",
+      "CCND1",
+      "CD274",
+      "CDH19",
+      "CDK4",
+      "CDK6",
+      "CTSB",
+      "DAG1",
+      "DDX39A",
+      "EEA1",
+      "FMN1",
+      "FOS",
+      "GPNMB",
+      "IFNGR1",
+      "IFNGR2",
+      "IRF3",
+      "JAK1",
+      "JAK2",
+      "KCNN4",
+      "NGFR",
+      "PET100",
+      "RAB27A",
+      "SAT1",
+      "SLC19A1",
+      "SLC25A13",
+      "SLC26A2",
+      "SLC5A3",
+      "SLIRP",
+      "SMAD4",
+      "SP100",
+      "TFAP2A",
+      "TGFB1",
+      "TP53",
+      "UCN2",
+      "UQCRFS1",
+      "UQCRH",
+      "VDAC2"
+    ],
+    "sources": [
+      "GO:BP",
+      "REAC"
+    ],
+    "user_threshold": 0.05,
+    "significance_threshold_method": "g_SCS",
+    "domain_scope": "custom",
+    "background": [
+      "A2M",
+      "ACSL3",
+      "ACTA2",
+      "AEBP1",
+      "AGA",
+      "AHNAK",
+      "APOD",
+      "APOE",
+      "ARMC6",
+      "ATP1B1",
+      "B2M",
+      "BOLA2",
+      "BOLA2B",
+      "BZW2",
+      "C19orf48",
+      "C1QBP",
+      "C6orf226",
+      "CCND1",
+      "CCND2",
+      "CCR10",
+      "CD151",
+      "CD274",
+      "CD44",
+      "CD47",
+      "CD58",
+      "CD59",
+      "CD63",
+      "CDH19",
+      "CDK4",
+      "CDK6",
+      "CDKN1A",
+      "CDKN2A",
+      "CDKN2B",
+      "CHCHD2",
+      "CITED1",
+      "CKS1B",
+      "CMSS1",
+      "CORO1A",
+      "CSPG4",
+      "CST3",
+      "CTPS1",
+      "CTSA",
+      "CTSB",
+      "CTSD",
+      "CTSL",
+      "CTSO",
+      "CXCR4",
+      "CYP27A1",
+      "DAG1",
+      "DDR1",
+      "DDX17",
+      "DDX39A",
+      "DLL3",
+      "DNMT1",
+      "E2F1",
+      "EEA1",
+      "EIF3K",
+      "EMP1",
+      "ENPP1",
+      "EVA1A",
+      "FBL",
+      "FBXO32",
+      "FGFR1",
+      "FKBP4",
+      "FMN1",
+      "FOS",
+      "FRZB",
+      "FSTL3",
+      "GAA",
+      "GPATCH4",
+      "GPNMB",
+      "GRN",
+      "GSN",
+      "HLA-A",
+      "HLA-B",
+      "HLA-C",
+      "HLA-DRB5",
+      "HLA-E",
+      "HLA-F",
+      "HNRNPA1",
+      "HSPA1A",
+      "IDH2",
+      "IFNGR1",
+      "IFNGR2",
+      "IRF3",
+      "IRF4",
+      "ISYNA1",
+      "ITGA3",
+      "JAK1",
+      "JAK2",
+      "JMJD7",
+      "KCNN4",
+      "KDR",
+      "KLF4",
+      "LAMP2",
+      "LCP1",
+      "LGALS3",
+      "LGALS3BP",
+      "LRPAP1",
+      "LY96",
+      "MC1R",
+      "MDH2",
+      "MFGE8",
+      "MIA",
+      "MRPL47",
+      "MT2A",
+      "NDUFA13",
+      "NGFR",
+      "NME1",
+      "NMRK1",
+      "NOLC1",
+      "NONO",
+      "NPC1",
+      "NPC2",
+      "NSG1",
+      "NT5E",
+      "P2RX4",
+      "PAICS",
+      "PET100",
+      "PFDN4",
+      "PFN1",
+      "PIK3IP1",
+      "PPIA",
+      "PROS1",
+      "PSAP",
+      "PTMA",
+      "PUF60",
+      "PYGB",
+      "RAB27A",
+      "RB1",
+      "RBP7",
+      "RNASEH2A",
+      "RNF213",
+      "RPSA",
+      "RTP4",
+      "S100A6",
+      "S100B",
+      "SAT1",
+      "SCARB2",
+      "SDC3",
+      "SDCBP",
+      "SEC11C",
+      "SERPINA3",
+      "SERPINE2",
+      "SERPINF1",
+      "SET",
+      "SGK1",
+      "SHMT2",
+      "SLC19A1",
+      "SLC22A18",
+      "SLC25A13",
+      "SLC26A2",
+      "SLC5A3",
+      "SLIRP",
+      "SMAD3",
+      "SMAD4",
+      "SOX4",
+      "SP100",
+      "SPESP1",
+      "SPINT1",
+      "SSR2",
+      "ST6GALNAC2",
+      "STAT1",
+      "STAT3",
+      "STOM",
+      "STX7",
+      "TAPBP",
+      "TAPBPL",
+      "TFAP2A",
+      "TGFB1",
+      "TIMM50",
+      "TIMP1",
+      "TIMP2",
+      "TIMP3",
+      "TM4SF1",
+      "TOP1MT",
+      "TP53",
+      "TPP1",
+      "TRIM22",
+      "TSC22D3",
+      "TTLL1",
+      "TXNDC17",
+      "UBC",
+      "UCN2",
+      "UQCRFS1",
+      "UQCRH",
+      "VAT1",
+      "VDAC2",
+      "WBP2"
+    ],
+    "no_evidences": false
+  },
+  "response": {
+    "result": [],
+    "meta": {
+      "query_metadata": {
+        "queries": {
+          "query_1": [
+            "ATP1B1",
+            "C19orf48",
+            "CCND1",
+            "CD274",
+            "CDH19",
+            "CDK4",
+            "CDK6",
+            "CTSB",
+            "DAG1",
+            "DDX39A",
+            "EEA1",
+            "FMN1",
+            "FOS",
+            "GPNMB",
+            "IFNGR1",
+            "IFNGR2",
+            "IRF3",
+            "JAK1",
+            "JAK2",
+            "KCNN4",
+            "NGFR",
+            "PET100",
+            "RAB27A",
+            "SAT1",
+            "SLC19A1",
+            "SLC25A13",
+            "SLC26A2",
+            "SLC5A3",
+            "SLIRP",
+            "SMAD4",
+            "SP100",
+            "TFAP2A",
+            "TGFB1",
+            "TP53",
+            "UCN2",
+            "UQCRFS1",
+            "UQCRH",
+            "VDAC2"
+          ]
+        },
+        "organism": "hsapiens",
+        "all_results": false,
+        "ordered": false,
+        "no_iea": false,
+        "sources": [
+          "GO:BP",
+          "REAC"
+        ],
+        "combined": false,
+        "aresolve": {},
+        "numeric_ns": "ENTREZGENE_ACC",
+        "domain_scope": "custom",
+        "measure_underrepresentation": false,
+        "significance_threshold_method": "g_SCS",
+        "user_threshold": 0.05,
+        "no_evidences": false,
+        "highlight": null
+      },
+      "result_metadata": {
+        "GO:BP": {
+          "domain_size": 20972,
+          "number_of_terms": 24546,
+          "threshold": 1e-06
+        },
+        "REAC": {
+          "domain_size": 11056,
+          "number_of_terms": 2849,
+          "threshold": 1e-06
+        }
+      },
+      "genes_metadata": {
+        "failed": [
+          "C19orf48"
+        ],
+        "ambiguous": {},
+        "duplicates": [],
+        "query": {
+          "query_1": {
+            "mapping": {
+              "ATP1B1": [
+                "ENSG00000143153"
+              ],
+              "CCND1": [
+                "ENSG00000110092"
+              ],
+              "CD274": [
+                "ENSG00000120217"
+              ],
+              "CDH19": [
+                "ENSG00000071991"
+              ],
+              "CDK4": [
+                "ENSG00000135446"
+              ],
+              "CDK6": [
+                "ENSG00000105810"
+              ],
+              "CTSB": [
+                "ENSG00000164733"
+              ],
+              "DAG1": [
+                "ENSG00000173402"
+              ],
+              "DDX39A": [
+                "ENSG00000123136"
+              ],
+              "EEA1": [
+                "ENSG00000102189"
+              ],
+              "FMN1": [
+                "ENSG00000248905"
+              ],
+              "FOS": [
+                "ENSG00000170345"
+              ],
+              "GPNMB": [
+                "ENSG00000136235"
+              ],
+              "IFNGR1": [
+                "ENSG00000027697"
+              ],
+              "IFNGR2": [
+                "ENSG00000159128"
+              ],
+              "IRF3": [
+                "ENSG00000126456"
+              ],
+              "JAK1": [
+                "ENSG00000162434"
+              ],
+              "JAK2": [
+                "ENSG00000096968"
+              ],
+              "KCNN4": [
+                "ENSG00000104783"
+              ],
+              "NGFR": [
+                "ENSG00000064300"
+              ],
+              "PET100": [
+                "ENSG00000229833"
+              ],
+              "RAB27A": [
+                "ENSG00000069974"
+              ],
+              "SAT1": [
+                "ENSG00000130066"
+              ],
+              "SLC19A1": [
+                "ENSG00000173638"
+              ],
+              "SLC25A13": [
+                "ENSG00000004864"
+              ],
+              "SLC26A2": [
+                "ENSG00000155850"
+              ],
+              "SLC5A3": [
+                "ENSG00000198743"
+              ],
+              "SLIRP": [
+                "ENSG00000119705"
+              ],
+              "SMAD4": [
+                "ENSG00000141646"
+              ],
+              "SP100": [
+                "ENSG00000067066"
+              ],
+              "TFAP2A": [
+                "ENSG00000137203"
+              ],
+              "TGFB1": [
+                "ENSG00000105329"
+              ],
+              "TP53": [
+                "ENSG00000141510"
+              ],
+              "UCN2": [
+                "ENSG00000145040"
+              ],
+              "UQCRFS1": [
+                "ENSG00000169021"
+              ],
+              "UQCRH": [
+                "ENSG00000173660"
+              ],
+              "VDAC2": [
+                "ENSG00000165637"
+              ]
+            },
+            "ensgs": [
+              "ENSG00000143153",
+              "ENSG00000110092",
+              "ENSG00000120217",
+              "ENSG00000071991",
+              "ENSG00000135446",
+              "ENSG00000105810",
+              "ENSG00000164733",
+              "ENSG00000173402",
+              "ENSG00000123136",
+              "ENSG00000102189",
+              "ENSG00000248905",
+              "ENSG00000170345",
+              "ENSG00000136235",
+              "ENSG00000027697",
+              "ENSG00000159128",
+              "ENSG00000126456",
+              "ENSG00000162434",
+              "ENSG00000096968",
+              "ENSG00000104783",
+              "ENSG00000064300",
+              "ENSG00000229833",
+              "ENSG00000069974",
+              "ENSG00000130066",
+              "ENSG00000173638",
+              "ENSG00000004864",
+              "ENSG00000155850",
+              "ENSG00000198743",
+              "ENSG00000119705",
+              "ENSG00000141646",
+              "ENSG00000067066",
+              "ENSG00000137203",
+              "ENSG00000105329",
+              "ENSG00000141510",
+              "ENSG00000145040",
+              "ENSG00000169021",
+              "ENSG00000173660",
+              "ENSG00000165637"
+            ]
+          }
+        }
+      },
+      "timestamp": "2026-07-13T16:07:58.773925+00:00",
+      "version": "e114_eg62_p19_27110d83"
+    }
+  }
+}

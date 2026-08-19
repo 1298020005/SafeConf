@@ -1,0 +1,11 @@
+{
+  "dataset": "Replogle_two_cellline",
+  "status": "complete",
+  "generated_at": "2026-07-14T15:22:34",
+  "n_folds": 2,
+  "n_test_tasks": 340,
+  "n_records": 680,
+  "strict_issue_count": 0,
+  "test_truth_used_for_training_calibration_score_or_threshold": false,
+  "wall_seconds": 25.9597806930542
+}

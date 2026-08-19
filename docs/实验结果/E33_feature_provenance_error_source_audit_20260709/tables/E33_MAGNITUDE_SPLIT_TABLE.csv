@@ -1,0 +1,4 @@
+magnitude_name,input_vector,available_before_wetlab_or_truth,allowed_role,forbidden_role,reporting_rule
+true_effect_magnitude,held-out true effect,False,retrospective confounding control,prospective risk score,写成事后控制，不写成可部署特征。
+predicted_magnitude,predicted effect,True,deployable strong baseline,oracle control,和 SafeConf 并列报告，尤其 chemical 场景。
+oracle_magnitude_diagnostic,held-out true effect,False,diagnostic upper-bound/confounding check,method comparison as deployable model,只能作为诊断，不和可部署方法混排为同类。

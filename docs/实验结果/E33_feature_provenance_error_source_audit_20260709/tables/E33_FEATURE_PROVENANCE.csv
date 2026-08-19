@@ -1,0 +1,10 @@
+score_or_feature,feature_group,input_source,uses_predictor_output,uses_train_truth,uses_heldout_truth,prospective_status,advisor_note
+context_similarity_score,context,target context control expression + train-fold control expression,False,False,False,deployable_if_target_control_available,可用于新 context，但需要该 context 的 control 表达。
+perturbation_support_score,support,train-fold task table,False,False,False,deployable,只数训练 fold 中同一 perturbation 的历史支持量。
+historical_residual_risk,history,train-fold historical prediction residuals/errors,True,True,False,deployable_with_historical_records,可用历史真值训练/校准，不能用当前 held-out pair 真值。
+model_disagreement_risk,disagreement,multiple predictor outputs for the target task,True,False,False,deployable_if_predictors_can_run,它是任务难度线索，不是某个模型自己的可靠性保证。
+predicted_magnitude / prediction_magnitude_risk,predicted_magnitude,predicted effect vector norm,True,False,False,deployable_baseline,可作为前置强基线，必须和 SafeConf 并列报告。
+true_effect_magnitude / oracle_magnitude_diagnostic,true_magnitude,held-out true effect vector norm,False,False,True,retrospective_control_only,只能事后控制混杂，不能进入前置风险打分。
+protocol_v0_2_family_confidence / SafeConf frozen,combined_protocol,"context/support/disagreement family score, standardized within fold",True,False,False,deployable_if_component_inputs_available,主张放在 task-level risk triage。
+learned_risk / safeconf_lodo_risk,learned_extension,"train-fold score/error pairs, then applied to held-out tasks",True,True,False,deployable_after_train_fold_calibration,可作扩展，不覆盖 frozen 失败边界。
+true_error_rmse,evaluation_target,predicted effect vs held-out true effect,True,False,True,evaluation_only,必须绑定 predictor_name，不能只写“预测错误”。

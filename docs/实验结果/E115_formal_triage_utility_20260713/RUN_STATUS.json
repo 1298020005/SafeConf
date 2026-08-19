@@ -1,0 +1,10 @@
+{
+  "experiment": "E115_formal_triage_utility",
+  "generated_at": "2026-07-13T23:47:47",
+  "status": "complete",
+  "n_datasets": 3,
+  "n_folds": 13,
+  "n_tasks": 1437,
+  "risk_scores_refit_on_test_truth": false,
+  "preregistered_gate_passed": false
+}

@@ -1,0 +1,39 @@
+{
+  "analysis_type": "retrospective_cross_study_synthesis_after_e182",
+  "beta_binomial_reference_parameters": {
+    "alpha": 18,
+    "beta": 2,
+    "calibration_targets": 19,
+    "future_targets": 20,
+    "selected_order_rank": 18
+  },
+  "e182_beta_binomial_reference_probability_k_at_most_16": 0.18681318681318676,
+  "e182_covered_targets": 16,
+  "e182_standalone_preregistered_status": "FAIL",
+  "e182_total_targets": 20,
+  "family_lower_violations": 0,
+  "family_upper_target_coverage": 0.903663500678426,
+  "family_upper_target_descriptive_ci95": [
+    0.8800383917603065,
+    0.923993228585956
+  ],
+  "family_upper_targets_covered": 666,
+  "family_upper_task_coverage": 0.9580764488286067,
+  "family_upper_tasks_covered": 2331,
+  "git_head_at_run": "8325a32c4b2f33d718104e31c349ab0f9b02920f",
+  "interpretation_limits": [
+    "E183 was run after E182 truth was opened and is not a new prospective test.",
+    "The pooled confidence interval is descriptive because study target units are heterogeneous.",
+    "E182 remains FAIL against its registered empirical gate; no threshold or model was changed."
+  ],
+  "max_hilbert_identity_absolute_residual": 9.681925400299999e-17,
+  "n_evaluation_tasks": 2433,
+  "n_studies": 4,
+  "n_target_clusters": 737,
+  "python": "3.9.25",
+  "schema": "safeconf_e183_all_study_family_synthesis_v1",
+  "status": "PASS",
+  "worst_lower_violations": 0,
+  "worst_upper_target_coverage": 0.9335142469470827,
+  "worst_upper_targets_covered": 688
+}

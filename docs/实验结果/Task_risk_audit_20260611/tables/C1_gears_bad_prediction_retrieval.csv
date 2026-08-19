@@ -1,0 +1,13 @@
+dataset_name,score_name,score_type,risk_direction,top_fraction,status,n_records,n_top_risk,n_worst_error,hits,precision,recall,random_expected_precision,enrichment_fold,lift_over_random
+frangieh,gears_prediction_magnitude_risk,risk,score_value_high_is_risky,0.05,ok,62,4,4,3,0.75,0.75,0.06451612903225806,11.625,11.625
+frangieh,gears_prediction_magnitude_risk,risk,score_value_high_is_risky,0.1,ok,62,7,7,7,1.0,1.0,0.11290322580645161,8.857142857142858,8.857142857142858
+frangieh,gears_prediction_magnitude_risk,risk,score_value_high_is_risky,0.2,ok,62,13,13,13,1.0,1.0,0.20967741935483872,4.769230769230769,4.769230769230769
+frangieh,gears_uncertainty_confidence,confidence,score_value_low_is_risky,0.05,ok,62,4,4,0,0.0,0.0,0.06451612903225806,0.0,0.0
+frangieh,gears_uncertainty_confidence,confidence,score_value_low_is_risky,0.1,ok,62,7,7,0,0.0,0.0,0.11290322580645161,0.0,0.0
+frangieh,gears_uncertainty_confidence,confidence,score_value_low_is_risky,0.2,ok,62,13,13,3,0.23076923076923078,0.23076923076923078,0.20967741935483872,1.1005917159763314,1.1005917159763312
+__macro_mean__,gears_prediction_magnitude_risk,risk,score_value_high_is_risky,0.05,macro_mean_over_datasets,62,4,4,3,0.75,0.75,0.06451612903225806,11.625,11.625
+__macro_mean__,gears_prediction_magnitude_risk,risk,score_value_high_is_risky,0.1,macro_mean_over_datasets,62,7,7,7,1.0,1.0,0.11290322580645161,8.857142857142858,8.857142857142858
+__macro_mean__,gears_prediction_magnitude_risk,risk,score_value_high_is_risky,0.2,macro_mean_over_datasets,62,13,13,13,1.0,1.0,0.20967741935483872,4.769230769230769,4.769230769230769
+__macro_mean__,gears_uncertainty_confidence,confidence,score_value_low_is_risky,0.05,macro_mean_over_datasets,62,4,4,0,0.0,0.0,0.06451612903225806,0.0,0.0
+__macro_mean__,gears_uncertainty_confidence,confidence,score_value_low_is_risky,0.1,macro_mean_over_datasets,62,7,7,0,0.0,0.0,0.11290322580645161,0.0,0.0
+__macro_mean__,gears_uncertainty_confidence,confidence,score_value_low_is_risky,0.2,macro_mean_over_datasets,62,13,13,3,0.23076923076923078,0.23076923076923078,0.20967741935483872,1.1005917159763314,1.1005917159763312

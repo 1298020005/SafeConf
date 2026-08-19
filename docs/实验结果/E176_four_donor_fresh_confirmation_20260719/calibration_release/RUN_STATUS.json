@@ -1,0 +1,21 @@
+{
+  "calibration_targeting_x_values_read": 960,
+  "code_freeze_commit": "71f2388290fea4402e93c107aa6f82043f887ae5",
+  "deployment_authorized": false,
+  "evaluation_targeting_x_values_read": 0,
+  "manifest_sha256": "c7954e8f2de45a769cf34f1ec1838507a9bdc85a36ed6ad33b70303daf1b262f",
+  "n_calibration_targets": 160,
+  "n_calibration_tasks": 480,
+  "pair_max_bound_violations": 0,
+  "pair_mean_bound_violations": 0,
+  "platform": "Linux-6.8.0-45-generic-x86_64-with-glibc2.35",
+  "python": "3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 15:12:24) [GCC 11.2.0]",
+  "schema": "safeconf_e176_donor_specific_calibration_status_v1",
+  "selected_model_spec": {
+    "ensemble_rmse": "magnitude",
+    "pair_mean_rmse": "magnitude"
+  },
+  "squared_error_decomposition_max_abs_residual": 8.39251654283224e-11,
+  "status": "COMPLETE",
+  "wall_seconds": 39.19793701171875
+}

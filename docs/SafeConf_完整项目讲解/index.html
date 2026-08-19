@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SafeConf 完整项目讲解</title>
+<link rel="stylesheet" href="assets/tutorial.css">
+</head>
+<body>
+<header class="top">
+<div class="topin">
+<a class="brand" href="index.html">SafeConf 完整项目讲解</a>
+<a class="back" href="../../SafeConf_统一研究工作台.html">返回研究工作台</a>
+</div>
+</header>
+<div class="layout">
+<aside class="side" id="chapterNav">
+</aside>
+<main class="content">
+<section class="hero">
+<p class="eyebrow">BEGINNER TO PROJECT · 离线可读</p>
+<h1>从一个细胞，到一套预测风险质检系统</h1>
+<p class="lead">内容从单细胞基础讲到 SafeConf 的数据、公式、代码、实验、证据谱系和后续任务。没有相关背景也可以按章节阅读。</p>
+<div class="chips">
+<span class="chip green">12 章</span>
+<span class="chip green">术语词典可搜索</span>
+<span class="chip">链接全为相对路径</span>
+<span class="chip amber">保留失败结果</span>
+</div>
+</section>
+
+<h2>先用一张图看懂全项目</h2>
+<figure class="figure">
+<div class="flow">
+<div class="node">
+<b>单细胞实验</b>
+<small>每个细胞有一组基因表达量</small>
+</div>
+<div class="node">
+<b>施加扰动</b>
+<small>药物、基因敲除或刺激</small>
+</div>
+<div class="node">
+<b>预测效应</b>
+<small>预测基因表达会怎么变</small>
+</div>
+<div class="node">
+<b>SafeConf 风险分</b>
+<small>判断哪些预测更容易错</small>
+</div>
+<div class="node">
+<b>实验分诊</b>
+<small>有限预算优先验证高风险</small>
+</div>
+</div>
+<figcaption>SafeConf 位于扰动预测之后，负责风险排序与质检。</figcaption>
+</figure>
+
+<h2>十二章各自回答什么</h2>
+<div class="grid3">
+<a class="mini" href="01_从零认识单细胞.html">
+<h3>01 单细胞基础</h3>
+<p>细胞、基因、RNA、表达量、context、perturbation 分别是什么。</p>
+</a>
+<a class="mini" href="02_数据如何一步步变化.html">
+<h3>02 数据流</h3>
+<p>h5ad 怎样变成 true effect、PredictionRecord、特征和分数。</p>
+</a>
+<a class="mini" href="03_数据集地图.html">
+<h3>03 数据集</h3>
+<p>七个主数据集和 Tahoe 分别有多大、解决什么问题。</p>
+</a>
+<a class="mini" href="04_SafeConf系统原理.html">
+<h3>04 系统原理</h3>
+<p>三个核心线索、两套公式、标准化和分数方向。</p>
+</a>
+<a class="mini" href="05_目录与代码结构.html">
+<h3>05 目录与代码</h3>
+<p>服务器目录、Python 包、关键函数和一条记录怎样流过代码。</p>
+</a>
+<a class="mini" href="06_实验怎么做.html">
+<h3>06 实验设计</h3>
+<p>train/test、fold-safe、泄漏、相关系数、AURC、bootstrap 和 E1–E4。</p>
+</a>
+<a class="mini" href="07_结果与边界.html">
+<h3>07 结果边界</h3>
+<p>哪些结论成立，哪些只能带限定，McFarland 为什么不能删。</p>
+</a>
+<a class="mini" href="08_下一阶段任务.html">
+<h3>08 下一阶段</h3>
+<p>收口现有系统或扩展多模型可靠性：任务、输入、产出和验收门槛。</p>
+</a>
+<a class="mini" href="09_术语词典.html">
+<h3>09 术语词典</h3>
+<p>按主题解释英文、缩写、统计指标和工程词。</p>
+</a><a class="mini" href="10_代码设计与协议全解.html"><h3>10 协议与代码设计</h3><p>逐项覆盖代码设计目录、七类特征、预测器、指标和版本关系。</p></a><a class="mini" href="11_实验结果完整谱系.html"><h3>11 实验证据谱系</h3><p>解释 39 个实验结果包、早期版本、修正版、正式证据和负结果。</p></a><a class="mini" href="12_真实文件逐项阅读.html"><h3>12 真实文件实习</h3><p>按顺序打开小白科普中的全部 CSV/TSV 样例，跟完一条真实任务。</p></a>
+</div>
+
+<h2>阅读时抓住三件事</h2>
+<div class="grid3">
+<div class="mini">
+<h3>确认每一行代表什么</h3>
+<p>原始表中一行是细胞，PredictionRecord 中一行是一次预测，最终主表中一行是一个数据集。</p>
+</div>
+<div class="mini">
+<h3>区分预测与质检</h3>
+<p>预测器生成 predicted effect；SafeConf 根据可见线索估计这次任务的风险。</p>
+</div>
+<div class="mini">
+<h3>成功与失败放在同一张表</h3>
+<p>6/7 为正不能写成 7/7；Tahoe 有信号也不等于超过 magnitude。</p>
+</div>
+</div>
+<h2>2026-07-07 新增外部验证入口</h2>
+<div class="grid3">
+<a class="mini" href="../实验结果/E10_external_task_validation_assets_20260707/reports/E10_EXTERNAL_ASSET_AUDIT.html">
+<h3>E10 数据资产审计</h3>
+<p>服务器已有 83 个 h5ad、约 107.3 GiB；官方 scPerturBench/scPerturb metadata 覆盖 66/66。</p>
+</a>
+<a class="mini" href="../实验结果/E10_external_task_validation_probe_20260707/reports/E10_EXTERNAL_PROBE.html">
+<h3>E10 外部小型探针</h3>
+<p>KaggleCrossCell、Haber、Parekh 已跑通；disagreement 信号强，组合分数存在外部边界。</p>
+</a>
+<a class="mini" href="../实验结果/E12_external_panel_probe_20260707/reports/E12_EXTERNAL_PANEL_PROBE.html">
+<h3>E12 外部面板探针</h3>
+<p>6 个外部候选中 3 个可按 held-out pair 评价；sciplex3 与 KaggleCrossPatient 值得继续正式化。</p>
+</a>
+<a class="mini" href="../实验结果/E13_sciplex3_official_3cell_panel_20260707/reports/E13_SCIPLEX3_OFFICIAL_3CELL.html">
+<h3>E13 官方 sciplex3 focused panel</h3>
+<p>A549/K562/MCF7 三细胞系 drug-dose 面板已跑通；learned 与 disagreement 信号接近。</p>
+</a>
+<a class="mini" href="../实验结果/E14_sciplex3_full743_gene1000_20260707/reports/E14_SCIPLEX3_FULL743_GENE1000.html">
+<h3>E14 sciplex3 full-743 gene1000</h3>
+<p>官方三细胞系 743 个共享 drug-dose 全量任务，1,000 基因快速验证；learned ρ=0.862。</p>
+</a>
+<a class="mini" href="../实验结果/E15_sciplex3_full743_gene2000_20260707/reports/E15_SCIPLEX3_FULL743_GENE2000.html">
+<h3>E15 sciplex3 full-743 gene2000</h3>
+<p>同一 full-743 面板提高到 2,000 基因；learned ρ=0.899，disagreement ρ=0.739。</p>
+</a>
+<a class="mini" href="../实验结果/E16_sciplex3_full743_gene3000_20260707/reports/E16_SCIPLEX3_FULL743_GENE3000.html">
+<h3>E16 sciplex3 full-743 gene3000</h3>
+<p>同一 full-743 面板提高到 3,000 基因；learned ρ=0.903，80% coverage 改善 19.14%。</p>
+</a>
+<a class="mini" href="../实验结果/E17_sciplex3_full743_gene5000_20260707/reports/E17_SCIPLEX3_FULL743_GENE5000.html">
+<h3>E17 sciplex3 full-743 gene5000</h3>
+<p>同一 full-743 面板提高到 5,000 基因；learned ρ=0.891，正式 5k 外部验证完成。</p>
+</a>
+<a class="mini" href="../实验结果/E18_model_vector_asset_audit_20260707/reports/E18_MODEL_VECTOR_ASSET_AUDIT.html">
+<h3>E18 真实模型向量资产审计</h3>
+<p>GEARS 有 54 条可读记录；scGPT/CPA 暂无 SafeConf 协议下的逐任务向量。</p>
+</a>
+<a class="mini" href="../实验结果/E19_gears_only_supplement_20260707/reports/E19_GEARS_ONLY_SUPPLEMENT.html">
+<h3>E19 GEARS-only supplement</h3>
+<p>整理 GEARS-only formal 与 Frangieh supplement；只作补充，不冒充多模型统一验证。</p>
+</a>
+<a class="mini" href="../实验结果/E20_adapter_contract_validator_20260707/reports/E20_ADAPTER_CONTRACT_VALIDATOR.html">
+<h3>E20 adapter contract validator</h3>
+<p>检查现有预测输出是否能进入 strict 多模型合同；10 个 bundle 可审计，但 0 个 strict pass。</p>
+</a>
+<a class="mini" href="../实验结果/E21_strict_contract_remediation_20260707/reports/E21_STRICT_CONTRACT_REMEDIATION.html">
+<h3>E21 strict contract remediation</h3>
+<p>把 E17 抽样包改成 task-scoped true effect，strict validator 通过；这是修法样例，不替换正式结果。</p>
+</a>
+<a class="mini" href="../实验结果/E22_generator_strict_smoke_20260707/reports/E22_GENERATOR_STRICT_SMOKE.html">
+<h3>E22 generator strict smoke</h3>
+<p>修改后的生成器新跑 Haber 200-gene smoke，240 条记录 strict pass；这是工程合同验证。</p>
+</a>
+<a class="mini" href="../实验结果/E23_shared_benchmark_adapter_workbench_20260708/reports/E23_SHARED_BENCHMARK_ADAPTER_WORKBENCH.html">
+<h3>E23 shared benchmark adapter</h3>
+<p>固定 120 个 task groups 的 shared manifest，让 GEARS/scGPT/CPA 后续对同一任务台面输出预测向量。</p>
+</a>
+<a class="mini" href="../实验结果/E24_model_family_compatibility_audit_20260708/reports/E24_MODEL_FAMILY_COMPATIBILITY_AUDIT.html">
+<h3>E24 model-family compatibility</h3>
+<p>指出 E23 是 stimulus 合同 smoke，不适合直接给 GEARS；后续转入 GEARS gene-perturbation strict 证据包。</p>
+</a>
+<a class="mini" href="../实验结果/E25_gears_strict_prediction_records_20260708/reports/E25_GEARS_STRICT_REMEDIATION.html">
+<h3>E25 GEARS strict records</h3>
+<p>把 Adamson/Dixit/Norman 的真实 GEARS formal 输出补齐 strict provenance；54 records，issue_count=0。</p>
+</a>
+<a class="mini" href="../实验结果/E26_gears_single_model_risk_audit_20260708/reports/E26_GEARS_SINGLE_MODEL_RISK_AUDIT.html">
+<h3>E26 GEARS single-model risk</h3>
+<p>在 E25 strict 包上评估 GEARS-only 风险线索；predicted-effect abs mean ρ=0.679，native uncertainty 缺失。</p>
+</a>
+<a class="mini" href="../实验结果/E27_scgpt_forward_prediction_record_smoke_20260708/reports/E27_SCGPT_FORWARD_PREDICTION_RECORD_SMOKE.html">
+<h3>E27 scGPT forward smoke</h3>
+<p>用归档 scGPT 源码和 whole-human checkpoint 生成 strict PredictionRecord smoke；3 records，issue_count=0。</p>
+</a>
+<a class="mini" href="../实验结果/E28_gears_scgpt_shared_adamson_smoke_20260708/reports/E28_GEARS_SCGPT_SHARED_ADAMSON_SMOKE.html">
+<h3>E28 GEARS–scGPT shared smoke</h3>
+<p>Adamson 上 3 个任务 × 2 个 predictor，统一 512-gene panel 和 true effect key；strict issue_count=0。</p>
+</a>
+<a class="mini" href="../实验结果/E29_gears_scgpt_shared_adamson_risk_audit_20260708/reports/E29_GEARS_SCGPT_SHARED_ADAMSON_RISK_AUDIT.html">
+<h3>E29 GEARS–scGPT risk audit</h3>
+<p>Adamson 上 7 个任务 × 2 个 predictor，新增 disagreement 风险排序；14 records，strict issue_count=0。</p>
+</a>
+<a class="mini" href="../实验结果/E30_gears_seed_overlap_feasibility_audit_20260708/reports/E30_GEARS_SEED_OVERLAP_FEASIBILITY_AUDIT.html">
+<h3>E30 GEARS seed overlap</h3>
+<p>审计 E25 三个 GEARS runs 是否足以支持 seed uncertainty；47 tasks 中只有 5 个重复 ≥2 次。</p>
+</a>
+<a class="mini" href="../实验结果/E31_gears_fixed_test_split_smoke_20260708/reports/E31_GEARS_FIXED_TEST_SPLIT_SMOKE.html">
+<h3>E31 GEARS fixed-test smoke</h3>
+<p>GEARS exporter 已支持固定 test perturbations；Adamson 7 个任务全部命中，strict issue_count=0。</p>
+</a>
+<a class="mini" href="../实验结果/E32_gears_fixed_test_3seed_smoke_20260708/reports/E32_GEARS_FIXED_TEST_3SEED_SMOKE.html">
+<h3>E32 GEARS 3-seed smoke</h3>
+<p>固定 Adamson 7 个 test 任务跑通 GEARS 3 seeds；21 records，seed disagreement ρ=0.679。</p>
+</a>
+<a class="mini" href="../投稿升级/Q1_CCFA_upgrade_20260707/Q1_PUBLICATION_WORKBENCH.html">
+<h3>一区/CCF-A 工作台</h3>
+<p>查看当前投稿差距、强基线风险、selective prediction 方向和下一阶段实验路线。</p>
+</a>
+</div>
+<div class="callout good">
+<b>读完后可查明：</b>数据来源、一条预测的结构、风险线索、代码位置、防泄漏方法、证据边界及后续实验条件。</div>
+<div class="pager">
+<span>
+</span>
+<a href="01_从零认识单细胞.html">下一章：从零认识单细胞 →</a>
+</div>
+</main>
+</div>
+<footer class="footer">本教程使用相对路径；复制整个 SafeConf_完整项目讲解 文件夹即可离线阅读。</footer>
+<script src="assets/tutorial.js">
+</script>
+</body>
+</html>

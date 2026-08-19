@@ -1,0 +1,23 @@
+{
+  "status": "ok",
+  "generated_at": "2026-07-07T15:21:18",
+  "script": "tools/scripts/package_e14_sciplex3_full743_gene1000.py",
+  "output_dir": "docs/实验结果/E14_sciplex3_full743_gene1000_20260707",
+  "runtime_source": "runtime/e14_sciplex3_official_3cell_panel_full743_gene1000_20260707",
+  "input_git_commit": "d6c6d09f3e67829d77422881280e9210956c2e53",
+  "input_git_dirty": true,
+  "provenance_note": "Runtime was generated from the listed HEAD plus the E14 feature-vectorization working-tree changes committed together with this package.",
+  "best_overall_score": "learned_risk_score",
+  "best_overall_aligned_spearman": 0.8622586767925868,
+  "best_overall_risk_cov_80_improve_pct": 13.6263315241743,
+  "learned_aligned_spearman": 0.8622586767925868,
+  "disagreement_aligned_spearman": 0.4181099304593129,
+  "simple_combined_aligned_spearman": 0.3387385861009994,
+  "panel": {
+    "n_tasks": 2229,
+    "n_contexts": 3,
+    "n_genes": 1000,
+    "n_shared_perturbations": 743,
+    "n_selected_perturbations": 743
+  }
+}

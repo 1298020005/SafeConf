@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>E24 model-family compatibility audit</title>
+<style>
+body{margin:0;background:#fbfbf8;color:#17212b;font-family:"Microsoft YaHei","PingFang SC","Segoe UI",Arial,sans-serif;line-height:1.72}
+.wrap{max-width:1180px;margin:0 auto;padding:34px 28px 70px}h1{margin:0 0 8px;font-size:34px}h2{margin-top:30px;border-bottom:2px solid #d8e0e4;padding-bottom:8px}
+.lead{color:#5d6974;max-width:940px}.card,figure{background:#fff;border:1px solid #d8e0e4;border-radius:10px;padding:18px;margin:16px 0;overflow-x:auto;box-shadow:0 8px 24px rgba(28,42,52,.06)}
+table{border-collapse:collapse;width:100%;font-size:13px}th,td{border:1px solid #d8e0e4;padding:7px 8px;vertical-align:top}th{background:#eaf0f1;text-align:left}img{max-width:100%}
+</style></head><body><main class="wrap">
+<h1>E24 model-family compatibility audit</h1>
+<p class="lead">E24 把一个容易踩坑的区别说清楚：PredictionRecord 合同过关，不代表某个模型家族可以生物学合理地运行。E23 是合同 smoke；GEARS 需要 gene-perturbation manifest。</p>
+<figure><img src="../figures/model_family_compatibility_audit.svg" alt="model family compatibility audit"></figure>
+<section class="card"><h2>E23 compatibility</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>manifest</th>
+      <th>n_task_groups</th>
+      <th>dataset_names</th>
+      <th>perturbation_examples</th>
+      <th>gene_order_hashes</th>
+      <th>effect_definitions</th>
+      <th>gears_compatible</th>
+      <th>gears_reason</th>
+      <th>scgpt_compatible</th>
+      <th>scgpt_reason</th>
+      <th>cpa_compatible</th>
+      <th>cpa_reason</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>E23_HABER_200GENE_STRICT_SMOKE</td>
+      <td>120</td>
+      <td>Haber</td>
+      <td>Hpoly_Day10,Hpoly_Day3,Salmonella</td>
+      <td>1</td>
+      <td>mean_diff</td>
+      <td>False</td>
+      <td>Perturbations are Hpoly/Salmonella stimuli, not gene knockout/overexpression conditions.</td>
+      <td>adapter_possible_but_not_ready</td>
+      <td>Generic single-cell model source exists, but perturbation prediction adapter/checkpoint is absent.</td>
+      <td>conceptually_possible_for_stimulus_or_drug_but_not_ready</td>
+      <td>CPA/chemCPA assets are not locally executable; E23 stimuli are not a prepared CPA dataset.</td>
+    </tr>
+  </tbody>
+</table></section>
+<section class="card"><h2>Perturbation class</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>perturbation_class</th>
+      <th>n_task_groups</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>stimulus_or_timecourse</td>
+      <td>120</td>
+    </tr>
+  </tbody>
+</table></section>
+<section class="card"><h2>GEARS candidate summary</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataset_name</th>
+      <th>n_records</th>
+      <th>n_task_like_rows</th>
+      <th>n_seeds</th>
+      <th>n_perturbations</th>
+      <th>perturbation_class</th>
+      <th>mean_rmse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>adamson</td>
+      <td>21</td>
+      <td>18</td>
+      <td>3</td>
+      <td>18</td>
+      <td>gene_perturbation_like</td>
+      <td>0.042086</td>
+    </tr>
+    <tr>
+      <td>dixit</td>
+      <td>3</td>
+      <td>2</td>
+      <td>3</td>
+      <td>2</td>
+      <td>gene_perturbation_like</td>
+      <td>0.424841</td>
+    </tr>
+    <tr>
+      <td>norman</td>
+      <td>30</td>
+      <td>27</td>
+      <td>3</td>
+      <td>27</td>
+      <td>gene_perturbation_like</td>
+      <td>0.055878</td>
+    </tr>
+  </tbody>
+</table></section>
+<section class="card"><h2>Environment</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>environment</th>
+      <th>path</th>
+      <th>gears_importable</th>
+      <th>scgpt_importable</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>default_python</td>
+      <td>/home/miniconda/bin/python3</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>scgpt_env</td>
+      <td>$YYF_CONDA/envs/scgpt_env/bin/python</td>
+      <td>True</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table></section>
+<section class="card"><h2>Decisions</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>decision</th>
+      <th>reason</th>
+      <th>action</th>
+      <th>priority</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Do not run GEARS on E23 Haber manifest</td>
+      <td>E23 perturbations are stimulus/timecourse labels, not gene perturbations.</td>
+      <td>Keep E23 as adapter contract smoke only.</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Use GEARS-compatible gene perturbation data for the first true model adapter</td>
+      <td>Norman/Adamson/Dixit/Frangieh local processed GEARS assets exist and scgpt_env imports gears.</td>
+      <td>Run a small GEARS strict smoke in scgpt_env, then package as E25 if runtime succeeds.</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Do not claim scGPT validation yet</td>
+      <td>scGPT source zip exists but import is false and no perturbation checkpoint/output was found.</td>
+      <td>Unpack/install source or point PYTHONPATH; then locate checkpoint/tutorial assets.</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Do not claim CPA/chemCPA validation yet</td>
+      <td>Only a CPA PDF trace was found locally.</td>
+      <td>Acquire executable assets or choose an accessible perturbation model.</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table></section>
+</main></body></html>

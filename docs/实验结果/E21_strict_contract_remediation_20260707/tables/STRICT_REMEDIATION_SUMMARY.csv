@@ -1,0 +1,2 @@
+source_bundle,source_records,sample_records,sample_task_groups,sample_predictors,sample_splits,strict_status,strict_issue_count,strict_issues,max_true_effect_diff_within_task,n_predicted_arrays,n_true_arrays,n_control_arrays
+runtime/e17_sciplex3_full743_gene5000_20260707,22290,60,30,"ContextSimBaseline,V0StrongBaseline","test,train,val",pass,0,,0.0,60,30,30

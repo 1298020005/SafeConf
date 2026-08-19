@@ -1,0 +1,13 @@
+fold_id,heldout_context,train_fraction,n_train_pairs,n_train_contexts,n_train_perturbations
+frangieh_context_holdout_1_Co-culture,Co-culture,0.25,64,2,55
+frangieh_context_holdout_1_Co-culture,Co-culture,0.5,129,2,98
+frangieh_context_holdout_1_Co-culture,Co-culture,0.75,194,2,134
+frangieh_context_holdout_1_Co-culture,Co-culture,1.0,258,2,154
+frangieh_context_holdout_2_Control,Control,0.25,64,2,60
+frangieh_context_holdout_2_Control,Control,0.5,128,2,100
+frangieh_context_holdout_2_Control,Control,0.75,194,2,135
+frangieh_context_holdout_2_Control,Control,1.0,258,2,152
+frangieh_context_holdout_3_IFNγ,IFNγ,0.25,64,2,56
+frangieh_context_holdout_3_IFNγ,IFNγ,0.5,128,2,100
+frangieh_context_holdout_3_IFNγ,IFNγ,0.75,194,2,131
+frangieh_context_holdout_3_IFNγ,IFNγ,1.0,258,2,155

@@ -1,0 +1,24 @@
+{
+  "main_records": 6330,
+  "main_test_records": 1266,
+  "gears_records": 62,
+  "main_unique_perturbations": 211,
+  "gears_unique_perturbations_clean": 58,
+  "perturbation_overlap": 58,
+  "gears_perturbations_all_in_main": true,
+  "main_contexts": [
+    "Co-culture",
+    "Control",
+    "IFNγ"
+  ],
+  "gears_contexts": [
+    "GEARS_single_heldout"
+  ],
+  "main_prediction_dim": 5000,
+  "gears_prediction_dim": 3000,
+  "source_h5ad_gene_overlap": 3000,
+  "source_h5ad_gene_jaccard": 0.585480093676815,
+  "alignment_verdict": "FAIL_FOR_DIRECT_DISAGREEMENT",
+  "main_reason": "context mismatch and prediction array gene dimensions differ; selected gene order not exported for direct array subtraction",
+  "recommended_use": "GEARS supplement feasibility + native uncertainty weak motivation; do not directly compute GEARS_vs_V0 disagreement until task/gene space contract is rebuilt"
+}

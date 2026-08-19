@@ -1,0 +1,24 @@
+{
+  "experiment": "E103_cui_cartesian_predictions",
+  "generated_at": "2026-07-13T04:30:33",
+  "contract": "docs/实验结果/E102_cui_direct_mapping_contract_20260713/manifests/E102_TASK_MANIFEST.csv",
+  "dataset": "Cui_direct41",
+  "modality": "cytokine_stimulus",
+  "n_contexts": 6,
+  "n_perturbations": 41,
+  "n_genes": 3000,
+  "features": {
+    "gene_embedding_pca_components": 24,
+    "context_control_pca_components": 2,
+    "interaction_components": 24,
+    "feature_dimension": 50,
+    "target_context_control_is_available": true,
+    "target_perturbed_expression_is_available": false
+  },
+  "n_task_rows": 2832,
+  "n_prediction_records": 5664,
+  "strict_issue_count": 0,
+  "strict_issues": [],
+  "target_test_perturbed_truth_used_in_prediction_or_risk": false,
+  "validation_truth_used_for_predictor_and_risk_calibration": true
+}

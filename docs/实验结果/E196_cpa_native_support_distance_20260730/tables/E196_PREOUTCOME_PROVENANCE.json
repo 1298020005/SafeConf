@@ -1,0 +1,10 @@
+{
+  "stage": "PREOUTCOME_DISTANCE_COMPLETE",
+  "completed_at": "2026-07-30T15:05:02+08:00",
+  "task_rows": 2064,
+  "reference_rows": 610,
+  "task_csv_sha256": "30d155ff9c60b4b5fc2635b0c8dba983833f6d43fa3d906f838680f4fd2b7c2e",
+  "reference_csv_sha256": "e94baf408a490b9e982a77cbafb4b160336b2ae20f6a1a5dd34597339f4e0bad",
+  "outcome_columns_present": [],
+  "truth_boundary": "The frozen CPA builder loads the source h5ad in-process; target perturbed expression and error columns are not arguments to or numerical inputs of the distance functions."
+}

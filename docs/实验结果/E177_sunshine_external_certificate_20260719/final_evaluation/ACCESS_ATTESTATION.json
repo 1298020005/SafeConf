@@ -1,0 +1,30 @@
+{
+  "calibration_attestation_sha256": "a6e79de4e389a1bbbed2c1a13587d949f87be7b1ec9da73fdddef519c8fbf4a9",
+  "calibration_status": "PASS",
+  "code_freeze_remote_heads": {
+    "github": "d2389cdd080fd262831239605f82933c20e9c1f8",
+    "origin": "d2389cdd080fd262831239605f82933c20e9c1f8"
+  },
+  "created_at": "2026-07-20T00:24:41.180568+08:00",
+  "evaluation_x_rows_read_by_phase": {
+    "POSTCALIBRATION_EVALUATION_TRUTH_X": 6226
+  },
+  "experiment": "E177_sunshine_external_certificate",
+  "git_branch": "exp/task-risk-audit-20260611",
+  "git_head": "d2389cdd080fd262831239605f82933c20e9c1f8",
+  "operational_wetlab_protocol_in_scope": false,
+  "public_processed_data_only": true,
+  "release_files_sha256": {
+    "E177_FINAL_SUMMARY.json": "71f1181a73d8b171e3a1e193da20ce244ee65c4dcf22c64ace2849025991ccae",
+    "arrays/EVALUATION_TRUE_EFFECTS.npz": "3887a5eac1802bdb9e204df4c16ba11abc111d84e370220edac41f5c065d344f",
+    "tables/EVALUATION_RANKING_DIAGNOSTICS.csv": "02c3d4d169b01042f96bb539a411b1f5432c733a4c40f4ad4f96317057cafdfa",
+    "tables/EVALUATION_TARGET_CLUSTER_COVERAGE.csv": "f3967c98fc3a9fc960fe4f93441803dd20fd2b85f7b0e3740fc0e7ec8526fa1b",
+    "tables/EVALUATION_TASK_RESULTS.csv": "b7520ce1ebaa0fb937b0bc7425f95dd0419973f3fb9f583d358bd4334d815ff2",
+    "tables/EVALUATION_TRUE_EFFECT_INDEX.csv": "d37b59b7da4e679aa62b63a21f55caccfad3273c53eda9ecf6a4a05cd529d077",
+    "tables/INPUT_HASHES.csv": "797ba0d3da11d4bb865847a385220de58c2f120329161f70a0e0da74fc53622c"
+  },
+  "runner_sha256": "4a8cbae3cad4eb239f8b38dab7249529d60c9d8fc10c36bdf1da9ed5ec1430e8",
+  "schema": "safeconf_e177_final_evaluation_attestation_v1",
+  "stage": "F5_FINAL_EVALUATION",
+  "status": "COMPLETE"
+}

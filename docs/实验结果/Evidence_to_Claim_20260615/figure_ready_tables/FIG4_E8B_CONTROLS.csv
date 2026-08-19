@@ -1,0 +1,4 @@
+control_type,n_methods,n_perturbations,median_spearman,ci_low,ci_high,pct_methods_positive,status,observed_empirical_p_one_sided,source_file,source_commit
+frozen_v0_2_risk,15,74,0.5836435309801913,0.3934616631523212,0.7261213847941498,0.9333333333333332,ok,,docs/实验结果/E1_E4_preregistered_20260614/E8b_scperturbench_association/E8b_FRANGIEH_CONTROLS.csv,e8a3594
+sample_size,15,74,0.7637071473739743,0.5573329271247571,0.9070271136507112,0.8666666666666667,ok,,docs/实验结果/E1_E4_preregistered_20260614/E8b_scperturbench_association/E8b_FRANGIEH_CONTROLS.csv,e8a3594
+shuffled_risk_null,15,74,0.0072169759938012,-0.2322746894566758,0.2305051645948716,,ok,0.0049751243781094,docs/实验结果/E1_E4_preregistered_20260614/E8b_scperturbench_association/E8b_FRANGIEH_CONTROLS.csv,e8a3594

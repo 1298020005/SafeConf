@@ -1,0 +1,10 @@
+{
+  "experiment": "E112_external_formal_dual_models",
+  "generated_at": "2026-07-13T11:22:02",
+  "status": "complete",
+  "datasets": [
+    "Lara_exvivo",
+    "Santinha"
+  ],
+  "test_truth_used_for_training_calibration_score_or_threshold": false
+}

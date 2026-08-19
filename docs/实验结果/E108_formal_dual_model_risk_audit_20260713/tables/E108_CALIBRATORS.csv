@@ -1,0 +1,4 @@
+fold_id,n_validation_tasks,ridge_alpha,coefficient_disagreement_z,coefficient_predicted_magnitude_z,intercept,structural_scale,validation_q80_threshold,test_truth_used
+frangieh_context_holdout_1_Co-culture,30,1.0,0.0008965636412480743,0.0021283363459826702,0.053280155783914304,0.010415922741560632,0.05825336339642704,False
+frangieh_context_holdout_2_Control,30,1.0,0.004807784173267711,0.0041956159877677805,0.04910812048801818,0.01473789387852275,0.05580504868486424,False
+frangieh_context_holdout_3_IFNγ,30,1.0,0.0,0.0,0.054724108180802866,0.018006635199790514,0.054724108180802866,False

@@ -1,0 +1,40 @@
+{
+  "cell_line": "K562",
+  "dataset_id": "GSE225807_RBP_CRISPRI",
+  "f0_attestation_path": "/home/yyf/data/safeconf_e182_gse225807/source/F0_SOURCE_REFORMAT.json",
+  "f0_attestation_sha256": "f5fbd973f72a1a93e6e668c583f7d4a163c3f022127eabfd75561e0436d0d295",
+  "f0_expression_reformat_disclosure": "The downloaded MatrixMarket values were mechanically transposed into a row-addressable H5AD before the formal access boundary. No expression summary, perturbation effect, target split, prediction, or error was computed.",
+  "formal_freeze_read_obs_and_var_names_only": true,
+  "formal_freeze_read_x_values": false,
+  "geo_accession": "GSE225807",
+  "geo_sample_accessions": [
+    "GSM7056649",
+    "GSM7056650"
+  ],
+  "n_negative_control_cells": 91,
+  "negative_control_label": "control",
+  "organism": "Homo sapiens",
+  "perturbation_modality": "CRISPR interference",
+  "prior_project_use_audit": {
+    "patterns": {
+      "GSE225807": [],
+      "GSM7056649": [],
+      "GSM7056650": []
+    },
+    "prior_result_or_dataset_mentions": 0,
+    "searched_git_head": "596980493eaff4ab9efaee106422a351043c0e7d"
+  },
+  "schema": "safeconf_e182_source_lock_v1",
+  "shape": [
+    17424,
+    33538
+  ],
+  "source_bytes": 62596435,
+  "source_path": "/home/yyf/data/safeconf_e182_gse225807/source/GSE225807_RBP_CRISPRI.h5ad",
+  "source_sha256": "e0cf307babb1710794d52bc41289835c08a8e15031df84057723fc659e9c9856",
+  "source_shape": [
+    17424,
+    33538
+  ],
+  "x_backend_type": "CSRDataset"
+}

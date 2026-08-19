@@ -1,0 +1,24 @@
+{
+  "out_dir": "outputs/safeconf_reliability_model_corrected_20260610",
+  "n_run_dirs": 7,
+  "n_records": 45850,
+  "n_datasets": 7,
+  "norm_feature_cols": [
+    "context_similarity_max_qnorm",
+    "context_similarity_mean_qnorm",
+    "perturbation_support_count_qnorm",
+    "perturbation_effect_stability_qnorm",
+    "perturbation_effect_variance_qnorm",
+    "historical_residual_risk_qnorm",
+    "model_disagreement_rmse_qnorm",
+    "model_disagreement_cosine_qnorm",
+    "ood_nearest_distance_qnorm",
+    "ood_mean_k_distance_qnorm",
+    "prediction_l2_norm_qnorm",
+    "prediction_abs_mean_qnorm",
+    "prediction_magnitude_deviation_qnorm",
+    "prediction_norm_ratio_qnorm"
+  ],
+  "n_bootstrap": 1000,
+  "status": "ok"
+}

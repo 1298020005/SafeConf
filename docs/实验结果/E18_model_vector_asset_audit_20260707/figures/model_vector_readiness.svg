@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="250" viewBox="0 0 900 250">
+<rect width="900" height="250" fill="#fbfbf8"/>
+<text x="35" y="28" font-size="20" font-weight="800" fill="#17201c">Real-model vector readiness audit</text>
+<text x="35" y="67" font-size="16" font-weight="700">GEARS</text><rect x="170" y="50" width="420" height="25" rx="6" fill="#edf1ee"/><rect x="170" y="50" width="378.0" height="25" rx="6" fill="#2f6f5e"/><text x="610" y="68" font-size="14">54 records · PARTIAL_READY_GEARS_ONLY</text><text x="35" y="122" font-size="16" font-weight="700">scGPT</text><rect x="170" y="105" width="420" height="25" rx="6" fill="#edf1ee"/><rect x="170" y="105" width="8.0" height="25" rx="6" fill="#b26b00"/><text x="610" y="123" font-size="14">0 records · NOT_READY_NO_PREDICTION_RECORDS</text><text x="35" y="177" font-size="16" font-weight="700">CPA / chemCPA</text><rect x="170" y="160" width="420" height="25" rx="6" fill="#edf1ee"/><rect x="170" y="160" width="8.0" height="25" rx="6" fill="#9b4545"/><text x="610" y="178" font-size="14">0 records · NOT_READY_NO_LOCAL_VECTOR_OUTPUT</text>
+<text x="35" y="230" font-size="13" fill="#66736d">Record count is capped at 60 for display; readiness depends on SafeConf PredictionRecord + predicted/true vector contract.</text>
+</svg>

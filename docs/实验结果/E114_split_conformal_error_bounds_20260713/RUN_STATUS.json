@@ -1,0 +1,12 @@
+{
+  "experiment": "E114_split_conformal_error_bounds",
+  "generated_at": "2026-07-13T11:43:05",
+  "status": "complete",
+  "nominal_coverage": 0.9,
+  "n_folds": 3,
+  "n_test_tasks": 837,
+  "risk_fit_per_fold": 15,
+  "conformal_calibration_per_fold": 15,
+  "test_truth_used_to_construct_bound": false,
+  "exchangeability_required_for_finite_sample_claim": true
+}

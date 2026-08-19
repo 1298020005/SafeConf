@@ -1,0 +1,16 @@
+experiment,risk_score_name,target_error,n_tasks,spearman,top20_k,top20_mean_error,top20_enrichment
+TCDD_dose_aware,risk_tcdd_dose_aware,error_mean_rmse,48,0.7128745115067303,10,0.11503672642315359,1.4617577385555947
+TCDD_dose_aware,risk_tcdd_dose_aware,error_nearest_rmse,48,0.6387140179060972,10,0.13936747898768728,1.6024063250298912
+TCDD_dose_aware,risk_tcdd_dose_aware,error_linear_rmse,48,0.6622883195831524,10,0.10339897763532677,1.2300664719482057
+TCDD_dose_aware,risk_dose_disagreement,error_mean_rmse,48,0.38276161528441166,10,0.09074790457695067,1.1531226235099419
+TCDD_dose_aware,risk_dose_disagreement,error_nearest_rmse,48,0.39887038669237906,10,0.12009815179666501,1.3808532626207441
+TCDD_dose_aware,risk_dose_disagreement,error_linear_rmse,48,0.4376899696048632,10,0.0829045762073568,0.986258683556879
+TCDD_dose_aware,risk_predicted_magnitude,error_mean_rmse,48,0.6771602257924446,10,0.11211351228876695,1.4246128108854805
+TCDD_dose_aware,risk_predicted_magnitude,error_nearest_rmse,48,0.6932436840606654,10,0.13570417631423262,1.5602867472267994
+TCDD_dose_aware,risk_predicted_magnitude,error_linear_rmse,48,0.6124620060790275,10,0.10032721458700933,1.1935238211220938
+TCDD_dose_aware,risk_nearest_dose_distance,error_mean_rmse,48,,10,0.06501825496936056,0.8261790847493601
+TCDD_dose_aware,risk_nearest_dose_distance,error_nearest_rmse,48,,10,0.06460364153509103,0.7427936887983707
+TCDD_dose_aware,risk_nearest_dose_distance,error_linear_rmse,48,,10,0.07893933848564375,0.9390869794807923
+TCDD_dose_aware,risk_logdose_extreme,error_mean_rmse,48,0.24892281978832492,10,0.06501825496936056,0.8261790847493601
+TCDD_dose_aware,risk_logdose_extreme,error_nearest_rmse,48,0.10306969980205889,10,0.06460364153509103,0.7427936887983707
+TCDD_dose_aware,risk_logdose_extreme,error_linear_rmse,48,0.19147909214486533,10,0.07893933848564375,0.9390869794807923

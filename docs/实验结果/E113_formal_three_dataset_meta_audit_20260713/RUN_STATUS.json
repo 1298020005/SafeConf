@@ -1,0 +1,16 @@
+{
+  "experiment": "E113_formal_three_dataset_meta_audit",
+  "generated_at": "2026-07-13T11:37:43",
+  "status": "complete",
+  "datasets": [
+    "Frangieh",
+    "Lara_exvivo",
+    "Santinha"
+  ],
+  "n_datasets": 3,
+  "n_folds": 13,
+  "n_test_task_rows": 1437,
+  "primary": "safeconf_calibrated_pair_risk",
+  "test_truth_used_to_change_score": false,
+  "n_bootstrap": 2000
+}

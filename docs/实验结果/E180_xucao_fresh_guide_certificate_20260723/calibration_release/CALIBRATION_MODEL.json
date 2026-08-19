@@ -1,0 +1,42 @@
+{
+  "calibration_pair_lower_max_violations": 0,
+  "calibration_pair_lower_mean_violations": 0,
+  "cluster_unit": "perturbation_gene_all_eligible_guides",
+  "evaluation_truth_opened": false,
+  "generated_at": "2026-07-24T00:03:03.866621+08:00",
+  "methods": {
+    "constant": {
+      "base_column": "constant_base",
+      "conformal_correction": 0.2168090299069399,
+      "finite_sample_rank_one_based": 27,
+      "target_cluster_count": 29,
+      "target_coverage": 0.9
+    },
+    "extra_trees_vector": {
+      "base_column": "extra_trees_vector_base",
+      "conformal_correction": 0.1356837405325486,
+      "finite_sample_rank_one_based": 27,
+      "target_cluster_count": 29,
+      "target_coverage": 0.9
+    },
+    "magnitude_plus_pair_lower": {
+      "base_column": "magnitude_plus_lower_base",
+      "conformal_correction": 0.2047573105079464,
+      "finite_sample_rank_one_based": 27,
+      "target_cluster_count": 29,
+      "target_coverage": 0.9
+    },
+    "predicted_magnitude": {
+      "base_column": "magnitude_base",
+      "conformal_correction": 0.2047573105079464,
+      "finite_sample_rank_one_based": 27,
+      "target_cluster_count": 29,
+      "target_coverage": 0.9
+    }
+  },
+  "primary_method": "extra_trees_vector",
+  "primary_outcome": "pair_mean_rmse",
+  "schema": "safeconf_e180_target_cluster_conformal_model_v1",
+  "selection_changed_after_e180_truth": false,
+  "status": "FROZEN"
+}

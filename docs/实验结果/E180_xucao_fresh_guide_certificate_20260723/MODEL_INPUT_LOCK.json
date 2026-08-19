@@ -1,0 +1,57 @@
+{
+  "adaptive_upper_base": {
+    "features": [
+      "predicted_magnitude",
+      "pair_lower_bound",
+      "scgpt_magnitude",
+      "gears_magnitude",
+      "model_cosine",
+      "ensemble_mean_abs",
+      "ensemble_max_abs",
+      "disagreement_mean_abs",
+      "sign_agreement",
+      "ensemble_abs_p90",
+      "ensemble_abs_p99",
+      "disagreement_abs_p90",
+      "disagreement_abs_p99",
+      "ensemble_gene_std",
+      "disagreement_gene_std",
+      "scgpt_seed_spread",
+      "gears_seed_spread",
+      "ensemble_seed_spread"
+    ],
+    "max_features": 0.7,
+    "method": "ExtraTreesRegressor",
+    "min_samples_leaf": 10,
+    "n_estimators": 200,
+    "selection_source": "E179 retrospective nested benchmark; no E180 expression truth used",
+    "training_truth_role": "model_validation targets only"
+  },
+  "gears_go_prior": {
+    "path": "/home/yyf/data/gears_formal_baselines_v2/frangieh_local_atlas/go.csv",
+    "sha256": "c84cbbd58ba5e221fa328ca3d4b281ca2dd8b1a20de01ee961009f5d8476cb72"
+  },
+  "gene_panel_size": 512,
+  "inherited_frozen_assets_from": "docs/实验结果/E177_sunshine_external_certificate_20260719/MODEL_INPUT_LOCK.json",
+  "random_seeds": [
+    3407,
+    3408,
+    3409,
+    3410,
+    3411
+  ],
+  "scgpt_checkpoint_files": {
+    "/home/yyf/archive/code/20260519_0958_home_cleanup/moved_top_level/codex_scgpt_attnres_workspace/checkpoints/whole-human/args.json": "c18e075e018140cb8b2d9029387b9de26607a5ce6a8ccabd6ead70cd76b95d60",
+    "/home/yyf/archive/code/20260519_0958_home_cleanup/moved_top_level/codex_scgpt_attnres_workspace/checkpoints/whole-human/best_model.pt": "6cb5d451ab5c4b33eb673adbe4fddc61d2389df1b89b7651a9fe2e557572b922",
+    "/home/yyf/archive/code/20260519_0958_home_cleanup/moved_top_level/codex_scgpt_attnres_workspace/checkpoints/whole-human/vocab.json": "acca93d114ca62c3f0f50debbd23e8c87f0714f4737764454f6b2b13f2e8580f"
+  },
+  "scgpt_vocab": {
+    "path": "/home/yyf/archive/code/20260519_0958_home_cleanup/moved_top_level/codex_scgpt_attnres_workspace/checkpoints/whole-human/vocab.json",
+    "sha256": "acca93d114ca62c3f0f50debbd23e8c87f0714f4737764454f6b2b13f2e8580f"
+  },
+  "schema": "safeconf_e180_model_input_lock_v1",
+  "underlying_predictors": [
+    "scGPT",
+    "GEARS"
+  ]
+}

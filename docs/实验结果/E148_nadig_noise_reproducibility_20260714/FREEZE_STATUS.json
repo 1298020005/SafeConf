@@ -1,0 +1,34 @@
+{
+  "experiment": "E148_nadig_noise_reproducibility",
+  "generated_at": "2026-07-14T13:59:50",
+  "status": "frozen_before_expression_values_opened_for_noise_endpoints",
+  "sources": {
+    "HepG2": {
+      "path": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/NadigOConner2024_hepg2.h5ad",
+      "sha256": "1af2f7b3e692ad3d077e6027d68a1f800619e29aa3f7a0efa70146fb7223a4bf",
+      "shape": [
+        145473,
+        9624
+      ]
+    },
+    "Jurkat": {
+      "path": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/NadigOConner2024_jurkat.h5ad",
+      "sha256": "ade3d83150fd6944212363cd11da77c0d2143fa6df1febb3f15a66d4dab0677f",
+      "shape": [
+        262956,
+        8882
+      ]
+    }
+  },
+  "selection_sha256": "796266fd7ad80d9ae590f54569147c1ac102aa70c09220f41dff620fb5baa7f3",
+  "panel_sha256": "61a769486db61e38ec3f7dc1555132cebf1a72b7ea0d27e1f65797f88d0ff364",
+  "score_snapshot_sha256": "aff30ba3f55f941f416463ab01cf87031b6af17e016419e86194109bf61d94ab",
+  "n_unique_context_perturbation_tasks": 192,
+  "n_split_repeats": 50,
+  "minimum_cells_per_half": 20,
+  "minimum_cells_per_guide": 10,
+  "primary_diagnostic": "partial Spearman directional risk vs directional model error controlling split-half noise and log cell count",
+  "bootstrap_unit": "perturbation_gene_cluster_across_contexts_and_folds",
+  "n_bootstrap": 3000,
+  "independence_note": "new technical-noise endpoint on previously used Nadig data; not an independent biological validation"
+}

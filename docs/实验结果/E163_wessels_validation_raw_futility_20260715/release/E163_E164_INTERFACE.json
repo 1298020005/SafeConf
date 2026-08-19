@@ -1,0 +1,63 @@
+{
+  "schema": "safeconf_e163_to_e164_v1",
+  "experiment": "E163_wessels_validation_raw_futility",
+  "phase": "validation_only_futility_diagnostic_complete_test_remains_sealed",
+  "git_head_at_E163_execution": "c3d5462861d394e52c7a0eb53f4a3c0a51bd626f",
+  "authorization_gate_sha256": "e9f0ef8f924acf23d4369a9b7ca9d2f1827ef4b5219dadc1a9ee49aad028b374",
+  "validation_gate_passed": true,
+  "authorize_future_test_label_lock": true,
+  "decision": "allow_new_test_label_only_preregistration",
+  "main_seed": 3407,
+  "primary_score": "raw_log_prob",
+  "score_orientation": "higher_is_more_confident",
+  "primary_accuracy": "PCA10_inverse_transform_own_model_Pearson",
+  "seed_primary_spearman_rho": {
+    "3407": 0.16173913043478258,
+    "3408": 0.042608695652173914,
+    "3409": -0.22608695652173913
+  },
+  "downstream_permission_if_authorized": "write_and_commit_a_new_test_label_only_contract; no test truth access",
+  "downstream_permission_if_not_authorized": "none_stop_raw_score_path",
+  "E163_is_external_or_confirmatory_evidence": false,
+  "artifact_integrity": {
+    "authorization_gate": {
+      "release_relative_path": "E163_AUTHORIZATION_GATE.json",
+      "bytes": 1226,
+      "sha256": "e9f0ef8f924acf23d4369a9b7ca9d2f1827ef4b5219dadc1a9ee49aad028b374"
+    },
+    "run_status": {
+      "release_relative_path": "RUN_STATUS.json",
+      "bytes": 3389,
+      "sha256": "167e40294dede72d9b9862738f01af6666a8b43230e9e57f8c6892b6e885a01c"
+    },
+    "task_metrics": {
+      "release_relative_path": "tables/E163_TASK_METRICS.csv",
+      "bytes": 18037,
+      "sha256": "7f66b4c100c857cbfb30f0d164fa7c9f20ad87c099ee3b51ca81789eca72ab37"
+    },
+    "associations": {
+      "release_relative_path": "tables/E163_ASSOCIATIONS.csv",
+      "bytes": 3258,
+      "sha256": "77ec7ef1cf791e4de219311ba760f6eed27071719fdd4e161be172a321cd26e0"
+    },
+    "git_source_gate": {
+      "release_relative_path": "manifests/E163_GIT_SOURCE_GATE.csv",
+      "bytes": 566,
+      "sha256": "6f7d8a808cadca89a23655c5d579d97f84a5125da9c9d473c3dab50735b2a91d"
+    },
+    "input_manifest": {
+      "release_relative_path": "manifests/E163_INPUT_MANIFEST.csv",
+      "bytes": 4325,
+      "sha256": "92ba4cdaae571cf77ea86e5cfd5c48b474c107cae15fb0662f424c0c76e01071"
+    },
+    "development_access_ledger": {
+      "release_relative_path": "manifests/E163_DEV_H5AD_ACCESS_LEDGER.csv",
+      "bytes": 516,
+      "sha256": "8c503b5741d4bb0e44586517c095e88549677e6784f5dccfd50c6d5a26ecc11c"
+    }
+  },
+  "release_manifest_relative_path": "RESULTS_SHA256.csv",
+  "test_label_queried": false,
+  "test_X_accessed": false,
+  "test_truth_accessed": false
+}

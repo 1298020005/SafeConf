@@ -1,0 +1,91 @@
+﻿# 给 Codex 的完整指令（请整段执行）
+
+工作目录：/home/yyf/proj
+
+## 硬目标
+
+1. 按周老师 2026-07-09 要求：分数必须对应明确预测器的误差；打分输入不得使用 holdout 真值；必须覆盖难设置（小矩阵、整行 holdout、整列 holdout、跨数据集）；基因扰动与化学扰动都要能算。
+2. 以稳定二区方法类期刊录用为设计目标。一区仅在二区证据真正齐备后再评估。现在禁止宣称已具备一区。
+3. 禁止：把下载当进度、无脑堆面板、测试集调参、不同预测器结果混写同一主张、证据未齐就说“稳定二区已达成”。
+4. 周老师大意：小矩阵、整行整列 holdout、跨数据集若都解决了，小文章差不多可以写。这是最低科学闭环，不是录用保证。25/50/75、关卡编号、是否必须用 CPA 都是执行细节，不是老师原话；但难设置本身必须做。
+5. 每个数字必须能指到 docs 下真实文件，指不到就当不存在。
+
+## 先读这些（按顺序）
+
+用下面命令列出路径后逐个打开：
+
+python3 -c "from pathlib import Path; r=Path('/home/yyf/proj');
+[print(p) for pat in ['**/CLAIM_LOCK_20260712.md','**/GATE_STATUS_20260712.md','**/E74_REPORT.md'] for p in r.glob(pat)];
+[print(p) for p in sorted((r/'docs').rglob('E63*'))[:8]];
+[print(p) for p in sorted((r/'docs').rglob('E68*'))[:8]];
+[print(p) for p in sorted((r/'docs').rglob('E77*')) if p.is_dir()][:8];
+[print(p) for name in ['E84','E85','E87','E89'] for p in sorted((r/'docs').rglob(name+'*')) if p.is_dir()];
+print(r/'workspace'/'group_meeting_20260709_MAINLINE_WHITE');
+print(Path.home()/'.codex'/'attachments'/'3d36bc69-c573-44c2-821b-6795c42ac3fc'/'pasted-text.txt')"
+
+并阅读 workspace/group_meeting_20260709_MAINLINE_WHITE/ 下全部相关 markdown，以及 CLAIM_LOCK、GATE_STATUS、E63、E68、E74、E77、E84、E85、E87、E89 报告。
+
+读完后先输出三行：目标理解 / 当前缺口 / 本轮唯一动作。然后再干活。
+
+## 当前事实（2026-07-12）
+
+基因双模型（目前最强正结果）：Adamson、Norman、Frangieh；GEARS + 正式微调 scGPT；同模型 seed 分歧多次失败（E60/E66/E71）；E74/E77 给出 pair-risk 下界，并相对预测幅度有多面板正增量，这是主结果候选。
+
+化学 E84/E85（CPA-RDKit）：四象限可跑；分歧能排序部分 pair risk；新细胞背景、新药象限上预测幅度更强；选择性路由未证明明显节省复核资源。
+
+跨数据集：E87 sciPlex3 到 OpenProblems 是强负面（相关约 0.99，但预测器几乎打不过零效应，幅度同时驱动分歧与误差）；E89 sciPlex3 到 sciPlex4 有排序但未稳定超过幅度（样本小）。必须作边界保留。旧主表 McFarland 仍是失败边界。
+
+现在不能叫稳定二区。PRESCRIBE 尚未进入同一合同。
+
+证据分层（禁止混写进同一句主张）：
+- 第一层：旧七主表参考预测（背景与边界）
+- 第二层：轻量预测器试跑（不能进摘要主数字）
+- 第三层：GEARS+scGPT+E74/E77（主结果候选）
+- 第四层：只下载未接适配预测器（附录）
+
+## 允许写的主张
+
+SafeConf 是预测器之后的事后任务风险分诊。只用部署时可算输入（禁止 holdout 真效应）。跨模型家族分歧在基因未见基因面板上，是 pair 级风险证书与排序信号，相对预测幅度有证据（E74/E77）。seed 分歧失败。化学与强跨域多为幅度主导或迁移失败（E84/E85/E87/E89/McFarland）。禁止写普遍有效或单模型置信度。
+
+## 禁止写的主张
+
+全面有效；固定四特征永远赢幅度；低分歧等于安全；真幅度可进前置打分；已稳定二区或一区；不写预测器名字就混报轻量/GEARS/scGPT/CPA 数字。
+
+## 期刊（先二区）
+
+优先：Bioinformatics、BMC Bioinformatics、Briefings in Bioinformatics、PLOS Computational Biology、GigaScience。未齐备前不要以 Nature Methods、Genome Biology 作主投。
+
+竞品必须处理：scPerturBench、Systema/简单基线、PRESCRIBE（集成不确定性 vs 你的事后异构质检）、风险覆盖率文献。
+
+## 统一字段（每一任务一行）
+
+split_setting, dataset_name, perturbation_family, predictor_name, task_key, score_predicted_magnitude, score_model_disagreement, score_other_optional, error_rmse, true_magnitude_oracle, seed, frozen_manifest_id
+
+true_magnitude_oracle 不得进入任何可部署分数。宣称增益时必须对照预测幅度并报置信区间。
+
+## 只准按此顺序做
+
+1. 基因侧、同一 GEARS/scGPT 合同：小矩阵 + 整行 holdout + 整列 holdout，汇总成一张总表。优先用已冻结预测缓存。禁止看完测试误差再改分数。
+2. 禁止在 E84/E87/E89 已解封测试集上重调分数。
+3. 然后在冻结任务上接 PRESCRIBE 或原生不确定性；做不到就写清不可比表。
+4. 摘要只能写 CLAIM_LOCK 允许的主张；E87/E89/McFarland/E85 作边界。
+5. 诚实更新 GATE_STATUS：能跑通不等于可投稿。
+
+## 一票否决
+
+分数用了 holdout 真值；主数字没有预测器名字；藏阴性；只挑正的跨域方向；难设置没证据却说已按老师做完；提前宣称稳定二区或一区；测试集调参。
+
+## 每轮回复格式
+
+1）本轮推进了什么
+2）路径
+3）主数字（含置信区间与相对幅度）
+4）阴性
+5）是否命中否决
+6）下一句唯一动作
+
+## 判断
+
+idea 可发：事后分诊 + 多设置评估 + 多模型分歧。数据方向大体对。要用统一合同收口老师难设置，并始终对照预测幅度。E74/E77 是基因侧王牌；化学与强跨域现阶段多为边界。成功路径：基因难设置总表、竞品对照、诚实摘要，再投二区方法刊。失败路径：继续堆面板、下载、混层、主张漂移。
+
+现在立刻开始：第 1 条，基因侧难设置总表。

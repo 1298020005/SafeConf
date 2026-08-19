@@ -1,0 +1,23 @@
+{
+  "experiment": "E190",
+  "stage": "PRETRUTH_MODEL_ASSET_BUILD",
+  "status": "PASS",
+  "n_panel_genes": 512,
+  "n_transfer_genes": 47,
+  "n_train_tasks": 216,
+  "n_validation_tasks": 54,
+  "n_target_queries": 692,
+  "n_target_control_profiles": 48,
+  "target_perturbation_x_rows_read": 0,
+  "target_control_x_rows_read": 10691,
+  "source_target_x_rows_read": 29771,
+  "source_control_x_rows_read": 2613,
+  "contains_target_evaluation_truth": false,
+  "normalization": "per-cell full-library scale to 10000, then log1p",
+  "git_head": "8b49acb5f2c03b9436c61faae4962e84760224a8",
+  "git_branch": "exp/task-risk-audit-20260611",
+  "remote_heads": {
+    "origin": "8b49acb5f2c03b9436c61faae4962e84760224a8",
+    "github": "8b49acb5f2c03b9436c61faae4962e84760224a8"
+  }
+}

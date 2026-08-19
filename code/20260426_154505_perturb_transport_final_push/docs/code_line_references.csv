@@ -1,0 +1,31 @@
+file,symbol_or_logic,line
+build_context_splits.py,CONTROL_STRINGS,12
+build_context_splits.py,CONTEXT_CANDIDATES,13
+build_context_splits.py,PERT_CANDIDATES,14
+build_context_splits.py,build_effect_tasks(),76
+build_context_splits.py,context_col / pert_col 推断,79-80
+build_context_splits.py,表达矩阵读取 logNor 或 X,85
+build_context_splits.py,按 context + perturbation 分组,93
+build_context_splits.py,control_mean = 同 context control 平均,101-103
+build_context_splits.py,effect = perturbed_mean - control_mean,104-114
+build_context_splits.py,feasible_splits(),133
+build_context_splits.py,materialize_split(),152
+transport_models.py,V0StrongBaseline,37
+transport_models.py,V0 fit: by_pert/by_context/global_mean,42-52
+transport_models.py,V0 predict: by_pert + 0.15 by_context,55-59
+transport_models.py,V2GraphPriorTransport,120
+transport_models.py,ContextSimilarityBaseline,175
+transport_models.py,ContextSim confidence/unsafe,194-245
+safetrans_models.py,PolicySafeTransPT,584
+safetrans_models.py,Policy router features,725-814
+safetrans_models.py,utility_reg_ / error_reg_,900-902
+safetrans_models.py,_calibrated_confidence(),1011-1069
+safetrans_models.py,predict_details 输出 confidence/unsafe/features,1120-1205
+risk_coverage.py,task_errors true_error proxy,9-20
+risk_coverage.py,risk_coverage_curve(),23-52
+run_safety_abstention_evidence.py,模型列表,149-162
+run_safety_abstention_evidence.py,写 confidence / unsafe_flag,164-180
+run_safety_abstention_evidence.py,输出 CSV,266-275
+evaluate_q1_readiness.py,risk_coverage_gain,89-102
+evaluate_q1_readiness.py,unsafe_contrast_ok,105-111
+evaluate_q1_readiness.py,Q2/Q1 判定逻辑,167-195

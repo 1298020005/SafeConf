@@ -1,0 +1,20 @@
+{
+  "experiment": "E69_real_model_cross_dataset_risk_transfer",
+  "generated_at": "2026-07-11T14:27:35",
+  "git_head_before_run": "53ad524faff785df59ed6312dd7e62e4eb5549e3",
+  "source_experiments": [
+    "E65",
+    "E67"
+  ],
+  "directions": [
+    "Adamson_to_Norman",
+    "Norman_to_Adamson"
+  ],
+  "n_tasks_per_dataset": {
+    "Adamson": 24,
+    "Norman": 24
+  },
+  "target_truth_used_for_fit_standardization_or_alpha_selection": false,
+  "transferred_object": "task-risk calibrator; not perturbation predictor",
+  "n_boot": 2000
+}

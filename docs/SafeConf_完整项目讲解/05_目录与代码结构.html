@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>05 目录与代码结构</title>
+<link rel="stylesheet" href="assets/tutorial.css">
+</head>
+<body>
+<header class="top">
+<div class="topin">
+<a class="brand" href="index.html">SafeConf 完整项目讲解</a>
+<a class="back" href="../../SafeConf_统一研究工作台.html">返回工作台</a>
+</div>
+</header>
+<div class="layout">
+<aside class="side" id="chapterNav">
+</aside>
+<main class="content">
+<section class="hero">
+<p class="eyebrow">CHAPTER 05</p>
+<h1>目录和代码：每一块负责什么</h1>
+<p class="lead">本章标出服务器边界、Python 包职责以及四个关键代码动作。</p>
+</section>
+<h2>1. 服务器的六个边界</h2>
+<div class="tree">proj/              # 当前 Git 项目：代码、精简证据、教程、汇报
+data/              # 原始数据集，不进 Git
+safeconf_runtime/  # 大型数组、预测向量和完整运行产物
+tool/              # 通用服务器工具
+out/               # 短期下载/交付中转
+archive/           # 所有历史材料，不从这里继续开发</div>
+<h2>2. 项目内部地图</h2>
+<div class="tree">proj/
+├── SafeConf_统一研究工作台.html   # 日常导航
+├── code/                                # 正式代码
+├── docs/
+│   ├── 代码设计/                        # frozen protocol 与系统设计
+│   ├── 实验结果/                        # 可审计的小表、报告和结论
+│   ├── 小白科普/                        # 学习材料
+│   └── SafeConf_完整项目讲解/       # 本教程
+├── workspace/                           # 当前组会和近期工作
+├── agents/                              # AI 协作状态
+├── tools/                               # 下载、复跑、维护
+└── runtime/                             # 指向大型产物的说明</div>
+<h2>3. 当前 Python 包</h2>
+<div class="table">
+<table>
+<thead>
+<tr>
+<th>目录</th>
+<th>职责</th>
+<th>关键文件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>data/</code>
+</td>
+<td>读取 PredictionRecord、检查数据契约和数据集资格</td>
+<td>
+<code>records.py</code>, <code>eligibility.py</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>features/</code>
+</td>
+<td>定义特征组、来源和禁止列</td>
+<td>
+<code>schema.py</code>, <code>normalize.py</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>scoring/</code>
+</td>
+<td>计算 frozen v0.2 和 learned risk</td>
+<td>
+<code>protocol_v0_2.py</code>, <code>error_ranker.py</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>split/</code>
+</td>
+<td>检查 train/test 泄漏</td>
+<td>
+<code>leakage.py</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>eval/</code>
+</td>
+<td>相关、AURC、分诊曲线、信号有效性</td>
+<td>
+<code>metrics.py</code>, <code>selective_prediction.py</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>cli/</code>
+</td>
+<td>把模块组成可运行实验</td>
+<td>
+<code>run_preregistered_risk_audits.py</code>, Tahoe/E8b CLI</td>
+</tr>
+<tr>
+<td>
+<code>tests/</code>
+</td>
+<td>检查公式、契约、泄漏和结果复现</td>
+<td>
+<code>test_protocol_formula_frozen.py</code> 等</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2>4. 四段关键代码，逐句看懂</h2>
+<h3>A. 合并预测记录与特征</h3>
+<div class="code">
+<span class="kw">rec</span> = read_csv(<span class="cm">"PREDICTION_RECORDS.csv"</span>)
+<span class="kw">feat</span> = read_csv(<span class="cm">"CONFIDENCE_FEATURES.csv"</span>)
+base = rec.merge(feat, on=MERGE_KEYS, how=<span class="cm">"left"</span>)</div>
+<p>
+<code>MERGE_KEYS</code> 包含 record_id、dataset、fold、split、context、perturbation和 predictor。目的是确保“这组线索”真的属于“这次预测”。</p>
+<h3>B. 检查特征没有偷看答案</h3>
+<div class="code">bad = set(feature_cols) &amp; {
+  <span class="cm">"true_error_rmse", "true_effect", "failure_label", "score_value"</span>
+}
+<span class="kw">if</span> bad: <span class="kw">raise</span> ValueError(<span class="cm">"label leakage"</span>)</div>
+<h3>C. 在每个 dataset/fold/predictor 内标准化</h3>
+<div class="code">train = sub[sub[<span class="cm">"split"</span>] == <span class="cm">"train"</span>]
+z_ctx = zscore_by_ref(sub.context_similarity_max, train.context_similarity_max)
+z_support = zscore_by_ref(log1p(sub.support_count), log1p(train.support_count))
+z_dis = zscore_by_ref(sub.disagreement_rmse, train.disagreement_rmse)</div>
+<p>测试行可以被转换，但转换使用的中位数和 IQR 只能从 train 得到。</p>
+<h3>D. 风险—覆盖曲线</h3>
+<div class="code">order = argsort(risk)       <span class="cm"># 低风险先保留</span>
+sorted_errors = errors[order]
+selective_risk = cumsum(sorted_errors) / arange(1, n+1)
+coverage = arange(1, n+1) / n</div>
+<p>如果低风险组的平均误差真的更低，说明排序有实用意义。</p>
+<h2>5. 从命令到证据</h2>
+<div class="flow">
+<div class="node">
+<b>CLI 参数</b>
+<small>输入路径、seed、bootstrap 次数</small>
+</div>
+<div class="node">
+<b>数据契约检查</b>
+</div>
+<div class="node">
+<b>特征/分数</b>
+</div>
+<div class="node">
+<b>评价与 bootstrap</b>
+</div>
+<div class="node">
+<b>tables + reports</b>
+<small>小证据进 Git，大数组进 runtime</small>
+</div>
+</div>
+<div class="callout warn">
+<b>历史代码不等于当前入口。</b>
+<code>03_code/</code> 保留 SafeTrans-PT 方法演化和兼容依赖；新 SafeConf 代码优先进 <code>safetrans_confidence/</code> 和 <code>scripts/</code>。</div>
+<p class="source">当前代码入口：<a href="../../code/README.md">../../code/README.md</a>
+</p>
+<div class="pager">
+<a href="04_SafeConf系统原理.html">← 上一章</a>
+<a href="06_实验怎么做.html">下一章：实验设计 →</a>
+</div>
+</main>
+</div>
+<script src="assets/tutorial.js">
+</script>
+</body>
+</html>

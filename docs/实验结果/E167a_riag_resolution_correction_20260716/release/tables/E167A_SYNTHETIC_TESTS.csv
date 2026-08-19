@@ -1,0 +1,11 @@
+test_id,expected,observed,passed
+S1_cross_batch_constant_masking,each batch fails G2a although pooled vector varies,batchA=False;batchB=False;pooled=True,True
+S2_twenty_score_levels,G2a passes; 20% selection requires tie handling,G2a=True;unique=20;low=TIEBREAK_REQUIRED;high=TIEBREAK_REQUIRED,True
+S3_twenty_prediction_phenotypes,G3a passes with 20/100 unique vectors,G3a=True;unique=20,True
+S4_epsilon_jitter,1e-12 score and prediction jitter both fail,score_G2a=False;prediction_G3a=False,True
+S5_tie_aware_permutation_invariance,100 row permutations change all tie-aware RC points/bounds/AURC by <=1e-12,max_abs_difference=1.110e-16,True
+S6_batch_status_not_masked,batch_map and certificate keep exact and tie-aware statuses separate,high=EVALUABLE_SELECTIVE_RANKING_G4_NOT_EVALUATED;coarse=EVALUABLE_ASSOCIATION_TIE_AWARE_G4_NOT_EVALUATED,True
+S7_variable_score_constant_prediction,variable score passes G2a; structural lane exposes predictor collapse without calling it MODEL_UQ,G2a=True;G3a=False;status=STRUCTURAL_RISK_ONLY_PREDICTOR_COLLAPSE,True
+S8_magnitude_weak_order_clone,same operational weak order and identical RC/bounds/AURC at all coverages,operational_weak_order=True;max_delta=0.000e+00;status=EVALUABLE_BASELINE_EQUIVALENT,True
+S9_raw_affine_but_operationally_different,raw affine order is not called G5-equivalent when frozen quantization changes ties,raw=True;operational=False;status=EVALUABLE_ASSOCIATION_TIE_AWARE_G4_NOT_EVALUATED;delta_AURC=9.578e-05,True
+S10_nonfinite_score_abstains,non-finite score produces ABSTAIN instead of crashing G2b,ABSTAIN_SCORE_SATURATION,True

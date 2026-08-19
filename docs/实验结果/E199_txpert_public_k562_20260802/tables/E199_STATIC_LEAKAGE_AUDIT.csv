@@ -1,0 +1,5 @@
+check,passed,detail
+predict_step_truth_only_saved,True,batch.x occurrences=1
+sample_inference_has_no_target,True,"sample_inference receives control, perturbation indices and embeddings"
+forward_has_no_target,True,forward signature excludes target expression
+predict_mode_uses_trainer_predict,True,official predict branch inspected

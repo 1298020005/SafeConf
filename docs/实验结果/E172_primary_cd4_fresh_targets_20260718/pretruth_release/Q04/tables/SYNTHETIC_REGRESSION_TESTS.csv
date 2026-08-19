@@ -1,0 +1,11 @@
+test_id,passed,observed
+S1_constant_score_fails,True,"{'all_finite': True, 'n_levels': 1, 'std': 0.0, 'passed': False}"
+S2_variable_score_passes,True,"{'all_finite': True, 'n_levels': 100, 'std': 0.29157646512850627, 'passed': True}"
+S3_epsilon_jitter_fails,True,"{'all_finite': True, 'n_levels': 1, 'std': 2.8866070047722117e-11, 'passed': False}"
+S4_constant_predictor_fails,True,"{'all_finite': True, 'n_unique_vectors': 1, 'max_repeat_fraction': 1.0, 'max_coordinate_std': 0.0, 'passed': False}"
+S5_task_dependent_predictor_passes,True,"{'all_finite': True, 'n_unique_vectors': 100, 'max_repeat_fraction': 0.01, 'max_coordinate_std': 0.30132605255011735, 'passed': True}"
+S6_query_batch_without_y,True,batch=3
+S7_cross_batch_pooling_detected,True,pooled_pass/state_fail
+S8_operational_clone_detected,True,clone=True
+S9_stable_seed_ranks_pass,True,"{'spearman_3407_3408': 0.9999999999999999, 'spearman_3407_3409': 0.9999999999999999, 'spearman_3408_3409': 0.9999999999999999, 'median_pairwise_spearman': 0.9999999999999999, 'kendall_w': 1.0, 'bootstrap_valid': 250, 'bootstrap_ci95_lower': 0.9999999999999999, 'bootstrap_ci95_upper': 1.0, 'passed': True}"
+S10_unstable_seed_ranks_fail,True,"{'spearman_3407_3408': -0.17058505850585057, 'spearman_3407_3409': 0.11665166516651664, 'spearman_3408_3409': 0.020738073807380738, 'median_pairwise_spearman': 0.020738073807380738, 'kendall_w': 0.325956595659566, 'bootstrap_valid': 250, 'bootstrap_ci95_lower': -0.1545484963271486, 'bootstrap_ci95_upper': 0.15082889429486146, 'passed': False}"

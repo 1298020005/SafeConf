@@ -1,0 +1,5 @@
+category,n_tasks,n_cells,n_ge30,n_10_29,min_cells,median_cells,max_cells
+strict_context_only_train_seen,580,80153,566,14,15,114.0,765
+validation_only,202,28023,199,3,15,113.0,567
+neither_train_nor_validation,33,3838,32,1,24,63.0,637
+unseen_context_and_perturbation,272,38458,266,6,18,121.0,688

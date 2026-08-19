@@ -1,0 +1,60 @@
+file,size,role,keyword_hits
+03_code/build_context_splits.py,7562,从 h5ad 构造 context + perturbation 的 effect task，并提供 leave_context / heldout_perturbation split。,
+03_code/configs/full.yaml,330,未细分，需按内容进一步确认,
+03_code/configs/gate.yaml,266,未细分，需按内容进一步确认,
+03_code/encoders.py,3555,hash/pathway prior/nearest prior smoothing 等轻量特征。,
+03_code/evaluate_q1_readiness.py,10537,把结果目录打分为 NOT_READY/Q2/Q1 等 readiness 标签。,"SafeTransPT, PolicySafeTransPT, risk_coverage, RMSE, rmse"
+03_code/evaluate_transportability_gate.py,5534,未细分，需按内容进一步确认,"SafeTransPT, unsafe_flag, confidence, rmse"
+03_code/evaluators.py,4587,Pearson/Spearman/RMSE/top20/DEG/program consistency 指标。,rmse
+03_code/finalize_handoff.py,8817,未细分，需按内容进一步确认,
+03_code/make_group_meeting_pack.py,17217,实验启动脚本或报告/汇总脚本,SafeTransPT
+03_code/make_mentor_audit_pack_20260521.py,43992,实验启动脚本或报告/汇总脚本,"V0StrongBaseline, ContextSimilarityBaseline, SafeTransPT, PolicySafeTransPT, transportability_score, unsafe_flag, confidence, risk_coverage, RMSE, rmse, true_effect"
+03_code/make_methodology_story_pack.py,22813,实验启动脚本或报告/汇总脚本,SafeTransPT
+03_code/make_paper_preprint_pack.py,21624,实验启动脚本或报告/汇总脚本,"confidence, RMSE, rmse"
+03_code/make_safetrans_report.py,15962,实验启动脚本或报告/汇总脚本,"SafeTransPT, transportability_score, risk_coverage, RMSE, rmse"
+03_code/make_tuesday_q2_package.py,15433,实验启动脚本或报告/汇总脚本,"SafeTransPT, rmse"
+03_code/make_web_gpt_review_pack_20260520.py,29231,实验启动脚本或报告/汇总脚本,"SafeTransPT, PolicySafeTransPT, transportability_score, confidence, RMSE, rmse"
+03_code/monitor_q1_push.sh,1841,未细分，需按内容进一步确认,
+03_code/network_modules.py,8542,未细分，需按内容进一步确认,
+03_code/pipeline.py,1559,未细分，需按内容进一步确认,
+03_code/program_bank.py,3548,未细分，需按内容进一步确认,
+03_code/queue_gpu_effect_objective_20260520.sh,901,未细分，需按内容进一步确认,
+03_code/risk_coverage.py,1624,按 confidence 做 risk-coverage 曲线和单 task error。,"confidence, risk_coverage, rmse"
+03_code/run_background.sh,608,实验启动脚本或报告/汇总脚本,
+03_code/run_codex_q1_task.sh,980,实验启动脚本或报告/汇总脚本,
+03_code/run_community_inspired_baselines.py,17313,实验启动脚本或报告/汇总脚本,"V0StrongBaseline, rmse"
+03_code/run_deep_gpu_transport.py,30797,GPU 深度模型 runner。,"V0StrongBaseline, confidence, rmse"
+03_code/run_full.py,12381,实验启动脚本或报告/汇总脚本,"V0StrongBaseline, SafeTransPT, PolicySafeTransPT, rmse"
+03_code/run_gate.py,7225,实验启动脚本或报告/汇总脚本,"V0StrongBaseline, rmse"
+03_code/run_gears_formal_baseline.py,9363,实验启动脚本或报告/汇总脚本,
+03_code/run_gears_formal_seedloop.sh,1461,实验启动脚本或报告/汇总脚本,
+03_code/run_gpu_calibrated_main_20260520.sh,782,实验启动脚本或报告/汇总脚本,
+03_code/run_gpu_calibrated_tian_20260520.sh,741,实验启动脚本或报告/汇总脚本,
+03_code/run_gpu_deep_gpu0.sh,718,实验启动脚本或报告/汇总脚本,
+03_code/run_gpu_deep_gpu1.sh,759,实验启动脚本或报告/汇总脚本,
+03_code/run_gpu_deepsafetrans.py,13869,GPU 深度模型 runner。,"V0StrongBaseline, rmse"
+03_code/run_gpu_effect_objective_main_20260520.sh,1031,实验启动脚本或报告/汇总脚本,
+03_code/run_gpu_effect_objective_tian_20260520.sh,990,实验启动脚本或报告/汇总脚本,
+03_code/run_gpu_external_policy_fix_20260520.sh,1426,实验启动脚本或报告/汇总脚本,
+03_code/run_gpu_graft_tian_20260520.sh,1113,实验启动脚本或报告/汇总脚本,
+03_code/run_gpu_main_policy_fix_20260520.sh,1391,实验启动脚本或报告/汇总脚本,
+03_code/run_network_safetrans.py,15824,实验启动脚本或报告/汇总脚本,"V0StrongBaseline, SafeTransPT, transportability_score, unsafe_flag, risk_coverage, rmse"
+03_code/run_policy_calibrated_push_20260520.sh,1480,实验启动脚本或报告/汇总脚本,"SafeTransPT, PolicySafeTransPT"
+03_code/run_policy_full_wide.sh,464,实验启动脚本或报告/汇总脚本,
+03_code/run_policy_router_focus.sh,537,实验启动脚本或报告/汇总脚本,
+03_code/run_policy_router_hybrid.sh,569,实验启动脚本或报告/汇总脚本,
+03_code/run_policy_router_soft.sh,565,实验启动脚本或报告/汇总脚本,
+03_code/run_policy_router_wide.sh,540,实验启动脚本或报告/汇总脚本,
+03_code/run_policy_tian_ext.sh,654,实验启动脚本或报告/汇总脚本,
+03_code/run_q1_cpu_master_20260520.sh,1215,实验启动脚本或报告/汇总脚本,
+03_code/run_q1_postprocess_all.sh,695,实验启动脚本或报告/汇总脚本,
+03_code/run_safetrans.py,15083,实验启动脚本或报告/汇总脚本,"V0StrongBaseline, SafeTransPT, transportability_score, unsafe_flag, risk_coverage, rmse"
+03_code/run_safety_abstention_evidence.py,14562,CPU 主证据 runner：读数据、构造 split、跑 V0/V2/Policy/Safe，并输出 safety 结果表。,"V0StrongBaseline, ContextSimilarityBaseline, SafeTransPT, PolicySafeTransPT, transportability_score, unsafe_flag, confidence, risk_coverage, rmse"
+03_code/safetrans_models.py,55595,SafeTransPT / PolicySafeTransPT 等 safety、router、confidence、unsafe 相关模型。,"V0StrongBaseline, ContextSimilarityBaseline, SafeTransPT, PolicySafeTransPT, transportability_score, unsafe_flag, confidence, rmse"
+03_code/setup_research_env.sh,1194,未细分，需按内容进一步确认,
+03_code/smoke_test.py,1539,未细分，需按内容进一步确认,V0StrongBaseline
+03_code/summarize_community_baselines.py,3727,实验启动脚本或报告/汇总脚本,
+03_code/summarize_network_push.py,4725,实验启动脚本或报告/汇总脚本,SafeTransPT
+03_code/summarize_six_day_push.py,4840,实验启动脚本或报告/汇总脚本,
+03_code/summarize_weekend_q1_push.py,9903,实验启动脚本或报告/汇总脚本,"SafeTransPT, risk_coverage, RMSE, rmse"
+03_code/transport_models.py,11814,V0、V1、V2、ContextSimBaseline、V3 等 effect predictor/baseline。,"V0StrongBaseline, ContextSimilarityBaseline, transportability_score, unsafe_flag"

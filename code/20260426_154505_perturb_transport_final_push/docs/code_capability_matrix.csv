@@ -1,0 +1,14 @@
+能力/字段,当前状态,证据
+context × perturbation task,已有,build_context_splits.py:76-130，task 字段含 context / perturbation / effect / control_mean
+true_effect,已有但字段名叫 effect,build_context_splits.py:107-114，effect = perturbed_mean - control_mean
+predicted_effect,已有但没有统一落盘字段,predict 返回矩阵；SAFETY_TASK_METRICS 只保存指标，不保存向量
+true_error,已有但字段名多为 rmse,risk_coverage.py:9-20；SAFETY_TASK_METRICS.csv 中 rmse 是单 task error
+V0 prediction,已有,transport_models.py:37-62
+ContextSim prediction,已有,transport_models.py:175-245
+risk score / confidence score,已有,safetrans_models.py:1011-1069；输出 transportability_score；runner 落盘为 confidence
+unsafe flag,已有,safetrans_models.py:1171-1178；run_safety_abstention_evidence.py:85-88
+risk-coverage,已有,risk_coverage.py:23-52；RISK_COVERAGE.csv
+safe vs unsafe RMSE,已有,run_safety_abstention_evidence.py:100-116；SAFE_UNSAFE_CONTRAST.csv
+Q1 readiness,已有,evaluate_q1_readiness.py:114-222
+held-out context-perturbation pair split,没找到,当前 build_context_splits.py 只有 leave_context 和 heldout_perturbation；未见 pair-holdout split 实现
+统一 PredictionRecord,部分已有,有 task metrics，但缺 context、perturbation、predicted_effect 向量、true_effect 向量等字段

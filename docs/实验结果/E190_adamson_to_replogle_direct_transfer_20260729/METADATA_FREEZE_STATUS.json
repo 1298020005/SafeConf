@@ -1,0 +1,25 @@
+{
+  "experiment": "E190",
+  "stage": "METADATA_FREEZE",
+  "status": "PASS",
+  "source_file": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/AdamsonWeissman2016_GSM2406681_10X010.h5ad",
+  "target_file": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/ReplogleWeissman2022_K562_essential.h5ad",
+  "source_shape": [
+    65337,
+    32738
+  ],
+  "target_shape": [
+    310385,
+    8563
+  ],
+  "n_common_eligible_genes": 47,
+  "n_source_guides": 54,
+  "n_source_selected_cells": 29771,
+  "n_target_tasks": 692,
+  "n_target_selected_cells": 4959,
+  "n_target_control_cells": 10691,
+  "n_target_batches": 48,
+  "source_x_values_read": 0,
+  "target_x_values_read": 0,
+  "selection_used_expression_values": false
+}

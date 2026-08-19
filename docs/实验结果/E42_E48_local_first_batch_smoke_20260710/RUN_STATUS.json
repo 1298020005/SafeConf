@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-07-10T16:57:19",
+  "git_head": "900abafd5dad7e3f8f135a14e2cf7b1675610494",
+  "git_dirty": true,
+  "args": {
+    "n_genes": 256,
+    "min_cells": 15,
+    "max_cells_per_group": 120,
+    "seed": 0
+  },
+  "n_score_rows": 194,
+  "n_score_summary_rows": 60,
+  "n_norman_combo_rows": 125,
+  "n_papalexi_aligned_rows": 94,
+  "output_dir": "docs/实验结果/E42_E48_local_first_batch_smoke_20260710",
+  "tables": [
+    "tables/LOCAL_TASK_BUILD_STATUS.csv",
+    "tables/LOCAL_SPLIT_STATUS.csv",
+    "tables/LOCAL_SCORE_TABLE.csv",
+    "tables/LOCAL_SCORE_SUMMARY.csv",
+    "tables/NORMAN_SINGLE_TO_COMBO.csv",
+    "tables/NORMAN_SINGLE_TO_COMBO_SUMMARY.csv",
+    "tables/GASPERINI_REGULATORY_SPARSITY_AUDIT.csv",
+    "tables/PAPALEXI_RNA_PROTEIN_CONSISTENCY.csv",
+    "tables/PAPALEXI_RNA_PROTEIN_SUMMARY.csv"
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "experiment": "E156_prescribe_norman_p3p4_preprocess",
+  "phase": "complete_preprocessing_only_no_training_no_evaluation",
+  "started_at": "2026-07-14T18:48:18",
+  "raw_dataset": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/NormanWeissman2019_filtered.h5ad",
+  "data_root": "/home/yyf/data/safeconf_e156_prescribe",
+  "runner_path": "/home/yyf/proj/tools/scripts/run_e156_prescribe_norman_p3p4_preprocess.py",
+  "runner_sha256": "0829d691a12772375869483402df067ec28708d6622e510223d6001ee9a48b37",
+  "runner_git_head": "b7270bafa7644912f99b398a4a4c69140faef6fb",
+  "runner_matches_git_head_blob": true,
+  "raw_container_opened_for_hash_and_obs": true,
+  "raw_obs_metadata_read": true,
+  "test_X_rows_indexed": false,
+  "test_X_rows_materialized": false,
+  "test_X_rows_transformed": false,
+  "model_training_started": false,
+  "predictions_generated": false,
+  "test_endpoint_computed": false,
+  "n_raw_genes": 33694,
+  "n_model_genes": 2044,
+  "n_train_hvg": 2000,
+  "n_forced_perturbation_genes": 101,
+  "n_train_edistance_conditions": 64,
+  "edistance_balance_n": 54,
+  "finished_at": "2026-07-14T18:51:20",
+  "runtime_seconds": 182.715,
+  "e155_phase": "contract_frozen_predictions_and_errors_unseen",
+  "e155_commit_prefix": "53222bc",
+  "e155_artifact_hashes_verified": true,
+  "raw_sha256": "efde6f5301fe256725dce1d980f37bd96a13481a9a16135515897368e631affc",
+  "normalization": "fixed per-cell target_sum=10000 then log1p",
+  "hvg_fit_scope": "shared E155 train only",
+  "pca_fit_scope": "shared E155 train only",
+  "edistance_fit_scope": "shared E155 train only",
+  "validation_test_label_policy": "validation uses NaN sentinels; raw container/obs inspected but test-X rows were not indexed, materialized, or transformed",
+  "native_rank_label_effective": false,
+  "native_rank_label_reason": "ListMLE -sum(log_softmax) is invariant to y_n-induced permutation",
+  "primary_truth_definition": "native PCA10-reconstructed truth, matching E95/E145; raw normalized truth sensitivity only",
+  "native_loss_sha256": "e6b56bef92ab918b2428dc42855d4c2d1cb48e1b929c606536ec02fba4903425",
+  "native_lightning_module_sha256": "5add09fb0ca49dd43f9caac892140c3d8a31add3bdd492aef2ea4668b0acb3cd",
+  "test_expression_role": "raw container and obs metadata inspected; test-X rows never indexed, materialized, or transformed; E155 obs metadata counts only",
+  "test_expression_opened": false,
+  "test_expression_opened_definition": "no test-X row indexing/materialization; raw container and obs were opened",
+  "test_expression_transformed": false,
+  "heldout_gene_development_leakage_count": 0,
+  "panels": [
+    {
+      "panel": "Norman_P3",
+      "dataset_name": "norman_p3",
+      "n_cells_from_development_plus_test_metadata": 57675,
+      "n_development_cells": 44132,
+      "n_test_cells_metadata_only": 13543,
+      "n_genes": 2044,
+      "n_train_conditions": 64,
+      "n_val_conditions": 20,
+      "n_test_conditions": 24,
+      "h5ad": "/home/yyf/data/safeconf_e156_prescribe/norman_p3/perturb_processed.h5ad",
+      "test_X_rows_indexed_materialized_or_transformed": false,
+      "prescribe_symlink": "/home/yyf/archive/external/PRESCRIBE/data/norman_p3"
+    },
+    {
+      "panel": "Norman_P4",
+      "dataset_name": "norman_p4",
+      "n_cells_from_development_plus_test_metadata": 60621,
+      "n_development_cells": 44132,
+      "n_test_cells_metadata_only": 16489,
+      "n_genes": 2044,
+      "n_train_conditions": 64,
+      "n_val_conditions": 20,
+      "n_test_conditions": 24,
+      "h5ad": "/home/yyf/data/safeconf_e156_prescribe/norman_p4/perturb_processed.h5ad",
+      "test_X_rows_indexed_materialized_or_transformed": false,
+      "prescribe_symlink": "/home/yyf/archive/external/PRESCRIBE/data/norman_p4"
+    }
+  ],
+  "graph_summaries": [
+    {
+      "panel": "Norman_P3",
+      "n_graph_conditions": 84,
+      "n_cell_graphs": 44132,
+      "cell_graphs_path": "/home/yyf/data/safeconf_e156_prescribe/norman_p3/data_pyg/cell_graphs.pkl",
+      "cell_graphs_sha256": "ab6a2357afbbf446543b070dc68c56d8cb21d02d2e0f646a0bc38eb1bec27550"
+    },
+    {
+      "panel": "Norman_P4",
+      "n_graph_conditions": 84,
+      "n_cell_graphs": 44132,
+      "cell_graphs_path": "/home/yyf/data/safeconf_e156_prescribe/norman_p4/data_pyg/cell_graphs.pkl",
+      "cell_graphs_sha256": "70163d5da327fe33d2a4a79de7176e2d67f8ec5500c9db755a4119b366eea188"
+    }
+  ],
+  "perturb_processed_sha256": {
+    "Norman_P3": "18ba7243def057dc78a17f8b2a903e55d14ab98097d46c58c91e74b750f2b583",
+    "Norman_P4": "c5b09d92d57c2d126087bae983b3c314445606237f25c0215e39174b8668db00"
+  },
+  "cell_graphs_sha256": {
+    "Norman_P3": "ab6a2357afbbf446543b070dc68c56d8cb21d02d2e0f646a0bc38eb1bec27550",
+    "Norman_P4": "70163d5da327fe33d2a4a79de7176e2d67f8ec5500c9db755a4119b366eea188"
+  },
+  "artifact_manifest_sha256": "0539769791abb4b9a3afd7a0efe5aa69d2f059c22ec8adabbcf00b33ba36186a"
+}

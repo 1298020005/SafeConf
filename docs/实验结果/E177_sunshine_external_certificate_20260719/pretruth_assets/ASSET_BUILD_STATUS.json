@@ -1,0 +1,24 @@
+{
+  "schema": "safeconf_e177_pretruth_asset_build_status_v1",
+  "experiment": "E177_sunshine_external_certificate",
+  "stage": "F2_PRETRUTH_ISOLATED_ASSET_BUILD",
+  "status": "PASS",
+  "generated_at": "2026-07-19T23:59:49+08:00",
+  "asset_root": "/home/yyf/data/safeconf_e177_external/isolated/F2_pretruth",
+  "asset_manifest_sha256": "eccb5f9c82eb49df0bceb0080781d0b172a1bed70100745e68547b7efe633f29",
+  "logical_x_rows_read_by_phase": {
+    "PRETRUTH_CONTROL_X": 2500,
+    "PRETRUTH_TRAIN_X": 8146,
+    "PRETRUTH_VALIDATION_X": 1193
+  },
+  "calibration_target_x_rows_read": 0,
+  "evaluation_target_x_rows_read": 0,
+  "n_panel_genes": 512,
+  "n_registered_targets_in_panel": 144,
+  "n_seen_train_validation_effects": 512,
+  "n_query_only_tasks_without_y": 640,
+  "source_x_encoding": "csc_matrix_backed_h5ad",
+  "physical_hdf5_row_exactness_claimed": false,
+  "public_processed_data_only": true,
+  "operational_wetlab_protocol_in_scope": false
+}

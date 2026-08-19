@@ -1,0 +1,53 @@
+{
+  "experiment": "E161a",
+  "status": "completed_diagnostic",
+  "started_at": "2026-07-15T14:22:55.212975+08:00",
+  "completed_at": "2026-07-15T14:23:07.119328+08:00",
+  "git_head": "3264bbe4d09e5d89aabe19de326e1306fe0aae7f",
+  "committed_inputs": {
+    "runner": {
+      "path": "tools/scripts/run_e161a_wessels_feature_boundary_audit.py",
+      "bytes": 11352,
+      "sha256": "19c70133e7408e2c32c0d61e80c2935f286fc2bacd1e88cc36aafdad9d8bfaef",
+      "matches_git_head_blob": true
+    },
+    "contract": {
+      "path": "docs/实验结果/E161a_wessels_feature_boundary_audit_20260715/ANALYSIS_CONTRACT.md",
+      "bytes": 2478,
+      "sha256": "78f187e332683e4b9eef254ec136db7edf705609a7419f3052567f596a28dfed",
+      "matches_git_head_blob": true
+    },
+    "e161_runner": {
+      "path": "tools/scripts/run_e161_wessels_trainval_preprocess.py",
+      "bytes": 87662,
+      "sha256": "bf67c35cc419681dffca5e2f6fe7af0b2988b72de97421b332a9c7e299f13ab7",
+      "matches_git_head_blob": true
+    }
+  },
+  "raw_identity": {
+    "md5": "6897bfdcda928a678208fecf4eeb282e",
+    "sha256": "5da0485aed81b23bda57b4a7b4510a394682d54911416db89b4846ff6dd34732",
+    "bytes": 219393529,
+    "device": 2065,
+    "inode": 265665529,
+    "mtime_ns": 1776410890327788277
+  },
+  "candidate_boundaries": [
+    20631,
+    20632,
+    20633,
+    20634,
+    20635,
+    20636,
+    20637,
+    20638,
+    20639
+  ],
+  "exact_matching_boundaries": [],
+  "unique_exact_boundary": null,
+  "train_cells_read": 11779,
+  "validation_expression_rows_read": 0,
+  "test_expression_rows_read": 0,
+  "excluded_expression_rows_read": 0,
+  "guide_or_barcode_columns_read": 0
+}

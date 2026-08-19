@@ -1,0 +1,5 @@
+panel_id,seed,model,best_epoch,best_validation_mse,pretrained_tensors,n_go_edges,n_coexpression_edges
+R01,3410,scGPT,4,0.0088485811992237966,129,,
+R01,3410,GEARS,1,0.009179404005408287,,1144,4392
+R01,3411,scGPT,3,0.0088565887262423825,129,,
+R01,3411,GEARS,4,0.0091755612442890808,,1144,4392

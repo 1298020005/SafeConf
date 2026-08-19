@@ -1,0 +1,48 @@
+{
+  "experiment": "E150_replogle_combined_asset",
+  "generated_at": "2026-07-14T14:26:46",
+  "status": "complete",
+  "source_contract": "docs/实验结果/E149_replogle_two_cellline_contract_20260714",
+  "e149_status_at_build": "frozen_before_expression_values_predictions_or_errors",
+  "verified_source_sha256": {
+    "K562": "412fd0df8c4ccea9f4db91cd88033c49200838b29d40945e48574be588b48789",
+    "RPE1": "12d6a0cf9378c4f09411e27f0ce07b59f1d97731bd576d6fadf112f6f088d1a4"
+  },
+  "verified_frozen_artifact_sha256": {
+    "tables/E149_SELECTED_PERTURBATIONS.csv": "12bc1bec94a3c223e5ce765380fad31f4570c09155fe3874ea1ff41c52ec44f2",
+    "manifests/E149_TASK_MANIFEST.csv": "445f665f18d273083d47c8f82d6beb379a6fbc212fdbcd37d9c8b65e16746f0a"
+  },
+  "asset_path": "/home/yyf/data/safeconf_e150_replogle/Replogle_two_cellline_E149_selected_raw_counts.h5ad",
+  "asset_sha256": "23e9d50d17e41ba5086ce7079030388c8a8f61449ed66ae30063584fd6f21339",
+  "asset_file_bytes": 507721153,
+  "asset_shape": [
+    72008,
+    7226
+  ],
+  "asset_x_h5ad_encoding": "csr_matrix",
+  "asset_x_in_memory_encoding": "scipy.sparse.csr_matrix",
+  "asset_x_dtype": "float32",
+  "asset_nnz": 230707877,
+  "asset_density": 0.4433877772383934,
+  "asset_sparse_memory_bytes": 1845951052,
+  "peak_process_rss_mb": 5074.23828125,
+  "source_gene_counts": {
+    "K562": 8563,
+    "RPE1": 8749
+  },
+  "common_gene_count": 7226,
+  "contexts": [
+    "K562",
+    "RPE1"
+  ],
+  "n_selected_perturbations": 128,
+  "n_control_cells": 22176,
+  "n_selected_perturbation_cells": 49832,
+  "task_coverage_rows": 258,
+  "all_selected_task_counts_match_e149": true,
+  "all_x_values_nonnegative_integer_counts": true,
+  "normalization_applied": false,
+  "effect_vectors_computed": false,
+  "model_training_executed": false,
+  "selection_or_split_modified": false
+}

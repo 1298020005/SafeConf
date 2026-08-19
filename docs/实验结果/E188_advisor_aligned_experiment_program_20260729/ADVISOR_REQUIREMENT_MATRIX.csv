@@ -1,0 +1,12 @@
+requirement_id,advisor_question,formal_evidence,status_before_e189,remaining_action
+Z1,风险和哪个预测误差比较,E176/E178/E181 family RMS and worst member plus scGPT/GEARS errors,PASS,保持不同误差对象分列
+Z2,预测前能否计算尤其预测幅度,E178 input provenance and fail-closed releases,PASS,在E189再次检查query无y
+Z3,只给小训练矩阵,E84 chemical formal and E187 reference predictors,PARTIAL,运行E189正式scGPT-GEARS支持量梯度
+Z4,整行留出,E176 four held-out donors,PASS,在E189与其他setting同表比较
+Z5,整列留出,E77 single-context formal panels and E84 chemical,PARTIAL,在E189多背景同合同补齐
+Z6,背景扰动双未见,E176 target stratum and E84 chemical,PASS_WITHOUT_UNIFIED_TABLE,在E189统一同模型矩阵
+Z7,一个数据集训练另一个数据集预测,E87/E89 chemical direct transfer and E69 gene risk-score transfer,PARTIAL,运行E190基因预测器直接迁移
+Z8,基因和化学都检查,E176/E177/E180 genetic and E84/E87/E89 chemical,PASS,保持模态分开解释
+Q2A,同一正式模型合同覆盖老师难度矩阵,none complete,FAIL,完成E189
+Q2B,直接外部迁移并检查预测器是否有效,E87/E89 chemical only,PARTIAL,完成E190并保留zero-effect比较
+Q1A,真实后续实验或机制闭环,E143 design only,NOT_AVAILABLE_COMPUTATIONALLY,需要实验室执行

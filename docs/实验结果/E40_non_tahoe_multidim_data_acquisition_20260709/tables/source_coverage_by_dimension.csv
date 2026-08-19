@@ -1,0 +1,6 @@
+perturbation_type,dimension_bucket_cn,n_files,n_study_families,total_cells_or_obs,total_file_size_gb,representative_studies
+genetic_single,基因单扰动,45,33,3145339,39.857,"PapalexiSatija2021, LaraAstiasoHuntly2023, AdamsonWeissman2016, DixitRegev2016, Replogle, TianKampmann2021, FrangiehIzar2021, TianKampmann2019"
+genetic_combinatorial,基因组合扰动,18,11,4352022,54.304,"Replogle, ReplogleWeissman2022, NadigOConner2024, SchiebingerLander2019, SchraivogelSteinmetz2020, Schmidt, Norman, NormanWeissman2019"
+chemical_single,药物/化学单扰动,8,7,555752,5.454,"SrivatsanTrapnell2020, sciplex3, TCDD, LiangWang2023, LotfollahiTheis2023, SantinhaPlatt2023, XuCao2023"
+chemical_combinatorial,药物/化学组合扰动,6,3,1409693,6.211,"sciplex3, SrivatsanTrapnell2020, SunshineHein2023"
+enhancer_regulatory,增强子/调控元件扰动,6,3,1623311,9.363,"GasperiniShendure2019, JoungZhang2023, XieHon2017"

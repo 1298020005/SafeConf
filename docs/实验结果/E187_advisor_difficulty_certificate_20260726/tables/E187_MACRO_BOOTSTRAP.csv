@@ -1,0 +1,17 @@
+train_fraction,setting,setting_label,macro_median_tightness,cluster_bootstrap_ci95_low,cluster_bootstrap_ci95_high,bootstrap_unit,bootstrap_repeats
+0.25,random_missing_pair,Random pair,0.21047337971043328,0.18439968060837855,0.24345946957127623,perturbation within dataset,5000
+0.25,context_unseen_row,Unseen context,0.23919575925499104,0.21739584549139324,0.2571459751008136,perturbation within dataset,5000
+0.25,perturbation_unseen_column,Unseen perturbation,0.15901884704491787,0.15176881016918034,0.16858767279372047,perturbation within dataset,5000
+0.25,context_and_perturbation_unseen,Double unseen,0.15100343146105527,0.1360614667717872,0.1619956039593845,perturbation within dataset,5000
+0.5,random_missing_pair,Random pair,0.29253915548060294,0.26732390898323527,0.31516909345551786,perturbation within dataset,5000
+0.5,context_unseen_row,Unseen context,0.2871416715539994,0.2792275216666199,0.2997855336483846,perturbation within dataset,5000
+0.5,perturbation_unseen_column,Unseen perturbation,0.16968740964470302,0.1607777575664177,0.1788090563217784,perturbation within dataset,5000
+0.5,context_and_perturbation_unseen,Double unseen,0.15275698226968326,0.1390872284221437,0.16616262417202898,perturbation within dataset,5000
+0.75,random_missing_pair,Random pair,0.32032263471266414,0.29940406629816335,0.3441781959940914,perturbation within dataset,5000
+0.75,context_unseen_row,Unseen context,0.28382082776071793,0.2774419425860683,0.293713374602691,perturbation within dataset,5000
+0.75,perturbation_unseen_column,Unseen perturbation,0.17440422005805578,0.16706453155249576,0.183272621032398,perturbation within dataset,5000
+0.75,context_and_perturbation_unseen,Double unseen,0.1510013519835811,0.13922516277163624,0.1626235984458068,perturbation within dataset,5000
+1.0,random_missing_pair,Random pair,0.32824833929548713,0.31524195266244187,0.34213667856049645,perturbation within dataset,5000
+1.0,context_unseen_row,Unseen context,0.259861067067906,0.25188098697710304,0.26874366553403056,perturbation within dataset,5000
+1.0,perturbation_unseen_column,Unseen perturbation,0.17486368563427893,0.1630571942694552,0.1826747551274245,perturbation within dataset,5000
+1.0,context_and_perturbation_unseen,Double unseen,0.1475512978145298,0.1330446668988627,0.15792040995253812,perturbation within dataset,5000

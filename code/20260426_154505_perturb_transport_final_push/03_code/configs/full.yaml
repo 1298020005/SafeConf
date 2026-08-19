@@ -1,0 +1,8 @@
+root: /home/yyf/codex_cout/20260426_154505_perturb_transport_final_push
+atlas_root: /home/yyf/datasets/singlecell_perturbation_atlas
+seeds: [11, 22, 33, 44, 55]
+max_datasets: 6
+n_genes: 2000
+n_programs: 96
+models: [V0, V1, V2, V3]
+hard_splits: [leave_context, leave_study, heldout_perturbation, unseen_combination, context_shift]

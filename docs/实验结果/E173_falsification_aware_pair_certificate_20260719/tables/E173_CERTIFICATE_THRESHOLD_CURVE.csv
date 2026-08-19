@@ -1,0 +1,8 @@
+error_tolerance_rmse,n_tasks,n_certified_pair_mean_above_tolerance,certified_fraction,empirical_false_certificates_pair_mean,empirical_false_certificates_pair_max,guarantee_source
+0.0050000000000000001,3000,3000,1,0,0,triangle_inequality_not_empirical_calibration
+0.01,3000,2886,0.96199999999999997,0,0,triangle_inequality_not_empirical_calibration
+0.014999999999999999,3000,1206,0.40200000000000002,0,0,triangle_inequality_not_empirical_calibration
+0.02,3000,465,0.155,0,0,triangle_inequality_not_empirical_calibration
+0.029999999999999999,3000,117,0.039,0,0,triangle_inequality_not_empirical_calibration
+0.040000000000000001,3000,26,0.0086666666666666663,0,0,triangle_inequality_not_empirical_calibration
+0.050000000000000003,3000,6,0.002,0,0,triangle_inequality_not_empirical_calibration

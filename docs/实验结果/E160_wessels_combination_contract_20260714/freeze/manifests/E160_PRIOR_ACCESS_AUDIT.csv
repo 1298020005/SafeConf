@@ -1,0 +1,3 @@
+stage,script,script_sha256,expression_reader_token_hits,documented_role,wessels_prediction_score_or_error_generated
+E10,tools/scripts/run_e10_external_dataset_asset_audit.py,a19fecfec75d2ce6f10569ddec3df500b7555ac93376d18db0044e71f8341d5a,,path/size/official and legacy metadata inventory only,False
+E40,tools/scripts/build_e40_multidim_data_inventory.py,d5c7c3331570f3c8e2dafbf081ae1b79bb3406f6d56417bf97ce0ee025de39bf,,precomputed h5ad_scan and download-status inventory only,False

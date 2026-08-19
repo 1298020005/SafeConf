@@ -1,0 +1,11 @@
+{
+  "dataset": "Nadig_two_cellline",
+  "status": "complete",
+  "generated_at": "2026-07-14T02:36:22",
+  "n_folds": 2,
+  "n_test_tasks": 256,
+  "n_records": 512,
+  "strict_issue_count": 0,
+  "test_truth_used_for_training_calibration_score_or_threshold": false,
+  "wall_seconds": 34.464195251464844
+}

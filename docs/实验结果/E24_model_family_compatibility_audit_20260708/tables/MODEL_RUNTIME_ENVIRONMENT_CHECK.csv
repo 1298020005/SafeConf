@@ -1,0 +1,3 @@
+environment,path,gears_importable,scgpt_importable
+default_python,/home/miniconda/bin/python3,False,False
+scgpt_env,$YYF_CONDA/envs/scgpt_env/bin/python,True,False

@@ -1,0 +1,13 @@
+scope,score_name,score_type,n,top_fraction,k,high_error_threshold_p80,base_high_error_rate,picked_high_error_rate,enrichment
+overall,gears_cell_support_confidence,confidence,54,0.2,11,0.0697046563029289,0.2037037037037037,0.45454545454545453,2.231404958677686
+adamson,gears_cell_support_confidence,confidence,21,0.2,5,0.0498433001339435,0.23809523809523808,0.4,1.6800000000000002
+norman,gears_cell_support_confidence,confidence,30,0.2,6,0.06952920407056805,0.2,0.5,2.5
+overall,gears_low_support_risk,risk,54,0.2,11,0.0697046563029289,0.2037037037037037,0.45454545454545453,2.231404958677686
+adamson,gears_low_support_risk,risk,21,0.2,5,0.0498433001339435,0.23809523809523808,0.4,1.6800000000000002
+norman,gears_low_support_risk,risk,30,0.2,6,0.06952920407056805,0.2,0.5,2.5
+overall,gears_predicted_effect_abs_mean_risk,risk,54,0.2,11,0.0697046563029289,0.2037037037037037,0.6363636363636364,3.1239669421487606
+adamson,gears_predicted_effect_abs_mean_risk,risk,21,0.2,5,0.0498433001339435,0.23809523809523808,0.2,0.8400000000000001
+norman,gears_predicted_effect_abs_mean_risk,risk,30,0.2,6,0.06952920407056805,0.2,0.5,2.5
+overall,gears_predicted_effect_l2_risk,risk,54,0.2,11,0.0697046563029289,0.2037037037037037,0.6363636363636364,3.1239669421487606
+adamson,gears_predicted_effect_l2_risk,risk,21,0.2,5,0.0498433001339435,0.23809523809523808,0.2,0.8400000000000001
+norman,gears_predicted_effect_l2_risk,risk,30,0.2,6,0.06952920407056805,0.2,0.5,2.5

@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SafeConf Q1 / CCF-A 投稿升级工作台</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f7f8f6;color:#17202a;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,"Noto Sans SC",sans-serif;line-height:1.72;overflow-x:hidden}
+.top{background:#12312b;color:white;padding:26px 42px}
+.top h1{margin:0;font-size:30px}.top p{margin:8px 0 0;color:#d8eee8}
+.wrap{max-width:1180px;margin:0 auto;padding:28px}
+.card{background:white;border:1px solid #d8e0dc;border-radius:16px;padding:24px;margin:18px 0;box-shadow:0 8px 22px rgba(15,23,42,.06);overflow-x:auto}
+h2{border-bottom:3px solid #0f766e;padding-bottom:8px;margin-top:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.metric{border:1px solid #d7e5df;border-radius:14px;padding:18px;background:#fbfdfc}
+.metric b{font-size:26px;color:#0f766e}.warn{border-left:6px solid #b45309;background:#fff8eb}.ok{border-left:6px solid #047857;background:#f1fbf6}
+.figgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:18px}.figgrid img{width:100%;max-width:100%;background:white;border:1px solid #d8e0dc;border-radius:12px}
+.data-table{border-collapse:collapse;width:100%;font-size:14px}.data-table th,.data-table td{border:1px solid #dbe3df;padding:8px;vertical-align:top}.data-table th{background:#eef6f3}
+code{background:#eef2f7;padding:2px 6px;border-radius:5px}
+a{color:#0f766e}.small{color:#5f6b66;font-size:14px}
+</style>
+</head>
+<body>
+<div class="top">
+  <h1>SafeConf Q1 / CCF-A 投稿升级工作台</h1>
+  <p>目标：把现有 SafeConf 从“实验结果很多”整理成“一区投稿可辩护的证据链”。</p>
+</div>
+<div class="wrap">
+  <div class="card ok">
+    <h2>当前结论</h2>
+    <p><b>主线冲一区生信方法论文，CCF-A 作为方法升级线。</b> SafeConf 的强点是任务级风险审计、复核优先级和失败边界识别；弱点是 chemical 场景中 magnitude 更强，外部任务级验证还要补。</p>
+  </div>
+
+  <div class="grid">
+    <div class="metric"><span>Formal datasets</span><br><b>7</b><p>七主数据集 evidence chain。</p></div>
+    <div class="metric"><span>E2 positive after magnitude control</span><br><b>7/7</b><p>控制 predicted magnitude 后仍保留信息。</p></div>
+    <div class="metric"><span>Frozen v0.2 median partial rho</span><br><b>0.427</b><p>来自 baseline ladder。</p></div>
+    <div class="metric"><span>Magnitude median partial rho</span><br><b>0.522</b><p>强竞争基线，不能回避。</p></div>
+  </div>
+
+  <div class="card warn">
+    <h2>论文定位红线</h2>
+    <p>论文中避免把 SafeConf 写成新的扰动预测器，也避免宣称全面超过 magnitude。更稳的写法：SafeConf 对已有扰动预测做风险审计，在 gene/cross-context 场景有增量价值，在 chemical 场景需要和 magnitude 形成边界或组合。</p>
+  </div>
+
+  <div class="card">
+    <h2>核心图</h2>
+    <div class="figgrid">
+      <img src="figures/fig1_baseline_ladder_partial_rho.svg" alt="baseline ladder">
+      <img src="figures/fig2_e2_residual_partial_rho.svg" alt="E2 residual">
+      <img src="figures/fig3_cost_effectiveness_top10.svg" alt="cost effectiveness">
+      <img src="figures/fig4_tahoe_chemical_boundary.svg" alt="Tahoe chemical boundary">
+      <img src="figures/fig5_publication_readiness_scorecard.svg" alt="readiness scorecard">
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>强基线阶梯</h2>
+    <table border="1" class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>score_label</th>
+      <th>role</th>
+      <th>n_datasets</th>
+      <th>median_aligned_rho</th>
+      <th>median_partial_rho_control_magnitude</th>
+      <th>median_aurc_reduction_vs_random_pct</th>
+      <th>deployment_status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Magnitude-only</td>
+      <td>strong deployable competitor</td>
+      <td>7</td>
+      <td>0.457312</td>
+      <td>0.521609</td>
+      <td>17.234124</td>
+      <td>deployable</td>
+    </tr>
+    <tr>
+      <td>Frozen v0.2</td>
+      <td>frozen protocol score</td>
+      <td>7</td>
+      <td>0.427781</td>
+      <td>0.426870</td>
+      <td>18.005655</td>
+      <td>deployable</td>
+    </tr>
+    <tr>
+      <td>SafeConf LODO</td>
+      <td>cross-dataset transfer score</td>
+      <td>7</td>
+      <td>0.421044</td>
+      <td>0.295330</td>
+      <td>19.825290</td>
+      <td>deployable</td>
+    </tr>
+    <tr>
+      <td>SafeConf LODO linear</td>
+      <td>simpler transfer variant</td>
+      <td>7</td>
+      <td>0.354568</td>
+      <td>0.267659</td>
+      <td>12.147794</td>
+      <td>deployable</td>
+    </tr>
+    <tr>
+      <td>Oracle true magnitude</td>
+      <td>non-deployable oracle diagnostic</td>
+      <td>7</td>
+      <td>0.740302</td>
+      <td>0.021158</td>
+      <td>38.482182</td>
+      <td>non-deployable oracle</td>
+    </tr>
+    <tr>
+      <td>SafeConf per-dataset</td>
+      <td>within-dataset upper reference</td>
+      <td>7</td>
+      <td>0.756795</td>
+      <td>0.539645</td>
+      <td>34.476792</td>
+      <td>reference only</td>
+    </tr>
+    <tr>
+      <td>Random</td>
+      <td>sanity baseline</td>
+      <td>7</td>
+      <td>-0.001642</td>
+      <td>0.007144</td>
+      <td>1.538695</td>
+      <td>reference only</td>
+    </tr>
+  </tbody>
+</table>
+    <p class="small"><a href="tables/TABLE_Q1_BASELINE_LADDER_SUMMARY.csv">打开 CSV</a></p>
+  </div>
+
+  <div class="card">
+    <h2>E2：控制 magnitude 后的增量价值</h2>
+    <table border="1" class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataset_name</th>
+      <th>n</th>
+      <th>residual_partial_rho_point</th>
+      <th>residual_partial_rho_ci_low</th>
+      <th>residual_partial_rho_ci_high</th>
+      <th>aurc_improvement_magnitude_minus_combined_point</th>
+      <th>incremental_claim</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CuiHacohen2023</td>
+      <td>1253</td>
+      <td>0.600254</td>
+      <td>0.554509</td>
+      <td>0.644054</td>
+      <td>0.045316</td>
+      <td>adds information beyond magnitude</td>
+    </tr>
+    <tr>
+      <td>Frangieh</td>
+      <td>633</td>
+      <td>0.232173</td>
+      <td>0.131738</td>
+      <td>0.327485</td>
+      <td>0.000823</td>
+      <td>adds information beyond magnitude</td>
+    </tr>
+    <tr>
+      <td>LaraAstiasoHuntly2023_exvivo</td>
+      <td>323</td>
+      <td>0.637820</td>
+      <td>0.555694</td>
+      <td>0.700279</td>
+      <td>1.132238</td>
+      <td>adds information beyond magnitude</td>
+    </tr>
+    <tr>
+      <td>LaraAstiasoHuntly2023_invivo</td>
+      <td>375</td>
+      <td>0.614665</td>
+      <td>0.519005</td>
+      <td>0.688003</td>
+      <td>2.433221</td>
+      <td>adds information beyond magnitude</td>
+    </tr>
+    <tr>
+      <td>McFarlandTsherniak2020</td>
+      <td>1163</td>
+      <td>0.225657</td>
+      <td>0.172638</td>
+      <td>0.280739</td>
+      <td>0.307478</td>
+      <td>adds information beyond magnitude</td>
+    </tr>
+    <tr>
+      <td>SantinhaPlatt2023</td>
+      <td>273</td>
+      <td>0.290667</td>
+      <td>0.175238</td>
+      <td>0.408804</td>
+      <td>0.087730</td>
+      <td>adds information beyond magnitude</td>
+    </tr>
+    <tr>
+      <td>SrivatsanTrapnell2020_sciplex3</td>
+      <td>564</td>
+      <td>0.153818</td>
+      <td>0.064503</td>
+      <td>0.240958</td>
+      <td>0.002741</td>
+      <td>adds information beyond magnitude</td>
+    </tr>
+  </tbody>
+</table>
+    <p class="small"><a href="tables/TABLE_INCREMENTAL_VALUE_E2.csv">打开 CSV</a></p>
+  </div>
+
+  <div class="card">
+    <h2>Tahoe chemical 边界</h2>
+    <table border="1" class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>score_label</th>
+      <th>top_fraction</th>
+      <th>aligned_rho</th>
+      <th>precision</th>
+      <th>enrichment</th>
+      <th>magnitude_enrichment_same_top_fraction</th>
+      <th>delta_enrichment_vs_magnitude_same_top_fraction</th>
+      <th>interpretation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>SafeConf full</td>
+      <td>0.1</td>
+      <td>0.398933</td>
+      <td>0.488213</td>
+      <td>4.880317</td>
+      <td>6.486419</td>
+      <td>-1.606102</td>
+      <td>below magnitude; keep as boundary evidence</td>
+    </tr>
+    <tr>
+      <td>Magnitude-only</td>
+      <td>0.1</td>
+      <td>0.485376</td>
+      <td>0.648883</td>
+      <td>6.486419</td>
+      <td>6.486419</td>
+      <td>0.000000</td>
+      <td>chemical dominant baseline</td>
+    </tr>
+    <tr>
+      <td>Combined equal</td>
+      <td>0.1</td>
+      <td>0.489051</td>
+      <td>0.573201</td>
+      <td>5.729876</td>
+      <td>6.486419</td>
+      <td>-0.756542</td>
+      <td>below magnitude; keep as boundary evidence</td>
+    </tr>
+    <tr>
+      <td>Combined 75% magnitude</td>
+      <td>0.1</td>
+      <td>0.503299</td>
+      <td>0.626551</td>
+      <td>6.263177</td>
+      <td>6.486419</td>
+      <td>-0.223242</td>
+      <td>below magnitude; keep as boundary evidence</td>
+    </tr>
+    <tr>
+      <td>Combined 75% SafeConf</td>
+      <td>0.1</td>
+      <td>0.452798</td>
+      <td>0.524194</td>
+      <td>5.239984</td>
+      <td>6.486419</td>
+      <td>-1.246434</td>
+      <td>below magnitude; keep as boundary evidence</td>
+    </tr>
+  </tbody>
+</table>
+    <p class="small"><a href="tables/TABLE_TAHOE_CHEMICAL_BOUNDARY.csv">打开 CSV</a></p>
+  </div>
+
+  <div class="card">
+    <h2>下一轮必须补什么</h2>
+    <table border="1" class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>priority</th>
+      <th>gap</th>
+      <th>action</th>
+      <th>deliverable</th>
+      <th>status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>SafeConf vs magnitude 的边界仍会被审稿人追问</td>
+      <td>新增统一强基线审计：报告 SafeConf、magnitude、support、context、disagreement、combined；按 gene / chemical / cross-context 分层。</td>
+      <td>E9_STRONG_BASELINE_AUDIT.csv + Fig: baseline ladder by domain</td>
+      <td>next experiment</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>外部验证仍偏聚合层面</td>
+      <td>接入一个冻结 benchmark：优先 scPerturBench 可落地子集；失败也要形成资源审计和可复现实验日志。</td>
+      <td>E10_EXTERNAL_TASK_VALIDATION/</td>
+      <td>next experiment</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>方法学贡献需要从打分推进到可控风险</td>
+      <td>已生成 retrospective selective prediction audit；下一步补 calibration split 与 risk-control guarantee。</td>
+      <td>E11_selective_prediction_audit_20260707/；formal conformal guarantee 待补</td>
+      <td>audit generated; guarantee pending</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>生物学故事仍偏方法验证</td>
+      <td>选择 2–3 个高风险任务做案例：预测器分歧、历史支持、细胞背景、通路/marker 是否解释错误。</td>
+      <td>E12_BIOLOGICAL_CASE_STUDIES/</td>
+      <td>paper narrative</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>代码与结果虽然多，但投稿时需要一键复现边界</td>
+      <td>建立 paper/ 级别 manifest：每张主图对应源 CSV、脚本、commit、运行命令。</td>
+      <td>PAPER_REPRODUCIBILITY_MANIFEST.md</td>
+      <td>engineering</td>
+    </tr>
+  </tbody>
+</table>
+    <p class="small"><a href="tables/TABLE_Q1_GAP_AND_ACTIONS.csv">打开 CSV</a></p>
+  </div>
+
+  <div class="card">
+    <h2>投稿路线</h2>
+    <table border="1" class="dataframe data-table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>track</th>
+      <th>target</th>
+      <th>fit</th>
+      <th>required_upgrade</th>
+      <th>risk</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Q1 bioinformatics method</td>
+      <td>Bioinformatics / Briefings in Bioinformatics / PLOS Computational Biology</td>
+      <td>最高。SafeConf 是单细胞扰动预测的可靠性评估与实验决策工具。</td>
+      <td>统一强基线、外部验证、risk-budget 决策曲线、可复现包。</td>
+      <td>如果写成预测模型，会被要求直接超过 SOTA；必须写成 post-prediction risk auditing。</td>
+    </tr>
+    <tr>
+      <td>higher biological computation</td>
+      <td>Genome Biology / Cell Systems</td>
+      <td>中等偏高。需要把方法和真实生物案例绑紧。</td>
+      <td>补 biological case study：错误富集任务对应通路、药物机制或细胞背景差异。</td>
+      <td>纯方法审计可能被认为生物发现不足。</td>
+    </tr>
+    <tr>
+      <td>CCF-A AI</td>
+      <td>AAAI / IJCAI / NeurIPS workshop-to-main route / ICML-style ML venue</td>
+      <td>当前中等。需要把 SafeConf 升级成 risk-controlled selective prediction 方法。</td>
+      <td>conformal/selective risk control、跨域分布偏移理论化、公开 benchmark 对比。</td>
+      <td>现有版本更像应用方法；直接投 CCF-A 主会很危险。</td>
+    </tr>
+    <tr>
+      <td>fallback but still useful</td>
+      <td>BMC Bioinformatics / GigaScience / Scientific Reports</td>
+      <td>保底。适合在一区冲刺失败后快速转投。</td>
+      <td>不建议先走这条；会浪费当前证据积累。</td>
+      <td>安全但上限低。</td>
+    </tr>
+  </tbody>
+</table>
+    <p class="small"><a href="tables/TABLE_TARGET_VENUE_STRATEGY.csv">打开 CSV</a></p>
+  </div>
+
+  <div class="card">
+    <h2>来源文件</h2>
+    <ul>
+      <li><code>baseline_ladder</code>: docs/实验结果/Reliability_model_corrected_20260610/tables/RELIABILITY_BASELINE_LADDER.csv</li><li><code>within_magnitude</code>: docs/实验结果/Reliability_model_corrected_20260610/tables/RELIABILITY_WITHIN_MAGNITUDE_STRATUM.csv</li><li><code>formal_main</code>: docs/实验结果/Evidence_to_Claim_20260615/figure_ready_tables/FIG2_FORMAL_MAIN_FOREST.csv</li><li><code>e2_residual</code>: docs/实验结果/Evidence_to_Claim_20260615/figure_ready_tables/FIG3_E2_MAGNITUDE_RESIDUAL.csv</li><li><code>cost_effectiveness</code>: docs/实验结果/Evidence_to_Claim_20260615/figure_ready_tables/FIG5_COST_EFFECTIVENESS.csv</li><li><code>risk_coverage</code>: docs/实验结果/Evidence_to_Claim_20260615/figure_ready_tables/SFIG_RISK_COVERAGE.csv</li><li><code>e8b_external</code>: docs/实验结果/Evidence_to_Claim_20260615/figure_ready_tables/FIG4_E8B_EXTERNAL_BENCHMARK.csv</li><li><code>tahoe_d5</code>: docs/实验结果/Tahoe_D5_combined_triage_20260627/tables/TAHOE_D5_POINT_SUMMARY.csv</li><li><code>source_files</code>: docs/实验结果/Evidence_to_Claim_20260615/figure_ready_tables/SOURCE_FILES_USED.csv</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

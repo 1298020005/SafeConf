@@ -1,0 +1,54 @@
+{
+  "alpha": 0.05,
+  "bootstrap_draws": 10000,
+  "bootstrap_seed": 2026071821,
+  "confirmatory_population": "E172_only_800_fresh_targets_excludes_E168_200_and_E170_800",
+  "coverage_grid": [
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.9,
+    0.95,
+    1.0
+  ],
+  "deployment_authorized": false,
+  "earlier_targets_excluded_from_inference": true,
+  "hierarchical_strata": [
+    "all_800",
+    "seen_640"
+  ],
+  "loss": "ensemble_effect_rmse_512",
+  "operational_tolerance": 1e-06,
+  "optional_stopping_or_panel_dropping_allowed": false,
+  "panels": [
+    "Q01",
+    "Q02",
+    "Q03",
+    "Q04"
+  ],
+  "permutation_draws": 100000,
+  "permutation_seed": 2026071822,
+  "primary_cluster": "target_gene_three_states_together_stratified_within_panel",
+  "primary_comparator": "ensemble_predicted_magnitude_rms_512",
+  "ranking_units": "12_panel_by_state_equal_weight",
+  "required_positive_panel_state_units": 8,
+  "risk_formula": "unchanged_E170_three_seed_family_mean_SafeConf",
+  "same_donor_study_not_independent_biological_replication": true,
+  "states": [
+    "Rest",
+    "Stim8hr",
+    "Stim48hr"
+  ],
+  "tie_primary": "tie_average"
+}

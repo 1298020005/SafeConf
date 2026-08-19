@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1020" height="320" viewBox="0 0 1020 320">
+<rect width="1020" height="320" fill="#fbfbf8"/>
+<text x="42" y="38" font-size="23" font-weight="800" fill="#17212b">E24 model-family compatibility audit</text>
+<text x="42" y="62" font-size="14" fill="#5d6974">Contract validity and model-family compatibility are different gates. E23 passes the first gate, not the GEARS biology gate.</text>
+<g transform="translate(48 104)">
+<rect x="0" y="0" width="220" height="70" rx="8" fill="#fff3d6" stroke="#ead89a"/>
+<text x="110" y="26" text-anchor="middle" font-size="15" font-weight="700" fill="#946205">E23 Haber manifest</text>
+<text x="110" y="49" text-anchor="middle" font-size="12" fill="#946205">stimulus/timecourse perturbations</text>
+<text x="245" y="42" font-size="24" fill="#087f73">→</text>
+<rect x="285" y="0" width="220" height="70" rx="8" fill="#faeae8" stroke="#e8c4c0"/>
+<text x="395" y="26" text-anchor="middle" font-size="15" font-weight="700" fill="#a4403a">GEARS compatibility</text>
+<text x="395" y="49" text-anchor="middle" font-size="12" fill="#a4403a">not suitable for direct GEARS run</text>
+<text x="530" y="42" font-size="24" fill="#087f73">→</text>
+<rect x="570" y="0" width="260" height="70" rx="8" fill="#e7f3eb" stroke="#c8dfd0"/>
+<text x="700" y="26" text-anchor="middle" font-size="15" font-weight="700" fill="#28734f">Next executable route</text>
+<text x="700" y="49" text-anchor="middle" font-size="12" fill="#28734f">GEARS gene-perturbation smoke</text>
+</g>
+<g transform="translate(48 230)">
+<rect x="0" y="0" width="360" height="45" rx="8" fill="#fff" stroke="#d8e0e4"/>
+<text x="20" y="28" font-size="14" fill="#17212b">scgpt_env imports GEARS: True</text>
+<rect x="430" y="0" width="390" height="45" rx="8" fill="#fff" stroke="#d8e0e4"/>
+<text x="450" y="28" font-size="14" fill="#17212b">E23 task groups: 120</text>
+</g>
+</svg>

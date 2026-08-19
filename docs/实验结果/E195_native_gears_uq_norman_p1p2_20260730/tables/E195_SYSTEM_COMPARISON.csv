@@ -1,0 +1,15 @@
+system,arm,score_name,outcome_name,n_panels,n_panels_valid,status,panel_macro_spearman,panel_macro_utility20,panel_macro_normalized_aurc,raw_error_values_directly_comparable_across_systems
+GEARS-UQ,same_prediction_family_rms,native_logvar_mean,family_rms_error,2,2,estimable,0.43304347826086953,0.7137429304868177,0.9305709312448247,False
+GEARS-UQ,same_prediction_family_rms,predicted_magnitude,family_rms_error,2,2,estimable,0.6834782608695652,0.5282725936293761,0.9256125165909258,False
+GEARS-UQ,same_prediction_family_rms,seed_disagreement,family_rms_error,2,2,estimable,0.3465217391304347,0.30723018759604,0.9715460500420436,False
+GEARS-scGPT pair,posthoc_pair,risk_gears_predicted_magnitude,task_mean_rmse,2,2,estimable,0.04043478260869565,0.13187433376479613,0.9867782450310822,False
+GEARS-scGPT pair,posthoc_pair,risk_gears_scgpt_disagreement,task_mean_rmse,2,2,estimable,0.42565217391304344,0.3384184464447445,0.9406000462757163,False
+GEARS-scGPT pair,posthoc_pair,risk_scgpt_predicted_magnitude,task_mean_rmse,2,2,estimable,0.2743478260869565,0.11979831526212016,0.9797404541863648,False
+PRESCRIBE,paper_effect_pearson_primary,aleatoric_confidence,one_minus_pearson_effect_accuracy,2,2,estimable,0.006956521739130438,-0.14969903309426075,1.0243239768672152,False
+PRESCRIBE,paper_effect_pearson_primary,combined_confidence,one_minus_pearson_effect_accuracy,2,2,estimable,0.3169565217391304,0.16747775512909868,0.9320768047870329,False
+PRESCRIBE,paper_effect_pearson_primary,epistemic_confidence,one_minus_pearson_effect_accuracy,2,2,estimable,0.3117391304347826,0.16747775512909868,0.9335187171763647,False
+PRESCRIBE,paper_effect_pearson_primary,predicted_magnitude,one_minus_pearson_effect_accuracy,2,2,estimable,0.3104347826086956,0.19500007090504873,0.9302580678216739,False
+PRESCRIBE,rmse_sensitivity,predicted_magnitude,rmse_mean_profile,2,2,estimable,0.05913043478260869,0.3042415448043987,0.9410354746917795,False
+PRESCRIBE,rmse_sensitivity,risk_aleatoric,rmse_mean_profile,2,2,estimable,-0.16521739130434782,-0.0932247769139193,1.043966802026664,False
+PRESCRIBE,rmse_sensitivity,risk_combined,rmse_mean_profile,2,2,estimable,-0.05608695652173913,-0.023248604078501087,1.0151602547547078,False
+PRESCRIBE,rmse_sensitivity,risk_epistemic,rmse_mean_profile,2,2,estimable,-0.05347826086956521,-0.023248604078501087,1.0134397637783694,False

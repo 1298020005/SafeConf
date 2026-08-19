@@ -1,0 +1,16 @@
+{
+  "status": "ok",
+  "gate": "PASS",
+  "scores_csv": "/home/yyf/safeconf_runtime/outputs/tahoe_300_shard_nested_formal_20260624/tables/TAHOE_PROTOCOL_SCORES_SMOKE.csv",
+  "out_dir": "/home/yyf/safeconf_runtime/outputs/tahoe_300_shard_nested_taskcluster_20260624",
+  "n_bootstrap": 1000,
+  "seed": 5201,
+  "bootstrap_unit": "task_key",
+  "n_rows": 80812,
+  "n_test_rows": 16114,
+  "n_task_clusters": 8057,
+  "n_overlap_audits_requested": 3,
+  "n_overlap_audits_copied": 3,
+  "overall_partial_rho_control_magnitude": 0.4533516300453082,
+  "overall_partial_rho_ci_low": 0.4414793941708075
+}

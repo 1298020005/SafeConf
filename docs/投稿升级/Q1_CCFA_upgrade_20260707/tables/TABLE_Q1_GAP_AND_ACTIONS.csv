@@ -1,0 +1,6 @@
+priority,gap,why_it_matters,action,deliverable,status
+1,SafeConf vs magnitude 的边界仍会被审稿人追问,Tahoe chemical 中 magnitude 更强；必须把边界变成可信叙事，而不是让审稿人觉得我们回避。,新增统一强基线审计：报告 SafeConf、magnitude、support、context、disagreement、combined；按 gene / chemical / cross-context 分层。,E9_STRONG_BASELINE_AUDIT.csv + Fig: baseline ladder by domain,next experiment
+2,外部验证仍偏聚合层面,E8b 说明外部 aggregate association，但一区审稿人会想看冻结外部任务级验证。,接入一个冻结 benchmark：优先 scPerturBench 可落地子集；失败也要形成资源审计和可复现实验日志。,E10_EXTERNAL_TASK_VALIDATION/,next experiment
+3,方法学贡献需要从打分推进到可控风险,CCF-A/更高一区需要更像 ML 方法，而不只是经验特征组合。,已生成 retrospective selective prediction audit；下一步补 calibration split 与 risk-control guarantee。,E11_selective_prediction_audit_20260707/；formal conformal guarantee 待补,audit generated; guarantee pending
+4,生物学故事仍偏方法验证,Genome Biology/Cell Systems 等更看重一个可解释 biological case。,选择 2–3 个高风险任务做案例：预测器分歧、历史支持、细胞背景、通路/marker 是否解释错误。,E12_BIOLOGICAL_CASE_STUDIES/,paper narrative
+5,代码与结果虽然多，但投稿时需要一键复现边界,审稿人和编辑会把可复现性当作加分项；也能保护自己不被质疑挑结果。,建立 paper/ 级别 manifest：每张主图对应源 CSV、脚本、commit、运行命令。,PAPER_REPRODUCIBILITY_MANIFEST.md,engineering

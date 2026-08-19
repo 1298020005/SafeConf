@@ -1,0 +1,24 @@
+{
+  "experiment": "E58_cross_dataset_statistical_stability",
+  "created_at": "2026-07-11T01:13:13",
+  "git_head_before_run": "2efb6b592e8b1b898dbde07098fc3d4fbcc2d7b2",
+  "input_files": {
+    "E55": "docs/实验结果/E55_cross_dataset_transfer_20260710/tables/E55_CROSS_DATASET_SCORE_TABLE.csv",
+    "E57": "docs/实验结果/E57_dataset_expansion_cross_dataset_20260710/tables/E57_DATASET_EXPANSION_SCORE_TABLE.csv"
+  },
+  "n_input_task_rows": 4430,
+  "n_directional_pairs": 50,
+  "n_boot": 2000,
+  "n_perm": 2000,
+  "seed": 20260711,
+  "score_column": "risk_cross_dataset",
+  "error_column": "error_combined_rmse",
+  "true_effect_used_at_scoring": false,
+  "outputs": [
+    "tables/E58_INPUT_TASK_ROWS.csv",
+    "tables/E58_DIRECTIONAL_STABILITY_SUMMARY.csv",
+    "tables/E58_BOOTSTRAP_DRAWS.csv",
+    "figures/F1_cross_dataset_risk_error_bootstrap_ci.svg",
+    "reports/E58_STATISTICAL_STABILITY_REPORT.md"
+  ]
+}

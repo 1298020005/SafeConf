@@ -1,0 +1,31 @@
+{
+  "experiment": "E141_progeny_pathway_fidelity",
+  "generated_at": "2026-07-14T06:23:52",
+  "status": "frozen_before_prediction_or_truth_vectors_opened",
+  "n_datasets": 7,
+  "n_tasks": 3209,
+  "progeny_source_url": "https://omnipathdb.org/annotations?resources=PROGENy&format=tsv",
+  "progeny_snapshot_path": "/home/yyf/data/safeconf_mechanism/progeny_omnipath_20260714.tsv",
+  "progeny_snapshot_sha256": "a1a0f938211def2b846cfde7e7dd56d83240d1bb9bc0ac423682b071761bc821",
+  "frozen_direction_model_sha256": "77caf3b7b46071ced9577a8bd5289ce4c7bf5899c329ab37e835c41bda07d4b3",
+  "score_snapshot_sha256": "b2d1775c7e2a449c4455224e5c7eb2f7a3266aeabeec7d679868d4c635b1a4ff",
+  "top_genes_per_pathway": 500,
+  "minimum_panel_overlap": 5,
+  "primary_pairs": [
+    [
+      "safeconf_calibrated_pair_risk",
+      "progeny_activity_rmse_mean"
+    ],
+    [
+      "directional_risk_frozen",
+      "progeny_activity_cosine_error_mean"
+    ]
+  ],
+  "comparators": [
+    "baseline_predicted_magnitude",
+    "risk_model_disagreement"
+  ],
+  "bootstrap_unit": "dataset_then_perturbation_cluster_with_fold_macro",
+  "n_bootstrap": 3000,
+  "prediction_or_truth_vector_files_opened": []
+}

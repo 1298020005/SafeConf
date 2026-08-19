@@ -1,0 +1,31 @@
+cell_barcode,cell_line,perturbation,perturbation_type,dose_value,dose_unit,time,disease,ncounts,ngenes
+AAACCTGAGACAAGCC,CAL62,Navitoclax,drug,5.0,µM,24,thyroid cancer,17155.0,3758
+AAACCTGAGAGATGAG,MIAPACA2,Navitoclax,drug,5.0,µM,24,pancreatic cancer,19764.0,4009
+AAACCTGAGCGTTGCC,MIAPACA2,Navitoclax,drug,5.0,µM,24,pancreatic cancer,47352.0,5772
+AAACCTGAGTAGGCCA,LOVO,Navitoclax,drug,5.0,µM,24,colon/colorectal cancer,74069.0,5813
+AAACCTGAGTTCGATC,OAW42,Navitoclax,drug,5.0,µM,24,ovarian cancer,38785.0,5200
+AAACCTGAGTTGAGAT,CAOV3,Navitoclax,drug,5.0,µM,24,ovarian cancer,49613.0,6046
+AAACCTGCAATGAATG,LUDLU1,Navitoclax,drug,5.0,µM,24,lung cancer,27298.0,4996
+AAACCTGCACATGTGT,IGROV1,Navitoclax,drug,5.0,µM,24,ovarian cancer,27735.0,4233
+AAACCTGCACGGCGTT,SNU1105,Navitoclax,drug,5.0,µM,24,brain cancer,40236.0,5345
+AAACCTGCACTTAACG,DMS273,Navitoclax,drug,5.0,µM,24,lung cancer,21471.0,3914
+AAACCTGCATACGCTA,A375,Navitoclax,drug,5.0,µM,24,skin cancer,31380.0,4717
+AAACCTGCATTTGCTT,IGROV1,Navitoclax,drug,5.0,µM,24,ovarian cancer,34263.0,5218
+AAACCTGGTAACGTTC,NUGC3,Navitoclax,drug,5.0,µM,24,gastric cancer,22324.0,4401
+AAACCTGGTCACCTAA,LK2,Navitoclax,drug,5.0,µM,24,lung cancer,21595.0,3974
+AAACCTGGTCCTGCTT,HUCCT1,Navitoclax,drug,5.0,µM,24,bile duct cancer,77660.0,7353
+AAACCTGGTGACCAAG,RH30,Navitoclax,drug,5.0,µM,24,sarcoma,35493.0,5537
+AAACCTGGTGTGGCTC,CAL62,Navitoclax,drug,5.0,µM,24,thyroid cancer,21322.0,4215
+AAACCTGGTTAAGACA,NCIH2126,Navitoclax,drug,5.0,µM,24,lung cancer,28754.0,4262
+AAACCTGGTTGACGTT,SKMEL24,Navitoclax,drug,5.0,µM,24,skin cancer,10532.0,2679
+AAACCTGTCAGAAATG,TE11,Navitoclax,drug,5.0,µM,24,esophageal cancer,24274.0,4645
+AAACCTGTCCACGTGG,DMS273,Navitoclax,drug,5.0,µM,24,lung cancer,32933.0,4384
+AAACCTGTCGCTTAGA,LOVO,Navitoclax,drug,5.0,µM,24,colon/colorectal cancer,22870.0,3884
+AAACCTGTCGTAGATC,GP2D,Navitoclax,drug,5.0,µM,24,colon/colorectal cancer,17954.0,3652
+AAACCTGTCTCCAACC,G401,Navitoclax,drug,5.0,µM,24,rhabdoid,16593.0,3785
+AAACGGGAGTGACTCT,HCC1419,Navitoclax,drug,5.0,µM,24,breast cancer,29293.0,4360
+AAACGGGAGTTAGCGG,J82,Navitoclax,drug,5.0,µM,24,bladder cancer,26369.0,4562
+AAACGGGAGTTGAGTA,LMSU,Navitoclax,drug,5.0,µM,24,gastric cancer,17995.0,3734
+AAACGGGCAAGCGCTC,J82,Navitoclax,drug,5.0,µM,24,bladder cancer,36414.0,5374
+AAACGGGCACAGAGGT,CAL62,Navitoclax,drug,5.0,µM,24,thyroid cancer,24772.0,4361
+AAACGGGCACCGAAAG,A2780,Navitoclax,drug,5.0,µM,24,ovarian cancer,11113.0,2832

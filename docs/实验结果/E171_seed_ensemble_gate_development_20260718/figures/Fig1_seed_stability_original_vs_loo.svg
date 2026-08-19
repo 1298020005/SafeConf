@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="568.899687pt" height="337.860937pt" viewBox="0 0 568.899687 337.860937" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-07-18T19:27:37.251257</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 337.860937
+L 568.899687 337.860937
+L 568.899687 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 42.329688 304.754375
+L 561.699687 304.754375
+L 561.699687 23.195625
+L 42.329688 23.195625
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 67.568346 144.657975
+L 67.568346 51.642585
+" clip-path="url(#pbb457dafed)" style="fill: none; stroke: #b8c2cc; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 87.954984 209.302107
+L 87.954984 66.306419
+" clip-path="url(#pbb457dafed)" style="fill: none; stroke: #b8c2cc; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 108.341623 145.427676
+L 108.341623 53.015021
+" clip-path="url(#pbb457dafed)" style="fill: none; stroke: #b8c2cc; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 128.728261 209.637468
+L 128.728261 69.151977
+" clip-path="url(#pbb457dafed)" style="fill: none; stroke: #b8c2cc; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 149.114899 147.782566
+L 149.114899 53.170145
+" clip-path="url(#pbb457dafed)" style="fill: none; stroke: #b8c2cc; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 169.501538 212.734355
+L 169.501538 69.491193
+" clip-path="url(#pbb457dafed)" style="fill: none; stroke: #b8c2cc; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 189.888176 115.168564
+L 189.888176 54.025895
+" clip-path="url(#pbb457dafed)" style="fill: none; stroke: #b8c2cc; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_8">
+    <path d="M 210.274815 164.245756
+L 210.274815 67.785862
+" clip-path="url(#pbb457dafed)" style="fill: none; stroke: #b8c2cc; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_9">
+    <path d="M 230.661453 116.560736
+L 230.661453 54.561922
+" clip-path="url(#pbb457dafed)" style="fill: none; stroke: #b8c2cc; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_10">
+    <path d="M 251.048091 167.295615
+L 251.048091 68.099637
+" clip-path="url(#pbb457dafed)" style="fill: none; stroke: #b8c2cc; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_11">
+    <path d="M 271.43473 117.73226
+L 271.43473 54.812174
+" clip-path="url(#pbb457dafed)" style="fill: none; stroke: #b8c2cc; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_12">
+    <path d="M 291.821368 169.267693
+L 291.821368 68.868269
+" clip-path="url(#pbb457dafed)" style="fill: none; stroke: #b8c2cc; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_13">
+    <path d="M 312.208007 60.930704
+L 312.208007 38.145584
+" clip-path="url(#pbb457dafed)" style="fill: none; stroke: #b8c2cc; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_14">
+    <path d="M 332.594645 76.532236
+L 332.594645 40.938466
+" clip-path="url(#pbb457dafed)" style="fill: none; stroke: #b8c2cc; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_15">
+    <path d="M 352.981284 61.138326
+L 352.981284 38.0323
+" clip-path="url(#pbb457dafed)" style="fill: none; stroke: #b8c2cc; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_16">
+    <path d="M 373.367922 76.768916
+L 373.367922 40.946947
+" clip-path="url(#pbb457dafed)" style="fill: none; stroke: #b8c2cc; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_17">
+    <path d="M 393.75456 60.755054
+L 393.75456 37.972303
+" clip-path="url(#pbb457dafed)" style="fill: none; stroke: #b8c2cc; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_18">
+    <path d="M 414.141199 76.557677
+L 414.141199 40.942321
+" clip-path="url(#pbb457dafed)" style="fill: none; stroke: #b8c2cc; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_19">
+    <path d="M 434.527837 180.556034
+L 434.527837 68.65179
+" clip-path="url(#pbb457dafed)" style="fill: none; stroke: #b8c2cc; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_20">
+    <path d="M 454.914476 259.819063
+L 454.914476 94.697247
+" clip-path="url(#pbb457dafed)" style="fill: none; stroke: #b8c2cc; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_21">
+    <path d="M 475.301114 181.863342
+L 475.301114 70.245663
+" clip-path="url(#pbb457dafed)" style="fill: none; stroke: #b8c2cc; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_22">
+    <path d="M 495.687752 263.965977
+L 495.687752 98.059339
+" clip-path="url(#pbb457dafed)" style="fill: none; stroke: #b8c2cc; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_23">
+    <path d="M 516.074391 183.613918
+L 516.074391 72.096892
+" clip-path="url(#pbb457dafed)" style="fill: none; stroke: #b8c2cc; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_24">
+    <path d="M 536.461029 268.235471
+L 536.461029 100.610397
+" clip-path="url(#pbb457dafed)" style="fill: none; stroke: #b8c2cc; stroke-linecap: square"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_25">
+      <defs>
+       <path id="m544eb5402f" d="M 0 0
+L 0 3.5
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m544eb5402f" x="67.568346" y="304.754375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(61.263096 324.973984) rotate(-90)">P01</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(69.552408 325.992812) rotate(-90)">Rest</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(77.841721 322.832422) rotate(-90)">all</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_26">
+      <g>
+       <use xlink:href="#m544eb5402f" x="87.954984" y="304.754375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(81.649734 325.506094) rotate(-90)">P01</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(89.939047 326.524922) rotate(-90)">Rest</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(98.228359 327.057031) rotate(-90)">seen</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_27">
+      <g>
+       <use xlink:href="#m544eb5402f" x="108.341623" y="304.754375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(102.036373 325.365547) rotate(-90)">P01</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(110.325685 326.775937) rotate(-90)">S8hr</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(118.614998 323.223984) rotate(-90)">all</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_28">
+      <g>
+       <use xlink:href="#m544eb5402f" x="128.728261" y="304.754375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(122.423011 325.506094) rotate(-90)">P01</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(130.712324 326.916484) rotate(-90)">S8hr</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(139.001636 327.057031) rotate(-90)">seen</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_29">
+      <g>
+       <use xlink:href="#m544eb5402f" x="149.114899" y="304.754375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(142.809649 327.308047) rotate(-90)">P01</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(151.098962 330.660937) rotate(-90)">S48hr</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(159.388274 325.166484) rotate(-90)">all</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_30">
+      <g>
+       <use xlink:href="#m544eb5402f" x="169.501538" y="304.754375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(163.196288 327.308047) rotate(-90)">P01</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(171.4856 330.660937) rotate(-90)">S48hr</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(179.774913 328.858984) rotate(-90)">seen</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_31">
+      <g>
+       <use xlink:href="#m544eb5402f" x="189.888176" y="304.754375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(183.582926 324.973984) rotate(-90)">P02</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(191.872239 325.992812) rotate(-90)">Rest</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(200.161551 322.832422) rotate(-90)">all</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_32">
+      <g>
+       <use xlink:href="#m544eb5402f" x="210.274815" y="304.754375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(203.969565 325.506094) rotate(-90)">P02</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(212.258877 326.524922) rotate(-90)">Rest</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(220.54819 327.057031) rotate(-90)">seen</text>
+     </g>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_33">
+      <g>
+       <use xlink:href="#m544eb5402f" x="230.661453" y="304.754375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(224.356203 325.365547) rotate(-90)">P02</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(232.645516 326.775937) rotate(-90)">S8hr</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(240.934828 323.223984) rotate(-90)">all</text>
+     </g>
+    </g>
+    <g id="xtick_10">
+     <g id="line2d_34">
+      <g>
+       <use xlink:href="#m544eb5402f" x="251.048091" y="304.754375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(244.742841 325.506094) rotate(-90)">P02</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(253.032154 326.916484) rotate(-90)">S8hr</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(261.321466 327.057031) rotate(-90)">seen</text>
+     </g>
+    </g>
+    <g id="xtick_11">
+     <g id="line2d_35">
+      <g>
+       <use xlink:href="#m544eb5402f" x="271.43473" y="304.754375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(265.12948 327.308047) rotate(-90)">P02</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(273.418792 330.660937) rotate(-90)">S48hr</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(281.708105 325.166484) rotate(-90)">all</text>
+     </g>
+    </g>
+    <g id="xtick_12">
+     <g id="line2d_36">
+      <g>
+       <use xlink:href="#m544eb5402f" x="291.821368" y="304.754375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(285.516118 327.308047) rotate(-90)">P02</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(293.805431 330.660937) rotate(-90)">S48hr</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(302.094743 328.858984) rotate(-90)">seen</text>
+     </g>
+    </g>
+    <g id="xtick_13">
+     <g id="line2d_37">
+      <g>
+       <use xlink:href="#m544eb5402f" x="312.208007" y="304.754375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_13">
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(305.902757 324.973984) rotate(-90)">P03</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(314.192069 325.992812) rotate(-90)">Rest</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(322.481382 322.832422) rotate(-90)">all</text>
+     </g>
+    </g>
+    <g id="xtick_14">
+     <g id="line2d_38">
+      <g>
+       <use xlink:href="#m544eb5402f" x="332.594645" y="304.754375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_14">
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(326.289395 325.506094) rotate(-90)">P03</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(334.578708 326.524922) rotate(-90)">Rest</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(342.86802 327.057031) rotate(-90)">seen</text>
+     </g>
+    </g>
+    <g id="xtick_15">
+     <g id="line2d_39">
+      <g>
+       <use xlink:href="#m544eb5402f" x="352.981284" y="304.754375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_15">
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(346.676034 325.365547) rotate(-90)">P03</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(354.965346 326.775937) rotate(-90)">S8hr</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(363.254659 323.223984) rotate(-90)">all</text>
+     </g>
+    </g>
+    <g id="xtick_16">
+     <g id="line2d_40">
+      <g>
+       <use xlink:href="#m544eb5402f" x="373.367922" y="304.754375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_16">
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(367.062672 325.506094) rotate(-90)">P03</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(375.351984 326.916484) rotate(-90)">S8hr</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(383.641297 327.057031) rotate(-90)">seen</text>
+     </g>
+    </g>
+    <g id="xtick_17">
+     <g id="line2d_41">
+      <g>
+       <use xlink:href="#m544eb5402f" x="393.75456" y="304.754375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_17">
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(387.44931 327.308047) rotate(-90)">P03</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(395.738623 330.660937) rotate(-90)">S48hr</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(404.027935 325.166484) rotate(-90)">all</text>
+     </g>
+    </g>
+    <g id="xtick_18">
+     <g id="line2d_42">
+      <g>
+       <use xlink:href="#m544eb5402f" x="414.141199" y="304.754375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_18">
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(407.835949 327.308047) rotate(-90)">P03</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(416.125261 330.660937) rotate(-90)">S48hr</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(424.414574 328.858984) rotate(-90)">seen</text>
+     </g>
+    </g>
+    <g id="xtick_19">
+     <g id="line2d_43">
+      <g>
+       <use xlink:href="#m544eb5402f" x="434.527837" y="304.754375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_19">
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(428.222587 324.973984) rotate(-90)">P04</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(436.5119 325.992812) rotate(-90)">Rest</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(444.801212 322.832422) rotate(-90)">all</text>
+     </g>
+    </g>
+    <g id="xtick_20">
+     <g id="line2d_44">
+      <g>
+       <use xlink:href="#m544eb5402f" x="454.914476" y="304.754375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_20">
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(448.609226 325.506094) rotate(-90)">P04</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(456.898538 326.524922) rotate(-90)">Rest</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(465.187851 327.057031) rotate(-90)">seen</text>
+     </g>
+    </g>
+    <g id="xtick_21">
+     <g id="line2d_45">
+      <g>
+       <use xlink:href="#m544eb5402f" x="475.301114" y="304.754375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_21">
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(468.995864 325.365547) rotate(-90)">P04</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(477.285176 326.775937) rotate(-90)">S8hr</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(485.574489 323.223984) rotate(-90)">all</text>
+     </g>
+    </g>
+    <g id="xtick_22">
+     <g id="line2d_46">
+      <g>
+       <use xlink:href="#m544eb5402f" x="495.687752" y="304.754375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_22">
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(489.382502 325.506094) rotate(-90)">P04</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(497.671815 326.916484) rotate(-90)">S8hr</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(505.961127 327.057031) rotate(-90)">seen</text>
+     </g>
+    </g>
+    <g id="xtick_23">
+     <g id="line2d_47">
+      <g>
+       <use xlink:href="#m544eb5402f" x="516.074391" y="304.754375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_23">
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(509.769141 327.308047) rotate(-90)">P04</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(518.058453 330.660937) rotate(-90)">S48hr</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(526.347766 325.166484) rotate(-90)">all</text>
+     </g>
+    </g>
+    <g id="xtick_24">
+     <g id="line2d_48">
+      <g>
+       <use xlink:href="#m544eb5402f" x="536.461029" y="304.754375" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_24">
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(530.155779 327.308047) rotate(-90)">P04</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(538.445092 330.660937) rotate(-90)">S48hr</text>
+      <text style="font-size: 7px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(546.734404 328.858984) rotate(-90)">seen</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_49">
+      <defs>
+       <path id="mee4973e97a" d="M 0 0
+L -3.5 0
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#mee4973e97a" x="42.329688" y="291.597424" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_25">
+      <text style="font-size: 10px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: end" x="35.329688" y="295.577112" transform="rotate(-0 35.329688 295.577112)">0.0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_50">
+      <g>
+       <use xlink:href="#mee4973e97a" x="42.329688" y="238.96962" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_26">
+      <text style="font-size: 10px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: end" x="35.329688" y="242.949308" transform="rotate(-0 35.329688 242.949308)">0.2</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_51">
+      <g>
+       <use xlink:href="#mee4973e97a" x="42.329688" y="186.341817" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_27">
+      <text style="font-size: 10px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: end" x="35.329688" y="190.321504" transform="rotate(-0 35.329688 190.321504)">0.4</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_52">
+      <g>
+       <use xlink:href="#mee4973e97a" x="42.329688" y="133.714013" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_28">
+      <text style="font-size: 10px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: end" x="35.329688" y="137.6937" transform="rotate(-0 35.329688 137.6937)">0.6</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_53">
+      <g>
+       <use xlink:href="#mee4973e97a" x="42.329688" y="81.086209" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_29">
+      <text style="font-size: 10px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: end" x="35.329688" y="85.065897" transform="rotate(-0 35.329688 85.065897)">0.8</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_54">
+      <g>
+       <use xlink:href="#mee4973e97a" x="42.329688" y="28.458405" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_30">
+      <text style="font-size: 10px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: end" x="35.329688" y="32.438093" transform="rotate(-0 35.329688 32.438093)">1.0</text>
+     </g>
+    </g>
+    <g id="text_31">
+     <text style="font-size: 10px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: middle" x="15.159375" y="163.975" transform="rotate(-90 15.159375 163.975)">median pairwise Spearman</text>
+    </g>
+   </g>
+   <g id="PathCollection_1">
+    <defs>
+     <path id="m1ac2a7ec48" d="M 0 2.44949
+C 0.649612 2.44949 1.272706 2.191396 1.732051 1.732051
+C 2.191396 1.272706 2.44949 0.649612 2.44949 0
+C 2.44949 -0.649612 2.191396 -1.272706 1.732051 -1.732051
+C 1.272706 -2.191396 0.649612 -2.44949 0 -2.44949
+C -0.649612 -2.44949 -1.272706 -2.191396 -1.732051 -1.732051
+C -2.191396 -1.272706 -2.44949 -0.649612 -2.44949 0
+C -2.44949 0.649612 -2.191396 1.272706 -1.732051 1.732051
+C -1.272706 2.191396 -0.649612 2.44949 0 2.44949
+z
+" style="stroke: #7a8b99"/>
+    </defs>
+    <g clip-path="url(#pbb457dafed)">
+     <use xlink:href="#m1ac2a7ec48" x="65.937415" y="144.657975" style="fill: #7a8b99; stroke: #7a8b99"/>
+     <use xlink:href="#m1ac2a7ec48" x="86.324053" y="209.302107" style="fill: #7a8b99; stroke: #7a8b99"/>
+     <use xlink:href="#m1ac2a7ec48" x="106.710692" y="145.427676" style="fill: #7a8b99; stroke: #7a8b99"/>
+     <use xlink:href="#m1ac2a7ec48" x="127.09733" y="209.637468" style="fill: #7a8b99; stroke: #7a8b99"/>
+     <use xlink:href="#m1ac2a7ec48" x="147.483968" y="147.782566" style="fill: #7a8b99; stroke: #7a8b99"/>
+     <use xlink:href="#m1ac2a7ec48" x="167.870607" y="212.734355" style="fill: #7a8b99; stroke: #7a8b99"/>
+     <use xlink:href="#m1ac2a7ec48" x="188.257245" y="115.168564" style="fill: #7a8b99; stroke: #7a8b99"/>
+     <use xlink:href="#m1ac2a7ec48" x="208.643884" y="164.245756" style="fill: #7a8b99; stroke: #7a8b99"/>
+     <use xlink:href="#m1ac2a7ec48" x="229.030522" y="116.560736" style="fill: #7a8b99; stroke: #7a8b99"/>
+     <use xlink:href="#m1ac2a7ec48" x="249.41716" y="167.295615" style="fill: #7a8b99; stroke: #7a8b99"/>
+     <use xlink:href="#m1ac2a7ec48" x="269.803799" y="117.73226" style="fill: #7a8b99; stroke: #7a8b99"/>
+     <use xlink:href="#m1ac2a7ec48" x="290.190437" y="169.267693" style="fill: #7a8b99; stroke: #7a8b99"/>
+     <use xlink:href="#m1ac2a7ec48" x="310.577076" y="60.930704" style="fill: #7a8b99; stroke: #7a8b99"/>
+     <use xlink:href="#m1ac2a7ec48" x="330.963714" y="76.532236" style="fill: #7a8b99; stroke: #7a8b99"/>
+     <use xlink:href="#m1ac2a7ec48" x="351.350352" y="61.138326" style="fill: #7a8b99; stroke: #7a8b99"/>
+     <use xlink:href="#m1ac2a7ec48" x="371.736991" y="76.768916" style="fill: #7a8b99; stroke: #7a8b99"/>
+     <use xlink:href="#m1ac2a7ec48" x="392.123629" y="60.755054" style="fill: #7a8b99; stroke: #7a8b99"/>
+     <use xlink:href="#m1ac2a7ec48" x="412.510268" y="76.557677" style="fill: #7a8b99; stroke: #7a8b99"/>
+     <use xlink:href="#m1ac2a7ec48" x="432.896906" y="180.556034" style="fill: #7a8b99; stroke: #7a8b99"/>
+     <use xlink:href="#m1ac2a7ec48" x="453.283544" y="259.819063" style="fill: #7a8b99; stroke: #7a8b99"/>
+     <use xlink:href="#m1ac2a7ec48" x="473.670183" y="181.863342" style="fill: #7a8b99; stroke: #7a8b99"/>
+     <use xlink:href="#m1ac2a7ec48" x="494.056821" y="263.965977" style="fill: #7a8b99; stroke: #7a8b99"/>
+     <use xlink:href="#m1ac2a7ec48" x="514.44346" y="183.613918" style="fill: #7a8b99; stroke: #7a8b99"/>
+     <use xlink:href="#m1ac2a7ec48" x="534.830098" y="268.235471" style="fill: #7a8b99; stroke: #7a8b99"/>
+    </g>
+   </g>
+   <g id="line2d_55">
+    <path d="M 42.329688 160.027915
+L 561.699687 160.027915
+" clip-path="url(#pbb457dafed)" style="fill: none; stroke-dasharray: 4.44,1.92; stroke-dashoffset: 0; stroke: #c94c4c; stroke-width: 1.2"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 42.329688 304.754375
+L 42.329688 23.195625
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 42.329687 304.754375
+L 561.699687 304.754375
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="PathCollection_2">
+    <defs>
+     <path id="m77e9ae5bb3" d="M 0 2.645751
+C 0.701661 2.645751 1.374679 2.366978 1.870829 1.870829
+C 2.366978 1.374679 2.645751 0.701661 2.645751 0
+C 2.645751 -0.701661 2.366978 -1.374679 1.870829 -1.870829
+C 1.374679 -2.366978 0.701661 -2.645751 0 -2.645751
+C -0.701661 -2.645751 -1.374679 -2.366978 -1.870829 -1.870829
+C -2.366978 -1.374679 -2.645751 -0.701661 -2.645751 0
+C -2.645751 0.701661 -2.366978 1.374679 -1.870829 1.870829
+C -1.374679 2.366978 -0.701661 2.645751 0 2.645751
+z
+" style="stroke: #176b87"/>
+    </defs>
+    <g clip-path="url(#pbb457dafed)">
+     <use xlink:href="#m77e9ae5bb3" x="69.199277" y="51.642585" style="fill: #176b87; stroke: #176b87"/>
+     <use xlink:href="#m77e9ae5bb3" x="89.585915" y="66.306419" style="fill: #176b87; stroke: #176b87"/>
+     <use xlink:href="#m77e9ae5bb3" x="109.972554" y="53.015021" style="fill: #176b87; stroke: #176b87"/>
+     <use xlink:href="#m77e9ae5bb3" x="130.359192" y="69.151977" style="fill: #176b87; stroke: #176b87"/>
+     <use xlink:href="#m77e9ae5bb3" x="150.745831" y="53.170145" style="fill: #176b87; stroke: #176b87"/>
+     <use xlink:href="#m77e9ae5bb3" x="171.132469" y="69.491193" style="fill: #176b87; stroke: #176b87"/>
+     <use xlink:href="#m77e9ae5bb3" x="191.519107" y="54.025895" style="fill: #176b87; stroke: #176b87"/>
+     <use xlink:href="#m77e9ae5bb3" x="211.905746" y="67.785862" style="fill: #176b87; stroke: #176b87"/>
+     <use xlink:href="#m77e9ae5bb3" x="232.292384" y="54.561922" style="fill: #176b87; stroke: #176b87"/>
+     <use xlink:href="#m77e9ae5bb3" x="252.679023" y="68.099637" style="fill: #176b87; stroke: #176b87"/>
+     <use xlink:href="#m77e9ae5bb3" x="273.065661" y="54.812174" style="fill: #176b87; stroke: #176b87"/>
+     <use xlink:href="#m77e9ae5bb3" x="293.452299" y="68.868269" style="fill: #176b87; stroke: #176b87"/>
+     <use xlink:href="#m77e9ae5bb3" x="313.838938" y="38.145584" style="fill: #176b87; stroke: #176b87"/>
+     <use xlink:href="#m77e9ae5bb3" x="334.225576" y="40.938466" style="fill: #176b87; stroke: #176b87"/>
+     <use xlink:href="#m77e9ae5bb3" x="354.612215" y="38.0323" style="fill: #176b87; stroke: #176b87"/>
+     <use xlink:href="#m77e9ae5bb3" x="374.998853" y="40.946947" style="fill: #176b87; stroke: #176b87"/>
+     <use xlink:href="#m77e9ae5bb3" x="395.385491" y="37.972303" style="fill: #176b87; stroke: #176b87"/>
+     <use xlink:href="#m77e9ae5bb3" x="415.77213" y="40.942321" style="fill: #176b87; stroke: #176b87"/>
+     <use xlink:href="#m77e9ae5bb3" x="436.158768" y="68.65179" style="fill: #176b87; stroke: #176b87"/>
+     <use xlink:href="#m77e9ae5bb3" x="456.545407" y="94.697247" style="fill: #176b87; stroke: #176b87"/>
+     <use xlink:href="#m77e9ae5bb3" x="476.932045" y="70.245663" style="fill: #176b87; stroke: #176b87"/>
+     <use xlink:href="#m77e9ae5bb3" x="497.318683" y="98.059339" style="fill: #176b87; stroke: #176b87"/>
+     <use xlink:href="#m77e9ae5bb3" x="517.705322" y="72.096892" style="fill: #176b87; stroke: #176b87"/>
+     <use xlink:href="#m77e9ae5bb3" x="538.09196" y="100.610397" style="fill: #176b87; stroke: #176b87"/>
+    </g>
+   </g>
+   <g id="text_32">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: start" x="42.329688" y="17.195625" transform="rotate(-0 42.329688 17.195625)">Seed-stability estimator alignment (test truth unread)</text>
+   </g>
+   <g id="legend_1">
+    <g id="PathCollection_3">
+     <g>
+      <use xlink:href="#m1ac2a7ec48" x="136.483438" y="293.454375" style="fill: #7a8b99; stroke: #7a8b99"/>
+     </g>
+    </g>
+    <g id="text_33">
+     <text style="font-size: 8px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: start" x="150.883438" y="295.554375" transform="rotate(-0 150.883438 295.554375)">single-seed pair</text>
+    </g>
+    <g id="PathCollection_4">
+     <g>
+      <use xlink:href="#m77e9ae5bb3" x="233.829688" y="293.454375" style="fill: #176b87; stroke: #176b87"/>
+     </g>
+    </g>
+    <g id="text_34">
+     <text style="font-size: 8px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: start" x="248.229688" y="295.554375" transform="rotate(-0 248.229688 295.554375)">leave-one-out family mean</text>
+    </g>
+    <g id="line2d_56">
+     <path d="M 364.430938 292.754375
+L 372.430938 292.754375
+L 380.430938 292.754375
+" style="fill: none; stroke-dasharray: 4.44,1.92; stroke-dashoffset: 0; stroke: #c94c4c; stroke-width: 1.2"/>
+    </g>
+    <g id="text_35">
+     <text style="font-size: 8px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: start" x="386.830938" y="295.554375" transform="rotate(-0 386.830938 295.554375)">registered threshold 0.5</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pbb457dafed">
+   <rect x="42.329688" y="23.195625" width="519.37" height="281.55875"/>
+  </clipPath>
+ </defs>
+</svg>

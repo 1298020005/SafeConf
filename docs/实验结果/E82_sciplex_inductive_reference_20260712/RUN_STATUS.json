@@ -1,0 +1,14 @@
+{
+  "experiment": "E82_sciplex_inductive_reference",
+  "phase": "evaluation_complete",
+  "generated_at": "2026-07-12T01:44:31",
+  "n_manifest_task_predictions_per_model": 688,
+  "n_unique_biological_tasks": 103,
+  "n_summary_rows": 324,
+  "n_aggregate_rows": 36,
+  "n_prediction_records": 1376,
+  "strict_issue_count": 0,
+  "target_truth_used_for_scores": false,
+  "target_truth_used_for_evaluation_only": true,
+  "interpretation": "formal protocol/reference-predictor result; not CPA/chemCPA evidence"
+}

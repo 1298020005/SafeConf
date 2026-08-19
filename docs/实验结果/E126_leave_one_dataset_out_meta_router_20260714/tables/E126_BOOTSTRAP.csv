@@ -1,0 +1,10 @@
+metric,comparator,favorable_delta,ci95_low,ci95_high,probability_favorable,bootstrap_unit,n_bootstrap
+spearman,SafeConf,-0.010644743772733278,-0.036762896274654074,0.010636795845071241,0.2041,dataset_population_plus_outer_fold,10000
+spearman,predicted_magnitude,0.10946763697718895,0.015628433006629493,0.19210337448506648,0.9882,dataset_population_plus_outer_fold,10000
+spearman,model_disagreement,0.14482055482426798,0.08266116410073708,0.20891421340766436,1.0,dataset_population_plus_outer_fold,10000
+normalized_aurc_50_100,SafeConf,-0.0008486030233693098,-0.0034110856745813573,0.0011106680468894838,0.2364,dataset_population_plus_outer_fold,10000
+normalized_aurc_50_100,predicted_magnitude,0.0069492545830202035,-0.0016636940289240121,0.016057506898068768,0.9334,dataset_population_plus_outer_fold,10000
+normalized_aurc_50_100,model_disagreement,0.008003724578942495,0.0009918177600559796,0.015507768381369035,0.9868,dataset_population_plus_outer_fold,10000
+top20_total_error_capture,SafeConf,-0.0010280664815210117,-0.005118431830137346,0.0021633949416698947,0.3132,dataset_population_plus_outer_fold,10000
+top20_total_error_capture,predicted_magnitude,0.0018002016686938238,-0.004189646128718364,0.008333608783295305,0.7043,dataset_population_plus_outer_fold,10000
+top20_total_error_capture,model_disagreement,0.0025684552756316814,-0.0030684215849599425,0.008151524044425614,0.8139,dataset_population_plus_outer_fold,10000

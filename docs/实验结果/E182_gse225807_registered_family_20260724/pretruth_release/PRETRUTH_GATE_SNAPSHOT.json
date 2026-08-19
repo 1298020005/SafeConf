@@ -1,0 +1,25 @@
+{
+  "adaptive_upper_fitted": false,
+  "builder_sha256": "a219762eae6c557f357a014bda3cdb6b4167b374d7ea07707bd5c9e45b6caa9f",
+  "calibration_target_x_rows_read": 0,
+  "code_freeze_remote_heads": {
+    "github": "fc0de741c6e90f3dacee74e761527f1604fa1242",
+    "origin": "fc0de741c6e90f3dacee74e761527f1604fa1242"
+  },
+  "evaluation_target_x_rows_read": 0,
+  "experiment": "E182_gse225807_registered_family",
+  "f2_manifest_sha256": "8bff895acbe581a0a656017f835f88319642635df9126ba23f67bd82e9f34156",
+  "generated_at": "2026-07-24T01:50:18.229806+08:00",
+  "git_branch": "exp/task-risk-audit-20260611",
+  "git_head": "fc0de741c6e90f3dacee74e761527f1604fa1242",
+  "n_calibration_query_tasks": 38,
+  "n_evaluation_query_tasks": 40,
+  "n_tasks": 152,
+  "n_train_tasks": 56,
+  "n_validation_tasks": 18,
+  "registered_family_size": 10,
+  "runner_sha256": "b0b105ef7d5550c30b160e6c06c4849a7fc3e164f1738086f70b9e06caff5380",
+  "schema": "safeconf_e182_pretruth_snapshot_v1",
+  "status": "PASS",
+  "wall_seconds": 56.65439772605896
+}

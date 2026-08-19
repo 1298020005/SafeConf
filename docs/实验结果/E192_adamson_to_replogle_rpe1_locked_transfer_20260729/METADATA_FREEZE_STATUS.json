@@ -1,0 +1,25 @@
+{
+  "experiment": "E192",
+  "stage": "METADATA_ONLY_FREEZE",
+  "status": "PASS",
+  "source_gene_candidates": 47,
+  "n_selected_genes": 21,
+  "n_target_tasks": 175,
+  "n_target_selected_cells": 1086,
+  "n_target_control_cells": 1905,
+  "n_target_batches": 53,
+  "n_source_train_tasks": 104,
+  "n_source_validation_tasks": 26,
+  "target_file": "/home/yyf/data/singlecell_perturbation_atlas/official_generalization/Replogle_RPE1essential.h5ad",
+  "target_bytes": 11890779568,
+  "target_sha256": "66c7d7c50ebf3d424162b31c0645797753455da760ced856dd309c9f957ba37b",
+  "source_x_values_read": 0,
+  "target_x_values_read": 0,
+  "selection_used_expression_values": false,
+  "git_head": "9dd395807c093478fa6a832ce5aaeb1190eefb6e",
+  "git_branch": "exp/task-risk-audit-20260611",
+  "remote_heads": {
+    "origin": "9dd395807c093478fa6a832ce5aaeb1190eefb6e",
+    "github": "9dd395807c093478fa6a832ce5aaeb1190eefb6e"
+  }
+}

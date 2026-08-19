@@ -1,0 +1,4 @@
+check,status,detail
+default_scgpt_pth,stale_path,/home/yyf/.conda/envs/scgpt_env/lib/python3.9/site-packages/scgpt.pth points to /home/yyf/codex_scgpt_attnres_workspace/repo
+archived_scgpt_repo_exists,True,$YYF_ARCHIVE/code/20260519_0958_home_cleanup/moved_top_level/codex_scgpt_attnres_workspace/repo
+python_import_scgpt_with_repo_path,True,sys.path insert archived repo

@@ -1,0 +1,16 @@
+{
+  "schema": "safeconf_e195_visualization_v1",
+  "scope": "Same-prediction GEARS-UQ summary only; no new statistical analysis",
+  "script": "tools/scripts/plot_e195_publication_figure.py",
+  "script_sha256": "a13d35b82c74ade3e5188c935becb3a03a9e45b1ec4fb7f525ccd98692f44236",
+  "sources": {
+    "tables/E195_FAMILY_TASKS.csv": "b244425038c6edb9ad8d06913a3783bf599d11e28c4c193dac9f919bcc31d95e",
+    "tables/E195_ASSOCIATION.csv": "2b751f974e742a8b9b0477b4b121e36287ff632138589b128497866e6569678e",
+    "tables/E195_ROUTING_METRICS.csv": "4d4c67849a5acb1c600a8d9b9163ef90177a22ec4f2160f7970d53d5712005fd",
+    "tables/E195_RISK_COVERAGE.csv": "9b47eba9b3094d8416ce48ec109f2487a96d20efc1a2d93201fc32ca36f6bfd7"
+  },
+  "outputs": {
+    "figures/E195_same_prediction_summary.png": "36698869555d0f0214967c3ca4f178dddedef8d2bc12331b916f0c9e8ae8dbfc",
+    "figures/E195_same_prediction_summary.pdf": "86a0102d1d4cf8cab5a572b6c84082e023eafb1745fc3f20e5f3937fa54fa643"
+  }
+}

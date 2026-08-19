@@ -1,0 +1,8 @@
+gate,passed
+G1_hidden_query_graphs_have_no_y,True
+G2_hidden_truth_absent_from_scoring_interface,True
+G3_adaptive_base_finite_and_variable,True
+G4_pair_lower_finite,True
+G5_predictor_vectors_variable,True
+G6_five_seed_predictions_complete,True
+G7_f2_hidden_x_rows_zero,True

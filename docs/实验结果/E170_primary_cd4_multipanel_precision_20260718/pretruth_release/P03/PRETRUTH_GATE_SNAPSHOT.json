@@ -1,0 +1,43 @@
+{
+  "all_registered_gates_passed": true,
+  "asset_builder_sha256": "8fd04d5e95c61aa1f17d1a5000a84f44dce57cd53510a0b3c0d3ac22d1d872cb",
+  "code_freeze_remote_heads": {
+    "github": "280d0171d5ea9123f5ccdaf4a5ae2e8ba787c880",
+    "origin": "280d0171d5ea9123f5ccdaf4a5ae2e8ba787c880"
+  },
+  "created_at": "2026-07-18T19:11:29.617404+08:00",
+  "deployment_authorized": false,
+  "experiment": "E170_primary_cd4_multipanel_precision::P03",
+  "f2_manifest_sha256": "60990c71e9303d199a008d4137a4ebfae67afae23886209bedb6630b19e9d2ef",
+  "forbidden_column_unseen_x_values_read": 0,
+  "git_branch": "exp/task-risk-audit-20260611",
+  "git_head": "280d0171d5ea9123f5ccdaf4a5ae2e8ba787c880",
+  "pretruth_files_sha256": {
+    "RUNTIME_ENVIRONMENT.json": "2b3d0d03d41a770c7ed0970e58524f131c32b23a350b5a1c24070044d11492cd",
+    "arrays/PRETRUTH_PREDICTIONS.npz": "3d76b7409ed1452ca58b0a9e50fc409d0dc37aefa559b5e61b9da7fad2793383",
+    "tables/COVERAGE_BOUNDARIES.csv": "7d4619b816743f52df139d4eedcae551c5c2f81ce03298f5c790f3297421857d",
+    "tables/G2_SCORE_CERTIFICATES.csv": "9670f1bc916c497111ecdd27fef0c0d7bab9092cdbe497b5c1bdeaeac1a1adf5",
+    "tables/G3_PREDICTOR_CERTIFICATES.csv": "cd33f61b4e7c1bc92b8dc8068124fe70c882800bebf537f88126209bbc0a8586",
+    "tables/G4_SEED_STABILITY.csv": "a5627762843eda12b5f75105143c5ee63c7826ed6cb4f438e8beb9a4650f01d8",
+    "tables/G5_MAGNITUDE_EQUIVALENCE.csv": "1fbe10d46fbcae936326e3de079f8d060ad4a4d2cad0327f1273988accb5165b",
+    "tables/INPUT_HASHES.csv": "72e9e96dbcd2ecd768de008ca748fc4cab66f16060d40e7a7d58df435d64c0e9",
+    "tables/MODEL_AUDIT.csv": "bc4f1d2b7cedc67b346d1d9c58cd78b75d69860379d824addf1c1f1bf2af719e",
+    "tables/PRETRUTH_SCORING_INTERFACE.csv": "219dc27128e762e654aa15561bd88a44ed4c9e2eb4cfc09bacabe0b0b2b60d59",
+    "tables/QUERY_GRAPH_AUDIT.csv": "0961a2aaafc6a00db473834ab9a6bcb9e42b3080b3b277b590f623cb38fa1e18",
+    "tables/SYNTHETIC_REGRESSION_TESTS.csv": "73189f6c4cfee383dfd64af71f4885c45ea82d39ee5119a8a60696019512f0a8",
+    "tables/TRAINING_HISTORY.csv": "8af2fa1480f1e3559f930d64ae363e3ebe2b9b0d4589475f15a52e259ee880a1"
+  },
+  "registered_g2_units": 6,
+  "registered_g4_units": 6,
+  "runner_sha256": "146b80a96bccf936a61af1fd5a038664fd0023b0acfac7c7b6e2816f2cbbb4e8",
+  "schema": "safeconf_e170_p03_pretruth_gate_snapshot_v1",
+  "source_full_sha256": "fd2b8c21d357f8699ec34e2d5ebc1639612c27a0147a9ca94d4983822d93247e",
+  "stage": "E170_P03_F2_PRETRUTH_GATE",
+  "status": "PASS",
+  "synthetic_tests_passed": 10,
+  "test_query_count": 600,
+  "test_query_graphs_containing_y": 0,
+  "test_targeting_x_values_read": 0,
+  "train_reference_task_count": 960,
+  "validation_query_count": 600
+}

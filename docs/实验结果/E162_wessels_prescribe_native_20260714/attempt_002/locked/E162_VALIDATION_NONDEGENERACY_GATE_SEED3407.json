@@ -1,0 +1,29 @@
+{
+  "n_rows": 24,
+  "passed": false,
+  "prediction_all_finite": true,
+  "prediction_any_coordinate_std_gt_1e_minus_6": false,
+  "prediction_coordinate_sample_std_ddof1": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "prediction_exact_unique_vectors": 1,
+  "prediction_shape": [
+    24,
+    10
+  ],
+  "raw_log_prob_all_finite": true,
+  "raw_log_prob_exact_unique": 24,
+  "raw_log_prob_sample_std_ddof1": 74899.2092177116,
+  "required_minimum_exact_unique": 12,
+  "required_rows": 24,
+  "split": "validation"
+}

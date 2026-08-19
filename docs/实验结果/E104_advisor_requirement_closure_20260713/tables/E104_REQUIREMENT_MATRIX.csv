@@ -1,0 +1,14 @@
+requirement,status,evidence,remaining_boundary
+unseen_pair_input_provenance,pass,E98+E100+E103 strict PredictionRecords,target context control must be available
+random_missing_pair,pass,E98+E100+E103,performance varies by dataset
+training_submatrix_25_50_75_100,pass,E97+E99+E102,retraining is embedding/transfer predictor
+whole_context_row_holdout,pass,E98+E100+E103,formal context-aware GEARS/scGPT pending
+whole_perturbation_column_holdout,pass,E98+E100+E103,magnitude stronger in some datasets
+context_and_perturbation_unseen,pass_computable,E98+E100+E103,q80 calibration fails on some double-unseen tasks
+different_perturbation_modalities,pass,gene E97-E101; cytokine E102-E103; chemical E84/E87/E89,do not pool biological claims
+cross_dataset_stress_test,pass_computable,E69+E87+E89+E101,not universally positive
+strict_truth_lock,pass,all new RUN_STATUS truth flags and validator issue_count=0,target validation truth used only where declared
+stable_increment_over_disagreement,pass,E101 dataset-population cluster CI [0.017;0.151],specific to current predictor contract
+stable_increment_over_magnitude,not_yet,E101 dataset-population cluster CI [-0.057;0.213],Santinha negative delta
+selective_risk_guarantee,not_yet,E98 validation q80 audit,setting-matched calibration required
+formal_context_aware_predictor_pair,not_yet,E98/E100/E103 honest predictor labels,GEARS and end-to-end scGPT adaptation required

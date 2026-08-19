@@ -1,0 +1,7 @@
+dataset,geometry,n_input_tasks,n_certificate_valid,n_certificate_excluded,n_truth_nonfinite,n_truth_low_norm,n_any_prediction_nonfinite,n_any_prediction_low_norm,n_source_baseline_valid,n_source_nonfinite,n_source_low_norm,n_normalized_raw_centroid_valid,n_normalized_raw_centroid_low_norm
+E190_K562,absolute_rmse,692,692,0,0,0,0,0,692,0,0,692,0
+E190_K562,cosine,692,692,0,0,0,0,0,692,0,0,692,0
+E190_K562,pearson,692,692,0,0,0,0,0,692,0,0,692,0
+E192_RPE1,absolute_rmse,175,175,0,0,0,0,0,175,0,0,175,0
+E192_RPE1,cosine,175,175,0,0,0,0,0,175,0,0,175,0
+E192_RPE1,pearson,175,175,0,0,0,0,0,175,0,0,175,0

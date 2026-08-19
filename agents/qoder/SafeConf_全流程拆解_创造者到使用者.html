@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SafeConf 全流程拆解 — 从创造者到使用者</title>
+<style>
+  :root {
+    --blue: #2563eb;
+    --blue-light: #dbeafe;
+    --green: #16a34a;
+    --green-light: #dcfce7;
+    --orange: #ea580c;
+    --orange-light: #fff7ed;
+    --red: #dc2626;
+    --red-light: #fef2f2;
+    --purple: #7c3aed;
+    --purple-light: #f3e8ff;
+    --teal: #0d9488;
+    --teal-light: #ccfbf1;
+    --gray: #374151;
+    --gray-light: #f3f4f6;
+    --yellow: #ca8a04;
+    --yellow-light: #fefce8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+    line-height: 1.8;
+    font-size: 17px;
+  }
+  .hero {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 50%, #7c3aed 100%);
+    color: white;
+    padding: 60px 20px 50px;
+    text-align: center;
+  }
+  .hero h1 { font-size: 2.4em; margin-bottom: 10px; text-shadow: 0 2px 8px rgba(0,0,0,.3); }
+  .hero .subtitle { font-size: 1.2em; opacity: .9; max-width: 700px; margin: 0 auto; }
+  .hero .badge {
+    display: inline-block; margin-top: 18px; padding: 6px 18px;
+    background: rgba(255,255,255,.2); border-radius: 20px; font-size: .9em;
+  }
+
+  .container { max-width: 980px; margin: 0 auto; padding: 30px 20px; }
+
+  /* --- TOC --- */
+  .toc {
+    background: white; border-radius: 16px; padding: 30px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.06); margin-bottom: 40px;
+  }
+  .toc h2 { font-size: 1.3em; margin-bottom: 15px; color: var(--blue); }
+  .toc ul { list-style: none; }
+  .toc li { padding: 6px 0; }
+  .toc a {
+    text-decoration: none; color: var(--gray);
+    border-bottom: 1px dashed #cbd5e1; transition: all .2s;
+  }
+  .toc a:hover { color: var(--blue); border-color: var(--blue); }
+  .toc .nav-icon { margin-right: 8px; }
+
+  /* --- Section --- */
+  .section {
+    background: white; border-radius: 16px; padding: 36px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.06); margin-bottom: 36px;
+  }
+  .section h2 {
+    font-size: 1.5em; margin-bottom: 20px; padding-bottom: 12px;
+    border-bottom: 3px solid var(--blue);
+  }
+  .section h3 { font-size: 1.15em; margin: 24px 0 12px; color: var(--blue); }
+
+  /* --- Dual perspective banner --- */
+  .perspective-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;
+  }
+  .perspective-card {
+    border-radius: 14px; padding: 24px; text-align: center;
+  }
+  .perspective-card.creator {
+    background: linear-gradient(135deg, #dbeafe, #ede9fe);
+    border: 2px solid var(--blue);
+  }
+  .perspective-card.user {
+    background: linear-gradient(135deg, #dcfce7, #ccfbf1);
+    border: 2px solid var(--green);
+  }
+  .perspective-card .icon { font-size: 2.5em; margin-bottom: 8px; }
+  .perspective-card h3 { margin: 8px 0; color: inherit; }
+  .perspective-card p { font-size: .95em; color: #475569; }
+
+  /* --- Flow arrow between sections --- */
+  .flow-arrow {
+    text-align: center; font-size: 2em; color: var(--blue);
+    margin: -10px 0; position: relative; z-index: 2;
+  }
+
+  /* --- Step card --- */
+  .step {
+    position: relative; padding: 24px 24px 24px 80px;
+    border-left: 4px solid var(--blue); margin: 20px 0;
+    background: var(--blue-light); border-radius: 0 14px 14px 0;
+  }
+  .step.green { border-color: var(--green); background: var(--green-light); }
+  .step.orange { border-color: var(--orange); background: var(--orange-light); }
+  .step.purple { border-color: var(--purple); background: var(--purple-light); }
+  .step.teal { border-color: var(--teal); background: var(--teal-light); }
+  .step .step-num {
+    position: absolute; left: -22px; top: 20px;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--blue); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 1.1em;
+    box-shadow: 0 2px 8px rgba(37,99,235,.4);
+  }
+  .step.green .step-num { background: var(--green); box-shadow: 0 2px 8px rgba(22,163,74,.4); }
+  .step.orange .step-num { background: var(--orange); box-shadow: 0 2px 8px rgba(234,88,12,.4); }
+  .step.purple .step-num { background: var(--purple); box-shadow: 0 2px 8px rgba(124,58,237,.4); }
+  .step.teal .step-num { background: var(--teal); box-shadow: 0 2px 8px rgba(13,148,136,.4); }
+  .step h4 { font-size: 1.1em; margin-bottom: 8px; }
+  .step p { margin: 6px 0; }
+
+  /* --- Connector arrow between steps --- */
+  .step-connector {
+    text-align: center; font-size: 1.6em; color: #94a3b8; margin: -5px 0;
+  }
+
+  /* --- Info box variants --- */
+  .info-box {
+    border-radius: 12px; padding: 18px 20px; margin: 16px 0;
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .info-box .icon { font-size: 1.4em; flex-shrink: 0; margin-top: 2px; }
+  .info-box.warn { background: #fff7ed; border: 1px solid #fed7aa; }
+  .info-box.danger { background: #fef2f2; border: 1px solid #fecaca; }
+  .info-box.tip { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .info-box.info { background: #eff6ff; border: 1px solid #bfdbfe; }
+  .info-box.purple-box { background: #f5f3ff; border: 1px solid #ddd6fe; }
+
+  /* --- Data table --- */
+  table {
+    width: 100%; border-collapse: collapse; margin: 16px 0;
+    font-size: .95em;
+  }
+  thead { background: var(--blue); color: white; }
+  th { padding: 10px 14px; text-align: left; font-weight: 600; }
+  td { padding: 10px 14px; border-bottom: 1px solid #e2e8f0; }
+  tbody tr:hover { background: #f8fafc; }
+
+  /* --- Feature card grid --- */
+  .feature-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px; margin: 16px 0;
+  }
+  .feature-card {
+    border-radius: 12px; padding: 16px; border: 1px solid #e2e8f0;
+    background: white;
+  }
+  .feature-card .fname { font-weight: 700; color: var(--blue); font-size: 1em; }
+  .feature-card .fdesc { color: #64748b; font-size: .9em; margin-top: 4px; }
+  .feature-card .ftag {
+    display: inline-block; margin-top: 6px; padding: 2px 10px;
+    background: var(--blue-light); border-radius: 10px; font-size: .8em; color: var(--blue);
+  }
+
+  /* --- Formula box --- */
+  .formula-box {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    color: #e2e8f0; border-radius: 14px; padding: 28px;
+    margin: 20px 0; font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
+  }
+  .formula-box .label {
+    font-size: .85em; text-transform: uppercase; letter-spacing: 2px;
+    color: #94a3b8; margin-bottom: 10px;
+  }
+  .formula-box .formula {
+    font-size: 1.2em; color: #60a5fa; margin: 8px 0;
+  }
+  .formula-box .formula .op { color: #f472b6; }
+  .formula-box .formula .var { color: #34d399; }
+  .formula-box .note { font-size: .85em; color: #94a3b8; margin-top: 12px; font-family: inherit; }
+
+  /* --- Journey timeline --- */
+  .journey-step {
+    position: relative; padding: 18px 18px 18px 60px; margin: 12px 0;
+    border-radius: 12px; border: 1px solid #e2e8f0; background: white;
+  }
+  .journey-step .j-num {
+    position: absolute; left: 14px; top: 16px;
+    width: 32px; height: 32px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: .9em; color: white;
+  }
+  .journey-step:nth-child(1) .j-num { background: #ef4444; }
+  .journey-step:nth-child(2) .j-num { background: #f97316; }
+  .journey-step:nth-child(3) .j-num { background: #eab308; }
+  .journey-step:nth-child(4) .j-num { background: #22c55e; }
+  .journey-step:nth-child(5) .j-num { background: #06b6d4; }
+  .journey-step:nth-child(6) .j-num { background: #3b82f6; }
+  .journey-step:nth-child(7) .j-num { background: #8b5cf6; }
+  .journey-step:nth-child(8) .j-num { background: #ec4899; }
+  .journey-step h4 { font-size: 1em; margin-bottom: 4px; }
+  .journey-step .detail { color: #64748b; font-size: .93em; }
+  .journey-step .detail code {
+    background: #f1f5f9; padding: 1px 6px; border-radius: 4px;
+    font-size: .9em; color: var(--blue);
+  }
+
+  /* --- Code tree --- */
+  .code-tree {
+    background: #1e293b; color: #e2e8f0; border-radius: 14px;
+    padding: 24px 28px; margin: 16px 0;
+    font-family: "JetBrains Mono", "Fira Code", monospace; font-size: .9em;
+    line-height: 1.7; overflow-x: auto;
+  }
+  .code-tree .dir { color: #60a5fa; font-weight: 700; }
+  .code-tree .file { color: #34d399; }
+  .code-tree .comment { color: #94a3b8; }
+
+  /* --- Comparison columns --- */
+  .compare-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin: 16px 0;
+  }
+  .compare-col {
+    border-radius: 12px; padding: 20px; border: 2px solid #e2e8f0;
+    text-align: center;
+  }
+  .compare-col h4 { margin-bottom: 10px; }
+  .compare-col.c1 { border-color: #fbbf24; background: #fffbeb; }
+  .compare-col.c2 { border-color: #34d399; background: #f0fdf4; }
+  .compare-col.c3 { border-color: #818cf8; background: #eef2ff; }
+
+  /* --- Experiment result cards --- */
+  .exp-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0;
+  }
+  .exp-card {
+    border-radius: 12px; padding: 16px; text-align: center;
+    border: 2px solid; transition: transform .2s;
+  }
+  .exp-card:hover { transform: translateY(-3px); }
+  .exp-card .exp-name { font-weight: 700; font-size: 1.05em; }
+  .exp-card .exp-q { font-size: .85em; color: #64748b; margin: 6px 0; }
+  .exp-card .exp-result { font-size: 1.2em; font-weight: 700; }
+  .exp-card.pass { border-color: #22c55e; background: #f0fdf4; }
+  .exp-card.pass .exp-result { color: #16a34a; }
+
+  /* --- Responsive --- */
+  @media (max-width: 700px) {
+    .perspective-grid { grid-template-columns: 1fr; }
+    .compare-grid { grid-template-columns: 1fr; }
+    .exp-grid { grid-template-columns: 1fr 1fr; }
+    .feature-grid { grid-template-columns: 1fr; }
+    body { font-size: 16px; }
+    .hero h1 { font-size: 1.7em; }
+    .section { padding: 24px 18px; }
+    .step { padding-left: 60px; }
+  }
+
+  /* --- Details toggle --- */
+  details { margin: 12px 0; }
+  details summary {
+    cursor: pointer; font-weight: 600; color: var(--blue);
+    padding: 8px 0;
+  }
+  details summary:hover { color: var(--purple); }
+  details[open] summary { margin-bottom: 8px; }
+
+  /* --- Score example demo --- */
+  .score-demo {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0;
+  }
+  .score-item {
+    border-radius: 12px; padding: 16px; text-align: center;
+    border: 2px solid;
+  }
+  .score-item.high { border-color: #22c55e; background: #f0fdf4; }
+  .score-item.mid { border-color: #eab308; background: #fefce8; }
+  .score-item.low { border-color: #ef4444; background: #fef2f2; }
+  .score-item .task-name { font-weight: 700; font-size: .95em; }
+  .score-item .score-val { font-size: 1.8em; font-weight: 800; margin: 6px 0; }
+  .score-item.high .score-val { color: #16a34a; }
+  .score-item.mid .score-val { color: #ca8a04; }
+  .score-item.low .score-val { color: #dc2626; }
+  .score-item .advice { font-size: .85em; color: #64748b; }
+
+  /* Divider */
+  .divider { border: none; border-top: 2px dashed #e2e8f0; margin: 30px 0; }
+
+  /* Highlight span */
+  .hl { background: #fef08a; padding: 1px 4px; border-radius: 3px; }
+  .hl-blue { background: #dbeafe; padding: 1px 4px; border-radius: 3px; color: var(--blue); font-weight: 600; }
+  .hl-green { background: #dcfce7; padding: 1px 4px; border-radius: 3px; color: var(--green); font-weight: 600; }
+  .hl-red { background: #fee2e2; padding: 1px 4px; border-radius: 3px; color: var(--red); font-weight: 600; }
+
+  .plain-flow {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .plain-flow.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .plain-flow.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .flow-card {
+    background: white;
+    border: 2px solid #dbeafe;
+    border-radius: 12px;
+    padding: 14px;
+    min-height: 112px;
+  }
+  .flow-card .small-title {
+    font-weight: 800;
+    color: var(--blue);
+    margin-bottom: 6px;
+  }
+  .flow-card .small-text {
+    color: #475569;
+    font-size: .92em;
+  }
+  .flow-card.good { border-color: #86efac; background: #f0fdf4; }
+  .flow-card.warn { border-color: #fed7aa; background: #fff7ed; }
+  .flow-card.danger { border-color: #fecaca; background: #fef2f2; }
+  .flow-card.purple { border-color: #c4b5fd; background: #f5f3ff; }
+  .arrow-row {
+    text-align: center;
+    color: #64748b;
+    font-weight: 700;
+    margin: -4px 0 2px;
+  }
+  .mini-equation {
+    background: #0f172a;
+    color: #e2e8f0;
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin: 14px 0;
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    font-size: .95em;
+    overflow-x: auto;
+  }
+  .mini-equation strong { color: #86efac; }
+  @media (max-width: 760px) {
+    .plain-flow, .plain-flow.three, .plain-flow.two { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== HERO ==================== -->
+<div class="hero">
+  <h1>SafeConf 全流程拆解</h1>
+  <div class="subtitle">从创造者到使用者 — 你是怎么造出它的，别人又怎么用它</div>
+  <div class="badge">基于 Qoder 原稿 + Claude 校验修正 | 2026-06-17</div>
+</div>
+
+<div class="container">
+
+<!-- ==================== TOC ==================== -->
+<div class="toc">
+  <h2>目录导航</h2>
+  <ul>
+    <li><span class="nav-icon">🗺️</span> <a href="#s0">图 0 — h5ad 文件里到底有什么？</a></li>
+    <li><span class="nav-icon">🦅</span> <a href="#s1">图 1 — 全局鸟瞰：创造者 vs 使用者</a></li>
+    <li><span class="nav-icon">🔧</span> <a href="#sA">角度 A — 创造者的 7 步流水线</a></li>
+    <li><span class="nav-icon">🧑‍🔬</span> <a href="#sB">角度 B — 使用者的 4 步流程</a></li>
+    <li><span class="nav-icon">🧬</span> <a href="#sC">图 C — 一条数据从出生到打分的完整旅程</a></li>
+    <li><span class="nav-icon">📋</span> <a href="#sD">图 D — 创造者 vs 使用者分工表</a></li>
+    <li><span class="nav-icon">📁</span> <a href="#sE">图 E — 代码文件对应哪个步骤</a></li>
+    <li><span class="nav-icon">🔢</span> <a href="#sF">图 F — 预测器数量不同时的影响</a></li>
+    <li><span class="nav-icon">📌</span> <a href="#sG">读完检查清单</a></li>
+  </ul>
+</div>
+
+<!-- ==================== 图 0：h5ad ==================== -->
+<div class="section" id="s0">
+  <h2>🗺️ 图 0 — h5ad 文件里到底有什么？</h2>
+  <p>在开始之前，先搞清楚数据长什么样。SafeConf 的一切都从 <strong>h5ad 文件</strong>开始——这是单细胞实验数据的标准格式。</p>
+
+  <div style="background: linear-gradient(135deg, #f0f9ff, #f5f3ff); border-radius: 14px; padding: 24px; margin: 20px 0; border: 1px solid #c7d2fe;">
+    <h3 style="margin-top:0">📦 一个 h5ad 文件 = 一次单细胞实验的全部数据</h3>
+    <table>
+      <thead><tr><th>组成部分</th><th>内容</th><th>大白话</th></tr></thead>
+      <tbody>
+        <tr><td><strong>obs</strong>（细胞表）</td><td>cell_id, context, perturbation, is_control</td><td>登记簿：每个细胞来自哪个背景、被施加了什么扰动</td></tr>
+        <tr><td><strong>var</strong>（基因表）</td><td>gene_name, gene_id</td><td>菜单：有哪些基因被测量了</td></tr>
+        <tr><td><strong>X</strong>（表达矩阵）</td><td>细胞 x 基因 的数值矩阵</td><td>成绩单：每个细胞每个基因的表达量</td></tr>
+      </tbody>
+    </table>
+    <div class="info-box info" style="margin-top: 12px;">
+      <span class="icon">💡</span>
+      <div>h5ad 本身<strong>已经包含了扰动结果</strong>——细胞确实被扰动了，表达量是实验室真实测出来的。<code>true_effect</code> 就是从这里面算出来的（扰动组平均 - 对照组平均）。</div>
+    </div>
+  </div>
+
+  <h3>先把“真实值”讲成人话</h3>
+  <p><strong>真实值不是人工写的标签。</strong>它是从实验测出来的表达矩阵里算出来的。</p>
+  <div class="plain-flow three">
+    <div class="flow-card">
+      <div class="small-title">1. 先有一批 control 细胞</div>
+      <div class="small-text">这些细胞没有被敲基因、没有加药。它们代表“正常状态”。</div>
+    </div>
+    <div class="flow-card warn">
+      <div class="small-title">2. 再有一批 perturbation 细胞</div>
+      <div class="small-text">这些细胞被敲了一个基因，或加了一个药。它们代表“被扰动之后”。</div>
+    </div>
+    <div class="flow-card good">
+      <div class="small-title">3. 两边相减</div>
+      <div class="small-text">扰动组平均表达 - control 平均表达 = 真实扰动效果，也就是 true_effect。</div>
+    </div>
+  </div>
+
+  <div class="mini-equation">
+control 细胞平均表达        = [10,  8,  3,  6]<br>
+扰动后细胞平均表达          = [13,  7,  4, 10]<br>
+<strong>true_effect</strong> = 扰动后 - control = [ 3, -1,  1,  4]
+  </div>
+
+  <table>
+    <thead><tr><th>词</th><th>人话解释</th><th>在 SafeConf 里叫什么</th></tr></thead>
+    <tbody>
+      <tr><td>真实扰动影响</td><td>实验里真的观察到的变化</td><td><code>true_effect</code></td></tr>
+      <tr><td>模型猜的扰动影响</td><td>预测器提前猜“扰动后会变成什么样”</td><td><code>predicted_effect</code></td></tr>
+      <tr><td>猜错多少</td><td>模型猜的变化和真实变化差多远</td><td><code>true_error_rmse</code></td></tr>
+    </tbody>
+  </table>
+
+  <div class="info-box tip">
+    <span class="icon">🧠</span>
+    <div>
+      <strong>一句话：</strong>扰动就是“故意动一下细胞”，比如敲掉一个基因或加一个药；<code>true_effect</code> 就是“动完以后，细胞真实发生了什么变化”。
+    </div>
+  </div>
+
+  <h3>使用者打分时需要什么文件？</h3>
+  <table>
+    <thead><tr><th>文件</th><th>需要吗？</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td>h5ad（原始数据）</td><td><span class="hl-green">必须</span></td><td>用来算 control 向量和 true_effect</td></tr>
+      <tr><td>control_means.npz</td><td><span class="hl-green">必须</span></td><td>算 context_similarity 特征</td></tr>
+      <tr><td>predicted_effects.npz</td><td><span class="hl-green">必须</span></td><td>预测器的输出</td></tr>
+      <tr><td>true_effects.npz（训练集）</td><td><span class="hl-green">必须</span></td><td>算 historical_residual 等特征</td></tr>
+      <tr><td>true_effects.npz（测试集）</td><td><span class="hl-red">打分不需要</span></td><td>只有验证 SafeConf 是否有效时才需要</td></tr>
+    </tbody>
+  </table>
+
+  <div class="info-box tip">
+    <span class="icon">✅</span>
+    <div><strong>一句话：</strong>使用者给预测打分时，<strong>不需要知道测试集真实答案</strong>。只有你要证明“SafeConf 打得准不准”时，才打开测试集真值做评估。</div>
+  </div>
+</div>
+
+<!-- ==================== 图 1：全局鸟瞰 ==================== -->
+<div class="section" id="s1">
+  <h2>🦅 图 1 — 全局鸟瞰：创造者 vs 使用者</h2>
+  <p>SafeConf 有两个角色。你现在是<strong>创造者</strong>，你的论文读者将来可能是<strong>使用者</strong>。</p>
+
+  <div class="perspective-grid">
+    <div class="perspective-card creator">
+      <div class="icon">🔧</div>
+      <h3>你（创造者）</h3>
+      <p>收集公开数据 → 造预测器 → 跑预测 → 提取特征 → 定公式 → 验证</p>
+      <p style="margin-top: 10px; font-weight: 600;">产出：SafeConf 系统<br>（公式 + 代码 + 验证证据）</p>
+    </div>
+    <div class="perspective-card user">
+      <div class="icon">🧑‍🔬</div>
+      <h3>使用者（另一个研究者）</h3>
+      <p>拿到自己的 h5ad → 跑预测器 → 套公式打分 → 看分数做决策</p>
+      <p style="margin-top: 10px; font-weight: 600;">消费：SafeConf 输出的分数<br>（哪些预测可信、哪些该复核）</p>
+    </div>
+  </div>
+
+  <div class="flow-arrow">⬇️ 发表论文 / 开源代码 ⬇️</div>
+</div>
+
+<!-- ==================== 角度 A：创造者 ==================== -->
+<div class="section" id="sA">
+  <h2>🔧 角度 A — 创造者的 7 步流水线</h2>
+  <p>这就是你做 SafeConf 的全过程。从下载数据到验证有效，一共 7 步。</p>
+
+  <!-- Step 1 -->
+  <div class="step">
+    <div class="step-num">1</div>
+    <h4>📥 收集数据</h4>
+    <p>从公开论文 / 数据库下载 h5ad 文件。当前用了 <strong>7 个数据集</strong>：</p>
+    <table>
+      <thead><tr><th>数据集</th><th>扰动类型</th><th>特色</th></tr></thead>
+      <tbody>
+        <tr><td>Frangieh 2021</td><td>基因敲除</td><td>黑色素瘤 + 免疫细胞共培养</td></tr>
+        <tr><td>CuiHacohen 2023</td><td>基因敲除</td><td>大规模 CRISPR 筛选</td></tr>
+        <tr><td>LaraAstiaso 2023 (ex vivo)</td><td>基因敲除</td><td>体外实验子集</td></tr>
+        <tr><td>LaraAstiaso 2023 (in vivo)</td><td>基因敲除</td><td>体内实验子集</td></tr>
+        <tr><td>SantinhaPlatt 2023</td><td>基因敲除</td><td>弱正信号（效果量小）</td></tr>
+        <tr><td>McFarland 2020</td><td>药物扰动</td><td>已知的 frozen v0.2 <span class="hl-red">失败边界</span></td></tr>
+        <tr><td>Srivatsan 2020</td><td>药物扰动</td><td>sci-Plex3，大规模化学扰动</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="step-connector">⬇️</div>
+
+  <!-- Step 2 -->
+  <div class="step green">
+    <div class="step-num">2</div>
+    <h4>✂️ 数据预处理 + 切分</h4>
+    <p>对每个数据集做三件事：</p>
+    <p><strong>① 算 true_effect 向量：</strong><code>扰动组平均表达 - 对照组平均表达</code>（5000 维，对应 top 5000 基因）</p>
+    <p><strong>② 算 control 向量：</strong>每个 context 的对照组细胞平均表达</p>
+    <p><strong>③ 切成 5-fold 交叉验证</strong></p>
+
+    <h4 style="margin-top:18px;">train/test 不是两种实验，是同一个数据里切出来的两份</h4>
+    <div class="plain-flow three">
+      <div class="flow-card">
+        <div class="small-title">同一个 h5ad</div>
+        <div class="small-text">里面有很多 context × perturbation 任务，每个任务都能算 true_effect。</div>
+      </div>
+      <div class="flow-card good">
+        <div class="small-title">训练集 train</div>
+        <div class="small-text">允许看 true_effect。用它学习历史规律、算支持次数、算相似背景。</div>
+      </div>
+      <div class="flow-card danger">
+        <div class="small-title">测试集 test</div>
+        <div class="small-text">打分时不许看 true_effect。最后评估时才打开，看 SafeConf 排序准不准。</div>
+      </div>
+    </div>
+
+    <div class="info-box warn">
+      <span class="icon">⚠️</span>
+      <div>
+        <strong>Held-out pair 约束（极其关键）：</strong><br>
+        测试集里的 <span class="hl">(context, perturbation) 组合</span> 在训练集里不会出现。<br>
+        但 context 和 perturbation <strong>各自</strong>在训练集别处都见过。<br>
+        → 测试的是<strong>"新组合"</strong>，不是"完全未见的细胞系或扰动"。
+      </div>
+    </div>
+
+    <p><strong>产出文件：</strong></p>
+    <ul>
+      <li><code>true_effects.npz</code> — 真实 effect 向量</li>
+      <li><code>target_control_means.npz</code> — 对照组平均表达</li>
+      <li><code>PREDICTION_RECORDS.csv</code> — 任务列表（还没填预测值）</li>
+    </ul>
+  </div>
+
+  <div class="step-connector">⬇️</div>
+
+  <!-- Step 3 -->
+  <div class="step purple">
+    <div class="step-num">3</div>
+    <h4>🤖 造预测器 + 跑预测</h4>
+    <p>你造了两个参考预测器（retrieval-style baseline）：</p>
+
+    <div class="info-box info">
+      <span class="icon">🎯</span>
+      <div>
+        <strong>预测器到底在预测什么？</strong><br>
+        它不是预测“这个细胞活不活”，也不是预测“哪个基因被敲了”。它预测的是：<strong>如果在这个 context 里做这个 perturbation，5000 个基因的表达会怎么变</strong>。
+      </div>
+    </div>
+
+    <div class="plain-flow three">
+      <div class="flow-card">
+        <div class="small-title">输入任务</div>
+        <div class="small-text">context = M229 细胞系<br>perturbation = MAP2K1 敲除</div>
+      </div>
+      <div class="flow-card purple">
+        <div class="small-title">预测器输出</div>
+        <div class="small-text">predicted_effect = [0.1, -0.3, 0.0, 0.8, ...]</div>
+      </div>
+      <div class="flow-card good">
+        <div class="small-title">真实答案</div>
+        <div class="small-text">true_effect = 实验真的测出来的变化。最后用来算误差。</div>
+      </div>
+    </div>
+
+    <div class="perspective-grid">
+      <div style="background: #f5f3ff; border: 2px solid var(--purple); border-radius: 12px; padding: 16px;">
+        <h4>V0StrongBaseline</h4>
+        <p style="font-size:.9em;color:#64748b;">「强基线预测器」</p>
+        <p>先问：训练集里有没有做过同一个扰动？有的话，把这些历史 effect 拿来平均，作为这次的预测。</p>
+        <p style="font-size:.9em;color:#64748b;">人话：以前别人做过 MAP2K1 敲除，我就参考以前 MAP2K1 的平均结果。</p>
+      </div>
+      <div style="background: #f0fdf4; border: 2px solid var(--green); border-radius: 12px; padding: 16px;">
+        <h4>ContextSimBaseline</h4>
+        <p style="font-size:.9em;color:#64748b;">「相似度加权预测器」</p>
+        <p>也找同一个扰动，但更偏向参考“细胞背景更像”的历史 context。越像，权重越高。</p>
+        <p style="font-size:.9em;color:#64748b;">人话：同样是 MAP2K1 敲除，我更相信和 M229 更像的细胞系。</p>
+      </div>
+    </div>
+
+    <div class="info-box info">
+      <span class="icon">🔌</span>
+      <div>
+        也可以接更多预测器。<code>PredictorAdapter</code> 的意思是：不管你里面是 GEARS、scGPT，还是别的模型，只要最后能按 SafeConf 要求吐出 <code>predicted_effect</code> 表，就能接进来。<br>
+        当前代码里已经有 GEARS adapter 的实现文件，但主表没有把 GEARS 当正式主验证结果使用。
+      </div>
+    </div>
+
+    <p><strong>产出：</strong><code>predicted_effects.npz</code> + 更新 <code>PREDICTION_RECORDS.csv</code></p>
+  </div>
+
+  <div class="step-connector">⬇️</div>
+
+  <!-- Step 4 -->
+  <div class="step teal">
+    <div class="step-num">4</div>
+    <h4>🔍 计算特征（质检线索）</h4>
+    <p>运行 <code>run_fast_feature_scoring.py</code>，提取每条预测的"体检指标"：</p>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="fname">context_similarity_max</div>
+        <div class="fdesc">目标 context 和训练集里最像的 context 有多像？</div>
+        <div class="ftag">只需要 control 向量</div>
+      </div>
+      <div class="feature-card">
+        <div class="fname">perturbation_support_count</div>
+        <div class="fdesc">这个扰动在训练集里有几个背景研究过？</div>
+        <div class="ftag">只需要任务表</div>
+      </div>
+      <div class="feature-card">
+        <div class="fname">model_disagreement_rmse</div>
+        <div class="fdesc">两个预测器对这道题的答案差多少？吵架越凶 → 越不确定</div>
+        <div class="ftag">需要两个预测器</div>
+      </div>
+      <div class="feature-card">
+        <div class="fname">historical_residual_risk</div>
+        <div class="fdesc">类似的扰动在训练集的其他背景上出错多吗？</div>
+        <div class="ftag">需要训练集真值</div>
+      </div>
+      <div class="feature-card">
+        <div class="fname">prediction_l2_norm</div>
+        <div class="fdesc">预测的效应幅度有多大？</div>
+        <div class="ftag">需要预测器输出</div>
+      </div>
+      <div class="feature-card">
+        <div class="fname">perturbation_effect_stability</div>
+        <div class="fdesc">同一扰动在不同背景下效果稳不稳？</div>
+        <div class="ftag">需要训练集真值</div>
+      </div>
+    </div>
+
+    <div class="info-box tip">
+      <span class="icon">🔒</span>
+      <div><strong>防泄漏铁律 L4：</strong>所有特征计算<strong>只能用 fold 训练集的统计量</strong>，绝不偷看测试集的真实答案。</div>
+    </div>
+
+    <h4>顺手把 magnitude 讲清楚</h4>
+    <div class="plain-flow three">
+      <div class="flow-card">
+        <div class="small-title">预测器输出一串变化</div>
+        <div class="small-text">predicted_effect = [0.2, -0.1, 0.0, 1.3, ...]</div>
+      </div>
+      <div class="flow-card warn">
+        <div class="small-title">magnitude 问的是整体动静多大</div>
+        <div class="small-text">不是看某一个基因，而是看这一整串变化的总幅度。</div>
+      </div>
+      <div class="flow-card danger">
+        <div class="small-title">为什么它会变成强 baseline</div>
+        <div class="small-text">模型预测“动静越大”，通常越容易错。审稿人会问：你是不是只是在看动静大小？</div>
+      </div>
+    </div>
+
+    <div class="mini-equation">
+predicted_effect = [0.2, -0.1, 0.0, 1.3]<br>
+magnitude ≈ 这串数字的整体长度<br>
+人话：模型觉得这个扰动会把细胞<strong>搅动得多厉害</strong>
+    </div>
+
+    <p><strong>产出：</strong><code>CONFIDENCE_FEATURES.csv</code></p>
+  </div>
+
+  <div class="step-connector">⬇️</div>
+
+  <!-- Step 5 -->
+  <div class="step orange">
+    <div class="step-num">5</div>
+    <h4>📐 定义打分公式（Frozen v0.2）</h4>
+    <p>把上面的特征组合成一个分数。公式在看到测试集答案<strong>之前就锁死了</strong>：</p>
+
+    <div class="formula-box">
+      <div class="label">Gene-main 数据集（基因扰动类）</div>
+      <div class="formula">
+        score = <span class="var">z(context_similarity)</span> <span class="op">+</span> <span class="var">z(log_support)</span> <span class="op">-</span> <span class="var">z(disagreement)</span>
+      </div>
+      <div class="label" style="margin-top:16px;">Chem-robust 数据集（药物扰动类）</div>
+      <div class="formula">
+        score = <span class="var">z(log_support)</span> <span class="op">-</span> <span class="var">z(disagreement)</span>
+      </div>
+      <div class="note">
+        z = (当前值 - <strong>训练集中位数</strong>) / <strong>训练集 IQR</strong><br>
+        用 median/IQR 而不是 mean/std → 对异常值更鲁棒，不会被极端值拉偏
+      </div>
+    </div>
+
+    <div class="info-box warn">
+      <span class="icon">🧊</span>
+      <div><strong>Frozen = 冻结 = 不许改。</strong>公式定好之后，不管测试集结果好不好，都不回头调权重。这是科学诚信的底线——你不能看到答案再改公式。</div>
+    </div>
+  </div>
+
+  <div class="step-connector">⬇️</div>
+
+  <!-- Step 6 -->
+  <div class="step" style="border-color: #94a3b8; background: var(--gray-light);">
+    <div class="step-num" style="background: #6b7280;">6</div>
+    <h4>🧠 （可选）训练学习模型</h4>
+    <p>除了手写公式，还可以让机器从数据里学规则：</p>
+    <p>用训练集的 <code>(特征, true_error_rmse)</code> 训练 HistGradientBoosting 模型，让它学会"什么样的特征组合更容易出错"。</p>
+
+    <div class="info-box purple-box">
+      <span class="icon">📊</span>
+      <div>
+        <strong>公式版 vs 学习版的区别：</strong><br>
+        公式版 = 你手动设计的简单规则（frozen v0.2）→ <strong>论文主线</strong><br>
+        学习版 = 让机器从数据里学规则（HistGBT）→ <strong>论文二线分析</strong>，不是给用户部署的
+      </div>
+    </div>
+  </div>
+
+  <div class="step-connector">⬇️</div>
+
+  <!-- Step 7 -->
+  <div class="step green">
+    <div class="step-num">7</div>
+    <h4>✅ 验证——SafeConf 有没有用</h4>
+    <p>打开测试集的真实答案 <code>true_error_rmse</code>，和你的分数做对比：</p>
+
+    <div style="background: white; border-radius: 12px; padding: 16px; margin: 12px 0; border: 1px solid #e2e8f0;">
+      <h4 style="margin-bottom: 10px;">评估指标四件套</h4>
+      <table>
+        <thead><tr><th>指标</th><th>含义</th><th>通过标准</th></tr></thead>
+        <tbody>
+          <tr><td>aligned rho</td><td>分数排序方向对不对</td><td>&gt; 0</td></tr>
+          <tr><td>partial rho</td><td>扣掉幅度后还有额外信号吗</td><td>&gt; 0，且 CI 不含 0</td></tr>
+          <tr><td>RC@80% 改善</td><td>只看前 80% 可信预测，误差更低吗</td><td>&gt; 5%</td></tr>
+          <tr><td>AURC 降低</td><td>选择性预测的整体表现更好吗</td><td>低于随机</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>验证实验 E1—E4</h4>
+    <div class="exp-grid">
+      <div class="exp-card pass">
+        <div class="exp-name">E1 消融</div>
+        <div class="exp-q">哪些特征组最重要？</div>
+        <div class="exp-result">context 最稳</div>
+      </div>
+      <div class="exp-card pass">
+        <div class="exp-name">E2 校准</div>
+        <div class="exp-q">比"只看幅度"更好吗？</div>
+        <div class="exp-result">7/7 通过</div>
+      </div>
+      <div class="exp-card pass">
+        <div class="exp-name">E3 阴性控制</div>
+        <div class="exp-q">会不会被假数据骗？</div>
+        <div class="exp-result">7/7 通过</div>
+      </div>
+      <div class="exp-card pass">
+        <div class="exp-name">E4 稳定性</div>
+        <div class="exp-q">换种子结果稳不稳？</div>
+        <div class="exp-result">7/7 保持正</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 角度 B：使用者 ==================== -->
+<div class="section" id="sB">
+  <h2>🧑‍🔬 角度 B — 使用者的 4 步流程</h2>
+  <p>假设你（创造者）已经发表了论文、开源了代码。另一个研究者怎么用 SafeConf？</p>
+
+  <div class="step green">
+    <div class="step-num">1</div>
+    <h4>📁 准备数据</h4>
+    <p>使用者有自己的单细胞扰动实验数据（h5ad 格式），需要：</p>
+    <div class="plain-flow three">
+      <div class="flow-card">
+        <div class="small-title">你论文里的 h5ad</div>
+        <div class="small-text">公开数据集，用来开发和验证 SafeConf，例如 Frangieh、Cui、Lara。</div>
+      </div>
+      <div class="flow-card purple">
+        <div class="small-title">使用者自己的 h5ad</div>
+        <div class="small-text">别的实验室新做的数据。格式类似，但细胞系、扰动、批次可能不同。</div>
+      </div>
+      <div class="flow-card good">
+        <div class="small-title">为什么不是人人一样</div>
+        <div class="small-text">h5ad 是一种文件格式，不是一份固定数据。就像 Excel 是格式，每个人的 Excel 内容可以不同。</div>
+      </div>
+    </div>
+    <ul>
+      <li>obs 表：每个细胞属于哪个 context、哪个扰动</li>
+      <li>X 矩阵：每个细胞的基因表达</li>
+      <li>切分好 train/test（或用 SafeConf 提供的切分工具）</li>
+    </ul>
+    <p><strong>产出：</strong><code>true_effects.npz</code> + <code>target_control_means.npz</code></p>
+
+    <table>
+      <thead><tr><th>阶段</th><th>能不能看真实答案？</th><th>为什么</th></tr></thead>
+      <tbody>
+        <tr><td>训练集 train</td><td><span class="hl-green">能看</span></td><td>要用历史真实效果，计算 support、historical residual、稳定性等特征。</td></tr>
+        <tr><td>测试集 test：打分时</td><td><span class="hl-red">不能看</span></td><td>否则就是偷看答案，SafeConf 分数就不可信。</td></tr>
+        <tr><td>测试集 test：最后评估时</td><td><span class="hl-green">能看</span></td><td>这一步只是验证“SafeConf 排序准不准”，不是给分数用。</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="step-connector">⬇️</div>
+
+  <div class="step purple">
+    <div class="step-num">2</div>
+    <h4>🤖 跑预测器</h4>
+    <p>使用者有两个选择：</p>
+    <div class="perspective-grid">
+      <div style="background: #f5f3ff; border: 2px solid var(--purple); border-radius: 12px; padding: 16px;">
+        <h4>方案 A：用 SafeConf 自带的</h4>
+        <p>V0StrongBaseline + ContextSimBaseline，直接运行代码即可。</p>
+      </div>
+      <div style="background: #f0fdf4; border: 2px solid var(--green); border-radius: 12px; padding: 16px;">
+        <h4>方案 B：用自己的模型</h4>
+        <p>GEARS、scGPT 等，需要写一层 adapter，把模型输出整理成 SafeConf 认识的 <code>predicted_effect</code>。</p>
+      </div>
+    </div>
+
+    <table>
+      <thead><tr><th>问题</th><th>准确回答</th></tr></thead>
+      <tbody>
+        <tr><td>PredictorAdapter 实现了吗？</td><td>接口和 GEARS adapter 文件已经有，但 GEARS 没有进入 7 主表正式结论。</td></tr>
+        <tr><td>使用者一定要自己写 adapter 吗？</td><td>如果用 SafeConf 自带 V0/ContextSim，不需要；如果接自己的深度模型，需要。</td></tr>
+        <tr><td>adapter 做什么？</td><td>把任何模型的输出统一变成 predicted_effect，后面 SafeConf 才能算 disagreement、误差和分数。</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="step-connector">⬇️</div>
+
+  <div class="step teal">
+    <div class="step-num">3</div>
+    <h4>📊 SafeConf 打分</h4>
+    <p>运行打分代码，得到每条预测的可信度分数：</p>
+
+    <div class="score-demo">
+      <div class="score-item high">
+        <div class="task-name">A375 x BRAF</div>
+        <div class="score-val">+1.5</div>
+        <div class="advice">高可信 → 先用这个结果</div>
+      </div>
+      <div class="score-item mid">
+        <div class="task-name">A375 x ACSL3</div>
+        <div class="score-val">+0.3</div>
+        <div class="advice">中等 → 看情况决定</div>
+      </div>
+      <div class="score-item low">
+        <div class="task-name">M229 x MAP2K1</div>
+        <div class="score-val">-1.2</div>
+        <div class="advice">高风险 → 优先复核！</div>
+      </div>
+    </div>
+
+    <div class="info-box info">
+      <span class="icon">📏</span>
+      <div>分数<strong>不是</strong> 0-1 的概率！它是 z-score 之和，<strong>可正可负</strong>，越大越可信。</div>
+    </div>
+  </div>
+
+  <div class="step-connector">⬇️</div>
+
+  <div class="step orange">
+    <div class="step-num">4</div>
+    <h4>🎯 做决策——省钱！</h4>
+    <p>使用者根据分数排序做决策：</p>
+    <div style="background: #fff7ed; border: 2px solid #fed7aa; border-radius: 12px; padding: 20px; margin: 12px 0; font-size: 1.05em;">
+      <p>💬 <em>"我有 1000 条预测，湿实验验证一条要 5000 元。"</em></p>
+      <p>💬 <em>"SafeConf 说后 100 条是高风险。"</em></p>
+      <p>💬 <em>"我优先复核这 100 条，省了 80% 的实验经费！"</em></p>
+    </div>
+    <p>这就是 <strong>prediction triage</strong>（预测分诊）——把有限的实验预算花在最该验证的地方。</p>
+  </div>
+</div>
+
+<!-- ==================== 图 C：数据旅程 ==================== -->
+<div class="section" id="sC">
+  <h2>🧬 图 C — 一条数据从出生到打分的完整旅程</h2>
+  <p>以 <strong>Frangieh 数据集、fold 0、任务 M229 x MAP2K1</strong> 为例，跟着一条数据走完全程：</p>
+
+  <div class="journey-step">
+    <div class="j-num">1</div>
+    <h4>🔬 实验室做实验</h4>
+    <div class="detail">实验者对 M229 细胞系做了 MAP2K1 基因敲除，测了单细胞表达 → 写入 h5ad 文件</div>
+  </div>
+  <div class="journey-step">
+    <div class="j-num">2</div>
+    <h4>📥 创造者下载 + 预处理</h4>
+    <div class="detail">
+      算出 <code>true_effect</code> = 扰动组平均 - 对照组平均 → 存入 <code>true_effects.npz</code><br>
+      算出 M229 的 control 向量 → 存入 <code>target_control_means.npz</code>
+    </div>
+  </div>
+  <div class="journey-step">
+    <div class="j-num">3</div>
+    <h4>✂️ 切分数据</h4>
+    <div class="detail">这条任务被分到 fold 0 的<strong>测试集</strong> → <code>true_effect</code> 被锁起来，预测器看不到</div>
+  </div>
+  <div class="journey-step">
+    <div class="j-num">4</div>
+    <h4>🤖 V0StrongBaseline 预测</h4>
+    <div class="detail">在训练集里找所有 MAP2K1 扰动，算平均 effect → 这就是 V0 对 M229 x MAP2K1 的 <code>predicted_effect</code></div>
+  </div>
+  <div class="journey-step">
+    <div class="j-num">5</div>
+    <h4>🤖 ContextSimBaseline 预测</h4>
+    <div class="detail">在训练集里找和 M229 <strong>相似的 context</strong>，用 cosine similarity <strong>加权平均</strong>它们的 MAP2K1 effect 当预测</div>
+  </div>
+  <div class="journey-step">
+    <div class="j-num">6</div>
+    <h4>🔍 提取特征</h4>
+    <div class="detail">
+      <code>context_similarity</code>: M229 和训练集最像的 context → <strong>0.72</strong><br>
+      <code>support_count</code>: MAP2K1 在训练集有 3 个背景 → <strong>3</strong><br>
+      <code>model_disagreement</code>: V0 和 CS 的预测差 → <strong>RMSE = 0.08</strong>
+    </div>
+  </div>
+  <div class="journey-step">
+    <div class="j-num">7</div>
+    <h4>📐 套公式打分</h4>
+    <div class="detail">
+      <strong>z = (当前值 - 训练集中位数) / 训练集 IQR</strong><br><br>
+      z_ctx = (0.72 - 0.60) / 0.25 = <strong>+0.48</strong>（比一半以上训练样本更像 → 好信号）<br>
+      z_support = (log(4) - 1.0) / 0.5 = <strong>+0.77</strong>（研究得比较多 → 好信号）<br>
+      z_disagreement = (0.08 - 0.05) / 0.03 = <strong>+1.0</strong>（预测器分歧大 → 坏信号）<br><br>
+      <span style="font-size:1.1em;">分数 = 0.48 + 0.77 - 1.0 = <strong style="color:var(--orange);">+0.25</strong>（中等偏上）</span>
+    </div>
+  </div>
+  <div class="journey-step">
+    <div class="j-num">8</div>
+    <h4>✅ 验证（只有创造者做）</h4>
+    <div class="detail">
+      打开测试集真值 → 算 <code>true_error_rmse = 0.089</code><br>
+      看 SafeConf 分数 +0.25 和真实误差 0.089 是否匹配 → 在 100 条预测里做排序相关 → rho = 0.45 → 有效
+    </div>
+  </div>
+
+  <div class="info-box warn">
+    <span class="icon">📝</span>
+    <div><strong>注意：</strong>上面第 7 步的具体数字（0.72, 0.60, 0.25 等）是为了演示造的，不是真实值。<strong>但流程和公式是真的。</strong></div>
+  </div>
+</div>
+
+<!-- ==================== 图 D：分工表 ==================== -->
+<div class="section" id="sD">
+  <h2>📋 图 D — 创造者 vs 使用者分工表</h2>
+
+  <table>
+    <thead>
+      <tr><th>步骤</th><th>创造者（你）</th><th>使用者（别人）</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>收集 h5ad 数据</td><td>✅ 从公开论文下载</td><td>用自己的实验数据</td></tr>
+      <tr><td>造预测器</td><td>✅ 写 V0、ContextSim</td><td>直接用你提供的</td></tr>
+      <tr><td>跑预测</td><td>✅ 在 7 个数据集上跑</td><td>在自己的数据上跑</td></tr>
+      <tr><td>设计打分公式</td><td>✅ 定义 frozen v0.2</td><td>直接用你的公式算</td></tr>
+      <tr><td>训练学习模型</td><td>✅ 训练 HistGBT</td><td><span class="hl-red">不需要</span>（这是论文二线分析）</td></tr>
+      <tr><td>验证有效性</td><td>✅ E1-E4 实验</td><td><span class="hl-red">不需要做</span></td></tr>
+      <tr><td>提取特征</td><td>✅ 写代码实现</td><td>运行你的代码</td></tr>
+      <tr><td>打分</td><td>✅ 写代码实现</td><td>运行你的代码</td></tr>
+      <tr><td>决策（验证哪些预测）</td><td>❌ 不关你的事</td><td>✅ 根据分数决定</td></tr>
+    </tbody>
+  </table>
+
+  <div class="info-box purple-box">
+    <span class="icon">💡</span>
+    <div>
+      <strong>关于学习模型（HistGBT / error ranker）：</strong><br>
+      frozen v0.2 是一个固定公式，<strong>不需要训练</strong>，使用者直接算就行。<br>
+      学习模型是论文里的增强分析（secondary analysis），用来展示"如果用机器学习能做得更好"，<strong>不是给使用者部署的</strong>。
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 图 E：代码文件 ==================== -->
+<div class="section" id="sE">
+  <h2>📁 图 E — 代码文件对应哪个步骤</h2>
+  <p>下面是代码仓库 <code>safetrans_confidence/</code> 的结构。每个文件夹对应流水线的一个环节。</p>
+
+  <div class="code-tree">
+<span class="dir">safetrans_confidence/</span>
+│
+├── <span class="dir">data/</span>                          <span class="comment">← 第 1-2 步：数据读取与预处理</span>
+│   ├── <span class="file">records.py</span>              <span class="comment"># 读取和验证 PredictionRecord</span>
+│   ├── <span class="file">dataset_ontology.py</span>     <span class="comment"># 数据集分类（gene_main / chem_robust）</span>
+│   └── <span class="file">eligibility.py</span>          <span class="comment"># 检查 h5ad 是否满足条件</span>
+│
+├── <span class="dir">predictors/</span>                    <span class="comment">← 第 3 步：预测器</span>
+│   ├── <span class="file">base.py</span>                 <span class="comment"># 预测器接口定义（PredictorAdapter）</span>
+│   └── <span class="file">gears_adapter.py</span>        <span class="comment"># GEARS 深度学习预测器的适配器</span>
+│
+├── <span class="dir">features/</span>                      <span class="comment">← 第 4 步：特征提取</span>
+│   ├── <span class="file">schema.py</span>               <span class="comment"># 特征定义 + 中文含义说明</span>
+│   ├── <span class="file">compute_disagreement_batch.py</span>  <span class="comment"># 计算模型分歧</span>
+│   ├── <span class="file">multiscale_disagreement.py</span>     <span class="comment"># 多尺度分歧（8 种指标）</span>
+│   └── <span class="file">normalize.py</span>            <span class="comment"># 跨数据集标准化（给学习模型用）</span>
+│
+├── <span class="dir">scoring/</span>                       <span class="comment">← 第 5-6 步：打分</span>
+│   ├── <span class="file">protocol_v0_2.py</span>        <span class="comment"># 公式版打分（frozen v0.2）⭐ 核心</span>
+│   ├── <span class="file">error_ranker.py</span>         <span class="comment"># 学习版打分（HistGBT，二线分析）</span>
+│   └── <span class="file">conformal_calibrator.py</span> <span class="comment"># 保形校准（暂缓）</span>
+│
+├── <span class="dir">eval/</span>                          <span class="comment">← 第 7 步：验证评估</span>
+│   ├── <span class="file">metrics.py</span>              <span class="comment"># rho、partial rho 等评估指标</span>
+│   ├── <span class="file">selective_prediction.py</span>  <span class="comment"># RC 曲线、AURC</span>
+│   └── <span class="file">reliability.py</span>          <span class="comment"># 可靠性评估</span>
+│
+└── <span class="dir">cli/</span>                           <span class="comment">← 命令行入口</span>
+    ├── <span class="file">run_fast_feature_scoring.py</span>    <span class="comment"># 特征提取（最常用）</span>
+    ├── <span class="file">run_benchmark.py</span>               <span class="comment"># 打分 + 评估一体化</span>
+    ├── <span class="file">run_lodo.py</span>                    <span class="comment"># 留一数据集验证</span>
+    ├── <span class="file">run_lopo_third_predictor.py</span>    <span class="comment"># 留一预测器验证</span>
+    └── <span class="file">run_preregistered_risk_audits.py</span>  <span class="comment"># E1-E4 正式实验</span>
+  </div>
+</div>
+
+<!-- ==================== 图 F：预测器数量 ==================== -->
+<div class="section" id="sF">
+  <h2>🔢 图 F — 预测器数量不同时的影响</h2>
+
+  <div class="compare-grid">
+    <div class="compare-col c1">
+      <h4>只有 1 个预测器</h4>
+      <p style="font-size:2em; margin: 10px 0;">🤖</p>
+      <p style="text-align:left; font-size:.9em;">
+        ✅ context_similarity<br>
+        ✅ support_count<br>
+        ✅ historical_residual<br>
+        ✅ prediction_l2_norm<br>
+        <span class="hl-red">❌ model_disagreement</span>
+      </p>
+      <div class="info-box danger" style="margin-top: 10px; font-size: .85em;">
+        <div>当前 frozen v0.2 <strong>要求 2 个预测器</strong>。单预测器的 fallback 公式<strong>不存在</strong>——这是一个未解决的问题。</div>
+      </div>
+    </div>
+    <div class="compare-col c2">
+      <h4>2 个预测器（当前默认）</h4>
+      <p style="font-size:2em; margin: 10px 0;">🤖🤖</p>
+      <p style="text-align:left; font-size:.9em;">
+        ✅ 所有特征<br>
+        ✅ model_disagreement<br>
+        ✅ 公式完整版
+      </p>
+      <p style="margin-top: 12px; font-size:.9em; color: var(--green); font-weight: 700;">
+        当前 7 个数据集全部使用此配置
+      </p>
+    </div>
+    <div class="compare-col c3">
+      <h4>3+ 个预测器</h4>
+      <p style="font-size:2em; margin: 10px 0;">🤖🤖🤖</p>
+      <p style="text-align:left; font-size:.9em;">
+        ✅ 所有特征<br>
+        ✅ C(N,2) 对分歧<br>
+        ✅ 更丰富的不确定性信号
+      </p>
+      <p style="margin-top: 12px; font-size:.9em; color: var(--purple);">
+        <code>compute_disagreement_batch.py</code> 自动处理所有配对
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== 读完检查清单 ==================== -->
+<div class="section" id="sG">
+  <h2>📌 读完检查清单</h2>
+  <p>如果你能回答以下问题，说明你已经理解了 SafeConf 的全貌：</p>
+
+  <div style="background: linear-gradient(135deg, #f0fdf4, #ecfdf5); border-radius: 14px; padding: 24px; border: 2px solid #86efac;">
+    <table style="background: transparent;">
+      <thead style="background: #16a34a;"><tr><th>#</th><th>问题</th><th>你应该能答出</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>SafeConf 是在训练一个新的扰动预测模型吗？</td><td>不是。它是给已有预测做"质检"打分。</td></tr>
+        <tr><td>2</td><td>frozen v0.2 的三个特征是什么？</td><td>context_similarity + support_count - disagreement</td></tr>
+        <tr><td>3</td><td>z-score 用什么标准化？</td><td><strong>训练集的中位数和 IQR</strong>，不是均值和标准差</td></tr>
+        <tr><td>4</td><td>测试集的 (context, perturbation) 对在训练集里出现过吗？</td><td>组合没见过，但 context 和 perturbation 各自见过</td></tr>
+        <tr><td>5</td><td>使用者打分时需要知道测试集真实答案吗？</td><td>不需要。只有验证有效性时才需要。</td></tr>
+        <tr><td>6</td><td>分数范围是 0-1 吗？</td><td>不是。z-score 之和，可正可负，越大越可信。</td></tr>
+        <tr><td>7</td><td>McFarland 数据集上 frozen v0.2 成功了吗？</td><td>没有。partial rho = -0.061，是明确的失败边界。</td></tr>
+        <tr><td>8</td><td>学习模型（HistGBT）是给使用者部署的吗？</td><td>不是。它是论文的二线分析，使用者只用公式版。</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ==================== Footer ==================== -->
+<div style="text-align: center; padding: 30px; color: #94a3b8; font-size: .85em;">
+  <p>SafeConf 全流程拆解 | 基于 Qoder 原稿，Claude 校验修正并渲染</p>
+  <p>生成时间：2026-06-17 | 仓库分支：exp/task-risk-audit-20260611</p>
+</div>
+
+</div><!-- container -->
+</body>
+</html>

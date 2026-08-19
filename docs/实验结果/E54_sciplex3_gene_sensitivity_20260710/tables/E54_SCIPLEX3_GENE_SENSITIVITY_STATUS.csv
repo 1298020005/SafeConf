@@ -1,0 +1,13 @@
+dataset,path,n_obs,n_vars,n_genes_used,context_col,perturbation_col,n_tasks,n_contexts,n_perturbations,status,setting,heldout,dataset_name,n_train,n_test,n_genes_setting
+sciplex3_cell_line_gene1000,extra_official/cellular_context_generalization/sciplex3.h5ad,26046.0,5000.0,1000.0,cell_line,perturbation,104.0,3.0,36.0,ok,,,,,,1000
+,,,,,,,,,,ok,leave_context,A549,sciplex3_cell_line_gene1000,68.0,36.0,1000
+,,,,,,,,,,ok,leave_context,K562,sciplex3_cell_line_gene1000,69.0,35.0,1000
+,,,,,,,,,,ok,leave_context,MCF7,sciplex3_cell_line_gene1000,71.0,33.0,1000
+sciplex3_cell_line_gene3000,extra_official/cellular_context_generalization/sciplex3.h5ad,26046.0,5000.0,3000.0,cell_line,perturbation,104.0,3.0,36.0,ok,,,,,,3000
+,,,,,,,,,,ok,leave_context,A549,sciplex3_cell_line_gene3000,68.0,36.0,3000
+,,,,,,,,,,ok,leave_context,K562,sciplex3_cell_line_gene3000,69.0,35.0,3000
+,,,,,,,,,,ok,leave_context,MCF7,sciplex3_cell_line_gene3000,71.0,33.0,3000
+sciplex3_cell_line_gene5000,extra_official/cellular_context_generalization/sciplex3.h5ad,26046.0,5000.0,5000.0,cell_line,perturbation,104.0,3.0,36.0,ok,,,,,,5000
+,,,,,,,,,,ok,leave_context,A549,sciplex3_cell_line_gene5000,68.0,36.0,5000
+,,,,,,,,,,ok,leave_context,K562,sciplex3_cell_line_gene5000,69.0,35.0,5000
+,,,,,,,,,,ok,leave_context,MCF7,sciplex3_cell_line_gene5000,71.0,33.0,5000

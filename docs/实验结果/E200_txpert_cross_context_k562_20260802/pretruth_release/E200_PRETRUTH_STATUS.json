@@ -1,0 +1,15 @@
+{
+  "experiment": "E200_txpert_cross_context_k562",
+  "stage": "PRETRUTH_FEATURE_RELEASE",
+  "generated_at": "2026-08-02T05:00:26+08:00",
+  "status": "PASS",
+  "git_head": "28f1fa3ece76f9c8ec9076e994a9650f92c713f4",
+  "n_tasks": 580,
+  "n_primary_tasks_ge30": 566,
+  "n_sensitivity_tasks_10_29": 14,
+  "n_single_context_dispersion_imputed": 75,
+  "target_K562_perturbation_expression_rows_opened": 0,
+  "target_outcomes_evaluated": false,
+  "gates_passed": 21,
+  "gates_total": 21
+}

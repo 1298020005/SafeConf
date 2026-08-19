@@ -1,0 +1,83 @@
+{
+  "status": "ok",
+  "generated_at": "2026-07-08T12:56:33",
+  "git_head": "12f50e67d1510745793a6836838477228c1c6b4c",
+  "git_dirty": true,
+  "out": "docs/实验结果/E29_gears_scgpt_shared_adamson_risk_audit_20260708",
+  "device": "cuda:0",
+  "n_prediction_records": 14,
+  "n_tasks": 7,
+  "n_genes": 512,
+  "perturbations": [
+    "CCND3",
+    "DAD1",
+    "DERL2",
+    "NEDD8",
+    "TIMM23",
+    "UFM1",
+    "YIPF5"
+  ],
+  "strict_issue_count": 0,
+  "strict_issues": [],
+  "cells_per_perturbation": {
+    "control": 8,
+    "CCND3": 8,
+    "DAD1": 8,
+    "DERL2": 8,
+    "NEDD8": 8,
+    "TIMM23": 8,
+    "UFM1": 8,
+    "YIPF5": 8
+  },
+  "scgpt_matched_key_count": 129,
+  "scgpt_total_model_key_count": 176,
+  "sources": {
+    "e25": "docs/实验结果/E25_gears_strict_prediction_records_20260708",
+    "adamson_h5ad": "$YYF_DATA/singlecell_perturbation_atlas/official_generalization/Adamson.h5ad",
+    "gears_processed": "$YYF_DATA/gears_formal_baselines_v2/adamson_local_atlas/perturb_processed.h5ad"
+  },
+  "risk_summary": [
+    {
+      "score": "risk_disagreement_z",
+      "n_tasks": 7,
+      "target": "task_mean_rmse",
+      "spearman": 0.3571428571428572,
+      "pearson": 0.41475388840843636,
+      "top_30pct_k": 3,
+      "top_30pct_mean_rmse": 0.2820326288541158,
+      "bottom_30pct_k": 3,
+      "bottom_30pct_mean_rmse": 0.26997720698515576,
+      "all_task_mean_rmse": 0.27931220829486847,
+      "top_vs_all_ratio": 1.00973971233071,
+      "top_vs_bottom_ratio": 1.0446534802088787
+    },
+    {
+      "score": "risk_disagreement_plus_pred_magnitude_z",
+      "n_tasks": 7,
+      "target": "task_mean_rmse",
+      "spearman": 0.3571428571428572,
+      "pearson": 0.41471318157365983,
+      "top_30pct_k": 3,
+      "top_30pct_mean_rmse": 0.2820326288541158,
+      "bottom_30pct_k": 3,
+      "bottom_30pct_mean_rmse": 0.26997720698515576,
+      "all_task_mean_rmse": 0.27931220829486847,
+      "top_vs_all_ratio": 1.00973971233071,
+      "top_vs_bottom_ratio": 1.0446534802088787
+    },
+    {
+      "score": "diagnostic_true_magnitude_z",
+      "n_tasks": 7,
+      "target": "task_mean_rmse",
+      "spearman": 0.9642857142857145,
+      "pearson": 0.9948867834059922,
+      "top_30pct_k": 3,
+      "top_30pct_mean_rmse": 0.30571211874485016,
+      "bottom_30pct_k": 3,
+      "bottom_30pct_mean_rmse": 0.2527570128440857,
+      "all_task_mean_rmse": 0.27931220829486847,
+      "top_vs_all_ratio": 1.0945175673170413,
+      "top_vs_bottom_ratio": 1.2095099372511973
+    }
+  ]
+}

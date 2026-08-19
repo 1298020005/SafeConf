@@ -1,0 +1,26 @@
+{
+  "best_exploratory_candidate": "safeconf_only",
+  "best_exploratory_candidate_mean_delta": 0.0001741542512455572,
+  "deployment_authorized": false,
+  "e170_f3_directories_present": 0,
+  "e170_test_targeting_x_values_read": 0,
+  "experiment": "E171_seed_ensemble_gate_development",
+  "git_branch": "exp/task-risk-audit-20260611",
+  "git_head": "35f81f83a70a80eb02ed63cd7757102e87450296",
+  "loo_family_mean_g4_units_passed": 24,
+  "original_g4_units_passed": 12,
+  "performance_rescue_claim_supported": false,
+  "recommended_deployed_score_changed": false,
+  "recommended_gate_for_fresh_protocol": "three_leave_one_seed_out_two_seed_family_mean_risks",
+  "registered_g4_units": 24,
+  "remote_heads": {
+    "github": "35f81f83a70a80eb02ed63cd7757102e87450296",
+    "origin": "35f81f83a70a80eb02ed63cd7757102e87450296"
+  },
+  "schema": "safeconf_e171_pretruth_development_v1",
+  "stage": "PRETRUTH_DEVELOPMENT_ONLY",
+  "status": "COMPLETE",
+  "validation_magnitude_minus_safeconf_mean_delta": 0.0001741542512455572,
+  "validation_safeconf_positive_units": 4,
+  "validation_units": 12
+}

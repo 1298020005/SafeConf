@@ -1,0 +1,3 @@
+source,path,n_obs,n_vars,obs_columns_sample
+main_source_h5ad,/home/yyf/data/singlecell_perturbation_atlas/official_generalization/Frangieh.h5ad,110188,5124,gene;condition;perturbation;n_genes;n_genes_by_counts;total_counts;total_counts_mt;pct_counts_mt
+gears_processed_h5ad,/home/yyf/data/gears_formal_baselines_v2/frangieh_local_atlas/perturb_processed.h5ad,110188,3000,gene;condition;perturbation;n_genes;n_genes_by_counts;total_counts;total_counts_mt;pct_counts_mt;cell_type;dose_val;control;condition_name

@@ -1,0 +1,4 @@
+path,dataset,n_tasks,n_contexts,n_perturbations,context_col,perturbation_col,n_genes
+/home/yyf/datasets/singlecell_perturbation_atlas/extra_official/cellular_context_generalization/Haber.h5ad,Haber,24,8,3,cell_type,perturbation,1000
+/home/yyf/datasets/singlecell_perturbation_atlas/extra_official/cellular_context_generalization/Parekh.h5ad,Parekh,30,3,10,cell_type,perturbation,1000
+/home/yyf/datasets/singlecell_perturbation_atlas/extra_official/cellular_context_generalization/KaggleCrossCell.h5ad,KaggleCrossCell,24,5,10,cell_type,perturbation,1000

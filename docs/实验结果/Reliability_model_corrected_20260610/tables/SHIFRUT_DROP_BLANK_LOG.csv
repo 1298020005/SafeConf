@@ -1,0 +1,4 @@
+table,rows_before,rows_after,dropped_rows
+PREDICTION_RECORDS.csv,420,400,20
+CONFIDENCE_FEATURES.csv,420,400,20
+CONFIDENCE_SCORES.csv,4200,4000,200

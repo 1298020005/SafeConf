@@ -1,0 +1,29 @@
+{
+  "dataset": "adamson",
+  "split": "single",
+  "seed": 3,
+  "epochs": 1,
+  "status": "ok",
+  "fixed_test_perturbations_file": "/home/yyf/proj/docs/实验结果/E32_gears_fixed_test_3seed_smoke_20260708/tables/E32_FIXED_TEST_PERTURBATIONS.csv",
+  "fixed_test_conditions": [
+    "CCND3+ctrl",
+    "DAD1+ctrl",
+    "DERL2+ctrl",
+    "NEDD8+ctrl",
+    "TIMM23+ctrl",
+    "UFM1+ctrl",
+    "YIPF5+ctrl"
+  ],
+  "n_fixed_test_conditions": 7,
+  "n_train_conditions_after_override": 64,
+  "n_val_conditions_after_override": 6,
+  "fixed_test_deterministic_val": true,
+  "test_mse": 0.001839251448732934,
+  "test_mse_de": 0.10534508473106793,
+  "test_pearson": 0.9958260594130068,
+  "test_pearson_de": 0.9530721647420188,
+  "n_prediction_records": 7,
+  "records_csv": "/home/yyf/proj/docs/实验结果/E32_gears_fixed_test_3seed_smoke_20260708/raw_gears/adamson/seed_3/tables/PREDICTION_RECORDS.csv",
+  "predicted_npz": "/home/yyf/proj/docs/实验结果/E32_gears_fixed_test_3seed_smoke_20260708/raw_gears/adamson/seed_3/arrays/gears_predicted_effects.npz",
+  "true_npz": "/home/yyf/proj/docs/实验结果/E32_gears_fixed_test_3seed_smoke_20260708/raw_gears/adamson/seed_3/arrays/gears_true_effects.npz"
+}

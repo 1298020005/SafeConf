@@ -1,0 +1,11 @@
+{
+  "status": "ok",
+  "generated_at": "2026-07-07T21:35:50",
+  "script": "tools/scripts/run_e19_gears_only_supplement.py",
+  "output_dir": "docs/实验结果/E19_gears_only_supplement_20260707",
+  "input_git_commit": "1133facb9afcc28b552ad312611bd22503c54093",
+  "n_sources": 2,
+  "total_records": 116,
+  "best_source": "GEARS_FRANGIEH_62",
+  "best_aligned_spearman": 0.9411246254186496
+}

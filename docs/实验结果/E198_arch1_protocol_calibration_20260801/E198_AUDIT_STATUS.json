@@ -1,0 +1,11 @@
+{
+  "experiment": "E198_arch1_protocol_calibration",
+  "generated_at": "2026-08-02T00:10:03+08:00",
+  "status": "PASS",
+  "formal_output_hashes_checked": 11,
+  "hash_failures": [],
+  "calibration_rows": 1800,
+  "independent_drf_max_delta": 6.317724121629453e-13,
+  "independent_bds_max_delta": 1.1102230246251565e-16,
+  "dataset_reopened": false
+}

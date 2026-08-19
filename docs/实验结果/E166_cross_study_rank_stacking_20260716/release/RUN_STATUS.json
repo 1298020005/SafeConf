@@ -1,0 +1,26 @@
+{
+  "completed_at": "2026-07-16T19:08:53+08:00",
+  "git_head_at_formal_run": "7de0b5c74832d1f611fac2a999bc9bd2566a0b3c",
+  "n_cluster_bootstrap_per_study": 3000,
+  "n_folds": 34,
+  "n_rows": 3465,
+  "n_studies": 8,
+  "n_two_level_bootstrap": 10000,
+  "phase": "complete_posthoc_lodo_rank_stacking",
+  "predictors_retrained": false,
+  "primary": {
+    "equal_study_mean": 0.03237903478474495,
+    "metric": "delta_stack_minus_magnitude",
+    "p_gt_zero": 0.8575,
+    "positive_studies": 5,
+    "total_studies": 8,
+    "two_level_ci95_high": 0.08771485201262928,
+    "two_level_ci95_low": -0.028279988637739263
+  },
+  "results_manifest_sha256": "945f28dc75ea92fe84b10d3f2d99c699a624763ed3b3046b0881796d2a4d5a27",
+  "schema": "safeconf_e166_cross_study_rank_stacking_v1",
+  "source_expression_opened": false,
+  "strict_gate_passed": false,
+  "test_truth_rows_used_for_weight_fit": 0,
+  "transaction_id": "8dc4bb8845944490ade74969134c236b"
+}

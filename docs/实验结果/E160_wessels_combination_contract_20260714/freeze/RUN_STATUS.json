@@ -1,0 +1,269 @@
+{
+  "experiment": "E160_wessels_combination_contract",
+  "phase": "requirements_frozen_test_expression_unopened",
+  "frozen_at": "2026-07-14",
+  "executed_at": "2026-07-14T21:53:57+08:00",
+  "requirements_only_not_gate_results": true,
+  "dataset": "WesselsSatija2023",
+  "raw_path": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/WesselsSatija2023.h5ad",
+  "raw_integrity": {
+    "md5": "6897bfdcda928a678208fecf4eeb282e",
+    "sha256": "5da0485aed81b23bda57b4a7b4510a394682d54911416db89b4846ff6dd34732",
+    "bytes": 219393529,
+    "device": 2065,
+    "inode": 265665529,
+    "mtime_ns": 1776410890327788277
+  },
+  "dataset_shape": [
+    30707,
+    21052
+  ],
+  "metadata_only_selection": true,
+  "ann_data_backed_read_only": true,
+  "raw_file_streamed_once_for_simultaneous_hashes": true,
+  "raw_X_values_indexed_or_materialized": false,
+  "layers_opened_by_formal_runner": false,
+  "prediction_score_or_error_used_for_selection": false,
+  "pre_design_reconnaissance_20260714": {
+    "obs_var_shape_inspected": true,
+    "X_storage_type_and_dtype_metadata_inspected": "CSR int64 raw counts",
+    "layers_presence_metadata_inspected": "no layers",
+    "X_values_read": false,
+    "hardcoded_counts_source": "pre-design metadata/storage-type reconnaissance"
+  },
+  "selection_seed": "E160|Wessels|seen-component-unseen-pair|20260714|v1",
+  "minimum_pair_cells": 75,
+  "canonicalization": "uppercase; control->ctrl; single->GENE+ctrl; sorted pair joined by +",
+  "required_main_truth": {
+    "name": "train_only_PCA10_inverse_transform_effect",
+    "task_mean": "mu_t = mean_i_in_task(log1p(10000*x_i/sum_g x_i)) on selected genes",
+    "control_mean": "mu_ctrl = train-control cell mean after per-cell normalization/log1p",
+    "pca_truth": "z_t=(mu_t-m_G)W^T; effect=(z_t W+m_G)-mu_ctrl",
+    "prediction_effect": "effect_hat=(z_hat_t W+m_G)-mu_ctrl",
+    "accuracy": "Pearson(effect_hat, PCA10-inverse-transform effect)"
+  },
+  "required_raw_full_gene_truth_sensitivity": {
+    "truth_effect": "mu_t-mu_ctrl on the full selected-gene axis",
+    "accuracy": "Pearson(effect_hat, raw full-selected-gene truth effect)",
+    "mandatory_reporting": true
+  },
+  "primary_score": "PRESCRIBE raw_log_prob; larger means higher confidence",
+  "raw_log_prob_hypothesis_timing": "new Wessels hypothesis jointly motivated after unseal by positive PCA10 rhos and negative raw-full-gene rhos; not retrospectively preregistered",
+  "required_raw_log_prob_gate": {
+    "required_rows": 48,
+    "required_one_row_per_test_task": true,
+    "required_all_finite": true,
+    "required_minimum_exact_unique_values": 24,
+    "required_sample_std_ddof": 1,
+    "required_sample_std_strictly_greater_than": 1e-06
+  },
+  "required_prediction_non_degeneracy_gate": {
+    "required_shape": [
+      48,
+      10
+    ],
+    "required_all_480_values_finite": true,
+    "required_minimum_exact_unique_prediction_vectors": 24,
+    "required_at_least_one_coordinate_sample_std_ddof": 1,
+    "required_at_least_one_coordinate_sample_std_strictly_greater_than": 1e-06
+  },
+  "required_baseline_estimability": {
+    "baselines": [
+      "official_combined_confidence=2*epistemic+aleatoric",
+      "predicted_magnitude_rms"
+    ],
+    "required_rows": 48,
+    "required_all_finite": true,
+    "required_minimum_exact_unique_values": 2,
+    "required_sample_std_ddof": 1,
+    "required_sample_std_strictly_greater_than": 1e-12,
+    "failure_output": "NA with constant_or_nonfinite_baseline; never zero-fill"
+  },
+  "required_main_endpoint": {
+    "statistic": "Spearman(raw_log_prob, PCA10 pearson_effect_accuracy)",
+    "expected_direction": "positive",
+    "constant_rule": "nonfinite or unique<2 or sample_std<=1e-12 => rho/CI NA and main gate fails",
+    "confirmation": "point rho>0 and task-bootstrap 95% CI lower>0"
+  },
+  "required_bootstrap": {
+    "rng": "numpy.random.default_rng",
+    "seed": 3407,
+    "replicates": 10000,
+    "task_resample_size": 48,
+    "paired_indices_for_rawlog_and_baselines": true,
+    "paired_delta": "rho_raw_log_prob - rho_baseline",
+    "ci": "numpy.quantile([0.025,0.975], method='linear')",
+    "percentile_method": "linear",
+    "minimum_valid_replicates": 9500
+  },
+  "required_gene_cluster_bootstrap": {
+    "seed": 3407,
+    "replicates": 10000,
+    "algorithm": "sample K component genes with replacement; for every sampled gene append all test tasks containing it once; compute Spearman on the resulting task multiset",
+    "role": "dependency sensitivity; does not replace primary task bootstrap"
+  },
+  "required_leave_one_gene_out": {
+    "algorithm": "for every component gene remove all test pairs containing it and recompute rho",
+    "required_outputs": "gene, removed_n, remaining_n, rho, estimability; min/median/max and positive fraction"
+  },
+  "required_secondary_endpoints": [
+    "PCA10 frac_correct_direction_all and top20 true-effect direction",
+    "PCA10 rmse_effect_error",
+    "raw full-selected-gene Pearson/direction/RMSE sensitivity"
+  ],
+  "required_coverage": {
+    "ranking": "raw_log_prob descending; canonical condition ascending for ties",
+    "retained_n_rule": "ceil(coverage*48)",
+    "grid": [
+      {
+        "coverage": 0.5,
+        "required_retained_n": 24
+      },
+      {
+        "coverage": 0.55,
+        "required_retained_n": 27
+      },
+      {
+        "coverage": 0.6,
+        "required_retained_n": 29
+      },
+      {
+        "coverage": 0.65,
+        "required_retained_n": 32
+      },
+      {
+        "coverage": 0.7,
+        "required_retained_n": 34
+      },
+      {
+        "coverage": 0.75,
+        "required_retained_n": 36
+      },
+      {
+        "coverage": 0.8,
+        "required_retained_n": 39
+      },
+      {
+        "coverage": 0.85,
+        "required_retained_n": 41
+      },
+      {
+        "coverage": 0.9,
+        "required_retained_n": 44
+      },
+      {
+        "coverage": 0.95,
+        "required_retained_n": 46
+      },
+      {
+        "coverage": 1.0,
+        "required_retained_n": 48
+      }
+    ]
+  },
+  "prior_evidence_disclosure": {
+    "E158_attempt1_phase": "failed_after_irreversible_test_unseal_preserve_attempt",
+    "E158_test_data_unsealed": true,
+    "E158_test_X_rows_materialized": true,
+    "E158_failure": "RuntimeError('Only 0 valid bootstrap replicates; need 9500')",
+    "E158_unseal_event_sha256": "40b1418002c8f32d0dbac67bd0260ed47d23645ff92f60c25c97d4ef38322f08",
+    "E159_phase": "complete_post_unseal_saturation_forensics",
+    "E159_analysis_timing": "post_unseal_forensic_not_preregistered",
+    "E159_official_combined_magnitude_and_PCA_predictions_saturated": true,
+    "E159_raw_log_prob_role": "posthoc_hypothesis_generating_only",
+    "E159_posthoc_rhos": {
+      "Norman_P3|pearson_effect_accuracy": 0.177391304347826,
+      "Norman_P4|pearson_effect_accuracy": 0.2904347826086956,
+      "Norman_P3|raw_pearson_effect_accuracy_sensitivity": -0.2730434782608695,
+      "Norman_P4|raw_pearson_effect_accuracy_sensitivity": -0.4999999999999999
+    },
+    "E160_hypothesis_disclosure": "new Wessels hypothesis jointly motivated after unseal by positive PCA10 rhos and negative raw-full-gene rhos; not retrospectively preregistered"
+  },
+  "committed_input_gate": {
+    "git_head": "a8db8f8e4367a4857de97de7eecf336176a3280a",
+    "files": {
+      "runner": {
+        "path": "tools/scripts/run_e160_wessels_combination_contract.py",
+        "sha256": "2ccaa4ea238582ae34b1bc569e918a2846a00021b9a564146fbf08114c8fce19",
+        "bytes": 48164,
+        "matches_git_head_blob": true
+      },
+      "contract": {
+        "path": "docs/实验结果/E160_wessels_combination_contract_20260714/ANALYSIS_CONTRACT.md",
+        "sha256": "4fdb0cca84811a8a8e5e93f5c800220dd7231b18ffeb999120ab3e608b80da43",
+        "bytes": 12655,
+        "matches_git_head_blob": true
+      },
+      "scgpt_perturbation_vocabulary": {
+        "path": "docs/实验结果/E160_wessels_combination_contract_20260714/SCGPT_PERTURBATION_VOCABULARY.txt",
+        "sha256": "27b822c871a7905d419529bdc9e28d6608e4b56a155bd875908b02cc171fb084",
+        "bytes": 600383,
+        "matches_git_head_blob": true
+      },
+      "e158_attempt1_run_status": {
+        "path": "docs/实验结果/E158_prescribe_norman_p3p4_forward_evaluation_20260714/attempt_001/RUN_STATUS.json",
+        "sha256": "11f5dc76c45b674b560fd7e5f55f782f504c8ee2b70264cc88f348445aa7c6de",
+        "bytes": 5307,
+        "matches_git_head_blob": true
+      },
+      "e158_attempt1_unseal_event": {
+        "path": "docs/实验结果/E158_prescribe_norman_p3p4_forward_evaluation_20260714/attempt_001/UNSEAL_EVENT.json",
+        "sha256": "40b1418002c8f32d0dbac67bd0260ed47d23645ff92f60c25c97d4ef38322f08",
+        "bytes": 3181,
+        "matches_git_head_blob": true
+      },
+      "e159_run_status": {
+        "path": "docs/实验结果/E159_prescribe_saturation_forensics_20260714/RUN_STATUS.json",
+        "sha256": "dd9a56b91bbb4e0197ff716247bc063adff025876feafb2794e982c5419a9ed5",
+        "bytes": 3927,
+        "matches_git_head_blob": true
+      },
+      "e159_posthoc_spearman": {
+        "path": "docs/实验结果/E159_prescribe_saturation_forensics_20260714/tables/E159_POSTHOC_SPEARMAN.csv",
+        "sha256": "cc55e28cbf47444fa4838e6cefd4cf1a329d01c8aa0e52762d7140d7d0a8558a",
+        "bytes": 5776,
+        "matches_git_head_blob": true
+      }
+    }
+  },
+  "n_raw_conditions": 187,
+  "n_control_conditions": 1,
+  "n_compatible_singles_all_train": 27,
+  "n_compatible_pairs": 142,
+  "n_eligible_pairs_min75": 116,
+  "n_pair_train": 44,
+  "n_pair_val": 24,
+  "n_pair_test": 48,
+  "n_total_train_conditions": 72,
+  "all_test_pair_components_seen_as_train_singles": true,
+  "split_task_overlap": 0,
+  "vprbp_absent_from_vocabulary_and_expression_var": true,
+  "n_vprbp_pairs_excluded": 16,
+  "guide_class_nperts_mapping_strictly_verified": true,
+  "canonical_gene_case": "uppercase",
+  "atomic_publication": {
+    "staging": ".freeze.staging",
+    "release": "freeze",
+    "explicit_allowlist": [
+      "RUN_STATUS.json",
+      "manifests/E160_CONDITION_AUDIT.csv",
+      "manifests/E160_ELIGIBLE_PAIRS_SHA_ORDER.csv",
+      "manifests/E160_PRIOR_ACCESS_AUDIT.csv",
+      "manifests/E160_PRIOR_EVIDENCE_AUDIT.json",
+      "manifests/E160_SOURCE_HASHES.csv",
+      "manifests/E160_SPLIT.csv",
+      "manifests/E160_set2conditions.json"
+    ],
+    "symlink_or_unknown_path_policy": "reject",
+    "recovery": "explicit --recover-staging with valid sentinel and allowlist only"
+  },
+  "artifact_sha256": {
+    "freeze/manifests/E160_CONDITION_AUDIT.csv": "5c87b0ab01a3735a05178f8ebf48ebda0b4328d955e199cf8db85de05f3b8125",
+    "freeze/manifests/E160_ELIGIBLE_PAIRS_SHA_ORDER.csv": "a0aaba8b8825eb02dee1eb384af1fd3d11b09645df7cb7c6a62e4a43b95dac16",
+    "freeze/manifests/E160_SPLIT.csv": "c3cb1a45b4918964e14092b5aa564b45739c123fada42bb336a8e5e3531dd577",
+    "freeze/manifests/E160_set2conditions.json": "dedd26e86b022bf5ffb86d485b3a33276c0c35cf959c3e2881034be8c636b514",
+    "freeze/manifests/E160_SOURCE_HASHES.csv": "e53adfbbd5de13cbddb0250d9ba751b2e27eb7960f3404e5836b81cfc88db805",
+    "freeze/manifests/E160_PRIOR_ACCESS_AUDIT.csv": "04af710da9ec398092d3604730178a33dec1e0727692ebaf778d6e128ba294f7",
+    "freeze/manifests/E160_PRIOR_EVIDENCE_AUDIT.json": "ed8729511705528e6972b7b98e249fd6906337a665c57b9eb24f29ff7a42794e"
+  }
+}

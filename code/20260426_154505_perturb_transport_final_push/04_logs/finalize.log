@@ -1,0 +1,10 @@
+
+$ /home/yyf/.conda/envs/scgpt_env/bin/python finalize_handoff.py --root /home/yyf/codex_cout/20260426_154505_perturb_transport_final_push --archive /home/yyf/codex_archive/20260426_154505_before_perturb_transport --zip-path /home/yyf/codex_cout/20260426_154505_FINAL_GPT_HANDOFF_AND_CODEX_CLEANUP.zip
+{'zip_path': '/home/yyf/codex_cout/20260426_154505_FINAL_GPT_HANDOFF_AND_CODEX_CLEANUP.zip', 'verdict': 'NOT_Q2_READY_STOP', 'reason': 'Gate passed but full run did not complete; no Q2 claim is allowed.'}
+
+exit_code=0
+
+$ /home/yyf/.conda/envs/scgpt_env/bin/python finalize_handoff.py --root /home/yyf/codex_cout/20260426_154505_perturb_transport_final_push --archive /home/yyf/codex_archive/20260426_154505_before_perturb_transport --zip-path /home/yyf/codex_cout/20260426_154505_FINAL_GPT_HANDOFF_AND_CODEX_CLEANUP.zip
+{'zip_path': '/home/yyf/codex_cout/20260426_154505_FINAL_GPT_HANDOFF_AND_CODEX_CLEANUP.zip', 'verdict': 'Q2_READY_WITH_FOCUSED_CLAIMS', 'reason': 'Full run found at least two main hard OOD settings plus external directional support and uncertainty-error association.'}
+
+exit_code=0

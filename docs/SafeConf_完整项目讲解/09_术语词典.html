@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>09 术语词典</title>
+<link rel="stylesheet" href="assets/tutorial.css">
+</head>
+<body>
+<header class="top">
+<div class="topin">
+<a class="brand" href="index.html">SafeConf 完整项目讲解</a>
+<a class="back" href="../../SafeConf_统一研究工作台.html">返回工作台</a>
+</div>
+</header>
+<div class="layout">
+<aside class="side" id="chapterNav">
+</aside>
+<main class="content">
+<section class="hero">
+<p class="eyebrow">CHAPTER 09</p>
+<h1>术语词典：遇到生词就在这里查</h1>
+<p class="lead">解释按“它是什么—在本项目里做什么”来写，不要求先懂生物学、统计学或编程。</p>
+<p>
+<input class="glossary-search" id="glossarySearch" type="search" placeholder="搜索：基因、fold、AURC、h5ad、commit……">
+</p>
+</section>
+<div id="glossaryList">
+<h2>生物学与单细胞</h2>
+<div class="term" data-term="cell 细胞">
+<b>细胞 cell</b>
+<p>生命体的基本单位。单细胞研究逐个观察细胞状态，保留群体平均值会掩盖的差异。</p>
+</div>
+<div class="term" data-term="gene 基因 dna">
+<b>基因 gene</b>
+<p>DNA 上承载功能信息的一段序列。可把它理解为细胞说明书中的一个条目。</p>
+</div>
+<div class="term" data-term="rna 核糖核酸">
+<b>RNA</b>
+<p>基因被使用时产生的一类分子。测到某种 RNA 较多，通常表示相应基因在当前细胞中较活跃。</p>
+</div>
+<div class="term" data-term="gene expression 基因表达">
+<b>基因表达</b>
+<p>基因被读取并产生 RNA 或蛋白质的过程。项目中的表达量通常指每个基因测得的 RNA 数量或标准化数值。</p>
+</div>
+<div class="term" data-term="transcriptome 转录组">
+<b>转录组 transcriptome</b>
+<p>某个细胞在某一时刻全部 RNA 表达的集合，记录细胞当时的工作状态。</p>
+</div>
+<div class="term" data-term="single-cell RNA-seq scrna 单细胞转录组">
+<b>单细胞 RNA 测序</b>
+<p>逐个细胞测量大量基因表达的技术，常写作 scRNA-seq。结果通常是“细胞 × 基因”的大矩阵。</p>
+</div>
+<div class="term" data-term="cell line 细胞系">
+<b>细胞系 cell line</b>
+<p>能在实验室长期培养的一类细胞。不同细胞系有不同基因背景，因此同一种药在不同细胞系上可能效果不同。</p>
+</div>
+<div class="term" data-term="context background 细胞背景 上下文">
+<b>细胞背景 context</b>
+<p>施加扰动前的细胞身份和状态，可包括细胞系、组织来源和初始表达。SafeConf 用它判断新任务是否接近历史经验。</p>
+</div>
+<div class="term" data-term="perturbation 扰动 干预">
+<b>扰动 perturbation</b>
+<p>人为改变细胞的操作，例如敲除一个基因、加入一种药物或施加刺激。</p>
+</div>
+<div class="term" data-term="control 对照">
+<b>对照 control</b>
+<p>未接受目标扰动、其余条件尽量相同的细胞。扰动组与对照组的差异用于估计真实效应。</p>
+</div>
+<div class="term" data-term="dose 剂量">
+<b>剂量 dose</b>
+<p>药物或刺激的用量。相同药物在不同剂量下可形成不同任务。</p>
+</div>
+<div class="term" data-term="time timepoint 时间点">
+<b>时间点 timepoint</b>
+<p>扰动后经过多久测量。6 小时和 24 小时的细胞反应可能完全不同。</p>
+</div>
+<h2>项目对象与数据文件</h2>
+<div class="term" data-term="task 任务">
+<b>任务 task</b>
+<p>项目中待预测的最小单位，通常由数据集、细胞背景、扰动以及必要时的剂量和时间共同确定。</p>
+</div>
+<div class="term" data-term="vector 向量">
+<b>向量 vector</b>
+<p>按固定顺序排列的一串数。一个表达效应向量的每个位置对应一个基因。</p>
+</div>
+<div class="term" data-term="effect 效应">
+<b>效应 effect</b>
+<p>扰动组相对对照组的变化。正值常表示上调，负值常表示下调。</p>
+</div>
+<div class="term" data-term="true predicted effect 真实效应 预测效应">
+<b>真实 / 预测效应</b>
+<p>真实效应来自实验观测；预测效应由模型给出。两者的差异就是预测误差。</p>
+</div>
+<div class="term" data-term="h5ad anndata">
+<b>H5AD / AnnData</b>
+<p>单细胞分析常用文件与对象格式，可同时保存表达矩阵、细胞信息、基因信息和其他分析结果。</p>
+</div>
+<div class="term" data-term="obs observation">
+<b>obs</b>
+<p>AnnData 中描述每个细胞的表格，例如细胞系、扰动、批次和剂量；一行对应一个细胞。</p>
+</div>
+<div class="term" data-term="var variable gene">
+<b>var</b>
+<p>AnnData 中描述每个基因的表格，例如基因名或基因 ID；一行对应表达矩阵的一列。</p>
+</div>
+<div class="term" data-term="X matrix 表达矩阵">
+<b>X</b>
+<p>AnnData 的核心“细胞 × 基因”表达矩阵。第 i 行第 j 列表示第 i 个细胞中第 j 个基因的数值。</p>
+</div>
+<div class="term" data-term="sparse matrix 稀疏矩阵">
+<b>稀疏矩阵</b>
+<p>只存非零位置的矩阵格式。单细胞表达中零很多，用它可显著节省内存。</p>
+</div>
+<div class="term" data-term="npz numpy">
+<b>NPZ</b>
+<p>NumPy 的压缩数组文件，适合保存预测向量或特征数组，但必须另外说明每一维对应什么。</p>
+</div>
+<div class="term" data-term="csv comma separated">
+<b>CSV</b>
+<p>用逗号分隔的表格文本文件，可被 Excel、Pandas 等读取。项目的正式结果表多用此格式。</p>
+</div>
+<div class="term" data-term="PredictionRecord prediction record 预测记录">
+<b>PredictionRecord</b>
+<p>SafeConf 的标准预测记录：把任务身份、真实向量、预测向量和来源信息封装成统一结构，供后续特征与评价使用。</p>
+</div>
+<div class="term" data-term="schema contract 数据契约">
+<b>Schema / 数据契约</b>
+<p>规定文件必须有哪些列、类型和含义。它像接口说明书，防止不同脚本把同一列理解成不同东西。</p>
+</div>
+<h2>SafeConf 与模型</h2>
+<div class="term" data-term="feature 特征">
+<b>特征 feature</b>
+<p>可供打分或学习使用的数值描述，例如上下文相似度、历史支持数和模型分歧。</p>
+</div>
+<div class="term" data-term="confidence 置信度">
+<b>置信度 confidence</b>
+<p>系统认为预测可靠的程度。SafeConf 中分数越高通常表示越可信。</p>
+</div>
+<div class="term" data-term="risk 风险">
+<b>风险 risk</b>
+<p>预测出错的可能或严重程度。它与 confidence 方向相反；使用前必须确认代码采用哪一种方向。</p>
+</div>
+<div class="term" data-term="support count 历史支持数">
+<b>历史支持数</b>
+<p>训练参考域中同一扰动有多少有效历史记录。支持越少，外推通常越冒险。</p>
+</div>
+<div class="term" data-term="cosine similarity 余弦相似度">
+<b>余弦相似度</b>
+<p>比较两个向量方向是否相近，范围通常为 −1 到 1。项目用它衡量目标细胞背景与历史背景有多像。</p>
+</div>
+<div class="term" data-term="rmse root mean square error 均方根误差">
+<b>RMSE</b>
+<p>先算每个位置的差的平方，再取平均和平方根。项目用它表示预测器之间的向量分歧或预测误差。</p>
+</div>
+<div class="term" data-term="disagreement 分歧">
+<b>模型分歧 disagreement</b>
+<p>多个预测器对同一任务给出的效应向量有多不一致。分歧大常提示任务不稳定；单凭分歧仍不能判定预测一定错误。</p>
+</div>
+<div class="term" data-term="ood out of distribution 分布外">
+<b>OOD / 分布外</b>
+<p>测试对象明显超出训练数据范围。例如训练没见过某类细胞背景，模型仍被要求预测它。</p>
+</div>
+<div class="term" data-term="magnitude 幅度">
+<b>Magnitude / 效应幅度</b>
+<p>预测效应整体有多大。大效应任务可能天然更难，因此评价 SafeConf 时要检查结果是否只是 magnitude 的替身。</p>
+</div>
+<div class="term" data-term="frozen protocol 冻结协议">
+<b>冻结协议</b>
+<p>在看最终测试结果前固定公式、特征、切分与评价方法。它减少“看结果再改规则”的偏差。</p>
+</div>
+<div class="term" data-term="learned model 学习模型">
+<b>学习模型</b>
+<p>从训练数据估计特征权重或非线性关系的模型。它可能更强，但必须严格避免把测试信息带进训练。</p>
+</div>
+<div class="term" data-term="histgbt histogram gradient boosting">
+<b>HistGBT</b>
+<p>基于直方图的梯度提升树，可学习非线性和特征交互。项目用它探索可学习风险上界。</p>
+</div>
+<div class="term" data-term="elasticnet elastic net">
+<b>ElasticNet</b>
+<p>同时使用 L1 与 L2 正则化的线性模型，能压缩不重要特征，适合作为较简单的学习基线。</p>
+</div>
+<div class="term" data-term="task-level risk 任务级风险">
+<b>任务级风险</b>
+<p>给“细胞背景 + 扰动”一个共同风险值，不随采用的预测模型变化；这是当前 SafeConf 的主要范围。</p>
+</div>
+<div class="term" data-term="model-specific risk 模型级风险">
+<b>模型级风险</b>
+<p>对“某任务上的某个模型预测”打分。同一任务换一个模型，风险也应变化；这是下一阶段可能扩展的方向。</p>
+</div>
+<h2>实验设计与统计</h2>
+<div class="term" data-term="train validation test 训练 验证 测试">
+<b>训练 / 验证 / 测试</b>
+<p>训练集用于学习参数，验证集用于选择设置，测试集只做最终评价。测试集不能反过来指导调参。</p>
+</div>
+<div class="term" data-term="fold 折 交叉验证">
+<b>Fold / 折</b>
+<p>交叉验证中的一次数据划分。每次留一部分测试，其余训练，然后轮换。</p>
+</div>
+<div class="term" data-term="held-out pair cell line drug 留出">
+<b>Held-out / 留出</b>
+<p>故意让某类对象不进入训练。pair 留出一个组合，cell-line 留出整个细胞系，drug 留出整个药物；三者难度和含义不同。</p>
+</div>
+<div class="term" data-term="leakage 数据泄漏">
+<b>数据泄漏 leakage</b>
+<p>训练过程偷看了测试信息，例如用全数据计算标准化参数。它会让结果虚高。</p>
+</div>
+<div class="term" data-term="preregistration 预注册">
+<b>预注册</b>
+<p>在正式实验前写下数据、公式、指标、停止规则和例外处理，防止事后挑选有利结果。</p>
+</div>
+<div class="term" data-term="spearman rho 斯皮尔曼">
+<b>Spearman ρ</b>
+<p>比较两个变量的排序是否一致。ρ 越接近 1，SafeConf 风险排序与真实误差排序越一致。</p>
+</div>
+<div class="term" data-term="partial rho partial correlation 偏相关">
+<b>Partial ρ / 偏相关</b>
+<p>统计上控制 magnitude 等混杂因素后，计算风险与误差的剩余排序关系，用于判断 SafeConf 是否提供额外信息。</p>
+</div>
+<div class="term" data-term="confidence interval ci 置信区间">
+<b>CI / 置信区间</b>
+<p>表示估计值的不确定范围。若相关系数的区间跨过 0，就不能稳妥声称关联方向确定。</p>
+</div>
+<div class="term" data-term="bootstrap 自助法">
+<b>Bootstrap</b>
+<p>从现有样本反复有放回抽样，得到统计量的经验分布，从而估计置信区间。</p>
+</div>
+<div class="term" data-term="aurc risk coverage">
+<b>AURC</b>
+<p>风险—覆盖曲线下面积。它衡量逐步拒绝高风险预测后，剩余预测的平均误差表现；通常越低越好。</p>
+</div>
+<div class="term" data-term="coverage 覆盖率">
+<b>Coverage / 覆盖率</b>
+<p>系统选择保留并自动接受的预测比例。覆盖越低表示拒绝或人工复核的任务越多。</p>
+</div>
+<div class="term" data-term="top-k enrichment 富集">
+<b>Top-k error enrichment</b>
+<p>风险最高的前 k% 中，高错误任务相对随机抽样多了多少倍。1× 表示没有分诊收益。</p>
+</div>
+<div class="term" data-term="baseline 基线">
+<b>Baseline / 基线</b>
+<p>用于比较的简单方法，如随机排序或 magnitude。新方法必须与合理基线比较，单看自身数字没有意义。</p>
+</div>
+<div class="term" data-term="negative control 负对照">
+<b>负对照</b>
+<p>理论上不应出现目标信号的实验，例如打乱标签。若负对照仍很好，通常提示泄漏或评价问题。</p>
+</div>
+<div class="term" data-term="ablation 消融">
+<b>Ablation / 消融</b>
+<p>一次删除一个特征或模块，观察性能变化，用于判断哪个部分提供了信息。</p>
+</div>
+<div class="term" data-term="calibration 校准">
+<b>Calibration / 校准</b>
+<p>预测风险数值与真实出错频率是否匹配。排序正确不等于校准良好。</p>
+</div>
+<div class="term" data-term="model selection regret 后悔值">
+<b>模型选择后悔值</b>
+<p>系统所选模型的误差减去事后最优模型误差。0 表示每次都选到最好模型。</p>
+</div>
+<h2>工程与项目管理</h2>
+<div class="term" data-term="cli command line interface 命令行">
+<b>CLI</b>
+<p>命令行接口，例如用一条命令指定输入、配置和输出。稳定 CLI 比手工改脚本更容易复现。</p>
+</div>
+<div class="term" data-term="seed random 随机种子">
+<b>随机种子 seed</b>
+<p>控制随机抽样和模型初始化的起点。保存它能让同一随机过程尽量重现。</p>
+</div>
+<div class="term" data-term="shard 分片">
+<b>Shard / 分片</b>
+<p>把大数据切成多个小文件或批次，便于逐块读取。Tahoe 的 300-shard 是抽样读取方案，不代表全量数据。</p>
+</div>
+<div class="term" data-term="smoke probe formal 冒烟 探针 正式">
+<b>Smoke / Probe / Formal</b>
+<p>Smoke 用极小数据查流程能否运行；probe 用中等规模看趋势；formal 按冻结方案生成正式结果。</p>
+</div>
+<div class="term" data-term="reproducibility 复现">
+<b>可复现性</b>
+<p>同样的代码、数据、环境和参数能得到相同或足够接近的结果。</p>
+</div>
+<div class="term" data-term="git version control 版本控制">
+<b>Git</b>
+<p>记录文件变化历史的版本控制工具，可查看谁在何时改了什么，也能恢复到已提交版本。</p>
+</div>
+<div class="term" data-term="commit 提交">
+<b>Commit</b>
+<p>Git 中一次有说明的版本快照。好的提交应范围清楚，不把无关改动混在一起。</p>
+</div>
+<div class="term" data-term="runtime 运行时环境">
+<b>Runtime / 运行环境</b>
+<p>代码运行所依赖的 Python 版本、软件包、操作系统和硬件条件。</p>
+</div>
+<div class="term" data-term="archive 归档">
+<b>Archive / 归档</b>
+<p>保存已停止维护但仍有追溯价值的旧材料。归档文件继续保留，同时与当前正式文件分开存放。</p>
+</div>
+<h2>补充生物与数据术语</h2>
+<div class="term" data-term="CRISPR gene editing 基因编辑"><b>CRISPR</b><p>一种基因编辑技术，可敲除、抑制或激活目标基因。项目的基因扰动数据常由 CRISPR 实验产生。</p></div>
+<div class="term" data-term="pseudobulk 伪批量 聚合"><b>Pseudobulk / 伪批量</b><p>把同一条件下多个单细胞的表达量汇总成组级表达。这样可从细胞层数据构造任务层效应。</p></div>
+<div class="term" data-term="cell barcode 细胞条形码"><b>Cell barcode</b><p>测序流程分配给每个细胞的唯一标识，用于区分细胞记录。</p></div>
+<div class="term" data-term="Ensembl ID gene identifier"><b>Ensembl ID</b><p>Ensembl 数据库中的稳定基因编号，例如 ENSG00000186092，用于跨文件映射基因。</p></div>
+<div class="term" data-term="ncounts counts total quality control"><b>ncounts</b><p>一个细胞记录到的表达计数总量，常用于质量控制。</p></div>
+<div class="term" data-term="ngenes detected genes quality control"><b>ngenes</b><p>一个细胞检测到非零表达的基因数。数值过低可能表示捕获信息不足。</p></div>
+<div class="term" data-term="gene panel gene order 基因集合 基因顺序"><b>Gene panel / gene order</b><p>向量包含哪些基因及其排列顺序。两个模型只有使用同一集合和顺序，向量才能逐位置比较。</p></div>
+<div class="term" data-term="eligible task eligibility 可评价任务"><b>Eligible task</b><p>满足最低细胞数、对照、历史支持和基因完整度等条件，可进入正式评估的任务。</p></div>
+<div class="term" data-term="cross-context 跨背景 迁移"><b>Cross-context</b><p>把一个细胞背景中学到的扰动规律迁移到另一个背景，或预测尚未见过的背景—扰动组合。</p></div>
+<div class="term" data-term="vehicle non-targeting control solvent"><b>Vehicle / non-targeting</b><p>Vehicle 是只加溶剂的药物对照；non-targeting 是不针对有效基因的编辑对照。两者都可用于估计基线表达。</p></div>
+<div class="term" data-term="blind blinded 盲测"><b>Blind / 盲测</b><p>在规则冻结后才查看的新数据测试，用于减少根据结果修改方法的偏差。</p></div>
+<h2>补充模型与接口术语</h2>
+<div class="term" data-term="predictor 预测器"><b>Predictor / 预测器</b><p>输入任务并输出 predicted effect 的模型或算法。SafeConf 评估它产生的预测。</p></div>
+<div class="term" data-term="black box 黑盒"><b>Black box / 黑盒</b><p>接口只约定输入与输出，不要求 SafeConf 知道预测器内部如何训练。</p></div>
+<div class="term" data-term="adapter 适配器"><b>Adapter / 适配器</b><p>把外部模型的字段、数组和任务标识转换成统一 PredictionRecord 的薄接口。</p></div>
+<div class="term" data-term="checkpoint model weights 权重文件"><b>Checkpoint</b><p>训练过程中保存的模型参数文件，可用于恢复训练或直接推理。</p></div>
+<div class="term" data-term="native uncertainty 原生不确定性"><b>Native uncertainty</b><p>预测模型自身输出的不确定性量，例如集成方差。它与 SafeConf 外部计算的任务风险来源不同。</p></div>
+<div class="term" data-term="V0StrongBaseline lookup retrieval"><b>V0StrongBaseline</b><p>项目中的强检索基线，根据训练折历史任务构造预测，用于提供稳定参照。</p></div>
+<div class="term" data-term="ContextSimBaseline context similarity predictor"><b>ContextSimBaseline</b><p>依据细胞背景相似度选择和迁移历史效应的基线预测器。</p></div>
+<div class="term" data-term="PertMean perturbation mean predictor"><b>PertMean</b><p>按扰动汇总训练折历史效应的预测器，部分 learned risk 实验把它作为第三种预测器。</p></div>
+<div class="term" data-term="lookup retrieval 检索"><b>Lookup / retrieval</b><p>从已有记录中查找相似任务并组合答案的预测方式，不需要训练大型神经网络。</p></div>
+<div class="term" data-term="epoch 训练轮数"><b>Epoch</b><p>模型完整遍历一次训练数据称为一个 epoch。20 epochs 表示完整训练 20 轮。</p></div>
+<div class="term" data-term="mask boolean train mask 掩码"><b>Mask / 掩码</b><p>一组 True/False 标记，用来指定哪些任务属于训练、验证或测试。</p></div>
+<h2>补充统计与验证术语</h2>
+<div class="term" data-term="Pearson correlation 皮尔逊"><b>Pearson correlation</b><p>衡量两个数值变量的线性关系；Spearman 衡量排序关系，两者回答的问题不同。</p></div>
+<div class="term" data-term="MSE mean squared error 均方误差"><b>MSE</b><p>逐位置平方误差的平均值。RMSE 是 MSE 的平方根。</p></div>
+<div class="term" data-term="DE DEG differentially expressed genes 差异表达基因"><b>DE / DEG</b><p>Differentially Expressed Gene，差异表达基因。扰动组与对照组之间变化显著的基因。</p></div>
+<div class="term" data-term="isotonic regression 单调回归"><b>Isotonic calibration</b><p>用单调函数拟合幅度与期望误差之间的关系，E2 用它估计 magnitude expected error。</p></div>
+<div class="term" data-term="nuisance baseline 混杂基线"><b>Nuisance baseline</b><p>由样本量等非目标因素构造的比较方法，用于检查观察到的关联是否可能由混杂因素解释。</p></div>
+<div class="term" data-term="pooled macro per-dataset 聚合"><b>Pooled / macro / per-dataset</b><p>Pooled 把所有记录混在一起；macro 先逐数据集计算再平均；per-dataset 保留每个数据集的单独结果。</p></div>
+<div class="term" data-term="median MAD IQR std standard deviation"><b>Median / MAD / IQR / std</b><p>Median 是中位数；MAD 是绝对偏差中位数；IQR 是四分位距；std 是标准差。前两类对极端值更稳健。</p></div>
+<div class="term" data-term="quantile q80 percentile 分位数"><b>Quantile / q80</b><p>分位数按大小切分数据。q80 是第 80 百分位，常用于定义高错误或高置信阈值。</p></div>
+<div class="term" data-term="AUROC receiver operating characteristic"><b>AUROC</b><p>衡量分数区分正负类别的排序能力，0.5 约等于随机，1 表示完全区分。</p></div>
+<div class="term" data-term="AUGRC generalized risk coverage"><b>AUGRC</b><p>广义风险—覆盖曲线下面积，是 selective prediction 的补充评价指标。</p></div>
+<div class="term" data-term="LODO leave one dataset out 留一数据集"><b>LODO</b><p>Leave-One-Dataset-Out。留出整个数据集作为测试，检验风险规律的跨数据集迁移。</p></div>
+<div class="term" data-term="LOPO leave one predictor out 留一预测器"><b>LOPO</b><p>Leave-One-Predictor-Out。训练时留出一种预测器，检验风险规律能否迁移到未见预测器。</p></div>
+<div class="term" data-term="variance fraction 方差占比 task identity predictor identity"><b>Variance fraction</b><p>总误差变化中可归因于任务身份、预测器身份或剩余因素的比例。</p></div>
+<div class="term" data-term="task identity predictor identity 身份"><b>Task / predictor identity</b><p>Task identity 表示具体背景—扰动任务；predictor identity 表示产生预测的模型名称。</p></div>
+<h2>补充文件与证据管理术语</h2>
+<div class="term" data-term="YAML config configuration"><b>YAML / config</b><p>人类可读的配置文件，保存路径、参数、随机种子和冻结公式，减少手工修改代码。</p></div>
+<div class="term" data-term="JSON javascript object notation"><b>JSON</b><p>结构化文本格式，常保存 split、运行状态和机器可读摘要。</p></div>
+<div class="term" data-term="Parquet columnar table"><b>Parquet</b><p>列式二进制表格格式，适合保存大型数据表，读取部分列时通常比 CSV 更高效。</p></div>
+<div class="term" data-term="package module script 软件包 模块 脚本"><b>Package / module / script</b><p>Package 是一组 Python 模块；module 通常对应一个 .py 文件；script 是可直接执行的任务入口。</p></div>
+<div class="term" data-term="wrapper 包装器"><b>Wrapper / 包装器</b><p>在旧函数外增加统一接口和检查，不改变底层算法。</p></div>
+<div class="term" data-term="manifest 清单 可复现"><b>Manifest / 清单</b><p>记录输入、输出、脚本、版本和哈希的文件，用于复现与审计。</p></div>
+<div class="term" data-term="canonical source of truth 权威来源"><b>Canonical / source of truth</b><p>同一结果存在多个版本时，被指定为当前权威的文件或目录。</p></div>
+<div class="term" data-term="superseded 取代 旧版"><b>Superseded</b><p>某个旧结果已由修正版或更严格实验取代。文件仍保留，但不再支撑当前结论。</p></div>
+<div class="term" data-term="go no-go gate 闸门"><b>Go / No-Go gate</b><p>预设的继续或停止门槛。Go 表示满足条件继续；No-Go 表示停止该路线或重新定义问题。</p></div>
+<div class="term" data-term="caveat limitation 限定 条件"><b>Caveat</b><p>结论必须同时说明的限制条件，例如样本量、任务定义或不能外推的范围。</p></div>
+<div class="term" data-term="scPerturBench benchmark"><b>scPerturBench</b><p>公开的单细胞扰动预测基准。E8b 使用其聚合方法误差做外部关联分析。</p></div>
+<div class="term" data-term="feasibility 可行性"><b>Feasibility / 可行性</b><p>检查数据、模型和环境能否接入管道。通过可行性检查不代表方法效果已经验证。</p></div>
+<div class="term" data-term="alignment 对齐 task gene context"><b>Alignment / 对齐</b><p>确认不同来源的任务身份、背景、基因集合、顺序和向量维数一致。</p></div>
+</div>
+<div class="callout good">
+<b>使用方法：</b>遇到陌生词时在本页搜索，再回原章节查看它在流程中的位置。无需集中记忆。</div>
+<div class="pager">
+<a href="08_下一阶段任务.html">← 上一章</a>
+<a href="10_代码设计与协议全解.html">下一章：协议与代码设计 →</a>
+</div>
+</main>
+</div>
+<script src="assets/tutorial.js">
+</script>
+</body>
+</html>

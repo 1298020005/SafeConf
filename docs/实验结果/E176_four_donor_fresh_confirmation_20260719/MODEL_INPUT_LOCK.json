@@ -1,0 +1,68 @@
+{
+  "base_error_model_spec": "magnitude_from_e174_method_freeze",
+  "column_unseen_each": 40,
+  "deployed_seed_estimator": "five_seed_family_mean",
+  "deployment_authorized": false,
+  "donor_rotations": {
+    "H01": {
+      "test": "CE0006864",
+      "train": [
+        "CE0008678",
+        "CE0010866"
+      ],
+      "validation": "CE0008162"
+    },
+    "H02": {
+      "test": "CE0008162",
+      "train": [
+        "CE0006864",
+        "CE0010866"
+      ],
+      "validation": "CE0008678"
+    },
+    "H03": {
+      "test": "CE0008678",
+      "train": [
+        "CE0006864",
+        "CE0008162"
+      ],
+      "validation": "CE0010866"
+    },
+    "H04": {
+      "test": "CE0010866",
+      "train": [
+        "CE0008162",
+        "CE0008678"
+      ],
+      "validation": "CE0006864"
+    }
+  },
+  "g4_seed_estimator": "five_leave_one_seed_out_four_seed_family_means",
+  "gears_external_go_file": {
+    "path": "/home/yyf/data/gears_formal_baselines_v2/frangieh_local_atlas/go.csv",
+    "sha256": "c84cbbd58ba5e221fa328ca3d4b281ca2dd8b1a20de01ee961009f5d8476cb72"
+  },
+  "gene_panel_size_each": 512,
+  "metadata_freeze_script_sha256": "13d428894b3771992c8964fba58653174a0f8f47d530b447e2805e0604696c14",
+  "model_seeds": [
+    3407,
+    3408,
+    3409,
+    3410,
+    3411
+  ],
+  "panels": [
+    "H01",
+    "H02",
+    "H03",
+    "H04"
+  ],
+  "pretruth_test_targeting_x_access_count_required": 0,
+  "primary_method": "pair_lower_certificate_plus_donor_specific_split_conformal_upper_bound",
+  "registered_targets_each": 200,
+  "scgpt_checkpoint_files": {
+    "/home/yyf/archive/code/20260519_0958_home_cleanup/moved_top_level/codex_scgpt_attnres_workspace/checkpoints/whole-human/args.json": "c18e075e018140cb8b2d9029387b9de26607a5ce6a8ccabd6ead70cd76b95d60",
+    "/home/yyf/archive/code/20260519_0958_home_cleanup/moved_top_level/codex_scgpt_attnres_workspace/checkpoints/whole-human/best_model.pt": "6cb5d451ab5c4b33eb673adbe4fddc61d2389df1b89b7651a9fe2e557572b922",
+    "/home/yyf/archive/code/20260519_0958_home_cleanup/moved_top_level/codex_scgpt_attnres_workspace/checkpoints/whole-human/vocab.json": "acca93d114ca62c3f0f50debbd23e8c87f0714f4737764454f6b2b13f2e8580f"
+  }
+}

@@ -1,0 +1,11 @@
+item,check,call,detail
+context_similarity_score,heldout truth usage,PASS,可用于新 context，但需要该 context 的 control 表达。
+perturbation_support_score,heldout truth usage,PASS,只数训练 fold 中同一 perturbation 的历史支持量。
+historical_residual_risk,heldout truth usage,PASS,可用历史真值训练/校准，不能用当前 held-out pair 真值。
+model_disagreement_risk,heldout truth usage,PASS,它是任务难度线索，不是某个模型自己的可靠性保证。
+predicted_magnitude / prediction_magnitude_risk,heldout truth usage,PASS,可作为前置强基线，必须和 SafeConf 并列报告。
+true_effect_magnitude / oracle_magnitude_diagnostic,heldout truth usage,PASS_IF_NOT_USED_FOR_SCORING,只能事后控制混杂，不能进入前置风险打分。
+protocol_v0_2_family_confidence / SafeConf frozen,heldout truth usage,PASS,主张放在 task-level risk triage。
+learned_risk / safeconf_lodo_risk,heldout truth usage,PASS,可作扩展，不覆盖 frozen 失败边界。
+true_error_rmse,heldout truth usage,PASS_IF_NOT_USED_FOR_SCORING,必须绑定 predictor_name，不能只写“预测错误”。
+error source tables,predictor_name required for error interpretation,WARN,3 previewed error/score tables lack predictor_name; aggregate summaries need explicit note.

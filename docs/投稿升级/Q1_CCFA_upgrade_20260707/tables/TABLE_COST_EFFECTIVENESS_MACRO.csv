@@ -1,0 +1,19 @@
+score_name,score_label,strategy_role,top_fraction,precision,random_expected_precision,enrichment_fold,hits,n_top_risk,n_worst_error
+oracle_magnitude_diagnostic,Oracle true magnitude,non_deployable_oracle_reference,0.05,0.7743470501929149,0.0506710603147329,15.277679785616074,358,463,463
+safeconf_perdataset_risk,SafeConf per-dataset,within_dataset_upper_reference,0.05,0.3471441361478956,0.0506710603147329,6.859403446069984,168,463,463
+predicted_magnitude,Magnitude-only,magnitude_competitor,0.05,0.2447884717621559,0.0506710603147329,4.843276524156905,120,463,463
+protocol_v0_2_family_confidence,Frozen v0.2,frozen_safeconf,0.05,0.2085774240379503,0.0506710603147329,4.110295746250752,74,463,463
+safeconf_lodo_risk,SafeConf LODO,cross_dataset_transfer,0.05,0.1344174178995607,0.0506710603147329,2.655995055247653,62,463,463
+random,Random,baseline,0.05,0.0530063738475392,0.0506710603147329,1.043030038649971,20,463,463
+oracle_magnitude_diagnostic,Oracle true magnitude,non_deployable_oracle_reference,0.1,0.8237471579908366,0.1003109489249624,8.21088903330607,749,919,919
+safeconf_perdataset_risk,SafeConf per-dataset,within_dataset_upper_reference,0.1,0.5374509622449052,0.1003109489249624,5.356986337363471,475,919,919
+protocol_v0_2_family_confidence,Frozen v0.2,frozen_safeconf,0.1,0.3363942110224558,0.1003109489249624,3.3523732242866884,273,919,919
+predicted_magnitude,Magnitude-only,magnitude_competitor,0.1,0.3307946598775219,0.1003109489249624,3.300146491125401,323,919,919
+safeconf_lodo_risk,SafeConf LODO,cross_dataset_transfer,0.1,0.2318907867042509,0.1003109489249624,2.3128169002095573,227,919,919
+random,Random,baseline,0.1,0.1116281468239826,0.1003109489249624,1.1126876921916908,102,919,919
+oracle_magnitude_diagnostic,Oracle true magnitude,non_deployable_oracle_reference,0.2,0.7695950922937854,0.2006218978499249,3.835870510168141,1419,1838,1838
+safeconf_perdataset_risk,SafeConf per-dataset,within_dataset_upper_reference,0.2,0.7133948095861589,0.2006218978499249,3.5554413990659155,1246,1838,1838
+predicted_magnitude,Magnitude-only,magnitude_competitor,0.2,0.4766599694076125,0.2006218978499249,2.376723026743679,839,1838,1838
+protocol_v0_2_family_confidence,Frozen v0.2,frozen_safeconf,0.2,0.4197445140405814,0.2006218978499249,2.092236740475117,744,1838,1838
+safeconf_lodo_risk,SafeConf LODO,cross_dataset_transfer,0.2,0.4071659832572762,0.2006218978499249,2.030115084815057,744,1838,1838
+random,Random,baseline,0.2,0.2022278171427451,0.2006218978499249,1.00795285241354,359,1838,1838

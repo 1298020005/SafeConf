@@ -1,0 +1,59 @@
+{
+  "experiment": "E105_context_safe_graph_adapter",
+  "generated_at": "2026-07-13T10:11:19",
+  "mode": "smoke",
+  "fold_id": "frangieh_context_holdout_1_Co-culture",
+  "source_h5ad": "/home/yyf/data/scgpt_formal_frangieh_fixed_panel_20260711/frangieh_e72_fixed512/perturb_processed.h5ad",
+  "n_genes": 512,
+  "n_graphs": 567,
+  "split_counts": {
+    "test": 279,
+    "train": 258,
+    "val": 30
+  },
+  "setting_counts": {
+    "context_and_perturbation_unseen": 30,
+    "context_unseen_row": 159,
+    "perturbation_unseen_column": 60,
+    "random_missing_pair": 30,
+    "source_train_pair": 258,
+    "source_validation_pair": 30
+  },
+  "all_basal_controls_match_target_context": true,
+  "train_validation_test_task_ids_disjoint": true,
+  "test_targets_used_for_optimization": false,
+  "device": "cuda:0",
+  "scgpt_smoke": {
+    "model": "scGPT TransformerGenerator",
+    "checkpoint": "/home/yyf/archive/code/20260519_0958_home_cleanup/moved_top_level/codex_scgpt_attnres_workspace/checkpoints/whole-human",
+    "pretrained_tensors_loaded": 129,
+    "n_train_graphs_used": 4,
+    "n_test_graphs_inference_only": 4,
+    "train_loss_one_step": 1.7127391695976257,
+    "optimizer_steps": 2,
+    "nonzero_gradient_tensors": 2,
+    "test_prediction_shape": [
+      2,
+      512
+    ],
+    "test_target_shape": [
+      2,
+      512
+    ]
+  },
+  "gears_smoke": {
+    "model": "GEARS_Model architecture",
+    "graph_network": "self-loop smoke only; formal GO/coexpression graphs are not claimed",
+    "n_train_graphs_used": 4,
+    "n_test_graphs_inference_only": 4,
+    "train_loss_one_step": 0.5477184057235718,
+    "test_prediction_shape": [
+      2,
+      512
+    ],
+    "test_target_shape": [
+      2,
+      512
+    ]
+  }
+}

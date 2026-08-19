@@ -1,0 +1,23 @@
+{
+  "experiment": "E185_minimal_release_validation",
+  "date": "2026-07-24",
+  "status": "PASS",
+  "validator": "tools/scripts/validate_current_certificate_release.py",
+  "validator_sha256": "5d02c2f61a492053269ffca654b8413174f1e6dd1490a62c9fd5f557fd96f0e4",
+  "python_dependency": "standard_library_only",
+  "checks_total": 12033,
+  "checks_failed": 0,
+  "e181_manifest_entries_verified": 19,
+  "e183_input_hash_entries_verified": 6,
+  "raw_expression_or_truth_arrays_read": 0,
+  "n_studies": 4,
+  "n_evaluation_tasks": 2433,
+  "n_target_clusters": 737,
+  "family_lower_violations": 0,
+  "worst_lower_violations": 0,
+  "family_upper_targets_covered": 666,
+  "worst_upper_targets_covered": 688,
+  "e182_status": "FAIL",
+  "e182_family_upper_targets_covered": 16,
+  "e182_total_targets": 20
+}

@@ -1,0 +1,16 @@
+requirement_id,周老师的问题,最终证据,状态,不能夸大的部分
+Z1,风险和哪个实际预测误差比较,E189/E190逐模型RMSE加family RMS和worst-member,PASS,不同误差对象必须分列
+Z2,预测前能否计算尤其predicted magnitude,E189全部query无y且E190预测先于目标真值双远程冻结,PASS,只证明输入可得不证明分数有效
+Z3,只给小训练子矩阵,E189每个扰动1/2/3/5个背景共13440任务实例,PASS,支持量增加后3到5基本平台
+Z4,整行留出,E189四个donor轮换的unseen-context row,PASS,分歧在整行中没有稳定正相关
+Z5,整列留出,E189同合同unseen-perturbation column,PASS,预测器整体接近zero-effect
+Z6,背景和扰动双未见,E189四面板double-unseen,PASS,分歧相关方向为负
+Z7,一个数据集训练另一个数据集预测,E190 Adamson训练后直预测Replogle的47基因692任务,PASS_WITH_BOUNDARY,基因簇bootstrap的性能优势区间跨0
+Z8,基因和化学扰动都检查,E189/E190基因加E84/E87/E89化学,PASS,两个模态不能混成同一误差尺度
+M1,同一正式模型合同覆盖难度矩阵,E189 scGPT-GEARS六成员,PASS,家族预测性能不稳定
+M2,外部迁移使用真实预测器,E190加化学E87/E89,PASS,不能用风险分数迁移代替
+M3,分歧是否普遍代表置信度,E189按setting异质且double-unseen反向,FAIL_UNIVERSAL_CLAIM,只能保留下界和适用setting
+M4,分歧是否优于magnitude,E190 rho几乎相同且E189随setting变化,FAIL_SUPERIORITY_CLAIM,不得写成分歧普遍更强
+M5,确定性family-error下界,E189和E190均0违例,PASS,仍需报告紧致度
+M6,有限复核预算的实际收益,尚未统一按预算和基线比较,PARTIAL,下一实验计算decision utility
+M7,真实后续实验或机制验证,当前只有计算设计,NOT_DONE,冲更高层级仍需真实实验闭环

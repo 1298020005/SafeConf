@@ -1,0 +1,14 @@
+{
+  "experiment": "E90_gene_hard_setting_matrix",
+  "generated_at": "2026-07-12T22:17:07",
+  "git_head": "77b476ee7991ef662071a615a2a1122becf5166f",
+  "n_tasks": 144,
+  "n_panels": 6,
+  "col_holdout_delta_ci_excludes_zero": true,
+  "pooled_delta_rho": 0.11971014492753634,
+  "row_holdout_done": false,
+  "train_submatrix_done": false,
+  "cross_dataset_source": "E69",
+  "no_chem_retune": true,
+  "target_truth_used_for_scoring": false
+}

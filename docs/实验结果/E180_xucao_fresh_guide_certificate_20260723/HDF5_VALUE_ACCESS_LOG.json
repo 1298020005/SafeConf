@@ -1,0 +1,11 @@
+{
+  "calibration_truth_effects_computed": false,
+  "evaluation_truth_effects_computed": false,
+  "next_allowed_phase": "F2_PRETRUTH_ASSET_BUILD only after freeze code and manifests are committed and pushed",
+  "obs_and_var_metadata_read": true,
+  "phase": "F1_METADATA_FREEZE",
+  "schema": "safeconf_e180_hdf5_value_access_log_v1",
+  "source": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/XuCao2023.h5ad",
+  "x_backend_handle_seen_for_type_audit": true,
+  "x_values_indexed_or_materialized": false
+}

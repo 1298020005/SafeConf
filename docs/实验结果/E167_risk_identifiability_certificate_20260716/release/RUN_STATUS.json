@@ -1,0 +1,24 @@
+{
+  "all_gate_checks": {
+    "no_truth_gate_override": true,
+    "real_collapse_detection": true,
+    "real_noncollapsed_reference_retention": false,
+    "synthetic_constant_and_jitter_detection": true,
+    "synthetic_magnitude_clone_aurc_identity": true,
+    "synthetic_magnitude_clone_equivalence": true,
+    "synthetic_prediction_collapse_detection": true,
+    "wessels_replicate_instability_detected": true
+  },
+  "completed_at": "2026-07-16T21:21:21+08:00",
+  "git_head_at_formal_run": "705d1bf2a80d6da36bcf9063235887e7e0e59f00",
+  "n_real_units": 19,
+  "n_source_files": 30,
+  "n_synthetic_units": 32,
+  "new_candidate_truth_opened": false,
+  "phase": "complete_retrospective_development_not_independent_confirmation",
+  "raw_expression_files_opened": 0,
+  "results_manifest_sha256": "530d1047c3958bf92e7955298cf903b3c364b5b20f94fbeb1e60927c4325d9bf",
+  "schema": "safeconf_e167_riag_v1",
+  "strict_development_gate_passed": false,
+  "transaction_id": "3392820edc2442d185c372566c37f55f"
+}

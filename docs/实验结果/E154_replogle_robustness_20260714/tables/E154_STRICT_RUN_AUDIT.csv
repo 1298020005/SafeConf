@@ -1,0 +1,7 @@
+run_id,seed,train_fraction,reused_e151,n_folds,n_test_tasks,n_prediction_records,strict_issue_count,all_records_are_test,two_records_per_task,n_primary_unique_tasks,source_truth_pass
+seed1_frac100_reused_e151,202607151,100,True,2,340,680,0,True,True,256,True
+seed2_frac25,2026071542,25,False,2,340,680,0,True,True,256,True
+seed2_frac50,2026071542,50,False,2,340,680,0,True,True,256,True
+seed2_frac75,2026071542,75,False,2,340,680,0,True,True,256,True
+seed2_frac100,2026071542,100,False,2,340,680,0,True,True,256,True
+seed3_frac100,2026071543,100,False,2,340,680,0,True,True,256,True

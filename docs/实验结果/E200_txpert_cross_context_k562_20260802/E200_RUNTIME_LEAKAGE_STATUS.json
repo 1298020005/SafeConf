@@ -1,0 +1,14 @@
+{
+  "experiment": "E200_txpert_cross_context_k562",
+  "stage": "RUNTIME_LEAKAGE_SMOKE",
+  "status": "PASS",
+  "generated_at": "2026-08-02T04:21:13+08:00",
+  "device": "cpu",
+  "batch_size": 8,
+  "n_genes": 3352,
+  "truth_tensor_zeroed_between_forward_passes": true,
+  "prediction_exact_equal": true,
+  "prediction_max_abs_delta": 0.0,
+  "control_unchanged": true,
+  "raw_manifest_sha256": "ed7b8a2880c9a01cbd5daa2ed6eb2968ffe8a2dd85b44e58ccaa43cd48e88466"
+}

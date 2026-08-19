@@ -1,0 +1,19 @@
+dataset_name,dataset_group,role,note
+CuiHacohen2023,cui_immune_cytokine_group,main,flagship immune/cytokine context dataset
+McFarlandTsherniak2020,mcfarland_drug_group,main,drug-only subset used in formal main table
+McFarland,mcfarland_drug_group,supplement,legacy/alternate McFarland naming kept in same group
+Frangieh,frangieh_crispr_group,main,CRISPR melanoma perturbation dataset
+SrivatsanTrapnell2020_sciplex2,srivatsan_sciplex_group,supplement,same sci-Plex family as sciplex3/4
+SrivatsanTrapnell2020_sciplex3,srivatsan_sciplex_group,main,sci-Plex chemical perturbation dataset
+SrivatsanTrapnell2020_sciplex4,srivatsan_sciplex_group,supplement,same sci-Plex family as sciplex2/3
+SantinhaPlatt2023,santinha_chemical_group,main,chemical perturbation dataset
+LaraAstiasoHuntly2023_invivo,lara_astiaso_group,main,paired Lara source; grouped with exvivo conservatively
+LaraAstiasoHuntly2023_exvivo,lara_astiaso_group,main,paired Lara source; grouped with invivo conservatively
+LaraAstiasoHuntly2023_leukemia,lara_astiaso_group,supplement,same Lara source family
+Haber,haber_gene_group,supplement,small genetic supplement
+Parekh,parekh_gene_group,supplement,small genetic supplement
+KaggleCrossCell,kaggle_chem_group,supplement,kaggle chemical robustness source
+KaggleCrossPatient,kaggle_chem_group,supplement,kaggle chemical robustness source
+crossPatient,cross_patient_sparse_group,supplement,sparse cross-patient failure/boundary source
+crossSpecies,cross_species_sparse_group,supplement,sparse cross-species source
+ShifrutMarson2018,shifrut_patient_group,supplement,patient-context supplement

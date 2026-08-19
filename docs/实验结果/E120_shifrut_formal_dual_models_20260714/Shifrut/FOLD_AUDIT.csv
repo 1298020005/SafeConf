@@ -1,0 +1,5 @@
+fold_id,source_contexts,n_go_edges,n_coexpression_edges,n_source_control_cells,scgpt_pretrained_tensors,test_truth_used_for_training_calibration_or_score
+Shifrut_context_holdout_1_D1_nostim,D1_stim+D2_nostim+D2_stim,1530,1503,2689,129,False
+Shifrut_context_holdout_2_D1_stim,D1_nostim+D2_nostim+D2_stim,1530,922,2586,129,False
+Shifrut_context_holdout_3_D2_nostim,D1_nostim+D1_stim+D2_stim,1530,1424,2843,129,False
+Shifrut_context_holdout_4_D2_stim,D1_nostim+D1_stim+D2_nostim,1530,1631,2505,129,False

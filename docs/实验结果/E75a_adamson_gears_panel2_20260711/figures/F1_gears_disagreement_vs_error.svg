@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="720" viewBox="0 0 1100 720">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<style>text{font-family:Arial,"Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#23313d}.t{font-size:27px;font-weight:700}.s{font-size:16px;fill:#5c6a75}.a{font-size:15px}.sm{font-size:12px;fill:#5c6a75}</style>
+<text class="t" x="55" y="43">Adamson｜真实 GEARS 误差与三 seed 分歧</text>
+<text class="s" x="55" y="70">Adamson，冻结未见单基因扰动；每点一个任务。横轴只用预测向量，纵轴只用于事后评估。</text>
+<line x1="110" y1="90" x2="110" y2="635" stroke="#74818b"/>
+<line x1="110" y1="635" x2="1028" y2="635" stroke="#74818b"/>
+<text class="a" x="569.0" y="685" text-anchor="middle">三 seed 预测分歧（risk input）</text>
+<text class="a" transform="translate(30 362.5) rotate(-90)" text-anchor="middle">GEARS ensemble RMSE（评估目标）</text>
+<text class="sm" x="110" y="653">0.0100</text>
+<text class="sm" x="1028" y="653" text-anchor="end">0.0193</text>
+<text class="sm" x="102" y="95" text-anchor="end">0.0833</text>
+<text class="sm" x="102" y="635" text-anchor="end">0.0183</text>
+<circle cx="599.6" cy="584.7" r="6" fill="#167c80" opacity=".83"><title>AMIGO3+ctrl</title></circle>
+<circle cx="481.7" cy="357.4" r="6" fill="#167c80" opacity=".83"><title>ASCC3+ctrl</title></circle>
+<circle cx="303.8" cy="137.7" r="6" fill="#167c80" opacity=".83"><title>CAD+ctrl</title></circle>
+<circle cx="755.7" cy="430.2" r="6" fill="#167c80" opacity=".83"><title>COPB1+ctrl</title></circle>
+<circle cx="173.3" cy="505.0" r="6" fill="#167c80" opacity=".83"><title>DDOST+ctrl</title></circle>
+<circle cx="681.5" cy="564.4" r="6" fill="#167c80" opacity=".83"><title>DDRGK1+ctrl</title></circle>
+<circle cx="325.3" cy="586.1" r="6" fill="#167c80" opacity=".83"><title>GMPPB+ctrl</title></circle>
+<circle cx="457.6" cy="419.5" r="6" fill="#167c80" opacity=".83"><title>HSD17B12+ctrl</title></circle>
+<circle cx="874.4" cy="127.6" r="6" fill="#167c80" opacity=".83"><title>HSPA5+ctrl</title></circle>
+<circle cx="570.7" cy="440.9" r="6" fill="#167c80" opacity=".83"><title>MRGBP+ctrl</title></circle>
+<circle cx="450.6" cy="225.2" r="6" fill="#167c80" opacity=".83"><title>MTHFD1+ctrl</title></circle>
+<circle cx="841.8" cy="551.2" r="6" fill="#167c80" opacity=".83"><title>P4HB+ctrl</title></circle>
+<circle cx="410.1" cy="306.7" r="6" fill="#167c80" opacity=".83"><title>PPWD1+ctrl</title></circle>
+<circle cx="286.6" cy="508.2" r="6" fill="#167c80" opacity=".83"><title>SCYL1+ctrl</title></circle>
+<circle cx="319.6" cy="200.7" r="6" fill="#167c80" opacity=".83"><title>SEC61A1+ctrl</title></circle>
+<circle cx="241.6" cy="547.0" r="6" fill="#167c80" opacity=".83"><title>SEC61B+ctrl</title></circle>
+<circle cx="462.5" cy="525.6" r="6" fill="#167c80" opacity=".83"><title>SOCS1+ctrl</title></circle>
+<circle cx="964.7" cy="460.9" r="6" fill="#167c80" opacity=".83"><title>SPCS2+ctrl</title></circle>
+<circle cx="464.2" cy="516.4" r="6" fill="#167c80" opacity=".83"><title>SRP72+ctrl</title></circle>
+<circle cx="495.4" cy="428.5" r="6" fill="#167c80" opacity=".83"><title>SRPRB+ctrl</title></circle>
+<circle cx="560.8" cy="570.7" r="6" fill="#167c80" opacity=".83"><title>TMED10+ctrl</title></circle>
+<circle cx="494.9" cy="536.4" r="6" fill="#167c80" opacity=".83"><title>TMED2+ctrl</title></circle>
+<circle cx="306.1" cy="570.1" r="6" fill="#167c80" opacity=".83"><title>TTI2+ctrl</title></circle>
+<circle cx="606.3" cy="597.4" r="6" fill="#167c80" opacity=".83"><title>UFM1+ctrl</title></circle>
+</svg>

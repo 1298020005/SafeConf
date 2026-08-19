@@ -1,0 +1,10 @@
+fold_id,source_contexts,n_go_edges,n_coexpression_edges,n_source_control_cells,scgpt_pretrained_tensors,test_truth_used_for_training_calibration_or_score
+Liang_context_holdout_1_DM2_1,DM2_2+DM2_3+DM2_4+DM2_5+DM2_6+EM2_1+EM2_2+EM2_3,1565,3172,2135,129,False
+Liang_context_holdout_2_DM2_2,DM2_1+DM2_3+DM2_4+DM2_5+DM2_6+EM2_1+EM2_2+EM2_3,1565,3166,2129,129,False
+Liang_context_holdout_3_DM2_3,DM2_1+DM2_2+DM2_4+DM2_5+DM2_6+EM2_1+EM2_2+EM2_3,1565,3078,2201,129,False
+Liang_context_holdout_4_DM2_4,DM2_1+DM2_2+DM2_3+DM2_5+DM2_6+EM2_1+EM2_2+EM2_3,1565,3118,2153,129,False
+Liang_context_holdout_5_DM2_5,DM2_1+DM2_2+DM2_3+DM2_4+DM2_6+EM2_1+EM2_2+EM2_3,1565,3140,2141,129,False
+Liang_context_holdout_6_DM2_6,DM2_1+DM2_2+DM2_3+DM2_4+DM2_5+EM2_1+EM2_2+EM2_3,1565,3101,2133,129,False
+Liang_context_holdout_7_EM2_1,DM2_1+DM2_2+DM2_3+DM2_4+DM2_5+DM2_6+EM2_2+EM2_3,1565,2775,2213,129,False
+Liang_context_holdout_8_EM2_2,DM2_1+DM2_2+DM2_3+DM2_4+DM2_5+DM2_6+EM2_1+EM2_3,1565,2977,2351,129,False
+Liang_context_holdout_9_EM2_3,DM2_1+DM2_2+DM2_3+DM2_4+DM2_5+DM2_6+EM2_1+EM2_2,1565,2775,2216,129,False

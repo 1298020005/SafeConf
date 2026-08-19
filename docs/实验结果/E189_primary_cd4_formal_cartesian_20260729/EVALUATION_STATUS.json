@@ -1,0 +1,24 @@
+{
+  "experiment": "E189",
+  "stage": "POSTTRUTH_EVALUATION",
+  "status": "PASS",
+  "n_task_instances": 13440,
+  "n_unique_biological_tasks": 3360,
+  "n_panels": 4,
+  "support_levels": [
+    1,
+    2,
+    3,
+    5
+  ],
+  "settings": [
+    "random_missing_pair",
+    "unseen_context_row",
+    "unseen_perturbation_column",
+    "double_unseen"
+  ],
+  "family_rms_lower_violations": 0,
+  "family_worst_lower_violations": 0,
+  "max_rms_identity_residual": 1.0028426700170456e-09,
+  "performance_is_not_a_pass_gate": true
+}

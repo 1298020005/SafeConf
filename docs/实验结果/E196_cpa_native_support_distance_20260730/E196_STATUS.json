@@ -1,0 +1,56 @@
+{
+  "experiment": "E196",
+  "stage": "POSTTRUTH_DIRECT_COMPETITOR_AUDIT",
+  "status": "COMPLETE",
+  "mode": "full",
+  "started_at": "2026-07-30T15:04:19+08:00",
+  "completed_at": "2026-07-30T15:10:50+08:00",
+  "elapsed_seconds": 384.5887220194563,
+  "development_manifest": "E81_r1_p75",
+  "formal_manifests": [
+    "E81_r1_p25",
+    "E81_r1_p50",
+    "E81_r2_p25",
+    "E81_r2_p50",
+    "E81_r2_p75",
+    "E81_r3_p25",
+    "E81_r3_p50",
+    "E81_r3_p75"
+  ],
+  "n_formal_manifest_tasks": 629,
+  "n_development_tasks": 59,
+  "n_task_reference_rows": 2064,
+  "n_reference_rows": 610,
+  "reference_sets": [
+    "all_explicit_train_conditions",
+    "official_gt30_train_conditions",
+    "perturbed_train_only"
+  ],
+  "model_retraining": false,
+  "state_updates": false,
+  "all_invariants_passed": true,
+  "invariant_count": 153,
+  "pseudo_test_effect_tolerance": 1e-05,
+  "maximum_pseudo_test_effect_abs_difference": 9.5367431640625e-07,
+  "manifest_bootstrap_replicates": 10000,
+  "task_key_cluster_bootstrap_replicates": 10000,
+  "output_hash_count": 19,
+  "synthetic_smoke": {
+    "status": "PASS",
+    "cosine_shape": [
+      12,
+      7
+    ],
+    "euclidean_shape": [
+      12,
+      7
+    ],
+    "monotone_spearman": 1.0,
+    "constant_score": "NON_ESTIMABLE",
+    "routing_budget_rows": 3,
+    "risk_coverage_rows": 11
+  },
+  "primary_outcome": "error_cpa_rmse",
+  "primary_reference_set": "all_explicit_train_conditions",
+  "claim_boundary": "E196 evaluates association and routing utility for CPA own error; it is post-truth, descriptive, not predictive variance, and not a new blind validation."
+}

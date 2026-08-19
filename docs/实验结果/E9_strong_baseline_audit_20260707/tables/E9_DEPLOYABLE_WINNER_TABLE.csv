@@ -1,0 +1,22 @@
+dataset_name,metric,winner_score_name,winner_label,winner_value
+CuiHacohen2023,aligned rho,protocol_v0_2_family_confidence,Frozen v0.2,0.4453758817214197
+CuiHacohen2023,AURC reduction,protocol_v0_2_family_confidence,Frozen v0.2,27.05493677590792
+CuiHacohen2023,partial rho after magnitude control,protocol_v0_2_family_confidence,Frozen v0.2,0.4452499608711773
+Frangieh,aligned rho,predicted_magnitude,Magnitude-only,0.8593654059623044
+Frangieh,AURC reduction,predicted_magnitude,Magnitude-only,17.234124209398015
+Frangieh,partial rho after magnitude control,predicted_magnitude,Magnitude-only,0.9001781561498481
+LaraAstiasoHuntly2023_exvivo,aligned rho,protocol_v0_2_family_confidence,Frozen v0.2,0.5631508494546714
+LaraAstiasoHuntly2023_exvivo,AURC reduction,protocol_v0_2_family_confidence,Frozen v0.2,57.66998589449312
+LaraAstiasoHuntly2023_exvivo,partial rho after magnitude control,protocol_v0_2_family_confidence,Frozen v0.2,0.5648929477813909
+LaraAstiasoHuntly2023_invivo,aligned rho,predicted_magnitude,Magnitude-only,0.6208705499039938
+LaraAstiasoHuntly2023_invivo,AURC reduction,predicted_magnitude,Magnitude-only,34.25147525496969
+LaraAstiasoHuntly2023_invivo,partial rho after magnitude control,predicted_magnitude,Magnitude-only,0.5739310151105212
+McFarlandTsherniak2020,aligned rho,safeconf_lodo_linear_risk,SafeConf LODO linear,0.2629271964583539
+McFarlandTsherniak2020,AURC reduction,safeconf_lodo_risk,SafeConf LODO,14.82640884853836
+McFarlandTsherniak2020,partial rho after magnitude control,safeconf_lodo_risk,SafeConf LODO,0.1622242115982345
+SantinhaPlatt2023,aligned rho,predicted_magnitude,Magnitude-only,0.3522916243141659
+SantinhaPlatt2023,AURC reduction,predicted_magnitude,Magnitude-only,11.76336835970575
+SantinhaPlatt2023,partial rho after magnitude control,predicted_magnitude,Magnitude-only,0.4686825398022501
+SrivatsanTrapnell2020_sciplex3,aligned rho,predicted_magnitude,Magnitude-only,0.5627128793807584
+SrivatsanTrapnell2020_sciplex3,AURC reduction,predicted_magnitude,Magnitude-only,22.909608986725324
+SrivatsanTrapnell2020_sciplex3,partial rho after magnitude control,predicted_magnitude,Magnitude-only,0.7732685216126838

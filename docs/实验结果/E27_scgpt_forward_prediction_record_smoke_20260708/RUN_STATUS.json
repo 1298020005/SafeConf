@@ -1,0 +1,37 @@
+{
+  "status": "ok",
+  "generated_at": "2026-07-08T03:12:03",
+  "git_head": "094d794f7eacaf21664407e66c0156b5976e8ada",
+  "git_dirty": true,
+  "out": "docs/实验结果/E27_scgpt_forward_prediction_record_smoke_20260708",
+  "device": "cuda:0",
+  "n_prediction_records": 3,
+  "strict_issue_count": 0,
+  "strict_issues": [],
+  "selected_perturbations": [
+    "control",
+    "RPL3",
+    "NCBP2",
+    "KIF11"
+  ],
+  "selected_gene_count": 128,
+  "cells_per_perturbation": {
+    "control": 4,
+    "RPL3": 4,
+    "NCBP2": 4,
+    "KIF11": 4
+  },
+  "matched_key_count": 129,
+  "total_model_key_count": 176,
+  "forward_summary": {
+    "cell_count": 16,
+    "gene_count": 128,
+    "prediction_matrix_mean": 0.09949125349521637,
+    "prediction_matrix_std": 0.006968862377107143,
+    "target_matrix_mean": 48.22021484375,
+    "target_matrix_std": 57.4240837097168
+  },
+  "source_repo": "$YYF_ARCHIVE/code/20260519_0958_home_cleanup/moved_top_level/codex_scgpt_attnres_workspace/repo",
+  "checkpoint_dir": "$YYF_ARCHIVE/code/20260519_0958_home_cleanup/moved_top_level/codex_scgpt_attnres_workspace/checkpoints/whole-human",
+  "adata_path": "$YYF_DATA/singlecell_perturbation_atlas/official_scperturb/ReplogleWeissman2022_K562_essential.h5ad"
+}

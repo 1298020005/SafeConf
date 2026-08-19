@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="500">
+<rect width="100%" height="100%" fill="#fff"/>
+<style>text{font-family:Arial,"Noto Sans CJK SC",sans-serif;fill:#27343c}.t{font-size:25px;font-weight:700}.s{font-size:13px;fill:#647078}.v{font-size:13px;font-weight:700}</style>
+<text x="45" y="42" class="t">E126｜整套留出数据集的风险路由</text>
+<text x="45" y="70" class="s">每次只用其余四套历史数据学习；目标数据集真值不进入拟合与特征变换。</text>
+<text x="190" y="110" text-anchor="middle" class="s">Spearman ↑</text>
+<line x1="45" y1="370" x2="345" y2="370" stroke="#ccd5d8"/>
+<rect x="55" y="167.4" width="48" height="202.6" fill="#276c66"/>
+<text x="79" y="161.4" text-anchor="middle" class="v">0.207</text>
+<text x="79" y="394" text-anchor="middle" class="s">Meta</text>
+<rect x="127" y="157.0" width="48" height="213.0" fill="#6c948e"/>
+<text x="151" y="151.0" text-anchor="middle" class="v">0.218</text>
+<text x="151" y="394" text-anchor="middle" class="s">Safe</text>
+<rect x="199" y="274.4" width="48" height="95.6" fill="#a47b3c"/>
+<text x="223" y="268.4" text-anchor="middle" class="v">0.098</text>
+<text x="223" y="394" text-anchor="middle" class="s">幅度</text>
+<rect x="271" y="308.9" width="48" height="61.1" fill="#58778a"/>
+<text x="295" y="302.9" text-anchor="middle" class="v">0.062</text>
+<text x="295" y="394" text-anchor="middle" class="s">分歧</text>
+<text x="545" y="110" text-anchor="middle" class="s">normalized AURC ↓</text>
+<line x1="400" y1="370" x2="700" y2="370" stroke="#ccd5d8"/>
+<rect x="410" y="158.7" width="48" height="211.3" fill="#276c66"/>
+<text x="434" y="152.7" text-anchor="middle" class="v">0.981</text>
+<text x="434" y="394" text-anchor="middle" class="s">Meta</text>
+<rect x="482" y="158.9" width="48" height="211.1" fill="#6c948e"/>
+<text x="506" y="152.9" text-anchor="middle" class="v">0.980</text>
+<text x="506" y="394" text-anchor="middle" class="s">Safe</text>
+<rect x="554" y="157.2" width="48" height="212.8" fill="#a47b3c"/>
+<text x="578" y="151.2" text-anchor="middle" class="v">0.988</text>
+<text x="578" y="394" text-anchor="middle" class="s">幅度</text>
+<rect x="626" y="157.0" width="48" height="213.0" fill="#58778a"/>
+<text x="650" y="151.0" text-anchor="middle" class="v">0.989</text>
+<text x="650" y="394" text-anchor="middle" class="s">分歧</text>
+<text x="900" y="110" text-anchor="middle" class="s">top-20% error capture ↑</text>
+<line x1="755" y1="370" x2="1055" y2="370" stroke="#ccd5d8"/>
+<rect x="765" y="157.9" width="48" height="212.1" fill="#276c66"/>
+<text x="789" y="151.9" text-anchor="middle" class="v">0.221</text>
+<text x="789" y="394" text-anchor="middle" class="s">Meta</text>
+<rect x="837" y="157.0" width="48" height="213.0" fill="#6c948e"/>
+<text x="861" y="151.0" text-anchor="middle" class="v">0.222</text>
+<text x="861" y="394" text-anchor="middle" class="s">Safe</text>
+<rect x="909" y="159.7" width="48" height="210.3" fill="#a47b3c"/>
+<text x="933" y="153.7" text-anchor="middle" class="v">0.219</text>
+<text x="933" y="394" text-anchor="middle" class="s">幅度</text>
+<rect x="981" y="160.4" width="48" height="209.6" fill="#58778a"/>
+<text x="1005" y="154.4" text-anchor="middle" class="v">0.219</text>
+<text x="1005" y="394" text-anchor="middle" class="s">分歧</text>
+</svg>

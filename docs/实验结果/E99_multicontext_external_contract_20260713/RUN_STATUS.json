@@ -1,0 +1,35 @@
+{
+  "experiment": "E99_multicontext_external_contract",
+  "generated_at": "2026-07-13T04:07:09",
+  "min_cells_per_pair": 50,
+  "datasets": [
+    {
+      "dataset": "Lara_exvivo",
+      "modality": "gene_knockout",
+      "n_rectangle_contexts": 5,
+      "n_rectangle_perturbations": 31
+    },
+    {
+      "dataset": "Santinha",
+      "modality": "gene_knockout",
+      "n_rectangle_contexts": 5,
+      "n_rectangle_perturbations": 23
+    },
+    {
+      "dataset": "Cui",
+      "modality": "cytokine_stimulus",
+      "n_rectangle_contexts": 6,
+      "n_rectangle_perturbations": 86
+    }
+  ],
+  "n_folds": 16,
+  "n_manifest_rows": 4446,
+  "training_fractions": [
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "expression_matrix_read_during_selection": false,
+  "target_effect_or_error_used_for_selection": false
+}

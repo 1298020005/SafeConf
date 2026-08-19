@@ -1,0 +1,19 @@
+{
+  "decision": "PASS_ADAPTER_SMOKE",
+  "tahoe_root": "/home/yyf/data/singlecell_perturbation_atlas/mega_external/Tahoe-100M",
+  "pseudobulk_dir": "/home/yyf/data/singlecell_perturbation_atlas/mega_external/Tahoe-100M/metadata/pseudobulk_differential_expression",
+  "n_available_shards": 1026,
+  "n_scanned_shards": 10,
+  "n_tasks": 500,
+  "n_contexts": 8,
+  "n_perturbations": 480,
+  "n_genes": 1000,
+  "n_prediction_records": 30,
+  "test_pair_leakage_rows": 0,
+  "test_context_missing_rows": 0,
+  "test_perturbation_missing_rows": 0,
+  "mean_rmse": 1.1232977681097087,
+  "median_rmse": 1.00926468694538,
+  "effect_definition": "logFC",
+  "run_type": "smoke"
+}

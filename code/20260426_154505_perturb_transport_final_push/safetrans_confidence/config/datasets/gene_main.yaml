@@ -1,0 +1,13 @@
+dataset_family: gene_main
+datasets:
+  - CuiHacohen2023
+  - Frangieh
+  - Haber
+  - LaraAstiasoHuntly2023_exvivo
+  - LaraAstiasoHuntly2023_invivo
+  - Parekh
+  - ShifrutMarson2018
+  - crossPatient
+  - kangCrossCell
+  - kangCrossPatient
+main_score: protocol_v0_2_family_confidence

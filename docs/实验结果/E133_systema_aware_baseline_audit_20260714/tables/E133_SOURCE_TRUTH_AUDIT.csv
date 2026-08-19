@@ -1,0 +1,7 @@
+dataset,n_folds,n_test_tasks,max_abs_saved_truth_vs_reconstructed_truth,truth_reconstruction_pass_atol_1e-5
+Frangieh,3,837,4.76837158203125e-06,True
+Lara_exvivo,5,345,0.0,True
+Santinha,5,255,0.0,True
+Shifrut,4,172,0.0,True
+Liang,9,612,0.0,True
+Tian_CRISPRi,4,732,0.0,True

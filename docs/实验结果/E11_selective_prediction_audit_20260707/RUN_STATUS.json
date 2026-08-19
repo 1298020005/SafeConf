@@ -1,0 +1,10 @@
+{
+  "status": "ok",
+  "generated_at": "2026-07-07T05:55:30",
+  "script": "tools/scripts/run_e11_selective_prediction_audit.py",
+  "output_dir": "docs/实验结果/E11_selective_prediction_audit_20260707",
+  "input_git_commit": "a8a80664ffc0c268aa11ffa1541f22a3047423ce",
+  "source_files": {
+    "risk_coverage": "docs/实验结果/Evidence_to_Claim_20260615/figure_ready_tables/SFIG_RISK_COVERAGE.csv"
+  }
+}

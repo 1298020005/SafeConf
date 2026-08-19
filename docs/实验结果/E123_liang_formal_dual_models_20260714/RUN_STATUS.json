@@ -1,0 +1,13 @@
+{
+  "experiment": "E123_liang_formal_dual_models",
+  "generated_at": "2026-07-14T00:40:10",
+  "status": "complete",
+  "source_contract": "docs/实验结果/E122_liang_nine_context_contract_20260714/manifests/E122_TASK_MANIFEST.csv",
+  "dataset": "LiangWang2023",
+  "context_definition": "organoid culture replicate nested in differentiation/expansion medium",
+  "n_folds": 9,
+  "n_test_tasks": 612,
+  "n_prediction_records": 1224,
+  "strict_issue_count": 0,
+  "test_truth_used_for_training_calibration_score_or_threshold": false
+}

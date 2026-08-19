@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>E19 GEARS-only supplement</title>
+<style>
+body{margin:0;background:#fbfbf8;color:#17201c;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC","Microsoft YaHei",Arial,sans-serif;line-height:1.7}
+.wrap{max-width:1180px;margin:0 auto;padding:34px 28px 70px}h1{font-size:34px;margin:0}h2{border-bottom:2px solid #dfe7e2;padding-bottom:8px;margin-top:30px}
+.lead{color:#66736d;max-width:940px}.card,figure{background:white;border:1px solid #dfe7e2;border-radius:15px;padding:18px;margin:16px 0;overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px}th,td{border:1px solid #dfe7e2;padding:7px 8px;vertical-align:top}th{background:#f1f5f2;text-align:left}
+img{max-width:100%}.warn{border-left:5px solid #b26b00}.good{border-left:5px solid #2f6f5e}
+</style></head><body><main class="wrap">
+<h1>E19 GEARS-only supplement</h1>
+<p class="lead">整理本地已有 GEARS-only 结果。它可以作为补充证据，不能写成 GEARS/CPA/scGPT 已完成统一模型级验证。</p>
+<figure><img src="../figures/gears_only_supplement_signal.svg" alt="GEARS-only signal"></figure>
+<section class="card good"><h2>1. Source summary</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>source_id</th>
+      <th>source_label</th>
+      <th>source_status</th>
+      <th>exists</th>
+      <th>n_records</th>
+      <th>n_scores</th>
+      <th>n_datasets</th>
+      <th>datasets</th>
+      <th>best_score_name</th>
+      <th>best_aligned_spearman</th>
+      <th>best_n</th>
+      <th>has_uncertainty_confidence</th>
+      <th>boundary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GEARS_FORMAL_54</td>
+      <td>Norman/Adamson/Dixit formal</td>
+      <td>formal_existing</td>
+      <td>True</td>
+      <td>54</td>
+      <td>54</td>
+      <td>3</td>
+      <td>adamson,dixit,norman</td>
+      <td>gears_prediction_magnitude_risk</td>
+      <td>0.623937</td>
+      <td>54</td>
+      <td>False</td>
+      <td>GEARS-only; no native uncertainty; not aligned with sciplex3/CPA/scGPT.</td>
+    </tr>
+    <tr>
+      <td>GEARS_FRANGIEH_62</td>
+      <td>Frangieh third-predictor run03</td>
+      <td>supplement_probe_existing</td>
+      <td>True</td>
+      <td>62</td>
+      <td>124</td>
+      <td>1</td>
+      <td>frangieh</td>
+      <td>gears_prediction_magnitude_risk</td>
+      <td>0.941125</td>
+      <td>62</td>
+      <td>True</td>
+      <td>GEARS-only Frangieh run; source name contains smoke lineage; use as supplementary signal, not main formal claim.</td>
+    </tr>
+  </tbody>
+</table></section>
+<section class="card"><h2>2. Dataset summary</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>source_id</th>
+      <th>source_label</th>
+      <th>dataset_name</th>
+      <th>n_records</th>
+      <th>n_unique_perturbations</th>
+      <th>n_seeds</th>
+      <th>mean_rmse</th>
+      <th>median_rmse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GEARS_FORMAL_54</td>
+      <td>Norman/Adamson/Dixit formal</td>
+      <td>adamson</td>
+      <td>21</td>
+      <td>18</td>
+      <td>3</td>
+      <td>0.042086</td>
+      <td>0.034761</td>
+    </tr>
+    <tr>
+      <td>GEARS_FORMAL_54</td>
+      <td>Norman/Adamson/Dixit formal</td>
+      <td>dixit</td>
+      <td>3</td>
+      <td>2</td>
+      <td>3</td>
+      <td>0.424841</td>
+      <td>0.371982</td>
+    </tr>
+    <tr>
+      <td>GEARS_FORMAL_54</td>
+      <td>Norman/Adamson/Dixit formal</td>
+      <td>norman</td>
+      <td>30</td>
+      <td>27</td>
+      <td>3</td>
+      <td>0.055878</td>
+      <td>0.052180</td>
+    </tr>
+    <tr>
+      <td>GEARS_FRANGIEH_62</td>
+      <td>Frangieh third-predictor run03</td>
+      <td>frangieh</td>
+      <td>62</td>
+      <td>58</td>
+      <td>3</td>
+      <td>0.038370</td>
+      <td>0.034156</td>
+    </tr>
+  </tbody>
+</table></section>
+<section class="card"><h2>3. Evaluation summary</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>source_id</th>
+      <th>source_label</th>
+      <th>source_status</th>
+      <th>level</th>
+      <th>dataset_family</th>
+      <th>dataset_name</th>
+      <th>score_name</th>
+      <th>score_type</th>
+      <th>n</th>
+      <th>spearman_score_vs_rmse</th>
+      <th>direction_aligned_spearman</th>
+      <th>mean_rmse</th>
+      <th>risk_cov_improve_pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GEARS_FORMAL_54</td>
+      <td>Norman/Adamson/Dixit formal</td>
+      <td>formal_existing</td>
+      <td>dataset</td>
+      <td>gears_supplement</td>
+      <td>adamson</td>
+      <td>gears_prediction_magnitude_risk</td>
+      <td>risk</td>
+      <td>21</td>
+      <td>0.422078</td>
+      <td>0.422078</td>
+      <td>0.042086</td>
+      <td>0.812960</td>
+    </tr>
+    <tr>
+      <td>GEARS_FORMAL_54</td>
+      <td>Norman/Adamson/Dixit formal</td>
+      <td>formal_existing</td>
+      <td>dataset</td>
+      <td>gears_supplement</td>
+      <td>dixit</td>
+      <td>gears_prediction_magnitude_risk</td>
+      <td>risk</td>
+      <td>3</td>
+      <td>0.500000</td>
+      <td>0.500000</td>
+      <td>0.424841</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <td>GEARS_FORMAL_54</td>
+      <td>Norman/Adamson/Dixit formal</td>
+      <td>formal_existing</td>
+      <td>dataset</td>
+      <td>gears_supplement</td>
+      <td>norman</td>
+      <td>gears_prediction_magnitude_risk</td>
+      <td>risk</td>
+      <td>30</td>
+      <td>0.623582</td>
+      <td>0.623582</td>
+      <td>0.055878</td>
+      <td>7.609899</td>
+    </tr>
+    <tr>
+      <td>GEARS_FORMAL_54</td>
+      <td>Norman/Adamson/Dixit formal</td>
+      <td>formal_existing</td>
+      <td>family</td>
+      <td>gears_supplement</td>
+      <td>ALL</td>
+      <td>gears_prediction_magnitude_risk</td>
+      <td>risk</td>
+      <td>54</td>
+      <td>0.623937</td>
+      <td>0.623937</td>
+      <td>0.071013</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>GEARS_FORMAL_54</td>
+      <td>Norman/Adamson/Dixit formal</td>
+      <td>formal_existing</td>
+      <td>overall</td>
+      <td>ALL</td>
+      <td>ALL</td>
+      <td>gears_prediction_magnitude_risk</td>
+      <td>risk</td>
+      <td>54</td>
+      <td>0.623937</td>
+      <td>0.623937</td>
+      <td>0.071013</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>GEARS_FRANGIEH_62</td>
+      <td>Frangieh third-predictor run03</td>
+      <td>supplement_probe_existing</td>
+      <td>dataset</td>
+      <td>gears_supplement</td>
+      <td>frangieh</td>
+      <td>gears_prediction_magnitude_risk</td>
+      <td>risk</td>
+      <td>62</td>
+      <td>0.941125</td>
+      <td>0.941125</td>
+      <td>0.038370</td>
+      <td>12.817707</td>
+    </tr>
+    <tr>
+      <td>GEARS_FRANGIEH_62</td>
+      <td>Frangieh third-predictor run03</td>
+      <td>supplement_probe_existing</td>
+      <td>dataset</td>
+      <td>gears_supplement</td>
+      <td>frangieh</td>
+      <td>gears_uncertainty_confidence</td>
+      <td>confidence</td>
+      <td>62</td>
+      <td>0.201430</td>
+      <td>-0.201430</td>
+      <td>0.038370</td>
+      <td>1.029774</td>
+    </tr>
+    <tr>
+      <td>GEARS_FRANGIEH_62</td>
+      <td>Frangieh third-predictor run03</td>
+      <td>supplement_probe_existing</td>
+      <td>family</td>
+      <td>gears_supplement</td>
+      <td>ALL</td>
+      <td>gears_prediction_magnitude_risk</td>
+      <td>risk</td>
+      <td>62</td>
+      <td>0.941125</td>
+      <td>0.941125</td>
+      <td>0.038370</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>GEARS_FRANGIEH_62</td>
+      <td>Frangieh third-predictor run03</td>
+      <td>supplement_probe_existing</td>
+      <td>family</td>
+      <td>gears_supplement</td>
+      <td>ALL</td>
+      <td>gears_uncertainty_confidence</td>
+      <td>confidence</td>
+      <td>62</td>
+      <td>0.201430</td>
+      <td>-0.201430</td>
+      <td>0.038370</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>GEARS_FRANGIEH_62</td>
+      <td>Frangieh third-predictor run03</td>
+      <td>supplement_probe_existing</td>
+      <td>overall</td>
+      <td>ALL</td>
+      <td>ALL</td>
+      <td>gears_prediction_magnitude_risk</td>
+      <td>risk</td>
+      <td>62</td>
+      <td>0.941125</td>
+      <td>0.941125</td>
+      <td>0.038370</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>GEARS_FRANGIEH_62</td>
+      <td>Frangieh third-predictor run03</td>
+      <td>supplement_probe_existing</td>
+      <td>overall</td>
+      <td>ALL</td>
+      <td>ALL</td>
+      <td>gears_uncertainty_confidence</td>
+      <td>confidence</td>
+      <td>62</td>
+      <td>0.201430</td>
+      <td>-0.201430</td>
+      <td>0.038370</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table></section>
+<section class="card warn"><h2>4. Boundary</h2><p>GEARS-only supplement does not provide CPA/scGPT vectors and does not align to sciplex3 full-743.</p></section>
+</main></body></html>

@@ -1,0 +1,24 @@
+task_gene,condition,n_cells_in_source_h5ad,selection_rule,selection_uses_effect_or_error
+ARHGAP22,ARHGAP22+ctrl,513,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 48 frozen prior tasks; rng_seed=202607781,False
+CCND3,CCND3+ctrl,412,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 48 frozen prior tasks; rng_seed=202607781,False
+CHERP,CHERP+ctrl,497,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 48 frozen prior tasks; rng_seed=202607781,False
+DHDDS,DHDDS+ctrl,526,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 48 frozen prior tasks; rng_seed=202607781,False
+EIF2B2,EIF2B2+ctrl,638,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 48 frozen prior tasks; rng_seed=202607781,False
+EIF2B3,EIF2B3+ctrl,427,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 48 frozen prior tasks; rng_seed=202607781,False
+EIF2B4,EIF2B4+ctrl,654,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 48 frozen prior tasks; rng_seed=202607781,False
+FARSB,FARSB+ctrl,655,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 48 frozen prior tasks; rng_seed=202607781,False
+FECH,FECH+ctrl,702,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 48 frozen prior tasks; rng_seed=202607781,False
+GNPNAT1,GNPNAT1+ctrl,514,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 48 frozen prior tasks; rng_seed=202607781,False
+HSPA9,HSPA9+ctrl,926,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 48 frozen prior tasks; rng_seed=202607781,False
+HYOU1,HYOU1+ctrl,514,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 48 frozen prior tasks; rng_seed=202607781,False
+KCTD16,KCTD16+ctrl,480,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 48 frozen prior tasks; rng_seed=202607781,False
+MANF,MANF+ctrl,578,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 48 frozen prior tasks; rng_seed=202607781,False
+SAMM50,SAMM50+ctrl,838,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 48 frozen prior tasks; rng_seed=202607781,False
+SEC63,SEC63+ctrl,684,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 48 frozen prior tasks; rng_seed=202607781,False
+SLC39A7,SLC39A7+ctrl,626,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 48 frozen prior tasks; rng_seed=202607781,False
+STT3A,STT3A+ctrl,523,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 48 frozen prior tasks; rng_seed=202607781,False
+TIMM44,TIMM44+ctrl,605,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 48 frozen prior tasks; rng_seed=202607781,False
+TMEM167A,TMEM167A+ctrl,488,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 48 frozen prior tasks; rng_seed=202607781,False
+UFL1,UFL1+ctrl,611,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 48 frozen prior tasks; rng_seed=202607781,False
+XRN1,XRN1+ctrl,810,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 48 frozen prior tasks; rng_seed=202607781,False
+YIPF5,YIPF5+ctrl,1457,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 48 frozen prior tasks; rng_seed=202607781,False

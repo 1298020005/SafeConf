@@ -1,0 +1,7 @@
+gate,passed
+family_rms_lower_violations_zero,True
+worst_member_lower_violations_zero,True
+hilbert_identity_residual_at_most_1e_10,True
+target_simultaneous_coverage_at_least_0_85,False
+truth_access_violations_zero,True
+no_adaptive_upper_used,True

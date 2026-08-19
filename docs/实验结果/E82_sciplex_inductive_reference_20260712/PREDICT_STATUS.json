@@ -1,0 +1,17 @@
+{
+  "experiment": "E82_sciplex_inductive_reference",
+  "phase": "prediction_complete_truth_unread",
+  "generated_at": "2026-07-12T01:32:59",
+  "source_contract": "E81_sciplex_cartesian_contract_20260712",
+  "predictors": [
+    "inductive_ridge_reference_v1",
+    "inductive_knn_reference_v1"
+  ],
+  "ridge_alpha": 10.0,
+  "knn_neighbors_max": 5,
+  "context_input": "vehicle-control expression only",
+  "perturbation_input": "external SMILES character hash + dose",
+  "n_predictions_per_model": 688,
+  "target_perturbed_truth_used_for_prediction": false,
+  "gene_order_hash": "sha256:e53bfe14230003dbba9396958fae945532976804da8c5950a489b1f269953618"
+}

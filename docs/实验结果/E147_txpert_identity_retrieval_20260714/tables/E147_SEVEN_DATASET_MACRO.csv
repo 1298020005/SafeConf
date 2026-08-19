@@ -1,0 +1,17 @@
+predictor,similarity,score,n_datasets,spearman_risk_vs_retrieval_error
+GEARS,cosine,baseline_predicted_magnitude,7,-0.19798462180722695
+GEARS,cosine,directional_risk_frozen,7,0.12024063845717527
+GEARS,cosine,risk_model_disagreement,7,-0.1918156087515092
+GEARS,cosine,safeconf_calibrated_pair_risk,7,-0.03865800351105903
+GEARS,pearson,baseline_predicted_magnitude,7,-0.19731576609458723
+GEARS,pearson,directional_risk_frozen,7,0.13275823827894348
+GEARS,pearson,risk_model_disagreement,7,-0.1872777838255962
+GEARS,pearson,safeconf_calibrated_pair_risk,7,-0.03683018058724603
+scGPT,cosine,baseline_predicted_magnitude,7,-0.07943003440611822
+scGPT,cosine,directional_risk_frozen,7,-0.04426473998862394
+scGPT,cosine,risk_model_disagreement,7,-0.0531109254740237
+scGPT,cosine,safeconf_calibrated_pair_risk,7,-0.057144172882630954
+scGPT,pearson,baseline_predicted_magnitude,7,-0.02780878782362506
+scGPT,pearson,directional_risk_frozen,7,0.0011679084017915402
+scGPT,pearson,risk_model_disagreement,7,0.003502144594689797
+scGPT,pearson,safeconf_calibrated_pair_risk,7,-0.02649342429721265

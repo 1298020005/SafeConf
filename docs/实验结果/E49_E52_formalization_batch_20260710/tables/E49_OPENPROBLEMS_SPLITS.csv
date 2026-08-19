@@ -1,0 +1,150 @@
+experiment,n_train,n_test
+official_train_to_test,602,255
+internal_cell_type_holdout::B cells,587,15
+internal_cell_type_holdout::Myeloid cells,587,15
+internal_cell_type_holdout::NK cells,458,144
+internal_cell_type_holdout::T cells CD4+,458,144
+internal_cell_type_holdout::T cells CD8+,462,140
+internal_cell_type_holdout::T regulatory cells,458,144
+internal_compound_holdout::Idelalisib,596,6
+internal_compound_holdout::Crizotinib,596,6
+internal_compound_holdout::Porcn Inhibitor III,596,6
+internal_compound_holdout::Foretinib,596,6
+internal_compound_holdout::LDN 193189,596,6
+internal_compound_holdout::CHIR-99021,596,6
+internal_compound_holdout::Dactolisib,596,6
+internal_compound_holdout::O-Demethylated Adapalene,596,6
+internal_compound_holdout::MLN 2238,596,6
+internal_compound_holdout::Penfluridol,596,6
+internal_compound_holdout::Palbociclib,596,6
+internal_compound_holdout::Linagliptin,596,6
+internal_compound_holdout::R428,596,6
+internal_compound_holdout::Oprozomib (ONX 0912),597,5
+internal_compound_holdout::Alvocidib,597,5
+internal_compound_holdout::Mometasone Furoate,598,4
+internal_compound_holdout::Vorinostat,598,4
+internal_compound_holdout::Oxybenzone,598,4
+internal_compound_holdout::ABT-199 (GDC-0199),598,4
+internal_compound_holdout::Trametinib,598,4
+internal_compound_holdout::Selumetinib,598,4
+internal_compound_holdout::Dasatinib,598,4
+internal_compound_holdout::Flutamide,598,4
+internal_compound_holdout::Cabozantinib,598,4
+internal_compound_holdout::Lamivudine,598,4
+internal_compound_holdout::Ceritinib,598,4
+internal_compound_holdout::Bosutinib,598,4
+internal_compound_holdout::Vandetanib,598,4
+internal_compound_holdout::Clotrimazole,598,4
+internal_compound_holdout::IN1451,598,4
+internal_compound_holdout::Proscillaridin A;Proscillaridin-A,598,4
+internal_compound_holdout::Canertinib,598,4
+internal_compound_holdout::BMS-387032,598,4
+internal_compound_holdout::IMD-0354,598,4
+internal_compound_holdout::MK-5108,598,4
+internal_compound_holdout::LY2090314,598,4
+internal_compound_holdout::Methotrexate,598,4
+internal_compound_holdout::Tacalcitol,598,4
+internal_compound_holdout::Colchicine,598,4
+internal_compound_holdout::TL_HRAS26,598,4
+internal_compound_holdout::Masitinib,598,4
+internal_compound_holdout::TIE2 Kinase Inhibitor,598,4
+internal_compound_holdout::Ixabepilone,598,4
+internal_compound_holdout::CEP-18770 (Delanzomib),598,4
+internal_compound_holdout::RG7112,598,4
+internal_compound_holdout::Disulfiram,598,4
+internal_compound_holdout::Lapatinib,598,4
+internal_compound_holdout::Raloxifene,598,4
+internal_compound_holdout::Amiodarone,598,4
+internal_compound_holdout::RVX-208,598,4
+internal_compound_holdout::Ketoconazole,598,4
+internal_compound_holdout::CC-401,598,4
+internal_compound_holdout::HYDROXYUREA,598,4
+internal_compound_holdout::BAY 61-3606,598,4
+internal_compound_holdout::Navitoclax,598,4
+internal_compound_holdout::Decitabine,598,4
+internal_compound_holdout::Prednisolone,598,4
+internal_compound_holdout::Tamatinib,598,4
+internal_compound_holdout::Tosedostat,598,4
+internal_compound_holdout::GSK256066,598,4
+internal_compound_holdout::MGCD-265,598,4
+internal_compound_holdout::AZD-8330,598,4
+internal_compound_holdout::RN-486,598,4
+internal_compound_holdout::GW843682X,598,4
+internal_compound_holdout::AZD4547,598,4
+internal_compound_holdout::Tivozanib,598,4
+internal_compound_holdout::Scriptaid,598,4
+internal_compound_holdout::GO-6976,598,4
+internal_compound_holdout::SB525334,598,4
+internal_compound_holdout::AVL-292,598,4
+internal_compound_holdout::BMS-777607,598,4
+internal_compound_holdout::HMN-214,598,4
+internal_compound_holdout::UNII-BXU45ZH6LI,598,4
+internal_compound_holdout::Chlorpheniramine,598,4
+internal_compound_holdout::PD-0325901,598,4
+internal_compound_holdout::Isoniazid,598,4
+internal_compound_holdout::Saracatinib,598,4
+internal_compound_holdout::GSK-1070916,598,4
+internal_compound_holdout::Vardenafil,598,4
+internal_compound_holdout::Ricolinostat,598,4
+internal_compound_holdout::ABT737,598,4
+internal_compound_holdout::Nefazodone,598,4
+internal_compound_holdout::CEP-37440,598,4
+internal_compound_holdout::Tivantinib,598,4
+internal_compound_holdout::IKK Inhibitor VII,598,4
+internal_compound_holdout::Quizartinib,598,4
+internal_compound_holdout::AZD3514,598,4
+internal_compound_holdout::OSI-930,598,4
+internal_compound_holdout::Dovitinib,598,4
+internal_compound_holdout::K-02288,598,4
+internal_compound_holdout::I-BET151,598,4
+internal_compound_holdout::Midostaurin,598,4
+internal_compound_holdout::STK219801,598,4
+internal_compound_holdout::Vanoxerine,598,4
+internal_compound_holdout::PF-03814735,598,4
+internal_compound_holdout::TPCA-1,598,4
+internal_compound_holdout::Sunitinib,598,4
+internal_compound_holdout::BMS-536924,598,4
+internal_compound_holdout::BI-D1870,598,4
+internal_compound_holdout::Perhexiline,598,4
+internal_compound_holdout::Mubritinib (TAK 165),598,4
+internal_compound_holdout::Doxorubicin,598,4
+internal_compound_holdout::Pomalidomide,598,4
+internal_compound_holdout::FK 866,598,4
+internal_compound_holdout::Colforsin,598,4
+internal_compound_holdout::Phenylbutazone,598,4
+internal_compound_holdout::Buspirone,598,4
+internal_compound_holdout::Protriptyline,598,4
+internal_compound_holdout::Clomipramine,598,4
+internal_compound_holdout::PRT-062607,598,4
+internal_compound_holdout::AT 7867,598,4
+internal_compound_holdout::AZ628,598,4
+internal_compound_holdout::Pitavastatin Calcium,598,4
+internal_compound_holdout::TR-14035,598,4
+internal_compound_holdout::Alogliptin,598,4
+internal_compound_holdout::Nilotinib,598,4
+internal_compound_holdout::Sgc-cbp30,598,4
+internal_compound_holdout::BX 912,598,4
+internal_compound_holdout::PF-04691502,598,4
+internal_compound_holdout::Defactinib,598,4
+internal_compound_holdout::Ruxolitinib,598,4
+internal_compound_holdout::SCH-58261,598,4
+internal_compound_holdout::YK 4-279,598,4
+internal_compound_holdout::BAY 87-2243,598,4
+internal_compound_holdout::Ganetespib (STA-9090),598,4
+internal_compound_holdout::SLx-2119,598,4
+internal_compound_holdout::Desloratadine,598,4
+internal_compound_holdout::GLPG0634,598,4
+internal_compound_holdout::Topotecan,598,4
+internal_compound_holdout::Clemastine,598,4
+internal_compound_holdout::AT13387,598,4
+internal_compound_holdout::RG7090,598,4
+internal_compound_holdout::AMD-070 (hydrochloride),598,4
+internal_compound_holdout::BMS-265246,598,4
+internal_compound_holdout::Tipifarnib,598,4
+internal_compound_holdout::Imatinib,598,4
+internal_compound_holdout::TGX 221,598,4
+internal_compound_holdout::Azacitidine,598,4
+internal_compound_holdout::5-(9-Isopropyl-8-methyl-2-morpholino-9H-purin-6-yl)pyrimidin-2-amine,598,4
+internal_compound_holdout::CGM-097,598,4
+internal_compound_holdout::Atorvastatin,598,4
+internal_compound_holdout::Riociguat,598,4

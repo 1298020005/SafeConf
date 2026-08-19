@@ -1,0 +1,7 @@
+n_genes: 5000
+seed: 5201
+n_folds: 5
+val_fraction: 0.1
+atlas_root: /home/yyf/data/singlecell_perturbation_atlas
+gears_root: /home/yyf/data/gears_formal_baselines_v2
+project_root: /home/yyf/proj/code/20260426_154505_perturb_transport_final_push

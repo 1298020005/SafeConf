@@ -1,0 +1,49 @@
+{
+  "artifact_sha256": {
+    "HDF5_VALUE_ACCESS_LOG.json": "c720006fbc5cf3ff6e547f2995d98f52b6bf5b843b7a3f6464e1db99b1ebd23e",
+    "MODEL_INPUT_LOCK.json": "e79b2b05ac796013a038a34452c7faa5fff550fb375d225cdcbcff0fd6394962",
+    "PREREG_ANALYSIS_PLAN.md": "2ba03986ca8bec968a27c6a717a9d0fab7ca3dd1ad374f37de4f7c6c4bb819eb",
+    "README_先看这个.md": "06d1d067731b0c4b36f7525a7eada0db655d361d26bd33aa4733fcc50c5399b3",
+    "SOURCE_LOCK.json": "b5d6c05c65e7794e31b03ac37225c3cbe9d3e0a2c1f20e73a369f42f745372e8",
+    "STATISTICAL_ANALYSIS_LOCK.json": "e39d39dc00b0198fb693fd0a58c51e1eb82a1efe875e18fc4fe26486c5ad780a",
+    "manifests/E177_ROW_ACCESS_MANIFEST.csv": "6e1a1fd8d78c8c064b0275930b36eed5d7c4f3796cc36b01711243c077afc9ea",
+    "manifests/E177_SELECTED_TARGETS.csv": "829b0bfac10d8e3ed2a3c5f5465543446fde24edbe0f79a4e898eafbf05b5ffe",
+    "manifests/E177_TASK_MANIFEST.csv": "5055ec9fe7b93a560f6347b294649f67dd75cbd0a5ff28ed10673e83b7b3d3cd",
+    "reports/E177_METADATA_FREEZE_REPORT.md": "88db4ddf7b1dae5cf2c83aaeca4457593ed09585351b54576915093fc37e84e5",
+    "tables/E177_TARGET_AUDIT.csv": "c09b630945965ca6cca0fbe79a33241a8beb27947e07ef866f6842041b80462c"
+  },
+  "experiment": "E177_sunshine_external_certificate",
+  "expression_matrix_x_values_read_during_freeze": 0,
+  "generated_at": "2026-07-19T23:49:26+08:00",
+  "n_calibration_tasks": 240,
+  "n_eligible_targets_before_hash_selection": 144,
+  "n_evaluation_tasks": 400,
+  "n_exact_control_cells": 2500,
+  "n_exact_match_cells": 27882,
+  "n_selected_targets": 144,
+  "n_single_gene_exact_labels": 181,
+  "n_tasks": 1152,
+  "planned_row_access_by_phase": {
+    "POSTCALIBRATION_EVALUATION_TRUTH_X": 6226,
+    "POSTGATE_CALIBRATION_TRUTH_X": 5595,
+    "PRETRUTH_CONTROL_X": 2500,
+    "PRETRUTH_TRAIN_X": 8146,
+    "PRETRUTH_VALIDATION_X": 1193
+  },
+  "public_processed_data_only": true,
+  "python": "3.9.25",
+  "schema": "safeconf_e177_metadata_freeze_v1",
+  "source_shape": [
+    90380,
+    33538
+  ],
+  "split_counts": {
+    "calibration": 30,
+    "evaluation": 50,
+    "train": 54,
+    "validation": 10
+  },
+  "stage": "F1_METADATA_FREEZE",
+  "status": "PASS",
+  "technical_group_label_is_biological_context": false
+}

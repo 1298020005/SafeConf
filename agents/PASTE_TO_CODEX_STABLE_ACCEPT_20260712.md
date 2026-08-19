@@ -1,0 +1,412 @@
+# 粘贴给 Codex 的完整任务指令（稳定录用版）
+
+> 使用方式：把本文件**从「===BEGIN===」到「===END===」整段复制**给 Codex。  
+> 目标不是“多跑实验”，而是：**按周老师要求，做出一篇能稳定投过二区方法刊、并保留一区升级路径的论文证据包**。  
+> 作者：Grok 深度审阅版 · 2026-07-12 · 路径：`/home/yyf/proj/agents/PASTE_TO_CODEX_STABLE_ACCEPT_20260712.md`
+
+---
+
+===BEGIN===
+
+# 角色与总目标
+
+你是 SafeConf 项目的执行与科学把关 agent。工作目录：`/home/yyf/proj`。
+
+**用户硬目标（按优先级）：**
+
+1. **必须**回应周老师 2026-07-09 组会后半段的问题与布置（原文见下）。
+2. **必须**以「**稳定被二区方法类期刊录用**」为设计标准，而不是“看起来实验很多”。
+3. 一区是冲刺，**只有二区证据关全绿后**才评估；禁止现在写“已具备一区”。
+4. 禁止把下载数据、堆 panel、课程论文内容当成科研主进度。
+5. 禁止结果导向调参（看完 test error 再改公式/权重）。
+6. 每个数字必须能指到 `docs/实验结果/...` 下的表或报告；指不到就当不存在。
+
+**你必须先完整阅读再动手（按顺序）：**
+
+1. `workspace/group_meeting_20260709_MAINLINE_WHITE/周老师聊天记录_要求拆解与实验设计_20260709.md`
+2. `docs/实验结果/E63_周老师问题_证据总账_20260711.md`
+3. `docs/实验结果/E68_一区目标_二区底线_证据门槛_20260711.md`
+4. `docs/实验结果/E74_pair_risk_certificate_20260711/reports/E74_REPORT.md`
+5. `docs/实验结果/Formal_main_20260604/README_先看这个.md`
+6. 本指令全文
+
+聊天原文（老师原话）：`~/.codex/attachments/3d36bc69-c573-44c2-821b-6795c42ac3fc/pasted-text.txt`
+
+读完后先输出一节 **「我理解的目标 / 当前缺口 / 本轮唯一动作」**，再执行。不要一上来开新实验。
+
+---
+
+# 第一部分：周老师到底要什么（不要再理解偏）
+
+## 1.1 老师认可的
+
+- 框架方向可以：预测之后做风险排序 / 分诊。
+- 不是让你继续堆随机 pair 上的相关。
+
+## 1.2 老师追问的（必须在论文/汇报里逐条可答）
+
+| 编号 | 原意 | 错误答法 | 正确答法标准 |
+|---|---|---|---|
+| Q1 | 分数最后跟什么错误相关？ | “跟预测错误相关” | 写清：score vs **哪个 predictor** 的 **哪种 RMSE** |
+| Q2 | 那个错误来自哪个模型？ | 混用 reference / GEARS / scGPT | 表里永远有 `predictor_name` |
+| Q3 | disagreement 用了多模型 → 不是针对每个 model | 吹“可选模型” | 写成 **task / pair 难度**，不写“该信 GEARS 还是 scGPT” |
+| Q4 | 第四项幅度：没测真值怎么算？ | 含糊 | **predicted magnitude** 可部署；**true magnitude** 只事后控制 |
+| Q5 | 输入必须是没见过 holdout 真值就能算的 | 用 true effect 打分 | provenance 表证明 deployable |
+| Q6 | random pair 太简单 | 当主卖点 | 只作 Setting 0 对照 |
+| Q7 | 小矩阵 / 低覆盖 | 只做 smoke | 主证据 |
+| Q8 | 整行 + 整列 holdout | 只做整列未见基因 | 行、列分开报告 |
+| Q9 | 跨数据集 | 轻量器高 ρ 充数 | 真预测器或冻结风险器 + CI |
+| Q10 | gene 和 chemical 都看 | 下载 Tahoe 即完成 | 化学用适配 predictor（CPA 类） |
+
+## 1.3 老师的发表门槛原话（最高优先级）
+
+> 小矩阵、整行整列 holdout、跨数据集 —— **这三个都解决了**，感觉写一个小文章应该可以了。  
+> 更取决于这些方法在这些 setting 上**能不能算**。
+
+**解释（你必须按此执行）：**
+
+- “小文章可以了” ≈ 有一篇可投的方法/评估短文或标准方法文的**最低科学闭环**。
+- 这**不等于**中科院一区，也**不等于** Nature Methods。
+- 但若这三关不过，用户要求的「稳定二区」在逻辑上也不成立。
+
+---
+
+# 第二部分：当前项目的真实科学状态（2026-07-12）
+
+你必须接受下列事实，不得用话术抹平。
+
+## 2.1 旧 7 主表（protocol v0.2 + 参考预测线）
+
+| 数据集 | 线 | n | aligned ρ | partial ρ | magnitude-only ρ | 含义 |
+|---|---|---:|---:|---:|---:|---|
+| Cui | gene | 2506 | 0.445 | 0.328 | 0.736 | 有信号，幅度混杂重 |
+| Frangieh | gene | 1266 | 0.583 | 0.474 | 0.797 | 最强 gene 之一 |
+| Lara ex | gene | 662 | 0.561 | 0.430 | 0.513 | 可用 |
+| Lara in | gene | 780 | 0.413 | 0.358 | 0.639 | 可用 |
+| sciplex3 | chem | 1128 | 0.428 | 0.629 | 0.740 | 化学最好看 |
+| Santinha | chem | 566 | 0.206 | 0.224 | 0.824 | 弱 |
+| McFarland | chem | 2326 | −0.086 | −0.061 | 0.795 | **失败边界，必须保留** |
+
+**能说：** 参考预测设定下，任务风险分诊在 6/7 有 partial 正信号。  
+**不能说：** 深度模型上也成立；四特征等权全面赢 magnitude；化学全面成功。
+
+## 2.2 真双模型线（目前最硬）
+
+- 数据：Adamson、Norman、Frangieh；固定未见基因；GEARS + 正式微调 scGPT。
+- **seed 分歧：多次失败**（E60/E66/E71）→ 正确结论：seed ≠ 可靠性。
+- **跨家族分歧：有信号**（E65/E67/E72）。
+- **E74：** disagreement/2 是 pair mean/max RMSE 下界；72 任务核验通过；三数据集分层 pair mean ρ≈0.477，CI [0.268, 0.674]；相对固定 magnitude 聚合 Δρ 的 CI 在四个对比上 >0。
+- **E69 跨数据集：** 真模型迁移弱，主目标增量 CI 穿 0。
+- **E73：** 残差校准同向但不稳，已正确停止刷权重。
+
+## 2.3 证据分层（禁止混写进同一句 claim）
+
+| 层 | 是什么 | 可进主文哪一块 |
+|---|---|---|
+| L1 | 7 主表 + frozen 四特征 | 背景 / 参考设定 / 失败边界 |
+| L2 | 轻量器上的小矩阵/跨域/行列表 smoke | Methods 可行性，**不是** Abstract 主数字 |
+| L3 | GEARS+scGPT 正式合同 + E74 | **主结果候选** |
+| L4 | Tahoe/OP 下载、未接 CPA | 数据可用性附录，**不是**结果 |
+
+## 2.4 当前相对「稳定二区」差在哪
+
+还差的是**录用级闭环**，不是再下一批数据：
+
+1. 老师三 setting **未用同一真预测器合同收口**（最大缺口）。
+2. claim 在「四特征分诊」和「pair-risk 证书」之间**漂移**。
+3. 化学真模型未闭环。
+4. E74 需不重叠 panel 钉死“不是一次抽样”。
+5. 无 PRESCRIBE / 原生 UQ 对照（至少要有清晰差异表）。
+6. 主文数字常缺 risk-coverage / top-k 与 magnitude 同表。
+
+---
+
+# 第三部分：稳定录用的论文设计（先定产品，再定实验）
+
+## 3.1 只允许一条主故事（二区稳定版）
+
+**论文题目方向（锁定）：**
+
+> Post-hoc task-risk triage for single-cell perturbation predictions:  
+> multi-setting evaluation, multi-model disagreement, and failure boundaries.
+
+**中文理解：**  
+不是再做一个扰动预测器；是预测之后的**质检/分诊**。  
+在多种难度 setting 下，证明哪些可部署分数能把高误差任务排到前面，并诚实写出何时失败。
+
+**主 claim（Abstract 只能有这一句核心）：**
+
+> 在严格 holdout 与多 setting 下，**可部署**（不用 holdout 真值）的风险分数能对任务级预测误差排序；  
+> **跨模型家族分歧**在未见基因任务上对 **pair-level 误差** 有可证明下界与实证排序增益，且优于/补充 **predicted magnitude**；  
+> **seed 分歧与部分跨域设定失败**；McFarland 等为边界。
+
+**副 claim（Results 一节，不抢主句）：**
+
+> E74 式 pair-risk 证书说明分歧对应 pair mean/max risk，不能定位单模型对错。
+
+## 3.2 稳定二区需要的“录用最小集合”（Minimal Publishable Unit）
+
+下面 8 项 **全部满足** 才允许说“可以按稳定二区投稿准备”。缺 1 项 = 未就绪。
+
+| # | 模块 | 通过标准 |
+|---|---|---|
+| M1 | **Claim 冻结** | 仓库内一份 `CLAIM_LOCK.md`：主 claim / 禁止 claim / 主表列表 |
+| M2 | **Q1–Q5 口径** | 每张主表有 predictor_name、error、provenance；true mag 永不进 score |
+| M3 | **Setting 矩阵** | 同一 predictor 合同下至少：随机 pair（对照）+ 小矩阵 + 列 holdout + 行 holdout + 跨数据集（同族）各有汇总表 |
+| M4 | **≥3 独立 gene 数据** | Adamson/Norman/Frangieh 或替换为同等正式合同；主数字带 bootstrap CI |
+| M5 | **双模型** | 两家族共享 task/gene panel/true effect；seed 阴性保留 |
+| M6 | **赢/不赢 magnitude 写清** | 每个 setting 有 predicted magnitude 对照；Δ 与 CI；不能只报自己最好 |
+| M7 | **化学边界** | 至少 sciplex3（或 OP）一条 chem 线 + McFarland 失败；若无 CPA，化学降为边界章并写明 |
+| M8 | **复现包** | 从任务表到主图的一键命令、种子、版本、PredictionRecord 合同 |
+
+**一区额外（现在不做，只记账）：** 可迁移残差风险、全面 RC 优于原生 UQ、PRESCRIBE 同协议、机制分组、外部盲测。
+
+## 3.3 目标期刊（匹配“稳定录用”，不是幻想）
+
+**第一志愿（稳定二区策略）：**
+
+1. **Bioinformatics (OUP)** — 算法+评估协议，最贴  
+2. **BMC Bioinformatics** — 工具/流程，录用路径清晰  
+3. **Briefings in Bioinformatics** — 方法+领域定位长文也可  
+4. **PLOS Computational Biology** — 计算生物学方法  
+5. **GigaScience** — 若强调协议+大数据可复现  
+
+**不要作为当前主投：** Nature Methods / Genome Biology（除非 M1–M8 + 一区额外全绿）。
+
+**竞品必须在 Related Work 处理：**
+
+- scPerturBench (Nat Methods 2025)：多 setting 泛化  
+- Systema 等：效应大小与简单基线  
+- PRESCRIBE (NeurIPS 2025)：集成式 UQ；你方是 **post-hoc、不改原模型、接异构预测器**  
+- risk-coverage / selective prediction 经典框架：主文要有 RC 曲线，不只 Spearman  
+
+## 3.4 论文结构（写出来才能知道还缺哪块实验）
+
+1. **Intro**：预测器爆炸 → 复核资源有限 → 需要 post-hoc 分诊；问题不是再涨 1% 精度。  
+2. **Related**：预测方法 vs 不确定性 vs 你的 post-hoc 定位；PRESCRIBE 差异表。  
+3. **Methods**：PredictionRecord 合同；分数定义；**禁止 true mag**；setting 定义（小矩阵/行/列/跨域）；指标（Spearman、CI、top-k、RC）。  
+4. **Results A**：Setting 矩阵总图（老师三 setting 必须出现）。  
+5. **Results B**：双模型分歧 + E74 下界 + vs magnitude。  
+6. **Results C**：失败边界（seed、McFarland、跨域弱）。  
+7. **Discussion**：能分诊什么 / 不能选模型 / 化学限制 / 与湿实验优先级。  
+8. **Reproducibility**：代码、种子、数据获取。
+
+---
+
+# 第四部分：实验执行总计划（只做对录用有用的）
+
+## 4.1 统一任务表 schema（所有新实验强制）
+
+每行一个 task：
+
+```text
+split_setting, coverage_or_holdout_id, dataset_name, perturbation_family,
+predictor_name, gene_panel_id, task_key,
+score_predicted_magnitude, score_support, score_context_sim,
+score_model_disagreement, score_pair_risk, score_frozen_optional,
+error_rmse, true_magnitude_oracle, fold_id, seed, run_id
+```
+
+规则：
+
+- `true_magnitude_oracle` **禁止**进入任何 deployable score。  
+- 主文对比必须包含 `score_predicted_magnitude`。  
+- 跨数据集时：源上拟合的一切，目标上只推理。
+
+## 4.2 关卡与顺序（违反顺序 = 失败）
+
+```text
+Gate0  CLAIM_LOCK.md 写好并自审禁止 claim
+Gate1  Provenance 全绿（Q4/Q5）
+Gate2  列 holdout 双模型汇总 + E74 不重叠 panel 复现钉死
+Gate3  小矩阵 25/50/75（真预测器或冻结预测缓存，同一 error）
+Gate4  行 holdout（新 context）
+Gate5  跨数据集同族（真模型或冻结风险器；报 CI；弱就写弱）
+Gate6  化学边界章（sciplex3 + McFarland；CPA 能上则上，不能上则降级并解释）
+Gate7  消融 + RC + 复现包
+Gate8  投稿前 Attacker 审核（见第六部分）——全 PASS 才算“稳定投稿就绪”
+```
+
+**现在禁止优先做的：**
+
+- E79+ 无意义 panel 扩展（除非 Gate2 复现未完成）  
+- 再下 TB 级数据  
+- 在 72 个旧测试任务上搜权重  
+- 轻量器跨域高 ρ 进 Abstract  
+
+## 4.3 每个 Gate 的最小交付物
+
+### Gate0 — CLAIM_LOCK.md
+
+路径：`docs/实验结果/CLAIM_LOCK_20260712.md`  
+
+内容必须包含：主 claim、副 claim、禁止 claim、主图表清单、L1/L2/L3 哪些进主文。
+
+### Gate1 — Provenance
+
+- 每个 score 输入来源：train fold / control / prediction / **不得** holdout truth  
+- 输出：`FEATURE_PROVENANCE.csv` + `LEAKAGE_CHECKLIST.csv`  
+- FAIL 条件：任一 deployable 分数用了 true effect  
+
+### Gate2 — 列 holdout + E74 复现
+
+- 不重叠 panel 汇总：disagreement vs pair_mean/max；vs magnitude Δρ CI  
+- 单 panel CI 穿 0 可以；**合并后**若 CI 仍不稳，主 claim 必须降级  
+- seed 阴性必须同图或同表  
+
+### Gate3 — 小矩阵
+
+- 可见比例 25/50/75%；≥2 gene 数据集  
+- 同一 error 定义  
+- 通过：**或** CI 下界>0 的排序信号，**或**“覆盖下降后失效”的清晰边界（也算完成老师“能不能算”的问题）  
+
+### Gate4 — 行 holdout
+
+- 留出整个 context/cell line  
+- 报告 context similarity 是否仍可用  
+- 失败也要成文  
+
+### Gate5 — 跨数据集
+
+- gene→gene 优先（如 Adamson↔Norman 风险器或预测缓存）  
+- 禁止只报最好方向；必须双向或矩阵 + 多重检验诚实性  
+- E69 已表明不稳：你的任务是**用统一合同写清边界**，不是刷到全正  
+
+### Gate6 — 化学
+
+- 最低：sciplex3 cell-line holdout（已有线索）+ McFarland 失败  
+- 若接 CPA/chemCPA：与 gene 主表字段对齐  
+- 若接不上：主文写 “chemical 为 boundary chapter”，**不要**用 GEARS 硬套 Tahoe 当主结果  
+
+### Gate7 — 消融与 RC
+
+- 分数：magnitude / support / context / disagreement / 组合  
+- 指标：Spearman+CI、top-k enrichment、RC@80% 或 AURC  
+- 与 random rejection 比较  
+
+### Gate8 — 投稿就绪检查
+
+见第六部分清单，全部打勾。
+
+---
+
+# 第五部分：你（Codex）过去思路的对错（必须内化）
+
+## 5.1 做对了的
+
+- 停 seed 当主线（阴性证据充分）  
+- 坚持真 scGPT 微调而非 forward-only  
+- E74 理论边界清楚  
+- 保留 McFarland / 跨域弱 / magnitude 强  
+- 不在 72 任务上继续搜权重  
+
+## 5.2 做错了的 / 正在偏的
+
+1. **用 panel 复现代替老师三 setting**  
+2. **轻量跨域与真双模型混层**  
+3. **下载 = 进度**  
+4. **claim 从四特征漂到 pair-risk 却未正式锁题**  
+5. **“冲一区”话术驱动实验选择**  
+
+## 5.3 纠正后的默认策略
+
+```text
+每一算力单位优先关闭 Gate3/4/5 中仍红的格子；
+其次钉 Gate2 复现；
+再次化学边界；
+最后写作与复现包。
+```
+
+---
+
+# 第六部分：稳定录用自检（Attacker 模式）
+
+每完成一个 Gate，用下列问题自攻。任一 KILL 命中则停止宣称进度。
+
+## 6.1 科学 KILL
+
+- [ ] 分数用了 holdout true expression/effect  
+- [ ] 主数字没有 predictor_name  
+- [ ] 只报 Spearman 不报 magnitude 对照  
+- [ ] 删阴性  
+- [ ] 测试可见后改权重  
+- [ ] 把 pair-risk 写成单模型置信度  
+- [ ] 轻量 L2 数字写进 Abstract  
+
+## 6.2 老师 KILL
+
+- [ ] 三 setting 未做完却说“已按老师要求完成”  
+- [ ] random pair 仍是唯一主图  
+- [ ] 跨数据集只挑正的方向展示  
+
+## 6.3 录用 KILL
+
+- [ ] 无法一键复现主图  
+- [ ] 与 PRESCRIBE 零对比且零差异说明  
+- [ ] 化学用错误模型家族却当主贡献  
+- [ ] 主 claim 超过证据（写了“普遍有效/稳定二区已达成/一区就绪”）  
+
+## 6.4 投稿就绪清单（Gate8）
+
+- [ ] CLAIM_LOCK 与 Abstract 一致  
+- [ ] 主图 1：方法流程（post-hoc）  
+- [ ] 主图 2：Setting 矩阵（含老师三 setting）  
+- [ ] 主图 3：双模型分歧 vs magnitude vs seed  
+- [ ] 主图 4：失败边界  
+- [ ] 主表：全 setting 汇总 + CI  
+- [ ] 代码+种子+数据说明  
+- [ ] 目标期刊 1 篇确定，cover letter 一句 claim 与全文一致  
+
+---
+
+# 第七部分：本轮你要立刻做的事（不要发散）
+
+## Step A（当天，先做完再谈 GPU）
+
+1. 写 `docs/实验结果/CLAIM_LOCK_20260712.md`（主/副/禁止 claim + 主图表计划）。  
+2. 写 `docs/实验结果/GATE_STATUS_20260712.md`：Gate0–8 红黄绿 + 证据路径。  
+3. 用本指令第六部分自检 CLAIM_LOCK；有 KILL 则改 claim，不改实验凑。
+
+## Step B（唯一主实验队列）
+
+按顺序只推进：
+
+1. Gate2：汇总已有 panel2/3（E75–E78 等）——**先吃已有结果**，缺什么再补跑。  
+2. Gate3：小矩阵真合同（优先在已有 GEARS/scGPT 预测缓存上做，避免无意义重训）。  
+3. Gate4：行 holdout。  
+4. Gate5：跨数据集（接受阴性，写成边界）。  
+
+每完成一个 Gate：更新 GATE_STATUS；git commit；双远端按项目惯例推送。
+
+## Step C（禁止本轮做）
+
+- 新开无关数据集下载  
+- 新模型架构  
+- 写完整论文初稿（Gate3 前最多写 Methods 骨架）  
+- 宣称二区/一区已达成  
+
+## Step D（每轮回复用户的格式）
+
+```text
+1) 本轮关闭/推进的 Gate
+2) 路径（表/报告）
+3) 主数字（含 CI 与 vs magnitude）
+4) 阴性
+5) 是否命中 KILL
+6) 下一轮唯一动作（一句话）
+```
+
+---
+
+# 第八部分：给“稳定录用”的最终判断（你必须同意后执行）
+
+1. **idea 可以发**，定位是 post-hoc 分诊 + 多 setting 评估 + 多模型分歧，不是新 SOTA 预测器。  
+2. **数据集方向对**；问题在协议统一与老师三 setting 收口，不在换数据集名字。  
+3. **现在不能**说稳定二区已达成；**现在不能**谈一区。  
+4. **E74 是王牌结果**，但单独不够录用；必须嵌进老师要求的 setting 矩阵与 magnitude 对照。  
+5. **成功路径：** Gate0→8 全绿 → 投 Bioinformatics / BMC Bioinfo / Briefings / PLOS CB 之一 → 一区仅升级评估。  
+6. **失败路径：** 继续堆 panel / 下载 / 混层数字 / 换题不锁 claim。  
+
+你的工作是走成功路径。从 Step A 开始。
+
+===END===

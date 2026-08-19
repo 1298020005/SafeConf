@@ -1,0 +1,30 @@
+{
+  "schema": "safeconf_e163_authorization_gate_v1",
+  "analysis_role": "validation_informed_futility_diagnostic_not_external_confirmation",
+  "score": "raw_log_prob",
+  "score_orientation": "higher_is_more_confident",
+  "primary_accuracy": "PCA10_inverse_transform_own_model_Pearson",
+  "main_seed": 3407,
+  "seed_primary_estimable": {
+    "3407": true,
+    "3408": true,
+    "3409": true
+  },
+  "seed_primary_spearman_rho": {
+    "3407": 0.16173913043478258,
+    "3408": 0.042608695652173914,
+    "3409": -0.22608695652173913
+  },
+  "condition_1_all_three_primary_associations_estimable": true,
+  "condition_2_main_seed_rho_strictly_positive": true,
+  "condition_3_at_least_two_of_three_seed_rhos_strictly_positive": true,
+  "positive_seed_count": 2,
+  "authorize_future_test_label_lock": true,
+  "decision": "allow_new_test_label_only_preregistration",
+  "bootstrap_cluster_LOGO_or_raw_sensitivity_alter_gate": false,
+  "test_label_query_authorized_inside_E163": false,
+  "test_label_queried": false,
+  "test_X_accessed": false,
+  "test_truth_accessed": false,
+  "interpretation_boundary": "Passing permits only a separately committed future test-label-only contract; it is not model validation or confirmatory success."
+}

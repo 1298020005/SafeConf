@@ -1,0 +1,10 @@
+hdf5_path,value_access,n_values,encoding,purpose
+obs/10xrun_id,True,278684,categorical/categories+codes,expression-blind task and row-access freeze
+obs/donor_id,True,278684,categorical/categories+codes,expression-blind task and row-access freeze
+obs/culture_condition,True,278684,categorical/categories+codes,expression-blind task and row-access freeze
+obs/guide_id,True,278684,categorical/categories+codes,expression-blind task and row-access freeze
+obs/perturbed_gene_name,True,278684,categorical/categories+codes,expression-blind task and row-access freeze
+obs/perturbed_gene_id,True,278684,categorical/categories+codes,expression-blind task and row-access freeze
+obs/guide_type,True,278684,categorical/categories+codes,expression-blind task and row-access freeze
+var/gene_ids,True,18129,string-array,expression-blind task and row-access freeze
+var/gene_name,True,18129,string-array,expression-blind task and row-access freeze

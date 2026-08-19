@@ -1,0 +1,13 @@
+{
+  "experiment": "E202_residual_task_failure",
+  "status": "COMPLETE",
+  "finished_at": "2026-08-02T05:53:39+08:00",
+  "git_head": "a7ac2685926a69a236f98a8e44baea56a1bce994",
+  "n_tasks": 566,
+  "n_bootstrap": 5000,
+  "primary_partial_spearman": -0.06795009555675122,
+  "primary_ci95_lower": -0.15220938179656016,
+  "primary_ci95_upper": 0.019064629699197637,
+  "independent_signal_status": "NOT_SUPPORTED",
+  "post_e200_diagnostic": true
+}

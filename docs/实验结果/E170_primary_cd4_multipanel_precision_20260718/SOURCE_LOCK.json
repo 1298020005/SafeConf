@@ -1,0 +1,30 @@
+{
+  "allowed_hdf5_value_paths": [
+    "obs/10xrun_id",
+    "obs/donor_id",
+    "obs/culture_condition",
+    "obs/guide_id",
+    "obs/perturbed_gene_name",
+    "obs/perturbed_gene_id",
+    "obs/guide_type"
+  ],
+  "e168_primary_target_manifest_sha256": "cf86f2be050dde1777ce2d052f3fd001e6213f495520aaa13a9a13950ff01781",
+  "e168_source_lock_sha256": "e2c34499b0b6ede81d67062a041a3a7ba3758189be69407fa842c3fac61138a8",
+  "e168_target_eligibility_audit_sha256": "c240397c619c6b93fed8f8cbb0716bf8d3db9caee9c0b1f9324aa9f14e51f4de",
+  "expression_matrix_x_decoded_by_e170_freeze": false,
+  "forbidden_value_roots": [
+    "X",
+    "layers",
+    "obsm",
+    "obsp",
+    "varm",
+    "varp"
+  ],
+  "layers_decoded_by_e170_freeze": false,
+  "official_crc64nvme_base64": "E2slkXBEb2c=",
+  "source_byte_attestation_path": "/home/yyf/data/safeconf_external/primary_cd4_perturbseq_2025/E168_SOURCE_BYTE_ATTESTATION.json",
+  "source_byte_attestation_sha256": "487600a78372d952bcc97529dd1b8107f0c0b740e50a98ab9d317b75fbd2d059",
+  "source_bytes": 44566657140,
+  "source_full_sha256": "fd2b8c21d357f8699ec34e2d5ebc1639612c27a0147a9ca94d4983822d93247e",
+  "source_path": "/home/yyf/data/safeconf_external/primary_cd4_perturbseq_2025/source/GWCD4i.pseudobulk_merged.h5ad"
+}

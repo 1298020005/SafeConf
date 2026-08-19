@@ -1,0 +1,8 @@
+phase,split,rows_indexed,columns_indexed,row_index_sha256,test_row_intersection,excluded_row_intersection,X_indexed,X_materialized,X_transformed,rows_transformed,engineered_construct_columns_indexed,guide_barcode_columns_indexed,total_excluded_columns_indexed
+opaque_raw_file_identity_hash,all_file_bytes_not_semantic_X_access,0,0,,0,0,False,False,False,0,0,0,0
+semantic_train_endogenous_axis_read,train,11779,20631,cb625a649b94cc3939edc3c8b85c5e98e23c9f4f5f05d1936b2e6ca46e7b6365,0,0,True,True,False,0,0,0,0
+semantic_val_endogenous_axis_read,val,5102,20631,88e14f07a4ba188653c375983b13cd79175739f741c38080e3291cea88a81757,0,0,True,True,False,0,0,0,0
+semantic_train_fixed_transform,train,0,2023,,0,0,False,False,True,11779,0,0,0
+semantic_val_fixed_transform,val,0,2023,,0,0,False,False,True,5102,0,0,0
+sealed_test_zero_access,test,0,0,,0,0,False,False,False,0,0,0,0
+excluded_zero_access,excluded,0,0,,0,0,False,False,False,0,0,0,0

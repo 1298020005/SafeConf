@@ -1,0 +1,13 @@
+dataset_name,score_name,top_fraction,enrichment_fold,lift_over_random,n_records,n_top_risk,n_worst_error,interpretation
+LaraAstiasoHuntly2023_exvivo,predicted_magnitude,0.05,1.7796143250688705,1.7796143250688705,646,33,33,weak_positive_at_top5
+LaraAstiasoHuntly2023_exvivo,predicted_magnitude,0.1,0.45869822485207107,0.458698224852071,646,65,65,below_random_at_top10
+LaraAstiasoHuntly2023_exvivo,predicted_magnitude,0.2,1.796568047337278,1.7965680473372783,646,130,130,positive_at_top20
+LaraAstiasoHuntly2023_exvivo,protocol_v0_2_family_confidence,0.05,8.898071625344352,8.898071625344352,646,33,33,strong_frozen_v02
+LaraAstiasoHuntly2023_exvivo,protocol_v0_2_family_confidence,0.1,7.797869822485207,7.797869822485207,646,65,65,strong_frozen_v02
+LaraAstiasoHuntly2023_exvivo,protocol_v0_2_family_confidence,0.2,3.74603550295858,3.74603550295858,646,130,130,strong_frozen_v02
+LaraAstiasoHuntly2023_exvivo,safeconf_lodo_risk,0.05,0.5932047750229569,0.5932047750229569,646,33,33,lodo_failure_below_random
+LaraAstiasoHuntly2023_exvivo,safeconf_lodo_risk,0.1,0.6115976331360947,0.6115976331360947,646,65,65,lodo_failure_below_random
+LaraAstiasoHuntly2023_exvivo,safeconf_lodo_risk,0.2,1.796568047337278,1.7965680473372783,646,130,130,positive_only_at_top20
+LaraAstiasoHuntly2023_exvivo,safeconf_perdataset_risk,0.05,8.898071625344352,8.898071625344352,646,33,33,strong_perdataset_layer
+LaraAstiasoHuntly2023_exvivo,safeconf_perdataset_risk,0.1,7.186272189349112,7.186272189349113,646,65,65,strong_perdataset_layer
+LaraAstiasoHuntly2023_exvivo,safeconf_perdataset_risk,0.2,4.586982248520711,4.586982248520711,646,130,130,strong_perdataset_layer

@@ -1,0 +1,50 @@
+{
+  "experiment": "E76a_adamson_scGPT_formal_panel2",
+  "prepared_at": "2026-07-11T19:26:00",
+  "git_head_before_prepare": "6a44ccff4a900ad48ef51ed191ba2c24c25ebc96",
+  "source_h5ad": "/home/yyf/data/gears_formal_baselines_v2/adamson_local_atlas/perturb_processed.h5ad",
+  "source_shape": [
+    56998,
+    5043
+  ],
+  "n_panel_genes": 512,
+  "panel_gene_order_hash": "sha256:781d6b5f4ee0bf3e98fb7ef60dae6e0ff3d06ea62237c4bc38ca09bdab3c7234",
+  "panel_selection": "all Adamson perturbation-label genes (24 frozen tests first), then remaining positions ranked by total expression over E75a-matched training conditions only",
+  "test_truth_used_for_panel": false,
+  "test_conditions": [
+    "AMIGO3+ctrl",
+    "ASCC3+ctrl",
+    "CAD+ctrl",
+    "COPB1+ctrl",
+    "DDOST+ctrl",
+    "DDRGK1+ctrl",
+    "GMPPB+ctrl",
+    "HSD17B12+ctrl",
+    "HSPA5+ctrl",
+    "MRGBP+ctrl",
+    "MTHFD1+ctrl",
+    "P4HB+ctrl",
+    "PPWD1+ctrl",
+    "SCYL1+ctrl",
+    "SEC61A1+ctrl",
+    "SEC61B+ctrl",
+    "SOCS1+ctrl",
+    "SPCS2+ctrl",
+    "SRP72+ctrl",
+    "SRPRB+ctrl",
+    "TMED10+ctrl",
+    "TMED2+ctrl",
+    "TTI2+ctrl",
+    "UFM1+ctrl"
+  ],
+  "n_train_conditions": 48,
+  "n_val_conditions": 5,
+  "n_test_conditions": 24,
+  "source_urls": {
+    "scgpt_official_perturbation_tutorial": "https://github.com/bowang-lab/scGPT/blob/main/tutorials/Tutorial_Perturbation.ipynb",
+    "gears_repository": "https://github.com/snap-stanford/GEARS"
+  },
+  "dataset": "Adamson",
+  "gears_audit": "E75a_adamson_gears_panel2_20260711",
+  "adapter_origin": "E65 audited implementation reused; no prior-panel task/prediction/error reused"
+}

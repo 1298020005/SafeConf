@@ -1,0 +1,31 @@
+{
+  "status": "ok",
+  "generated_at": "2026-07-08T12:46:11",
+  "git_head": "f77bd61b715a80fa17c32683ea69f1ddf6e5689d",
+  "git_dirty": true,
+  "out": "docs/实验结果/E28_gears_scgpt_shared_adamson_smoke_20260708",
+  "device": "cuda:0",
+  "n_prediction_records": 6,
+  "n_tasks": 3,
+  "n_genes": 512,
+  "perturbations": [
+    "CCND3",
+    "DAD1",
+    "DERL2"
+  ],
+  "strict_issue_count": 0,
+  "strict_issues": [],
+  "cells_per_perturbation": {
+    "control": 8,
+    "CCND3": 8,
+    "DAD1": 8,
+    "DERL2": 8
+  },
+  "scgpt_matched_key_count": 129,
+  "scgpt_total_model_key_count": 176,
+  "sources": {
+    "e25": "docs/实验结果/E25_gears_strict_prediction_records_20260708",
+    "adamson_h5ad": "$YYF_DATA/singlecell_perturbation_atlas/official_generalization/Adamson.h5ad",
+    "gears_processed": "$YYF_DATA/gears_formal_baselines_v2/adamson_local_atlas/perturb_processed.h5ad"
+  }
+}

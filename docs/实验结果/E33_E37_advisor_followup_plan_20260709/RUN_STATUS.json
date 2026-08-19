@@ -1,0 +1,20 @@
+{
+  "run_id": "E33_E37_advisor_followup_plan_20260709",
+  "created_at": "2026-07-09",
+  "status": "triggered",
+  "source": "Zhou advisor meeting transcript, final discussion",
+  "current_priority": "Upgrade E34/E35 smoke to formal scoring after advisor confirmation",
+  "completed_outputs": [
+    "EXPERIMENT_QUEUE.csv",
+    "README_先看这个.md",
+    "TRIGGER_LOG_20260709.md",
+    "../E33_feature_provenance_error_source_audit_20260709",
+    "../E34_E35_split_smoke_20260709",
+    "../E34_E35_scoring_smoke_20260709"
+  ],
+  "not_completed_yet": [
+    "E36_TRANSFER_MATRIX.csv",
+    "E37_SETTING_BY_DOMAIN_SUMMARY.csv"
+  ],
+  "decision": "E33 completed. E34/E35 split and scoring smoke completed. Next step is formal E34/E35 with frozen dataset list, stronger predictors, and larger gene panels."
+}

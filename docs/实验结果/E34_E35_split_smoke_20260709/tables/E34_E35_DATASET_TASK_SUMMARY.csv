@@ -1,0 +1,9 @@
+dataset_name,path,status,error,n_tasks,n_contexts,n_perturbations,context_col,perturbation_col,perturbation_type,has_control_like_scan,suitable_generalization_scan,file_size_bytes
+Haber,/home/yyf/datasets/singlecell_perturbation_atlas/extra_official/cellular_context_generalization/Haber.h5ad,ok,,24,8,3,cell_type,perturbation,genetic_single,True,True,592930236
+Parekh,/home/yyf/datasets/singlecell_perturbation_atlas/extra_official/cellular_context_generalization/Parekh.h5ad,ok,,30,3,10,cell_type,perturbation,genetic_single,True,True,261722230
+kangCrossCell,/home/yyf/datasets/singlecell_perturbation_atlas/extra_official/cellular_context_generalization/kangCrossCell.h5ad,ok,,8,8,1,cell_type,perturbation,genetic_single,True,True,816975704
+kangCrossPatient,/home/yyf/datasets/singlecell_perturbation_atlas/extra_official/cellular_context_generalization/kangCrossPatient.h5ad,ok,,8,8,1,condition1,perturbation,genetic_single,True,True,788088093
+TCDD,/home/yyf/datasets/singlecell_perturbation_atlas/extra_official/cellular_context_generalization/TCDD.h5ad,ok,,6,6,1,condition1,perturbation,chemical_single,True,True,2589969469
+sciplex3,/home/yyf/datasets/singlecell_perturbation_atlas/extra_official/cellular_context_generalization/sciplex3.h5ad,ok,,105,3,36,cell_type,perturbation,chemical_single,True,True,589108092
+ShifrutMarson2018,/home/yyf/datasets/singlecell_perturbation_atlas/official_scperturb/ShifrutMarson2018.h5ad,ok,,40,2,20,patient,perturbation,genetic_single,True,True,871481676
+AissaBenevolenskaya2021,/home/yyf/datasets/singlecell_perturbation_atlas/official_scperturb/AissaBenevolenskaya2021.h5ad,no_tasks,missing context or perturbation column,0,0,0,,,genetic_single,True,True,45919115

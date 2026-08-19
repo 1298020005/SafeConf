@@ -1,0 +1,6 @@
+theorem,empirical_check,passed
+P1_constant_rank_not_estimable,constant+jitter G2 rejected,True
+P2_output_collapse_blocks_model_UQ,real+synthetic collapsed predictions rejected,True
+P3_same_weak_order_same_AURC,magnitude clones exact zero delta AURC,True
+P4_low_replicate_reliability_blocks_authorization,Wessels raw score G4 rejected,True
+necessary_not_sufficient,E87 passes G2/G3 while predictor viability is zero,True

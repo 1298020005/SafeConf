@@ -1,0 +1,14 @@
+{
+  "experiment": "E118_chemical_contract_meta",
+  "generated_at": "2026-07-13T23:57:40",
+  "status": "complete",
+  "n_sources": 3,
+  "n_source_tasks": {
+    "sciPlex3_internal": 629,
+    "sciPlex3_to_OpenProblems": 553,
+    "sciPlex3_to_sciPlex4": 28
+  },
+  "all_strict_contracts_pass": true,
+  "test_truth_used_to_refit_scores": false,
+  "preregistered_chemical_increment_gate_passed": false
+}

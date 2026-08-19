@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="230" viewBox="0 0 980 230">
+<rect width="980" height="230" fill="#fbfbf8"/>
+<text x="35" y="30" font-size="20" font-weight="800" fill="#17201c">GEARS-only supplementary signal</text>
+<text x="35" y="79" font-size="15" font-weight="700">GEARS_FORMAL_54</text><rect x="250" y="62" width="500" height="25" rx="6" fill="#edf1ee"/><rect x="250" y="62" width="312.0" height="25" rx="6" fill="#2f6f5e"/><text x="765" y="80" font-size="14">ρ=0.624, n=54</text><text x="35" y="139" font-size="15" font-weight="700">GEARS_FRANGIEH_62</text><rect x="250" y="122" width="500" height="25" rx="6" fill="#edf1ee"/><rect x="250" y="122" width="470.6" height="25" rx="6" fill="#2f6f5e"/><text x="765" y="140" font-size="14">ρ=0.941, n=62</text>
+<text x="35" y="205" font-size="13" fill="#66736d">Bars show best overall direction-aligned Spearman in existing GEARS-only outputs. This is not unified GEARS/CPA/scGPT validation.</text>
+</svg>

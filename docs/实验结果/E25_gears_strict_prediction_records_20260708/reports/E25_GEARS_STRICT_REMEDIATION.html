@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>E25 GEARS strict remediation</title>
+  <style>
+    body{margin:0;background:#fff;color:#1f2933;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",Arial,sans-serif;}
+    main{max-width:1120px;margin:0 auto;padding:42px 28px 72px;}
+    h1{font-size:30px;margin:0 0 10px;letter-spacing:-.02em;}
+    h2{font-size:21px;margin:34px 0 12px;border-top:1px solid #e5e7eb;padding-top:24px;}
+    p,li{line-height:1.75;font-size:16px;}
+    .lead{color:#52606d;margin-bottom:24px;}
+    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0;}
+    .card{border:1px solid #e5e7eb;border-radius:14px;padding:16px;background:#fafafa;}
+    .k{font-size:26px;font-weight:760;color:#111827;}
+    .l{font-size:13px;color:#66788a;margin-top:4px;}
+    table{border-collapse:collapse;width:100%;font-size:14px;margin:10px 0 22px;}
+    th,td{border-bottom:1px solid #e5e7eb;text-align:left;padding:9px 10px;vertical-align:top;}
+    th{background:#f7f7f7;color:#111827;}
+    code{background:#f3f4f6;border-radius:6px;padding:2px 5px;}
+    .ok{color:#147d64;font-weight:700;}
+    .note{border-left:4px solid #5B8DEF;background:#f8fbff;padding:12px 16px;border-radius:8px;}
+  </style>
+</head>
+<body>
+<main>
+  <h1>E25 GEARS strict PredictionRecord remediation</h1>
+  <p class="lead">把已有真实 GEARS formal 输出补齐严格 SafeConf provenance，合并为可校验证据包。</p>
+  <div class="cards">
+    <div class="card"><div class="k">54</div><div class="l">PredictionRecords</div></div>
+    <div class="card"><div class="k">3</div><div class="l">GEARS datasets</div></div>
+    <div class="card"><div class="k">9</div><div class="l">formal runs</div></div>
+    <div class="card"><div class="k ok">PASS</div><div class="l">strict validator</div></div>
+  </div>
+  <p class="note">E25 不重新训练、不改误差数值；只做合同修复、数组合并、gene order hash 绑定和严格验证。</p>
+  <img src="../figures/gears_strict_remediation.svg" alt="E25 summary" style="width:100%;max-width:980px;border:1px solid #e5e7eb;border-radius:14px;margin:20px 0;"/>
+  <h2>数据集汇总</h2>
+  <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataset_name</th>
+      <th>n_runs</th>
+      <th>n_prediction_records</th>
+      <th>n_genes</th>
+      <th>mean_rmse</th>
+      <th>median_rmse</th>
+      <th>min_rmse</th>
+      <th>max_rmse</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>adamson</td>
+      <td>3</td>
+      <td>21</td>
+      <td>5043</td>
+      <td>0.042086</td>
+      <td>0.034761</td>
+      <td>0.022992</td>
+      <td>0.112453</td>
+    </tr>
+    <tr>
+      <td>dixit</td>
+      <td>3</td>
+      <td>3</td>
+      <td>6000</td>
+      <td>0.424841</td>
+      <td>0.371982</td>
+      <td>0.355655</td>
+      <td>0.546885</td>
+    </tr>
+    <tr>
+      <td>norman</td>
+      <td>3</td>
+      <td>30</td>
+      <td>5025</td>
+      <td>0.055878</td>
+      <td>0.045537</td>
+      <td>0.030096</td>
+      <td>0.089127</td>
+    </tr>
+  </tbody>
+</table>
+  <h2>每个 run</h2>
+  <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataset_name</th>
+      <th>seed</th>
+      <th>source_run_dir</th>
+      <th>n_prediction_records</th>
+      <th>n_predicted_arrays</th>
+      <th>n_true_arrays</th>
+      <th>n_genes</th>
+      <th>gene_panel_id</th>
+      <th>gene_order_hash</th>
+      <th>mean_rmse</th>
+      <th>median_rmse</th>
+      <th>min_rmse</th>
+      <th>max_rmse</th>
+      <th>mean_gears_confidence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>adamson</td>
+      <td>1</td>
+      <td>$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal/adamson/seed_1</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>5043</td>
+      <td>gears::adamson::single::n_genes_5043</td>
+      <td>sha256:8b461482a501bc0fa4966cf0d6ba0a20365560359528edf44ab7876dc831278d</td>
+      <td>0.038754</td>
+      <td>0.030122</td>
+      <td>0.022992</td>
+      <td>0.072577</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>adamson</td>
+      <td>2</td>
+      <td>$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal/adamson/seed_2</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>5043</td>
+      <td>gears::adamson::single::n_genes_5043</td>
+      <td>sha256:8b461482a501bc0fa4966cf0d6ba0a20365560359528edf44ab7876dc831278d</td>
+      <td>0.040625</td>
+      <td>0.044873</td>
+      <td>0.023050</td>
+      <td>0.054869</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>adamson</td>
+      <td>3</td>
+      <td>$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal/adamson/seed_3</td>
+      <td>7</td>
+      <td>7</td>
+      <td>7</td>
+      <td>5043</td>
+      <td>gears::adamson::single::n_genes_5043</td>
+      <td>sha256:8b461482a501bc0fa4966cf0d6ba0a20365560359528edf44ab7876dc831278d</td>
+      <td>0.046878</td>
+      <td>0.034761</td>
+      <td>0.024809</td>
+      <td>0.112453</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>dixit</td>
+      <td>1</td>
+      <td>$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal/dixit/seed_1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>6000</td>
+      <td>gears::dixit::single::n_genes_6000</td>
+      <td>sha256:09cfde75cdbdbdc2f6f496e5fa2cdfb4b9dfd758f582c2212777c2dd525b66e3</td>
+      <td>0.546885</td>
+      <td>0.546885</td>
+      <td>0.546885</td>
+      <td>0.546885</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>dixit</td>
+      <td>2</td>
+      <td>$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal/dixit/seed_2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>6000</td>
+      <td>gears::dixit::single::n_genes_6000</td>
+      <td>sha256:09cfde75cdbdbdc2f6f496e5fa2cdfb4b9dfd758f582c2212777c2dd525b66e3</td>
+      <td>0.355655</td>
+      <td>0.355655</td>
+      <td>0.355655</td>
+      <td>0.355655</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>dixit</td>
+      <td>3</td>
+      <td>$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal/dixit/seed_3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>6000</td>
+      <td>gears::dixit::single::n_genes_6000</td>
+      <td>sha256:09cfde75cdbdbdc2f6f496e5fa2cdfb4b9dfd758f582c2212777c2dd525b66e3</td>
+      <td>0.371982</td>
+      <td>0.371982</td>
+      <td>0.371982</td>
+      <td>0.371982</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>norman</td>
+      <td>1</td>
+      <td>$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal/norman/seed_1</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>5025</td>
+      <td>gears::norman::single::n_genes_5025</td>
+      <td>sha256:9059bd6e8ff28482b90f1dd4dd423df7e1990b35f9a8ad5b4b6aee9ef0eb7ed0</td>
+      <td>0.070690</td>
+      <td>0.067833</td>
+      <td>0.049006</td>
+      <td>0.089127</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>norman</td>
+      <td>2</td>
+      <td>$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal/norman/seed_2</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>5025</td>
+      <td>gears::norman::single::n_genes_5025</td>
+      <td>sha256:9059bd6e8ff28482b90f1dd4dd423df7e1990b35f9a8ad5b4b6aee9ef0eb7ed0</td>
+      <td>0.051245</td>
+      <td>0.045537</td>
+      <td>0.030096</td>
+      <td>0.077489</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>norman</td>
+      <td>3</td>
+      <td>$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal/norman/seed_3</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>5025</td>
+      <td>gears::norman::single::n_genes_5025</td>
+      <td>sha256:9059bd6e8ff28482b90f1dd4dd423df7e1990b35f9a8ad5b4b6aee9ef0eb7ed0</td>
+      <td>0.045701</td>
+      <td>0.042120</td>
+      <td>0.035489</td>
+      <td>0.066836</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+  <h2>严格校验</h2>
+  <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>scope</th>
+      <th>strict</th>
+      <th>issue_count</th>
+      <th>issues</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>combined_e25_gears_strict_package</td>
+      <td>True</td>
+      <td>0</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+  <h2>怎么用于下一步</h2>
+  <p>这个包可以作为真实 GEARS 模型基线进入后续 SafeConf 评分流程。下一步要做的是：把 GEARS 与另一个预测器在同一任务空间对齐，或者构造 leave-one-dataset / leave-one-perturbation 的风险排序评估。</p>
+</main>
+</body>
+</html>

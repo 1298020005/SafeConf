@@ -1,0 +1,42 @@
+{
+  "experiment": "E154_replogle_robustness_run",
+  "generated_at": "2026-07-14T15:30:55",
+  "status": "complete",
+  "run_id": "seed2_frac25",
+  "seed": 2026071542,
+  "train_fraction": 25,
+  "reused_e151": false,
+  "source_model_root": "docs/实验结果/E154_replogle_robustness_20260714/runs/seed2_frac25/Replogle_two_cellline",
+  "manifest": "docs/实验结果/E154_replogle_robustness_20260714/manifests/E154_TRAIN_FRACTION_25_MANIFEST.csv",
+  "manifest_sha256": "0ae2adcd4f98a5291aca364514dd37f456d352e3449ff0cee3b82a1abf4c89cb",
+  "n_primary_unique_tasks": 256,
+  "n_source_context_diagnostics_excluded": 84,
+  "strict": {
+    "n_folds": 2,
+    "n_test_tasks": 340,
+    "n_prediction_records": 680,
+    "strict_issue_count": 0,
+    "all_records_are_test": true,
+    "two_records_per_task": true
+  },
+  "singleton_batch_guard": {
+    "default_batch_size": 16,
+    "fallback_batch_size": 15,
+    "rule": "fallback only when selected_train_count modulo 16 equals 1",
+    "affected_folds": [],
+    "applied": false,
+    "all_frozen_training_pairs_retained": true
+  },
+  "systema_exact_source_truth_audit": {
+    "dataset": "Replogle_two_cellline",
+    "n_folds": 2,
+    "n_test_tasks": 340,
+    "max_abs_saved_truth_vs_reconstructed_truth": 0.0,
+    "truth_reconstruction_pass_atol_1e-5": true
+  },
+  "undefined_two_fold_macro_metrics": [
+    "absolute_safeconf_spearman"
+  ],
+  "direction_model_refit": false,
+  "e154_is_post_e152_sensitivity_not_gate": true
+}

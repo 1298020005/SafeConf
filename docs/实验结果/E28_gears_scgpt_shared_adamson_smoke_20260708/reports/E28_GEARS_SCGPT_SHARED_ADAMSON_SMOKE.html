@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>E28 GEARS scGPT shared Adamson smoke</title>
+<style>
+body{margin:0;background:#fff;color:#1f2933;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",Arial,sans-serif;}
+main{max-width:1120px;margin:0 auto;padding:42px 28px 72px;}
+h1{font-size:30px;margin:0 0 10px;} h2{font-size:21px;margin:34px 0 12px;border-top:1px solid #e5e7eb;padding-top:24px;}
+p{line-height:1.75;font-size:16px;} table{border-collapse:collapse;width:100%;font-size:14px;margin:10px 0 22px;}
+th,td{border-bottom:1px solid #e5e7eb;text-align:left;padding:9px 10px;vertical-align:top;} th{background:#f7f7f7;}
+.note{border-left:4px solid #4677C8;background:#f8fbff;padding:12px 16px;border-radius:8px;}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0;} .card{border:1px solid #e5e7eb;border-radius:14px;padding:16px;background:#fafafa;}
+.k{font-size:26px;font-weight:760;color:#111827;} .l{font-size:13px;color:#66788a;margin-top:4px;}
+</style></head>
+<body><main>
+<h1>E28 GEARS–scGPT shared Adamson smoke</h1>
+<p class="note">同任务、同 512-gene panel、同 true effect key 的双预测器 strict smoke。不是正式性能 benchmark。</p>
+<div class="cards">
+<div class="card"><div class="k">6</div><div class="l">PredictionRecords</div></div>
+<div class="card"><div class="k">3</div><div class="l">tasks</div></div>
+<div class="card"><div class="k">512</div><div class="l">shared genes</div></div>
+<div class="card"><div class="k">0</div><div class="l">strict issues</div></div>
+</div>
+<h2>Manifest</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>fold_id</th>
+      <th>perturbation</th>
+      <th>perturbation_gene</th>
+      <th>record_id</th>
+      <th>predicted_effect_key</th>
+      <th>scgpt_cells</th>
+      <th>shared_gene_count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>CCND3+ctrl</td>
+      <td>CCND3</td>
+      <td>GEARS::adamson::seed1::single::CCND3+ctrl</td>
+      <td>GEARS::adamson::seed1::single::CCND3+ctrl::pred</td>
+      <td>8</td>
+      <td>512</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>DAD1+ctrl</td>
+      <td>DAD1</td>
+      <td>GEARS::adamson::seed1::single::DAD1+ctrl</td>
+      <td>GEARS::adamson::seed1::single::DAD1+ctrl::pred</td>
+      <td>8</td>
+      <td>512</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>DERL2+ctrl</td>
+      <td>DERL2</td>
+      <td>GEARS::adamson::seed1::single::DERL2+ctrl</td>
+      <td>GEARS::adamson::seed1::single::DERL2+ctrl::pred</td>
+      <td>8</td>
+      <td>512</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Metrics</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>perturbation</th>
+      <th>predictor_name</th>
+      <th>rmse</th>
+      <th>cosine_error</th>
+      <th>pearson</th>
+      <th>spearman</th>
+      <th>pred_l2</th>
+      <th>true_l2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CCND3</td>
+      <td>GEARS_formal_seed1_subset512</td>
+      <td>0.282558</td>
+      <td>0.896293</td>
+      <td>0.065734</td>
+      <td>0.167276</td>
+      <td>1.584948</td>
+      <td>6.360543</td>
+    </tr>
+    <tr>
+      <td>CCND3</td>
+      <td>scGPT_whole_human_forward_subset512</td>
+      <td>0.281100</td>
+      <td>1.003801</td>
+      <td>0.040703</td>
+      <td>0.005530</td>
+      <td>0.004869</td>
+      <td>6.360543</td>
+    </tr>
+    <tr>
+      <td>DAD1</td>
+      <td>GEARS_formal_seed1_subset512</td>
+      <td>0.278121</td>
+      <td>0.868609</td>
+      <td>0.147384</td>
+      <td>0.240889</td>
+      <td>1.387203</td>
+      <td>6.323342</td>
+    </tr>
+    <tr>
+      <td>DAD1</td>
+      <td>scGPT_whole_human_forward_subset512</td>
+      <td>0.279520</td>
+      <td>1.210562</td>
+      <td>-0.207340</td>
+      <td>0.070078</td>
+      <td>0.006971</td>
+      <td>6.323342</td>
+    </tr>
+    <tr>
+      <td>DERL2</td>
+      <td>GEARS_formal_seed1_subset512</td>
+      <td>0.306956</td>
+      <td>0.623132</td>
+      <td>0.378963</td>
+      <td>0.389900</td>
+      <td>1.475147</td>
+      <td>7.365840</td>
+    </tr>
+    <tr>
+      <td>DERL2</td>
+      <td>scGPT_whole_human_forward_subset512</td>
+      <td>0.325499</td>
+      <td>0.948953</td>
+      <td>-0.005821</td>
+      <td>-0.059455</td>
+      <td>0.012813</td>
+      <td>7.365840</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Validation</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>scope</th>
+      <th>strict</th>
+      <th>issue_count</th>
+      <th>issues</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>e28_gears_scgpt_shared_adamson_smoke</td>
+      <td>True</td>
+      <td>0</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</main></body></html>

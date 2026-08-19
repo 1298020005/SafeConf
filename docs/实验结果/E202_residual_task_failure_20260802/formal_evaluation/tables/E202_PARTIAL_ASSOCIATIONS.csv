@@ -1,0 +1,6 @@
+predictor,outcome,control,n_tasks,raw_spearman,partial_spearman,ci95_lower,ci95_upper,bootstrap_valid
+training_delta_dispersion,gat_excess_rmse_vs_general,predicted_magnitude,566,0.07983648772976674,-0.06795009555675122,-0.15220938179656016,0.019064629699197637,5000
+transfer_risk,gat_excess_rmse_vs_general,predicted_magnitude,566,-0.5473242278208037,-0.6504936621766135,-0.7096582504591094,-0.5844304495521376,5000
+model_baseline_gap,gat_excess_rmse_vs_general,predicted_magnitude,566,-0.5889123665977226,-0.6031652768365651,-0.67070957558521,-0.5293141528122166,5000
+negative_log_train_cells,gat_excess_rmse_vs_general,predicted_magnitude,566,-0.6717768979451681,-0.7136300841222236,-0.7614262213010954,-0.6610529925928421,5000
+support_context_deficit,gat_excess_rmse_vs_general,predicted_magnitude,566,-0.5283672679661806,-0.5260162242993567,-0.5931226219305129,-0.45137176593193945,5000

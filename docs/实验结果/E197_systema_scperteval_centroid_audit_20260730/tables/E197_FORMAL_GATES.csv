@@ -1,0 +1,48 @@
+setting,check,observed,expected,passed,detail
+E190_K562,systema_row_count,8304,8304,True,
+E190_K562,predictor_registry_exact,"['GEARS_seed3407', 'GEARS_seed3408', 'GEARS_seed3409', 'family_centroid', 'matching_source_all_folds_mean', 'matching_source_train_mean', 'scGPT_seed3407', 'scGPT_seed3408', 'scGPT_seed3409', 'source_absolute_noncontrol_mean', 'target_control_plus_source_mean_effect', 'zero_effect']","['GEARS_seed3407', 'GEARS_seed3408', 'GEARS_seed3409', 'family_centroid', 'matching_source_all_folds_mean', 'matching_source_train_mean', 'scGPT_seed3407', 'scGPT_seed3408', 'scGPT_seed3409', 'source_absolute_noncontrol_mean', 'target_control_plus_source_mean_effect', 'zero_effect']",True,
+E190_K562,systema_predictor_task_keys_unique,8304,8304,True,
+E190_K562,absolute_effect_top20_proxy_genes_exactly_20_unique,8304,8304,True,
+E190_K562,source_top20_genes_exactly_20_unique,8304,8304,True,
+E190_K562,source_top20_predictor_and_batch_invariant,692,692,True,
+E190_K562,scperteval_row_count,3384,3384,True,
+E190_K562,scperteval_predictor_gene_protocol_keys_unique,3384,3384,True,
+E190_K562,scperteval_protocol_allowlist_exact,"mse,pearson,pearson_ctrl,pearson_pert,rank,transpose_rank","mse,pearson,pearson_ctrl,pearson_pert,rank,transpose_rank",True,
+E190_K562,scperteval_pearson_matches_independent_formula,1.1102230246251565e-16,<=1e-8 and identical NA mask,True,tolerance covers float32 centroid round-off only
+E190_K562,scperteval_pearson_ctrl_matches_independent_formula,1.1102230246251565e-16,<=1e-8 and identical NA mask,True,tolerance covers float32 centroid round-off only
+E190_K562,scperteval_pearson_pert_matches_independent_formula,1.1102230246251565e-16,<=1e-8 and identical NA mask,True,tolerance covers float32 centroid round-off only
+E190_K562,scperteval_mse_matches_independent_formula,0.0,<=1e-8 and identical NA mask,True,tolerance covers float32 centroid round-off only
+E190_K562,scperteval_rank_matches_independent_formula,0.0,<=1e-8 and identical NA mask,True,tolerance covers float32 centroid round-off only
+E190_K562,scperteval_transpose_rank_matches_independent_formula,0.0,<=1e-8 and identical NA mask,True,tolerance covers float32 centroid round-off only
+E190_K562,zero_control_pearson_equals_pearson_ctrl,0.0,<=1e-10,True,
+E190_K562,family_endpoint_task_count,692,692,True,
+E190_K562,gene_equal_endpoint_count,47,47,True,
+E190_K562,predictor_input_audit_complete_and_pretruth,12,12,True,
+E190_K562,systema_gene_centroid_row_count,1128,1128,True,
+E190_K562,systema_gene_centroid_spaces,"['matched_control_effect', 'post_state']","['matched_control_effect', 'post_state']",True,
+E190_K562,systema_gene_centroid_competitor_count,[46],[46],True,
+E190_K562,context_centroid_eligibility_and_competitors,"eligible=692;na=0;competitors=[5, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 21]",eligible=692;na=0,True,
+E192_RPE1,systema_row_count,2100,2100,True,
+E192_RPE1,predictor_registry_exact,"['GEARS_seed3407', 'GEARS_seed3408', 'GEARS_seed3409', 'family_centroid', 'matching_source_all_folds_mean', 'matching_source_train_mean', 'scGPT_seed3407', 'scGPT_seed3408', 'scGPT_seed3409', 'source_absolute_noncontrol_mean', 'target_control_plus_source_mean_effect', 'zero_effect']","['GEARS_seed3407', 'GEARS_seed3408', 'GEARS_seed3409', 'family_centroid', 'matching_source_all_folds_mean', 'matching_source_train_mean', 'scGPT_seed3407', 'scGPT_seed3408', 'scGPT_seed3409', 'source_absolute_noncontrol_mean', 'target_control_plus_source_mean_effect', 'zero_effect']",True,
+E192_RPE1,systema_predictor_task_keys_unique,2100,2100,True,
+E192_RPE1,absolute_effect_top20_proxy_genes_exactly_20_unique,2100,2100,True,
+E192_RPE1,source_top20_genes_exactly_20_unique,2100,2100,True,
+E192_RPE1,source_top20_predictor_and_batch_invariant,175,175,True,
+E192_RPE1,scperteval_row_count,1512,1512,True,
+E192_RPE1,scperteval_predictor_gene_protocol_keys_unique,1512,1512,True,
+E192_RPE1,scperteval_protocol_allowlist_exact,"mse,pearson,pearson_ctrl,pearson_pert,rank,transpose_rank","mse,pearson,pearson_ctrl,pearson_pert,rank,transpose_rank",True,
+E192_RPE1,scperteval_pearson_matches_independent_formula,5.551115123125783e-17,<=1e-8 and identical NA mask,True,tolerance covers float32 centroid round-off only
+E192_RPE1,scperteval_pearson_ctrl_matches_independent_formula,5.551115123125783e-17,<=1e-8 and identical NA mask,True,tolerance covers float32 centroid round-off only
+E192_RPE1,scperteval_pearson_pert_matches_independent_formula,2.220446049250313e-16,<=1e-8 and identical NA mask,True,tolerance covers float32 centroid round-off only
+E192_RPE1,scperteval_mse_matches_independent_formula,0.0,<=1e-8 and identical NA mask,True,tolerance covers float32 centroid round-off only
+E192_RPE1,scperteval_rank_matches_independent_formula,0.0,<=1e-8 and identical NA mask,True,tolerance covers float32 centroid round-off only
+E192_RPE1,scperteval_transpose_rank_matches_independent_formula,0.0,<=1e-8 and identical NA mask,True,tolerance covers float32 centroid round-off only
+E192_RPE1,zero_control_pearson_equals_pearson_ctrl,0.0,<=1e-10,True,
+E192_RPE1,family_endpoint_task_count,175,175,True,
+E192_RPE1,gene_equal_endpoint_count,21,21,True,
+E192_RPE1,predictor_input_audit_complete_and_pretruth,12,12,True,
+E192_RPE1,systema_gene_centroid_row_count,504,504,True,
+E192_RPE1,systema_gene_centroid_spaces,"['matched_control_effect', 'post_state']","['matched_control_effect', 'post_state']",True,
+E192_RPE1,systema_gene_centroid_competitor_count,[20],[20],True,
+E192_RPE1,context_centroid_eligibility_and_competitors,"eligible=164;na=11;competitors=[0, 1, 2, 3, 4, 5, 6]",eligible=164;na=11,True,
+global,population_distribution_de_protocol_count,0,0,True,

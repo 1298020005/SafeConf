@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="380" viewBox="0 0 1000 380">
+<rect width="1000" height="380" fill="#fbfbf8"/>
+<text x="44" y="38" font-size="23" font-weight="800" fill="#17212b">E20 adapter contract validator</text>
+<text x="44" y="61" font-size="14" fill="#5d6974">Strict pass means future cross-predictor validation is directly safe. Usable means old evidence can still be audited with stated caveats.</text>
+<text x="44" y="99" font-size="16" font-weight="700" fill="#17212b">gears_formal_legacy</text><rect x="300" y="82" width="360" height="18" rx="4" fill="#e8edef"/><rect x="300" y="82" width="0.0" height="18" rx="4" fill="#28734f"/><text x="680" y="97" font-size="13" fill="#40515e">strict 0/9</text><rect x="300" y="110" width="360" height="18" rx="4" fill="#e8edef"/><rect x="300" y="110" width="360.0" height="18" rx="4" fill="#087f73"/><text x="680" y="125" font-size="13" fill="#40515e">usable 9/9</text><text x="44" y="181" font-size="16" font-weight="700" fill="#17212b">sciplex3_full743</text><rect x="300" y="164" width="360" height="18" rx="4" fill="#e8edef"/><rect x="300" y="164" width="0.0" height="18" rx="4" fill="#28734f"/><text x="680" y="179" font-size="13" fill="#40515e">strict 0/1</text><rect x="300" y="192" width="360" height="18" rx="4" fill="#e8edef"/><rect x="300" y="192" width="360.0" height="18" rx="4" fill="#087f73"/><text x="680" y="207" font-size="13" fill="#40515e">usable 1/1</text>
+
+<g transform="translate(44 270)">
+<rect x="0" y="0" width="170" height="58" rx="8" fill="#ffffff" stroke="#d8e0e4"/>
+<text x="85" y="25" text-anchor="middle" font-size="15" font-weight="700">Predictor</text>
+<text x="85" y="45" text-anchor="middle" font-size="12" fill="#5d6974">GEARS / scGPT / CPA</text>
+<text x="190" y="35" font-size="24" fill="#087f73">→</text>
+<rect x="230" y="0" width="180" height="58" rx="8" fill="#ffffff" stroke="#d8e0e4"/>
+<text x="320" y="25" text-anchor="middle" font-size="15" font-weight="700">PredictionRecord</text>
+<text x="320" y="45" text-anchor="middle" font-size="12" fill="#5d6974">task + keys + provenance</text>
+<text x="430" y="35" font-size="24" fill="#087f73">→</text>
+<rect x="470" y="0" width="160" height="58" rx="8" fill="#ffffff" stroke="#d8e0e4"/>
+<text x="550" y="25" text-anchor="middle" font-size="15" font-weight="700">Effect arrays</text>
+<text x="550" y="45" text-anchor="middle" font-size="12" fill="#5d6974">predicted / true</text>
+<text x="650" y="35" font-size="24" fill="#087f73">→</text>
+<rect x="690" y="0" width="180" height="58" rx="8" fill="#ffffff" stroke="#d8e0e4"/>
+<text x="780" y="25" text-anchor="middle" font-size="15" font-weight="700">SafeConf audit</text>
+<text x="780" y="45" text-anchor="middle" font-size="12" fill="#5d6974">confidence vs error</text>
+</g>
+
+</svg>

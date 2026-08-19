@@ -1,0 +1,23 @@
+{
+  "out_dir": "outputs/safeconf_external_validation_corrected_20260610",
+  "internal_datasets": [
+    "CuiHacohen2023",
+    "Frangieh",
+    "LaraAstiasoHuntly2023_exvivo",
+    "LaraAstiasoHuntly2023_invivo",
+    "McFarlandTsherniak2020",
+    "SantinhaPlatt2023",
+    "SrivatsanTrapnell2020_sciplex3"
+  ],
+  "external_datasets": [
+    "KaggleCrossPatient",
+    "ShifrutMarson2018",
+    "XieHon2017",
+    "crossPatient"
+  ],
+  "n_train_rows": 36682,
+  "n_external_test_rows": 206,
+  "n_internal_inputs": 7,
+  "n_external_inputs": 4,
+  "status": "ok"
+}

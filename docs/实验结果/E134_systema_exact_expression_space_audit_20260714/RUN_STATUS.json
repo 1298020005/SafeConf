@@ -1,0 +1,13 @@
+{
+  "experiment": "E134_systema_exact_expression_space_audit",
+  "generated_at": "2026-07-14T02:13:57",
+  "status": "complete",
+  "n_datasets": 6,
+  "n_folds": 30,
+  "n_test_tasks": 2953,
+  "bootstrap_draws": 3000,
+  "safeconf_or_predictor_refit": false,
+  "training_reference_uses_validation_or_test_truth": false,
+  "all_source_truth_checks_pass": true,
+  "e133_negative_result_overwritten": false
+}

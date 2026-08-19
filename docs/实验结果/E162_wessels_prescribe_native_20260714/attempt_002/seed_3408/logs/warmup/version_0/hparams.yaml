@@ -1,0 +1,5 @@
+early_stopping: false
+learning_rate: 0.001
+learning_rate_decay: false
+log_prob_positive: false
+stage: warmup

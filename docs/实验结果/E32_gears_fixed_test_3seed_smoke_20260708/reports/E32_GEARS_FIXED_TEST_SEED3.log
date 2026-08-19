@@ -1,0 +1,102 @@
+Local copy of pyg dataset is detected. Loading...
+Done!
+Local copy of split is detected. Loading...
+Done!
+Creating dataloaders....
+Done!
+Start Training...
+Epoch 1 Step 1 Train Loss: 0.3738
+Epoch 1 Step 51 Train Loss: 0.3724
+Epoch 1 Step 101 Train Loss: 0.3577
+Epoch 1 Step 151 Train Loss: 0.4374
+Epoch 1 Step 201 Train Loss: 0.3428
+Epoch 1 Step 251 Train Loss: 0.3296
+Epoch 1 Step 301 Train Loss: 0.3393
+Epoch 1 Step 351 Train Loss: 0.3419
+Epoch 1 Step 401 Train Loss: 0.2818
+Epoch 1 Step 451 Train Loss: 0.3513
+Epoch 1 Step 501 Train Loss: 0.3550
+Epoch 1 Step 551 Train Loss: 0.3047
+Epoch 1 Step 601 Train Loss: 0.2693
+Epoch 1 Step 651 Train Loss: 0.4030
+Epoch 1 Step 701 Train Loss: 0.3742
+Epoch 1 Step 751 Train Loss: 0.5463
+Epoch 1 Step 801 Train Loss: 0.4075
+Epoch 1 Step 851 Train Loss: 0.4135
+Epoch 1 Step 901 Train Loss: 0.2901
+Epoch 1 Step 951 Train Loss: 0.3548
+Epoch 1 Step 1001 Train Loss: 0.3349
+Epoch 1 Step 1051 Train Loss: 0.3841
+Epoch 1 Step 1101 Train Loss: 0.3141
+Epoch 1 Step 1151 Train Loss: 0.3347
+Epoch 1 Step 1201 Train Loss: 0.3247
+Epoch 1 Step 1251 Train Loss: 0.3436
+Epoch 1 Step 1301 Train Loss: 0.2779
+Epoch 1 Step 1351 Train Loss: 0.3484
+Epoch 1 Step 1401 Train Loss: 0.3893
+Epoch 1 Step 1451 Train Loss: 0.4410
+Epoch 1 Step 1501 Train Loss: 0.3587
+Epoch 1 Step 1551 Train Loss: 0.2853
+Epoch 1 Step 1601 Train Loss: 0.2947
+Epoch 1 Step 1651 Train Loss: 0.3342
+Epoch 1 Step 1701 Train Loss: 0.3637
+Epoch 1 Step 1751 Train Loss: 0.2471
+Epoch 1 Step 1801 Train Loss: 0.3489
+Epoch 1 Step 1851 Train Loss: 0.2718
+Epoch 1 Step 1901 Train Loss: 0.4233
+Epoch 1 Step 1951 Train Loss: 0.3238
+Epoch 1 Step 2001 Train Loss: 0.4120
+Epoch 1 Step 2051 Train Loss: 0.4218
+Epoch 1 Step 2101 Train Loss: 0.3280
+Epoch 1 Step 2151 Train Loss: 0.3162
+Epoch 1 Step 2201 Train Loss: 0.3387
+Epoch 1 Step 2251 Train Loss: 0.3643
+Epoch 1 Step 2301 Train Loss: 0.3401
+Epoch 1 Step 2351 Train Loss: 0.4517
+Epoch 1 Step 2401 Train Loss: 0.3668
+Epoch 1 Step 2451 Train Loss: 0.4442
+Epoch 1 Step 2501 Train Loss: 0.3601
+Epoch 1 Step 2551 Train Loss: 0.3129
+Epoch 1 Step 2601 Train Loss: 0.3582
+Epoch 1 Step 2651 Train Loss: 0.3167
+Epoch 1 Step 2701 Train Loss: 0.3202
+Epoch 1 Step 2751 Train Loss: 0.3153
+Epoch 1 Step 2801 Train Loss: 0.2857
+Epoch 1 Step 2851 Train Loss: 0.2987
+Epoch 1 Step 2901 Train Loss: 0.3692
+Epoch 1 Step 2951 Train Loss: 0.2869
+Epoch 1: Train Overall MSE: 0.0019 Validation Overall MSE: 0.0026.
+Train Top 20 DE MSE: 0.0746 Validation Top 20 DE MSE: 0.1317.
+Done!
+Start Testing...
+Best performing model: Test Top 20 DE MSE: 0.1053
+Done!
+{
+  "dataset": "adamson",
+  "split": "single",
+  "seed": 3,
+  "epochs": 1,
+  "status": "ok",
+  "fixed_test_perturbations_file": "/home/yyf/proj/docs/实验结果/E32_gears_fixed_test_3seed_smoke_20260708/tables/E32_FIXED_TEST_PERTURBATIONS.csv",
+  "fixed_test_conditions": [
+    "CCND3+ctrl",
+    "DAD1+ctrl",
+    "DERL2+ctrl",
+    "NEDD8+ctrl",
+    "TIMM23+ctrl",
+    "UFM1+ctrl",
+    "YIPF5+ctrl"
+  ],
+  "n_fixed_test_conditions": 7,
+  "n_train_conditions_after_override": 64,
+  "n_val_conditions_after_override": 6,
+  "fixed_test_deterministic_val": true,
+  "test_mse": 0.001839251448732934,
+  "test_mse_de": 0.10534508473106793,
+  "test_pearson": 0.9958260594130068,
+  "test_pearson_de": 0.9530721647420188,
+  "n_prediction_records": 7,
+  "records_csv": "/home/yyf/proj/docs/实验结果/E32_gears_fixed_test_3seed_smoke_20260708/raw_gears/adamson/seed_3/tables/PREDICTION_RECORDS.csv",
+  "predicted_npz": "/home/yyf/proj/docs/实验结果/E32_gears_fixed_test_3seed_smoke_20260708/raw_gears/adamson/seed_3/arrays/gears_predicted_effects.npz",
+  "true_npz": "/home/yyf/proj/docs/实验结果/E32_gears_fixed_test_3seed_smoke_20260708/raw_gears/adamson/seed_3/arrays/gears_true_effects.npz"
+}

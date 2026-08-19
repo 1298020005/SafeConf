@@ -1,0 +1,18 @@
+{
+  "experiment": "E88_sciplex3_to_sciplex4_contract",
+  "phase": "contract_frozen_target_truth_unread",
+  "generated_at": "2026-07-12T12:56:23",
+  "source_tasks": 24,
+  "target_tasks": 28,
+  "source_contexts": 3,
+  "target_contexts": 2,
+  "shared_drugs": 2,
+  "target_exact_dose_tasks": 16,
+  "target_interpolated_dose_tasks": 12,
+  "shared_genes_before_filter": 58347,
+  "gene_panel_size": 1000,
+  "gene_order_hash": "sha256:b176450e8f3d363060f0beb82bc1c1c40e98d3633e0a802fd6f1e9f91b945172",
+  "gene_selection_uses_controls_only": true,
+  "target_perturbed_expression_used": false,
+  "target_dose_unit_interpretation": "dose_value_2 is uM; converted to nM"
+}

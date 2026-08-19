@@ -1,0 +1,31 @@
+{
+  "deployment_authorized": false,
+  "ensemble_quantile": 0.47258539027647317,
+  "ensemble_target_cluster_ci95": [
+    0.7568986832944374,
+    0.9546646792263361
+  ],
+  "ensemble_target_cluster_coverage": 0.88,
+  "ensemble_target_cluster_covered": 44,
+  "ensemble_task_coverage": 0.9825,
+  "experiment": "E177_sunshine_external_certificate",
+  "median_ensemble_rmse": 0.21612857387955625,
+  "median_pair_lower_tightness": 0.08412343160421121,
+  "median_pair_mean_rmse": 0.2168460290181019,
+  "n_evaluation_targets": 50,
+  "n_evaluation_tasks": 400,
+  "operational_wetlab_protocol_in_scope": false,
+  "pair_lower_max_violations": 0,
+  "pair_lower_mean_violations": 0,
+  "pair_mean_quantile": 0.47295926564019647,
+  "pair_mean_target_cluster_ci95": [
+    0.7568986832944374,
+    0.9546646792263361
+  ],
+  "pair_mean_target_cluster_coverage": 0.88,
+  "pair_mean_target_cluster_covered": 44,
+  "pair_mean_task_coverage": 0.9825,
+  "public_processed_data_only": true,
+  "schema": "safeconf_e177_final_evaluation_summary_v1",
+  "status": "COMPLETE"
+}

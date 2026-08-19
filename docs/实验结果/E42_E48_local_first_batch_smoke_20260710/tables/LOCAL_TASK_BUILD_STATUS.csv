@@ -1,0 +1,6 @@
+dataset,path,n_obs,n_vars,n_genes_used,context_col,perturbation_col,n_tasks,n_contexts,n_perturbations,status,error
+sciplex3_cell_line,extra_official/cellular_context_generalization/sciplex3.h5ad,26046,5000,256,cell_line,perturbation,104,3,36,ok,
+TCDD_celltype,extra_official/cellular_context_generalization/TCDD.h5ad,103745,5000,256,celltype,perturbation,6,6,1,ok,
+TCDD_dose,extra_official/cellular_context_generalization/TCDD.h5ad,103745,5000,256,celltype,dose,48,6,8,ok,
+KaggleCrossPatient_donor,extra_official/cellular_context_generalization/KaggleCrossPatient.h5ad,25583,5000,256,donor_id,perturbation,30,3,10,ok,
+crossSpecies_species,extra_official/cellular_context_generalization/crossSpecies.h5ad,112903,5000,256,condition1,perturbation,12,4,3,ok,

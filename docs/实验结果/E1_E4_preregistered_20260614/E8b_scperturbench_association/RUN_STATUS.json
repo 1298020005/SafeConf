@@ -1,0 +1,12 @@
+{
+  "status": "ok",
+  "primary_gate": "PASS",
+  "primary_dataset": "Frangieh",
+  "primary_metric": "mse",
+  "primary_DEG": 5000,
+  "n_bootstrap": 1000,
+  "n_permutations": 200,
+  "seed": 5201,
+  "sciplex3_usable_aliases": 60,
+  "frozen_protocol_modified": false
+}

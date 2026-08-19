@@ -1,0 +1,4 @@
+dataset_name,n_records,n_task_like_rows,n_seeds,n_perturbations,perturbation_class,mean_rmse
+adamson,21,18,3,18,gene_perturbation_like,0.04208579650592232
+dixit,3,2,3,2,gene_perturbation_like,0.42484066883722943
+norman,30,27,3,27,gene_perturbation_like,0.055878463511665616

@@ -1,0 +1,13 @@
+outcome,score,n_tasks,spearman
+ensemble_rmse,safeconf_risk,400,0.05717360733504584
+ensemble_rmse,predicted_magnitude,400,0.060170438565241027
+ensemble_rmse,model_disagreement_rmse,400,0.05717360733504584
+ensemble_rmse,pair_lower_bound_rmse,400,0.05717360733504584
+pair_mean_rmse,safeconf_risk,400,0.059031931449571549
+pair_mean_rmse,predicted_magnitude,400,0.058764554778467364
+pair_mean_rmse,model_disagreement_rmse,400,0.059031931449571549
+pair_mean_rmse,pair_lower_bound_rmse,400,0.059031931449571549
+pair_max_rmse,safeconf_risk,400,0.074504340652129075
+pair_max_rmse,predicted_magnitude,400,0.049080681754260953
+pair_max_rmse,model_disagreement_rmse,400,0.074504340652129075
+pair_max_rmse,pair_lower_bound_rmse,400,0.074504340652129075

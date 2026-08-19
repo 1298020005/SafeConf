@@ -1,0 +1,6 @@
+source,role,rows_indexed,X_rows_indexed,X_rows_materialized,X_rows_transformed,detail
+E161 development H5AD,metadata,16881,0,0,0,obs role/condition and var names only
+E161 development H5AD,train,11779,11779,11779,11779,csr_prefix_rows_only
+E161 development H5AD,validation,5102,0,0,0,metadata role verified; X/layers/obsm unopened
+E160 frozen split JSON,test,48,0,0,0,48 canonical condition strings only; no cell count/truth/effect/error/DE
+Wessels raw,raw/test/excluded,0,0,0,0,file not opened by E162b

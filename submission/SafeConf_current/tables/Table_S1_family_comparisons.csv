@@ -1,0 +1,7 @@
+study,study_cn,comparison_family,comparison_family_cn,reference_family,n_paired_tasks,fraction_higher_diversity_lower,fraction_higher_family_tightness,median_diversity_lower_difference,median_family_tightness_difference
+E176_primary_CD4,E176 四供体原代CD4,frozen_10_seed_family,冻结10模型家族,architecture_pair,1920,1.0,1.0,0.00863296913736,0.0825607933715
+E176_primary_CD4,E176 四供体原代CD4,nochange_negative_control,加入不变预测（反例）,architecture_pair,1920,0.883333333333,0.813541666667,0.000515558127083,0.00739576723685
+E177_Sunshine,E177 独立公开研究,frozen_10_seed_family,冻结10模型家族,architecture_pair,400,1.0,1.0,0.0186048044525,0.0856739656969
+E177_Sunshine,E177 独立公开研究,nochange_negative_control,加入不变预测（反例）,architecture_pair,400,0.8,0.8,0.00204225930206,0.00770864439819
+E180_XuCao,E180 XuCao独立数据,frozen_10_seed_family,冻结10模型家族,architecture_pair,73,1.0,1.0,0.00959489463822,0.101061419595
+E180_XuCao,E180 XuCao独立数据,nochange_negative_control,加入不变预测（反例）,architecture_pair,73,0.0,0.0,-0.000636962077472,-0.00688945888304

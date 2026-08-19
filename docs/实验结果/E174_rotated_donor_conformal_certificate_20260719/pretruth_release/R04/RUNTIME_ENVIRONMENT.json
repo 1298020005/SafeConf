@@ -1,0 +1,35 @@
+{
+  "cuda_runtime": "11.8",
+  "cudnn": 8700,
+  "cudnn_benchmark": false,
+  "deterministic_cudnn": false,
+  "gpu_inventory": [
+    {
+      "compute_capability": [
+        7,
+        5
+      ],
+      "index": 0,
+      "name": "Quadro RTX 6000",
+      "total_memory_bytes": 25388515328
+    },
+    {
+      "compute_capability": [
+        7,
+        5
+      ],
+      "index": 1,
+      "name": "Quadro RTX 6000",
+      "total_memory_bytes": 25388515328
+    }
+  ],
+  "numpy": "1.26.4",
+  "pandas": "2.3.3",
+  "platform": "Linux-6.8.0-45-generic-x86_64-with-glibc2.35",
+  "python": "3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]",
+  "python_executable": "/home/yyf/.conda/envs/scgpt_env/bin/python",
+  "scipy": "1.13.1",
+  "selected_device": "cuda:1",
+  "torch": "2.1.2+cu118",
+  "torch_geometric": "2.6.1"
+}

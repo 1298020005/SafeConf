@@ -1,0 +1,25 @@
+setting,predictor,predictor_family,input_contract,uses_target_control,uses_source_validation_or_all_folds,uses_target_perturbed_expression_for_prediction,role
+E190_K562,scGPT_seed3407,model_member,frozen model-specific pretruth prediction release,True,True,False,primary_or_registered_comparator
+E190_K562,GEARS_seed3407,model_member,frozen model-specific pretruth prediction release,True,True,False,primary_or_registered_comparator
+E190_K562,scGPT_seed3408,model_member,frozen model-specific pretruth prediction release,True,True,False,primary_or_registered_comparator
+E190_K562,GEARS_seed3408,model_member,frozen model-specific pretruth prediction release,True,True,False,primary_or_registered_comparator
+E190_K562,scGPT_seed3409,model_member,frozen model-specific pretruth prediction release,True,True,False,primary_or_registered_comparator
+E190_K562,GEARS_seed3409,model_member,frozen model-specific pretruth prediction release,True,True,False,primary_or_registered_comparator
+E190_K562,family_centroid,ensemble,six frozen pretruth prediction releases,True,True,False,primary_or_registered_comparator
+E190_K562,matching_source_train_mean,simple_baseline,Adamson train-only guide means + target control,True,False,False,primary_or_registered_comparator
+E190_K562,matching_source_all_folds_mean,simple_baseline,Adamson all-fold source-gene asset + target control,True,True,False,sensitivity_baseline
+E190_K562,source_absolute_noncontrol_mean,simple_baseline,Adamson train-only absolute perturbed centroid,False,False,False,primary_or_registered_comparator
+E190_K562,target_control_plus_source_mean_effect,simple_baseline,Adamson train-only global mean effect + target control,True,False,False,primary_or_registered_comparator
+E190_K562,zero_effect,simple_baseline,target control only,True,False,False,primary_or_registered_comparator
+E192_RPE1,scGPT_seed3407,model_member,frozen model-specific pretruth prediction release,True,True,False,primary_or_registered_comparator
+E192_RPE1,GEARS_seed3407,model_member,frozen model-specific pretruth prediction release,True,True,False,primary_or_registered_comparator
+E192_RPE1,scGPT_seed3408,model_member,frozen model-specific pretruth prediction release,True,True,False,primary_or_registered_comparator
+E192_RPE1,GEARS_seed3408,model_member,frozen model-specific pretruth prediction release,True,True,False,primary_or_registered_comparator
+E192_RPE1,scGPT_seed3409,model_member,frozen model-specific pretruth prediction release,True,True,False,primary_or_registered_comparator
+E192_RPE1,GEARS_seed3409,model_member,frozen model-specific pretruth prediction release,True,True,False,primary_or_registered_comparator
+E192_RPE1,family_centroid,ensemble,six frozen pretruth prediction releases,True,True,False,primary_or_registered_comparator
+E192_RPE1,matching_source_train_mean,simple_baseline,Adamson train-only guide means + target control,True,False,False,primary_or_registered_comparator
+E192_RPE1,matching_source_all_folds_mean,simple_baseline,Adamson all-fold source-gene asset + target control,True,True,False,sensitivity_baseline
+E192_RPE1,source_absolute_noncontrol_mean,simple_baseline,Adamson train-only absolute perturbed centroid,False,False,False,primary_or_registered_comparator
+E192_RPE1,target_control_plus_source_mean_effect,simple_baseline,Adamson train-only global mean effect + target control,True,False,False,primary_or_registered_comparator
+E192_RPE1,zero_effect,simple_baseline,target control only,True,False,False,primary_or_registered_comparator

@@ -1,0 +1,11 @@
+dataset_name,fold_id,predictor_name,status,error,n_eval
+sciplex3_official_3cell,0,V0StrongBaseline,ok,,240
+sciplex3_official_3cell,0,ContextSimBaseline,ok,,240
+sciplex3_official_3cell,1,V0StrongBaseline,ok,,240
+sciplex3_official_3cell,1,ContextSimBaseline,ok,,240
+sciplex3_official_3cell,2,V0StrongBaseline,ok,,240
+sciplex3_official_3cell,2,ContextSimBaseline,ok,,240
+sciplex3_official_3cell,3,V0StrongBaseline,ok,,240
+sciplex3_official_3cell,3,ContextSimBaseline,ok,,240
+sciplex3_official_3cell,4,V0StrongBaseline,ok,,240
+sciplex3_official_3cell,4,ContextSimBaseline,ok,,240

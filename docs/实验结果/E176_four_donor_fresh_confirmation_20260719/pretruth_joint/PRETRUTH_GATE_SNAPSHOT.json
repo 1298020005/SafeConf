@@ -1,0 +1,66 @@
+{
+  "calibration_runner_authorized": true,
+  "calibration_targeting_x_values_read": 0,
+  "decision": "CALIBRATION_TRUTH_ACCESS_AUTHORIZED",
+  "deployment_authorized": false,
+  "evaluation_targeting_x_values_read": 0,
+  "experiment": "E176_four_donor_fresh_confirmation",
+  "final_evaluator_authorized": false,
+  "g4_threshold_relaxed_after_result": false,
+  "g4_units": 24,
+  "g4_units_passed": 24,
+  "git_branch": "exp/task-risk-audit-20260611",
+  "git_head": "48e484e69b620a4d22aad1e91fbc09dc8dda7b75",
+  "minimum_ci95_lower": 0.8139332856884247,
+  "minimum_median_pairwise_spearman": 0.8510166412750497,
+  "optional_panel_dropping_used": false,
+  "panel_evidence": {
+    "H01": {
+      "f2_manifest_sha256": "a7359965f97154473a77b3884c8ac1942e9fbe83b56961d4c797518ea85d64e1",
+      "g4_units_passed": 6,
+      "minimum_ci95_lower": 0.8195790499671991,
+      "minimum_median_pairwise_spearman": 0.8671818235087309,
+      "snapshot_sha256": "aa24f2c3464a24f6613b7d91562b538199fa88694c9c1ba08fa2f83c16010265",
+      "test_donor_targeting_x_values_read": 0
+    },
+    "H02": {
+      "f2_manifest_sha256": "76684fc42b50314bf0705a6b2802b2e06cc06f529f2953bbdf351683749175cc",
+      "g4_units_passed": 6,
+      "minimum_ci95_lower": 0.8658127643845887,
+      "minimum_median_pairwise_spearman": 0.8978905425993202,
+      "snapshot_sha256": "655bcdac0b5f57ac28f22caa2dfa1a9c58c390de23663fe57f979b3f042931f1",
+      "test_donor_targeting_x_values_read": 0
+    },
+    "H03": {
+      "f2_manifest_sha256": "d530291955e1c9f03889f8c6cd768130a7eb16c4e2f85b0899a5c5a9cfaa89c6",
+      "g4_units_passed": 6,
+      "minimum_ci95_lower": 0.8139332856884247,
+      "minimum_median_pairwise_spearman": 0.8510166412750497,
+      "snapshot_sha256": "a1220ae658ed0e2b94582f81154db3419a40d31f160984af83fbc99eb4156f40",
+      "test_donor_targeting_x_values_read": 0
+    },
+    "H04": {
+      "f2_manifest_sha256": "34e2f314261c31a7c05ac3f0d66f5337f0648c73f662686f2b663f7b379c85fe",
+      "g4_units_passed": 6,
+      "minimum_ci95_lower": 0.8164500500952179,
+      "minimum_median_pairwise_spearman": 0.866591468416735,
+      "snapshot_sha256": "d5c3c41c1c8267e963db59e89b083b1e504bbc2f520888cbb039f044c87808dd",
+      "test_donor_targeting_x_values_read": 0
+    }
+  },
+  "panels": [
+    "H01",
+    "H02",
+    "H03",
+    "H04"
+  ],
+  "remote_heads": {
+    "github": "48e484e69b620a4d22aad1e91fbc09dc8dda7b75",
+    "origin": "48e484e69b620a4d22aad1e91fbc09dc8dda7b75"
+  },
+  "schema": "safeconf_e176_joint_pretruth_gate_v1",
+  "source_full_sha256": "fd2b8c21d357f8699ec34e2d5ebc1639612c27a0147a9ca94d4983822d93247e",
+  "stage": "F2_JOINT_PRETRUTH_GATE",
+  "status": "PASS",
+  "test_donor_targeting_x_values_read": 0
+}

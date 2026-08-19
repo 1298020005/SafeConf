@@ -1,0 +1,17 @@
+field,type,requirement
+record_id,string,adapter-specific unique prediction row id
+task_id,int/string,reuse task id from manifest when possible
+task_key,string,must match manifest
+dataset_name,string,must match manifest
+fold_id,int,must match manifest
+split,train/val/test,must match manifest
+context,string,must match manifest
+perturbation,string,must match manifest
+predictor_name,string,GEARS/scGPT/CPA/etc.
+gene_panel_id,string,must match manifest
+gene_order_hash,sha256,must match manifest exactly
+effect_definition,string,must match manifest
+normalization_id,string,must match manifest
+predicted_effect_key,string,key in predicted_effects.npz
+true_effect_key,string,reuse task-scoped key from manifest
+true_error_rmse,float,computed after predicted vector is exported

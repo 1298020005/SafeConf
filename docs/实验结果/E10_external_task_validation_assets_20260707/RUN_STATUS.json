@@ -1,0 +1,15 @@
+{
+  "status": "ok",
+  "generated_at": "2026-07-07T06:27:35",
+  "script": "tools/scripts/run_e10_external_dataset_asset_audit.py",
+  "output_dir": "docs/实验结果/E10_external_task_validation_assets_20260707",
+  "data_root": "/home/yyf/data/singlecell_perturbation_atlas",
+  "input_git_commit": "0b3c6d6606f070b72526d71a6b5bb005cfe4e576",
+  "source_files": {
+    "legacy_inventory": "code/20260426_154505_perturb_transport_final_push/01_asset_audit/DATASET_INVENTORY.csv",
+    "scperturbench_zenodo": "docs/实验结果/E10_external_task_validation_assets_20260707/source_metadata/scperturbench_20260707/scperturbench_zenodo_14607156.json",
+    "scperturb_zenodo": "docs/实验结果/E10_external_task_validation_assets_20260707/source_metadata/scperturb_20260707/scperturb_zenodo_13350497.json",
+    "scperturbench_readme": "docs/实验结果/E10_external_task_validation_assets_20260707/source_metadata/scperturbench_20260707/scperturbench_readme.md",
+    "scperturbench_md5_xlsx": "docs/实验结果/E10_external_task_validation_assets_20260707/source_metadata/scperturbench_20260707/scperturbench_md5sum.xlsx"
+  }
+}

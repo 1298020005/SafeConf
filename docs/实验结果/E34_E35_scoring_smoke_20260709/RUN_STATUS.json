@@ -1,0 +1,16 @@
+{
+  "run_id": "E34_E35_scoring_smoke_20260709",
+  "created_at": "2026-07-09T20:23:17",
+  "git_head": "c9097519bb469018c9d14a5f012cee3fddce9b20",
+  "git_dirty": true,
+  "status": "completed",
+  "n_score_rows": 978,
+  "n_split_status_rows": 121,
+  "outputs": [
+    "tables/E34_E35_SCORING_TASK_STATUS.csv",
+    "tables/E34_E35_SPLIT_SCORE_STATUS.csv",
+    "tables/E34_E35_SCORE_TABLE.csv",
+    "tables/E34_E35_SCORING_SUMMARY.csv",
+    "reports/E34_E35_SCORING_SMOKE_REPORT.md"
+  ]
+}

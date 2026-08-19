@@ -1,0 +1,4 @@
+analysis_status,stratum,n_total_tasks,n_evaluable_target_genes,n_direction_correct,direction_accuracy,n_direction_incorrect
+POST_HOC_DENOMINATOR_CLARIFICATION,all_ge10,272,107,52,0.48598130841121495,55
+POST_HOC_DENOMINATOR_CLARIFICATION,primary_ge30,263,104,51,0.49038461538461536,53
+POST_HOC_DENOMINATOR_CLARIFICATION,sensitivity_10_29,9,3,1,0.3333333333333333,2

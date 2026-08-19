@@ -1,0 +1,10 @@
+prefix_features,last_feature,mismatched_train_cells,max_abs_delta_vs_obs_ncounts,min_delta,max_delta,sum_delta,exact_match_all_train_cells
+20631,AC213203.1,10215,89.0,-89.0,3.0,-52559.0,False
+20632,eGFP,10200,89.0,-89.0,3.0,-52349.0,False
+20633,Blast,10145,87.0,-87.0,3.0,-51255.0,False
+20634,Cas9,10145,87.0,-87.0,3.0,-51255.0,False
+20635,Puro,10137,87.0,-87.0,3.0,-51177.0,False
+20636,Cas13d,591,4.0,0.0,4.0,634.0,False
+20637,AsCas12a,591,4.0,0.0,4.0,634.0,False
+20638,MeCP2,591,4.0,0.0,4.0,634.0,False
+20639,KRAB,592,4.0,0.0,4.0,635.0,False

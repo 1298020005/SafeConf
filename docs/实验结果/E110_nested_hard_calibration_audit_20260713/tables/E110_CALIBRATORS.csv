@@ -1,0 +1,4 @@
+fold_id,ridge_alpha_fixed,n_inner_calibration_rows,coefficient_risk_disagreement_z,coefficient_predicted_magnitude_z,coefficient_context_novelty_scaled,coefficient_perturbation_novelty,coefficient_structural_interaction,intercept,inner_risk_q80_threshold,outer_test_truth_used
+frangieh_context_holdout_1_Co-culture,1.0,228,0.002830130781822196,0.0,0.005609484277595082,0.0,0.003030051528458007,0.05107039113962897,0.060296589021728006,False
+frangieh_context_holdout_2_Control,1.0,232,0.002531980152445631,0.0024798296997374375,2.2003625315558603e-05,0.000491557921134824,0.0005135615464503824,0.05337733659194264,0.05851599328484113,False
+frangieh_context_holdout_3_IFNγ,1.0,226,0.0030068900010596766,0.0010647781507764974,0.004248720685354155,0.0,0.0,0.05008561150849064,0.05839885781378909,False

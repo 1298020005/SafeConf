@@ -1,0 +1,77 @@
+{
+  "alpha": 0.05,
+  "aurc_normalization_width": 0.8,
+  "bootstrap_draws": 10000,
+  "bootstrap_seed": 2026071681,
+  "confidence_formula": "z(context_similarity_max)+z(log1p(perturbation_support_count))-z(model_disagreement_rmse)",
+  "context_similarity_definition": "max_cosine_query_donor_state_NTC_to_six_train_donor_state_NTC_vectors_on_frozen_512_panel",
+  "coverage_grid": [
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.9,
+    0.95,
+    1.0
+  ],
+  "deployment_authorized": false,
+  "disagreement_definition": "rmse_512_between_scgpt_three_seed_mean_and_gears_three_seed_mean_effects",
+  "loss": "ensemble_effect_rmse_512",
+  "operational_tolerance": 1e-06,
+  "permutation_alternative": "SafeConf_delta_greater_than_zero",
+  "permutation_draws": 100000,
+  "permutation_seed": 2026071682,
+  "primary_cluster": "perturbed_gene_id_keep_three_states_together",
+  "primary_comparator": "ensemble_predicted_magnitude_rms_512",
+  "primary_risk": "negative_frozen_protocol_v0_2_confidence",
+  "primary_strata_order": [
+    "all_200",
+    "seen_160",
+    "column_unseen_40_descriptive"
+  ],
+  "ranking_batches": [
+    "Rest",
+    "Stim8hr",
+    "Stim48hr"
+  ],
+  "riag_g2_min_levels": 2,
+  "riag_g2_population_std_min_exclusive": 1e-06,
+  "riag_g2_registered_strata": [
+    "all_200",
+    "seen_160"
+  ],
+  "riag_g4_cluster_bootstrap_ci_lower_min_exclusive": 0.0,
+  "riag_g4_cluster_bootstrap_draws": 2000,
+  "riag_g4_pairwise_spearman_median_min": 0.5,
+  "riag_g4_registered_strata": [
+    "all_200",
+    "seen_160"
+  ],
+  "rounding": "numpy_ties_to_even",
+  "secondary_ablations": [
+    "disagreement_only",
+    "support_only",
+    "context_only",
+    "magnitude"
+  ],
+  "seed_risk_pairing_for_g4": "same_seed_scgpt_and_gears_then_frozen_formula",
+  "support_definition": "number_of_supervised_train_donor_state_contexts_seen_6_unseen_0",
+  "tie_bounds": [
+    "best_legal_order",
+    "worst_legal_order"
+  ],
+  "tie_primary": "tie_average",
+  "z_implementation": "protocol_v0_2.zscore_by_ref_train_median_iqr_std_fallback",
+  "z_reference": "all_960_supervised_train_tasks_pooled_across_three_states",
+  "z_scope": "pooled_once_before_state_specific_ranking"
+}

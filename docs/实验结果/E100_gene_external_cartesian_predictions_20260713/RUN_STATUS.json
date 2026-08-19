@@ -1,0 +1,30 @@
+{
+  "experiment": "E100_gene_external_cartesian_predictions",
+  "generated_at": "2026-07-13T04:14:13",
+  "contract": "docs/实验结果/E99_multicontext_external_contract_20260713/manifests/E99_TASK_MANIFEST.csv",
+  "contract_sha256": "sha256:dd927ab638fad15575ad888f71c30b29ce13739c97da62bba59560ec71993137",
+  "datasets": [
+    "Lara_exvivo",
+    "Santinha"
+  ],
+  "normalization": "normalize_total_1e4_log1p_context_specific_control_mean_difference",
+  "gene_panel_selection": "top control-only mean expression plus perturbed genes; no test perturbation expression",
+  "n_genes": 3000,
+  "training_fractions": [
+    25,
+    50,
+    75,
+    100
+  ],
+  "n_task_rows": 2760,
+  "n_prediction_records": 5520,
+  "strict_issue_count": 0,
+  "strict_issues": [],
+  "target_test_perturbed_truth_used_in_prediction_or_risk": false,
+  "validation_truth_used_for_predictor_and_risk_calibration": true,
+  "scgpt_checkpoint_sha256": "sha256:6cb5d451ab5c4b33eb673adbe4fddc61d2389df1b89b7651a9fe2e557572b922",
+  "ortholog_aliases": {
+    "Gltscr1": "BICRA",
+    "Dgcr14": "ESS2"
+  }
+}

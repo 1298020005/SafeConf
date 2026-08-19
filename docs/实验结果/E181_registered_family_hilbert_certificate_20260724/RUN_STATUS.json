@@ -1,0 +1,32 @@
+{
+  "adaptive_upper_model_in_primary_method": false,
+  "analysis_type": "retrospective_method_consolidation",
+  "experiment": "E181_registered_family_hilbert_certificate",
+  "family_lower_violations": 0,
+  "git_commit_at_run": "c5bd08e4ff1ecf3b69587500da4bb5060e31abfb",
+  "max_identity_abs_residual": 9.681925400295555e-17,
+  "n_evaluation_tasks": 2393,
+  "n_target_clusters": 717,
+  "notes": [
+    "Evaluation truth had already been opened before E181.",
+    "The original calibrated reference-centroid upper bound is transported without refitting.",
+    "The no-change member is a negative-control composition stress test only."
+  ],
+  "platform": "Linux-6.8.0-45-generic-x86_64-with-glibc2.35",
+  "python": "3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 15:12:24) [GCC 11.2.0]",
+  "registered_family": [
+    "scGPT_seed3407",
+    "scGPT_seed3408",
+    "scGPT_seed3409",
+    "scGPT_seed3410",
+    "scGPT_seed3411",
+    "GEARS_seed3407",
+    "GEARS_seed3408",
+    "GEARS_seed3409",
+    "GEARS_seed3410",
+    "GEARS_seed3411"
+  ],
+  "source_reproduction_tolerance": 5e-09,
+  "status": "PASS",
+  "worst_lower_violations": 0
+}

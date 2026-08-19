@@ -1,0 +1,13 @@
+fold_id,setting,split,primary_analysis,n_tasks,n_unique_perturbations,min_cells,median_cells
+Replogle_cellline_holdout_1_K562,context_and_perturbation_unseen,test,True,26,26,101,170.5
+Replogle_cellline_holdout_1_K562,context_unseen,test,True,102,102,100,163.5
+Replogle_cellline_holdout_1_K562,perturbation_unseen,test,False,26,26,104,139.5
+Replogle_cellline_holdout_1_K562,random_seen_pair,test,False,16,16,106,147.5
+Replogle_cellline_holdout_1_K562,training_pair,train,False,70,70,100,148.0
+Replogle_cellline_holdout_1_K562,validation_pair,val,False,16,16,102,140.5
+Replogle_cellline_holdout_2_RPE1,context_and_perturbation_unseen,test,True,26,26,103,150.5
+Replogle_cellline_holdout_2_RPE1,context_unseen,test,True,102,102,100,145.5
+Replogle_cellline_holdout_2_RPE1,perturbation_unseen,test,False,26,26,100,165.5
+Replogle_cellline_holdout_2_RPE1,random_seen_pair,test,False,16,16,106,156.0
+Replogle_cellline_holdout_2_RPE1,training_pair,train,False,70,70,101,180.0
+Replogle_cellline_holdout_2_RPE1,validation_pair,val,False,16,16,108,140.0

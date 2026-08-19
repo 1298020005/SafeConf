@@ -1,0 +1,19 @@
+{
+  "status": "ok",
+  "generated_at": "2026-07-07T14:29:45",
+  "script": "tools/scripts/package_e13_sciplex3_official_3cell_panel.py",
+  "output_dir": "docs/实验结果/E13_sciplex3_official_3cell_panel_20260707",
+  "runtime_source": "runtime/e13_sciplex3_official_3cell_panel_focused_20260707",
+  "input_git_commit": "947de3a5f43d4c6b0db2d57788972b406a7bb5fd",
+  "best_overall_score": "model_disagreement_risk",
+  "best_overall_aligned_spearman": 0.5762297933533084,
+  "best_overall_risk_cov_80_improve_pct": 6.418621553985497,
+  "learned_aligned_spearman": 0.5723391581874795,
+  "simple_combined_aligned_spearman": 0.3656981663714967,
+  "panel": {
+    "n_tasks": 240,
+    "n_contexts": 3,
+    "n_shared_perturbations": 743,
+    "n_selected_perturbations": 80
+  }
+}

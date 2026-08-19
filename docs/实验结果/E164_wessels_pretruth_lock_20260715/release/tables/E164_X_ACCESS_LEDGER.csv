@@ -1,0 +1,8 @@
+asset,access,count,detail
+raw_Wessels_H5AD,file_open,0,raw_file_opened=false
+E161_development_H5AD_X,train_rows_indexed_materialized_transformed,11779,Systema condition-balanced reference only
+E161_development_H5AD_X,validation_rows_indexed_materialized_transformed,0,metadata inspected; X suffix not sliced
+test_or_excluded_X,rows_indexed_materialized_transformed,0,sealed
+test_condition_strings,label_only_forward_inputs,48,48 canonical strings; no expression or cell count
+test_graphs,constructed_or_loaded,0,label-only Batch uses x/pert/batch/ptr only
+test_truth_effect_error_DE_cell_count,queried_or_computed,0,all false

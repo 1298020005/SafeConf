@@ -1,0 +1,39 @@
+{
+  "out_dir": "/home/yyf/safeconf_runtime/outputs/safeconf_lopo_robustness_20260613",
+  "evidence_dir": "/home/yyf/proj/docs/实验结果/LOPO_robustness_20260613",
+  "third_predictors": [
+    "PertMeanPredictor",
+    "Control1NNPredictor"
+  ],
+  "validation_modes": [
+    "lopo",
+    "lodo_lopo"
+  ],
+  "feature_sets": [
+    "full",
+    "no_disagreement",
+    "pre_model_task_only"
+  ],
+  "n_datasets": 7,
+  "n_score_rows": 82512,
+  "n_bootstrap": 1000,
+  "seed": 5201,
+  "feature_matrices": {
+    "PertMeanPredictor": "/home/yyf/safeconf_runtime/outputs/safeconf_lopo_robustness_20260613/tables/LOPO_FEATURE_MATRIX_PertMeanPredictor.csv",
+    "Control1NNPredictor": "/home/yyf/safeconf_runtime/outputs/safeconf_lopo_robustness_20260613/tables/LOPO_FEATURE_MATRIX_Control1NNPredictor.csv"
+  },
+  "frozen_protocol_modified": false,
+  "status": "ok",
+  "decision": {
+    "pertmean_pre_model_task_only_positive_datasets": 6,
+    "pertmean_pre_model_task_only_total_datasets": 7,
+    "pre_model_task_only_gate": "strong_pre_model_task_risk_evidence",
+    "pertmean_lodo_lopo_full_positive_datasets": 7,
+    "pertmean_lodo_lopo_full_total_datasets": 7,
+    "lodo_lopo_gate": "cross_dataset_cross_predictor_signal",
+    "control1nn_independent_datasets": 5,
+    "control1nn_total_datasets": 7,
+    "control1nn_role": "mechanistically_close_secondary_predictor",
+    "formal_seven_dataset_gate_evaluated": true
+  }
+}

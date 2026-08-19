@@ -1,0 +1,46 @@
+{
+  "decision": "NO_TARGET_REPLICATION",
+  "decision_checks": {
+    "all800_ci_lower_positive": false,
+    "all800_delta_positive": false,
+    "all800_permutation_p_lt_0_05": false,
+    "all_four_pretruth_gates_passed": true,
+    "ensemble_beats_nochange_all_12_units": true,
+    "positive_panel_state_units": 3,
+    "positive_panel_state_units_at_least_8": false,
+    "seen640_ci_lower_positive": false,
+    "seen640_permutation_p_lt_0_05": false
+  },
+  "deployment_authorized": false,
+  "experiment": "E172_primary_cd4_fresh_targets",
+  "gate_commit": "a9635643b6b0e89094acabcbd3290023937b4912",
+  "gate_remote_heads": {
+    "github": "a9635643b6b0e89094acabcbd3290023937b4912",
+    "origin": "a9635643b6b0e89094acabcbd3290023937b4912"
+  },
+  "independent_donor_or_study_replication_claim": false,
+  "n_fresh_test_targets": 800,
+  "n_panels": 4,
+  "n_prediction_records": 25920,
+  "n_test_tasks": 2400,
+  "prediction_record_contract_issues": [],
+  "primary_ci95": [
+    -0.0023939275130913608,
+    0.001805071210097132
+  ],
+  "primary_delta": -0.0002848181901479741,
+  "primary_permutation_p_one_sided": 0.5509644903550964,
+  "prior_selected_targets_in_inference": 0,
+  "same_test_donor_study_target_replication_only": true,
+  "schema": "safeconf_e172_joint_postgate_result_v1",
+  "seen_ci95": [
+    -0.00124211710214896,
+    0.0016109979737878183
+  ],
+  "seen_delta": 0.0002552137643821092,
+  "seen_permutation_p_one_sided": 0.4574354256457435,
+  "stage": "E172_JOINT_F3_POSTGATE_FORMAL_EVALUATION",
+  "status": "COMPLETE",
+  "test_truth_used_for_training_scoring_threshold_or_panel_selection": false,
+  "wall_seconds": 705.3083527088165
+}

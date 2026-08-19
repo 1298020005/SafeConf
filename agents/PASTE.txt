@@ -1,0 +1,80 @@
+# CODEX INSTRUCTION (paste this whole block)
+
+Working directory: /home/yyf/proj
+
+## Hard goals
+1. Follow Advisor Zhou 2026-07-09: named predictor error, no holdout-truth leakage, hard settings (submatrix, row holdout, column holdout, cross-dataset), gene and chemical as computable.
+2. Target stable Q2 methods-journal acceptance. Q1 only after Q2 evidence is real. Never claim Q1-ready now.
+3. Forbidden: download-as-progress, endless panels, test-set tuning, mixing predictor layers in one claim, claiming stable Q2 achieved before submission checklist is green.
+4. Advisor roughly said: if submatrix + row/col holdout + cross-dataset are solved, a small paper is about ready. That is a minimum scientific loop, not a journal guarantee. Numbers like 25/50/75, Gate IDs, and CPA are implementation tools, not Zhou quotes; the hard settings remain required.
+5. Every number must point to a real file under docs/ or it does not exist.
+
+## Read first (in order)
+Run this Python to list files, then open every path printed:
+
+python3 -c "from pathlib import Path; r=Path('/home/yyf/proj');
+[print(p) for pat in ['**/CLAIM_LOCK_20260712.md','**/GATE_STATUS_20260712.md','**/E74_REPORT.md'] for p in r.glob(pat)];
+[print(p) for p in sorted((r/'docs').rglob('E63*'))[:5]];
+[print(p) for p in sorted((r/'docs').rglob('E68*'))[:5]];
+[print(p) for p in sorted((r/'docs').rglob('E77*')) if p.is_dir()][:5];
+[print(p) for name in ['E84','E85','E87','E89'] for p in sorted((r/'docs').rglob(name+'*')) if p.is_dir()];
+print(r/'workspace'/'group_meeting_20260709_MAINLINE_WHITE');
+print(Path.home()/'.codex'/'attachments'/'3d36bc69-c573-44c2-821b-6795c42ac3fc'/'pasted-text.txt')"
+
+Also read all .md files in workspace/group_meeting_20260709_MAINLINE_WHITE/.
+
+After reading, output: Goal / Gaps / Single next action. Then work.
+
+## Facts (2026-07-12)
+Gene dual-model (main positive block): Adamson, Norman, Frangieh; GEARS + real scGPT finetune; seed disagreement fails (E60/E66/E71); E74/E77 pair-risk lower bound and ranking vs predicted magnitude with multi-panel support is the strongest positive evidence.
+
+Chem E84/E85 (CPA-RDKit): four quadrants runnable; disagreement ranks some pair risk; hard quadrants (new context / new drug) magnitude is stronger; selective routing does not clearly save review budget.
+
+Cross-dataset: E87 sciPlex3 -> OpenProblems is a STRONG NEGATIVE (rho ~0.99 but predictors never beat zero baseline; magnitude drives disagreement and error). E89 sciPlex3 -> sciPlex4 ranks but does not stably beat magnitude (small n). Keep as boundaries. McFarland remains a fail boundary on old 7-main.
+
+Not stable Q2 yet. PRESCRIBE not under same contract.
+
+Evidence layers (never mix in one claim sentence):
+- L1 = old 7-main reference scores (background / boundaries)
+- L2 = light-predictor smokes (not Abstract)
+- L3 = GEARS+scGPT+E74/E77 (main Results candidate)
+- L4 = downloads without adapted predictors (appendix only)
+
+## Allowed claim
+Post-hoc task-risk triage after predictors. Deployable scores only (no holdout true effect). Cross-model-family disagreement is a pair-level risk certificate and ranking signal on gene unseen-gene panels versus predicted magnitude (E74/E77). Seed disagreement fails. Chem and strong cross-domain are mostly magnitude-dominated or transfer-failed (E84/E85/E87/E89/McFarland). Do not claim universal gain or single-model confidence.
+
+## Forbidden claims
+Universal effectiveness; frozen 4-feature always beats magnitude; low disagreement means safe; true magnitude in deployable score; stable Q2/Q1 already achieved; mix light/GEARS/scGPT/CPA numbers without predictor_name.
+
+## Journals (Q2 first)
+Bioinformatics (OUP), BMC Bioinformatics, Briefings in Bioinformatics, PLOS Computational Biology, GigaScience. Not Nature Methods / Genome Biology as primary until stronger package.
+
+Competitors to handle: scPerturBench, Systema/simple baselines, PRESCRIBE (integrated UQ vs your post-hoc layer), risk-coverage literature.
+
+## Unified schema (every task row)
+split_setting, dataset_name, perturbation_family, predictor_name, task_key, score_predicted_magnitude, score_model_disagreement, score_other_optional, error_rmse, true_magnitude_oracle, seed, frozen_manifest_id
+
+true_magnitude_oracle never enters deployable scores. Always report vs predicted magnitude with CI when claiming gain.
+
+## Next only (fixed order)
+1. Gene-side setting matrix under the SAME GEARS/scGPT contract: submatrix + row holdout + column holdout in ONE summary table. Prefer frozen prediction caches. No score retune after seeing test error.
+2. Do NOT retune E84/E87/E89 unlocked test sets.
+3. Then PRESCRIBE / native UQ on frozen tasks if fair; else write an explicit incomparable table.
+4. Draft Abstract only from CLAIM_LOCK allowed claims; E87/E89/McFarland/E85 as boundaries.
+5. Update GATE_STATUS honestly: runnable is not submission-ready.
+
+## Kills (stop and fix)
+Holdout truth in score; main number without predictor_name; hide negatives; cherry-pick only positive transfer; claim advisor-done without hard-setting evidence; claim stable Q2/Q1 early; test-set tuning.
+
+## Reply format every turn
+1) What advanced
+2) Paths
+3) Numbers (CI + vs magnitude)
+4) Negatives
+5) Kill hit? yes/no
+6) One next action
+
+## Judgment
+Idea is publishable as post-hoc triage + multi-setting evaluation + multi-model disagreement. Datasets are directionally fine. Close advisor hard settings under one contract and keep magnitude baselines. E74/E77 is the ace gene result; chem/cross-domain are mostly boundaries for now. Success path: finish gene setting matrix, fair competitor table, honest Abstract, then Q2 methods journal. Failure path: more panels, downloads, mixed layers, unlocked claim drift.
+
+START: gene-side setting matrix table (Next only item 1).

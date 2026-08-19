@@ -1,0 +1,13 @@
+{
+  "experiment": "E120_shifrut_formal_dual_models",
+  "generated_at": "2026-07-14T00:24:30",
+  "status": "complete",
+  "source_contract": "docs/实验结果/E119_shifrut_four_context_contract_20260714/manifests/E119_TASK_MANIFEST.csv",
+  "dataset": "ShifrutMarson2018",
+  "context_definition": "donor x TCR stimulation",
+  "n_folds": 4,
+  "n_test_tasks": 172,
+  "n_prediction_records": 344,
+  "strict_issue_count": 0,
+  "test_truth_used_for_training_calibration_score_or_threshold": false
+}

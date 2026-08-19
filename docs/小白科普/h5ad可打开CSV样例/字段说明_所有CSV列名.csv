@@ -1,0 +1,138 @@
+file,column,meaning,first_value_example
+00_h5ad内部结构说明.csv,part,h5ad 内部组成部分。,obs
+00_h5ad内部结构说明.csv,shape,这个部分有多大。,154710 rows
+00_h5ad内部结构说明.csv,plain_chinese,人话解释。,细胞信息表：一行一个细胞，记录 cell_line、perturbation、dose、time 等
+01_obs细胞表_前30行.csv,cell_barcode,单个细胞的编号。每一行单细胞都有一个独立编号。,AAACCTGAGACAAGCC
+01_obs细胞表_前30行.csv,cell_line,细胞系，也就是实验背景。22RV1 是一种癌细胞系名字。,CAL62
+01_obs细胞表_前30行.csv,perturbation,扰动。这里通常表示加了什么药；control 表示对照组。,Navitoclax
+01_obs细胞表_前30行.csv,perturbation_type,扰动类型。drug 表示药物扰动。,drug
+01_obs细胞表_前30行.csv,dose_value,剂量数值。0.0 通常是 control；0.1 表示 0.1 微摩尔。,5.0
+01_obs细胞表_前30行.csv,dose_unit,剂量单位。µM 是微摩尔。,µM
+01_obs细胞表_前30行.csv,time,处理时间。24 表示处理 24 小时。,24
+01_obs细胞表_前30行.csv,disease,疾病来源。这里是 prostate cancer，前列腺癌。,thyroid cancer
+01_obs细胞表_前30行.csv,ncounts,这个细胞里检测到的总表达量。粗略理解成这个细胞测到多少 RNA 信号。,17155.0
+01_obs细胞表_前30行.csv,ngenes,这个细胞里检测到的基因数量。,3758
+02_obs细胞表_22RV1_control和Trametinib样例.csv,cell_barcode,单个细胞的编号。每一行单细胞都有一个独立编号。,AAAGCAACAATCCAAC
+02_obs细胞表_22RV1_control和Trametinib样例.csv,cell_line,细胞系，也就是实验背景。22RV1 是一种癌细胞系名字。,22RV1
+02_obs细胞表_22RV1_control和Trametinib样例.csv,perturbation,扰动。这里通常表示加了什么药；control 表示对照组。,control
+02_obs细胞表_22RV1_control和Trametinib样例.csv,perturbation_type,扰动类型。drug 表示药物扰动。,drug
+02_obs细胞表_22RV1_control和Trametinib样例.csv,dose_value,剂量数值。0.0 通常是 control；0.1 表示 0.1 微摩尔。,0.0
+02_obs细胞表_22RV1_control和Trametinib样例.csv,dose_unit,剂量单位。µM 是微摩尔。,µM
+02_obs细胞表_22RV1_control和Trametinib样例.csv,time,处理时间。24 表示处理 24 小时。,24
+02_obs细胞表_22RV1_control和Trametinib样例.csv,disease,疾病来源。这里是 prostate cancer，前列腺癌。,prostate cancer
+02_obs细胞表_22RV1_control和Trametinib样例.csv,ncounts,这个细胞里检测到的总表达量。粗略理解成这个细胞测到多少 RNA 信号。,17771.0
+02_obs细胞表_22RV1_control和Trametinib样例.csv,ngenes,这个细胞里检测到的基因数量。,4137
+03_var基因表_前30行.csv,gene_name,基因名字，比如 RPLP1。,MIR1302-10
+03_var基因表_前30行.csv,ensembl_id,基因在 Ensembl 数据库里的编号。,ENSG00000243485
+03_var基因表_前30行.csv,ncounts,这个细胞里检测到的总表达量。粗略理解成这个细胞测到多少 RNA 信号。,8.0
+03_var基因表_前30行.csv,ncells,这个基因在多少个细胞里被检测到。,8
+04_X表达矩阵小块_20个细胞x8个基因.csv,cell_barcode,单个细胞的编号。每一行单细胞都有一个独立编号。,AAAGCAACAATCCAAC
+04_X表达矩阵小块_20个细胞x8个基因.csv,cell_line,细胞系，也就是实验背景。22RV1 是一种癌细胞系名字。,22RV1
+04_X表达矩阵小块_20个细胞x8个基因.csv,perturbation,扰动。这里通常表示加了什么药；control 表示对照组。,control
+04_X表达矩阵小块_20个细胞x8个基因.csv,dose_value,剂量数值。0.0 通常是 control；0.1 表示 0.1 微摩尔。,0.0
+04_X表达矩阵小块_20个细胞x8个基因.csv,time,处理时间。24 表示处理 24 小时。,24
+04_X表达矩阵小块_20个细胞x8个基因.csv,RPLP1,这个列暂时没有单独解释；先按表格上下文理解。,128.0
+04_X表达矩阵小块_20个细胞x8个基因.csv,RPL41,这个列暂时没有单独解释；先按表格上下文理解。,345.0
+04_X表达矩阵小块_20个细胞x8个基因.csv,RPS2,这个列暂时没有单独解释；先按表格上下文理解。,165.0
+04_X表达矩阵小块_20个细胞x8个基因.csv,RPS18,这个列暂时没有单独解释；先按表格上下文理解。,111.0
+04_X表达矩阵小块_20个细胞x8个基因.csv,TMSB10,这个列暂时没有单独解释；先按表格上下文理解。,238.0
+04_X表达矩阵小块_20个细胞x8个基因.csv,MT-CO3,这个列暂时没有单独解释；先按表格上下文理解。,110.0
+04_X表达矩阵小块_20个细胞x8个基因.csv,RPS19,这个列暂时没有单独解释；先按表格上下文理解。,92.0
+04_X表达矩阵小块_20个细胞x8个基因.csv,MT-CO1,这个列暂时没有单独解释；先按表格上下文理解。,165.0
+05_从表达矩阵到effect_8个基因演示.csv,gene,基因名。,RPLP1
+05_从表达矩阵到effect_8个基因演示.csv,control_mean_22RV1,22RV1 对照组里这个基因的平均表达量。,141.35443
+05_从表达矩阵到effect_8个基因演示.csv,trametinib_mean_22RV1,22RV1 加 Trametinib 后这个基因的平均表达量。,105.85714
+05_从表达矩阵到effect_8个基因演示.csv,effect_trametinib_minus_control,药物组平均表达 - 对照组平均表达。负数表示药物组更低。,-35.49729
+06_22RV1_Trametinib这句话逐词解释.csv,word,要解释的词或短语。,22RV1 control: 158 cells
+06_22RV1_Trametinib这句话逐词解释.csv,meaning,这句话/这个词的人话解释。,22RV1 这个细胞系里，没有加药的对照组，一共有 158 个单细胞
+06_22RV1_Trametinib这句话逐词解释.csv,cell_line,细胞系，也就是实验背景。22RV1 是一种癌细胞系名字。,22RV1
+06_22RV1_Trametinib这句话逐词解释.csv,perturbation,扰动。这里通常表示加了什么药；control 表示对照组。,control
+06_22RV1_Trametinib这句话逐词解释.csv,n_cells,细胞数量。,158
+07_切分表_这道题为什么是test.csv,dataset_name,数据集名字。,McFarlandTsherniak2020
+07_切分表_这道题为什么是test.csv,task_id,任务编号。,3
+07_切分表_这道题为什么是test.csv,task_key,任务的唯一名字。,McFarlandTsherniak2020::task_00003
+07_切分表_这道题为什么是test.csv,context,背景。这里通常是 cell_line。,22RV1
+07_切分表_这道题为什么是test.csv,perturbation,扰动。这里通常表示加了什么药；control 表示对照组。,Trametinib
+07_切分表_这道题为什么是test.csv,fold_id,第几折交叉验证。,0
+07_切分表_这道题为什么是test.csv,split,train/val/test，表示训练/验证/测试。,test
+07_切分表_这道题为什么是test.csv,pair_seen_in_train,这个 context × perturbation 组合训练时是否见过。False 表示没见过。,False
+07_切分表_这道题为什么是test.csv,perturbation_seen_in_train,单独这个 perturbation 训练时是否见过。,True
+07_切分表_这道题为什么是test.csv,context_seen_in_train,单独这个 context 训练时是否见过。,True
+08_PredictionRecord_单条预测记录.csv,record_id,一条预测记录的编号。,v2_rec_000930
+08_PredictionRecord_单条预测记录.csv,task_id,任务编号。,3
+08_PredictionRecord_单条预测记录.csv,task_key,任务的唯一名字。,McFarlandTsherniak2020::task_00003
+08_PredictionRecord_单条预测记录.csv,dataset_name,数据集名字。,McFarlandTsherniak2020
+08_PredictionRecord_单条预测记录.csv,fold_id,第几折交叉验证。,0
+08_PredictionRecord_单条预测记录.csv,split,train/val/test，表示训练/验证/测试。,test
+08_PredictionRecord_单条预测记录.csv,context,背景。这里通常是 cell_line。,22RV1
+08_PredictionRecord_单条预测记录.csv,perturbation,扰动。这里通常表示加了什么药；control 表示对照组。,Trametinib
+08_PredictionRecord_单条预测记录.csv,predictor_name,预测器名字。,V0StrongBaseline
+08_PredictionRecord_单条预测记录.csv,predicted_effect_key,预测答案向量在 npz 文件里的 key。,v2_rec_000930::predicted_effect
+08_PredictionRecord_单条预测记录.csv,true_effect_key,真实答案向量在 npz 文件里的 key。,v2_rec_000930::true_effect
+08_PredictionRecord_单条预测记录.csv,target_control_key,这个列暂时没有单独解释；先按表格上下文理解。,v2_rec_000930::target_control_mean
+08_PredictionRecord_单条预测记录.csv,true_error_rmse,真实误差。预测向量和真实向量的 RMSE，越大越差。,0.5776326701112968
+08_PredictionRecord_单条预测记录.csv,true_error_cosine,另一种误差/相似度指标。,0.1539217189347875
+08_PredictionRecord_单条预测记录.csv,true_error_top20,top 基因相关误差指标。,0.35
+09_ConfidenceFeatures_单条质检线索.csv,record_id,一条预测记录的编号。,v2_rec_000930
+09_ConfidenceFeatures_单条质检线索.csv,task_id,任务编号。,3
+09_ConfidenceFeatures_单条质检线索.csv,task_key,任务的唯一名字。,McFarlandTsherniak2020::task_00003
+09_ConfidenceFeatures_单条质检线索.csv,dataset_name,数据集名字。,McFarlandTsherniak2020
+09_ConfidenceFeatures_单条质检线索.csv,fold_id,第几折交叉验证。,0
+09_ConfidenceFeatures_单条质检线索.csv,split,train/val/test，表示训练/验证/测试。,test
+09_ConfidenceFeatures_单条质检线索.csv,context,背景。这里通常是 cell_line。,22RV1
+09_ConfidenceFeatures_单条质检线索.csv,perturbation,扰动。这里通常表示加了什么药；control 表示对照组。,Trametinib
+09_ConfidenceFeatures_单条质检线索.csv,predictor_name,预测器名字。,V0StrongBaseline
+09_ConfidenceFeatures_单条质检线索.csv,context_similarity_max,当前背景和训练集中最像背景的相似度。,0.9677310027962835
+09_ConfidenceFeatures_单条质检线索.csv,context_similarity_mean,当前背景和训练集中背景相似度的平均。,0.8084490300940981
+09_ConfidenceFeatures_单条质检线索.csv,perturbation_support_count,训练集中同一个扰动有多少支持样本。,121
+09_ConfidenceFeatures_单条质检线索.csv,perturbation_effect_stability,这个列暂时没有单独解释；先按表格上下文理解。,0.1044841358608925
+09_ConfidenceFeatures_单条质检线索.csv,perturbation_effect_variance,这个列暂时没有单独解释；先按表格上下文理解。,8.708559036254883
+09_ConfidenceFeatures_单条质检线索.csv,prediction_l2_norm,这个列暂时没有单独解释；先按表格上下文理解。,47.92321395874024
+09_ConfidenceFeatures_单条质检线索.csv,prediction_abs_mean,这个列暂时没有单独解释；先按表格上下文理解。,0.1069391816854476
+09_ConfidenceFeatures_单条质检线索.csv,fold_train_median_effect_norm,这个列暂时没有单独解释；先按表格上下文理解。,101.19378662109376
+09_ConfidenceFeatures_单条质检线索.csv,prediction_norm_ratio,这个列暂时没有单独解释；先按表格上下文理解。,0.4735786213183854
+09_ConfidenceFeatures_单条质检线索.csv,prediction_magnitude_deviation,这个列暂时没有单独解释；先按表格上下文理解。,0.7474373161127279
+09_ConfidenceFeatures_单条质检线索.csv,model_disagreement_rmse,两个预测器之间预测结果差多少。越大表示分歧越大。,0.36919982806737
+09_ConfidenceFeatures_单条质检线索.csv,model_disagreement_cosine,这个列暂时没有单独解释；先按表格上下文理解。,0.0251117425283372
+09_ConfidenceFeatures_单条质检线索.csv,ood_nearest_distance,这个列暂时没有单独解释；先按表格上下文理解。,0.086193713687658
+09_ConfidenceFeatures_单条质检线索.csv,ood_mean_k_distance,这个列暂时没有单独解释；先按表格上下文理解。,0.0972338248791317
+09_ConfidenceFeatures_单条质检线索.csv,historical_residual_risk,历史残差风险。过去类似情况容易错的程度。,2.2128849153667858
+10_ConfidenceScores_单条记录的多个分数.csv,record_id,一条预测记录的编号。,v2_rec_000930
+10_ConfidenceScores_单条记录的多个分数.csv,dataset_name,数据集名字。,McFarlandTsherniak2020
+10_ConfidenceScores_单条记录的多个分数.csv,fold_id,第几折交叉验证。,0
+10_ConfidenceScores_单条记录的多个分数.csv,split,train/val/test，表示训练/验证/测试。,test
+10_ConfidenceScores_单条记录的多个分数.csv,context,背景。这里通常是 cell_line。,22RV1
+10_ConfidenceScores_单条记录的多个分数.csv,perturbation,扰动。这里通常表示加了什么药；control 表示对照组。,Trametinib
+10_ConfidenceScores_单条记录的多个分数.csv,predictor_name,预测器名字。,V0StrongBaseline
+10_ConfidenceScores_单条记录的多个分数.csv,score_name,分数名字。,random_score
+10_ConfidenceScores_单条记录的多个分数.csv,score_type,confidence 或 risk。confidence 越高越可信；risk 越高越危险。,confidence
+10_ConfidenceScores_单条记录的多个分数.csv,score_value,分数值。,0.4657393052893382
+10_ConfidenceScores_单条记录的多个分数.csv,true_error_rmse,真实误差。预测向量和真实向量的 RMSE，越大越差。,0.5776326701112968
+10_ConfidenceScores_单条记录的多个分数.csv,true_error_cosine,另一种误差/相似度指标。,0.1539217189347875
+10_ConfidenceScores_单条记录的多个分数.csv,true_error_top20,top 基因相关误差指标。,0.35
+11_true_effect_vs_predicted_effect_前20个位置.csv,gene_index,第几个基因位置。正式向量里通常用编号表示。,0
+11_true_effect_vs_predicted_effect_前20个位置.csv,true_effect,真实效应，标准答案。,0.0
+11_true_effect_vs_predicted_effect_前20个位置.csv,predicted_effect,预测效应，预测器猜的答案。,-1.6490127e-05
+11_true_effect_vs_predicted_effect_前20个位置.csv,difference_pred_minus_true,预测值 - 真实值。,-1.6490127e-05
+11_true_effect_vs_predicted_effect_前20个位置.csv,squared_error,差值平方，是 RMSE 计算的中间量。,2.719243e-10
+12_true_effect_vs_predicted_effect_误差最大30个位置.csv,gene_index,第几个基因位置。正式向量里通常用编号表示。,4027
+12_true_effect_vs_predicted_effect_误差最大30个位置.csv,true_effect,真实效应，标准答案。,-53.239746
+12_true_effect_vs_predicted_effect_误差最大30个位置.csv,predicted_effect,预测效应，预测器猜的答案。,-28.664219
+12_true_effect_vs_predicted_effect_误差最大30个位置.csv,difference_pred_minus_true,预测值 - 真实值。,24.575527
+12_true_effect_vs_predicted_effect_误差最大30个位置.csv,squared_error,差值平方，是 RMSE 计算的中间量。,603.95654
+13_FORMAL_MAIN_TABLE_7个数据集总成绩.csv,dataset_name,数据集名字。,CuiHacohen2023
+13_FORMAL_MAIN_TABLE_7个数据集总成绩.csv,dataset_family,这个列暂时没有单独解释；先按表格上下文理解。,gene_main
+13_FORMAL_MAIN_TABLE_7个数据集总成绩.csv,score_name,分数名字。,protocol_v0_2_family_confidence
+13_FORMAL_MAIN_TABLE_7个数据集总成绩.csv,score_type,confidence 或 risk。confidence 越高越可信；risk 越高越危险。,confidence
+13_FORMAL_MAIN_TABLE_7个数据集总成绩.csv,n,这个列暂时没有单独解释；先按表格上下文理解。,2506
+13_FORMAL_MAIN_TABLE_7个数据集总成绩.csv,aligned_rho,方向对齐后的 Spearman 相关。越高说明分数越能排序误差。,0.4453758817214197
+13_FORMAL_MAIN_TABLE_7个数据集总成绩.csv,normalized_rmse_rho,这个列暂时没有单独解释；先按表格上下文理解。,0.1091077622809904
+13_FORMAL_MAIN_TABLE_7个数据集总成绩.csv,magnitude_only_rho,只靠效应大小这个基线能做到的相关。,0.7358455041044434
+13_FORMAL_MAIN_TABLE_7个数据集总成绩.csv,partial_rho_control_magnitude,控制效应大小后的相关，回答是不是独立信号。,0.3284789922988475
+13_FORMAL_MAIN_TABLE_7个数据集总成绩.csv,risk_coverage80_improve_pct,保留高可信 80% 后误差改善百分比。,21.588636940374
+13_FORMAL_MAIN_TABLE_7个数据集总成绩.csv,mean_rmse,这个列暂时没有单独解释；先按表格上下文理解。,0.2110444141722927
+13_FORMAL_MAIN_TABLE_7个数据集总成绩.csv,aligned_rho_ci_low,这个列暂时没有单独解释；先按表格上下文理解。,0.4125391426118307
+13_FORMAL_MAIN_TABLE_7个数据集总成绩.csv,aligned_rho_ci_high,这个列暂时没有单独解释；先按表格上下文理解。,0.4763799655569566
+13_FORMAL_MAIN_TABLE_7个数据集总成绩.csv,partial_rho_ci_low,这个列暂时没有单独解释；先按表格上下文理解。,0.2933225969765277
+13_FORMAL_MAIN_TABLE_7个数据集总成绩.csv,partial_rho_ci_high,这个列暂时没有单独解释；先按表格上下文理解。,0.3615064343944431
+13_FORMAL_MAIN_TABLE_7个数据集总成绩.csv,n_bootstrap,这个列暂时没有单独解释；先按表格上下文理解。,1000

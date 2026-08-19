@@ -1,0 +1,7 @@
+blinded_library_id,context_code,biological_batch,collection_day,library_type,target_qc_cells_per_guide,minimum_qc_cells_per_guide,planned_targeting_guides,planned_non_targeting_guides,target_total_qc_cells,suggested_loaded_cells_allowing_20pct_loss,risk_stratum_visible_to_wetlab
+WL-806DA438,NEW,1,7,10x_3prime_plus_guide_capture,100,50,96,6,10200,12750,False
+WL-360411A9,NEW,2,7,10x_3prime_plus_guide_capture,100,50,96,6,10200,12750,False
+WL-C880D18A,NEW,3,7,10x_3prime_plus_guide_capture,100,50,96,6,10200,12750,False
+WL-1F48E856,ANC,1,7,10x_3prime_plus_guide_capture,100,50,96,6,10200,12750,False
+WL-D700BEAD,ANC,2,7,10x_3prime_plus_guide_capture,100,50,96,6,10200,12750,False
+WL-7AD29BBA,ANC,3,7,10x_3prime_plus_guide_capture,100,50,96,6,10200,12750,False

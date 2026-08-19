@@ -1,0 +1,19 @@
+{
+  "experiment": "E137_nadig_combined_asset",
+  "generated_at": "2026-07-14T02:33:15",
+  "status": "complete",
+  "source_contract": "docs/实验结果/E136_nadig_two_cellline_contract_20260714",
+  "combined_asset": "/home/yyf/data/safeconf_e137_nadig/Nadig_two_cellline_E136_selected.h5ad",
+  "combined_sha256": "6c664f714207bf3ea7b29cc1ed1ab1afbaf49dc4882a87caba271b732f3f4b09",
+  "shape": [
+    44160,
+    7632
+  ],
+  "contexts": [
+    "HepG2",
+    "Jurkat"
+  ],
+  "selected_perturbations": 96,
+  "expression_values_used_for_contract_selection_or_split": false,
+  "test_effect_or_error_computed": false
+}

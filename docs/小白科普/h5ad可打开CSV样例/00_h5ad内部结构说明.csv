@@ -1,0 +1,5 @@
+part,shape,plain_chinese
+obs,154710 rows,细胞信息表：一行一个细胞，记录 cell_line、perturbation、dose、time 等
+X,154710 cells × 32738 genes,表达矩阵：一行一个细胞，一列一个基因，格子里是表达量
+var,32738 rows,基因信息表：一行一个基因，记录 gene name、ensembl_id 等
+X/data,591403120 non-zero values,稀疏矩阵里实际存下来的非零表达值，不是给人直接看的普通表

@@ -1,0 +1,19 @@
+check_id,category,check,status,evidence
+1,git_order,F1 metadata freeze precedes runtime hardening,PASS,b4701ac is ancestor of fc0de74
+2,git_order,runtime hardening precedes sealed pretruth release,PASS,fc0de74 is ancestor of 9124431
+3,git_order,predictions precede conformal calibration,PASS,2f4f148 is ancestor of 420e536
+4,git_order,calibration precedes one-shot final evaluation,PASS,420e536 is ancestor of 593f663
+5,git_order,final evaluation precedes retrospective synthesis,PASS,593f663 is ancestor of 744b5ef
+6,release_reproduction,E181 manifest entries verify,PASS,19 of 19
+7,release_reproduction,E183 direct input hashes verify,PASS,6 of 6
+8,release_reproduction,task certificates recompute,PASS,2433 tasks
+9,release_reproduction,target clusters recompute,PASS,737 clusters
+10,release_reproduction,lower-bound violations recompute,PASS,0 family and 0 worst-member
+11,release_reproduction,E185 Python 3.9 compatibility,PASS,Python 3.9.25; 12033 checks; 0 failed
+12,release_reproduction,E185 repeatability,PASS,two report hashes and two main-number CSV hashes match
+13,reporting,E182 failure preserved,PASS,16 of 20 below registered 17 of 20
+14,reporting,E183 labelled retrospective and descriptive,PASS,E183 report and current gate
+15,reporting,task and target-cluster units remain separate,PASS,E183 and E185 tables
+16,novelty,classical ambiguity and conformal sources acknowledged,PASS,E184 report
+17,scope,integrated single-model UQ not conflated with family certificate,PASS,E184 method matrix
+18,remote_state,local GitHub and Gitee audited heads identical,PASS,d52f3dd4f8524af4ee2f6f64eb0472845f436aba

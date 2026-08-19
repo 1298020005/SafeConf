@@ -1,0 +1,47 @@
+{
+  "experiment": "E65_scGPT_formal_fixed_panel",
+  "prepared_at": "2026-07-11T12:28:26",
+  "git_head_before_prepare": "3a89decf48ece8ca6c86d8e8157b396e05efcf6e",
+  "source_h5ad": "/home/yyf/data/gears_formal_baselines_v2/adamson_local_atlas/perturb_processed.h5ad",
+  "source_shape": [
+    56998,
+    5043
+  ],
+  "n_panel_genes": 512,
+  "panel_gene_order_hash": "sha256:586ea4c98066352ff566ac5a498c2702e484aacc80180f2d61a23262af34aeac",
+  "panel_selection": "all Adamson perturbation-label genes (24 frozen tests first), then remaining positions ranked by total expression over E60-matched training conditions only",
+  "test_truth_used_for_panel": false,
+  "test_conditions": [
+    "ATF4+ctrl",
+    "COPZ1+ctrl",
+    "DAD1+ctrl",
+    "DERL2+ctrl",
+    "DNAJC19+ctrl",
+    "EIF2S1+ctrl",
+    "GBF1+ctrl",
+    "IARS2+ctrl",
+    "IDH3A+ctrl",
+    "MRPL39+ctrl",
+    "NEDD8+ctrl",
+    "OST4+ctrl",
+    "PDIA6+ctrl",
+    "PSMD4+ctrl",
+    "PTDSS1+ctrl",
+    "SEC61G+ctrl",
+    "SEL1L+ctrl",
+    "SLC35B1+ctrl",
+    "SPCS3+ctrl",
+    "SRP68+ctrl",
+    "SYVN1+ctrl",
+    "TELO2+ctrl",
+    "TIMM23+ctrl",
+    "TTI1+ctrl"
+  ],
+  "n_train_conditions": 48,
+  "n_val_conditions": 5,
+  "n_test_conditions": 24,
+  "source_urls": {
+    "scgpt_official_perturbation_tutorial": "https://github.com/bowang-lab/scGPT/blob/main/tutorials/Tutorial_Perturbation.ipynb",
+    "gears_repository": "https://github.com/snap-stanford/GEARS"
+  }
+}

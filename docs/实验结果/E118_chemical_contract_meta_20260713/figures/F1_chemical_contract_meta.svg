@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="450">
+<rect width="100%" height="100%" fill="#fff"/>
+<style>text{font-family:Arial,"Noto Sans CJK SC",sans-serif;fill:#27343c}.t{font-size:24px;font-weight:700}.s{font-size:14px;fill:#647078}.v{font-size:14px;font-weight:700}</style>
+<text x="42" y="40" class="t">E118｜化学扰动统一合同元审计</text>
+<text x="42" y="68" class="s">三来源等权；青色为模型分歧，金色为预测幅度。</text>
+<text x="180" y="105" text-anchor="middle" class="s">Spearman ρ</text>
+<rect x="105" y="165.8" width="55" height="184.2" fill="#3b7188"/>
+<text x="132" y="157.8" text-anchor="middle" class="v">0.811</text>
+<text x="132" y="375" text-anchor="middle" class="s">分歧</text>
+<rect x="195" y="158.7" width="55" height="191.3" fill="#a5782b"/>
+<text x="222" y="150.7" text-anchor="middle" class="v">0.842</text>
+<text x="222" y="375" text-anchor="middle" class="s">幅度</text>
+<text x="490" y="105" text-anchor="middle" class="s">top-20% error enrichment</text>
+<rect x="415" y="159.3" width="55" height="190.7" fill="#3b7188"/>
+<text x="442" y="151.3" text-anchor="middle" class="v">1.323</text>
+<text x="442" y="375" text-anchor="middle" class="s">分歧</text>
+<rect x="505" y="158.7" width="55" height="191.3" fill="#a5782b"/>
+<text x="532" y="150.7" text-anchor="middle" class="v">1.327</text>
+<text x="532" y="375" text-anchor="middle" class="s">幅度</text>
+<text x="800" y="105" text-anchor="middle" class="s">top-20% error capture</text>
+<rect x="725" y="159.3" width="55" height="190.7" fill="#3b7188"/>
+<text x="752" y="151.3" text-anchor="middle" class="v">0.286</text>
+<text x="752" y="375" text-anchor="middle" class="s">分歧</text>
+<rect x="815" y="158.7" width="55" height="191.3" fill="#a5782b"/>
+<text x="842" y="150.7" text-anchor="middle" class="v">0.287</text>
+<text x="842" y="375" text-anchor="middle" class="s">幅度</text>
+</svg>

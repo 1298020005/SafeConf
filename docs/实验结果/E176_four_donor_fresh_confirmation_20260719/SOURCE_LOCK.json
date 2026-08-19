@@ -1,0 +1,27 @@
+{
+  "allowed_hdf5_value_paths": [
+    "obs/10xrun_id",
+    "obs/donor_id",
+    "obs/culture_condition",
+    "obs/guide_id",
+    "obs/perturbed_gene_name",
+    "obs/perturbed_gene_id",
+    "obs/guide_type"
+  ],
+  "e168_target_audit_sha256": "c240397c619c6b93fed8f8cbb0716bf8d3db9caee9c0b1f9324aa9f14e51f4de",
+  "e175_gate_sha256": "ed0c529fb0b1b73c1c59508c8deb00edfe34b7d72353106d924114f8f2279b67",
+  "expression_matrix_x_decoded_by_e176_freeze": false,
+  "layers_decoded_by_e176_freeze": false,
+  "official_crc64nvme_base64": "E2slkXBEb2c=",
+  "prior_selected_target_sha256": {
+    "docs/实验结果/E168_primary_human_cd4_fresh_confirmation_20260716/manifests/E168_SELECTED_TARGETS.csv": "cf86f2be050dde1777ce2d052f3fd001e6213f495520aaa13a9a13950ff01781",
+    "docs/实验结果/E170_primary_cd4_multipanel_precision_20260718/manifests/E170_ALL_SELECTED_TARGETS.csv": "5324dfad603955eb57064af54aff8d21c0fcf80f978918a9dfdcdd9cf9d5b738",
+    "docs/实验结果/E172_primary_cd4_fresh_targets_20260718/manifests/E172_ALL_SELECTED_TARGETS.csv": "994e758e7fbf1d17c17576283f08f78d7d642867717b24fb720fb06b37961415",
+    "docs/实验结果/E174_rotated_donor_conformal_certificate_20260719/manifests/E174_ALL_SELECTED_TARGETS.csv": "9c23ca63a706b43d6d0ed613f117571b9c295cbbe6e67c4975d2b8493410d9c4"
+  },
+  "source_byte_attestation_path": "/home/yyf/data/safeconf_external/primary_cd4_perturbseq_2025/E168_SOURCE_BYTE_ATTESTATION.json",
+  "source_byte_attestation_sha256": "487600a78372d952bcc97529dd1b8107f0c0b740e50a98ab9d317b75fbd2d059",
+  "source_bytes": 44566657140,
+  "source_full_sha256": "fd2b8c21d357f8699ec34e2d5ebc1639612c27a0147a9ca94d4983822d93247e",
+  "source_path": "/home/yyf/data/safeconf_external/primary_cd4_perturbseq_2025/source/GWCD4i.pseudobulk_merged.h5ad"
+}

@@ -1,0 +1,21 @@
+{
+  "experiment": "E201_txpert_multitarget_retraining",
+  "stage": "OFFICIAL_GENERAL_BASELINE_PREFLIGHT",
+  "status": "PASS",
+  "generated_at": "2026-08-02T10:29:15+08:00",
+  "safeconf_commit": "2b729e9a0914412d5d140ebd43b8edbf7c00f238",
+  "task_base_status_sha256": "5726902925669dfdbce79f33be14bef135d712db00b0c009a1cdcec8831c4689",
+  "target_perturbed_expression_rows_opened": 0,
+  "target_truth_opened": false,
+  "e200_official_code_equivalence": {
+    "reference": "E200 TxPert public MeanBaseline cell-level output",
+    "n_tasks": 580,
+    "n_genes": 3352,
+    "maximum_absolute_delta_residual": 2.7865171432495117e-06,
+    "rms_delta_residual": 4.9673142782439826e-08,
+    "tolerance": 5e-06,
+    "tasks_exceeding_tolerance": 0,
+    "target_truth_opened": false,
+    "passed": true
+  }
+}

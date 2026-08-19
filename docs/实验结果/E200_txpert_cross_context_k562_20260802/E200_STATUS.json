@@ -1,0 +1,22 @@
+{
+  "experiment": "E200_txpert_cross_context_k562",
+  "stage": "PREPARE",
+  "status": "PASS",
+  "generated_at": "2026-08-02T04:18:29+08:00",
+  "n_strict_context_only_tasks": 580,
+  "n_primary_tasks_ge30": 566,
+  "n_sensitivity_tasks_10_29": 14,
+  "n_validation_only_tasks": 202,
+  "n_neither_train_nor_validation_tasks": 33,
+  "n_double_ood_tasks": 272,
+  "target_context": "K562",
+  "training_contexts": [
+    "RPE1",
+    "hepg2",
+    "jurkat"
+  ],
+  "target_controls_allowed": true,
+  "target_perturbations_in_training": false,
+  "cross_dataset_transfer_answered": false,
+  "multiple_model_families_answered": false
+}

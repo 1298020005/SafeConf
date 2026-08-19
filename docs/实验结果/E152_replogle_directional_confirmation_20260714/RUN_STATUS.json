@@ -1,0 +1,16 @@
+{
+  "experiment": "E152_replogle_directional_confirmation",
+  "generated_at": "2026-07-14T15:06:06",
+  "status": "complete",
+  "n_folds": 2,
+  "n_primary_unique_tasks": 256,
+  "n_source_context_diagnostic_tasks_excluded": 84,
+  "bootstrap_draws": 3000,
+  "score_file_sha256": "611ac06b5630b33dd3e2f16e62f5a1c5bd903d1cb895ce69ee97e56578011b42",
+  "model_file_sha256": "77caf3b7b46071ced9577a8bd5289ce4c7bf5899c329ab37e835c41bda07d4b3",
+  "all_source_truth_checks_pass": true,
+  "preregistered_directional_gate_passed": true,
+  "model_refit_on_replogle": false,
+  "replogle_truth_used_for_score_or_transform": false,
+  "claim_scope": "same-study control-observed cross-cell-line replication"
+}

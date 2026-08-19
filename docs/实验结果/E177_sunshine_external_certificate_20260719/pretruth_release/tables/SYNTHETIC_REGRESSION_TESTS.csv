@@ -1,0 +1,8 @@
+test_id,passed,observed
+S1_constant_score_fails,True,constant
+S2_variable_score_passes,True,variable
+S3_constant_predictor_fails,True,constant predictor
+S4_variable_predictor_passes,True,variable predictor
+S5_stable_five_seed_gate_passes,True,stable
+S6_unstable_five_seed_gate_fails,True,unstable
+S7_magnitude_clone_detected,True,clone=True

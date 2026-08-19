@@ -1,0 +1,12 @@
+requirement_id,问题,证据,状态,结论
+Z1,风险对应哪种实际误差,E189和E190逐模型RMSE family RMS worst-member,PASS,误差对象已明确分列
+Z2,真值未知时能否计算,E189 query无y且E190预测先双远程冻结,PASS,下界和magnitude均为pretruth量
+Z3,小训练子矩阵,E189支持量1/2/3/5,PASS,3到5收益平台
+Z4,随机pair与整行整列双未见,E189同模型合同13440任务,PASS,不同setting的风险排序差异很大
+Z5,跨数据集直接预测,E190 Adamson到Replogle 47基因692任务,PASS_WITH_BOUNDARY,平均改善但基因簇CI跨0
+Z6,基因和化学扰动,E189/E190加E84/E87/E89,PASS,两模态分开解释
+M1,确定性family-error下界,E189和E190均0违例,PASS,下界紧致度E189约0.30 E190约0.42
+M2,有限复核预算收益,E191固定10/20/30预算,PASS_WITH_SETTING_BOUNDARY,E190的20%预算捕获47.5%高错误任务
+M3,分歧普遍优于magnitude,E191在E189正好8胜8负且E190近似持平,FAIL_UNIVERSAL_CLAIM,不能写成通用优势
+M4,双未见风险路由,E191两种分数均为负utility,FAIL_DEPLOYMENT,必须显示排序未验证而不是自动放行
+M5,真实后续实验或机制验证,尚无新的湿实验结果,NOT_DONE,更高层级投稿仍需实验闭环

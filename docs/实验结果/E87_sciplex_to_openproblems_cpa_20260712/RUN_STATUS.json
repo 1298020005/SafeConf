@@ -1,0 +1,13 @@
+{
+  "experiment": "E87_sciplex_to_openproblems_cpa",
+  "phase": "evaluation_complete",
+  "generated_at": "2026-07-12T12:50:25",
+  "source_tasks": 108,
+  "target_tasks": 553,
+  "n_prediction_records": 1106,
+  "strict_issue_count": 0,
+  "triangle_mean_violations": 0,
+  "triangle_max_violations": 0,
+  "target_truth_used_for_scores": false,
+  "target_truth_used_for_evaluation_only": true
+}

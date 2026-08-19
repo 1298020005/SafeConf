@@ -1,0 +1,13 @@
+{
+  "phase": "scores_frozen_before_replogle_directional_truth_audit",
+  "generated_at": "2026-07-14T14:51:51",
+  "n_primary_unique_tasks": 256,
+  "score_file": "docs/实验结果/E152_replogle_directional_confirmation_20260714/tables/E152_DIRECTIONAL_SCORES_BEFORE_TRUTH.csv",
+  "score_file_sha256": "611ac06b5630b33dd3e2f16e62f5a1c5bd903d1cb895ce69ee97e56578011b42",
+  "model_file_sha256": "77caf3b7b46071ced9577a8bd5289ce4c7bf5899c329ab37e835c41bda07d4b3",
+  "manifest_sha256": "445f665f18d273083d47c8f82d6beb379a6fbc212fdbcd37d9c8b65e16746f0a",
+  "e151_status_sha256": "15045cfbd2b9a297666cfed2c9baa37f5b8b500bf66f66574e78fd1854dfac3d",
+  "target_truth_columns_read": [],
+  "absolute_error_columns_read": [],
+  "model_refit": false
+}

@@ -1,0 +1,22 @@
+{
+  "experiment": "E85_cpa_selective_routing",
+  "generated_at": "2026-07-12T12:19:53",
+  "source": "E84 frozen task scores",
+  "n_manifest_metric_rows": 64,
+  "n_curve_rows": 704,
+  "coverages": [
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.9,
+    0.95,
+    1.0
+  ],
+  "target_truth_used_to_change_scores": false,
+  "random_expected_baselines_explicit": true
+}

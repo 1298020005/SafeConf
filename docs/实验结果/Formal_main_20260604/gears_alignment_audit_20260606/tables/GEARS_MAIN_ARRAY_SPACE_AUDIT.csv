@@ -1,0 +1,5 @@
+source,npz,n_arrays,first_shape,gene_names_exported
+main_v0_contextsim,/home/yyf/proj/code/20260426_154505_perturb_transport_final_push/outputs/safeconf_phase1_main/Frangieh/input/predicted_effects.npz,6330,"(5000,)",False
+seed_1,/home/yyf/proj/code/20260426_154505_perturb_transport_final_push/outputs/gears_frangieh_formal_probe_20260605/frangieh/seed_1/arrays/gears_predicted_effects.npz,21,"(3000,)",False
+seed_2,/home/yyf/proj/code/20260426_154505_perturb_transport_final_push/outputs/gears_frangieh_formal_probe_20260605/frangieh/seed_2/arrays/gears_predicted_effects.npz,20,"(3000,)",False
+seed_3,/home/yyf/proj/code/20260426_154505_perturb_transport_final_push/outputs/gears_frangieh_formal_probe_20260605/frangieh/seed_3/arrays/gears_predicted_effects.npz,21,"(3000,)",False

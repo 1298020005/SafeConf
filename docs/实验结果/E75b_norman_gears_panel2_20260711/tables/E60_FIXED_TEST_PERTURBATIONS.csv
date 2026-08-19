@@ -1,0 +1,25 @@
+task_gene,condition,n_cells_in_source_h5ad,selection_rule,selection_uses_effect_or_error
+ARRDC3,ARRDC3+ctrl,495,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 24 frozen prior tasks; rng_seed=202607752,False
+ATL1,ATL1+ctrl,379,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 24 frozen prior tasks; rng_seed=202607752,False
+BPGM,BPGM+ctrl,464,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 24 frozen prior tasks; rng_seed=202607752,False
+CBFA2T3,CBFA2T3+ctrl,658,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 24 frozen prior tasks; rng_seed=202607752,False
+CDKN1C,CDKN1C+ctrl,230,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 24 frozen prior tasks; rng_seed=202607752,False
+CEBPA,CEBPA+ctrl,460,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 24 frozen prior tasks; rng_seed=202607752,False
+CEBPB,CEBPB+ctrl,488,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 24 frozen prior tasks; rng_seed=202607752,False
+CELF2,CELF2+ctrl,475,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 24 frozen prior tasks; rng_seed=202607752,False
+COL1A1,COL1A1+ctrl,328,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 24 frozen prior tasks; rng_seed=202607752,False
+COL2A1,COL2A1+ctrl,598,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 24 frozen prior tasks; rng_seed=202607752,False
+CSRNP1,CSRNP1+ctrl,478,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 24 frozen prior tasks; rng_seed=202607752,False
+DLX2,DLX2+ctrl,732,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 24 frozen prior tasks; rng_seed=202607752,False
+HK2,HK2+ctrl,303,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 24 frozen prior tasks; rng_seed=202607752,False
+HOXA13,HOXA13+ctrl,274,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 24 frozen prior tasks; rng_seed=202607752,False
+NCL,NCL+ctrl,237,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 24 frozen prior tasks; rng_seed=202607752,False
+RREB1,RREB1+ctrl,331,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 24 frozen prior tasks; rng_seed=202607752,False
+SAMD1,SAMD1+ctrl,498,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 24 frozen prior tasks; rng_seed=202607752,False
+SGK1,SGK1+ctrl,483,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 24 frozen prior tasks; rng_seed=202607752,False
+SLC38A2,SLC38A2+ctrl,332,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 24 frozen prior tasks; rng_seed=202607752,False
+SLC4A1,SLC4A1+ctrl,1000,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 24 frozen prior tasks; rng_seed=202607752,False
+SLC6A9,SLC6A9+ctrl,558,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 24 frozen prior tasks; rng_seed=202607752,False
+TBX3,TBX3+ctrl,691,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 24 frozen prior tasks; rng_seed=202607752,False
+TP73,TP73+ctrl,248,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 24 frozen prior tasks; rng_seed=202607752,False
+ZC3HAV1,ZC3HAV1+ctrl,516,uniform random sample without replacement from single-gene conditions with >=200 cells after excluding 24 frozen prior tasks; rng_seed=202607752,False

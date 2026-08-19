@@ -1,0 +1,84 @@
+diff --git a/src/data/pertdata.py b/src/data/pertdata.py
+index c1b0b61..d96b83e 100644
+--- a/src/data/pertdata.py
++++ b/src/data/pertdata.py
+@@ -145,6 +145,37 @@ def _prepare_norman_split(pert_data: PertData, seed: int) -> None:
+     pert_data.prepare_split(split_dict_path=str(split_file), seed=seed, split="custom")
+
+
++def _load_norman_family(data_name: str, seed: int) -> PertData:
++    """Load a frozen Norman panel without silently dropping non-GO perturbations.
++
++    PRESCRIBE's encoder consumes scGPT perturbation embeddings and its ``Get_Graph``
++    helper does not construct a GO graph.  The bundled GEARS loader nevertheless
++    filters conditions against GO membership before building cell graphs.  Extend
++    the in-memory lookup for every gene in the already-frozen split so this
++    unrelated filter cannot change the task contract.
++    """
++    split_file = Path(f"data/{data_name}/set2conditions_{seed}.pkl")
++    frozen_genes = []
++    if split_file.exists():
++        with split_file.open("rb") as handle:
++            frozen = pickle.load(handle)
++        for condition in frozen["train"] + frozen["val"] + frozen["test"]:
++            for gene in condition.split("+"):
++                if gene != "ctrl" and gene not in frozen_genes:
++                    frozen_genes.append(gene)
++    gene_set_path = split_file.with_name(f"frozen_pert_gene_set_{seed}.pkl")
++    with gene_set_path.open("wb") as handle:
++        pickle.dump(frozen_genes, handle)
++    pert_data = PertData("data/", gene_set_path=str(gene_set_path), default_pert_graph=False)
++    for gene in frozen_genes:
++        pert_data.gene2go.setdefault(gene, set())
++    if data_name == "norman":
++        pert_data.load(data_name=data_name)
++    else:
++        pert_data.load(data_path=f"data/{data_name}")
++    return pert_data
++
++
+ def LoadData(
+     data_name: str,
+     seed: int = 42,
+@@ -175,11 +206,16 @@ def LoadData(
+     """
+     processed_path = Path(f"scLLM_weights/{backbone}/pca/{data_name}/processed")
+
++    is_norman_family = data_name == "norman" or data_name.startswith("norman_")
++
+     if backbone and not processed_path.is_dir():
+         # --- Preprocessing Workflow (with Backbone) ---
+         print(f"Processing data '{data_name}' for backbone '{backbone}'...")
+-        pert_data = PertData("data/")
+-        pert_data.load(data_name=data_name)
++        if is_norman_family:
++            pert_data = _load_norman_family(data_name, seed)
++        else:
++            pert_data = PertData("data/")
++            pert_data.load(data_name=data_name)
+
+         # Ensure required metadata columns exist.
+         if "gene_name" not in pert_data.adata.var.columns:
+@@ -209,14 +245,17 @@ def LoadData(
+     else:
+         # --- Standard Loading Workflow ---
+         print(f"Loading data '{data_name}'...")
+-        pert_data = PertData("data/")
+-        pert_data.load(data_name=data_name)
++        if is_norman_family:
++            pert_data = _load_norman_family(data_name, seed)
++        else:
++            pert_data = PertData("data/")
++            pert_data.load(data_name=data_name)
+
+     # --- Data Splitting ---
+-    if data_name == "norman":
++    if is_norman_family:
+         _prepare_norman_split(pert_data, seed)
+     else:
+         pert_data.prepare_split(split="simulation", seed=seed)
+
+     pert_data.dataset_name = data_name
+-    return pert_data
+\ No newline at end of file
++    return pert_data

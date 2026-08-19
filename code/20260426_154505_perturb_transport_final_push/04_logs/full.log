@@ -1,0 +1,20 @@
+
+$ /home/yyf/.conda/envs/scgpt_env/bin/python run_full.py --root /home/yyf/codex_cout/20260426_154505_perturb_transport_final_push --seeds 11,22,33,44,55 --max-datasets 6
+Traceback (most recent call last):
+  File "/home/yyf/codex_cout/20260426_154505_perturb_transport_final_push/03_code/run_full.py", line 106, in <module>
+    main()
+  File "/home/yyf/codex_cout/20260426_154505_perturb_transport_final_push/03_code/run_full.py", line 54, in main
+    splits = pd.DataFrame(feasible_splits(tasks)).sort_values(["split_type", "n_test"], ascending=[True, False]).head(6)
+  File "/home/yyf/.conda/envs/scgpt_env/lib/python3.9/site-packages/pandas/core/frame.py", line 7194, in sort_values
+    keys = [self._get_label_or_level_values(x, axis=axis) for x in by]
+  File "/home/yyf/.conda/envs/scgpt_env/lib/python3.9/site-packages/pandas/core/frame.py", line 7194, in <listcomp>
+    keys = [self._get_label_or_level_values(x, axis=axis) for x in by]
+  File "/home/yyf/.conda/envs/scgpt_env/lib/python3.9/site-packages/pandas/core/generic.py", line 1914, in _get_label_or_level_values
+    raise KeyError(key)
+KeyError: 'split_type'
+
+exit_code=1
+
+$ /home/yyf/.conda/envs/scgpt_env/bin/python run_full.py --root /home/yyf/codex_cout/20260426_154505_perturb_transport_final_push --seeds 11,22,33,44,55,66,77,88,99,101 --max-datasets 6
+
+exit_code=0

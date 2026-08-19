@@ -1,0 +1,13 @@
+fold_id,setting,split,n_tasks,min_cells,median_cells
+Nadig_cellline_holdout_1_HepG2,context_and_perturbation_unseen,test,20,52,75.0
+Nadig_cellline_holdout_1_HepG2,context_unseen,test,76,50,71.0
+Nadig_cellline_holdout_1_HepG2,perturbation_unseen,test,20,52,145.0
+Nadig_cellline_holdout_1_HepG2,random_seen_pair,test,12,68,145.0
+Nadig_cellline_holdout_1_HepG2,training_pair,train,52,50,145.0
+Nadig_cellline_holdout_1_HepG2,validation_pair,val,12,62,107.0
+Nadig_cellline_holdout_2_Jurkat,context_and_perturbation_unseen,test,20,51,139.5
+Nadig_cellline_holdout_2_Jurkat,context_unseen,test,76,50,140.5
+Nadig_cellline_holdout_2_Jurkat,perturbation_unseen,test,20,50,83.5
+Nadig_cellline_holdout_2_Jurkat,random_seen_pair,test,12,51,69.0
+Nadig_cellline_holdout_2_Jurkat,training_pair,train,52,50,75.0
+Nadig_cellline_holdout_2_Jurkat,validation_pair,val,12,50,65.0

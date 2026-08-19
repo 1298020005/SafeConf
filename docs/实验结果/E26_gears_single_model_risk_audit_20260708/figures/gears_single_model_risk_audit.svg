@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="340" viewBox="0 0 1040 340">
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <text x="42" y="42" font-size="24" font-weight="700" fill="#111">E26 GEARS single-model risk audit</text>
+  <text x="42" y="68" font-size="15" fill="#555">Strict GEARS records from E25; no multi-model disagreement is claimed.</text>
+  <text x="42" y="115" font-size="16" fill="#222">predicted_effect_abs_mean</text><rect x="360" y="92" width="429" height="30" rx="7" fill="#4677C8" opacity="0.88"/><text x="801" y="113" font-size="15" fill="#333">ρ=0.679, n=54</text><text x="42" y="169" font-size="16" fill="#222">predicted_effect_l2</text><rect x="360" y="146" width="395" height="30" rx="7" fill="#4677C8" opacity="0.88"/><text x="767" y="167" font-size="15" fill="#333">ρ=0.624, n=54</text><text x="42" y="223" font-size="16" fill="#222">low_support</text><rect x="360" y="200" width="160" height="30" rx="7" fill="#4677C8" opacity="0.88"/><text x="532" y="221" font-size="15" fill="#333">ρ=0.253, n=54</text><text x="42" y="277" font-size="16" fill="#222">cell_support</text><rect x="360" y="254" width="160" height="30" rx="7" fill="#4677C8" opacity="0.88"/><text x="532" y="275" font-size="15" fill="#333">ρ=0.253, n=54</text>
+  <line x1="42" y1="300" x2="998" y2="300" stroke="#d9dde3"/>
+  <text x="42" y="322" font-size="13" fill="#666">Higher aligned Spearman means the score ranks high-error GEARS predictions earlier.</text>
+</svg>

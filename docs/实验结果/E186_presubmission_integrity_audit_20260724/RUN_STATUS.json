@@ -1,0 +1,20 @@
+{
+  "experiment": "E186_presubmission_integrity_audit",
+  "date": "2026-07-24",
+  "status": "PASS",
+  "audited_release_head": "d52f3dd4f8524af4ee2f6f64eb0472845f436aba",
+  "checks_total": 18,
+  "checks_failed": 0,
+  "e182_status": "FAIL",
+  "e183_interpretation": "retrospective_descriptive_synthesis",
+  "e184_novelty_boundary_checked": true,
+  "e185_checks_total": 12033,
+  "e185_checks_failed": 0,
+  "python_versions_checked": [
+    "3.9.25",
+    "3.12.4"
+  ],
+  "remote_heads_equal_at_audit": true,
+  "formula_or_threshold_changed": false,
+  "new_target_truth_read": false
+}

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="520" viewBox="0 0 1040 520">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<style>text{font-family:Arial,"Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#26343d}.t{font-size:25px;font-weight:700}.s{font-size:15px;fill:#5f6b72}.l{font-size:16px}.v{font-size:14px;fill:#52616a}</style>
+<text x="48" y="42" class="t">E101｜三套遗传扰动矩阵：Frozen pair risk 相对 magnitude</text>
+<text x="48" y="70" class="s">点为 fold 宏平均 ΔSpearman；线为 fold+扰动聚类 bootstrap 95% CI。</text>
+<line x1="615.0" y1="100" x2="615.0" y2="430" stroke="#87949b" stroke-dasharray="5 5"/>
+<line x1="327.9" y1="430" x2="327.9" y2="438" stroke="#69777f"/>
+<text x="327.9" y="459" text-anchor="middle" class="v">-0.3</text>
+<line x1="423.6" y1="430" x2="423.6" y2="438" stroke="#69777f"/>
+<text x="423.6" y="459" text-anchor="middle" class="v">-0.2</text>
+<line x1="519.3" y1="430" x2="519.3" y2="438" stroke="#69777f"/>
+<text x="519.3" y="459" text-anchor="middle" class="v">-0.1</text>
+<line x1="615.0" y1="430" x2="615.0" y2="438" stroke="#69777f"/>
+<text x="615.0" y="459" text-anchor="middle" class="v">0.0</text>
+<line x1="710.7" y1="430" x2="710.7" y2="438" stroke="#69777f"/>
+<text x="710.7" y="459" text-anchor="middle" class="v">0.1</text>
+<line x1="806.4" y1="430" x2="806.4" y2="438" stroke="#69777f"/>
+<text x="806.4" y="459" text-anchor="middle" class="v">0.2</text>
+<line x1="902.1" y1="430" x2="902.1" y2="438" stroke="#69777f"/>
+<text x="902.1" y="459" text-anchor="middle" class="v">0.3</text>
+<text x="55" y="135" class="l">Frangieh</text>
+<line x1="578.1" y1="130" x2="777.3" y2="130" stroke="#456f82" stroke-width="4"/>
+<circle cx="657.8" cy="130" r="7" fill="#2f6f8f"/>
+<text x="995" y="135" text-anchor="end" class="v">0.045 [-0.039, 0.170]</text>
+<text x="55" y="217" class="l">Lara_exvivo</text>
+<line x1="631.6" y1="212" x2="975.3" y2="212" stroke="#456f82" stroke-width="4"/>
+<circle cx="792.9" cy="212" r="7" fill="#2f6f8f"/>
+<text x="995" y="217" text-anchor="end" class="v">0.186 [0.017, 0.376]</text>
+<text x="55" y="299" class="l">Santinha</text>
+<line x1="463.2" y1="294" x2="744.2" y2="294" stroke="#456f82" stroke-width="4"/>
+<circle cx="588.1" cy="294" r="7" fill="#2f6f8f"/>
+<text x="995" y="299" text-anchor="end" class="v">-0.028 [-0.159, 0.135]</text>
+<text x="55" y="381" class="l">三数据集固定集合宏平均</text>
+<line x1="603.9" y1="376" x2="765.6" y2="376" stroke="#456f82" stroke-width="4"/>
+<circle cx="679.6" cy="376" r="7" fill="#2f6f8f"/>
+<text x="995" y="381" text-anchor="end" class="v">0.067 [-0.012, 0.157]</text>
+<text x="615.0" y="495" text-anchor="middle" class="l">Δρ = frozen pair risk − predicted magnitude</text>
+</svg>

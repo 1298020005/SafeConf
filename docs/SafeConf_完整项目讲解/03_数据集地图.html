@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>03 数据集地图</title>
+<link rel="stylesheet" href="assets/tutorial.css">
+</head>
+<body>
+<header class="top">
+<div class="topin">
+<a class="brand" href="index.html">SafeConf 完整项目讲解</a>
+<a class="back" href="../../SafeConf_统一研究工作台.html">返回工作台</a>
+</div>
+</header>
+<div class="layout">
+<aside class="side" id="chapterNav">
+</aside>
+<main class="content">
+<section class="hero">
+<p class="eyebrow">CHAPTER 03</p>
+<h1>数据集地图：谁在测什么</h1>
+<p class="lead">各数据集的扰动类型、背景数量和任务密度均有差异，这些结构差异会改变风险线索的有效性。</p>
+</section>
+<h2>1. 七个正式主数据集</h2>
+<div class="table">
+<table>
+<thead>
+<tr>
+<th>数据集</th>
+<th>扰动类型</th>
+<th>Contexts</th>
+<th>Perturbations</th>
+<th>可评价 tasks</th>
+<th>结构特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cui</td>
+<td>基因</td>
+<td>15</td>
+<td>86</td>
+<td>1,253</td>
+<td>背景和扰动较均衡</td>
+</tr>
+<tr>
+<td>Frangieh</td>
+<td>基因</td>
+<td>3</td>
+<td>211</td>
+<td>633</td>
+<td>背景少，扰动多</td>
+</tr>
+<tr>
+<td>Lara ex vivo</td>
+<td>基因</td>
+<td>8</td>
+<td>42</td>
+<td>323</td>
+<td>离体实验，中等规模</td>
+</tr>
+<tr>
+<td>Lara in vivo</td>
+<td>基因</td>
+<td>15</td>
+<td>39</td>
+<td>375</td>
+<td>体内环境，背景多</td>
+</tr>
+<tr>
+<td>McFarland</td>
+<td>药物</td>
+<td>170</td>
+<td>13</td>
+<td>1,163</td>
+<td>背景极多，药物很少</td>
+</tr>
+<tr>
+<td>Santinha</td>
+<td>基因</td>
+<td>10</td>
+<td>29</td>
+<td>273</td>
+<td>规模较小，信号较弱</td>
+</tr>
+<tr>
+<td>Srivatsan sciplex3</td>
+<td>药物</td>
+<td>3</td>
+<td>188</td>
+<td>564</td>
+<td>背景少，药物多</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure class="figure">
+<h3>两种极端数据形状</h3>
+<div class="grid2">
+<div class="mini">
+<b>McFarland：宽背景、窄药物</b>
+<div class="bar">
+<span>contexts</span>
+<div class="track">
+<div class="fill" style="width:100%">
+</div>
+</div>
+<b>170</b>
+</div>
+<div class="bar">
+<span>perturbations</span>
+<div class="track">
+<div class="fill blue" style="width:7.6%">
+</div>
+</div>
+<b>13</b>
+</div>
+</div>
+<div class="mini">
+<b>Srivatsan：窄背景、宽药物</b>
+<div class="bar">
+<span>contexts</span>
+<div class="track">
+<div class="fill" style="width:1.8%">
+</div>
+</div>
+<b>3</b>
+</div>
+<div class="bar">
+<span>perturbations</span>
+<div class="track">
+<div class="fill blue" style="width:100%">
+</div>
+</div>
+<b>188</b>
+</div>
+</div>
+</div>
+<figcaption>同一条公式不会在所有数据形状上拥有相同信息量。</figcaption>
+</figure>
+<h2>2. 基因扰动与药物扰动</h2>
+<div class="grid2">
+<div class="card">
+<h3>Gene perturbation（基因扰动）</h3>
+<p>例如用 CRISPR 把某个基因敲除或抑制。基因身份相对稳定，背景相似度常有额外信息。</p>
+</div>
+<div class="card">
+<h3>Chemical perturbation（化学/药物扰动）</h3>
+<p>同一药物还可能有剂量和时间差异。项目的 frozen chemical 公式不使用 context similarity，避免将不稳定信息强行塞入。</p>
+</div>
+</div>
+<h2>3. Tahoe 为什么要单独做</h2>
+<figure class="figure">
+<div class="flow">
+<div class="node">
+<b>D0</b>
+<small>数据地图：是否有增量价值</small>
+</div>
+<div class="node">
+<b>D1</b>
+<small>9,000-task held-out pair</small>
+</div>
+<div class="node">
+<b>D2</b>
+<small>held-out cell line</small>
+</div>
+<div class="node">
+<b>D3</b>
+<small>top-k 实用分诊</small>
+</div>
+<div class="node">
+<b>D4</b>
+<small>min-900 敏感性</small>
+</div>
+<div class="node">
+<b>D5</b>
+<small>固定联合负结果</small>
+</div>
+</div>
+</figure>
+<div class="grid4">
+<div class="mini">
+<h3>25</h3>
+<p>contexts</p>
+</div>
+<div class="mini">
+<h3>1,028</h3>
+<p>drug-dose perturbations</p>
+</div>
+<div class="mini">
+<h3>80,812</h3>
+<p>PredictionRecords</p>
+</div>
+<div class="mini">
+<h3>约 145</h3>
+<p>9,000 tasks 时停止读取的 shards</p>
+</div>
+</div>
+<div class="term">
+<b>Shard<br>分片</b>
+<p>大数据集不会放在一个超大文件中，而被分成多个可独立读取的数据块。</p>
+</div>
+<div class="term">
+<b>Sampled validation<br>抽样验证</b>
+<p>本项目读取了能形成预注册任务规模的 Tahoe 子集；337GB 原始数据没有进行全量训练。</p>
+</div>
+<div class="callout warn">
+<b>数据集多不等于自动可外推。</b>七主数据集与 Tahoe 提供了不同结构的任务证据，但还没有提供“同一任务上多个真实深度模型”的完整预测向量。</div>
+<div class="pager">
+<a href="02_数据如何一步步变化.html">← 上一章</a>
+<a href="04_SafeConf系统原理.html">下一章：系统原理 →</a>
+</div>
+</main>
+</div>
+<script src="assets/tutorial.js">
+</script>
+</body>
+</html>

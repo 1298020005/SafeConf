@@ -1,0 +1,11 @@
+{
+  "experiment": "E89_sciplex3_to_sciplex4_cpa",
+  "phase": "prediction_complete_truth_unread",
+  "generated_at": "2026-07-12T13:01:39",
+  "source_tasks": 24,
+  "target_tasks": 28,
+  "target_perturbed_truth_used_for_prediction": false,
+  "gene_order_hash": "sha256:b176450e8f3d363060f0beb82bc1c1c40e98d3633e0a802fd6f1e9f91b945172",
+  "cpa_source_commit": "fbd7c0250edc23eff003a10c99655579c53afd63",
+  "environment": "cpa_runtime_env compatibility environment; pinned rerun pending"
+}

@@ -1,0 +1,45 @@
+track,panel,seed,system,arm,score_name,outcome_name,n_tasks,n_seeds,n_tasks_per_seed,spearman,ci95_lower,ci95_upper,bootstrap_valid,status
+A_single_seed,P1,11,GEARS-UQ,single_seed_own_error,native_logvar,own_rmse,24.0,1.0,24.0,0.48173913043478256,0.08529547537148831,0.7406162099740744,5000,estimable
+A_single_seed,P1,11,GEARS-UQ,single_seed_own_error,predicted_magnitude,own_rmse,24.0,1.0,24.0,0.617391304347826,0.18755477651183175,0.8963661826915377,5000,estimable
+A_single_seed,P1,22,GEARS-UQ,single_seed_own_error,native_logvar,own_rmse,24.0,1.0,24.0,0.5434782608695652,0.09298220726412278,0.8471734259209689,5000,estimable
+A_single_seed,P1,22,GEARS-UQ,single_seed_own_error,predicted_magnitude,own_rmse,24.0,1.0,24.0,0.6904347826086955,0.36165943088956687,0.8523404878512018,5000,estimable
+A_single_seed,P1,33,GEARS-UQ,single_seed_own_error,native_logvar,own_rmse,24.0,1.0,24.0,0.27478260869565213,-0.1753568854522389,0.6407646146635282,5000,estimable
+A_single_seed,P1,33,GEARS-UQ,single_seed_own_error,predicted_magnitude,own_rmse,24.0,1.0,24.0,0.728695652173913,0.38259053702677187,0.9253747708824298,5000,estimable
+A_single_seed,P2,11,GEARS-UQ,single_seed_own_error,native_logvar,own_rmse,24.0,1.0,24.0,0.2982608695652174,-0.153748442397662,0.6691511211398814,5000,estimable
+A_single_seed,P2,11,GEARS-UQ,single_seed_own_error,predicted_magnitude,own_rmse,24.0,1.0,24.0,0.568695652173913,0.24538625266057343,0.7648155361943394,5000,estimable
+A_single_seed,P2,22,GEARS-UQ,single_seed_own_error,native_logvar,own_rmse,24.0,1.0,24.0,0.5973913043478261,0.23596294483473457,0.8193020520118439,5000,estimable
+A_single_seed,P2,22,GEARS-UQ,single_seed_own_error,predicted_magnitude,own_rmse,24.0,1.0,24.0,0.5347826086956522,0.09728171620281992,0.7937123869116416,5000,estimable
+A_single_seed,P2,33,GEARS-UQ,single_seed_own_error,native_logvar,own_rmse,24.0,1.0,24.0,0.17043478260869566,-0.3143937599591718,0.5670606612112297,5000,estimable
+A_single_seed,P2,33,GEARS-UQ,single_seed_own_error,predicted_magnitude,own_rmse,24.0,1.0,24.0,0.5234782608695652,0.2031578746997088,0.7469484001053994,5000,estimable
+A_single_seed_median,P1,median_of_11_22_33,GEARS-UQ,single_seed_own_error,native_logvar,own_rmse,,3.0,24.0,0.48173913043478256,,,0,descriptive_seed_median
+A_single_seed_median,P1,median_of_11_22_33,GEARS-UQ,single_seed_own_error,predicted_magnitude,own_rmse,,3.0,24.0,0.6904347826086955,,,0,descriptive_seed_median
+A_single_seed_median,P2,median_of_11_22_33,GEARS-UQ,single_seed_own_error,native_logvar,own_rmse,,3.0,24.0,0.2982608695652174,,,0,descriptive_seed_median
+A_single_seed_median,P2,median_of_11_22_33,GEARS-UQ,single_seed_own_error,predicted_magnitude,own_rmse,,3.0,24.0,0.5347826086956522,,,0,descriptive_seed_median
+A_family,P1,,GEARS-UQ,same_prediction_family_rms,native_logvar_mean,family_rms_error,24.0,3.0,,0.4121739130434783,-0.046290699050428694,0.731242689651331,5000,estimable
+A_family,P1,,GEARS-UQ,same_prediction_family_rms,predicted_magnitude,family_rms_error,24.0,3.0,,0.6869565217391305,0.3546073535390728,0.8959801570753405,5000,estimable
+A_family,P1,,GEARS-UQ,same_prediction_family_rms,seed_disagreement,family_rms_error,24.0,3.0,,0.3608695652173913,-0.11931228991112953,0.7348065989508181,5000,estimable
+B_system,P1,,GEARS-scGPT pair,posthoc_pair,risk_gears_predicted_magnitude,task_mean_rmse,24.0,,,0.29565217391304344,-0.18018521331260595,0.7158062183532419,5000,estimable
+B_system,P1,,GEARS-scGPT pair,posthoc_pair,risk_gears_scgpt_disagreement,task_mean_rmse,24.0,,,0.588695652173913,0.20485816955413244,0.8232862571626397,5000,estimable
+B_system,P1,,GEARS-scGPT pair,posthoc_pair,risk_scgpt_predicted_magnitude,task_mean_rmse,24.0,,,0.44869565217391305,0.03763134851138354,0.7477086717642554,5000,estimable
+B_system,P1,,PRESCRIBE,paper_effect_pearson_primary,aleatoric_confidence,one_minus_pearson_effect_accuracy,24.0,,,0.08782608695652173,-0.36483508082131927,0.5091760720839068,5000,estimable
+B_system,P1,,PRESCRIBE,paper_effect_pearson_primary,combined_confidence,one_minus_pearson_effect_accuracy,24.0,,,0.049565217391304345,-0.3984282573818475,0.4744745636765308,5000,estimable
+B_system,P1,,PRESCRIBE,paper_effect_pearson_primary,epistemic_confidence,one_minus_pearson_effect_accuracy,24.0,,,0.047826086956521734,-0.39109991343066347,0.48597736152608584,5000,estimable
+B_system,P1,,PRESCRIBE,paper_effect_pearson_primary,predicted_magnitude,one_minus_pearson_effect_accuracy,24.0,,,0.046956521739130425,-0.40165721761883993,0.4727689856898811,5000,estimable
+B_system,P1,,PRESCRIBE,rmse_sensitivity,predicted_magnitude,rmse_mean_profile,24.0,,,0.033913043478260865,-0.3701282361620214,0.44439925140361813,5000,estimable
+B_system,P1,,PRESCRIBE,rmse_sensitivity,risk_aleatoric,rmse_mean_profile,24.0,,,0.07130434782608694,-0.3503138468096697,0.45916250664047326,5000,estimable
+B_system,P1,,PRESCRIBE,rmse_sensitivity,risk_combined,rmse_mean_profile,24.0,,,-0.02695652173913043,-0.43898690122031503,0.3763784050413856,5000,estimable
+B_system,P1,,PRESCRIBE,rmse_sensitivity,risk_epistemic,rmse_mean_profile,24.0,,,-0.029565217391304344,-0.4212001217170546,0.3705842050075152,5000,estimable
+A_family,P2,,GEARS-UQ,same_prediction_family_rms,native_logvar_mean,family_rms_error,24.0,3.0,,0.4539130434782608,0.028863892013498316,0.7624465055934234,5000,estimable
+A_family,P2,,GEARS-UQ,same_prediction_family_rms,predicted_magnitude,family_rms_error,24.0,3.0,,0.6799999999999999,0.3983866359835522,0.8180307129226221,5000,estimable
+A_family,P2,,GEARS-UQ,same_prediction_family_rms,seed_disagreement,family_rms_error,24.0,3.0,,0.3321739130434782,-0.1134688042508594,0.6828309305373526,5000,estimable
+B_system,P2,,GEARS-scGPT pair,posthoc_pair,risk_gears_predicted_magnitude,task_mean_rmse,24.0,,,-0.21478260869565213,-0.5455361477248286,0.16030830881211103,5000,estimable
+B_system,P2,,GEARS-scGPT pair,posthoc_pair,risk_gears_scgpt_disagreement,task_mean_rmse,24.0,,,0.2626086956521739,-0.16849039384420478,0.636850062272245,5000,estimable
+B_system,P2,,GEARS-scGPT pair,posthoc_pair,risk_scgpt_predicted_magnitude,task_mean_rmse,24.0,,,0.09999999999999999,-0.32255243343115086,0.48910993979641865,5000,estimable
+B_system,P2,,PRESCRIBE,paper_effect_pearson_primary,aleatoric_confidence,one_minus_pearson_effect_accuracy,24.0,,,-0.07391304347826086,-0.5037655882368218,0.34762649732578643,5000,estimable
+B_system,P2,,PRESCRIBE,paper_effect_pearson_primary,combined_confidence,one_minus_pearson_effect_accuracy,24.0,,,0.5843478260869565,0.20555881187662903,0.840126692878986,5000,estimable
+B_system,P2,,PRESCRIBE,paper_effect_pearson_primary,epistemic_confidence,one_minus_pearson_effect_accuracy,24.0,,,0.5756521739130435,0.19925549975648532,0.8246903571997736,5000,estimable
+B_system,P2,,PRESCRIBE,paper_effect_pearson_primary,predicted_magnitude,one_minus_pearson_effect_accuracy,24.0,,,0.5739130434782608,0.21329856824444177,0.830051901074539,5000,estimable
+B_system,P2,,PRESCRIBE,rmse_sensitivity,predicted_magnitude,rmse_mean_profile,24.0,,,0.08434782608695651,-0.38468440099187434,0.5183574470625696,5000,estimable
+B_system,P2,,PRESCRIBE,rmse_sensitivity,risk_aleatoric,rmse_mean_profile,24.0,,,-0.4017391304347826,-0.7370813732052003,0.04073587385019711,5000,estimable
+B_system,P2,,PRESCRIBE,rmse_sensitivity,risk_combined,rmse_mean_profile,24.0,,,-0.08521739130434783,-0.5549020994309581,0.3960031508137415,5000,estimable
+B_system,P2,,PRESCRIBE,rmse_sensitivity,risk_epistemic,rmse_mean_profile,24.0,,,-0.07739130434782608,-0.536116774063073,0.3918482162376715,5000,estimable

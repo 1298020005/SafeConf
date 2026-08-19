@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="566.337769pt" height="167.769938pt" viewBox="0 0 566.337769 167.769938" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-07-19T01:32:14.107694</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 167.769938
+L 566.337769 167.769938
+L 566.337769 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 17.6904 112.059938
+L 117.3492 112.059938
+L 117.3492 59.391938
+L 17.6904 59.391938
+z
+" clip-path="url(#p675e0b103d)" style="fill: #e8f1f5; stroke: #667085; stroke-width: 1.1; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 148.8204 112.059938
+L 248.4792 112.059938
+L 248.4792 59.391938
+L 148.8204 59.391938
+z
+" clip-path="url(#p675e0b103d)" style="fill: #e8f1f5; stroke: #667085; stroke-width: 1.1; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 279.9504 112.059938
+L 379.6092 112.059938
+L 379.6092 59.391938
+L 279.9504 59.391938
+z
+" clip-path="url(#p675e0b103d)" style="fill: #e7f3ec; stroke: #667085; stroke-width: 1.1; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 411.0804 112.059938
+L 510.7392 112.059938
+L 510.7392 59.391938
+L 411.0804 59.391938
+z
+" clip-path="url(#p675e0b103d)" style="fill: #fff3e3; stroke: #667085; stroke-width: 1.1; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(44.169019 82.948031)">Two frozen</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(29.346441 93.605719)">prediction vectors</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(188.6373 82.948031)">RIAG</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(178.326675 93.605719)">G2/G3/G4</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(299.219878 82.829063)">Pair certificate</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(307.860581 93.724688)">d(p1,p2)/2</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(416.917378 82.853813)">Validation increment</text>
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif" transform="translate(430.385738 93.5115)">vs magnitude?</text>
+   </g>
+   <g id="patch_6">
+    <path d="M 119.345923 85.725938
+Q 131.770488 85.725938 143.07702 85.725938
+" style="fill: none; stroke: #667085; stroke-linecap: round"/>
+    <path d="M 139.47702 83.925938
+L 143.07702 85.725938
+L 139.47702 87.525938
+" style="fill: none; stroke: #667085; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 250.475923 85.725938
+Q 262.900488 85.725938 274.20702 85.725938
+" style="fill: none; stroke: #667085; stroke-linecap: round"/>
+    <path d="M 270.60702 83.925938
+L 274.20702 85.725938
+L 270.60702 87.525938
+" style="fill: none; stroke: #667085; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 381.605923 85.725938
+Q 394.030488 85.725938 405.33702 85.725938
+" style="fill: none; stroke: #667085; stroke-linecap: round"/>
+    <path d="M 401.73702 83.925938
+L 405.33702 85.725938
+L 401.73702 87.525938
+" style="fill: none; stroke: #667085; stroke-linecap: round"/>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #176b87" x="460.9098" y="130.077938" transform="rotate(-0 460.9098 130.077938)">PASS → calibrated router</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 9px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #c94c4c" x="460.9098" y="146.709938" transform="rotate(-0 460.9098 146.709938)">FAIL → ABSTAIN; retain certificate + magnitude</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 10.8px; font-family: 'Noto Sans CJK JP', 'DejaVu Sans', sans-serif; text-anchor: start" x="7.2" y="15.969938" transform="rotate(-0 7.2 15.969938)">Falsification-aware SafeConf-Cert decision path</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p675e0b103d">
+   <rect x="7.2" y="21.969938" width="524.52" height="138.6"/>
+  </clipPath>
+ </defs>
+</svg>

@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1640" height="1496" viewBox="0 0 1640 1496">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<style>text{font-family:Arial,"Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#27323c}.t{font-size:27px;font-weight:700}.s{font-size:16px;fill:#5d6b78}.l{font-size:14px}.sm{font-size:12px;fill:#5d6b78}</style>
+<text class="t" x="55" y="45">E59｜总分相对预测幅度的增益</text>
+<text class="s" x="55" y="75">点为 ρ(full risk) − ρ(predicted magnitude)，线为 bootstrap 95% CI；正值说明总分排序更好。</text>
+<line x1="560.0" y1="98" x2="560.0" y2="1451" stroke="#e2e8f0" stroke-width="1"/>
+<text class="sm" x="560.0" y="88" text-anchor="middle">-1</text>
+<line x1="797.5" y1="98" x2="797.5" y2="1451" stroke="#e2e8f0" stroke-width="1"/>
+<text class="sm" x="797.5" y="88" text-anchor="middle">-0.5</text>
+<line x1="1035.0" y1="98" x2="1035.0" y2="1451" stroke="#94a3b8" stroke-width="2"/>
+<text class="sm" x="1035.0" y="88" text-anchor="middle">0</text>
+<line x1="1272.5" y1="98" x2="1272.5" y2="1451" stroke="#e2e8f0" stroke-width="1"/>
+<text class="sm" x="1272.5" y="88" text-anchor="middle">0.5</text>
+<line x1="1510.0" y1="98" x2="1510.0" y2="1451" stroke="#e2e8f0" stroke-width="1"/>
+<text class="sm" x="1510.0" y="88" text-anchor="middle">1</text>
+<text class="l" x="547" y="123" text-anchor="end">KaggleCrossCell_celltype -&gt; KaggleCrossPatient_celltype</text>
+<line x1="1023.5" y1="118" x2="1319.0" y2="118" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+<circle cx="1169.4" cy="118" r="7" fill="#64748b"/>
+<text class="sm" x="1570" y="123" text-anchor="middle">n=38</text>
+<text class="l" x="547" y="171" text-anchor="end">Lara_exvivo_celltype -&gt; Lara_leukemia_celltype</text>
+<line x1="1056.0" y1="166" x2="1251.1" y2="166" stroke="#137c8b" stroke-width="5" stroke-linecap="round"/>
+<circle cx="1150.6" cy="166" r="7" fill="#137c8b"/>
+<text class="sm" x="1570" y="171" text-anchor="middle">n=147</text>
+<text class="l" x="547" y="219" text-anchor="end">crossPatient_patient -&gt; McFarland_cellline</text>
+<line x1="970.2" y1="214" x2="1128.5" y2="214" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+<circle cx="1050.9" cy="214" r="7" fill="#64748b"/>
+<text class="sm" x="1570" y="219" text-anchor="middle">n=42</text>
+<text class="l" x="547" y="267" text-anchor="end">KaggleCrossCell_celltype -&gt; KaggleCrossPatient_donor</text>
+<line x1="986.1" y1="262" x2="1116.1" y2="262" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+<circle cx="1050.6" cy="262" r="7" fill="#64748b"/>
+<text class="sm" x="1570" y="267" text-anchor="middle">n=30</text>
+<text class="l" x="547" y="315" text-anchor="end">TianInhibition_batch -&gt; Adamson_global</text>
+<line x1="1035.0" y1="310" x2="1035.0" y2="310" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+<circle cx="1035.0" cy="310" r="7" fill="#64748b"/>
+<text class="sm" x="1570" y="315" text-anchor="middle">n=76</text>
+<text class="l" x="547" y="363" text-anchor="end">KaggleCrossCell_celltype -&gt; McFarland_cellline</text>
+<line x1="933.9" y1="358" x2="1148.9" y2="358" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+<circle cx="1034.5" cy="358" r="7" fill="#64748b"/>
+<text class="sm" x="1570" y="363" text-anchor="middle">n=42</text>
+<text class="l" x="547" y="411" text-anchor="end">KaggleCrossPatient_celltype -&gt; McFarland_cellline</text>
+<line x1="938.9" y1="406" x2="1104.5" y2="406" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+<circle cx="1026.8" cy="406" r="7" fill="#64748b"/>
+<text class="sm" x="1570" y="411" text-anchor="middle">n=42</text>
+<text class="l" x="547" y="459" text-anchor="end">Replogle_exp7_global -&gt; Replogle_exp8_global</text>
+<line x1="853.4" y1="454" x2="1206.5" y2="454" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+<circle cx="1025.8" cy="454" r="7" fill="#64748b"/>
+<text class="sm" x="1570" y="459" text-anchor="middle">n=61</text>
+<text class="l" x="547" y="507" text-anchor="end">sciplex3_cellline -&gt; McFarland_cellline</text>
+<line x1="898.4" y1="502" x2="1117.3" y2="502" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+<circle cx="1008.9" cy="502" r="7" fill="#64748b"/>
+<text class="sm" x="1570" y="507" text-anchor="middle">n=42</text>
+<text class="l" x="547" y="555" text-anchor="end">crossPatient_patient -&gt; KaggleCrossPatient_celltype</text>
+<line x1="877.8" y1="550" x2="1117.6" y2="550" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+<circle cx="997.7" cy="550" r="7" fill="#64748b"/>
+<text class="sm" x="1570" y="555" text-anchor="middle">n=38</text>
+<text class="l" x="547" y="603" text-anchor="end">Replogle_exp7_global -&gt; Adamson_global</text>
+<line x1="846.6" y1="598" x2="1107.6" y2="598" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+<circle cx="987.6" cy="598" r="7" fill="#64748b"/>
+<text class="sm" x="1570" y="603" text-anchor="middle">n=76</text>
+<text class="l" x="547" y="651" text-anchor="end">sciplex3_cellline -&gt; KaggleCrossPatient_celltype</text>
+<line x1="858.5" y1="646" x2="1121.3" y2="646" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+<circle cx="986.1" cy="646" r="7" fill="#64748b"/>
+<text class="sm" x="1570" y="651" text-anchor="middle">n=38</text>
+<text class="l" x="547" y="699" text-anchor="end">Lara_exvivo_celltype -&gt; Lara_invivo_celltype</text>
+<line x1="917.7" y1="694" x2="1017.9" y2="694" stroke="#b45309" stroke-width="5" stroke-linecap="round"/>
+<circle cx="967.3" cy="694" r="7" fill="#b45309"/>
+<text class="sm" x="1570" y="699" text-anchor="middle">n=249</text>
+<text class="l" x="547" y="747" text-anchor="end">Replogle_exp7_global -&gt; Replogle_exp6_global</text>
+<line x1="778.3" y1="742" x2="1109.6" y2="742" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+<circle cx="951.9" cy="742" r="7" fill="#64748b"/>
+<text class="sm" x="1570" y="747" text-anchor="middle">n=69</text>
+<text class="l" x="547" y="795" text-anchor="end">TianActivation_batch -&gt; TianInhibition_batch</text>
+<line x1="898.6" y1="790" x2="983.7" y2="790" stroke="#b45309" stroke-width="5" stroke-linecap="round"/>
+<circle cx="940.0" cy="790" r="7" fill="#b45309"/>
+<text class="sm" x="1570" y="795" text-anchor="middle">n=705</text>
+<text class="l" x="547" y="843" text-anchor="end">Replogle_exp6_global -&gt; Replogle_exp8_global</text>
+<line x1="755.5" y1="838" x2="1035.0" y2="838" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+<circle cx="936.2" cy="838" r="7" fill="#64748b"/>
+<text class="sm" x="1570" y="843" text-anchor="middle">n=61</text>
+<text class="l" x="547" y="891" text-anchor="end">TianInhibition_batch -&gt; TianActivation_batch</text>
+<line x1="865.9" y1="886" x2="1006.9" y2="886" stroke="#b45309" stroke-width="5" stroke-linecap="round"/>
+<circle cx="934.3" cy="886" r="7" fill="#b45309"/>
+<text class="sm" x="1570" y="891" text-anchor="middle">n=184</text>
+<text class="l" x="547" y="939" text-anchor="end">Adamson_global -&gt; Replogle_exp7_global</text>
+<line x1="786.5" y1="934" x2="1035.0" y2="934" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+<circle cx="926.6" cy="934" r="7" fill="#64748b"/>
+<text class="sm" x="1570" y="939" text-anchor="middle">n=104</text>
+<text class="l" x="547" y="987" text-anchor="end">Adamson_global -&gt; TianInhibition_batch</text>
+<line x1="881.1" y1="982" x2="965.1" y2="982" stroke="#b45309" stroke-width="5" stroke-linecap="round"/>
+<circle cx="920.1" cy="982" r="7" fill="#b45309"/>
+<text class="sm" x="1570" y="987" text-anchor="middle">n=705</text>
+<text class="l" x="547" y="1035" text-anchor="end">Lara_invivo_celltype -&gt; Lara_leukemia_celltype</text>
+<line x1="847.5" y1="1030" x2="966.6" y2="1030" stroke="#b45309" stroke-width="5" stroke-linecap="round"/>
+<circle cx="908.0" cy="1030" r="7" fill="#b45309"/>
+<text class="sm" x="1570" y="1035" text-anchor="middle">n=147</text>
+<text class="l" x="547" y="1083" text-anchor="end">Replogle_exp6_global -&gt; Replogle_exp7_global</text>
+<line x1="776.2" y1="1078" x2="1035.0" y2="1078" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+<circle cx="901.7" cy="1078" r="7" fill="#64748b"/>
+<text class="sm" x="1570" y="1083" text-anchor="middle">n=104</text>
+<text class="l" x="547" y="1131" text-anchor="end">Lara_leukemia_celltype -&gt; Lara_exvivo_celltype</text>
+<line x1="836.5" y1="1126" x2="911.5" y2="1126" stroke="#b45309" stroke-width="5" stroke-linecap="round"/>
+<circle cx="874.3" cy="1126" r="7" fill="#b45309"/>
+<text class="sm" x="1570" y="1131" text-anchor="middle">n=288</text>
+<text class="l" x="547" y="1179" text-anchor="end">Replogle_exp8_global -&gt; Replogle_exp6_global</text>
+<line x1="703.7" y1="1174" x2="1035.0" y2="1174" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+<circle cx="863.1" cy="1174" r="7" fill="#64748b"/>
+<text class="sm" x="1570" y="1179" text-anchor="middle">n=69</text>
+<text class="l" x="547" y="1227" text-anchor="end">Lara_leukemia_celltype -&gt; Lara_invivo_celltype</text>
+<line x1="815.9" y1="1222" x2="901.4" y2="1222" stroke="#b45309" stroke-width="5" stroke-linecap="round"/>
+<circle cx="862.1" cy="1222" r="7" fill="#b45309"/>
+<text class="sm" x="1570" y="1227" text-anchor="middle">n=249</text>
+<text class="l" x="547" y="1275" text-anchor="end">Lara_invivo_celltype -&gt; Lara_exvivo_celltype</text>
+<line x1="809.1" y1="1270" x2="893.3" y2="1270" stroke="#b45309" stroke-width="5" stroke-linecap="round"/>
+<circle cx="851.4" cy="1270" r="7" fill="#b45309"/>
+<text class="sm" x="1570" y="1275" text-anchor="middle">n=288</text>
+<text class="l" x="547" y="1323" text-anchor="end">Replogle_exp8_global -&gt; Replogle_exp7_global</text>
+<line x1="637.8" y1="1318" x2="904.6" y2="1318" stroke="#b45309" stroke-width="5" stroke-linecap="round"/>
+<circle cx="763.8" cy="1318" r="7" fill="#b45309"/>
+<text class="sm" x="1570" y="1323" text-anchor="middle">n=104</text>
+<text class="l" x="547" y="1371" text-anchor="end">McFarland_cellline -&gt; KaggleCrossPatient_celltype</text>
+<line x1="1510.0" y1="1366" x2="1510.0" y2="1366" stroke="#64748b" stroke-width="5" stroke-linecap="round"/>
+<circle cx="1510.0" cy="1366" r="7" fill="#64748b"/>
+<text class="sm" x="1570" y="1371" text-anchor="middle">n=38</text>
+</svg>

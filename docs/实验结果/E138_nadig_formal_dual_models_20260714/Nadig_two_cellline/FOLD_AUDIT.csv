@@ -1,0 +1,3 @@
+fold_id,source_contexts,n_go_edges,n_coexpression_edges,n_source_control_cells,scgpt_pretrained_tensors,test_truth_used_for_training_calibration_or_score
+Nadig_cellline_holdout_1_HepG2,Jurkat,1386,682,12013,129,False
+Nadig_cellline_holdout_2_Jurkat,HepG2,1386,822,4976,129,False

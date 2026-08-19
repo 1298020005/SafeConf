@@ -1,0 +1,13 @@
+seed,split,score,n_rows,all_finite,exact_unique,sample_std_ddof1,required_unique,required_std_strictly_greater_than,estimable,failure_code,downstream_statistic
+3407,test_label_only,raw_log_prob,48,True,48,87499.410661842223,2,9.9999999999999998e-13,True,,eligible
+3407,test_label_only,official_combined_confidence,48,True,1,0,2,9.9999999999999998e-13,False,constant_or_nonfinite_baseline,NA
+3407,test_label_only,predicted_magnitude_rms,48,True,1,0,2,9.9999999999999998e-13,False,constant_or_nonfinite_baseline,NA
+3407,test_label_only,predicted_pca10_vector,48,True,1,0,2,9.9999999999999998e-13,False,constant_or_nonfinite_prediction,retain_prediction_and_disclose_collapse
+3408,test_label_only,raw_log_prob,48,True,48,6232.1117597814246,2,9.9999999999999998e-13,True,,eligible
+3408,test_label_only,official_combined_confidence,48,True,1,0,2,9.9999999999999998e-13,False,constant_or_nonfinite_baseline,NA
+3408,test_label_only,predicted_magnitude_rms,48,True,1,0,2,9.9999999999999998e-13,False,constant_or_nonfinite_baseline,NA
+3408,test_label_only,predicted_pca10_vector,48,True,1,0,2,9.9999999999999998e-13,False,constant_or_nonfinite_prediction,retain_prediction_and_disclose_collapse
+3409,test_label_only,raw_log_prob,48,True,48,37212.051730076368,2,9.9999999999999998e-13,True,,eligible
+3409,test_label_only,official_combined_confidence,48,True,1,0,2,9.9999999999999998e-13,False,constant_or_nonfinite_baseline,NA
+3409,test_label_only,predicted_magnitude_rms,48,True,1,0,2,9.9999999999999998e-13,False,constant_or_nonfinite_baseline,NA
+3409,test_label_only,predicted_pca10_vector,48,True,1,0,2,9.9999999999999998e-13,False,constant_or_nonfinite_prediction,retain_prediction_and_disclose_collapse

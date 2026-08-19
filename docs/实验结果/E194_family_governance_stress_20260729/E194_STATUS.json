@@ -1,0 +1,44 @@
+{
+  "experiment": "E194",
+  "stage": "POSTTRUTH_FAMILY_GOVERNANCE_STRESS",
+  "status": "PASS",
+  "frozen_analysis": "ANALYSIS_FREEZE.md",
+  "datasets": {
+    "E190_K562": {
+      "n_tasks": 692,
+      "n_gene_clusters": 47,
+      "target": "Replogle K562"
+    },
+    "E192_RPE1": {
+      "n_tasks": 175,
+      "n_gene_clusters": 21,
+      "target": "Replogle RPE1"
+    }
+  },
+  "geometries": [
+    "absolute_rmse",
+    "cosine",
+    "pearson"
+  ],
+  "primary_family": "A0_primary_balanced_3x3",
+  "n_task_rows": 134385,
+  "n_scenario_summaries": 310,
+  "n_family_member_rows": 1608,
+  "family_lower_violations": 0,
+  "worst_lower_violations": 0,
+  "max_identity_residual": 6.661338147750939e-16,
+  "invariant_passed": 492,
+  "invariant_total": 492,
+  "thresholds": {
+    "lower_bound": 1e-10,
+    "identity": 1e-10,
+    "invariant": 1e-10
+  },
+  "bootstrap": {
+    "unit": "gene_cluster",
+    "spearman_replicates": 5000,
+    "utility_replicates": 3000,
+    "utility_budget": 0.2
+  },
+  "claim_boundary": "The deterministic certificate is family-conditional. Family construction and weighting are part of the estimand."
+}

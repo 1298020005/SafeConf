@@ -1,0 +1,29 @@
+{
+  "deployment_authorized": false,
+  "e174_calibration_truth_used": false,
+  "e174_evaluation_truth_used": false,
+  "e174_heldout_donor_targeting_x_values_read": 0,
+  "experiment": "E175_e174_seed_extension_development",
+  "extra_seeds": [
+    3410,
+    3411
+  ],
+  "git_branch": "exp/task-risk-audit-20260611",
+  "git_head": "bb30542437900bc50a24ec53ef6cea7e228cf47b",
+  "panel_id": "R03",
+  "prediction_tasks": 2160,
+  "primary_output_sha256": {
+    "arrays/EXTRA_SEED_PREDICTIONS.npz": "2616c69dc6ef25e729314588ef58fce913a47fce1116cf33998c819134f415dd",
+    "tables/INPUT_HASHES.csv": "1e16a19d74aa1362d968597a94fc93e5c6f5b5f68b1d16b4528b5e325cf9b96e",
+    "tables/MODEL_AUDIT.csv": "19f0fd9b9bf457ba52907eb82b19a9d837e4422db1b58653ad6d084fd92474b8",
+    "tables/TRAINING_HISTORY.csv": "42e033e1b9b70b35379196fbb55a6dca09fbddbd1bc14758b52754a667155070"
+  },
+  "remote_heads": {
+    "github": "bb30542437900bc50a24ec53ef6cea7e228cf47b",
+    "origin": "bb30542437900bc50a24ec53ef6cea7e228cf47b"
+  },
+  "schema": "safeconf_e175_extra_seed_panel_status_v1",
+  "stage": "TRUTH_BLIND_EXTRA_SEED_TRAINING",
+  "status": "COMPLETE",
+  "test_query_graphs_containing_y": 0
+}

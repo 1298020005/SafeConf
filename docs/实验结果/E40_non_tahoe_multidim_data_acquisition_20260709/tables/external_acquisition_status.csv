@@ -1,0 +1,4 @@
+external_dataset,dimension,local_status,downloaded_size_gb,local_relative_path,role_for_safeconf
+Tahoe-100M pseudobulk differential expression,大规模化学扰动 / pseudobulk DE,1026/1026 parquet present,88.86,mega_external/Tahoe-100M/metadata/pseudobulk_differential_expression,已用于 Tahoe chemical D1-D5；可继续做细胞系/药物/分片稳定性。
+Tahoe-100M raw single-cell shards,大规模单细胞原始层 / raw parquet shards,"190 complete, 654 partial, 3388 expected; raw schema confirmed",84.405,mega_external/Tahoe-100M/data,正在补原始层；已确认 drug/cell_line_id/moa-fine/canonical_smiles/pubchem_cid/plate 字段，可做药物、细胞系、MoA、SMILES、plate/batch 分层。
+OpenProblems / NeurIPS 2023 single-cell perturbations,PBMC 小分子扰动 / 多供体 / 多细胞类型 / baseline multiome 背景,"35 official objects identified; 15 complete, 11 partial",42.055,mega_external/OpenProblems_NeurIPS2023_single_cell_perturbations,新补数据源；workflow Kaggle DGE、pseudobulk、id_map、prediction、score 已可读，可先做独立 chemical benchmark。

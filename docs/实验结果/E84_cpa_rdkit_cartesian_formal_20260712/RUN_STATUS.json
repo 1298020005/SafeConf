@@ -1,0 +1,24 @@
+{
+  "experiment": "E84_cpa_rdkit_cartesian_formal",
+  "generated_at": "2026-07-12T12:19:51",
+  "development_manifest_excluded": "E81_r1_p75",
+  "formal_manifests": [
+    "E81_r1_p25",
+    "E81_r1_p50",
+    "E81_r2_p25",
+    "E81_r2_p50",
+    "E81_r2_p75",
+    "E81_r3_p25",
+    "E81_r3_p50",
+    "E81_r3_p75"
+  ],
+  "epochs_fixed": 20,
+  "n_manifest_tasks": 629,
+  "n_prediction_records": 1258,
+  "strict_issue_count": 0,
+  "triangle_pair_mean_violations": 0,
+  "triangle_pair_max_violations": 0,
+  "target_truth_used_for_scores": false,
+  "target_truth_used_for_evaluation_only": true,
+  "inference_scope": "within-dataset repeated frozen manifests; not independent datasets"
+}

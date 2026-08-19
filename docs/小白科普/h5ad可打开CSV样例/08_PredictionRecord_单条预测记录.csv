@@ -1,0 +1,2 @@
+record_id,task_id,task_key,dataset_name,fold_id,split,context,perturbation,predictor_name,predicted_effect_key,true_effect_key,target_control_key,true_error_rmse,true_error_cosine,true_error_top20
+v2_rec_000930,3,McFarlandTsherniak2020::task_00003,McFarlandTsherniak2020,0,test,22RV1,Trametinib,V0StrongBaseline,v2_rec_000930::predicted_effect,v2_rec_000930::true_effect,v2_rec_000930::target_control_mean,0.5776326701112968,0.1539217189347875,0.35

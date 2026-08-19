@@ -1,0 +1,13 @@
+{
+  "experiment": "E107_frangieh_context_gears",
+  "generated_at": "2026-07-13T10:31:41",
+  "status": "complete",
+  "completed_folds": [
+    "frangieh_context_holdout_1_Co-culture",
+    "frangieh_context_holdout_2_Control",
+    "frangieh_context_holdout_3_IFNγ"
+  ],
+  "missing_folds": [],
+  "test_target_used_for_training_or_selection": false,
+  "n_test_task_records": 837
+}

@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "safeconf-audit"
+version = "0.1.0"
+description = "Minimal one-command auditor for SafeConf frozen perturbation-audit tables (E199/E200; E201 hook)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = ["numpy", "pandas", "scipy"]
+
+[project.scripts]
+safeconf-audit = "safeconf_audit.verify:main"
+
+[tool.setuptools.packages.find]
+include = ["safeconf_audit*"]

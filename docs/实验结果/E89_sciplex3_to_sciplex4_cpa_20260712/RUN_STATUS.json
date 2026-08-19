@@ -1,0 +1,13 @@
+{
+  "experiment": "E89_sciplex3_to_sciplex4_cpa",
+  "phase": "evaluation_complete",
+  "generated_at": "2026-07-12T13:05:10",
+  "source_tasks": 24,
+  "target_tasks": 28,
+  "n_prediction_records": 56,
+  "strict_issue_count": 0,
+  "triangle_mean_violations": 0,
+  "triangle_max_violations": 0,
+  "target_truth_used_for_scores": false,
+  "target_truth_used_for_evaluation_only": true
+}

@@ -1,0 +1,2 @@
+dataset,n_seeds,all_status_ok,mean_test_mse,mean_test_mse_de,mean_test_pearson,mean_test_pearson_de,total_prediction_records,unique_perturbations,mean_true_error_rmse,median_true_error_rmse,mean_true_error_cosine,uncertainty_logvar_non_null,uncertainty_confidence_non_null
+frangieh,3,True,0.0014365167947419002,0.005415552275787466,0.9958326818035443,0.9382268651727522,62,58,0.03564621408980696,0.0309730237349867,0.8404973568547921,0,0

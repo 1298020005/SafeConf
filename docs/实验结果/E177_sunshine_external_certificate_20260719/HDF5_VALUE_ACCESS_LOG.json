@@ -1,0 +1,16 @@
+{
+  "X_values_read": 0,
+  "experiment": "E177_sunshine_external_certificate",
+  "layers_values_read": 0,
+  "obs_rows_read": 90380,
+  "planned_row_access_by_phase": {
+    "POSTCALIBRATION_EVALUATION_TRUTH_X": 6226,
+    "POSTGATE_CALIBRATION_TRUTH_X": 5595,
+    "PRETRUTH_CONTROL_X": 2500,
+    "PRETRUTH_TRAIN_X": 8146,
+    "PRETRUTH_VALIDATION_X": 1193
+  },
+  "schema": "safeconf_e177_freeze_access_log_v1",
+  "stage": "F1_METADATA_FREEZE",
+  "var_names_read": 33538
+}

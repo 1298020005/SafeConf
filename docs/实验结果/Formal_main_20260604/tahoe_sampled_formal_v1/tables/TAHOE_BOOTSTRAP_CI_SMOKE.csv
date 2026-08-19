@@ -1,0 +1,3 @@
+dataset_name,predictor_name,score_name,n_bootstrap,aligned_rho_bootstrap_mean,aligned_rho_ci_low,aligned_rho_ci_high
+Tahoe100M_pseudobulk_smoke,V0DrugMeanAcrossDose,tahoe_protocol_v0_2_confidence,300,0.33880369473190536,0.2952750441355173,0.38074109442769405
+Tahoe100M_pseudobulk_smoke,V0ExactDoseMean,tahoe_protocol_v0_2_confidence,300,0.33118820432362084,0.2939289689784197,0.3728872949995688

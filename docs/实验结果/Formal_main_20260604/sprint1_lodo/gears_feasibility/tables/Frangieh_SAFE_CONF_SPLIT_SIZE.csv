@@ -1,0 +1,16 @@
+fold_id,split,n_tasks,n_contexts,n_perturbations
+0,test,126,3,108
+0,train,431,3,211
+0,val,76,3,66
+1,test,127,3,110
+1,train,430,3,209
+1,val,76,3,66
+2,test,127,3,101
+2,train,430,3,210
+2,val,76,3,68
+3,test,127,3,101
+3,train,430,3,211
+3,val,76,3,70
+4,test,126,3,101
+4,train,431,3,211
+4,val,76,3,68

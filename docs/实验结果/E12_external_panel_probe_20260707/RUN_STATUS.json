@@ -1,0 +1,21 @@
+{
+  "status": "ok",
+  "generated_at": "2026-07-07T06:34:06",
+  "script": "tools/scripts/package_e12_external_panel_probe.py",
+  "output_dir": "docs/实验结果/E12_external_panel_probe_20260707",
+  "runtime_source": "runtime/e12_external_panel_probe_20260707",
+  "input_git_commit": "edca54c16474e77dc0c46436a256ceb86c45eefc",
+  "best_overall_score": "model_disagreement_risk",
+  "best_overall_aligned_spearman": 0.7344056978518413,
+  "best_overall_risk_cov_80_improve_pct": 10.040206664610844,
+  "evaluable_datasets": [
+    "KaggleCrossPatient",
+    "crossPatient",
+    "sciplex3"
+  ],
+  "not_evaluable_under_heldout_pair": [
+    "TCDD",
+    "kangCrossCell",
+    "kangCrossPatient"
+  ]
+}

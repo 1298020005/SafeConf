@@ -1,0 +1,5 @@
+run_dir,dataset,n,status
+outputs/safeconf_external_drop_blank_inputs_20260610/ShifrutMarson2018,['ShifrutMarson2018'],400,ok
+outputs/safeconf_supplement_v02_20260605/XieHon2017,['XieHon2017'],1660,ok
+outputs/confidence_task_crossPatient_blind,['crossPatient'],60,ok
+outputs/confidence_task_kcp_blind_probe,['KaggleCrossPatient'],400,ok

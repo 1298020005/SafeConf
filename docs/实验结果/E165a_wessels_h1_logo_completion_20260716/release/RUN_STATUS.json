@@ -1,0 +1,25 @@
+{
+  "E165_H1_passed_unchanged": true,
+  "artifact_sha256": {
+    ".E165a_TRANSACTION.json": "1429664aec03ae56c151f038da3bf92617d610d4984f411bf8a6be03dfd17684",
+    "README_先看这个.md": "34210c81203222a30675d0d2c4726b1005ea269909f1e2e8b2f46ccd86716ab1",
+    "reports/E165a_REPORT.md": "017a9a991ced7c00e1bac84ecad40df523316133523a948a0047c871ad9d89b4",
+    "tables/E165a_H1_LOGO.csv": "ff2f5c7ac934eeaf7e9a7c2630f3c27aabd231d37f57b0a2cb63c73d061b8725",
+    "tables/E165a_INPUT_HASHES.csv": "8eb50a4a4679fd7a4e7ed268b9e29beab2ce30947dbff714e6606031095cb2f6"
+  },
+  "completed_at": "2026-07-16T18:53:57+08:00",
+  "expression_rows_indexed": 0,
+  "full_H1_point": 0.028058850033891802,
+  "git_head": "d14a9001f8fa3832bd6e1f54be27bf705dda5912",
+  "logo_fraction_positive": 1.0,
+  "logo_max": 0.03163318102984192,
+  "logo_median": 0.027903156962352377,
+  "logo_min": 0.02572910640150455,
+  "n_component_genes": 22,
+  "phase": "complete_postpublication_contract_completion_no_raw_access",
+  "raw_Wessels_opened": false,
+  "results_manifest_sha256": "c91d1dc71b66a27db02c2c75584de613624e65dece17cd78f635d22ad5285fcd",
+  "schema": "safeconf_e165a_h1_logo_completion_v1",
+  "test_truth_profiles_reopened": false,
+  "transaction_id": "e0ebe369206a4d0c848dbb19177e707b"
+}

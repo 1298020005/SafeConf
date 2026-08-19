@@ -1,0 +1,38 @@
+{
+  "artifact_sha256": {
+    "MODEL_INPUT_LOCK.json": "dbb78fc878ad161dddacb647e13f0f8aa3702569bf0c037d5262b5547283eb68",
+    "PREREG_ANALYSIS_PLAN.md": "87746e461e7e0c7a3eb47ecfc24865922a23516143cdb42c31fcbed8b9938d12",
+    "PRIOR_PROJECT_USE_AUDIT.json": "c555e8e4164d2bc4a3c4d34405c8e7680a21a98f957716a8722e8f842225433d",
+    "README_先看这个.md": "71471736ff41d8bba730994b98f2a566ef708b19e2a2ff229438d7cfd2cbc78e",
+    "SOURCE_LOCK.json": "7602f505f4d55c802471a304250c2b44b1bde4663de9b2ab7146691414b2f921",
+    "STATISTICAL_ANALYSIS_LOCK.json": "53f417f6fec4ea08e61dbefab0e7fc81fa4a96ebc8c14448be5d335f1bfe9aab",
+    "manifests/E182_GUIDE_TASK_MANIFEST.csv": "dc06e214a6bcbc309667783d0b86325339b53bd49e59ba8bb8d9345580dcae5d",
+    "manifests/E182_ROW_ACCESS_MANIFEST.csv": "de103e9f71a21ec5fdcb4c5dedb71fa5cf45bd2a61a45cce344c5a70fc678fbd",
+    "manifests/E182_SELECTED_TARGETS.csv": "06cffe1b1c8e89afc178ff20bb1e6c045e0c2aedfdc45af153ff8a33c262242b",
+    "reports/E182_METADATA_FREEZE_REPORT.md": "fa04e86cb7ab827d452e236447fe447de5b3d4ddaf6426f1fb5a37e78a739a0d",
+    "tables/E182_TARGET_METADATA_AUDIT.csv": "94de7dc10d681712f7af9d254618c0d4dcb4fa5db00fd024673a07656e9a858e"
+  },
+  "expression_matrix_x_values_read_during_f1_freeze": 0,
+  "freeze_passed": true,
+  "n_control_cells": 91,
+  "n_eligible_targets": 76,
+  "n_guide_tasks": 152,
+  "n_observed_targets": 94,
+  "prior_project_use_mentions": 0,
+  "runner": "tools/scripts/freeze_e182_gse225807_certificate.py",
+  "runner_sha256": "b53d32a3a9c1b8a0890f66d665bbf36c2267bded03466f413cd76949c89a92d6",
+  "schema": "safeconf_e182_metadata_freeze_v1",
+  "source_shape": [
+    17424,
+    33538
+  ],
+  "stage": "F1_METADATA_FREEZE",
+  "status": "F1_METADATA_FROZEN",
+  "target_split_counts": {
+    "conformal_calibration": 19,
+    "model_validation": 9,
+    "prospective_evaluation": 20,
+    "supervised_train": 28
+  },
+  "x_values_read_during_freeze": 0
+}

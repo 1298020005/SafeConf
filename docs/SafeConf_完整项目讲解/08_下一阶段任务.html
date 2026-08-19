@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>08 下一阶段任务</title>
+<link rel="stylesheet" href="assets/tutorial.css">
+</head>
+<body>
+<header class="top">
+<div class="topin">
+<a class="brand" href="index.html">SafeConf 完整项目讲解</a>
+<a class="back" href="../../SafeConf_统一研究工作台.html">返回工作台</a>
+</div>
+</header>
+<div class="layout">
+<aside class="side" id="chapterNav">
+</aside>
+<main class="content">
+<section class="hero">
+<p class="eyebrow">CHAPTER 08</p>
+<h1>下一阶段：完成当前版本，审计扩展条件</h1>
+<p class="lead">当前工作包括证据收口、复现检查和外部验证设计。E10–E17 已完成外部数据资产审计和官方 sciplex3 full-743 5,000-gene formal panel；E18–E32 已完成真实模型预测向量资产审计、GEARS-only supplement、adapter 合同体检、strict 修法 smoke、生成器 strict smoke、shared benchmark adapter 地基、模型家族兼容性审计、GEARS strict-pass 证据包、GEARS-only 单模型风险审计、scGPT forward-only strict smoke、GEARS–scGPT shared Adamson smoke、7-task 小样本风险审计、GEARS seed-overlap 可行性审计、GEARS fixed-test split smoke 和 fixed-test 3-seed smoke。模型级扩展下一步应把 fixed-test 3-seed 提升到正式 epochs、扩大到更多共享任务/数据集，或继续接 CPA adapter。</p>
+<div class="chips">
+<span class="chip green">优先：封口与复现</span>
+<span class="chip amber">条件成立才扩展</span>
+<span class="chip">每一步有验收标准</span>
+</div>
+</section>
+<h2>1. 全局路线</h2>
+<figure class="figure">
+<div class="flow">
+<div class="node">
+<b>A1 冻结结论</b>
+<small>哪些成立，哪些失败</small>
+</div>
+<div class="node">
+<b>A2 统一产物</b>
+<small>表、图、文字、路径一致</small>
+</div>
+<div class="node">
+<b>A3 一键复现</b>
+<small>从记录到最终表图</small>
+</div>
+<div class="node">
+<b>B0 数据审计</b>
+<small>是否有逐模型向量</small>
+</div>
+<div class="node">
+<b>B1 条件扩展</b>
+<small>做模型级风险与选择</small>
+</div>
+</div>
+<figcaption>路线 A 必做；路线 B 已完成 E10–E32 的外部验证、模型向量资产审计、adapter 合同体检、task-scoped true effect 生成器 smoke、shared manifest、模型家族兼容性审计、GEARS strict-pass 证据包、GEARS-only 风险审计、scGPT forward smoke、GEARS–scGPT shared smoke、7-task risk audit、GEARS seed-overlap audit、fixed-test split smoke 和 fixed-test 3-seed smoke。进入更高等级模型级扩展前，还要把 fixed-test 3-seed 提升到正式 epochs、扩大共享任务数并固定 split，或补 CPA adapter。</figcaption>
+</figure>
+<h2>2. 路线 A：把当前 SafeConf 做成可交付系统</h2>
+<div class="grid2">
+<div class="mini">
+<h3>A1 冻结 claim matrix</h3>
+<p>
+<b>Claim</b> 是论文或汇报中的结论句。<b>Claim matrix</b> 是“结论—证据—限制”的对照表。</p>
+<ul class="plain">
+<li>每个结论对应唯一结果表或图。</li>
+<li>McFarland 失败、Tahoe 抽样和 magnitude 更强必须保留。</li>
+<li>冻结公式、数据划分和评价口径，不再事后改规则。</li>
+</ul>
+</div>
+<div class="mini">
+<h3>A2 统一结果产物</h3>
+<p>同一个数字只能有一个正式来源；汇报图、论文表和说明文字都从它生成。</p>
+<ul class="plain">
+<li>统一数据集名称、任务数和小数位。</li>
+<li>图中标注 pair / cell-line / drug 的留出方式。</li>
+<li>给每张图补“它回答什么、不能回答什么”。</li>
+</ul>
+</div>
+<div class="mini">
+<h3>A3 建立复现入口</h3>
+<p>
+<b>复现</b> 指别人按说明运行后能得到相同结论；脚本、输入和环境缺一不可。</p>
+<ul class="plain">
+<li>一条命令运行 smoke，小数据先检查流程。</li>
+<li>一条命令运行 formal，生成正式 CSV 与图。</li>
+<li>保存环境、随机种子、输入清单和日志。</li>
+</ul>
+</div>
+<div class="mini">
+<h3>A4 写清系统边界</h3>
+<p>SafeConf 当前给每个任务一个共同风险值。某个模型在该任务上的专属置信度尚未进入当前协议。</p>
+<ul class="plain">
+<li>适用：高风险任务排序、复核和湿实验分诊。</li>
+<li>不适用：声称能为任意模型给出校准概率。</li>
+<li>尚未完成：同一任务上自动选择最佳模型。</li>
+</ul>
+</div>
+</div>
+<h3>路线 A 的验收表</h3>
+<div class="table">
+<table>
+<thead>
+<tr>
+<th>交付物</th>
+<th>完成标准</th>
+<th>检查方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正式记录表</td>
+<td>任务 ID、数据集、真实效应、预测效应、特征和误差可追溯</td>
+<td>随机抽 10 个任务回查原始文件</td>
+</tr>
+<tr>
+<td>证据—结论矩阵</td>
+<td>每条结论都有路径、数字、限制和状态</td>
+<td>逐条点击相对链接</td>
+</tr>
+<tr>
+<td>主结果图表</td>
+<td>数字与 CSV 一致；无手工改数</td>
+<td>脚本重生成后做差异比较</td>
+</tr>
+<tr>
+<td>复现说明</td>
+<td>新终端可完成 smoke；正式命令与预计资源明确</td>
+<td>清空临时目录后重跑</td>
+</tr>
+<tr>
+<td>归档</td>
+<td>旧版本只在中央 archive；活跃目录无重复最终版</td>
+<td>按文件名和哈希排查重复</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2>3. 路线 B：从“任务难不难”走向“哪个模型更可靠”</h2>
+<div class="callout warn">
+<b>先决条件：</b>必须拿到同一任务上多个模型的逐基因预测向量，以及同一真实效应向量。只有汇总分数或论文表格，不能完成模型级验证。</div>
+<figure class="figure">
+<svg class="svg" viewBox="0 0 900 350" role="img" aria-label="任务级风险与模型级风险区别">
+<defs>
+<marker id="arr8" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+<path d="M0,0 L8,4 L0,8 Z" fill="#087f73"/>
+</marker>
+</defs>
+<rect x="30" y="35" width="220" height="90" rx="9" fill="#e8f0f8" stroke="#275f9d"/>
+<text x="140" y="70" text-anchor="middle" font-size="19" font-weight="700">同一个任务 x</text>
+<text x="140" y="99" text-anchor="middle" font-size="15">细胞背景 + 扰动</text>
+<path d="M250 80 H345" stroke="#087f73" stroke-width="3" marker-end="url(#arr8)"/>
+<rect x="360" y="20" width="185" height="62" rx="8" fill="#fff" stroke="#087f73"/>
+<text x="452" y="57" text-anchor="middle" font-size="17">GEARS 预测向量</text>
+<rect x="360" y="103" width="185" height="62" rx="8" fill="#fff" stroke="#087f73"/>
+<text x="452" y="140" text-anchor="middle" font-size="17">CPA 预测向量</text>
+<rect x="360" y="186" width="185" height="62" rx="8" fill="#fff" stroke="#087f73"/>
+<text x="452" y="223" text-anchor="middle" font-size="17">scGPT 预测向量</text>
+<path d="M545 51 C650 51 630 85 700 85" fill="none" stroke="#087f73" stroke-width="2" marker-end="url(#arr8)"/>
+<path d="M545 134 H700" stroke="#087f73" stroke-width="2" marker-end="url(#arr8)"/>
+<path d="M545 217 C650 217 630 175 700 175" fill="none" stroke="#087f73" stroke-width="2" marker-end="url(#arr8)"/>
+<rect x="710" y="55" width="160" height="150" rx="9" fill="#dff2ee" stroke="#087f73"/>
+<text x="790" y="92" text-anchor="middle" font-size="18" font-weight="700">模型级风险</text>
+<text x="790" y="124" text-anchor="middle" font-size="14">同一任务</text>
+<text x="790" y="147" text-anchor="middle" font-size="14">不同模型</text>
+<text x="790" y="177" text-anchor="middle" font-size="14">风险应不同</text>
+<rect x="280" y="286" width="340" height="46" rx="7" fill="#fff3d6" stroke="#946205"/>
+<text x="450" y="315" text-anchor="middle" font-size="16">目标：既知道任务难，也知道谁在这里更可能错</text>
+</svg>
+<figcaption>任务级分数对同一任务只给一个值；模型级风险必须随模型身份和模型自身证据变化。</figcaption>
+</figure>
+<h3>B0. 逐模型向量审计</h3>
+<div class="table">
+<table>
+<thead>
+<tr>
+<th>需要检查</th>
+<th>通俗解释</th>
+<th>通过条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>模型覆盖</td>
+<td>GEARS、CPA、scGPT 等是否真的在同一批任务上产生结果</td>
+<td>至少 3 个非同源模型</td>
+</tr>
+<tr>
+<td>任务对齐</td>
+<td>核对模型 A 与模型 B 的“任务 17”是否指同一细胞背景和同一扰动</td>
+<td>有稳定 task_id，可一一连接</td>
+</tr>
+<tr>
+<td>基因空间</td>
+<td>每个向量的第 100 位是否代表同一个基因</td>
+<td>统一 gene_id 顺序或有明确映射</td>
+</tr>
+<tr>
+<td>真实标签</td>
+<td>是否有实验测得的真实效应向量</td>
+<td>每个任务可计算统一误差</td>
+</tr>
+<tr>
+<td>模型证据</td>
+<td>是否保存模型自己的不确定性、集成方差或重构误差</td>
+<td>有则使用；没有也要明确缺失</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="callout good"><b>B0 当前进展：</b>E10 已确认服务器有 83 个 h5ad、约 107.3 GiB，官方外部 metadata 覆盖 66/66；E12–E17 将官方 sciplex3 三细胞系推进到 full-743 gene5000 formal，learned ρ=0.891；E18 显示 GEARS 有 54 条可读预测向量，scGPT/CPA 暂无 SafeConf 协议下的逐任务向量；E19 已整理 GEARS-only supplement；E20 显示 10 个现有 bundle 都可 non-strict 审计但 0 个 strict pass；E21/E22 验证 task-scoped true effect 修法和生成器 strict pass；E23 已固定 120 个 task groups 的 shared manifest；E24 说明 E23 不适合直接给 GEARS；E25 已把 Adamson/Dixit/Norman 的 54 条真实 GEARS formal 输出升级为 strict-pass 证据包；E26 显示 GEARS predicted-effect 风险与误差相关，abs-mean ρ=0.679；E27 已让 scGPT 生成 3 条 strict-pass smoke PredictionRecord；E28 已完成 Adamson 3 tasks × 2 predictors 的 shared strict smoke；E29 已完成 Adamson 7 tasks × 2 predictors 的 shared 风险审计，disagreement ρ=0.357；E30 显示 E25 只有 5/47 个 GEARS task groups 有重复 seed，不足以直接声称 ensemble uncertainty；E31 已验证 GEARS fixed-test exporter，7/7 fixed tasks 命中且 strict issue_count=0；E32 已跑通 7 tasks × 3 seeds fixed-test smoke，seed_disagreement ρ=0.679。下一步应把 fixed-test 3-seed 提升到正式 epochs、扩大共享任务数/数据集并固定 split，或推进 CPA adapter。</div>
+<h3>B1–B5. 正式扩展流程</h3>
+<div class="flow">
+<div class="node">
+<b>B1 冻结基准</b>
+<small>任务、基因、模型、切分、指标</small>
+</div>
+<div class="node">
+<b>B2 生成长表</b>
+<small>一行 = 任务 × 模型</small>
+</div>
+<div class="node">
+<b>B3 构建风险</b>
+<small>task-only / model-only / combined</small>
+</div>
+<div class="node">
+<b>B4 评估选择</b>
+<small>排序、覆盖、校准、后悔值</small>
+</div>
+<div class="node">
+<b>B5 Go/No-Go</b>
+<small>有效再进入主线</small>
+</div>
+</div>
+<div class="card">
+<h3>模型级记录应长什么样</h3>
+<pre class="code">dataset, task_id, model_id, split,
+context_similarity, support_count,
+cross_model_disagreement, native_uncertainty,
+true_error, predicted_risk
+
+Cui, task_001, GEARS, test, ...
+Cui, task_001, CPA,   test, ...
+Cui, task_001, scGPT, test, ...</pre>
+<p>这里的 <code>model_id</code> 是关键：没有它，系统仍然只是在给“任务”打分。</p>
+</div>
+<div class="grid3">
+<div class="mini">
+<h3>Task-only</h3>
+<p>只用背景相似度、支持数等任务特征。回答“这个任务普遍难不难”。</p>
+</div>
+<div class="mini">
+<h3>Model-only</h3>
+<p>只用模型自身的不确定性、重构误差或集成方差。回答“这个模型自己是否犹豫”。</p>
+</div>
+<div class="mini">
+<h3>Combined</h3>
+<p>把任务特征与模型证据合并。只有它稳定优于前两者，扩展才有实质价值。</p>
+</div>
+</div>
+<h3>新指标为什么需要</h3>
+<div class="table">
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>要回答的问题</th>
+<th>理想结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Partial Spearman ρ</td>
+<td>控制 magnitude 后，风险排序还和真实误差一致吗</td>
+<td>跨数据集为正，置信区间稳定</td>
+</tr>
+<tr>
+<td>AURC</td>
+<td>拒绝高风险预测后，保留部分的误差是否下降</td>
+<td>低于随机或基线</td>
+</tr>
+<tr>
+<td>Calibration</td>
+<td>预测“风险 0.7”的样本是否真的更常出错</td>
+<td>预测风险与实际频率接近</td>
+</tr>
+<tr>
+<td>Top-k enrichment</td>
+<td>人工只复核最危险的 10%，能多抓到多少错误</td>
+<td>显著高于 1×</td>
+</tr>
+<tr>
+<td>Model-selection regret</td>
+<td>系统选的模型，比事后最优模型多错多少</td>
+<td>越接近 0 越好</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2>4. 明确停止线：这些事现在不要做</h2>
+<div class="grid2">
+<div class="callout danger">
+<b>不要继续扩 Tahoe shard</b>
+<br>现有 D1、D2、D4 已稳定为正；更多相似抽样不会自动解决 held-out drug 或模型级问题。</div>
+<div class="callout danger">
+<b>不要在测试集调组合权重</b>
+<br>用最终结果挑最好权重会产生数据泄漏。权重必须预先固定或只在训练折学习。</div>
+<div class="callout danger">
+<b>不要把 cell-line 外推写成 drug 外推</b>
+<br>两者是不同问题。没有足够药物支持，就应直接标为不可评估。</div>
+<div class="callout danger">
+<b>不要修改 frozen v0.2 追数字</b>
+<br>冻结协议的价值就是规则先于结果。新公式应另起版本并独立验证。</div>
+</div>
+<h2>5. 建议执行顺序</h2>
+<div class="table">
+<table>
+<thead>
+<tr>
+<th>顺序</th>
+<th>任务</th>
+<th>产物</th>
+<th>决策点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>锁定当前数字、失败案例和限制</td>
+<td>最终 claim matrix</td>
+<td>所有表述可追溯</td>
+</tr>
+<tr>
+<td>2</td>
+<td>整理一键复现与产物清单</td>
+<td>命令、环境、日志、manifest</td>
+<td>新环境可跑通 smoke</td>
+</tr>
+<tr>
+<td>3</td>
+<td>统一组会/论文主图</td>
+<td>白底矢量图 + 图注</td>
+<td>图表和 CSV 无差异</td>
+</tr>
+<tr>
+<td>4</td>
+<td>审计真实多模型向量</td>
+<td>availability matrix</td>
+<td>通过才进入步骤 5</td>
+</tr>
+<tr>
+<td>5</td>
+<td>做最小模型级 pilot</td>
+<td>3 模型 × 1–2 数据集</td>
+<td>combined 是否稳定优于基线</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Go / No-Go</td>
+<td>扩展方案或负结果记录</td>
+<td>由证据决定，不由预期决定</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="callout good">
+<b>执行口径：</b>SafeConf v0.2 需要达到数字唯一、路径可追、命令可跑、边界明确。模型级扩展从小规模 pilot 开始，并由预设门槛决定是否继续。</div>
+<div class="pager">
+<a href="07_结果与边界.html">← 上一章</a>
+<a href="09_术语词典.html">下一章：术语词典 →</a>
+</div>
+</main>
+</div>
+<script src="assets/tutorial.js">
+</script>
+</body>
+</html>

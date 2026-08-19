@@ -1,0 +1,437 @@
+{
+  "dataset": "adamson",
+  "split": "single",
+  "seed": 22,
+  "epochs": 10,
+  "status": "ok",
+  "fixed_test_perturbations_file": "/home/yyf/proj/docs/实验结果/E78a_adamson_gears_panel3_20260711/tables/E60_FIXED_TEST_PERTURBATIONS.csv",
+  "fixed_test_conditions": [
+    "ARHGAP22+ctrl",
+    "CCND3+ctrl",
+    "CHERP+ctrl",
+    "DHDDS+ctrl",
+    "EIF2B2+ctrl",
+    "EIF2B3+ctrl",
+    "EIF2B4+ctrl",
+    "FARSB+ctrl",
+    "FECH+ctrl",
+    "GNPNAT1+ctrl",
+    "HSPA9+ctrl",
+    "HYOU1+ctrl",
+    "KCTD16+ctrl",
+    "MANF+ctrl",
+    "SAMM50+ctrl",
+    "SEC63+ctrl",
+    "SLC39A7+ctrl",
+    "STT3A+ctrl",
+    "TIMM44+ctrl",
+    "TMEM167A+ctrl",
+    "UFL1+ctrl",
+    "XRN1+ctrl",
+    "YIPF5+ctrl"
+  ],
+  "n_fixed_test_conditions": 23,
+  "n_train_conditions_after_override": 49,
+  "n_val_conditions_after_override": 5,
+  "fixed_test_deterministic_val": true,
+  "test_mse": 0.002844143696837937,
+  "test_mse_de": 0.16316534793409315,
+  "test_pearson": 0.9934260789472453,
+  "test_pearson_de": 0.9609523347617911,
+  "n_prediction_records": 23,
+  "records_csv": "/home/yyf/proj/docs/实验结果/E78a_adamson_gears_panel3_20260711/raw_gears/seed_22/adamson/seed_22/tables/PREDICTION_RECORDS.csv",
+  "predicted_npz": "/home/yyf/proj/docs/实验结果/E78a_adamson_gears_panel3_20260711/raw_gears/seed_22/adamson/seed_22/arrays/gears_predicted_effects.npz",
+  "true_npz": "/home/yyf/proj/docs/实验结果/E78a_adamson_gears_panel3_20260711/raw_gears/seed_22/adamson/seed_22/arrays/gears_true_effects.npz",
+  "condition_graph_sampling": {
+    "enabled": true,
+    "max_cells_per_condition": 192,
+    "sampling_seed": 202607781,
+    "conditions": {
+      "ctrl": {
+        "split": "train",
+        "before": 7629,
+        "after": 192
+      },
+      "COPZ1+ctrl": {
+        "split": "train",
+        "before": 291,
+        "after": 192
+      },
+      "DAD1+ctrl": {
+        "split": "train",
+        "before": 774,
+        "after": 192
+      },
+      "DDOST+ctrl": {
+        "split": "train",
+        "before": 398,
+        "after": 192
+      },
+      "DDRGK1+ctrl": {
+        "split": "train",
+        "before": 633,
+        "after": 192
+      },
+      "DERL2+ctrl": {
+        "split": "train",
+        "before": 676,
+        "after": 192
+      },
+      "DNAJC19+ctrl": {
+        "split": "train",
+        "before": 1588,
+        "after": 192
+      },
+      "EIF2AK3+ctrl": {
+        "split": "train",
+        "before": 173,
+        "after": 173
+      },
+      "EIF2S1+ctrl": {
+        "split": "train",
+        "before": 534,
+        "after": 192
+      },
+      "ERN1+ctrl": {
+        "split": "train",
+        "before": 88,
+        "after": 88
+      },
+      "GBF1+ctrl": {
+        "split": "train",
+        "before": 1012,
+        "after": 192
+      },
+      "GMPPB+ctrl": {
+        "split": "train",
+        "before": 634,
+        "after": 192
+      },
+      "HSD17B12+ctrl": {
+        "split": "train",
+        "before": 421,
+        "after": 192
+      },
+      "HSPA5+ctrl": {
+        "split": "train",
+        "before": 1242,
+        "after": 192
+      },
+      "IARS2+ctrl": {
+        "split": "train",
+        "before": 1142,
+        "after": 192
+      },
+      "IDH3A+ctrl": {
+        "split": "train",
+        "before": 690,
+        "after": 192
+      },
+      "MRGBP+ctrl": {
+        "split": "train",
+        "before": 586,
+        "after": 192
+      },
+      "MRPL39+ctrl": {
+        "split": "train",
+        "before": 712,
+        "after": 192
+      },
+      "MTHFD1+ctrl": {
+        "split": "train",
+        "before": 540,
+        "after": 192
+      },
+      "NEDD8+ctrl": {
+        "split": "train",
+        "before": 518,
+        "after": 192
+      },
+      "OST4+ctrl": {
+        "split": "train",
+        "before": 669,
+        "after": 192
+      },
+      "P4HB+ctrl": {
+        "split": "train",
+        "before": 578,
+        "after": 192
+      },
+      "PDIA6+ctrl": {
+        "split": "train",
+        "before": 618,
+        "after": 192
+      },
+      "PPWD1+ctrl": {
+        "split": "train",
+        "before": 241,
+        "after": 192
+      },
+      "PSMA1+ctrl": {
+        "split": "train",
+        "before": 30,
+        "after": 30
+      },
+      "PSMD12+ctrl": {
+        "split": "train",
+        "before": 63,
+        "after": 63
+      },
+      "PSMD4+ctrl": {
+        "split": "train",
+        "before": 639,
+        "after": 192
+      },
+      "PTDSS1+ctrl": {
+        "split": "train",
+        "before": 557,
+        "after": 192
+      },
+      "SCYL1+ctrl": {
+        "split": "train",
+        "before": 1268,
+        "after": 192
+      },
+      "SEC61A1+ctrl": {
+        "split": "train",
+        "before": 1228,
+        "after": 192
+      },
+      "SEC61B+ctrl": {
+        "split": "train",
+        "before": 1760,
+        "after": 192
+      },
+      "SEC61G+ctrl": {
+        "split": "train",
+        "before": 674,
+        "after": 192
+      },
+      "SEL1L+ctrl": {
+        "split": "train",
+        "before": 464,
+        "after": 192
+      },
+      "SLC35B1+ctrl": {
+        "split": "train",
+        "before": 644,
+        "after": 192
+      },
+      "SOCS1+ctrl": {
+        "split": "train",
+        "before": 462,
+        "after": 192
+      },
+      "SPCS2+ctrl": {
+        "split": "train",
+        "before": 612,
+        "after": 192
+      },
+      "SPCS3+ctrl": {
+        "split": "train",
+        "before": 672,
+        "after": 192
+      },
+      "SRP68+ctrl": {
+        "split": "train",
+        "before": 729,
+        "after": 192
+      },
+      "SRP72+ctrl": {
+        "split": "train",
+        "before": 541,
+        "after": 192
+      },
+      "SRPRB+ctrl": {
+        "split": "train",
+        "before": 732,
+        "after": 192
+      },
+      "SYVN1+ctrl": {
+        "split": "train",
+        "before": 676,
+        "after": 192
+      },
+      "TELO2+ctrl": {
+        "split": "train",
+        "before": 711,
+        "after": 192
+      },
+      "TIMM23+ctrl": {
+        "split": "train",
+        "before": 789,
+        "after": 192
+      },
+      "TMED10+ctrl": {
+        "split": "train",
+        "before": 649,
+        "after": 192
+      },
+      "TMED2+ctrl": {
+        "split": "train",
+        "before": 534,
+        "after": 192
+      },
+      "TTI1+ctrl": {
+        "split": "train",
+        "before": 542,
+        "after": 192
+      },
+      "TTI2+ctrl": {
+        "split": "train",
+        "before": 682,
+        "after": 192
+      },
+      "UFM1+ctrl": {
+        "split": "train",
+        "before": 723,
+        "after": 192
+      },
+      "XBP1+ctrl": {
+        "split": "train",
+        "before": 66,
+        "after": 66
+      },
+      "AMIGO3+ctrl": {
+        "split": "val",
+        "before": 750,
+        "after": 192
+      },
+      "ASCC3+ctrl": {
+        "split": "val",
+        "before": 1824,
+        "after": 192
+      },
+      "ATF4+ctrl": {
+        "split": "val",
+        "before": 382,
+        "after": 192
+      },
+      "CAD+ctrl": {
+        "split": "val",
+        "before": 295,
+        "after": 192
+      },
+      "COPB1+ctrl": {
+        "split": "val",
+        "before": 235,
+        "after": 192
+      },
+      "ARHGAP22+ctrl": {
+        "split": "test",
+        "before": 513,
+        "after": 513
+      },
+      "CCND3+ctrl": {
+        "split": "test",
+        "before": 412,
+        "after": 412
+      },
+      "CHERP+ctrl": {
+        "split": "test",
+        "before": 497,
+        "after": 497
+      },
+      "DHDDS+ctrl": {
+        "split": "test",
+        "before": 526,
+        "after": 526
+      },
+      "EIF2B2+ctrl": {
+        "split": "test",
+        "before": 638,
+        "after": 638
+      },
+      "EIF2B3+ctrl": {
+        "split": "test",
+        "before": 427,
+        "after": 427
+      },
+      "EIF2B4+ctrl": {
+        "split": "test",
+        "before": 654,
+        "after": 654
+      },
+      "FARSB+ctrl": {
+        "split": "test",
+        "before": 655,
+        "after": 655
+      },
+      "FECH+ctrl": {
+        "split": "test",
+        "before": 702,
+        "after": 702
+      },
+      "GNPNAT1+ctrl": {
+        "split": "test",
+        "before": 514,
+        "after": 514
+      },
+      "HSPA9+ctrl": {
+        "split": "test",
+        "before": 926,
+        "after": 926
+      },
+      "HYOU1+ctrl": {
+        "split": "test",
+        "before": 514,
+        "after": 514
+      },
+      "KCTD16+ctrl": {
+        "split": "test",
+        "before": 480,
+        "after": 480
+      },
+      "MANF+ctrl": {
+        "split": "test",
+        "before": 578,
+        "after": 578
+      },
+      "SAMM50+ctrl": {
+        "split": "test",
+        "before": 838,
+        "after": 838
+      },
+      "SEC63+ctrl": {
+        "split": "test",
+        "before": 684,
+        "after": 684
+      },
+      "SLC39A7+ctrl": {
+        "split": "test",
+        "before": 626,
+        "after": 626
+      },
+      "STT3A+ctrl": {
+        "split": "test",
+        "before": 523,
+        "after": 523
+      },
+      "TIMM44+ctrl": {
+        "split": "test",
+        "before": 605,
+        "after": 605
+      },
+      "TMEM167A+ctrl": {
+        "split": "test",
+        "before": 488,
+        "after": 488
+      },
+      "UFL1+ctrl": {
+        "split": "test",
+        "before": 611,
+        "after": 611
+      },
+      "XRN1+ctrl": {
+        "split": "test",
+        "before": 810,
+        "after": 810
+      },
+      "YIPF5+ctrl": {
+        "split": "test",
+        "before": 1457,
+        "after": 1457
+      }
+    }
+  }
+}

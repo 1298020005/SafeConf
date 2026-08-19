@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="980" viewBox="0 0 1400 980">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+      <path d="M0,0 L0,8 L11,4 z" fill="#334155"/>
+    </marker>
+    <style>
+      text { font-family: "PingFang SC", "Microsoft YaHei", Arial, sans-serif; fill:#17202a; }
+      .title { font-size: 34px; font-weight: 700; }
+      .sub { font-size: 17px; fill:#475569; }
+      .box-title { font-size: 20px; font-weight: 700; }
+      .small { font-size: 15px; fill:#334155; }
+      .tiny { font-size: 13px; fill:#475569; }
+      .note { font-size: 14px; fill:#64748b; }
+    </style>
+  </defs>
+
+  <rect width="1400" height="980" fill="#f7f8fb"/>
+  <text x="60" y="58" class="title">SafeConf 数据到底怎么变：从 h5ad 到最终 ρ</text>
+  <text x="60" y="92" class="sub">真实例子：McFarlandTsherniak2020 / 22RV1 × Trametinib / record_id = v2_rec_000930</text>
+
+  <rect x="60" y="135" width="300" height="220" rx="16" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+  <text x="85" y="172" class="box-title" fill="#1d4ed8">1. h5ad 原始数据仓库</text>
+  <text x="85" y="210" class="small">obs：154,710 个细胞的标签</text>
+  <text x="85" y="238" class="small">X：154,710 × 32,738 表达矩阵</text>
+  <text x="85" y="266" class="small">var：32,738 个基因的标签</text>
+  <text x="85" y="307" class="tiny">例：每行是一个细胞，每列是一个基因</text>
+  <text x="85" y="330" class="tiny">数字 = 这个细胞里这个基因的表达量</text>
+
+  <rect x="480" y="135" width="320" height="220" rx="16" fill="#ecfdf5" stroke="#86efac" stroke-width="2"/>
+  <text x="505" y="172" class="box-title" fill="#15803d">2. 按任务分组</text>
+  <text x="505" y="210" class="small">context = 22RV1</text>
+  <text x="505" y="238" class="small">perturbation = Trametinib</text>
+  <text x="505" y="278" class="small">control 组：158 个细胞</text>
+  <text x="505" y="306" class="small">drug 组：84 个细胞</text>
+  <text x="505" y="330" class="tiny">从“细胞级”压缩成“任务级”</text>
+
+  <line x1="360" y1="245" x2="480" y2="245" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <rect x="920" y="135" width="330" height="220" rx="16" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/>
+  <text x="945" y="172" class="box-title" fill="#c2410c">3. 算 true_effect</text>
+  <text x="945" y="210" class="small">drug_mean - control_mean</text>
+  <text x="945" y="250" class="small">RPLP1: 105.857 - 141.354</text>
+  <text x="945" y="278" class="small">= -35.497</text>
+  <text x="945" y="318" class="tiny">正式保存为 5000 维向量</text>
+  <text x="945" y="340" class="tiny">true_effect = [0, 0, 0, 0.0056, ...]</text>
+
+  <line x1="800" y1="245" x2="920" y2="245" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <rect x="60" y="445" width="300" height="220" rx="16" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="2"/>
+  <text x="85" y="482" class="box-title" fill="#7c3aed">4. 预测器给 predicted_effect</text>
+  <text x="85" y="520" class="small">V0StrongBaseline</text>
+  <text x="85" y="548" class="small">不能看 22RV1 × Trametinib 答案</text>
+  <text x="85" y="588" class="small">用训练集中 Trametinib 历史效应</text>
+  <text x="85" y="616" class="small">support_count = 121</text>
+  <text x="85" y="640" class="tiny">输出另一个 5000 维向量</text>
+
+  <line x1="1085" y1="355" x2="1085" y2="395" stroke="#334155" stroke-width="3"/>
+  <line x1="1085" y1="395" x2="210" y2="395" stroke="#334155" stroke-width="3"/>
+  <line x1="210" y1="395" x2="210" y2="445" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <rect x="480" y="445" width="320" height="220" rx="16" fill="#ffffff" stroke="#d8dee9" stroke-width="2"/>
+  <text x="505" y="482" class="box-title">5. PredictionRecord</text>
+  <text x="505" y="520" class="small">一行 = 一次预测</text>
+  <text x="505" y="548" class="small">record_id = v2_rec_000930</text>
+  <text x="505" y="576" class="small">true_error_rmse = 0.5776</text>
+  <text x="505" y="616" class="tiny">RMSE = sqrt(mean((pred - true)^2))</text>
+  <text x="505" y="640" class="tiny">用 5000 个基因位置一起算</text>
+
+  <line x1="360" y1="555" x2="480" y2="555" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <rect x="920" y="445" width="330" height="220" rx="16" fill="#ffffff" stroke="#d8dee9" stroke-width="2"/>
+  <text x="945" y="482" class="box-title">6. ConfidenceFeatures</text>
+  <text x="945" y="520" class="small">context_similarity_max = 0.9677</text>
+  <text x="945" y="548" class="small">perturbation_support_count = 121</text>
+  <text x="945" y="576" class="small">model_disagreement_rmse = 0.3692</text>
+  <text x="945" y="604" class="small">historical_residual_risk = 2.213</text>
+  <text x="945" y="640" class="tiny">这些是打分时允许看的线索</text>
+
+  <line x1="800" y1="555" x2="920" y2="555" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <rect x="260" y="750" width="350" height="160" rx="16" fill="#ffffff" stroke="#d8dee9" stroke-width="2"/>
+  <text x="285" y="787" class="box-title">7. ConfidenceScores</text>
+  <text x="285" y="825" class="small">同一条预测被多个标准打分</text>
+  <text x="285" y="853" class="small">simple_combined_confidence = -0.8523</text>
+  <text x="285" y="881" class="small">learned_risk_score = 1.5918</text>
+
+  <rect x="760" y="750" width="350" height="160" rx="16" fill="#fef2f2" stroke="#fecaca" stroke-width="2"/>
+  <text x="785" y="787" class="box-title" fill="#b91c1c">8. Evaluation</text>
+  <text x="785" y="825" class="small">把许多 test records 放一起统计</text>
+  <text x="785" y="853" class="small">aligned ρ / partial ρ / RC@80%</text>
+  <text x="785" y="881" class="small">McFarland v0.2 partial ρ = -0.0609</text>
+
+  <line x1="1085" y1="665" x2="1085" y2="700" stroke="#334155" stroke-width="3"/>
+  <line x1="1085" y1="700" x2="435" y2="700" stroke="#334155" stroke-width="3"/>
+  <line x1="435" y1="700" x2="435" y2="750" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="610" y1="830" x2="760" y2="830" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <text x="60" y="950" class="note">核心：SafeConf 打分时只能看 PredictionRecord + ConfidenceFeatures，不能偷看 true_effect；true_effect 只在 Evaluation 阶段揭晓，用来验证打分准不准。</text>
+</svg>

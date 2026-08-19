@@ -1,0 +1,29 @@
+{
+  "run_id": "E39_data_acquisition_advisor_multidim_20260709",
+  "created_at": "2026-07-09T21:08:00",
+  "status": "running_background_download",
+  "disk_free_at_start": "3.4T under /home",
+  "scperturbench_zenodo_14607156": {
+    "files_present": 12,
+    "files_total": 12,
+    "status": "complete"
+  },
+  "scperturb_zenodo_13350497": {
+    "files_present": 54,
+    "files_total": 54,
+    "status": "complete"
+  },
+  "tahoe_100m_pseudobulk": {
+    "files_present": 1026,
+    "files_total": 1026,
+    "size_gb": 88.86,
+    "status": "complete"
+  },
+  "tahoe_100m_raw": {
+    "files_total": 3388,
+    "download_started": true,
+    "pid": 1822925,
+    "data_dir": "/home/yyf/data/singlecell_perturbation_atlas/mega_external/Tahoe-100M/data",
+    "status_command": "python3 tools/scripts/download_tahoe_100m_raw.py --mode status"
+  }
+}

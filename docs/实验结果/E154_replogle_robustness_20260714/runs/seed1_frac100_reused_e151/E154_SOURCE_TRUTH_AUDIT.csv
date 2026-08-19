@@ -1,0 +1,2 @@
+dataset,n_folds,n_test_tasks,max_abs_saved_truth_vs_reconstructed_truth,truth_reconstruction_pass_atol_1e-5
+Replogle_two_cellline,2,340,0.0,True

@@ -1,0 +1,22 @@
+{
+  "schema": "safeconf_e178_crossstudy_bilateral_audit_v1",
+  "experiment": "E178_crossstudy_bilateral_certificate_audit",
+  "status": "COMPLETE",
+  "analysis_type": "post_evaluation_descriptive_synthesis",
+  "method_or_quantile_tuned_on_evaluation_truth": false,
+  "n_studies": 2,
+  "n_evaluation_target_clusters": 690,
+  "n_evaluation_tasks": 2320,
+  "pair_mean_bound_violations": 0,
+  "pair_max_bound_violations": 0,
+  "e176_cluster_coverage": 0.903125,
+  "e177_cluster_coverage": 0.88,
+  "pooled_coverage_descriptive_only": 0.9014492753623189,
+  "legacy_ranking_superiority_claim_supported": false,
+  "deployment_authorized": false,
+  "git_head_at_run": "110075edb7bf32429ab4a7641a57fbe4105ccc29",
+  "python": "3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 15:12:24) [GCC 11.2.0]",
+  "platform": "Linux-6.8.0-45-generic-x86_64-with-glibc2.35",
+  "bootstrap_seed": 178,
+  "bootstrap_replicates": 2000
+}

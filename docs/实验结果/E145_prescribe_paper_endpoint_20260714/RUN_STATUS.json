@@ -1,0 +1,87 @@
+{
+  "experiment": "E145_prescribe_paper_endpoint_audit",
+  "generated_at": "2026-07-14T14:05:00",
+  "analysis_nature": "post_unblinding_metric_correction_not_independent_confirmation",
+  "paper_url": "https://papers.nips.cc/paper_files/paper/2025/file/d6383e7643415842b48a5077a1b09c98-Paper-Conference.pdf",
+  "paper_exact_combined_formula": "2 * mean(epistemic_conf) + mean(aleatoric_conf)",
+  "primary_endpoint": "pearson_effect_accuracy_on_2037_log_normalized_effect_genes",
+  "n_panels": 2,
+  "n_tasks": 48,
+  "n_bootstrap": 10000,
+  "coverage_grid": [
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.9,
+    0.95,
+    1.0
+  ],
+  "focal_filtering": [
+    "bottom_5_percent",
+    "bottom_10_percent"
+  ],
+  "panel_metadata": {
+    "Norman_P1": {
+      "n_cells": 12721,
+      "n_tasks": 24,
+      "n_genes": 2037,
+      "n_control_cells": 11855,
+      "gene_order_hash": "sha256:737bde87b28b79317ae85d24e135103745af5de4338e4e62a468d48325af8995",
+      "control_vector_sha256": "43d4a3321a9c4b05505495ef7fcc780e30310dbb8329a2b84f2f345fa603a294",
+      "n_nonfinite_primary": 0
+    },
+    "Norman_P2": {
+      "n_cells": 11256,
+      "n_tasks": 24,
+      "n_genes": 2037,
+      "n_control_cells": 11855,
+      "gene_order_hash": "sha256:737bde87b28b79317ae85d24e135103745af5de4338e4e62a468d48325af8995",
+      "control_vector_sha256": "43d4a3321a9c4b05505495ef7fcc780e30310dbb8329a2b84f2f345fa603a294",
+      "n_nonfinite_primary": 0
+    }
+  },
+  "validated_frozen_hashes": {
+    "Norman_P1_raw": "98c0c57e755dc18f5a325bad657e1a850f8868e13fea956de5b76849acbb0831",
+    "Norman_P1_table": "c17af2fee00f7694e435de8ecce9aa81cb0f5a5d44edbcaee72dff0e49b06d05",
+    "Norman_P2_raw": "5ab3bdf59f82bd637d16f401f805a3a5cb981b50aa40f87b6cfea3738c59b4f3",
+    "Norman_P2_table": "a11fcd538647f5ed7e7a0afdebc0ee21daeab201aaa548f93efd7dc41b6c0fcf",
+    "/home/yyf/archive/external/PRESCRIBE/Step3_test.py": "b3c2f0e243824e4c8f27352b401c0709193361b5697287812bfda67dc96f989d",
+    "/home/yyf/archive/external/PRESCRIBE/src/model/lightening_module.py": "5add09fb0ca49dd43f9caac892140c3d8a31add3bdd492aef2ea4668b0acb3cd"
+  },
+  "analysis_contract_sha256": "50b58a865ecca0fafad9ec88771e951040e1828930ae6128d4e858fbf6795853",
+  "primary_macro_spearman": {
+    "epistemic_confidence": {
+      "rho": 0.3117391304347826,
+      "ci95_low": 0.019443886566412435,
+      "ci95_high": 0.5687549427751335
+    },
+    "aleatoric_confidence": {
+      "rho": 0.006956521739130438,
+      "ci95_low": -0.3003630208419407,
+      "ci95_high": 0.3156565001118213
+    },
+    "combined_confidence": {
+      "rho": 0.3169565217391304,
+      "ci95_low": 0.0324039318711927,
+      "ci95_high": 0.5669241267746755
+    },
+    "predicted_magnitude": {
+      "rho": 0.3104347826086956,
+      "ci95_low": 0.023959949040543174,
+      "ci95_high": 0.5592558711166282
+    }
+  },
+  "combined_delta_rho_vs_magnitude": {
+    "delta": 0.0065217391304348005,
+    "ci95_low": -0.03173927660759481,
+    "ci95_high": 0.053363124834324295
+  },
+  "target_truth_used_to_change_task_set_or_score": false,
+  "target_truth_used_for_posthoc_metric_correction": true,
+  "independent_confirmation": false
+}

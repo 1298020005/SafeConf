@@ -1,0 +1,13 @@
+qc_item,timepoint,prefrozen_rule,failure_action
+cell_identity,Before perturbation,STR identity matches expected line,quarantine line; do not replace based on outcome
+mycoplasma,Before perturbation and harvest,negative,repeat test; positive batch excluded before unblinding
+baseline_replicates,Before candidate freeze,three independently cultured controls; pairwise pseudobulk Pearson >=0.90,resolve batch drift before scoring
+guide_design,Before ordering,two independent guides per gene; prespecified on/off-target filters,use only ranked technical alternate
+guide_assignment,Cell QC,primary analysis retains one confidently assigned guide; doublets removed,record all assignment rates
+cells_per_guide_batch,Cell QC,>=50 after QC; target 100-150,failed guide-batch remains in CONSORT-style flow table
+knockdown,Before label unblinding,>=50% reduction by target RNA/qPCR for at least one guide; report both,"technical failure, never outcome-based deletion"
+candidate_completion,Experiment QC,>=75% candidates meet prespecified knockdown and cell-count QC in both contexts,otherwise label study technically incomplete
+cell_filter,Cell QC,library-specific robust MAD thresholds for genes/UMI/mitochondrial fraction frozen before risk unblinding,no risk-stratum-specific thresholds
+viability,Harvest,"record live fraction, Annexin V/PI and cell-cycle proxy",adjust/explain; do not silently remove high-death targets
+batch_balance,Library design,all risk strata represented in every culture batch and lane,rerandomize before wet work
+analysis_lock,Before unblinding,"QC report, pseudobulk matrix, exclusion log and hashes complete",only then release risk codebook

@@ -1,0 +1,7 @@
+level,dataset_family,dataset_name,score_name,score_type,n,spearman_score_vs_rmse,direction_aligned_spearman,mean_rmse,risk_cov_improve_pct
+dataset,gears_supplement,frangieh,gears_prediction_magnitude_risk,risk,62,0.8940847624084006,0.8940847624084006,0.03492183884185164,14.809430326054182
+dataset,gears_supplement,frangieh,gears_uncertainty_confidence,confidence,62,-0.09597683094641346,0.09597683094641346,0.03492183884185164,-0.82473345441545
+family,gears_supplement,ALL,gears_prediction_magnitude_risk,risk,62,0.8940847624084006,0.8940847624084006,0.03492183884185164,
+family,gears_supplement,ALL,gears_uncertainty_confidence,confidence,62,-0.09597683094641346,0.09597683094641346,0.03492183884185164,
+overall,ALL,ALL,gears_prediction_magnitude_risk,risk,62,0.8940847624084006,0.8940847624084006,0.03492183884185164,
+overall,ALL,ALL,gears_uncertainty_confidence,confidence,62,-0.09597683094641346,0.09597683094641346,0.03492183884185164,

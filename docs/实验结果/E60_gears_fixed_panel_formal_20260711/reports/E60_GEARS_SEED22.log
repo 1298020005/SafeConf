@@ -1,0 +1,308 @@
+Local copy of pyg dataset is detected. Loading...
+Done!
+Creating new splits....
+Saving new splits at /home/yyf/data/gears_formal_baselines_v2/adamson_local_atlas/splits/adamson_local_atlas_single_22_0.75.pkl
+Done!
+Creating dataloaders....
+Done!
+Start Training...
+Epoch 1 Step 1 Train Loss: 0.3844
+Epoch 1 Step 51 Train Loss: 0.3756
+Epoch 1 Step 101 Train Loss: 0.3457
+Epoch 1 Step 151 Train Loss: 0.4529
+Epoch 1 Step 201 Train Loss: 0.3380
+Epoch 1 Step 251 Train Loss: 0.4019
+Epoch 1 Step 301 Train Loss: 0.3586
+Epoch 1 Step 351 Train Loss: 0.4564
+Epoch 1 Step 401 Train Loss: 0.3991
+Epoch 1 Step 451 Train Loss: 0.3323
+Epoch 1 Step 501 Train Loss: 0.3236
+Epoch 1 Step 551 Train Loss: 0.3754
+Epoch 1 Step 601 Train Loss: 0.3561
+Epoch 1 Step 651 Train Loss: 0.3633
+Epoch 1 Step 701 Train Loss: 0.3513
+Epoch 1 Step 751 Train Loss: 0.3302
+Epoch 1 Step 801 Train Loss: 0.3594
+Epoch 1 Step 851 Train Loss: 0.3103
+Epoch 1 Step 901 Train Loss: 0.3596
+Epoch 1 Step 951 Train Loss: 0.3364
+Epoch 1 Step 1001 Train Loss: 0.3530
+Epoch 1 Step 1051 Train Loss: 0.3521
+Epoch 1 Step 1101 Train Loss: 0.3221
+Epoch 1: Train Overall MSE: 0.0039 Validation Overall MSE: 0.0054. 
+Train Top 20 DE MSE: 0.0584 Validation Top 20 DE MSE: 0.2403. 
+Epoch 2 Step 1 Train Loss: 0.3277
+Epoch 2 Step 51 Train Loss: 0.3791
+Epoch 2 Step 101 Train Loss: 0.2916
+Epoch 2 Step 151 Train Loss: 0.4139
+Epoch 2 Step 201 Train Loss: 0.2875
+Epoch 2 Step 251 Train Loss: 0.3036
+Epoch 2 Step 301 Train Loss: 0.2751
+Epoch 2 Step 351 Train Loss: 0.3330
+Epoch 2 Step 401 Train Loss: 0.3247
+Epoch 2 Step 451 Train Loss: 0.4995
+Epoch 2 Step 501 Train Loss: 0.3615
+Epoch 2 Step 551 Train Loss: 0.3179
+Epoch 2 Step 601 Train Loss: 0.3892
+Epoch 2 Step 651 Train Loss: 0.3025
+Epoch 2 Step 701 Train Loss: 0.3368
+Epoch 2 Step 751 Train Loss: 0.3545
+Epoch 2 Step 801 Train Loss: 0.3230
+Epoch 2 Step 851 Train Loss: 0.3703
+Epoch 2 Step 901 Train Loss: 0.2974
+Epoch 2 Step 951 Train Loss: 0.3472
+Epoch 2 Step 1001 Train Loss: 0.3204
+Epoch 2 Step 1051 Train Loss: 0.3326
+Epoch 2 Step 1101 Train Loss: 0.3839
+Epoch 2: Train Overall MSE: 0.0033 Validation Overall MSE: 0.0045. 
+Train Top 20 DE MSE: 0.0487 Validation Top 20 DE MSE: 0.2092. 
+Epoch 3 Step 1 Train Loss: 0.3336
+Epoch 3 Step 51 Train Loss: 0.3076
+Epoch 3 Step 101 Train Loss: 0.5064
+Epoch 3 Step 151 Train Loss: 0.3132
+Epoch 3 Step 201 Train Loss: 0.3523
+Epoch 3 Step 251 Train Loss: 0.3162
+Epoch 3 Step 301 Train Loss: 0.3245
+Epoch 3 Step 351 Train Loss: 0.3380
+Epoch 3 Step 401 Train Loss: 0.3542
+Epoch 3 Step 451 Train Loss: 0.3361
+Epoch 3 Step 501 Train Loss: 0.3484
+Epoch 3 Step 551 Train Loss: 0.3795
+Epoch 3 Step 601 Train Loss: 0.3183
+Epoch 3 Step 651 Train Loss: 0.3777
+Epoch 3 Step 701 Train Loss: 0.2821
+Epoch 3 Step 751 Train Loss: 0.3047
+Epoch 3 Step 801 Train Loss: 0.3290
+Epoch 3 Step 851 Train Loss: 0.2735
+Epoch 3 Step 901 Train Loss: 0.3655
+Epoch 3 Step 951 Train Loss: 0.3869
+Epoch 3 Step 1001 Train Loss: 0.3200
+Epoch 3 Step 1051 Train Loss: 0.2931
+Epoch 3 Step 1101 Train Loss: 0.3375
+Epoch 3: Train Overall MSE: 0.0059 Validation Overall MSE: 0.0073. 
+Train Top 20 DE MSE: 0.0807 Validation Top 20 DE MSE: 0.2325. 
+Epoch 4 Step 1 Train Loss: 0.4192
+Epoch 4 Step 51 Train Loss: 0.3197
+Epoch 4 Step 101 Train Loss: 0.3072
+Epoch 4 Step 151 Train Loss: 0.3980
+Epoch 4 Step 201 Train Loss: 0.3720
+Epoch 4 Step 251 Train Loss: 0.3492
+Epoch 4 Step 301 Train Loss: 0.4139
+Epoch 4 Step 351 Train Loss: 0.3201
+Epoch 4 Step 401 Train Loss: 0.3624
+Epoch 4 Step 451 Train Loss: 0.3913
+Epoch 4 Step 501 Train Loss: 0.3458
+Epoch 4 Step 551 Train Loss: 0.3911
+Epoch 4 Step 601 Train Loss: 0.3871
+Epoch 4 Step 651 Train Loss: 0.3312
+Epoch 4 Step 701 Train Loss: 0.3102
+Epoch 4 Step 751 Train Loss: 0.3583
+Epoch 4 Step 801 Train Loss: 0.3122
+Epoch 4 Step 851 Train Loss: 0.3276
+Epoch 4 Step 901 Train Loss: 0.3242
+Epoch 4 Step 951 Train Loss: 0.3131
+Epoch 4 Step 1001 Train Loss: 0.3590
+Epoch 4 Step 1051 Train Loss: 0.3412
+Epoch 4 Step 1101 Train Loss: 0.3311
+Epoch 4: Train Overall MSE: 0.0014 Validation Overall MSE: 0.0023. 
+Train Top 20 DE MSE: 0.0497 Validation Top 20 DE MSE: 0.1435. 
+Epoch 5 Step 1 Train Loss: 0.3599
+Epoch 5 Step 51 Train Loss: 0.2967
+Epoch 5 Step 101 Train Loss: 0.3376
+Epoch 5 Step 151 Train Loss: 0.3559
+Epoch 5 Step 201 Train Loss: 0.3362
+Epoch 5 Step 251 Train Loss: 0.3637
+Epoch 5 Step 301 Train Loss: 0.3710
+Epoch 5 Step 351 Train Loss: 0.3249
+Epoch 5 Step 401 Train Loss: 0.3293
+Epoch 5 Step 451 Train Loss: 0.3823
+Epoch 5 Step 501 Train Loss: 0.3218
+Epoch 5 Step 551 Train Loss: 0.3519
+Epoch 5 Step 601 Train Loss: 0.3537
+Epoch 5 Step 651 Train Loss: 0.3460
+Epoch 5 Step 701 Train Loss: 0.3154
+Epoch 5 Step 751 Train Loss: 0.3458
+Epoch 5 Step 801 Train Loss: 0.3880
+Epoch 5 Step 851 Train Loss: 0.4461
+Epoch 5 Step 901 Train Loss: 0.3291
+Epoch 5 Step 951 Train Loss: 0.3540
+Epoch 5 Step 1001 Train Loss: 0.3285
+Epoch 5 Step 1051 Train Loss: 0.3509
+Epoch 5 Step 1101 Train Loss: 0.2777
+Epoch 5: Train Overall MSE: 0.0013 Validation Overall MSE: 0.0023. 
+Train Top 20 DE MSE: 0.0466 Validation Top 20 DE MSE: 0.1503. 
+Epoch 6 Step 1 Train Loss: 0.3135
+Epoch 6 Step 51 Train Loss: 0.3986
+Epoch 6 Step 101 Train Loss: 0.3131
+Epoch 6 Step 151 Train Loss: 0.3311
+Epoch 6 Step 201 Train Loss: 0.3083
+Epoch 6 Step 251 Train Loss: 0.4299
+Epoch 6 Step 301 Train Loss: 0.3726
+Epoch 6 Step 351 Train Loss: 0.2940
+Epoch 6 Step 401 Train Loss: 0.3029
+Epoch 6 Step 451 Train Loss: 0.2790
+Epoch 6 Step 501 Train Loss: 0.3030
+Epoch 6 Step 551 Train Loss: 0.3187
+Epoch 6 Step 601 Train Loss: 0.3647
+Epoch 6 Step 651 Train Loss: 0.3552
+Epoch 6 Step 701 Train Loss: 0.3375
+Epoch 6 Step 751 Train Loss: 0.4427
+Epoch 6 Step 801 Train Loss: 0.3054
+Epoch 6 Step 851 Train Loss: 0.4162
+Epoch 6 Step 901 Train Loss: 0.3560
+Epoch 6 Step 951 Train Loss: 0.3381
+Epoch 6 Step 1001 Train Loss: 0.2931
+Epoch 6 Step 1051 Train Loss: 0.3352
+Epoch 6 Step 1101 Train Loss: 0.3501
+Epoch 6: Train Overall MSE: 0.0013 Validation Overall MSE: 0.0023. 
+Train Top 20 DE MSE: 0.0443 Validation Top 20 DE MSE: 0.1474. 
+Epoch 7 Step 1 Train Loss: 0.3052
+Epoch 7 Step 51 Train Loss: 0.3902
+Epoch 7 Step 101 Train Loss: 0.3065
+Epoch 7 Step 151 Train Loss: 0.3121
+Epoch 7 Step 201 Train Loss: 0.3328
+Epoch 7 Step 251 Train Loss: 0.3997
+Epoch 7 Step 301 Train Loss: 0.3292
+Epoch 7 Step 351 Train Loss: 0.3326
+Epoch 7 Step 401 Train Loss: 0.3203
+Epoch 7 Step 451 Train Loss: 0.3561
+Epoch 7 Step 501 Train Loss: 0.3462
+Epoch 7 Step 551 Train Loss: 0.3239
+Epoch 7 Step 601 Train Loss: 0.3681
+Epoch 7 Step 651 Train Loss: 0.3602
+Epoch 7 Step 701 Train Loss: 0.3722
+Epoch 7 Step 751 Train Loss: 0.3971
+Epoch 7 Step 801 Train Loss: 0.3493
+Epoch 7 Step 851 Train Loss: 0.3356
+Epoch 7 Step 901 Train Loss: 0.3391
+Epoch 7 Step 951 Train Loss: 0.3425
+Epoch 7 Step 1001 Train Loss: 0.3803
+Epoch 7 Step 1051 Train Loss: 0.3261
+Epoch 7 Step 1101 Train Loss: 0.3193
+Epoch 7: Train Overall MSE: 0.0013 Validation Overall MSE: 0.0024. 
+Train Top 20 DE MSE: 0.0426 Validation Top 20 DE MSE: 0.1528. 
+Epoch 8 Step 1 Train Loss: 0.3409
+Epoch 8 Step 51 Train Loss: 0.4115
+Epoch 8 Step 101 Train Loss: 0.3078
+Epoch 8 Step 151 Train Loss: 0.3681
+Epoch 8 Step 201 Train Loss: 0.3590
+Epoch 8 Step 251 Train Loss: 0.3288
+Epoch 8 Step 301 Train Loss: 0.3376
+Epoch 8 Step 351 Train Loss: 0.3539
+Epoch 8 Step 401 Train Loss: 0.3534
+Epoch 8 Step 451 Train Loss: 0.3290
+Epoch 8 Step 501 Train Loss: 0.3401
+Epoch 8 Step 551 Train Loss: 0.3494
+Epoch 8 Step 601 Train Loss: 0.3631
+Epoch 8 Step 651 Train Loss: 0.3016
+Epoch 8 Step 701 Train Loss: 0.3566
+Epoch 8 Step 751 Train Loss: 0.3893
+Epoch 8 Step 801 Train Loss: 0.2774
+Epoch 8 Step 851 Train Loss: 0.3263
+Epoch 8 Step 901 Train Loss: 0.3083
+Epoch 8 Step 951 Train Loss: 0.3020
+Epoch 8 Step 1001 Train Loss: 0.3997
+Epoch 8 Step 1051 Train Loss: 0.3453
+Epoch 8 Step 1101 Train Loss: 0.3191
+Epoch 8: Train Overall MSE: 0.0013 Validation Overall MSE: 0.0023. 
+Train Top 20 DE MSE: 0.0430 Validation Top 20 DE MSE: 0.1459. 
+Epoch 9 Step 1 Train Loss: 0.3884
+Epoch 9 Step 51 Train Loss: 0.4672
+Epoch 9 Step 101 Train Loss: 0.3487
+Epoch 9 Step 151 Train Loss: 0.3228
+Epoch 9 Step 201 Train Loss: 0.3281
+Epoch 9 Step 251 Train Loss: 0.3546
+Epoch 9 Step 301 Train Loss: 0.2855
+Epoch 9 Step 351 Train Loss: 0.3110
+Epoch 9 Step 401 Train Loss: 0.3832
+Epoch 9 Step 451 Train Loss: 0.3855
+Epoch 9 Step 501 Train Loss: 0.3704
+Epoch 9 Step 551 Train Loss: 0.3941
+Epoch 9 Step 601 Train Loss: 0.3406
+Epoch 9 Step 651 Train Loss: 0.3789
+Epoch 9 Step 701 Train Loss: 0.3421
+Epoch 9 Step 751 Train Loss: 0.3555
+Epoch 9 Step 801 Train Loss: 0.2917
+Epoch 9 Step 851 Train Loss: 0.3019
+Epoch 9 Step 901 Train Loss: 0.3919
+Epoch 9 Step 951 Train Loss: 0.4398
+Epoch 9 Step 1001 Train Loss: 0.3407
+Epoch 9 Step 1051 Train Loss: 0.3443
+Epoch 9 Step 1101 Train Loss: 0.3089
+Epoch 9: Train Overall MSE: 0.0013 Validation Overall MSE: 0.0024. 
+Train Top 20 DE MSE: 0.0404 Validation Top 20 DE MSE: 0.1551. 
+Epoch 10 Step 1 Train Loss: 0.2865
+Epoch 10 Step 51 Train Loss: 0.3380
+Epoch 10 Step 101 Train Loss: 0.3802
+Epoch 10 Step 151 Train Loss: 0.3279
+Epoch 10 Step 201 Train Loss: 0.3783
+Epoch 10 Step 251 Train Loss: 0.3394
+Epoch 10 Step 301 Train Loss: 0.3329
+Epoch 10 Step 351 Train Loss: 0.3178
+Epoch 10 Step 401 Train Loss: 0.3408
+Epoch 10 Step 451 Train Loss: 0.3110
+Epoch 10 Step 501 Train Loss: 0.3312
+Epoch 10 Step 551 Train Loss: 0.3940
+Epoch 10 Step 601 Train Loss: 0.3676
+Epoch 10 Step 651 Train Loss: 0.3391
+Epoch 10 Step 701 Train Loss: 0.3958
+Epoch 10 Step 751 Train Loss: 0.3212
+Epoch 10 Step 801 Train Loss: 0.3769
+Epoch 10 Step 851 Train Loss: 0.3572
+Epoch 10 Step 901 Train Loss: 0.3472
+Epoch 10 Step 951 Train Loss: 0.2834
+Epoch 10 Step 1001 Train Loss: 0.4280
+Epoch 10 Step 1051 Train Loss: 0.3507
+Epoch 10 Step 1101 Train Loss: 0.3511
+Epoch 10: Train Overall MSE: 0.0013 Validation Overall MSE: 0.0023. 
+Train Top 20 DE MSE: 0.0477 Validation Top 20 DE MSE: 0.1457. 
+Done!
+Start Testing...
+Best performing model: Test Top 20 DE MSE: 0.1458
+Done!
+{
+  "dataset": "adamson",
+  "split": "single",
+  "seed": 22,
+  "epochs": 10,
+  "status": "ok",
+  "fixed_test_perturbations_file": "/home/yyf/proj/docs/实验结果/E60_gears_fixed_panel_formal_20260711/tables/E60_FIXED_TEST_PERTURBATIONS.csv",
+  "fixed_test_conditions": [
+    "ATF4+ctrl",
+    "COPZ1+ctrl",
+    "DAD1+ctrl",
+    "DERL2+ctrl",
+    "DNAJC19+ctrl",
+    "EIF2S1+ctrl",
+    "GBF1+ctrl",
+    "IARS2+ctrl",
+    "IDH3A+ctrl",
+    "MRPL39+ctrl",
+    "NEDD8+ctrl",
+    "OST4+ctrl",
+    "PDIA6+ctrl",
+    "PSMD4+ctrl",
+    "PTDSS1+ctrl",
+    "SEC61G+ctrl",
+    "SEL1L+ctrl",
+    "SLC35B1+ctrl",
+    "SPCS3+ctrl",
+    "SRP68+ctrl",
+    "SYVN1+ctrl",
+    "TELO2+ctrl",
+    "TIMM23+ctrl",
+    "TTI1+ctrl"
+  ],
+  "n_fixed_test_conditions": 24,
+  "n_train_conditions_after_override": 48,
+  "n_val_conditions_after_override": 5,
+  "fixed_test_deterministic_val": true,
+  "test_mse": 0.0024419644735947563,
+  "test_mse_de": 0.14584535161384338,
+  "test_pearson": 0.9943807282025497,
+  "test_pearson_de": 0.9117437677677298,
+  "n_prediction_records": 24,
+  "records_csv": "/home/yyf/proj/docs/实验结果/E60_gears_fixed_panel_formal_20260711/raw_gears/seed_22/adamson/seed_22/tables/PREDICTION_RECORDS.csv",
+  "predicted_npz": "/home/yyf/proj/docs/实验结果/E60_gears_fixed_panel_formal_20260711/raw_gears/seed_22/adamson/seed_22/arrays/gears_predicted_effects.npz",
+  "true_npz": "/home/yyf/proj/docs/实验结果/E60_gears_fixed_panel_formal_20260711/raw_gears/seed_22/adamson/seed_22/arrays/gears_true_effects.npz"
+}

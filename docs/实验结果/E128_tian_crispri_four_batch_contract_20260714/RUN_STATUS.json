@@ -1,0 +1,29 @@
+{
+  "experiment": "E128_tian_crispri_four_batch_contract",
+  "generated_at": "2026-07-14T01:03:37",
+  "status": "contract_frozen",
+  "source": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/TianKampmann2021_CRISPRi.h5ad",
+  "source_sha256": "sha256:7ea6689359964e23da78f93bb54c4eb08d9cd95c16ee769375fc5ac7edb62fa9",
+  "source_shape": [
+    32300,
+    33538
+  ],
+  "context_definition": "technical sequencing/experimental batch, not a biological cell type",
+  "n_contexts": 4,
+  "n_perturbations": 99,
+  "excluded_targets_missing_gene_axis": [
+    "TMEM55A"
+  ],
+  "excluded_targets_missing_scgpt_vocab": [
+    "GARS",
+    "MATR3",
+    "WDR66",
+    "YARS"
+  ],
+  "n_folds": 4,
+  "n_manifest_rows": 1584,
+  "minimum_cells_per_pair": 30,
+  "expression_values_read_during_selection": false,
+  "gene_identity_and_vocab_read_for_predictor_compatibility": true,
+  "target_effect_prediction_or_error_used_for_selection": false
+}

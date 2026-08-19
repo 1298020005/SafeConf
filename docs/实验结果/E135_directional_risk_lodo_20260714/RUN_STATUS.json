@@ -1,0 +1,17 @@
+{
+  "experiment": "E135_directional_risk_lodo",
+  "generated_at": "2026-07-14T02:29:02",
+  "status": "complete_exploratory",
+  "n_datasets": 6,
+  "n_tasks": 2953,
+  "candidate_models_reported": [
+    "ridge_alpha10",
+    "ridge_positive_alpha10",
+    "hist_leaf7_l2_10",
+    "rf_depth3_leaf30",
+    "extra_depth3_leaf30"
+  ],
+  "selected_model": "ridge_alpha10",
+  "untouched_seventh_dataset_confirmation_required": true,
+  "target_truth_required_at_deployment": false
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "encoding": "categorical/categories+codes",
+    "hdf5_path": "obs/10xrun_id",
+    "n_values": 278684,
+    "purpose": "expression-blind task and row-access freeze",
+    "value_access": true
+  },
+  {
+    "encoding": "categorical/categories+codes",
+    "hdf5_path": "obs/donor_id",
+    "n_values": 278684,
+    "purpose": "expression-blind task and row-access freeze",
+    "value_access": true
+  },
+  {
+    "encoding": "categorical/categories+codes",
+    "hdf5_path": "obs/culture_condition",
+    "n_values": 278684,
+    "purpose": "expression-blind task and row-access freeze",
+    "value_access": true
+  },
+  {
+    "encoding": "categorical/categories+codes",
+    "hdf5_path": "obs/guide_id",
+    "n_values": 278684,
+    "purpose": "expression-blind task and row-access freeze",
+    "value_access": true
+  },
+  {
+    "encoding": "categorical/categories+codes",
+    "hdf5_path": "obs/perturbed_gene_name",
+    "n_values": 278684,
+    "purpose": "expression-blind task and row-access freeze",
+    "value_access": true
+  },
+  {
+    "encoding": "categorical/categories+codes",
+    "hdf5_path": "obs/perturbed_gene_id",
+    "n_values": 278684,
+    "purpose": "expression-blind task and row-access freeze",
+    "value_access": true
+  },
+  {
+    "encoding": "categorical/categories+codes",
+    "hdf5_path": "obs/guide_type",
+    "n_values": 278684,
+    "purpose": "expression-blind task and row-access freeze",
+    "value_access": true
+  },
+  {
+    "encoding": "string-array",
+    "hdf5_path": "var/gene_ids",
+    "n_values": 18129,
+    "purpose": "expression-blind task and row-access freeze",
+    "value_access": true
+  },
+  {
+    "encoding": "string-array",
+    "hdf5_path": "var/gene_name",
+    "n_values": 18129,
+    "purpose": "expression-blind task and row-access freeze",
+    "value_access": true
+  }
+]

@@ -1,0 +1,10 @@
+component,version
+python,3.9.25
+platform,Linux-6.8.0-45-generic-x86_64-with-glibc2.35
+numpy,1.26.4
+pandas,2.3.3
+torch,2.1.2+cu118
+scanpy,1.10.3
+cell-gears,0.0.2
+gpu,"Quadro RTX 6000, 535.183.06, 24576 MiB
+Quadro RTX 6000, 535.183.06, 24576 MiB"

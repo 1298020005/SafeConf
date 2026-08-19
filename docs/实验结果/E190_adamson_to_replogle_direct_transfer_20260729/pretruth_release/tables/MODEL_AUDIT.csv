@@ -1,0 +1,7 @@
+architecture,seed,best_epoch,best_validation_mse,pretrained_tensors,model_key,n_predictions,n_unique_vectors_at_1e-6,all_finite,target_query_graphs_containing_y,n_go_edges,n_coexpression_edges
+scGPT,3407,5,0.023037868551909924,129.0,scGPT_seed3407,692,692,True,0,,
+GEARS,3407,31,0.009778113919310272,,GEARS_seed3407,692,580,True,0,1275.0,10240.0
+scGPT,3408,1,0.024957757676020265,129.0,scGPT_seed3408,692,692,True,0,,
+GEARS,3408,25,0.00982720754109323,,GEARS_seed3408,692,557,True,0,1275.0,10240.0
+scGPT,3409,1,0.023162467405200005,129.0,scGPT_seed3409,692,692,True,0,,
+GEARS,3409,25,0.009898821823298931,,GEARS_seed3409,692,643,True,0,1275.0,10240.0

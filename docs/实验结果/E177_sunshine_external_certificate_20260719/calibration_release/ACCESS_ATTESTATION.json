@@ -1,0 +1,34 @@
+{
+  "calibration_truth_used_to_compute_quantile": true,
+  "calibration_truth_used_to_select_base_model": false,
+  "calibration_x_rows_read_by_phase": {
+    "POSTGATE_CALIBRATION_TRUTH_X": 5595
+  },
+  "code_freeze_remote_heads": {
+    "github": "d809fdc30a9e2c66a1ce9c223e09f7c316713e62",
+    "origin": "d809fdc30a9e2c66a1ce9c223e09f7c316713e62"
+  },
+  "created_at": "2026-07-20T00:18:43.868081+08:00",
+  "evaluation_target_x_rows_read": 0,
+  "experiment": "E177_sunshine_external_certificate",
+  "git_branch": "exp/task-risk-audit-20260611",
+  "git_head": "d809fdc30a9e2c66a1ce9c223e09f7c316713e62",
+  "n_calibration_targets": 30,
+  "n_calibration_tasks": 240,
+  "operational_wetlab_protocol_in_scope": false,
+  "pretruth_snapshot_sha256": "749e4495c0b82a750a6a7414bb385df35c5954865a911c64ebc1adceb9fb640f",
+  "pretruth_snapshot_status": "PASS",
+  "public_processed_data_only": true,
+  "release_files_sha256": {
+    "CALIBRATION_MODEL.json": "6bf3e126cdcd241f4f9c14f4b33019eb6ae708be42972772302365dc49ddb8c5",
+    "arrays/CALIBRATION_TRUE_EFFECTS.npz": "bf56e4aa3222ac5895e46b4966195dead4cf72aee2fb41499148dcb60913dd10",
+    "tables/CALIBRATION_RESIDUALS_BY_TARGET.csv": "7150eff20a7b9e20a0c1a73e8fa02111a3ac0d49f652c4953bf6138cc4a27bd0",
+    "tables/CALIBRATION_TASK_ERRORS.csv": "dedffb5d712ee4ec042e86976045db848402eb9b5c724e45308ec6be8475c419",
+    "tables/CALIBRATION_TRUE_EFFECT_INDEX.csv": "9de3d8ca301375a8213214ded85b757c1dc1669cd61b1390560dfd1aca10e1fe",
+    "tables/INPUT_HASHES.csv": "d74752f6c853fd83015513dc96a281827adabf25fd1f25da6c374dc2a3d75d4c"
+  },
+  "runner_sha256": "382c1c13b3e2763909ed872bd6d43b0a990e019a732ae5dc5c0c18ac31cb6b96",
+  "schema": "safeconf_e177_calibration_access_attestation_v1",
+  "stage": "F4_CALIBRATION_TRUTH_AND_BOUND_FREEZE",
+  "status": "PASS"
+}

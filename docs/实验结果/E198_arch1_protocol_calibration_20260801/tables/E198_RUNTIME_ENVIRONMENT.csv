@@ -1,0 +1,12 @@
+component,version
+python,3.12.4
+platform,Linux-6.8.0-45-generic-x86_64-with-glibc2.35
+cpu_count,96
+anndata,0.12.10
+h5py,3.16.0
+matplotlib,3.10.8
+numpy,2.4.4
+pandas,2.3.3
+scikit-learn,1.8.0
+scipy,1.17.1
+scperteval,0.1.0

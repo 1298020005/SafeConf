@@ -1,0 +1,3 @@
+dataset,n_contexts,n_perturbations,n_genes,gene_order_hash,control_only_panel,feature_meta
+Lara_exvivo,5,31,3000,sha256:c473735edf65f22b26743dcc48b150f64251a009eef5db41e4966858efa6160b,True,"{""gene_embedding_pca_components"": 24, ""context_control_pca_components"": 2, ""interaction_components"": 24, ""feature_dimension"": 50, ""target_context_control_is_available"": true, ""target_perturbed_expression_is_available"": false}"
+Santinha,5,23,3000,sha256:53dbd5a9132affcfbbac5fda8a6f42a9abaf73dea231b058b8c71666dfc4049f,True,"{""gene_embedding_pca_components"": 22, ""context_control_pca_components"": 2, ""interaction_components"": 24, ""feature_dimension"": 48, ""target_context_control_is_available"": true, ""target_perturbed_expression_is_available"": false}"

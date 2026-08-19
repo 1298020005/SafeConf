@@ -1,0 +1,85 @@
+{
+  "schema": "safeconf_e163_validation_raw_futility_v1",
+  "experiment": "E163_wessels_validation_raw_futility",
+  "analysis_timing": "post_E162_training_validation_informed_pre_test_unseal",
+  "phase": "complete_validation_only_futility_diagnostic_no_test_label_or_X_access",
+  "started_at": "2026-07-15T16:20:25+08:00",
+  "completed_at": "2026-07-15T16:21:25+08:00",
+  "git_head": "c3d5462861d394e52c7a0eb53f4a3c0a51bd626f",
+  "main_seed": 3407,
+  "training_sensitivity_seeds": [
+    3408,
+    3409
+  ],
+  "n_validation_tasks": 24,
+  "n_validation_cells_materialized": 5102,
+  "primary_score": "raw_log_prob_higher_is_more_confident",
+  "primary_accuracy": "PCA10_inverse_transform_own_model_Pearson",
+  "secondary_accuracy": "PCA10_inverse_transform_own_model_RMSE",
+  "raw_selected_gene_truth_sensitivity_mandatory_and_reported": true,
+  "authorization_gate": {
+    "schema": "safeconf_e163_authorization_gate_v1",
+    "analysis_role": "validation_informed_futility_diagnostic_not_external_confirmation",
+    "score": "raw_log_prob",
+    "score_orientation": "higher_is_more_confident",
+    "primary_accuracy": "PCA10_inverse_transform_own_model_Pearson",
+    "main_seed": 3407,
+    "seed_primary_estimable": {
+      "3407": true,
+      "3408": true,
+      "3409": true
+    },
+    "seed_primary_spearman_rho": {
+      "3407": 0.16173913043478258,
+      "3408": 0.042608695652173914,
+      "3409": -0.22608695652173913
+    },
+    "condition_1_all_three_primary_associations_estimable": true,
+    "condition_2_main_seed_rho_strictly_positive": true,
+    "condition_3_at_least_two_of_three_seed_rhos_strictly_positive": true,
+    "positive_seed_count": 2,
+    "authorize_future_test_label_lock": true,
+    "decision": "allow_new_test_label_only_preregistration",
+    "bootstrap_cluster_LOGO_or_raw_sensitivity_alter_gate": false,
+    "test_label_query_authorized_inside_E163": false,
+    "test_label_queried": false,
+    "test_X_accessed": false,
+    "test_truth_accessed": false,
+    "interpretation_boundary": "Passing permits only a separately committed future test-label-only contract; it is not model validation or confirmatory success."
+  },
+  "task_bootstrap": {
+    "rng": "numpy.random.default_rng",
+    "seed": 3407,
+    "replicates": 10000,
+    "resample_size": 24,
+    "minimum_valid_replicates": 9500,
+    "alters_authorization_gate": false
+  },
+  "component_gene_cluster_bootstrap": {
+    "rng": "numpy.random.default_rng",
+    "seed": 3407,
+    "replicates": 10000,
+    "alters_authorization_gate": false
+  },
+  "leave_one_gene_out_alters_authorization_gate": false,
+  "E161_development_h5ad_integrity": {
+    "device": 2065,
+    "inode": 267552277,
+    "bytes": 47861187,
+    "mtime_ns": 1784097753806445252,
+    "sha256": "2921f1c8fa7e6415725380e319a5092993e725ec5cb596f225af19811e82fd40"
+  },
+  "allowlisted_input_count": 14,
+  "all_input_hashes_match": true,
+  "all_frozen_sources_match_HEAD": true,
+  "development_h5ad_opened": true,
+  "raw_Wessels_h5ad_opened": false,
+  "E160_test_condition_list_opened": false,
+  "E162b_test_label_artifact_opened": false,
+  "test_label_queried": false,
+  "test_X_accessed": false,
+  "test_truth_accessed": false,
+  "test_endpoint_computed": false,
+  "access_ledger_test_rows_present_or_materialized": 0,
+  "scientific_claim_boundary": "validation-only futility/authorization diagnostic; never external or confirmatory evidence"
+}

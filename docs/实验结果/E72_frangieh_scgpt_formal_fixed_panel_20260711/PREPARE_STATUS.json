@@ -1,0 +1,50 @@
+{
+  "experiment": "E72_frangieh_scGPT_formal_fixed_panel",
+  "prepared_at": "2026-07-11T14:50:05",
+  "git_head_before_prepare": "916f65b989becdb10184cfa4718c7bba9a145e3f",
+  "source_h5ad": "/home/yyf/data/gears_formal_baselines_v2/frangieh_local_atlas/perturb_processed.h5ad",
+  "source_shape": [
+    110188,
+    3000
+  ],
+  "n_panel_genes": 512,
+  "panel_gene_order_hash": "sha256:657e9fedf70fda94a6d910eb2799f057bc8147507fd42c4fe3b25d97d0eb452d",
+  "panel_selection": "all Frangieh perturbation-label genes (24 frozen tests first), then remaining positions ranked by total expression over E71-matched training conditions only",
+  "test_truth_used_for_panel": false,
+  "test_conditions": [
+    "APOD+ctrl",
+    "B2M+ctrl",
+    "BOLA2B+ctrl",
+    "CD63+ctrl",
+    "CDK4+ctrl",
+    "DDR1+ctrl",
+    "DDX39A+ctrl",
+    "EEA1+ctrl",
+    "ENPP1+ctrl",
+    "HLA-B+ctrl",
+    "IRF4+ctrl",
+    "JAK1+ctrl",
+    "JAK2+ctrl",
+    "KLF4+ctrl",
+    "LRPAP1+ctrl",
+    "NOLC1+ctrl",
+    "NSG1+ctrl",
+    "PSAP+ctrl",
+    "S100A6+ctrl",
+    "SAT1+ctrl",
+    "SDCBP+ctrl",
+    "SET+ctrl",
+    "SHMT2+ctrl",
+    "STOM+ctrl"
+  ],
+  "n_train_conditions": 170,
+  "n_val_conditions": 18,
+  "n_test_conditions": 24,
+  "source_urls": {
+    "scgpt_official_perturbation_tutorial": "https://github.com/bowang-lab/scGPT/blob/main/tutorials/Tutorial_Perturbation.ipynb",
+    "gears_repository": "https://github.com/snap-stanford/GEARS"
+  },
+  "dataset": "Frangieh",
+  "gears_audit": "E71_frangieh_gears_fixed_panel_formal_20260711",
+  "adapter_origin": "E65 implementation reused; no Adamson or Norman cell/task/prediction/error reused"
+}

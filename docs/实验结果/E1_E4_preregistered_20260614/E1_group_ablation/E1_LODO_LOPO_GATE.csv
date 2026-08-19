@@ -1,0 +1,7 @@
+dropped_group,n_datasets_ci_positive_lodo_lopo,passes_three_of_seven
+context,3,True
+support,1,False
+prediction_output,4,True
+disagreement,4,True
+ood,3,True
+historical,3,True

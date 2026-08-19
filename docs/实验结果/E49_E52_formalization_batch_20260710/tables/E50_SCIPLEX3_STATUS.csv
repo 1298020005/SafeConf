@@ -1,0 +1,5 @@
+dataset,path,n_obs,n_vars,n_genes_used,context_col,perturbation_col,n_tasks,n_contexts,n_perturbations,status,setting,heldout,dataset_name,n_train,n_test
+sciplex3_cell_line_formal,extra_official/cellular_context_generalization/sciplex3.h5ad,26046.0,5000.0,1000.0,cell_line,perturbation,104.0,3.0,36.0,ok,,,,,
+,,,,,,,,,,ok,leave_context,A549,sciplex3_cell_line_formal,68.0,36.0
+,,,,,,,,,,ok,leave_context,K562,sciplex3_cell_line_formal,69.0,35.0
+,,,,,,,,,,ok,leave_context,MCF7,sciplex3_cell_line_formal,71.0,33.0

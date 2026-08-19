@@ -1,0 +1,58 @@
+{
+  "experiment": "E98_frangieh_gene_cartesian_predictions",
+  "generated_at": "2026-07-13T03:56:43",
+  "git_head_at_run": "b7813e0db4d888a1aef3934b23cd3a67a4496737",
+  "source_h5ad": "/home/yyf/data/gears_formal_baselines_v2/frangieh_local_atlas/perturb_processed.h5ad",
+  "source_h5ad_sha256": "sha256:53b01e6b6282475c261be11161c121eadf22a547c3c118aeab201479a8995221",
+  "contract": "docs/实验结果/E97_frangieh_gene_cartesian_contract_20260713/manifests/E97_TASK_MANIFEST.csv",
+  "contract_sha256": "sha256:8194ef3a2376d2c7377534f31189979acd9709fe90a7002cbe370f7cabe05cec",
+  "effect_asset_cache": "/home/yyf/data/safeconf_e98_frangieh_cartesian/E98_EFFECT_ASSETS.npz",
+  "effect_asset_cache_sha256": "sha256:b7b4e8c09e9a2faea165ec0c780da61b532e5ca431b1d29267e983aeab120dcf",
+  "contexts": [
+    "Co-culture",
+    "Control",
+    "IFNγ"
+  ],
+  "n_perturbations": 189,
+  "n_genes": 3000,
+  "training_fractions": [
+    25,
+    50,
+    75,
+    100
+  ],
+  "predictors": [
+    "SourceEffect_scGPTKNN",
+    "scGPTEmbedding_ContextRidge"
+  ],
+  "embedding": {
+    "checkpoint": "/home/yyf/archive/code/20260519_0958_home_cleanup/moved_top_level/codex_scgpt_attnres_workspace/checkpoints/whole-human/best_model.pt",
+    "checkpoint_sha256": "sha256:6cb5d451ab5c4b33eb673adbe4fddc61d2389df1b89b7651a9fe2e557572b922",
+    "embedding_tensor": "encoder.embedding.weight",
+    "embedding_dimension": 512,
+    "missing_perturbation_genes": []
+  },
+  "features": {
+    "gene_embedding_pca_components": 24,
+    "context_control_pca_components": 2,
+    "interaction_components": 24,
+    "feature_dimension": 50,
+    "target_context_control_is_available": true,
+    "target_perturbed_expression_is_available": false
+  },
+  "ridge_alpha_candidates": [
+    0.1,
+    1.0,
+    10.0,
+    100.0
+  ],
+  "knn_neighbors": 8,
+  "n_task_rows": 3708,
+  "n_prediction_records": 7416,
+  "strict_issue_count": 0,
+  "strict_issues": [],
+  "target_test_perturbed_truth_used_in_prediction_or_risk": false,
+  "validation_truth_used_for_ridge_alpha_risk_calibration_and_q80_threshold": true,
+  "risk_calibration_rows": 12,
+  "pooled_bootstrap_rows": 6
+}

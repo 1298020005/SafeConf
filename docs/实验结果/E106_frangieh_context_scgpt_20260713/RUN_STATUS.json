@@ -1,0 +1,14 @@
+{
+  "experiment": "E106_frangieh_context_scgpt",
+  "generated_at": "2026-07-13T10:31:37",
+  "status": "complete",
+  "completed_folds": [
+    "frangieh_context_holdout_1_Co-culture",
+    "frangieh_context_holdout_2_Control",
+    "frangieh_context_holdout_3_IFNγ"
+  ],
+  "missing_folds": [],
+  "n_completed_folds": 3,
+  "test_target_used_for_training_or_selection": false,
+  "n_test_task_records": 837
+}

@@ -1,0 +1,15 @@
+{
+  "status": "ok",
+  "generated_at": "2026-07-08T02:48:34",
+  "git_head": "11dd4d26620a1802ee0633bc182b7f920833da0c",
+  "git_dirty": true,
+  "source_root": "$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal",
+  "out": "docs/实验结果/E25_gears_strict_prediction_records_20260708",
+  "n_runs": 9,
+  "n_datasets": 3,
+  "n_prediction_records": 54,
+  "n_predicted_arrays": 54,
+  "n_true_arrays": 54,
+  "strict_issue_count": 0,
+  "strict_issues": []
+}

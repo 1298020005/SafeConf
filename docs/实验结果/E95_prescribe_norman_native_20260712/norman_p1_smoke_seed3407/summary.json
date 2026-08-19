@@ -1,0 +1,126 @@
+{
+  "n_tasks": 14,
+  "n_cells": 8192,
+  "rho_risk_epistemic_vs_error": NaN,
+  "p_risk_epistemic_vs_error": NaN,
+  "rho_risk_aleatoric_vs_error": 0.2938442186022439,
+  "p_risk_aleatoric_vs_error": 0.30787161030875576,
+  "rho_risk_combined_vs_error": 0.2938442186022439,
+  "p_risk_combined_vs_error": 0.30787161030875576,
+  "rho_magnitude_pred_rms_vs_error": -0.40264050767271037,
+  "p_magnitude_pred_rms_vs_error": 0.1534790013673288,
+  "selection_curve": [
+    {
+      "score": "risk_epistemic",
+      "reject_fraction": 0.0,
+      "n_retained": 14,
+      "mean_error_retained": 0.16277957867298806,
+      "high_error_recall_rejected": 0.0
+    },
+    {
+      "score": "risk_epistemic",
+      "reject_fraction": 0.1,
+      "n_retained": 12,
+      "mean_error_retained": 0.16060890443623066,
+      "high_error_recall_rejected": 0.5
+    },
+    {
+      "score": "risk_epistemic",
+      "reject_fraction": 0.2,
+      "n_retained": 11,
+      "mean_error_retained": 0.16313905133442444,
+      "high_error_recall_rejected": 0.3333333333333333
+    },
+    {
+      "score": "risk_epistemic",
+      "reject_fraction": 0.3,
+      "n_retained": 9,
+      "mean_error_retained": 0.164273196624385,
+      "high_error_recall_rejected": 0.4
+    },
+    {
+      "score": "risk_aleatoric",
+      "reject_fraction": 0.0,
+      "n_retained": 14,
+      "mean_error_retained": 0.16277957867298806,
+      "high_error_recall_rejected": 0.0
+    },
+    {
+      "score": "risk_aleatoric",
+      "reject_fraction": 0.1,
+      "n_retained": 12,
+      "mean_error_retained": 0.16060890443623066,
+      "high_error_recall_rejected": 0.5
+    },
+    {
+      "score": "risk_aleatoric",
+      "reject_fraction": 0.2,
+      "n_retained": 11,
+      "mean_error_retained": 0.16313905133442444,
+      "high_error_recall_rejected": 0.3333333333333333
+    },
+    {
+      "score": "risk_aleatoric",
+      "reject_fraction": 0.3,
+      "n_retained": 9,
+      "mean_error_retained": 0.15593760460615158,
+      "high_error_recall_rejected": 0.6
+    },
+    {
+      "score": "risk_combined",
+      "reject_fraction": 0.0,
+      "n_retained": 14,
+      "mean_error_retained": 0.16277957867298806,
+      "high_error_recall_rejected": 0.0
+    },
+    {
+      "score": "risk_combined",
+      "reject_fraction": 0.1,
+      "n_retained": 12,
+      "mean_error_retained": 0.16060890443623066,
+      "high_error_recall_rejected": 0.5
+    },
+    {
+      "score": "risk_combined",
+      "reject_fraction": 0.2,
+      "n_retained": 11,
+      "mean_error_retained": 0.16313905133442444,
+      "high_error_recall_rejected": 0.3333333333333333
+    },
+    {
+      "score": "risk_combined",
+      "reject_fraction": 0.3,
+      "n_retained": 9,
+      "mean_error_retained": 0.15593760460615158,
+      "high_error_recall_rejected": 0.6
+    },
+    {
+      "score": "magnitude_pred_rms",
+      "reject_fraction": 0.0,
+      "n_retained": 14,
+      "mean_error_retained": 0.16277957867298806,
+      "high_error_recall_rejected": 0.0
+    },
+    {
+      "score": "magnitude_pred_rms",
+      "reject_fraction": 0.1,
+      "n_retained": 12,
+      "mean_error_retained": 0.16464388805131117,
+      "high_error_recall_rejected": 0.0
+    },
+    {
+      "score": "magnitude_pred_rms",
+      "reject_fraction": 0.2,
+      "n_retained": 11,
+      "mean_error_retained": 0.167540851641785,
+      "high_error_recall_rejected": 0.0
+    },
+    {
+      "score": "magnitude_pred_rms",
+      "reject_fraction": 0.3,
+      "n_retained": 9,
+      "mean_error_retained": 0.161557551059458,
+      "high_error_recall_rejected": 0.2
+    }
+  ]
+}

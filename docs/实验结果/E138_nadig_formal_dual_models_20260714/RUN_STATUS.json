@@ -1,0 +1,15 @@
+{
+  "experiment": "E138_nadig_formal_dual_models",
+  "generated_at": "2026-07-14T02:36:22",
+  "status": "complete",
+  "source_contract": "docs/实验结果/E136_nadig_two_cellline_contract_20260714/manifests/E136_TASK_MANIFEST.csv",
+  "source_asset": "/home/yyf/data/safeconf_e137_nadig/Nadig_two_cellline_E136_selected.h5ad",
+  "dataset": "NadigOConner2024_HepG2_Jurkat",
+  "context_definition": "biological cell-line shift",
+  "n_folds": 2,
+  "n_test_tasks": 256,
+  "n_prediction_records": 512,
+  "strict_issue_count": 0,
+  "test_truth_used_for_training_calibration_score_or_threshold": false,
+  "directional_confirmation_not_evaluated_here": true
+}

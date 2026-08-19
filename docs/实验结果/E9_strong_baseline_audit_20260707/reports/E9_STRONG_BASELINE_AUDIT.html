@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>E9 强基线统一审计</title>
+<style>
+body{margin:0;background:#f7f8f6;color:#17202a;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,"Noto Sans SC",sans-serif;line-height:1.7}
+.top{background:#12312b;color:white;padding:28px 42px}.wrap{max-width:1120px;margin:0 auto;padding:28px}
+.card{background:white;border:1px solid #d8e0dc;border-radius:16px;padding:22px;margin:18px 0;box-shadow:0 8px 22px rgba(15,23,42,.06);overflow-x:auto}
+h2{border-bottom:3px solid #0f766e;padding-bottom:8px}.warn{border-left:6px solid #b45309;background:#fff8eb}.ok{border-left:6px solid #047857;background:#f1fbf6}
+img{max-width:100%;background:white;border:1px solid #d8e0dc;border-radius:12px}table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #dbe3df;padding:7px;vertical-align:top}th{background:#eef6f3}
+</style></head><body>
+<div class="top"><h1>E9 强基线统一审计</h1><p>审稿人最可能追问的问题：SafeConf 是否只是 magnitude 的影子？</p></div>
+<div class="wrap">
+<div class="card warn"><h2>结论</h2><p>Frozen v0.2 直接对比 magnitude 只赢 2/7 个数据集；但 E2 显示 7/7 个数据集在控制 magnitude 后仍有正的 residual signal。论文主张应转向“增量风险信息”和“复核决策价值”。</p></div>
+<div class="card"><h2>图 1：直接对比 magnitude</h2><img src="../figures/E9_fig1_frozen_vs_magnitude_aligned_delta.svg"></div>
+<div class="card"><h2>图 2：控制 magnitude 后的增量价值</h2><img src="../figures/E9_fig2_incremental_value_after_magnitude_control.svg"></div>
+<div class="card"><h2>图 3：Tahoe chemical 边界</h2><img src="../figures/E9_fig3_tahoe_top10_boundary.svg"></div>
+<div class="card"><h2>Head-to-head 表</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataset_name</th>
+      <th>magnitude_aligned_rho</th>
+      <th>frozen_v02_aligned_rho</th>
+      <th>delta_frozen_minus_magnitude_aligned_rho</th>
+      <th>magnitude_partial_rho_control_magnitude</th>
+      <th>frozen_v02_partial_rho_control_magnitude</th>
+      <th>delta_frozen_minus_magnitude_partial_rho_control_magnitude</th>
+      <th>magnitude_aurc_reduction_vs_random_pct</th>
+      <th>frozen_v02_aurc_reduction_vs_random_pct</th>
+      <th>delta_frozen_minus_magnitude_aurc_reduction_vs_random_pct</th>
+      <th>magnitude_avoidable_gap_captured_pct</th>
+      <th>frozen_v02_avoidable_gap_captured_pct</th>
+      <th>delta_frozen_minus_magnitude_avoidable_gap_captured_pct</th>
+      <th>frozen_beats_magnitude_aligned</th>
+      <th>frozen_beats_magnitude_aurc</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Frangieh</td>
+      <td>0.859365</td>
+      <td>0.582722</td>
+      <td>-0.276643</td>
+      <td>0.900178</td>
+      <td>0.473820</td>
+      <td>-0.426359</td>
+      <td>17.234124</td>
+      <td>12.065432</td>
+      <td>-5.168693</td>
+      <td>87.833546</td>
+      <td>61.491355</td>
+      <td>-26.342191</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>LaraAstiasoHuntly2023_invivo</td>
+      <td>0.620871</td>
+      <td>0.394162</td>
+      <td>-0.226709</td>
+      <td>0.573931</td>
+      <td>0.394276</td>
+      <td>-0.179655</td>
+      <td>34.251475</td>
+      <td>30.048838</td>
+      <td>-4.202637</td>
+      <td>48.759821</td>
+      <td>42.777018</td>
+      <td>-5.982803</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>McFarlandTsherniak2020</td>
+      <td>0.137378</td>
+      <td>-0.085934</td>
+      <td>-0.223312</td>
+      <td>-0.122462</td>
+      <td>-0.080758</td>
+      <td>0.041704</td>
+      <td>10.953294</td>
+      <td>-12.544651</td>
+      <td>-23.497945</td>
+      <td>23.009166</td>
+      <td>-26.352067</td>
+      <td>-49.361232</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>SantinhaPlatt2023</td>
+      <td>0.352292</td>
+      <td>0.152410</td>
+      <td>-0.199882</td>
+      <td>0.468683</td>
+      <td>0.151755</td>
+      <td>-0.316928</td>
+      <td>11.763368</td>
+      <td>8.934489</td>
+      <td>-2.828879</td>
+      <td>26.745822</td>
+      <td>20.313932</td>
+      <td>-6.431890</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>SrivatsanTrapnell2020_sciplex3</td>
+      <td>0.562713</td>
+      <td>0.427781</td>
+      <td>-0.134931</td>
+      <td>0.773269</td>
+      <td>0.426870</td>
+      <td>-0.346399</td>
+      <td>22.909609</td>
+      <td>18.005655</td>
+      <td>-4.903954</td>
+      <td>62.873694</td>
+      <td>49.415163</td>
+      <td>-13.458531</td>
+      <td>False</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <td>CuiHacohen2023</td>
+      <td>0.391569</td>
+      <td>0.445376</td>
+      <td>0.053807</td>
+      <td>0.129162</td>
+      <td>0.445250</td>
+      <td>0.316088</td>
+      <td>21.835634</td>
+      <td>27.054937</td>
+      <td>5.219302</td>
+      <td>46.268159</td>
+      <td>57.327490</td>
+      <td>11.059331</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <td>LaraAstiasoHuntly2023_exvivo</td>
+      <td>0.457312</td>
+      <td>0.563151</td>
+      <td>0.105838</td>
+      <td>0.521609</td>
+      <td>0.564893</td>
+      <td>0.043284</td>
+      <td>14.138661</td>
+      <td>57.669986</td>
+      <td>43.531325</td>
+      <td>20.037291</td>
+      <td>81.729825</td>
+      <td>61.692534</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table></div>
+</div></body></html>

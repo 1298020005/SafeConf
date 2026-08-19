@@ -1,0 +1,20 @@
+{
+  "experiment": "E101_gene_cartesian_meta_audit",
+  "generated_at": "2026-07-13T04:22:15",
+  "datasets": [
+    "Frangieh",
+    "Lara_exvivo",
+    "Santinha"
+  ],
+  "n_datasets": 3,
+  "n_folds_at_full_fraction": 13,
+  "n_test_task_rows_at_full_fraction": 1437,
+  "primary_score": "safeconf_frozen_pair_risk",
+  "comparators": [
+    "baseline_predicted_magnitude",
+    "risk_model_disagreement"
+  ],
+  "n_bootstrap": 5000,
+  "score_refit_in_E101": false,
+  "test_truth_used_to_choose_score_or_weight": false
+}

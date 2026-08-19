@@ -1,0 +1,2 @@
+dataset_name,task_id,task_key,context,perturbation,fold_id,split,pair_seen_in_train,perturbation_seen_in_train,context_seen_in_train
+McFarlandTsherniak2020,3,McFarlandTsherniak2020::task_00003,22RV1,Trametinib,0,test,False,True,True

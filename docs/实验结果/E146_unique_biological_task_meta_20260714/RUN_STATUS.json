@@ -1,0 +1,57 @@
+{
+  "experiment": "E146_unique_biological_task_meta",
+  "phase": "complete_post_unblinding_dependence_audit",
+  "generated_at": "2026-07-14T14:48:00",
+  "upstream_E140_results_already_unblinded": true,
+  "confirmatory_claim_allowed": false,
+  "input_snapshot": "docs/实验结果/E146_unique_biological_task_meta_20260714/tables/E146_E140_TASK_INPUT.csv",
+  "input_snapshot_sha256": "sha256:95e5c776f97efbefaaf4d312dbb906ac100701e9682480020e8dd32153188ec9",
+  "direction_snapshot": "docs/实验结果/E146_unique_biological_task_meta_20260714/tables/E146_E139_DIRECTIONAL_INPUT.csv",
+  "direction_snapshot_sha256": "sha256:5c2ec6b5dfa7de56fbb873403a5910faf71c0972f188feb346fa851005517268",
+  "contract_sha256": "sha256:27843596d81a7efb45dac4d77d5854161531f32966469aa591edd0dea420975f",
+  "input_manifest_sha256": "sha256:8fc659282205ce90c99857c496b52829eb857ce13e19b4dcfb42e25906388ce5",
+  "analysis_script_sha256": "sha256:4e303f76ed4b8fd97bb751e5b46b327e33b04fd026c872ba8a7dd0fcc72a2e38",
+  "n_rows": 3209,
+  "n_datasets": 7,
+  "n_unique_context_tasks": 1667,
+  "n_unique_dataset_perturbations": 476,
+  "bootstrap_cluster_primary": [
+    "dataset",
+    "perturbation"
+  ],
+  "bootstrap_cluster_sensitivity": [
+    "dataset",
+    "context",
+    "perturbation"
+  ],
+  "n_bootstrap": 3000,
+  "primary_endpoint": "error_two_predictor_mean_rmse",
+  "primary_score": "safeconf_calibrated_pair_risk",
+  "comparators": [
+    "risk_model_disagreement",
+    "baseline_predicted_magnitude"
+  ],
+  "truth_used_to_change_scores_or_tasks": false,
+  "completed_at": "2026-07-14T15:07:09",
+  "n_input_rows": 3209,
+  "n_bootstrap_per_dataset_per_estimand": 3000,
+  "bootstrap_estimands": [
+    "e140_fold_macro_context_task_cluster",
+    "e140_fold_macro_perturbation_cluster",
+    "pooled_context_task_median_sensitivity"
+  ],
+  "random_effects_method": "Fisher z + REML tau2 + modified Knapp-Hartung + t prediction interval",
+  "random_effects_estimands": [
+    "e140_fold_macro_perturbation_cluster",
+    "pooled_context_task_median_sensitivity"
+  ],
+  "safeconf_minus_magnitude_sign_reversal_after_deleting_liang_in_pooled_median_sensitivity": true,
+  "directional_analysis_scope": "Nadig single-study only; excluded from seven-study absolute meta",
+  "directional_alignment_audit": {
+    "aligned_rows": 256,
+    "unique_context_tasks": 192,
+    "unique_perturbations_synchronized_across_contexts": 96,
+    "max_abs_e139_e140_absolute_endpoint_difference": 0.0,
+    "included_in_seven_study_absolute_meta": false
+  }
+}

@@ -1,0 +1,34 @@
+setting,check,observed,expected,passed,detail
+E190_K562,task_count,692,692,True,
+E190_K562,selected_gene_count,47,47,True,
+E190_K562,panel_gene_count,512,512,True,
+E190_K562,query_order_contiguous,"[0, 1, 2, 689, 690, 691]",0..691,True,
+E190_K562,task_order_matches_truth_index,692,692,True,
+E190_K562,task_order_matches_asset_query,692,692,True,
+E190_K562,task_order_matches_saved_metrics,692,692,True,
+E190_K562,task_genes_within_selected_genes,47,47,True,
+E190_K562,task_ids_unique,692,692,True,
+E190_K562,batch_gene_tasks_unique,692,692,True,context-stratified centroid competitors must be distinct perturbation genes
+E190_K562,prediction_release_status,PASS,PASS,True,prediction release must precede target-truth read
+E190_K562,truth_release_status,PASS,PASS,True,
+E190_K562,train_only_systema_inputs,['train'],['train'],True,
+E190_K562,frozen_risk_columns_present,4,4,True,
+E192_RPE1,task_count,175,175,True,
+E192_RPE1,selected_gene_count,21,21,True,
+E192_RPE1,panel_gene_count,512,512,True,
+E192_RPE1,query_order_contiguous,"[0, 1, 2, 172, 173, 174]",0..174,True,
+E192_RPE1,task_order_matches_truth_index,175,175,True,
+E192_RPE1,task_order_matches_asset_query,175,175,True,
+E192_RPE1,task_order_matches_saved_metrics,175,175,True,
+E192_RPE1,task_genes_within_selected_genes,21,21,True,
+E192_RPE1,task_ids_unique,175,175,True,
+E192_RPE1,batch_gene_tasks_unique,175,175,True,context-stratified centroid competitors must be distinct perturbation genes
+E192_RPE1,prediction_release_status,PASS,PASS,True,prediction release must precede target-truth read
+E192_RPE1,truth_release_status,PASS,PASS,True,
+E192_RPE1,train_only_systema_inputs,['train'],['train'],True,
+E192_RPE1,frozen_risk_columns_present,4,4,True,
+cross_setting,setting_specific_512_gene_axes_recorded,E190=512;E192=512;overlap=280,two unique 512-gene axes; no cross-axis vector comparison,True,
+cross_setting,source_assets_kept_setting_specific,0,0,True,the two target settings froze different 512-gene panels
+software,scperteval_official_commit,8709eb07a0e7d4ecf1c60c977f2018690a749975,8709eb07a0e7d4ecf1c60c977f2018690a749975,True,official checkout must be clean
+software,systema_official_commit,aaf5b5353993b48b78543f2f93b3e18ca65df515,aaf5b5353993b48b78543f2f93b3e18ca65df515,True,official Systema checkout must be clean
+protocol,centroid_only_allowlist,"pearson,pearson_ctrl,pearson_pert,mse,rank,transpose_rank","pearson,pearson_ctrl,pearson_pert,mse,rank,transpose_rank",True,

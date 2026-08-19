@@ -1,0 +1,3 @@
+file_name,status,n_rows,columns,relative_path
+gene_metadata.parquet,ok,62710,gene_symbol;ensembl_id;token_id,mega_external/Tahoe-100M/metadata/gene_metadata.parquet
+obs_metadata.parquet,ok,100648790,plate;BARCODE_SUB_LIB_ID;sample;gene_count;tscp_count;mread_count;drugname_drugconc;drug;cell_line;sublibrary;BARCODE;pcnt_mito;S_score;G2M_score;phase;pass_filter;cell_name;__index_level_0__,mega_external/Tahoe-100M/metadata/obs_metadata.parquet

@@ -1,0 +1,10 @@
+{
+  "baseline_arm_authorized": true,
+  "created_at": "2026-07-16T18:17:27+08:00",
+  "e163_validation_gate_passed": true,
+  "experiment": "E164_wessels_pretruth_lock",
+  "planned_label_query": true,
+  "schema": "e164_atomic_staging_v1",
+  "target": "/home/yyf/proj/docs/实验结果/E164_wessels_pretruth_lock_20260715/release",
+  "transaction_id": "741501a2d83e4c5ba7c8f04d22459d22"
+}

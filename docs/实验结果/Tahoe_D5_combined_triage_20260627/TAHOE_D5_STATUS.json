@@ -1,0 +1,17 @@
+{
+  "status": "ok",
+  "gate": "PASS_USEFUL_NOT_BETTER",
+  "score_csv": "/home/yyf/safeconf_runtime/outputs/tahoe_d3_triage_20260625/tables/TAHOE_D3_SCORE_AUDIT.csv",
+  "out_dir": "/home/yyf/safeconf_runtime/outputs/tahoe_d5_combined_triage_20260627",
+  "n_records": 16114,
+  "n_task_clusters": 8057,
+  "n_bootstrap": 1000,
+  "seed": 5201,
+  "primary_score": "combined_equal",
+  "safeconf_top10_enrichment": 4.880316823575049,
+  "magnitude_top10_enrichment": 6.486418548233164,
+  "combined_equal_top10_enrichment": 5.729876423104631,
+  "combined_equal_top10_ci_low": 5.450823999901484,
+  "combined_equal_minus_magnitude_ci_low": -1.0171460825754743,
+  "combined_equal_minus_magnitude_ci_high": -0.6075591369628526
+}

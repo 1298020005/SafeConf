@@ -1,0 +1,3 @@
+source_id,source_label,source_status,exists,n_records,n_scores,n_datasets,datasets,best_score_name,best_aligned_spearman,best_n,has_uncertainty_confidence,boundary
+GEARS_FORMAL_54,Norman/Adamson/Dixit formal,formal_existing,True,54,54,3,"adamson,dixit,norman",gears_prediction_magnitude_risk,0.6239374880884314,54,False,GEARS-only; no native uncertainty; not aligned with sciplex3/CPA/scGPT.
+GEARS_FRANGIEH_62,Frangieh third-predictor run03,supplement_probe_existing,True,62,124,1,frangieh,gears_prediction_magnitude_risk,0.9411246254186496,62,True,"GEARS-only Frangieh run; source name contains smoke lineage; use as supplementary signal, not main formal claim."

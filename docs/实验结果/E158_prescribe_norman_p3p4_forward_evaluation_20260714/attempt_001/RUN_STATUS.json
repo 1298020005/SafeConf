@@ -1,0 +1,94 @@
+{
+  "experiment": "E158_prescribe_norman_p3p4_forward_evaluation",
+  "phase": "failed_after_irreversible_test_unseal_preserve_attempt",
+  "started_at": "2026-07-14T20:32:56+08:00",
+  "n_bootstrap": 10000,
+  "coverage_grid": [
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.9,
+    0.95,
+    1.0
+  ],
+  "test_data_unsealed": true,
+  "raw_file_bytes_accessed": true,
+  "test_X_rows_materialized": true,
+  "both_E157_complete_and_hash_verified": true,
+  "lock_verification_completed_at": "2026-07-14T20:33:09+08:00",
+  "lock_audit": {
+    "git_head_at_unseal": "29e94a249c4726bb8b9e15ff44000ceb060c38ab",
+    "runner_sha256": "a128cf4681d64a1b167027454139477448dfe879e09b1d11a84dd0d1238af398",
+    "runner_matches_git_head_blob": true,
+    "contract_sha256": "519dc05823e41c20b958c62f7d7c4f85763c364d1ece67e44e6417dd4a215841",
+    "contract_matches_git_head_blob": true,
+    "panels": {
+      "Norman_P3": {
+        "panel": "Norman_P3",
+        "status_path": "/home/yyf/proj/docs/实验结果/E157_prescribe_norman_p3p4_native_20260714/norman_p3_formal_seed3407/STATUS.json",
+        "status_sha256": "ecdba86b7d34f15bd46abee0081562b05e72d9775d65b94dbd9eb4fbad6fbab0",
+        "checkpoint_sha256": {
+          "best_lightning_checkpoint": "fc75c02201cea11c5da439628157e3a20a2b92173e69803946e6c270b575a31c",
+          "locked_slim_checkpoint": "44d40c2e29a4d2e6169205f5f064cdb8f37095418faa6c964e9c89e1e4dd83d1"
+        },
+        "task_score_path": "/home/yyf/proj/docs/实验结果/E157_prescribe_norman_p3p4_native_20260714/norman_p3_formal_seed3407/locked/E157_LOCKED_LABEL_ONLY_TASK_SCORES.csv",
+        "task_score_sha256": "4f782745606d677d85e1b62c3e21da9e83521d14179b856701a2298cc815ee33",
+        "n_locked_tasks": 24,
+        "best_val_loss": 34.57464599609375,
+        "test_expression_accessed": false,
+        "test_endpoint_computed": false
+      },
+      "Norman_P4": {
+        "panel": "Norman_P4",
+        "status_path": "/home/yyf/proj/docs/实验结果/E157_prescribe_norman_p3p4_native_20260714/norman_p4_formal_seed3407/STATUS.json",
+        "status_sha256": "0e44f7a1b0b0aadbbbd231ddacf9759f8186697b44da03588f5aac8a6192cef6",
+        "checkpoint_sha256": {
+          "best_lightning_checkpoint": "f74425ef4462045998960c6abdfae118e7ca4a5fb6e4d83c30015165a6787b58",
+          "locked_slim_checkpoint": "dd165be659758ceeb7bd12b4d4b942c123a92da076cbc0df1e24b50e715adcfd"
+        },
+        "task_score_path": "/home/yyf/proj/docs/实验结果/E157_prescribe_norman_p3p4_native_20260714/norman_p4_formal_seed3407/locked/E157_LOCKED_LABEL_ONLY_TASK_SCORES.csv",
+        "task_score_sha256": "731bd52f61eb944f339995e31cc952ee58dcaee817e7956bfc75d88a9ed4bba7",
+        "n_locked_tasks": 24,
+        "best_val_loss": 34.57464599609375,
+        "test_expression_accessed": false,
+        "test_endpoint_computed": false
+      }
+    }
+  },
+  "input_manifest_sha256": "e8557eeb381a7e46b786cf05d7da8c0130b9a0e9e74739cde051dcef8d9c9d2c",
+  "pca_model_sha256": "19551ecaddde045ab39bdf1e19d645e477d9941ae0d070c20777a9f2556b6d39",
+  "gene_order_sha256": "5cc1afc8cff9d7734971b0ec15390517c4e8b4dc3b79f04e8d238cc6a3b87d2e",
+  "control_sha256": "f86e5fea051340f0f53e81aaf319eb10ce5fba749f4ae0619a58d7573f2de117",
+  "locked_score_semantics_audit": {
+    "Norman_P3": {
+      "n_tasks": 24,
+      "gene_order_sha256": "5cc1afc8cff9d7734971b0ec15390517c4e8b4dc3b79f04e8d238cc6a3b87d2e",
+      "predicted_magnitude_max_abs_delta": 1.2656310565545281e-09,
+      "verified_without_test_truth_or_expression": true
+    },
+    "Norman_P4": {
+      "n_tasks": 24,
+      "gene_order_sha256": "5cc1afc8cff9d7734971b0ec15390517c4e8b4dc3b79f04e8d238cc6a3b87d2e",
+      "predicted_magnitude_max_abs_delta": 1.2656310565545281e-09,
+      "verified_without_test_truth_or_expression": true
+    }
+  },
+  "unseal_event_sha256": "40b1418002c8f32d0dbac67bd0260ed47d23645ff92f60c25c97d4ef38322f08",
+  "raw_sha256": "efde6f5301fe256725dce1d980f37bd96a13481a9a16135515897368e631affc",
+  "raw_hash_verified_at": "2026-07-14T20:33:11+08:00",
+  "raw_container_open_started": true,
+  "raw_container_opened": true,
+  "raw_obs_access_started": true,
+  "raw_obs_read": true,
+  "test_X_access_started": true,
+  "n_test_cells_materialized": 30032,
+  "failed_at": "2026-07-14T20:33:24+08:00",
+  "runtime_seconds": 28.42,
+  "error": "RuntimeError('Only 0 valid bootstrap replicates; need 9500')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/yyf/proj/tools/scripts/run_e158_prescribe_norman_p3p4_forward_evaluation.py\", line 1574, in main\n    associations, deltas, primary_draws = build_associations(tasks)\n  File \"/home/yyf/proj/tools/scripts/run_e158_prescribe_norman_p3p4_forward_evaluation.py\", line 1078, in build_associations\n    association, delta, draws = target_bootstrap(tasks, target, \"spearman\")\n  File \"/home/yyf/proj/tools/scripts/run_e158_prescribe_norman_p3p4_forward_evaluation.py\", line 896, in target_bootstrap\n    low, high, valid = percentile(draws[f\"{panel}|{score}\"])\n  File \"/home/yyf/proj/tools/scripts/run_e158_prescribe_norman_p3p4_forward_evaluation.py\", line 853, in percentile\n    raise RuntimeError(f\"Only {len(finite)} valid bootstrap replicates; need {MIN_VALID_BOOT}\")\nRuntimeError: Only 0 valid bootstrap replicates; need 9500\n"
+}

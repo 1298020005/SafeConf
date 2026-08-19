@@ -1,0 +1,13 @@
+{
+  "experiment": "E140_formal_seven_dataset_meta",
+  "generated_at": "2026-07-14T02:49:27",
+  "status": "complete",
+  "n_datasets": 7,
+  "n_folds": 32,
+  "n_test_tasks": 3209,
+  "n_prediction_records": 6418,
+  "strict_issue_count": 0,
+  "n_bootstrap": 3000,
+  "nadig_negative_absolute_rmse_comparison_retained": true,
+  "test_truth_used_to_change_safeconf_score": false
+}

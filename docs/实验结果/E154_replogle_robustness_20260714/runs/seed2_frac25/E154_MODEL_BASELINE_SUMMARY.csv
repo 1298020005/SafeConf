@@ -1,0 +1,2 @@
+dataset,n_tasks,rmse_scgpt_mean,rmse_gears_mean,rmse_individual_mean,rmse_ensemble_mean,rmse_training_perturbed_mean,ensemble_minus_simple_baseline,fraction_tasks_ensemble_beats_simple_baseline,truth_alignment_with_training_mean
+Replogle_two_cellline,256,1.1218202519425846,0.10678259949262635,0.6143014257176054,0.5704572510743173,0.5824636996703673,-0.012006448596049824,0.5,0.9614328984171152

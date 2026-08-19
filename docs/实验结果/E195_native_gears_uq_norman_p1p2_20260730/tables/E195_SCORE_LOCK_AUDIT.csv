@@ -1,0 +1,7 @@
+panel,seed,score_lock_hash_chain,truth_unlock_after_lock,cell_task_order_match,score_record_exact_match,array_keys_match,effect_vectors_finite,vector_length,max_magnitude_recompute_diff,max_rmse_recompute_diff
+P1,11,True,True,True,True,True,True,5025,9.020562075079397e-17,2.0676700629440603e-10
+P1,22,True,True,True,True,True,True,5025,9.71445146547012e-17,2.365781667790223e-10
+P1,33,True,True,True,True,True,True,5025,9.71445146547012e-17,2.2031478030815066e-10
+P2,11,True,True,True,True,True,True,5025,9.71445146547012e-17,5.261657498589756e-10
+P2,22,True,True,True,True,True,True,5025,9.71445146547012e-17,5.212931336595616e-10
+P2,33,True,True,True,True,True,True,5025,9.71445146547012e-17,8.911041973758138e-10

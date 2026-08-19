@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SafeConf 小白科普首页</title>
+<style>
+  body{
+    margin:0;
+    background:#f6f7fb;
+    color:#17202a;
+    font-family:"PingFang SC","Microsoft YaHei","Segoe UI",Arial,sans-serif;
+    line-height:1.75;
+  }
+  .page{max-width:980px;margin:0 auto;padding:34px 20px 80px}
+  header,.card{
+    background:#fff;
+    border:1px solid #d8dee9;
+    border-radius:8px;
+    padding:22px;
+    margin:14px 0;
+  }
+  h1{margin:0 0 8px;font-size:32px}
+  h2{margin:0 0 10px;font-size:22px}
+  p{margin:8px 0}
+  a{color:#2563eb;font-weight:700;text-decoration:none}
+  a:hover{text-decoration:underline}
+  code{
+    background:#f1f5f9;
+    border:1px solid #e2e8f0;
+    border-radius:4px;
+    padding:1px 5px;
+  }
+  pre{
+    white-space:pre-wrap;
+    background:#f8fafc;
+    border:1px solid #e2e8f0;
+    border-radius:8px;
+    padding:14px;
+    overflow:auto;
+  }
+  .muted{color:#64748b}
+  .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .blue{border-left:6px solid #2563eb}
+  .green{border-left:6px solid #15803d}
+  .orange{border-left:6px solid #c2410c}
+  .purple{border-left:6px solid #7c3aed}
+  @media (max-width:760px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1>SafeConf 小白科普首页</h1>
+    <p class="muted">这个文件夹可以整包下载到本地。所有链接都是相对路径，双击本页即可开始看。</p>
+  </header>
+
+  <section class="card green">
+    <h2>当前推荐阅读顺序</h2>
+    <p>如果你不知道从哪开始，就按这个顺序：</p>
+    <pre><code>1. 整体架构流程图：30 秒看懂全局
+2. h5ad 数据页：搞懂数据到底长什么样
+3. 全流程拆解：主书，详细讲创造者到使用者
+4. CSV 样例页：想看真实表格时打开
+5. 终版学习手册：当术语词典查，不再作为主线</code></pre>
+    <p><a href="./SafeConf_HTML资料整合与版本对比_20260617.html">打开：HTML 资料整合与版本对比报告</a></p>
+  </section>
+
+  <section class="card purple">
+    <h2>主书：全流程拆解</h2>
+    <p><a href="./全流程拆解_创造者到使用者/SafeConf_全流程拆解_创造者到使用者.html">SafeConf_全流程拆解_创造者到使用者.html</a></p>
+    <p>这是现在的小白学习主入口。按“创造者怎么造 SafeConf”和“使用者怎么用 SafeConf”两条线讲。</p>
+    <p class="muted">Markdown 版：<a href="./全流程拆解_创造者到使用者/SafeConf_全流程拆解_创造者到使用者.md">SafeConf_全流程拆解_创造者到使用者.md</a></p>
+  </section>
+
+  <section class="card blue">
+    <h2>先看 h5ad 到底长什么样</h2>
+    <p><a href="./h5ad真实数据格式/README_h5ad到底长什么样.md">README_h5ad到底长什么样.md</a></p>
+    <p>先把 <code>obs</code>、<code>var</code>、<code>X</code>、<code>true_effect</code> 看懂。这个是最基础的地基。</p>
+  </section>
+
+  <section class="card blue">
+    <h2>终版学习手册（参考词典）</h2>
+    <p><a href="./SafeConf_终版学习手册.html">SafeConf_终版学习手册.html</a></p>
+    <p>旧版大手册，内容很多。现在建议当“术语词典”和参考书，不再作为主线从头读。</p>
+    <p class="muted">Markdown 版：<a href="./SafeConf_终版学习手册.md">SafeConf_终版学习手册.md</a></p>
+  </section>
+
+  <section class="card blue">
+    <h2>今晚突击路线</h2>
+    <p><a href="./今晚突击学习路线_先按这个看.md">今晚突击学习路线_先按这个看.md</a></p>
+    <p>如果你今天只想突击看懂数据链路，按这个顺序走。</p>
+  </section>
+
+  <div class="grid">
+    <section class="card green">
+      <h2>数据一页看懂</h2>
+      <p><a href="./h5ad真实数据格式/SafeConf_数据到底长什么样_一页看懂_20260608.html">SafeConf_数据到底长什么样_一页看懂_20260608.html</a></p>
+      <p>用图展示真实 h5ad、表达矩阵、向量、PredictionRecord、features、scores 长什么样。</p>
+    </section>
+
+    <section class="card green">
+      <h2>可打开 CSV 样例</h2>
+      <p><a href="./h5ad可打开CSV样例/CSV样例_浏览器查看.html">CSV样例_浏览器查看.html</a></p>
+      <p>先看这个浏览器版。它会解释列名，再显示表格，不依赖 CSV 插件。</p>
+      <p><a href="./h5ad可打开CSV样例/README_这些CSV怎么看.md">README_这些CSV怎么看.md</a></p>
+    </section>
+
+    <section class="card orange">
+      <h2>从 h5ad 到 effect</h2>
+      <p><a href="./从h5ad到effect_真实数据实物拆解_20260608.md">SafeConf_真实数据实物拆解_20260608.md</a></p>
+      <p>慢慢拆字段、数据粒度变化、向量和 RMSE 的计算。</p>
+    </section>
+
+    <section class="card purple">
+      <h2>整体架构</h2>
+      <p><a href="./SafeConf整体架构流程图_20260608.html">SafeConf_小白架构流程图_20260608.html</a></p>
+      <p>等你知道数据是什么后，再看 SafeConf 整体流程。</p>
+    </section>
+
+    <section class="card">
+      <h2>组会逐页讲解</h2>
+      <p><a href="./组会逐页讲解_20260610/README_先看这个.md">README_先看这个.md</a></p>
+      <p>准备讲给别人听时看这里。</p>
+    </section>
+  </div>
+
+  <section class="card">
+    <h2>一条主线</h2>
+    <pre><code>h5ad 原始单细胞数据
+  -> obs 细胞表 + var 基因表 + X 表达矩阵
+  -> true_effect = perturbation_mean - control_mean
+  -> predicted_effect = 预测器给出的答案
+  -> true_error_rmse = 预测错得多远
+  -> SafeConf risk score = 这条预测是否高风险</code></pre>
+  </section>
+
+  <section class="card">
+    <h2>文件夹结构</h2>
+    <pre><code>小白科普/
+├── index.html
+├── README_先看这个.md
+├── SafeConf_终版学习手册.html
+├── h5ad真实数据格式/
+├── h5ad可打开CSV样例/
+├── 从h5ad到effect_真实数据实物拆解_20260608.md
+├── SafeConf整体架构流程图_20260608.html
+├── 全流程拆解_创造者到使用者/
+├── 组会逐页讲解_20260610/
+└── assets/</code></pre>
+  </section>
+</div>
+</body>
+</html>

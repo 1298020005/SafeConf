@@ -1,0 +1,32 @@
+{
+  "schema": "safeconf_directional_risk_v1",
+  "frozen_at": "2026-07-14T02:29:02",
+  "status": "frozen_before_seventh_dataset_prediction_or_truth",
+  "model": "Ridge",
+  "alpha": 10.0,
+  "features_in_order": [
+    "risk_disagreement_z",
+    "predicted_magnitude_z",
+    "context_novelty_scaled",
+    "perturbation_novelty"
+  ],
+  "coefficients_in_order": [
+    0.015637725890004724,
+    0.023463472706494955,
+    -0.19486358334777257,
+    0.1317285460036106
+  ],
+  "intercept": 0.48556181419043987,
+  "training_target": "mean of within-dataset-fold percentile ranks of Systema-centered Pearson and cosine error",
+  "source_datasets": [
+    "Frangieh",
+    "Lara_exvivo",
+    "Liang",
+    "Santinha",
+    "Shifrut",
+    "Tian_CRISPRi"
+  ],
+  "n_source_tasks": 2953,
+  "deployment_requires_target_truth": false,
+  "selection_disclosure": "Chosen after transparent five-candidate exploration on the six source datasets; requires untouched seventh-dataset confirmation."
+}

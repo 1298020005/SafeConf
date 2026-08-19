@@ -1,0 +1,55 @@
+{
+  "attempt": "attempt_002",
+  "best_lightning_checkpoint": {
+    "bytes": 145623484,
+    "contains_anndata_or_test_truth_path": false,
+    "hyperparameter_keys": [
+      "change_step",
+      "control_gene",
+      "data_name",
+      "interval",
+      "lam1",
+      "lam2",
+      "lam3",
+      "learning_rate",
+      "learning_rate_decay",
+      "patience",
+      "reduce_rate",
+      "save_value_only",
+      "scheduler",
+      "transformer",
+      "warmup_max_steps",
+      "warmup_steps"
+    ],
+    "path": "/home/yyf/proj/docs/实验结果/E162_wessels_prescribe_native_20260714/attempt_002/seed_3407/checkpoints/main/best-00.ckpt",
+    "sha256": "b7a8c4008f0ac951ea3ce663f367476e807f32034d41c1833121712f239fd9ee"
+  },
+  "best_reload_forward_max_abs_delta": {
+    "aleatoric": 0.0,
+    "epistemic": 0.0,
+    "prediction": 0.0,
+    "raw_log_prob": 0.0
+  },
+  "best_val_loss": 29.26584243774414,
+  "callbacks": {
+    "callback_classes": [
+      "lightning.pytorch.callbacks.progress.rich_progress.RichProgressBar",
+      "lightning.pytorch.callbacks.rich_model_summary.RichModelSummary",
+      "lightning.pytorch.callbacks.early_stopping.EarlyStopping",
+      "lightning.pytorch.callbacks.model_checkpoint.ModelCheckpoint"
+    ],
+    "early_stopping": {
+      "min_delta_internal": -0.001,
+      "min_delta_user_value": 0.001,
+      "mode": "min",
+      "monitor": "val/loss",
+      "patience": 3
+    },
+    "n_early_stopping": 1,
+    "n_model_checkpoint": 1
+  },
+  "experiment": "E162_wessels_prescribe_native",
+  "gate_fingerprint_sha256": "f2180d643e6e283a44b501eb7df2d8457af1c7235288c9110d24619057466daa",
+  "schema": "safeconf_e162_checkpoint_ready_v1",
+  "seed": 3407
+}

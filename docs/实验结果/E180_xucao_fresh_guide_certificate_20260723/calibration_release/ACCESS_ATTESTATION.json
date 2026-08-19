@@ -1,0 +1,15 @@
+{
+  "calibration_x_rows_read": 18078,
+  "evaluation_target_x_rows_read": 0,
+  "evaluation_truth_opened": false,
+  "git_branch": "exp/task-risk-audit-20260611",
+  "git_head": "978569d74a91941a6ef078bec189a74252bf8429",
+  "n_calibration_targets": 29,
+  "n_calibration_tasks": 78,
+  "remote_heads": {
+    "github": "978569d74a91941a6ef078bec189a74252bf8429",
+    "origin": "978569d74a91941a6ef078bec189a74252bf8429"
+  },
+  "schema": "safeconf_e180_calibration_access_v1",
+  "status": "PASS"
+}

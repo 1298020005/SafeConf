@@ -1,0 +1,114 @@
+# E99｜多背景外部矩阵冻结合同
+
+E99 从服务器已有官方 h5ad 中冻结三套独立矩形。矩形选择只使用 context、perturbation 标签和每个 pair 的细胞数，目标是先最大化满足每 pair 至少 50 个细胞的共同扰动数，再按总细胞数破同分。表达矩阵、效应、预测和误差均未读取。
+
+## 数据矩形
+
+| dataset | modality | n_rectangle_contexts | n_rectangle_perturbations | rectangle_min_cells |
+|---|---|---|---|---|
+| Lara_exvivo | gene_knockout | 5 | 31 | 58 |
+| Santinha | gene_knockout | 5 | 23 | 55 |
+| Cui | cytokine_stimulus | 6 | 86 | 97 |
+
+## Setting 规模
+
+| dataset | modality | fold_id | setting | split | n_tasks | min_cells | median_cells |
+|---|---|---|---|---|---|---|---|
+| Cui | cytokine_stimulus | Cui_context_holdout_1_Macrophage | context_and_perturbation_unseen | test | 18 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_1_Macrophage | context_unseen_row | test | 68 | 97 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_1_Macrophage | perturbation_unseen_column | test | 90 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_1_Macrophage | random_missing_pair | test | 30 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_1_Macrophage | source_train_pair | train | 280 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_1_Macrophage | source_validation_pair | val | 30 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_2_MigDC | context_and_perturbation_unseen | test | 18 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_2_MigDC | context_unseen_row | test | 68 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_2_MigDC | perturbation_unseen_column | test | 90 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_2_MigDC | random_missing_pair | test | 30 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_2_MigDC | source_train_pair | train | 280 | 97 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_2_MigDC | source_validation_pair | val | 30 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_3_T_cell_CD4 | context_and_perturbation_unseen | test | 18 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_3_T_cell_CD4 | context_unseen_row | test | 68 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_3_T_cell_CD4 | perturbation_unseen_column | test | 90 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_3_T_cell_CD4 | random_missing_pair | test | 30 | 97 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_3_T_cell_CD4 | source_train_pair | train | 280 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_3_T_cell_CD4 | source_validation_pair | val | 30 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_4_T_cell_CD8 | context_and_perturbation_unseen | test | 18 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_4_T_cell_CD8 | context_unseen_row | test | 68 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_4_T_cell_CD8 | perturbation_unseen_column | test | 90 | 97 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_4_T_cell_CD8 | random_missing_pair | test | 30 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_4_T_cell_CD8 | source_train_pair | train | 280 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_4_T_cell_CD8 | source_validation_pair | val | 30 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_5_T_cell_gd | context_and_perturbation_unseen | test | 18 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_5_T_cell_gd | context_unseen_row | test | 68 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_5_T_cell_gd | perturbation_unseen_column | test | 90 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_5_T_cell_gd | random_missing_pair | test | 30 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_5_T_cell_gd | source_train_pair | train | 280 | 97 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_5_T_cell_gd | source_validation_pair | val | 30 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_6_Treg | context_and_perturbation_unseen | test | 18 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_6_Treg | context_unseen_row | test | 68 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_6_Treg | perturbation_unseen_column | test | 90 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_6_Treg | random_missing_pair | test | 30 | 100 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_6_Treg | source_train_pair | train | 280 | 97 | 100.0 |
+| Cui | cytokine_stimulus | Cui_context_holdout_6_Treg | source_validation_pair | val | 30 | 100 | 100.0 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_1_EBMP | context_and_perturbation_unseen | test | 7 | 138 | 244.0 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_1_EBMP | context_unseen_row | test | 24 | 120 | 292.5 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_1_EBMP | perturbation_unseen_column | test | 28 | 66 | 281.5 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_1_EBMP | random_missing_pair | test | 10 | 87 | 465.0 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_1_EBMP | source_train_pair | train | 76 | 58 | 259.0 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_1_EBMP | source_validation_pair | val | 10 | 60 | 163.0 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_2_GMP | context_and_perturbation_unseen | test | 7 | 68 | 290.0 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_2_GMP | context_unseen_row | test | 24 | 143 | 410.5 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_2_GMP | perturbation_unseen_column | test | 28 | 58 | 275.5 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_2_GMP | random_missing_pair | test | 10 | 92 | 246.5 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_2_GMP | source_train_pair | train | 76 | 60 | 240.0 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_2_GMP | source_validation_pair | val | 10 | 120 | 253.5 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_3_GMP_(late) | context_and_perturbation_unseen | test | 7 | 141 | 448.0 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_3_GMP_(late) | context_unseen_row | test | 24 | 73 | 445.0 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_3_GMP_(late) | perturbation_unseen_column | test | 28 | 68 | 242.5 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_3_GMP_(late) | random_missing_pair | test | 10 | 121 | 225.5 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_3_GMP_(late) | source_train_pair | train | 76 | 58 | 239.0 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_3_GMP_(late) | source_validation_pair | val | 10 | 66 | 209.0 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_4_HSC | context_and_perturbation_unseen | test | 7 | 92 | 226.0 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_4_HSC | context_unseen_row | test | 24 | 60 | 191.0 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_4_HSC | perturbation_unseen_column | test | 28 | 58 | 295.5 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_4_HSC | random_missing_pair | test | 10 | 134 | 311.0 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_4_HSC | source_train_pair | train | 76 | 68 | 290.5 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_4_HSC | source_validation_pair | val | 10 | 105 | 260.5 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_5_MkP | context_and_perturbation_unseen | test | 7 | 58 | 170.0 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_5_MkP | context_unseen_row | test | 24 | 74 | 152.5 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_5_MkP | perturbation_unseen_column | test | 28 | 73 | 325.5 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_5_MkP | random_missing_pair | test | 10 | 205 | 340.5 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_5_MkP | source_train_pair | train | 76 | 60 | 275.5 |
+| Lara_exvivo | gene_knockout | Lara_exvivo_context_holdout_5_MkP | source_validation_pair | val | 10 | 138 | 414.5 |
+| Santinha | gene_knockout | Santinha_context_holdout_1_Interneurons_Sst_Pvalb | context_and_perturbation_unseen | test | 5 | 202 | 375.0 |
+| Santinha | gene_knockout | Santinha_context_holdout_1_Interneurons_Sst_Pvalb | context_unseen_row | test | 18 | 168 | 507.0 |
+| Santinha | gene_knockout | Santinha_context_holdout_1_Interneurons_Sst_Pvalb | perturbation_unseen_column | test | 20 | 61 | 191.0 |
+| Santinha | gene_knockout | Santinha_context_holdout_1_Interneurons_Sst_Pvalb | random_missing_pair | test | 8 | 96 | 267.0 |
+| Santinha | gene_knockout | Santinha_context_holdout_1_Interneurons_Sst_Pvalb | source_train_pair | train | 56 | 55 | 251.0 |
+| Santinha | gene_knockout | Santinha_context_holdout_1_Interneurons_Sst_Pvalb | source_validation_pair | val | 8 | 139 | 422.0 |
+| Santinha | gene_knockout | Santinha_context_holdout_2_Interneurons_Vip_Adarb2 | context_and_perturbation_unseen | test | 5 | 61 | 104.0 |
+| Santinha | gene_knockout | Santinha_context_holdout_2_Interneurons_Vip_Adarb2 | context_unseen_row | test | 18 | 55 | 138.0 |
+| Santinha | gene_knockout | Santinha_context_holdout_2_Interneurons_Vip_Adarb2 | perturbation_unseen_column | test | 20 | 98 | 265.0 |
+| Santinha | gene_knockout | Santinha_context_holdout_2_Interneurons_Vip_Adarb2 | random_missing_pair | test | 8 | 62 | 343.5 |
+| Santinha | gene_knockout | Santinha_context_holdout_2_Interneurons_Vip_Adarb2 | source_train_pair | train | 56 | 106 | 352.5 |
+| Santinha | gene_knockout | Santinha_context_holdout_2_Interneurons_Vip_Adarb2 | source_validation_pair | val | 8 | 191 | 377.0 |
+| Santinha | gene_knockout | Santinha_context_holdout_3_Neurons_L_2_3 | context_and_perturbation_unseen | test | 5 | 206 | 271.0 |
+| Santinha | gene_knockout | Santinha_context_holdout_3_Neurons_L_2_3 | context_unseen_row | test | 18 | 139 | 428.0 |
+| Santinha | gene_knockout | Santinha_context_holdout_3_Neurons_L_2_3 | perturbation_unseen_column | test | 20 | 63 | 259.5 |
+| Santinha | gene_knockout | Santinha_context_holdout_3_Neurons_L_2_3 | random_missing_pair | test | 8 | 149 | 327.0 |
+| Santinha | gene_knockout | Santinha_context_holdout_3_Neurons_L_2_3 | source_train_pair | train | 56 | 55 | 220.0 |
+| Santinha | gene_knockout | Santinha_context_holdout_3_Neurons_L_2_3 | source_validation_pair | val | 8 | 135 | 217.0 |
+| Santinha | gene_knockout | Santinha_context_holdout_4_Neurons_L_5 | context_and_perturbation_unseen | test | 5 | 165 | 313.0 |
+| Santinha | gene_knockout | Santinha_context_holdout_4_Neurons_L_5 | context_unseen_row | test | 18 | 106 | 333.5 |
+| Santinha | gene_knockout | Santinha_context_holdout_4_Neurons_L_5 | perturbation_unseen_column | test | 20 | 55 | 271.5 |
+| Santinha | gene_knockout | Santinha_context_holdout_4_Neurons_L_5 | random_missing_pair | test | 8 | 103 | 217.5 |
+| Santinha | gene_knockout | Santinha_context_holdout_4_Neurons_L_5 | source_train_pair | train | 56 | 55 | 244.0 |
+| Santinha | gene_knockout | Santinha_context_holdout_4_Neurons_L_5 | source_validation_pair | val | 8 | 156 | 455.0 |
+| Santinha | gene_knockout | Santinha_context_holdout_5_Neurons_L_6 | context_and_perturbation_unseen | test | 5 | 123 | 191.0 |
+| Santinha | gene_knockout | Santinha_context_holdout_5_Neurons_L_6 | context_unseen_row | test | 18 | 62 | 232.0 |
+| Santinha | gene_knockout | Santinha_context_holdout_5_Neurons_L_6 | perturbation_unseen_column | test | 20 | 80 | 286.0 |
+| Santinha | gene_knockout | Santinha_context_holdout_5_Neurons_L_6 | random_missing_pair | test | 8 | 63 | 323.0 |
+| Santinha | gene_knockout | Santinha_context_holdout_5_Neurons_L_6 | source_train_pair | train | 56 | 55 | 362.5 |
+| Santinha | gene_knockout | Santinha_context_holdout_5_Neurons_L_6 | source_validation_pair | val | 8 | 61 | 249.0 |
+
+Lara ex vivo 与 Santinha 是两套独立遗传扰动复制；Cui 是细胞因子刺激，用于检验不同扰动类型。每个 context 各做一次整行留出，每折同时包含随机缺失 pair、整列新扰动和双未见任务。E99 只冻结合同，预测器输出与 test truth 尚未生成。

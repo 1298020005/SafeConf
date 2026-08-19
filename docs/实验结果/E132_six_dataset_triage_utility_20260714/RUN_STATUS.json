@@ -1,0 +1,10 @@
+{
+  "experiment": "E132_six_dataset_triage_utility",
+  "generated_at": "2026-07-14T01:22:24",
+  "status": "complete",
+  "n_datasets": 6,
+  "n_folds": 30,
+  "n_tasks": 2953,
+  "confirmatory": false,
+  "risk_scores_refit_on_test_truth": false
+}

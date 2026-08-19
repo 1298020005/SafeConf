@@ -1,0 +1,13 @@
+protocol,axis,representation,space,scope,better,perfect,default_positive,default_negative,requires_extra
+pearson,direction,centroid,full,perturbation,higher,1.0,generic,generic,
+pearson_ctrl,direction,centroid,full,perturbation,higher,1.0,generic,generic,
+pearson_pert,direction,centroid,full,perturbation,higher,1.0,generic,control,
+mse,absolute,centroid,full,perturbation,lower,0.0,generic,generic,
+wmse_exp2,absolute,centroid,full,perturbation,lower,0.0,generic,generic,
+rank,retrieval,centroid,full,dataset,lower,0.0,generic,global_mean,
+transpose_rank,retrieval,centroid,full,dataset,lower,0.0,generic,global_mean,
+energy_distance_pca_k=50,population,population,pca_50,perturbation,lower,0.0,generic,generic,
+unbiased_mmd_median_pca_k=50,population,population,pca_50,perturbation,lower,0.0,generic,generic,
+de_auprc,de,de,full,perturbation,higher,1.0,generic,generic,
+de_auroc,de,de,full,perturbation,higher,1.0,generic,generic,
+de_overlap_k=50,de,de,full,perturbation,higher,1.0,generic,generic,

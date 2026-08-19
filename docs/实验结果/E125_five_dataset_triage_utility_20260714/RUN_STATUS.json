@@ -1,0 +1,14 @@
+{
+  "experiment": "E125_five_dataset_triage_utility",
+  "generated_at": "2026-07-14T00:47:57",
+  "status": "complete",
+  "n_datasets": 5,
+  "n_folds": 26,
+  "n_tasks": 2221,
+  "new_datasets_frozen_after_e115": [
+    "Shifrut",
+    "Liang"
+  ],
+  "risk_scores_refit_on_test_truth": false,
+  "preregistered_gate_passed": false
+}

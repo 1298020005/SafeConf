@@ -1,0 +1,35 @@
+{
+  "calibration_nonconformity": "maximum over eligible guides of pair_mean_rmse minus frozen pretruth base",
+  "comparators": [
+    "constant",
+    "predicted_magnitude",
+    "magnitude_plus_pair_lower",
+    "extra_trees_vector"
+  ],
+  "conformal_cluster_unit": "perturbation gene",
+  "deterministic_lower_bound": "rmse(scgpt_prediction-gears_prediction)/2",
+  "efficiency_reference": "constant split conformal on the identical target split",
+  "evaluation_truth_forbidden_before": "pretruth prediction release and calibration model freeze are committed and on both remotes",
+  "finite_sample_rank": "ceil((n_calibration_targets+1)*0.90)",
+  "lower_bound_success_gate": "zero violations for pair mean and pair max errors",
+  "no_posttruth_rescue": [
+    "no target replacement",
+    "no guide replacement",
+    "no feature replacement",
+    "no hyperparameter replacement",
+    "no seed replacement",
+    "no endpoint replacement"
+  ],
+  "primary_adaptive_method": "extra_trees_vector",
+  "primary_outcome": "pair_mean_rmse_across_scgpt_and_gears",
+  "prospective_success_gates": {
+    "adaptive_mean_upper_must_not_exceed_constant_mean_upper": true,
+    "evaluation_target_simultaneous_coverage_minimum": 0.85,
+    "nominal_coverage_reported_separately": 0.9,
+    "pair_lower_bound_violations": 0,
+    "truth_access_or_split_violation": 0
+  },
+  "ranking_status": "secondary_diagnostic_only",
+  "schema": "safeconf_e180_statistical_lock_v1",
+  "upper_bound_target": "90% target-simultaneous coverage across all eligible guides"
+}

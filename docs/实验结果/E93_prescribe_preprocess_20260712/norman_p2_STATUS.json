@@ -1,0 +1,17 @@
+{
+  "experiment": "E93_prescribe_preprocess",
+  "panel": "Norman_P2",
+  "dataset_name": "norman_p2",
+  "phase": "preprocessing_complete",
+  "generated_at": "2026-07-12T22:44:31",
+  "prescribe_commit": "6f7264a205aaff654a9594863c5c10b656f88ebe",
+  "upstream_step1_sha256": "sha256:6bb0955524616b6602eaf943c0869b1c7602a27ecee1e4593d302509af5149c4",
+  "runtime_change": "split path only: \"data/norman/set2conditions_3407.pkl\" -> \"data/norman_p2/set2conditions_3407.pkl\"",
+  "raw_dataset": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/NormanWeissman2019_filtered.h5ad",
+  "raw_dataset_sha256": "sha256:efde6f5301fe256725dce1d980f37bd96a13481a9a16135515897368e631affc",
+  "split_manifest": "/home/yyf/proj/docs/实验结果/E91_prescribe_norman_contract_20260712/manifests/Norman_P2_set2conditions.pkl",
+  "split_manifest_sha256": "sha256:387a0edbfe68948cf57cfd2ac568dae20b03dea136df5de0b21dfcf635f45519",
+  "processed_h5ad": "/home/yyf/archive/external/PRESCRIBE/data/norman_p2/perturb_processed.h5ad",
+  "processed_h5ad_sha256": "sha256:8d11038a250493bf6c0f5b0adb704243e708dc3b514f1e3babd7d44d9a66f25b",
+  "target_test_expression_used_for_task_selection": false
+}

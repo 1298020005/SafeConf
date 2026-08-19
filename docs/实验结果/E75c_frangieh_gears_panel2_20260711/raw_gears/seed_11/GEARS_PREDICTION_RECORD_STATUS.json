@@ -1,0 +1,1113 @@
+{
+  "dataset": "frangieh",
+  "split": "single",
+  "seed": 11,
+  "epochs": 10,
+  "status": "ok",
+  "fixed_test_perturbations_file": "/home/yyf/proj/docs/实验结果/E75c_frangieh_gears_panel2_20260711/tables/E60_FIXED_TEST_PERTURBATIONS.csv",
+  "fixed_test_conditions": [
+    "ACSL3+ctrl",
+    "AGA+ctrl",
+    "CCND2+ctrl",
+    "CTSA+ctrl",
+    "DAG1+ctrl",
+    "EVA1A+ctrl",
+    "HLA-DRB5+ctrl",
+    "HLA-E+ctrl",
+    "IDH2+ctrl",
+    "LAMP2+ctrl",
+    "LGALS3+ctrl",
+    "NDUFA13+ctrl",
+    "NGFR+ctrl",
+    "NMRK1+ctrl",
+    "PFDN4+ctrl",
+    "PFN1+ctrl",
+    "RNASEH2A+ctrl",
+    "SEC11C+ctrl",
+    "SGK1+ctrl",
+    "SMAD3+ctrl",
+    "TM4SF1+ctrl",
+    "TRIM22+ctrl",
+    "TXNDC17+ctrl",
+    "UCN2+ctrl"
+  ],
+  "n_fixed_test_conditions": 24,
+  "n_train_conditions_after_override": 170,
+  "n_val_conditions_after_override": 18,
+  "fixed_test_deterministic_val": true,
+  "test_mse": 0.001434872901882045,
+  "test_mse_de": 0.005998357621137984,
+  "test_pearson": 0.9958057129027648,
+  "test_pearson_de": 0.9594378455364799,
+  "n_prediction_records": 24,
+  "records_csv": "/home/yyf/proj/docs/实验结果/E75c_frangieh_gears_panel2_20260711/raw_gears/seed_11/frangieh/seed_11/tables/PREDICTION_RECORDS.csv",
+  "predicted_npz": "/home/yyf/proj/docs/实验结果/E75c_frangieh_gears_panel2_20260711/raw_gears/seed_11/frangieh/seed_11/arrays/gears_predicted_effects.npz",
+  "true_npz": "/home/yyf/proj/docs/实验结果/E75c_frangieh_gears_panel2_20260711/raw_gears/seed_11/frangieh/seed_11/arrays/gears_true_effects.npz",
+  "condition_graph_sampling": {
+    "enabled": true,
+    "max_cells_per_condition": 32,
+    "sampling_seed": 202607753,
+    "conditions": {
+      "ctrl": {
+        "split": "train",
+        "before": 2000,
+        "after": 32
+      },
+      "CD151+ctrl": {
+        "split": "train",
+        "before": 579,
+        "after": 32
+      },
+      "CD274+ctrl": {
+        "split": "train",
+        "before": 663,
+        "after": 32
+      },
+      "CD44+ctrl": {
+        "split": "train",
+        "before": 732,
+        "after": 32
+      },
+      "CD47+ctrl": {
+        "split": "train",
+        "before": 602,
+        "after": 32
+      },
+      "CD58+ctrl": {
+        "split": "train",
+        "before": 636,
+        "after": 32
+      },
+      "CD59+ctrl": {
+        "split": "train",
+        "before": 715,
+        "after": 32
+      },
+      "CD63+ctrl": {
+        "split": "train",
+        "before": 512,
+        "after": 32
+      },
+      "CDC123+ctrl": {
+        "split": "train",
+        "before": 193,
+        "after": 32
+      },
+      "CDH19+ctrl": {
+        "split": "train",
+        "before": 714,
+        "after": 32
+      },
+      "CDK4+ctrl": {
+        "split": "train",
+        "before": 505,
+        "after": 32
+      },
+      "CDK6+ctrl": {
+        "split": "train",
+        "before": 246,
+        "after": 32
+      },
+      "CDKN1A+ctrl": {
+        "split": "train",
+        "before": 668,
+        "after": 32
+      },
+      "CDKN2A+ctrl": {
+        "split": "train",
+        "before": 540,
+        "after": 32
+      },
+      "CDKN2B+ctrl": {
+        "split": "train",
+        "before": 598,
+        "after": 32
+      },
+      "CHCHD2+ctrl": {
+        "split": "train",
+        "before": 642,
+        "after": 32
+      },
+      "CITED1+ctrl": {
+        "split": "train",
+        "before": 662,
+        "after": 32
+      },
+      "CKS1B+ctrl": {
+        "split": "train",
+        "before": 581,
+        "after": 32
+      },
+      "CMSS1+ctrl": {
+        "split": "train",
+        "before": 606,
+        "after": 32
+      },
+      "CORO1A+ctrl": {
+        "split": "train",
+        "before": 550,
+        "after": 32
+      },
+      "CSPG4+ctrl": {
+        "split": "train",
+        "before": 738,
+        "after": 32
+      },
+      "CST3+ctrl": {
+        "split": "train",
+        "before": 447,
+        "after": 32
+      },
+      "CTPS1+ctrl": {
+        "split": "train",
+        "before": 251,
+        "after": 32
+      },
+      "CTSB+ctrl": {
+        "split": "train",
+        "before": 655,
+        "after": 32
+      },
+      "CTSD+ctrl": {
+        "split": "train",
+        "before": 775,
+        "after": 32
+      },
+      "CTSL+ctrl": {
+        "split": "train",
+        "before": 581,
+        "after": 32
+      },
+      "CTSO+ctrl": {
+        "split": "train",
+        "before": 661,
+        "after": 32
+      },
+      "CXCR4+ctrl": {
+        "split": "train",
+        "before": 552,
+        "after": 32
+      },
+      "CYP27A1+ctrl": {
+        "split": "train",
+        "before": 628,
+        "after": 32
+      },
+      "DDR1+ctrl": {
+        "split": "train",
+        "before": 575,
+        "after": 32
+      },
+      "DDX17+ctrl": {
+        "split": "train",
+        "before": 451,
+        "after": 32
+      },
+      "DDX39A+ctrl": {
+        "split": "train",
+        "before": 411,
+        "after": 32
+      },
+      "DLL3+ctrl": {
+        "split": "train",
+        "before": 581,
+        "after": 32
+      },
+      "DNMT1+ctrl": {
+        "split": "train",
+        "before": 206,
+        "after": 32
+      },
+      "E2F1+ctrl": {
+        "split": "train",
+        "before": 406,
+        "after": 32
+      },
+      "EEA1+ctrl": {
+        "split": "train",
+        "before": 498,
+        "after": 32
+      },
+      "EEF1G+ctrl": {
+        "split": "train",
+        "before": 105,
+        "after": 32
+      },
+      "EIF3K+ctrl": {
+        "split": "train",
+        "before": 470,
+        "after": 32
+      },
+      "EIF4A1+ctrl": {
+        "split": "train",
+        "before": 83,
+        "after": 32
+      },
+      "EMP1+ctrl": {
+        "split": "train",
+        "before": 593,
+        "after": 32
+      },
+      "ENPP1+ctrl": {
+        "split": "train",
+        "before": 598,
+        "after": 32
+      },
+      "FBL+ctrl": {
+        "split": "train",
+        "before": 216,
+        "after": 32
+      },
+      "FBXO32+ctrl": {
+        "split": "train",
+        "before": 663,
+        "after": 32
+      },
+      "FGFR1+ctrl": {
+        "split": "train",
+        "before": 779,
+        "after": 32
+      },
+      "FKBP4+ctrl": {
+        "split": "train",
+        "before": 447,
+        "after": 32
+      },
+      "FMN1+ctrl": {
+        "split": "train",
+        "before": 735,
+        "after": 32
+      },
+      "FOS+ctrl": {
+        "split": "train",
+        "before": 507,
+        "after": 32
+      },
+      "FOXM1+ctrl": {
+        "split": "train",
+        "before": 178,
+        "after": 32
+      },
+      "FRZB+ctrl": {
+        "split": "train",
+        "before": 487,
+        "after": 32
+      },
+      "FSTL3+ctrl": {
+        "split": "train",
+        "before": 708,
+        "after": 32
+      },
+      "FTH1+ctrl": {
+        "split": "train",
+        "before": 78,
+        "after": 32
+      },
+      "GAA+ctrl": {
+        "split": "train",
+        "before": 617,
+        "after": 32
+      },
+      "GPATCH4+ctrl": {
+        "split": "train",
+        "before": 446,
+        "after": 32
+      },
+      "GPI+ctrl": {
+        "split": "train",
+        "before": 103,
+        "after": 32
+      },
+      "GPNMB+ctrl": {
+        "split": "train",
+        "before": 550,
+        "after": 32
+      },
+      "GRN+ctrl": {
+        "split": "train",
+        "before": 554,
+        "after": 32
+      },
+      "GSN+ctrl": {
+        "split": "train",
+        "before": 691,
+        "after": 32
+      },
+      "HLA-A+ctrl": {
+        "split": "train",
+        "before": 720,
+        "after": 32
+      },
+      "HLA-B+ctrl": {
+        "split": "train",
+        "before": 415,
+        "after": 32
+      },
+      "HLA-C+ctrl": {
+        "split": "train",
+        "before": 443,
+        "after": 32
+      },
+      "HLA-F+ctrl": {
+        "split": "train",
+        "before": 639,
+        "after": 32
+      },
+      "HNRNPA1+ctrl": {
+        "split": "train",
+        "before": 458,
+        "after": 32
+      },
+      "HNRNPC+ctrl": {
+        "split": "train",
+        "before": 172,
+        "after": 32
+      },
+      "HSPA1A+ctrl": {
+        "split": "train",
+        "before": 514,
+        "after": 32
+      },
+      "IFNGR1+ctrl": {
+        "split": "train",
+        "before": 671,
+        "after": 32
+      },
+      "IFNGR2+ctrl": {
+        "split": "train",
+        "before": 921,
+        "after": 32
+      },
+      "ILF2+ctrl": {
+        "split": "train",
+        "before": 120,
+        "after": 32
+      },
+      "IRF3+ctrl": {
+        "split": "train",
+        "before": 590,
+        "after": 32
+      },
+      "IRF4+ctrl": {
+        "split": "train",
+        "before": 507,
+        "after": 32
+      },
+      "ISYNA1+ctrl": {
+        "split": "train",
+        "before": 420,
+        "after": 32
+      },
+      "ITGA3+ctrl": {
+        "split": "train",
+        "before": 599,
+        "after": 32
+      },
+      "JAK1+ctrl": {
+        "split": "train",
+        "before": 796,
+        "after": 32
+      },
+      "JAK2+ctrl": {
+        "split": "train",
+        "before": 834,
+        "after": 32
+      },
+      "JMJD7+ctrl": {
+        "split": "train",
+        "before": 708,
+        "after": 32
+      },
+      "KCNN4+ctrl": {
+        "split": "train",
+        "before": 640,
+        "after": 32
+      },
+      "KDR+ctrl": {
+        "split": "train",
+        "before": 653,
+        "after": 32
+      },
+      "KLF4+ctrl": {
+        "split": "train",
+        "before": 546,
+        "after": 32
+      },
+      "LCP1+ctrl": {
+        "split": "train",
+        "before": 695,
+        "after": 32
+      },
+      "LGALS3BP+ctrl": {
+        "split": "train",
+        "before": 511,
+        "after": 32
+      },
+      "LRPAP1+ctrl": {
+        "split": "train",
+        "before": 656,
+        "after": 32
+      },
+      "LY96+ctrl": {
+        "split": "train",
+        "before": 625,
+        "after": 32
+      },
+      "MC1R+ctrl": {
+        "split": "train",
+        "before": 567,
+        "after": 32
+      },
+      "MDH2+ctrl": {
+        "split": "train",
+        "before": 466,
+        "after": 32
+      },
+      "MFGE8+ctrl": {
+        "split": "train",
+        "before": 814,
+        "after": 32
+      },
+      "MIA+ctrl": {
+        "split": "train",
+        "before": 569,
+        "after": 32
+      },
+      "MRPL47+ctrl": {
+        "split": "train",
+        "before": 305,
+        "after": 32
+      },
+      "MT2A+ctrl": {
+        "split": "train",
+        "before": 427,
+        "after": 32
+      },
+      "MYC+ctrl": {
+        "split": "train",
+        "before": 155,
+        "after": 32
+      },
+      "NACA+ctrl": {
+        "split": "train",
+        "before": 70,
+        "after": 32
+      },
+      "NCL+ctrl": {
+        "split": "train",
+        "before": 127,
+        "after": 32
+      },
+      "NME1+ctrl": {
+        "split": "train",
+        "before": 534,
+        "after": 32
+      },
+      "NOLC1+ctrl": {
+        "split": "train",
+        "before": 232,
+        "after": 32
+      },
+      "NONO+ctrl": {
+        "split": "train",
+        "before": 499,
+        "after": 32
+      },
+      "NPC1+ctrl": {
+        "split": "train",
+        "before": 655,
+        "after": 32
+      },
+      "NPC2+ctrl": {
+        "split": "train",
+        "before": 600,
+        "after": 32
+      },
+      "NSG1+ctrl": {
+        "split": "train",
+        "before": 590,
+        "after": 32
+      },
+      "NT5E+ctrl": {
+        "split": "train",
+        "before": 751,
+        "after": 32
+      },
+      "P2RX4+ctrl": {
+        "split": "train",
+        "before": 270,
+        "after": 32
+      },
+      "PABPC1+ctrl": {
+        "split": "train",
+        "before": 193,
+        "after": 32
+      },
+      "PAICS+ctrl": {
+        "split": "train",
+        "before": 203,
+        "after": 32
+      },
+      "PET100+ctrl": {
+        "split": "train",
+        "before": 277,
+        "after": 32
+      },
+      "PIK3IP1+ctrl": {
+        "split": "train",
+        "before": 501,
+        "after": 32
+      },
+      "POLD2+ctrl": {
+        "split": "train",
+        "before": 120,
+        "after": 32
+      },
+      "PPA1+ctrl": {
+        "split": "train",
+        "before": 99,
+        "after": 32
+      },
+      "PPIA+ctrl": {
+        "split": "train",
+        "before": 499,
+        "after": 32
+      },
+      "PROS1+ctrl": {
+        "split": "train",
+        "before": 474,
+        "after": 32
+      },
+      "PSAP+ctrl": {
+        "split": "train",
+        "before": 733,
+        "after": 32
+      },
+      "PTMA+ctrl": {
+        "split": "train",
+        "before": 572,
+        "after": 32
+      },
+      "PUF60+ctrl": {
+        "split": "train",
+        "before": 209,
+        "after": 32
+      },
+      "PYGB+ctrl": {
+        "split": "train",
+        "before": 497,
+        "after": 32
+      },
+      "RAB27A+ctrl": {
+        "split": "train",
+        "before": 591,
+        "after": 32
+      },
+      "RB1+ctrl": {
+        "split": "train",
+        "before": 710,
+        "after": 32
+      },
+      "RBP7+ctrl": {
+        "split": "train",
+        "before": 621,
+        "after": 32
+      },
+      "RNF213+ctrl": {
+        "split": "train",
+        "before": 536,
+        "after": 32
+      },
+      "ROMO1+ctrl": {
+        "split": "train",
+        "before": 134,
+        "after": 32
+      },
+      "RPSA+ctrl": {
+        "split": "train",
+        "before": 317,
+        "after": 32
+      },
+      "RRS1+ctrl": {
+        "split": "train",
+        "before": 146,
+        "after": 32
+      },
+      "RTP4+ctrl": {
+        "split": "train",
+        "before": 729,
+        "after": 32
+      },
+      "RUVBL2+ctrl": {
+        "split": "train",
+        "before": 57,
+        "after": 32
+      },
+      "S100A6+ctrl": {
+        "split": "train",
+        "before": 592,
+        "after": 32
+      },
+      "S100B+ctrl": {
+        "split": "train",
+        "before": 603,
+        "after": 32
+      },
+      "SAE1+ctrl": {
+        "split": "train",
+        "before": 90,
+        "after": 32
+      },
+      "SAT1+ctrl": {
+        "split": "train",
+        "before": 576,
+        "after": 32
+      },
+      "SCARB2+ctrl": {
+        "split": "train",
+        "before": 578,
+        "after": 32
+      },
+      "SDC3+ctrl": {
+        "split": "train",
+        "before": 700,
+        "after": 32
+      },
+      "SDCBP+ctrl": {
+        "split": "train",
+        "before": 622,
+        "after": 32
+      },
+      "SERPINA3+ctrl": {
+        "split": "train",
+        "before": 501,
+        "after": 32
+      },
+      "SERPINE2+ctrl": {
+        "split": "train",
+        "before": 510,
+        "after": 32
+      },
+      "SERPINF1+ctrl": {
+        "split": "train",
+        "before": 593,
+        "after": 32
+      },
+      "SET+ctrl": {
+        "split": "train",
+        "before": 455,
+        "after": 32
+      },
+      "SHMT2+ctrl": {
+        "split": "train",
+        "before": 448,
+        "after": 32
+      },
+      "SLC19A1+ctrl": {
+        "split": "train",
+        "before": 472,
+        "after": 32
+      },
+      "SLC22A18+ctrl": {
+        "split": "train",
+        "before": 785,
+        "after": 32
+      },
+      "SLC25A13+ctrl": {
+        "split": "train",
+        "before": 639,
+        "after": 32
+      },
+      "SLC26A2+ctrl": {
+        "split": "train",
+        "before": 649,
+        "after": 32
+      },
+      "SLC5A3+ctrl": {
+        "split": "train",
+        "before": 697,
+        "after": 32
+      },
+      "SLIRP+ctrl": {
+        "split": "train",
+        "before": 406,
+        "after": 32
+      },
+      "SMAD4+ctrl": {
+        "split": "train",
+        "before": 616,
+        "after": 32
+      },
+      "SNRPG+ctrl": {
+        "split": "train",
+        "before": 75,
+        "after": 32
+      },
+      "SOX4+ctrl": {
+        "split": "train",
+        "before": 665,
+        "after": 32
+      },
+      "SP100+ctrl": {
+        "split": "train",
+        "before": 604,
+        "after": 32
+      },
+      "SPESP1+ctrl": {
+        "split": "train",
+        "before": 634,
+        "after": 32
+      },
+      "SPINT1+ctrl": {
+        "split": "train",
+        "before": 616,
+        "after": 32
+      },
+      "SSR2+ctrl": {
+        "split": "train",
+        "before": 450,
+        "after": 32
+      },
+      "ST6GALNAC2+ctrl": {
+        "split": "train",
+        "before": 449,
+        "after": 32
+      },
+      "STAT1+ctrl": {
+        "split": "train",
+        "before": 724,
+        "after": 32
+      },
+      "STAT3+ctrl": {
+        "split": "train",
+        "before": 531,
+        "after": 32
+      },
+      "STOM+ctrl": {
+        "split": "train",
+        "before": 655,
+        "after": 32
+      },
+      "STX7+ctrl": {
+        "split": "train",
+        "before": 606,
+        "after": 32
+      },
+      "TAPBP+ctrl": {
+        "split": "train",
+        "before": 529,
+        "after": 32
+      },
+      "TAPBPL+ctrl": {
+        "split": "train",
+        "before": 628,
+        "after": 32
+      },
+      "TFAP2A+ctrl": {
+        "split": "train",
+        "before": 611,
+        "after": 32
+      },
+      "TGFB1+ctrl": {
+        "split": "train",
+        "before": 711,
+        "after": 32
+      },
+      "TIMM50+ctrl": {
+        "split": "train",
+        "before": 338,
+        "after": 32
+      },
+      "TIMP1+ctrl": {
+        "split": "train",
+        "before": 635,
+        "after": 32
+      },
+      "TIMP2+ctrl": {
+        "split": "train",
+        "before": 464,
+        "after": 32
+      },
+      "TIMP3+ctrl": {
+        "split": "train",
+        "before": 537,
+        "after": 32
+      },
+      "TMED10+ctrl": {
+        "split": "train",
+        "before": 171,
+        "after": 32
+      },
+      "TOP1MT+ctrl": {
+        "split": "train",
+        "before": 556,
+        "after": 32
+      },
+      "TP53+ctrl": {
+        "split": "train",
+        "before": 580,
+        "after": 32
+      },
+      "TPP1+ctrl": {
+        "split": "train",
+        "before": 586,
+        "after": 32
+      },
+      "TPRKB+ctrl": {
+        "split": "train",
+        "before": 173,
+        "after": 32
+      },
+      "TSC22D3+ctrl": {
+        "split": "train",
+        "before": 716,
+        "after": 32
+      },
+      "TTLL1+ctrl": {
+        "split": "train",
+        "before": 704,
+        "after": 32
+      },
+      "UBC+ctrl": {
+        "split": "train",
+        "before": 250,
+        "after": 32
+      },
+      "UQCRFS1+ctrl": {
+        "split": "train",
+        "before": 315,
+        "after": 32
+      },
+      "UQCRH+ctrl": {
+        "split": "train",
+        "before": 220,
+        "after": 32
+      },
+      "VAT1+ctrl": {
+        "split": "train",
+        "before": 455,
+        "after": 32
+      },
+      "VDAC2+ctrl": {
+        "split": "train",
+        "before": 633,
+        "after": 32
+      },
+      "WBP2+ctrl": {
+        "split": "train",
+        "before": 661,
+        "after": 32
+      },
+      "A2M+ctrl": {
+        "split": "val",
+        "before": 701,
+        "after": 32
+      },
+      "ACTA2+ctrl": {
+        "split": "val",
+        "before": 754,
+        "after": 32
+      },
+      "AEBP1+ctrl": {
+        "split": "val",
+        "before": 716,
+        "after": 32
+      },
+      "AHNAK+ctrl": {
+        "split": "val",
+        "before": 578,
+        "after": 32
+      },
+      "APOD+ctrl": {
+        "split": "val",
+        "before": 592,
+        "after": 32
+      },
+      "APOE+ctrl": {
+        "split": "val",
+        "before": 627,
+        "after": 32
+      },
+      "ARMC6+ctrl": {
+        "split": "val",
+        "before": 521,
+        "after": 32
+      },
+      "ATP1B1+ctrl": {
+        "split": "val",
+        "before": 644,
+        "after": 32
+      },
+      "B2M+ctrl": {
+        "split": "val",
+        "before": 707,
+        "after": 32
+      },
+      "BOLA2+ctrl": {
+        "split": "val",
+        "before": 371,
+        "after": 32
+      },
+      "BOLA2B+ctrl": {
+        "split": "val",
+        "before": 360,
+        "after": 32
+      },
+      "BZW2+ctrl": {
+        "split": "val",
+        "before": 566,
+        "after": 32
+      },
+      "C19orf48+ctrl": {
+        "split": "val",
+        "before": 664,
+        "after": 32
+      },
+      "C1QBP+ctrl": {
+        "split": "val",
+        "before": 381,
+        "after": 32
+      },
+      "C6orf226+ctrl": {
+        "split": "val",
+        "before": 545,
+        "after": 32
+      },
+      "CCND1+ctrl": {
+        "split": "val",
+        "before": 384,
+        "after": 32
+      },
+      "CCR10+ctrl": {
+        "split": "val",
+        "before": 555,
+        "after": 32
+      },
+      "CCT3+ctrl": {
+        "split": "val",
+        "before": 110,
+        "after": 32
+      },
+      "ACSL3+ctrl": {
+        "split": "test",
+        "before": 317,
+        "after": 317
+      },
+      "AGA+ctrl": {
+        "split": "test",
+        "before": 621,
+        "after": 621
+      },
+      "CCND2+ctrl": {
+        "split": "test",
+        "before": 563,
+        "after": 563
+      },
+      "CTSA+ctrl": {
+        "split": "test",
+        "before": 600,
+        "after": 600
+      },
+      "DAG1+ctrl": {
+        "split": "test",
+        "before": 522,
+        "after": 522
+      },
+      "EVA1A+ctrl": {
+        "split": "test",
+        "before": 519,
+        "after": 519
+      },
+      "HLA-DRB5+ctrl": {
+        "split": "test",
+        "before": 704,
+        "after": 704
+      },
+      "HLA-E+ctrl": {
+        "split": "test",
+        "before": 518,
+        "after": 518
+      },
+      "IDH2+ctrl": {
+        "split": "test",
+        "before": 700,
+        "after": 700
+      },
+      "LAMP2+ctrl": {
+        "split": "test",
+        "before": 650,
+        "after": 650
+      },
+      "LGALS3+ctrl": {
+        "split": "test",
+        "before": 493,
+        "after": 493
+      },
+      "NDUFA13+ctrl": {
+        "split": "test",
+        "before": 291,
+        "after": 291
+      },
+      "NGFR+ctrl": {
+        "split": "test",
+        "before": 487,
+        "after": 487
+      },
+      "NMRK1+ctrl": {
+        "split": "test",
+        "before": 599,
+        "after": 599
+      },
+      "PFDN4+ctrl": {
+        "split": "test",
+        "before": 601,
+        "after": 601
+      },
+      "PFN1+ctrl": {
+        "split": "test",
+        "before": 280,
+        "after": 280
+      },
+      "RNASEH2A+ctrl": {
+        "split": "test",
+        "before": 268,
+        "after": 268
+      },
+      "SEC11C+ctrl": {
+        "split": "test",
+        "before": 595,
+        "after": 595
+      },
+      "SGK1+ctrl": {
+        "split": "test",
+        "before": 573,
+        "after": 573
+      },
+      "SMAD3+ctrl": {
+        "split": "test",
+        "before": 704,
+        "after": 704
+      },
+      "TM4SF1+ctrl": {
+        "split": "test",
+        "before": 633,
+        "after": 633
+      },
+      "TRIM22+ctrl": {
+        "split": "test",
+        "before": 483,
+        "after": 483
+      },
+      "TXNDC17+ctrl": {
+        "split": "test",
+        "before": 523,
+        "after": 523
+      },
+      "UCN2+ctrl": {
+        "split": "test",
+        "before": 484,
+        "after": 484
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+fold_id,n_risk_fit,n_conformal_calibration,alpha,order_statistic_k,residual_quantile,test_coverage,mean_upper_bound,test_truth_used_to_construct_bound
+frangieh_context_holdout_1_Co-culture,15,15,0.1,15,0.025974602927827654,0.974910394265233,0.0883178931168423,False
+frangieh_context_holdout_2_Control,15,15,0.1,15,0.04744713614798197,0.989247311827957,0.09763209424511353,False
+frangieh_context_holdout_3_IFNγ,15,15,0.1,15,0.04794446200720766,0.974910394265233,0.11839307046632956,False

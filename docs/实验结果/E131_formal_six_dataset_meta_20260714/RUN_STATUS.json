@@ -1,0 +1,13 @@
+{
+  "experiment": "E131_formal_six_dataset_meta",
+  "generated_at": "2026-07-14T01:28:10",
+  "status": "complete",
+  "n_datasets": 6,
+  "n_folds": 30,
+  "n_test_tasks": 2953,
+  "n_prediction_records": 5906,
+  "strict_issue_count": 0,
+  "tian_contract_frozen_commit": "19e5e237e974bc939d77ad9e445d6da9a268afe4",
+  "test_truth_used_to_change_safeconf_score": false,
+  "n_bootstrap": 2000
+}

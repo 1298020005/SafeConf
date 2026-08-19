@@ -1,0 +1,12 @@
+{
+  "experiment": "E116_biological_mechanism_audit",
+  "generated_at": "2026-07-14T00:08:11",
+  "status": "complete",
+  "n_datasets": 3,
+  "n_tasks": 1437,
+  "n_unique_dataset_gene_pairs": 243,
+  "gprofiler_queries_complete": 4,
+  "gprofiler_queries_failed": 0,
+  "n_significant_terms_after_prespecified_filter": 0,
+  "test_truth_used_to_change_risk_score": false
+}

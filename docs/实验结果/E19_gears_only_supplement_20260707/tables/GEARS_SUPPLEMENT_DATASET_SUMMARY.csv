@@ -1,0 +1,5 @@
+source_id,source_label,dataset_name,n_records,n_unique_perturbations,n_seeds,mean_rmse,median_rmse
+GEARS_FORMAL_54,Norman/Adamson/Dixit formal,adamson,21,18,3,0.04208579650592232,0.0347613915801048
+GEARS_FORMAL_54,Norman/Adamson/Dixit formal,dixit,3,2,3,0.42484066883722943,0.3719817996025085
+GEARS_FORMAL_54,Norman/Adamson/Dixit formal,norman,30,27,3,0.055878463511665616,0.05217983014881605
+GEARS_FRANGIEH_62,Frangieh third-predictor run03,frangieh,62,58,3,0.03837047105715155,0.03415592387318605

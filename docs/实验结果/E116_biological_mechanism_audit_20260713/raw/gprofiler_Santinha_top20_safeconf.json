@@ -1,0 +1,123 @@
+{
+  "payload": {
+    "organism": "mmusculus",
+    "query": [
+      "Dgcr14",
+      "Hic2",
+      "Lztr1",
+      "Rimbp3",
+      "Txnrd2"
+    ],
+    "sources": [
+      "GO:BP",
+      "REAC"
+    ],
+    "user_threshold": 0.05,
+    "significance_threshold_method": "g_SCS",
+    "domain_scope": "custom",
+    "background": [
+      "Arvcf",
+      "Ccdc74a",
+      "Comt",
+      "Crkl",
+      "Dgcr14",
+      "Dgcr2",
+      "Dgcr6",
+      "Dgcr8",
+      "Hic2",
+      "Lztr1",
+      "Med15",
+      "Mrpl40",
+      "Pi4ka",
+      "Ranbp1",
+      "Rimbp3",
+      "Scarf2",
+      "Slc25a1",
+      "Snap29",
+      "Tango2",
+      "Tmem191c",
+      "Trmt2a",
+      "Txnrd2",
+      "Zdhhc8"
+    ],
+    "no_evidences": false
+  },
+  "response": {
+    "result": [],
+    "meta": {
+      "query_metadata": {
+        "queries": {
+          "query_1": [
+            "Dgcr14",
+            "Hic2",
+            "Lztr1",
+            "Rimbp3",
+            "Txnrd2"
+          ]
+        },
+        "organism": "mmusculus",
+        "all_results": false,
+        "ordered": false,
+        "no_iea": false,
+        "sources": [
+          "GO:BP",
+          "REAC"
+        ],
+        "combined": false,
+        "aresolve": {},
+        "numeric_ns": "ENTREZGENE_ACC",
+        "domain_scope": "custom",
+        "measure_underrepresentation": false,
+        "significance_threshold_method": "g_SCS",
+        "user_threshold": 0.05,
+        "no_evidences": false,
+        "highlight": null
+      },
+      "result_metadata": {
+        "GO:BP": {
+          "domain_size": 24936,
+          "number_of_terms": 24546,
+          "threshold": 1e-06
+        },
+        "REAC": {
+          "domain_size": 8514,
+          "number_of_terms": 1823,
+          "threshold": 1e-06
+        }
+      },
+      "genes_metadata": {
+        "failed": [
+          "Dgcr14"
+        ],
+        "ambiguous": {},
+        "duplicates": [],
+        "query": {
+          "query_1": {
+            "mapping": {
+              "Hic2": [
+                "ENSMUSG00000050240"
+              ],
+              "Lztr1": [
+                "ENSMUSG00000022761"
+              ],
+              "Rimbp3": [
+                "ENSMUSG00000071636"
+              ],
+              "Txnrd2": [
+                "ENSMUSG00000075704"
+              ]
+            },
+            "ensgs": [
+              "ENSMUSG00000050240",
+              "ENSMUSG00000022761",
+              "ENSMUSG00000071636",
+              "ENSMUSG00000075704"
+            ]
+          }
+        }
+      },
+      "timestamp": "2026-07-13T16:08:10.978748+00:00",
+      "version": "e114_eg62_p19_27110d83"
+    }
+  }
+}

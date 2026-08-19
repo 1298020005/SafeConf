@@ -1,0 +1,18 @@
+{
+  "experiment": "E74_pair_risk_certificate",
+  "generated_at": "2026-07-11T15:30:54",
+  "git_head_before_run": "916f65b989becdb10184cfa4718c7bba9a145e3f",
+  "datasets": [
+    "Adamson",
+    "Norman",
+    "Frangieh"
+  ],
+  "n_tasks": 72,
+  "all_triangle_mean_bounds_hold": true,
+  "all_triangle_max_bounds_hold": true,
+  "max_mse_identity_abs_error": 1.474514954580286e-17,
+  "target_truth_used_in_certificate": false,
+  "target_truth_used_for_evaluation_only": true,
+  "n_boot": 10000,
+  "n_permutation": 10000
+}

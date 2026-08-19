@@ -1,0 +1,19 @@
+{
+  "experiment": "E147_txpert_identity_retrieval",
+  "generated_at": "2026-07-14T13:56:21",
+  "status": "frozen_before_prediction_or_truth_vectors_loaded",
+  "analysis_position": "new_endpoint_audit_on_previously_used_seven_datasets_not_independent_validation",
+  "n_datasets": 7,
+  "n_tasks": 3209,
+  "n_candidate_pools": 176,
+  "n_pools_ge10_pre_metric_qc": 62,
+  "prereg_sha256": "385247a9eec1d54f2c16e4511a6bb4132bb5de0e9d1809e2b95ef5dee4a73231",
+  "source_e141_scores_sha256": "b2d1775c7e2a449c4455224e5c7eb2f7a3266aeabeec7d679868d4c635b1a4ff",
+  "frozen_score_snapshot_sha256": "b1121d8225fbb7e36ab1fc2f943492b75e5612750ae711df428300422a8d509e",
+  "source_file_hash_table_sha256": "4ff5697c01b8349d29dd9f9ae3f0dce707803d18b82d10a120cebf2e6f38595f",
+  "minimum_candidate_pool": 10,
+  "n_bootstrap": 3000,
+  "bootstrap_cluster": "dataset_context_perturbation",
+  "dataset_aggregation": "fixed_seven_dataset_equal_weight",
+  "prediction_or_truth_vectors_loaded": false
+}

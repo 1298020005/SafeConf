@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="760">
+<rect width="100%" height="100%" fill="#fff"/>
+<style>text{font-family:Arial,"Noto Sans CJK SC",sans-serif;fill:#26343c}.t{font-size:25px;font-weight:700}.s{font-size:13px;fill:#637179}.g{font-size:14px}</style>
+<text x="42" y="40" class="t">E116｜高 SafeConf 风险扰动基因</text>
+<text x="42" y="68" class="s">每个数据集按平均冻结风险排序；深色描边表示同时位于 GEARS excess error 前 20%。</text>
+<text x="42" y="117" class="g">Frangieh · IFNGR1</text>
+<rect x="270" y="100" width="670.0" height="22" fill="#a8c9c3" stroke="#a44e46" stroke-width="3"/>
+<text x="955.0" y="116" class="s">GEARS−scGPT=0.009</text>
+<text x="42" y="144" class="g">Frangieh · JAK2</text>
+<rect x="270" y="127" width="413.4" height="22" fill="#a8c9c3" stroke="#a44e46" stroke-width="3"/>
+<text x="698.4" y="143" class="s">GEARS−scGPT=0.007</text>
+<text x="42" y="171" class="g">Frangieh · SLC19A1</text>
+<rect x="270" y="154" width="392.2" height="22" fill="#a8c9c3" stroke="#a44e46" stroke-width="3"/>
+<text x="677.2" y="170" class="s">GEARS−scGPT=0.021</text>
+<text x="42" y="198" class="g">Frangieh · TGFB1</text>
+<rect x="270" y="181" width="362.9" height="22" fill="#a8c9c3" stroke="#a44e46" stroke-width="3"/>
+<text x="647.9" y="197" class="s">GEARS−scGPT=0.020</text>
+<text x="42" y="225" class="g">Frangieh · SLC25A13</text>
+<rect x="270" y="208" width="195.8" height="22" fill="#a8c9c3" stroke="#a44e46" stroke-width="3"/>
+<text x="480.8" y="224" class="s">GEARS−scGPT=0.011</text>
+<text x="42" y="252" class="g">Frangieh · DAG1</text>
+<rect x="270" y="235" width="161.0" height="22" fill="#a8c9c3" stroke="#a44e46" stroke-width="3"/>
+<text x="446.0" y="251" class="s">GEARS−scGPT=0.007</text>
+<text x="42" y="279" class="g">Frangieh · FMN1</text>
+<rect x="270" y="262" width="157.8" height="22" fill="#a8c9c3" stroke="#a44e46" stroke-width="3"/>
+<text x="442.8" y="278" class="s">GEARS−scGPT=0.020</text>
+<text x="42" y="306" class="g">Frangieh · UCN2</text>
+<rect x="270" y="289" width="110.0" height="22" fill="#a8c9c3" stroke="#a44e46" stroke-width="3"/>
+<text x="395.0" y="305" class="s">GEARS−scGPT=0.008</text>
+<text x="42" y="333" class="g">Lara_exvivo · Prmt1</text>
+<rect x="270" y="316" width="670.0" height="22" fill="#a8c9c3" stroke="#2f7f76" stroke-width="0"/>
+<text x="955.0" y="332" class="s">GEARS−scGPT=-0.030</text>
+<text x="42" y="360" class="g">Lara_exvivo · Stag2</text>
+<rect x="270" y="343" width="669.8" height="22" fill="#a8c9c3" stroke="#2f7f76" stroke-width="0"/>
+<text x="954.8" y="359" class="s">GEARS−scGPT=-0.038</text>
+<text x="42" y="387" class="g">Lara_exvivo · Ash1l</text>
+<rect x="270" y="370" width="644.5" height="22" fill="#a8c9c3" stroke="#2f7f76" stroke-width="0"/>
+<text x="929.5" y="386" class="s">GEARS−scGPT=-0.018</text>
+<text x="42" y="414" class="g">Lara_exvivo · Hmgxb4</text>
+<rect x="270" y="397" width="583.0" height="22" fill="#a8c9c3" stroke="#2f7f76" stroke-width="0"/>
+<text x="868.0" y="413" class="s">GEARS−scGPT=-0.032</text>
+<text x="42" y="441" class="g">Lara_exvivo · Kmt2d</text>
+<rect x="270" y="424" width="560.5" height="22" fill="#a8c9c3" stroke="#2f7f76" stroke-width="0"/>
+<text x="845.5" y="440" class="s">GEARS−scGPT=-0.014</text>
+<text x="42" y="468" class="g">Lara_exvivo · Kdm6a</text>
+<rect x="270" y="451" width="377.0" height="22" fill="#a8c9c3" stroke="#2f7f76" stroke-width="0"/>
+<text x="662.0" y="467" class="s">GEARS−scGPT=-0.005</text>
+<text x="42" y="495" class="g">Lara_exvivo · Spi1</text>
+<rect x="270" y="478" width="245.8" height="22" fill="#a8c9c3" stroke="#2f7f76" stroke-width="0"/>
+<text x="530.8" y="494" class="s">GEARS−scGPT=-0.018</text>
+<text x="42" y="522" class="g">Lara_exvivo · Carm1</text>
+<rect x="270" y="505" width="110.0" height="22" fill="#a8c9c3" stroke="#2f7f76" stroke-width="0"/>
+<text x="395.0" y="521" class="s">GEARS−scGPT=-0.002</text>
+<text x="42" y="549" class="g">Santinha · Dgcr14</text>
+<rect x="270" y="532" width="670.0" height="22" fill="#a8c9c3" stroke="#2f7f76" stroke-width="0"/>
+<text x="955.0" y="548" class="s">GEARS−scGPT=-0.004</text>
+<text x="42" y="576" class="g">Santinha · Hic2</text>
+<rect x="270" y="559" width="551.0" height="22" fill="#a8c9c3" stroke="#2f7f76" stroke-width="0"/>
+<text x="836.0" y="575" class="s">GEARS−scGPT=-0.004</text>
+<text x="42" y="603" class="g">Santinha · Txnrd2</text>
+<rect x="270" y="586" width="516.9" height="22" fill="#a8c9c3" stroke="#2f7f76" stroke-width="0"/>
+<text x="801.9" y="602" class="s">GEARS−scGPT=-0.004</text>
+<text x="42" y="630" class="g">Santinha · Rimbp3</text>
+<rect x="270" y="613" width="350.4" height="22" fill="#a8c9c3" stroke="#2f7f76" stroke-width="0"/>
+<text x="635.4" y="629" class="s">GEARS−scGPT=-0.002</text>
+<text x="42" y="657" class="g">Santinha · Lztr1</text>
+<rect x="270" y="640" width="243.0" height="22" fill="#a8c9c3" stroke="#2f7f76" stroke-width="0"/>
+<text x="528.0" y="656" class="s">GEARS−scGPT=-0.004</text>
+<text x="42" y="684" class="g">Santinha · Tango2</text>
+<rect x="270" y="667" width="236.4" height="22" fill="#a8c9c3" stroke="#2f7f76" stroke-width="0"/>
+<text x="521.4" y="683" class="s">GEARS−scGPT=-0.000</text>
+<text x="42" y="711" class="g">Santinha · Dgcr2</text>
+<rect x="270" y="694" width="186.6" height="22" fill="#a8c9c3" stroke="#2f7f76" stroke-width="0"/>
+<text x="471.6" y="710" class="s">GEARS−scGPT=0.001</text>
+<text x="42" y="738" class="g">Santinha · Comt</text>
+<rect x="270" y="721" width="110.0" height="22" fill="#a8c9c3" stroke="#2f7f76" stroke-width="0"/>
+<text x="395.0" y="737" class="s">GEARS−scGPT=-0.000</text>
+</svg>

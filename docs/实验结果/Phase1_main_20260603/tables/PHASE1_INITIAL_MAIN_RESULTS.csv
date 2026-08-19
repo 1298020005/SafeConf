@@ -1,0 +1,6 @@
+dataset,line,n_tasks,n_contexts,n_perturbations,test_records,simple_combined_aligned_rho,simple_combined_rc80_improve_pct,learned_risk_aligned_rho,model_disagreement_aligned_rho,note
+SrivatsanTrapnell2020_sciplex3,chem_robust,564,3,188,1128,0.4315971108745956,16.25562229600748,0.6516148298393369,0.4802935537570164,initial_run_no_partial_yet
+SantinhaPlatt2023,chem_robust,283,10,30,566,0.1931714557329364,1.2664431630526378,0.6980398015827517,0.1767314895494188,initial_run_no_partial_yet
+LaraAstiasoHuntly2023_invivo,gene_main,391,15,40,780,0.4662546061862225,18.43364503512852,0.776056691290037,0.4664019881550486,initial_run_no_partial_yet
+LaraAstiasoHuntly2023_exvivo,gene_main,331,8,43,662,0.688939366937736,58.441580881804725,0.7641138781669126,0.2764223521147006,initial_run_no_partial_yet
+Frangieh,gene_main,633,3,211,1266,0.5978203359678955,11.349534697028153,0.8648511237518386,0.8565873375880156,initial_run_no_partial_yet

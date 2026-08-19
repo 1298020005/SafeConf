@@ -1,0 +1,7 @@
+source,row_kind,contexts,n_rows,target_K562_perturbation_rows,status
+DATA/txpert_official_20260802/cache/K562_cross_cell_lines/de_adata_test.h5ad,training_control,RPE1,11485,0,PASS
+DATA/txpert_official_20260802/cache/K562_cross_cell_lines/de_adata_test.h5ad,training_perturbation,RPE1,38543,0,PASS
+DATA/txpert_official_20260802/cache/K562_cross_cell_lines/de_adata_test.h5ad,training_control,hepg2,4976,0,PASS
+DATA/txpert_official_20260802/cache/K562_cross_cell_lines/de_adata_test.h5ad,training_perturbation,hepg2,30139,0,PASS
+DATA/txpert_official_20260802/cache/K562_cross_cell_lines/de_adata_test.h5ad,training_control,jurkat,12013,0,PASS
+DATA/txpert_official_20260802/cache/K562_cross_cell_lines/de_adata_test.h5ad,training_perturbation,jurkat,43604,0,PASS

@@ -1,0 +1,5 @@
+gate,passed,observed,criterion
+certificate_integrity,True,2.6020852139652106e-18,identity residual <= 1e-08; zero lower-bound violations
+empirical_routing,True,rho_lower=0.283475;utility_lower=0.103277,both 95% CI lower bounds > 0
+incremental_vs_magnitude,True,delta_rho_lower=0.161143;delta_utility_lower=-0.0283173,either paired 95% CI lower bound > 0
+family_centroid_vs_general_mse,True,mean_delta=-0.00931128;upper=-0.00816519,paired RMSE delta 95% CI upper < 0

@@ -1,0 +1,5 @@
+dataset_name,risk_score_name,target_error,n_tasks,spearman,top20_k,top20_mean_error,top20_enrichment
+Norman_single_to_combo,risk_norman_combo_smoke,error_single_additive_rmse,125,0.426937019969278,25,0.06813244126743606,1.2679483087423111
+Norman_single_to_combo,risk_missing_single,error_single_additive_rmse,125,,25,0.05345490598859928,0.9947986066751767
+Norman_single_to_combo,risk_combo_size,error_single_additive_rmse,125,,25,0.05345490598859928,0.9947986066751767
+Norman_single_to_combo,risk_predicted_magnitude,error_single_additive_rmse,125,0.426937019969278,25,0.06813244126743606,1.2679483087423111

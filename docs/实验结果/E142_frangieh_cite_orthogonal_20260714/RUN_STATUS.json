@@ -1,0 +1,44 @@
+{
+  "experiment": "E142_frangieh_cite_orthogonal_audit",
+  "generated_at": "2026-07-14T06:27:33",
+  "status": "complete",
+  "n_test_tasks": 837,
+  "n_folds": 3,
+  "risk_score_snapshot_sha256": "0e2b056c4e422b6b11c0ce3167bd0e9732c94b1e8821478ac06f956e92ebe9e0",
+  "e108_prediction_records_sha256": "98028c1db23b1de20c7440724add14efe744178d4992f6bcf8a83639465326eb",
+  "e97_manifest_sha256": "8194ef3a2376d2c7377534f31189979acd9709fe90a7002cbe370f7cabe05cec",
+  "protein_h5ad_sha256": "1f85827b5afad11a30d8ac99399772231110a1c3723bed6ecf7981a12cc3dbcc",
+  "protein_source_shape_from_scperturb_metadata": [
+    218331,
+    24
+  ],
+  "protein_matrix_opened_during_freeze": false,
+  "normalization": "Frangieh published isotype normalization max(ln((antibody+1)/(matched_isotype+1)),0)",
+  "biological_markers": 20,
+  "isotype_controls": 4,
+  "decoder": "train-only StandardScaler + multi-output Ridge; alpha selected on source-context validation tasks",
+  "ridge_alphas": [
+    0.01,
+    0.1,
+    1.0,
+    10.0,
+    100.0
+  ],
+  "primary_endpoints": [
+    "protein_rmse_two_predictor_mean",
+    "protein_cosine_error_two_predictor_mean"
+  ],
+  "primary_score": "safeconf_calibrated_pair_risk",
+  "comparators": [
+    "baseline_predicted_magnitude",
+    "risk_model_disagreement",
+    "directional_risk_frozen"
+  ],
+  "bootstrap_unit": "outer_fold_plus_perturbation_cluster",
+  "n_bootstrap": 3000,
+  "preregistered_gate_passed": false,
+  "n_aligned_test_tasks": 837,
+  "n_biological_markers": 20,
+  "true_rna_decoder_advantage_over_train_mean": -0.011235646373186083,
+  "protein_truth_used_to_refit_or_change_safeconf": false
+}

@@ -1,0 +1,276 @@
+{
+  "Systema_compatible_evaluation": {
+    "Euclidean_centroid_accuracy": "for each predicted post state, find the nearest among all 48 true test post centroids by Euclidean distance; canonical condition breaks exact ties; hit iff nearest condition is the task itself; report mean hit rate",
+    "citation": "10.1038/s41587-025-02777-8",
+    "panel_metric_role": "secondary_descriptive_perturbation_specificity",
+    "simple_predictor": "condition_balanced_perturbed_mean",
+    "train_reference": "E164 condition-balanced mean of 71 train perturbation-condition centroids"
+  },
+  "all_required_task_metrics": {
+    "RMSE_reference_invariance_note": "RMSE is unchanged by subtracting a shared reference; retain it to distinguish matching from the 2x matching single-additive amplitude",
+    "absolute": [
+      "PCA10_projected_RMSE_2023",
+      "raw_RMSE_2023",
+      "PCA10_projected_MSE_2023",
+      "raw_MSE_2023"
+    ],
+    "control_reference": [
+      "Pearson_delta_PCA10",
+      "cosine_delta_PCA10",
+      "Pearson_delta_raw",
+      "cosine_delta_raw"
+    ],
+    "direction": [
+      "strict_direction_fraction_all",
+      "strict_direction_fraction_top20"
+    ],
+    "train_Systema_reference": [
+      "Pearson(predicted_post-Systema_train_centroid, truth_post-Systema_train_centroid)",
+      "cosine(predicted_post-Systema_train_centroid, truth_post-Systema_train_centroid)"
+    ]
+  },
+  "analysis_timing": "before_first_raw_Wessels_or_test_truth_open",
+  "baseline_arm_authorized": true,
+  "confirmatory_families": {
+    "PRESCRIBE_own_family": {
+      "alpha": 0.025,
+      "confirmatory_gate": "point estimate >0 and both task-bootstrap and component-gene cluster-bootstrap 95% CI lower bounds >0",
+      "disclosure": "E162 failed its original prediction nondegeneracy gate; E163 is a validation-informed futility diagnostic, not external confirmation",
+      "enabled_only_if_prescribe_arm_authorized": true,
+      "expected_direction": "greater_than_zero",
+      "mandatory_sensitivity": [
+        "same score versus raw 2023-gene Pearson effect accuracy",
+        "same score versus PCA10 and raw RMSE with negative expected sign",
+        "same score versus strict direction fraction",
+        "seeds 3408 and 3409 reported without replacing seed 3407"
+      ],
+      "score": "prescribe_seed3407.raw_log_prob; higher is more confident",
+      "statistic": "Spearman(raw_log_prob, PCA10_inverse_transform_own_model_Pearson)"
+    },
+    "baseline_family_fixed_sequence": {
+      "H1": {
+        "aggregate": "arithmetic mean over all 48 tasks",
+        "confirmatory_gate": "point estimate >0 and both task-bootstrap and component-gene cluster-bootstrap 95% CI lower bounds >0",
+        "expected_direction": "greater_than_zero_favors_matching",
+        "name": "matching_vs_cellweighted_PCA10_RMSE",
+        "task_contrast": "RMSE10_cell_weighted_perturbed_mean - RMSE10_matching_single_mean"
+      },
+      "H2": {
+        "confirmatory_gate": "point estimate >0 and both task-bootstrap and component-gene cluster-bootstrap 95% CI lower bounds >0",
+        "expected_direction": "greater_than_zero",
+        "if_H1_fails": "descriptive_only",
+        "name": "matching_SE_risk",
+        "statistic": "Spearman(matching_se_pca10_confidence, -RMSE10_matching)",
+        "tested_only_if_H1_passes": true
+      },
+      "alpha": 0.025
+    },
+    "familywise_alpha": 0.05
+  },
+  "experiment": "E165_wessels_frozen_truth_evaluation",
+  "forbidden_adaptations": [
+    "change task set or label order",
+    "change score sign after seeing truth",
+    "jitter or perturb constant scores/predictions",
+    "replace an NA correlation with zero",
+    "add a prediction-union top20 set",
+    "call split-half an upper bound",
+    "claim E162 validation failure was passed"
+  ],
+  "frozen_at": "2026-07-16T18:17:56+08:00",
+  "frozen_by": "E164_wessels_pretruth_lock",
+  "multiplicity": {
+    "confirmatory": "PRESCRIBE family alpha=0.025 plus fixed-sequence baseline family alpha=0.025; total FWER<=0.05",
+    "everything_else": "descriptive; report raw and adjusted p-values where defined",
+    "secondary_prediction_contrasts": "Holm within one family",
+    "secondary_risk_contrasts": "Holm within one separate family"
+  },
+  "no_adaptive_changes_after_truth_unseal": true,
+  "predictors": {
+    "fixed_order": [
+      "control_no_change",
+      "cell_weighted_perturbed_mean",
+      "condition_balanced_perturbed_mean",
+      "matching_single_mean",
+      "single_additive",
+      "prescribe_seed3407"
+    ],
+    "profile_kind": "one fixed 2023-gene post-state centroid per test task",
+    "seed_sensitivity_only": [
+      "prescribe_seed3408",
+      "prescribe_seed3409"
+    ],
+    "single_cell_prediction_distribution_available": false
+  },
+  "prescribe_arm_authorized": true,
+  "primary_truth_and_accuracy": {
+    "PRESCRIBE_primary_task_accuracy": "Pearson(predicted_effect_2023, PCA10_projected_truth_effect_2023)",
+    "PRESCRIBE_primary_truth": "train-only PCA10 inverse-transform effect",
+    "constant_or_weak_signal_rule": "Pearson/cosine is NA when either compared vector is nonfinite or has sample std <=1e-12; never fill with zero",
+    "direction_rule": "per gene hit iff prediction_effect * truth_effect > 0; prediction or truth equal to zero is a miss",
+    "mandatory_raw_sensitivity": "Pearson(predicted_effect_2023, raw_normalized_truth_effect_2023)",
+    "raw_sensitivity_never_replaces_primary": true
+  },
+  "resampling": {
+    "CI": "percentile [0.025,0.975], numpy.quantile method=linear",
+    "component_gene_cluster_bootstrap": "let K be distinct component genes; sample K genes with replacement; for every sampled gene append all containing test tasks in canonical condition order; a pair can enter twice through its two components",
+    "leave_one_component_gene_out": {
+      "per_gene": [
+        "removed gene",
+        "removed task count",
+        "remaining task count",
+        "effect or rho",
+        "estimability status"
+      ],
+      "required": true,
+      "summary": [
+        "minimum",
+        "median",
+        "maximum",
+        "fraction_positive"
+      ]
+    },
+    "minimum_valid_replicates": 9500,
+    "paired_indices_shared_by_all_predictors_and_scores": true,
+    "replicates": 10000,
+    "rng": "numpy.random.default_rng(3407)",
+    "task_bootstrap": "sample 48 task indices with replacement"
+  },
+  "risk_and_selective_prediction": {
+    "constant_rule": "nonfinite, exact unique<2 or sample std<=1e-12 => rho, CI, AURC and coverage contrasts NA with constant_or_nonfinite_baseline",
+    "coverage_grid": [
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9,
+      0.95,
+      1.0
+    ],
+    "ordering": "score descending, canonical condition ascending tie-break",
+    "orientation": "every analysis score is higher_expected_accuracy",
+    "outputs": [
+      "Spearman versus each error/accuracy endpoint",
+      "selective risk curve and AURC",
+      "lowest-confidence quartile error enrichment",
+      "paired delta-rho versus predicted magnitude"
+    ],
+    "retained_task_counts": [
+      24,
+      27,
+      29,
+      32,
+      34,
+      36,
+      39,
+      41,
+      44,
+      46,
+      48
+    ],
+    "scores": [
+      "matching_se_pca10_confidence",
+      "matching_se_gene_confidence",
+      "min_single_cell_count_confidence",
+      "min_train_pair_degree_confidence",
+      "matching_magnitude_confidence",
+      "hash_random_confidence",
+      "constant_confidence",
+      "exact_pair_support_confidence",
+      "prescribe_raw_log_prob_seed3407_confidence",
+      "prescribe_raw_log_prob_seed3408_confidence",
+      "prescribe_raw_log_prob_seed3409_confidence",
+      "prescribe_official_seed3407_confidence",
+      "prescribe_negative_magnitude_seed3407_confidence"
+    ]
+  },
+  "scPerturBench_compatibility": {
+    "NA_reason": "all frozen predictors provide centroids, not predicted cell distributions",
+    "centroid_metrics_to_report": [
+      "MSE",
+      "RMSE",
+      "PCC_delta"
+    ],
+    "citation": "10.1038/s41592-025-02980-0",
+    "distribution_metrics_fixed_NA": [
+      "E-distance",
+      "Wasserstein",
+      "KL_divergence",
+      "Common-DEGs"
+    ]
+  },
+  "schema": "safeconf_e165_wessels_evaluation_spec_v1",
+  "split_half_experimental_reproducibility_reference": {
+    "TxPert_context": "seen-single/unseen-double evaluation requires strong additive/simple baselines; split-half is not a model-performance upper bound",
+    "cell_id_source": "frozen raw obs index; exact string, no row-number fallback",
+    "citations": {
+      "2026_SBB_evaluation": "10.64898/2026.04.20.719650",
+      "TxPert": "10.1038/s41587-026-03113-4"
+    },
+    "digest": "SHA256(\"E165|Wessels|split-half|3407\\t\" + canonical_condition + \"\\t\" + cell_id)",
+    "endpoints": [
+      "PCA10-projected Pearson and RMSE",
+      "raw 2023-gene Pearson and RMSE",
+      "PCA10-truth-top20 and raw-truth-top20 RMSE/Pearson/direction"
+    ],
+    "interpretation": "experimental reproducibility benchmark/reference; half-sample noise can make it lower than full-sample reproducibility",
+    "name_must_not_contain": [
+      "upper_bound",
+      "upper bound",
+      "theoretical ceiling"
+    ],
+    "normalization": "normalize/log1p every cell first; form A and B means independently",
+    "partition": "sort by (digest_hex, cell_id), assign alternating rows A/B; for odd n, A contains one more cell",
+    "role": "contextual_descriptive_not_confirmatory",
+    "small_task_rule": "n<4 => every split-half endpoint is NA; do not borrow cells"
+  },
+  "top20": {
+    "PCA10_truth_top20": "20 genes with largest absolute PCA10-projected truth effect; exact ties by zero-based E161 selected-gene index",
+    "metrics": [
+      "RMSE",
+      "Pearson_delta",
+      "strict_direction_fraction"
+    ],
+    "prediction_union_set_forbidden": true,
+    "raw_truth_top20": "20 genes with largest absolute raw normalized truth effect; exact ties by zero-based E161 selected-gene index",
+    "role": "secondary_test_dependent_truth_selected_signal_sensitive"
+  },
+  "truth_unseal": {
+    "control_truth": "E161 train-only control_gene_mean; never a test control",
+    "first_action": "atomically write and fsync a permanent E165 truth-unseal event binding the E164 interface, manifest, raw identity and runner Git blob",
+    "mandatory_truth_outputs": [
+      "raw normalized 2023-gene task means and effects",
+      "train-PCA10 projected/inverse-transformed task means and effects",
+      "task cell counts and normalization audit"
+    ],
+    "normalization": "per cell over all 20631 endogenous raw-count genes: log1p(10000*x/library); select the frozen 2023 genes only afterward",
+    "pca10_truth": "(raw_test_task_mean - E161_PCA_mean) @ E161_components.T; inverse transform with the same mean/components for the primary truth profile",
+    "permitted_X": {
+      "columns": "first 20631 endogenous features only",
+      "engineered_construct_columns": 0,
+      "excluded_rows": 0,
+      "guide_barcode_columns": 0,
+      "test_rows": 9902,
+      "validation_rows": 0
+    },
+    "precondition_schema": "safeconf_e164_to_e165_v1",
+    "raw_identity_and_axes_to_reverify": [
+      "E160 raw file identity and full byte hashes",
+      "E160 canonical row-to-condition audit",
+      "20631 endogenous feature axis",
+      "2023 E161 selected-gene axis and raw indices",
+      "8 engineered construct columns excluded",
+      "413 guide/barcode columns excluded"
+    ],
+    "required_baseline_arm_authorized": true,
+    "required_for_prescribe_endpoints": {
+      "main_raw_gate_passed": true,
+      "prescribe_arm_authorized": true
+    },
+    "task_truth": "arithmetic mean of normalized selected-gene vectors over all test cells in each canonical condition"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "status": "ok",
+  "generated_at": "2026-07-07T21:30:16",
+  "script": "tools/scripts/run_e18_model_vector_asset_audit.py",
+  "output_dir": "docs/实验结果/E18_model_vector_asset_audit_20260707",
+  "input_git_commit": "e9be58ca3e5f4094ed771b3289d190f0c3d245c1",
+  "input_git_dirty": true,
+  "gears_records": 54,
+  "gears_runs": 9,
+  "gears_datasets": 3,
+  "gears_ready": true,
+  "scgpt_ready": false,
+  "cpa_ready": false
+}

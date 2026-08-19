@@ -1,0 +1,66 @@
+{
+  "experiment": "E136_nadig_two_cellline_contract",
+  "generated_at": "2026-07-14T02:30:32",
+  "status": "frozen_before_expression_values_predictions_or_errors",
+  "sources": {
+    "HepG2": {
+      "path": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/NadigOConner2024_hepg2.h5ad",
+      "sha256": "1af2f7b3e692ad3d077e6027d68a1f800619e29aa3f7a0efa70146fb7223a4bf",
+      "shape": [
+        145473,
+        9624
+      ]
+    },
+    "Jurkat": {
+      "path": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/NadigOConner2024_jurkat.h5ad",
+      "sha256": "ade3d83150fd6944212363cd11da77c0d2143fa6df1febb3f15a66d4dab0677f",
+      "shape": [
+        262956,
+        8882
+      ]
+    }
+  },
+  "context_definition": "two biological cell lines: HepG2 and Jurkat",
+  "n_contexts": 2,
+  "n_eligible_perturbations": 785,
+  "n_selected_perturbations": 96,
+  "minimum_cells_per_selected_pair": 50,
+  "n_folds": 2,
+  "n_manifest_rows": 384,
+  "n_test_tasks": 256,
+  "expression_values_read_for_selection_or_split": false,
+  "target_effect_prediction_or_error_used_for_selection": false,
+  "frozen_direction_model_sha256": "77caf3b7b46071ced9577a8bd5289ce4c7bf5899c329ab37e835c41bda07d4b3",
+  "frozen_direction_model": {
+    "schema": "safeconf_directional_risk_v1",
+    "frozen_at": "2026-07-14T02:29:02",
+    "status": "frozen_before_seventh_dataset_prediction_or_truth",
+    "model": "Ridge",
+    "alpha": 10.0,
+    "features_in_order": [
+      "risk_disagreement_z",
+      "predicted_magnitude_z",
+      "context_novelty_scaled",
+      "perturbation_novelty"
+    ],
+    "coefficients_in_order": [
+      0.015637725890004724,
+      0.023463472706494955,
+      -0.19486358334777257,
+      0.1317285460036106
+    ],
+    "intercept": 0.48556181419043987,
+    "training_target": "mean of within-dataset-fold percentile ranks of Systema-centered Pearson and cosine error",
+    "source_datasets": [
+      "Frangieh",
+      "Lara_exvivo",
+      "Liang",
+      "Santinha",
+      "Shifrut",
+      "Tian_CRISPRi"
+    ],
+    "n_source_tasks": 2953,
+    "deployment_requires_target_truth": false,
+    "selection_disclosure": "Chosen after transparent five-candidate exploration on the six source datasets; requires untouched seventh-dataset confirmation."
+  }
+}

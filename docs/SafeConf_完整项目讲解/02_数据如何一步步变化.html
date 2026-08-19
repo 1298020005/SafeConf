@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>02 数据如何一步步变化</title>
+<link rel="stylesheet" href="assets/tutorial.css">
+</head>
+<body>
+<header class="top">
+<div class="topin">
+<a class="brand" href="index.html">SafeConf 完整项目讲解</a>
+<a class="back" href="../../SafeConf_统一研究工作台.html">返回工作台</a>
+</div>
+</header>
+<div class="layout">
+<aside class="side" id="chapterNav">
+</aside>
+<main class="content">
+<section class="hero">
+<p class="eyebrow">CHAPTER 02</p>
+<h1>从 h5ad 到一条 SafeConf 分数</h1>
+<p class="lead">这一章只追踪数据。每一步都问：输入是什么？输出是什么？一行代表什么？</p>
+</section>
+<h2>1. h5ad 是一个单细胞数据包</h2>
+<div class="tree">experiment.h5ad
+├── obs      # 细胞说明表：一行 = 一个细胞
+├── var      # 基因说明表：一行 = 一个基因
+├── X        # 表达矩阵：行 = 细胞，列 = 基因
+├── layers   # 可选的其他表达矩阵
+├── obsm     # 可选的细胞坐标/嵌入
+└── uns      # 其他说明信息</div>
+<div class="grid3">
+<div class="mini">
+<h3>obs</h3>
+<p>包含 cell line、perturbation、dose、time 等标签。它告诉电脑哪些细胞应该分在一组。</p>
+</div>
+<div class="mini">
+<h3>var</h3>
+<p>包含基因名和 Ensembl ID。它确定 X 矩阵每一列是哪个基因。</p>
+</div>
+<div class="mini">
+<h3>X</h3>
+<p>数值矩阵。单细胞数据中大量位置为 0，因此常用 sparse matrix（稀疏矩阵）只存非零值。</p>
+</div>
+</div>
+<h2>2. 整条数据流</h2>
+<figure class="figure">
+<div class="flow">
+<div class="node">
+<b>h5ad</b>
+<small>细胞粒度</small>
+</div>
+<div class="node">
+<b>context × perturbation</b>
+<small>任务粒度</small>
+</div>
+<div class="node">
+<b>true / predicted effect</b>
+<small>向量粒度</small>
+</div>
+<div class="node">
+<b>PredictionRecord</b>
+<small>预测粒度</small>
+</div>
+<div class="node">
+<b>Features / Scores</b>
+<small>质检粒度</small>
+</div>
+<div class="node">
+<b>Evaluation</b>
+<small>数据集粒度</small>
+</div>
+</div>
+</figure>
+<div class="table">
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>典型文件</th>
+<th>一行/一个 key 代表</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>原始细胞</td>
+<td>
+<code>*.h5ad</code>
+</td>
+<td>obs 一行=一个细胞</td>
+<td>保存表达与实验标签</td>
+</tr>
+<tr>
+<td>切分</td>
+<td>
+<code>HELDOUT_PAIR_SPLITS.csv</code>
+</td>
+<td>一个任务在某 fold 中的 train/val/test 归属</td>
+<td>防止测试答案混入训练</td>
+</tr>
+<tr>
+<td>效应向量</td>
+<td>
+<code>true_effects.npz</code>
+<br>
+<code>predicted_effects.npz</code>
+</td>
+<td>一个 key=一条多基因向量</td>
+<td>保存标准答案与预测答案</td>
+</tr>
+<tr>
+<td>预测记录</td>
+<td>
+<code>PREDICTION_RECORDS.csv</code>
+</td>
+<td>一个预测器对一个 task 的一次预测</td>
+<td>统一数据集和预测器</td>
+</tr>
+<tr>
+<td>风险线索</td>
+<td>
+<code>CONFIDENCE_FEATURES.csv</code>
+</td>
+<td>与 PredictionRecord 对齐的一组质检特征</td>
+<td>不看测试答案也能计算</td>
+</tr>
+<tr>
+<td>风险分</td>
+<td>
+<code>CONFIDENCE_SCORES.csv</code>
+</td>
+<td>一条记录被某个 score 打一次分</td>
+<td>排序高风险预测</td>
+</tr>
+<tr>
+<td>数据集结果</td>
+<td>
+<code>FORMAL_MAIN_TABLE.csv</code>
+</td>
+<td>一行=一个数据集的总结果</td>
+<td>论文/汇报级结论</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2>3. PredictionRecord 是整个系统的中心接口</h2>
+<div class="card">
+<div class="code">record_id      = v2_rec_000930
+dataset_name  = McFarlandTsherniak2020
+context       = 22RV1
+perturbation  = Trametinib
+predictor     = ContextSimPredictor
+fold_id       = 2
+split         = test
+predicted_effect_key = ...
+true_effect_key      = ...
+true_error_rmse      = 1.42</div>
+<p>这一行记录某个预测器对“22RV1 细胞背景接受 Trametinib 后的扰动效应”给出的一次预测。原始细胞表中的多行细胞已经汇总为一个任务。</p>
+</div>
+<div class="term">
+<b>NPZ</b>
+<p>NumPy 的压缩数组容器。CSV 适合存一行一条记录，NPZ 适合存每条记录对应的几千维向量。</p>
+</div>
+<div class="term">
+<b>Schema / Contract<br>模式/数据契约</b>
+<p>规定每条 PredictionRecord 必须有哪些列、向量的基因顺序如何核对、哪些字段禁止当作特征。</p>
+</div>
+<h2>4. 为什么真实误差不能进特征</h2>
+<div class="grid2">
+<div class="callout good">
+<b>允许的输入：</b>训练侧历史支持、对照细胞相似度、预测器之间的分歧、预测输出幅度。</div>
+<div class="callout danger">
+<b>禁止的输入：</b>
+<code>true_error_rmse</code>、<code>true_effect</code>、failure label 等使用了测试真值的列。</div>
+</div>
+<p>如果把真实误差放进风险特征，就等于在考试前先看到了答案。这叫 <b>label leakage（标签泄漏）</b>。</p>
+<h2>5. 可直接打开的真实小样例</h2>
+<div class="grid2">
+<a class="mini" href="../小白科普/h5ad可打开CSV样例/01_obs细胞表_前30行.csv">
+<b>obs 细胞表</b>
+<p class="source">相对路径：../小白科普/h5ad可打开CSV样例/01_obs细胞表_前30行.csv</p>
+</a>
+<a class="mini" href="../小白科普/h5ad可打开CSV样例/08_PredictionRecord_单条预测记录.csv">
+<b>PredictionRecord 单条记录</b>
+<p class="source">../小白科普/h5ad可打开CSV样例/08_PredictionRecord_单条预测记录.csv</p>
+</a>
+<a class="mini" href="../小白科普/h5ad可打开CSV样例/09_ConfidenceFeatures_单条质检线索.csv">
+<b>ConfidenceFeatures 单条线索</b>
+<p class="source">../小白科普/h5ad可打开CSV样例/09_ConfidenceFeatures_单条质检线索.csv</p>
+</a>
+<a class="mini" href="../小白科普/h5ad可打开CSV样例/13_FORMAL_MAIN_TABLE_7个数据集总成绩.csv">
+<b>7 数据集总成绩</b>
+<p class="source">../小白科普/h5ad可打开CSV样例/13_FORMAL_MAIN_TABLE_7个数据集总成绩.csv</p>
+</a>
+</div>
+<div class="callout warn">
+<b>便携性说明：</b>本章的解释和图在教程文件夹内可独立阅读；上面四个真实 CSV 链接需要保留完整 <code>docs/</code> 目录结构。</div>
+<div class="pager">
+<a href="01_从零认识单细胞.html">← 上一章</a>
+<a href="03_数据集地图.html">下一章：数据集地图 →</a>
+</div>
+</main>
+</div>
+<script src="assets/tutorial.js">
+</script>
+</body>
+</html>

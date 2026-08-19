@@ -1,0 +1,14 @@
+{
+  "outer_fold_id": "frangieh_context_holdout_2_Control",
+  "status": "complete",
+  "generated_at": "2026-07-13T10:45:21",
+  "n_inner_folds": 2,
+  "n_calibration_test_rows": 232,
+  "settings": [
+    "context_and_perturbation_unseen",
+    "context_unseen_row",
+    "perturbation_unseen_column"
+  ],
+  "outer_test_truth_used": false,
+  "wall_seconds": 43.56332850456238
+}

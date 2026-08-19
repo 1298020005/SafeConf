@@ -1,0 +1,8 @@
+score_name,score_label,role,n_datasets,median_aligned_rho,median_partial_rho_control_magnitude,median_aurc_reduction_vs_random_pct,positive_aligned_datasets,positive_partial_after_magnitude_datasets,deployment_status
+predicted_magnitude,Magnitude-only,strong deployable competitor,7,0.4573124540196879,0.521608734960635,17.234124209398015,7,6,deployable
+protocol_v0_2_family_confidence,Frozen v0.2,frozen protocol score,7,0.4277813904102051,0.4268695150400821,18.005655358964244,6,6,deployable
+safeconf_lodo_risk,SafeConf LODO,cross-dataset transfer score,7,0.4210436345089804,0.2953304513545568,19.825289883727866,7,7,deployable
+safeconf_lodo_linear_risk,SafeConf LODO linear,simpler transfer variant,7,0.3545680024969715,0.2676585189903663,12.147794247737693,7,6,deployable
+oracle_magnitude_diagnostic,Oracle true magnitude,non-deployable oracle diagnostic,7,0.7403023289344335,0.0211579588590332,38.482181645463896,7,5,non-deployable oracle
+safeconf_perdataset_risk,SafeConf per-dataset,within-dataset upper reference,7,0.7567952342011334,0.5396453504564223,34.47679215999057,7,7,reference only
+random,Random,sanity baseline,7,-0.0016418547824213,0.0071440601463492,1.5386949845502005,2,4,reference only

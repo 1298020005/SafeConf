@@ -1,0 +1,56 @@
+{
+  "status": "ok",
+  "code_commit": "f2e2c9de0d8f997a22aff22a776d8060a1498aa8",
+  "feature_matrix": "/home/yyf/safeconf_runtime/outputs/safeconf_lopo_robustness_20260613/tables/LOPO_FEATURE_MATRIX_PertMeanPredictor.csv",
+  "feature_matrix_rows": 68775,
+  "experiments": [
+    "e1",
+    "e2",
+    "e3",
+    "e4"
+  ],
+  "decisions": {
+    "e1": {
+      "passing_groups": [
+        "context",
+        "support",
+        "prediction_output"
+      ],
+      "n_passing_groups": 3,
+      "gate": "pass",
+      "gate_note": "Unadjusted paired bootstrap CIs are an across-dataset consistency gate, not multiplicity-adjusted inference."
+    },
+    "e2": {
+      "isotonic_partial_ci_positive_datasets": 7,
+      "isotonic_aurc_improvement_ci_positive_datasets": 7,
+      "partial_gate": "pass",
+      "aurc_gate": "pass",
+      "overall_gate": "pass"
+    },
+    "e3": {
+      "observed_vs_target_null_fdr_significant_datasets": 7,
+      "observed_vs_feature_null_fdr_significant_datasets": 7,
+      "missingness_only_fdr_significant_datasets": 0,
+      "full_plus_missingness_ci_positive_datasets": 2,
+      "target_null_gate": "pass",
+      "feature_null_gate": "pass",
+      "missingness_gate": "pass"
+    },
+    "e4": {
+      "datasets_with_at_least_9_of_10_positive_seeds": 7,
+      "datasets_with_at_least_3_of_6_positive_configs": 7,
+      "seed_gate": "pass",
+      "config_gate": "pass",
+      "note": "HistGBT is close to deterministic; configuration sensitivity is more informative than seed sensitivity."
+    }
+  },
+  "n_bootstrap": 1000,
+  "n_permutations": 200,
+  "n_jobs": 7,
+  "seed": 5201,
+  "elapsed_seconds": 2545.9450545310974,
+  "frozen_protocol_modified": false,
+  "learned_model_outer_fold_policy": "one model per outer fold; source=train+val and target=test from the same fold only",
+  "source_target_task_overlap_required": 0,
+  "preregistration_correction": "Permutation empirical p-values are expected to be small when the observed model exceeds its null; the supplied p>0.10 direction was corrected before execution."
+}

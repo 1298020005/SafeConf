@@ -1,0 +1,25 @@
+{
+  "experiment": "E56_cross_dataset_source_size_ablation",
+  "created_at": "2026-07-10T18:20:28",
+  "git_head": "81ca43c00deb69f0f816858935a95ca469de52de",
+  "git_dirty": true,
+  "args": {
+    "n_genes": 1000,
+    "min_common_genes": 100,
+    "min_cells": 20,
+    "max_cells_per_group": 400,
+    "min_source_tasks": 3,
+    "min_target_tasks": 3,
+    "source_fractions": [
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "repeats": 8,
+    "seed": 56
+  },
+  "output_dir": "docs/实验结果/E56_cross_dataset_source_size_ablation_20260710",
+  "n_pairs": 6,
+  "n_score_rows": 3450
+}

@@ -1,0 +1,7 @@
+score_name,score_type,deployable,description
+gears_cell_support_confidence,confidence,True,log1p(n_cells)
+gears_low_support_risk,risk,True,-log1p(n_cells)
+gears_predicted_effect_abs_mean_risk,risk,True,Mean absolute predicted effect
+gears_predicted_effect_l2_risk,risk,True,GEARS predicted effect L2 norm
+true_effect_abs_mean_diagnostic,risk,False,"True effect absolute mean, diagnostic only"
+true_effect_l2_diagnostic,risk,False,"True effect L2, diagnostic only"

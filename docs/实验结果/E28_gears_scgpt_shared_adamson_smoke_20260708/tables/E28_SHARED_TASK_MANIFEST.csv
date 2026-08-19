@@ -1,0 +1,4 @@
+fold_id,perturbation,perturbation_gene,record_id,predicted_effect_key,scgpt_cells,shared_gene_count
+1,CCND3+ctrl,CCND3,GEARS::adamson::seed1::single::CCND3+ctrl,GEARS::adamson::seed1::single::CCND3+ctrl::pred,8,512
+1,DAD1+ctrl,DAD1,GEARS::adamson::seed1::single::DAD1+ctrl,GEARS::adamson::seed1::single::DAD1+ctrl::pred,8,512
+1,DERL2+ctrl,DERL2,GEARS::adamson::seed1::single::DERL2+ctrl,GEARS::adamson::seed1::single::DERL2+ctrl::pred,8,512

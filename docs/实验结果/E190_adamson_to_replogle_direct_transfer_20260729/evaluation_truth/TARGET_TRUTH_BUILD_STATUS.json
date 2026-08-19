@@ -1,0 +1,14 @@
+{
+  "experiment": "E190",
+  "stage": "TARGET_TRUTH_BUILD",
+  "status": "PASS",
+  "n_target_tasks": 692,
+  "target_perturbation_x_rows_read": 4959,
+  "normalization": "per-cell full-library scale to 10000, then log1p",
+  "git_head": "c34a5b0a85299dcfcdfc1927be169e80aa050c2c",
+  "git_branch": "exp/task-risk-audit-20260611",
+  "prediction_freeze_remote_heads": {
+    "origin": "c34a5b0a85299dcfcdfc1927be169e80aa050c2c",
+    "github": "c34a5b0a85299dcfcdfc1927be169e80aa050c2c"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "adaptive_base_fitted_from": "model_validation_targets_only",
+  "builder_sha256": "af5329732d38448ea2792e765e5e69e9de5620dcd0493dedc7e5b34613f9481c",
+  "calibration_target_x_rows_read": 0,
+  "cell_cycle_phase_used_as_primary_context": false,
+  "code_freeze_remote_heads": {
+    "github": "875f945483b4a5f35a4ef7fbe8ba398eefbf2a91",
+    "origin": "875f945483b4a5f35a4ef7fbe8ba398eefbf2a91"
+  },
+  "evaluation_target_x_rows_read": 0,
+  "experiment": "E180_xucao_fresh_guide_certificate",
+  "f2_manifest_sha256": "99f7c1a2fcd76c98ed5e599ff9340d33010a8dcd64052353cbf7a78096cf4652",
+  "generated_at": "2026-07-23T23:57:33.394405+08:00",
+  "git_branch": "exp/task-risk-audit-20260611",
+  "git_head": "875f945483b4a5f35a4ef7fbe8ba398eefbf2a91",
+  "n_calibration_query_tasks": 78,
+  "n_evaluation_query_tasks": 73,
+  "n_tasks": 411,
+  "n_train_tasks": 174,
+  "n_validation_tasks": 86,
+  "runner_sha256": "aec1a91ff84c8dc7cf428d6a5b8adb00f89d8aa0de3cd3be8baebe795b4e077d",
+  "schema": "safeconf_e180_pretruth_snapshot_v1",
+  "status": "PASS",
+  "wall_seconds": 99.97580099105835
+}

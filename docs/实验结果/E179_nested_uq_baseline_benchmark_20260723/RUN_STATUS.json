@@ -1,0 +1,33 @@
+{
+  "experiment": "E179_nested_uq_baseline_benchmark",
+  "generated_at": "2026-07-23T23:36:30.256534+08:00",
+  "git_head_at_run": "4d9e35c5f9f5e404a7bb48aef00391703f3faa4b",
+  "primary_candidate_for_next_frozen_confirmation": "extra_trees_vector",
+  "purpose": "retrospective_method_development_not_prospective_confirmation",
+  "repeat_count": 50,
+  "runtime": {
+    "numpy": "2.4.4",
+    "pandas": "2.3.3",
+    "platform": "Linux-6.8.0-45-generic-x86_64-with-glibc2.35",
+    "python": "3.12.4"
+  },
+  "status": "complete",
+  "studies": {
+    "E176_primary_CD4": {
+      "n_targets": 800,
+      "n_tasks": 2400,
+      "primary_mean_target_coverage": 0.8941,
+      "primary_mean_upper": 0.20616714696795108,
+      "relative_upper_reduction_vs_constant": 0.027155034773622872
+    },
+    "E177_Sunshine": {
+      "n_targets": 80,
+      "n_tasks": 640,
+      "primary_mean_target_coverage": 0.905,
+      "primary_mean_upper": 0.5389201791323177,
+      "relative_upper_reduction_vs_constant": 0.014117104264249706
+    }
+  },
+  "target_coverage": 0.9,
+  "whole_target_partitioning": true
+}

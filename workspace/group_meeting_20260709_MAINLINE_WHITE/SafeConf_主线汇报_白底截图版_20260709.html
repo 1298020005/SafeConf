@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SafeConf 主线汇报｜白底截图版｜2026-07-09</title>
+<style>
+:root{
+  --ink:#20252b;--muted:#66717d;--line:#d8dee5;--soft:#f7f9fb;
+  --blue:#275f9d;--blue2:#edf4fb;--teal:#2f7f76;--teal2:#eef8f6;
+  --amber:#a86b1f;--amber2:#fff6e8;--red:#a84d4d;--red2:#fff1f1;
+  --green:#477a45;--green2:#f0f7ef;
+}
+*{box-sizing:border-box}
+html{background:#eceff2;scroll-behavior:smooth}
+body{margin:0;padding:22px 0 80px;color:var(--ink);font-family:Arial,"Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.45}
+.toolbar{position:sticky;top:0;z-index:10;width:1440px;margin:0 auto 14px;padding:10px 18px;background:#fff;border:1px solid var(--line);box-shadow:0 1px 6px rgba(30,40,50,.06);font-size:14px;color:var(--muted)}
+.toolbar b{color:var(--ink);margin-right:20px}.toolbar a{color:var(--blue);text-decoration:none;margin-right:13px}
+.slide{position:relative;width:1440px;height:810px;margin:0 auto 28px;padding:46px 70px 44px;background:#fff;overflow:hidden;page-break-after:always}
+.slide:before{content:"";position:absolute;left:70px;right:70px;top:104px;height:2px;background:var(--blue)}
+.slide h1{margin:0;font-size:37px;line-height:1.18;letter-spacing:-.4px}
+.sub{margin-top:7px;color:var(--muted);font-size:18px}.kicker{color:var(--blue);font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase}
+.page{position:absolute;right:70px;bottom:20px;color:#9aa4ad;font-size:13px}
+.content{position:absolute;left:70px;right:70px;top:136px;bottom:52px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{border:1px solid var(--line);background:#fff;padding:20px 22px;border-radius:2px}
+.card h2,.card h3{margin:0 0 12px;font-size:22px}.card p{margin:0;color:var(--muted);font-size:16px}.card .big{font-size:36px;font-weight:760;color:var(--ink);line-height:1}
+.blue{border-top:4px solid var(--blue)}.teal{border-top:4px solid var(--teal)}.amber{border-top:4px solid var(--amber)}.red{border-top:4px solid var(--red)}.green{border-top:4px solid var(--green)}
+.note{border-left:4px solid var(--blue);background:var(--blue2);padding:14px 18px;font-size:18px}.warn{border-left-color:var(--amber);background:var(--amber2)}.danger{border-left-color:var(--red);background:var(--red2)}.ok{border-left-color:var(--green);background:var(--green2)}
+.lead{font-size:27px;line-height:1.55}.small{font-size:14px;color:var(--muted)}.muted{color:var(--muted)}.b{font-weight:760}.blueText{color:var(--blue)}.tealText{color:var(--teal)}.amberText{color:var(--amber)}.redText{color:var(--red)}
+table{width:100%;border-collapse:collapse;font-size:16px}th,td{border-bottom:1px solid var(--line);padding:11px 10px;text-align:left;vertical-align:top}th{background:var(--soft);font-weight:760}
+.tag{display:inline-block;border:1px solid var(--line);padding:5px 9px;margin:3px 5px 3px 0;border-radius:999px;background:#fff;color:var(--muted);font-size:13px}.tag.blue{border-top:1px solid var(--line);color:var(--blue);background:var(--blue2)}
+.flow{display:flex;align-items:center;justify-content:space-between;gap:12px}.node{flex:1;min-height:106px;border:1px solid var(--line);padding:17px 15px;text-align:center;background:#fff}.node b{font-size:19px}.node span{display:block;margin-top:8px;color:var(--muted);font-size:13px}.arrow{flex:0 0 34px;height:2px;background:#8d98a3;position:relative}.arrow:after{content:"";position:absolute;right:-1px;top:-6px;border-left:10px solid #8d98a3;border-top:7px solid transparent;border-bottom:7px solid transparent}
+.ladder{display:grid;grid-template-columns:210px 1fr;gap:10px;align-items:stretch}.rung{border:1px solid var(--line);padding:14px 16px;background:#fff}.rung b{font-size:18px}.rung p{margin:5px 0 0;color:var(--muted);font-size:14px}
+.axis{height:10px;border-top:2px solid #b7c0c9;margin-top:13px;position:relative}.axis span{position:absolute;top:8px;font-size:12px;color:var(--muted)}.axis .l{left:0}.axis .r{right:0}
+.matrix{display:grid;grid-template-columns:220px repeat(4,1fr);border:1px solid var(--line);font-size:15px}.matrix div{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px}.matrix .head{background:var(--soft);font-weight:760}.matrix div:nth-child(5n){border-right:0}.matrix .lastrow{border-bottom:0}
+.caption{position:absolute;left:70px;bottom:22px;color:#98a2aa;font-size:12px}
+svg{width:100%;height:auto;display:block}
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <b>SafeConf 主线汇报白底截图版</b>
+  <a href="#s01">01封面</a><a href="#s02">02主线</a><a href="#s03">03系统</a><a href="#s04">04证据</a><a href="#s05">05结论</a><a href="#s06">06最新</a><a href="#s07">07模型级</a><a href="#s08">08边界</a><a href="#s09">09下一步</a><a href="#s10">10问答</a>
+</div>
+
+<section class="slide" id="s01">
+  <div class="kicker">GROUP MEETING · 2026-07-09</div>
+  <h1>SafeConf 当前主线：从任务风险分诊到模型级可靠性入口</h1>
+  <div class="sub">白底截图版 · 每一页可直接截屏贴入 PPT</div>
+  <div class="content">
+    <div class="grid2" style="height:100%;align-items:center">
+      <div>
+        <p class="lead"><span class="b blueText">一句话：</span>SafeConf 已经形成“预测后质检 / 高风险分诊”的证据闭环；最近工作的重点不是再调公式，而是把真实模型级验证入口打通。</p>
+        <div class="note ok" style="margin-top:28px">今天只讲三件事：现在能确认什么、不能说什么、下一步需要老师确认哪条技术路线。</div>
+      </div>
+      <div class="grid2">
+        <div class="card blue"><div class="big">6 / 7</div><p>七主表 Frozen partial ρ 为正</p></div>
+        <div class="card teal"><div class="big">9,000</div><p>Tahoe chemical 外部任务</p></div>
+        <div class="card amber"><div class="big">0.891</div><p>E17 sciplex3 full-743 learned ρ</p></div>
+        <div class="card green"><div class="big">21</div><p>E32 GEARS fixed-test 3-seed records</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="page">01</div>
+</section>
+
+<section class="slide" id="s02">
+  <div class="kicker">MAIN LINE</div>
+  <h1>汇报主线不要散：不是“又多跑了几个实验”，而是三层证据在收口</h1>
+  <div class="sub">把所有插曲压回三个问题</div>
+  <div class="content">
+    <div class="flow" style="margin-top:20px">
+      <div class="node"><b>任务是否有难度结构？</b><span>context × perturbation 的错误不是随机散点</span></div>
+      <div class="arrow"></div>
+      <div class="node"><b>能否在真值未知时分诊？</b><span>提前排出最该人工复核的预测</span></div>
+      <div class="arrow"></div>
+      <div class="node"><b>能否走向模型级可靠性？</b><span>同任务上区分 GEARS / scGPT / 未来 CPA</span></div>
+    </div>
+    <div class="grid3" style="margin-top:48px">
+      <div class="card blue"><h3>已基本完成</h3><p>任务层风险分诊：七主表、E1–E4、E8b、Tahoe、sciplex3 外部链路都能支撑。</p></div>
+      <div class="card amber"><h3>正在打开</h3><p>模型层入口：E25–E32 已把 GEARS strict、scGPT smoke、shared contract、GEARS 3-seed smoke 连起来。</p></div>
+      <div class="card red"><h3>不能乱说</h3><p>不能说 SafeConf 普遍超过 magnitude；不能把 smoke 写成 benchmark；不能说 CPA 已接入。</p></div>
+    </div>
+  </div>
+  <div class="page">02</div>
+</section>
+
+<section class="slide" id="s03">
+  <div class="kicker">SYSTEM POSITION</div>
+  <h1>SafeConf 的位置：不生成预测，而是给预测结果做风险质检</h1>
+  <div class="sub">这页用来回答“这个系统到底做什么”</div>
+  <div class="content">
+    <div class="flow" style="margin-top:18px">
+      <div class="node"><b>扰动预测模型</b><span>GEARS / scGPT / 基线模型<br>输出表达变化向量</span></div>
+      <div class="arrow"></div>
+      <div class="node"><b>PredictionRecord</b><span>统一任务、预测器、基因面板、真值向量</span></div>
+      <div class="arrow"></div>
+      <div class="node"><b>SafeConf 风险线索</b><span>背景相似度、历史支持、模型分歧、幅度</span></div>
+      <div class="arrow"></div>
+      <div class="node"><b>分诊输出</b><span>先复核哪些预测<br>先安排哪些湿实验</span></div>
+    </div>
+    <div class="grid2" style="margin-top:48px">
+      <div class="note">主线表述：SafeConf 是预测后的可靠性评估层，目标是在真值未知时做资源分配。</div>
+      <div class="note warn">不要说：SafeConf 替代 scGPT/GEARS；也不要说它直接提高预测模型本身的表达谱精度。</div>
+    </div>
+  </div>
+  <div class="page">03</div>
+</section>
+
+<section class="slide" id="s04">
+  <div class="kicker">EVIDENCE MAP</div>
+  <h1>证据链全景：哪些证据支撑主结论，哪些只是边界或入口</h1>
+  <div class="sub">建议按这一页讲，别按 E 编号流水账讲</div>
+  <div class="content">
+    <div class="ladder">
+      <div class="rung blue"><b>主结果</b><p>七主数据集</p></div>
+      <div class="rung"><b>Frozen task-risk 多数成立</b><p>6/7 partial ρ 为正；top-10 macro enrichment：Frozen 3.35×，Magnitude 3.30×；McFarland 失败必须保留。</p></div>
+      <div class="rung teal"><b>稳健性</b><p>E1–E4</p></div>
+      <div class="rung"><b>幅度之外仍有信号</b><p>E2 residual 7/7 为正；负对照支持不是随机排列或缺失模式伪影。</p></div>
+      <div class="rung amber"><b>外部关联</b><p>E8b / scPerturBench</p></div>
+      <div class="rung"><b>多方法方向一致，但不能夸大</b><p>15 种方法中 14 种方向为正；受样本量和指标影响，只能作为外部关联证据。</p></div>
+      <div class="rung blue"><b>大型 chemical</b><p>Tahoe D1–D5</p></div>
+      <div class="rung"><b>SafeConf 有分诊价值，magnitude 更强</b><p>D1 ρ=0.453；D2 ρ=0.470；SafeConf top-10 4.88×，magnitude 6.49×。</p></div>
+      <div class="rung green"><b>模型级入口</b><p>E25–E32</p></div>
+      <div class="rung"><b>从 GEARS strict 到 fixed-test 3-seed smoke</b><p>GEARS strict-pass、scGPT smoke、shared GEARS–scGPT、GEARS fixed-test 3-seed 工作流已跑通。</p></div>
+    </div>
+  </div>
+  <div class="page">04</div>
+</section>
+
+<section class="slide" id="s05">
+  <div class="kicker">WHAT CAN BE CLAIMED</div>
+  <h1>当前可以说什么：主张要收得住</h1>
+  <div class="sub">这页适合放在结果之后，帮老师快速判断论文边界</div>
+  <div class="content">
+    <table>
+      <thead><tr><th>层级</th><th>可以说</th><th>不能说</th><th>关键数字</th></tr></thead>
+      <tbody>
+        <tr><td>任务风险</td><td>许多数据集存在可提前识别的任务难度结构。</td><td>所有数据集都成功。</td><td>Frozen partial ρ：6/7 为正；McFarland = 失败边界。</td></tr>
+        <tr><td>强基线</td><td>SafeConf 和 magnitude 捕获互补风险模式。</td><td>SafeConf 普遍超过 magnitude。</td><td>七主表 top-10：3.35× vs 3.30×；Tahoe：4.88× vs 6.49×。</td></tr>
+        <tr><td>外部验证</td><td>sciplex3 / Tahoe 支持外部任务级风险审计可运行。</td><td>已经完成所有真实模型统一验证。</td><td>E17 learned ρ=0.891；Tahoe D1/D2 均为正。</td></tr>
+        <tr><td>模型级可靠性</td><td>GEARS/scGPT shared contract 和 GEARS fixed-test 3-seed smoke 已打通。</td><td>已经完成 GEARS/scGPT/CPA 正式 benchmark。</td><td>E32：21 records，strict issue=0，seed disagreement ρ=0.679。</td></tr>
+      </tbody>
+    </table>
+    <div class="note warn" style="margin-top:24px">汇报建议：把“负结果”和“不能说”主动讲出来，反而显得研究更稳。</div>
+  </div>
+  <div class="page">05</div>
+</section>
+
+<section class="slide" id="s06">
+  <div class="kicker">RECENT UPDATE</div>
+  <h1>最近新增内容怎样回到主线：E25–E32 不是支线，是模型级入口</h1>
+  <div class="sub">把近期一堆编号压成四步</div>
+  <div class="content">
+    <div class="flow" style="margin-top:12px">
+      <div class="node"><b>E25–E26</b><span>GEARS strict-pass<br>GEARS-only 风险审计</span></div>
+      <div class="arrow"></div>
+      <div class="node"><b>E27–E29</b><span>scGPT strict smoke<br>GEARS–scGPT shared tasks</span></div>
+      <div class="arrow"></div>
+      <div class="node"><b>E30</b><span>发现旧 GEARS runs<br>不能直接当 seed uncertainty</span></div>
+      <div class="arrow"></div>
+      <div class="node"><b>E31–E32</b><span>固定 test 清单<br>GEARS 3-seed smoke 跑通</span></div>
+    </div>
+    <div class="grid4" style="margin-top:48px">
+      <div class="card green"><div class="big">54</div><p>E25 GEARS strict records</p></div>
+      <div class="card blue"><div class="big">14</div><p>E29 GEARS–scGPT shared records</p></div>
+      <div class="card amber"><div class="big">5 / 47</div><p>E30 可重复 GEARS tasks 太少</p></div>
+      <div class="card green"><div class="big">21</div><p>E32 fixed-test 3-seed records</p></div>
+    </div>
+    <div class="note" style="margin-top:28px">这条线的价值：从“有没有真实模型预测向量”推进到“同一任务、同一基因面板、同一 split 下可以比较模型/seed 风险”。</div>
+  </div>
+  <div class="page">06</div>
+</section>
+
+<section class="slide" id="s07">
+  <div class="kicker">MODEL-LEVEL ENTRY</div>
+  <h1>模型级可靠性目前到哪一步：入口打通，但还不是正式 benchmark</h1>
+  <div class="sub">这页回答“现在能不能比较 GEARS、scGPT、CPA”</div>
+  <div class="content">
+    <div class="grid2">
+      <div class="card blue">
+        <h3>GEARS–scGPT shared contract</h3>
+        <p>Adamson 同任务、同 512-gene panel、同 true effect key；E29 扩展到 7 tasks × 2 predictors。</p>
+        <div class="axis"><span class="l">合同可行</span><span class="r">正式 benchmark 未完成</span></div>
+      </div>
+      <div class="card green">
+        <h3>GEARS fixed-test 3-seed smoke</h3>
+        <p>同一 Adamson 7-task test panel，GEARS seeds 1/2/3 都输出 strict records；seed disagreement ρ=0.679。</p>
+        <div class="axis"><span class="l">工作流跑通</span><span class="r">需正式 epochs / 更多任务</span></div>
+      </div>
+    </div>
+    <div class="matrix" style="margin-top:30px">
+      <div class="head">模型/路线</div><div class="head">预测向量</div><div class="head">同任务合同</div><div class="head">风险信号</div><div class="head">当前状态</div>
+      <div>GEARS</div><div>已有</div><div>已 strict</div><div>magnitude / seed disagreement</div><div>可继续正式重跑</div>
+      <div>scGPT</div><div>forward smoke</div><div>E28/E29 已 shared</div><div>分歧信号较弱</div><div>需正式 adapter</div>
+      <div>CPA / chemCPA</div><div>暂无可用逐向量</div><div>未接入</div><div>无</div><div>仍是缺口</div>
+    </div>
+  </div>
+  <div class="page">07</div>
+</section>
+
+<section class="slide" id="s08">
+  <div class="kicker">BOUNDARIES</div>
+  <h1>必须主动说明的边界：这些不是缺点，是下一步实验设计依据</h1>
+  <div class="sub">老师问到时按这页答</div>
+  <div class="content">
+    <div class="grid2">
+      <div class="card red"><h3>1. McFarland 失败要保留</h3><p>Frozen partial ρ 为负，说明简单冻结公式不是处处适用。</p></div>
+      <div class="card amber"><h3>2. Magnitude 是强基线</h3><p>Tahoe top-10 中 magnitude 6.49× 高于 SafeConf 4.88×。</p></div>
+      <div class="card amber"><h3>3. E8b 只是聚合外部关联</h3><p>不是 15 个模型的逐预测校准，也不替代真实模型向量验证。</p></div>
+      <div class="card red"><h3>4. E32 仍是 smoke</h3><p>1 epoch、7 tasks，只证明 fixed-test 3-seed 工作流可运行。</p></div>
+    </div>
+    <div class="note ok" style="margin-top:32px">汇报口径：我不是通过继续调权重追全正结果，而是把成功、失败和下一步可验证缺口都固定下来。</div>
+  </div>
+  <div class="page">08</div>
+</section>
+
+<section class="slide" id="s09">
+  <div class="kicker">NEXT DECISION</div>
+  <h1>下一步不要再散：建议只做一个决定性模型级实验</h1>
+  <div class="sub">给老师一个明确选择，而不是让老师听一堆“还可以做”</div>
+  <div class="content">
+    <div class="flow" style="margin-top:8px">
+      <div class="node"><b>固定任务</b><span>Adamson / Norman<br>同一 test perturbations</span></div>
+      <div class="arrow"></div>
+      <div class="node"><b>正式 GEARS 3 seeds</b><span>epochs 拉回 formal 设置<br>输出 strict PredictionRecord</span></div>
+      <div class="arrow"></div>
+      <div class="node"><b>加入第二模型</b><span>scGPT formal adapter<br>或 CPA 可用性审计</span></div>
+      <div class="arrow"></div>
+      <div class="node"><b>评价模型级风险</b><span>task-only / model-only / combined<br>regret、AURC、top-k</span></div>
+    </div>
+    <div class="grid3" style="margin-top:46px">
+      <div class="card green"><h3>推荐 A</h3><p>先把 E32 提升为正式 GEARS fixed-test 3-seed 实验。最稳，延续当前证据链。</p></div>
+      <div class="card blue"><h3>路线 B</h3><p>同步推进 scGPT formal adapter，让 GEARS–scGPT shared benchmark 更像正式多模型验证。</p></div>
+      <div class="card amber"><h3>暂缓 C</h3><p>CPA/chemCPA 先做资产审计；没有逐向量前不要承诺正式结果。</p></div>
+    </div>
+  </div>
+  <div class="page">09</div>
+</section>
+
+<section class="slide" id="s10">
+  <div class="kicker">TALK TRACK</div>
+  <h1>明天汇报可以这样收束</h1>
+  <div class="sub">少讲流水账，多讲判断</div>
+  <div class="content">
+    <div class="grid2">
+      <div class="card blue">
+        <h3>建议开场 30 秒</h3>
+        <p>老师，我这次不按 E 编号流水账讲，主要汇报 SafeConf 主线现在到哪一步：任务风险分诊已经有比较完整的证据闭环，最近我把真实模型级验证的入口也打通了，包括 GEARS strict、scGPT shared smoke，以及 GEARS fixed-test 3-seed smoke。</p>
+      </div>
+      <div class="card green">
+        <h3>建议结尾 30 秒</h3>
+        <p>我现在希望确认下一步优先级：如果继续实验，我建议不再调 frozen 公式，而是把 E32 的 fixed-test 3-seed smoke 提升到正式 epochs，并扩展到更多任务或第二模型，这样才能真正回答模型级可靠性。</p>
+      </div>
+    </div>
+    <table style="margin-top:28px">
+      <thead><tr><th>老师可能问</th><th>建议回答</th></tr></thead>
+      <tbody>
+        <tr><td>这是不是只是 magnitude？</td><td>不是，但 magnitude 很强。E2 有残差信号；Tahoe 顶端 magnitude 更强，所以只能说互补。</td></tr>
+        <tr><td>现在能比较 GEARS/scGPT/CPA 吗？</td><td>GEARS/scGPT shared 合同已跑通，但 scGPT 仍是 smoke，CPA 未接入；正式比较还需要下一轮。</td></tr>
+        <tr><td>为什么还要 GEARS 3 seeds？</td><td>E30 发现旧 runs 任务重叠太少；E31/E32 已解决 fixed-test 入口，下一步才能评价 seed uncertainty。</td></tr>
+        <tr><td>论文主张怎么写才稳？</td><td>写 task-risk triage 与选择性复核价值；模型级可靠性写成正在扩展，不写成已完成。</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="page">10</div>
+</section>
+
+<section class="slide" id="s11">
+  <div class="kicker">ONE-PAGE BACKUP</div>
+  <h1>一页备用：关键数字速查</h1>
+  <div class="sub">被追问数字时直接截这页</div>
+  <div class="content">
+    <div class="grid4">
+      <div class="card blue"><div class="big">6 / 7</div><p>Frozen partial ρ 为正</p></div>
+      <div class="card blue"><div class="big">3.35×</div><p>七主表 Frozen top-10 macro</p></div>
+      <div class="card amber"><div class="big">3.30×</div><p>七主表 Magnitude top-10 macro</p></div>
+      <div class="card red"><div class="big">-0.061</div><p>McFarland Frozen partial ρ</p></div>
+      <div class="card teal"><div class="big">0.453</div><p>Tahoe D1 partial ρ</p></div>
+      <div class="card teal"><div class="big">4.88×</div><p>Tahoe SafeConf top-10</p></div>
+      <div class="card amber"><div class="big">6.49×</div><p>Tahoe Magnitude top-10</p></div>
+      <div class="card green"><div class="big">0.891</div><p>E17 sciplex3 full-743 learned ρ</p></div>
+      <div class="card green"><div class="big">54</div><p>E25 GEARS strict records</p></div>
+      <div class="card green"><div class="big">14</div><p>E29 GEARS–scGPT shared records</p></div>
+      <div class="card green"><div class="big">21</div><p>E32 GEARS 3-seed smoke records</p></div>
+      <div class="card green"><div class="big">0</div><p>E32 strict issues</p></div>
+    </div>
+  </div>
+  <div class="page">11</div>
+</section>
+
+<section class="slide" id="s12">
+  <div class="kicker">FINAL ASK</div>
+  <h1>最后向老师要的决定</h1>
+  <div class="sub">把讨论导向具体下一步</div>
+  <div class="content">
+    <div class="grid2" style="height:100%;align-items:center">
+      <div>
+        <p class="lead">我建议下一阶段选择 <span class="b blueText">“GEARS fixed-test 3-seed 正式版 + scGPT formal adapter 可行性”</span> 作为主线，而不是继续调 frozen 公式或扩 Tahoe shard。</p>
+        <div class="note warn" style="margin-top:24px">原因：这一步直接回答当前最大缺口——同一任务上不同模型/不同 seed 的可靠性如何区分。</div>
+      </div>
+      <div class="card green" style="padding:34px">
+        <h3>需要老师确认</h3>
+        <p style="font-size:20px;line-height:1.65;color:var(--ink)">1. 是否同意进入模型级可靠性阶段？<br>2. GEARS 正式版优先扩 Adamson 还是 Norman？<br>3. scGPT formal adapter 与 CPA 审计是否并行推进？</p>
+      </div>
+    </div>
+  </div>
+  <div class="page">12</div>
+</section>
+</body>
+</html>

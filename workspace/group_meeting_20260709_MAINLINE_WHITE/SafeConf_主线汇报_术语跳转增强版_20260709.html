@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SafeConf 主线汇报｜术语跳转增强版｜2026-07-09</title>
+<style>
+:root{
+  --ink:#1f252b;--muted:#64717d;--line:#d8e0e7;--soft:#f7f9fb;--paper:#fff;
+  --blue:#285f9f;--blue2:#eef5fc;--blue3:#d9e8f7;
+  --teal:#2d7c74;--teal2:#edf8f6;--teal3:#d7efeb;
+  --amber:#a66b22;--amber2:#fff7eb;--amber3:#f4dfbd;
+  --red:#a84e4e;--red2:#fff2f2;--red3:#efcece;
+  --green:#4b7b46;--green2:#f1f8ef;--green3:#dcefd7;
+  --violet:#715aa6;--violet2:#f5f1fb;
+}
+*{box-sizing:border-box}
+html{background:#eef1f4;scroll-behavior:smooth}
+body{margin:0;padding:22px 0 80px;color:var(--ink);font-family:Arial,"Microsoft YaHei","Noto Sans SC",sans-serif;line-height:1.45}
+a{color:inherit}
+.toolbar{position:sticky;top:0;z-index:20;width:1440px;margin:0 auto 14px;padding:10px 18px;background:rgba(255,255,255,.97);border:1px solid var(--line);box-shadow:0 1px 8px rgba(30,40,50,.06);font-size:14px;color:var(--muted)}
+.toolbar b{color:var(--ink);margin-right:20px}.toolbar a{color:var(--blue);text-decoration:none;margin-right:12px}
+body.capture .toolbar{display:none}
+.slide{position:relative;width:1440px;height:810px;margin:0 auto 28px;padding:45px 70px 44px;background:var(--paper);overflow:hidden;page-break-after:always}
+.slide:before{content:"";position:absolute;left:70px;right:70px;top:104px;height:2px;background:linear-gradient(90deg,var(--blue),var(--teal))}
+.slide h1{margin:0;font-size:36px;line-height:1.18;letter-spacing:-.4px}
+.kicker{color:var(--blue);font-weight:800;font-size:14px;letter-spacing:.09em;text-transform:uppercase}
+.sub{margin-top:7px;color:var(--muted);font-size:18px}
+.content{position:absolute;left:70px;right:70px;top:136px;bottom:52px}
+.page{position:absolute;right:70px;bottom:20px;color:#9aa5ae;font-size:13px}.caption{position:absolute;left:70px;bottom:22px;color:#9aa5ae;font-size:12px}
+.term{color:var(--blue);text-decoration:none;border-bottom:1px dotted rgba(40,95,159,.7);font-weight:760}.term:hover{background:var(--blue2)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{border:1px solid var(--line);background:#fff;padding:19px 21px;border-radius:3px}.card h2,.card h3{margin:0 0 12px;font-size:21px}.card p{margin:0;color:var(--muted);font-size:16px}.big{font-size:36px;font-weight:800;color:var(--ink);line-height:1}
+.blue{border-top:4px solid var(--blue)}.teal{border-top:4px solid var(--teal)}.amber{border-top:4px solid var(--amber)}.red{border-top:4px solid var(--red)}.green{border-top:4px solid var(--green)}.violet{border-top:4px solid var(--violet)}
+.note{border-left:4px solid var(--blue);background:var(--blue2);padding:14px 18px;font-size:18px}.note.ok{border-left-color:var(--green);background:var(--green2)}.note.warn{border-left-color:var(--amber);background:var(--amber2)}.note.red{border-left-color:var(--red);background:var(--red2)}
+.lead{font-size:27px;line-height:1.56}.small{font-size:14px;color:var(--muted)}.b{font-weight:800}.muted{color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:16px}th,td{border-bottom:1px solid var(--line);padding:10px 10px;text-align:left;vertical-align:top}th{background:var(--soft);font-weight:800}
+.flow{display:flex;align-items:center;justify-content:space-between;gap:12px}.node{flex:1;min-height:106px;border:1px solid var(--line);padding:16px;text-align:center;background:#fff;border-radius:4px}.node b{font-size:18px}.node span{display:block;margin-top:8px;color:var(--muted);font-size:13px}.arrow{flex:0 0 34px;height:2px;background:#8b98a4;position:relative}.arrow:after{content:"";position:absolute;right:-1px;top:-6px;border-left:10px solid #8b98a4;border-top:7px solid transparent;border-bottom:7px solid transparent}
+.minirow{display:grid;grid-template-columns:180px 1fr;gap:12px;align-items:stretch}.rung{border:1px solid var(--line);padding:13px 15px;background:#fff;border-radius:3px}.rung b{font-size:17px}.rung p{margin:4px 0 0;color:var(--muted);font-size:14px}
+.tag{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:5px 10px;margin:3px 5px 3px 0;color:var(--muted);font-size:13px;background:#fff}.tag.hot{color:var(--blue);background:var(--blue2);border-color:var(--blue3)}
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center;height:100%}
+.glossary{width:1440px;margin:0 auto 28px;padding:48px 70px 70px;background:#fff;border-top:4px solid var(--blue)}
+.glossary h1{margin:0 0 8px;font-size:34px}.glossary .intro{font-size:18px;color:var(--muted);margin:0 0 24px}
+.glossaryNav{border:1px solid var(--line);background:var(--soft);padding:14px;margin-bottom:24px}.glossaryNav a{display:inline-block;margin:4px 9px 4px 0;color:var(--blue);text-decoration:none;border-bottom:1px dotted var(--blue);font-size:14px}
+.glossaryGrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.gcard{border:1px solid var(--line);padding:18px 20px;border-radius:4px;background:#fff;scroll-margin-top:70px}.gcard h2{font-size:20px;margin:0 0 8px;color:var(--ink)}.gcard p{font-size:15px;margin:7px 0;color:#3e4a55}.gcard .how{color:var(--muted);font-size:14px}.gcard .back{display:inline-block;margin-top:8px;color:var(--blue);font-size:13px;text-decoration:none}
+svg{display:block;width:100%;height:auto}
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <b>SafeConf 增强版</b>
+  <a href="?capture=1#s01">截图模式</a><a href="#s01">封面</a><a href="#s02">项目地图</a><a href="#s03">生物任务</a><a href="#s04">系统图</a><a href="#s05">记录结构</a><a href="#s06">风险线索</a><a href="#s07">证据链</a><a href="#s08">能说什么</a><a href="#s09">模型级</a><a href="#s10">三 seed</a><a href="#s11">下一步</a><a href="#glossary">术语词典</a>
+</div>
+
+<section class="slide" id="s01">
+  <div class="kicker">GROUP MEETING · MAINLINE VERSION</div>
+  <h1><a class="term" href="#term-safeconf">SafeConf</a> 主线汇报：把“预测结果”变成“可分诊的证据”</h1>
+  <div class="sub">白底截图页 + 术语跳转 + 详细解释 · 2026-07-09</div>
+  <div class="content split">
+    <div>
+      <p class="lead">这次按主线讲，不逐个堆实验编号。主线只有一条：在 <a class="term" href="#term-singlecell">单细胞组学</a> 的 <a class="term" href="#term-perturbation">扰动预测</a> 中，哪些预测最容易错，能不能在真值出来前先排查。</p>
+      <div class="note ok" style="margin-top:24px">汇报目标：让老师看到项目已经从 <a class="term" href="#term-taskrisk">任务风险</a> 分诊，走到真实模型级可靠性的入口。</div>
+      <div style="margin-top:18px">
+        <span class="tag hot">所有蓝色虚线名词可点击</span>
+        <span class="tag">底部有完整术语词典</span>
+        <span class="tag">每页可截图贴 PPT</span>
+      </div>
+    </div>
+    <svg viewBox="0 0 520 420" role="img" aria-label="SafeConf 主线图">
+      <defs>
+        <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%"><feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#9aa7b4" flood-opacity=".18"/></filter>
+      </defs>
+      <rect x="30" y="30" width="460" height="360" rx="18" fill="#fff" stroke="#d8e0e7" filter="url(#shadow)"/>
+      <path d="M100 315 C150 220 185 210 245 230 C310 252 332 163 410 102" fill="none" stroke="#285f9f" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="100" cy="315" r="17" fill="#eef5fc" stroke="#285f9f" stroke-width="3"/><text x="73" y="356" font-size="18" fill="#1f252b">数据</text>
+      <circle cx="245" cy="230" r="17" fill="#edf8f6" stroke="#2d7c74" stroke-width="3"/><text x="200" y="271" font-size="18" fill="#1f252b">风险分数</text>
+      <circle cx="410" cy="102" r="17" fill="#f1f8ef" stroke="#4b7b46" stroke-width="3"/><text x="355" y="78" font-size="18" fill="#1f252b">复核优先级</text>
+      <rect x="82" y="116" width="150" height="70" rx="10" fill="#eef5fc" stroke="#d9e8f7"/><text x="112" y="145" font-size="17" font-weight="700" fill="#285f9f">任务难度</text><text x="106" y="170" font-size="13" fill="#64717d">context × perturbation</text>
+      <rect x="278" y="242" width="155" height="70" rx="10" fill="#fff7eb" stroke="#f4dfbd"/><text x="313" y="271" font-size="17" font-weight="700" fill="#a66b22">模型边界</text><text x="307" y="296" font-size="13" fill="#64717d">GEARS / scGPT</text>
+    </svg>
+  </div>
+  <div class="page">01</div>
+</section>
+
+<section class="slide" id="s02">
+  <div class="kicker">PROJECT MAP</div>
+  <h1>先把项目地图摆正：主线、支线和当前缺口</h1>
+  <div class="sub">以后汇报时按这张图走，不再被 E 编号带散</div>
+  <div class="content">
+    <div class="flow" style="margin-top:8px">
+      <div class="node"><b><a class="term" href="#term-task">任务</a>是否有难度结构</b><span>同样是预测，有些 <a class="term" href="#term-context">细胞背景</a> / <a class="term" href="#term-perturbation">扰动</a> 天然更容易错</span></div>
+      <div class="arrow"></div>
+      <div class="node"><b>能否提前分诊</b><span>用 <a class="term" href="#term-frozen">Frozen score</a>、<a class="term" href="#term-learned">learned risk</a>、<a class="term" href="#term-magnitude">magnitude</a> 做排序</span></div>
+      <div class="arrow"></div>
+      <div class="node"><b>能否走向模型级</b><span>同一任务上，<a class="term" href="#term-gears">GEARS</a>、<a class="term" href="#term-scgpt">scGPT</a>、未来 <a class="term" href="#term-cpa">CPA</a> 谁更可靠</span></div>
+    </div>
+    <div class="grid3" style="margin-top:44px">
+      <div class="card blue"><h3>已经较稳</h3><p><a class="term" href="#term-taskrisk">task-risk triage</a>。七主表、E1–E4、E8b、Tahoe、sciplex3 都能围绕它解释。</p></div>
+      <div class="card amber"><h3>最近推进</h3><p>E25–E32 打通真实模型入口：<a class="term" href="#term-predictionrecord">PredictionRecord</a>、shared contract、fixed-test 3-seed。</p></div>
+      <div class="card red"><h3>仍需克制</h3><p>不能说 <a class="term" href="#term-safeconf">SafeConf</a> 普遍超过 <a class="term" href="#term-magnitude">magnitude</a>，也不能把 <a class="term" href="#term-smoke">smoke</a> 写成正式 benchmark。</p></div>
+    </div>
+  </div>
+  <div class="page">02</div>
+</section>
+
+<section class="slide" id="s03">
+  <div class="kicker">BIOLOGICAL TASK</div>
+  <h1>从生物问题说起：我们到底在预测什么</h1>
+  <div class="sub">这页给不熟悉单细胞的人看</div>
+  <div class="content split">
+    <div>
+      <div class="card blue"><h3><a class="term" href="#term-singlecell">单细胞组学</a></h3><p>把很多细胞逐个测量，而不是只看一管细胞的平均值。每个细胞会有自己的 <a class="term" href="#term-transcriptome">转录组</a> 状态。</p></div>
+      <div class="card teal" style="margin-top:18px"><h3><a class="term" href="#term-perturbation">扰动</a></h3><p>对细胞施加基因敲除、药物或刺激，观察 <a class="term" href="#term-expression">表达谱</a> 如何变化。</p></div>
+      <div class="card amber" style="margin-top:18px"><h3><a class="term" href="#term-effect">效应向量</a></h3><p>把“扰动后表达 - 对照表达”写成一个向量；模型预测的就是这个变化方向和大小。</p></div>
+    </div>
+    <svg viewBox="0 0 560 420" role="img" aria-label="单细胞扰动预测示意">
+      <rect x="18" y="22" width="524" height="376" rx="18" fill="#fff" stroke="#d8e0e7"/>
+      <text x="45" y="65" font-size="20" font-weight="700" fill="#1f252b">一个任务 = 细胞背景 + 扰动</text>
+      <g>
+        <rect x="48" y="105" width="170" height="112" rx="12" fill="#eef5fc" stroke="#d9e8f7"/>
+        <text x="84" y="137" font-size="17" font-weight="700" fill="#285f9f">细胞背景</text>
+        <circle cx="95" cy="172" r="12" fill="#285f9f"/><circle cx="132" cy="172" r="12" fill="#2d7c74"/><circle cx="169" cy="172" r="12" fill="#a66b22"/>
+        <text x="80" y="204" font-size="12" fill="#64717d">K562 / A549 / cell line</text>
+      </g>
+      <g>
+        <rect x="332" y="105" width="170" height="112" rx="12" fill="#fff7eb" stroke="#f4dfbd"/>
+        <text x="382" y="137" font-size="17" font-weight="700" fill="#a66b22">扰动</text>
+        <path d="M389 162 h58 M418 133 v58" stroke="#a66b22" stroke-width="8" stroke-linecap="round"/>
+        <text x="369" y="204" font-size="12" fill="#64717d">drug / KO / stimulus</text>
+      </g>
+      <path d="M224 160 C260 160 281 160 326 160" fill="none" stroke="#9aa7b4" stroke-width="2" marker-end="url(#arr)"/>
+      <defs><marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#9aa7b4"/></marker></defs>
+      <rect x="90" y="265" width="380" height="78" rx="12" fill="#f1f8ef" stroke="#dcefd7"/>
+      <polyline points="125,318 160,295 195,309 230,284 265,302 300,290 335,320 370,301 430,314" fill="none" stroke="#4b7b46" stroke-width="4" stroke-linecap="round"/>
+      <text x="181" y="254" font-size="17" font-weight="700" fill="#4b7b46">预测扰动后的表达变化</text>
+    </svg>
+  </div>
+  <div class="page">03</div>
+</section>
+
+<section class="slide" id="s04">
+  <div class="kicker">SYSTEM FLOW</div>
+  <h1>系统图：SafeConf 站在预测模型后面，做质检和排序</h1>
+  <div class="sub">这页是汇报中最重要的架构图</div>
+  <div class="content">
+    <svg viewBox="0 0 1260 430" role="img" aria-label="SafeConf 系统流程">
+      <defs>
+        <marker id="arrow2" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L0,8 L11,4 z" fill="#8793a0"/></marker>
+      </defs>
+      <rect x="10" y="22" width="1240" height="382" rx="16" fill="#fff" stroke="#d8e0e7"/>
+      <g>
+        <rect x="50" y="100" width="205" height="170" rx="12" fill="#eef5fc" stroke="#d9e8f7"/>
+        <text x="90" y="136" font-size="20" font-weight="700" fill="#285f9f">预测模型</text>
+        <text x="83" y="172" font-size="14" fill="#64717d">GEARS / scGPT / baseline</text>
+        <text x="82" y="206" font-size="14" fill="#64717d">输出 predicted effect</text>
+      </g>
+      <line x1="265" y1="185" x2="360" y2="185" stroke="#8793a0" stroke-width="2" marker-end="url(#arrow2)"/>
+      <g>
+        <rect x="370" y="100" width="220" height="170" rx="12" fill="#fff" stroke="#d8e0e7"/>
+        <text x="407" y="136" font-size="20" font-weight="700" fill="#1f252b">PredictionRecord</text>
+        <text x="409" y="170" font-size="14" fill="#64717d">task / predictor / gene panel</text>
+        <text x="409" y="204" font-size="14" fill="#64717d">predicted key / true key</text>
+      </g>
+      <line x1="600" y1="185" x2="695" y2="185" stroke="#8793a0" stroke-width="2" marker-end="url(#arrow2)"/>
+      <g>
+        <rect x="705" y="76" width="245" height="218" rx="12" fill="#edf8f6" stroke="#d7efeb"/>
+        <text x="771" y="112" font-size="20" font-weight="700" fill="#2d7c74">风险线索</text>
+        <circle cx="748" cy="150" r="6" fill="#2d7c74"/><text x="765" y="155" font-size="14" fill="#334">context similarity</text>
+        <circle cx="748" cy="183" r="6" fill="#2d7c74"/><text x="765" y="188" font-size="14" fill="#334">historical support</text>
+        <circle cx="748" cy="216" r="6" fill="#2d7c74"/><text x="765" y="221" font-size="14" fill="#334">model disagreement</text>
+        <circle cx="748" cy="249" r="6" fill="#2d7c74"/><text x="765" y="254" font-size="14" fill="#334">magnitude baseline</text>
+      </g>
+      <line x1="960" y1="185" x2="1055" y2="185" stroke="#8793a0" stroke-width="2" marker-end="url(#arrow2)"/>
+      <g>
+        <rect x="1065" y="100" width="145" height="170" rx="12" fill="#f1f8ef" stroke="#dcefd7"/>
+        <text x="1099" y="136" font-size="20" font-weight="700" fill="#4b7b46">分诊</text>
+        <text x="1091" y="172" font-size="14" fill="#64717d">高风险清单</text>
+        <text x="1091" y="206" font-size="14" fill="#64717d">优先复核</text>
+      </g>
+      <text x="55" y="340" font-size="16" fill="#64717d">SafeConf 的输出是“哪些预测先查”，位于表达谱预测之后。</text>
+    </svg>
+    <div class="note warn" style="margin-top:18px">讲的时候可以说：我现在做的是预测后质检层，不是和 scGPT/GEARS 抢“谁预测表达谱”。</div>
+  </div>
+  <div class="page">04</div>
+</section>
+
+<section class="slide" id="s05">
+  <div class="kicker">RECORD CONTRACT</div>
+  <h1>为什么一直强调 PredictionRecord：它让模型比较不再糊</h1>
+  <div class="sub">这页解释 E20–E32 这串工作的共同目的</div>
+  <div class="content">
+    <div class="grid2">
+      <div class="card blue">
+        <h3>一条 <a class="term" href="#term-predictionrecord">PredictionRecord</a> 至少要说清</h3>
+        <p>数据集、任务、预测器、split、gene panel、predicted effect key、true effect key、误差。没有这些字段，后面所有比较都会变成口头说法。</p>
+      </div>
+      <div class="card green">
+        <h3><a class="term" href="#term-strict">strict validator</a> 的意义</h3>
+        <p>这个检查有实际用途：防止把不同基因空间、不同 true effect、不同 split 的结果硬拼到一张表里。</p>
+      </div>
+    </div>
+    <table style="margin-top:26px">
+      <thead><tr><th>字段</th><th>人话解释</th><th>如果缺失会怎样</th></tr></thead>
+      <tbody>
+        <tr><td><a class="term" href="#term-genepanel">gene_panel_id</a></td><td>这条预测用了哪一批基因。</td><td>两个模型可能根本不在同一空间比较。</td></tr>
+        <tr><td><a class="term" href="#term-trueeffect">true_effect_key</a></td><td>这道任务对应的真实效应向量。</td><td>同一任务下不同模型可能用了不同真值。</td></tr>
+        <tr><td><a class="term" href="#term-split">split / fold</a></td><td>训练、验证、测试的划分。</td><td>容易发生 <a class="term" href="#term-leakage">leakage</a>，结论看起来虚高。</td></tr>
+        <tr><td><a class="term" href="#term-runtype">run_type</a></td><td>smoke 还是 formal。</td><td>会把工程冒烟测试误写成正式实验。</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="page">05</div>
+</section>
+
+<section class="slide" id="s06">
+  <div class="kicker">RISK SIGNALS</div>
+  <h1>SafeConf 看哪些风险线索：四盏灯，各有边界</h1>
+  <div class="sub">术语都可点开看解释</div>
+  <div class="content">
+    <div class="grid4" style="margin-top:10px">
+      <div class="card blue"><h3><a class="term" href="#term-contextsim">背景相似度</a></h3><p>新任务像不像训练中见过的细胞背景。越陌生，越容易出错。</p></div>
+      <div class="card teal"><h3><a class="term" href="#term-support">历史支持量</a></h3><p>同类扰动在训练历史中出现得多不多。支持少，风险高。</p></div>
+      <div class="card amber"><h3><a class="term" href="#term-disagreement">模型分歧</a></h3><p>不同预测器对同一任务意见差多少。分歧大，值得复核。</p></div>
+      <div class="card red"><h3><a class="term" href="#term-magnitude">效应幅度</a></h3><p>真实生物效应越大，模型越可能难。它是强基线，必须正视。</p></div>
+    </div>
+    <svg viewBox="0 0 1260 250" style="margin-top:34px" role="img" aria-label="风险线索雷达图">
+      <rect x="15" y="20" width="1230" height="205" rx="14" fill="#fff" stroke="#d8e0e7"/>
+      <line x1="150" y1="170" x2="1110" y2="170" stroke="#c2ccd5" stroke-width="2"/>
+      <text x="112" y="200" font-size="13" fill="#64717d">低风险</text><text x="1085" y="200" font-size="13" fill="#64717d">高风险</text>
+      <g font-size="15" fill="#1f252b">
+        <circle cx="315" cy="170" r="11" fill="#eef5fc" stroke="#285f9f" stroke-width="3"/><text x="270" y="132">背景陌生</text>
+        <circle cx="525" cy="170" r="11" fill="#edf8f6" stroke="#2d7c74" stroke-width="3"/><text x="475" y="132">支持较少</text>
+        <circle cx="760" cy="170" r="11" fill="#fff7eb" stroke="#a66b22" stroke-width="3"/><text x="710" y="132">模型分歧</text>
+        <circle cx="990" cy="170" r="11" fill="#fff2f2" stroke="#a84e4e" stroke-width="3"/><text x="942" y="132">幅度很大</text>
+      </g>
+      <path d="M315 170 C450 110 630 220 760 170 S900 120 990 170" fill="none" stroke="#285f9f" stroke-width="4" opacity=".7"/>
+    </svg>
+    <div class="note" style="margin-top:18px">讲法：这些线索不是彼此替代。SafeConf 的价值在于把它们放进同一个分诊框架，并明确什么时候失效。</div>
+  </div>
+  <div class="page">06</div>
+</section>
+
+<section class="slide" id="s07">
+  <div class="kicker">EVIDENCE LADDER</div>
+  <h1>证据链：每一层回答一个问题，不互相冒充</h1>
+  <div class="sub">这页用来讲全局进展</div>
+  <div class="content">
+    <div class="minirow">
+      <div class="rung blue"><b>七主表</b><p>主结果</p></div><div class="rung"><b>任务风险多数成立</b><p><a class="term" href="#term-frozen">Frozen</a> partial ρ：6/7 为正；top-10 macro：Frozen 3.35×，magnitude 3.30×。McFarland 失败保留。</p></div>
+      <div class="rung teal"><b>E1–E4</b><p>稳健性</p></div><div class="rung"><b>控制幅度后仍有信号</b><p>E2 residual 7/7 为正；负对照不支持随机排列或缺失模式解释。</p></div>
+      <div class="rung amber"><b>E8b</b><p>外部关联</p></div><div class="rung"><b>跨方法方向一致</b><p>15 种方法中 14 种为正，但它是聚合关联，不是逐预测模型校准。</p></div>
+      <div class="rung blue"><b>Tahoe</b><p>大型 chemical</p></div><div class="rung"><b>正结果和负边界同时成立</b><p>D1 ρ=0.453；D2 ρ=0.470；SafeConf top-10 4.88×，magnitude 6.49×。</p></div>
+      <div class="rung green"><b>E25–E32</b><p>模型级入口</p></div><div class="rung"><b>真实模型合同和 fixed-test 3-seed 工作流已打通</b><p>GEARS strict、scGPT smoke、GEARS–scGPT shared、GEARS fixed-test 3-seed smoke。</p></div>
+    </div>
+  </div>
+  <div class="page">07</div>
+</section>
+
+<section class="slide" id="s08">
+  <div class="kicker">CLAIM BOUNDARY</div>
+  <h1>现在能说什么，不能说什么</h1>
+  <div class="sub">这页建议保留，能帮你挡住过度声称</div>
+  <div class="content">
+    <table>
+      <thead><tr><th>主题</th><th>可以说</th><th>暂时不能说</th><th>数字依据</th></tr></thead>
+      <tbody>
+        <tr><td><a class="term" href="#term-taskrisk">任务风险</a></td><td>错误存在可提前识别的任务结构。</td><td>所有数据集都成功。</td><td>Frozen partial ρ 6/7 为正。</td></tr>
+        <tr><td><a class="term" href="#term-magnitude">Magnitude</a></td><td>是强基线，也与 SafeConf 互补。</td><td>SafeConf 普遍超过 magnitude。</td><td>Tahoe top-10：4.88× vs 6.49×。</td></tr>
+        <tr><td><a class="term" href="#term-scperturbench">E8b</a></td><td>支持跨方法外部关联。</td><td>15 个模型逐预测校准已经完成。</td><td>14/15 方法方向为正。</td></tr>
+        <tr><td><a class="term" href="#term-modelrisk">模型级风险</a></td><td>GEARS/scGPT shared 和 GEARS 3-seed smoke 已打通。</td><td>GEARS/scGPT/CPA 正式 benchmark 已完成。</td><td>E32：21 records，strict issue=0。</td></tr>
+      </tbody>
+    </table>
+    <div class="note warn" style="margin-top:24px">口头建议：主动讲“不能说什么”，比回避边界更像一个能投稿的研究。</div>
+  </div>
+  <div class="page">08</div>
+</section>
+
+<section class="slide" id="s09">
+  <div class="kicker">MODEL-LEVEL PROGRESS</div>
+  <h1>E25–E32：最近的工作怎样连回主线</h1>
+  <div class="sub">这页把近期实验压成一条清楚的路线</div>
+  <div class="content">
+    <div class="flow" style="margin-top:8px">
+      <div class="node"><b>E25–E26</b><span><a class="term" href="#term-gears">GEARS</a> strict-pass<br>单模型风险审计</span></div>
+      <div class="arrow"></div>
+      <div class="node"><b>E27–E29</b><span><a class="term" href="#term-scgpt">scGPT</a> forward smoke<br>GEARS–scGPT shared tasks</span></div>
+      <div class="arrow"></div>
+      <div class="node"><b>E30</b><span>旧 GEARS runs 任务重叠太少<br>不能直接写 <a class="term" href="#term-seed">seed</a> uncertainty</span></div>
+      <div class="arrow"></div>
+      <div class="node"><b>E31–E32</b><span>fixed-test exporter<br>3-seed smoke 跑通</span></div>
+    </div>
+    <div class="grid4" style="margin-top:45px">
+      <div class="card green"><div class="big">54</div><p>E25 GEARS strict records</p></div>
+      <div class="card blue"><div class="big">14</div><p>E29 GEARS–scGPT shared records</p></div>
+      <div class="card amber"><div class="big">5 / 47</div><p>E30 重复任务太少</p></div>
+      <div class="card green"><div class="big">21</div><p>E32 fixed-test 3-seed records</p></div>
+    </div>
+  </div>
+  <div class="page">09</div>
+</section>
+
+<section class="slide" id="s10">
+  <div class="kicker">FIXED-TEST 3-SEED</div>
+  <h1>E32 的意义：先把同一批任务、三个 seed 跑到同一个合同里</h1>
+  <div class="sub">不要把这页讲成性能胜利，要讲成工作流打通</div>
+  <div class="content split">
+    <svg viewBox="0 0 610 430" role="img" aria-label="GEARS fixed-test 3seed">
+      <rect x="20" y="20" width="570" height="380" rx="16" fill="#fff" stroke="#d8e0e7"/>
+      <rect x="70" y="65" width="470" height="70" rx="12" fill="#eef5fc" stroke="#d9e8f7"/>
+      <text x="190" y="106" font-size="20" font-weight="700" fill="#285f9f">固定 Adamson 7 个 test tasks</text>
+      <path d="M305 140 V188" stroke="#8793a0" stroke-width="2" marker-end="url(#arr3)"/>
+      <defs><marker id="arr3" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto"><path d="M0,0 L0,8 L11,4 z" fill="#8793a0"/></marker></defs>
+      <g>
+        <rect x="70" y="195" width="135" height="86" rx="10" fill="#f1f8ef" stroke="#dcefd7"/><text x="107" y="231" font-size="18" font-weight="700" fill="#4b7b46">Seed 1</text><text x="105" y="258" font-size="13" fill="#64717d">7 records</text>
+        <rect x="238" y="195" width="135" height="86" rx="10" fill="#f1f8ef" stroke="#dcefd7"/><text x="275" y="231" font-size="18" font-weight="700" fill="#4b7b46">Seed 2</text><text x="273" y="258" font-size="13" fill="#64717d">7 records</text>
+        <rect x="405" y="195" width="135" height="86" rx="10" fill="#f1f8ef" stroke="#dcefd7"/><text x="442" y="231" font-size="18" font-weight="700" fill="#4b7b46">Seed 3</text><text x="440" y="258" font-size="13" fill="#64717d">7 records</text>
+      </g>
+      <path d="M137 286 C180 330 248 335 305 335 C365 335 430 330 472 286" fill="none" stroke="#2d7c74" stroke-width="4"/>
+      <text x="166" y="365" font-size="18" font-weight="700" fill="#2d7c74">计算 seed disagreement</text>
+    </svg>
+    <div>
+      <div class="grid2">
+        <div class="card green"><div class="big">21</div><p><a class="term" href="#term-predictionrecord">PredictionRecord</a></p></div>
+        <div class="card green"><div class="big">0</div><p><a class="term" href="#term-strict">strict</a> issues</p></div>
+        <div class="card blue"><div class="big">0.679</div><p><a class="term" href="#term-seeddisagreement">seed disagreement</a> vs error</p></div>
+        <div class="card amber"><div class="big">1</div><p><a class="term" href="#term-epoch">epoch</a> smoke，不是正式 benchmark</p></div>
+      </div>
+      <div class="note warn" style="margin-top:22px">这页讲法：我已经把“同一任务三 seed”的工程入口打通；正式结论还要提高 epochs、扩大任务数。</div>
+    </div>
+  </div>
+  <div class="page">10</div>
+</section>
+
+<section class="slide" id="s11">
+  <div class="kicker">NEXT STEP</div>
+  <h1>下一步建议只保留一条主路：把 E32 提升成正式模型级实验</h1>
+  <div class="sub">少做分散实验，多做能回答缺口的实验</div>
+  <div class="content">
+    <div class="flow" style="margin-top:10px">
+      <div class="node"><b>固定任务</b><span>Adamson / Norman<br>同一 test perturbations</span></div>
+      <div class="arrow"></div>
+      <div class="node"><b>正式 epochs</b><span>把 1-epoch smoke<br>升级到 formal setting</span></div>
+      <div class="arrow"></div>
+      <div class="node"><b>第二模型</b><span>scGPT formal adapter<br>或 CPA 资产审计</span></div>
+      <div class="arrow"></div>
+      <div class="node"><b>模型级评价</b><span>task-only / model-only / combined<br>regret / AURC / top-k</span></div>
+    </div>
+    <div class="grid3" style="margin-top:48px">
+      <div class="card green"><h3>推荐 A</h3><p>GEARS fixed-test 3-seed formal。最直接延续 E32，风险最低。</p></div>
+      <div class="card blue"><h3>并行 B</h3><p>scGPT formal adapter。让 shared benchmark 从 smoke 走向真实模型比较。</p></div>
+      <div class="card amber"><h3>审计 C</h3><p>CPA/chemCPA 先查资产和逐向量可得性，不提前承诺结果。</p></div>
+    </div>
+  </div>
+  <div class="page">11</div>
+</section>
+
+<section class="slide" id="s12">
+  <div class="kicker">TALK TRACK</div>
+  <h1>明天可以这样讲：先主线，再证据，最后要决定</h1>
+  <div class="sub">这页可以截图，也可以只当讲稿</div>
+  <div class="content">
+    <div class="grid2">
+      <div class="card blue">
+        <h3>开场</h3>
+        <p>老师，我这次把内容收回主线讲：SafeConf 的任务风险分诊已经有比较完整的证据闭环；最近我主要补的是模型级可靠性入口，包括 GEARS strict、scGPT shared smoke，以及 GEARS fixed-test 3-seed smoke。</p>
+      </div>
+      <div class="card green">
+        <h3>收尾</h3>
+        <p>我建议下一步从继续调 frozen 公式，转到把 E32 的 fixed-test 3-seed smoke 提升为正式 epochs，并扩到更多任务或第二模型。这个实验更能回答模型级可靠性。</p>
+      </div>
+    </div>
+    <table style="margin-top:24px">
+      <thead><tr><th>可能追问</th><th>短答</th></tr></thead>
+      <tbody>
+        <tr><td>这和 magnitude 什么关系？</td><td>magnitude 是强基线，SafeConf 还有 residual task-risk 信号。两者更适合一起解释，而非简单替代。</td></tr>
+        <tr><td>能比较 GEARS/scGPT/CPA 吗？</td><td>GEARS/scGPT shared 入口已跑通；CPA 还没有逐向量。正式比较还差下一轮。</td></tr>
+        <tr><td>为什么做 3 seeds？</td><td>E30 发现旧 runs 不足以支持 seed uncertainty；E31/E32 已解决 fixed-test 入口。</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="page">12</div>
+</section>
+
+<section class="slide" id="s13">
+  <div class="kicker">NUMBER BACKUP</div>
+  <h1>关键数字速查</h1>
+  <div class="sub">被追问数字时用，不必主动全讲</div>
+  <div class="content">
+    <div class="grid4">
+      <div class="card blue"><div class="big">6 / 7</div><p>Frozen partial ρ 为正</p></div>
+      <div class="card blue"><div class="big">3.35×</div><p>七主表 Frozen top-10</p></div>
+      <div class="card amber"><div class="big">3.30×</div><p>七主表 magnitude top-10</p></div>
+      <div class="card red"><div class="big">-0.061</div><p>McFarland 失败边界</p></div>
+      <div class="card teal"><div class="big">0.453</div><p>Tahoe D1 partial ρ</p></div>
+      <div class="card teal"><div class="big">4.88×</div><p>Tahoe SafeConf top-10</p></div>
+      <div class="card amber"><div class="big">6.49×</div><p>Tahoe magnitude top-10</p></div>
+      <div class="card green"><div class="big">0.891</div><p>E17 sciplex3 full-743 learned ρ</p></div>
+      <div class="card green"><div class="big">54</div><p>E25 GEARS strict records</p></div>
+      <div class="card green"><div class="big">14</div><p>E29 GEARS–scGPT shared records</p></div>
+      <div class="card green"><div class="big">21</div><p>E32 GEARS 3-seed smoke records</p></div>
+      <div class="card green"><div class="big">0</div><p>E32 strict issues</p></div>
+    </div>
+  </div>
+  <div class="page">13</div>
+</section>
+
+<section class="slide" id="s14">
+  <div class="kicker">FINAL ASK</div>
+  <h1>最后向老师要的决定</h1>
+  <div class="sub">把讨论落到一个可执行方向上</div>
+  <div class="content split">
+    <div>
+      <p class="lead">我建议下一阶段进入 <span class="b">模型级可靠性</span>：优先把 <a class="term" href="#term-e32">E32</a> 的 fixed-test 3-seed smoke 升级为正式 GEARS 实验，同时推进 scGPT formal adapter 可行性。</p>
+      <div class="note warn" style="margin-top:22px">这比继续扫 Tahoe shard 或调整 frozen 权重更能回答当前真实缺口。</div>
+    </div>
+    <div class="card green" style="padding:34px">
+      <h3>希望老师确认</h3>
+      <p style="font-size:20px;line-height:1.65;color:var(--ink)">1. 是否同意进入模型级可靠性阶段？<br>2. GEARS formal 优先 Adamson 还是 Norman？<br>3. scGPT formal adapter 与 CPA 审计是否并行？</p>
+    </div>
+  </div>
+  <div class="page">14</div>
+</section>
+
+<section class="glossary" id="glossary">
+  <h1>术语词典：点名词会跳到这里</h1>
+  <p class="intro">这里尽量用“能给老师解释”的说法，不写成论文腔。每个词下面都有：它是什么、为什么重要、汇报时怎么说。</p>
+  <div class="glossaryNav">
+    <a href="#term-safeconf">SafeConf</a><a href="#term-singlecell">单细胞组学</a><a href="#term-transcriptome">转录组</a><a href="#term-context">细胞背景</a><a href="#term-perturbation">扰动</a><a href="#term-expression">表达谱</a><a href="#term-effect">效应向量</a><a href="#term-task">任务</a><a href="#term-predictionrecord">PredictionRecord</a><a href="#term-genepanel">gene panel</a><a href="#term-trueeffect">true effect</a><a href="#term-split">split/fold</a><a href="#term-leakage">leakage</a><a href="#term-strict">strict validator</a><a href="#term-taskrisk">task-risk</a><a href="#term-modelrisk">model-specific risk</a><a href="#term-frozen">Frozen score</a><a href="#term-learned">learned risk</a><a href="#term-magnitude">magnitude</a><a href="#term-contextsim">context similarity</a><a href="#term-support">support</a><a href="#term-disagreement">model disagreement</a><a href="#term-seeddisagreement">seed disagreement</a><a href="#term-seed">seed</a><a href="#term-epoch">epoch</a><a href="#term-runtype">run_type</a><a href="#term-smoke">smoke</a><a href="#term-rmse">RMSE</a><a href="#term-spearman">Spearman</a><a href="#term-partialrho">partial ρ</a><a href="#term-topk">top-k enrichment</a><a href="#term-selective">selective prediction</a><a href="#term-gears">GEARS</a><a href="#term-scgpt">scGPT</a><a href="#term-cpa">CPA</a><a href="#term-adapter">adapter</a><a href="#term-adamson">Adamson</a><a href="#term-norman">Norman</a><a href="#term-tahoe">Tahoe</a><a href="#term-sciplex3">sciplex3</a><a href="#term-scperturbench">scPerturBench/E8b</a><a href="#term-e32">E32</a><a href="#term-wetlab">湿实验</a>
+  </div>
+  <div class="glossaryGrid">
+    <div class="gcard" id="term-safeconf"><h2>SafeConf</h2><p>本项目的方法名。它位于表达谱预测之后，负责判断哪些任务更可能出错。</p><p class="how">汇报说法：SafeConf 是预测后的质检层，用来安排人工复核和湿实验优先级。</p><a class="back" href="#s01">回到汇报 ↑</a></div>
+    <div class="gcard" id="term-singlecell"><h2>单细胞组学</h2><p>把每个细胞单独测量，而不是只看一堆细胞的平均值。这样能看到细胞之间的差异，比如不同细胞系、状态或反应强度。</p><p class="how">汇报说法：我们的任务发生在单细胞尺度，context 很重要。</p></div>
+    <div class="gcard" id="term-transcriptome"><h2>转录组</h2><p>一个细胞里哪些基因正在被转录、表达量大概是多少。单细胞转录组常用一个很长的基因表达向量表示。</p><p class="how">汇报说法：扰动预测通常就是预测转录组状态如何变化。</p></div>
+    <div class="gcard" id="term-context"><h2>细胞背景 / context</h2><p>任务发生的细胞环境，比如细胞系、细胞类型、时间点、状态。相同药物在不同细胞背景下可能完全不同。</p><p class="how">汇报说法：SafeConf 的一个核心线索是新 context 是否像训练历史。</p></div>
+    <div class="gcard" id="term-perturbation"><h2>扰动 / perturbation</h2><p>人为施加的改变，可以是基因敲除、药物、细胞因子、感染刺激等。模型要预测细胞被扰动后会怎样。</p><p class="how">汇报说法：任务就是 context × perturbation 的组合。</p></div>
+    <div class="gcard" id="term-expression"><h2>表达谱</h2><p>一组基因的表达量列表。可以理解为细胞当前状态的一张“读数表”。</p><p class="how">汇报说法：预测模型输出表达谱变化，SafeConf 判断这个输出是否值得优先复核。</p></div>
+    <div class="gcard" id="term-effect"><h2>效应向量 / effect vector</h2><p>扰动组平均表达减去对照组平均表达。它把“扰动造成的变化”变成一个向量，方便比较预测和真实结果。</p><p class="how">汇报说法：GEARS、scGPT 进入同一合同后，要比较的是同一 effect vector 空间。</p></div>
+    <div class="gcard" id="term-task"><h2>任务 / task</h2><p>一个具体的预测问题，例如“Adamson 数据里，K562 背景下敲掉 CCND3 后表达变化是什么”。</p><p class="how">汇报说法：SafeConf 现在最稳的是 task-level risk，不是所有模型级判断。</p></div>
+    <div class="gcard" id="term-predictionrecord"><h2>PredictionRecord</h2><p>统一记录格式。每条记录说明数据集、任务、预测器、基因面板、预测向量、真值向量和误差。</p><p class="how">汇报说法：没有 PredictionRecord，模型比较就会变成“看起来像”，不能严肃审计。</p></div>
+    <div class="gcard" id="term-genepanel"><h2>gene panel</h2><p>参与比较的一组基因。不同模型如果使用不同基因集合，误差和分歧就不能直接比。</p><p class="how">汇报说法：E28/E29 强调 shared 512-gene panel，就是为了避免基因空间错位。</p></div>
+    <div class="gcard" id="term-trueeffect"><h2>true effect</h2><p>从真实数据中计算出来的扰动效应向量。它是评估预测误差的参照。</p><p class="how">汇报说法：同一任务下不同预测器必须共用同一个 true effect key。</p></div>
+    <div class="gcard" id="term-split"><h2>split / fold</h2><p>把数据分成训练、验证、测试。fold 是交叉验证中的一轮划分。</p><p class="how">汇报说法：所有风险特征都必须 fold-safe，只看训练部分，不能偷看测试。</p></div>
+    <div class="gcard" id="term-leakage"><h2>leakage / 泄漏</h2><p>测试集信息提前进入训练或特征计算。它会让结果虚高，是机器学习评估中很严重的问题。</p><p class="how">汇报说法：E1–E4 里专门修过 outer-fold 泄漏，正式口径只用修正后结果。</p></div>
+    <div class="gcard" id="term-strict"><h2>strict validator</h2><p>检查 PredictionRecord 是否字段齐全、key 能否找到数组、同任务真值是否一致。它像实验输出的质检员。</p><p class="how">汇报说法：strict issue_count=0 表示合同层面可审计，不代表性能一定好。</p></div>
+    <div class="gcard" id="term-taskrisk"><h2>task-risk</h2><p>任务本身的风险：这道 context × perturbation 是否天然难预测。它不关心具体模型 A 或 B 谁更好。</p><p class="how">汇报说法：SafeConf 当前最扎实的结论在 task-risk triage。</p></div>
+    <div class="gcard" id="term-modelrisk"><h2>model-specific risk</h2><p>同一道任务上，不同模型各自的可靠性。例如 GEARS 对这个任务可信，scGPT 不可信，或反过来。</p><p class="how">汇报说法：这是当前下一阶段缺口，E25–E32 正在打开入口。</p></div>
+    <div class="gcard" id="term-frozen"><h2>Frozen score</h2><p>预先固定公式的风险分数。公式不根据测试集调参，优点是解释清楚、可信度高。</p><p class="how">汇报说法：Frozen 多数成立，但不是所有数据集都成功。</p></div>
+    <div class="gcard" id="term-learned"><h2>learned risk</h2><p>用模型学习风险规律，比 Frozen 灵活，但也更容易被调参或数据划分影响。</p><p class="how">汇报说法：learned 结果可作为扩展，不要拿它覆盖 Frozen 的失败边界。</p></div>
+    <div class="gcard" id="term-magnitude"><h2>magnitude</h2><p>效应幅度。真实变化本身越大、越复杂，预测误差往往越高。</p><p class="how">汇报说法：magnitude 是强基线，Tahoe top-10 中比 SafeConf 更强。</p></div>
+    <div class="gcard" id="term-contextsim"><h2>context similarity</h2><p>新细胞背景和训练背景有多像。越像，模型越可能有经验；越不像，风险越高。</p><p class="how">汇报说法：这是 SafeConf 的可解释风险来源之一。</p></div>
+    <div class="gcard" id="term-support"><h2>historical support / 支持量</h2><p>训练历史里类似扰动出现了多少次。支持量低表示模型几乎没有参考案例。</p><p class="how">汇报说法：support 是“有没有历史经验”的量化。</p></div>
+    <div class="gcard" id="term-disagreement"><h2>model disagreement</h2><p>不同预测器对同一任务输出差多少。分歧越大，说明这道任务没有共识，更值得检查。</p><p class="how">汇报说法：E29 中 GEARS–scGPT disagreement 为弱正相关，不能夸大。</p></div>
+    <div class="gcard" id="term-seeddisagreement"><h2>seed disagreement</h2><p>同一个模型用不同随机种子训练后，对同一任务预测差多少。它可以作为模型自身不稳定性的线索。</p><p class="how">汇报说法：E32 已跑通 fixed-test 3-seed smoke，初步正相关，但还不是正式证据。</p></div>
+    <div class="gcard" id="term-seed"><h2>seed / 随机种子</h2><p>控制训练中随机过程的数字。不同 seed 可能导致模型得到稍微不同的参数和预测。</p><p class="how">汇报说法：做三 seed 是为了看模型自身是否稳定。</p></div>
+    <div class="gcard" id="term-epoch"><h2>epoch</h2><p>模型完整看一遍训练数据的次数。1 epoch 常用于 smoke，正式训练通常需要更多。</p><p class="how">汇报说法：E32 是 1 epoch，所以只能说工作流跑通。</p></div>
+    <div class="gcard" id="term-runtype"><h2>run_type</h2><p>记录一次运行是 smoke 还是 formal。E31 给 GEARS exporter 加了这个字段。</p><p class="how">汇报说法：run_type 防止把工程测试误写成正式实验。</p></div>
+    <div class="gcard" id="term-smoke"><h2>smoke test / 冒烟测试</h2><p>小规模检查管线能不能跑通。它验证工程链路，不承担最终性能结论。</p><p class="how">汇报说法：E27、E31、E32 都要明确是 smoke。</p></div>
+    <div class="gcard" id="term-rmse"><h2>RMSE</h2><p>预测向量和真实向量差异的均方根误差。越小，预测越接近真值。</p><p class="how">汇报说法：风险排序常用 RMSE 作为真实错误目标。</p></div>
+    <div class="gcard" id="term-spearman"><h2>Spearman 相关</h2><p>看两个排序是否一致。风险分数越高，真实误差是否也越高，常用 Spearman 判断。</p><p class="how">汇报说法：E32 seed disagreement ρ=0.679 是排序相关，不是误差绝对值。</p></div>
+    <div class="gcard" id="term-partialrho"><h2>partial ρ</h2><p>控制一个强混杂因素后，再看两个变量的相关。这里常用于控制 magnitude 后看 SafeConf 还有没有额外信号。</p><p class="how">汇报说法：E2 residual 和 partial ρ 是反驳“只是 magnitude”的关键。</p></div>
+    <div class="gcard" id="term-topk"><h2>top-k enrichment</h2><p>取风险最高的 k 个任务，看其中高错误任务是否比随机更多。它贴近实际分诊价值。</p><p class="how">汇报说法：Tahoe 中 SafeConf top-10 为 4.88×，magnitude 为 6.49×。</p></div>
+    <div class="gcard" id="term-selective"><h2>selective prediction</h2><p>模型可以选择不回答高风险样本，或把高风险样本交给人工复核。评价重点是保留预测的平均误差是否下降。</p><p class="how">汇报说法：SafeConf 很适合讲成 selective prediction / triage。</p></div>
+    <div class="gcard" id="term-gears"><h2>GEARS</h2><p>基于图神经网络的基因扰动预测模型，常用于基因敲除/组合扰动预测。</p><p class="how">汇报说法：GEARS 现在是模型级验证中最可推进的一条线。</p></div>
+    <div class="gcard" id="term-scgpt"><h2>scGPT</h2><p>单细胞基础模型，使用 Transformer 思路学习细胞和基因表征。本项目已跑通 forward smoke 和 GEARS–scGPT shared 合同。</p><p class="how">汇报说法：scGPT 已进入合同，但 formal adapter 仍需完善。</p></div>
+    <div class="gcard" id="term-cpa"><h2>CPA / chemCPA</h2><p>用于建模扰动、药物和剂量效应的条件生成/表征模型家族。当前本地还缺可直接进入 SafeConf 的逐预测向量。</p><p class="how">汇报说法：CPA 现在只能说待审计，不能说正式接入。</p></div>
+    <div class="gcard" id="term-adapter"><h2>adapter</h2><p>把不同模型的原始输出转换成统一 PredictionRecord 的薄接口。</p><p class="how">汇报说法：模型级比较要先统一 adapter 合同，再进入正式跑分。</p></div>
+    <div class="gcard" id="term-adamson"><h2>Adamson</h2><p>常用于基因扰动预测的单细胞数据集。本项目 E28–E32 的 GEARS/scGPT shared 和 GEARS 3-seed smoke 都在 Adamson 上推进。</p><p class="how">汇报说法：Adamson 是当前模型级入口数据集。</p></div>
+    <div class="gcard" id="term-norman"><h2>Norman</h2><p>另一个常用 CRISPR 扰动数据集，常包含单基因和组合扰动。</p><p class="how">汇报说法：下一步如果扩展 GEARS fixed-test，可以考虑 Norman。</p></div>
+    <div class="gcard" id="term-tahoe"><h2>Tahoe</h2><p>大型 chemical perturbation 数据。项目中 D1–D5 用于检验 SafeConf 在大规模药物扰动上的分诊价值。</p><p class="how">汇报说法：Tahoe 给出正信号，也暴露 magnitude 更强的边界。</p></div>
+    <div class="gcard" id="term-sciplex3"><h2>sciplex3</h2><p>药物/剂量/细胞系扰动数据。E13–E17 把它推进到 full-743 shared drug-dose 外部验证。</p><p class="how">汇报说法：sciplex3 是 chemical 外部验证的重要支撑。</p></div>
+    <div class="gcard" id="term-scperturbench"><h2>scPerturBench / E8b</h2><p>外部 benchmark 关联分析。它显示多种方法的错误与任务风险方向一致，但数据是聚合层面的。</p><p class="how">汇报说法：E8b 支持外部关联，不等于逐预测模型校准。</p></div>
+    <div class="gcard" id="term-e32"><h2>E32</h2><p>最新 fixed-test 3-seed GEARS smoke。在 Adamson 7 个固定任务上跑 seeds 1/2/3，合并 21 条 strict PredictionRecord。</p><p class="how">汇报说法：E32 是正式 seed uncertainty 的工程入口，下一步要提高 epochs 和任务规模。</p></div>
+    <div class="gcard" id="term-wetlab"><h2>湿实验</h2><p>真实生物实验，如重新做扰动、测序或验证候选结果。资源昂贵，不能每个预测都做。</p><p class="how">汇报说法：SafeConf 的应用价值是把有限湿实验资源投到更可能出错或更值得验证的地方。</p></div>
+  </div>
+</section>
+<script>
+if (new URLSearchParams(window.location.search).get('capture') === '1') {
+  document.body.classList.add('capture');
+}
+</script>
+</body>
+</html>

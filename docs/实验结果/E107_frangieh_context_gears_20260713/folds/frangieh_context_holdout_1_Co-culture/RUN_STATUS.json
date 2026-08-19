@@ -1,0 +1,26 @@
+{
+  "fold_id": "frangieh_context_holdout_1_Co-culture",
+  "finished_at": "2026-07-13T10:29:31",
+  "status": "complete",
+  "seed": 202607107,
+  "device": "cuda:1",
+  "epochs_requested": 80,
+  "epochs_completed": 19,
+  "best_epoch": 11,
+  "best_validation_mse": 0.0031149755232036114,
+  "n_train_tasks": 258,
+  "n_validation_tasks": 30,
+  "n_test_tasks": 279,
+  "source_contexts_for_coexpression": [
+    "Control",
+    "IFNγ"
+  ],
+  "heldout_contexts_excluded_from_coexpression": [
+    "Co-culture"
+  ],
+  "n_source_control_cells_for_coexpression": 1269,
+  "n_go_edges_before_self_loop_completion": 8476,
+  "n_coexpression_edges_before_self_loop_completion": 1028,
+  "test_target_used_for_training_or_selection": false,
+  "wall_seconds": 27.560662031173706
+}

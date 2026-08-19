@@ -1,0 +1,11 @@
+{
+  "dataset": "Liang",
+  "status": "complete",
+  "generated_at": "2026-07-14T00:40:10",
+  "n_folds": 9,
+  "n_test_tasks": 612,
+  "n_records": 1224,
+  "strict_issue_count": 0,
+  "test_truth_used_for_training_calibration_score_or_threshold": false,
+  "wall_seconds": 159.03408074378967
+}

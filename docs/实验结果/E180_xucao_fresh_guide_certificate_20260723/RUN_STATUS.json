@@ -1,0 +1,20 @@
+{
+  "calibration_truth_opened": false,
+  "evaluation_truth_opened": false,
+  "experiment": "E180_xucao_fresh_guide_certificate",
+  "generated_at": "2026-07-23T23:42:22.954132+08:00",
+  "n_cells": 98315,
+  "n_control_cells": 2758,
+  "n_eligible_targets": 153,
+  "n_guide_tasks": 411,
+  "n_variables": 59429,
+  "source_sha256": "0065ac9524f103fcb7903125b4d2d22e8f2c29e427db31b7cefd5a8f1ea846e0",
+  "status": "F1_METADATA_FROZEN",
+  "target_split_counts": {
+    "conformal_calibration": 29,
+    "model_validation": 32,
+    "prospective_evaluation": 27,
+    "supervised_train": 65
+  },
+  "x_values_read_during_freeze": 0
+}

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="950" height="520">
+<rect width="100%" height="100%" fill="#fff"/>
+<style>text{font-family:Arial,"Noto Sans CJK SC",sans-serif;fill:#27343c}.t{font-size:24px;font-weight:700}.s{font-size:14px;fill:#647078}.l{font-size:15px}</style>
+<text x="45" y="40" class="t">E114｜90% split-conformal 任务误差上界</text>
+<text x="45" y="68" class="s">虚线为名义覆盖率；柱为 3 个外层 fold 合并后的经验覆盖率。</text>
+<line x1="100" y1="131.0" x2="880" y2="131.0" stroke="#a66f55" stroke-dasharray="6 5"/>
+<rect x="150.0" y="103.4" width="56" height="306.6" fill="#3b7188"/>
+<text x="178.0" y="96.4" text-anchor="middle" class="s">0.99</text>
+<text x="178.0" y="445" text-anchor="middle" class="l">随机缺失</text>
+<rect x="306.0" y="104.5" width="56" height="305.5" fill="#3b7188"/>
+<text x="334.0" y="97.5" text-anchor="middle" class="s">0.99</text>
+<text x="334.0" y="445" text-anchor="middle" class="l">新背景</text>
+<rect x="462.0" y="112.1" width="56" height="297.9" fill="#3b7188"/>
+<text x="490.0" y="105.1" text-anchor="middle" class="s">0.96</text>
+<text x="490.0" y="445" text-anchor="middle" class="l">新扰动</text>
+<rect x="618.0" y="106.9" width="56" height="303.1" fill="#3b7188"/>
+<text x="646.0" y="99.9" text-anchor="middle" class="s">0.98</text>
+<text x="646.0" y="445" text-anchor="middle" class="l">双未见</text>
+<rect x="774.0" y="106.3" width="56" height="303.7" fill="#3b7188"/>
+<text x="802.0" y="99.3" text-anchor="middle" class="s">0.98</text>
+<text x="802.0" y="445" text-anchor="middle" class="l">全部</text>
+</svg>

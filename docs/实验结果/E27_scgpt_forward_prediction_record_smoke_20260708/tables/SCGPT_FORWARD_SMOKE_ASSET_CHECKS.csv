@@ -1,0 +1,5 @@
+asset,exists,path
+scgpt_repo,True,$YYF_ARCHIVE/code/20260519_0958_home_cleanup/moved_top_level/codex_scgpt_attnres_workspace/repo
+checkpoint_dir,True,$YYF_ARCHIVE/code/20260519_0958_home_cleanup/moved_top_level/codex_scgpt_attnres_workspace/checkpoints/whole-human
+adata,True,$YYF_DATA/singlecell_perturbation_atlas/official_scperturb/ReplogleWeissman2022_K562_essential.h5ad
+selected_gene_count,True,128

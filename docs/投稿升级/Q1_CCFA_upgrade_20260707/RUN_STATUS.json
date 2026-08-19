@@ -1,0 +1,18 @@
+{
+  "status": "ok",
+  "generated_at": "2026-07-07T05:55:28",
+  "script": "tools/scripts/build_q1_publication_package.py",
+  "output_dir": "docs/投稿升级/Q1_CCFA_upgrade_20260707",
+  "input_git_commit": "a8a80664ffc0c268aa11ffa1541f22a3047423ce",
+  "source_files": {
+    "baseline_ladder": "docs/实验结果/Reliability_model_corrected_20260610/tables/RELIABILITY_BASELINE_LADDER.csv",
+    "within_magnitude": "docs/实验结果/Reliability_model_corrected_20260610/tables/RELIABILITY_WITHIN_MAGNITUDE_STRATUM.csv",
+    "formal_main": "docs/实验结果/Evidence_to_Claim_20260615/figure_ready_tables/FIG2_FORMAL_MAIN_FOREST.csv",
+    "e2_residual": "docs/实验结果/Evidence_to_Claim_20260615/figure_ready_tables/FIG3_E2_MAGNITUDE_RESIDUAL.csv",
+    "cost_effectiveness": "docs/实验结果/Evidence_to_Claim_20260615/figure_ready_tables/FIG5_COST_EFFECTIVENESS.csv",
+    "risk_coverage": "docs/实验结果/Evidence_to_Claim_20260615/figure_ready_tables/SFIG_RISK_COVERAGE.csv",
+    "e8b_external": "docs/实验结果/Evidence_to_Claim_20260615/figure_ready_tables/FIG4_E8B_EXTERNAL_BENCHMARK.csv",
+    "tahoe_d5": "docs/实验结果/Tahoe_D5_combined_triage_20260627/tables/TAHOE_D5_POINT_SUMMARY.csv",
+    "source_files": "docs/实验结果/Evidence_to_Claim_20260615/figure_ready_tables/SOURCE_FILES_USED.csv"
+  }
+}

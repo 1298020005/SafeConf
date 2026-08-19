@@ -1,0 +1,66 @@
+{
+  "artifact_sha256": {
+    ".E165_TRANSACTION.json": "8ca0d8edbdbfae8ffa3443de81c90377b9ad6245db537a384b90c8cf9f371889",
+    "E165_E166_INTERFACE.json": "311215a0625142c6b394175d1709ad24e9da520c0ce15d42f1ae823fd6bf2555",
+    "README_先看这个.md": "de51403ef60670b6f01a51a53b8ca3ea391962199e5f632197da7d1fdbcaf480",
+    "figures/E165_SUMMARY_WHITE.svg": "9b02776b66966033c512f44e603bfe6fab147cc2dce99cb6aa34e022c1f9fcf3",
+    "profiles/E165_TEST_TRUTH_PROFILES.csv.gz": "f3cef172fbc1c70be94ad423b36f23cffbda66d065f3584243cfbca332ca8b82",
+    "reports/E165_REPORT.md": "f53ec2ae39aea82c3d1948bc9dde52757198d86397f2f964fd33e8629fc4430d",
+    "tables/E165_AURC_ERROR_CAPTURE.csv": "cacced37ed15254bab712c2f873ccd3ead1de8560a020a8e90c6262f3f601492",
+    "tables/E165_BASELINE_HIERARCHY.csv": "fb247e7268c4caebf961a71264ad2e880bc1eba5c6ff20fbe173869ed51afef5",
+    "tables/E165_BOOTSTRAP_REPLICATES.csv.gz": "1b0c8a6ed4d27e74294abfa809a8f75bd258dca16a2265baaba83848ac72156f",
+    "tables/E165_BOOTSTRAP_SUMMARY.csv": "a3a88bd14b72317de7c940aa8de2e2b2fedcfa603419bccc593eeeead9caa7ce",
+    "tables/E165_CENTROID_ACCURACY.csv": "3fcb56824a6a102006ae11f05d291d7f5a9a6f13ee89379ab17ea7f5ecc68d9b",
+    "tables/E165_COVERAGE_CURVES.csv": "4cc84d50f73c88450b36a8d9cfd5319fc1c73a6a5ff928bf8caeebf43a674277",
+    "tables/E165_HYPOTHESIS_TESTS.csv": "df5e631a2c965aa535defef60eed25aa10bde6e1db58b7132a0d3c5b6ce9d0b4",
+    "tables/E165_INPUT_HASHES.csv": "ec4e3e1a5631b3a78a746e08eb05d312ee971fa4989e17b31ce4085828bc4865",
+    "tables/E165_LOGO.csv": "cf5475aa56b0a367c4c9a1c684b385760d9b78c71699b45f7cfa45c8e4151043",
+    "tables/E165_NATIVE_SCORE_ASSOCIATIONS.csv": "cbc4863b19d0d9f188ba563f72eaa69ab82815de42ff7f7b51de8649a16c96e5",
+    "tables/E165_PREDICTOR_SUMMARY.csv": "54a6be9dc7044536a4e115f19929a4d66b54371caa3f0b113bc84f5bbed25e03",
+    "tables/E165_PREDICTOR_TASK_METRICS.csv.gz": "c37467db93d5f69ea33851ace13fc4c9c63747976bb8763f3e741813ea889ccd",
+    "tables/E165_RUNTIME_ENVIRONMENT.csv": "8b0812525798b04b66cef32778a188f3c4f51a9013168240025f09b7176eb73c",
+    "tables/E165_SECONDARY_PREDICTION_CONTRASTS.csv": "c00a48ffc55410ee36ea7a2986af23fff2993162f7d55e45edb6aa8eaa691fc5",
+    "tables/E165_SPLIT_HALF_REFERENCE.csv": "3be22c359ffb6131fa75c286ea1f3e092893909966ec6a568e95b997b03f3c3e",
+    "tables/E165_TEST_TRUTH_PCA10.csv": "cea12e081d45a83e05f2278c0c7ff76f39ee94efec8ed67d89e12b5d146cb8a4",
+    "tables/E165_TEST_TRUTH_TASKS.csv": "a761c433814a5ffd5d464680c6f789743f0ecdccb289a2260c2d7189a618d0ba",
+    "tables/E165_X_ACCESS_LEDGER.csv": "d390d28ef609d99bc85243b452a5a0ff0187febcddae06a768ea5f7c18d30080"
+  },
+  "baseline_arm_evaluated": true,
+  "completed_at": "2026-07-16T18:45:59+08:00",
+  "distribution_metrics_computed": false,
+  "endogenous_columns_indexed": 20631,
+  "engineered_guide_barcode_columns_indexed": 0,
+  "excluded_rows_indexed": 0,
+  "experiment": "E165_wessels_truth_unseal_evaluation",
+  "git_head": "acaa791f67f9a530f529f57cc2027b41963540ae",
+  "hypotheses": {
+    "H1": {
+      "confirmatory_status": "preregistered_primary_baseline_hypothesis",
+      "passed": true,
+      "point_estimate": 0.028058850033891802
+    },
+    "H2": {
+      "confirmatory_status": "confirmatory_H1_passed",
+      "passed": false,
+      "point_estimate": 0.07609639600521059
+    },
+    "P1_PRESCRIBE_RAW_SCORE": {
+      "confirmatory_status": "preregistered_test_endpoint_after_validation_informed_futility_gate",
+      "passed": false,
+      "point_estimate": -0.20972644376899696
+    }
+  },
+  "phase": "complete_one_time_test_truth_evaluation",
+  "prescribe_arm_evaluated": true,
+  "raw_h5ad_opened_after_event": true,
+  "raw_sha256_verified_after_event": true,
+  "results_manifest_sha256": "e86b7a48aee7adbc508f4392592247fdad33cf30730f801c819e05c50fca443e",
+  "schema": "safeconf_e165_truth_unseal_evaluation_v1",
+  "selected_columns_after_transform": 2023,
+  "test_X_rows_indexed_materialized_transformed": 9902,
+  "test_conditions": 48,
+  "train_rows_indexed": 0,
+  "transaction_id": "89160bca799e4f19ad53a0a2d2cc6c38",
+  "unseal_event_sha256": "7de6b6e7d207e5a01b296b65802f5c1d10ca8600b8254a5c2da24e7f4d915043",
+  "validation_rows_indexed": 0
+}

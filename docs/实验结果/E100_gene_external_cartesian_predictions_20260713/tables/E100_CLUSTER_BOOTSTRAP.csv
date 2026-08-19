@@ -1,0 +1,13 @@
+dataset,primary_score,comparator,setting,train_fraction,bootstrap_unit,n_folds,n_unique_perturbations,n_task_rows,observed_macro_delta_spearman,bootstrap_ci95_low,bootstrap_ci95_high,bootstrap_probability_delta_gt_zero,n_bootstrap
+Lara_exvivo,safeconf_calibrated_pair_risk,safeconf_frozen_pair_risk,all_test_settings_pooled,1.0,task_row,5,31,345,0.025970040189989062,-0.0198525930876542,0.07107438901309591,0.8575,2000
+Lara_exvivo,safeconf_calibrated_pair_risk,safeconf_frozen_pair_risk,all_test_settings_pooled,1.0,outer_fold_plus_perturbation_cluster,5,31,345,0.025970040189989062,-0.11229509015254457,0.12891342096465666,0.662,2000
+Lara_exvivo,safeconf_calibrated_pair_risk,risk_model_disagreement,all_test_settings_pooled,1.0,task_row,5,31,345,0.16982827913774207,0.10310433586817488,0.23268925176266725,1.0,2000
+Lara_exvivo,safeconf_calibrated_pair_risk,risk_model_disagreement,all_test_settings_pooled,1.0,outer_fold_plus_perturbation_cluster,5,31,345,0.16982827913774207,0.023572876064620496,0.29376331586869187,0.9865,2000
+Lara_exvivo,safeconf_calibrated_pair_risk,baseline_predicted_magnitude,all_test_settings_pooled,1.0,task_row,5,31,345,0.21186700767263428,0.1249104704957113,0.29057762697331074,1.0,2000
+Lara_exvivo,safeconf_calibrated_pair_risk,baseline_predicted_magnitude,all_test_settings_pooled,1.0,outer_fold_plus_perturbation_cluster,5,31,345,0.21186700767263428,0.07410943447124647,0.3640327303530802,0.9995,2000
+Santinha,safeconf_calibrated_pair_risk,safeconf_frozen_pair_risk,all_test_settings_pooled,1.0,task_row,5,23,255,-0.18041628959276015,-0.28375465088911606,-0.05833897450609395,0.001,2000
+Santinha,safeconf_calibrated_pair_risk,safeconf_frozen_pair_risk,all_test_settings_pooled,1.0,outer_fold_plus_perturbation_cluster,5,23,255,-0.18041628959276015,-0.438236899272435,0.022316692862071625,0.0495,2000
+Santinha,safeconf_calibrated_pair_risk,risk_model_disagreement,all_test_settings_pooled,1.0,task_row,5,23,255,-0.1657918552036199,-0.294683877538976,-0.02797603749987811,0.009,2000
+Santinha,safeconf_calibrated_pair_risk,risk_model_disagreement,all_test_settings_pooled,1.0,outer_fold_plus_perturbation_cluster,5,23,255,-0.1657918552036199,-0.43023837559856326,0.06098135352757459,0.1025,2000
+Santinha,safeconf_calibrated_pair_risk,baseline_predicted_magnitude,all_test_settings_pooled,1.0,task_row,5,23,255,-0.20856108597285067,-0.3397350872621665,-0.0673284396774952,0.002,2000
+Santinha,safeconf_calibrated_pair_risk,baseline_predicted_magnitude,all_test_settings_pooled,1.0,outer_fold_plus_perturbation_cluster,5,23,255,-0.20856108597285067,-0.5221978403901135,0.11542078003515903,0.122,2000

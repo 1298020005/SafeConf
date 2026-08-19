@@ -1,0 +1,16 @@
+fold_id,alpha,validation_protein_rmse
+frangieh_context_holdout_1_Co-culture,0.01,0.10654143554769117
+frangieh_context_holdout_1_Co-culture,0.1,0.10646942574795153
+frangieh_context_holdout_1_Co-culture,1.0,0.10576764177029434
+frangieh_context_holdout_1_Co-culture,10.0,0.1001656394271919
+frangieh_context_holdout_1_Co-culture,100.0,0.08258321690702629
+frangieh_context_holdout_2_Control,0.01,0.11184358136474004
+frangieh_context_holdout_2_Control,0.1,0.11179767036249548
+frangieh_context_holdout_2_Control,1.0,0.11134999269306775
+frangieh_context_holdout_2_Control,10.0,0.10776319581464656
+frangieh_context_holdout_2_Control,100.0,0.0966649760520801
+frangieh_context_holdout_3_IFNγ,0.01,0.11231229110653423
+frangieh_context_holdout_3_IFNγ,0.1,0.11223855136293771
+frangieh_context_holdout_3_IFNγ,1.0,0.11151850764643623
+frangieh_context_holdout_3_IFNγ,10.0,0.1056843234493617
+frangieh_context_holdout_3_IFNγ,100.0,0.08685617384817094

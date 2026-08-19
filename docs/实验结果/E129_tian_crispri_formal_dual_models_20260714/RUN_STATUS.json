@@ -1,0 +1,13 @@
+{
+  "experiment": "E129_tian_crispri_formal_dual_models",
+  "generated_at": "2026-07-14T01:07:10",
+  "status": "complete",
+  "source_contract": "docs/实验结果/E128_tian_crispri_four_batch_contract_20260714/manifests/E128_TASK_MANIFEST.csv",
+  "dataset": "TianKampmann2021_CRISPRi",
+  "context_definition": "technical batch shift",
+  "n_folds": 4,
+  "n_test_tasks": 732,
+  "n_prediction_records": 1464,
+  "strict_issue_count": 0,
+  "test_truth_used_for_training_calibration_score_or_threshold": false
+}

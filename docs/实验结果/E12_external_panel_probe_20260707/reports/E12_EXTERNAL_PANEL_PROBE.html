@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>E12 外部面板扩展探针</title>
+<style>
+:root{--ink:#17201c;--muted:#66736d;--line:#dfe7e2;--accent:#2f6f5e;--soft:#f8faf7;--warn:#9a5b00}
+body{margin:0;background:#fbfbf8;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC","Microsoft YaHei",Arial,sans-serif;line-height:1.72}
+.wrap{max-width:1180px;margin:0 auto;padding:34px 30px 70px}
+.hero{border-bottom:1px solid var(--line);padding:28px 0 22px}
+h1{font-size:34px;margin:0 0 10px}h2{margin-top:32px;padding-bottom:8px;border-bottom:2px solid var(--line)}
+.lead{max-width:930px;color:var(--muted);font-size:17px}
+.metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:24px 0}
+.metric,.card,figure{background:white;border:1px solid var(--line);border-radius:15px}
+.metric{padding:16px}.metric .k{color:var(--muted);font-size:13px}.metric .v{color:var(--accent);font-size:26px;font-weight:720}
+.card{padding:20px;margin:18px 0;overflow-x:auto}.warn{border-left:5px solid var(--warn)}
+table{border-collapse:collapse;width:100%;font-size:13px}th,td{border:1px solid var(--line);padding:7px 8px;vertical-align:top}th{background:#f1f5f2;text-align:left}
+.figgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}figure{margin:0;padding:12px}img{max-width:100%;display:block;background:white;border-radius:10px}figcaption{color:var(--muted);font-size:13px;margin-top:8px}
+@media(max-width:900px){.metrics,.figgrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body><main class="wrap">
+<section class="hero"><h1>E12 外部面板扩展探针</h1><p class="lead">这一步把 E10 从 3 个外部数据集扩展到 6 个候选。重点是筛清楚哪些数据适合 held-out pair，哪些需要换验证定义。</p><div class="metrics"><div class="metric"><div class="k">候选数据集</div><div class="v">6</div></div><div class="metric"><div class="k">可评估数据集</div><div class="v">3</div></div><div class="metric"><div class="k">test 记录</div><div class="v">308</div></div><div class="metric"><div class="k">best rho</div><div class="v">0.734</div></div><div class="metric"><div class="k">simple cov80</div><div class="v">11.51%</div></div></div></section>
+<section class="card"><h2>1. 数据集适配</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataset</th>
+      <th>n_tasks</th>
+      <th>n_contexts</th>
+      <th>n_perturbations</th>
+      <th>context_col</th>
+      <th>perturbation_col</th>
+      <th>n_test</th>
+      <th>e12_status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>kangCrossCell</td>
+      <td>8</td>
+      <td>8</td>
+      <td>1</td>
+      <td>cell_type</td>
+      <td>perturbation</td>
+      <td>0</td>
+      <td>not_evaluable_under_heldout_pair</td>
+    </tr>
+    <tr>
+      <td>kangCrossPatient</td>
+      <td>8</td>
+      <td>8</td>
+      <td>1</td>
+      <td>condition1</td>
+      <td>perturbation</td>
+      <td>0</td>
+      <td>not_evaluable_under_heldout_pair</td>
+    </tr>
+    <tr>
+      <td>KaggleCrossPatient</td>
+      <td>40</td>
+      <td>6</td>
+      <td>10</td>
+      <td>cell_type</td>
+      <td>perturbation</td>
+      <td>40</td>
+      <td>evaluable</td>
+    </tr>
+    <tr>
+      <td>crossPatient</td>
+      <td>10</td>
+      <td>6</td>
+      <td>2</td>
+      <td>condition1</td>
+      <td>perturbation</td>
+      <td>8</td>
+      <td>evaluable</td>
+    </tr>
+    <tr>
+      <td>TCDD</td>
+      <td>6</td>
+      <td>6</td>
+      <td>1</td>
+      <td>condition1</td>
+      <td>perturbation</td>
+      <td>0</td>
+      <td>not_evaluable_under_heldout_pair</td>
+    </tr>
+    <tr>
+      <td>sciplex3</td>
+      <td>106</td>
+      <td>3</td>
+      <td>36</td>
+      <td>cell_type</td>
+      <td>perturbation</td>
+      <td>106</td>
+      <td>evaluable</td>
+    </tr>
+  </tbody>
+</table></section>
+<section class="card"><h2>2. 每数据集主结果</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataset_name</th>
+      <th>simple_combined_confidence_aligned_rho</th>
+      <th>simple_combined_confidence_risk_cov_80_improve_pct</th>
+      <th>learned_risk_score_aligned_rho</th>
+      <th>learned_risk_score_risk_cov_80_improve_pct</th>
+      <th>model_disagreement_risk_aligned_rho</th>
+      <th>model_disagreement_risk_risk_cov_80_improve_pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>KaggleCrossPatient</td>
+      <td>0.618747</td>
+      <td>14.383236</td>
+      <td>0.009235</td>
+      <td>-1.943495</td>
+      <td>0.468595</td>
+      <td>12.094574</td>
+    </tr>
+    <tr>
+      <td>crossPatient</td>
+      <td>0.075333</td>
+      <td>2.441169</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.597644</td>
+      <td>-0.167093</td>
+    </tr>
+    <tr>
+      <td>sciplex3</td>
+      <td>0.622404</td>
+      <td>17.690673</td>
+      <td>0.425516</td>
+      <td>7.803259</td>
+      <td>0.884577</td>
+      <td>18.193139</td>
+    </tr>
+  </tbody>
+</table></section>
+<section class="card"><h2>3. Overall 信号排序</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>score_name</th>
+      <th>score_type</th>
+      <th>n</th>
+      <th>direction_aligned_spearman</th>
+      <th>risk_cov_80_improve_pct</th>
+      <th>high_low_rmse_gap</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>model_disagreement_risk</td>
+      <td>risk</td>
+      <td>308</td>
+      <td>0.734406</td>
+      <td>10.040207</td>
+      <td>0.064697</td>
+    </tr>
+    <tr>
+      <td>support_count_score</td>
+      <td>confidence</td>
+      <td>308</td>
+      <td>0.624740</td>
+      <td>7.144678</td>
+      <td>0.037830</td>
+    </tr>
+    <tr>
+      <td>historical_residual_risk</td>
+      <td>risk</td>
+      <td>308</td>
+      <td>0.596586</td>
+      <td>-0.809355</td>
+      <td>0.014959</td>
+    </tr>
+    <tr>
+      <td>simple_combined_confidence</td>
+      <td>confidence</td>
+      <td>308</td>
+      <td>0.537476</td>
+      <td>11.505026</td>
+      <td>0.052048</td>
+    </tr>
+    <tr>
+      <td>learned_risk_score</td>
+      <td>risk</td>
+      <td>296</td>
+      <td>0.446422</td>
+      <td>1.953255</td>
+      <td>0.000757</td>
+    </tr>
+    <tr>
+      <td>context_similarity_score</td>
+      <td>confidence</td>
+      <td>308</td>
+      <td>0.335464</td>
+      <td>-0.735439</td>
+      <td>-0.003750</td>
+    </tr>
+    <tr>
+      <td>random_score</td>
+      <td>confidence</td>
+      <td>308</td>
+      <td>0.080481</td>
+      <td>2.449128</td>
+      <td>0.007404</td>
+    </tr>
+    <tr>
+      <td>ood_distance_risk</td>
+      <td>risk</td>
+      <td>308</td>
+      <td>-0.080645</td>
+      <td>-6.363686</td>
+      <td>-0.035143</td>
+    </tr>
+    <tr>
+      <td>perturbation_stability_score</td>
+      <td>confidence</td>
+      <td>178</td>
+      <td>-0.219792</td>
+      <td>-3.338171</td>
+      <td>-0.031456</td>
+    </tr>
+    <tr>
+      <td>prediction_magnitude_risk</td>
+      <td>risk</td>
+      <td>308</td>
+      <td>-0.271350</td>
+      <td>1.012284</td>
+      <td>0.007875</td>
+    </tr>
+  </tbody>
+</table></section>
+<section class="card warn"><h2>4. 解释边界</h2><p>E12 有 6 个候选，但只有 3 个可按 held-out pair 评价。sciplex3 信号很强，crossPatient simple combined 很弱；learned risk 仍没有超过 disagreement。</p></section>
+<section><h2>5. 图件</h2><div class="figgrid"><figure><img src="../figures/F1_task_schematic.png" alt="F1_task_schematic.png"><figcaption>F1_task_schematic.png</figcaption></figure><figure><img src="../figures/F2_context_perturbation_matrix.png" alt="F2_context_perturbation_matrix.png"><figcaption>F2_context_perturbation_matrix.png</figcaption></figure><figure><img src="../figures/F3_prediction_record_flow.png" alt="F3_prediction_record_flow.png"><figcaption>F3_prediction_record_flow.png</figcaption></figure><figure><img src="../figures/F4_confidence_vs_true_error_scatter.png" alt="F4_confidence_vs_true_error_scatter.png"><figcaption>F4_confidence_vs_true_error_scatter.png</figcaption></figure><figure><img src="../figures/F5_risk_coverage_curve.png" alt="F5_risk_coverage_curve.png"><figcaption>F5_risk_coverage_curve.png</figcaption></figure><figure><img src="../figures/F6_high_vs_low_confidence_rmse.png" alt="F6_high_vs_low_confidence_rmse.png"><figcaption>F6_high_vs_low_confidence_rmse.png</figcaption></figure><figure><img src="../figures/F7_per_dataset_spearman_comparison.png" alt="F7_per_dataset_spearman_comparison.png"><figcaption>F7_per_dataset_spearman_comparison.png</figcaption></figure><figure><img src="../figures/F8_calibration_buckets.png" alt="F8_calibration_buckets.png"><figcaption>F8_calibration_buckets.png</figcaption></figure><figure><img src="../figures/F10_transferability_ranking.png" alt="F10_transferability_ranking.png"><figcaption>F10_transferability_ranking.png</figcaption></figure></div></section>
+</main></body></html>

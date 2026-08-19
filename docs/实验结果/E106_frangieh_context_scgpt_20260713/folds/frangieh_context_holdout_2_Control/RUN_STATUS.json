@@ -1,0 +1,20 @@
+{
+  "fold_id": "frangieh_context_holdout_2_Control",
+  "finished_at": "2026-07-13T10:30:07",
+  "status": "complete",
+  "seed": 202607106,
+  "device": "cuda:0",
+  "epochs_requested": 12,
+  "epochs_completed": 7,
+  "best_epoch": 4,
+  "best_validation_mse": 0.0030860276892781258,
+  "batch_size": 16,
+  "learning_rate": 0.0001,
+  "n_train_tasks": 258,
+  "n_validation_tasks": 30,
+  "n_test_tasks": 279,
+  "pretrained_tensors_loaded": 129,
+  "basal_input": "same-context control mean; available at prediction time",
+  "test_target_used_for_training_or_selection": false,
+  "wall_seconds": 30.871471405029297
+}

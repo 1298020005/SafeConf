@@ -1,0 +1,4 @@
+predictor_name,score_name,score_deployable,target_error,n_tasks,spearman,bootstrap_rho_ci95_low,bootstrap_rho_ci95_high,top20_k,top20_error_enrichment
+GEARS_3seed_ensemble,risk_ensemble_disagreement,True,error_gears_ensemble_rmse,24,-0.09130434782608696,-0.47521353118712284,0.2892793434683478,5,0.7869773515289961
+GEARS_3seed_ensemble,risk_predicted_magnitude,True,error_gears_ensemble_rmse,24,0.09478260869565217,-0.24984376119721002,0.42476140040548155,5,0.9293166713608687
+GEARS_3seed_ensemble,true_l2_diagnostic,False,error_gears_ensemble_rmse,24,0.9426086956521739,,,0,

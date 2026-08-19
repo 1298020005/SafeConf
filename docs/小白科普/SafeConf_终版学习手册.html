@@ -1,0 +1,1914 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SafeConf 终版学习手册 · 2026-06-12</title>
+<style>
+  :root {
+    --bg: #fafaf8; --text: #2c2c2c; --accent: #1a73e8; --green: #0d7a3e;
+    --orange: #c55a11; --red: #c0392b; --gray: #6b7280; --card-bg: #fff;
+    --border: #e5e7eb; --highlight: #fffde7; --purple: #7b1fa2;
+    --accent-light: #eff6ff; --warn-light: #fef2f2; --ok-light: #f0fdf4;
+    --orange-light: #fff7ed; --purple-light: #f5f3ff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC","Microsoft YaHei","Segoe UI",system-ui,sans-serif;
+    font-size: 18px; line-height: 1.9; color: var(--text); background: var(--bg);
+    max-width: 960px; margin: 0 auto; padding: 30px 24px 80px;
+  }
+  h1 { font-size: 1.8em; margin: 1.2em 0 0.6em; color: var(--accent); border-bottom: 3px solid var(--accent); padding-bottom: 8px; }
+  h2 { font-size: 1.4em; margin: 1.4em 0 0.5em; color: #333; }
+  h3 { font-size: 1.15em; margin: 1em 0 0.4em; color: #444; }
+  p { margin: 0.6em 0; }
+  .en { color: var(--accent); font-weight: 600; }
+  .cn { color: var(--gray); font-size: 0.88em; }
+
+  /* ===== Hero ===== */
+  .hero {
+    background: linear-gradient(135deg, #1e3a5f, #2563eb);
+    color: #fff; padding: 36px 28px; border-radius: 16px; margin-bottom: 28px;
+  }
+  .hero h1 { color: #fff; border-bottom-color: rgba(255,255,255,.3); font-size: 1.7em; margin: 0 0 8px; }
+  .hero p { opacity: .9; margin: 4px 0; }
+  .hero .tags { margin-top: 14px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .hero .tag { background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.28); padding: 2px 10px; border-radius: 999px; font-size: .82em; }
+
+  /* ===== Notice ===== */
+  .notice { background: #fff8e1; border: 2px solid #ffd54f; padding: 16px 20px; margin: 16px 0; border-radius: 8px; }
+  .notice strong { color: var(--orange); }
+
+  /* ===== Chapter card ===== */
+  .chapter { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 24px 26px; margin: 22px 0; box-shadow: 0 1px 4px rgba(0,0,0,.04); }
+  .chapter-goal { background: #e3f2fd; border-left: 3px solid var(--accent); padding: 10px 14px; border-radius: 0 8px 8px 0; margin: 12px 0; font-size: .95em; font-weight: 600; }
+
+  /* ===== Metaphor ===== */
+  .metaphor { background: linear-gradient(135deg, #e8f5e9, #f1f8e9); border-left: 4px solid var(--green); padding: 16px 20px; margin: 1em 0; border-radius: 0 8px 8px 0; }
+  .metaphor::before { content: "\1F37D\FE0F 连锁餐厅质检比喻："; font-weight: 700; color: var(--green); display: block; margin-bottom: 6px; }
+
+  /* ===== Teacher Q & Answer ===== */
+  .teacher-q { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 14px 18px; margin: 1em 0; border-radius: 0 10px 10px 0; }
+  .teacher-q::before { content: "\1F393 老师的问题："; font-weight: 700; color: #92400e; display: block; margin-bottom: 4px; font-size: .9em; }
+  .answer { background: #e8f5e9; border-left: 4px solid var(--green); padding: 14px 18px; margin: 1em 0; border-radius: 0 10px 10px 0; }
+  .answer::before { content: "\2705 你该怎么回答："; font-weight: 700; color: var(--green); display: block; margin-bottom: 4px; font-size: .9em; }
+
+  /* ===== Quote teacher / meaning ===== */
+  .quote-teacher { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 12px 16px; margin: 10px 0; border-radius: 0 8px 8px 0; font-style: italic; }
+  .quote-teacher::before { content: "\1F393 老师原话："; font-weight: 700; font-style: normal; display: block; margin-bottom: 4px; color: #92400e; font-size: .85em; }
+  .quote-meaning { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 12px 16px; margin: 10px 0; border-radius: 0 8px 8px 0; }
+  .quote-meaning::before { content: "\1F4AC 大白话翻译："; font-weight: 700; display: block; margin-bottom: 4px; color: #166534; font-size: .85em; }
+
+  /* ===== Warning / Error / Insight / Summary ===== */
+  .warn { background: #fff8e1; border-left: 4px solid var(--orange); padding: 14px 18px; margin: 1em 0; border-radius: 0 8px 8px 0; }
+  .error-box { background: #fce4ec; border-left: 4px solid var(--red); padding: 14px 18px; margin: 1em 0; border-radius: 0 8px 8px 0; }
+  .error-box::before { content: "\26A0\FE0F 诚实边界："; font-weight: 700; color: var(--red); display: block; margin-bottom: 4px; font-size: .9em; }
+  .insight-box { background: #ede7f6; border-left: 4px solid var(--purple); padding: 14px 18px; margin: 1em 0; border-radius: 0 8px 8px 0; }
+  .summary-box { background: var(--highlight); border: 2px solid #ffd54f; padding: 16px 20px; margin: 1.2em 0; border-radius: 8px; font-size: 1.02em; }
+  .summary-box::before { content: "\1F4CC 本章一句话："; font-weight: 700; display: block; margin-bottom: 4px; }
+
+  /* ===== Number card ===== */
+  .number-card { background: #e3f2fd; border: 1px solid #90caf9; border-radius: 10px; padding: 14px 18px; margin: 12px 0; font-size: .95em; }
+  .number-card b { color: var(--accent); }
+
+  /* ===== Table ===== */
+  table { width: 100%; border-collapse: collapse; margin: 1em 0; font-size: .93em; }
+  th { background: var(--accent); color: #fff; padding: 10px 12px; text-align: left; }
+  td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+  tr:nth-child(even) td { background: #f8f9fa; }
+  td.fail { color: var(--red); font-weight: 700; }
+  td.weak { color: var(--orange); font-weight: 600; }
+  td.good { color: var(--green); font-weight: 600; }
+
+  /* ===== Term card ===== */
+  .term-card { background: #fffde7; border: 1px solid #fff59d; border-radius: 8px; padding: 10px 14px; margin: 8px 0; }
+  .term-card strong { color: var(--text); }
+  .term-card .en2 { color: var(--gray); font-size: .9em; margin-left: 6px; }
+  .term-card p { margin: 4px 0 0; font-size: .9em; color: #555; }
+
+  /* ===== Know box ===== */
+  .know { background: #e8f5e9; border: 1px solid #a5d6a7; border-radius: 10px; padding: 14px 18px; margin: 16px 0; font-size: .93em; }
+  .know::before { content: "\2705 读完这节你应该懂："; font-weight: 700; color: var(--green); display: block; margin-bottom: 4px; font-size: .88em; }
+
+  /* ===== Source tag ===== */
+  .source-tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: .75em; font-weight: 700; margin-right: 6px; vertical-align: middle; }
+  .tag-teacher { background: #fef3c7; color: #92400e; }
+  .tag-claude { background: #ede9fe; color: #5b21b6; }
+  .tag-gpt { background: #e0f2fe; color: #075985; }
+  .tag-infer { background: #fce7f3; color: #9d174d; }
+  .tag-data { background: #dcfce7; color: #166534; }
+
+  /* ===== Compare box ===== */
+  .compare-box { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  @media (max-width: 700px) { .compare-box { grid-template-columns: 1fr; } }
+  .compare-box .col { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+  .compare-box .col h4 { margin-bottom: 8px; padding-bottom: 6px; border-bottom: 2px solid; }
+  .compare-box .col.gpt-col h4 { border-bottom-color: #0ea5e9; color: #075985; }
+  .compare-box .col.claude-col h4 { border-bottom-color: #7c3aed; color: #5b21b6; }
+
+  /* ===== Step flow ===== */
+  .step-flow { position: relative; padding-left: 40px; margin: 16px 0; }
+  .step-flow::before { content: ""; position: absolute; left: 15px; top: 0; bottom: 0; width: 2px; background: var(--accent); }
+  .step-item { position: relative; margin-bottom: 16px; padding: 12px 16px; background: var(--card-bg); border-radius: 8px; border: 1px solid var(--border); }
+  .step-item::before { content: attr(data-step); position: absolute; left: -33px; top: 12px; width: 28px; height: 28px; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .8em; font-weight: 700; }
+
+  /* ===== Verdict ===== */
+  .verdict { font-size: 1.1em; font-weight: 700; padding: 16px 20px; border-radius: 10px; margin: 16px 0; text-align: center; }
+  .verdict.good { background: #dcfce7; color: #166534; border: 2px solid #86efac; }
+  .verdict.warn { background: #fef9c3; color: #854d0e; border: 2px solid #fde047; }
+  .verdict.bad { background: #fee2e2; color: #991b1b; border: 2px solid #fca5a5; }
+
+  /* ===== TOC ===== */
+  .toc { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+  .toc h3 { margin-top: 0; }
+  .toc ol { padding-left: 20px; }
+  .toc li { margin: 6px 0; }
+  .toc a { color: var(--accent); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+
+  /* ===== Nav num ===== */
+  .nav-num { display: inline-block; background: var(--accent); color: white; width: 32px; height: 32px; line-height: 32px; text-align: center; border-radius: 50%; font-weight: 700; font-size: .9em; margin-right: 8px; }
+
+  /* ===== Details ===== */
+  details { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; margin: 10px 0; }
+  details summary { cursor: pointer; font-weight: 600; color: var(--accent); padding: 4px 0; }
+  details[open] summary { margin-bottom: 10px; }
+
+  /* ===== Misc ===== */
+  ul, ol { margin: 0.6em 0; padding-left: 22px; }
+  li { margin: 4px 0; }
+  code { background: #f5f5f5; padding: 2px 6px; border-radius: 3px; font-family: "Cascadia Code","Fira Code",monospace; font-size: .9em; }
+  hr { border: none; border-top: 2px solid var(--border); margin: 40px 0; }
+  .foot { margin-top: 36px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--gray); font-size: .84em; }
+  .highlight-box { background: linear-gradient(135deg, #fef3c7, #fffbeb); border: 2px solid #fbbf24; border-radius: 10px; padding: 20px; margin: 20px 0; }
+</style>
+</head>
+<body>
+
+<!-- ========================== HERO ========================== -->
+<div class="hero">
+  <h1>SafeConf 终版学习手册</h1>
+  <p>一个文件，从零到懂：项目全貌 + 餐厅比喻 + 全部实验数字 + 老师反馈解读 + 下一步行动</p>
+  <p>本文件替代桌面上所有散装 HTML。所有比喻统一用「连锁餐厅质检」。</p>
+  <div class="tags">
+    <span class="tag">2026-06-12 定版</span>
+    <span class="tag">14 章 + 3 附录</span>
+    <span class="tag">所有数字来自真实实验 CSV</span>
+    <span class="tag">阅读时间约 90 分钟</span>
+  </div>
+</div>
+
+<div class="notice">
+  <strong>全文统一比喻：</strong>分店 = 细胞背景（context）、菜品 = 扰动（perturbation）、厨师 = 预测器（predictor）、投诉率 = 真实误差（true_error_rmse）、质检评分 = SafeConf 分数（confidence_score）。每个英文术语首次出现时都有中文解释。
+</div>
+
+<!-- ========================== TOC ========================== -->
+<div class="toc">
+  <h3>目录</h3>
+  <ol start="0">
+    <li><a href="#ch0">SafeConf 到底在干嘛</a>（2 分钟）</li>
+    <li><a href="#ch1">餐厅比喻完整术语表</a>（5 分钟）</li>
+    <li><a href="#ch2">数据到底长什么样</a>（15 分钟）
+      <ul style="list-style:none;padding-left:1em;margin:4px 0;font-size:.92em;">
+        <li>2.0 <a href="#ch2-perturbation" style="color:#c55a11;">扰动全领域详解——八大类型 + 技术平台 + 预测模型</a></li>
+        <li style="padding-left:1em;color:#888;">2.0.3 八大扰动类型总览 | 2.0.5 三大测量技术 | 2.0.6 预测模型全景</li>
+        <li style="padding-left:1em;color:#888;">2.0.8 能不能实验前打分？数据越多越好？分数打在哪？</li>
+      </ul>
+    </li>
+    <li><a href="#ch3">三条质检线索怎么工作</a>（10 分钟）</li>
+    <li><a href="#ch4">两个厨师是什么来头</a>（5 分钟）</li>
+    <li><a href="#ch5">完整数据流程——从原始数据到质检评分</a>（10 分钟）</li>
+    <li><a href="#ch6">真实使用场景模拟——从零走一遍</a>（10 分钟）</li>
+    <li><a href="#ch7">实验结果全景</a>（15 分钟）</li>
+    <li><a href="#ch8">老师到底在问什么</a>（10 分钟）</li>
+    <li><a href="#ch9">"给任务难度打分有什么意义"——标准回答</a>（10 分钟）</li>
+    <li><a href="#ch10">GPT 和 Claude 怎么分析的</a>（5 分钟）</li>
+    <li><a href="#ch11">最大威胁——"订单金额基线"</a>（5 分钟）</li>
+    <li><a href="#ch12">能不能发二区</a>（5 分钟）</li>
+    <li><a href="#ch13">下一步行动表</a>（5 分钟）</li>
+  </ol>
+  <p style="margin-top:10px;color:var(--gray);font-size:.9em;">附录 A：完整术语词典 | 附录 B：数据来源地图 | 附录 C：Scope Boundary 表</p>
+</div>
+
+<!-- ============================================================ -->
+<!--                      第 0 章                                  -->
+<!-- ============================================================ -->
+<div class="chapter" id="ch0">
+  <h1><span class="nav-num">0</span>SafeConf 到底在干嘛</h1>
+  <div class="chapter-goal">目标：零基础的你，2 分钟内知道这个项目是什么。</div>
+
+  <p><strong>一句话定义：</strong>SafeConf 不做菜（不预测扰动效应），只做质检（给每次预测打一个可信度分数）。</p>
+
+  <div class="metaphor">
+    想象一个连锁餐厅集团。各地分店（<span class="en">context</span>，细胞背景）做各种菜品（<span class="en">perturbation</span>，扰动）。有些厨师（<span class="en">predictor</span>，预测模型）做菜水平不一，有时候做出来的菜跟标准差很远，被顾客投诉（<span class="en">true_error_rmse</span>，真实误差）。<br><br>
+    SafeConf 就像一个<b>第三方质检员</b>，不自己做菜，但会根据线索判断："这道菜在这家分店做出来，大概靠不靠谱？"然后给出一个<b>质检评分</b>（<span class="en">confidence_score</span>）。评分越高，预测越可信。
+  </div>
+
+  <h2>核心映射表</h2>
+  <table>
+    <tr><th>餐厅比喻</th><th>英文术语</th><th>中文含义</th></tr>
+    <tr><td>分店</td><td>context</td><td>细胞背景（如某种细胞类型/状态）</td></tr>
+    <tr><td>菜品</td><td>perturbation</td><td>扰动（如基因敲除、加药处理）</td></tr>
+    <tr><td>厨师</td><td>predictor</td><td>预测模型（如 V0、ContextSim、GEARS 等）</td></tr>
+    <tr><td>做出来的菜 vs 标准菜</td><td>predicted_effect vs true_effect</td><td>预测值 vs 真实值（各 5000 维基因向量）</td></tr>
+    <tr><td>投诉率</td><td>true_error_rmse</td><td>预测误差 = RMSE(预测值, 真实值)</td></tr>
+    <tr><td>质检评分</td><td>confidence_score</td><td>SafeConf 给的可信度分数</td></tr>
+  </table>
+
+  <div class="warn">
+    <strong>关键澄清：</strong>质检评分<b>不是</b> 0 到 1 的百分比，也<b>不是</b>"对/错"的判定。它是几个 z-score（标准化分数）的加减，结果可以是任何实数——正数、负数、大于 1 都正常。<b>越大越可信，越小越危险。</b><br><br>
+    <b>低于 0 ≠ "这次预测一定错了"。</b>SafeConf 做的是<b>排序（ranking）</b>，不是分类（classification）。分数的意义是<b>相对的</b>：在一批预测里，分数低的比分数高的<b>风险更大</b>——但"分数 = -0.3"本身不意味着"预测错误"，只是它在这批预测中属于较高风险的。你拿到的是一份<b>按风险从高到低的排序清单</b>，用来决定优先验证哪些，不是一份"对/错判决书"。
+  </div>
+
+  <div class="know">
+    <ul>
+      <li>SafeConf 不训练新的预测模型，不"做菜"</li>
+      <li>SafeConf 给已有预测结果"打分"——这次预测该不该信</li>
+      <li>质检评分不是百分比，是 z-score 之和，可正可负</li>
+      <li>核心验证：评分越高 → 真实误差越低（负相关）</li>
+    </ul>
+  </div>
+
+  <div class="summary-box">SafeConf = 不做菜的质检员，给每次预测打可信度分数，帮用户决定哪些预测该信、哪些该优先验证。</div>
+</div>
+
+<!-- ============================================================ -->
+<!--                      第 1 章                                  -->
+<!-- ============================================================ -->
+<div class="chapter" id="ch1">
+  <h1><span class="nav-num">1</span>餐厅比喻完整术语表</h1>
+  <div class="chapter-goal">目标：一次性把所有术语对上号。每个术语 = 一张卡片。</div>
+
+  <h2>基础概念</h2>
+
+  <div class="term-card">
+    <strong>细胞背景</strong> <span class="en2">context</span>
+    <p>餐厅比喻：<b>分店</b>。代表一种细胞类型或细胞状态。不同分店的"口味偏好"不同，同一道菜在不同分店的效果也不同。</p>
+  </div>
+  <div class="term-card">
+    <strong>扰动</strong> <span class="en2">perturbation</span>
+    <p>餐厅比喻：<b>菜品</b>。对细胞施加的干预，比如敲除某个基因（gene perturbation）或加某种药物（chemical perturbation）。</p>
+  </div>
+  <div class="term-card">
+    <strong>预测器</strong> <span class="en2">predictor</span>
+    <p>餐厅比喻：<b>厨师</b>。做菜的人——预测细胞在受到扰动后基因表达会怎么变。可以是简单厨师（V0、ContextSim），也可以是高级厨师（GEARS 等深度学习模型）。</p>
+  </div>
+  <div class="term-card">
+    <strong>真实效应</strong> <span class="en2">true_effect</span>
+    <p>餐厅比喻：<b>标准菜谱的味道</b>。实验室里实际测到的扰动结果。一个 5000 维向量（5000 个基因各变化了多少）。</p>
+  </div>
+  <div class="term-card">
+    <strong>预测效应</strong> <span class="en2">predicted_effect</span>
+    <p>餐厅比喻：<b>厨师做出来的菜</b>。模型预测的扰动结果，也是 5000 维向量。</p>
+  </div>
+  <div class="term-card">
+    <strong>真实误差</strong> <span class="en2">true_error_rmse</span>
+    <p>餐厅比喻：<b>投诉率</b>。= RMSE(predicted_effect, true_effect)，衡量预测跟真实差了多远。这个值越大，预测越不准。</p>
+  </div>
+  <div class="term-card">
+    <strong>质检评分</strong> <span class="en2">confidence_score</span>
+    <p>餐厅比喻：<b>质检员给的评分</b>。SafeConf 的输出。注意：不是 [0,1] 百分比，是 z-score 之和，可以是任何实数。越大越可信。</p>
+  </div>
+
+  <div class="insight-box">
+    <p><b>你刚才问：为什么会有负数？直接做成 0-1 不更好吗？</b></p>
+    <p>简单说：SafeConf 原始分数不是“概率”，而是“相对排名尺”。它先把几条线索都变成标准化分数（z-score），再加加减减。这样做的自然结果就是：中等水平附近是 0，比中等更可靠就是正数，比中等更危险就是负数。</p>
+    <ul>
+      <li><b>负数不是坏设计</b>：它只是表示“低于这批预测的中间水平”，不等于“预测一定错”。</li>
+      <li><b>0-1 容易误导</b>：如果写成 0.82，读者很容易以为“82% 概率正确”，但 SafeConf 目前没有证明自己是概率校准器（probability calibrator）。</li>
+      <li><b>论文更需要排序</b>：我们真正想做的是把高风险预测排到前面，让人优先复核，而不是给每条预测发一张“正确/错误”判决书。</li>
+      <li><b>以后可以做展示层</b>：比如把原始分数再转成百分位（percentile）或风险等级（low / medium / high risk），给人看更舒服；但底层公式保留 z-score 更诚实。</li>
+    </ul>
+    <p>一句话：<b>负数是数学标尺的自然结果；0-1 可以做成人类友好的显示层，但不能假装它是概率。</b></p>
+  </div>
+
+  <h2>三条质检线索</h2>
+
+  <div class="term-card">
+    <strong>分店熟悉度</strong> <span class="en2">context_similarity</span>
+    <p>餐厅比喻：<b>这家分店跟我们见过的分店有多像？</b>如果很像某家老分店，那经验可以借鉴，预测更靠谱。技术上：当前 context 与 fold-train 中所有 context 的最大余弦相似度（max cosine similarity）。</p>
+  </div>
+  <div class="term-card">
+    <strong>菜品出现次数</strong> <span class="en2">support_count / log_support</span>
+    <p>餐厅比喻：<b>这道菜在历史上被做过多少次？</b>做过 100 次的招牌菜比只做过 1 次的新菜更有把握。技术上：log2(该 perturbation 在 fold-train 中出现次数 + 1)。</p>
+  </div>
+  <div class="term-card">
+    <strong>厨师分歧</strong> <span class="en2">model_disagreement</span>
+    <p>餐厅比喻：<b>两个参考厨师对这道菜的做法分歧有多大？</b>如果两个厨师做出来的菜很不一样，说明这道菜"有争议"，预测可能不靠谱。技术上：RMSE(V0 预测, ContextSim 预测)。</p>
+  </div>
+
+  <h2>评估指标</h2>
+
+  <div class="term-card">
+    <strong>Spearman 相关系数</strong> <span class="en2">Spearman ρ (rho)</span>
+    <p>餐厅比喻：<b>质检评分的排序跟投诉率的排序有多一致？</b>不关心具体数值，只关心"评分高的那些预测，投诉率是不是真的低"。ρ 为负说明"评分越高、投诉越少"——这正是我们想要的。我们报告时会取 aligned ρ 让正数=好。</p>
+  </div>
+  <div class="term-card">
+    <strong>偏相关系数</strong> <span class="en2">partial ρ (partial_rho)</span>
+    <p>餐厅比喻：<b>去掉"订单金额"的影响后，质检评分还有用吗？</b>predicted_magnitude（预测效应的大小）跟误差天然正相关。偏相关控制了 magnitude 之后看 SafeConf 是否还有独立信号。</p>
+  </div>
+  <div class="term-card">
+    <strong>z-score 标准化</strong> <span class="en2">z-score</span>
+    <p>餐厅比喻：<b>把不同度量单位的线索统一到同一个标尺上</b>。公式：z = (值 - 中位数) / IQR。注意 SafeConf 用的是中位数（median）和四分位距（IQR），不是平均值和标准差——因为中位数对异常值更鲁棒。</p>
+  </div>
+
+  <div class="insight-box">
+    <p><b>IQR 和“鲁棒性”到底是什么？</b></p>
+    <p><b>IQR（interquartile range，四分位距）</b>就是“中间 50% 数据的范围”：先把一列数从小到大排好，Q1（第 25 百分位）到 Q3（第 75 百分位）之间的距离就是 IQR，公式是 <code>IQR = Q3 - Q1</code>。</p>
+    <p><b>鲁棒性（robustness）</b>可以理解成“抗极端值能力”。比如 10 个学生考试，9 个人 60-80 分，1 个人 0 分。平均分会被这个 0 分明显拉低，但中位数基本不受影响。所以说中位数和 IQR 更鲁棒。</p>
+    <p>放到 SafeConf 里就是：生物数据经常有特别离谱的预测误差。如果用平均值（mean）和标准差（standard deviation），少数极端点会把标尺拉歪；用中位数（median）和 IQR，标尺更稳。</p>
+  </div>
+  <div class="term-card">
+    <strong>预测效应大小</strong> <span class="en2">predicted_magnitude</span>
+    <p>餐厅比喻：<b>订单金额</b>。预测向量的 L2 范数（大小）。大金额订单更容易出错——预测一个大幅变化比预测小变化更难。这是 SafeConf 最大的竞争对手。</p>
+  </div>
+  <div class="term-card">
+    <strong>RC@80% 改善</strong> <span class="en2">Risk-Coverage at 80%</span>
+    <p>餐厅比喻：<b>如果我们按质检评分淘汰最差的 20% 预测，剩下 80% 的平均投诉率降了多少？</b>正数 = 有效筛掉了差预测。</p>
+  </div>
+  <div class="term-card">
+    <strong>Enrichment（富集倍数）</strong> <span class="en2">enrichment fold</span>
+    <p>餐厅比喻：<b>质检员标记的"高风险"里，真正翻车的比例是随机挑的多少倍？</b>如果 2.3×，意味着质检员找出的"高风险"预测里，真正的坏预测是随机抽样的 2.3 倍。</p>
+  </div>
+
+  <h2>实验设计术语</h2>
+
+  <div class="term-card">
+    <strong>LODO</strong> <span class="en2">Leave-One-Dataset-Out</span>
+    <p>餐厅比喻：<b>留一座城市做盲测</b>。训练时不用这座城市的数据，测试时看质检评分在这座陌生城市还准不准。验证跨城市迁移能力。</p>
+  </div>
+  <div class="term-card">
+    <strong>LOPO</strong> <span class="en2">Leave-One-Predictor-Out</span>
+    <p>餐厅比喻：<b>留一个厨师做盲测</b>。训练时不用这个厨师的数据，测试时看质检评分对这个陌生厨师还有没有用。验证跨厨师迁移能力。</p>
+  </div>
+  <div class="term-card">
+    <strong>Held-out pair split</strong> <span class="en2">held-out (context, perturbation) pair split</span>
+    <p>餐厅比喻：<b>测试集里的"(分店, 菜品)组合"在训练集里没出现过</b>，但这个分店做过别的菜、这道菜在别的分店做过。确保不是"背答案"。</p>
+  </div>
+  <div class="term-card">
+    <strong>防泄漏</strong> <span class="en2">leakage prevention, L1-L4</span>
+    <p>餐厅比喻：<b>严禁考试作弊的四条铁律</b>。L1: 测试的 (分店,菜品) 对不能出现在训练集。L2: 测试的菜品在训练集别处出现过。L3: 测试的分店在训练集别处出现过。L4: 特征计算只能用 fold-train 的统计量。</p>
+  </div>
+  <div class="term-card">
+    <strong>冻结协议</strong> <span class="en2">frozen protocol v0.2</span>
+    <p>餐厅比喻：<b>质检手册定稿后不再改</b>。在 Haber/Parekh/KCC 三个数据集上调好公式后锁死，其他数据集必须做 blind extension（盲测），不能回头改公式。</p>
+  </div>
+  <div class="term-card">
+    <strong>折</strong> <span class="en2">fold</span>
+    <p>餐厅比喻：<b>轮次</b>。5 折交叉验证：把数据分成 5 份，轮流用 4 份训练、1 份测试，做 5 轮取平均。</p>
+  </div>
+  <div class="term-card">
+    <strong>PredictionRecord</strong> <span class="en2">PredictionRecord</span>
+    <p>餐厅比喻：<b>一张考试答卷</b>。记录一次预测的所有信息：哪个数据集、第几折、哪个分店、哪道菜、哪个厨师、预测误差是多少。</p>
+  </div>
+
+  <h2>其他术语</h2>
+
+  <div class="term-card">
+    <strong>h5ad 文件</strong> <span class="en2">HDF5-backed AnnData</span>
+    <p>餐厅比喻：<b>某座城市的完整经营档案</b>。一个大矩阵：行 = 细胞（顾客），列 = 基因（菜品维度），加上分店/菜品/对照组等元信息。</p>
+  </div>
+  <div class="term-card">
+    <strong>ANOVA（方差分析）</strong> <span class="en2">Analysis of Variance</span>
+    <p>餐厅比喻：<b>投诉率的波动里，多少来自"菜品本身难做"、多少来自"厨师水平差"？</b>把总方差拆分成不同来源。</p>
+  </div>
+  <div class="term-card">
+    <strong>Bootstrap CI</strong> <span class="en2">Bootstrap Confidence Interval</span>
+    <p>餐厅比喻：<b>反复抽样 1000 次算出的"误差范围"</b>。告诉你一个数字有多稳定——[0.29, 0.36] 意味着 95% 的可能性在这个范围内。</p>
+  </div>
+  <div class="term-card">
+    <strong>消融实验</strong> <span class="en2">ablation</span>
+    <p>餐厅比喻：<b>去掉一条线索看效果差多少</b>。比如把"分店熟悉度"去掉，看质检评分还准不准——如果大幅下降，说明这条线索很重要。</p>
+  </div>
+
+  <div class="summary-box">所有术语都在这里了。后面章节提到任何术语，回来查这一章就行。</div>
+</div>
+
+<!-- ============================================================ -->
+<!--                      第 2 章                                  -->
+<!-- ============================================================ -->
+<div class="chapter" id="ch2">
+  <h1><span class="nav-num">2</span>数据到底长什么样</h1>
+  <div class="chapter-goal">目标：搞清楚 SafeConf 的输入是什么、输出是什么——<b>尤其是"扰动"到底指什么</b>。</div>
+
+  <!-- ====== 扰动全领域详解（重构版）====== -->
+  <h2 id="ch2-perturbation">2.0 扰动（Perturbation）——单细胞研究的核心概念</h2>
+
+  <p>在看数据格式之前，先花 10 分钟把<b>"扰动"这个概念彻底搞懂</b>。这不仅仅是 SafeConf 的基础——它是整个<b>单细胞扰动预测领域</b>的核心。跟老师讨论、读论文、听报告，都绕不开它。</p>
+
+  <!-- ==================== 2.0.1 从细胞说起 ==================== -->
+  <h3>2.0.1 从细胞说起——什么是基因表达</h3>
+
+  <div class="metaphor">
+    <b>一句话版本：</b>细胞 = 一座工厂，基因 = 操作手册，基因表达 = 每本手册被翻阅的频率。<br><br>
+    <b>详细版本：</b><br>
+    人体有大约 <b>2 万个基因</b>，每个基因是一段 DNA 序列，编码一种蛋白质（或 RNA）。但不是所有基因都同时工作——在心脏细胞里，心肌相关基因很活跃（"高表达"），而消化酶基因几乎沉默（"低表达"）。<br><br>
+    <b>基因表达谱</b>（gene expression profile）就是一张清单：这个细胞里每个基因的活跃程度是多少。你可以把它想象成一个很长的数字列表——2 万个基因，每个基因一个数字。<br><br>
+    <b>单细胞测序</b>（single-cell RNA sequencing, scRNA-seq）技术让我们能<b>逐个细胞</b>测量这张清单——以前只能测一堆细胞的平均值，现在能看到每个细胞的"个性"。
+  </div>
+
+  <!-- ==================== 2.0.2 扰动是什么 ==================== -->
+  <h3>2.0.2 那扰动到底是什么？</h3>
+
+  <div style="background:linear-gradient(135deg,#e8f5e9,#f1f8e9);border:2px solid #4caf50;border-radius:12px;padding:24px;margin:16px 0;">
+    <h4 style="color:#2e7d32;margin:0 0 12px;font-size:1.2em;">一句话定义</h4>
+    <p style="font-size:1.15em;margin:0;"><b>扰动（perturbation）= 科学家对细胞<u>故意做的一件事</u>，然后观察细胞的基因表达怎么变化。</b></p>
+  </div>
+
+  <p>关键词是<b>"故意"</b>——不是观察自然变化，而是主动干预，然后看结果。就像：</p>
+  <ul>
+    <li>把工厂的某条流水线关掉 → 看其他流水线怎么补偿</li>
+    <li>往工厂里倒一种化学品 → 看哪些流水线受影响</li>
+    <li>把某条流水线开到最大功率 → 看会不会过载</li>
+  </ul>
+
+  <p>扰动之后，测量细胞里（通常选 <b>top 5000 个基因</b>）每个基因的表达变化。<b>这个变化向量</b>（5000 维）就叫做<b>扰动效应</b>（perturbation effect）。</p>
+
+  <div class="insight-box">
+    <p><b>你问得很关键：所有扰动都是“改一个东西，然后测基因”吗？基因都是 5000 个吗？</b></p>
+    <p>大方向可以这么理解：很多单细胞扰动实验确实是“故意改一个条件，然后测细胞里的基因表达怎么变”。但“改一个东西”不一定永远是一个基因，也可以是一个药物、一组基因、一个细胞因子（cytokine），甚至是温度、缺氧、辐射这类环境条件。</p>
+    <p><b>5000 个基因不是生物学铁律</b>，也不是扰动的定义。它更像一个工程约定：单细胞数据里可能有一两万个基因，但很多基因噪声大、信息少，所以常常选高变异基因（highly variable genes, HVGs）或模型需要的基因面板。5000 只是常见选择之一，有的项目用 2000，有的用 3000，有的用全基因或特定基因集。</p>
+    <p>所以更准确的说法是：<b>扰动 = 改一个条件；测量 = 看很多基因表达变化；5000 维 = 本项目为了预测和比较而采用的一种常用特征表示。</b></p>
+  </div>
+
+  <div class="insight-box">
+    <p><b>为什么要做扰动实验？</b></p>
+    <ul>
+      <li><b>基础研究</b>：搞清楚每个基因到底干什么——敲掉它看会怎样</li>
+      <li><b>药物研发</b>：在细胞层面筛选候选药物——加药看哪些基因响应了</li>
+      <li><b>精准医疗</b>：预测某种治疗对特定患者细胞的效果——不同患者的细胞反应可能不同</li>
+      <li><b>合成生物学</b>：设计基因线路——改一个零件，看系统怎么变</li>
+    </ul>
+    <p>扰动实验的核心价值：<b>从"相关性"到"因果性"</b>。观察只能发现"A 和 B 同时变化"，扰动能证明"A 变化导致 B 变化"。</p>
+  </div>
+
+  <!-- ==================== 2.0.3 八大扰动类型 ==================== -->
+  <h3>2.0.3 扰动的完整分类——八大类型</h3>
+
+  <p>单细胞领域的扰动<b>远不止"基因"和"化学"两种</b>。下面是目前领域内的<b>八大类扰动</b>，从最常见到最前沿：</p>
+
+  <!-- ---- 类型 1：基因敲除 ---- -->
+  <div style="background:#e3f2fd;border-left:5px solid #1a73e8;border-radius:0 12px 12px 0;padding:20px;margin:20px 0;">
+    <h4 style="color:#1a73e8;margin:0 0 8px;">类型 1：基因敲除（Gene Knockout, KO）</h4>
+    <p><b>做了什么：</b>用 <b>CRISPR-Cas9</b> 工具<b>永久切断</b>某个基因的 DNA 序列，让它彻底失去功能。</p>
+    <p><b>工厂比喻：</b>把某本操作手册<b>撕碎扔掉</b>——这条流水线永远停工了。</p>
+    <p><b>扰动名长什么样：</b></p>
+    <ul style="font-family:monospace;font-size:0.9em;">
+      <li><code>TP53</code> — 敲除 TP53 基因（著名抑癌基因，敲掉后细胞更容易癌变）</li>
+      <li><code>ACSL3</code> — 敲除 ACSL3 基因（脂肪酸代谢相关）</li>
+      <li><code>CCT3+ctrl</code> — 敲除 CCT3（GEARS 数据集格式，+ctrl 表示单基因扰动）</li>
+    </ul>
+    <p><b>特点：</b>效果<b>永久、彻底、精准</b>——一次只动一个基因，非此即彼（要么敲掉，要么没敲）。</p>
+    <p><b>代表性实验技术：</b>Perturb-seq（2016, Dixit 等）、CROP-seq（2017, Datlinger 等）</p>
+    <p><b>代表性数据集：</b>Replogle 2022（~5000 个基因的大规模敲除筛选）</p>
+    <div style="background:#fff;border-radius:6px;padding:8px 12px;margin-top:8px;">
+      <b>SafeConf 状态：</b><span style="color:#1a73e8;font-weight:700;">主力数据源</span>。gene_main 线 5 个数据集（CuiHacohen2023, Frangieh, Lara_exvivo, Lara_invivo, Santinha）全部是基因敲除。
+    </div>
+  </div>
+
+  <!-- ---- 类型 2：基因敲低 ---- -->
+  <div style="background:#e8eaf6;border-left:5px solid #3f51b5;border-radius:0 12px 12px 0;padding:20px;margin:20px 0;">
+    <h4 style="color:#3f51b5;margin:0 0 8px;">类型 2：基因敲低（Gene Knockdown, KD）</h4>
+    <p><b>做了什么：</b>不是彻底删除基因，而是<b>降低它的表达量</b>。常用工具：</p>
+    <ul>
+      <li><b>CRISPRi</b>（CRISPR interference）：在基因的启动子上放一个"路障"（dCas9-KRAB），让转录机器过不去 → 表达量降低但不归零</li>
+      <li><b>shRNA / siRNA</b>：用小 RNA 分子"拦截"基因的 mRNA，在翻译前把它降解掉</li>
+    </ul>
+    <p><b>工厂比喻：</b>不是把操作手册撕碎，而是<b>把手册锁进柜子里</b>——工人还能偶尔借出来翻一下，但效率大大降低。</p>
+    <p><b>跟敲除的区别：</b></p>
+    <table style="font-size:0.92em;">
+      <tr><th></th><th>敲除 (KO)</th><th>敲低 (KD)</th></tr>
+      <tr><td>程度</td><td>100% 关闭</td><td>降低 50%-90%</td></tr>
+      <tr><td>可逆性</td><td>永久</td><td>通常可逆</td></tr>
+      <tr><td>致死基因</td><td>无法研究（敲掉就死了）</td><td>可以研究（降低到细胞能活的程度）</td></tr>
+    </table>
+    <p><b>代表性数据集：</b>Adamson 2016（CRISPRi 筛选）、PapalexiSatija 2021（ECCITE-seq 多模态）</p>
+    <div style="background:#fff;border-radius:6px;padding:8px 12px;margin-top:8px;">
+      <b>SafeConf 状态：</b><span style="color:#666;">未直接使用</span>。Adamson 数据集在仓库里存在但<b>不能伪造成 cross-context 数据</b>（context 种类不够），只能做辅助验证。
+    </div>
+  </div>
+
+  <!-- ---- 类型 3：基因过表达/激活 ---- -->
+  <div style="background:#e0f2f1;border-left:5px solid #009688;border-radius:0 12px 12px 0;padding:20px;margin:20px 0;">
+    <h4 style="color:#009688;margin:0 0 8px;">类型 3：基因过表达 / 激活（Overexpression / CRISPRa）</h4>
+    <p><b>做了什么：</b>跟敲除/敲低相反——<b>强制提高</b>某个基因的表达量。常用工具：</p>
+    <ul>
+      <li><b>CRISPRa</b>（CRISPR activation）：在基因启动子上放一个"加速器"（dCas9-VP64/p65），让转录机器疯狂工作</li>
+      <li><b>ORF 过表达</b>：直接往细胞里塞一段额外的基因拷贝（用慢病毒载体等）</li>
+    </ul>
+    <p><b>工厂比喻：</b>不是关掉流水线，而是<b>给流水线加了三倍的工人</b>——产量暴增，但可能导致库存积压、其他流水线被挤占资源。</p>
+    <p><b>为什么重要：</b>很多疾病是因为某个基因<b>过度活跃</b>（比如癌基因 MYC 过表达），不是因为基因缺失。要研究这类疾病，需要过表达实验。</p>
+    <p><b>例子：</b><code>CRISPRa-MYC</code>（激活 MYC 癌基因）、<code>ORF-EGFR</code>（过表达表皮生长因子受体）</p>
+    <div style="background:#fff;border-radius:6px;padding:8px 12px;margin-top:8px;">
+      <b>SafeConf 状态：</b><span style="color:#666;">理论可支持，当前无此类数据集</span>。如果有过表达数据，SafeConf 的三条线索仍然适用——context_similarity 和 support_count 的逻辑不变。
+    </div>
+  </div>
+
+  <!-- ---- 类型 4：化学/药物扰动 ---- -->
+  <div style="background:#fff7ed;border-left:5px solid #c55a11;border-radius:0 12px 12px 0;padding:20px;margin:20px 0;">
+    <h4 style="color:#c55a11;margin:0 0 8px;">类型 4：化学/药物扰动（Chemical / Drug Perturbation）</h4>
+    <p><b>做了什么：</b>往细胞培养皿里<b>加入一种化学物质</b>（小分子药物、天然产物、化合物等），观察细胞基因表达的变化。</p>
+    <p><b>工厂比喻：</b>往工厂的通风管道里<b>灌入一种气体</b>——不是拆某条流水线，而是整个工厂的空气都变了，哪些流水线受影响取决于气体的化学性质。</p>
+    <p><b>扰动名长什么样：</b></p>
+    <ul style="font-family:monospace;font-size:0.9em;">
+      <li><code>Trametinib</code> — 曲美替尼（MEK 抑制剂，抗癌药）</li>
+      <li><code>Navitoclax@5.0uM</code> — 纳维托拉克斯，浓度 5 微摩尔（BCL-2 抑制剂）</li>
+      <li><code>Pralsetinib@0.05uM</code> — 普雷西尼布，浓度 0.05 微摩尔（RET 抑制剂）</li>
+      <li><code>Dabrafenib</code> — 达拉非尼（BRAF 抑制剂）</li>
+    </ul>
+    <p><b>跟基因扰动的关键区别：</b></p>
+    <table style="font-size:0.92em;">
+      <tr><th></th><th>基因扰动</th><th>化学扰动</th></tr>
+      <tr><td>靶点</td><td>精确到 1 个基因</td><td>可能同时影响多条通路</td></tr>
+      <tr><td>剂量</td><td>全有或全无</td><td><b>有浓度梯度</b>（0.01μM → 10μM）</td></tr>
+      <tr><td>时间</td><td>效果通常稳定</td><td><b>有时间维度</b>（6h vs 24h 效果不同）</td></tr>
+      <tr><td>可逆性</td><td>KO 不可逆</td><td>洗掉药物后通常可逆</td></tr>
+      <tr><td>预测难度</td><td>相对容易</td><td><b>更难</b>——变量更多</td></tr>
+    </table>
+    <p><b>代表性实验技术：</b>sci-Plex（2020, Srivatsan 等，一次能测上百种药物×多种浓度）</p>
+    <p><b>代表性预测模型：</b>CPA（Lotfollahi 2023）、chemCPA（Hetzel 2022）——专门处理化学扰动的预测模型</p>
+    <div style="background:#fff;border-radius:6px;padding:8px 12px;margin-top:8px;">
+      <b>SafeConf 状态：</b><span style="color:#c55a11;font-weight:700;">chem_robust 线</span>。McFarland（13 种抗癌药 × 171 种细胞系）和 Srivatsan_sciplex3（多种化合物 × 多浓度）。<br>
+      <b>但有大问题：</b>McFarland 的药物+剂量+时间混杂太严重，SafeConf 在上面<b>完全失败</b>（ρ = -0.086）。
+    </div>
+  </div>
+
+  <!-- ---- 类型 5：组合扰动 ---- -->
+  <div style="background:#fce4ec;border-left:5px solid #e91e63;border-radius:0 12px 12px 0;padding:20px;margin:20px 0;">
+    <h4 style="color:#e91e63;margin:0 0 8px;">类型 5：组合扰动（Combinatorial Perturbation）</h4>
+    <p><b>做了什么：</b><b>同时</b>对两个或多个基因做扰动，观察它们的<b>联合效应</b>是否等于单独效应之和。</p>
+    <p><b>工厂比喻：</b>同时拆掉两条流水线——效果可能是 1+1=2（加性的），也可能是 1+1=10（协同效应），甚至 1+1=0（互相抵消）。这种<b>非加性的交互效应</b>（epistasis / synergy）是生物学最想知道的。</p>
+    <p><b>扰动名长什么样：</b></p>
+    <ul style="font-family:monospace;font-size:0.9em;">
+      <li><code>TP53+BRCA1</code> — 同时敲除 TP53 和 BRCA1</li>
+      <li><code>CBL+CNN1</code>、<code>FOSB+UBASH3B</code> — Norman 2019 数据集中的组合</li>
+    </ul>
+    <p><b>为什么特别难预测：</b></p>
+    <ul>
+      <li>假设有 100 个基因，单基因扰动有 100 种；双基因组合就有 100×99/2 = <b>4,950 种</b></li>
+      <li>实验不可能全做，必须靠模型预测没做过的组合 → 这正是 GEARS 模型的核心目标</li>
+      <li>对 SafeConf 来说，组合扰动的 support_count 极低（历史上同一组合几乎没出现过），打分很困难</li>
+    </ul>
+    <p><b>代表性数据集：</b>Norman 2019（~100 种双基因组合扰动）</p>
+    <p><b>代表性预测模型：</b>GEARS（Roohani 2023）——专门预测组合扰动效应的图神经网络模型</p>
+    <div style="background:#fff;border-radius:6px;padding:8px 12px;margin-top:8px;">
+      <b>SafeConf 状态：</b><span style="color:#666;">当前不支持</span>。Norman 数据集在仓库里存在但不能伪造成 cross-context 数据集——它只有 1 种 context（K562 细胞系），无法计算 context_similarity。
+    </div>
+  </div>
+
+  <!-- ---- 类型 6：表观遗传扰动 ---- -->
+  <div style="background:#f3e5f5;border-left:5px solid #9c27b0;border-radius:0 12px 12px 0;padding:20px;margin:20px 0;">
+    <h4 style="color:#9c27b0;margin:0 0 8px;">类型 6：表观遗传扰动（Epigenetic Perturbation）</h4>
+    <p><b>做了什么：</b>不改变基因的 DNA 序列本身，而是修改基因上面的<b>"开关标记"</b>。这些标记决定了基因是"打开"还是"关闭"的。</p>
+    <p><b>工厂比喻：</b>不是撕操作手册，也不是换调料，而是<b>改变手册上的便签纸</b>——手册内容没变，但便签写着"暂停使用"或"优先使用"，控制手册会不会被翻。</p>
+    <p><b>常用工具：</b></p>
+    <ul>
+      <li><b>dCas9-KRAB</b>（CRISPRi 的底层机制）：在基因启动子上留下抑制标记 → 基因沉默</li>
+      <li><b>DNA 甲基化编辑</b>：直接在特定位置加/去甲基 → 永久改变基因的开关状态</li>
+      <li><b>组蛋白修饰</b>：改变 DNA 缠绕的蛋白质上的化学标记 → 改变染色质结构</li>
+    </ul>
+    <p><b>跟基因敲除的区别：</b>基因敲除是"把手册撕了"（DNA 被切了），表观遗传是"把手册封存了"（DNA 完好，但没人来读）。效果可能类似，但机制完全不同，而且<b>通常可逆</b>。</p>
+    <div style="background:#fff;border-radius:6px;padding:8px 12px;margin-top:8px;">
+      <b>SafeConf 状态：</b><span style="color:#666;">当前不涉及</span>。但从原理上看，如果有 scRNA-seq 数据，SafeConf 的评估框架仍然适用。
+    </div>
+  </div>
+
+  <!-- ---- 类型 7：配体/细胞因子刺激 ---- -->
+  <div style="background:#e0f7fa;border-left:5px solid #00bcd4;border-radius:0 12px 12px 0;padding:20px;margin:20px 0;">
+    <h4 style="color:#00838f;margin:0 0 8px;">类型 7：配体/细胞因子刺激（Ligand / Cytokine Stimulation）</h4>
+    <p><b>做了什么：</b>往培养基里加入<b>天然信号分子</b>（蛋白质），模拟细胞在体内收到的"命令"。</p>
+    <p><b>工厂比喻：</b>不是拆流水线也不是倒化学品，而是<b>给工厂发了一封紧急通知</b>——"总部要求转产口罩"。工厂收到通知后，自主调整哪些流水线开工、哪些停工。</p>
+    <p><b>跟化学扰动的区别：</b></p>
+    <ul>
+      <li>化学扰动（小分子药物）通常<b>穿透细胞膜</b>直接作用于细胞内部</li>
+      <li>配体/细胞因子<b>结合在细胞表面的受体上</b>，通过信号转导通路间接影响基因表达</li>
+      <li>这更接近细胞在体内的真实情况——免疫细胞靠细胞因子互相通信</li>
+    </ul>
+    <p><b>例子：</b></p>
+    <ul style="font-family:monospace;font-size:0.9em;">
+      <li><code>IFN-γ</code> — 干扰素 γ（激活免疫应答）</li>
+      <li><code>TNF-α</code> — 肿瘤坏死因子 α（促炎信号）</li>
+      <li><code>TGF-β</code> — 转化生长因子 β（促进纤维化）</li>
+    </ul>
+    <div style="background:#fff;border-radius:6px;padding:8px 12px;margin-top:8px;">
+      <b>SafeConf 状态：</b><span style="color:#666;">当前不涉及</span>。但这类扰动在免疫学单细胞研究中非常常见，是未来可能的扩展方向。
+    </div>
+  </div>
+
+  <!-- ---- 类型 8：物理扰动 ---- -->
+  <div style="background:#efebe9;border-left:5px solid #795548;border-radius:0 12px 12px 0;padding:20px;margin:20px 0;">
+    <h4 style="color:#795548;margin:0 0 8px;">类型 8：物理扰动（Physical Perturbation）</h4>
+    <p><b>做了什么：</b>用<b>物理手段</b>改变细胞的环境条件。</p>
+    <p><b>工厂比喻：</b>不是改手册也不是加化学品，而是<b>给工厂断电、调温度、或者地震</b>——外部环境变了，工厂被迫应急响应。</p>
+    <p><b>例子：</b></p>
+    <ul>
+      <li><b>热休克</b>（heat shock）：突然升温到 42°C → 细胞启动热休克蛋白（HSP）保护程序</li>
+      <li><b>辐射</b>（radiation）：用紫外线或 X 射线照射 → 造成 DNA 损伤，触发修复通路</li>
+      <li><b>机械力</b>（mechanical stress）：挤压、拉伸细胞 → 改变细胞骨架和机械敏感基因</li>
+      <li><b>缺氧</b>（hypoxia）：降低氧气浓度 → 细胞切换到缺氧代谢模式</li>
+    </ul>
+    <div style="background:#fff;border-radius:6px;padding:8px 12px;margin-top:8px;">
+      <b>SafeConf 状态：</b><span style="color:#666;">当前不涉及</span>。物理扰动的单细胞数据较少，且难以标准化（"升温 2 度"和"升温 5 度"的差异跟剂量类似但更难控制）。
+    </div>
+  </div>
+
+  <!-- ==================== 2.0.4 总览图 ==================== -->
+  <h3>2.0.4 一张图看全八大类</h3>
+
+  <table>
+    <tr>
+      <th>类型</th><th>干了什么</th><th>工具</th><th>精度</th><th>可逆？</th><th>代表数据集</th><th>SafeConf</th>
+    </tr>
+    <tr style="background:#e3f2fd;">
+      <td><b>1. 基因敲除 KO</b></td><td>切断基因 DNA</td><td>CRISPR-Cas9</td><td>单基因</td><td>不可逆</td><td>Replogle 2022, Frangieh 2021</td><td style="color:var(--green);font-weight:700;">主力</td>
+    </tr>
+    <tr style="background:#e8eaf6;">
+      <td><b>2. 基因敲低 KD</b></td><td>降低表达量</td><td>CRISPRi / shRNA</td><td>单基因</td><td>可逆</td><td>Adamson 2016, Papalexi 2021</td><td style="color:#666;">辅助</td>
+    </tr>
+    <tr style="background:#e0f2f1;">
+      <td><b>3. 过表达 OE</b></td><td>强制提高表达</td><td>CRISPRa / ORF</td><td>单基因</td><td>可逆</td><td>Joung 2023 (CRISPRa screen)</td><td style="color:#666;">未用</td>
+    </tr>
+    <tr style="background:#fff7ed;">
+      <td><b>4. 化学/药物</b></td><td>加入化合物</td><td>药物处理</td><td>多通路</td><td>可逆</td><td>McFarland 2020, sci-Plex 2020</td><td style="color:#c55a11;font-weight:700;">副线</td>
+    </tr>
+    <tr style="background:#fce4ec;">
+      <td><b>5. 组合扰动</b></td><td>同时动多个基因</td><td>CRISPR 多靶</td><td>多基因</td><td>不可逆</td><td>Norman 2019</td><td style="color:#666;">不支持</td>
+    </tr>
+    <tr style="background:#f3e5f5;">
+      <td><b>6. 表观遗传</b></td><td>改"开关标记"</td><td>dCas9-KRAB 等</td><td>单位点</td><td>可逆</td><td>专项研究</td><td style="color:#666;">不涉及</td>
+    </tr>
+    <tr style="background:#e0f7fa;">
+      <td><b>7. 配体/细胞因子</b></td><td>加信号分子</td><td>蛋白添加</td><td>通路级</td><td>可逆</td><td>免疫学数据集</td><td style="color:#666;">不涉及</td>
+    </tr>
+    <tr style="background:#efebe9;">
+      <td><b>8. 物理扰动</b></td><td>改环境条件</td><td>温度/辐射等</td><td>全局</td><td>视情况</td><td>较少</td><td style="color:#666;">不涉及</td>
+    </tr>
+  </table>
+
+  <div class="insight-box">
+    <p><b>再把“扰动”和“5000 基因”分清楚：</b></p>
+    <ul>
+      <li><b>扰动对象</b>：你动了什么。可能是一个基因、一个药物、两个基因组合，或者一个外界刺激。</li>
+      <li><b>测量对象</b>：细胞怎么回应。通常用转录组（transcriptome，也就是很多基因的表达量）来观察。</li>
+      <li><b>表示方式</b>：为了让模型能算，最后会把回应整理成一个向量（vector）。本手册里常说的 5000 维，就是“选 5000 个基因组成的向量”。</li>
+    </ul>
+    <p>因此，“单基因敲除”说的是你只改了一个基因；“5000 维向量”说的是你观察了 5000 个基因的变化。这两个不是一回事。</p>
+  </div>
+
+  <div class="warn">
+    <b>SafeConf 当前只覆盖了类型 1（基因敲除）和类型 4（化学药物）。</b>这是因为：(1) 这两类有高质量的跨 context 公开数据；(2) 学术论文聚焦在这两类的预测问题上最多。但<b>整个扰动预测领域远比这两类丰富</b>——跟老师讨论时，要展示你了解全貌，而不是只知道自己用到的那一块。
+  </div>
+
+  <!-- ==================== 2.0.5 测量技术 ==================== -->
+  <h3>2.0.5 扰动实验是怎么做的？——三大技术平台</h3>
+
+  <p>光做扰动不够，还要能<b>在单细胞层面测量</b>扰动效应。这需要把"做扰动"和"测转录组"结合起来的专门技术：</p>
+
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin:16px 0;">
+    <div style="flex:1;min-width:280px;background:#fff;border:2px solid #1a73e8;border-radius:12px;padding:16px;">
+      <h4 style="color:#1a73e8;margin:0 0 8px;">Perturb-seq</h4>
+      <p><b>发明者：</b>Dixit 等 (2016)</p>
+      <p><b>原理：</b>CRISPR 扰动 + 10x Genomics 单细胞测序。每个细胞里有一个"条形码"，标记它被哪个 sgRNA 打了（即被敲除了哪个基因）。</p>
+      <p><b>类比：</b>给每个工厂工人发一张工牌，写着"你被关掉了 X 流水线"。查验时既能看到工牌（知道做了什么扰动），又能看到产量报表（基因表达）。</p>
+      <p><b>规模：</b>一次实验可测 ~10,000 个细胞 × 几十到上百种扰动</p>
+    </div>
+    <div style="flex:1;min-width:280px;background:#fff;border:2px solid #c55a11;border-radius:12px;padding:16px;">
+      <h4 style="color:#c55a11;margin:0 0 8px;">sci-Plex</h4>
+      <p><b>发明者：</b>Srivatsan 等 (2020)</p>
+      <p><b>原理：</b>用"核散列"（nuclear hashing）技术，把不同药物处理的细胞混在一起测序。每种药物处理的细胞有独特的化学标记。</p>
+      <p><b>类比：</b>给不同工厂（不同药物处理）的产品贴不同颜色的标签，混在一条传送带上检测，最后按颜色分拣。</p>
+      <p><b>规模：</b>一次能测 <b>188 种化合物 × 多种剂量 × 3 种细胞系</b> ≈ 上百万条记录</p>
+    </div>
+    <div style="flex:1;min-width:280px;background:#fff;border:2px solid #9c27b0;border-radius:12px;padding:16px;">
+      <h4 style="color:#9c27b0;margin:0 0 8px;">ECCITE-seq</h4>
+      <p><b>发明者：</b>Papalexi &amp; Satija 等 (2021)</p>
+      <p><b>原理：</b>在 CRISPR 扰动的基础上，<b>同时测量</b>多种模态——RNA 表达、蛋白质表面标记（CITE-seq）、sgRNA 身份。</p>
+      <p><b>类比：</b>不仅看工厂的产量报表，还同时检查工厂大门的招牌（表面蛋白）和工人手上的工牌（扰动标记）。</p>
+      <p><b>特点：</b>多模态数据，能更全面地理解扰动效应</p>
+    </div>
+  </div>
+
+  <!-- ==================== 2.0.6 预测问题 ==================== -->
+  <h3>2.0.6 "扰动预测"到底在预测什么？</h3>
+
+  <p>做完扰动实验，自然会问：<b>能不能不做实验，直接用计算方法预测扰动效应？</b></p>
+
+  <div class="step-flow">
+    <div class="step-item" data-step="1">
+      <b>已知</b>：在细胞类型 A、B、C 里做了扰动 X 的实验，测到了真实效应
+    </div>
+    <div class="step-item" data-step="2">
+      <b>想预测</b>：在细胞类型 D（没做过实验的新环境）里，扰动 X 的效应会是什么？
+    </div>
+    <div class="step-item" data-step="3">
+      <b>核心难题</b>：细胞类型 D 和 A/B/C 有多像？扰动 X 在不同背景下的效果有多稳定？如果 D 很独特，还能预测准吗？
+    </div>
+    <div class="step-item" data-step="4">
+      <b>SafeConf 的定位</b>：不回答"预测值是多少"，而是回答"这次预测<b>可不可信</b>"——不管你用什么预测模型
+    </div>
+  </div>
+
+  <p><b>领域内主流预测模型（你跟老师讨论时可能会提到的名字）：</b></p>
+  <table style="font-size:0.92em;">
+    <tr><th>模型</th><th>擅长什么扰动</th><th>核心思路</th></tr>
+    <tr><td><b>scGen</b> (Lotfollahi 2019)</td><td>基因 / 化学</td><td>用 VAE 学一个"扰动向量"，在潜空间里做加减法</td></tr>
+    <tr><td><b>CPA</b> (Lotfollahi 2023)</td><td>化学（有剂量）</td><td>分解"细胞状态"和"扰动效应"为独立表示</td></tr>
+    <tr><td><b>chemCPA</b> (Hetzel 2022)</td><td>化学（用分子结构）</td><td>CPA + 药物分子指纹，能预测没见过的药物</td></tr>
+    <tr><td><b>GEARS</b> (Roohani 2023)</td><td>基因（含组合）</td><td>用基因调控网络的图结构预测组合扰动效应</td></tr>
+    <tr><td><b>scFoundation</b> 等基础模型</td><td>通用</td><td>大规模预训练 → 下游扰动预测微调</td></tr>
+  </table>
+
+  <div class="insight-box">
+    <p><b>SafeConf 和这些模型的关系：</b>SafeConf <b>不是</b>这些模型的竞争者。它是一个<b>评估层</b>——不管你用上面哪个模型做预测，SafeConf 都可以给你的预测结果打可信度分数。这就是"predictor-agnostic"（与预测器无关）的含义。</p>
+  </div>
+
+  <!-- ==================== 2.0.7 SafeConf 用了哪些 ==================== -->
+  <h3>2.0.7 回到 SafeConf——我们具体用了哪些数据？</h3>
+
+  <p>了解了全貌之后，再看 SafeConf 当前使用的 7 个数据集：</p>
+
+  <table>
+    <tr>
+      <th>数据集</th><th>扰动类型</th><th>具体做了什么</th><th>context（背景）</th><th>任务数</th><th>扰动举例</th>
+    </tr>
+    <tr style="background:#e3f2fd;">
+      <td><b>CuiHacohen2023</b></td><td>基因 KO</td><td>CRISPR 敲除免疫相关基因</td><td>多种免疫细胞类型</td><td>2506</td><td>TP53, BRCA1, MYC</td>
+    </tr>
+    <tr style="background:#e3f2fd;">
+      <td><b>Frangieh 2021</b></td><td>基因 KO</td><td>CRISPR 筛选黑色素瘤免疫逃逸基因</td><td>共培养条件</td><td>1266</td><td>ACSL3, CD58, PFN1</td>
+    </tr>
+    <tr style="background:#e3f2fd;">
+      <td><b>Lara_exvivo</b></td><td>基因 KO</td><td>CRISPR 敲除白血病相关基因</td><td>白血病细胞亚型（体外）</td><td>646</td><td>RUNX1, FLT3, NPM1</td>
+    </tr>
+    <tr style="background:#e3f2fd;">
+      <td><b>Lara_invivo</b></td><td>基因 KO</td><td>同上，但在活体小鼠体内</td><td>体内细胞亚型</td><td>750</td><td>同上</td>
+    </tr>
+    <tr style="background:#e3f2fd;">
+      <td><b>Santinha 2023</b></td><td>基因 KO</td><td>CRISPR 敲除</td><td>细胞类型</td><td>546</td><td>基因扰动</td>
+    </tr>
+    <tr style="background:#fff7ed;">
+      <td><b>McFarland 2020</b></td><td>化学</td><td>13 种抗癌药处理</td><td>171 种癌症细胞系</td><td>2326</td><td>Trametinib 0.1μM, Navitoclax 5μM</td>
+    </tr>
+    <tr style="background:#fff7ed;">
+      <td><b>Srivatsan_sciplex3</b></td><td>化学</td><td>多种药物 × 多浓度（sci-Plex）</td><td>细胞系</td><td>1128</td><td>多种化合物 + 不同浓度</td>
+    </tr>
+  </table>
+
+  <div class="warn">
+    <b>为什么只用了这 7 个？</b>不是因为别的扰动类型不重要，而是因为 SafeConf 需要<b>跨 context 的数据</b>——同一扰动在不同细胞背景下都做过实验。很多数据集（如 Norman 2019）只有 1 种 context，无法计算 context_similarity。这是数据限制，不是方法限制。
+  </div>
+
+  <!-- ==================== 2.0.8 三个关键问题 ==================== -->
+  <h3>2.0.8 三个你一定会问的问题</h3>
+
+  <details open>
+    <summary style="font-weight:700;cursor:pointer;font-size:1.05em;">问题 1：SafeConf 能不能在实验前就打分？</summary>
+    <div style="padding:12px 0;">
+      <p><b>答案：几乎可以。</b></p>
+      <table>
+        <tr><th>线索</th><th>需要什么</th><th>需要跑用户模型？</th></tr>
+        <tr><td>context_similarity</td><td>历史 context 表达谱</td><td style="color:var(--green);font-weight:700;">不需要</td></tr>
+        <tr><td>log_support</td><td>历史扰动出现次数</td><td style="color:var(--green);font-weight:700;">不需要</td></tr>
+        <tr><td>model_disagreement</td><td>SafeConf 内置的 V0/CS 预测器跑一遍</td><td style="color:var(--orange);font-weight:700;">不需要用户模型，但需要跑 SafeConf 自带的简单预测器</td></tr>
+      </table>
+      <p>质检员不需要等厨师把菜做出来——看到订单"北京分店做宫保鸡丁"，就能根据历史记录打分。<b>质检发生在出菜之前。</b></p>
+    </div>
+  </details>
+
+  <details open>
+    <summary style="font-weight:700;cursor:pointer;font-size:1.05em;">问题 2：分数打在哪里？</summary>
+    <div style="padding:12px 0;">
+      <p>打在<b>每个 (context, perturbation) 组合</b>上——即"在这家分店做这道菜"这个<b>具体任务</b>。</p>
+      <p>不是给整个数据集打一个分，也不是给某个模型打一个分。是给<b>每一条具体的预测任务</b>打分。比如：</p>
+      <ul>
+        <li>"在 Co-culture 环境里敲除 ACSL3" → 一个分数</li>
+        <li>"在 Mono-culture 环境里敲除 ACSL3" → 另一个分数（context 不同）</li>
+        <li>"在 Co-culture 环境里敲除 TP53" → 又一个分数（perturbation 不同）</li>
+      </ul>
+    </div>
+  </details>
+
+  <details open>
+    <summary style="font-weight:700;cursor:pointer;font-size:1.05em;">问题 3：数据越多越好吗？</summary>
+    <div style="padding:12px 0;">
+      <p><b>不一定。数据的"质量"比"数量"更重要。</b></p>
+      <table>
+        <tr><th>情况</th><th>更多数据的好处</th><th>但是……</th></tr>
+        <tr>
+          <td>同一数据集内更多 context</td>
+          <td>context_similarity 更有区分力</td>
+          <td>如果 context 只有 1-2 种，再多扰动也没用</td>
+        </tr>
+        <tr>
+          <td>跨数据集更多数据集</td>
+          <td>验证泛化能力</td>
+          <td>McFarland 有 2326 条（最多），但 SafeConf <b>完全失败</b>（ρ = -0.086）</td>
+        </tr>
+        <tr>
+          <td>外部大数据集</td>
+          <td>扩大历史资料库</td>
+          <td>batch effect 可能引入噪音而非信号</td>
+        </tr>
+      </table>
+      <p><b>McFarland 的教训：</b>数据量最大（2326 条 × 171 种细胞系 × 13 种药物），结果最差。原因不是数据太少，而是药物+剂量+时间的混杂因素太复杂。<b>结论：context 种类多、扰动类型匹配、混杂因素少，比单纯数量更重要。</b></p>
+    </div>
+  </details>
+
+  <div class="know">
+    <ul>
+      <li><b>扰动</b>是单细胞研究的核心概念——对细胞做故意干预，然后测量基因表达变化</li>
+      <li>领域内有<b>八大类扰动</b>：基因敲除、敲低、过表达、化学药物、组合扰动、表观遗传、配体刺激、物理扰动</li>
+      <li>SafeConf 当前覆盖<b>基因敲除</b>（5 个数据集）和<b>化学药物</b>（2 个数据集），这是因为数据限制而非方法限制</li>
+      <li>扰动预测领域有 scGen、CPA、GEARS 等模型——SafeConf 不是它们的竞争者，而是给它们的预测结果做<b>可信度评估</b></li>
+      <li>SafeConf 可以<b>在用户跑模型之前</b>就打分，分数打在每个 (context, perturbation) 任务上</li>
+      <li>数据<b>不是越多越好</b>——McFarland 数据量最大但效果最差</li>
+    </ul>
+  </div>
+
+  <div class="summary-box">扰动 = 对细胞的故意干预，有八大类。SafeConf 只覆盖了其中两类（基因敲除 + 化学药物），但评估框架是通用的。跟老师讨论时，展示你了解整个领域的全貌。</div>
+
+  <hr style="border:none;border-top:1px dashed var(--border);margin:24px 0;">
+
+  <h2>2.1 输入：h5ad 文件</h2>
+  <p>每个数据集是一个 <span class="en">h5ad</span> 文件。你可以把它想象成一张巨大的电子表格：</p>
+  <ul>
+    <li><b>行</b> = 细胞（一个个顾客）——通常几千到几万行</li>
+    <li><b>列</b> = 基因（菜品维度）——选 top 5000 个基因</li>
+    <li><b>元信息</b> = 这个细胞属于哪个分店（context）、接受了什么菜品（perturbation）、是不是对照组（control）</li>
+  </ul>
+
+  <h2>2.2 中间产物：PredictionRecord</h2>
+  <p>两个厨师（V0 和 ContextSim）各自对每个 (分店, 菜品) 组合做一遍预测后，产出一张记录表：</p>
+  <table>
+    <tr><th>字段</th><th>含义</th><th>餐厅比喻</th></tr>
+    <tr><td><code>record_id</code></td><td>唯一编号</td><td>这张答卷的编号</td></tr>
+    <tr><td><code>dataset_name</code></td><td>数据集名</td><td>哪座城市</td></tr>
+    <tr><td><code>fold</code></td><td>第几折</td><td>第几轮考试</td></tr>
+    <tr><td><code>split</code></td><td>训练/验证/测试</td><td>练习题还是正式考题</td></tr>
+    <tr><td><code>context</code></td><td>细胞背景</td><td>哪家分店</td></tr>
+    <tr><td><code>perturbation</code></td><td>扰动名</td><td>哪道菜</td></tr>
+    <tr><td><code>predictor</code></td><td>预测器名</td><td>哪个厨师</td></tr>
+    <tr><td><code>true_error_rmse</code></td><td>预测误差</td><td>这道菜的投诉率</td></tr>
+  </table>
+
+  <h2>2.3 输出：质检评分</h2>
+  <p>SafeConf 对每条 PredictionRecord 计算三条线索，套用冻结公式，输出一个 <span class="en">confidence_score</span>。</p>
+  <div class="warn">
+    <strong>再次强调：</strong>confidence_score 不是 [0, 1] 的百分比。它是三个 z-score 的加减结果，可以是 +2.5、-0.3 或任何实数。<b>正数越大越可信，负数越小越危险。</b>
+  </div>
+
+  <h2>2.4 训练/测试怎么切：held-out pair split</h2>
+  <div class="metaphor">
+    假设连锁餐厅有 3 个分店（A/B/C）和 4 道菜（甲/乙/丙/丁）。不是所有组合都有数据。<br><br>
+    测试集规则：被选为测试的 (分店, 菜品) 组合——比如 (A, 丙)——在训练集里<b>不能出现</b>。但分店 A 做过别的菜（如 A+甲），菜品丙在别的分店做过（如 B+丙）。<br><br>
+    这保证了：你在测试一个"没见过的组合"，但你对这家分店和这道菜各自都有一些经验。
+  </div>
+
+  <h2>2.5 防泄漏铁律 L1-L4</h2>
+  <table>
+    <tr><th>规则</th><th>内容</th><th>餐厅比喻</th></tr>
+    <tr><td>L1</td><td>test pair ∉ train/val</td><td>考过的题不能再出现在练习册里</td></tr>
+    <tr><td>L2</td><td>test 的 perturbation 在 train 别处出现</td><td>这道菜在别的分店做过</td></tr>
+    <tr><td>L3</td><td>test 的 context 在 train 别处出现</td><td>这家分店做过别的菜</td></tr>
+    <tr><td>L4</td><td>feature 计算只能用 fold-train 的统计量</td><td>质检员只能看训练集的历史记录，不能偷看考试答案</td></tr>
+  </table>
+
+  <div class="know">
+    <ul>
+      <li>输入是 h5ad 文件（细胞×基因矩阵 + 元信息）</li>
+      <li>中间产物是 PredictionRecord（每行 = 一次预测的成绩单）</li>
+      <li>输出是 confidence_score（z-score 之和，不是百分比）</li>
+      <li>held-out pair split 确保测试集的 (分店,菜品) 组合没被训练过</li>
+      <li>L1-L4 铁律防止信息泄漏</li>
+    </ul>
+  </div>
+
+  <div class="summary-box">SafeConf 吃进 h5ad 文件，中间产出 PredictionRecord，最终输出每条预测的质检评分。</div>
+</div>
+
+<!-- ============================================================ -->
+<!--                      第 3 章                                  -->
+<!-- ============================================================ -->
+<div class="chapter" id="ch3">
+  <h1><span class="nav-num">3</span>三条质检线索怎么工作</h1>
+  <div class="chapter-goal">目标：理解 v0.2 冻结公式的三个特征是什么、怎么算、怎么合成。</div>
+
+  <h2>线索 1：分店熟悉度（context_similarity）</h2>
+  <div class="metaphor">
+    <b>这家分店跟我们见过的分店有多像？</b><br>
+    如果一家新分店的顾客口味跟某家老分店非常接近，那老分店的经验就能借鉴——预测更有把握。反之，如果这家分店很"独特"，跟谁都不像，那预测就不太靠谱。
+  </div>
+  <p><b>计算方法：</b>取当前 context 的基因表达 profile，跟 fold-train 中所有 context 的 profile 算余弦相似度（cosine similarity），取最大值。</p>
+  <p><b>关键约束：</b>只跟 <b>fold-train</b> 中的 context 比较，绝不偷看测试集——这是 L4 规则。</p>
+
+  <h2>线索 2：菜品出现次数（log_support）</h2>
+  <div class="metaphor">
+    <b>这道菜在历史上被做过多少次？</b><br>
+    一道被 100 家分店做过的招牌菜，大家对它的效果很熟悉，预测自然准。一道只在 1 家分店出现过的新菜，数据太少，预测就不太靠谱。
+  </div>
+  <p><b>计算方法：</b><code>log2(该 perturbation 在 fold-train 中出现的次数 + 1)</code>。取对数是因为从 1 次到 10 次的信息增益比从 100 次到 110 次大得多。</p>
+
+  <h2>线索 3：厨师分歧（model_disagreement）</h2>
+  <div class="metaphor">
+    <b>两个参考厨师对这道菜的做法差异有多大？</b><br>
+    如果均值厨师（V0）和相似厨师（ContextSim）做出来的菜味道差不多，说明"大家对这道菜的做法共识高"，预测可能比较准。如果两人做出来的差别巨大，说明"这道菜有争议"，谁的预测都不太靠谱。
+  </div>
+  <p><b>计算方法：</b><code>RMSE(V0 的预测向量, ContextSim 的预测向量)</code>。两个 5000 维向量之间的均方根误差。</p>
+  <p><b>注意：</b>分歧越<b>大</b>，风险越<b>高</b>。所以公式里是<b>减去</b>这条线索。</p>
+
+  <h2>z-score 标准化</h2>
+  <p>三条线索的原始值单位不同（相似度是 0-1、次数是整数、分歧是 RMSE），需要统一到同一个标尺。</p>
+  <div class="highlight-box">
+    <p><b>SafeConf 的 z-score 公式：</b><code>z = (值 - median) / IQR</code></p>
+    <p>其中 median = 中位数，IQR = 第 75 百分位 - 第 25 百分位（四分位距）。</p>
+    <p><b>为什么不用 mean/std？</b>因为生物数据里经常有极端异常值（比如某道菜的误差特别大），mean 和 std 会被异常值拉偏。median 和 IQR 对异常值更鲁棒（robust）——一个极端值不会影响中位数。</p>
+    <p><b>关键：</b>median 和 IQR 都只在 fold-train 上计算！测试集不参与。</p>
+  </div>
+
+  <h2>冻结公式 v0.2</h2>
+  <div class="number-card">
+    <b>gene_main 线（基因扰动数据集）：</b><br>
+    <code>质检评分 = z(context_similarity) + z(log_support) − z(model_disagreement)</code><br><br>
+    <b>chem_robust 线（化学扰动数据集）：</b><br>
+    <code>质检评分 = z(log_support) − z(model_disagreement)</code>
+  </div>
+
+  <div class="warn">
+    <strong>为什么化学线不含 context_similarity？</strong>不是因为数据缺失率高，而是因为化学扰动数据集（如 McFarland、Srivatsan）中不同 context 之间的差异模式不同于基因扰动数据集。在这些化学数据集上，context_similarity 这条线索没有稳定的区分能力。
+  </div>
+
+  <div class="error-box">
+    这个公式已经在 2026-05-23 <b>冻结</b>。在 Haber/Parekh/KCC 三个数据集上调好后锁死，其余数据集必须做 blind extension。不能再回头改权重！
+  </div>
+
+  <div class="know">
+    <ul>
+      <li>三条线索：分店像不像（context_similarity）、菜品见过几次（log_support）、两个厨师分歧多大（model_disagreement）</li>
+      <li>z-score 用 median/IQR 标准化，不是 mean/std</li>
+      <li>冻结公式 = z(像) + z(次) - z(歧)，化学线去掉 z(像)</li>
+      <li>所有计算只用 fold-train 数据，绝不偷看测试集</li>
+    </ul>
+  </div>
+
+  <div class="summary-box">SafeConf v0.2 = 三条线索的 z-score 加减，已冻结不可改。</div>
+</div>
+
+<!-- ============================================================ -->
+<!--                      第 4 章                                  -->
+<!-- ============================================================ -->
+<div class="chapter" id="ch4">
+  <h1><span class="nav-num">4</span>两个厨师是什么来头</h1>
+  <div class="chapter-goal">目标：理解 V0StrongBaseline 和 ContextSimBaseline 是什么、为什么需要它们。</div>
+
+  <h2>V0（均值厨师）—— V0StrongBaseline</h2>
+  <div class="metaphor">
+    <b>做法：</b>翻历史记录，看这道菜过去在所有分店的平均味道是什么，然后照着平均味道做。<br><br>
+    <b>例子：</b>"红烧肉"在历史上的 A/B/C 三家分店各做过一次。V0 查到三次的效果，算个平均值，当成本次的预测。<br><br>
+    <b>技术上：</b>对 fold-train 中该 perturbation 在所有 context 下的 true_effect 取平均。
+  </div>
+
+  <h2>CS（找相似厨师）—— ContextSimBaseline</h2>
+  <div class="metaphor">
+    <b>做法：</b>找跟当前分店最像的那家历史分店，看那里这道菜怎么做的，照搬过来。<br><br>
+    <b>例子：</b>要预测分店 D 做"红烧肉"。CS 发现 D 跟 B 最像（基因表达 profile 最接近），于是直接用 B 做"红烧肉"的效果当成 D 的预测。<br><br>
+    <b>技术上：</b>找 fold-train 中 context_similarity 最高的那个 (context, perturbation) 对，取其 true_effect。
+  </div>
+
+  <h2>为什么用这两个"简单厨师"？</h2>
+  <ul>
+    <li><b>不是 SafeConf 的"产品"。</b>它们不是 SafeConf 对外输出的预测——SafeConf 不做预测。</li>
+    <li><b>是内部工具。</b>V0 和 CS 只用来计算第三条线索 <span class="en">model_disagreement</span>（厨师分歧）。</li>
+    <li><b>predictor-agnostic 设计的关键。</b>SafeConf 不要求用户提供自己模型的内部信息。V0 和 CS 是 SafeConf 自带的参考基线，不依赖用户的模型。</li>
+    <li><b>足够简单。</b>它们的预测可以用训练集直接算出来，不需要训练深度学习模型。</li>
+  </ul>
+
+  <div class="know">
+    <ul>
+      <li>V0 = 查历史平均（均值厨师）</li>
+      <li>CS = 找最像的历史分店照搬（找相似厨师）</li>
+      <li>它们不是"SafeConf 做的预测"，是用来算"厨师分歧"的内部工具</li>
+      <li>这是 predictor-agnostic 设计的关键——不依赖用户的模型</li>
+    </ul>
+  </div>
+
+  <div class="summary-box">V0 和 CS 是 SafeConf 自带的两个参考厨师，只用来计算"厨师分歧"这条线索。</div>
+</div>
+
+<!-- ============================================================ -->
+<!--                      第 5 章                                  -->
+<!-- ============================================================ -->
+<div class="chapter" id="ch5">
+  <h1><span class="nav-num">5</span>完整数据流程——从原始数据到质检评分</h1>
+  <div class="chapter-goal">目标：看到数据怎么一步步变成 SafeConf 分数。</div>
+
+  <h2>5.1 流水线全景图</h2>
+
+  <div class="step-flow">
+    <div class="step-item" data-step="1">
+      <h3>原始数据（h5ad 文件）</h3>
+      <p><b>输入：</b>一个 h5ad 文件 = 一座城市的完整经营档案</p>
+      <p><b>内容：</b>细胞×基因矩阵（约 50,000 × 20,000），加上 obs 表记录每个细胞的 context、perturbation、是否 control</p>
+      <p><b>餐厅比喻：</b>某座城市的所有分店、所有菜品、所有顾客口味评价，全记在一个大本子里</p>
+    </div>
+    <div class="step-item" data-step="2">
+      <h3>数据预处理</h3>
+      <p><b>操作：</b>选出 top 5000 高变异基因、标注 context/perturbation/control、算每个 (context, perturbation) 组合的扰动效应</p>
+      <p><b>输出：</b>obs 表（约 50,000 行）+ 按 (context, perturbation) 聚合的效应向量</p>
+      <p><b>餐厅比喻：</b>整理登记簿——哪家分店、哪道菜、是不是对照组，每道菜的标准味道是什么</p>
+    </div>
+    <div class="step-item" data-step="3">
+      <h3>切分训练/测试集（held-out pair split）</h3>
+      <p><b>操作：</b>5 折交叉验证。按 perturbation 分层，确保 L1-L4 防泄漏规则</p>
+      <p><b>输出：</b>每折的 train/val/test 划分，每个 (context, perturbation) 对被分配到唯一一份</p>
+      <p><b>关键约束：</b>测试集的 (分店, 菜品) 组合在训练集里<b>不存在</b>。但分店和菜品各自在训练集别处出现过（L2/L3）</p>
+      <p><b>铁律触发：</b>L1（pair 不重复）、L2（perturbation 在 train 出现）、L3（context 在 train 出现）</p>
+    </div>
+    <div class="step-item" data-step="4">
+      <h3>两个厨师做菜（V0 + ContextSim 各预测一遍）</h3>
+      <p><b>操作：</b>V0 对每个测试 (context, perturbation) 算历史平均；CS 找最相似 context 的效应</p>
+      <p><b>输出：</b>每个 (context, perturbation) 得到 2 个预测向量（各 5000 维），加上 true_effect</p>
+      <p><b>关键约束：</b>V0 和 CS 只用 fold-train 的数据来预测</p>
+    </div>
+    <div class="step-item" data-step="5">
+      <h3>计算三条质检线索</h3>
+      <p><b>操作：</b></p>
+      <ul>
+        <li>context_similarity = max cosine sim(当前 context, fold-train 中所有 context)</li>
+        <li>log_support = log2(该 perturbation 在 fold-train 中出现次数 + 1)</li>
+        <li>model_disagreement = RMSE(V0 预测, CS 预测)</li>
+      </ul>
+      <p><b>输出：</b>ConfidenceFeatures 表（约 2,500 行 × 3 列线索值）</p>
+      <p><b>铁律触发：</b>L4——所有统计量只来自 fold-train</p>
+    </div>
+    <div class="step-item" data-step="6">
+      <h3>套用冻结公式 v0.2</h3>
+      <p><b>操作：</b>用 fold-train 上的 median/IQR 把三条线索 z-score 标准化，然后加减</p>
+      <p><b>公式：</b><code>质检评分 = z(context_similarity) + z(log_support) - z(model_disagreement)</code></p>
+      <p><b>输出：</b>每条 PredictionRecord 的 confidence_score</p>
+    </div>
+    <div class="step-item" data-step="7">
+      <h3>评估（和真实投诉率对比）</h3>
+      <p><b>操作：</b>把 confidence_score 跟 true_error_rmse 做 Spearman 相关、算 partial ρ（控制 magnitude）、RC@80%、enrichment</p>
+      <p><b>核心检验：</b>Spearman(confidence_score, true_error_rmse) &lt; 0 → 评分越高、误差越低 → 有用！</p>
+      <p><b>输出：</b>eval_summary.csv——包含所有评估指标</p>
+    </div>
+  </div>
+
+  <h2>5.2 数据格式变化对照表</h2>
+  <table>
+    <tr><th>阶段</th><th>数据格式</th><th>行数示例</th><th>餐厅比喻</th></tr>
+    <tr><td>原始</td><td>h5ad (cells × genes)</td><td>~50,000 × 5,000</td><td>每个顾客对每道菜的口味评价</td></tr>
+    <tr><td>预处理后</td><td>obs 表 (cell, context, perturbation, is_control)</td><td>~50,000 行</td><td>登记簿：哪个分店、哪道菜</td></tr>
+    <tr><td>PredictionRecord</td><td>CSV (record_id, dataset, fold, split, context, perturbation, predictor, true_error_rmse)</td><td>因数据集而异</td><td>每张答卷：一次预测的成绩单</td></tr>
+    <tr><td>ConfidenceFeatures</td><td>CSV (record_id, context_similarity, support_count, model_disagreement, ...)</td><td>同上</td><td>质检线索表：三条证据</td></tr>
+    <tr><td>最终输出</td><td>CSV (record_id, confidence_score)</td><td>同上</td><td>质检评分：每条预测的可信度</td></tr>
+  </table>
+
+  <div class="warn">
+    <b>每条记录都有分数，不是"挑最好的"。</b>数据集中<b>所有</b>测试集的 (context, perturbation) 组合都会被打分——不是选出一部分，也不是只给"好数据"打分。行数因数据集而异：CuiHacohen2023 有 2506 条、Frangieh 有 1266 条、Lara_exvivo 有 646 条……第 7 章主表的 7 个数据集各有各的记录数。SafeConf 对每一条测试记录都给出 confidence_score。
+  </div>
+
+  <div class="know">
+    <ul>
+      <li>7 步流水线：原始数据 → 预处理 → 切分 → 预测 → 算线索 → 套公式 → 评估</li>
+      <li>L4 铁律贯穿第 4-6 步：所有计算只用 fold-train 数据</li>
+      <li>数据从 ~50,000 行细胞级 → 聚合为 任务级（行数因数据集而异）→ 每行一个 confidence_score</li>
+      <li><b>所有</b>测试记录都被打分，不存在"只给好数据打分"的筛选</li>
+    </ul>
+  </div>
+
+  <div class="summary-box">数据流水线 = 7 步，从 h5ad 到 confidence_score，全程防泄漏。</div>
+</div>
+
+<!-- ============================================================ -->
+<!--                      第 6 章                                  -->
+<!-- ============================================================ -->
+<div class="chapter" id="ch6">
+  <h1><span class="nav-num">6</span>真实使用场景模拟——从零走一遍</h1>
+  <div class="chapter-goal">目标：假设你是一个要用 SafeConf 的生物学家，完整走一遍使用流程。</div>
+
+  <div class="metaphor">
+    你是一家新开的连锁餐厅的区域经理。总部说："这 1000 道新菜单里，有些菜在你这个区域可能会翻车，但我们没预算全部试做。帮我挑出最可能翻车的 200 道，我们优先在这 200 道上做试吃验证。"
+  </div>
+
+  <div class="step-flow">
+    <div class="step-item" data-step="1">
+      <h3>你手上有什么</h3>
+      <ul>
+        <li><b>你的分店的基因表达 profile</b>——你这个区域的细胞类型特征（分店特征）</li>
+        <li><b>1000 个待预测的扰动</b>——你要评估的新菜单（比如 1000 个候选基因敲除）</li>
+        <li><b>你选的预测模型</b>——某个厨师（可以是 GEARS、scGPT 或任何扰动预测模型）</li>
+      </ul>
+    </div>
+    <div class="step-item" data-step="2">
+      <h3>你的模型给出预测</h3>
+      <p>模型对 1000 个 (你的分店, 菜品) 组合各输出一个 5000 维预测向量——每道菜做出来大概什么味道。</p>
+      <p><b>问题是：</b>你不知道哪些预测准、哪些不准。模型自己也不告诉你。</p>
+    </div>
+    <div class="step-item" data-step="3">
+      <h3>调用 SafeConf</h3>
+      <p>SafeConf <b>不看你的模型是什么</b>。它做的事：</p>
+      <ul>
+        <li>查历史数据库：你这个分店跟历史上哪些分店最像？→ context_similarity</li>
+        <li>查历史数据库：这道菜在历史上被做过多少次？→ log_support</li>
+        <li>让自带的两个参考厨师（V0/CS）各做一遍预测，看它们分歧多大 → model_disagreement</li>
+        <li>套公式：<code>质检评分 = z(像) + z(次) - z(歧)</code></li>
+      </ul>
+      <p><b>输出：</b>每个 (分店, 菜品) 一个质检评分。</p>
+    </div>
+    <div class="step-item" data-step="4">
+      <h3>按分数排序做决策</h3>
+      <p><b>分数最低的 200 个</b> = "高风险预测" → 优先做湿实验验证（先试做这 200 道菜看效果）</p>
+      <p><b>分数最高的 800 个</b> = "较可信预测" → 可以先相信模型结果，暂缓实验</p>
+      <p>这就是 <span class="en">risk triage</span>（风险分诊）——把有限的实验预算花在最该验证的地方。</p>
+    </div>
+    <div class="step-item" data-step="5">
+      <h3>为什么这有用——不只是"查数据库"</h3>
+      <p>你可能会想：<b>"这不就是查历史数据库然后排序吗？"</b>——这个直觉部分正确。SafeConf 确实<b>严重依赖历史扰动实验数据</b>——没有历史数据，SafeConf 就无法工作。但它比纯数据库查询多了关键的一步：</p>
+      <ul>
+        <li><b>纯数据库查询</b>只能告诉你"这道菜过去做过 10 次"——这是原始事实</li>
+        <li><b>SafeConf 在历史数据上计算派生特征</b>——不只是"做过几次"，还要算"当前分店跟历史分店有多像"、"两个参考厨师的分歧有多大"，然后用标准化公式综合打分</li>
+        <li><b>用户确实不需要自己训练任何东西</b>——SafeConf 的价值在于替用户做了"该查什么、怎么综合判断"的设计工作</li>
+      </ul>
+      <p>所以 SafeConf 的核心确实是<b>历史扰动数据 + 设计好的特征计算 + 标准化打分公式</b>。用户提供新的 (context, perturbation) 查询，SafeConf 利用历史数据计算风险并排序。</p>
+      <p>附带好处：</p>
+      <ul>
+        <li><b>不用重新跑模型</b>——SafeConf 独立于你的模型运行</li>
+        <li><b>不依赖模型的不确定性估计</b>——很多预测模型没有内置的"我有多确定"功能</li>
+        <li><b>省钱</b>——做 1000 个扰动的湿实验可能要花几十万元；SafeConf 帮你挑出最该验证的 200 个，省下 80% 的实验成本</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="error-box">
+    <ul>
+      <li>SafeConf 告诉你"<b>这个任务风险高</b>"，<b>不</b>告诉你"你的模型在这个任务上比别人差"</li>
+      <li>如果你换一个模型重新预测同样的 1000 道菜，SafeConf 给的分数<b>是一样的</b>——因为分数不看你用了什么模型</li>
+      <li>这是当前版本的设计选择，不是 bug——因为 <b>93.6%</b> 的预测误差来自任务本身（菜品难不难做），只有 <b>0.1%</b> 来自厨师差异</li>
+    </ul>
+  </div>
+
+  <div class="know">
+    <ul>
+      <li>SafeConf 在实际场景里用于<b>风险分诊</b>：把 1000 个预测按风险排序，优先验证高风险的</li>
+      <li>输入：你的 context profile + 待预测的 perturbation 列表（不需要告诉 SafeConf 你用了什么模型）</li>
+      <li>输出：每个 (context, perturbation) 的质检评分</li>
+      <li>局限：不区分同一任务上不同模型的好坏</li>
+    </ul>
+  </div>
+
+  <div class="summary-box">SafeConf 的实际用法 = 风险分诊：排序预测、挑出高风险的优先做实验、省下 80% 实验成本。</div>
+</div>
+
+<!-- ============================================================ -->
+<!--                      第 7 章                                  -->
+<!-- ============================================================ -->
+<div class="chapter" id="ch7">
+  <h1><span class="nav-num">7</span>实验结果全景</h1>
+  <div class="chapter-goal">目标：看懂所有关键数字。这是最重要的一章。</div>
+
+  <h2>7.1 七大餐厅主表</h2>
+  <p><span class="source-tag tag-data">数据来源</span> <code>corrected_v3_drop_blank_1000_20260609/tables/FORMAL_MAIN_TABLE.csv</code></p>
+
+  <table>
+    <tr>
+      <th>数据集</th><th>族</th><th>n</th><th>aligned ρ</th><th>partial ρ</th><th>partial ρ 95% CI</th><th>magnitude-only ρ</th><th>RC@80%</th>
+    </tr>
+    <tr>
+      <td>CuiHacohen2023</td><td>gene_main</td><td>2506</td>
+      <td class="good">0.445</td><td class="good">0.328</td><td>[0.293, 0.362]</td><td>0.736</td><td class="good">21.6%</td>
+    </tr>
+    <tr>
+      <td>Frangieh</td><td>gene_main</td><td>1266</td>
+      <td class="good">0.583</td><td class="good">0.474</td><td>[0.430, 0.510]</td><td>0.797</td><td>5.0%</td>
+    </tr>
+    <tr>
+      <td>Lara_exvivo</td><td>gene_main</td><td>646</td>
+      <td class="good">0.563</td><td class="good">0.443</td><td>[0.376, 0.506]</td><td>0.486</td><td class="good">56.2%</td>
+    </tr>
+    <tr>
+      <td>Lara_invivo</td><td>gene_main</td><td>750</td>
+      <td class="good">0.394</td><td class="good">0.357</td><td>[0.290, 0.424]</td><td>0.634</td><td class="good">12.5%</td>
+    </tr>
+    <tr>
+      <td>McFarland</td><td>chem_robust</td><td>2326</td>
+      <td class="fail">-0.086</td><td class="fail">-0.061</td><td>[-0.100, -0.023]</td><td>0.795</td><td>4.0%</td>
+    </tr>
+    <tr>
+      <td>Santinha</td><td>gene_main</td><td>546</td>
+      <td class="weak">0.152</td><td class="weak">0.212</td><td>[0.129, 0.297]</td><td>0.840</td><td>-1.0%</td>
+    </tr>
+    <tr>
+      <td>Srivatsan_sciplex3</td><td>chem_robust</td><td>1128</td>
+      <td class="good">0.428</td><td class="good">0.629</td><td>[0.595, 0.660]</td><td>0.740</td><td class="good">15.1%</td>
+    </tr>
+  </table>
+
+  <div class="metaphor">
+    <b>怎么读这张表？</b><br>
+    <b>aligned ρ</b>：质检评分排序跟投诉率排序有多一致。正数 = 质检员有用。<br>
+    <b>partial ρ</b>：去掉"订单金额"的影响后还有多少独立信号。这是最核心的指标。<br>
+    <b>magnitude-only ρ</b>：只看订单金额就能达到的相关。这是我们的对手。<br>
+    <b>RC@80%</b>：淘汰最差 20% 后，剩下 80% 的平均误差降了多少百分比。正数 = 有效。
+  </div>
+
+  <div class="error-box">
+    <ul>
+      <li><b>McFarland 是明确的 frozen v0.2 失败</b>：aligned ρ = -0.086（负！），partial ρ = -0.061。原因：这是化学药物数据集，drug + dose + time 混杂让冻结公式失灵。不能说"McFarland 是边界案例"，要说"这是失败"。</li>
+      <li><b>Santinha 是弱正信号</b>：aligned ρ = 0.152，partial ρ = 0.212。不能作为强证据。</li>
+    </ul>
+  </div>
+
+  <h2>7.2 A1 方差分解——最关键的发现</h2>
+  <p><span class="source-tag tag-data">数据来源</span> <code>Task_risk_audit_20260611/tables/A1_task_vs_predictor_variance_summary.csv</code></p>
+
+  <div class="highlight-box">
+    <p><b>核心问题：</b>预测误差的波动里，多少来自"菜品本身难做"（任务因素），多少来自"厨师水平差"（模型因素）？</p>
+  </div>
+
+  <div class="number-card">
+    <b>Spearman(V0 error, CS error) = 0.973</b><br>
+    均值厨师和相似厨师在<b>同一道菜</b>上的误差排序几乎完全一致——一道菜如果 V0 做砸了，CS 也一定做砸了。
+  </div>
+  <div class="number-card">
+    <b>任务方差占比 = 93.6%</b>，厨师方差占比 = 0.1%<br>
+    投诉率的波动几乎<b>全部</b>来自"这道菜本身难不难做"，跟"用哪个厨师"几乎无关。
+  </div>
+
+  <table>
+    <tr><th>数据集</th><th>任务数</th><th>Spearman (V0 vs CS)</th><th>任务方差占比</th><th>判定</th></tr>
+    <tr><td>CuiHacohen2023</td><td>1253</td><td>0.919</td><td>99.2%</td><td class="good">task dominant</td></tr>
+    <tr><td>Frangieh</td><td>633</td><td>0.995</td><td>98.4%</td><td class="good">task dominant</td></tr>
+    <tr><td>Lara_exvivo</td><td>323</td><td>0.543</td><td>94.9%</td><td class="good">task dominant</td></tr>
+    <tr><td>Lara_invivo</td><td>375</td><td>0.637</td><td>89.9%</td><td class="good">task dominant</td></tr>
+    <tr><td>McFarland</td><td>1163</td><td>0.954</td><td>99.2%</td><td class="good">task dominant</td></tr>
+    <tr><td>Santinha</td><td>273</td><td>0.935</td><td>97.2%</td><td class="good">task dominant</td></tr>
+    <tr><td>Srivatsan_sciplex3</td><td>564</td><td>0.985</td><td>99.2%</td><td class="good">task dominant</td></tr>
+    <tr><td><b>__overall__</b></td><td><b>4584</b></td><td><b>0.973</b></td><td><b>93.6%</b></td><td class="good"><b>task dominant</b></td></tr>
+  </table>
+
+  <div class="metaphor">
+    <b>这说明什么？</b><br>
+    一道菜如果难做（比如食材稀少、工艺复杂），那<b>不管请哪个厨师</b>，做出来都大概率翻车。93.6% 的"翻车风险"由菜品和分店的组合决定，厨师差异只占 0.1%。<br><br>
+    所以 SafeConf 评估的是"这个任务的风险"——这已经回答了 93.6% 的问题。
+  </div>
+
+  <h2>7.3 LODO 跨城市验证</h2>
+  <p><span class="source-tag tag-data">数据来源</span> <code>sprint1_lodo/tables/LODO_MAIN_TABLE.csv</code></p>
+  <div class="number-card">
+    <b>7/7 数据集 LODO partial ρ 为正</b>（learned risk model, 留一座城市做盲测）<br>
+    说明 SafeConf 学到的风险模式可以<b>跨城市迁移</b>。
+  </div>
+
+  <h2>7.4 LOPO 跨厨师验证</h2>
+  <div class="number-card">
+    <b>14/14 LOPO positive</b>（PertMean 7/7 + ControlKNN 7/7）<br>
+    留一个厨师做盲测，剩余厨师训练的 SafeConf 分数对陌生厨师依然有效。
+  </div>
+
+  <h2>7.5 坏预测检索（Bad Prediction Retrieval）</h2>
+  <p><span class="source-tag tag-data">数据来源</span> <code>Task_risk_audit_20260611/tables/B1_bad_prediction_retrieval.csv</code></p>
+  <p>在 top 10% 高风险区间内，不同方法找到真正坏预测的能力（macro enrichment，所有数据集宏平均）：</p>
+
+  <table>
+    <tr><th>方法</th><th>Top-10% Enrichment</th><th>含义</th></tr>
+    <tr><td>random（随机）</td><td>1.11×</td><td>基准（约等于 1）</td></tr>
+    <tr><td class="good">safeconf_perdataset_risk</td><td class="good">5.36×</td><td>每数据集内训练的风险分数</td></tr>
+    <tr><td>frozen v0.2</td><td>3.35×</td><td>冻结公式（不含学习）</td></tr>
+    <tr><td class="warn">predicted_magnitude</td><td class="warn">3.30×</td><td>只看订单金额</td></tr>
+    <tr><td>safeconf_lodo_risk</td><td>2.31×</td><td>跨城市迁移的学习分数</td></tr>
+  </table>
+
+  <div class="error-box">
+    <b>magnitude（订单金额）在 macro enrichment 上比 LODO 强：3.30× vs 2.31×。</b>在 5/7 数据集上 magnitude 比 LODO 更能找到坏预测。不能说"LODO 比 magnitude 更强"——只能说"LODO 有跨数据集迁移价值"。
+  </div>
+
+  <h2>7.6 McFarland 失败边界</h2>
+  <div class="number-card">
+    <b>Frozen v0.2 aligned ρ = -0.086</b>（负数——质检评分方向反了！）<br>
+    <b>原因：</b>McFarland 是化学药物数据集，包含 drug + dose + time 三重混杂，冻结公式的三条线索无法有效区分。<br>
+    <b>Learned LODO 部分挽救：</b>LODO partial ρ = 0.162（正数，但很弱）
+  </div>
+
+  <h2>7.7 Lara_exvivo LODO 失败</h2>
+  <p><span class="source-tag tag-data">数据来源</span> <code>Task_risk_audit_20260611/tables/D1_lara_exvivo_lodo_failure_summary.csv</code></p>
+  <div class="number-card">
+    <b>Frozen v0.2 per-dataset top-10% enrichment = 7.798</b>（非常强！）<br>
+    但 <b>LODO top-5% enrichment = 0.593</b>（低于随机 1.0！）<br>
+    <b>LODO top-10% enrichment = 0.612</b>（仍低于随机！）
+  </div>
+  <div class="warn">
+    <b>含义：</b>在 Lara_exvivo 数据集内部，SafeConf 非常有效。但当用其他城市的经验来评估 Lara_exvivo 时（LODO），在 top-5%/10% 的高风险尾部完全失灵——甚至比随机挑还差。<br>
+    <b>正确说法：</b>"6/7 LODO 有效，Lara_exvivo 在 top-5%/10% 低于随机"。不能笼统说"7/7 LODO 全正"来掩盖这个问题。
+  </div>
+
+  <div class="know">
+    <ul>
+      <li>5/7 数据集 frozen v0.2 有正向独立信号（partial ρ > 0）</li>
+      <li>McFarland 是 frozen v0.2 的明确失败（ρ < 0）</li>
+      <li>Santinha 是弱正信号（partial ρ = 0.212）</li>
+      <li>A1 方差分解：93.6% 任务方差，0.1% 厨师方差</li>
+      <li>LODO 7/7 positive，但 Lara_exvivo LODO 在 top-k 失败</li>
+      <li>magnitude enrichment 3.3× > LODO 2.3×</li>
+    </ul>
+  </div>
+
+  <div class="summary-box">主线结果 5/7 正向，但 McFarland 失败、magnitude 很强、Lara_exvivo LODO 局部失灵——必须诚实报告。</div>
+</div>
+
+<!-- ============================================================ -->
+<!--                      第 8 章                                  -->
+<!-- ============================================================ -->
+<div class="chapter" id="ch8">
+  <h1><span class="nav-num">8</span>老师到底在问什么——完整对话还原</h1>
+  <div class="chapter-goal">目标：逐轮还原 2026-06-11 组会后老师与你的约 15 分钟对话——每句老师原话、大白话翻译、真实意图分析。这一章是你下次汇报前必须吃透的内容。</div>
+
+  <div class="warn">
+    <b>为什么这一章很重要：</b>老师的追问不是否定 SafeConf，而是精准地指出了<b>叙事和方法之间的逻辑缺口</b>。理解老师的每句话，是你能正确调整方向的前提。下面按对话发生的顺序，逐轮还原。
+  </div>
+
+  <!-- 第一轮 -->
+  <h2>8.1 第一轮：数据是怎么组织的？</h2>
+
+  <div class="quote-teacher">
+    "你的 split（数据切分）是 across 数据集的，还是每个数据集分别做的？"<br>
+    "每个数据集内部分别 split 了 train/test（训练集/测试集），然后分数也是在每个数据集里分开的，对吧？"<br>
+    "不同数据集是没关系的。"
+  </div>
+  <div class="quote-meaning">
+    老师在确认：你有没有把来自不同实验室、不同物种、不同实验条件的数据硬混在一起做？<br>
+    你回答了"每个数据集各自独立做切分和评估"。<br>
+    老师确认了：<b>这样做是可以的</b>。他还说了"cross dataset generalization（跨数据集泛化）一般都很差"——意思是你不需要硬把它们混到一起。
+  </div>
+  <div class="answer"><span class="source-tag tag-teacher">老师原话</span> <b>结论：这部分没有异议。</b>老师确认了每个数据集独立评估是合理的。</div>
+
+  <!-- 第二轮 -->
+  <h2>8.2 第二轮：三个打分依据怎么算的？</h2>
+
+  <div class="quote-teacher">
+    "前边那三个指标具体是怎么算的？"<br>
+    "尤其是背景相似度是谁跟谁比？"
+  </div>
+  <div class="quote-meaning">
+    老师不是在问"这个指标叫什么名字"，他是在问<b>精确的计算过程</b>：谁和谁比？用什么数据比？在哪个数据分区里比？有没有偷看测试集的答案？
+  </div>
+  <p>你当时的回答是："大概是用基因表达向量计算相似度，取最大值。"</p>
+  <div class="warn">
+    <span class="source-tag tag-infer">推断</span> 老师觉得你对自己项目的计算细节还不够熟悉。他需要你能说出类似这样精确的定义：<br>
+    <code style="display:block;background:#fff;padding:10px;border-radius:6px;margin:8px 0;font-size:0.9em;">context_similarity = max(cosine_similarity(当前context的基因表达向量, 训练集中每个context的基因表达向量))</code>
+    <b>下次汇报时，必须能对每个特征说清楚：输入是什么、和什么比、用什么公式、数据来自训练集还是测试集。</b>
+  </div>
+
+  <!-- 第三轮 -->
+  <h2>8.3 第三轮：每个数据集有多少种细胞类型和扰动？</h2>
+
+  <div class="quote-teacher">
+    "每个数据集到底有多少种 cell type（细胞类型）和多少种 perturbation（扰动）？"<br>
+    "大部分数据集可能 perturbation 比较多，但 cell type 比较少。"
+  </div>
+  <div class="quote-meaning">
+    老师不是随便问问。他在提醒一个<b>非常实际的问题</b>：如果一个数据集只有 1~2 种细胞类型（cell type），那你的"背景相似度"这个特征就<b>没什么区分力</b>——因为所有样本的背景都差不多，相似度都很高，区分不了谁可信谁不可信。
+  </div>
+  <div class="metaphor">
+    如果你的连锁餐厅只有北京和上海两家分店，那"分店熟悉度"能提供的信息就非常有限——要么是北京要么是上海，仅此而已。但如果你有 20 家分店，这个维度就能区分出"这家分店我们很了解"和"这家分店我们不太了解"。
+  </div>
+  <div class="warn">
+    <span class="source-tag tag-infer">推断</span> 老师在暗示：你需要一张<b>数据地图</b>——列出每个数据集有多少 context（细胞背景类型）、多少 perturbation（扰动种类）、多少组合。这能解释为什么有些数据集效果好（种类多、特征有区分力）、有些差（种类少、特征区分力弱）。
+  </div>
+
+  <!-- 第四轮 -->
+  <h2>8.4 第四轮：找现成的公开数据</h2>
+
+  <div class="quote-teacher">
+    "有一些现成的已经整理好的 data（数据）可以直接用。不一定要搜很多文章，自己一个一个想。"<br>
+    提到了类似 "Tahoe-100M" 这样的大数据资源。
+  </div>
+  <div class="quote-meaning">
+    意思很直接：扩充数据的时候，优先去找那些已经被别人清洗、整理好、格式统一的大数据集或 benchmark（基准测试数据集），而不是自己一篇一篇论文地去挖零散数据。
+  </div>
+  <div class="answer"><span class="source-tag tag-teacher">老师原话</span> <b>这是具体建议，不是质疑。</b>可以直接执行。</div>
+
+  <!-- 第五轮 -->
+  <h2>8.5 第五轮：公式还是模型？</h2>
+
+  <p>你问老师："现在主要是公式起作用，模型（机器学习模型）基本没起什么作用，这样可以吗？"</p>
+  <div class="quote-teacher">
+    "我觉得也可以。如果能 work（能跑出好结果）就行了。我觉得公式还是模型不太重要。"
+  </div>
+  <div class="quote-meaning">
+    <b>这句话非常关键</b>：老师并没有要求你必须训练一个复杂的深度学习模型。他认可用公式/规则的方式来做，只要结果是好的就行。<br>
+    <b>不要被"只有公式能不能发论文"这个焦虑卡住——老师并不认为公式路线有问题。</b>
+  </div>
+  <div class="answer"><span class="source-tag tag-teacher">老师原话</span> <b>公式路线被明确认可。</b>这是绿灯。</div>
+
+  <!-- 第六轮（最关键） -->
+  <h2>8.6 第六轮（最关键！）：你的分数和模型有什么关系？</h2>
+
+  <div class="error-box">这是整段对话中最重要的部分。老师在这里反复追问了大约 4 分钟，层层递进。下面逐句还原。</div>
+
+  <div class="step-flow">
+    <div class="step-item" data-step="1">
+      <b>第一步：确认事实</b>
+      <div class="quote-teacher">
+        "你这个公式相当于是跟具体模型没有关系的，对吧？"<br>
+        "所有的分数都是从训练集来的。"
+      </div>
+      <div class="quote-meaning">
+        老师在确认：你 SafeConf 的三个打分依据——背景相似度、支持计数、模型分歧——全都是从训练数据（历史资料）里算出来的。不管用户实际用的是 GEARS、scGEN、还是随便什么模型，你给的分数都一模一样。
+      </div>
+      <p><b>这个说法对不对？</b> <span style="color:var(--green);font-weight:700;">完全正确。</span>三项特征没有任何一项依赖用户的模型。</p>
+    </div>
+
+    <div class="step-item" data-step="2">
+      <b>第二步：得出结论</b>
+      <div class="quote-teacher">
+        "实际上它在评估的是，这个扰动在你这个 context（细胞背景）下，是好预测还是难预测。"<br>
+        "这说的是任务的难度。并不是你训练一个新模型。"
+      </div>
+      <div class="quote-meaning">
+        既然你的分数和用户的模型无关，那你评估的就不是"某个模型靠不靠谱"，而是"这道题本身容易还是难"。这就是<b>任务难度</b>（task difficulty）。
+      </div>
+      <p><b>这个推理对不对？</b> <span style="color:var(--green);font-weight:700;">完全正确。</span>这是从第一步的事实自然推出来的。</p>
+    </div>
+
+    <div class="step-item" data-step="3">
+      <b>第三步：追问价值（最关键的一句！）</b>
+      <div class="quote-teacher">
+        "但是给任务难度打分的意义是什么呢？"
+      </div>
+      <div class="quote-meaning">
+        这句话<b>不是说"没意义"</b>。老师没有下结论说"没用"。<br>
+        老师是在问你：<b>你能不能说清楚它有什么用？</b>
+      </div>
+      <p>你当时没能清楚地回答这个问题。你说了"第三方评测""可信度分数"这些话，但老师接着追问——</p>
+      <div class="quote-teacher">
+        "对呀，对这些我都懂啊。但是你这个东西如何实现这个目的呢？"
+      </div>
+      <div class="quote-meaning">
+        翻译成大白话：<b>"我知道你想做质检。但你的分数和模型无关，那你怎么质检？你告诉我具体机制。"</b><br><br>
+        老师不是不懂你的目标，他是在问你<b>怎么实现</b>。你当时没答上来。
+      </div>
+    </div>
+
+    <div class="step-item" data-step="4">
+      <b>第四步：指出缺口</b>
+      <div class="quote-teacher">
+        "每个模型在同样的数据上会给不同的预测结果，对吧？然后不同的模型在不同的数据上更 confident（更有把握），但是你这个相当于是衡量不了这件事情了。"
+      </div>
+      <div class="quote-meaning">
+        &bull; 现实中，模型 A 可能在某些任务上做得很好、在另一些任务上做得很差<br>
+        &bull; 模型 B 可能恰好相反<br>
+        &bull; 但你 SafeConf 给同一个任务的分数是一样的——不管是 A 做还是 B 做<br>
+        &bull; 所以<b>你无法区分"A 在这题上靠谱但 B 不靠谱"这种情况</b>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote-teacher">
+    "那就再想想。"
+  </div>
+  <div class="quote-meaning">
+    不是否定。不是"不行"。是说：你的逻辑链条还没有闭合，<b>回去补上</b>。
+  </div>
+
+  <!-- 你当时回答错在哪 -->
+  <h2>8.7 你当时回答错在哪？</h2>
+
+  <div class="warn">
+    <p>你当时的回答是："因为是一个第三方的评层…你本身一个模型的话你很难判断是否正确…我这个大概是可以做一个第三方的接触…"</p>
+    <p style="margin-top:10px;"><b>问题出在哪</b>：你一直在说<b>目的</b>（我要做第三方质检），但老师问的是<b>机制</b>（你怎么实现质检）。</p>
+    <p style="margin-top:10px;">打个比方：</p>
+    <ul>
+      <li>你说："我要给餐厅做质检！"</li>
+      <li>老师说："好，那你怎么检？"</li>
+      <li>你说："我是第三方的！餐厅自己判断不了好坏！"</li>
+      <li>老师说："<b>我知道你是第三方，但你具体怎么检？你又不看厨师做的菜，你怎么判断菜好不好？</b>"</li>
+      <li>你没答上来。</li>
+    </ul>
+  </div>
+
+  <!-- 核心总结 -->
+  <h2>8.8 老师追问的核心总结</h2>
+
+  <div class="error-box">
+    <p><b>老师最后 4 分钟追问的核心意思（四条）：</b></p>
+    <ol>
+      <li>你的 SafeConf 分数不依赖用户的实际模型 → <b>这是事实</b></li>
+      <li>所以它衡量的是任务本身难不难 → <b>这是逻辑推论</b></li>
+      <li>如果只是衡量任务难度，那和"判断某个模型的预测可不可信"之间还差一步 → <b>这是缺口</b></li>
+      <li>老师没说 SafeConf 没用，但要求你把"它到底有什么用"讲清楚 → <b>这是要求</b></li>
+    </ol>
+  </div>
+
+  <!-- 老师到底什么意思 -->
+  <h2>8.9 老师到底是什么意思？——两种可能的理解</h2>
+
+  <div class="insight-box">
+    <p><span class="source-tag tag-claude">Claude 分析</span> 老师的追问有两种可能的理解：</p>
+    <table>
+      <tr><th>理解</th><th>含义</th><th>你该怎么应对</th></tr>
+      <tr>
+        <td><b>A：要你解释为什么 task risk 有用</b></td>
+        <td>"你说你做的是任务难度评分，OK，那告诉我它为什么有价值"</td>
+        <td>用 A1 数据 + 使用场景回答（见第 9 章）</td>
+      </tr>
+      <tr>
+        <td><b>B：暗示你应该去做模型评估</b></td>
+        <td>"你应该做的是评估不同模型的好坏，而不是评任务难度"</td>
+        <td>需要讨论是否改方向</td>
+      </tr>
+    </table>
+    <p style="margin-top:10px;"><span class="source-tag tag-claude">Claude 判断</span> 更可能是 <b>A</b>。理由：老师说的是"再想想"，不是"你应该改方向"；老师没有说"你应该把模型加进去"。</p>
+    <p style="margin-top:6px;"><b>但不能 100% 确定。</b>建议下次汇报时直接问老师："老师，上次您提到'给任务难度打分的意义是什么'——我准备了两个方向的回答，想确认一下您希望我走哪个。"</p>
+  </div>
+
+  <!-- 这套分析是不是事后凑的 -->
+  <h2>8.10 这套分析是不是事后凑的？——诚实交代</h2>
+
+  <div class="error-box">
+    <p><b>一半是、一半不是。必须诚实说清楚。</b></p>
+    <p style="margin-top:8px;"><b>"不是"的部分：</b>v0.2 公式在 2026-05-23 就冻结了，三个特征<b>本来就不含任何用户模型相关的输入</b>——这不是后来发现的。A1 方差分解实验（93.6% task variance、两个预测器误差相关 0.973）是真实跑出来的实验数据，不是编的。</p>
+    <p style="margin-top:8px;"><b>"是"的部分：</b>在老师指出之前，我们一直在用"confidence scoring""模型质检"这类措辞来描述 SafeConf——<b>叙事确实是不准确的</b>。是老师的追问迫使我们承认：方法一直就是 task risk scoring，只是叙事包装成了"model QC"。</p>
+    <p style="margin-top:8px;"><b>结论：方法没变，是对方法的描述变准确了。叙事调整是被老师逼出来的，但调整后的说法是真实的。</b></p>
+  </div>
+
+  <!-- 六轮追问总表 -->
+  <h2>8.11 六轮追问总表</h2>
+
+  <table>
+    <tr><th>轮次</th><th>老师问了什么</th><th>真实意图</th><th>判定</th></tr>
+    <tr><td>1</td><td>数据是跨数据集还是各自做？</td><td>确认没有硬混不同来源的数据</td><td style="color:var(--green);font-weight:700;">已通过</td></tr>
+    <tr><td>2</td><td>三个指标怎么算的？谁跟谁比？</td><td>你对计算细节不够熟悉</td><td style="color:var(--orange);font-weight:700;">需加强</td></tr>
+    <tr><td>3</td><td>每个数据集多少 cell type / perturbation？</td><td>cell type 少时 context_similarity 没区分力</td><td style="color:var(--orange);font-weight:700;">需补数据地图</td></tr>
+    <tr><td>4</td><td>找整理好的现成数据</td><td>具体建议，不是质疑</td><td style="color:var(--green);font-weight:700;">直接执行</td></tr>
+    <tr><td>5</td><td>公式还是模型？</td><td>公式能 work 就行</td><td style="color:var(--green);font-weight:700;">公式路线认可</td></tr>
+    <tr style="background:var(--orange-light);">
+      <td><b>6</b></td><td><b>分数和模型有什么关系？给任务难度打分有什么用？</b></td><td><b>核心追问——叙事漏洞</b></td><td style="color:var(--red);font-weight:700;">需补逻辑</td></tr>
+  </table>
+
+  <div class="know">
+    <ul>
+      <li><b>老师的六轮追问</b>：数据组织(通过) → 计算细节(需加强) → 数据地图(需补) → 找公开数据(建议) → 公式路线(认可) → 分数和模型关系(<b>核心问题</b>)</li>
+      <li><b>核心追问链</b>：分数跟模型无关 → 你评的是任务难度 → 知道任务难度有什么用？</li>
+      <li><b>"再想想"不是否定</b>，是要求补完逻辑</li>
+      <li>你当时的错误：一直说<b>目的</b>（第三方质检），没回答<b>机制</b>（怎么质检）</li>
+      <li>叙事调整（model QC → task risk）是被逼的，但<b>调整后的说法是真实的</b></li>
+    </ul>
+  </div>
+
+  <div class="summary-box">老师用六轮追问精准定位了 SafeConf 的叙事漏洞。核心不是否定项目，而是要求你回答清楚：你评的是任务难度不是模型好坏——那知道任务难度到底有什么用？——第 9 章给出标准回答。</div>
+</div>
+
+<!-- ============================================================ -->
+<!--                      第 9 章                                  -->
+<!-- ============================================================ -->
+<div class="chapter" id="ch9">
+  <h1><span class="nav-num">9</span>"给任务难度打分有什么意义"——标准回答</h1>
+  <div class="chapter-goal">目标：下次老师问这个问题，你能用 5 步清楚回答。</div>
+
+  <div class="step-flow">
+    <div class="step-item" data-step="1">
+      <h3>承认</h3>
+      <p>"是的，SafeConf 当前确实衡量的是<b>任务难度</b>，不是模型特异性的可靠度。"</p>
+      <p>不回避，不狡辩。</p>
+    </div>
+    <div class="step-item" data-step="2">
+      <h3>用数据接上逻辑</h3>
+      <p>"但实验发现，<b>93.6%</b> 的预测误差由任务本身决定，两个不同厨师在同一任务上的误差相关达 <b>0.973</b>。"</p>
+      <p>这意味着：知道"这道菜难做" ≈ 知道"<b>不管用什么厨师</b>都大概率做砸"。</p>
+      <p>在任务方差占绝对主导的情况下，<b>任务风险评估本身就是最高效的预测可信度信号</b>。</p>
+    </div>
+    <div class="step-item" data-step="3">
+      <h3>给出使用场景</h3>
+      <p>"一个生物学家有 1000 个预测结果，不知道哪些能信。SafeConf 帮他找出 200 个<b>高风险</b>的，优先做湿实验验证。"</p>
+      <p>这就是 <b>risk triage</b>（风险分诊）——把有限的实验预算花在最该验证的地方。</p>
+      <p>类比：体检不区分"哪个医院验血更准"，但"高风险体检指标"已经很有用了——你会优先复查那些指标异常的人。</p>
+    </div>
+    <div class="step-item" data-step="4">
+      <h3>诚实说限制</h3>
+      <p>"当前版本确实<b>不能区分</b>同一任务上不同模型的好坏。如果用户想知道'我的 GEARS 比 scGPT 在这道菜上更准吗？'——SafeConf v0.2 回答不了。"</p>
+    </div>
+    <div class="step-item" data-step="5">
+      <h3>展示扩展路线</h3>
+      <p>"后续可以加入模型相关的特征（如 prediction_magnitude、模型内部不确定性），走向 model-conditioned 的第二层。但当前论文先把 task risk 这一层做扎实。"</p>
+    </div>
+  </div>
+
+  <div class="answer">
+    <b>完整话术（约 30 秒）：</b><br>
+    "SafeConf 当前确实衡量的是任务风险。但我们实验发现 93.6% 的预测误差由任务决定、两个不同预测器误差相关 0.973——所以知道任务风险就等于知道了绝大部分预测可信度。在实际使用中，生物学家可以把 SafeConf 当作风险分诊工具，把有限的实验预算优先花在高风险预测上。当前版本确实不区分模型好坏，这是后续迭代的方向。"
+  </div>
+
+  <div class="summary-box">五步回答：承认 → 数据支撑 → 使用场景 → 诚实限制 → 扩展路线。</div>
+</div>
+
+<!-- ============================================================ -->
+<!--                      第 10 章                                 -->
+<!-- ============================================================ -->
+<div class="chapter" id="ch10">
+  <h1><span class="nav-num">10</span>GPT 和 Claude 怎么分析的</h1>
+  <div class="chapter-goal">目标：理解两个 AI 助手对老师反馈的分析有什么共识和差异。</div>
+
+  <div class="compare-box">
+    <div class="col gpt-col">
+      <h4><span class="source-tag tag-gpt">GPT</span> 核心观点</h4>
+      <p><b>策略：立刻拆成两层</b></p>
+      <ul>
+        <li>Layer 1 = Task Risk Score（任务风险分，model-agnostic）</li>
+        <li>Layer 2 = Model-Conditioned Reliability（模型特异性可靠度）</li>
+      </ul>
+      <p>建议做 5 个实验（T1-T5）来验证两层结构。</p>
+      <p>偏"先行动后验证"——快速拿到分层框架的初步结果，再决定论文怎么写。</p>
+    </div>
+    <div class="col claude-col">
+      <h4><span class="source-tag tag-claude">Claude</span> 核心观点</h4>
+      <p><b>策略：先用数据回答关键问题，再决定叙事</b></p>
+      <ul>
+        <li>先做 A1 方差分解：任务方差 vs 模型方差到底多少？</li>
+        <li>如果任务方差 > 70%，task risk 单层就够发论文</li>
+        <li>如果模型方差显著，才需要第二层</li>
+      </ul>
+      <p>偏"先验证假设再行动"——用实验 A/B/C 决定走哪条路。</p>
+    </div>
+  </div>
+
+  <h2>两者共识（7 条）</h2>
+  <ol>
+    <li>老师的追问是对的——SafeConf 当前确实更像任务难度评估器</li>
+    <li>叙事必须从"模型质检"调整为"任务风险评估"</li>
+    <li>93.6% 任务方差是重要的正面证据，不是坏消息</li>
+    <li>需要一个清晰的使用场景来回答"有什么用"</li>
+    <li>McFarland 是 frozen v0.2 的明确失败</li>
+    <li>后续可以探索加入模型相关特征</li>
+    <li>"再想想"不是否定，是要求补完逻辑</li>
+  </ol>
+
+  <h2>分歧点</h2>
+  <table>
+    <tr><th>维度</th><th><span class="source-tag tag-gpt">GPT</span></th><th><span class="source-tag tag-claude">Claude</span></th></tr>
+    <tr><td>行动节奏</td><td>先建框架再验证</td><td>先验证再选方向</td></tr>
+    <tr><td>两层方案</td><td>当前论文就做两层</td><td>一层够了先发，二层留后续</td></tr>
+    <tr><td>面对老师</td><td>立刻用两层框架回答</td><td>先用 A1 数据说服"一层已有价值"</td></tr>
+  </table>
+
+  <div class="insight-box">
+    <p><span class="source-tag tag-claude">Claude 判断</span> A1 实验结果（任务方差 93.6%、模型方差 0.1%）出来后，Claude 的"先验证"策略被证实：<b>一层就够了</b>。因为模型差异只占 0.1%，做第二层的 ROI（投入产出比）极低。GPT 的两层框架不是错的，但在当前数据下不是必需的。</p>
+  </div>
+
+  <div class="summary-box">GPT 和 Claude 对问题诊断一致，策略略有分歧。A1 实验数据支持 Claude 的"一层够了"判断。</div>
+</div>
+
+<!-- ============================================================ -->
+<!--                      第 11 章                                 -->
+<!-- ============================================================ -->
+<div class="chapter" id="ch11">
+  <h1><span class="nav-num">11</span>最大威胁——"订单金额基线"</h1>
+  <div class="chapter-goal">目标：理解为什么 predicted_magnitude 是 SafeConf 最大的竞争对手。</div>
+
+  <h2>什么是 magnitude baseline？</h2>
+  <div class="metaphor">
+    <b>订单金额</b>（predicted_magnitude）= 预测效应向量的 L2 范数，就是"这次预测的变化幅度有多大"。<br><br>
+    直觉：一份 2000 元的大订单比一份 20 元的小订单更容易出差错（预测一个大幅基因表达变化比预测小变化更难）。所以<b>只看金额大小就能猜出投诉率</b>。
+  </div>
+
+  <h2>对比数据</h2>
+  <table>
+    <tr><th>方法</th><th>Macro Top-10% Enrichment</th></tr>
+    <tr><td class="warn">predicted_magnitude（只看金额）</td><td class="warn">3.30×</td></tr>
+    <tr><td>safeconf_lodo_risk（SafeConf LODO）</td><td>2.31×</td></tr>
+  </table>
+  <p>在 5/7 数据集上，magnitude 比 LODO 更能找到坏预测。</p>
+
+  <h2>为什么不致命？</h2>
+  <ol>
+    <li><b>partial ρ 证明 SafeConf 有独立信号。</b>控制 magnitude 后，gene_main 中位 partial ρ ≈ 0.36——说明 SafeConf 除了 magnitude 之外还捕捉到了别的信息。</li>
+    <li><b>magnitude 不能跨数据集迁移。</b>不同数据集的 magnitude 分布差异很大，没有统一的"多大算大"标准。SafeConf 的 z-score 标准化赋予了跨数据集可比性。</li>
+    <li><b>magnitude 是预测端的量，不是任务端的量。</b>SafeConf 的设计初衷是 predictor-agnostic——如果用户换模型，magnitude 变了但 SafeConf 分数不变。</li>
+  </ol>
+
+  <div class="error-box">
+    <b>论文 Discussion 必须报告这一点：</b>predicted_magnitude 在多数数据集的 top-k 检索上比 LODO 强。SafeConf 的增量价值在于跨数据集迁移能力和控制 magnitude 后的独立信号（partial ρ），而不是在单个数据集内碾压 magnitude。
+  </div>
+
+  <div class="summary-box">magnitude 是 SafeConf 最大对手——在多数数据集更能找到坏预测。但 partial ρ 证明 SafeConf 有独立信号。必须诚实报告。</div>
+</div>
+
+<!-- ============================================================ -->
+<!--                      第 12 章                                 -->
+<!-- ============================================================ -->
+<div class="chapter" id="ch12">
+  <h1><span class="nav-num">12</span>能不能发二区</h1>
+  <div class="chapter-goal">目标：判断当前论文的投稿定位。</div>
+
+  <h2>二区门槛检查</h2>
+  <table>
+    <tr><th>指标</th><th>二区门槛</th><th>当前数字</th><th>判定</th></tr>
+    <tr><td>gene_main median partial ρ</td><td>≥ 0.30</td><td class="good">~0.36</td><td class="good">PASS</td></tr>
+    <tr><td>80% coverage RMSE 改善</td><td>≥ 5%</td><td class="good">多数达标</td><td class="good">PASS</td></tr>
+    <tr><td>止损线</td><td>&lt; 0.15 则不发</td><td class="good">0.36</td><td class="good">SAFE</td></tr>
+  </table>
+
+  <div class="verdict good">二区可以冲（Bioinformatics / Briefings in Bioinformatics）</div>
+
+  <h2>叙事定位</h2>
+  <p>论文叙事必须调整为：</p>
+  <ul>
+    <li><b>主文叙事：</b>predictor-agnostic task-risk scoring protocol（任务风险评分协议）</li>
+    <li><b>不是：</b>"第三方模型质检系统"</li>
+    <li><b>核心卖点：</b>benchmark + protocol + 可解释 combined scoring</li>
+    <li><b>learned_histgb 只作 ablation</b>，不作唯一 headline</li>
+  </ul>
+
+  <h2>一区还需要什么</h2>
+  <p>如果要冲 Genome Biology / Cell Reports Methods：</p>
+  <ol>
+    <li>补 GEARS 验证——当前没有 frozen v0.2 / LODO 在 GEARS 预测上的评估</li>
+    <li>补外部验证——当前 external 数据集 n 太小、AURC 置信区间太宽</li>
+    <li>补 model-conditioned 第二层——加入 prediction_magnitude 等模型相关特征</li>
+    <li>解决 McFarland 失败——或在 Discussion 充分解释</li>
+  </ol>
+
+  <div class="summary-box">当前数据足够冲二区。一区需要补 GEARS 验证 + 外部验证 + model-conditioned 层。</div>
+</div>
+
+<!-- ============================================================ -->
+<!--                      第 13 章                                 -->
+<!-- ============================================================ -->
+<div class="chapter" id="ch13">
+  <h1><span class="nav-num">13</span>下一步行动表</h1>
+  <div class="chapter-goal">目标：知道今天之后该做什么。</div>
+
+  <h2>7 条行动（按优先级）</h2>
+  <table>
+    <tr><th>#</th><th>行动</th><th>优先级</th><th>估时</th><th>谁做</th></tr>
+    <tr><td>1</td><td><b>调整叙事</b>：从"模型质检"→"任务风险评估协议"</td><td style="color:var(--red);font-weight:700;">必做</td><td>1 天</td><td>学生 + Claude</td></tr>
+    <tr><td>2</td><td><b>准备老师回复话术</b>：用第 9 章的 5 步回答</td><td style="color:var(--red);font-weight:700;">必做</td><td>0.5 天</td><td>学生</td></tr>
+    <tr><td>3</td><td><b>补 GEARS frozen v0.2 评估</b></td><td style="color:var(--red);font-weight:700;">必做</td><td>2-3 天</td><td>Codex/服务器</td></tr>
+    <tr><td>4</td><td><b>完善 McFarland Discussion</b>：解释 drug+dose+time 混杂</td><td style="color:var(--orange);font-weight:700;">应做</td><td>1 天</td><td>学生 + Claude</td></tr>
+    <tr><td>5</td><td><b>探索 magnitude 控制后的 residual scoring</b></td><td style="color:var(--orange);font-weight:700;">应做</td><td>3-5 天</td><td>Codex/服务器</td></tr>
+    <tr><td>6</td><td><b>补外部验证数据集</b>（增加 n）</td><td style="color:var(--gray);font-weight:700;">暂缓</td><td>5+ 天</td><td>Codex/服务器</td></tr>
+    <tr><td>7</td><td><b>探索 model-conditioned 第二层</b></td><td style="color:var(--gray);font-weight:700;">暂缓</td><td>1-2 周</td><td>后续迭代</td></tr>
+  </table>
+
+  <h2>必须降级的 6 条说法</h2>
+  <table>
+    <tr><th>旧说法（不能再说）</th><th>新说法（正确表述）</th></tr>
+    <tr><td class="fail">"SafeConf 是第三方模型质检系统"</td><td>"predictor-agnostic task-risk scoring protocol"</td></tr>
+    <tr><td class="fail">"LODO 比 magnitude 更强"</td><td>"LODO 有跨数据集迁移价值，但 magnitude 在 5/7 数据集 macro enrichment 更强"</td></tr>
+    <tr><td class="fail">"7/7 LODO 全正"</td><td>"6/7 有效，Lara_exvivo 在 top-5%/10% 低于随机"</td></tr>
+    <tr><td class="fail">"McFarland 是边界案例"</td><td>"McFarland 是 frozen v0.2 的明确失败"</td></tr>
+    <tr><td class="fail">"GEARS 已验证"</td><td>"GEARS 只有 provenance 审计，没有 frozen v0.2 分数评估"</td></tr>
+    <tr><td class="fail">"Santinha 是正面证据"</td><td>"Santinha 是弱正信号"</td></tr>
+  </table>
+
+  <h2>给老师的下次汇报话术</h2>
+  <div class="answer">
+    <p>"老师上次的问题非常精准——我回去做了一组方差分解实验。结果发现：两个不同预测器在同一任务上的误差相关性是 0.973，93.6% 的误差方差来自任务本身，只有 0.1% 来自预测器差异。</p>
+    <p>所以 SafeConf 本质上确实是一个<b>任务风险评估协议</b>。它的使用价值在于：生物学家做完预测后，不知道哪些结果能信，SafeConf 可以帮他做风险分诊——把高风险的挑出来优先做实验验证。</p>
+    <p>当然，当前版本确实不能区分同一任务上不同模型的好坏。后续可以加入预测幅度等模型侧特征来走向模型特异性评估。但在任务方差占 93.6% 的前提下，任务风险评估本身已经覆盖了绝大部分预测可信度信息。"</p>
+  </div>
+
+  <div class="summary-box">最高优先级：调叙事 + 准备话术 + 补 GEARS 评估。三件事做完就可以再跟老师汇报。</div>
+</div>
+
+<!-- ============================================================ -->
+<!--                      附录                                     -->
+<!-- ============================================================ -->
+<hr>
+
+<div class="chapter" id="appendix-a">
+  <h1>附录 A：完整术语词典（按字母排序）</h1>
+
+  <table>
+    <tr><th>英文</th><th>中文</th><th>餐厅比喻</th><th>一句话定义</th></tr>
+    <tr><td>ablation</td><td>消融实验</td><td>去掉一条线索看差多少</td><td>去掉某个组件评估其贡献</td></tr>
+    <tr><td>aligned ρ</td><td>对齐后的 Spearman ρ</td><td>评分排序跟投诉率排序一致程度</td><td>取绝对值让正数=好的 Spearman 相关</td></tr>
+    <tr><td>ANOVA</td><td>方差分析</td><td>投诉来源拆解</td><td>把总方差拆分成各因素贡献</td></tr>
+    <tr><td>Bootstrap CI</td><td>自举置信区间</td><td>反复抽 1000 次的误差范围</td><td>通过重抽样估计统计量的不确定性</td></tr>
+    <tr><td>chem_robust</td><td>化学扰动线</td><td>药品类菜品</td><td>化学药物扰动数据集（McFarland、Srivatsan）</td></tr>
+    <tr><td>confidence_score</td><td>质检评分</td><td>质检员给的评分</td><td>SafeConf 输出，z-score 之和，可正可负</td></tr>
+    <tr><td>context</td><td>细胞背景</td><td>分店</td><td>细胞类型或细胞状态</td></tr>
+    <tr><td>context_similarity</td><td>分店熟悉度</td><td>跟老分店有多像</td><td>与 fold-train context 的最大余弦相似度</td></tr>
+    <tr><td>ContextSimBaseline</td><td>相似厨师</td><td>找最像的老分店照搬</td><td>取最相似 context 的 true_effect 做预测</td></tr>
+    <tr><td>enrichment</td><td>富集倍数</td><td>标记的高风险里真翻车是随机几倍</td><td>precision / random_expected_precision</td></tr>
+    <tr><td>fold</td><td>折</td><td>轮次</td><td>交叉验证的一轮</td></tr>
+    <tr><td>frozen protocol</td><td>冻结协议</td><td>质检手册定稿不改</td><td>公式锁死后不再调参数</td></tr>
+    <tr><td>GEARS</td><td>GEARS</td><td>高级厨师</td><td>深度学习扰动预测模型</td></tr>
+    <tr><td>gene_main</td><td>基因扰动主线</td><td>基因类菜品</td><td>基因扰动数据集（Cui、Frangieh、Lara 等）</td></tr>
+    <tr><td>h5ad</td><td>h5ad 文件</td><td>城市经营档案</td><td>HDF5-backed AnnData，存细胞×基因矩阵</td></tr>
+    <tr><td>held-out pair split</td><td>留出配对切分</td><td>没见过的(分店,菜品)组合</td><td>测试集的 (c,p) 对训练集没有</td></tr>
+    <tr><td>IQR</td><td>四分位距</td><td>中间 50% 的范围</td><td>Q3 - Q1，用于鲁棒标准化</td></tr>
+    <tr><td>L1-L4</td><td>防泄漏铁律</td><td>四条反作弊规则</td><td>防止测试信息泄漏到训练</td></tr>
+    <tr><td>leakage</td><td>信息泄漏</td><td>考试作弊</td><td>测试集信息出现在训练过程中</td></tr>
+    <tr><td>LODO</td><td>留一数据集</td><td>留一座城市盲测</td><td>Leave-One-Dataset-Out</td></tr>
+    <tr><td>log_support</td><td>菜品出现次数</td><td>做过多少次</td><td>log2(perturbation 在 fold-train 出现次数 + 1)</td></tr>
+    <tr><td>LOPO</td><td>留一预测器</td><td>留一个厨师盲测</td><td>Leave-One-Predictor-Out</td></tr>
+    <tr><td>magnitude</td><td>预测幅度</td><td>订单金额</td><td>预测向量的 L2 范数</td></tr>
+    <tr><td>median</td><td>中位数</td><td>排中间那个人的成绩</td><td>排序后位于中间的值</td></tr>
+    <tr><td>model_disagreement</td><td>厨师分歧</td><td>两厨师做法差多大</td><td>RMSE(V0 预测, CS 预测)</td></tr>
+    <tr><td>partial ρ</td><td>偏相关系数</td><td>去掉金额影响后还多准</td><td>控制 magnitude 后的 Spearman 相关</td></tr>
+    <tr><td>perturbation</td><td>扰动</td><td>菜品</td><td>对细胞的干预（基因敲除/加药等）</td></tr>
+    <tr><td>predicted_effect</td><td>预测效应</td><td>厨师做出来的菜</td><td>模型预测的 5000 维基因变化向量</td></tr>
+    <tr><td>predictor</td><td>预测器</td><td>厨师</td><td>扰动预测模型</td></tr>
+    <tr><td>PredictionRecord</td><td>预测记录</td><td>一张答卷</td><td>一次 (dataset,fold,split,context,pert,predictor) 预测</td></tr>
+    <tr><td>RC@80%</td><td>80%覆盖时RMSE改善</td><td>淘汰最差20%后改善</td><td>保留分数最高 80% 的预测，RMSE 降幅</td></tr>
+    <tr><td>risk triage</td><td>风险分诊</td><td>按风险排序优先验证</td><td>按 SafeConf 分数排序，高风险优先实验</td></tr>
+    <tr><td>Spearman ρ</td><td>Spearman 相关</td><td>排序一致性</td><td>秩相关系数，只看排序不看具体数值</td></tr>
+    <tr><td>split</td><td>划分</td><td>练习/考试</td><td>train/val/test 数据划分</td></tr>
+    <tr><td>true_effect</td><td>真实效应</td><td>标准菜谱味道</td><td>实验测得的 5000 维基因变化向量</td></tr>
+    <tr><td>true_error_rmse</td><td>真实误差</td><td>投诉率</td><td>RMSE(predicted_effect, true_effect)</td></tr>
+    <tr><td>V0StrongBaseline</td><td>均值厨师</td><td>查历史平均</td><td>对 fold-train 中同 perturbation 的 true_effect 取平均</td></tr>
+    <tr><td>z-score</td><td>标准化分数</td><td>统一标尺</td><td>(值 - median) / IQR</td></tr>
+  </table>
+</div>
+
+<hr>
+
+<div class="chapter" id="appendix-b">
+  <h1>附录 B：数据来源地图</h1>
+
+  <p>本文件中每个关键数字的来源文件：</p>
+  <table>
+    <tr><th>内容</th><th>来源文件（相对于项目根目录）</th></tr>
+    <tr><td>7 主表 aligned/partial ρ</td><td><code>docs/实验结果/Formal_main_20260604/corrected_v3_drop_blank_1000_20260609/tables/FORMAL_MAIN_TABLE.csv</code></td></tr>
+    <tr><td>A1 方差分解 93.6% / 0.973</td><td><code>docs/实验结果/Task_risk_audit_20260611/tables/A1_task_vs_predictor_variance_summary.csv</code></td></tr>
+    <tr><td>LODO 7/7 positive</td><td><code>docs/实验结果/Formal_main_20260604/sprint1_lodo/tables/LODO_MAIN_TABLE.csv</code></td></tr>
+    <tr><td>Bad prediction enrichment 2.3× / 3.3×</td><td><code>docs/实验结果/Task_risk_audit_20260611/tables/B1_bad_prediction_retrieval.csv</code></td></tr>
+    <tr><td>Lara_exvivo LODO failure</td><td><code>docs/实验结果/Task_risk_audit_20260611/tables/D1_lara_exvivo_lodo_failure_summary.csv</code></td></tr>
+    <tr><td>Scope boundary 表</td><td><code>docs/实验结果/Task_risk_audit_20260611/reports/C3_scope_boundary_interpretation.md</code></td></tr>
+    <tr><td>特征高低对比</td><td><code>docs/实验结果/Task_risk_audit_20260611/reports/C2_task_risk_feature_explanation.md</code></td></tr>
+    <tr><td>老师反馈原文</td><td>私有反馈包（不进 Git，按需线下同步）</td></tr>
+  </table>
+</div>
+
+<hr>
+
+<div class="chapter" id="appendix-c">
+  <h1>附录 C：Scope Boundary 表——什么能说、什么不能说</h1>
+  <p><span class="source-tag tag-data">数据来源</span> <code>Task_risk_audit_20260611/reports/C3_scope_boundary_interpretation.md</code></p>
+
+  <table>
+    <tr><th>领域</th><th>状态</th><th>安全说法</th><th>注意事项</th></tr>
+    <tr>
+      <td>简单预测器任务风险</td><td class="good">strong_with_boundary</td>
+      <td>任务难度在已测简单预测器中占主导</td>
+      <td>不可推广到所有深度学习预测器</td>
+    </tr>
+    <tr>
+      <td>坏预测检索</td><td class="weak">useful_but_not_dominant</td>
+      <td>SafeConf LODO 在多数数据集高于随机</td>
+      <td>predicted_magnitude 更强，必须作为主要对比</td>
+    </tr>
+    <tr>
+      <td>Magnitude vs LODO</td><td class="fail">magnitude_stronger</td>
+      <td>LODO 有跨数据集迁移价值</td>
+      <td>增量价值有限，框架为迁移/校准价值而非全面优势</td>
+    </tr>
+    <tr>
+      <td>McFarland</td><td class="fail">failure_rescue</td>
+      <td>Frozen v0.2 失败；LODO 部分挽救</td>
+      <td>永远不能说 McFarland 是 frozen v0.2 成功</td>
+    </tr>
+    <tr>
+      <td>Santinha</td><td class="weak">weak_positive</td>
+      <td>有一些检索价值</td>
+      <td>仅作弱/辅助证据，不是 headline</td>
+    </tr>
+    <tr>
+      <td>Lara_exvivo LODO</td><td class="fail">lodo_retrieval_failure</td>
+      <td>Frozen/per-dataset 很强；但 LODO 在 top-k 失败</td>
+      <td>LODO top-5% enrichment = 0.593（低于随机）</td>
+    </tr>
+    <tr>
+      <td>Lara_invivo</td><td class="weak">predictor_difference_caution</td>
+      <td>风险检索正向</td>
+      <td>A1 显示 V0/CS 差异较大，需单独讨论</td>
+    </tr>
+    <tr>
+      <td>GEARS</td><td class="fail">no_score_yet</td>
+      <td>只有 provenance/dedup 审计和 magnitude 诊断</td>
+      <td>没有 frozen v0.2 / LODO 在 GEARS 预测上的评估</td>
+    </tr>
+    <tr>
+      <td>外部验证</td><td class="weak">supportive_only</td>
+      <td>方向性支持</td>
+      <td>Small-n、AURC 置信区间不确定</td>
+    </tr>
+  </table>
+
+  <h2>最保守的安全措辞</h2>
+  <div class="highlight-box">
+    SafeConf is a task-risk scoring protocol validated across multiple simple predictors. Its LODO transfer risk score is above random for bad-prediction retrieval in 6/7 datasets, with macro top-10 enrichment of 2.313×. This supports practical screening value. However, three boundaries must be reported clearly: deployable predicted magnitude is stronger than LODO in most datasets, Lara_exvivo is a LODO top-k failure, and GEARS currently has no SafeConf score evaluation.
+  </div>
+</div>
+
+<!-- ========================== FOOTER ========================== -->
+<div class="foot">
+  <p><b>SafeConf 终版学习手册</b> · 2026-06-12 · 14 章 + 3 附录</p>
+  <p>本文件替代桌面上的：零基础总学习书、方法与故事餐厅版、老师反馈完整解读。</p>
+  <p>所有数字来自 <code>docs/实验结果/</code> 下的 CSV 和 MD 文件，1000 次 bootstrap 置信区间。</p>
+  <p>比喻体系：连锁餐厅质检 | 分店=context, 菜品=perturbation, 厨师=predictor, 投诉率=error, 质检评分=confidence_score</p>
+</div>
+
+</body>
+</html>

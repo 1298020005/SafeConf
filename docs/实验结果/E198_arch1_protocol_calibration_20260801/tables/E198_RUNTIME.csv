@@ -1,0 +1,13 @@
+protocol,axis,seconds,n_perturbations
+pearson,direction,7.582694828510284,150
+pearson_ctrl,direction,5.1456520752981305,150
+pearson_pert,direction,15.92870088107884,150
+mse,absolute,5.163523004390299,150
+wmse_exp2,absolute,7.294429301284254,150
+rank,retrieval,15.46113131660968,150
+transpose_rank,retrieval,15.383626687340438,150
+energy_distance_pca_k=50,population,14.507467881776392,150
+unbiased_mmd_median_pca_k=50,population,26.331529080867767,150
+de_auprc,de,1.1944078085944057,150
+de_auroc,de,1.884304971434176,150
+de_overlap_k=50,de,0.1233494570478797,150

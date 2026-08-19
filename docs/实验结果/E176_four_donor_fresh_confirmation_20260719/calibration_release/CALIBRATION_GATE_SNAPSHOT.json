@@ -1,0 +1,498 @@
+{
+  "calibration_code_freeze_commit": "71f2388290fea4402e93c107aa6f82043f887ae5",
+  "calibration_code_freeze_remote_heads": {
+    "github": "71f2388290fea4402e93c107aa6f82043f887ae5",
+    "origin": "71f2388290fea4402e93c107aa6f82043f887ae5"
+  },
+  "calibration_rules": {
+    "ensemble_rmse": {
+      "H01": {
+        "magnitude": {
+          "calibration_residual_sha256_float64": "fb1caee154f0fb3c3e762eab8a1e3ccc72b01dbb2c49ccfcd47e01e79808ca62",
+          "cluster_score": "max_state(observed_error_minus_base_prediction)",
+          "coverage": 0.9,
+          "finite_sample_order_rank_one_based": 37,
+          "n_calibration_targets": 40,
+          "n_calibration_tasks": 120,
+          "outcome": "ensemble_rmse",
+          "quantile": 0.025128901103329965,
+          "schema": "safeconf_e174_cluster_conformal_upper_v1"
+        },
+        "magnitude_plus_pair_lower": {
+          "calibration_residual_sha256_float64": "4fcaa6565568afe500241cc384534e7d6f740336ff66801f1d46664c7d94963b",
+          "cluster_score": "max_state(observed_error_minus_base_prediction)",
+          "coverage": 0.9,
+          "finite_sample_order_rank_one_based": 37,
+          "n_calibration_targets": 40,
+          "n_calibration_tasks": 120,
+          "outcome": "ensemble_rmse",
+          "quantile": 0.024691690176959727,
+          "schema": "safeconf_e174_cluster_conformal_upper_v1"
+        },
+        "state_stratum_constant": {
+          "calibration_residual_sha256_float64": "0df5b866e0c97319f761ed8ac4266b079df45db9d0b6b3ac17df97de6e088726",
+          "cluster_score": "max_state(observed_error_minus_base_prediction)",
+          "coverage": 0.9,
+          "finite_sample_order_rank_one_based": 37,
+          "n_calibration_targets": 40,
+          "n_calibration_tasks": 120,
+          "outcome": "ensemble_rmse",
+          "quantile": 0.023929750680003414,
+          "schema": "safeconf_e174_cluster_conformal_upper_v1"
+        }
+      },
+      "H02": {
+        "magnitude": {
+          "calibration_residual_sha256_float64": "148e3c7e4d527e2214beafd462d24ba0e975df8f37f88ae003892c63d7e16ff4",
+          "cluster_score": "max_state(observed_error_minus_base_prediction)",
+          "coverage": 0.9,
+          "finite_sample_order_rank_one_based": 37,
+          "n_calibration_targets": 40,
+          "n_calibration_tasks": 120,
+          "outcome": "ensemble_rmse",
+          "quantile": 0.051469627370078486,
+          "schema": "safeconf_e174_cluster_conformal_upper_v1"
+        },
+        "magnitude_plus_pair_lower": {
+          "calibration_residual_sha256_float64": "46291ea99dac5e45a6d1f0b1427b318b665be4861bf7200c39bbde3f47113ba9",
+          "cluster_score": "max_state(observed_error_minus_base_prediction)",
+          "coverage": 0.9,
+          "finite_sample_order_rank_one_based": 37,
+          "n_calibration_targets": 40,
+          "n_calibration_tasks": 120,
+          "outcome": "ensemble_rmse",
+          "quantile": 0.052381363617887866,
+          "schema": "safeconf_e174_cluster_conformal_upper_v1"
+        },
+        "state_stratum_constant": {
+          "calibration_residual_sha256_float64": "a475c7b8b073b8511ed57019af0dab7715a52234ab489ce71df8bec015a1c9ba",
+          "cluster_score": "max_state(observed_error_minus_base_prediction)",
+          "coverage": 0.9,
+          "finite_sample_order_rank_one_based": 37,
+          "n_calibration_targets": 40,
+          "n_calibration_tasks": 120,
+          "outcome": "ensemble_rmse",
+          "quantile": 0.0611024428308201,
+          "schema": "safeconf_e174_cluster_conformal_upper_v1"
+        }
+      },
+      "H03": {
+        "magnitude": {
+          "calibration_residual_sha256_float64": "9443b77a1583443b86c396164a6e709285f7b2b6f53c1ea68bcbbdf9623a19a7",
+          "cluster_score": "max_state(observed_error_minus_base_prediction)",
+          "coverage": 0.9,
+          "finite_sample_order_rank_one_based": 37,
+          "n_calibration_targets": 40,
+          "n_calibration_tasks": 120,
+          "outcome": "ensemble_rmse",
+          "quantile": 0.11303237837060573,
+          "schema": "safeconf_e174_cluster_conformal_upper_v1"
+        },
+        "magnitude_plus_pair_lower": {
+          "calibration_residual_sha256_float64": "8dd3b3e383977d631cb10109c05214e3d035f5d216568065762a3bf8874204fd",
+          "cluster_score": "max_state(observed_error_minus_base_prediction)",
+          "coverage": 0.9,
+          "finite_sample_order_rank_one_based": 37,
+          "n_calibration_targets": 40,
+          "n_calibration_tasks": 120,
+          "outcome": "ensemble_rmse",
+          "quantile": 0.1145340320580586,
+          "schema": "safeconf_e174_cluster_conformal_upper_v1"
+        },
+        "state_stratum_constant": {
+          "calibration_residual_sha256_float64": "3e46e96e40aa018f08d2aad5565a17b229b4f3e64d146b90132c7f5b8d6cc8ff",
+          "cluster_score": "max_state(observed_error_minus_base_prediction)",
+          "coverage": 0.9,
+          "finite_sample_order_rank_one_based": 37,
+          "n_calibration_targets": 40,
+          "n_calibration_tasks": 120,
+          "outcome": "ensemble_rmse",
+          "quantile": 0.11133305692285335,
+          "schema": "safeconf_e174_cluster_conformal_upper_v1"
+        }
+      },
+      "H04": {
+        "magnitude": {
+          "calibration_residual_sha256_float64": "f2d2c843df5a53a24f17a9c61986d6feeb17ccb2d3d12e4967b68c93fe631455",
+          "cluster_score": "max_state(observed_error_minus_base_prediction)",
+          "coverage": 0.9,
+          "finite_sample_order_rank_one_based": 37,
+          "n_calibration_targets": 40,
+          "n_calibration_tasks": 120,
+          "outcome": "ensemble_rmse",
+          "quantile": 0.12997457316207078,
+          "schema": "safeconf_e174_cluster_conformal_upper_v1"
+        },
+        "magnitude_plus_pair_lower": {
+          "calibration_residual_sha256_float64": "e97d03876654211f4ecc6295926f2a32aa0e99408b69782457b392e1e5178478",
+          "cluster_score": "max_state(observed_error_minus_base_prediction)",
+          "coverage": 0.9,
+          "finite_sample_order_rank_one_based": 37,
+          "n_calibration_targets": 40,
+          "n_calibration_tasks": 120,
+          "outcome": "ensemble_rmse",
+          "quantile": 0.1297023803393783,
+          "schema": "safeconf_e174_cluster_conformal_upper_v1"
+        },
+        "state_stratum_constant": {
+          "calibration_residual_sha256_float64": "990fdab9b3a9c3dbf539f04386b0ce519e04229f98ce4940edc1100ba43e09a8",
+          "cluster_score": "max_state(observed_error_minus_base_prediction)",
+          "coverage": 0.9,
+          "finite_sample_order_rank_one_based": 37,
+          "n_calibration_targets": 40,
+          "n_calibration_tasks": 120,
+          "outcome": "ensemble_rmse",
+          "quantile": 0.12874624645265048,
+          "schema": "safeconf_e174_cluster_conformal_upper_v1"
+        }
+      }
+    },
+    "pair_mean_rmse": {
+      "H01": {
+        "magnitude": {
+          "calibration_residual_sha256_float64": "86771dedd207488b26bd8f2126ec90119938374c988d1f1dfe28eea96d054fb5",
+          "cluster_score": "max_state(observed_error_minus_base_prediction)",
+          "coverage": 0.9,
+          "finite_sample_order_rank_one_based": 37,
+          "n_calibration_targets": 40,
+          "n_calibration_tasks": 120,
+          "outcome": "pair_mean_rmse",
+          "quantile": 0.024790188312498324,
+          "schema": "safeconf_e174_cluster_conformal_upper_v1"
+        },
+        "magnitude_plus_pair_lower": {
+          "calibration_residual_sha256_float64": "57f44fa8f7a265568080f390ba7c9db91d157f1b963d7945875df7639b5bc8e0",
+          "cluster_score": "max_state(observed_error_minus_base_prediction)",
+          "coverage": 0.9,
+          "finite_sample_order_rank_one_based": 37,
+          "n_calibration_targets": 40,
+          "n_calibration_tasks": 120,
+          "outcome": "pair_mean_rmse",
+          "quantile": 0.024135669202075993,
+          "schema": "safeconf_e174_cluster_conformal_upper_v1"
+        },
+        "state_stratum_constant": {
+          "calibration_residual_sha256_float64": "cfe1e86754b6e325749929ea969dfb991e5c613e5c583e21421ac87817ee5ac6",
+          "cluster_score": "max_state(observed_error_minus_base_prediction)",
+          "coverage": 0.9,
+          "finite_sample_order_rank_one_based": 37,
+          "n_calibration_targets": 40,
+          "n_calibration_tasks": 120,
+          "outcome": "pair_mean_rmse",
+          "quantile": 0.023395592131270126,
+          "schema": "safeconf_e174_cluster_conformal_upper_v1"
+        }
+      },
+      "H02": {
+        "magnitude": {
+          "calibration_residual_sha256_float64": "1fc12bcd065848c549ef7978e7e56a600364125c6965a3485cf3ce0fd64c2a41",
+          "cluster_score": "max_state(observed_error_minus_base_prediction)",
+          "coverage": 0.9,
+          "finite_sample_order_rank_one_based": 37,
+          "n_calibration_targets": 40,
+          "n_calibration_tasks": 120,
+          "outcome": "pair_mean_rmse",
+          "quantile": 0.04989250487327576,
+          "schema": "safeconf_e174_cluster_conformal_upper_v1"
+        },
+        "magnitude_plus_pair_lower": {
+          "calibration_residual_sha256_float64": "58dc461f7fa4cf82b42090e27ebb322c4deb32a19f7261c25f526fca760097c5",
+          "cluster_score": "max_state(observed_error_minus_base_prediction)",
+          "coverage": 0.9,
+          "finite_sample_order_rank_one_based": 37,
+          "n_calibration_targets": 40,
+          "n_calibration_tasks": 120,
+          "outcome": "pair_mean_rmse",
+          "quantile": 0.05125740396857109,
+          "schema": "safeconf_e174_cluster_conformal_upper_v1"
+        },
+        "state_stratum_constant": {
+          "calibration_residual_sha256_float64": "d35a6b57dcd882f4595165ad3152faa365327c7ef4da00f38e5d4e9e08458369",
+          "cluster_score": "max_state(observed_error_minus_base_prediction)",
+          "coverage": 0.9,
+          "finite_sample_order_rank_one_based": 37,
+          "n_calibration_targets": 40,
+          "n_calibration_tasks": 120,
+          "outcome": "pair_mean_rmse",
+          "quantile": 0.06109534264467034,
+          "schema": "safeconf_e174_cluster_conformal_upper_v1"
+        }
+      },
+      "H03": {
+        "magnitude": {
+          "calibration_residual_sha256_float64": "c711dc67f3ca47fbf4c6b04652b52fafb217b3f0bf3fabfdb4022df333440672",
+          "cluster_score": "max_state(observed_error_minus_base_prediction)",
+          "coverage": 0.9,
+          "finite_sample_order_rank_one_based": 37,
+          "n_calibration_targets": 40,
+          "n_calibration_tasks": 120,
+          "outcome": "pair_mean_rmse",
+          "quantile": 0.11209251157099512,
+          "schema": "safeconf_e174_cluster_conformal_upper_v1"
+        },
+        "magnitude_plus_pair_lower": {
+          "calibration_residual_sha256_float64": "994b5acbf06d58b11d8251c1b8789c1632065082415fb967f435514e1bd9a031",
+          "cluster_score": "max_state(observed_error_minus_base_prediction)",
+          "coverage": 0.9,
+          "finite_sample_order_rank_one_based": 37,
+          "n_calibration_targets": 40,
+          "n_calibration_tasks": 120,
+          "outcome": "pair_mean_rmse",
+          "quantile": 0.11434053644044158,
+          "schema": "safeconf_e174_cluster_conformal_upper_v1"
+        },
+        "state_stratum_constant": {
+          "calibration_residual_sha256_float64": "cb7d416dd96ee9949eb75f3552415c0ddbd88efa6277becff9be013c7edca540",
+          "cluster_score": "max_state(observed_error_minus_base_prediction)",
+          "coverage": 0.9,
+          "finite_sample_order_rank_one_based": 37,
+          "n_calibration_targets": 40,
+          "n_calibration_tasks": 120,
+          "outcome": "pair_mean_rmse",
+          "quantile": 0.11011622306238542,
+          "schema": "safeconf_e174_cluster_conformal_upper_v1"
+        }
+      },
+      "H04": {
+        "magnitude": {
+          "calibration_residual_sha256_float64": "36571faa4d65cddea89f17a21cda2b9374a6cedfeb53210f862f517301ed2163",
+          "cluster_score": "max_state(observed_error_minus_base_prediction)",
+          "coverage": 0.9,
+          "finite_sample_order_rank_one_based": 37,
+          "n_calibration_targets": 40,
+          "n_calibration_tasks": 120,
+          "outcome": "pair_mean_rmse",
+          "quantile": 0.1291939640077919,
+          "schema": "safeconf_e174_cluster_conformal_upper_v1"
+        },
+        "magnitude_plus_pair_lower": {
+          "calibration_residual_sha256_float64": "d20f138185a6fb014e2985b886390d6620d52260a5d3ffd8a4e18308f763fda5",
+          "cluster_score": "max_state(observed_error_minus_base_prediction)",
+          "coverage": 0.9,
+          "finite_sample_order_rank_one_based": 37,
+          "n_calibration_targets": 40,
+          "n_calibration_tasks": 120,
+          "outcome": "pair_mean_rmse",
+          "quantile": 0.1287864824161238,
+          "schema": "safeconf_e174_cluster_conformal_upper_v1"
+        },
+        "state_stratum_constant": {
+          "calibration_residual_sha256_float64": "93aaafdc3f71005c30dfd4af93e3c9edec9df7689ab85ceb0467a612f12017b0",
+          "cluster_score": "max_state(observed_error_minus_base_prediction)",
+          "coverage": 0.9,
+          "finite_sample_order_rank_one_based": 37,
+          "n_calibration_targets": 40,
+          "n_calibration_tasks": 120,
+          "outcome": "pair_mean_rmse",
+          "quantile": 0.12776543618931677,
+          "schema": "safeconf_e174_cluster_conformal_upper_v1"
+        }
+      }
+    }
+  },
+  "calibration_targeting_x_values_read": 960,
+  "deployment_authorized": false,
+  "evaluation_targeting_x_values_read": 0,
+  "evaluation_truth_may_modify_model_or_quantile": false,
+  "experiment": "E176_four_donor_fresh_confirmation",
+  "f2_manifest_sha256": {
+    "H01": "a7359965f97154473a77b3884c8ac1942e9fbe83b56961d4c797518ea85d64e1",
+    "H02": "76684fc42b50314bf0705a6b2802b2e06cc06f529f2953bbdf351683749175cc",
+    "H03": "d530291955e1c9f03889f8c6cd768130a7eb16c4e2f85b0899a5c5a9cfaa89c6",
+    "H04": "34e2f314261c31a7c05ac3f0d66f5337f0648c73f662686f2b663f7b379c85fe"
+  },
+  "f3_calibration_manifest_sha256": {
+    "H01": "523dcd51b024871a73251671bc4226a3d3e7b2ca468e88c51f4848caf52fd4ed",
+    "H02": "5fc5d63fa8914ea8da0f31929878181b059953beda793f258f05f2592f81dec4",
+    "H03": "56df56c2d490b35960ebb50ac3cd8e175caeb9c8fb92e1d0ba15c0bd76f85021",
+    "H04": "9139db6f9e30fd975aab27dbf5cd9dd3c215cd4f8c06102b76f9874a318c63ff"
+  },
+  "final_evaluator_authorized": true,
+  "finite_sample_order_rank_each_donor": 37,
+  "method_frozen_before_evaluation_truth": true,
+  "method_snapshot_sha256": "5a3d5a3725a749cfa7b4dfbd68632bda39281cfd4214270843f61642d95337ad",
+  "models": {
+    "ensemble_rmse": {
+      "magnitude": {
+        "coefficient": [
+          0.12167542694920284,
+          0.0036235379051964933,
+          0.0009659614313122307,
+          -0.0020288893203126664,
+          0.00617738077166039
+        ],
+        "feature_names": [
+          "intercept",
+          "state_Stim8hr",
+          "state_Stim48hr",
+          "column_unseen",
+          "z_predicted_magnitude"
+        ],
+        "n_training_targets": 1000,
+        "n_training_tasks": 3000,
+        "numeric_means": {
+          "predicted_magnitude": 0.02160682912326098
+        },
+        "numeric_scales": {
+          "predicted_magnitude": 0.006370073227896779
+        },
+        "outcome": "ensemble_rmse",
+        "ridge_lambda": 10.0,
+        "schema": "safeconf_e174_ridge_base_v1",
+        "spec": "magnitude"
+      },
+      "magnitude_plus_pair_lower": {
+        "coefficient": [
+          0.12138544812527491,
+          0.0038834029335029015,
+          0.0013456177815567405,
+          -0.0016448641649246013,
+          0.004121811702663467,
+          0.0021701162250008775
+        ],
+        "feature_names": [
+          "intercept",
+          "state_Stim8hr",
+          "state_Stim48hr",
+          "column_unseen",
+          "z_predicted_magnitude",
+          "z_pair_lower_bound_rmse"
+        ],
+        "n_training_targets": 1000,
+        "n_training_tasks": 3000,
+        "numeric_means": {
+          "pair_lower_bound_rmse": 0.015877459536306485,
+          "predicted_magnitude": 0.02160682912326098
+        },
+        "numeric_scales": {
+          "pair_lower_bound_rmse": 0.0061170014190270955,
+          "predicted_magnitude": 0.006370073227896779
+        },
+        "outcome": "ensemble_rmse",
+        "ridge_lambda": 10.0,
+        "schema": "safeconf_e174_ridge_base_v1",
+        "spec": "magnitude_plus_pair_lower"
+      },
+      "state_stratum_constant": {
+        "coefficient": [
+          0.12184962531340877,
+          0.003887535075771111,
+          0.0014749150514585887,
+          -0.004188132459210624
+        ],
+        "feature_names": [
+          "intercept",
+          "state_Stim8hr",
+          "state_Stim48hr",
+          "column_unseen"
+        ],
+        "n_training_targets": 1000,
+        "n_training_tasks": 3000,
+        "numeric_means": {},
+        "numeric_scales": {},
+        "outcome": "ensemble_rmse",
+        "ridge_lambda": 10.0,
+        "schema": "safeconf_e174_ridge_base_v1",
+        "spec": "state_stratum_constant"
+      }
+    },
+    "pair_mean_rmse": {
+      "magnitude": {
+        "coefficient": [
+          0.12310497469583678,
+          0.003348685497995621,
+          0.0006992571366074676,
+          -0.0021477513714351893,
+          0.0071842126446919185
+        ],
+        "feature_names": [
+          "intercept",
+          "state_Stim8hr",
+          "state_Stim48hr",
+          "column_unseen",
+          "z_predicted_magnitude"
+        ],
+        "n_training_targets": 1000,
+        "n_training_tasks": 3000,
+        "numeric_means": {
+          "predicted_magnitude": 0.02160682912326098
+        },
+        "numeric_scales": {
+          "predicted_magnitude": 0.006370073227896779
+        },
+        "outcome": "pair_mean_rmse",
+        "ridge_lambda": 10.0,
+        "schema": "safeconf_e174_ridge_base_v1",
+        "spec": "magnitude"
+      },
+      "magnitude_plus_pair_lower": {
+        "coefficient": [
+          0.12267086687640437,
+          0.0037377119767459397,
+          0.001267615157051334,
+          -0.0015728531062634335,
+          0.00410695826401762,
+          0.0032487352337983227
+        ],
+        "feature_names": [
+          "intercept",
+          "state_Stim8hr",
+          "state_Stim48hr",
+          "column_unseen",
+          "z_predicted_magnitude",
+          "z_pair_lower_bound_rmse"
+        ],
+        "n_training_targets": 1000,
+        "n_training_tasks": 3000,
+        "numeric_means": {
+          "pair_lower_bound_rmse": 0.015877459536306485,
+          "predicted_magnitude": 0.02160682912326098
+        },
+        "numeric_scales": {
+          "pair_lower_bound_rmse": 0.0061170014190270955,
+          "predicted_magnitude": 0.006370073227896779
+        },
+        "outcome": "pair_mean_rmse",
+        "ridge_lambda": 10.0,
+        "schema": "safeconf_e174_ridge_base_v1",
+        "spec": "magnitude_plus_pair_lower"
+      },
+      "state_stratum_constant": {
+        "coefficient": [
+          0.12330756510382238,
+          0.0036557107375123476,
+          0.001291163507377356,
+          -0.004658922761840746
+        ],
+        "feature_names": [
+          "intercept",
+          "state_Stim8hr",
+          "state_Stim48hr",
+          "column_unseen"
+        ],
+        "n_training_targets": 1000,
+        "n_training_tasks": 3000,
+        "numeric_means": {},
+        "numeric_scales": {},
+        "outcome": "pair_mean_rmse",
+        "ridge_lambda": 10.0,
+        "schema": "safeconf_e174_ridge_base_v1",
+        "spec": "state_stratum_constant"
+      }
+    }
+  },
+  "n_calibration_targets": 160,
+  "n_calibration_targets_each_donor": 40,
+  "n_calibration_tasks": 480,
+  "pair_max_bound_violations": 0,
+  "pair_mean_bound_violations": 0,
+  "schema": "safeconf_e176_donor_specific_calibration_gate_v1",
+  "selected_model_spec": {
+    "ensemble_rmse": "magnitude",
+    "pair_mean_rmse": "magnitude"
+  },
+  "source_full_sha256": "fd2b8c21d357f8699ec34e2d5ebc1639612c27a0147a9ca94d4983822d93247e",
+  "squared_error_decomposition_max_abs_residual": 8.39251654283224e-11,
+  "stage": "F3_DONOR_SPECIFIC_CONFORMAL_CALIBRATION",
+  "status": "PASS"
+}

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="670">
+<rect width="100%" height="100%" fill="#fff"/>
+<style>text{font-family:Arial,"Noto Sans CJK SC",sans-serif;fill:#27343c}.t{font-size:24px;font-weight:700}.s{font-size:13px;fill:#647078}.l{font-size:15px}</style>
+<text x="45" y="40" class="t">E131｜六套正式数据：SafeConf 相对 magnitude</text>
+<text x="45" y="67" class="s">Tian 是技术批次偏移；点为 fold 宏平均 Δρ，线为 perturbation-cluster bootstrap 95% CI。</text>
+<line x1="650.0" y1="90" x2="650.0" y2="625" stroke="#89959b" stroke-dasharray="5 5"/>
+<text x="45" y="125" class="l">Frangieh</text>
+<line x1="618.4" y1="120" x2="871.0" y2="120" stroke="#396d83" stroke-width="4"/>
+<circle cx="740.9" cy="120" r="7" fill="#285f78"/>
+<text x="1090" y="125" text-anchor="end" class="s">0.105 [-0.036, 0.255]</text>
+<text x="45" y="197" class="l">Lara_exvivo</text>
+<line x1="724.8" y1="192" x2="995.3" y2="192" stroke="#396d83" stroke-width="4"/>
+<circle cx="857.7" cy="192" r="7" fill="#285f78"/>
+<text x="1090" y="197" text-anchor="end" class="s">0.240 [0.086, 0.398]</text>
+<text x="45" y="269" class="l">Santinha</text>
+<line x1="511.1" y1="264" x2="1022.6" y2="264" stroke="#396d83" stroke-width="4"/>
+<circle cx="783.4" cy="264" r="7" fill="#285f78"/>
+<text x="1090" y="269" text-anchor="end" class="s">0.154 [-0.160, 0.430]</text>
+<text x="45" y="341" class="l">Shifrut</text>
+<line x1="454.7" y1="336" x2="875.1" y2="336" stroke="#396d83" stroke-width="4"/>
+<circle cx="618.8" cy="336" r="7" fill="#285f78"/>
+<text x="1090" y="341" text-anchor="end" class="s">-0.036 [-0.225, 0.260]</text>
+<text x="45" y="413" class="l">Liang</text>
+<line x1="597.4" y1="408" x2="939.0" y2="408" stroke="#396d83" stroke-width="4"/>
+<circle cx="769.8" cy="408" r="7" fill="#285f78"/>
+<text x="1090" y="413" text-anchor="end" class="s">0.138 [-0.061, 0.333]</text>
+<text x="45" y="485" class="l">Tian_CRISPRi</text>
+<line x1="550.7" y1="480" x2="887.7" y2="480" stroke="#396d83" stroke-width="4"/>
+<circle cx="708.5" cy="480" r="7" fill="#285f78"/>
+<text x="1090" y="485" text-anchor="end" class="s">0.067 [-0.115, 0.274]</text>
+<text x="45" y="557" class="l">六数据集固定集合</text>
+<line x1="671.8" y1="552" x2="823.1" y2="552" stroke="#396d83" stroke-width="4"/>
+<circle cx="746.5" cy="552" r="7" fill="#285f78"/>
+<text x="1090" y="557" text-anchor="end" class="s">0.111 [0.025, 0.200]</text>
+</svg>

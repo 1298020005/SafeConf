@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>07 结果与边界</title>
+<link rel="stylesheet" href="assets/tutorial.css">
+</head>
+<body>
+<header class="top">
+<div class="topin">
+<a class="brand" href="index.html">SafeConf 完整项目讲解</a>
+<a class="back" href="../../SafeConf_统一研究工作台.html">返回工作台</a>
+</div>
+</header>
+<div class="layout">
+<aside class="side" id="chapterNav">
+</aside>
+<main class="content">
+<section class="hero">
+<p class="eyebrow">CHAPTER 07</p>
+<h1>结果：成立到哪里，停在哪里</h1>
+<p class="lead">一个可信系统不只展示最好数字，还要说清哪个数据集失败、哪个基线更强、哪种外推尚未验证。</p>
+</section>
+<h2>1. 七主数据集</h2>
+<div class="table">
+<table>
+<thead>
+<tr>
+<th>数据集</th>
+<th>Aligned ρ</th>
+<th>Magnitude-controlled partial ρ</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cui</td>
+<td>0.445</td>
+<td>0.328</td>
+<td>正</td>
+</tr>
+<tr>
+<td>Frangieh</td>
+<td>0.583</td>
+<td>0.474</td>
+<td>正</td>
+</tr>
+<tr>
+<td>Lara ex vivo</td>
+<td>0.563</td>
+<td>0.443</td>
+<td>正</td>
+</tr>
+<tr>
+<td>Lara in vivo</td>
+<td>0.394</td>
+<td>0.357</td>
+<td>正</td>
+</tr>
+<tr>
+<td>McFarland</td>
+<td>-0.086</td>
+<td>-0.061</td>
+<td style="color:var(--red);font-weight:800">失败边界</td>
+</tr>
+<tr>
+<td>Santinha</td>
+<td>0.152</td>
+<td>0.212</td>
+<td>weak positive</td>
+</tr>
+<tr>
+<td>Srivatsan</td>
+<td>0.428</td>
+<td>0.629</td>
+<td>正</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2>2. 实用 top-10 分诊</h2>
+<div class="card">
+<div class="bar">
+<span>Random</span>
+<div class="track">
+<div class="fill" style="width:13.5%;background:#89949b">
+</div>
+</div>
+<b>1.11x</b>
+</div>
+<div class="bar">
+<span>Magnitude</span>
+<div class="track">
+<div class="fill blue" style="width:40.2%">
+</div>
+</div>
+<b>3.30x</b>
+</div>
+<div class="bar">
+<span>Frozen v0.2</span>
+<div class="track">
+<div class="fill" style="width:40.8%">
+</div>
+</div>
+<b>3.35x</b>
+</div>
+<div class="bar">
+<span>Per-dataset</span>
+<div class="track">
+<div class="fill" style="width:65.3%">
+</div>
+</div>
+<b>5.36x</b>
+</div>
+<div class="bar">
+<span>Oracle</span>
+<div class="track">
+<div class="fill" style="width:100%;background:#89949b">
+</div>
+</div>
+<b>8.21x</b>
+</div>
+</div>
+<p>Oracle（神谕上界）直接知道真实误差，只用作理论参考，不可部署。Per-dataset learned risk 是同数据集学习上界，也不等于 frozen 协议。</p>
+<h2>3. Tahoe 最终回答</h2>
+<div class="table">
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>核心数字</th>
+<th>能说什么</th>
+<th>不能说什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D1 pair</td>
+<td>partial ρ=0.453</td>
+<td>chemical task-risk 信号为正</td>
+<td>不是 full Tahoe</td>
+</tr>
+<tr>
+<td>D2 cell line</td>
+<td>ρ=0.470；coverage 91.7%</td>
+<td>留出整个细胞系仍为正</td>
+<td>不是 held-out drug</td>
+</tr>
+<tr>
+<td>D3 top-10</td>
+<td>SafeConf 4.88x；magnitude 6.49x</td>
+<td>SafeConf 有实用分诊价值</td>
+<td>不能说超越 magnitude</td>
+</tr>
+<tr>
+<td>D4 min-900</td>
+<td>ρ=0.461</td>
+<td>结论不依赖 850-gene 门槛</td>
+<td>不需再扫更多门槛</td>
+</tr>
+<tr>
+<td>D5 fixed combine</td>
+<td>5.73x &lt; 6.49x</td>
+<td>联合比 SafeConf 单独强</td>
+<td>联合仍没赢 magnitude</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2>4. 最终证据边界</h2>
+<div class="grid3">
+<div class="callout good">
+<b>已解决</b>
+<br>task-risk 排序、fold-safe 评估、magnitude 残差信号、负对照、Tahoe chemical 补强。</div>
+<div class="callout warn">
+<b>必须限定</b>
+<br>McFarland 失败；E8b 是聚合关联；Tahoe 是抽样且 magnitude 更强。</div>
+<div class="callout danger">
+<b>尚未解决</b>
+<br>真实多模型逐预测校准、同一任务上的模型选择和 model-specific uncertainty。</div>
+</div>
+<p class="source">完整证据索引：<a href="../实验结果/Evidence_to_Claim_20260615/SAFE_CONF_EVIDENCE_TO_CLAIM_MATRIX.md">../实验结果/Evidence_to_Claim_20260615/SAFE_CONF_EVIDENCE_TO_CLAIM_MATRIX.md</a>
+</p>
+<div class="pager">
+<a href="06_实验怎么做.html">← 上一章</a>
+<a href="08_下一阶段任务.html">下一章：下一阶段 →</a>
+</div>
+</main>
+</div>
+<script src="assets/tutorial.js">
+</script>
+</body>
+</html>

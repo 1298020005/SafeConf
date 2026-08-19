@@ -1,0 +1,35 @@
+{
+  "decision": "FIVE_SEED_GATE_READY_FOR_NEW_TARGET_PROTOCOL",
+  "deployment_authorized": false,
+  "development_panels": [
+    "R01",
+    "R02",
+    "R03",
+    "R04"
+  ],
+  "e174_calibration_truth_used": false,
+  "e174_evaluation_truth_used": false,
+  "e174_heldout_donor_targeting_x_values_read": 0,
+  "five_seed_g4_units": 24,
+  "five_seed_g4_units_passed": 24,
+  "git_branch": "exp/task-risk-audit-20260611",
+  "git_head": "30cd9fce7015c6647a8d56e02cfb2a8166432687",
+  "minimum_five_seed_ci95_lower": 0.6900566108762474,
+  "minimum_five_seed_median_pairwise_spearman": 0.7468402086018986,
+  "new_target_truth_must_be_used_for_confirmation": true,
+  "platform": "Linux-6.8.0-45-generic-x86_64-with-glibc2.35",
+  "python": "3.9.25 (main, Nov  3 2025, 22:33:05) \n[GCC 11.2.0]",
+  "remote_heads": {
+    "github": "30cd9fce7015c6647a8d56e02cfb2a8166432687",
+    "origin": "30cd9fce7015c6647a8d56e02cfb2a8166432687"
+  },
+  "schema": "safeconf_e175_seed_extension_aggregate_v1",
+  "seeds": [
+    3407,
+    3408,
+    3409,
+    3410,
+    3411
+  ],
+  "status": "COMPLETE"
+}

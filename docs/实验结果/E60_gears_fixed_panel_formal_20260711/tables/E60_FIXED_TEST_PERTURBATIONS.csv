@@ -1,0 +1,25 @@
+task_gene,condition,n_cells_in_source_h5ad,selection_rule,selection_uses_effect_or_error
+ATF4,ATF4+ctrl,382,uniform random sample without replacement from perturbations with >=200 cells; rng_seed=20260711,False
+COPZ1,COPZ1+ctrl,291,uniform random sample without replacement from perturbations with >=200 cells; rng_seed=20260711,False
+DAD1,DAD1+ctrl,774,uniform random sample without replacement from perturbations with >=200 cells; rng_seed=20260711,False
+DERL2,DERL2+ctrl,676,uniform random sample without replacement from perturbations with >=200 cells; rng_seed=20260711,False
+DNAJC19,DNAJC19+ctrl,1588,uniform random sample without replacement from perturbations with >=200 cells; rng_seed=20260711,False
+EIF2S1,EIF2S1+ctrl,534,uniform random sample without replacement from perturbations with >=200 cells; rng_seed=20260711,False
+GBF1,GBF1+ctrl,1012,uniform random sample without replacement from perturbations with >=200 cells; rng_seed=20260711,False
+IARS2,IARS2+ctrl,1142,uniform random sample without replacement from perturbations with >=200 cells; rng_seed=20260711,False
+IDH3A,IDH3A+ctrl,690,uniform random sample without replacement from perturbations with >=200 cells; rng_seed=20260711,False
+MRPL39,MRPL39+ctrl,712,uniform random sample without replacement from perturbations with >=200 cells; rng_seed=20260711,False
+NEDD8,NEDD8+ctrl,518,uniform random sample without replacement from perturbations with >=200 cells; rng_seed=20260711,False
+OST4,OST4+ctrl,669,uniform random sample without replacement from perturbations with >=200 cells; rng_seed=20260711,False
+PDIA6,PDIA6+ctrl,618,uniform random sample without replacement from perturbations with >=200 cells; rng_seed=20260711,False
+PSMD4,PSMD4+ctrl,639,uniform random sample without replacement from perturbations with >=200 cells; rng_seed=20260711,False
+PTDSS1,PTDSS1+ctrl,557,uniform random sample without replacement from perturbations with >=200 cells; rng_seed=20260711,False
+SEC61G,SEC61G+ctrl,674,uniform random sample without replacement from perturbations with >=200 cells; rng_seed=20260711,False
+SEL1L,SEL1L+ctrl,464,uniform random sample without replacement from perturbations with >=200 cells; rng_seed=20260711,False
+SLC35B1,SLC35B1+ctrl,644,uniform random sample without replacement from perturbations with >=200 cells; rng_seed=20260711,False
+SPCS3,SPCS3+ctrl,672,uniform random sample without replacement from perturbations with >=200 cells; rng_seed=20260711,False
+SRP68,SRP68+ctrl,729,uniform random sample without replacement from perturbations with >=200 cells; rng_seed=20260711,False
+SYVN1,SYVN1+ctrl,676,uniform random sample without replacement from perturbations with >=200 cells; rng_seed=20260711,False
+TELO2,TELO2+ctrl,711,uniform random sample without replacement from perturbations with >=200 cells; rng_seed=20260711,False
+TIMM23,TIMM23+ctrl,789,uniform random sample without replacement from perturbations with >=200 cells; rng_seed=20260711,False
+TTI1,TTI1+ctrl,542,uniform random sample without replacement from perturbations with >=200 cells; rng_seed=20260711,False

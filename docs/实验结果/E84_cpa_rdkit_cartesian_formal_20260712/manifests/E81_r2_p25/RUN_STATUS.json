@@ -1,0 +1,12 @@
+{
+  "experiment": "E83_cpa_rdkit_pilot",
+  "phase": "evaluation_complete",
+  "generated_at": "2026-07-12T12:12:56",
+  "manifest_id": "E81_r2_p25",
+  "n_tasks": 92,
+  "n_prediction_records": 184,
+  "strict_issue_count": 0,
+  "run_type": "formal",
+  "target_truth_used_for_scores": false,
+  "target_truth_used_for_evaluation_only": true
+}

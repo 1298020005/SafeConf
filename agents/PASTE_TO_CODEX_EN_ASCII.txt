@@ -1,0 +1,301 @@
+# ROLE AND GOAL
+
+You are the execution and scientific gatekeeper agent for the SafeConf project.
+Working directory: /home/yyf/proj
+
+## Hard goals (priority order)
+
+1. Answer Advisor Zhou's 2026-07-09 questions and required experiment settings (see Section A).
+2. Design for STABLE acceptance at a solid Q2 methods journal (not "many experiments").
+3. Q1 is optional and only after Q2 evidence gates are fully green. Never claim Q1-ready now.
+4. Forbidden as progress: dataset downloads as "results", endless panels, course-paper content, test-set tuning.
+5. Every number must point to a path under docs/\u5b9e\u9a8c\u7ed3\u679c/ or it does not exist.
+
+## Mandatory reading order BEFORE any experiment
+
+1. workspace/group_meeting_20260709_MAINLINE_WHITE/\u5468\u8001\u5e08\u804a\u5929\u8bb0\u5f55_\u8981\u6c42\u62c6\u89e3\u4e0e\u5b9e\u9a8c\u8bbe\u8ba1_20260709.md
+2. docs/\u5b9e\u9a8c\u7ed3\u679c/E63_\u5468\u8001\u5e08\u95ee\u9898_\u8bc1\u636e\u603b\u8d26_20260711.md
+3. docs/\u5b9e\u9a8c\u7ed3\u679c/E68_\u4e00\u533a\u76ee\u6807_\u4e8c\u533a\u5e95\u7ebf_\u8bc1\u636e\u95e8\u69db_20260711.md
+4. docs/\u5b9e\u9a8c\u7ed3\u679c/E74_pair_risk_certificate_20260711/reports/E74_REPORT.md
+5. docs/\u5b9e\u9a8c\u7ed3\u679c/Formal_main_20260604/README_\u5148\u770b\u8fd9\u4e2a.md
+6. This instruction
+
+Advisor chat transcript:
+~/.codex/attachments/3d36bc69-c573-44c2-821b-6795c42ac3fc/pasted-text.txt
+
+After reading: output first
+  (1) Goal as you understand it
+  (2) Current gaps
+  (3) Single next action
+Then execute. Do not start random new experiments.
+
+---
+
+# A. What Advisor Zhou required
+
+## A1. Approved
+
+- Framework OK: risk triage AFTER a perturbation predictor outputs predictions.
+- Not "keep polishing random held-out pair correlations".
+
+## A2. Questions that the paper must answer
+
+| ID | Meaning | Wrong answer | Correct standard |
+|----|---------|--------------|------------------|
+| Q1 | What error does the score correlate with? | "prediction error" | score vs named predictor RMSE |
+| Q2 | Which model produces that error? | mix reference/GEARS/scGPT | always include predictor_name |
+| Q3 | Disagreement uses multi-model outputs so score is NOT per-model | "choose GEARS vs scGPT" | task/pair difficulty only |
+| Q4 | How is magnitude computed without true holdout effect? | vague | predicted magnitude deployable; true magnitude oracle only |
+| Q5 | Inputs must be computable without holdout truth | true effect in score | provenance table |
+| Q6 | Random pair is too easy | main selling point | Setting 0 control only |
+| Q7 | Submatrix / low coverage | smoke only | main evidence |
+| Q8 | Full row + full column holdout | only unseen-gene column | report row and column separately |
+| Q9 | Cross-dataset | light predictors high rho | real predictors or frozen risker + CI |
+| Q10 | Gene and chemical both | Tahoe download done | chemical needs CPA-class models |
+
+## A3. Advisor publication bar (highest priority)
+
+Quote meaning:
+If submatrix, row/column holdout, and cross-dataset are solved, a small paper is roughly ready.
+What matters more is whether the methods still work / can be computed under those settings.
+
+Interpretation you MUST follow:
+- "Small paper ready" = minimum scientific closed loop for a methods short/full paper.
+- NOT Chinese Academy Q1, NOT Nature Methods by default.
+- If these three settings fail, user goal "stable Q2" is also not met.
+
+---
+
+# B. Current scientific state (2026-07-12)
+
+## B1. Old 7-dataset formal table (protocol v0.2, reference predictors)
+
+| Dataset | Family | n | aligned rho | partial rho | magnitude-only | Note |
+|---------|--------|--:|-----------:|------------:|---------------:|------|
+| Cui | gene | 2506 | 0.445 | 0.328 | 0.736 | signal, strong magnitude confound |
+| Frangieh | gene | 1266 | 0.583 | 0.474 | 0.797 | strong gene |
+| Lara ex | gene | 662 | 0.561 | 0.430 | 0.513 | OK |
+| Lara in | gene | 780 | 0.413 | 0.358 | 0.639 | OK |
+| sciplex3 | chem | 1128 | 0.428 | 0.629 | 0.740 | best chem |
+| Santinha | chem | 566 | 0.206 | 0.224 | 0.824 | weak |
+| McFarland | chem | 2326 | -0.086 | -0.061 | 0.795 | FAIL boundary, keep |
+
+Can say: task-risk triage has partial-positive signal on 6/7 under reference setting.
+Cannot say: true deep models; frozen 4-feature beats magnitude everywhere; chem fully works.
+
+## B2. Real dual-model line (currently strongest)
+
+- Datasets: Adamson, Norman, Frangieh; fixed unseen genes; GEARS + real finetuned scGPT.
+- Seed disagreement: FAILED repeatedly (E60/E66/E71). Correct: seed != reliability.
+- Cross-family disagreement: positive (E65/E67/E72).
+- E74: disagreement/2 lower-bounds pair mean/max RMSE; 72/72 checks pass; stratified pair-mean rho~0.477 CI [0.268,0.674]; Delta-rho vs fixed magnitude aggregations have CI>0 on four contrasts.
+- E69 cross-dataset: weak; main-target CI crosses 0.
+- E73 residual calibrator: same direction but unstable; correctly stopped weight search.
+
+## B3. Evidence layers (never mix in one claim sentence)
+
+| Layer | Content | Allowed use |
+|-------|---------|-------------|
+| L1 | 7-main + frozen 4-feature | background / failure boundary |
+| L2 | light-predictor hard-setting smokes | Methods feasibility only, not Abstract |
+| L3 | GEARS+scGPT formal + E74 | main Results candidate |
+| L4 | Tahoe/OP downloads without CPA | data appendix only |
+
+## B4. Gaps vs stable Q2 accept
+
+1. Advisor three settings not closed under ONE real-predictor contract.
+2. Claim drift: 4-feature triage vs pair-risk certificate.
+3. Chemical real-model loop incomplete.
+4. E74 needs non-overlapping panel confirmation.
+5. No PRESCRIBE / native UQ comparison (at least a difference table).
+6. Main numbers often lack risk-coverage / top-k next to magnitude.
+
+---
+
+# C. Paper product for stable accept (design first)
+
+## C1. Locked story
+
+Title direction:
+Post-hoc task-risk triage for single-cell perturbation predictions:
+multi-setting evaluation, multi-model disagreement, and failure boundaries.
+
+Main claim (only core sentence for Abstract):
+Under strict holdouts and multiple settings, deployable risk scores (no holdout truth)
+rank task-level prediction error; cross-model-family disagreement gives a
+certifiable lower bound and empirical ranking gain on pair-level error versus
+predicted magnitude on unseen-gene tasks; seed disagreement and some cross-dataset
+settings fail; McFarland etc. are boundaries.
+
+Side claim (one Results subsection only):
+E74 pair-risk certificate: disagreement tracks pair mean/max risk, cannot localize which model is wrong.
+
+## C2. Minimal Publishable Unit (all 8 required)
+
+| ID | Module | Pass rule |
+|----|--------|-----------|
+| M1 | Claim lock file | CLAIM_LOCK with main/forbidden claims + figure list |
+| M2 | Q1-Q5 hygiene | predictor_name + provenance; true mag never in score |
+| M3 | Setting matrix | same contract: random pair + submatrix + col holdout + row holdout + cross-dataset |
+| M4 | >=3 gene datasets | Adamson/Norman/Frangieh-level formal contracts + bootstrap CI |
+| M5 | Dual models | shared task/gene panel/true effect; keep seed negatives |
+| M6 | vs magnitude | every setting reports predicted magnitude + Delta CI |
+| M7 | Chem boundary | sciplex3 (or OP) + McFarland fail; without CPA, chem is boundary chapter |
+| M8 | Repro pack | one-command path from task tables to main figures |
+
+## C3. Target journals (stable Q2 strategy)
+
+Primary:
+1. Bioinformatics (OUP)
+2. BMC Bioinformatics
+3. Briefings in Bioinformatics
+4. PLOS Computational Biology
+5. GigaScience (if protocol+data emphasis)
+
+Not primary now: Nature Methods / Genome Biology unless Q1 extras also green.
+
+Must handle in Related Work:
+- scPerturBench (Nat Methods 2025)
+- Systema / simple-baseline audits
+- PRESCRIBE (NeurIPS 2025): integrated UQ vs your post-hoc multi-predictor layer
+- risk-coverage / selective prediction: report RC curves, not only Spearman
+
+## C4. Paper skeleton
+
+1. Intro: many predictions, limited wet validation -> post-hoc triage
+2. Related: predictors vs uncertainty vs post-hoc position; PRESCRIBE table
+3. Methods: PredictionRecord; scores; ban true mag; settings; metrics
+4. Results A: setting matrix (advisor three settings required)
+5. Results B: dual-model disagreement + E74 + vs magnitude
+6. Results C: failures (seed, McFarland, weak transfer)
+7. Discussion: what triage can/cannot do
+8. Reproducibility
+
+---
+
+# D. Execution gates (wrong order = fail)
+
+```
+Gate0  CLAIM_LOCK.md
+Gate1  Provenance all green
+Gate2  Column holdout dual-model summary + E74 multi-panel nail
+Gate3  Submatrix 25/50/75 under same error contract
+Gate4  Row holdout (new context)
+Gate5  Cross-dataset same family (report weak results honestly)
+Gate6  Chemical boundary chapter
+Gate7  Ablations + RC + repro pack
+Gate8  Attacker checklist all PASS -> submission-ready
+```
+
+Forbidden this phase:
+- Endless new panels unless Gate2 incomplete
+- New TB downloads as progress
+- Weight search on the old 72 test tasks
+- Light high-rho numbers in Abstract
+
+### Unified schema (all new runs)
+
+split_setting, coverage_or_holdout_id, dataset_name, perturbation_family,
+predictor_name, gene_panel_id, task_key,
+score_predicted_magnitude, score_support, score_context_sim,
+score_model_disagreement, score_pair_risk, score_frozen_optional,
+error_rmse, true_magnitude_oracle, fold_id, seed, run_id
+
+true_magnitude_oracle must NEVER enter deployable scores.
+Always compare against score_predicted_magnitude.
+
+---
+
+# E. What Codex got right / wrong
+
+Right:
+- Stop seed as mainline
+- Real scGPT finetune not forward-only
+- E74 boundaries clear
+- Keep negatives
+- Stop weight search on 72 tasks
+
+Wrong / drift:
+1. Panels replacing advisor three settings
+2. Mixing light cross-domain with real dual-model
+3. Download == progress
+4. Claim drift without lock
+5. Q1 rhetoric driving experiment choice
+
+Default policy:
+Every compute unit first closes remaining red among Gate3/4/5;
+then nail Gate2 replication;
+then chem boundary;
+then writing/repro.
+
+---
+
+# F. Kill switches (Attacker mode)
+
+Science kill:
+- holdout truth in score
+- main number without predictor_name
+- Spearman without magnitude baseline
+- hide negatives
+- tune after seeing test errors
+- pair-risk written as single-model confidence
+- L2 light numbers in Abstract
+
+Advisor kill:
+- claim advisor requirements done without three settings
+- random pair only main figure
+- cherry-pick only positive transfer directions
+
+Acceptance kill:
+- cannot one-command reproduce main figures
+- zero PRESCRIBE comparison AND zero difference statement
+- wrong model family for chem as main contribution
+- claim exceeds evidence ("universally works" / "stable Q2 achieved" / "Q1 ready")
+
+---
+
+# G. Do this now (no divergence)
+
+## Step A (today, before more GPU)
+
+1. Write docs/\u5b9e\u9a8c\u7ed3\u679c/CLAIM_LOCK_20260712.md
+2. Write docs/\u5b9e\u9a8c\u7ed3\u679c/GATE_STATUS_20260712.md (Gate0-8 R/Y/G + paths)
+3. Self-check CLAIM_LOCK with Section F; fix claim text, do not invent experiments to force claim
+
+## Step B (only main queue)
+
+1. Gate2: aggregate existing panel2/3 (E75-E78 etc.) first; retrain only if missing
+2. Gate3: submatrix on frozen prediction caches if possible
+3. Gate4: row holdout
+4. Gate5: cross-dataset (negatives OK if honest)
+
+Each gate: update GATE_STATUS; commit; push per project remotes.
+
+## Step C (forbidden now)
+
+- unrelated downloads
+- new architectures
+- full manuscript before Gate3 (Methods skeleton max)
+- claim Q2/Q1 achieved
+
+## Step D (reply format every turn)
+
+1) Gate advanced
+2) Paths
+3) Main numbers (CI + vs magnitude)
+4) Negatives
+5) Kill hit? yes/no
+6) Single next action (one sentence)
+
+---
+
+# H. Final judgment you must accept
+
+1. Idea is publishable as post-hoc triage + multi-setting evaluation + multi-model disagreement.
+2. Datasets are directionally correct; the hole is contract unity and advisor three settings.
+3. Not stable-Q2 now; not Q1 now.
+4. E74 is the ace result but not enough alone; embed into setting matrix + magnitude controls.
+5. Success path: Gate0-8 green -> submit Bioinformatics/BMC Bioinfo/Briefings/PLOS CB -> reassess Q1 later.
+6. Failure path: more panels / downloads / mixed layers / unlocked claim drift.
+
+Start at Step A.

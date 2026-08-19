@@ -1,0 +1,13 @@
+{
+  "experiment": "E199_txpert_public_k562",
+  "stage": "PRETRUTH_FEATURE_RELEASE",
+  "generated_at": "2026-08-02T02:02:49+08:00",
+  "status": "PASS",
+  "git_head": "3af7117048219ebdb1da590440a28705de2e17ce",
+  "n_tasks": 272,
+  "n_primary_tasks_ge30": 263,
+  "n_sensitivity_tasks_10_29": 9,
+  "historical_support_nonzero": 0,
+  "graph_isolated_tasks": 5,
+  "target_expression_files_opened": 0
+}

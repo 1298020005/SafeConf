@@ -1,0 +1,16 @@
+{
+  "experiment": "E199_txpert_public_k562",
+  "stage": "POSTRUN_ROBUSTNESS_AUDIT",
+  "analysis_status": "POST_HOC_EXPLORATORY",
+  "status": "PASS",
+  "git_head": "e549118d9660a60bcc7c97eb5ba23d456f19dee3",
+  "formal_manifest_sha256": "6c87c9e8d7eaff19b177e74fbc64e3b51e7dd94f54a9688a74b65bfdadb23f8c",
+  "protocol_sha256": "e24db60dc93dedb1b50b924c05b86bf3245949430ae865958d5ba7991083b621",
+  "formal_manifest_rows_verified": 19,
+  "n_primary_tasks": 263,
+  "n_target_direction_evaluable": 104,
+  "n_target_direction_correct": 51,
+  "cross_context_answered": false,
+  "cross_dataset_transfer_answered": false,
+  "formal_gate_changed": false
+}

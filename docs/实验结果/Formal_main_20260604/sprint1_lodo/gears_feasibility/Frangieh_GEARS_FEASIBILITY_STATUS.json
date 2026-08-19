@@ -1,0 +1,21 @@
+{
+  "dataset": "Frangieh",
+  "h5ad_path": "/home/yyf/data/singlecell_perturbation_atlas/official_generalization/Frangieh.h5ad",
+  "safeconf_run_dir": "/home/yyf/proj/code/20260426_154505_perturb_transport_final_push/outputs/safeconf_phase1_main/Frangieh",
+  "n_cells": 110188,
+  "n_genes_in_expression_panel": 5124,
+  "n_contexts": 3,
+  "n_perturbations_noncontrol": 211,
+  "n_safeconf_tasks": 633,
+  "n_prediction_records": 6330,
+  "n_exact_gene_symbol_overlap": 211,
+  "n_looks_like_gene_symbol": 209,
+  "min_cells_per_noncontrol_perturbation": 57,
+  "leakage": {
+    "test_pair_seen_in_train_true": 0,
+    "test_perturbation_not_seen_in_train": 0,
+    "test_context_not_seen_in_train": 0
+  },
+  "gears_feasibility": "feasible_for_adapter_probe_not_yet_training",
+  "recommendation": "Frangieh is a better GEARS feasibility target than Cui because perturbations are gene symbols. Next step may be a small adapter smoke run, but not a main claim until per-prediction GEARS records exist."
+}

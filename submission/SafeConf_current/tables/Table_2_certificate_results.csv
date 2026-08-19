@@ -1,0 +1,5 @@
+study,n_tasks,n_target_clusters,family_lower_violations,worst_lower_violations,family_upper_tasks_covered,family_upper_task_coverage,family_upper_targets_covered,family_upper_target_coverage,worst_upper_targets_covered,worst_upper_target_coverage,median_family_lower_tightness,median_worst_lower_tightness,max_identity_abs_residual
+Primary CD4,1920,640,0,0,1829,0.9526041666666668,579,0.9046875,596,0.93125,0.240089731289,0.243853757291,9.226560487850002e-17
+Sunshine,400,50,0,0,393,0.9825,44,0.88,46,0.92,0.1695636464185,0.2058824953544999,9.6819254003e-17
+XuCao,73,27,0,0,73,1.0,27,1.0,27,1.0,0.255306431216,0.261764581313,4.11996825544e-18
+GSE225807,40,20,0,0,36,0.9,16,0.8,19,0.95,0.51339807142259,0.4674288417702189,2.255140518769849e-17

@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>E29 GEARS scGPT shared Adamson risk audit</title><style>
+body{margin:0;background:#fff;color:#1f2933;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC",Arial,sans-serif}
+main{max-width:1180px;margin:0 auto;padding:42px 28px 76px}
+h1{font-size:30px;margin:0 0 10px}h2{font-size:21px;margin:34px 0 12px;border-top:1px solid #e5e7eb;padding-top:24px}
+p{line-height:1.75;font-size:16px}.note{border-left:4px solid #315C9B;background:#f8fbff;padding:12px 16px;border-radius:8px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0}.card{border:1px solid #e5e7eb;border-radius:14px;padding:16px;background:#fafafa}
+.k{font-size:26px;font-weight:760;color:#111827}.l{font-size:13px;color:#66788a;margin-top:4px}
+table{border-collapse:collapse;width:100%;font-size:13px;margin:10px 0 22px}th,td{border-bottom:1px solid #e5e7eb;text-align:left;padding:8px 9px;vertical-align:top}th{background:#f7f7f7}
+.svgbox{border:1px solid #e5e7eb;border-radius:14px;padding:12px;background:#fff;margin:14px 0 24px}
+</style></head>
+<body><main>
+<h1>E29 GEARS–scGPT shared Adamson risk audit</h1>
+<p class="note">同任务、同 512-gene panel、同 true effect key 的双预测器风险审计。n=7，结论只用于证据链推进，不当作正式 benchmark。</p>
+<div class="cards">
+<div class="card"><div class="k">14</div><div class="l">PredictionRecords</div></div>
+<div class="card"><div class="k">7</div><div class="l">Adamson tasks</div></div>
+<div class="card"><div class="k">512</div><div class="l">shared genes</div></div>
+<div class="card"><div class="k">0</div><div class="l">strict issues</div></div>
+</div>
+<h2>图 1：任务误差与模型分歧</h2>
+<p>蓝色是真实任务平均误差，棕色是 GEARS 与 scGPT 的预测分歧。这个图用来观察“两个模型意见不一致的地方，是否更容易出错”。</p>
+<div class="svgbox"><svg viewBox="0 0 920 360" role="img" aria-label="E29 task error and disagreement" xmlns="http://www.w3.org/2000/svg">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<line x1="108" y1="286" x2="886" y2="286" stroke="#111827" stroke-width="1"/>
+<line x1="108" y1="34" x2="108" y2="286" stroke="#111827" stroke-width="1"/>
+<text x="18" y="22" font-size="14" fill="#374151">RMSE</text>
+<rect x="690" y="20" width="13" height="13" fill="#315C9B"/><text x="710" y="31" font-size="13" fill="#374151">task mean error</text>
+<rect x="690" y="42" width="13" height="13" fill="#B47A3C"/><text x="710" y="53" font-size="13" fill="#374151">GEARS–scGPT disagreement</text>
+<rect x="117.0" y="34.0" width="28.0" height="252.0" fill="#315C9B"/>
+<rect x="149.0" y="233.4" width="28.0" height="52.6" fill="#B47A3C"/>
+<text transform="translate(145.0,304) rotate(35)" font-size="12" fill="#374151">DERL2</text>
+<rect x="228.1" y="41.8" width="28.0" height="244.2" fill="#315C9B"/>
+<rect x="260.1" y="169.2" width="28.0" height="116.8" fill="#B47A3C"/>
+<text transform="translate(256.1,304) rotate(35)" font-size="12" fill="#374151">TIMM23</text>
+<rect x="339.3" y="45.8" width="28.0" height="240.2" fill="#315C9B"/>
+<rect x="371.3" y="229.7" width="28.0" height="56.3" fill="#B47A3C"/>
+<text transform="translate(367.3,304) rotate(35)" font-size="12" fill="#374151">NEDD8</text>
+<rect x="450.4" y="61.0" width="28.0" height="225.0" fill="#315C9B"/>
+<rect x="482.4" y="229.5" width="28.0" height="56.5" fill="#B47A3C"/>
+<text transform="translate(478.4,304) rotate(35)" font-size="12" fill="#374151">CCND3</text>
+<rect x="561.6" y="61.4" width="28.0" height="224.6" fill="#315C9B"/>
+<rect x="593.6" y="236.2" width="28.0" height="49.8" fill="#B47A3C"/>
+<text transform="translate(589.6,304) rotate(35)" font-size="12" fill="#374151">DAD1</text>
+<rect x="672.7" y="75.9" width="28.0" height="210.1" fill="#315C9B"/>
+<rect x="704.7" y="226.3" width="28.0" height="59.7" fill="#B47A3C"/>
+<text transform="translate(700.7,304) rotate(35)" font-size="12" fill="#374151">YIPF5</text>
+<rect x="783.9" y="112.4" width="28.0" height="173.6" fill="#315C9B"/>
+<rect x="815.9" y="240.7" width="28.0" height="45.3" fill="#B47A3C"/>
+<text transform="translate(811.9,304) rotate(35)" font-size="12" fill="#374151">UFM1</text>
+</svg></div>
+<h2>风险信号汇总</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>score</th>
+      <th>n_tasks</th>
+      <th>target</th>
+      <th>spearman</th>
+      <th>pearson</th>
+      <th>top_30pct_k</th>
+      <th>top_30pct_mean_rmse</th>
+      <th>bottom_30pct_k</th>
+      <th>bottom_30pct_mean_rmse</th>
+      <th>all_task_mean_rmse</th>
+      <th>top_vs_all_ratio</th>
+      <th>top_vs_bottom_ratio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>risk_disagreement_z</td>
+      <td>7</td>
+      <td>task_mean_rmse</td>
+      <td>0.357143</td>
+      <td>0.414754</td>
+      <td>3</td>
+      <td>0.282033</td>
+      <td>3</td>
+      <td>0.269977</td>
+      <td>0.279312</td>
+      <td>1.009740</td>
+      <td>1.044653</td>
+    </tr>
+    <tr>
+      <td>risk_disagreement_plus_pred_magnitude_z</td>
+      <td>7</td>
+      <td>task_mean_rmse</td>
+      <td>0.357143</td>
+      <td>0.414713</td>
+      <td>3</td>
+      <td>0.282033</td>
+      <td>3</td>
+      <td>0.269977</td>
+      <td>0.279312</td>
+      <td>1.009740</td>
+      <td>1.044653</td>
+    </tr>
+    <tr>
+      <td>diagnostic_true_magnitude_z</td>
+      <td>7</td>
+      <td>task_mean_rmse</td>
+      <td>0.964286</td>
+      <td>0.994887</td>
+      <td>3</td>
+      <td>0.305712</td>
+      <td>3</td>
+      <td>0.252757</td>
+      <td>0.279312</td>
+      <td>1.094518</td>
+      <td>1.209510</td>
+    </tr>
+  </tbody>
+</table>
+<h2>任务级风险排序</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>perturbation</th>
+      <th>gears_rmse</th>
+      <th>scgpt_rmse</th>
+      <th>task_mean_rmse</th>
+      <th>task_max_rmse</th>
+      <th>disagreement_rmse</th>
+      <th>disagreement_cosine</th>
+      <th>gears_pred_l2</th>
+      <th>scgpt_pred_l2</th>
+      <th>consensus_pred_l2_mean</th>
+      <th>true_l2</th>
+      <th>risk_disagreement_z</th>
+      <th>risk_disagreement_plus_pred_magnitude_z</th>
+      <th>diagnostic_true_magnitude_z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TIMM23</td>
+      <td>0.296378</td>
+      <td>0.311831</td>
+      <td>0.304104</td>
+      <td>0.311831</td>
+      <td>0.145519</td>
+      <td>0.953431</td>
+      <td>3.293331</td>
+      <td>0.013808</td>
+      <td>1.653570</td>
+      <td>7.056557</td>
+      <td>2.402157</td>
+      <td>4.804352</td>
+      <td>0.815757</td>
+    </tr>
+    <tr>
+      <td>YIPF5</td>
+      <td>0.256489</td>
+      <td>0.266982</td>
+      <td>0.261735</td>
+      <td>0.266982</td>
+      <td>0.074391</td>
+      <td>1.053479</td>
+      <td>1.682559</td>
+      <td>0.012518</td>
+      <td>0.847539</td>
+      <td>6.041207</td>
+      <td>-0.119070</td>
+      <td>-0.240790</td>
+      <td>-0.506030</td>
+    </tr>
+    <tr>
+      <td>CCND3</td>
+      <td>0.280953</td>
+      <td>0.279563</td>
+      <td>0.280258</td>
+      <td>0.280953</td>
+      <td>0.070377</td>
+      <td>1.077062</td>
+      <td>1.591339</td>
+      <td>0.013618</td>
+      <td>0.802478</td>
+      <td>6.326242</td>
+      <td>-0.261355</td>
+      <td>-0.524172</td>
+      <td>-0.134970</td>
+    </tr>
+    <tr>
+      <td>NEDD8</td>
+      <td>0.287213</td>
+      <td>0.311099</td>
+      <td>0.299156</td>
+      <td>0.311099</td>
+      <td>0.070084</td>
+      <td>0.989667</td>
+      <td>1.585896</td>
+      <td>0.018308</td>
+      <td>0.802102</td>
+      <td>7.044866</td>
+      <td>-0.271747</td>
+      <td>-0.535741</td>
+      <td>0.800538</td>
+    </tr>
+    <tr>
+      <td>DERL2</td>
+      <td>0.304555</td>
+      <td>0.323197</td>
+      <td>0.313876</td>
+      <td>0.323197</td>
+      <td>0.065482</td>
+      <td>1.014332</td>
+      <td>1.481549</td>
+      <td>0.008667</td>
+      <td>0.745108</td>
+      <td>7.313259</td>
+      <td>-0.434844</td>
+      <td>-0.877304</td>
+      <td>1.149933</td>
+    </tr>
+    <tr>
+      <td>DAD1</td>
+      <td>0.279073</td>
+      <td>0.280483</td>
+      <td>0.279778</td>
+      <td>0.280483</td>
+      <td>0.061979</td>
+      <td>1.017385</td>
+      <td>1.402037</td>
+      <td>0.016681</td>
+      <td>0.709359</td>
+      <td>6.350209</td>
+      <td>-0.559027</td>
+      <td>-1.113428</td>
+      <td>-0.103770</td>
+    </tr>
+    <tr>
+      <td>UFM1</td>
+      <td>0.217063</td>
+      <td>0.215491</td>
+      <td>0.216277</td>
+      <td>0.217063</td>
+      <td>0.056419</td>
+      <td>1.061497</td>
+      <td>1.275694</td>
+      <td>0.013747</td>
+      <td>0.644721</td>
+      <td>4.877111</td>
+      <td>-0.756115</td>
+      <td>-1.512916</td>
+      <td>-2.021456</td>
+    </tr>
+  </tbody>
+</table>
+<h2>预测器级指标</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>perturbation</th>
+      <th>predictor_name</th>
+      <th>rmse</th>
+      <th>cosine_error</th>
+      <th>pearson</th>
+      <th>spearman</th>
+      <th>pred_l2</th>
+      <th>true_l2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CCND3</td>
+      <td>GEARS_formal_seed1_subset512</td>
+      <td>0.280953</td>
+      <td>0.893757</td>
+      <td>0.071604</td>
+      <td>0.174566</td>
+      <td>1.591339</td>
+      <td>6.326242</td>
+    </tr>
+    <tr>
+      <td>CCND3</td>
+      <td>scGPT_whole_human_forward_subset512</td>
+      <td>0.279563</td>
+      <td>0.966351</td>
+      <td>0.066468</td>
+      <td>-0.049564</td>
+      <td>0.013618</td>
+      <td>6.326242</td>
+    </tr>
+    <tr>
+      <td>DAD1</td>
+      <td>GEARS_formal_seed1_subset512</td>
+      <td>0.279073</td>
+      <td>0.864358</td>
+      <td>0.152404</td>
+      <td>0.239922</td>
+      <td>1.402037</td>
+      <td>6.350209</td>
+    </tr>
+    <tr>
+      <td>DAD1</td>
+      <td>scGPT_whole_human_forward_subset512</td>
+      <td>0.280483</td>
+      <td>0.782434</td>
+      <td>0.224470</td>
+      <td>0.064806</td>
+      <td>0.016681</td>
+      <td>6.350209</td>
+    </tr>
+    <tr>
+      <td>DERL2</td>
+      <td>GEARS_formal_seed1_subset512</td>
+      <td>0.304555</td>
+      <td>0.622114</td>
+      <td>0.380398</td>
+      <td>0.387146</td>
+      <td>1.481549</td>
+      <td>7.313259</td>
+    </tr>
+    <tr>
+      <td>DERL2</td>
+      <td>scGPT_whole_human_forward_subset512</td>
+      <td>0.323197</td>
+      <td>0.983523</td>
+      <td>-0.001579</td>
+      <td>0.057837</td>
+      <td>0.008667</td>
+      <td>7.313259</td>
+    </tr>
+    <tr>
+      <td>NEDD8</td>
+      <td>GEARS_formal_seed1_subset512</td>
+      <td>0.287213</td>
+      <td>0.556514</td>
+      <td>0.435435</td>
+      <td>0.407874</td>
+      <td>1.585896</td>
+      <td>7.044866</td>
+    </tr>
+    <tr>
+      <td>NEDD8</td>
+      <td>scGPT_whole_human_forward_subset512</td>
+      <td>0.311099</td>
+      <td>0.698253</td>
+      <td>0.307121</td>
+      <td>0.045574</td>
+      <td>0.018308</td>
+      <td>7.044866</td>
+    </tr>
+    <tr>
+      <td>TIMM23</td>
+      <td>GEARS_formal_seed1_subset512</td>
+      <td>0.296378</td>
+      <td>0.662922</td>
+      <td>0.317933</td>
+      <td>0.368551</td>
+      <td>3.293331</td>
+      <td>7.056557</td>
+    </tr>
+    <tr>
+      <td>TIMM23</td>
+      <td>scGPT_whole_human_forward_subset512</td>
+      <td>0.311831</td>
+      <td>0.952886</td>
+      <td>0.083869</td>
+      <td>0.124058</td>
+      <td>0.013808</td>
+      <td>7.056557</td>
+    </tr>
+    <tr>
+      <td>UFM1</td>
+      <td>GEARS_formal_seed1_subset512</td>
+      <td>0.217063</td>
+      <td>0.896331</td>
+      <td>0.095605</td>
+      <td>0.138718</td>
+      <td>1.275694</td>
+      <td>4.877111</td>
+    </tr>
+    <tr>
+      <td>UFM1</td>
+      <td>scGPT_whole_human_forward_subset512</td>
+      <td>0.215491</td>
+      <td>0.918644</td>
+      <td>0.085388</td>
+      <td>-0.015548</td>
+      <td>0.013747</td>
+      <td>4.877111</td>
+    </tr>
+    <tr>
+      <td>YIPF5</td>
+      <td>GEARS_formal_seed1_subset512</td>
+      <td>0.256489</td>
+      <td>0.722344</td>
+      <td>0.277853</td>
+      <td>0.203413</td>
+      <td>1.682559</td>
+      <td>6.041207</td>
+    </tr>
+    <tr>
+      <td>YIPF5</td>
+      <td>scGPT_whole_human_forward_subset512</td>
+      <td>0.266982</td>
+      <td>0.992279</td>
+      <td>0.007066</td>
+      <td>-0.026217</td>
+      <td>0.012518</td>
+      <td>6.041207</td>
+    </tr>
+  </tbody>
+</table>
+<h2>任务清单</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>fold_id</th>
+      <th>perturbation</th>
+      <th>perturbation_gene</th>
+      <th>record_id</th>
+      <th>predicted_effect_key</th>
+      <th>scgpt_cells</th>
+      <th>shared_gene_count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>CCND3+ctrl</td>
+      <td>CCND3</td>
+      <td>GEARS::adamson::seed1::single::CCND3+ctrl</td>
+      <td>GEARS::adamson::seed1::single::CCND3+ctrl::pred</td>
+      <td>8</td>
+      <td>512</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>DAD1+ctrl</td>
+      <td>DAD1</td>
+      <td>GEARS::adamson::seed1::single::DAD1+ctrl</td>
+      <td>GEARS::adamson::seed1::single::DAD1+ctrl::pred</td>
+      <td>8</td>
+      <td>512</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>DERL2+ctrl</td>
+      <td>DERL2</td>
+      <td>GEARS::adamson::seed1::single::DERL2+ctrl</td>
+      <td>GEARS::adamson::seed1::single::DERL2+ctrl::pred</td>
+      <td>8</td>
+      <td>512</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>NEDD8+ctrl</td>
+      <td>NEDD8</td>
+      <td>GEARS::adamson::seed1::single::NEDD8+ctrl</td>
+      <td>GEARS::adamson::seed1::single::NEDD8+ctrl::pred</td>
+      <td>8</td>
+      <td>512</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>TIMM23+ctrl</td>
+      <td>TIMM23</td>
+      <td>GEARS::adamson::seed1::single::TIMM23+ctrl</td>
+      <td>GEARS::adamson::seed1::single::TIMM23+ctrl::pred</td>
+      <td>8</td>
+      <td>512</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>UFM1+ctrl</td>
+      <td>UFM1</td>
+      <td>GEARS::adamson::seed1::single::UFM1+ctrl</td>
+      <td>GEARS::adamson::seed1::single::UFM1+ctrl::pred</td>
+      <td>8</td>
+      <td>512</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>YIPF5+ctrl</td>
+      <td>YIPF5</td>
+      <td>GEARS::adamson::seed1::single::YIPF5+ctrl</td>
+      <td>GEARS::adamson::seed1::single::YIPF5+ctrl::pred</td>
+      <td>8</td>
+      <td>512</td>
+    </tr>
+  </tbody>
+</table>
+<h2>严格校验</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>scope</th>
+      <th>strict</th>
+      <th>issue_count</th>
+      <th>issues</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>e29_gears_scgpt_shared_adamson_risk_audit</td>
+      <td>True</td>
+      <td>0</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</main></body></html>

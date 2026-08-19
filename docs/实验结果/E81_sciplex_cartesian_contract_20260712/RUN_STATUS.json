@@ -1,0 +1,34 @@
+{
+  "experiment": "E81_sciplex_cartesian_contract",
+  "generated_at": "2026-07-12T01:22:32",
+  "source_h5ad": "/home/yyf/data/singlecell_perturbation_atlas/extra_official/cellular_context_generalization/sciplex3.h5ad",
+  "source_shape": [
+    26046,
+    5000
+  ],
+  "n_contexts": 3,
+  "n_perturbations": 9,
+  "n_doses": 4,
+  "n_eligible_tasks": 103,
+  "min_cells": 20,
+  "gene_panel_size": 1000,
+  "gene_order_hash": "sha256:e53bfe14230003dbba9396958fae945532976804da8c5950a489b1f269953618",
+  "gene_panel_selection": "vehicle control expression only",
+  "split_selection_inputs": [
+    "context label",
+    "perturbation label",
+    "cell count",
+    "fixed seed"
+  ],
+  "target_perturbed_truth_used_for_gene_panel_or_split": false,
+  "coverages": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "repeats": 3,
+  "pair_holdout_fraction": 0.2,
+  "n_manifest_rows": 927,
+  "n_manifests": 9,
+  "status": "frozen_before_predictor_training"
+}

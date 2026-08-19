@@ -1,0 +1,11 @@
+panel,system,score,target,spearman
+Norman_P1,GEARS-scGPT post-hoc pair,model disagreement,GEARS-scGPT pair mean RMSE,0.588695652173913
+Norman_P2,GEARS-scGPT post-hoc pair,model disagreement,GEARS-scGPT pair mean RMSE,0.2626086956521739
+Norman_P1,PRESCRIBE integrated predictor,PRESCRIBE epistemic,PRESCRIBE task mean-profile RMSE,-0.029565217391304344
+Norman_P1,PRESCRIBE integrated predictor,PRESCRIBE aleatoric,PRESCRIBE task mean-profile RMSE,0.07130434782608694
+Norman_P1,PRESCRIBE integrated predictor,PRESCRIBE combined,PRESCRIBE task mean-profile RMSE,-0.02695652173913043
+Norman_P1,PRESCRIBE integrated predictor,PRESCRIBE magnitude,PRESCRIBE task mean-profile RMSE,0.033913043478260865
+Norman_P2,PRESCRIBE integrated predictor,PRESCRIBE epistemic,PRESCRIBE task mean-profile RMSE,-0.07739130434782608
+Norman_P2,PRESCRIBE integrated predictor,PRESCRIBE aleatoric,PRESCRIBE task mean-profile RMSE,-0.4017391304347826
+Norman_P2,PRESCRIBE integrated predictor,PRESCRIBE combined,PRESCRIBE task mean-profile RMSE,-0.08521739130434783
+Norman_P2,PRESCRIBE integrated predictor,PRESCRIBE magnitude,PRESCRIBE task mean-profile RMSE,0.08434782608695651

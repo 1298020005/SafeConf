@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>E10 外部数据资产审计</title>
+<style>
+body{margin:0;background:#f7f8f6;color:#17202a;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,"Noto Sans SC",sans-serif;line-height:1.7}
+.top{background:#12312b;color:white;padding:28px 42px}.wrap{max-width:1160px;margin:0 auto;padding:28px}
+.card{background:white;border:1px solid #d8e0dc;border-radius:16px;padding:22px;margin:18px 0;box-shadow:0 8px 22px rgba(15,23,42,.06);overflow-x:auto}
+h2{border-bottom:3px solid #0f766e;padding-bottom:8px}.ok{border-left:6px solid #047857;background:#f1fbf6}.warn{border-left:6px solid #b45309;background:#fff8eb}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{border:1px solid #dbe3df;padding:7px;vertical-align:top}th{background:#eef6f3}
+code{background:#eef2f7;padding:2px 5px;border-radius:5px}
+</style></head><body>
+<div class="top"><h1>E10 外部任务级验证资产审计</h1><p>先把数据源、文件覆盖和可跑候选钉死，再启动外部任务级验证。</p></div>
+<div class="wrap">
+<div class="card ok"><h2>当前结论</h2><p>服务器已有 83 个 h5ad，总计 107.3 GiB；官方 Zenodo 文件覆盖 66/66。E10 可以直接从现有资产中选候选，不需要全量重下。</p></div>
+<div class="card warn"><h2>路径边界</h2><p>旧 inventory 记录的是 <code>/home/yyf/datasets/...</code>，当前真实数据根目录是 <code>/home/yyf/data/singlecell_perturbation_atlas</code>。本服务器已建立兼容软链接 <code>/home/yyf/datasets -&gt; /home/yyf/data</code>；新机器需要重建软链接或直接传入真实根目录。</p></div>
+<div class="card"><h2>E10 候选排序</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>actual_file_name</th>
+      <th>actual_group</th>
+      <th>study_family</th>
+      <th>perturbation_type</th>
+      <th>modality</th>
+      <th>n_obs</th>
+      <th>n_vars</th>
+      <th>e10_priority_score</th>
+      <th>recommended_role</th>
+      <th>priority_reason</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>sciplex3_MCF7.h5ad</td>
+      <td>official_generalization</td>
+      <td>sciplex3</td>
+      <td>chemical_combinatorial</td>
+      <td>RNA</td>
+      <td>223630</td>
+      <td>5839</td>
+      <td>12</td>
+      <td>E10_primary_candidate</td>
+      <td>scPerturBench generalization asset; perturbation-generalization suitable; combination task possible; contains context/donor/cell-type metadata; chemical external stress-test; RNA expression available; enough cells for task-level aggregation; high-value external validation target</td>
+    </tr>
+    <tr>
+      <td>sciplex3_K562.h5ad</td>
+      <td>official_generalization</td>
+      <td>sciplex3</td>
+      <td>chemical_combinatorial</td>
+      <td>RNA</td>
+      <td>150013</td>
+      <td>5839</td>
+      <td>12</td>
+      <td>E10_primary_candidate</td>
+      <td>scPerturBench generalization asset; perturbation-generalization suitable; combination task possible; contains context/donor/cell-type metadata; chemical external stress-test; RNA expression available; enough cells for task-level aggregation; high-value external validation target</td>
+    </tr>
+    <tr>
+      <td>sciplex3_comb.h5ad</td>
+      <td>official_generalization</td>
+      <td>sciplex3</td>
+      <td>chemical_combinatorial</td>
+      <td>RNA</td>
+      <td>63378</td>
+      <td>5000</td>
+      <td>12</td>
+      <td>E10_primary_candidate</td>
+      <td>scPerturBench generalization asset; perturbation-generalization suitable; combination task possible; contains context/donor/cell-type metadata; chemical external stress-test; RNA expression available; enough cells for task-level aggregation; high-value external validation target</td>
+    </tr>
+    <tr>
+      <td>sciplex3_A549.h5ad</td>
+      <td>official_generalization</td>
+      <td>sciplex3</td>
+      <td>chemical_combinatorial</td>
+      <td>RNA</td>
+      <td>82975</td>
+      <td>5839</td>
+      <td>12</td>
+      <td>E10_primary_candidate</td>
+      <td>scPerturBench generalization asset; perturbation-generalization suitable; combination task possible; contains context/donor/cell-type metadata; chemical external stress-test; RNA expression available; enough cells for task-level aggregation; high-value external validation target</td>
+    </tr>
+    <tr>
+      <td>TCDD.h5ad</td>
+      <td>extra_official</td>
+      <td>TCDD</td>
+      <td>chemical_single</td>
+      <td>RNA</td>
+      <td>103745</td>
+      <td>5000</td>
+      <td>11</td>
+      <td>E10_primary_candidate</td>
+      <td>scPerturBench generalization asset; perturbation-generalization suitable; contains context/donor/cell-type metadata; chemical external stress-test; RNA expression available; enough cells for task-level aggregation; high-value external validation target</td>
+    </tr>
+    <tr>
+      <td>sciplex3.h5ad</td>
+      <td>extra_official</td>
+      <td>sciplex3</td>
+      <td>chemical_single</td>
+      <td>RNA</td>
+      <td>26046</td>
+      <td>5000</td>
+      <td>11</td>
+      <td>E10_primary_candidate</td>
+      <td>scPerturBench generalization asset; perturbation-generalization suitable; contains context/donor/cell-type metadata; chemical external stress-test; RNA expression available; enough cells for task-level aggregation; high-value external validation target</td>
+    </tr>
+    <tr>
+      <td>crossPatient.h5ad</td>
+      <td>extra_official</td>
+      <td>crossPatient</td>
+      <td>genetic_single</td>
+      <td>RNA</td>
+      <td>117363</td>
+      <td>5000</td>
+      <td>10</td>
+      <td>E10_primary_candidate</td>
+      <td>scPerturBench generalization asset; perturbation-generalization suitable; contains context/donor/cell-type metadata; RNA expression available; enough cells for task-level aggregation; high-value external validation target</td>
+    </tr>
+    <tr>
+      <td>KaggleCrossPatient.h5ad</td>
+      <td>extra_official</td>
+      <td>KaggleCrossPatient</td>
+      <td>genetic_single</td>
+      <td>RNA</td>
+      <td>25583</td>
+      <td>5000</td>
+      <td>10</td>
+      <td>E10_primary_candidate</td>
+      <td>scPerturBench generalization asset; perturbation-generalization suitable; contains context/donor/cell-type metadata; RNA expression available; enough cells for task-level aggregation; high-value external validation target</td>
+    </tr>
+    <tr>
+      <td>KaggleCrossCell.h5ad</td>
+      <td>extra_official</td>
+      <td>KaggleCrossCell</td>
+      <td>genetic_single</td>
+      <td>RNA</td>
+      <td>23653</td>
+      <td>5000</td>
+      <td>10</td>
+      <td>E10_primary_candidate</td>
+      <td>scPerturBench generalization asset; perturbation-generalization suitable; contains context/donor/cell-type metadata; RNA expression available; enough cells for task-level aggregation; high-value external validation target</td>
+    </tr>
+    <tr>
+      <td>kangCrossCell.h5ad</td>
+      <td>extra_official</td>
+      <td>kangCrossCell</td>
+      <td>genetic_single</td>
+      <td>RNA</td>
+      <td>13576</td>
+      <td>5000</td>
+      <td>10</td>
+      <td>E10_primary_candidate</td>
+      <td>scPerturBench generalization asset; perturbation-generalization suitable; contains context/donor/cell-type metadata; RNA expression available; enough cells for task-level aggregation; high-value external validation target</td>
+    </tr>
+    <tr>
+      <td>kangCrossPatient.h5ad</td>
+      <td>extra_official</td>
+      <td>kangCrossPatient</td>
+      <td>genetic_single</td>
+      <td>RNA</td>
+      <td>13093</td>
+      <td>5000</td>
+      <td>10</td>
+      <td>E10_primary_candidate</td>
+      <td>scPerturBench generalization asset; perturbation-generalization suitable; contains context/donor/cell-type metadata; RNA expression available; enough cells for task-level aggregation; high-value external validation target</td>
+    </tr>
+    <tr>
+      <td>crossSpecies.h5ad</td>
+      <td>extra_official</td>
+      <td>crossSpecies</td>
+      <td>genetic_single</td>
+      <td>RNA</td>
+      <td>112903</td>
+      <td>5000</td>
+      <td>9</td>
+      <td>E10_primary_candidate</td>
+      <td>scPerturBench generalization asset; perturbation-generalization suitable; RNA expression available; enough cells for task-level aggregation; high-value external validation target</td>
+    </tr>
+    <tr>
+      <td>SrivatsanTrapnell2020_sciplex3.h5ad</td>
+      <td>official_scperturb</td>
+      <td>SrivatsanTrapnell2020</td>
+      <td>chemical_combinatorial</td>
+      <td>RNA</td>
+      <td>799317</td>
+      <td>110983</td>
+      <td>9</td>
+      <td>E10_primary_candidate</td>
+      <td>perturbation-generalization suitable; combination task possible; contains context/donor/cell-type metadata; chemical external stress-test; RNA expression available; enough cells for task-level aggregation; high-value external validation target</td>
+    </tr>
+    <tr>
+      <td>Replogle_K562essential.h5ad</td>
+      <td>official_generalization</td>
+      <td>Replogle</td>
+      <td>genetic_combinatorial</td>
+      <td>RNA</td>
+      <td>263245</td>
+      <td>5822</td>
+      <td>8</td>
+      <td>E10_primary_candidate</td>
+      <td>scPerturBench generalization asset; perturbation-generalization suitable; combination task possible; RNA expression available; enough cells for task-level aggregation</td>
+    </tr>
+    <tr>
+      <td>Replogle_RPE1essential.h5ad</td>
+      <td>official_generalization</td>
+      <td>Replogle</td>
+      <td>genetic_combinatorial</td>
+      <td>RNA</td>
+      <td>173912</td>
+      <td>5687</td>
+      <td>8</td>
+      <td>E10_primary_candidate</td>
+      <td>scPerturBench generalization asset; perturbation-generalization suitable; combination task possible; RNA expression available; enough cells for task-level aggregation</td>
+    </tr>
+    <tr>
+      <td>Frangieh.h5ad</td>
+      <td>official_generalization</td>
+      <td>Frangieh</td>
+      <td>genetic_single</td>
+      <td>multimodal</td>
+      <td>110188</td>
+      <td>5124</td>
+      <td>8</td>
+      <td>E10_primary_candidate</td>
+      <td>scPerturBench generalization asset; perturbation-generalization suitable; enough cells for task-level aggregation; high-value external validation target</td>
+    </tr>
+    <tr>
+      <td>Norman.h5ad</td>
+      <td>official_generalization</td>
+      <td>Norman</td>
+      <td>genetic_combinatorial</td>
+      <td>RNA</td>
+      <td>96994</td>
+      <td>5025</td>
+      <td>8</td>
+      <td>E10_primary_candidate</td>
+      <td>scPerturBench generalization asset; perturbation-generalization suitable; combination task possible; RNA expression available; enough cells for task-level aggregation</td>
+    </tr>
+    <tr>
+      <td>Schmidt.h5ad</td>
+      <td>official_generalization</td>
+      <td>Schmidt</td>
+      <td>genetic_combinatorial</td>
+      <td>RNA</td>
+      <td>60572</td>
+      <td>5005</td>
+      <td>8</td>
+      <td>E10_primary_candidate</td>
+      <td>scPerturBench generalization asset; perturbation-generalization suitable; combination task possible; RNA expression available; enough cells for task-level aggregation</td>
+    </tr>
+    <tr>
+      <td>Replogle_exp6.h5ad</td>
+      <td>official_generalization</td>
+      <td>Replogle</td>
+      <td>genetic_combinatorial</td>
+      <td>RNA</td>
+      <td>27104</td>
+      <td>5019</td>
+      <td>8</td>
+      <td>E10_primary_candidate</td>
+      <td>scPerturBench generalization asset; perturbation-generalization suitable; combination task possible; RNA expression available; enough cells for task-level aggregation</td>
+    </tr>
+    <tr>
+      <td>Wessels.h5ad</td>
+      <td>official_generalization</td>
+      <td>Wessels</td>
+      <td>genetic_combinatorial</td>
+      <td>RNA</td>
+      <td>19775</td>
+      <td>5020</td>
+      <td>8</td>
+      <td>E10_primary_candidate</td>
+      <td>scPerturBench generalization asset; perturbation-generalization suitable; combination task possible; RNA expression available; enough cells for task-level aggregation</td>
+    </tr>
+    <tr>
+      <td>SrivatsanTrapnell2020_sciplex4.h5ad</td>
+      <td>official_scperturb</td>
+      <td>SrivatsanTrapnell2020</td>
+      <td>chemical_single</td>
+      <td>RNA</td>
+      <td>98437</td>
+      <td>58347</td>
+      <td>8</td>
+      <td>E10_primary_candidate</td>
+      <td>perturbation-generalization suitable; contains context/donor/cell-type metadata; chemical external stress-test; RNA expression available; enough cells for task-level aggregation; high-value external validation target</td>
+    </tr>
+    <tr>
+      <td>SrivatsanTrapnell2020_sciplex2.h5ad</td>
+      <td>official_scperturb</td>
+      <td>SrivatsanTrapnell2020</td>
+      <td>chemical_single</td>
+      <td>RNA</td>
+      <td>24262</td>
+      <td>58347</td>
+      <td>8</td>
+      <td>E10_primary_candidate</td>
+      <td>perturbation-generalization suitable; contains context/donor/cell-type metadata; chemical external stress-test; RNA expression available; enough cells for task-level aggregation; high-value external validation target</td>
+    </tr>
+    <tr>
+      <td>Replogle_exp7.h5ad</td>
+      <td>official_generalization</td>
+      <td>Replogle</td>
+      <td>genetic_single</td>
+      <td>RNA</td>
+      <td>102148</td>
+      <td>5087</td>
+      <td>7</td>
+      <td>E10_secondary_candidate</td>
+      <td>scPerturBench generalization asset; perturbation-generalization suitable; RNA expression available; enough cells for task-level aggregation</td>
+    </tr>
+    <tr>
+      <td>Adamson.h5ad</td>
+      <td>official_generalization</td>
+      <td>Adamson</td>
+      <td>genetic_single</td>
+      <td>RNA</td>
+      <td>56998</td>
+      <td>5043</td>
+      <td>7</td>
+      <td>E10_secondary_candidate</td>
+      <td>scPerturBench generalization asset; perturbation-generalization suitable; RNA expression available; enough cells for task-level aggregation</td>
+    </tr>
+    <tr>
+      <td>Afriat.h5ad</td>
+      <td>extra_official</td>
+      <td>Afriat</td>
+      <td>genetic_single</td>
+      <td>RNA</td>
+      <td>19053</td>
+      <td>5000</td>
+      <td>7</td>
+      <td>E10_secondary_candidate</td>
+      <td>scPerturBench generalization asset; perturbation-generalization suitable; RNA expression available; enough cells for task-level aggregation</td>
+    </tr>
+  </tbody>
+</table></div>
+<div class="card"><h2>官方文件覆盖</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>source</th>
+      <th>file_name</th>
+      <th>official_size_bytes</th>
+      <th>official_checksum</th>
+      <th>present_on_server</th>
+      <th>relative_path</th>
+      <th>size_check_status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>scPerturBench Zenodo 14607156</td>
+      <td>Afriat.h5ad.gz</td>
+      <td>886888320</td>
+      <td>md5:7b12990c8e24f2a24ec73e1c3a0b8499</td>
+      <td>True</td>
+      <td>extra_official/cellular_context_generalization/Afriat.h5ad</td>
+      <td>not_checked_gzip_source</td>
+    </tr>
+    <tr>
+      <td>scPerturBench Zenodo 14607156</td>
+      <td>TCDD.h5ad.gz</td>
+      <td>195737363</td>
+      <td>md5:46b47af026cefb7d53e58522b9b3a1dc</td>
+      <td>True</td>
+      <td>extra_official/cellular_context_generalization/TCDD.h5ad</td>
+      <td>not_checked_gzip_source</td>
+    </tr>
+    <tr>
+      <td>scPerturBench Zenodo 14607156</td>
+      <td>KaggleCrossPatient.h5ad.gz</td>
+      <td>83433107</td>
+      <td>md5:0027f6136f1715edc48c40d67dcf5593</td>
+      <td>True</td>
+      <td>extra_official/cellular_context_generalization/KaggleCrossPatient.h5ad</td>
+      <td>not_checked_gzip_source</td>
+    </tr>
+    <tr>
+      <td>scPerturBench Zenodo 14607156</td>
+      <td>KaggleCrossCell.h5ad.gz</td>
+      <td>77721719</td>
+      <td>md5:37a60cd8f77687c9627ccb73a38442ee</td>
+      <td>True</td>
+      <td>extra_official/cellular_context_generalization/KaggleCrossCell.h5ad</td>
+      <td>not_checked_gzip_source</td>
+    </tr>
+    <tr>
+      <td>scPerturBench Zenodo 14607156</td>
+      <td>Haber.h5ad.gz</td>
+      <td>27085785</td>
+      <td>md5:29b81705e358ca8546f8a5cff70dfd86</td>
+      <td>True</td>
+      <td>extra_official/cellular_context_generalization/Haber.h5ad</td>
+      <td>not_checked_gzip_source</td>
+    </tr>
+    <tr>
+      <td>scPerturBench Zenodo 14607156</td>
+      <td>crossSpecies.h5ad.gz</td>
+      <td>356775358</td>
+      <td>md5:a73256c4e77ba802d878bc482b07d065</td>
+      <td>True</td>
+      <td>extra_official/cellular_context_generalization/crossSpecies.h5ad</td>
+      <td>not_checked_gzip_source</td>
+    </tr>
+    <tr>
+      <td>scPerturBench Zenodo 14607156</td>
+      <td>McFarland.h5ad.gz</td>
+      <td>58480051</td>
+      <td>md5:1540ad44297a02eeb83e285a31e42d78</td>
+      <td>True</td>
+      <td>extra_official/cellular_context_generalization/McFarland.h5ad</td>
+      <td>not_checked_gzip_source</td>
+    </tr>
+    <tr>
+      <td>scPerturBench Zenodo 14607156</td>
+      <td>sciplex3.h5ad.gz</td>
+      <td>27471237</td>
+      <td>md5:963e324e2a1605b4e7c0cf7e36c925ca</td>
+      <td>True</td>
+      <td>extra_official/cellular_context_generalization/sciplex3.h5ad</td>
+      <td>not_checked_gzip_source</td>
+    </tr>
+    <tr>
+      <td>scPerturBench Zenodo 14607156</td>
+      <td>kangCrossCell.h5ad.gz</td>
+      <td>22625754</td>
+      <td>md5:f787133ae1fefa3ee05d002bc7be26da</td>
+      <td>True</td>
+      <td>extra_official/cellular_context_generalization/kangCrossCell.h5ad</td>
+      <td>not_checked_gzip_source</td>
+    </tr>
+    <tr>
+      <td>scPerturBench Zenodo 14607156</td>
+      <td>crossPatient.h5ad.gz</td>
+      <td>134652202</td>
+      <td>md5:73aef1d31904161377b18ef95bdc1568</td>
+      <td>True</td>
+      <td>extra_official/cellular_context_generalization/crossPatient.h5ad</td>
+      <td>not_checked_gzip_source</td>
+    </tr>
+    <tr>
+      <td>scPerturBench Zenodo 14607156</td>
+      <td>kangCrossPatient.h5ad.gz</td>
+      <td>21843789</td>
+      <td>md5:0ab86fd269703e8fe8a3e841cf1f1577</td>
+      <td>True</td>
+      <td>extra_official/cellular_context_generalization/kangCrossPatient.h5ad</td>
+      <td>not_checked_gzip_source</td>
+    </tr>
+    <tr>
+      <td>scPerturBench Zenodo 14607156</td>
+      <td>Parekh.h5ad.gz</td>
+      <td>19915283</td>
+      <td>md5:b5a817309f005f1d310338cc5981b803</td>
+      <td>True</td>
+      <td>extra_official/cellular_context_generalization/Parekh.h5ad</td>
+      <td>not_checked_gzip_source</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>NadigOConner2024_hepg2.h5ad</td>
+      <td>850590740</td>
+      <td>md5:af2be47f7477cf32fa6e4bec1c6a4868</td>
+      <td>True</td>
+      <td>official_scperturb/NadigOConner2024_hepg2.h5ad</td>
+      <td>size_match</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>DixitRegev2016_K562_TFs_13_days.h5ad</td>
+      <td>121166672</td>
+      <td>md5:b594d224cf17b268cd7e02efc976cea7</td>
+      <td>True</td>
+      <td>official_scperturb/DixitRegev2016_K562_TFs_13_days.h5ad</td>
+      <td>size_match</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>DixitRegev2016_K562_TFs_High_MOI.h5ad</td>
+      <td>319735470</td>
+      <td>md5:b77c2249b7069b16f91f7384a88c39b1</td>
+      <td>True</td>
+      <td>official_scperturb/DixitRegev2016_K562_TFs_High_MOI.h5ad</td>
+      <td>size_match</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>ShifrutMarson2018.h5ad</td>
+      <td>871481676</td>
+      <td>md5:813253590e31611560045333b7ffb637</td>
+      <td>True</td>
+      <td>official_scperturb/ShifrutMarson2018.h5ad</td>
+      <td>size_match</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>NadigOConner2024_jurkat.h5ad</td>
+      <td>1293665804</td>
+      <td>md5:d8b05d00bfbd686d37ffdd4293bc6c8c</td>
+      <td>True</td>
+      <td>official_scperturb/NadigOConner2024_jurkat.h5ad</td>
+      <td>size_match</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>SrivatsanTrapnell2020_sciplex3.h5ad</td>
+      <td>2526631614</td>
+      <td>md5:c9e70629505d98c7ca1a837f62b14e89</td>
+      <td>True</td>
+      <td>official_scperturb/SrivatsanTrapnell2020_sciplex3.h5ad</td>
+      <td>size_match</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>DixitRegev2016_K562_TFs_7_days.h5ad</td>
+      <td>256685252</td>
+      <td>md5:b4fb773a3b3857a8ee471d6d2f5221e0</td>
+      <td>True</td>
+      <td>official_scperturb/DixitRegev2016_K562_TFs_7_days.h5ad</td>
+      <td>size_match</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>LaraAstiasoHuntly2023_exvivo.h5ad</td>
+      <td>1080740763</td>
+      <td>md5:f5767ed229c57758393c78d1d2b646c8</td>
+      <td>True</td>
+      <td>official_scperturb/LaraAstiasoHuntly2023_exvivo.h5ad</td>
+      <td>size_match</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>AdamsonWeissman2016_GSM2406681_10X010.h5ad</td>
+      <td>471286951</td>
+      <td>md5:2fa44ea61a8dd35742af618638ec65fc</td>
+      <td>True</td>
+      <td>official_scperturb/AdamsonWeissman2016_GSM2406681_10X010.h5ad</td>
+      <td>size_match</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>AissaBenevolenskaya2021.h5ad</td>
+      <td>45919115</td>
+      <td>md5:c1ee47cc82052c1eed78f3a2e3eea30c</td>
+      <td>True</td>
+      <td>official_scperturb/AissaBenevolenskaya2021.h5ad</td>
+      <td>size_match</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>AdamsonWeissman2016_GSM2406675_10X001.h5ad</td>
+      <td>34557246</td>
+      <td>md5:232f7e3756d41602bbe434b50662a76f</td>
+      <td>True</td>
+      <td>official_scperturb/AdamsonWeissman2016_GSM2406675_10X001.h5ad</td>
+      <td>size_match</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>AdamsonWeissman2016_GSM2406677_10X005.h5ad</td>
+      <td>139059637</td>
+      <td>md5:8657391920e7f8b3e6fd52745777002a</td>
+      <td>True</td>
+      <td>official_scperturb/AdamsonWeissman2016_GSM2406677_10X005.h5ad</td>
+      <td>size_match</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>ChangYe2021.h5ad</td>
+      <td>501823050</td>
+      <td>md5:9c68660b093ebb3611d114893766fc97</td>
+      <td>True</td>
+      <td>official_scperturb/ChangYe2021.h5ad</td>
+      <td>size_match</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>DatlingerBock2017.h5ad</td>
+      <td>39085166</td>
+      <td>md5:c797d8e0320afcc0cc2a94e94805b142</td>
+      <td>True</td>
+      <td>official_scperturb/DatlingerBock2017.h5ad</td>
+      <td>size_match</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>DatlingerBock2021.h5ad</td>
+      <td>33600780</td>
+      <td>md5:5cfbcb4770e9c859a07b2cc44fd12066</td>
+      <td>True</td>
+      <td>official_scperturb/DatlingerBock2021.h5ad</td>
+      <td>size_match</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>FrangiehIzar2021_protein.h5ad</td>
+      <td>24714445</td>
+      <td>md5:9d9337e30af69ffdcf5e831f96616ed1</td>
+      <td>True</td>
+      <td>official_scperturb/FrangiehIzar2021_protein.h5ad</td>
+      <td>size_match</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>FrangiehIzar2021_RNA.h5ad</td>
+      <td>1458928348</td>
+      <td>md5:dc438f53c476a3dd562898654d48ed15</td>
+      <td>True</td>
+      <td>official_scperturb/FrangiehIzar2021_RNA.h5ad</td>
+      <td>size_match</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>JoungZhang2023_combinatorial.h5ad</td>
+      <td>834073300</td>
+      <td>md5:e3d5f50d228b4d90652b6146e97c605c</td>
+      <td>True</td>
+      <td>official_scperturb/JoungZhang2023_combinatorial.h5ad</td>
+      <td>size_match</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>SunshineHein2023.h5ad</td>
+      <td>743672579</td>
+      <td>md5:739f42ccb24815c4ac1d8ca6d4aa85d8</td>
+      <td>True</td>
+      <td>official_scperturb/SunshineHein2023.h5ad</td>
+      <td>size_match</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>PapalexiSatija2021_eccite_arrayed_RNA.h5ad</td>
+      <td>52339395</td>
+      <td>md5:843820d48b024348d6132cd53be0da91</td>
+      <td>True</td>
+      <td>official_scperturb/PapalexiSatija2021_eccite_arrayed_RNA.h5ad</td>
+      <td>size_match</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>PapalexiSatija2021_eccite_protein.h5ad</td>
+      <td>1191551</td>
+      <td>md5:07290242b0e835c9474bb816de9cda45</td>
+      <td>True</td>
+      <td>official_scperturb/PapalexiSatija2021_eccite_protein.h5ad</td>
+      <td>size_match</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>PapalexiSatija2021_eccite_RNA.h5ad</td>
+      <td>147215278</td>
+      <td>md5:d9e8bfe20b0e7b0919be042e8fcf6d03</td>
+      <td>True</td>
+      <td>official_scperturb/PapalexiSatija2021_eccite_RNA.h5ad</td>
+      <td>size_match</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>GasperiniShendure2019_atscale.h5ad</td>
+      <td>1866293566</td>
+      <td>md5:874e029adb1a344bd5ff313179084ad5</td>
+      <td>True</td>
+      <td>official_scperturb/GasperiniShendure2019_atscale.h5ad</td>
+      <td>size_match</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>GasperiniShendure2019_highMOI.h5ad</td>
+      <td>418337592</td>
+      <td>md5:04e1af7562c1d0d2dd2f9d1cf01e3560</td>
+      <td>True</td>
+      <td>official_scperturb/GasperiniShendure2019_highMOI.h5ad</td>
+      <td>size_match</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>GasperiniShendure2019_lowMOI.h5ad</td>
+      <td>322716827</td>
+      <td>md5:f26552257c5ce060ce523e5ffcb301a5</td>
+      <td>True</td>
+      <td>official_scperturb/GasperiniShendure2019_lowMOI.h5ad</td>
+      <td>size_match</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>GehringPachter2019.h5ad</td>
+      <td>73274146</td>
+      <td>md5:8348716d9d00c9526be4f51748ea7b98</td>
+      <td>True</td>
+      <td>official_scperturb/GehringPachter2019.h5ad</td>
+      <td>size_match</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>McFarlandTsherniak2020.h5ad</td>
+      <td>1459410830</td>
+      <td>md5:03204a96b7b5dd96fc3cf33418222cd9</td>
+      <td>True</td>
+      <td>official_scperturb/McFarlandTsherniak2020.h5ad</td>
+      <td>size_match</td>
+    </tr>
+    <tr>
+      <td>scPerturb Zenodo 13350497</td>
+      <td>ReplogleWeissman2022_K562_essential.h5ad</td>
+      <td>1546729675</td>
+      <td>md5:d8cba17576d1a8afc0f7d71b79cad0f7</td>
+      <td>True</td>
+      <td>official_scperturb/ReplogleWeissman2022_K562_essential.h5ad</td>
+      <td>size_match</td>
+    </tr>
+  </tbody>
+</table></div>
+<div class="card"><h2>缺失官方文件</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>source</th>
+      <th>file_name</th>
+      <th>official_size_bytes</th>
+      <th>official_checksum</th>
+      <th>download_url</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table></div>
+</div></body></html>

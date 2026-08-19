@@ -1,0 +1,25 @@
+{
+  "alpha": 0.05,
+  "bootstrap_draws": 10000,
+  "bootstrap_seed": 2026071903,
+  "calibration_population": "E174_rotated_test_donor_160_identity_frozen_targets_480_tasks",
+  "calibration_target_count": 160,
+  "conformal_target": "pair_mean_rmse_and_ensemble_rmse",
+  "deployment_authorized": false,
+  "development_population": "E168_plus_E172_1000_prior_targets_3000_tasks",
+  "evaluation_target_count": 640,
+  "evaluation_truth_may_select_or_modify_method": false,
+  "finite_sample_order_rank": 145,
+  "legacy_ranking_comparators": [
+    "magnitude",
+    "disagreement",
+    "fixed_safeconf"
+  ],
+  "miscoverage_alpha": 0.1,
+  "optional_stopping_or_panel_dropping_allowed": false,
+  "pair_lower_certificate": "rmse(p1,p2)/2",
+  "primary_evaluation_population": "E174_rotated_test_donor_640_hidden_targets_1920_tasks",
+  "same_study_rotated_donor_not_independent_study": true,
+  "target_cluster": "target_gene_three_states_simultaneously",
+  "target_coverage": 0.9
+}

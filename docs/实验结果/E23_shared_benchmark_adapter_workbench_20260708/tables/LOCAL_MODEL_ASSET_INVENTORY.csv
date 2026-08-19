@@ -1,0 +1,6 @@
+asset,kind,path,exists,usable_now,limitation
+GEARS legacy formal vectors,prediction_records_and_npz,$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal,True,True,旧 GEARS 输出是 legacy/non-strict；需要按 shared manifest 重跑或转换。
+Patched GEARS exporter,code,code/20260426_154505_perturb_transport_final_push/safetrans_confidence/cli/run_gears_prediction_records.py,True,True,能写 strict provenance；尚未对 E23 shared manifest 运行。
+scGPT conda env,environment,$YYF_CONDA/envs/scgpt_env,True,False,scgpt import result: False; env 有 torch/scanpy 但未安装 scgpt 包。
+scGPT source archive,source_zip,$YYF_ARCHIVE/code/20260519_0958_home_cleanup/moved_top_level/scGPT-main.zip,True,True,zip files=109; has perturbation tutorial=True; no local checkpoint found.
+CPA / chemCPA local executable output,missing_adapter_asset,$SAFECONF_RUNTIME/outputs/current_project_explanation_20260530/合并版_给我看的/papers/CPA_2023_MSB.pdf,True,False,本地只有论文 PDF 痕迹，没有可运行代码、checkpoint 或 SafeConf PredictionRecord。

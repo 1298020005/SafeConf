@@ -1,0 +1,27 @@
+key,value
+generated_at,2026-07-30T15:04:25+08:00
+command,/home/yyf/.conda/envs/cpa_runtime_env/bin/python tools/scripts/run_e196_cpa_native_support_distance.py --mode full --device cpu
+safeconf_repository_head,1dce8c5f6ff28549fe10be3666430a65e5c8f357
+python_executable,/home/yyf/.conda/envs/cpa_runtime_env/bin/python
+python_version,3.9.25
+platform,Linux-6.8.0-45-generic-x86_64-with-glibc2.35
+hostname,csb-NF5280M5
+cpu_count,96
+cpa_source_commit,fbd7c0250edc23eff003a10c99655579c53afd63
+cpa_source_worktree_status,M cpa/__init__.py
+cpa_covariate_embedding_access,direct module.covars_embeddings lookup using the frozen model.covars_encoder category id; CPA 0.8.8's scalar wrapper creates a 3-D AnnData input in this runtime
+package::cpa-tools,0.8.8
+package::torch,2.1.2+cu118
+package::scanpy,1.10.3
+package::anndata,0.10.8
+package::scvi-tools,0.20.3
+package::rdkit-pypi,2022.9.5
+package::numpy,1.26.4
+package::pandas,2.3.3
+package::scipy,1.13.1
+package::scikit-learn,1.6.1
+package::matplotlib,3.9.4
+torch_cuda_available,True
+torch_cuda_version,11.8
+gpu_count,2
+gpu_names,Quadro RTX 6000; Quadro RTX 6000

@@ -1,0 +1,71 @@
+dataset_name,dataset_family,fold_id,predictor_name,base_formula
+CuiHacohen2023,gene_main,0,ContextSimBaseline,gene_main: context_similarity + log_support - model_disagreement
+CuiHacohen2023,gene_main,0,V0StrongBaseline,gene_main: context_similarity + log_support - model_disagreement
+CuiHacohen2023,gene_main,1,ContextSimBaseline,gene_main: context_similarity + log_support - model_disagreement
+CuiHacohen2023,gene_main,1,V0StrongBaseline,gene_main: context_similarity + log_support - model_disagreement
+CuiHacohen2023,gene_main,2,ContextSimBaseline,gene_main: context_similarity + log_support - model_disagreement
+CuiHacohen2023,gene_main,2,V0StrongBaseline,gene_main: context_similarity + log_support - model_disagreement
+CuiHacohen2023,gene_main,3,ContextSimBaseline,gene_main: context_similarity + log_support - model_disagreement
+CuiHacohen2023,gene_main,3,V0StrongBaseline,gene_main: context_similarity + log_support - model_disagreement
+CuiHacohen2023,gene_main,4,ContextSimBaseline,gene_main: context_similarity + log_support - model_disagreement
+CuiHacohen2023,gene_main,4,V0StrongBaseline,gene_main: context_similarity + log_support - model_disagreement
+Frangieh,gene_main,0,ContextSimBaseline,gene_main: context_similarity + log_support - model_disagreement
+Frangieh,gene_main,0,V0StrongBaseline,gene_main: context_similarity + log_support - model_disagreement
+Frangieh,gene_main,1,ContextSimBaseline,gene_main: context_similarity + log_support - model_disagreement
+Frangieh,gene_main,1,V0StrongBaseline,gene_main: context_similarity + log_support - model_disagreement
+Frangieh,gene_main,2,ContextSimBaseline,gene_main: context_similarity + log_support - model_disagreement
+Frangieh,gene_main,2,V0StrongBaseline,gene_main: context_similarity + log_support - model_disagreement
+Frangieh,gene_main,3,ContextSimBaseline,gene_main: context_similarity + log_support - model_disagreement
+Frangieh,gene_main,3,V0StrongBaseline,gene_main: context_similarity + log_support - model_disagreement
+Frangieh,gene_main,4,ContextSimBaseline,gene_main: context_similarity + log_support - model_disagreement
+Frangieh,gene_main,4,V0StrongBaseline,gene_main: context_similarity + log_support - model_disagreement
+LaraAstiasoHuntly2023_exvivo,gene_main,0,ContextSimBaseline,gene_main: context_similarity + log_support - model_disagreement
+LaraAstiasoHuntly2023_exvivo,gene_main,0,V0StrongBaseline,gene_main: context_similarity + log_support - model_disagreement
+LaraAstiasoHuntly2023_exvivo,gene_main,1,ContextSimBaseline,gene_main: context_similarity + log_support - model_disagreement
+LaraAstiasoHuntly2023_exvivo,gene_main,1,V0StrongBaseline,gene_main: context_similarity + log_support - model_disagreement
+LaraAstiasoHuntly2023_exvivo,gene_main,2,ContextSimBaseline,gene_main: context_similarity + log_support - model_disagreement
+LaraAstiasoHuntly2023_exvivo,gene_main,2,V0StrongBaseline,gene_main: context_similarity + log_support - model_disagreement
+LaraAstiasoHuntly2023_exvivo,gene_main,3,ContextSimBaseline,gene_main: context_similarity + log_support - model_disagreement
+LaraAstiasoHuntly2023_exvivo,gene_main,3,V0StrongBaseline,gene_main: context_similarity + log_support - model_disagreement
+LaraAstiasoHuntly2023_exvivo,gene_main,4,ContextSimBaseline,gene_main: context_similarity + log_support - model_disagreement
+LaraAstiasoHuntly2023_exvivo,gene_main,4,V0StrongBaseline,gene_main: context_similarity + log_support - model_disagreement
+LaraAstiasoHuntly2023_invivo,gene_main,0,ContextSimBaseline,gene_main: context_similarity + log_support - model_disagreement
+LaraAstiasoHuntly2023_invivo,gene_main,0,V0StrongBaseline,gene_main: context_similarity + log_support - model_disagreement
+LaraAstiasoHuntly2023_invivo,gene_main,1,ContextSimBaseline,gene_main: context_similarity + log_support - model_disagreement
+LaraAstiasoHuntly2023_invivo,gene_main,1,V0StrongBaseline,gene_main: context_similarity + log_support - model_disagreement
+LaraAstiasoHuntly2023_invivo,gene_main,2,ContextSimBaseline,gene_main: context_similarity + log_support - model_disagreement
+LaraAstiasoHuntly2023_invivo,gene_main,2,V0StrongBaseline,gene_main: context_similarity + log_support - model_disagreement
+LaraAstiasoHuntly2023_invivo,gene_main,3,ContextSimBaseline,gene_main: context_similarity + log_support - model_disagreement
+LaraAstiasoHuntly2023_invivo,gene_main,3,V0StrongBaseline,gene_main: context_similarity + log_support - model_disagreement
+LaraAstiasoHuntly2023_invivo,gene_main,4,ContextSimBaseline,gene_main: context_similarity + log_support - model_disagreement
+LaraAstiasoHuntly2023_invivo,gene_main,4,V0StrongBaseline,gene_main: context_similarity + log_support - model_disagreement
+McFarlandTsherniak2020,chem_robust,0,ContextSimBaseline,chem_robust: log_support - model_disagreement
+McFarlandTsherniak2020,chem_robust,0,V0StrongBaseline,chem_robust: log_support - model_disagreement
+McFarlandTsherniak2020,chem_robust,1,ContextSimBaseline,chem_robust: log_support - model_disagreement
+McFarlandTsherniak2020,chem_robust,1,V0StrongBaseline,chem_robust: log_support - model_disagreement
+McFarlandTsherniak2020,chem_robust,2,ContextSimBaseline,chem_robust: log_support - model_disagreement
+McFarlandTsherniak2020,chem_robust,2,V0StrongBaseline,chem_robust: log_support - model_disagreement
+McFarlandTsherniak2020,chem_robust,3,ContextSimBaseline,chem_robust: log_support - model_disagreement
+McFarlandTsherniak2020,chem_robust,3,V0StrongBaseline,chem_robust: log_support - model_disagreement
+McFarlandTsherniak2020,chem_robust,4,ContextSimBaseline,chem_robust: log_support - model_disagreement
+McFarlandTsherniak2020,chem_robust,4,V0StrongBaseline,chem_robust: log_support - model_disagreement
+SantinhaPlatt2023,chem_robust,0,ContextSimBaseline,chem_robust: log_support - model_disagreement
+SantinhaPlatt2023,chem_robust,0,V0StrongBaseline,chem_robust: log_support - model_disagreement
+SantinhaPlatt2023,chem_robust,1,ContextSimBaseline,chem_robust: log_support - model_disagreement
+SantinhaPlatt2023,chem_robust,1,V0StrongBaseline,chem_robust: log_support - model_disagreement
+SantinhaPlatt2023,chem_robust,2,ContextSimBaseline,chem_robust: log_support - model_disagreement
+SantinhaPlatt2023,chem_robust,2,V0StrongBaseline,chem_robust: log_support - model_disagreement
+SantinhaPlatt2023,chem_robust,3,ContextSimBaseline,chem_robust: log_support - model_disagreement
+SantinhaPlatt2023,chem_robust,3,V0StrongBaseline,chem_robust: log_support - model_disagreement
+SantinhaPlatt2023,chem_robust,4,ContextSimBaseline,chem_robust: log_support - model_disagreement
+SantinhaPlatt2023,chem_robust,4,V0StrongBaseline,chem_robust: log_support - model_disagreement
+SrivatsanTrapnell2020_sciplex3,chem_robust,0,ContextSimBaseline,chem_robust: log_support - model_disagreement
+SrivatsanTrapnell2020_sciplex3,chem_robust,0,V0StrongBaseline,chem_robust: log_support - model_disagreement
+SrivatsanTrapnell2020_sciplex3,chem_robust,1,ContextSimBaseline,chem_robust: log_support - model_disagreement
+SrivatsanTrapnell2020_sciplex3,chem_robust,1,V0StrongBaseline,chem_robust: log_support - model_disagreement
+SrivatsanTrapnell2020_sciplex3,chem_robust,2,ContextSimBaseline,chem_robust: log_support - model_disagreement
+SrivatsanTrapnell2020_sciplex3,chem_robust,2,V0StrongBaseline,chem_robust: log_support - model_disagreement
+SrivatsanTrapnell2020_sciplex3,chem_robust,3,ContextSimBaseline,chem_robust: log_support - model_disagreement
+SrivatsanTrapnell2020_sciplex3,chem_robust,3,V0StrongBaseline,chem_robust: log_support - model_disagreement
+SrivatsanTrapnell2020_sciplex3,chem_robust,4,ContextSimBaseline,chem_robust: log_support - model_disagreement
+SrivatsanTrapnell2020_sciplex3,chem_robust,4,V0StrongBaseline,chem_robust: log_support - model_disagreement

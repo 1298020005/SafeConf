@@ -1,0 +1,23 @@
+{
+  "cluster_nonconformity": "maximum registered-family centroid RMSE over both guides of one calibration target",
+  "constant_centroid_upper": 0.18978567801751686,
+  "evaluation_target_x_rows_read": 0,
+  "experiment": "E182_gse225807_registered_family",
+  "family_lower_violations": 0,
+  "finite_sample_rank_one_based": 18,
+  "git_branch": "exp/task-risk-audit-20260611",
+  "git_head": "2f4f148e379e9ef021f79bdbce2488c4811af5a8",
+  "learned_or_adaptive_upper_fitted": false,
+  "logical_calibration_x_rows_read": 926,
+  "max_hilbert_identity_absolute_residual": 2.0816681711721685e-17,
+  "n_calibration_targets": 19,
+  "n_calibration_tasks": 38,
+  "remote_heads": {
+    "github": "2f4f148e379e9ef021f79bdbce2488c4811af5a8",
+    "origin": "2f4f148e379e9ef021f79bdbce2488c4811af5a8"
+  },
+  "schema": "safeconf_e182_calibration_lock_v1",
+  "status": "PASS",
+  "target_coverage": 0.9,
+  "worst_member_lower_violations": 0
+}

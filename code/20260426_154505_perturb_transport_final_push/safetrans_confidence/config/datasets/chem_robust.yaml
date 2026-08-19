@@ -1,0 +1,13 @@
+dataset_family: chem_robust
+datasets:
+  - KaggleCrossCell
+  - KaggleCrossPatient
+  - McFarland
+  - McFarlandTsherniak2020
+  - SantinhaPlatt2023
+  - SrivatsanTrapnell2020_sciplex2
+  - SrivatsanTrapnell2020_sciplex3
+  - SrivatsanTrapnell2020_sciplex4
+  - TCDD
+  - sciplex3
+main_score: protocol_v0_2_family_confidence

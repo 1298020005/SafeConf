@@ -1,0 +1,6 @@
+predictor,outcome,control,n_tasks,raw_spearman,partial_spearman,ci95_lower,ci95_upper,bootstrap_valid,endpoint
+training_delta_dispersion,gat_excess_error_vs_general,predicted_magnitude,566,-0.13986277346140027,-0.11295700750152482,-0.1969671542469486,-0.024265560725558154,5000,mse
+training_delta_dispersion,gat_excess_error_vs_general,predicted_magnitude,566,0.1274896079735561,0.08236333471031111,-0.0023096852971877086,0.16305264327397564,5000,pearson_pert
+training_delta_dispersion,gat_excess_error_vs_general,predicted_magnitude,566,0.15302276991200237,-0.007933534657533235,-0.09524293032716816,0.0767153328152251,5000,rank
+training_delta_dispersion,gat_excess_error_vs_general,predicted_magnitude,566,0.031506565595794365,-0.025523515679345864,-0.11786159533859636,0.06599538454221399,5000,energy_distance_pca_k=50
+training_delta_dispersion,gat_excess_error_vs_general,predicted_magnitude,566,0.24959560670651462,0.13168811329651234,0.04343605779338547,0.21742373933943618,5000,de_auprc

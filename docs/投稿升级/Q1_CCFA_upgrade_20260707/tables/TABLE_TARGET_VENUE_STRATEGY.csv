@@ -1,0 +1,5 @@
+track,target,fit,required_upgrade,risk
+Q1 bioinformatics method,Bioinformatics / Briefings in Bioinformatics / PLOS Computational Biology,最高。SafeConf 是单细胞扰动预测的可靠性评估与实验决策工具。,统一强基线、外部验证、risk-budget 决策曲线、可复现包。,如果写成预测模型，会被要求直接超过 SOTA；必须写成 post-prediction risk auditing。
+higher biological computation,Genome Biology / Cell Systems,中等偏高。需要把方法和真实生物案例绑紧。,补 biological case study：错误富集任务对应通路、药物机制或细胞背景差异。,纯方法审计可能被认为生物发现不足。
+CCF-A AI,AAAI / IJCAI / NeurIPS workshop-to-main route / ICML-style ML venue,当前中等。需要把 SafeConf 升级成 risk-controlled selective prediction 方法。,conformal/selective risk control、跨域分布偏移理论化、公开 benchmark 对比。,现有版本更像应用方法；直接投 CCF-A 主会很危险。
+fallback but still useful,BMC Bioinformatics / GigaScience / Scientific Reports,保底。适合在一区冲刺失败后快速转投。,不建议先走这条；会浪费当前证据积累。,安全但上限低。

@@ -1,0 +1,6 @@
+axis,priority,selected_protocol,selection_status,rule
+absolute,mse>wmse_exp2,mse,SELECTED,first PRIMARY_ELIGIBLE in preregistered priority
+direction,pearson_pert>pearson_ctrl>pearson,pearson_pert,SELECTED,first PRIMARY_ELIGIBLE in preregistered priority
+retrieval,rank>transpose_rank,rank,SELECTED,first PRIMARY_ELIGIBLE in preregistered priority
+population,energy_distance_pca_k=50>unbiased_mmd_median_pca_k=50,energy_distance_pca_k=50,SELECTED,first PRIMARY_ELIGIBLE in preregistered priority
+de,de_auprc>de_overlap_k=50>de_auroc,de_auprc,SELECTED,first PRIMARY_ELIGIBLE in preregistered priority

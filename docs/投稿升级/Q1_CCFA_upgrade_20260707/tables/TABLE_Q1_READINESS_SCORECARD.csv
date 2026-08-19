@@ -1,0 +1,8 @@
+dimension,score_5,evidence
+problem importance,5,单细胞扰动预测和基础模型快速发展，预测结果可靠性是明确痛点。
+dataset breadth,4,七主数据集 + Tahoe chemical + E8b 外部聚合证据；任务类型覆盖较广。
+baseline strength,3,已有 magnitude、LODO、oracle 等阶梯，但还需统一强基线审计和分层报告。
+external validation,3,E8b 有外部关联证据；仍缺冻结任务级外部验证。
+method novelty for Q1,4,risk auditing/triage 叙事清楚；若加入 selective/conformal 风险控制可更强。
+method novelty for CCF-A,2,当前偏应用审计；需要理论化为可控风险选择性预测。
+reproducibility,4,已有大量 frozen CSV、manifest 和 commit 记录；需要整理成 paper-level 一键入口。

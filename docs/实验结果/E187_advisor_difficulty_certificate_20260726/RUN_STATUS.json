@@ -1,0 +1,13 @@
+{
+  "experiment": "E187",
+  "status": "PASS",
+  "retrospective": true,
+  "cartesian_task_instances": 8196,
+  "cross_dataset_tasks": 581,
+  "total_task_instances": 8777,
+  "family_rms_violations": 0,
+  "family_worst_violations": 0,
+  "seed": 20260726,
+  "truth_use": "evaluation_only",
+  "cross_dataset_upper_claim": false
+}

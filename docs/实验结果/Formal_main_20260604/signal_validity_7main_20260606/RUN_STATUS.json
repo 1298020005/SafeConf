@@ -1,0 +1,14 @@
+{
+  "scored_records": "/home/yyf/proj/code/20260426_154505_perturb_transport_final_push/outputs/safeconf_formal_main_20260604/formal_audit/tables/FORMAL_SCORED_RECORDS.csv",
+  "out_dir": "/home/yyf/proj/code/20260426_154505_perturb_transport_final_push/outputs/safeconf_signal_validity_7main_20260606",
+  "n_datasets": 7,
+  "n_test_scores": 126770,
+  "main_score": "protocol_v0_2_family_confidence",
+  "outputs": [
+    "tables/SIGNAL_VALIDITY_7MAIN_SUMMARY.csv",
+    "tables/PARTIAL_AND_WITHIN_STRATUM_7MAIN.csv",
+    "tables/MAGNITUDE_BASELINE_7MAIN.csv",
+    "tables/SIGNAL_VALIDITY_7MAIN_MAIN_SCORE.csv",
+    "reports/SIGNAL_VALIDITY_7MAIN_REPORT.md"
+  ]
+}

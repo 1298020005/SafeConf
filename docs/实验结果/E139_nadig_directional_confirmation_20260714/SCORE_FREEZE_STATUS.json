@@ -1,0 +1,9 @@
+{
+  "phase": "scores_frozen_before_directional_truth_audit",
+  "generated_at": "2026-07-14T02:38:10",
+  "n_tasks": 256,
+  "score_file": "docs/实验结果/E139_nadig_directional_confirmation_20260714/tables/E139_DIRECTIONAL_SCORES_BEFORE_TRUTH.csv",
+  "score_file_sha256": "61c5804c6d714bc01235b0176e62309d80847549458b8a91a97c763b801f7307",
+  "model_file_sha256": "77caf3b7b46071ced9577a8bd5289ce4c7bf5899c329ab37e835c41bda07d4b3",
+  "target_truth_columns_read": []
+}

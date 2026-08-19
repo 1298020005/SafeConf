@@ -1,0 +1,43 @@
+{
+  "experiment": "E198_arch1_protocol_calibration",
+  "analysis_class": "EXTERNAL_PROTOCOL_CALIBRATION",
+  "generated_at": "2026-08-02T00:07:33+08:00",
+  "status": "COMPLETE_EXTERNAL_PROTOCOL_CALIBRATION",
+  "formal_git_head": "dfed0154f5ba45df6613f6f22e734f8be336e870",
+  "formal_branch": "exp/task-risk-audit-20260611",
+  "dataset_opened_as_anndata": true,
+  "dataset_sha256": "f85862ecc9d9c34c1765b395105c74af08480471ade27ce8466d742d73c1449e",
+  "scperteval_commit": "8709eb07a0e7d4ecf1c60c977f2018690a749975",
+  "protocols": [
+    "pearson",
+    "pearson_ctrl",
+    "pearson_pert",
+    "mse",
+    "wmse_exp2",
+    "rank",
+    "transpose_rank",
+    "energy_distance_pca_k=50",
+    "unbiased_mmd_median_pca_k=50",
+    "de_auprc",
+    "de_auroc",
+    "de_overlap_k=50"
+  ],
+  "n_perturbations": 150,
+  "n_protocol_rows": 1800,
+  "primary_eligible": 12,
+  "secondary_only": 0,
+  "rejected": 0,
+  "selected_endpoints": [
+    "mse",
+    "pearson_pert",
+    "rank",
+    "energy_distance_pca_k=50",
+    "de_auprc"
+  ],
+  "formal_gates_passed": 14,
+  "formal_gates_total": 14,
+  "elapsed_seconds": 219.23337507247925,
+  "model_predictions_used": false,
+  "safeconf_validated": false,
+  "cross_context_claim": false
+}

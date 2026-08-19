@@ -1,0 +1,15 @@
+{
+  "status": "ok",
+  "gate": "PASS_MAGNITUDE_STRONGER",
+  "run_dir": "/home/yyf/safeconf_runtime/outputs/tahoe_300_shard_nested_formal_20260624",
+  "out_dir": "/home/yyf/safeconf_runtime/outputs/tahoe_d3_triage_20260625",
+  "n_records": 16114,
+  "n_task_clusters": 8057,
+  "n_bootstrap": 1000,
+  "safeconf_top10_enrichment": 4.880316823575049,
+  "magnitude_top10_enrichment": 6.486418548233164,
+  "random_top10_enrichment": 1.054198043211891,
+  "safeconf_top10_ci_low": 4.588707041327759,
+  "safeconf_minus_magnitude_ci_low": -1.9287173317057564,
+  "safeconf_minus_magnitude_ci_high": -1.3827047569715967
+}

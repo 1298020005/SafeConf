@@ -1,0 +1,77 @@
+{
+  "experiment": "E154_replogle_robustness",
+  "generated_at": "2026-07-14T15:51:16",
+  "status": "complete",
+  "claim_scope": "post_E152_prespecified_manifest_sensitivity_only",
+  "not_a_new_confirmation_gate": true,
+  "n_analysis_runs": 6,
+  "n_new_model_runs": 5,
+  "n_reused_e151_runs": 1,
+  "n_full_training_seeds": 3,
+  "full_training_seeds": [
+    202607151,
+    2026071542,
+    2026071543
+  ],
+  "fixed_fraction_seed": 2026071542,
+  "training_fractions": [
+    25,
+    50,
+    75,
+    100
+  ],
+  "training_fraction_label_semantics": "E149 frozen hash thresholds; not exact requested sample fractions",
+  "actual_training_pairs_by_label": {
+    "25": 18,
+    "50": 58,
+    "75": 105,
+    "100": 140
+  },
+  "actual_training_percent_by_label": {
+    "25": 12.857142857142858,
+    "50": 41.42857142857143,
+    "75": 75.0,
+    "100": 100.0
+  },
+  "strict_records_per_run": 680,
+  "strict_issue_count_all_runs": 0,
+  "primary_unique_tasks_per_run": 256,
+  "all_source_truth_checks_pass": true,
+  "undefined_requested_metric_cells": [
+    {
+      "run_id": "seed2_frac25",
+      "metric": "absolute_safeconf_spearman",
+      "reason": "calibrated SafeConf is constant in fold 2; two-fold macro requires both folds",
+      "reported_as": "NA"
+    },
+    {
+      "run_id": "seed2_frac50",
+      "metric": "absolute_safeconf_spearman",
+      "reason": "calibrated SafeConf is constant in fold 1; two-fold macro requires both folds",
+      "reported_as": "NA"
+    },
+    {
+      "run_id": "seed2_frac75",
+      "metric": "absolute_safeconf_spearman",
+      "reason": "calibrated SafeConf is constant in both folds",
+      "reported_as": "NA"
+    }
+  ],
+  "direction_model_refit_on_replogle": false,
+  "disclosed_singleton_batch_guard": {
+    "affected_run": "seed2_frac75",
+    "affected_fold": "Replogle_cellline_holdout_2_RPE1",
+    "batch_size_16_to_15": true,
+    "all_frozen_training_pairs_retained": true,
+    "technical_deviation_file": "TECHNICAL_DEVIATION.md"
+  },
+  "analysis_contract_sha256": "95990b1c9b0248ee3743d6b9c4902f641aa08dcd2ef928443b0cb7b5f0eb435f",
+  "tables": {
+    "run_metrics_sha256": "082ce3ad4c9437ad068ecb4f2c46a655da0821aebe94a9718f6fe1d899cee332",
+    "full_seed_summary_sha256": "cba1d216636158ca0d5231884dc4f734cffa196fc52443f6f5979cc78ee65c8d",
+    "train_fraction_trend_sha256": "ad7e7f9377e7a3931b400b5aa8d28f1c9320e205739a046b090ffe493e68a29b",
+    "train_fraction_size_audit_sha256": "044269b556056d3b5f16286ded150310938ef1b96e08caa880ad440c02761b81",
+    "strict_run_audit_sha256": "b2ea351ef551564976142e8911d7433cdffbb1442a208ce5af1f3aeef9c35b98",
+    "score_degeneracy_audit_sha256": "6750d175fe2e04441349529f0a462ebdf74656e242aedb156568a85ebc9ce786"
+  }
+}

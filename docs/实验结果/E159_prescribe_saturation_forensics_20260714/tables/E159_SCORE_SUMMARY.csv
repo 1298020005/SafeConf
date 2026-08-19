@@ -1,0 +1,11 @@
+panel,score,n,n_finite,min,max,mean,std_population_ddof0,nunique,constant,estimable_for_within_panel_rank_association
+Norman_P3,log_prob,24,24,-44.850456237792969,-43.302860260009766,-44.0071702003479,0.37821755818445485,24,False,True
+Norman_P3,epistemic_confidence,24,24,10,10,10,0,1,True,False
+Norman_P3,aleatoric_confidence,24,24,-21.745992660522461,-21.745992660522461,-21.745992660522461,0,1,True,False
+Norman_P3,combined_confidence_official,24,24,-1.7459926605224609,-1.7459926605224609,-1.7459926605224609,0,1,True,False
+Norman_P3,predicted_magnitude_rms,24,24,0.011772904545068699,0.011772904545068699,0.011772904545068699,0,1,True,False
+Norman_P4,log_prob,24,24,-44.629257202148438,-43.198329925537109,-43.993838469187416,0.31347181132038859,24,False,True
+Norman_P4,epistemic_confidence,24,24,10,10,10,0,1,True,False
+Norman_P4,aleatoric_confidence,24,24,-21.745992660522461,-21.745992660522461,-21.745992660522461,0,1,True,False
+Norman_P4,combined_confidence_official,24,24,-1.7459926605224609,-1.7459926605224609,-1.7459926605224609,0,1,True,False
+Norman_P4,predicted_magnitude_rms,24,24,0.011772904545068699,0.011772904545068699,0.011772904545068699,0,1,True,False

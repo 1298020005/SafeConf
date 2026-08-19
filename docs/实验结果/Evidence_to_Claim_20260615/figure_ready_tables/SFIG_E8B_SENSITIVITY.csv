@@ -1,0 +1,5 @@
+dataset,metric,DEG,n_methods,n_perturbations,median_spearman,pct_methods_positive,source_file,source_commit
+Frangieh,mse,20,15,74,0.0090048060488771,0.6,docs/实验结果/E1_E4_preregistered_20260614/E8b_scperturbench_association/E8b_SENSITIVITY_DEG.csv,e8a3594
+Frangieh,mse,50,15,74,0.0835258932418452,0.8,docs/实验结果/E1_E4_preregistered_20260614/E8b_scperturbench_association/E8b_SENSITIVITY_DEG.csv,e8a3594
+Frangieh,mse,100,15,74,0.2121293006132648,0.8666666666666667,docs/实验结果/E1_E4_preregistered_20260614/E8b_scperturbench_association/E8b_SENSITIVITY_DEG.csv,e8a3594
+Frangieh,pearson_distance,5000,15,74,-0.4265002073804592,0.2,docs/实验结果/E1_E4_preregistered_20260614/E8b_scperturbench_association/E8b_SENSITIVITY_DEG.csv,e8a3594

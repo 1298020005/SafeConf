@@ -1,0 +1,23 @@
+{
+  "experiment": "E124_formal_five_dataset_meta",
+  "generated_at": "2026-07-14T00:50:22",
+  "status": "complete",
+  "datasets": [
+    "Frangieh",
+    "Lara_exvivo",
+    "Liang",
+    "Santinha",
+    "Shifrut"
+  ],
+  "n_datasets": 5,
+  "n_folds": 26,
+  "n_test_tasks": 2221,
+  "n_prediction_records": 4442,
+  "strict_issue_count": 0,
+  "new_datasets_frozen_after_e113": [
+    "Shifrut",
+    "Liang"
+  ],
+  "test_truth_used_to_change_existing_safeconf_score": false,
+  "n_bootstrap": 2000
+}

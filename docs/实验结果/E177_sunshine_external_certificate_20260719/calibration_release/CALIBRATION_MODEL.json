@@ -1,0 +1,28 @@
+{
+  "base_model_selection_used_calibration_truth": false,
+  "base_model_spec": {
+    "ensemble_rmse": "predicted_magnitude_from_pretruth_predictions",
+    "pair_mean_rmse": "max(predicted_magnitude_from_pretruth_predictions, model_disagreement_rmse/2)"
+  },
+  "cluster": "perturbation_target_across_eight_technical_groups",
+  "coverage": 0.9,
+  "experiment": "E177_sunshine_external_certificate",
+  "finite_sample_order_rank_one_based": 28,
+  "n_calibration_targets": 30,
+  "n_calibration_tasks": 240,
+  "outcomes": {
+    "ensemble_rmse": {
+      "base_prediction_column": "ensemble_base_prediction",
+      "cluster_residual_sha256_float64": "055af1f9df9f621a52568cf6584b173fa594cd502af43bb1cf81197670c255a1",
+      "cluster_score": "max_technical_group(observed_error_minus_base_prediction)",
+      "quantile": 0.47258539027647317
+    },
+    "pair_mean_rmse": {
+      "base_prediction_column": "pair_mean_base_prediction",
+      "cluster_residual_sha256_float64": "d00c9ea7c8b1d3412920664953f9ed41cef11dfb61d7de615b3df00be399f442",
+      "cluster_score": "max_technical_group(observed_error_minus_base_prediction)",
+      "quantile": 0.47295926564019647
+    }
+  },
+  "schema": "safeconf_e177_split_conformal_calibration_v1"
+}

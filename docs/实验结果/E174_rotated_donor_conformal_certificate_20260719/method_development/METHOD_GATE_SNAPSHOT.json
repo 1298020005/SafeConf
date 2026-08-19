@@ -1,0 +1,200 @@
+{
+  "candidate_increment_gate": {
+    "minimum_relative_mean_upper_improvement": 0.005,
+    "minimum_repeat_win_fraction": 0.75
+  },
+  "coverage_target": 0.9,
+  "deployment_authorized": false,
+  "development_source": "E168_plus_E172_via_E173_posttruth_audit",
+  "development_targets": 1000,
+  "development_tasks": 3000,
+  "e174_calibration_truth_used": false,
+  "e174_evaluation_truth_used": false,
+  "e174_expression_x_values_read": 0,
+  "experiment": "E174_rotated_donor_conformal_certificate",
+  "git_branch": "exp/task-risk-audit-20260611",
+  "git_head": "ea39418bb985aa4ecd6d2c1adc76f2f326b5dfaa",
+  "legacy_fixed_safeconf_increment_claim_retired": true,
+  "models": {
+    "ensemble_rmse": {
+      "magnitude": {
+        "coefficient": [
+          0.12167542694920284,
+          0.0036235379051964933,
+          0.0009659614313122307,
+          -0.0020288893203126664,
+          0.00617738077166039
+        ],
+        "feature_names": [
+          "intercept",
+          "state_Stim8hr",
+          "state_Stim48hr",
+          "column_unseen",
+          "z_predicted_magnitude"
+        ],
+        "n_training_targets": 1000,
+        "n_training_tasks": 3000,
+        "numeric_means": {
+          "predicted_magnitude": 0.02160682912326098
+        },
+        "numeric_scales": {
+          "predicted_magnitude": 0.006370073227896779
+        },
+        "outcome": "ensemble_rmse",
+        "ridge_lambda": 10.0,
+        "schema": "safeconf_e174_ridge_base_v1",
+        "spec": "magnitude"
+      },
+      "magnitude_plus_pair_lower": {
+        "coefficient": [
+          0.12138544812527491,
+          0.0038834029335029015,
+          0.0013456177815567405,
+          -0.0016448641649246013,
+          0.004121811702663467,
+          0.0021701162250008775
+        ],
+        "feature_names": [
+          "intercept",
+          "state_Stim8hr",
+          "state_Stim48hr",
+          "column_unseen",
+          "z_predicted_magnitude",
+          "z_pair_lower_bound_rmse"
+        ],
+        "n_training_targets": 1000,
+        "n_training_tasks": 3000,
+        "numeric_means": {
+          "pair_lower_bound_rmse": 0.015877459536306485,
+          "predicted_magnitude": 0.02160682912326098
+        },
+        "numeric_scales": {
+          "pair_lower_bound_rmse": 0.0061170014190270955,
+          "predicted_magnitude": 0.006370073227896779
+        },
+        "outcome": "ensemble_rmse",
+        "ridge_lambda": 10.0,
+        "schema": "safeconf_e174_ridge_base_v1",
+        "spec": "magnitude_plus_pair_lower"
+      },
+      "state_stratum_constant": {
+        "coefficient": [
+          0.12184962531340877,
+          0.003887535075771111,
+          0.0014749150514585887,
+          -0.004188132459210624
+        ],
+        "feature_names": [
+          "intercept",
+          "state_Stim8hr",
+          "state_Stim48hr",
+          "column_unseen"
+        ],
+        "n_training_targets": 1000,
+        "n_training_tasks": 3000,
+        "numeric_means": {},
+        "numeric_scales": {},
+        "outcome": "ensemble_rmse",
+        "ridge_lambda": 10.0,
+        "schema": "safeconf_e174_ridge_base_v1",
+        "spec": "state_stratum_constant"
+      }
+    },
+    "pair_mean_rmse": {
+      "magnitude": {
+        "coefficient": [
+          0.12310497469583678,
+          0.003348685497995621,
+          0.0006992571366074676,
+          -0.0021477513714351893,
+          0.0071842126446919185
+        ],
+        "feature_names": [
+          "intercept",
+          "state_Stim8hr",
+          "state_Stim48hr",
+          "column_unseen",
+          "z_predicted_magnitude"
+        ],
+        "n_training_targets": 1000,
+        "n_training_tasks": 3000,
+        "numeric_means": {
+          "predicted_magnitude": 0.02160682912326098
+        },
+        "numeric_scales": {
+          "predicted_magnitude": 0.006370073227896779
+        },
+        "outcome": "pair_mean_rmse",
+        "ridge_lambda": 10.0,
+        "schema": "safeconf_e174_ridge_base_v1",
+        "spec": "magnitude"
+      },
+      "magnitude_plus_pair_lower": {
+        "coefficient": [
+          0.12267086687640437,
+          0.0037377119767459397,
+          0.001267615157051334,
+          -0.0015728531062634335,
+          0.00410695826401762,
+          0.0032487352337983227
+        ],
+        "feature_names": [
+          "intercept",
+          "state_Stim8hr",
+          "state_Stim48hr",
+          "column_unseen",
+          "z_predicted_magnitude",
+          "z_pair_lower_bound_rmse"
+        ],
+        "n_training_targets": 1000,
+        "n_training_tasks": 3000,
+        "numeric_means": {
+          "pair_lower_bound_rmse": 0.015877459536306485,
+          "predicted_magnitude": 0.02160682912326098
+        },
+        "numeric_scales": {
+          "pair_lower_bound_rmse": 0.0061170014190270955,
+          "predicted_magnitude": 0.006370073227896779
+        },
+        "outcome": "pair_mean_rmse",
+        "ridge_lambda": 10.0,
+        "schema": "safeconf_e174_ridge_base_v1",
+        "spec": "magnitude_plus_pair_lower"
+      },
+      "state_stratum_constant": {
+        "coefficient": [
+          0.12330756510382238,
+          0.0036557107375123476,
+          0.001291163507377356,
+          -0.004658922761840746
+        ],
+        "feature_names": [
+          "intercept",
+          "state_Stim8hr",
+          "state_Stim48hr",
+          "column_unseen"
+        ],
+        "n_training_targets": 1000,
+        "n_training_tasks": 3000,
+        "numeric_means": {},
+        "numeric_scales": {},
+        "outcome": "pair_mean_rmse",
+        "ridge_lambda": 10.0,
+        "schema": "safeconf_e174_ridge_base_v1",
+        "spec": "state_stratum_constant"
+      }
+    }
+  },
+  "remote_heads": {
+    "github": "ea39418bb985aa4ecd6d2c1adc76f2f326b5dfaa",
+    "origin": "ea39418bb985aa4ecd6d2c1adc76f2f326b5dfaa"
+  },
+  "repeated_identity_splits": 20,
+  "schema": "safeconf_e174_method_gate_snapshot_v1",
+  "selected_model_spec": {
+    "ensemble_rmse": "magnitude",
+    "pair_mean_rmse": "magnitude"
+  },
+  "stage": "F1B_PRIOR_DATA_METHOD_FREEZE",
+  "status": "PASS"
+}

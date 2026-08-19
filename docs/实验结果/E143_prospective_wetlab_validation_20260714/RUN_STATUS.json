@@ -1,0 +1,32 @@
+{
+  "experiment": "E143_prospective_wetlab_validation",
+  "generated_at": "2026-07-14T07:05:37",
+  "status": "server_side_package_complete_physical_experiment_awaits_external_inputs",
+  "n_technical_pilot_genes": 24,
+  "n_formal_candidate_slots": 48,
+  "planned_guides_per_gene": 2,
+  "planned_non_targeting_guides": 6,
+  "planned_contexts": 2,
+  "planned_independent_batches_per_context": 3,
+  "planned_10x_libraries": 6,
+  "nadig_score_snapshot_sha256": "61c5804c6d714bc01235b0176e62309d80847549458b8a91a97c763b801f7307",
+  "package_files_sha256": {
+    "PREREG_PROSPECTIVE_CONFIRMATION.md": "d02cc2491cbb38c3382b741b2cfbe39c4be83061c2207cc34333fa6ea0ee3a2b",
+    "README_先看这个.md": "7f279c5df2114ff1d0df8508f5e954cc1c673715e800f0e0cdad3cca030b3b43",
+    "figures/E143_FIG1_CORRELATION_POWER.png": "17fa922f49394c96223c79fb454873b981831f551876b79daaf3bca84c8699c7",
+    "figures/E143_FIG1_CORRELATION_POWER.svg": "9df31e02f6e5976c42e9c5bf507fb89fe13118f0d149f9b24c8a3ecfa8dc1250",
+    "figures/E143_FIG2_PROSPECTIVE_DESIGN.png": "ec4e6d6c4ed4902aff2ef2d045a565e6aee8a4c8d126308d764f97cc46d3e146",
+    "figures/E143_FIG2_PROSPECTIVE_DESIGN.svg": "e212ea83be74ed055a04275ae6adac23cb87f640f130c6c8bb6943ea348770a0",
+    "reports/E143_DECISION_AND_HANDOFF.md": "705bd7105d799c763dc7e29ed171e32dba6b0b82560f248a324ad3004f08b484",
+    "tables/E143_CORRELATION_POWER.csv": "73c20b7b7f54256fd55dcd4e4728c514804337d5e7023171f2155a162133946d",
+    "tables/E143_MINIMUM_GENE_COUNT.csv": "ca30e4446248dd3ba83fb175cd890fd7ac4fd3ab0b6c08c508ac542cb745a2b4",
+    "tables/E143_NADIG_TECHNICAL_PILOT.csv": "b32dc464768cbb3a006f6e04dfaa21dedf15d795d2e994752a4981ddfcd27f7a",
+    "tables/E143_QC_RULES.csv": "495834ff85af54e6d40a73ee2d0f9664ff197c762d55e921fad97aafec0477bb",
+    "templates/BLINDED_LIBRARY_LAYOUT.csv": "2d69a65dea819e97bab8f2f072fcb8e558aeb0ced37c20ff64d7721e8822707d",
+    "templates/FORMAL_CANDIDATE_INPUT.csv": "7cb64865b509429979ab3c7f3f29b937ed90839522e5a5e55f7e3aa61e26c8c6",
+    "templates/FORMAL_CANDIDATE_SLOTS.csv": "683188ee6672fb0026c8ff81e4edcdce56ae5dcb979a20b406df1000429f7190"
+  },
+  "physical_wetlab_executed": false,
+  "external_inputs_required": true,
+  "independent_confirmation_claim_allowed_now": false
+}

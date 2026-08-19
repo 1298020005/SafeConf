@@ -1,0 +1,5 @@
+split,n_conditions,n_cells_obs_metadata,semantic_X_rows_indexed,in_development_h5ad,in_graph_cache,test_or_excluded_leakage
+train,72.0,11779,11779,True,True,False
+val,24.0,5102,5102,True,True,False
+test,48.0,9902,0,False,False,False
+excluded,,3924,0,False,False,False

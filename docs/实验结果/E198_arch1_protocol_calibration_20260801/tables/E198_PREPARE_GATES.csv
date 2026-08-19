@@ -1,0 +1,8 @@
+phase,check,observed,expected,passed,detail
+prepare,dataset_exists,True,True,True,
+prepare,dataset_bytes,4377281643,4377281643,True,
+prepare,scperteval_commit,8709eb07a0e7d4ecf1c60c977f2018690a749975,8709eb07a0e7d4ecf1c60c977f2018690a749975,True,
+prepare,scperteval_worktree_clean,clean,clean,True,
+prepare,protocol_count,12,12,True,
+prepare,optional_extras_absent,,empty,True,
+prepare,synthetic_all_protocols,12,12,True,arch1 not loaded

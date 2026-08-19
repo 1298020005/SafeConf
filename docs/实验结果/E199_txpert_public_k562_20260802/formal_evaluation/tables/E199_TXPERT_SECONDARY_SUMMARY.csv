@@ -1,0 +1,13 @@
+predictor,endpoint,n,mean,median
+batch_matched_control,fast_retrieval_official,0,,
+batch_matched_control,pearson_delta_batch_matched,272,0.0,0.0
+exphormer,fast_retrieval_official,272,0.7721487332556786,0.8910891089108911
+exphormer,pearson_delta_batch_matched,272,0.5990169643054661,0.6403248906135559
+exphormer_mg,fast_retrieval_official,272,0.7685865608619685,0.8910891089108911
+exphormer_mg,pearson_delta_batch_matched,272,0.5997504906537121,0.6369847655296326
+family_centroid,fast_retrieval_official,272,0.794236677344205,0.9108910891089109
+family_centroid,pearson_delta_batch_matched,272,0.6177595651458773,0.6785376182997724
+gat,fast_retrieval_official,272,0.7996796738497379,0.9108910891089109
+gat,pearson_delta_batch_matched,272,0.5954940764315646,0.6683779060840607
+general_baseline,fast_retrieval_official,272,0.46079644729178804,0.407970297029703
+general_baseline,pearson_delta_batch_matched,272,0.38749181868179755,0.3950084447860718

@@ -1,0 +1,5 @@
+fold_id,source_contexts,n_go_edges,n_coexpression_edges,n_source_control_cells,scgpt_pretrained_tensors,test_truth_used_for_training_calibration_or_score
+Tian_CRISPRi_batch_holdout_1_B1,2+3+4,914,3948,316,129,False
+Tian_CRISPRi_batch_holdout_2_B2,1+3+4,914,3825,324,129,False
+Tian_CRISPRi_batch_holdout_3_B3,1+2+4,914,3663,354,129,False
+Tian_CRISPRi_batch_holdout_4_B4,1+2+3,914,3987,317,129,False

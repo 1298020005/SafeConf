@@ -1,0 +1,24 @@
+{
+  "experiment": "E122_liang_nine_context_contract",
+  "generated_at": "2026-07-14T00:36:15",
+  "source": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/LiangWang2023.h5ad",
+  "source_sha256": "sha256:3a58c9b9045ff96897ec378ad012e36cd0dc9d85ff0969e6d5e2c196ced665b7",
+  "source_shape": [
+    41383,
+    17444
+  ],
+  "context_definition": "sample = culture replicate nested in differentiation/expansion medium",
+  "n_contexts": 9,
+  "n_perturbations": 18,
+  "excluded_targets_missing_from_expression_gene_axis": [
+    "Cebpe",
+    "Sfpi1",
+    "Spic"
+  ],
+  "n_folds": 9,
+  "n_manifest_rows": 1458,
+  "minimum_cells_per_pair": 30,
+  "expression_values_read_during_selection": false,
+  "gene_identity_axis_read_for_predictor_compatibility": true,
+  "target_effect_or_error_used_for_selection": false
+}

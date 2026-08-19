@@ -1,0 +1,5 @@
+decision,reason,action,priority
+Do not run GEARS on E23 Haber manifest,"E23 perturbations are stimulus/timecourse labels, not gene perturbations.",Keep E23 as adapter contract smoke only.,1
+Use GEARS-compatible gene perturbation data for the first true model adapter,Norman/Adamson/Dixit/Frangieh local processed GEARS assets exist and scgpt_env imports gears.,"Run a small GEARS strict smoke in scgpt_env, then package as E25 if runtime succeeds.",2
+Do not claim scGPT validation yet,scGPT source zip exists but import is false and no perturbation checkpoint/output was found.,Unpack/install source or point PYTHONPATH; then locate checkpoint/tutorial assets.,3
+Do not claim CPA/chemCPA validation yet,Only a CPA PDF trace was found locally.,Acquire executable assets or choose an accessible perturbation model.,4

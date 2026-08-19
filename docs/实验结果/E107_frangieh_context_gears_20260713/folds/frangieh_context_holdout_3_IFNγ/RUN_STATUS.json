@@ -1,0 +1,26 @@
+{
+  "fold_id": "frangieh_context_holdout_3_IFNγ",
+  "finished_at": "2026-07-13T10:30:18",
+  "status": "complete",
+  "seed": 202607107,
+  "device": "cuda:1",
+  "epochs_requested": 80,
+  "epochs_completed": 12,
+  "best_epoch": 4,
+  "best_validation_mse": 0.003362281830050051,
+  "n_train_tasks": 258,
+  "n_validation_tasks": 30,
+  "n_test_tasks": 279,
+  "source_contexts_for_coexpression": [
+    "Co-culture",
+    "Control"
+  ],
+  "heldout_contexts_excluded_from_coexpression": [
+    "IFNγ"
+  ],
+  "n_source_control_cells_for_coexpression": 1211,
+  "n_go_edges_before_self_loop_completion": 8476,
+  "n_coexpression_edges_before_self_loop_completion": 1030,
+  "test_target_used_for_training_or_selection": false,
+  "wall_seconds": 23.430534839630127
+}

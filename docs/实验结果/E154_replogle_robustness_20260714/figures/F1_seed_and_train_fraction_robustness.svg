@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="650" viewBox="0 0 1180 650">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:Arial,"Noto Sans SC",sans-serif;fill:#202124}.title{font-size:25px;font-weight:700}.sub{font-size:14px;fill:#5f6368}.label{font-size:14px}.small{font-size:12px}.axis{stroke:#9aa0a6;stroke-width:1}.zero{stroke:#5f6368;stroke-width:1.4}</style>
+<text x="45" y="42" class="title">E154 · Replogle robustness</text>
+<text x="45" y="67" class="sub">256 frozen primary tasks · two-fold macro Spearman · post-E152 sensitivity</text>
+<text x="60" y="112" class="label" font-weight="700">A  Full-training variation across three seeds</text>
+<text x="650" y="112" class="label" font-weight="700">B  Fixed-seed trend across frozen hash-threshold subsets</text>
+<line x1="235" y1="510" x2="555" y2="510" class="axis"/>
+<line x1="395.0" y1="135" x2="395.0" y2="510" class="zero"/>
+<text x="60" y="179" class="small">SafeConf × absolute RMSE</text>
+<line x1="422.6" y1="175" x2="455.0" y2="175" stroke="#2F6B5F" stroke-width="4"/>
+<circle cx="441.8" cy="175" r="7" fill="#2F6B5F"/>
+<text x="463.0" y="179" class="small">0.292 [0.173, 0.375]</text>
+<text x="60" y="261" class="small">Magnitude × absolute RMSE</text>
+<line x1="429.3" y1="257" x2="450.4" y2="257" stroke="#B06A3B" stroke-width="4"/>
+<circle cx="442.0" cy="257" r="7" fill="#B06A3B"/>
+<text x="458.4" y="261" class="small">0.294 [0.214, 0.346]</text>
+<text x="60" y="343" class="small">Frozen directional × direction error</text>
+<line x1="425.5" y1="339" x2="457.3" y2="339" stroke="#4C6A92" stroke-width="4"/>
+<circle cx="445.8" cy="339" r="7" fill="#4C6A92"/>
+<text x="465.3" y="343" class="small">0.318 [0.191, 0.389]</text>
+<text x="60" y="425" class="small">Magnitude × direction error</text>
+<line x1="428.3" y1="421" x2="450.8" y2="421" stroke="#8A6D8F" stroke-width="4"/>
+<circle cx="443.2" cy="421" r="7" fill="#8A6D8F"/>
+<text x="458.8" y="425" class="small">0.301 [0.208, 0.349]</text>
+<text x="235.0" y="532" class="small" text-anchor="middle">-1</text>
+<text x="315.0" y="532" class="small" text-anchor="middle">-0.5</text>
+<text x="395.0" y="532" class="small" text-anchor="middle">0</text>
+<text x="475.0" y="532" class="small" text-anchor="middle">0.5</text>
+<text x="555.0" y="532" class="small" text-anchor="middle">1</text>
+<line x1="690" y1="510" x2="1120" y2="510" class="axis"/>
+<line x1="690" y1="327.5" x2="1120" y2="327.5" class="zero"/>
+<circle cx="1120.0" cy="259.1" r="5" fill="#2F6B5F"/>
+<circle cx="690.0" cy="330.0" r="5" fill="#B06A3B"/>
+<circle cx="833.3" cy="314.4" r="5" fill="#B06A3B"/>
+<circle cx="976.7" cy="319.4" r="5" fill="#B06A3B"/>
+<circle cx="1120.0" cy="264.3" r="5" fill="#B06A3B"/>
+<polyline points="690.0,330.0 833.3,314.4 976.7,319.4 1120.0,264.3" fill="none" stroke="#B06A3B" stroke-width="3"/>
+<circle cx="690.0" cy="327.2" r="5" fill="#4C6A92"/>
+<circle cx="833.3" cy="298.9" r="5" fill="#4C6A92"/>
+<circle cx="976.7" cy="289.1" r="5" fill="#4C6A92"/>
+<circle cx="1120.0" cy="256.4" r="5" fill="#4C6A92"/>
+<polyline points="690.0,327.2 833.3,298.9 976.7,289.1 1120.0,256.4" fill="none" stroke="#4C6A92" stroke-width="3"/>
+<circle cx="690.0" cy="329.2" r="5" fill="#8A6D8F"/>
+<circle cx="833.3" cy="314.1" r="5" fill="#8A6D8F"/>
+<circle cx="976.7" cy="319.4" r="5" fill="#8A6D8F"/>
+<circle cx="1120.0" cy="263.9" r="5" fill="#8A6D8F"/>
+<polyline points="690.0,329.2 833.3,314.1 976.7,319.4 1120.0,263.9" fill="none" stroke="#8A6D8F" stroke-width="3"/>
+<text x="690.0" y="532" class="small" text-anchor="middle">label 25</text>
+<text x="690.0" y="549" class="small" text-anchor="middle">12.9% · n=18</text>
+<text x="833.3" y="532" class="small" text-anchor="middle">label 50</text>
+<text x="833.3" y="549" class="small" text-anchor="middle">41.4% · n=58</text>
+<text x="976.7" y="532" class="small" text-anchor="middle">label 75</text>
+<text x="976.7" y="549" class="small" text-anchor="middle">75.0% · n=105</text>
+<text x="1120.0" y="532" class="small" text-anchor="middle">label 100</text>
+<text x="1120.0" y="549" class="small" text-anchor="middle">100.0% · n=140</text>
+<text x="680" y="514.0" class="small" text-anchor="end">-1</text>
+<text x="680" y="422.8" class="small" text-anchor="end">-0.5</text>
+<text x="680" y="331.5" class="small" text-anchor="end">0</text>
+<text x="680" y="240.2" class="small" text-anchor="end">0.5</text>
+<text x="680" y="149.0" class="small" text-anchor="end">1</text>
+<line x1="80" y1="585" x2="108" y2="585" stroke="#2F6B5F" stroke-width="4"/>
+<text x="117" y="589" class="small">SafeConf × absolute RMSE</text>
+<line x1="440" y1="585" x2="468" y2="585" stroke="#B06A3B" stroke-width="4"/>
+<text x="477" y="589" class="small">Magnitude × absolute RMSE</text>
+<line x1="80" y1="610" x2="108" y2="610" stroke="#4C6A92" stroke-width="4"/>
+<text x="117" y="614" class="small">Frozen directional × direction error</text>
+<line x1="440" y1="610" x2="468" y2="610" stroke="#8A6D8F" stroke-width="4"/>
+<text x="477" y="614" class="small">Magnitude × direction error</text>
+<text x="650" y="574" class="sub">Top: frozen E149 threshold label · bottom: actual share of 140 training pairs</text>
+<text x="750" y="625" class="sub">Ranges describe computational sensitivity; they are not new confirmation intervals.</text>
+</svg>

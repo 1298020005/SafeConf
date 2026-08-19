@@ -1,0 +1,31 @@
+source_id,source_label,source_status,dataset_family,dataset_name,score_name,score_type,coverage,mean_rmse,full_mean_rmse,risk_cov_improve_pct
+GEARS_FORMAL_54,Norman/Adamson/Dixit formal,formal_existing,gears_supplement,adamson,gears_prediction_magnitude_risk,risk,1.0,0.0420857965059223,0.0420857965059223,0.0
+GEARS_FORMAL_54,Norman/Adamson/Dixit formal,formal_existing,gears_supplement,adamson,gears_prediction_magnitude_risk,risk,0.9,0.041932189837098,0.0420857965059223,0.3649845828690068
+GEARS_FORMAL_54,Norman/Adamson/Dixit formal,formal_existing,gears_supplement,adamson,gears_prediction_magnitude_risk,risk,0.8,0.0417436557438443,0.0420857965059223,0.8129601682359573
+GEARS_FORMAL_54,Norman/Adamson/Dixit formal,formal_existing,gears_supplement,adamson,gears_prediction_magnitude_risk,risk,0.7,0.041830912977457,0.0420857965059223,0.6056283820824213
+GEARS_FORMAL_54,Norman/Adamson/Dixit formal,formal_existing,gears_supplement,adamson,gears_prediction_magnitude_risk,risk,0.6,0.041836618230893,0.0420857965059223,0.5920721376729468
+GEARS_FORMAL_54,Norman/Adamson/Dixit formal,formal_existing,gears_supplement,adamson,gears_prediction_magnitude_risk,risk,0.5,0.0405704909088936,0.0420857965059223,3.6005154299870528
+GEARS_FORMAL_54,Norman/Adamson/Dixit formal,formal_existing,gears_supplement,dixit,gears_prediction_magnitude_risk,risk,1.0,0.4248406688372294,0.4248406688372294,0.0
+GEARS_FORMAL_54,Norman/Adamson/Dixit formal,formal_existing,gears_supplement,dixit,gears_prediction_magnitude_risk,risk,0.9,0.4248406688372294,0.4248406688372294,0.0
+GEARS_FORMAL_54,Norman/Adamson/Dixit formal,formal_existing,gears_supplement,dixit,gears_prediction_magnitude_risk,risk,0.8,0.4248406688372294,0.4248406688372294,0.0
+GEARS_FORMAL_54,Norman/Adamson/Dixit formal,formal_existing,gears_supplement,dixit,gears_prediction_magnitude_risk,risk,0.7,0.4248406688372294,0.4248406688372294,0.0
+GEARS_FORMAL_54,Norman/Adamson/Dixit formal,formal_existing,gears_supplement,dixit,gears_prediction_magnitude_risk,risk,0.6,0.3638183176517486,0.4248406688372294,14.363585141812427
+GEARS_FORMAL_54,Norman/Adamson/Dixit formal,formal_existing,gears_supplement,dixit,gears_prediction_magnitude_risk,risk,0.5,0.3638183176517486,0.4248406688372294,14.363585141812427
+GEARS_FORMAL_54,Norman/Adamson/Dixit formal,formal_existing,gears_supplement,norman,gears_prediction_magnitude_risk,risk,1.0,0.0558784635116656,0.0558784635116656,0.0
+GEARS_FORMAL_54,Norman/Adamson/Dixit formal,formal_existing,gears_supplement,norman,gears_prediction_magnitude_risk,risk,0.9,0.0530659284580636,0.0558784635116656,5.033307784160544
+GEARS_FORMAL_54,Norman/Adamson/Dixit formal,formal_existing,gears_supplement,norman,gears_prediction_magnitude_risk,risk,0.8,0.0516261688123146,0.0558784635116656,7.609899113391433
+GEARS_FORMAL_54,Norman/Adamson/Dixit formal,formal_existing,gears_supplement,norman,gears_prediction_magnitude_risk,risk,0.7,0.049298886387121,0.0558784635116656,11.77479964740076
+GEARS_FORMAL_54,Norman/Adamson/Dixit formal,formal_existing,gears_supplement,norman,gears_prediction_magnitude_risk,risk,0.6,0.0477723795920609,0.0558784635116656,14.506633522434536
+GEARS_FORMAL_54,Norman/Adamson/Dixit formal,formal_existing,gears_supplement,norman,gears_prediction_magnitude_risk,risk,0.5,0.047149892648061,0.0558784635116656,15.620635062347976
+GEARS_FRANGIEH_62,Frangieh third-predictor run03,supplement_probe_existing,gears_supplement,frangieh,gears_prediction_magnitude_risk,risk,1.0,0.0383704710571515,0.0383704710571515,0.0
+GEARS_FRANGIEH_62,Frangieh third-predictor run03,supplement_probe_existing,gears_supplement,frangieh,gears_prediction_magnitude_risk,risk,0.9,0.0348925581534525,0.0383704710571515,9.06403494113674
+GEARS_FRANGIEH_62,Frangieh third-predictor run03,supplement_probe_existing,gears_supplement,frangieh,gears_prediction_magnitude_risk,risk,0.8,0.0334522565826773,0.0383704710571515,12.817706791112128
+GEARS_FRANGIEH_62,Frangieh third-predictor run03,supplement_probe_existing,gears_supplement,frangieh,gears_prediction_magnitude_risk,risk,0.7,0.0329300047914412,0.0383704710571515,14.17878414264684
+GEARS_FRANGIEH_62,Frangieh third-predictor run03,supplement_probe_existing,gears_supplement,frangieh,gears_prediction_magnitude_risk,risk,0.6,0.0323690236301013,0.0383704710571515,15.64079684638534
+GEARS_FRANGIEH_62,Frangieh third-predictor run03,supplement_probe_existing,gears_supplement,frangieh,gears_prediction_magnitude_risk,risk,0.5,0.0317277624121596,0.0383704710571515,17.312033086843865
+GEARS_FRANGIEH_62,Frangieh third-predictor run03,supplement_probe_existing,gears_supplement,frangieh,gears_uncertainty_confidence,confidence,1.0,0.0383704710571515,0.0383704710571515,0.0
+GEARS_FRANGIEH_62,Frangieh third-predictor run03,supplement_probe_existing,gears_supplement,frangieh,gears_uncertainty_confidence,confidence,0.9,0.0382610718786183,0.0383704710571515,0.2851129410692509
+GEARS_FRANGIEH_62,Frangieh third-predictor run03,supplement_probe_existing,gears_supplement,frangieh,gears_uncertainty_confidence,confidence,0.8,0.0379753418639301,0.0383704710571515,1.0297741527145488
+GEARS_FRANGIEH_62,Frangieh third-predictor run03,supplement_probe_existing,gears_supplement,frangieh,gears_uncertainty_confidence,confidence,0.7,0.0384605946865948,0.0383704710571515,-0.2348775685058894
+GEARS_FRANGIEH_62,Frangieh third-predictor run03,supplement_probe_existing,gears_supplement,frangieh,gears_uncertainty_confidence,confidence,0.6,0.0395161998213121,0.0383704710571515,-2.9859648125092404
+GEARS_FRANGIEH_62,Frangieh third-predictor run03,supplement_probe_existing,gears_supplement,frangieh,gears_uncertainty_confidence,confidence,0.5,0.0396406535179383,0.0383704710571515,-3.3103123985497755

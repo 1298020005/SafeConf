@@ -1,0 +1,23 @@
+{
+  "experiment": "E110_nested_hard_calibration_audit",
+  "generated_at": "2026-07-13T10:51:20",
+  "status": "complete",
+  "fixed_ridge_alpha": 1.0,
+  "features": [
+    "risk_disagreement_z",
+    "predicted_magnitude_z",
+    "context_novelty_scaled",
+    "perturbation_novelty",
+    "structural_interaction"
+  ],
+  "n_inner_calibration_rows": 686,
+  "n_outer_test_rows": 837,
+  "outer_test_truth_used_for_calibrator_or_threshold": false,
+  "pooled_macro_spearman": {
+    "safeconf_calibrated_pair_risk": 0.25300639357974863,
+    "safeconf_frozen_pair_risk": 0.24181226447413495,
+    "safeconf_nested_hard_risk": 0.1757105043600753,
+    "baseline_predicted_magnitude": 0.14814820954296473,
+    "risk_model_disagreement": 0.13729477247694932
+  }
+}

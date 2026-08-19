@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="760" viewBox="0 0 1800 760">
+  <rect x="0" y="0" width="1800" height="760" fill="#ffffff"/>
+  <style>
+    .title { font: 700 34px Arial, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; fill: #171717; }
+    .subtitle { font: 400 19px Arial, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; fill: #555555; }
+    .head { font: 700 22px Arial, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; fill: #171717; }
+    .body { font: 400 18px Arial, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif; fill: #333333; }
+    .mono { font: 600 17px "DejaVu Sans Mono", Consolas, monospace; fill: #17365d; }
+    .arrow { stroke: #777777; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#777777"/>
+    </marker>
+  </defs>
+  <text x="80" y="70" class="title">E159 · PRESCRIBE 官方置信度饱和链</text>
+  <text x="80" y="108" class="subtitle">事后取证；只使用 E157 锁定分数与 E158 已物化任务指标；未读取 raw H5AD / X</text>
+
+  <rect x="70" y="170" width="260" height="190" rx="12" fill="#f7f9fb" stroke="#8da6bd" stroke-width="2"/>
+  <text x="95" y="212" class="head">1  原始密度仍有差异</text>
+  <text x="95" y="254" class="body">P3：24 个不同值</text>
+  <text x="95" y="286" class="mono">-44.850 ～ -43.303</text>
+  <text x="95" y="320" class="body">P4：24 个不同值</text>
+  <text x="95" y="350" class="mono">-44.629 ～ -43.198</text>
+
+  <path d="M330 265 L390 265" class="arrow"/>
+  <rect x="400" y="170" width="230" height="190" rx="12" fill="#ffffff" stroke="#9c9c9c" stroke-width="2"/>
+  <text x="425" y="212" class="head">2  exp 预算</text>
+  <text x="425" y="262" class="mono">log_prob + 10</text>
+  <text x="425" y="306" class="body">仍全部低于 −30</text>
+
+  <path d="M630 265 L690 265" class="arrow"/>
+  <rect x="700" y="170" width="230" height="190" rx="12" fill="#fff8f5" stroke="#c07a55" stroke-width="2"/>
+  <text x="725" y="212" class="head">3  下界截断</text>
+  <text x="725" y="262" class="mono">clamp → −30</text>
+  <text x="725" y="306" class="body">48/48 任务相同</text>
+
+  <path d="M930 265 L990 265" class="arrow"/>
+  <rect x="1000" y="170" width="250" height="190" rx="12" fill="#ffffff" stroke="#9c9c9c" stroke-width="2"/>
+  <text x="1025" y="212" class="head">4  极小证据</text>
+  <text x="1025" y="262" class="mono">exp(−30)</text>
+  <text x="1025" y="306" class="mono">9.3576e-14</text>
+
+  <path d="M1250 265 L1310 265" class="arrow"/>
+  <rect x="1320" y="170" width="410" height="190" rx="12" fill="#fff8f5" stroke="#c07a55" stroke-width="2"/>
+  <text x="1345" y="212" class="head">5  float32 消减</text>
+  <text x="1345" y="258" class="mono">1 − 1/(1+evidence) = 0</text>
+  <text x="1345" y="306" class="body">posterior 精确退回 prior</text>
+  <text x="1345" y="338" class="body">预测、熵、官方置信度全部相同</text>
+
+  <path d="M900 390 L900 455" class="arrow"/>
+  <rect x="330" y="470" width="1140" height="160" rx="14" fill="#f5f5f5" stroke="#555555" stroke-width="2"/>
+  <text x="370" y="520" class="head">统计后果</text>
+  <text x="370" y="562" class="body">P3 / P4 内官方分数均为常数，Spearman 与 10,000 次 bootstrap 无法产生有效重复。</text>
+  <text x="370" y="602" class="body">结论应写“主 gate 不可估计且失败”，不能写 ρ=0，也不能用事后 raw log_prob 救回。</text>
+  <text x="80" y="704" class="subtitle">白底证据图 · 数值来自 E159 固定输入；图中箭头表示实际源码计算顺序</text>
+</svg>

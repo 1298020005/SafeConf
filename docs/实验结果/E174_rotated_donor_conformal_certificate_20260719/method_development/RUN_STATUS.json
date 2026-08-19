@@ -1,0 +1,16 @@
+{
+  "deployment_authorized": false,
+  "e174_calibration_truth_used": false,
+  "e174_evaluation_truth_used": false,
+  "e174_expression_x_values_read": 0,
+  "git_head": "ea39418bb985aa4ecd6d2c1adc76f2f326b5dfaa",
+  "manifest_sha256": "b113aba4de52f515bd090a235f7a4e78064b384a2cc598e49520fb0c5cdfdbfb",
+  "platform": "Linux-6.8.0-45-generic-x86_64-with-glibc2.35",
+  "python": "3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 15:12:24) [GCC 11.2.0]",
+  "schema": "safeconf_e174_method_development_status_v1",
+  "selected_model_spec": {
+    "ensemble_rmse": "magnitude",
+    "pair_mean_rmse": "magnitude"
+  },
+  "status": "COMPLETE"
+}

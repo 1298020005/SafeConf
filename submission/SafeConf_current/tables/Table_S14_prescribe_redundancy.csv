@@ -1,0 +1,10 @@
+scope,score,comparison,n_tasks,spearman_rho,bootstrap_ci95_low,bootstrap_ci95_high,bootstrap_valid
+Norman_P1,epistemic_confidence,predicted_magnitude,24,0.9939130434782607,0.9631417288284336,1.0,10000
+Norman_P2,epistemic_confidence,predicted_magnitude,24,0.994782608695652,0.9624761341706024,1.0,10000
+two_panel_macro,epistemic_confidence,predicted_magnitude,48,0.9943478260869564,0.972461114737512,0.9991273996509599,10000
+Norman_P1,aleatoric_confidence,predicted_magnitude,24,0.9765217391304346,0.9073416444727114,0.9938407391113068,10000
+Norman_P2,aleatoric_confidence,predicted_magnitude,24,0.14782608695652172,-0.39283916542774805,0.6212240873173339,10000
+two_panel_macro,aleatoric_confidence,predicted_magnitude,48,0.5621739130434782,0.2863427780284163,0.7908295196228227,10000
+Norman_P1,combined_confidence,predicted_magnitude,24,0.9965217391304346,0.9736951703784182,1.0,10000
+Norman_P2,combined_confidence,predicted_magnitude,24,0.9939130434782607,0.9596491228070176,1.0,10000
+two_panel_macro,combined_confidence,predicted_magnitude,48,0.9952173913043476,0.9746377160627375,0.9995619798510731,10000

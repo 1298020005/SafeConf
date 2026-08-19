@@ -1,0 +1,19 @@
+{
+  "experiment": "E73_predictor_aware_residual_risk",
+  "generated_at": "2026-07-11T15:25:47",
+  "git_head_before_run": "916f65b989becdb10184cfa4718c7bba9a145e3f",
+  "datasets": [
+    "Adamson",
+    "Norman",
+    "Frangieh"
+  ],
+  "n_tasks": {
+    "Adamson": 24,
+    "Norman": 24,
+    "Frangieh": 24
+  },
+  "evaluation": "leave-one-entire-dataset-out",
+  "target_truth_used_for_fit_feature_ranking_or_selection": false,
+  "feature_transform": "within-screening-batch percentile ranks; target deployable features allowed, target labels forbidden",
+  "n_boot": 10000
+}

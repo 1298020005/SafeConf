@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="650">
+<rect width="100%" height="100%" fill="#fff"/>
+<style>text{font-family:Arial,"Noto Sans CJK SC",sans-serif;fill:#27343c}.t{font-size:26px;font-weight:700}.s{font-size:15px;fill:#657078}.l{font-size:15px}</style>
+<text x="50" y="42" class="t">E108｜正式 scGPT–GEARS 风险排序</text>
+<text x="50" y="70" class="s">Frangieh 3 个外层背景留出 fold；柱高为 fold 内 Spearman 的宏平均。</text>
+<line x1="105" y1="540.0" x2="1035" y2="540.0" stroke="#dce3e6"/>
+<text x="93" y="545.0" text-anchor="end" class="s">-0.4</text>
+<line x1="105" y1="417.1" x2="1035" y2="417.1" stroke="#dce3e6"/>
+<text x="93" y="422.1" text-anchor="end" class="s">0.0</text>
+<line x1="105" y1="294.3" x2="1035" y2="294.3" stroke="#dce3e6"/>
+<text x="93" y="299.3" text-anchor="end" class="s">0.4</text>
+<line x1="105" y1="171.4" x2="1035" y2="171.4" stroke="#dce3e6"/>
+<text x="93" y="176.4" text-anchor="end" class="s">0.8</text>
+<line x1="105" y1="110.0" x2="1035" y2="110.0" stroke="#dce3e6"/>
+<text x="93" y="115.0" text-anchor="end" class="s">1.0</text>
+<rect x="146.2" y="374.8" width="42" height="42.4" fill="#386f88"/>
+<text x="167.2" y="367.8" text-anchor="middle" class="s">0.14</text>
+<rect x="200.2" y="401.6" width="42" height="15.5" fill="#76988a"/>
+<text x="221.2" y="394.6" text-anchor="middle" class="s">0.05</text>
+<rect x="254.2" y="400.9" width="42" height="16.2" fill="#b08355"/>
+<text x="275.2" y="393.9" text-anchor="middle" class="s">0.05</text>
+<text x="221.2" y="575" text-anchor="middle" class="l">随机缺失</text>
+<rect x="378.8" y="369.4" width="42" height="47.7" fill="#386f88"/>
+<text x="399.8" y="362.4" text-anchor="middle" class="s">0.16</text>
+<rect x="432.8" y="352.5" width="42" height="64.6" fill="#76988a"/>
+<text x="453.8" y="345.5" text-anchor="middle" class="s">0.21</text>
+<rect x="486.8" y="350.1" width="42" height="67.1" fill="#b08355"/>
+<text x="507.8" y="343.1" text-anchor="middle" class="s">0.22</text>
+<text x="453.8" y="575" text-anchor="middle" class="l">新背景</text>
+<rect x="611.2" y="377.5" width="42" height="39.6" fill="#386f88"/>
+<text x="632.2" y="370.5" text-anchor="middle" class="s">0.13</text>
+<rect x="665.2" y="382.5" width="42" height="34.6" fill="#76988a"/>
+<text x="686.2" y="375.5" text-anchor="middle" class="s">0.11</text>
+<rect x="719.2" y="386.8" width="42" height="30.3" fill="#b08355"/>
+<text x="740.2" y="379.8" text-anchor="middle" class="s">0.10</text>
+<text x="686.2" y="575" text-anchor="middle" class="l">新扰动</text>
+<rect x="843.8" y="395.8" width="42" height="21.4" fill="#386f88"/>
+<text x="864.8" y="388.8" text-anchor="middle" class="s">0.07</text>
+<rect x="897.8" y="396.2" width="42" height="20.9" fill="#76988a"/>
+<text x="918.8" y="389.2" text-anchor="middle" class="s">0.07</text>
+<rect x="951.8" y="400.4" width="42" height="16.7" fill="#b08355"/>
+<text x="972.8" y="393.4" text-anchor="middle" class="s">0.05</text>
+<text x="918.8" y="575" text-anchor="middle" class="l">背景+扰动双未见</text>
+<rect x="250" y="610" width="18" height="12" fill="#386f88"/><text x="277" y="622" class="s">SafeConf 校准风险</text>
+<rect x="495" y="610" width="18" height="12" fill="#76988a"/><text x="522" y="622" class="s">模型分歧</text>
+<rect x="740" y="610" width="18" height="12" fill="#b08355"/><text x="767" y="622" class="s">预测幅度</text>
+</svg>

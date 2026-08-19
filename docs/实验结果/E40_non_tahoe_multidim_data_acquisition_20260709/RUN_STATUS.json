@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-07-09T21:48:57",
+  "manual_audit_updated_at": "2026-07-10T12:17:37",
+  "scan_table": "/home/yyf/data/singlecell_perturbation_atlas/metadata/h5ad_scan.tsv",
+  "local_h5ad_rows": 83,
+  "coverage_rows": 5,
+  "inventory_rows": 57,
+  "external_rows": 3,
+  "output_dir": "docs/实验结果/E40_non_tahoe_multidim_data_acquisition_20260709",
+  "tables": [
+    "tables/non_tahoe_local_inventory.csv",
+    "tables/source_coverage_by_dimension.csv",
+    "tables/external_acquisition_status.csv"
+  ],
+  "manual_audit": "人工识别记录_哪些数据真的能用.md",
+  "data_line_overview": "数据线总览_尽可能多但不乱.md",
+  "manual_audit_note": "逐个检查代表性 h5ad / h5ad workflow / Tahoe parquet schema 的字段，确认 cell type、donor/patient/species、dose、perturbation、batch、multiome/regulatory、drug、cell line、MoA、SMILES 等维度是否真实可用。",
+  "environment_note": "已在当前 Python 3.12 用户环境安装 pyarrow 24.0.0，用于读取 Tahoe parquet schema。"
+}

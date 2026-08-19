@@ -1,0 +1,74 @@
+{
+  "all_four_panels_completed": true,
+  "all_four_registered_gates_passed": true,
+  "column_unseen_targeting_x_values_read": 0,
+  "decision": "POSTGATE_AUTHORIZED",
+  "deployment_authorized": false,
+  "experiment": "E172_primary_cd4_fresh_targets",
+  "generated_at": "2026-07-19T00:45:38+08:00",
+  "g4_risk_estimator": "three_leave_one_seed_out_two_seed_family_means",
+  "joint_postgate_evaluation_authorized": true,
+  "panel_results": {
+    "Q01": {
+      "g2_passed": 6,
+      "g2_registered": 6,
+      "g3_passed": 24,
+      "g3_registered": 24,
+      "g4_bootstrap_ci95_lower_min": 0.6197400871636802,
+      "g4_median_pairwise_spearman_min": 0.7280294152115316,
+      "g4_passed": 6,
+      "g4_registered": 6,
+      "snapshot_sha256": "d712c6cca8013c265f627db3f607cbce59c101fedab161e71e8fe10c66fcbec9",
+      "status": "PASS"
+    },
+    "Q02": {
+      "g2_passed": 6,
+      "g2_registered": 6,
+      "g3_passed": 24,
+      "g3_registered": 24,
+      "g4_bootstrap_ci95_lower_min": 0.4883819292588804,
+      "g4_median_pairwise_spearman_min": 0.5974188444861127,
+      "g4_passed": 6,
+      "g4_registered": 6,
+      "snapshot_sha256": "18f2ecd60e7cc827f3f797c3d960203751d0105796c64707727d2b3dc39310ba",
+      "status": "PASS"
+    },
+    "Q03": {
+      "g2_passed": 6,
+      "g2_registered": 6,
+      "g3_passed": 24,
+      "g3_registered": 24,
+      "g4_bootstrap_ci95_lower_min": 0.7551733802191963,
+      "g4_median_pairwise_spearman_min": 0.828817531934841,
+      "g4_passed": 6,
+      "g4_registered": 6,
+      "snapshot_sha256": "24124f02783a76ba195a6523a14da1a662c6515e6ca78c7f7799e834b214a501",
+      "status": "PASS"
+    },
+    "Q04": {
+      "g2_passed": 6,
+      "g2_registered": 6,
+      "g3_passed": 24,
+      "g3_registered": 24,
+      "g4_bootstrap_ci95_lower_min": 0.9365558982404788,
+      "g4_median_pairwise_spearman_min": 0.959729872260635,
+      "g4_passed": 6,
+      "g4_registered": 6,
+      "snapshot_sha256": "a80c2cd7a1bcede8ffdf6b30c265139fb8dc9cd611b255cd42eca959d342d6df",
+      "status": "PASS"
+    }
+  },
+  "panels_passed": 4,
+  "panels_registered": 4,
+  "pretruth_code_git_head": "5d5b007cfce1cacdb856a9766cf4cfb33e429f34",
+  "pretruth_code_remote_heads": {
+    "github": "5d5b007cfce1cacdb856a9766cf4cfb33e429f34",
+    "origin": "5d5b007cfce1cacdb856a9766cf4cfb33e429f34"
+  },
+  "safeconf_score_changed_from_e170": false,
+  "schema": "safeconf_e172_multipanel_pretruth_status_v1",
+  "stage": "ALL_PANEL_PRETRUTH_GATE",
+  "status": "PASS",
+  "test_query_graphs_containing_y": 0,
+  "test_targeting_x_values_read": 0
+}

@@ -1,0 +1,12 @@
+{
+  "experiment": "E126_leave_one_dataset_out_meta_router",
+  "generated_at": "2026-07-14T00:53:33",
+  "status": "complete",
+  "n_datasets": 5,
+  "n_folds": 26,
+  "n_tasks": 2221,
+  "model": "positive Ridge alpha=10",
+  "heldout_dataset_truth_used_for_fit_or_feature_transform": false,
+  "confirmatory": false,
+  "requires_new_sixth_dataset": true
+}

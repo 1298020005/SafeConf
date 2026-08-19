@@ -1,0 +1,13 @@
+run_id,seed,train_fraction,fold_id,n_tasks,n_unique_calibrated_safeconf,calibrated_safeconf_std,absolute_safeconf_spearman_defined
+seed1_frac100_reused_e151,202607151,100,Replogle_cellline_holdout_1_K562,128,3,0.006021955600115401,True
+seed1_frac100_reused_e151,202607151,100,Replogle_cellline_holdout_2_RPE1,128,122,0.010015975904974883,True
+seed2_frac25,2026071542,25,Replogle_cellline_holdout_1_K562,128,128,0.025821818978568608,True
+seed2_frac25,2026071542,25,Replogle_cellline_holdout_2_RPE1,128,1,0.0,False
+seed2_frac50,2026071542,50,Replogle_cellline_holdout_1_K562,128,1,0.0,False
+seed2_frac50,2026071542,50,Replogle_cellline_holdout_2_RPE1,128,128,0.006735977241777753,True
+seed2_frac75,2026071542,75,Replogle_cellline_holdout_1_K562,128,1,5.551115123125783e-17,False
+seed2_frac75,2026071542,75,Replogle_cellline_holdout_2_RPE1,128,1,1.3877787807814457e-17,False
+seed2_frac100,2026071542,100,Replogle_cellline_holdout_1_K562,128,123,0.06232158186822612,True
+seed2_frac100,2026071542,100,Replogle_cellline_holdout_2_RPE1,128,123,0.009966784484429827,True
+seed3_frac100,2026071543,100,Replogle_cellline_holdout_1_K562,128,127,0.011221011508714084,True
+seed3_frac100,2026071543,100,Replogle_cellline_holdout_2_RPE1,128,123,0.005152814485287059,True

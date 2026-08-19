@@ -1,0 +1,15 @@
+check,observed,expected,passed
+matrix_shape,"(150472, 3352)","(150472, 3352)",true
+row_names_equal,true,true,true
+gene_names_equal,true,true,true
+task_labels_equal,true,true,true
+cell_types_equal,true,true,true
+batch_order_equal,true,true,true
+ground_truth_exact_equal,true,true,true
+ground_truth_max_abs_delta,0.0,0.0,true
+control_bitwise_equal,false,false,true
+control_rms_delta,4.3524381881028845e-08,"<=1e-6",true
+control_max_abs_delta,9.5367431640625e-07,"<=1e-6",true
+control_n_abs_gt_1e_6,0,0,true
+baseline_predictions_finite,true,true,true
+gat_and_baseline_predictions_differ,true,true,true

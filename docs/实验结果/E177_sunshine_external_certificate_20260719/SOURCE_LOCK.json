@@ -1,0 +1,47 @@
+{
+  "experiment": "E177_sunshine_external_certificate",
+  "obs_columns": [
+    "guide_id",
+    "nperts",
+    "read_count",
+    "UMI_count",
+    "coverage",
+    "gem_group",
+    "good_coverage",
+    "number_of_cells",
+    "matched_library_element",
+    "match_type",
+    "perturbation",
+    "perturbation_type",
+    "disease",
+    "cancer",
+    "tissue_type",
+    "cell_line",
+    "celltype",
+    "organism",
+    "ncounts",
+    "ngenes",
+    "percent_mito",
+    "percent_ribo"
+  ],
+  "operational_wetlab_protocol_in_scope": false,
+  "public_processed_data_only": true,
+  "schema": "safeconf_e177_source_lock_v1",
+  "selection_used_expression_matrix_X": false,
+  "selection_used_layers": false,
+  "selection_used_obs_columns": [
+    "source_row_index",
+    "match_type",
+    "perturbation",
+    "gem_group"
+  ],
+  "selection_used_target_errors_or_predictions": false,
+  "selection_used_var_names": true,
+  "source_bytes": 743672579,
+  "source_path": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/SunshineHein2023.h5ad",
+  "source_sha256": "4dd14fb68dc16057e1cf4a05d0bcd2efd26c1a9e4ef8c7d21afccaf2cfc84270",
+  "source_shape": [
+    90380,
+    33538
+  ]
+}

@@ -1,0 +1,3 @@
+estimator,baseline,outcome,measure,estimate,ci95_lower,ci95_upper,bootstrap_valid
+transfer_risk,predicted_magnitude,gat_centroid_rmse,delta_spearman,-0.45570388371601667,-0.536400566849142,-0.3778359678210454,5000
+transfer_risk,predicted_magnitude,gat_centroid_rmse,delta_oracle_normalized_utility,-0.5484833740916197,-0.6886691142219924,-0.43421429302012926,5000

@@ -1,0 +1,2 @@
+predictor,outcome,control,n_tasks,raw_spearman,partial_spearman,ci95_lower,ci95_upper,bootstrap_valid
+training_delta_dispersion,gat_excess_rmse_vs_control,predicted_magnitude,566,-0.009244149231458583,-0.043843119894414764,-0.12892898405759287,0.04679890115120848,5000

@@ -1,0 +1,9 @@
+heldout_dataset,train_datasets,heldout_absent_from_train,test_truth_rows_used_for_weight_fit,test_score_transform_uses_truth,test_truth_first_used_for_evaluation
+Frangieh,Lara_exvivo;Liang;Nadig_two_cellline;Replogle_two_cellline;Santinha;Shifrut;Tian_CRISPRi,True,0,False,True
+Lara_exvivo,Frangieh;Liang;Nadig_two_cellline;Replogle_two_cellline;Santinha;Shifrut;Tian_CRISPRi,True,0,False,True
+Liang,Frangieh;Lara_exvivo;Nadig_two_cellline;Replogle_two_cellline;Santinha;Shifrut;Tian_CRISPRi,True,0,False,True
+Nadig_two_cellline,Frangieh;Lara_exvivo;Liang;Replogle_two_cellline;Santinha;Shifrut;Tian_CRISPRi,True,0,False,True
+Replogle_two_cellline,Frangieh;Lara_exvivo;Liang;Nadig_two_cellline;Santinha;Shifrut;Tian_CRISPRi,True,0,False,True
+Santinha,Frangieh;Lara_exvivo;Liang;Nadig_two_cellline;Replogle_two_cellline;Shifrut;Tian_CRISPRi,True,0,False,True
+Shifrut,Frangieh;Lara_exvivo;Liang;Nadig_two_cellline;Replogle_two_cellline;Santinha;Tian_CRISPRi,True,0,False,True
+Tian_CRISPRi,Frangieh;Lara_exvivo;Liang;Nadig_two_cellline;Replogle_two_cellline;Santinha;Shifrut,True,0,False,True

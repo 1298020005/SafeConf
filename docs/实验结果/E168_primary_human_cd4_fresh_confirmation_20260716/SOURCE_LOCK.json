@@ -1,0 +1,74 @@
+{
+  "allowed_hdf5_value_paths": [
+    "obs/10xrun_id",
+    "obs/donor_id",
+    "obs/culture_condition",
+    "obs/guide_id",
+    "obs/perturbed_gene_name",
+    "obs/perturbed_gene_id",
+    "obs/guide_type",
+    "var/gene_ids",
+    "var/gene_name"
+  ],
+  "checksum_crc64nvme_base64": "E2slkXBEb2c=",
+  "checksum_crc64nvme_hex": "136b259170446f67",
+  "content_length_bytes": 44566657140,
+  "etag": "010c14e0af0dccbc2524529d28ca517e-5313",
+  "etag_is_multipart_not_md5": true,
+  "forbidden_hdf5_value_paths": [
+    "X",
+    "layers",
+    "obs/n_cells",
+    "obs/total_counts",
+    "obs/log10_n_cells",
+    "obs/keep_min_cells",
+    "obs/keep_effective_guides",
+    "obs/keep_total_counts",
+    "obs/keep_for_DE",
+    "obs/keep_test_genes"
+  ],
+  "forbidden_source_keys": [
+    "marson2025_data/GWCD4i.DE_stats.h5ad",
+    "marson2025_data/GWCD4i.DE_stats.by_donors.h5mu",
+    "marson2025_data/GWCD4i.DE_stats.by_guide.h5mu",
+    "marson2025_data/suppl_tables/DE_stats.suppl_table.csv",
+    "marson2025_data/suppl_tables/guide_kd_efficiency.suppl_table.csv",
+    "marson2025_data/suppl_tables/sgrna_library_metadata.suppl_table.csv"
+  ],
+  "https_url": "https://genome-scale-tcell-perturb-seq.s3.amazonaws.com/marson2025_data/GWCD4i.pseudobulk_merged.h5ad",
+  "last_modified_utc": "2026-05-28T23:56:40Z",
+  "local_byte_copy_state_at_metadata_freeze": "partial_download_unparsed",
+  "local_h5ad_opened_by_freeze_script": false,
+  "local_logical_size_bytes_at_metadata_freeze": 33520546743,
+  "local_target_path": "/home/yyf/data/safeconf_external/primary_cd4_perturbseq_2025/source/GWCD4i.pseudobulk_merged.h5ad",
+  "observed_source_headers": {
+    "after_metadata_read": {
+      "accept_ranges": "bytes",
+      "checksum_crc64nvme_base64": "E2slkXBEb2c=",
+      "checksum_type": "FULL_OBJECT",
+      "content_length_bytes": 44566657140,
+      "etag": "010c14e0af0dccbc2524529d28ca517e-5313",
+      "last_modified_http": "Thu, 28 May 2026 23:56:40 GMT",
+      "version_id": "BWCjgMRhH80BOFIid2.0kbCr2o8wNVmn"
+    },
+    "before_metadata_read": {
+      "accept_ranges": "bytes",
+      "checksum_crc64nvme_base64": "E2slkXBEb2c=",
+      "checksum_type": "FULL_OBJECT",
+      "content_length_bytes": 44566657140,
+      "etag": "010c14e0af0dccbc2524529d28ca517e-5313",
+      "last_modified_http": "Thu, 28 May 2026 23:56:40 GMT",
+      "version_id": "BWCjgMRhH80BOFIid2.0kbCr2o8wNVmn"
+    },
+    "identical_before_after": true
+  },
+  "official_data_card": "https://virtualcellmodels.cziscience.com/dataset/genome-scale-tcell-perturb-seq?access_dataset=true",
+  "official_data_readme_sha256": "9275bad99701534e109691f2ce6ff8c474dacb3912e9a6f22cbaa009237ceab7",
+  "official_expression_independent_guide_library_sha256": "eec3cd6568db23a182b2b99d4c97002bcc45bc3931158a26cfcece921d8e9756",
+  "official_repository": "https://github.com/emdann/GWT_perturbseq_analysis_2025",
+  "official_repository_commit": "848d62fc2b7027f7218d6fc5f5b0c37255dc94af",
+  "official_sample_metadata_sha256": "175a70bef0aca270d49cac278fc1ce02f18c43afb18791a6c13574fba51bad07",
+  "s3_uri": "s3://genome-scale-tcell-perturb-seq/marson2025_data/GWCD4i.pseudobulk_merged.h5ad",
+  "source_full_sha256": "PENDING_AFTER_BYTE_DOWNLOAD_BEFORE_X_ACCESS",
+  "version_id": "BWCjgMRhH80BOFIid2.0kbCr2o8wNVmn"
+}

@@ -1,0 +1,12 @@
+{
+  "status": "ok",
+  "n_all_gears_record_rows": 192,
+  "n_canonical_gears_records": 116,
+  "n_duplicate_conflict_keys": 76,
+  "n_canonical_score_rows": 124,
+  "scoreable_datasets": [
+    "frangieh"
+  ],
+  "gears_magnitude_top10_macro_enrichment": 8.857142857142858,
+  "gears_uncertainty_top10_macro_enrichment": 0.0
+}

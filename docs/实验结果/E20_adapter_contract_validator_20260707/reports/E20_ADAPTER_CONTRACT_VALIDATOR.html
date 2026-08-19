@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>E20 adapter contract validator</title>
+<style>
+body{margin:0;background:#fbfbf8;color:#17212b;font-family:"Microsoft YaHei","PingFang SC","Segoe UI",Arial,sans-serif;line-height:1.72}
+.wrap{max-width:1180px;margin:0 auto;padding:34px 28px 70px}h1{margin:0 0 8px;font-size:34px}h2{margin-top:30px;border-bottom:2px solid #d8e0e4;padding-bottom:8px}
+.lead{color:#5d6974;max-width:940px}.card,figure{background:#fff;border:1px solid #d8e0e4;border-radius:10px;padding:18px;margin:16px 0;overflow-x:auto;box-shadow:0 8px 24px rgba(28,42,52,.06)}
+table{border-collapse:collapse;width:100%;font-size:13px}th,td{border:1px solid #d8e0e4;padding:7px 8px;vertical-align:top}th{background:#eaf0f1;text-align:left}
+.ok{color:#28734f;font-weight:700}.warn{color:#946205;font-weight:700}.fail{color:#a4403a;font-weight:700}img{max-width:100%}code{background:#f4f7f7;border:1px solid #dce4e7;border-radius:4px;padding:2px 5px}
+</style></head><body><main class="wrap">
+<h1>E20 adapter contract validator</h1>
+<p class="lead">这页只回答一个工程问题：现有预测输出能不能安全进入后续跨模型验证。结论很清楚：旧结果可以审计，但严格适配器还要修；GEARS 导出器已经开始补齐严格字段。</p>
+<figure><img src="../figures/adapter_contract_validator.svg" alt="adapter contract validator"></figure>
+<section class="card"><h2>1. Bundle summary</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>bundle_id</th>
+      <th>bundle_group</th>
+      <th>n_records</th>
+      <th>n_tasks</th>
+      <th>n_predictors</th>
+      <th>strict_status</th>
+      <th>non_strict_status</th>
+      <th>primary_strict_issue</th>
+      <th>array_shape_unique_gene_dims</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>E17_SCIPLEX3_FULL743_GENE5000</td>
+      <td>sciplex3_full743</td>
+      <td>22290</td>
+      <td>2229</td>
+      <td>2</td>
+      <td>fail</td>
+      <td>warn</td>
+      <td>inconsistent_true_effect_key_for_task</td>
+      <td>5000</td>
+    </tr>
+    <tr>
+      <td>GEARS_FORMAL_ADAMSON_SEED_1</td>
+      <td>gears_formal_legacy</td>
+      <td>7</td>
+      <td>7</td>
+      <td>1</td>
+      <td>fail</td>
+      <td>pass</td>
+      <td>missing_contract_columns</td>
+      <td>5043</td>
+    </tr>
+    <tr>
+      <td>GEARS_FORMAL_ADAMSON_SEED_2</td>
+      <td>gears_formal_legacy</td>
+      <td>7</td>
+      <td>7</td>
+      <td>1</td>
+      <td>fail</td>
+      <td>pass</td>
+      <td>missing_contract_columns</td>
+      <td>5043</td>
+    </tr>
+    <tr>
+      <td>GEARS_FORMAL_ADAMSON_SEED_3</td>
+      <td>gears_formal_legacy</td>
+      <td>7</td>
+      <td>7</td>
+      <td>1</td>
+      <td>fail</td>
+      <td>pass</td>
+      <td>missing_contract_columns</td>
+      <td>5043</td>
+    </tr>
+    <tr>
+      <td>GEARS_FORMAL_DIXIT_SEED_1</td>
+      <td>gears_formal_legacy</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>fail</td>
+      <td>pass</td>
+      <td>missing_contract_columns</td>
+      <td>6000</td>
+    </tr>
+    <tr>
+      <td>GEARS_FORMAL_DIXIT_SEED_2</td>
+      <td>gears_formal_legacy</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>fail</td>
+      <td>pass</td>
+      <td>missing_contract_columns</td>
+      <td>6000</td>
+    </tr>
+    <tr>
+      <td>GEARS_FORMAL_DIXIT_SEED_3</td>
+      <td>gears_formal_legacy</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>fail</td>
+      <td>pass</td>
+      <td>missing_contract_columns</td>
+      <td>6000</td>
+    </tr>
+    <tr>
+      <td>GEARS_FORMAL_NORMAN_SEED_1</td>
+      <td>gears_formal_legacy</td>
+      <td>10</td>
+      <td>10</td>
+      <td>1</td>
+      <td>fail</td>
+      <td>pass</td>
+      <td>missing_contract_columns</td>
+      <td>5025</td>
+    </tr>
+    <tr>
+      <td>GEARS_FORMAL_NORMAN_SEED_2</td>
+      <td>gears_formal_legacy</td>
+      <td>10</td>
+      <td>10</td>
+      <td>1</td>
+      <td>fail</td>
+      <td>pass</td>
+      <td>missing_contract_columns</td>
+      <td>5025</td>
+    </tr>
+    <tr>
+      <td>GEARS_FORMAL_NORMAN_SEED_3</td>
+      <td>gears_formal_legacy</td>
+      <td>10</td>
+      <td>10</td>
+      <td>1</td>
+      <td>fail</td>
+      <td>pass</td>
+      <td>missing_contract_columns</td>
+      <td>5025</td>
+    </tr>
+  </tbody>
+</table></section>
+<section class="card"><h2>2. Issue type counts</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>bundle_group</th>
+      <th>mode</th>
+      <th>issue_type</th>
+      <th>n</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>gears_formal_legacy</td>
+      <td>strict</td>
+      <td>missing_contract_columns</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>sciplex3_full743</td>
+      <td>non_strict</td>
+      <td>legacy_true_effect_key_record_scoped_check_skipped</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>sciplex3_full743</td>
+      <td>strict</td>
+      <td>inconsistent_true_effect_key_for_task</td>
+      <td>11145</td>
+    </tr>
+  </tbody>
+</table></section>
+<section class="card"><h2>3. Adapter requirements</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>requirement</th>
+      <th>plain_meaning</th>
+      <th>why_it_matters</th>
+      <th>current_e17_status</th>
+      <th>current_gears_legacy_status</th>
+      <th>future_action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PREDICTION_RECORDS.csv</td>
+      <td>每一行是一条模型预测，至少要能说明数据集、任务、预测器、真实误差。</td>
+      <td>没有这张表，SafeConf 无法把置信度分数和真实失败对应起来。</td>
+      <td>present</td>
+      <td>present</td>
+      <td>保留统一列名，不允许每个模型随意改字段。</td>
+    </tr>
+    <tr>
+      <td>predicted_effect_key / true_effect_key</td>
+      <td>CSV 里的 key 必须能在 npz 里找到对应向量。</td>
+      <td>这是从表格跳到真实基因表达向量的桥。</td>
+      <td>present; key coverage audited</td>
+      <td>present; key coverage audited</td>
+      <td>同一任务不同预测器应共享同一个 true_effect_key。</td>
+    </tr>
+    <tr>
+      <td>gene_panel_id + gene_order_hash</td>
+      <td>说明用了哪些基因，以及这些基因的顺序。</td>
+      <td>两个向量长度相同也可能基因顺序不同，不校验会产生假一致。</td>
+      <td>present; strict fail because true_effect_key is record-scoped across predictors</td>
+      <td>legacy missing strict provenance columns in old outputs</td>
+      <td>GEARS 导出器已补写；scGPT/CPA adapter 必须同样写出。</td>
+    </tr>
+    <tr>
+      <td>normalization_id + effect_definition</td>
+      <td>说明 effect 是均值差、logFC 还是其它定义，归一化怎么做。</td>
+      <td>不同 effect 定义不能直接混在一起比较 RMSE。</td>
+      <td>present</td>
+      <td>legacy missing in old outputs</td>
+      <td>统一使用 mean_diff 或明确转换。</td>
+    </tr>
+    <tr>
+      <td>strict contract pass</td>
+      <td>能直接进入跨模型、同任务、同基因顺序的比较。</td>
+      <td>这是把 GEARS、scGPT、CPA 放在一张表里比较的门槛。</td>
+      <td>present; strict fail because true_effect_key is record-scoped across predictors</td>
+      <td>legacy missing strict provenance columns in old outputs</td>
+      <td>先修 adapter，再重跑小规模三模型 smoke，最后扩展正式验证。</td>
+    </tr>
+  </tbody>
+</table></section>
+<section class="card"><h2>4. Array files</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>array_role</th>
+      <th>path</th>
+      <th>exists</th>
+      <th>n_keys</th>
+      <th>size_mb</th>
+      <th>sample_shape</th>
+      <th>sample_dtype</th>
+      <th>bundle_id</th>
+      <th>bundle_group</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>predicted_effects</td>
+      <td>runtime/e17_sciplex3_full743_gene5000_20260707/input/predicted_effects.npz</td>
+      <td>True</td>
+      <td>22290</td>
+      <td>329.159681</td>
+      <td>5000</td>
+      <td>float32</td>
+      <td>E17_SCIPLEX3_FULL743_GENE5000</td>
+      <td>sciplex3_full743</td>
+    </tr>
+    <tr>
+      <td>true_effects</td>
+      <td>runtime/e17_sciplex3_full743_gene5000_20260707/input/true_effects.npz</td>
+      <td>True</td>
+      <td>22290</td>
+      <td>258.513414</td>
+      <td>5000</td>
+      <td>float32</td>
+      <td>E17_SCIPLEX3_FULL743_GENE5000</td>
+      <td>sciplex3_full743</td>
+    </tr>
+    <tr>
+      <td>predicted_effects</td>
+      <td>$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal/adamson/seed_1/arrays/gears_predicted_effects.npz</td>
+      <td>True</td>
+      <td>7</td>
+      <td>0.126787</td>
+      <td>5043</td>
+      <td>float32</td>
+      <td>GEARS_FORMAL_ADAMSON_SEED_1</td>
+      <td>gears_formal_legacy</td>
+    </tr>
+    <tr>
+      <td>true_effects</td>
+      <td>$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal/adamson/seed_1/arrays/gears_true_effects.npz</td>
+      <td>True</td>
+      <td>7</td>
+      <td>0.126303</td>
+      <td>5043</td>
+      <td>float32</td>
+      <td>GEARS_FORMAL_ADAMSON_SEED_1</td>
+      <td>gears_formal_legacy</td>
+    </tr>
+    <tr>
+      <td>predicted_effects</td>
+      <td>$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal/adamson/seed_2/arrays/gears_predicted_effects.npz</td>
+      <td>True</td>
+      <td>7</td>
+      <td>0.127035</td>
+      <td>5043</td>
+      <td>float32</td>
+      <td>GEARS_FORMAL_ADAMSON_SEED_2</td>
+      <td>gears_formal_legacy</td>
+    </tr>
+    <tr>
+      <td>true_effects</td>
+      <td>$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal/adamson/seed_2/arrays/gears_true_effects.npz</td>
+      <td>True</td>
+      <td>7</td>
+      <td>0.126341</td>
+      <td>5043</td>
+      <td>float32</td>
+      <td>GEARS_FORMAL_ADAMSON_SEED_2</td>
+      <td>gears_formal_legacy</td>
+    </tr>
+    <tr>
+      <td>predicted_effects</td>
+      <td>$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal/adamson/seed_3/arrays/gears_predicted_effects.npz</td>
+      <td>True</td>
+      <td>7</td>
+      <td>0.126752</td>
+      <td>5043</td>
+      <td>float32</td>
+      <td>GEARS_FORMAL_ADAMSON_SEED_3</td>
+      <td>gears_formal_legacy</td>
+    </tr>
+    <tr>
+      <td>true_effects</td>
+      <td>$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal/adamson/seed_3/arrays/gears_true_effects.npz</td>
+      <td>True</td>
+      <td>7</td>
+      <td>0.126253</td>
+      <td>5043</td>
+      <td>float32</td>
+      <td>GEARS_FORMAL_ADAMSON_SEED_3</td>
+      <td>gears_formal_legacy</td>
+    </tr>
+    <tr>
+      <td>predicted_effects</td>
+      <td>$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal/dixit/seed_1/arrays/gears_predicted_effects.npz</td>
+      <td>True</td>
+      <td>1</td>
+      <td>0.020889</td>
+      <td>6000</td>
+      <td>float32</td>
+      <td>GEARS_FORMAL_DIXIT_SEED_1</td>
+      <td>gears_formal_legacy</td>
+    </tr>
+    <tr>
+      <td>true_effects</td>
+      <td>$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal/dixit/seed_1/arrays/gears_true_effects.npz</td>
+      <td>True</td>
+      <td>1</td>
+      <td>0.020317</td>
+      <td>6000</td>
+      <td>float32</td>
+      <td>GEARS_FORMAL_DIXIT_SEED_1</td>
+      <td>gears_formal_legacy</td>
+    </tr>
+    <tr>
+      <td>predicted_effects</td>
+      <td>$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal/dixit/seed_2/arrays/gears_predicted_effects.npz</td>
+      <td>True</td>
+      <td>1</td>
+      <td>0.020613</td>
+      <td>6000</td>
+      <td>float32</td>
+      <td>GEARS_FORMAL_DIXIT_SEED_2</td>
+      <td>gears_formal_legacy</td>
+    </tr>
+    <tr>
+      <td>true_effects</td>
+      <td>$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal/dixit/seed_2/arrays/gears_true_effects.npz</td>
+      <td>True</td>
+      <td>1</td>
+      <td>0.020305</td>
+      <td>6000</td>
+      <td>float32</td>
+      <td>GEARS_FORMAL_DIXIT_SEED_2</td>
+      <td>gears_formal_legacy</td>
+    </tr>
+    <tr>
+      <td>predicted_effects</td>
+      <td>$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal/dixit/seed_3/arrays/gears_predicted_effects.npz</td>
+      <td>True</td>
+      <td>1</td>
+      <td>0.020520</td>
+      <td>6000</td>
+      <td>float32</td>
+      <td>GEARS_FORMAL_DIXIT_SEED_3</td>
+      <td>gears_formal_legacy</td>
+    </tr>
+    <tr>
+      <td>true_effects</td>
+      <td>$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal/dixit/seed_3/arrays/gears_true_effects.npz</td>
+      <td>True</td>
+      <td>1</td>
+      <td>0.020305</td>
+      <td>6000</td>
+      <td>float32</td>
+      <td>GEARS_FORMAL_DIXIT_SEED_3</td>
+      <td>gears_formal_legacy</td>
+    </tr>
+    <tr>
+      <td>predicted_effects</td>
+      <td>$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal/norman/seed_1/arrays/gears_predicted_effects.npz</td>
+      <td>True</td>
+      <td>10</td>
+      <td>0.183273</td>
+      <td>5025</td>
+      <td>float32</td>
+      <td>GEARS_FORMAL_NORMAN_SEED_1</td>
+      <td>gears_formal_legacy</td>
+    </tr>
+    <tr>
+      <td>true_effects</td>
+      <td>$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal/norman/seed_1/arrays/gears_true_effects.npz</td>
+      <td>True</td>
+      <td>10</td>
+      <td>0.169046</td>
+      <td>5025</td>
+      <td>float32</td>
+      <td>GEARS_FORMAL_NORMAN_SEED_1</td>
+      <td>gears_formal_legacy</td>
+    </tr>
+    <tr>
+      <td>predicted_effects</td>
+      <td>$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal/norman/seed_2/arrays/gears_predicted_effects.npz</td>
+      <td>True</td>
+      <td>10</td>
+      <td>0.181614</td>
+      <td>5025</td>
+      <td>float32</td>
+      <td>GEARS_FORMAL_NORMAN_SEED_2</td>
+      <td>gears_formal_legacy</td>
+    </tr>
+    <tr>
+      <td>true_effects</td>
+      <td>$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal/norman/seed_2/arrays/gears_true_effects.npz</td>
+      <td>True</td>
+      <td>10</td>
+      <td>0.169669</td>
+      <td>5025</td>
+      <td>float32</td>
+      <td>GEARS_FORMAL_NORMAN_SEED_2</td>
+      <td>gears_formal_legacy</td>
+    </tr>
+    <tr>
+      <td>predicted_effects</td>
+      <td>$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal/norman/seed_3/arrays/gears_predicted_effects.npz</td>
+      <td>True</td>
+      <td>10</td>
+      <td>0.181520</td>
+      <td>5025</td>
+      <td>float32</td>
+      <td>GEARS_FORMAL_NORMAN_SEED_3</td>
+      <td>gears_formal_legacy</td>
+    </tr>
+    <tr>
+      <td>true_effects</td>
+      <td>$SAFECONF_RUNTIME/outputs/gears_prediction_records_formal/norman/seed_3/arrays/gears_true_effects.npz</td>
+      <td>True</td>
+      <td>10</td>
+      <td>0.169273</td>
+      <td>5025</td>
+      <td>float32</td>
+      <td>GEARS_FORMAL_NORMAN_SEED_3</td>
+      <td>gears_formal_legacy</td>
+    </tr>
+  </tbody>
+</table></section>
+<section class="card"><h2>5. Plain conclusion</h2>
+<p>E17 的正式 sciplex3 包是可用证据；旧 GEARS 包是可审计证据；下一步如果要冲更强文章，必须做 task-scoped true effect、统一 gene order、统一 normalization 的三模型 adapter。</p>
+</section>
+</main></body></html>

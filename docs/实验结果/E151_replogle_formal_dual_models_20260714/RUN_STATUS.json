@@ -1,0 +1,25 @@
+{
+  "experiment": "E151_replogle_formal_dual_models",
+  "generated_at": "2026-07-14T14:42:25",
+  "status": "complete",
+  "source_contract": "docs/实验结果/E149_replogle_two_cellline_contract_20260714/manifests/E149_TASK_MANIFEST.csv",
+  "source_asset": "/home/yyf/data/safeconf_e150_replogle/Replogle_two_cellline_E149_selected_raw_counts.h5ad",
+  "dataset": "ReplogleWeissman2022_K562_RPE1_CRISPRi",
+  "context_definition": "control-observed cell-line shift within one study",
+  "n_folds": 2,
+  "n_all_test_diagnostic_tasks": 340,
+  "n_primary_unique_heldout_context_tasks": 256,
+  "n_prediction_records": 680,
+  "strict_issue_count": 0,
+  "test_truth_used_for_training_calibration_score_or_threshold": false,
+  "directional_confirmation_not_evaluated_here": true,
+  "input_audit": {
+    "contract_status_sha256": "d5e6536812fd29ba7d8cc827a5c6dfdb5e4eaa30dcb64d68c8acee7d80e64315",
+    "manifest_sha256": "445f665f18d273083d47c8f82d6beb379a6fbc212fdbcd37d9c8b65e16746f0a",
+    "asset_sha256": "23e9d50d17e41ba5086ce7079030388c8a8f61449ed66ae30063584fd6f21339",
+    "asset_shape": [
+      72008,
+      7226
+    ]
+  }
+}

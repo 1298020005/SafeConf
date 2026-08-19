@@ -1,0 +1,25 @@
+task_gene,condition,n_cells_in_source_h5ad,selection_rule,selection_uses_effect_or_error
+APOD,APOD+ctrl,592,uniform random sample without replacement from single-gene conditions with >=200 cells; rng_seed=20260771,False
+B2M,B2M+ctrl,707,uniform random sample without replacement from single-gene conditions with >=200 cells; rng_seed=20260771,False
+BOLA2B,BOLA2B+ctrl,360,uniform random sample without replacement from single-gene conditions with >=200 cells; rng_seed=20260771,False
+CD63,CD63+ctrl,512,uniform random sample without replacement from single-gene conditions with >=200 cells; rng_seed=20260771,False
+CDK4,CDK4+ctrl,505,uniform random sample without replacement from single-gene conditions with >=200 cells; rng_seed=20260771,False
+DDR1,DDR1+ctrl,575,uniform random sample without replacement from single-gene conditions with >=200 cells; rng_seed=20260771,False
+DDX39A,DDX39A+ctrl,411,uniform random sample without replacement from single-gene conditions with >=200 cells; rng_seed=20260771,False
+EEA1,EEA1+ctrl,498,uniform random sample without replacement from single-gene conditions with >=200 cells; rng_seed=20260771,False
+ENPP1,ENPP1+ctrl,598,uniform random sample without replacement from single-gene conditions with >=200 cells; rng_seed=20260771,False
+HLA-B,HLA-B+ctrl,415,uniform random sample without replacement from single-gene conditions with >=200 cells; rng_seed=20260771,False
+IRF4,IRF4+ctrl,507,uniform random sample without replacement from single-gene conditions with >=200 cells; rng_seed=20260771,False
+JAK1,JAK1+ctrl,796,uniform random sample without replacement from single-gene conditions with >=200 cells; rng_seed=20260771,False
+JAK2,JAK2+ctrl,834,uniform random sample without replacement from single-gene conditions with >=200 cells; rng_seed=20260771,False
+KLF4,KLF4+ctrl,546,uniform random sample without replacement from single-gene conditions with >=200 cells; rng_seed=20260771,False
+LRPAP1,LRPAP1+ctrl,656,uniform random sample without replacement from single-gene conditions with >=200 cells; rng_seed=20260771,False
+NOLC1,NOLC1+ctrl,232,uniform random sample without replacement from single-gene conditions with >=200 cells; rng_seed=20260771,False
+NSG1,NSG1+ctrl,590,uniform random sample without replacement from single-gene conditions with >=200 cells; rng_seed=20260771,False
+PSAP,PSAP+ctrl,733,uniform random sample without replacement from single-gene conditions with >=200 cells; rng_seed=20260771,False
+S100A6,S100A6+ctrl,592,uniform random sample without replacement from single-gene conditions with >=200 cells; rng_seed=20260771,False
+SAT1,SAT1+ctrl,576,uniform random sample without replacement from single-gene conditions with >=200 cells; rng_seed=20260771,False
+SDCBP,SDCBP+ctrl,622,uniform random sample without replacement from single-gene conditions with >=200 cells; rng_seed=20260771,False
+SET,SET+ctrl,455,uniform random sample without replacement from single-gene conditions with >=200 cells; rng_seed=20260771,False
+SHMT2,SHMT2+ctrl,448,uniform random sample without replacement from single-gene conditions with >=200 cells; rng_seed=20260771,False
+STOM,STOM+ctrl,655,uniform random sample without replacement from single-gene conditions with >=200 cells; rng_seed=20260771,False

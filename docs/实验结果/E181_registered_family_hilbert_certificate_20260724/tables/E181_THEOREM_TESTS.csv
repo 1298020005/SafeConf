@@ -1,0 +1,5 @@
+test,n_members,identity_abs_residual,family_lower_valid,worst_lower_valid,pass
+synthetic_hilbert_identity_M2,2,1.11022302463e-16,True,True,True
+synthetic_hilbert_identity_M3,3,1.11022302463e-16,True,True,True
+synthetic_hilbert_identity_M10,10,2.22044604925e-16,True,True,True
+synthetic_hilbert_identity_M25,25,1.11022302463e-16,True,True,True

@@ -1,0 +1,37 @@
+{
+  "status": "ok",
+  "generated_at": "2026-07-07T06:26:24",
+  "script": "tools/scripts/package_e10_external_probe.py",
+  "output_dir": "docs/实验结果/E10_external_task_validation_probe_20260707",
+  "runtime_source": "runtime/e10_external_probe_kcc_haber_parekh_20260707",
+  "input_git_commit": "0b3c6d6606f070b72526d71a6b5bb005cfe4e576",
+  "copied_tables": [
+    "DATASET_TASK_SUMMARY.csv",
+    "MAIN_PER_DATASET_SUMMARY.csv",
+    "CONFIDENCE_EVAL_SUMMARY.csv",
+    "RISK_COVERAGE.csv",
+    "HELDOUT_PAIR_SPLIT_SUMMARY.csv",
+    "CONFIDENCE_FEATURE_MISSINGNESS_BY_DATASET.csv",
+    "PREDICTOR_STATUS.csv",
+    "LEARNED_RISK_FOLD_STATUS.csv",
+    "TRANSFERABILITY_RANKING.csv"
+  ],
+  "copied_figures": [
+    "F1_task_schematic.png",
+    "F2_context_perturbation_matrix.png",
+    "F3_prediction_record_flow.png",
+    "F4_confidence_vs_true_error_scatter.png",
+    "F5_risk_coverage_curve.png",
+    "F6_high_vs_low_confidence_rmse.png",
+    "F7_per_dataset_spearman_comparison.png",
+    "F8_calibration_buckets.png",
+    "F10_transferability_ranking.png"
+  ],
+  "interpretation": {
+    "best_overall_score": "model_disagreement_risk",
+    "best_overall_aligned_spearman": 0.5588704041632587,
+    "best_overall_risk_cov_80_improve_pct": 7.962761501515111,
+    "stage_checklist_passed": 9,
+    "stage_checklist_failed": 2
+  }
+}

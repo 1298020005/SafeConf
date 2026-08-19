@@ -1,0 +1,9 @@
+condition,graph_pert,gene_order_sha256,n_genes,max_abs_graph_x_minus_train_control,graph_has_y,graph_has_y_pca,label_only_query_will_have_y,label_only_query_will_have_y_pca
+PTPN12+ZBTB10,PTPN12+ZBTB10,5cc1afc8cff9d7734971b0ec15390517c4e8b4dc3b79f04e8d238cc6a3b87d2e,2044,0.0,True,True,False,False
+CELF2+ctrl,CELF2+ctrl,5cc1afc8cff9d7734971b0ec15390517c4e8b4dc3b79f04e8d238cc6a3b87d2e,2044,0.0,True,True,False,False
+RREB1+ctrl,RREB1+ctrl,5cc1afc8cff9d7734971b0ec15390517c4e8b4dc3b79f04e8d238cc6a3b87d2e,2044,0.0,True,True,False,False
+IKZF3+MAP2K6,IKZF3+MAP2K6,5cc1afc8cff9d7734971b0ec15390517c4e8b4dc3b79f04e8d238cc6a3b87d2e,2044,0.0,True,True,False,False
+PLK4+ctrl,PLK4+ctrl,5cc1afc8cff9d7734971b0ec15390517c4e8b4dc3b79f04e8d238cc6a3b87d2e,2044,0.0,True,True,False,False
+SGK1+ctrl,SGK1+ctrl,5cc1afc8cff9d7734971b0ec15390517c4e8b4dc3b79f04e8d238cc6a3b87d2e,2044,0.0,True,True,False,False
+DLX2+ctrl,DLX2+ctrl,5cc1afc8cff9d7734971b0ec15390517c4e8b4dc3b79f04e8d238cc6a3b87d2e,2044,0.0,True,True,False,False
+SPI1+ctrl,SPI1+ctrl,5cc1afc8cff9d7734971b0ec15390517c4e8b4dc3b79f04e8d238cc6a3b87d2e,2044,0.0,True,True,False,False

@@ -1,0 +1,15 @@
+{
+  "dataset": "frangieh",
+  "split": "single",
+  "seed": 1,
+  "epochs": 1,
+  "status": "ok",
+  "test_mse": 0.0015020080193478083,
+  "test_mse_de": 0.004912325300254105,
+  "test_pearson": 0.9956463158383586,
+  "test_pearson_de": 0.9352790619880261,
+  "n_prediction_records": 21,
+  "records_csv": "/home/yyf/proj/code/20260426_154505_perturb_transport_final_push/outputs/gears_frangieh_uncertainty_probe_20260605/frangieh/seed_1/tables/PREDICTION_RECORDS.csv",
+  "predicted_npz": "/home/yyf/proj/code/20260426_154505_perturb_transport_final_push/outputs/gears_frangieh_uncertainty_probe_20260605/frangieh/seed_1/arrays/gears_predicted_effects.npz",
+  "true_npz": "/home/yyf/proj/code/20260426_154505_perturb_transport_final_push/outputs/gears_frangieh_uncertainty_probe_20260605/frangieh/seed_1/arrays/gears_true_effects.npz"
+}

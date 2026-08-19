@@ -1,0 +1,14 @@
+name: protocol_v0_2_family_confidence
+gene_main_formula: "context_similarity + log_support - model_disagreement"
+chem_robust_formula: "log_support - model_disagreement; stability_weight=0"
+zscore_ref_split: train
+chem_datasets:
+  - KaggleCrossCell
+  - KaggleCrossPatient
+  - McFarland
+  - McFarlandTsherniak2020
+  - SrivatsanTrapnell2020_sciplex2
+  - SrivatsanTrapnell2020_sciplex3
+  - SrivatsanTrapnell2020_sciplex4
+  - TCDD
+  - sciplex3

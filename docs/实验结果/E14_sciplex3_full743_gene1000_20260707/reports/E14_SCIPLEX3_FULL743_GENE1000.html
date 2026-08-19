@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><title>E14 sciplex3 full-743 gene1000</title>
+<style>
+:root{--ink:#17201c;--muted:#66736d;--line:#dfe7e2;--accent:#2f6f5e;--warn:#9a5b00}
+body{margin:0;background:#fbfbf8;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC","Microsoft YaHei",Arial,sans-serif;line-height:1.72}
+.wrap{max-width:1180px;margin:0 auto;padding:34px 30px 70px}.hero{border-bottom:1px solid var(--line);padding:28px 0 22px}
+h1{font-size:34px;margin:0 0 10px}h2{margin-top:32px;padding-bottom:8px;border-bottom:2px solid var(--line)}.lead{max-width:930px;color:var(--muted);font-size:17px}
+.metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:24px 0}.metric,.card,figure{background:white;border:1px solid var(--line);border-radius:15px}
+.metric{padding:16px}.metric .k{color:var(--muted);font-size:13px}.metric .v{color:var(--accent);font-size:26px;font-weight:720}
+.card{padding:20px;margin:18px 0;overflow-x:auto}.warn{border-left:5px solid var(--warn)}table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{border:1px solid var(--line);padding:7px 8px;vertical-align:top}th{background:#f1f5f2;text-align:left}.figgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+figure{margin:0;padding:12px}img{max-width:100%;display:block;background:white;border-radius:10px}figcaption{color:var(--muted);font-size:13px;margin-top:8px}
+@media(max-width:900px){.metrics,.figgrid{grid-template-columns:1fr}}
+</style></head>
+<body><main class="wrap">
+<section class="hero"><h1>E14 sciplex3 full-743 gene1000</h1><p class="lead">三细胞系全部 743 个共享 drug-dose 已跑通；本轮使用 1,000 genes，是 full perturbation / low-gene 快速验证。</p><div class="metrics"><div class="metric"><div class="k">tasks</div><div class="v">2229</div></div><div class="metric"><div class="k">drug-dose</div><div class="v">743</div></div><div class="metric"><div class="k">genes</div><div class="v">1000</div></div><div class="metric"><div class="k">learned rho</div><div class="v">0.862</div></div><div class="metric"><div class="k">disagree rho</div><div class="v">0.418</div></div></div></section>
+<section class="card"><h2>1. 面板构建</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataset</th>
+      <th>n_tasks</th>
+      <th>n_contexts</th>
+      <th>n_perturbations</th>
+      <th>n_genes</th>
+      <th>n_raw_tasks</th>
+      <th>n_shared_perturbations</th>
+      <th>n_selected_perturbations</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>sciplex3_official_3cell</td>
+      <td>2229</td>
+      <td>3</td>
+      <td>743</td>
+      <td>1000</td>
+      <td>2237</td>
+      <td>743</td>
+      <td>743</td>
+    </tr>
+  </tbody>
+</table></section>
+<section class="card"><h2>2. 主结果</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataset_name</th>
+      <th>simple_combined_confidence_aligned_rho</th>
+      <th>simple_combined_confidence_risk_cov_80_improve_pct</th>
+      <th>learned_risk_score_aligned_rho</th>
+      <th>learned_risk_score_risk_cov_80_improve_pct</th>
+      <th>model_disagreement_risk_aligned_rho</th>
+      <th>model_disagreement_risk_risk_cov_80_improve_pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>sciplex3_official_3cell</td>
+      <td>0.338739</td>
+      <td>8.93489</td>
+      <td>0.862259</td>
+      <td>13.626332</td>
+      <td>0.41811</td>
+      <td>12.13448</td>
+    </tr>
+  </tbody>
+</table></section>
+<section class="card"><h2>3. Overall 信号排序</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>score_name</th>
+      <th>score_type</th>
+      <th>n</th>
+      <th>direction_aligned_spearman</th>
+      <th>risk_cov_80_improve_pct</th>
+      <th>high_low_rmse_gap</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>learned_risk_score</td>
+      <td>risk</td>
+      <td>4458</td>
+      <td>0.862259</td>
+      <td>13.626332</td>
+      <td>0.050714</td>
+    </tr>
+    <tr>
+      <td>model_disagreement_risk</td>
+      <td>risk</td>
+      <td>4458</td>
+      <td>0.418110</td>
+      <td>12.134480</td>
+      <td>0.040040</td>
+    </tr>
+    <tr>
+      <td>simple_combined_confidence</td>
+      <td>confidence</td>
+      <td>4458</td>
+      <td>0.338739</td>
+      <td>8.934890</td>
+      <td>0.028387</td>
+    </tr>
+    <tr>
+      <td>support_count_score</td>
+      <td>confidence</td>
+      <td>4458</td>
+      <td>0.272183</td>
+      <td>1.790012</td>
+      <td>0.008121</td>
+    </tr>
+    <tr>
+      <td>context_similarity_score</td>
+      <td>confidence</td>
+      <td>4458</td>
+      <td>0.091227</td>
+      <td>-0.395061</td>
+      <td>0.003371</td>
+    </tr>
+    <tr>
+      <td>historical_residual_risk</td>
+      <td>risk</td>
+      <td>4458</td>
+      <td>0.075441</td>
+      <td>3.031478</td>
+      <td>0.015861</td>
+    </tr>
+    <tr>
+      <td>random_score</td>
+      <td>confidence</td>
+      <td>4458</td>
+      <td>-0.020376</td>
+      <td>-0.384222</td>
+      <td>-0.001191</td>
+    </tr>
+    <tr>
+      <td>prediction_magnitude_risk</td>
+      <td>risk</td>
+      <td>4458</td>
+      <td>-0.063810</td>
+      <td>6.917660</td>
+      <td>0.017787</td>
+    </tr>
+    <tr>
+      <td>ood_distance_risk</td>
+      <td>risk</td>
+      <td>4458</td>
+      <td>-0.345484</td>
+      <td>-3.038692</td>
+      <td>-0.013571</td>
+    </tr>
+    <tr>
+      <td>perturbation_stability_score</td>
+      <td>confidence</td>
+      <td>2062</td>
+      <td>-0.429849</td>
+      <td>-2.997932</td>
+      <td>-0.030327</td>
+    </tr>
+  </tbody>
+</table></section>
+<section class="card warn"><h2>4. 边界</h2><p>本轮是 1,000-gene 快速验证。5,000-gene full-743 仍需进一步优化 task-fold 级特征缓存。</p></section>
+<section><h2>5. 图件</h2><div class="figgrid"><figure><img src="../figures/F1_task_schematic.png" alt="F1_task_schematic.png"><figcaption>F1_task_schematic.png</figcaption></figure><figure><img src="../figures/F2_context_perturbation_matrix.png" alt="F2_context_perturbation_matrix.png"><figcaption>F2_context_perturbation_matrix.png</figcaption></figure><figure><img src="../figures/F3_prediction_record_flow.png" alt="F3_prediction_record_flow.png"><figcaption>F3_prediction_record_flow.png</figcaption></figure><figure><img src="../figures/F4_confidence_vs_true_error_scatter.png" alt="F4_confidence_vs_true_error_scatter.png"><figcaption>F4_confidence_vs_true_error_scatter.png</figcaption></figure><figure><img src="../figures/F5_risk_coverage_curve.png" alt="F5_risk_coverage_curve.png"><figcaption>F5_risk_coverage_curve.png</figcaption></figure><figure><img src="../figures/F6_high_vs_low_confidence_rmse.png" alt="F6_high_vs_low_confidence_rmse.png"><figcaption>F6_high_vs_low_confidence_rmse.png</figcaption></figure><figure><img src="../figures/F7_per_dataset_spearman_comparison.png" alt="F7_per_dataset_spearman_comparison.png"><figcaption>F7_per_dataset_spearman_comparison.png</figcaption></figure><figure><img src="../figures/F8_calibration_buckets.png" alt="F8_calibration_buckets.png"><figcaption>F8_calibration_buckets.png</figcaption></figure><figure><img src="../figures/F10_transferability_ranking.png" alt="F10_transferability_ranking.png"><figcaption>F10_transferability_ranking.png</figcaption></figure></div></section>
+</main></body></html>

@@ -1,0 +1,2 @@
+predictor_a,predictor_b,n_tasks,spearman,ci95_lower,ci95_upper,bootstrap_valid
+gat,general_baseline,566,0.9699529668196607,0.9609350000391997,0.9769055882279489,5000

@@ -1,0 +1,6 @@
+fold_id,source_contexts,n_go_edges,n_coexpression_edges,n_source_control_cells,scgpt_pretrained_tensors,test_truth_used_for_training_calibration_or_score
+Lara_exvivo_context_holdout_1_EBMP,GMP+GMP (late)+HSC+MkP,1600,2051,9187,129,False
+Lara_exvivo_context_holdout_2_GMP,EBMP+GMP (late)+HSC+MkP,1600,2170,8194,129,False
+Lara_exvivo_context_holdout_3_GMP_(late),EBMP+GMP+HSC+MkP,1600,1666,8115,129,False
+Lara_exvivo_context_holdout_4_HSC,EBMP+GMP+GMP (late)+MkP,1600,2048,9858,129,False
+Lara_exvivo_context_holdout_5_MkP,EBMP+GMP+GMP (late)+HSC,1600,2070,9982,129,False

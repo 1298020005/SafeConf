@@ -1,0 +1,27 @@
+{
+  "experiment": "E97_frangieh_gene_cartesian_contract",
+  "generated_at": "2026-07-13T03:36:10",
+  "source_h5ad": "/home/yyf/data/gears_formal_baselines_v2/frangieh_local_atlas/perturb_processed.h5ad",
+  "source_sha256": "sha256:53b01e6b6282475c261be11161c121eadf22a547c3c118aeab201479a8995221",
+  "source_shape": [
+    110188,
+    3000
+  ],
+  "contexts": [
+    "Co-culture",
+    "Control",
+    "IFNγ"
+  ],
+  "n_contexts": 3,
+  "n_shared_perturbations_min_cells_50": 189,
+  "n_folds": 3,
+  "n_manifest_rows": 1701,
+  "training_fractions": [
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "expression_matrix_read_during_selection": false,
+  "target_effect_or_error_used_for_selection": false
+}

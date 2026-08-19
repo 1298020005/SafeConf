@@ -1,0 +1,7 @@
+panel_id,n_train,n_val,n_test,n_context_levels_in_records,row_holdout_applicable,row_holdout_reason,train_submatrix_requires_retrain
+Adamson_P1,48,5,24,1,False,formal dual-model panels use a single frozen context string per dataset; whole-context holdout needs multi-context gene data under same GEARS/scGPT contract,True
+Adamson_P2,48,5,24,1,False,formal dual-model panels use a single frozen context string per dataset; whole-context holdout needs multi-context gene data under same GEARS/scGPT contract,True
+Norman_P1,183,20,24,1,False,formal dual-model panels use a single frozen context string per dataset; whole-context holdout needs multi-context gene data under same GEARS/scGPT contract,True
+Norman_P2,183,20,24,1,False,formal dual-model panels use a single frozen context string per dataset; whole-context holdout needs multi-context gene data under same GEARS/scGPT contract,True
+Frangieh_P1,170,18,24,1,False,formal dual-model panels use a single frozen context string per dataset; whole-context holdout needs multi-context gene data under same GEARS/scGPT contract,True
+Frangieh_P2,170,18,24,1,False,formal dual-model panels use a single frozen context string per dataset; whole-context holdout needs multi-context gene data under same GEARS/scGPT contract,True

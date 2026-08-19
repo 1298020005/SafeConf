@@ -1,0 +1,20 @@
+{
+  "experiment": "E95_prescribe_norman_native",
+  "run_name": "norman_p1_formal_seed3407",
+  "mode": "formal",
+  "phase": "aborted_contract_mismatch",
+  "started_at": "2026-07-12T22:10:29",
+  "prescribe_commit": "6f7264a205aaff654a9594863c5c10b656f88ebe",
+  "seed": 3407,
+  "max_epochs": 50,
+  "warmup_epochs": 5,
+  "batch_size": 4096,
+  "limit_train_batches": null,
+  "limit_val_batches": null,
+  "limit_test_batches": null,
+  "native_model_loss": true,
+  "target_test_expression_used_for_task_selection": false,
+  "aborted_at": "2026-07-12T22:23:00",
+  "reason": "Bundled GEARS GO prefilter silently removed frozen test task IER5L+ctrl (23/24 effective tasks). Run stopped during epoch 3; no test result was used.",
+  "replacement_run": "same run name after cache rebuild with the recorded Norman-family adapter"
+}

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>04 SafeConf 系统原理</title>
+<link rel="stylesheet" href="assets/tutorial.css">
+</head>
+<body>
+<header class="top">
+<div class="topin">
+<a class="brand" href="index.html">SafeConf 完整项目讲解</a>
+<a class="back" href="../../SafeConf_统一研究工作台.html">返回工作台</a>
+</div>
+</header>
+<div class="layout">
+<aside class="side" id="chapterNav">
+</aside>
+<main class="content">
+<section class="hero">
+<p class="eyebrow">CHAPTER 04</p>
+<h1>SafeConf 是怎样打分的</h1>
+<p class="lead">打分只使用测试前可观察的三类线索：背景熟悉程度、历史支持量和预测器分歧。测试真实误差只用于最终评价。</p>
+</section>
+<h2>1. 三个核心特征</h2>
+<div class="grid3">
+<div class="card">
+<h3>Context similarity</h3>
+<p>
+<b>背景相似度</b>。目标细胞背景的 control 表达向量，和训练参考背景最像的那个有多像。越像表示模型站在较熟悉的区域。</p>
+</div>
+<div class="card">
+<h3>Support count</h3>
+<p>
+<b>历史支持量</b>。这个 perturbation 在 fold-train 中有多少可用历史任务。支持越多，通常证据越充足。</p>
+</div>
+<div class="card">
+<h3>Model disagreement</h3>
+<p>
+<b>预测器分歧</b>。两个固定参考预测器给出的 effect vector 相差多大。分歧大常表示任务不稳定。</p>
+</div>
+</div>
+<figure class="figure">
+<div class="flow">
+<div class="node">
+<b>相似度高</b>
+<small>熟悉，可信方向 +</small>
+</div>
+<div class="node">
+<b>支持量多</b>
+<small>证据足，可信方向 +</small>
+</div>
+<div class="node">
+<b>分歧大</b>
+<small>不稳定，可信方向 -</small>
+</div>
+<div class="node">
+<b>Confidence score</b>
+<small>越高越值得信</small>
+</div>
+<div class="node">
+<b>Risk=-score</b>
+<small>越高越应先查</small>
+</div>
+</div>
+</figure>
+<h2>2. 为什么要先标准化</h2>
+<p>相似度大约在 -1 到 1，support count 可能是 0 到几百，RMSE 又是另一个尺度。不能把原始数字直接相加。</p>
+<div class="code">z(x) = (x - fold-train 中位数) / fold-train IQR
+IQR = 第75百分位 - 第25百分位</div>
+<div class="term">
+<b>Robust z-score<br>稳健标准分</b>
+<p>用中位数和四分位距进行缩放，比均值/标准差更不容被少数极端值拖走。参考统计只来自当前 fold 的 train 行。</p>
+</div>
+<h2>3. 冻结公式</h2>
+<div class="grid2">
+<div class="card">
+<h3>基因类任务</h3>
+<div class="code">confidence = z(context_similarity)
+           + z(log(1 + support_count))
+           - z(model_disagreement_rmse)</div>
+<p>同时使用背景熟悉度、历史支持和预测分歧。</p>
+</div>
+<div class="card">
+<h3>药物类任务</h3>
+<div class="code">confidence = z(log(1 + support_count))
+           - z(model_disagreement_rmse)</div>
+<p>冻结 chemical 公式不含 context similarity。该规则在正式测试前已经写入方法定义。</p>
+</div>
+</div>
+<div class="term">
+<b>Frozen protocol<br>冻结协议</b>
+<p>在正式测试前就确定特征、公式、方向和评价指标，看到失败数据集后不再为它单独改规则。</p>
+</div>
+<h2>4. Frozen 与 learned 的用途不同</h2>
+<div class="grid2">
+<div class="callout good">
+<b>Frozen v0.2：</b>三个核心特征的可解释固定公式，是主协议。</div>
+<div class="callout warn">
+<b>Learned risk model：</b>用更多特征训练 HistGBT 等模型预测误差，用于扩展、消融和敏感性分析。</div>
+</div>
+<p>Learned 在 McFarland 上可以为正，但不能据此把 Frozen 的 McFarland 失败改写成成功。</p>
+<h2>5. 它最终如何帮助做决定</h2>
+<div class="flow">
+<div class="node">
+<b>将所有预测按 risk 降序排列</b>
+</div>
+<div class="node">
+<b>取 top 10% 高风险预测</b>
+</div>
+<div class="node">
+<b>先做人工复核/湿实验</b>
+</div>
+<div class="node">
+<b>比较随机选择抓到多少坏预测</b>
+</div>
+</div>
+<div class="callout">
+<b>用途：</b>SafeConf 对已有预测进行风险排序，预测效应仍由原预测器生成。</div>
+<div class="pager">
+<a href="03_数据集地图.html">← 上一章</a>
+<a href="05_目录与代码结构.html">下一章：目录与代码 →</a>
+</div>
+</main>
+</div>
+<script src="assets/tutorial.js">
+</script>
+</body>
+</html>

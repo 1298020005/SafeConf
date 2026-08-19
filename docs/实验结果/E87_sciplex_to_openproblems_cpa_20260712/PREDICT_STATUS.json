@@ -1,0 +1,15 @@
+{
+  "experiment": "E87_sciplex_to_openproblems_cpa",
+  "phase": "prediction_complete_truth_unread",
+  "generated_at": "2026-07-12T12:36:21",
+  "source_tasks": 108,
+  "target_tasks": 553,
+  "cpa_train_cells": 3368,
+  "cpa_val_cells": 418,
+  "pseudo_target_control_cells": 2212,
+  "source_target_exact_drug_overlap": 0,
+  "target_perturbed_truth_used_for_prediction": false,
+  "gene_order_hash": "sha256:ed9577b3665bbeaf050f488e0ffe40a72561b12ba766051ea7a0ef149f65128e",
+  "cpa_source_commit": "fbd7c0250edc23eff003a10c99655579c53afd63",
+  "environment": "cpa_runtime_env compatibility environment; pinned rerun pending"
+}

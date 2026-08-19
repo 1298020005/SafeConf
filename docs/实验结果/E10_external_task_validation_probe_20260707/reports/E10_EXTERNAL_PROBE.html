@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>E10 外部任务级验证探针</title>
+<style>
+:root {
+  --ink:#17201c;
+  --muted:#66736d;
+  --line:#dfe7e2;
+  --accent:#2f6f5e;
+  --soft:#f6f8f4;
+  --warn:#a65d00;
+}
+body {
+  margin:0;
+  background:#fbfbf8;
+  color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC","Microsoft YaHei",Arial,sans-serif;
+  line-height:1.72;
+}
+.wrap { max-width:1180px; margin:0 auto; padding:34px 30px 70px; }
+.hero { border-bottom:1px solid var(--line); padding:30px 0 24px; }
+h1 { font-size:34px; margin:0 0 10px; letter-spacing:.02em; }
+h2 { margin-top:34px; padding-bottom:8px; border-bottom:2px solid var(--line); }
+p { margin:9px 0; }
+.lead { color:var(--muted); font-size:17px; max-width:900px; }
+.metrics { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin:24px 0; }
+.metric { background:white; border:1px solid var(--line); border-radius:14px; padding:16px; }
+.metric .k { color:var(--muted); font-size:13px; }
+.metric .v { color:var(--accent); font-size:26px; font-weight:720; margin-top:4px; }
+.card { background:white; border:1px solid var(--line); border-radius:16px; padding:20px; margin:18px 0; overflow-x:auto; }
+.honest { border-left:5px solid var(--warn); }
+table { border-collapse:collapse; width:100%; font-size:13px; }
+th,td { border:1px solid var(--line); padding:7px 8px; vertical-align:top; }
+th { background:#f1f5f2; text-align:left; }
+.figgrid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+figure { margin:0; background:white; border:1px solid var(--line); border-radius:16px; padding:12px; }
+img { max-width:100%; display:block; border-radius:10px; background:white; }
+figcaption { color:var(--muted); font-size:13px; margin-top:8px; }
+code { background:#eef3ef; padding:2px 6px; border-radius:5px; }
+@media (max-width:900px) { .metrics,.figgrid { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<main class="wrap">
+<section class="hero">
+  <h1>E10 外部任务级验证探针</h1>
+  <p class="lead">本次先确认外部数据能否进入 SafeConf 的任务级风险审计闭环。当前结论：管线跑通，disagreement 信号强，组合分数在部分外部数据上需要重查。</p>
+  <div class="metrics"><div class="metric"><div class="k">外部任务数</div><div class="v">78</div></div><div class="metric"><div class="k">测试任务数</div><div class="v">77</div></div><div class="metric"><div class="k">最强 overall rho</div><div class="v">0.559</div></div><div class="metric"><div class="k">80% coverage 改善</div><div class="v">7.96%</div></div><div class="metric"><div class="k">Gate</div><div class="v">9 PASS / 2 FAIL</div></div></div>
+</section>
+
+<section class="card">
+  <h2>1. 数据与任务</h2>
+  <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataset</th>
+      <th>n_tasks</th>
+      <th>n_contexts</th>
+      <th>n_perturbations</th>
+      <th>context_col</th>
+      <th>perturbation_col</th>
+      <th>n_genes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>KaggleCrossCell</td>
+      <td>24</td>
+      <td>5</td>
+      <td>10</td>
+      <td>cell_type</td>
+      <td>perturbation</td>
+      <td>5000</td>
+    </tr>
+    <tr>
+      <td>Haber</td>
+      <td>24</td>
+      <td>8</td>
+      <td>3</td>
+      <td>cell_type</td>
+      <td>perturbation</td>
+      <td>5000</td>
+    </tr>
+    <tr>
+      <td>Parekh</td>
+      <td>30</td>
+      <td>3</td>
+      <td>10</td>
+      <td>cell_type</td>
+      <td>perturbation</td>
+      <td>5000</td>
+    </tr>
+  </tbody>
+</table>
+</section>
+
+<section class="card">
+  <h2>2. 每数据集主结果</h2>
+  <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataset_name</th>
+      <th>simple_combined_confidence_aligned_rho</th>
+      <th>simple_combined_confidence_risk_cov_80_improve_pct</th>
+      <th>learned_risk_score_aligned_rho</th>
+      <th>learned_risk_score_risk_cov_80_improve_pct</th>
+      <th>model_disagreement_risk_aligned_rho</th>
+      <th>model_disagreement_risk_risk_cov_80_improve_pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>KaggleCrossCell</td>
+      <td>0.120823</td>
+      <td>-0.553202</td>
+      <td>0.031304</td>
+      <td>-4.456773</td>
+      <td>0.353435</td>
+      <td>12.856780</td>
+    </tr>
+    <tr>
+      <td>Haber</td>
+      <td>0.610603</td>
+      <td>5.099051</td>
+      <td>0.008673</td>
+      <td>1.290792</td>
+      <td>-0.021942</td>
+      <td>-1.691497</td>
+    </tr>
+    <tr>
+      <td>Parekh</td>
+      <td>0.432328</td>
+      <td>6.472721</td>
+      <td>-0.099686</td>
+      <td>-6.062514</td>
+      <td>0.806438</td>
+      <td>12.723002</td>
+    </tr>
+  </tbody>
+</table>
+</section>
+
+<section class="card">
+  <h2>3. 每数据集最强单项信号</h2>
+  <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>dataset_name</th>
+      <th>score_name</th>
+      <th>score_type</th>
+      <th>n</th>
+      <th>direction_aligned_spearman</th>
+      <th>risk_cov_80_improve_pct</th>
+      <th>high_low_rmse_gap</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Haber</td>
+      <td>context_similarity_score</td>
+      <td>confidence</td>
+      <td>48</td>
+      <td>0.681732</td>
+      <td>3.635814</td>
+      <td>0.031331</td>
+    </tr>
+    <tr>
+      <td>KaggleCrossCell</td>
+      <td>model_disagreement_risk</td>
+      <td>risk</td>
+      <td>46</td>
+      <td>0.353435</td>
+      <td>12.856780</td>
+      <td>0.053145</td>
+    </tr>
+    <tr>
+      <td>Parekh</td>
+      <td>model_disagreement_risk</td>
+      <td>risk</td>
+      <td>60</td>
+      <td>0.806438</td>
+      <td>12.723002</td>
+      <td>0.038338</td>
+    </tr>
+  </tbody>
+</table>
+</section>
+
+<section class="card honest">
+  <h2>4. 失败边界</h2>
+  <p>KaggleCrossCell 上 simple combined 只有 0.121；learned risk 没有超过 model disagreement；外部数据中 perturbation stability 有明显缺失。这三点不能藏，要在下一轮实验里正面处理。</p>
+</section>
+
+<section>
+  <h2>5. 图件</h2>
+  <div class="figgrid"><figure><img src="../figures/F1_task_schematic.png" alt="F1_task_schematic.png"><figcaption>F1_task_schematic.png</figcaption></figure>
+<figure><img src="../figures/F2_context_perturbation_matrix.png" alt="F2_context_perturbation_matrix.png"><figcaption>F2_context_perturbation_matrix.png</figcaption></figure>
+<figure><img src="../figures/F3_prediction_record_flow.png" alt="F3_prediction_record_flow.png"><figcaption>F3_prediction_record_flow.png</figcaption></figure>
+<figure><img src="../figures/F4_confidence_vs_true_error_scatter.png" alt="F4_confidence_vs_true_error_scatter.png"><figcaption>F4_confidence_vs_true_error_scatter.png</figcaption></figure>
+<figure><img src="../figures/F5_risk_coverage_curve.png" alt="F5_risk_coverage_curve.png"><figcaption>F5_risk_coverage_curve.png</figcaption></figure>
+<figure><img src="../figures/F6_high_vs_low_confidence_rmse.png" alt="F6_high_vs_low_confidence_rmse.png"><figcaption>F6_high_vs_low_confidence_rmse.png</figcaption></figure>
+<figure><img src="../figures/F7_per_dataset_spearman_comparison.png" alt="F7_per_dataset_spearman_comparison.png"><figcaption>F7_per_dataset_spearman_comparison.png</figcaption></figure>
+<figure><img src="../figures/F8_calibration_buckets.png" alt="F8_calibration_buckets.png"><figcaption>F8_calibration_buckets.png</figcaption></figure>
+<figure><img src="../figures/F10_transferability_ranking.png" alt="F10_transferability_ranking.png"><figcaption>F10_transferability_ranking.png</figcaption></figure></div>
+</section>
+</main>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "experiment": "E102_cui_direct_mapping_contract",
+  "generated_at": "2026-07-13T04:27:41",
+  "source_h5ad": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/CuiHacohen2023.h5ad",
+  "source_sha256": "sha256:b312e0e3caec24f6adf6d009729b73ff0cf8c87fec8ec1362efc74675a60ec16",
+  "n_contexts": 6,
+  "n_original_perturbations": 86,
+  "n_direct_mapped_perturbations": 41,
+  "n_excluded_unmapped": 45,
+  "n_folds": 6,
+  "n_manifest_rows": 1476,
+  "mapping_uses_manual_aliases": false,
+  "expression_effect_prediction_or_error_used_for_selection": false
+}

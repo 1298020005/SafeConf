@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="720" viewBox="0 0 1100 720">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<style>text{font-family:Arial,"Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#23313d}.t{font-size:27px;font-weight:700}.s{font-size:16px;fill:#5c6a75}.a{font-size:15px}.sm{font-size:12px;fill:#5c6a75}</style>
+<text class="t" x="55" y="43">Norman｜真实 GEARS 误差与三 seed 分歧</text>
+<text class="s" x="55" y="70">Norman，冻结未见单基因扰动；每点一个任务。横轴只用预测向量，纵轴只用于事后评估。</text>
+<line x1="110" y1="90" x2="110" y2="635" stroke="#74818b"/>
+<line x1="110" y1="635" x2="1028" y2="635" stroke="#74818b"/>
+<text class="a" x="569.0" y="685" text-anchor="middle">三 seed 预测分歧（risk input）</text>
+<text class="a" transform="translate(30 362.5) rotate(-90)" text-anchor="middle">GEARS ensemble RMSE（评估目标）</text>
+<text class="sm" x="110" y="653">0.0020</text>
+<text class="sm" x="1028" y="653" text-anchor="end">0.0178</text>
+<text class="sm" x="102" y="95" text-anchor="end">0.1021</text>
+<text class="sm" x="102" y="635" text-anchor="end">0.0240</text>
+<circle cx="203.6" cy="597.4" r="6" fill="#167c80" opacity=".83"><title>BCL2L11+ctrl</title></circle>
+<circle cx="201.3" cy="440.2" r="6" fill="#167c80" opacity=".83"><title>CKS1B+ctrl</title></circle>
+<circle cx="279.4" cy="251.2" r="6" fill="#167c80" opacity=".83"><title>CLDN6+ctrl</title></circle>
+<circle cx="346.3" cy="127.6" r="6" fill="#167c80" opacity=".83"><title>FEV+ctrl</title></circle>
+<circle cx="247.5" cy="282.9" r="6" fill="#167c80" opacity=".83"><title>FOSB+ctrl</title></circle>
+<circle cx="173.3" cy="420.8" r="6" fill="#167c80" opacity=".83"><title>FOXA1+ctrl</title></circle>
+<circle cx="234.6" cy="530.3" r="6" fill="#167c80" opacity=".83"><title>FOXA3+ctrl</title></circle>
+<circle cx="771.1" cy="308.4" r="6" fill="#167c80" opacity=".83"><title>IER5L+ctrl</title></circle>
+<circle cx="275.7" cy="552.0" r="6" fill="#167c80" opacity=".83"><title>IGDCC3+ctrl</title></circle>
+<circle cx="523.5" cy="279.2" r="6" fill="#167c80" opacity=".83"><title>IKZF3+ctrl</title></circle>
+<circle cx="366.6" cy="333.3" r="6" fill="#167c80" opacity=".83"><title>JUN+ctrl</title></circle>
+<circle cx="312.6" cy="418.9" r="6" fill="#167c80" opacity=".83"><title>MAPK1+ctrl</title></circle>
+<circle cx="294.4" cy="454.2" r="6" fill="#167c80" opacity=".83"><title>MEIS1+ctrl</title></circle>
+<circle cx="236.7" cy="413.6" r="6" fill="#167c80" opacity=".83"><title>MIDN+ctrl</title></circle>
+<circle cx="406.1" cy="477.3" r="6" fill="#167c80" opacity=".83"><title>OSR2+ctrl</title></circle>
+<circle cx="186.7" cy="546.2" r="6" fill="#167c80" opacity=".83"><title>POU3F2+ctrl</title></circle>
+<circle cx="248.5" cy="199.1" r="6" fill="#167c80" opacity=".83"><title>PRDM1+ctrl</title></circle>
+<circle cx="225.9" cy="524.5" r="6" fill="#167c80" opacity=".83"><title>PTPN12+ctrl</title></circle>
+<circle cx="182.3" cy="413.9" r="6" fill="#167c80" opacity=".83"><title>PTPN13+ctrl</title></circle>
+<circle cx="964.7" cy="491.2" r="6" fill="#167c80" opacity=".83"><title>S1PR2+ctrl</title></circle>
+<circle cx="408.8" cy="322.1" r="6" fill="#167c80" opacity=".83"><title>SNAI1+ctrl</title></circle>
+<circle cx="472.1" cy="267.6" r="6" fill="#167c80" opacity=".83"><title>SPI1+ctrl</title></circle>
+<circle cx="370.9" cy="527.7" r="6" fill="#167c80" opacity=".83"><title>STIL+ctrl</title></circle>
+<circle cx="281.9" cy="540.5" r="6" fill="#167c80" opacity=".83"><title>TSC22D1+ctrl</title></circle>
+</svg>

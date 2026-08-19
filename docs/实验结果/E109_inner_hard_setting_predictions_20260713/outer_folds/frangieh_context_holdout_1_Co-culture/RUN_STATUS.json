@@ -1,0 +1,14 @@
+{
+  "outer_fold_id": "frangieh_context_holdout_1_Co-culture",
+  "status": "complete",
+  "generated_at": "2026-07-13T10:43:51",
+  "n_inner_folds": 2,
+  "n_calibration_test_rows": 228,
+  "settings": [
+    "context_and_perturbation_unseen",
+    "context_unseen_row",
+    "perturbation_unseen_column"
+  ],
+  "outer_test_truth_used": false,
+  "wall_seconds": 44.051334619522095
+}

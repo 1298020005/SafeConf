@@ -1,0 +1,5 @@
+threshold_label,n_selected_train_pairs,fold1_selected_train_pairs,fold2_selected_train_pairs,actual_fraction,actual_percent,label_is_hash_threshold_not_exact_sample_fraction
+25,18,10,8,0.12857142857142856,12.857142857142856,True
+50,58,27,31,0.4142857142857143,41.42857142857143,True
+75,105,56,49,0.75,75.0,True
+100,140,70,70,1.0,100.0,True

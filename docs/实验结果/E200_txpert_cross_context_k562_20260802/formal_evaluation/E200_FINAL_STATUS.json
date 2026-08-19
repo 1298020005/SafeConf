@@ -1,0 +1,23 @@
+{
+  "experiment": "E200_txpert_cross_context_k562",
+  "stage": "FORMAL_EVALUATION",
+  "generated_at": "2026-08-02T05:22:26+08:00",
+  "status": "PASS",
+  "git_head": "f384b5101b83c12b2e675940b447cd410482ddbb",
+  "n_tasks": 580,
+  "n_primary_tasks": 566,
+  "n_sensitivity_tasks": 14,
+  "pretruth_feature_max_abs_residual": 2.220446049250313e-16,
+  "integrity_gate_pass": true,
+  "routing_activation_gate_pass": true,
+  "routing_status": "ENABLED",
+  "incremental_vs_magnitude_gate_pass": false,
+  "incremental_claim_status": "NOT_SUPPORTED",
+  "gat_beats_general_centroid_rmse": true,
+  "cross_context_answered": true,
+  "cross_dataset_transfer_answered": false,
+  "multiple_model_families_answered": false,
+  "other_target_cell_lines_answered": false,
+  "performance_is_not_integrity_gate": true,
+  "retrospective_public_data": true
+}

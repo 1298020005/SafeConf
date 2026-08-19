@@ -1,0 +1,35 @@
+{
+  "n_queries": 8,
+  "conditions": [
+    "FOSB+PTPN12",
+    "PLK4+ctrl",
+    "CEBPA+ZC3HAV1",
+    "CEBPB+MAPK1",
+    "SPI1+ctrl",
+    "PTPN12+ZBTB10",
+    "CEBPB+JUN",
+    "IKZF3+MAP2K6"
+  ],
+  "observed_batched_conditions": [
+    "FOSB+PTPN12",
+    "PLK4+ctrl",
+    "CEBPA+ZC3HAV1",
+    "CEBPB+MAPK1",
+    "SPI1+ctrl",
+    "PTPN12+ZBTB10",
+    "CEBPB+JUN",
+    "IKZF3+MAP2K6"
+  ],
+  "stored_keys": [
+    "batch",
+    "pert",
+    "ptr",
+    "x"
+  ],
+  "y_key_stored": false,
+  "y_pca_key_stored": false,
+  "y_attribute_nonnull": false,
+  "y_pca_attribute_nonnull": false,
+  "x_rows": 16352,
+  "x_columns": 1
+}

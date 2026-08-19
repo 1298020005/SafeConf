@@ -1,0 +1,3 @@
+study,n_tasks,n_target_clusters,task_error_spearman,target_mean_error_spearman,both_above_median_fraction,both_below_median_fraction,discordant_median_fraction,top20_overlap_fraction_of_tasks,top20_jaccard,scgpt_lower_error_fraction,gears_lower_error_fraction,ties_fraction,median_abs_model_error_gap
+E176 四供体,1920,640,0.9746570670998985,0.9838654391246076,0.4666666666666667,0.4666666666666667,0.06666666666666667,0.18854166666666666,0.8916256157635468,0.421875,0.578125,0.0,0.004767188477278958
+E177 独立研究,400,50,0.9924474527965798,0.9940456182472988,0.48,0.48,0.04,0.195,0.9512195121951219,0.42,0.58,0.0,0.004729206234199229

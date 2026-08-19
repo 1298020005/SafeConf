@@ -1,0 +1,193 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>11 实验结果完整谱系</title><link rel="stylesheet" href="assets/tutorial.css"></head><body>
+<header class="top"><div class="topin"><a class="brand" href="index.html">SafeConf 完整项目讲解</a><a class="back" href="../../SafeConf_统一研究工作台.html">返回工作台</a></div></header>
+<div class="layout"><aside class="side" id="chapterNav"></aside><main class="content">
+<section class="hero"><p class="eyebrow">CHAPTER 11 · docs/实验结果</p><h1>实验证据谱系：742 个文件怎样读</h1><p class="lead">实验目录保存 39 个顶层结果包，共 742 个文件。这里按问题、时间和证据级别整理，避免把 smoke、旧版和正式结果混用。</p><div class="chips"><span class="chip green">39 个结果包</span><span class="chip">366 CSV</span><span class="chip">180 HTML/MD</span><span class="chip">70 JSON</span><span class="chip">126 图、脚本、NPZ 或其他</span></div></section>
+
+<h2>1. 文件类型各自承担什么</h2>
+<div class="grid4"><div class="mini"><h3>CSV 表</h3><p>保存逐记录、逐折或汇总数字，是核对结果的主要数据源。</p></div><div class="mini"><h3>Markdown 报告</h3><p>记录问题、结论、限制和文件入口。报告需要回查 CSV。</p></div><div class="mini"><h3>JSON 状态</h3><p>保存参数、种子、运行状态、审计摘要和机器可读元数据。</p></div><div class="mini"><h3>PNG / SVG</h3><p>论文或汇报图。SVG 是矢量图，放大后文字和线条仍清晰。</p></div></div>
+
+<h2>2. 证据级别</h2>
+<figure class="figure"><div class="flow"><div class="node"><b>Smoke</b><small>管道能否跑通</small></div><div class="node"><b>Probe</b><small>小规模趋势</small></div><div class="node"><b>Formal</b><small>冻结方案正式运行</small></div><div class="node"><b>Corrected</b><small>修正已知输入或泄漏问题</small></div><div class="node"><b>Preregistered</b><small>预注册后验证</small></div><div class="node"><b>Claim matrix</b><small>写作允许范围</small></div></div><figcaption>后一级通常比前一级更适合支撑正文。旧结果保留用于追溯，不与当前正式数字并列使用。</figcaption></figure>
+<div class="table"><table><thead><tr><th>词</th><th>含义</th></tr></thead><tbody>
+<tr><td>Smoke</td><td>冒烟测试；用极小数据检查文件、代码和输出链路。</td></tr>
+<tr><td>Probe</td><td>探测实验；规模大于 smoke，用于判断方向，尚未达到正式结论标准。</td></tr>
+<tr><td>Corrected</td><td>发现空白行、输入或实现问题后重跑的修正版。修正版取代相应旧表。</td></tr>
+<tr><td>Superseded</td><td>旧结果已被更严格版本取代，保留文件只用于追溯。</td></tr>
+<tr><td>Preregistered</td><td>实验问题、输入、指标和通过门槛在运行前写定。</td></tr>
+<tr><td>Canonical / source of truth</td><td>同一结论存在多个版本时，指定的权威来源。</td></tr>
+</tbody></table></div>
+
+<h2>3. 39 个顶层结果包逐项说明</h2>
+<div class="table"><table><thead><tr><th>结果包</th><th>文件数</th><th>它回答的问题</th><th>当前地位</th></tr></thead><tbody>
+<tr><td><a href="../实验结果/Phase1_main_20260603/README_先看这个.md">Phase1_main_20260603</a></td><td>2</td><td>五个可运行数据集能否形成初版主表</td><td>早期结果；缺 partial rho、bootstrap 和完整 McFarland，已被 formal main 取代。</td></tr>
+<tr><td><a href="../实验结果/Cui_go_nogo_20260603/README_先看这个.md">Cui_go_nogo_20260603</a></td><td>6</td><td>大规模 Cui 是否达到继续推进门槛</td><td>GO 证据；aligned ρ=0.445，partial ρ=0.328。</td></tr>
+<tr><td><a href="../实验结果/Formal_main_20260604/README_先看这个.md">Formal_main_20260604</a></td><td>155</td><td>七主表、诊断、消融、GEARS、图表和早期 Tahoe</td><td>最大实验包；正式数字优先读取 corrected_v3 子目录。</td></tr>
+<tr><td><a href="../实验结果/Reliability_model_corrected_20260610/reports/CORRECTED_RELIABILITY_DECISION.md">Reliability_model_corrected_20260610</a></td><td>15</td><td>learned risk 在 LODO、LOPO 和外部设置下表现如何</td><td>修正后的 learned reliability 权威导出。</td></tr>
+<tr><td><a href="../实验结果/Task_risk_audit_20260611/reports/A0_existing_evidence_review.md">Task_risk_audit_20260611</a></td><td>35</td><td>任务难度、坏预测检索、适用边界和可复现锁</td><td>解释项目动机和实际分诊价值的核心包。</td></tr>
+<tr><td><a href="../实验结果/LOPO_robustness_20260613/README_先看这个.md">LOPO_robustness_20260613</a></td><td>13</td><td>留出预测器后，learned 风险能否迁移</td><td>目录内有 superseded 提示；当前使用 fold-safe 版本和限制说明。</td></tr>
+<tr><td><a href="../实验结果/E1_E4_preregistered_20260614/README_先看这个.md">E1_E4_preregistered_20260614</a></td><td>36</td><td>特征组、magnitude 残差信号、负对照、模型稳定性和 E8b</td><td>预注册稳健性主证据。包含一次 outer-fold 泄漏修正记录。</td></tr>
+<tr><td><a href="../实验结果/Evidence_to_Claim_20260615/SAFE_CONF_EVIDENCE_TO_CLAIM_MATRIX.md">Evidence_to_Claim_20260615</a></td><td>42</td><td>每条论文主张由哪些表和图支撑</td><td>当前写作边界和 figure-ready 入口。</td></tr>
+<tr><td><a href="../实验结果/Tahoe_D1_300_shard_20260624/README_先看这个.md">Tahoe_D1_300_shard_20260624</a></td><td>13</td><td>大型 chemical held-out pair 是否有正风险信号</td><td>9,000 任务主证据；partial ρ=0.453。</td></tr>
+<tr><td><a href="../实验结果/Tahoe_D2_heldout_cell_line_20260625/README_先看这个.md">Tahoe_D2_heldout_cell_line_20260625</a></td><td>9</td><td>留出整个细胞系后信号是否保留</td><td>敏感性证据；partial ρ=0.470，适用覆盖 91.7%。</td></tr>
+<tr><td><a href="../实验结果/Tahoe_D3_triage_20260625/README_先看这个.md">Tahoe_D3_triage_20260625</a></td><td>5</td><td>top-k 分诊能抓到多少高错误任务</td><td>SafeConf 4.88×；magnitude 6.49×，保留 magnitude 更强的边界。</td></tr>
+<tr><td><a href="../实验结果/Tahoe_D4_min900_sensitivity_20260627/README_先看这个.md">Tahoe_D4_min900_sensitivity_20260627</a></td><td>8</td><td>结论是否依赖 850-gene 完整度门槛</td><td>min-900 partial ρ=0.461，门槛敏感性通过。</td></tr>
+<tr><td><a href="../实验结果/Tahoe_D5_combined_triage_20260627/README_先看这个.md">Tahoe_D5_combined_triage_20260627</a></td><td>6</td><td>固定 50/50 组合能否超过 magnitude</td><td>组合 5.73×，低于 magnitude 6.49×；有效负结果。</td></tr>
+<tr><td><a href="../实验结果/Tahoe_chemical_evidence_20260627/TAHOE_CHEMICAL_EVIDENCE_CARD.md">Tahoe_chemical_evidence_20260627</a></td><td>1</td><td>把 D0–D5 压缩为可写结论和停止线</td><td>Tahoe chemical 当前总入口。</td></tr>
+<tr><td><a href="../实验结果/E9_strong_baseline_audit_20260707/reports/E9_STRONG_BASELINE_AUDIT.html">E9_strong_baseline_audit_20260707</a></td><td>12</td><td>SafeConf 与 magnitude 等强基线的统一审计</td><td>投稿前降火用证据；不能声称全面超过 magnitude。</td></tr>
+<tr><td><a href="../实验结果/E10_external_task_validation_assets_20260707/reports/E10_EXTERNAL_ASSET_AUDIT.html">E10_external_task_validation_assets_20260707</a></td><td>13</td><td>scPerturBench / scPerturb 外部数据是否具备可跑条件</td><td>83 个 h5ad、约 107.3 GiB，官方 metadata 覆盖 66/66。</td></tr>
+<tr><td><a href="../实验结果/E10_external_task_validation_probe_20260707/reports/E10_EXTERNAL_PROBE.html">E10_external_task_validation_probe_20260707</a></td><td>24</td><td>KaggleCrossCell、Haber、Parekh 外部任务级探针</td><td>管线跑通；disagreement 最强；组合分数在 KaggleCrossCell 上较弱。</td></tr>
+<tr><td><a href="../实验结果/E11_selective_prediction_audit_20260707/reports/E11_SELECTIVE_PREDICTION_AUDIT.html">E11_selective_prediction_audit_20260707</a></td><td>10</td><td>risk-coverage / selective prediction 角度审计</td><td>80% coverage 下 7/7 数据集 RMSE 下降；尚无 formal conformal guarantee。</td></tr>
+<tr><td><a href="../实验结果/E12_external_panel_probe_20260707/reports/E12_EXTERNAL_PANEL_PROBE.html">E12_external_panel_probe_20260707</a></td><td>24</td><td>把外部候选扩展到 6 个数据集，检查 held-out pair 适配性</td><td>3 个可评估；best overall ρ=0.734；单 perturbation 候选需换 split。</td></tr>
+<tr><td><a href="../实验结果/E13_sciplex3_official_3cell_panel_20260707/reports/E13_SCIPLEX3_OFFICIAL_3CELL.html">E13_sciplex3_official_3cell_panel_20260707</a></td><td>24</td><td>官方 sciplex3 A549/K562/MCF7 三细胞系 drug-dose focused panel</td><td>240 tasks；disagreement ρ=0.576；learned ρ=0.572。</td></tr>
+<tr><td><a href="../实验结果/E14_sciplex3_full743_gene1000_20260707/reports/E14_SCIPLEX3_FULL743_GENE1000.html">E14_sciplex3_full743_gene1000_20260707</a></td><td>24</td><td>官方 sciplex3 三细胞系全部 743 shared drug-dose，1,000-gene 快速验证</td><td>2,229 tasks；learned ρ=0.862；5,000-gene 版待复跑。</td></tr>
+<tr><td><a href="../实验结果/E15_sciplex3_full743_gene2000_20260707/reports/E15_SCIPLEX3_FULL743_GENE2000.html">E15_sciplex3_full743_gene2000_20260707</a></td><td>24</td><td>同一 full-743 面板提高到 2,000 genes 的 sensitivity</td><td>2,229 tasks；learned ρ=0.899；disagreement ρ=0.739。</td></tr>
+<tr><td><a href="../实验结果/E16_sciplex3_full743_gene3000_20260707/reports/E16_SCIPLEX3_FULL743_GENE3000.html">E16_sciplex3_full743_gene3000_20260707</a></td><td>24</td><td>同一 full-743 面板提高到 3,000 genes 的 sensitivity</td><td>2,229 tasks；learned ρ=0.903；80% coverage 改善 19.14%。</td></tr>
+<tr><td><a href="../实验结果/E17_sciplex3_full743_gene5000_20260707/reports/E17_SCIPLEX3_FULL743_GENE5000.html">E17_sciplex3_full743_gene5000_20260707</a></td><td>24</td><td>同一 full-743 面板提高到 5,000 genes 的正式版本</td><td>2,229 tasks；learned ρ=0.891；80% coverage 改善 18.74%。</td></tr>
+<tr><td><a href="../实验结果/E18_model_vector_asset_audit_20260707/reports/E18_MODEL_VECTOR_ASSET_AUDIT.html">E18_model_vector_asset_audit_20260707</a></td><td>11</td><td>审计 GEARS、scGPT、CPA 是否已有逐任务预测向量</td><td>GEARS 54 records partial-ready；scGPT/CPA 当前 not-ready。</td></tr>
+<tr><td><a href="../实验结果/E19_gears_only_supplement_20260707/reports/E19_GEARS_ONLY_SUPPLEMENT.html">E19_gears_only_supplement_20260707</a></td><td>11</td><td>整理 GEARS-only formal 与 Frangieh supplement</td><td>formal 54 records ρ=0.624；Frangieh supplement 62 records ρ=0.941。</td></tr>
+<tr><td><a href="../实验结果/E20_adapter_contract_validator_20260707/reports/E20_ADAPTER_CONTRACT_VALIDATOR.html">E20_adapter_contract_validator_20260707</a></td><td>9</td><td>检查现有预测输出是否满足 SafeConf strict adapter 合同</td><td>10 bundles non-strict usable；strict pass = 0；下一步修 task-scoped true_effect_key。</td></tr>
+<tr><td><a href="../实验结果/E21_strict_contract_remediation_20260707/reports/E21_STRICT_CONTRACT_REMEDIATION.html">E21_strict_contract_remediation_20260707</a></td><td>13</td><td>用 E17 抽样包验证 task-scoped true effect 修法</td><td>60 records、30 task groups；strict issue_count = 0。</td></tr>
+<tr><td><a href="../实验结果/E22_generator_strict_smoke_20260707/reports/E22_GENERATOR_STRICT_SMOKE.html">E22_generator_strict_smoke_20260707</a></td><td>8</td><td>验证修改后的生成器新产物可直接 strict pass</td><td>Haber 200 genes；240 records；strict issue_count = 0。</td></tr>
+<tr><td><a href="../实验结果/E23_shared_benchmark_adapter_workbench_20260708/reports/E23_SHARED_BENCHMARK_ADAPTER_WORKBENCH.html">E23_shared_benchmark_adapter_workbench_20260708</a></td><td>10</td><td>固定后续模型 adapter 的 shared benchmark manifest</td><td>120 task groups；manifest checks 5/5 pass；GEARS 优先接入。</td></tr>
+<tr><td><a href="../实验结果/E24_model_family_compatibility_audit_20260708/reports/E24_MODEL_FAMILY_COMPATIBILITY_AUDIT.html">E24_model_family_compatibility_audit_20260708</a></td><td>12</td><td>审计 E23 manifest 与 GEARS/scGPT/CPA 模型家族是否兼容</td><td>E23 不适合直接给 GEARS；scgpt_env 可 import GEARS；GEARS candidate rows=54。</td></tr>
+<tr><td><a href="../实验结果/E25_gears_strict_prediction_records_20260708/reports/E25_GEARS_STRICT_REMEDIATION.html">E25_gears_strict_prediction_records_20260708</a></td><td>12</td><td>把已有真实 GEARS formal 输出升级为 strict SafeConf PredictionRecord</td><td>Adamson/Dixit/Norman；9 formal runs；54 records；strict issue_count=0。</td></tr>
+<tr><td><a href="../实验结果/E26_gears_single_model_risk_audit_20260708/reports/E26_GEARS_SINGLE_MODEL_RISK_AUDIT.html">E26_gears_single_model_risk_audit_20260708</a></td><td>13</td><td>在 E25 strict GEARS 包上做 GEARS-only 单模型风险审计</td><td>predicted-effect abs mean ρ=0.679；L2 ρ=0.624；native uncertainty 缺失。</td></tr>
+<tr><td><a href="../实验结果/E27_scgpt_forward_prediction_record_smoke_20260708/reports/E27_SCGPT_FORWARD_PREDICTION_RECORD_SMOKE.html">E27_scgpt_forward_prediction_record_smoke_20260708</a></td><td>13</td><td>用归档 scGPT 源码和 whole-human checkpoint 生成 strict PredictionRecord smoke</td><td>3 records；128 genes；strict issue_count=0；forward-only smoke。</td></tr>
+<tr><td><a href="../实验结果/E28_gears_scgpt_shared_adamson_smoke_20260708/reports/E28_GEARS_SCGPT_SHARED_ADAMSON_SMOKE.html">E28_gears_scgpt_shared_adamson_smoke_20260708</a></td><td>12</td><td>GEARS 与 scGPT 在 Adamson 同任务、同 512-gene panel 下 strict 对齐</td><td>3 tasks × 2 predictors；6 records；strict issue_count=0。</td></tr>
+<tr><td><a href="../实验结果/E29_gears_scgpt_shared_adamson_risk_audit_20260708/reports/E29_GEARS_SCGPT_SHARED_ADAMSON_RISK_AUDIT.html">E29_gears_scgpt_shared_adamson_risk_audit_20260708</a></td><td>14</td><td>扩展 Adamson 7 个 shared tasks，并计算 GEARS–scGPT disagreement 风险排序</td><td>7 tasks × 2 predictors；14 records；strict issue_count=0；disagreement ρ=0.357。</td></tr>
+<tr><td><a href="../实验结果/E30_gears_seed_overlap_feasibility_audit_20260708/reports/E30_GEARS_SEED_OVERLAP_FEASIBILITY_AUDIT.html">E30_gears_seed_overlap_feasibility_audit_20260708</a></td><td>9</td><td>审计 E25 GEARS 三个 formal runs 是否足够支持 seed/ensemble uncertainty</td><td>47 unique tasks；42 singleton；5 repeat ≥2；不能直接声称 seed uncertainty。</td></tr>
+<tr><td><a href="../实验结果/E31_gears_fixed_test_split_smoke_20260708/reports/E31_GEARS_FIXED_TEST_SPLIT_SMOKE.html">E31_gears_fixed_test_split_smoke_20260708</a></td><td>17</td><td>验证 GEARS exporter 能固定同一批 test perturbations 并导出 strict records</td><td>Adamson 7 tasks；7/7 fixed test observed；7 records；strict issue_count=0。</td></tr>
+<tr><td><a href="../实验结果/E32_gears_fixed_test_3seed_smoke_20260708/reports/E32_GEARS_FIXED_TEST_3SEED_SMOKE.html">E32_gears_fixed_test_3seed_smoke_20260708</a></td><td>29</td><td>固定 Adamson 7 个 test perturbations，跑通 GEARS 3 seeds 并计算 seed disagreement</td><td>21 records；7/7 tasks 三 seed 齐全；seed disagreement ρ=0.679；strict issue_count=0。</td></tr>
+</tbody></table></div>
+
+<h2>4. Formal_main 内部为什么有 155 个文件</h2>
+<div class="table"><table><thead><tr><th>子包</th><th>内容</th><th>处理规则</th></tr></thead><tbody>
+<tr><td>corrected_v3_drop_blank_1000</td><td>修正空白输入、1,000 次 bootstrap 的七主表</td><td>七主表数字权威来源。</td></tr>
+<tr><td>diagnostics</td><td>特征冗余、McFarland 失败、Tahoe 资格审计</td><td>解释失败和后续数据选择。</td></tr>
+<tr><td>feature_ablation / feature_ablation_1000</td><td>逐个去掉特征，观察 partial rho 变化</td><td>1,000 bootstrap 版本优先。</td></tr>
+<tr><td>signal_validity_7main</td><td>magnitude-only、partial、组内相关</td><td>七主表信号有效性正式来源。</td></tr>
+<tr><td>sprint1_lodo / supplement_v02</td><td>跨数据集学习和补充分析</td><td>用于稳健性，不替代 frozen 主表。</td></tr>
+<tr><td>gears_* 六个子包</td><td>可行性、smoke、uncertainty、formal probe、对齐审计、Cui 评估</td><td>保留完整试错链；直接 disagreement 因任务和基因空间不一致而停止。</td></tr>
+<tr><td>tahoe_adapter_smoke / sampled_formal_v1</td><td>Tahoe 管道和早期抽样</td><td>管道历史；当前结论读 D1–D5。</td></tr>
+<tr><td>paper_figures</td><td>论文图、风险—覆盖曲线和 GEARS 状态</td><td>图必须回查 corrected 表和证据矩阵。</td></tr>
+</tbody></table></div>
+
+<h2>5. 七主表证据链</h2>
+<figure class="figure"><div class="flow"><div class="node"><b>Phase1</b><small>5 数据集初版</small></div><div class="node"><b>Cui Go/No-Go</b><small>大数据第一关</small></div><div class="node"><b>Formal 7-main</b><small>统一主表</small></div><div class="node"><b>Corrected v3</b><small>清理空白 + B=1000</small></div><div class="node"><b>E1–E4</b><small>预注册稳健性</small></div><div class="node"><b>Claim matrix</b><small>限定写作范围</small></div></div></figure>
+<div class="grid3">
+<div class="mini"><h3>Frozen 结果</h3><p>partial ρ 在 6/7 数据集为正。McFarland 为 −0.061，置信区间保持负值。</p></div>
+<div class="mini"><h3>Magnitude 问题</h3><p>magnitude-only 很强。E2 的 learned residual 和 AURC 改善说明仍有额外风险信号。</p></div>
+<div class="mini"><h3>实际分诊</h3><p>七数据集 top-10 宏平均：Frozen 3.35×，Magnitude 3.30×；逐数据集差异很大。</p></div>
+</div>
+
+<h2>6. E1–E4 与 outer-fold 修正</h2>
+<div class="table"><table><thead><tr><th>实验</th><th>问题</th><th>正式结果</th><th>限制</th></tr></thead><tbody>
+<tr><td>E1 group ablation</td><td>六组风险源的贡献能否跨数据集保留</td><td>贡献高度依赖数据集和验证方式</td><td>不能把 disagreement 写成所有场景唯一核心。</td></tr>
+<tr><td>E2 residual calibration</td><td>控制 magnitude 后是否仍有信号</td><td>7/7 residual CI 下界大于 0；7/7 AURC improvement 下界大于 0</td><td>属于 learned residual 扩展，不能改写成 frozen 自身结果。</td></tr>
+<tr><td>E3 negative controls</td><td>信号是否来自随机排列或缺失模式</td><td>真实/打乱审计 7/7；missing-only 0/7</td><td>负对照排除部分伪影，不等于证明所有因果机制。</td></tr>
+<tr><td>E4 stability</td><td>不同种子和模型设置是否稳定</td><td>HistGBT 7/7；ElasticNet 6/7</td><td>learned 结果随配置变化。</td></tr>
+</tbody></table></div>
+<div class="callout danger"><b>泄漏修正：</b>早期 outer-fold 处理中发现参考范围问题，目录保留 <a href="../实验结果/E1_E4_preregistered_20260614/LEAKAGE_CORRECTION.md">LEAKAGE_CORRECTION.md</a>。正式解释只使用修正后的 fold-safe 输出。</div>
+
+<h2>7. GEARS 证据链</h2>
+<figure class="figure"><div class="flow"><div class="node"><b>Feasibility</b><small>环境和数据能否接入</small></div><div class="node"><b>Smoke</b><small>少量记录跑通</small></div><div class="node"><b>Uncertainty probe</b><small>原生不确定性可导出</small></div><div class="node"><b>Formal probe</b><small>3 seeds × 20 epochs</small></div><div class="node"><b>Alignment audit</b><small>旧口径缺 gene order</small></div><div class="node"><b>E25 strict</b><small>54 records strict-pass</small></div></div></figure>
+<div class="table"><table><thead><tr><th>观察</th><th>数字或事实</th><th>结论范围</th></tr></thead><tbody>
+<tr><td>GEARS 预测可以运行</td><td>62 条记录；3 个 seed；test Pearson 约 0.996</td><td>证明 adapter 能导出 PredictionRecord。</td></tr>
+<tr><td>原生 uncertainty 较弱</td><td>aligned ρ=0.096；RC@80%=−0.82%</td><td>该小探测中区分误差能力弱。</td></tr>
+<tr><td>magnitude 很强</td><td>risk aligned ρ=0.894</td><td>容易受效应幅度混杂，不能当可靠不确定性结论。</td></tr>
+<tr><td>无法直接算 disagreement</td><td>context 不同；3,000 对 5,000 genes；缺统一 gene order</td><td>直接相减会形成伪比较。</td></tr>
+<tr><td>E25 strict remediation</td><td>9 个 formal runs；54 条记录；strict issue_count=0</td><td>GEARS 已可作为真实模型证据进入后续 SafeConf scoring；仍不是三模型统一验证。</td></tr>
+<tr><td>E26 GEARS-only risk</td><td>predicted-effect abs mean ρ=0.679；L2 ρ=0.624</td><td>说明 GEARS 单模型风险线索存在；native uncertainty 缺失，仍需第二模型 adapter。</td></tr>
+<tr><td>E27 scGPT smoke</td><td>3 条 strict-pass scGPT forward PredictionRecord</td><td>证明 scGPT adapter 合同链路可跑；仍需与 GEARS 同任务/gene panel 对齐。</td></tr>
+<tr><td>E28 shared smoke</td><td>Adamson 3 tasks × 2 predictors；512 genes；strict issue_count=0</td><td>证明 GEARS–scGPT 双模型合同对齐可行；仍非正式 benchmark。</td></tr>
+<tr><td>E29 shared risk audit</td><td>Adamson 7 tasks × 2 predictors；14 records；disagreement ρ=0.357；strict issue_count=0</td><td>证明 shared 合同下的小样本风险审计可跑通；n=7，不能当正式 benchmark。</td></tr>
+<tr><td>E30 GEARS seed overlap</td><td>E25 54 records；47 unique tasks；5 repeat ≥2；2 repeat ≥3；true diff = 0</td><td>证明现有 GEARS runs 不足以直接支撑 seed uncertainty；需要固定任务三 seed 重跑。</td></tr>
+<tr><td>E31 GEARS fixed-test smoke</td><td>Adamson 7 expected test tasks；7 observed；7 smoke records；strict issue_count=0</td><td>证明 GEARS exporter 已能固定 test 任务；1 epoch smoke，不能当性能结果。</td></tr>
+<tr><td>E32 GEARS 3-seed smoke</td><td>Adamson 7 tasks × 3 seeds；21 smoke records；seed disagreement ρ=0.679；strict issue_count=0</td><td>证明 fixed-task 3-seed 工作流跑通，并给出 seed-disagreement 初步信号；仍非正式 benchmark。</td></tr>
+</tbody></table></div>
+
+<h2>8. Task-risk、LODO、LOPO 和 E8b</h2>
+<div class="grid2">
+<div class="card"><h3>Task-risk 动机</h3><p>V0 与 ContextSim 的误差 Spearman 为 0.973；task identity 解释 93.6% 误差方差。结论只覆盖这组参考预测器。</p></div>
+<div class="card"><h3>LODO</h3><p><b>Leave-One-Dataset-Out</b>：留出整个数据集训练风险模型，检验跨数据集迁移。</p></div>
+<div class="card"><h3>LOPO</h3><p><b>Leave-One-Predictor-Out</b>：留出一种预测器，检验风险规律能否迁移到未参与训练的预测器。</p></div>
+<div class="card"><h3>E8b</h3><p>Frangieh 74 个 perturbation、15 种方法；median ρ=0.584，14/15 为正。输入是公开 benchmark 聚合误差，证据级别为外部关联。</p></div>
+</div>
+<div class="callout warn"><b>E8b 样本量边界：</b>Nstimulated 基线 median ρ=0.764，高于 frozen risk。控制 log(Nstimulated) 后 median partial ρ=0.335，属于事后诊断，不能写成预注册 gate。</div>
+
+<h2>9. Tahoe D0–D5 闭环</h2>
+<div class="table"><table><thead><tr><th>阶段</th><th>问题</th><th>结果</th><th>停止线</th></tr></thead><tbody>
+<tr><td>D0</td><td>数据是否提供独立增量</td><td>与既有药物重叠约 7%</td><td>进入正式抽样。</td></tr>
+<tr><td>D1</td><td>held-out pair 有无风险信号</td><td>partial ρ=0.453</td><td>完成 9,000 任务；无需继续相同 shard 扩展。</td></tr>
+<tr><td>D2</td><td>跨细胞系是否保留</td><td>partial ρ=0.470；coverage 91.7%</td><td>不能称为 held-out drug。</td></tr>
+<tr><td>D3</td><td>top-10 分诊价值</td><td>SafeConf 4.88×；magnitude 6.49×</td><td>记录 magnitude 更强。</td></tr>
+<tr><td>D4</td><td>gene completeness 门槛敏感性</td><td>min-900 partial ρ=0.461</td><td>不再细扫 875/925/950。</td></tr>
+<tr><td>D5</td><td>固定组合能否胜过 magnitude</td><td>combined 5.73×</td><td>组合仍未超过 6.49×，不在 test 调权重。</td></tr>
+</tbody></table></div>
+
+<h2>10. E9–E32 投稿升级与外部验证</h2>
+<div class="grid3">
+<div class="mini"><h3>E9 强基线审计</h3><p>把 SafeConf 放到 magnitude、sample-size 等强基线旁边看。作用是防止结论写过头。</p></div>
+<div class="mini"><h3>E10 外部探针</h3><p>先查数据资产，再跑 KaggleCrossCell、Haber、Parekh。当前定位是外部验证侦察，不是最终外部验证。</p></div>
+<div class="mini"><h3>E11 selective prediction</h3><p>从“丢掉高风险预测后平均误差是否下降”来审计实际分诊价值。它提供应用角度，但不是严格覆盖保证。</p></div>
+<div class="mini"><h3>E12 外部面板</h3><p>把候选扩到 6 个数据集，筛出 sciplex3、KaggleCrossPatient、crossPatient 三个可按 held-out pair 评价的外部对象。</p></div>
+<div class="mini"><h3>E13 官方 sciplex3</h3><p>把 A549、K562、MCF7 三个官方文件合成为三细胞系 drug-dose 面板，给 chemical 外部验证一个更干净的任务定义。</p></div>
+<div class="mini"><h3>E14 full-743 gene1000</h3><p>保留全部 743 个共享 drug-dose，把外部 chemical 面板扩大到 2,229 tasks；当前为 1,000-gene 快速验证。</p></div>
+<div class="mini"><h3>E15 full-743 gene2000</h3><p>把同一面板提高到 2,000 genes，检查 E14 信号是否随基因数增加保持稳定。</p></div>
+<div class="mini"><h3>E16 full-743 gene3000</h3><p>继续提高到 3,000 genes，验证 full-743 chemical 信号的连续性。</p></div>
+<div class="mini"><h3>E17 full-743 gene5000</h3><p>完成 5,000-gene full-743 正式版，把 E14–E16 的 sensitivity 升级为 formal evidence。</p></div>
+<div class="mini"><h3>E18 model-vector audit</h3><p>检查 GEARS、scGPT、CPA 是否已有可进入 SafeConf 协议的逐任务 predicted/true vector。</p></div>
+<div class="mini"><h3>E19 GEARS-only supplement</h3><p>整理 GEARS-only 既有 formal/probe 结果，作为补充证据，边界单独标明。</p></div>
+<div class="mini"><h3>E20 adapter contract</h3><p>检查旧 sciplex3/GEARS 输出能否 strict pass；结果显示可审计但还不能直接做统一多模型验证。</p></div>
+<div class="mini"><h3>E21 strict remediation</h3><p>把 E17 抽样包改成 task-scoped true effect，证明 strict 合同修法可行。</p></div>
+<div class="mini"><h3>E22 generator smoke</h3><p>新跑 Haber 200-gene smoke，证明修改后的生成器输出直接 strict pass。</p></div>
+<div class="mini"><h3>E23 shared benchmark</h3><p>固定 120 个 task groups 的 manifest，要求后续模型 adapter 对同一任务输出预测向量。</p></div>
+<div class="mini"><h3>E24 compatibility audit</h3><p>纠正 E23 不能直接给 GEARS 的问题，并把路线转向 gene-perturbation GEARS strict 证据包。</p></div>
+<div class="mini"><h3>E25 GEARS strict records</h3><p>把 Adamson/Dixit/Norman 的真实 GEARS formal 输出补齐 strict provenance，形成 54 条可校验证据。</p></div>
+<div class="mini"><h3>E26 GEARS single-model</h3><p>在 E25 strict 包上评估 GEARS-only 风险线索；预测效应幅度可排序高错误，原生 uncertainty 不可用。</p></div>
+<div class="mini"><h3>E27 scGPT forward smoke</h3><p>修正 scGPT 源码路径问题，用 whole-human checkpoint 生成 strict-pass scGPT smoke 记录。</p></div>
+<div class="mini"><h3>E28 GEARS–scGPT shared</h3><p>Adamson 上 3 个任务、两个 predictor、512-gene panel，共用 task-scoped true effect。</p></div>
+<div class="mini"><h3>E29 GEARS–scGPT risk</h3><p>把 Adamson shared 任务扩展到 7 个，计算双模型 disagreement 与真实误差的任务级关系。</p></div>
+<div class="mini"><h3>E30 GEARS seed overlap</h3><p>审计现有 GEARS 三个 formal runs 的任务重叠，确认不能直接声称 seed-ensemble uncertainty。</p></div>
+<div class="mini"><h3>E31 GEARS fixed-test</h3><p>给 GEARS exporter 增加固定 test perturbation 清单，验证后续三 seed 重跑可以测同一批任务。</p></div>
+<div class="mini"><h3>E32 GEARS 3-seed</h3><p>在固定 Adamson 7-task panel 上跑通 3 个 seed，并计算 seed disagreement 与误差的初步关系。</p></div>
+</div>
+<div class="callout warn"><b>E10–E32 边界：</b>E10 overall 最强为 model_disagreement_risk，aligned Spearman = 0.559；E14/E15/E16/E17 full-743 的 learned ρ 分别为 0.862、0.899、0.903、0.891；E18 说明 GEARS 有 54 条可读向量，但 scGPT/CPA 暂无 SafeConf PredictionRecord；E19 只提供 GEARS-only supplement；E20 显示现有 10 个 bundle 都可审计但 0 个 strict pass；E21/E22 只证明 task-scoped true effect 修法和生成器合同修复可行；E23 固定 shared manifest；E24 纠正模型家族兼容性；E25 让真实 GEARS formal 输出 strict-pass；E26 完成 GEARS-only 单模型风险审计；E27 让 scGPT 进入 strict smoke；E28 证明 GEARS–scGPT 双模型合同对齐可行；E29 在 7 个 Adamson shared tasks 上完成小样本风险审计，但 disagreement 只有弱正相关；E30 说明现有 GEARS runs 任务重叠太少，不能直接写 seed uncertainty；E31 已打通 GEARS fixed-test exporter；E32 已跑通 fixed-test 3-seed smoke，并出现 seed-disagreement 初步正信号。下一轮重点是提高到正式 epochs、扩大共享任务数、固定 split 或 CPA adapter，而不是把 smoke 写成正式 benchmark。</div>
+
+<h2>11. 当前写作使用顺序</h2>
+<div class="table"><table><thead><tr><th>要写的内容</th><th>优先来源</th></tr></thead><tbody>
+<tr><td>七主表 frozen 数字</td><td><a href="../实验结果/Formal_main_20260604/corrected_v3_drop_blank_1000_20260609/reports/CORRECTED_7MAIN_DECISION.md">Corrected 7-main decision</a></td></tr>
+<tr><td>magnitude 以外信号</td><td><a href="../实验结果/E1_E4_preregistered_20260614/E1_E4_GATE_REPORT.md">E1–E4 gate report</a></td></tr>
+<tr><td>论文主张边界</td><td><a href="../实验结果/Evidence_to_Claim_20260615/SAFE_CONF_EVIDENCE_TO_CLAIM_MATRIX.md">Evidence-to-Claim Matrix</a></td></tr>
+<tr><td>实际 top-k 分诊</td><td><a href="../实验结果/Evidence_to_Claim_20260615/PHASE5A0_COST_EFFECTIVENESS_REPORT.md">Cost-effectiveness report</a></td></tr>
+<tr><td>大型 chemical 补充</td><td><a href="../实验结果/Tahoe_chemical_evidence_20260627/TAHOE_CHEMICAL_EVIDENCE_CARD.md">Tahoe evidence card</a></td></tr>
+<tr><td>强基线与投稿风险</td><td><a href="../实验结果/E9_strong_baseline_audit_20260707/reports/E9_STRONG_BASELINE_AUDIT.html">E9 strong baseline audit</a></td></tr>
+<tr><td>外部数据资产与小型探针</td><td><a href="../实验结果/E10_external_task_validation_probe_20260707/reports/E10_EXTERNAL_PROBE.html">E10 external probe</a></td></tr>
+<tr><td>外部面板扩展与 split 适配</td><td><a href="../实验结果/E12_external_panel_probe_20260707/reports/E12_EXTERNAL_PANEL_PROBE.html">E12 external panel probe</a></td></tr>
+<tr><td>官方 sciplex3 三细胞系 focused panel</td><td><a href="../实验结果/E13_sciplex3_official_3cell_panel_20260707/reports/E13_SCIPLEX3_OFFICIAL_3CELL.html">E13 official sciplex3 panel</a></td></tr>
+<tr><td>官方 sciplex3 full-743 gene1000</td><td><a href="../实验结果/E14_sciplex3_full743_gene1000_20260707/reports/E14_SCIPLEX3_FULL743_GENE1000.html">E14 full-743 gene1000</a></td></tr>
+<tr><td>官方 sciplex3 full-743 gene2000</td><td><a href="../实验结果/E15_sciplex3_full743_gene2000_20260707/reports/E15_SCIPLEX3_FULL743_GENE2000.html">E15 full-743 gene2000</a></td></tr>
+<tr><td>官方 sciplex3 full-743 gene3000</td><td><a href="../实验结果/E16_sciplex3_full743_gene3000_20260707/reports/E16_SCIPLEX3_FULL743_GENE3000.html">E16 full-743 gene3000</a></td></tr>
+<tr><td>官方 sciplex3 full-743 gene5000</td><td><a href="../实验结果/E17_sciplex3_full743_gene5000_20260707/reports/E17_SCIPLEX3_FULL743_GENE5000.html">E17 full-743 gene5000</a></td></tr>
+<tr><td>真实模型预测向量资产审计</td><td><a href="../实验结果/E18_model_vector_asset_audit_20260707/reports/E18_MODEL_VECTOR_ASSET_AUDIT.html">E18 model vector asset audit</a></td></tr>
+<tr><td>GEARS-only 补充结果</td><td><a href="../实验结果/E19_gears_only_supplement_20260707/reports/E19_GEARS_ONLY_SUPPLEMENT.html">E19 GEARS-only supplement</a></td></tr>
+<tr><td>adapter 合同体检</td><td><a href="../实验结果/E20_adapter_contract_validator_20260707/reports/E20_ADAPTER_CONTRACT_VALIDATOR.html">E20 adapter contract validator</a></td></tr>
+<tr><td>strict adapter 修法样例</td><td><a href="../实验结果/E21_strict_contract_remediation_20260707/reports/E21_STRICT_CONTRACT_REMEDIATION.html">E21 strict contract remediation</a></td></tr>
+<tr><td>生成器 strict smoke</td><td><a href="../实验结果/E22_generator_strict_smoke_20260707/reports/E22_GENERATOR_STRICT_SMOKE.html">E22 generator strict smoke</a></td></tr>
+<tr><td>shared benchmark adapter 地基</td><td><a href="../实验结果/E23_shared_benchmark_adapter_workbench_20260708/reports/E23_SHARED_BENCHMARK_ADAPTER_WORKBENCH.html">E23 shared benchmark adapter workbench</a></td></tr>
+<tr><td>模型家族兼容性纠偏</td><td><a href="../实验结果/E24_model_family_compatibility_audit_20260708/reports/E24_MODEL_FAMILY_COMPATIBILITY_AUDIT.html">E24 model-family compatibility audit</a></td></tr>
+<tr><td>GEARS strict-pass 真实模型证据包</td><td><a href="../实验结果/E25_gears_strict_prediction_records_20260708/reports/E25_GEARS_STRICT_REMEDIATION.html">E25 GEARS strict PredictionRecord remediation</a></td></tr>
+<tr><td>GEARS-only 单模型风险分析</td><td><a href="../实验结果/E26_gears_single_model_risk_audit_20260708/reports/E26_GEARS_SINGLE_MODEL_RISK_AUDIT.html">E26 GEARS single-model risk audit</a></td></tr>
+<tr><td>scGPT strict adapter smoke</td><td><a href="../实验结果/E27_scgpt_forward_prediction_record_smoke_20260708/reports/E27_SCGPT_FORWARD_PREDICTION_RECORD_SMOKE.html">E27 scGPT forward PredictionRecord smoke</a></td></tr>
+<tr><td>GEARS–scGPT shared strict smoke</td><td><a href="../实验结果/E28_gears_scgpt_shared_adamson_smoke_20260708/reports/E28_GEARS_SCGPT_SHARED_ADAMSON_SMOKE.html">E28 GEARS–scGPT shared Adamson smoke</a></td></tr>
+<tr><td>GEARS–scGPT shared 风险审计</td><td><a href="../实验结果/E29_gears_scgpt_shared_adamson_risk_audit_20260708/reports/E29_GEARS_SCGPT_SHARED_ADAMSON_RISK_AUDIT.html">E29 GEARS–scGPT shared Adamson risk audit</a></td></tr>
+<tr><td>GEARS seed-overlap 可行性审计</td><td><a href="../实验结果/E30_gears_seed_overlap_feasibility_audit_20260708/reports/E30_GEARS_SEED_OVERLAP_FEASIBILITY_AUDIT.html">E30 GEARS seed-overlap feasibility audit</a></td></tr>
+<tr><td>GEARS fixed-test split smoke</td><td><a href="../实验结果/E31_gears_fixed_test_split_smoke_20260708/reports/E31_GEARS_FIXED_TEST_SPLIT_SMOKE.html">E31 GEARS fixed-test split smoke</a></td></tr>
+<tr><td>GEARS fixed-test 3-seed smoke</td><td><a href="../实验结果/E32_gears_fixed_test_3seed_smoke_20260708/reports/E32_GEARS_FIXED_TEST_3SEED_SMOKE.html">E32 GEARS fixed-test 3-seed smoke</a></td></tr>
+<tr><td>selective prediction 角度</td><td><a href="../实验结果/E11_selective_prediction_audit_20260707/reports/E11_SELECTIVE_PREDICTION_AUDIT.html">E11 selective prediction audit</a></td></tr>
+<tr><td>模型级缺口</td><td><a href="../实验结果/Task_risk_audit_20260611/reports/C3_scope_boundary_interpretation.md">Scope boundary report</a></td></tr>
+</tbody></table></div>
+
+<div class="callout good"><b>目录结论：</b>742 个文件已经按顶层包、Formal_main 子包、证据级别和当前权威来源归位。早期表、修正表、外部探针、adapter 合同体检、strict 修法样例、生成器 smoke、shared manifest、模型家族兼容性纠偏、GEARS strict-pass 证据包、GEARS-only 风险审计、scGPT strict smoke、GEARS–scGPT shared smoke、GEARS–scGPT shared risk audit、GEARS seed-overlap feasibility audit、GEARS fixed-test split smoke、GEARS fixed-test 3-seed smoke 和负结果各有明确用途。</div>
+<div class="pager"><a href="10_代码设计与协议全解.html">← 上一章</a><a href="12_真实文件逐项阅读.html">下一章：真实文件实习 →</a></div>
+</main></div><script src="assets/tutorial.js"></script></body></html>

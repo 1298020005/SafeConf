@@ -1,0 +1,42 @@
+phase,check,observed,expected,passed,detail
+prepare,freeze_exists,True,True,True,
+prepare,adapter_exists,True,True,True,
+prepare,txpert_commit,08d82eea86746b044cf7531f4ec8c5f60e1cb73f,08d82eea86746b044cf7531f4ec8c5f60e1cb73f,True,
+prepare,txpert_clean,CLEAN,CLEAN,True,
+prepare,scperteval_commit,8709eb07a0e7d4ecf1c60c977f2018690a749975,8709eb07a0e7d4ecf1c60c977f2018690a749975,True,
+prepare,scperteval_clean,CLEAN,CLEAN,True,
+prepare,scperturbench_commit,6e24e7a9827e55d4567d2139427be9af0d1e7a6c,6e24e7a9827e55d4567d2139427be9af0d1e7a6c,True,
+prepare,scperturbench_clean,CLEAN,CLEAN,True,
+prepare,checkpoints.zip:exists,True,True,True,
+prepare,checkpoints.zip:bytes,291708781,291708781,True,
+prepare,checkpoints.zip:md5,4058d19e14882a3bd2545b1512f1acde,4058d19e14882a3bd2545b1512f1acde,True,
+prepare,checkpoints.zip:zip_integrity,PASS,PASS,True,
+prepare,checkpoints.zip:member:checkpoints/K562_unseen_pert_gat.ckpt,True,True,True,
+prepare,checkpoints.zip:member:checkpoints/K562_unseen_pert_exphormer.ckpt,True,True,True,
+prepare,checkpoints.zip:member:checkpoints/K562_unseen_pert_exphormer_mg.ckpt,True,True,True,
+prepare,K562_single_cell_line.zip:exists,True,True,True,
+prepare,K562_single_cell_line.zip:bytes,678058077,678058077,True,
+prepare,K562_single_cell_line.zip:md5,6be4c8239fd7e6b70d2ffe7b80c3c7bc,6be4c8239fd7e6b70d2ffe7b80c3c7bc,True,
+prepare,K562_single_cell_line.zip:zip_integrity,PASS,PASS,True,
+prepare,K562_single_cell_line.zip:suffix:K562_single_cell_line/de_adata_test.h5ad,1,1,True,K562_single_cell_line/de_adata_test.h5ad
+prepare,K562_single_cell_line.zip:suffix:K562_single_cell_line/splits/train_test_split.pkl,1,1,True,K562_single_cell_line/splits/train_test_split.pkl
+prepare,K562_single_cell_line.zip:suffix:K562_single_cell_line/splits/subgroup.pkl,1,1,True,K562_single_cell_line/splits/subgroup.pkl
+prepare,source_exists:README.md,True,True,True,
+prepare,source_exists:license.pdf,True,True,True,
+prepare,source_exists:pyproject.toml,True,True,True,
+prepare,source_exists:uv.lock,True,True,True,
+prepare,source_exists:main.py,True,True,True,
+prepare,source_exists:gspp/predictor.py,True,True,True,
+prepare,source_exists:gspp/data/datamodule.py,True,True,True,
+prepare,source_exists:gspp/data/graphmodule.py,True,True,True,
+prepare,source_exists:gspp/models/baselines.py,True,True,True,
+prepare,source_exists:configs/config-gat.yaml,True,True,True,
+prepare,source_exists:configs/config-exphormer.yaml,True,True,True,
+prepare,source_exists:configs/config-exphormer-mg.yaml,True,True,True,
+prepare,source_exists:configs/config-baseline.yaml,True,True,True,
+prepare,environment_probe_exit,0,0,True,
+prepare,environment_versions,2.6.0+cu124 12.4 2.6.1 1.11.1 2.5.1 True,2.6.0+cu124 12.4 2.6.1 1.11.1 2.5.1 True,True,
+prepare,static:predict_step_truth_only_saved,True,True,True,batch.x occurrences=1
+prepare,static:sample_inference_has_no_target,True,True,True,"sample_inference receives control, perturbation indices and embeddings"
+prepare,static:forward_has_no_target,True,True,True,forward signature excludes target expression
+prepare,static:predict_mode_uses_trainer_predict,True,True,True,official predict branch inspected

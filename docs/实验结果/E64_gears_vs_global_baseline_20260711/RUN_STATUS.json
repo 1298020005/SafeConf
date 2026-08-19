@@ -1,0 +1,46 @@
+{
+  "experiment": "E64_GEARS_vs_source_global_baseline",
+  "generated_at": "2026-07-11T04:31:50",
+  "git_head_before_run": "f71d0a4d558baf3f9ecea1e5949e724aca29363d",
+  "source": "E60 strict GEARS outputs + Adamson GEARS processed training conditions",
+  "n_tasks": 24,
+  "test_conditions": [
+    "ATF4+ctrl",
+    "COPZ1+ctrl",
+    "DAD1+ctrl",
+    "DERL2+ctrl",
+    "DNAJC19+ctrl",
+    "EIF2S1+ctrl",
+    "GBF1+ctrl",
+    "IARS2+ctrl",
+    "IDH3A+ctrl",
+    "MRPL39+ctrl",
+    "NEDD8+ctrl",
+    "OST4+ctrl",
+    "PDIA6+ctrl",
+    "PSMD4+ctrl",
+    "PTDSS1+ctrl",
+    "SEC61G+ctrl",
+    "SEL1L+ctrl",
+    "SLC35B1+ctrl",
+    "SPCS3+ctrl",
+    "SRP68+ctrl",
+    "SYVN1+ctrl",
+    "TELO2+ctrl",
+    "TIMM23+ctrl",
+    "TTI1+ctrl"
+  ],
+  "target_truth_used_in_scores": false,
+  "baseline_definition": "mean effect across all non-control training conditions after removing all 24 fixed held-out conditions",
+  "baseline_meta": {
+    "n_train_conditions": 52,
+    "n_total_conditions": 77,
+    "n_genes": 5043
+  },
+  "outputs": [
+    "tables/E64_TASK_TABLE.csv",
+    "tables/E64_RISK_ERROR_SUMMARY.csv",
+    "figures/F1_gears_baseline_disagreement_vs_error.svg",
+    "reports/E64_REPORT.md"
+  ]
+}

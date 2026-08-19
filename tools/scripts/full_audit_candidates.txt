@@ -1,0 +1,125 @@
+# SafeConf Phase B: Full Eligibility Audit
+#
+# 这 32 个 h5ad 文件在磁盘上已有，有 control + cell_type，
+# 但 Codex Phase A 未审计。按潜力排序。
+#
+# 审计要求：对每个文件输出
+#   dataset_name, n_contexts, n_perturbations, n_eligible_pairs, context_col_used, control_label
+#
+# 合格标准：n_eligible_pairs >= 8 且 n_contexts >= 2
+#
+# 数据路径前缀：/home/yyf/data/singlecell_perturbation_atlas/
+
+# ============================================================
+# Tier A: 高优先级（大样本 + genetic/chemical single）
+# ============================================================
+
+# 1. SrivatsanTrapnell2020_sciplex3 (799k cells, chemical)
+#    原始 sci-Plex 数据，多 cell_line × 多 drug，可能有数百 pairs
+official_scperturb/SrivatsanTrapnell2020_sciplex3.h5ad
+
+# 2. SrivatsanTrapnell2020_sciplex4 (98k cells, chemical)
+official_scperturb/SrivatsanTrapnell2020_sciplex4.h5ad
+
+# 3. SrivatsanTrapnell2020_sciplex2 (24k cells, chemical)
+official_scperturb/SrivatsanTrapnell2020_sciplex2.h5ad
+
+# 4. ReplogleWeissman2022_rpe1 (248k cells, genetic)
+#    scPerturb 版有 celltype 列！与 scPerturBench 版不同
+official_scperturb/ReplogleWeissman2022_rpe1.h5ad
+
+# 5. NormanWeissman2019_filtered (111k cells, genetic)
+#    scPerturb 版有 celltype 列！scPerturBench 版的 Norman 没有
+official_scperturb/NormanWeissman2019_filtered.h5ad
+
+# 6. ZhaoSims2021 (166k cells, genetic)
+#    有 tissue/celltype/sample
+official_scperturb/ZhaoSims2021.h5ad
+
+# 7. LaraAstiasoHuntly2023_exvivo (147k cells, genetic)
+#    有 celltype + time，可能有丰富 pair 结构
+official_scperturb/LaraAstiasoHuntly2023_exvivo.h5ad
+
+# 8. LaraAstiasoHuntly2023_invivo (136k cells, genetic)
+official_scperturb/LaraAstiasoHuntly2023_invivo.h5ad
+
+# 9. GasperiniShendure2019_atscale (207k cells, enhancer)
+#    大规模 CRISPR screen
+official_scperturb/GasperiniShendure2019_atscale.h5ad
+
+# 10. XuCao2023 (98k cells, chemical)
+official_scperturb/XuCao2023.h5ad
+
+# 11. SantinhaPlatt2023 (100k cells, chemical)
+#     有 cell_types_broad
+official_scperturb/SantinhaPlatt2023.h5ad
+
+# 12. AissaBenevolenskaya2021 (119k cells, genetic)
+#     有 cell_line + time
+official_scperturb/AissaBenevolenskaya2021.h5ad
+
+# ============================================================
+# Tier B: 中优先级（中等样本或特殊结构）
+# ============================================================
+
+# 13. LotfollahiTheis2023 (63k cells, chemical)
+#     CPA 论文数据
+official_scperturb/LotfollahiTheis2023.h5ad
+
+# 14. TianKampmann2019_iPSC (276k cells, genetic)
+official_scperturb/TianKampmann2019_iPSC.h5ad
+
+# 15. TianKampmann2019_day7neuron (183k cells, genetic)
+official_scperturb/TianKampmann2019_day7neuron.h5ad
+
+# 16. TianKampmann2021_CRISPRi (32k cells, genetic)
+official_scperturb/TianKampmann2021_CRISPRi.h5ad
+
+# 17. TianKampmann2021_CRISPRa (21k cells, genetic)
+official_scperturb/TianKampmann2021_CRISPRa.h5ad
+
+# 18. LiangWang2023 (41k cells, chemical)
+official_scperturb/LiangWang2023.h5ad
+
+# 19. DixitRegev2016_K562_TFs_7_days (33k cells, genetic)
+#     有 time 可作 context proxy
+official_scperturb/DixitRegev2016_K562_TFs_7_days.h5ad
+
+# 20. DixitRegev2016_K562_TFs_13_days (19k cells, genetic)
+official_scperturb/DixitRegev2016_K562_TFs_13_days.h5ad
+
+# 21. DixitRegev2016_K562_TFs_High_MOI (52k cells, genetic)
+official_scperturb/DixitRegev2016_K562_TFs_High_MOI.h5ad
+
+# 22. WesselsSatija2023 (31k cells, genetic)
+official_scperturb/WesselsSatija2023.h5ad
+
+# 23. SchiebingerLander2019_GSE106340 (68k cells, genetic)
+official_scperturb/SchiebingerLander2019_GSE106340.h5ad
+
+# 24. PapalexiSatija2021_eccite_RNA (21k cells, genetic)
+official_scperturb/PapalexiSatija2021_eccite_RNA.h5ad
+
+# ============================================================
+# Tier C: 低优先级（enhancer/小/边缘）
+# ============================================================
+
+# 25-26. SchraivogelSteinmetz2020 (120k/112k, enhancer)
+official_scperturb/SchraivogelSteinmetz2020_TAP_SCREEN__chromosome_8_screen.h5ad
+official_scperturb/SchraivogelSteinmetz2020_TAP_SCREEN__chromosome_11_screen.h5ad
+
+# 27. SunshineHein2023 (90k, chemical_combinatorial)
+official_scperturb/SunshineHein2023.h5ad
+
+# 28-29. GasperiniShendure2019 other (48k/41k, enhancer)
+official_scperturb/GasperiniShendure2019_highMOI.h5ad
+official_scperturb/GasperiniShendure2019_lowMOI.h5ad
+
+# 30. DatlingerBock2017 (6k cells, genetic)
+official_scperturb/DatlingerBock2017.h5ad
+
+# 31. AdamsonWeissman2016 (15k cells, genetic)
+official_scperturb/AdamsonWeissman2016_GSM2406677_10X005.h5ad
+
+# 32. sciplex3_comb (63k, chemical_combinatorial)
+official_generalization/sciplex3_comb.h5ad

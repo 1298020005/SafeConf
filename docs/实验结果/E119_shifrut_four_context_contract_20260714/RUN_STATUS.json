@@ -1,0 +1,18 @@
+{
+  "experiment": "E119_shifrut_four_context_contract",
+  "generated_at": "2026-07-14T00:18:44",
+  "source": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/ShifrutMarson2018.h5ad",
+  "source_sha256": "sha256:73c92a61ccc49d3a8c1bfc18ebfd002c2439294c98eb11b3ca8a2c2d7e3d1b19",
+  "source_shape": [
+    52236,
+    33694
+  ],
+  "context_definition": "sample = donor x TCR stimulation",
+  "n_contexts": 4,
+  "n_perturbations": 20,
+  "n_folds": 4,
+  "n_manifest_rows": 320,
+  "minimum_cells_per_pair": 109,
+  "expression_read_during_selection": false,
+  "target_effect_or_error_used_for_selection": false
+}

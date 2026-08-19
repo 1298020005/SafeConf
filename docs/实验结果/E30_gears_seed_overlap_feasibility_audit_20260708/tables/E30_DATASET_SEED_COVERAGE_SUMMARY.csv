@@ -1,0 +1,5 @@
+dataset_name,n_task_groups,n_records,singleton_tasks,repeat_ge2_tasks,repeat_ge3_tasks,max_true_diff
+adamson,18,21,16,2,1,0.0
+dixit,2,3,1,1,0,0.0
+norman,27,30,25,2,1,0.0
+overall,47,54,42,5,2,0.0

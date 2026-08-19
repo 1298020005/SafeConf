@@ -1,0 +1,3 @@
+container,path,backed_mode,n_obs_container,n_vars_container,train_rows_present,validation_rows_present,test_rows_present,rows_materialized,X_columns_materialized,access_role
+E161 development H5AD,/home/yyf/data/safeconf_e161_prescribe/wessels_e160/perturb_processed.h5ad,r,16881,2023,11779,5102,0,0,0,metadata_gate_before_validation_subset
+E161 development H5AD,/home/yyf/data/safeconf_e161_prescribe/wessels_e160/perturb_processed.h5ad,r,16881,2023,11779,5102,0,5102,2023,validation_rows_only_truth_materialization

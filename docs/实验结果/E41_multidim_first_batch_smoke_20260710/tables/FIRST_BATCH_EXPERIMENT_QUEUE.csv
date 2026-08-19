@@ -1,0 +1,10 @@
+priority,experiment_id,experiment_name,data_line,input,current_status,what_it_answers
+1,E41A,OpenProblems Kaggle DGE smoke,PBMC chemical / cell type / SMILES,workflow_resources/neurips-2023-kaggle/de_train.h5ad + de_test.h5ad + prediction.h5ad,finished,独立小分子 benchmark 上，风险代理能不能提前找到高误差任务。
+2,E41B,Tahoe raw shard metadata audit,large-scale raw single-cell / drug / cell line / MoA / plate,Tahoe-100M raw complete shards,finished,Tahoe raw 已下载部分是否足以支持多维度分层实验。
+3,E42,sciplex3 cell-line holdout,chemical / dose / A549-K562-MCF7,official_generalization/sciplex3_A549/K562/MCF7.h5ad,queued,同一药物换细胞系时，SafeConf 是否能识别失败。
+4,E43,TCDD dose holdout,single compound / dose response / liver cell type,extra_official/cellular_context_generalization/TCDD.h5ad,queued,剂量变化是否造成预测误差和风险上升。
+5,E44,KaggleCrossPatient donor holdout,PBMC chemical / donor shift,extra_official/cellular_context_generalization/KaggleCrossPatient.h5ad,queued,不同供体/病人之间迁移是否是主要失败来源。
+6,E45,crossSpecies species holdout,species / LPS / time,extra_official/cellular_context_generalization/crossSpecies.h5ad,queued,强跨物种 domain shift 下风险信号是否仍有效。
+7,E46,Norman single-to-combo,genetic combination,official_generalization/Norman.h5ad,queued,单基因信息外推到组合扰动时，失败是否更集中。
+8,E47,Gasperini regulatory target holdout,regulatory / guide-level sparsity,official_scperturb/GasperiniShendure2019_*.h5ad,queued,调控元件/guide 标签稀疏是否让 SafeConf 的 support 项变重要。
+9,E48,Papalexi RNA-protein consistency,multimodal RNA + protein,PapalexiSatija2021_eccite_RNA/protein.h5ad,queued,RNA 层风险能否对应 protein 表型失败。

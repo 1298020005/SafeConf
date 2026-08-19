@@ -1,0 +1,5 @@
+dataset,metric,DEG,n_methods,n_perturbations,median_spearman,pct_methods_positive
+Frangieh,mse,20,15,74,0.009004806048877151,0.6
+Frangieh,mse,50,15,74,0.08352589324184528,0.8
+Frangieh,mse,100,15,74,0.21212930061326482,0.8666666666666667
+Frangieh,pearson_distance,5000,15,74,-0.42650020738045924,0.2

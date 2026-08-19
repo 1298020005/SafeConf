@@ -1,0 +1,11 @@
+{
+  "analysis_status": "post_hoc_diagnostic_not_part_of_preregistered_gate",
+  "n_methods": 15,
+  "median_partial_spearman_control_log_nstimulated": 0.3348975625109605,
+  "partial_ci_low": 0.0468979408718303,
+  "partial_ci_high": 0.53779170814567,
+  "n_methods_partial_positive": 15,
+  "pct_methods_partial_positive": 1.0,
+  "risk_vs_sample_size_risk_spearman": 0.5237629783631211,
+  "risk_vs_sample_size_risk_p_value": 1.6785256109197777e-06
+}

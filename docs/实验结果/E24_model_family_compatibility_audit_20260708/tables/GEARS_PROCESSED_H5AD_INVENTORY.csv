@@ -1,0 +1,5 @@
+dataset,processed_h5ad,exists,size_mb,has_split_files,n_split_files
+adamson,$YYF_DATA/gears_formal_baselines_v2/adamson_local_atlas/perturb_processed.h5ad,True,1629.401575088501,True,3
+dixit,$YYF_DATA/gears_formal_baselines_v2/dixit_local_atlas/perturb_processed.h5ad,True,1008.9512023925781,True,3
+frangieh,$YYF_DATA/gears_formal_baselines_v2/frangieh_local_atlas/perturb_processed.h5ad,True,1786.6847381591797,True,3
+norman,$YYF_DATA/gears_formal_baselines_v2/norman_local_atlas/perturb_processed.h5ad,True,2158.86399269104,True,3

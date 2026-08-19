@@ -1,0 +1,12 @@
+source_id,source_label,source_status,level,dataset_family,dataset_name,score_name,score_type,n,spearman_score_vs_rmse,direction_aligned_spearman,mean_rmse,risk_cov_improve_pct
+GEARS_FORMAL_54,Norman/Adamson/Dixit formal,formal_existing,dataset,gears_supplement,adamson,gears_prediction_magnitude_risk,risk,21,0.422077922077922,0.422077922077922,0.0420857965059223,0.8129601682359573
+GEARS_FORMAL_54,Norman/Adamson/Dixit formal,formal_existing,dataset,gears_supplement,dixit,gears_prediction_magnitude_risk,risk,3,0.5,0.5,0.4248406688372294,0.0
+GEARS_FORMAL_54,Norman/Adamson/Dixit formal,formal_existing,dataset,gears_supplement,norman,gears_prediction_magnitude_risk,risk,30,0.6235817575083425,0.6235817575083425,0.0558784635116656,7.609899113391433
+GEARS_FORMAL_54,Norman/Adamson/Dixit formal,formal_existing,family,gears_supplement,ALL,gears_prediction_magnitude_risk,risk,54,0.6239374880884314,0.6239374880884314,0.0710125488608523,
+GEARS_FORMAL_54,Norman/Adamson/Dixit formal,formal_existing,overall,ALL,ALL,gears_prediction_magnitude_risk,risk,54,0.6239374880884314,0.6239374880884314,0.0710125488608523,
+GEARS_FRANGIEH_62,Frangieh third-predictor run03,supplement_probe_existing,dataset,gears_supplement,frangieh,gears_prediction_magnitude_risk,risk,62,0.9411246254186496,0.9411246254186496,0.0383704710571515,12.817706791112128
+GEARS_FRANGIEH_62,Frangieh third-predictor run03,supplement_probe_existing,dataset,gears_supplement,frangieh,gears_uncertainty_confidence,confidence,62,0.2014303341643373,-0.2014303341643373,0.0383704710571515,1.0297741527145488
+GEARS_FRANGIEH_62,Frangieh third-predictor run03,supplement_probe_existing,family,gears_supplement,ALL,gears_prediction_magnitude_risk,risk,62,0.9411246254186496,0.9411246254186496,0.0383704710571515,
+GEARS_FRANGIEH_62,Frangieh third-predictor run03,supplement_probe_existing,family,gears_supplement,ALL,gears_uncertainty_confidence,confidence,62,0.2014303341643373,-0.2014303341643373,0.0383704710571515,
+GEARS_FRANGIEH_62,Frangieh third-predictor run03,supplement_probe_existing,overall,ALL,ALL,gears_prediction_magnitude_risk,risk,62,0.9411246254186496,0.9411246254186496,0.0383704710571515,
+GEARS_FRANGIEH_62,Frangieh third-predictor run03,supplement_probe_existing,overall,ALL,ALL,gears_uncertainty_confidence,confidence,62,0.2014303341643373,-0.2014303341643373,0.0383704710571515,

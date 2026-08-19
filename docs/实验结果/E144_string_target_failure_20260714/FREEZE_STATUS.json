@@ -1,0 +1,43 @@
+{
+  "experiment": "E144_string_target_failure",
+  "generated_at": "2026-07-14T06:49:48",
+  "status": "frozen_before_target_gene_truth_opened",
+  "n_datasets": 7,
+  "n_tasks": 3209,
+  "string_version": "12.0",
+  "string_combined_score_threshold": 700,
+  "string_info_url": "https://stringdb-downloads.org/download/protein.info.v12.0/9606.protein.info.v12.0.txt.gz",
+  "string_links_url": "https://stringdb-downloads.org/download/protein.links.v12.0/9606.protein.links.v12.0.txt.gz",
+  "string_info_sha256": "144de4b0d98c6a7dfde6ddc2591cf88657f27b989eadff4f501450c3ed1f0f1c",
+  "string_links_sha256": "3e22f32572211aa341d5b4bd08d30c32e693e294603202120936872f87719d4f",
+  "network_feature_snapshot_sha256": "d18fe8cc1d06d9499d2bac39712a0ae4a1f6794052b1fb20980fe1ea04c6f06a",
+  "manifest_sha256": {
+    "Frangieh": "8194ef3a2376d2c7377534f31189979acd9709fe90a7002cbe370f7cabe05cec",
+    "Lara_exvivo": "dd927ab638fad15575ad888f71c30b29ce13739c97da62bba59560ec71993137",
+    "Santinha": "dd927ab638fad15575ad888f71c30b29ce13739c97da62bba59560ec71993137",
+    "Shifrut": "05e4ef48edb7126b6efe41363b19036ee72761a2deaa46d7f96b0424890bf3bd",
+    "Liang": "41c1a201d8217f54627cf24b3ac96c17a105329e03182f9febb605d64d52078a",
+    "Tian_CRISPRi": "6810ec0e220cb1e0e97d7271903c9a2766847650d7d41c847368c06ec5dae0ee",
+    "Nadig_two_cellline": "d93195a173391ca98dc95c9a6a8576735561f48690cfcb1d5420ada00ae41dad"
+  },
+  "string_proteins": 19699,
+  "string_high_confidence_edges": 473860,
+  "string_symbols": 19699,
+  "primary_pair": [
+    "safeconf_calibrated_pair_risk",
+    "target_gene_absolute_error_mean"
+  ],
+  "supportive_pair": [
+    "string_distance_to_training_target",
+    "error_two_predictor_mean_rmse"
+  ],
+  "comparators": [
+    "baseline_predicted_magnitude",
+    "risk_model_disagreement"
+  ],
+  "bootstrap_unit": "dataset_then_perturbation_cluster_with_fold_macro",
+  "n_bootstrap": 3000,
+  "n_gene_label_permutations": 1000,
+  "saved_target_truth_vectors_opened": [],
+  "independence_note": "literature-motivated audit frozen after prior whole-vector analyses; not a new independent dataset"
+}

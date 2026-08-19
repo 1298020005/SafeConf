@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="620" viewBox="0 0 1180 620">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:Arial,"Noto Sans SC",sans-serif;fill:#202124}.title{font-size:25px;font-weight:700}.sub{font-size:14px;fill:#5f6368}.axis{stroke:#9aa0a6;stroke-width:1}.zero{stroke:#5f6368;stroke-width:1.5}.label{font-size:14px}.small{font-size:12px}</style>
+<text x="45" y="42" class="title">E133 · Systema-aware robustness audit</text>
+<text x="45" y="68" class="sub">Frozen six-dataset folds; training-only perturbed mean; no SafeConf refit</text>
+<line x1="75" y1="510" x2="685" y2="510" class="axis"/>
+<line x1="324.5454545454545" y1="105" x2="324.5454545454545" y2="510" class="zero"/>
+<text x="75" y="103" class="label" font-weight="700">A  SafeConf Spearman by dataset</text>
+<text x="75" y="120" class="small" font-weight="700">Pearson direction error</text>
+<circle cx="21.4" cy="144" r="4.5" fill="#3B6FB6"/><text x="29.4" y="148" class="small">Frangieh</text>
+<circle cx="416.7" cy="157" r="4.5" fill="#5B8E7D"/><text x="424.7" y="161" class="small">Lara_exvivo</text>
+<circle cx="385.0" cy="170" r="4.5" fill="#4D8796"/><text x="393.0" y="174" class="small">Liang</text>
+<circle cx="397.5" cy="183" r="4.5" fill="#A36A43"/><text x="405.5" y="187" class="small">Santinha</text>
+<circle cx="390.4" cy="196" r="4.5" fill="#7C6BAE"/><text x="398.4" y="200" class="small">Shifrut</text>
+<circle cx="208.1" cy="209" r="4.5" fill="#B15D62"/><text x="216.1" y="213" class="small">Tian_CRISPRi</text>
+<text x="75" y="235" class="small" font-weight="700">Cosine direction error</text>
+<circle cx="21.6" cy="259" r="4.5" fill="#3B6FB6"/><text x="29.6" y="263" class="small">Frangieh</text>
+<circle cx="416.3" cy="272" r="4.5" fill="#5B8E7D"/><text x="424.3" y="276" class="small">Lara_exvivo</text>
+<circle cx="385.0" cy="285" r="4.5" fill="#4D8796"/><text x="393.0" y="289" class="small">Liang</text>
+<circle cx="395.1" cy="298" r="4.5" fill="#A36A43"/><text x="403.1" y="302" class="small">Santinha</text>
+<circle cx="375.1" cy="311" r="4.5" fill="#7C6BAE"/><text x="383.1" y="315" class="small">Shifrut</text>
+<circle cx="249.4" cy="324" r="4.5" fill="#B15D62"/><text x="257.4" y="328" class="small">Tian_CRISPRi</text>
+<text x="75" y="350" class="small" font-weight="700">Excess RMSE vs simple mean</text>
+<circle cx="6.4" cy="374" r="4.5" fill="#3B6FB6"/><text x="14.4" y="378" class="small">Frangieh</text>
+<circle cx="286.0" cy="387" r="4.5" fill="#5B8E7D"/><text x="294.0" y="391" class="small">Lara_exvivo</text>
+<circle cx="352.5" cy="400" r="4.5" fill="#4D8796"/><text x="360.5" y="404" class="small">Liang</text>
+<circle cx="407.8" cy="413" r="4.5" fill="#A36A43"/><text x="415.8" y="417" class="small">Santinha</text>
+<circle cx="358.8" cy="426" r="4.5" fill="#7C6BAE"/><text x="366.8" y="430" class="small">Shifrut</text>
+<circle cx="361.2" cy="439" r="4.5" fill="#B15D62"/><text x="369.2" y="443" class="small">Tian_CRISPRi</text>
+<text x="102.7" y="534" class="small" text-anchor="middle">-0.4</text>
+<text x="213.6" y="534" class="small" text-anchor="middle">-0.2</text>
+<text x="324.5" y="534" class="small" text-anchor="middle">0.0</text>
+<text x="435.5" y="534" class="small" text-anchor="middle">0.2</text>
+<text x="546.4" y="534" class="small" text-anchor="middle">0.4</text>
+<text x="657.3" y="534" class="small" text-anchor="middle">0.6</text>
+<text x="760" y="103" class="label" font-weight="700">B  Ensemble advantage over simple mean</text>
+<text x="760" y="123" class="small">positive bar = ensemble has lower RMSE</text>
+<line x1="935.0" y1="145" x2="935.0" y2="470" class="zero"/>
+<text x="760" y="169" class="small">Frangieh</text><rect x="935.0" y="155" width="44.4" height="18" fill="#3B6FB6" opacity="0.82"/><text x="985.4" y="169" class="small" text-anchor="start">0.094</text>
+<text x="760" y="217" class="small">Lara_exvivo</text><rect x="935.0" y="203" width="62.1" height="18" fill="#5B8E7D" opacity="0.82"/><text x="1003.1" y="217" class="small" text-anchor="start">0.131</text>
+<text x="760" y="265" class="small">Liang</text><rect x="935.0" y="251" width="91.4" height="18" fill="#4D8796" opacity="0.82"/><text x="1032.4" y="265" class="small" text-anchor="start">0.193</text>
+<text x="760" y="313" class="small">Santinha</text><rect x="935.0" y="299" width="175.0" height="18" fill="#A36A43" opacity="0.82"/><text x="1116.0" y="313" class="small" text-anchor="start">0.370</text>
+<text x="760" y="361" class="small">Shifrut</text><rect x="935.0" y="347" width="100.3" height="18" fill="#7C6BAE" opacity="0.82"/><text x="1041.3" y="361" class="small" text-anchor="start">0.212</text>
+<text x="760" y="409" class="small">Tian_CRISPRi</text><rect x="930.4" y="395" width="4.6" height="18" fill="#B15D62" opacity="0.82"/><text x="924.4" y="409" class="small" text-anchor="end">-0.010</text>
+<text x="45" y="585" class="sub">Reference-sensitive direction metrics complement RMSE; they do not replace the preregistered primary endpoint.</text>
+</svg>

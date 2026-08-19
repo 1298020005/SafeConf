@@ -1,0 +1,14 @@
+{
+  "experiment": "E111_target_specific_mechanism_audit",
+  "generated_at": "2026-07-13T10:59:45",
+  "status": "complete",
+  "n_test_rows": 837,
+  "targets": [
+    "error_two_predictor_mean_rmse",
+    "error_two_predictor_max_rmse",
+    "error_gears_rmse",
+    "error_scgpt_rmse"
+  ],
+  "analysis_role": "pre-specified secondary targets from earlier E98 protocol; mechanism audit, not replacement primary endpoint",
+  "test_truth_used_to_change_score": false
+}

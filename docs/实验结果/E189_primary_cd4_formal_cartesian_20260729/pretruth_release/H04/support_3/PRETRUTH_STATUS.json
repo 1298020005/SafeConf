@@ -1,0 +1,30 @@
+{
+  "code_freeze_remote_heads": {
+    "github": "cb92a4535feb1b075305a1271e62b56b6862be65",
+    "origin": "cb92a4535feb1b075305a1271e62b56b6862be65"
+  },
+  "cuda_version": "11.8",
+  "device": "cuda:1",
+  "evaluation_truth_files_read": 0,
+  "experiment": "E189",
+  "git_branch": "exp/task-risk-audit-20260611",
+  "git_head": "cb92a4535feb1b075305a1271e62b56b6862be65",
+  "model_family_members": [
+    "GEARS_seed3407",
+    "GEARS_seed3408",
+    "GEARS_seed3409",
+    "scGPT_seed3407",
+    "scGPT_seed3408",
+    "scGPT_seed3409"
+  ],
+  "n_query_tasks": 840,
+  "n_train_tasks": 360,
+  "n_validation_tasks": 360,
+  "panel_id": "H04",
+  "query_graphs_containing_y": 0,
+  "stage": "PRETRUTH_PREDICTION",
+  "status": "PASS",
+  "support_contexts_per_seen_perturbation": 3,
+  "torch_version": "2.1.2+cu118",
+  "wall_seconds": 110.49384665489197
+}

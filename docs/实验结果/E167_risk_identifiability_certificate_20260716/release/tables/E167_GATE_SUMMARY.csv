@@ -1,0 +1,9 @@
+check,passed
+real_collapse_detection,True
+real_noncollapsed_reference_retention,False
+synthetic_constant_and_jitter_detection,True
+synthetic_prediction_collapse_detection,True
+synthetic_magnitude_clone_equivalence,True
+synthetic_magnitude_clone_aurc_identity,True
+wessels_replicate_instability_detected,True
+no_truth_gate_override,True

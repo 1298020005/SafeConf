@@ -1,0 +1,7 @@
+{
+  "phase": "failed_preserve_staging_no_overwrite",
+  "error": "RuntimeError('train 20,639-RNA-feature library differs from obs[ncounts]: 4.0')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/yyf/proj/tools/scripts/run_e161_wessels_trainval_preprocess.py\", line 2118, in main\n    formal(args.recover_staging)\n  File \"/home/yyf/proj/tools/scripts/run_e161_wessels_trainval_preprocess.py\", line 1893, in formal\n    normalize_with_full_library(\n  File \"/home/yyf/proj/tools/scripts/run_e161_wessels_trainval_preprocess.py\", line 603, in normalize_with_full_library\n    raise RuntimeError(\nRuntimeError: train 20,639-RNA-feature library differs from obs[ncounts]: 4.0\n",
+  "asset_staging": "/home/yyf/data/safeconf_e161_prescribe/.wessels_e160.staging",
+  "repo_staging": "/home/yyf/proj/docs/实验结果/E161_wessels_trainval_preprocess_20260714/.release.staging"
+}

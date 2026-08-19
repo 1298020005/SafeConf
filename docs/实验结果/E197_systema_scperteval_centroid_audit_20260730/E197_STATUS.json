@@ -1,0 +1,35 @@
+{
+  "experiment": "E197_systema_scperteval_centroid_audit",
+  "generated_at": "2026-08-01T23:09:36+08:00",
+  "status": "COMPLETE_POSTTRUTH_EXPLORATORY",
+  "analysis_class": "POSTTRUTH_EXPLORATORY",
+  "formal_git_head": "1315905fe560f3b9714d5eaa99e320123d082f83",
+  "n_settings": 2,
+  "n_tasks": 867,
+  "n_setting_tasks": 867,
+  "n_predictors": 12,
+  "n_systema_task_rows": 10404,
+  "n_scperteval_rows": 4896,
+  "n_systema_gene_centroid_rows": 1632,
+  "scperteval_protocols": [
+    "pearson",
+    "pearson_ctrl",
+    "pearson_pert",
+    "mse",
+    "rank",
+    "transpose_rank"
+  ],
+  "scperteval_commit": "8709eb07a0e7d4ecf1c60c977f2018690a749975",
+  "systema_commit": "aaf5b5353993b48b78543f2f93b3e18ca65df515",
+  "bootstrap_unit": "target_gene",
+  "bootstrap_draws": 5000,
+  "association_estimands": [
+    "task_weighted_gene_cluster_bootstrap",
+    "gene_equal"
+  ],
+  "formal_gates_passed": 47,
+  "formal_gates_total": 47,
+  "population_or_de_protocols_run": false,
+  "prediction_cells_fabricated": false,
+  "changes_E190_or_E192_gate": false
+}

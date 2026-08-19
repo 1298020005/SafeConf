@@ -1,0 +1,5 @@
+method,method_label,n_targets,n_tasks,targets_all_guides_covered,target_simultaneous_coverage,exact_binomial_ci95_lower,exact_binomial_ci95_upper,task_marginal_coverage,mean_upper,median_upper,mean_width_above_pair_lower,selected_primary_method
+constant,Constant,27,73,27,1,0.87229713238456763,1,1,0.21680902990693987,0.2168090299069399,0.20421744608625148,False
+predicted_magnitude,Magnitude,27,73,27,1,0.87229713238456763,1,1,0.21787853879102526,0.21779035745776931,0.20528695497033683,False
+magnitude_plus_pair_lower,Magnitude + lower,27,73,27,1,0.87229713238456763,1,1,0.2178875727385976,0.21779035745776931,0.20529598891790921,False
+extra_trees_vector,ExtraTrees,27,73,27,1,0.87229713238456763,1,1,0.23146740419096629,0.23218637769551251,0.21887582037027781,True

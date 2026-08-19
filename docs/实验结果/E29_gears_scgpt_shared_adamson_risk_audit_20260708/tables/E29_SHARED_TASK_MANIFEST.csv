@@ -1,0 +1,8 @@
+fold_id,perturbation,perturbation_gene,record_id,predicted_effect_key,scgpt_cells,shared_gene_count
+1,CCND3+ctrl,CCND3,GEARS::adamson::seed1::single::CCND3+ctrl,GEARS::adamson::seed1::single::CCND3+ctrl::pred,8,512
+1,DAD1+ctrl,DAD1,GEARS::adamson::seed1::single::DAD1+ctrl,GEARS::adamson::seed1::single::DAD1+ctrl::pred,8,512
+1,DERL2+ctrl,DERL2,GEARS::adamson::seed1::single::DERL2+ctrl,GEARS::adamson::seed1::single::DERL2+ctrl::pred,8,512
+1,NEDD8+ctrl,NEDD8,GEARS::adamson::seed1::single::NEDD8+ctrl,GEARS::adamson::seed1::single::NEDD8+ctrl::pred,8,512
+1,TIMM23+ctrl,TIMM23,GEARS::adamson::seed1::single::TIMM23+ctrl,GEARS::adamson::seed1::single::TIMM23+ctrl::pred,8,512
+1,UFM1+ctrl,UFM1,GEARS::adamson::seed1::single::UFM1+ctrl,GEARS::adamson::seed1::single::UFM1+ctrl::pred,8,512
+1,YIPF5+ctrl,YIPF5,GEARS::adamson::seed1::single::YIPF5+ctrl,GEARS::adamson::seed1::single::YIPF5+ctrl::pred,8,512

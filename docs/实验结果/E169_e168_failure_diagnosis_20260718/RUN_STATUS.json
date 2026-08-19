@@ -1,0 +1,22 @@
+{
+  "schema": "safeconf_e169_failure_diagnosis_v1",
+  "experiment": "E169_e168_failure_diagnosis",
+  "status": "COMPLETE",
+  "e168_primary_decision_unchanged": "NO_CONFIRMATION",
+  "analysis_role": "post_unseal_diagnostic",
+  "score_or_threshold_refit_on_e168_test": false,
+  "frozen_direction_model_refit": false,
+  "n_test_tasks": 600,
+  "n_direction_bootstrap_draws": 3000,
+  "safeconf_collapses_to_disagreement_within_seen_and_unseen_strata": true,
+  "input_audit": {
+    "pretruth_bound_files": 13,
+    "postgate_bound_files": 16,
+    "gate_commit": "270ed9556887ed187d469d3e78e976a48a235f6a",
+    "gate_snapshot_sha256": "aaba6bffc0789a82360a7016eb921379a4a35dd7693c826d4e11f4f78881188e",
+    "f2_manifest_sha256": "10e84e09881f7d085f328c6dd3db7ac2cd4cadbf73191546ed5c84b1dcfa2c2f",
+    "f3_manifest_sha256": "e47ea65e04e48d4a6d31bb7d35bb6d596e00191796b62ed765259a3175219800",
+    "prediction_record_contract_issues": []
+  },
+  "deployment_authorized": false
+}

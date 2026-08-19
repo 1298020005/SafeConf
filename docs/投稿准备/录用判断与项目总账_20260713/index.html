@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SafeConf｜录用判断与项目总账</title>
+  <style>
+    :root{--ink:#17232c;--muted:#5e6b73;--line:#dce4e7;--soft:#f5f8f8;--blue:#315f78;--teal:#377f78;--gold:#a67828;--red:#a54b43;--green:#477a57;--shadow:0 10px 28px rgba(23,35,44,.07)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:#fff;font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans SC","Microsoft YaHei",sans-serif}
+    a{color:var(--blue);text-decoration:none;border-bottom:1px solid #adc3cf}a:hover{color:#153f56;border-color:#153f56}
+    .layout{display:grid;grid-template-columns:250px minmax(0,1fr);min-height:100vh}.side{position:sticky;top:0;height:100vh;padding:34px 25px;border-right:1px solid var(--line);background:#fff;overflow:auto}.brand{font:700 22px/1.25 Georgia,"Noto Serif SC",serif;letter-spacing:.2px}.date{margin:8px 0 28px;color:var(--muted);font-size:13px}.side a{display:block;padding:8px 0;border:0;color:#46545c;font-size:14px}.side a:hover{color:var(--teal);transform:translateX(2px)}
+    main{width:min(1120px,100%);padding:58px 56px 110px}.eyebrow{color:var(--teal);font-weight:750;letter-spacing:.12em;font-size:13px}.hero h1{max-width:900px;margin:9px 0 18px;font:700 clamp(34px,5vw,62px)/1.12 Georgia,"Noto Serif SC",serif;letter-spacing:-.03em}.hero p{max-width:890px;color:#435159;font-size:20px}.verdict{margin:38px 0 58px;padding:26px 30px;border:1px solid #bfd0cd;border-left:6px solid var(--teal);background:#fff;box-shadow:var(--shadow);font-size:19px}.verdict b{color:#205b56}
+    section{scroll-margin-top:24px;margin:72px 0}.num{color:var(--gold);font:700 14px/1 Georgia,serif;letter-spacing:.1em}h2{margin:8px 0 24px;font:700 33px/1.25 Georgia,"Noto Serif SC",serif}h3{margin:30px 0 13px;font-size:20px}.lead{max-width:900px;color:#4d5a61;font-size:18px}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}.card{grid-column:span 4;padding:22px;border:1px solid var(--line);background:#fff;border-radius:3px}.card.wide{grid-column:span 6}.card.full{grid-column:1/-1}.card h3{margin:0 0 9px}.card p{margin:0;color:#536169}.tag{display:inline-block;margin-bottom:12px;padding:3px 9px;border:1px solid currentColor;border-radius:20px;font-size:12px;font-weight:700}.done{color:var(--green)}.open{color:var(--gold)}.limit{color:var(--red)}
+    .qa{margin:18px 0;border-top:1px solid var(--line)}.qa article{display:grid;grid-template-columns:210px minmax(0,1fr) 118px;gap:25px;padding:24px 0;border-bottom:1px solid var(--line)}.q{font-weight:750}.answer{color:#34434b}.proof{font-size:13px}.proof a{display:block;margin-bottom:5px}
+    .flow{display:flex;align-items:stretch;gap:8px;margin:30px 0;overflow-x:auto;padding:4px}.node{min-width:155px;flex:1;padding:19px 15px;border:1px solid var(--line);background:#fff;text-align:center;box-shadow:0 4px 13px rgba(23,35,44,.04)}.node strong{display:block;margin-bottom:6px}.node small{color:var(--muted)}.arrow{align-self:center;color:var(--teal);font-size:24px;font-weight:700}.node.freeze{border-color:#83aaa4;background:#f8fbfa}.node.truth{border-color:#d4bd91;background:#fffdf8}
+    table{width:100%;border-collapse:collapse;margin:22px 0;font-size:14px}th,td{padding:13px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}th{color:#42515a;background:var(--soft);font-weight:750}td.numv{font-variant-numeric:tabular-nums;font-weight:700}.good{color:var(--green)}.weak{color:var(--red)}
+    .bars{padding:25px;border:1px solid var(--line)}.barrow{display:grid;grid-template-columns:130px 1fr 55px;gap:12px;align-items:center;margin:13px 0}.track{height:13px;background:#edf1f2}.fill{height:100%;background:var(--teal)}.fill.base{background:#97a6ad}.fill.weak{background:#c08b84}.note{padding:14px 18px;border-left:3px solid var(--gold);background:#fffaf1;color:#5e5545}
+    .funnel{margin:30px auto;max-width:920px}.gate{position:relative;display:grid;grid-template-columns:145px minmax(0,1fr) 170px;gap:20px;align-items:center;margin:0 auto 10px;padding:16px 22px;border:1px solid var(--line);background:#fff}.gate:nth-child(1){width:100%}.gate:nth-child(2){width:92%}.gate:nth-child(3){width:84%}.gate:nth-child(4){width:76%}.gate:nth-child(5){width:68%}.gate .gnum{font-weight:800;color:var(--blue)}.gate .fail{color:var(--red);font-size:13px;text-align:right}.gate:last-child{border-color:#85a58d;background:#fbfdfb}
+    .riskmap article{display:grid;grid-template-columns:250px 100px minmax(0,1fr);gap:18px;align-items:start;padding:18px 0;border-bottom:1px solid var(--line)}.state{text-align:center;padding:3px 9px;border-radius:20px;font-size:12px;border:1px solid currentColor}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}.column{padding:24px;border:1px solid var(--line)}.column h3{margin-top:0}.column li{margin:9px 0}
+    .journal{padding:26px;border-top:4px solid var(--blue);box-shadow:var(--shadow)}.journal.methods{border-color:var(--gold)}.journal .fit{margin:18px 0 0;padding-top:14px;border-top:1px solid var(--line);font-weight:700}.road article{display:grid;grid-template-columns:46px 210px minmax(0,1fr);gap:15px;padding:17px 0;border-bottom:1px solid var(--line)}.road .rank{width:36px;height:36px;display:grid;place-items:center;border:1px solid var(--teal);border-radius:50%;color:var(--teal);font-weight:800}.glossary{columns:2;column-gap:36px}.term{break-inside:avoid;margin:0 0 14px;padding:0 0 14px;border-bottom:1px solid var(--line)}.term b{display:block;color:#284b5e}.footer{margin-top:80px;padding-top:25px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}.top{position:fixed;right:24px;bottom:20px;width:42px;height:42px;display:grid;place-items:center;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow);border-radius:50%}
+    @media(max-width:900px){.layout{display:block}.side{position:relative;width:auto;height:auto;border-right:0;border-bottom:1px solid var(--line)}.side nav{columns:2}.side a{break-inside:avoid}main{padding:38px 22px 80px}.card,.card.wide{grid-column:1/-1}.qa article,.riskmap article{grid-template-columns:1fr}.gate{width:100%!important;grid-template-columns:90px 1fr}.gate .fail{grid-column:2;text-align:left}.two-col{grid-template-columns:1fr}.glossary{columns:1}.flow{align-items:stretch}.arrow{transform:rotate(0deg)}}
+    @media print{.side,.top{display:none}.layout{display:block}main{width:100%;padding:0}.card,.journal,.verdict{box-shadow:none}section{break-inside:avoid}}
+  </style>
+</head>
+<body id="top">
+<div class="layout">
+  <aside class="side">
+    <div class="brand">SafeConf<br>证据与录用判断</div>
+    <div class="date">CURRENT LEDGER · 2026-07-14</div>
+    <nav>
+      <a href="#verdict">01 严肃结论</a><a href="#advisor">02 老师问题逐项回答</a><a href="#contract">03 实验合同</a><a href="#evidence">04 当前主证据</a><a href="#limits">05 结果边界</a><a href="#why">06 为什么不能保证录用</a><a href="#review">07 审稿风险</a><a href="#control">08 可控与不可控</a><a href="#journals">09 期刊门槛示例</a><a href="#position">10 当前定位</a><a href="#next">11 下一步</a><a href="#terms">12 名词解释</a><a href="#files">13 证据入口</a>
+    </nav>
+  </aside>
+  <main>
+    <header class="hero">
+      <div class="eyebrow">PROJECT AUDIT / PUBLICATION READINESS</div>
+      <h1>实验闭环以后，为什么仍不能承诺期刊录用？</h1>
+      <p>把周老师的每个追问、七套正式数据、两类误差风险、失败复制和投稿风险放到同一张账上。这里不估算虚假的“录用概率”，只说明已经解决什么、哪些边界经实验仍然存在。</p>
+    </header>
+
+    <div id="verdict" class="verdict"><b>当前判断：</b>七套正式 scGPT–GEARS 数据、32 个 folds 和 3,209 个测试任务形成较强二区投稿主干。原 SafeConf 的 absolute RMSE 排序稳定超过 disagreement，但相对 magnitude 的七数据区间跨 0；Directional-SafeConf 已在冻结后的 Nadig 第七数据确认通过。可以投稿和冲击一区，不能承诺“稳定录用二区”。</div>
+
+    <section id="advisor">
+      <div class="num">01 / ADVISOR QUESTIONS</div><h2>周老师的问题，逐项回答</h2>
+      <p class="lead">老师关心的不是“数据够不够多”这一句话，而是预测错误来自谁、输入有没有偷看真值、容易和困难的缺失方式是否分开、结论能否跨背景和数据集成立。</p>
+      <div class="qa">
+        <article><div class="q">风险分数和什么相关？</div><div class="answer">主终点是每个任务上 scGPT 与 GEARS 的平均预测 RMSE；另报告最大 RMSE 和模型别 RMSE。风险先冻结，测试真实表达后解封。</div><div class="proof"><a href="../../实验结果/E108_formal_dual_model_risk_audit_20260713/reports/E108_REPORT.md">E108 主审计</a><a href="../../实验结果/E111_target_specific_mechanism_audit_20260713/reports/E111_REPORT.md">E111 模型别误差</a></div></article>
+        <article><div class="q">实际错误来自什么模型？</div><div class="answer">来自按外层 fold 正式训练的 scGPT 与 GEARS。scGPT 加载 whole-human 权重再微调；GEARS 的共表达图只读训练背景 control。</div><div class="proof"><a href="../../实验结果/E106_frangieh_context_scgpt_20260713/E106_REPORT.md">E106 scGPT</a><a href="../../实验结果/E107_frangieh_context_gears_20260713/E107_REPORT.md">E107 GEARS</a></div></article>
+        <article><div class="q">未见组合输入什么？</div><div class="answer">目标背景的未扰动 control 表达、扰动标签和训练子矩阵。目标 pair 的受扰动表达不进入预测器，也不进入 SafeConf。</div><div class="proof"><a href="../../实验结果/E97_frangieh_gene_cartesian_contract_20260713/reports/E97_CONTRACT_REPORT.md">E97 冻结合同</a></div></article>
+        <article><div class="q">随机挖 pair 是否太容易？</div><div class="answer">正式测试拆为随机缺失 pair、整行新背景、整列新扰动、背景与扰动双未见。四种 setting 单独报告，不用随机缺失代表全部泛化。</div><div class="proof"><a href="../../实验结果/E108_formal_dual_model_risk_audit_20260713/reports/E108_REPORT.md">E108 Frangieh</a><a href="../../实验结果/E112_external_formal_dual_models_20260713/E112_REPORT.md">E112 外部复制</a></div></article>
+        <article><div class="q">训练矩阵很小时怎样？</div><div class="answer">25%、50%、75%、100% 嵌套子矩阵已冻结并测试。正式主证据使用完整训练量，小矩阵作为压力测试保留。</div><div class="proof"><a href="../../实验结果/E98_frangieh_gene_cartesian_predictions_20260713/reports/E98_REPORT.md">E98 敏感性</a></div></article>
+        <article><div class="q">能否跨行、跨列、跨数据集？</div><div class="answer">七套正式数据、32 个 context-holdout folds、3,209 个测试任务；每折另有约 20% 扰动整列留出和双未见任务。Nadig 增加 HepG2/Jurkat 跨细胞系确认。</div><div class="proof"><a href="../../实验结果/E140_formal_seven_dataset_meta_20260714/reports/E140_REPORT.md">E140 七数据元分析</a></div></article>
+        <article><div class="q">RMSE 是否过于单一？</div><div class="answer">已按 Systema 的训练受扰动表达质心增加 Pearson/cosine 方向误差。原 SafeConf 不适合直接排序方向误差；新方向风险头冻结后在 Nadig 确认通过。</div><div class="proof"><a href="../../实验结果/E139_nadig_directional_confirmation_20260714/reports/E139_REPORT.md">E139 第七数据确认</a></div></article>
+        <article><div class="q">能否节约复核预算？</div><div class="answer">六数据集 normalized AURC 稳定优于 disagreement；top-20% 错误捕获点估计更高，但区间仍跨 0，不能承诺固定预算收益。</div><div class="proof"><a href="../../实验结果/E132_six_dataset_triage_utility_20260714/reports/E132_REPORT.md">E132 分诊效用</a></div></article>
+        <article><div class="q">分歧是不是依赖模型？</div><div class="answer">是。SafeConf 对 GEARS 误差排序较强，对 scGPT 误差证据弱。论文对象必须写成“预测器/任务级风险”，不能写通用置信度。</div><div class="proof"><a href="../../实验结果/E111_target_specific_mechanism_audit_20260713/reports/E111_REPORT.md">E111 机制审计</a></div></article>
+        <article><div class="q">有没有风险保证？</div><div class="answer">E114 的 90% split-conformal 上界经验覆盖 98.0%，但偏宽；E117 收紧后覆盖降到 72.6%，已经否决。</div><div class="proof"><a href="../../实验结果/E114_split_conformal_error_bounds_20260713/reports/E114_REPORT.md">E114 保守上界</a><a href="../../实验结果/E117_shift_aware_conformal_20260713/reports/E117_REPORT.md">E117 失败紧化</a></div></article>
+      </div>
+      <div class="note">老师说“三个设置解决后可以写一个小文章”，说明研究问题达到了可写作的最低闭环。原话没有指定期刊、新颖性门槛或审稿结果，不能扩写成“期刊一定接收”。</div>
+    </section>
+
+    <section id="contract">
+      <div class="num">02 / DATA CONTRACT</div><h2>真值何时出现：这是整条证据链的地基</h2>
+      <div class="flow">
+        <div class="node"><strong>训练子矩阵</strong><small>只含训练 pair</small></div><div class="arrow">→</div>
+        <div class="node"><strong>同背景 control</strong><small>目标背景的未扰动状态</small></div><div class="arrow">→</div>
+        <div class="node"><strong>scGPT + GEARS</strong><small>正式预测效应</small></div><div class="arrow">→</div>
+        <div class="node freeze"><strong>冻结 SafeConf</strong><small>相似度、支持度、分歧</small></div><div class="arrow">→</div>
+        <div class="node truth"><strong>解封测试真值</strong><small>只用于算 RMSE 与评价</small></div>
+      </div>
+      <div class="grid">
+        <div class="card"><span class="tag done">已完成</span><h3>预测合同</h3><p>6,418 条正式 PredictionRecord 通过严格来源、基因顺序、真值键和拆分互斥检查。</p></div>
+        <div class="card"><span class="tag done">已完成</span><h3>困难设置</h3><p>随机 pair、整行、整列、行列双未见分别报告，不用容易设置遮盖困难设置。</p></div>
+        <div class="card"><span class="tag limit">必须限定</span><h3>可交换性</h3><p>conformal 理论依赖校准任务与未来任务可交换；row/column shift 只做经验压力测试。</p></div>
+      </div>
+    </section>
+
+    <section id="evidence">
+      <div class="num">03 / MAIN EVIDENCE</div><h2>七数据 absolute 与第七数据 direction 分开结算</h2>
+      <table><thead><tr><th>数据集</th><th>SafeConf ρ</th><th>预测幅度 ρ</th><th>模型分歧 ρ</th><th>结论</th></tr></thead><tbody>
+        <tr><td>Frangieh</td><td class="numv">0.253</td><td>0.148</td><td>0.137</td><td>正相关；单数据集增量 CI 跨 0</td></tr>
+        <tr><td>Lara ex vivo</td><td class="numv good">0.387</td><td>0.148</td><td>0.176</td><td>外部复制最强</td></tr>
+        <tr><td>Santinha</td><td class="numv weak">0.065</td><td>-0.089</td><td>-0.127</td><td>弱信号；保留为失败边界</td></tr>
+        <tr><td>Shifrut</td><td class="numv">0.173</td><td>0.209</td><td>0.051</td><td>未超过 magnitude，保留</td></tr>
+        <tr><td>Liang</td><td class="numv good">0.212</td><td>0.074</td><td>0.075</td><td>新的正复制</td></tr>
+        <tr><td>Tian CRISPRi</td><td class="numv">0.134</td><td>0.067</td><td>-0.018</td><td>技术批次偏移；第 4 fold 为负</td></tr>
+        <tr><td>Nadig HepG2/Jurkat</td><td class="numv weak">0.231</td><td>0.403</td><td>0.230</td><td>absolute 上 magnitude 更强</td></tr>
+        <tr><td>七数据集 Δ vs magnitude</td><td class="numv">+0.071</td><td colspan="2">dataset-population 95% CI [-0.056, 0.186]</td><td>点估计为正，区间跨 0</td></tr>
+        <tr><td>七数据集 Δ vs disagreement</td><td class="numv good">+0.133</td><td colspan="2">dataset-population 95% CI [0.045, 0.223]</td><td>区间为正</td></tr>
+        <tr><td>Directional-SafeConf / Nadig</td><td class="numv good">0.748</td><td>0.280</td><td>0.122</td><td>Pearson 方向误差；预注册确认通过</td></tr>
+      </tbody></table>
+      <div class="bars">
+        <div class="barrow"><span>Frangieh</span><div class="track"><div class="fill" style="width:65%"></div></div><b>0.253</b></div>
+        <div class="barrow"><span>Lara ex vivo</span><div class="track"><div class="fill" style="width:100%"></div></div><b>0.387</b></div>
+        <div class="barrow"><span>Santinha</span><div class="track"><div class="fill weak" style="width:17%"></div></div><b>0.065</b></div>
+        <div class="barrow"><span>Shifrut</span><div class="track"><div class="fill" style="width:45%"></div></div><b>0.173</b></div>
+        <div class="barrow"><span>Liang</span><div class="track"><div class="fill" style="width:55%"></div></div><b>0.212</b></div>
+        <div class="barrow"><span>Tian CRISPRi</span><div class="track"><div class="fill" style="width:35%"></div></div><b>0.134</b></div>
+      </div>
+      <p class="note">absolute RMSE 上只对 disagreement 形成稳定总体增量；相对 magnitude 仍有边界。方向误差由单独冻结的风险头负责，Nadig 复合方向终点 bootstrap 95% CI 为 [0.693, 0.801]。</p>
+    </section>
+
+    <section id="limits">
+      <div class="num">04 / WHAT THE METHOD ACTUALLY DOES</div><h2>它更擅长筛 GEARS 风险，不是模型无关的万能置信度</h2>
+      <table><thead><tr><th>误差目标</th><th>SafeConf ρ</th><th>相对 magnitude 的证据</th><th>解释</th></tr></thead><tbody>
+        <tr><td>GEARS RMSE</td><td class="numv good">0.397</td><td>Δ=0.143；95% CI [0.007, 0.275]</td><td>正式正增量</td></tr>
+        <tr><td>scGPT RMSE</td><td class="numv">0.071</td><td>Δ=0.070；95% CI [-0.082, 0.243]</td><td>证据不足</td></tr>
+        <tr><td>双模型最大 RMSE</td><td class="numv">0.364</td><td>Δ=0.120；95% CI [-0.012, 0.248]</td><td>正趋势，区间跨 0</td></tr>
+        <tr><td>双模型平均 RMSE</td><td class="numv">0.208</td><td>七数据 Δ vs magnitude=0.071；CI 跨 0</td><td>对 disagreement 稳定，对 magnitude 不稳定</td></tr>
+      </tbody></table>
+      <div class="grid">
+        <div class="card wide"><span class="tag limit">负结果</span><h3>E110 内层困难设置校准</h3><p>pooled ρ=0.176，低于主方案 0.253。没有删除，也没有为了提高结果临时替换主方法。</p></div>
+        <div class="card wide"><span class="tag open">保守上界</span><h3>E114 split-conformal</h3><p>名义覆盖 90%，经验覆盖 98.0%；平均上界 0.1014，真实平均误差 0.0546。能兜底，仍偏宽。</p></div>
+        <div class="card wide"><span class="tag done">机制线索</span><h3>E116 背景新颖度</h3><p>背景新颖度与 GEARS−scGPT 额外误差的宏平均 ρ=0.195；通路富集未显著，不写因果机制。</p></div>
+        <div class="card wide"><span class="tag limit">负结果</span><h3>E117 紧上界</h3><p>平均上界收紧到 0.0631，覆盖却降至 72.6%，低于名义 90%，不能替换 E114。</p></div>
+        <div class="card wide"><span class="tag limit">模态边界</span><h3>E118 chemical</h3><p>CPA chemical 中 disagreement ρ=0.811，magnitude ρ=0.842；现有分歧没有独立增量。</p></div>
+        <div class="card wide"><span class="tag limit">确认失败</span><h3>E130 高错误路由器</h3><p>合同与模型先提交再解封 Tian；新分类器没有超过原 SafeConf，因此不替换主方法。</p></div>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="num">05 / EDITORIAL FUNNEL</div><h2>为什么实验通过，仍可能被拒</h2>
+      <p class="lead">期刊决定不是“指标达到阈值就自动接收”。每一道关口回答的问题不同，其中一部分是独立专业判断。</p>
+      <div class="funnel">
+        <div class="gate"><div class="gnum">01 范围</div><div>主题、文章类型、读者是否匹配期刊</div><div class="fail">不匹配可直接退稿</div></div>
+        <div class="gate"><div class="gnum">02 编辑初筛</div><div>新颖性、优先级、完整度是否值得送审</div><div class="fail">没有统一量化阈值</div></div>
+        <div class="gate"><div class="gnum">03 同行评审</div><div>方法、基线、统计、解释、复现是否可信</div><div class="fail">专家可以有不同判断</div></div>
+        <div class="gate"><div class="gnum">04 修回</div><div>能否逐条补实验、改主张、澄清争议</div><div class="fail">大修后仍可拒稿</div></div>
+        <div class="gate"><div class="gnum">05 决定</div><div>编辑综合稿件与评审意见作出决定</div><div class="fail">接收不是代码输出</div></div>
+      </div>
+      <div class="note">“一区/二区”是期刊在某套评价体系、某个年份和学科中的相对位置，不是投稿系统的及格线；分区变化也不受作者控制。</div>
+    </section>
+
+    <section id="review">
+      <div class="num">06 / PROJECT-SPECIFIC REVIEW RISKS</div><h2>放到 SafeConf 身上，最可能被追问什么</h2>
+      <div class="riskmap">
+        <article><b>方法新颖性是否足够</b><span class="state open">仍有判断空间</span><div>正式风险层、任务合同、元分析和 conformal 构成完整方法；高门槛期刊仍可能把它视为可靠性协议，而非重大算法突破。</div></article>
+        <article><b>是否适用于所有预测器</b><span class="state limit">不能泛化</span><div>GEARS 证据强、scGPT 证据弱。限定为预测器/任务级风险路由，能守住结论。</div></article>
+        <article><b>跨数据集是否稳定</b><span class="state open">分指标回答</span><div>absolute 对 disagreement 稳定，对 magnitude 的七数据 CI 跨 0；方向风险在冻结后的第七数据确认通过。</div></article>
+        <article><b>是否带来实际筛选收益</b><span class="state open">部分闭环</span><div>AURC 相对 disagreement 稳定改善；固定 top-20% 捕获增益仍未稳定。</div></article>
+        <article><b>上界是否够紧</b><span class="state open">偏保守</span><div>98.0% 经验覆盖可靠，但平均上界为真实平均误差的 1.86 倍。</div></article>
+        <article><b>是否跨扰动模态</b><span class="state limit">正式负边界</span><div>chemical 合同中 magnitude 更强，不能合并冒充跨模态成功。</div></article>
+        <article><b>是否有生物学解释</b><span class="state open">部分闭环</span><div>背景新颖度是明确线索；通路富集未显著，尚无湿实验因果证据。</div></article>
+        <article><b>是否真正独立验证</b><span class="state done">冻结后复制</span><div>E135 方向模型先冻结，E136 再固定 Nadig 双细胞系合同，E139 预注册 gate 通过；尚无前瞻湿实验。</div></article>
+      </div>
+    </section>
+
+    <section id="control">
+      <div class="num">07 / CONTROL BOUNDARY</div><h2>我们能提高什么，不能承诺什么</h2>
+      <div class="two-col">
+        <div class="column"><h3 class="good">可以继续提高</h3><ul><li>目标期刊与文章类型匹配</li><li>方法定义、输入合同与无泄漏证据</li><li>强基线、公平比较与统计推断</li><li>生物机制、失败案例与适用边界</li><li>代码、数据、环境和一键复现</li><li>论文叙事和逐条回复质量</li></ul></div>
+        <div class="column"><h3 class="weak">无法预先控制</h3><ul><li>具体编辑与审稿人分配</li><li>专家对“足够新”的判断阈值</li><li>同期出现的竞争工作</li><li>期刊当期方向、版面和政策</li><li>不同审稿意见能否一致</li><li>下一年度期刊分区变化</li></ul></div>
+      </div>
+    </section>
+
+    <section id="journals">
+      <div class="num">08 / JOURNAL THRESHOLDS</div><h2>同一篇工作，在不同期刊面对不同门槛</h2>
+      <div class="grid">
+        <div class="card wide journal"><h3>BMC Bioinformatics 型门槛</h3><p>官方范围覆盖计算算法、软件、模型与机器学习工具，重视科学有效、问题清楚、方法和分析适当、符合领域规范。</p><div class="fit good">当前匹配度：较高</div><p><a href="https://bmcbioinformatics.biomedcentral.com/submission-guidelines/aims-and-scope">查看官方 Aims &amp; Scope</a></p></div>
+        <div class="card wide journal methods"><h3>Nature Methods 型门槛</h3><p>官方范围强调新方法或显著改进、广泛跨学科价值、即时实用性和推动生物学应用的潜力。</p><div class="fit weak">当前缺口：方法不可替代性、跨模态、生物学推动作用</div><p><a href="https://www.nature.com/nmeth/aims">查看官方 Aims &amp; Scope</a></p></div>
+      </div>
+      <p class="note">这两个例子用来说明审稿门槛差异，不代表已经决定目标期刊。没有目标期刊和投稿时最新分区核对，不应给出数值录用概率。</p>
+    </section>
+
+    <section id="position">
+      <div class="num">09 / CURRENT POSITION</div><h2>项目现在处在什么位置</h2>
+      <div class="grid">
+        <div class="card"><span class="tag done">已形成</span><h3>研究闭环</h3><p>老师追问的模型、输入、误差、矩阵 setting、外部数据和风险上界都有结果。</p></div>
+        <div class="card"><span class="tag done">有竞争力</span><h3>二区投稿</h3><p>七数据集、误差定义感知双风险头、第七数据确认、负结果和严格合同构成完整主干。</p></div>
+        <div class="card"><span class="tag open">可以尝试</span><h3>一区投稿</h3><p>能够冲击，但要接受编辑认为算法增量或生物意义不足的现实风险。</p></div>
+        <div class="card full"><span class="tag limit">不能承诺</span><h3>百分百录用</h3><p>更多实验能够降低某类质疑，无法取消编辑初筛、独立同行评审、同期竞争和期刊政策。</p></div>
+      </div>
+    </section>
+
+    <section id="next">
+      <div class="num">10 / NEXT ACTIONS</div><h2>下一步转入稿件与真正独立验证</h2>
+      <div class="road">
+        <article><div class="rank">1</div><b>锁定主张</b><div>只写预测器/任务级风险排序与保守误差上界；不写通用置信度、稳定跨模态或保证录用。</div></article>
+        <article><div class="rank">2</div><b>锁定主表</b><div>E140 为 absolute 总表，E139 为 direction 确认表，E132 为效用表，E114/E117 为误差界正负对照。</div></article>
+        <article><div class="rank">3</div><b>停止事后调参</b><div>不再对 Tian 和前五套已解封真值更换路由器；任何新方法先冻结，再找新数据。</div></article>
+        <article><div class="rank">4</div><b>争取独立验证</b><div>冲高门槛时优先湿实验、合作验证或真正未见数据，不继续堆同类回顾性结果。</div></article>
+        <article><div class="rank">5</div><b>完成投稿包</b><div>统一图表、Methods、统计计划、失败边界、数据字典和一键复现入口。</div></article>
+      </div>
+    </section>
+
+    <section id="terms">
+      <div class="num">11 / GLOSSARY</div><h2>这页出现的名词</h2>
+      <div class="glossary">
+        <div class="term"><b>task / 任务</b>一个细胞背景与一个扰动的组合，例如某细胞系接受某基因敲除。</div>
+        <div class="term"><b>control / 对照</b>同一细胞背景未受到目标扰动时的表达状态。</div>
+        <div class="term"><b>pair</b>背景 × 扰动矩阵中的一个格子。</div>
+        <div class="term"><b>fold</b>一次独立的数据划分；训练、验证和测试来源在该划分中固定。</div>
+        <div class="term"><b>RMSE</b>预测效应和真实效应逐基因差异的均方根；越大表示错误越大。</div>
+        <div class="term"><b>Spearman ρ</b>两套排序的一致程度；这里衡量风险排序能否把高错误任务排在前面。</div>
+        <div class="term"><b>magnitude</b>预测效应幅度。效应越大往往越难预测，因此是必须比较的强基线。</div>
+        <div class="term"><b>disagreement</b>两个预测器输出的差异；差异大可能意味着其中一个模型不可靠。</div>
+        <div class="term"><b>PredictionRecord</b>记录一次预测的输入来源、拆分、基因顺序、预测数组和真值数组键的审计合同。</div>
+        <div class="term"><b>truth lock / 真值锁</b>测试真实受扰动表达在预测和风险冻结前不可读取。</div>
+        <div class="term"><b>95% CI</b>对统计量不确定性的区间估计；增量区间跨 0 时，不能声称稳定优于比较对象。</div>
+        <div class="term"><b>cluster bootstrap</b>按 fold、扰动或数据集等相关单元整体重采样，避免把相关任务当成完全独立样本。</div>
+        <div class="term"><b>macro average / 宏平均</b>每个数据集先算结果，再等权平均，避免任务多的数据集独占结论。</div>
+        <div class="term"><b>split-conformal</b>用独立校准集的残差分位数构造预测误差上界；保证依赖可交换性条件。</div>
+        <div class="term"><b>exchangeability / 可交换性</b>校准任务和未来任务在统计上可看作同一机制产生；严重分布偏移时不一定成立。</div>
+        <div class="term"><b>RC80</b>保留 80% 低风险任务后的误差改善，用来衡量风险排序的实际筛选价值。</div>
+      </div>
+    </section>
+
+    <section id="files">
+      <div class="num">12 / SOURCE OF TRUTH</div><h2>只从这些入口读取当前结论</h2>
+      <div class="grid">
+        <div class="card wide"><h3>总入口</h3><p><a href="../../实验结果/GATE_STATUS_20260714.md">GATE_STATUS_20260714.md</a><br><a href="./SafeConf_录用判断与项目总账_20260713.md">本页 Markdown 版</a></p></div>
+        <div class="card wide"><h3>老师原始要求</h3><p><a href="../../../workspace/group_meeting_20260709_MAINLINE_WHITE/周老师聊天记录_要求拆解与实验设计_20260709.md">聊天记录要求拆解</a></p></div>
+        <div class="card"><h3>E140</h3><p><a href="../../实验结果/E140_formal_seven_dataset_meta_20260714/reports/E140_REPORT.md">七数据 absolute 元分析</a></p></div>
+        <div class="card"><h3>E139</h3><p><a href="../../实验结果/E139_nadig_directional_confirmation_20260714/reports/E139_REPORT.md">第七数据方向确认</a></p></div>
+        <div class="card"><h3>E135</h3><p><a href="../../实验结果/E135_directional_risk_lodo_20260714/E135_REPORT.md">方向风险冻结模型</a></p></div>
+        <div class="card"><h3>E132</h3><p><a href="../../实验结果/E132_six_dataset_triage_utility_20260714/reports/E132_REPORT.md">实际分诊效用</a></p></div>
+        <div class="card"><h3>E116</h3><p><a href="../../实验结果/E116_biological_mechanism_audit_20260713/reports/E116_REPORT.md">失效来源与机制</a></p></div>
+        <div class="card"><h3>E114</h3><p><a href="../../实验结果/E114_split_conformal_error_bounds_20260713/reports/E114_REPORT.md">误差上界</a></p></div>
+        <div class="card"><h3>E117</h3><p><a href="../../实验结果/E117_shift_aware_conformal_20260713/reports/E117_REPORT.md">紧上界负结果</a></p></div>
+        <div class="card"><h3>E118</h3><p><a href="../../实验结果/E118_chemical_contract_meta_20260713/reports/E118_REPORT.md">chemical 边界</a></p></div>
+        <div class="card"><h3>E130</h3><p><a href="../../实验结果/E130_tian_confirmatory_high_error_router_20260714/reports/E130_REPORT.md">确认性路由负结果</a></p></div>
+      </div>
+    </section>
+
+    <footer class="footer">SafeConf publication-readiness ledger · White-background report · updated 2026-07-14<br>旧 gate 与旧评估用于历史追溯；当前判断以本页和 GATE_STATUS_20260714 为准。</footer>
+  </main>
+</div>
+<a class="top" href="#top" aria-label="返回顶部">↑</a>
+</body>
+</html>

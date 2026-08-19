@@ -1,0 +1,7 @@
+feature,importance_note
+safeconf_rank,monotonic constrained; tree models have no stable linear coefficient
+disagreement_rank,monotonic constrained; tree models have no stable linear coefficient
+magnitude_rank,monotonic constrained; tree models have no stable linear coefficient
+context_novelty_rank,monotonic constrained; tree models have no stable linear coefficient
+perturbation_novelty_rank,monotonic constrained; tree models have no stable linear coefficient
+low_support_rank,monotonic constrained; tree models have no stable linear coefficient

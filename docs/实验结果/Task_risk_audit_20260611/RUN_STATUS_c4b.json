@@ -1,0 +1,13 @@
+{
+  "status": "ok",
+  "head": "abdff201444a9ca42b88b7d3c9ec5373c94abe5f",
+  "branch": "exp/task-risk-audit-20260611",
+  "reports_present": {
+    "B4a_leakage_precheck.md": true,
+    "B1_bad_prediction_retrieval_interpretation.md": true,
+    "B1_5_gears_feasibility_inventory.md": true,
+    "C1_gears_existing_record_dedup_audit.md": true,
+    "C2_task_risk_feature_explanation.md": true,
+    "C3_scope_boundary_interpretation.md": true
+  }
+}

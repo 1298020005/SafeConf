@@ -1,0 +1,23 @@
+{
+  "experiment": "E86_sciplex_to_openproblems_contract",
+  "generated_at": "2026-07-12T12:26:11",
+  "source_h5ad": "/home/yyf/data/singlecell_perturbation_atlas/extra_official/cellular_context_generalization/sciplex3.h5ad",
+  "target_h5ad": "/home/yyf/data/singlecell_perturbation_atlas/mega_external/OpenProblems_NeurIPS2023_single_cell_perturbations/data/raw/sc_counts_processed.h5ad",
+  "source_shape": [
+    26046,
+    5000
+  ],
+  "target_shape": [
+    298087,
+    21265
+  ],
+  "common_genes": 2421,
+  "gene_panel_size": 1000,
+  "gene_order_hash": "sha256:ed9577b3665bbeaf050f488e0ffe40a72561b12ba766051ea7a0ef149f65128e",
+  "source_tasks": 108,
+  "target_tasks": 553,
+  "target_min_cells": 20,
+  "target_controls_allowed": true,
+  "target_perturbed_truth_used_for_gene_or_task_selection": false,
+  "status": "frozen_before_predictor_training"
+}

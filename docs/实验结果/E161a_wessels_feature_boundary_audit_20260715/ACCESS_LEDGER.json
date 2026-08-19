@@ -1,0 +1,21 @@
+{
+  "split": "train",
+  "rows_indexed": 11779,
+  "columns_indexed": 20639,
+  "column_interval_half_open": [
+    0,
+    20639
+  ],
+  "validation_rows_indexed": 0,
+  "test_rows_indexed": 0,
+  "excluded_rows_indexed": 0,
+  "guide_or_barcode_columns_indexed": 0,
+  "sealed_role_intersections": {
+    "val": 0,
+    "test": 0,
+    "excluded": 0
+  },
+  "row_index_sha256": "cb625a649b94cc3939edc3c8b85c5e98e23c9f4f5f05d1936b2e6ca46e7b6365",
+  "X_materialized": true,
+  "transformation": "none_raw_integer_counts"
+}

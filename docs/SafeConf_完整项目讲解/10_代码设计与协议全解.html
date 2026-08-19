@@ -1,0 +1,88 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>10 代码设计与协议全解</title><link rel="stylesheet" href="assets/tutorial.css"></head><body>
+<header class="top"><div class="topin"><a class="brand" href="index.html">SafeConf 完整项目讲解</a><a class="back" href="../../SafeConf_统一研究工作台.html">返回工作台</a></div></header>
+<div class="layout"><aside class="side" id="chapterNav"></aside><main class="content">
+<section class="hero"><p class="eyebrow">CHAPTER 10 · docs/代码设计</p><h1>代码设计目录：协议、系统和服务器边界</h1><p class="lead">这一章逐项解释 <code>docs/代码设计/</code> 的三份文件，并标明历史设计与当前正式结果的关系。</p><div class="chips"><span class="chip green">3 份源文档</span><span class="chip">冻结协议</span><span class="chip">实现结构</span><span class="chip amber">历史口径需分辨</span></div></section>
+
+<h2>1. 三份文件各管什么</h2>
+<div class="table"><table><thead><tr><th>文件</th><th>作用</th><th>阅读时注意</th></tr></thead><tbody>
+<tr><td><a href="../代码设计/PROTOCOL.md">../代码设计/PROTOCOL.md</a></td><td>定义 PredictionRecord、效应、切分、冻结公式、特征、指标和复现要求。它是方法规格。</td><td>2026-05-23 冻结；其中 Haber、Parekh 等是协议开发期数据线，不能拿来替代后来的七主表。</td></tr>
+<tr><td><a href="../代码设计/系统设计-扰动预测质检-v1.md">../代码设计/系统设计-扰动预测质检-v1.md</a></td><td>解释四层系统、软件包、执行阶段、闸门和早期分工。</td><td>它是 v1.0 设计稿。后续实验已经改变了数据集和任务进度，结构思想仍有效。</td></tr>
+<tr><td><a href="../代码设计/服务器目录结构_20260706.md">../代码设计/服务器目录结构_20260706.md</a></td><td>规定 Git 项目、原始数据、运行产物、工具、中转区和归档各自的位置。</td><td>这是 2026-07-07 更新后的当前服务器边界。</td></tr>
+</tbody></table></div>
+<div class="callout warn"><b>版本判断：</b>方法定义以冻结协议和当前代码为准，实验数字以 corrected seven-main、E1–E4、E8b 和 Tahoe D1–D5 为准。早期设计中的目标数据集和投稿预期只保留历史解释价值。</div>
+
+<h2>2. 四层系统怎样连接</h2>
+<figure class="figure"><div class="flow"><div class="node"><b>协议层</b><small>定义任务、效应、切分和禁用信息</small></div><div class="node"><b>预测层</b><small>V0、ContextSim、GEARS 等输出效应向量</small></div><div class="node"><b>打分层</b><small>从训练折计算线索和风险分</small></div><div class="node"><b>评估层</b><small>用测试真值检验排序和分诊</small></div></div><figcaption>预测层可替换；协议、打分和评估共同组成 SafeConf 质检系统。</figcaption></figure>
+<div class="grid2">
+<div class="mini"><h3>协议层 Protocol</h3><p><b>Protocol</b> 指预先写好的实验规则。它规定 control、effect、eligible task、fold 和泄漏检查。</p></div>
+<div class="mini"><h3>预测层 Predictor</h3><p><b>Predictor</b> 指生成 predicted effect 的模型。SafeConf 把它当作黑盒，只要求输入输出符合接口。</p></div>
+<div class="mini"><h3>打分层 Scoring</h3><p>从测试前可见信息计算 confidence 或 risk。标准化参数只能来自当前 fold 的训练部分。</p></div>
+<div class="mini"><h3>评估层 Evaluation</h3><p>打分完成后读取真实误差，计算相关、风险—覆盖、富集倍数和置信区间。</p></div>
+</div>
+
+<h2>3. PredictionRecord 的完整字段</h2>
+<div class="table"><table><thead><tr><th>字段组</th><th>字段</th><th>含义</th></tr></thead><tbody>
+<tr><td>唯一身份</td><td><code>record_id</code>, <code>task_id</code></td><td>追踪一条记录和它所属的生物任务。</td></tr>
+<tr><td>实验身份</td><td><code>dataset_name</code>, <code>fold_id</code>, <code>split</code></td><td>指出数据集、交叉验证折和 train/val/test 归属。</td></tr>
+<tr><td>生物任务</td><td><code>context</code>, <code>perturbation</code></td><td>细胞背景与施加的基因或药物干预。</td></tr>
+<tr><td>模型身份</td><td><code>predictor_name</code></td><td>说明预测由哪个模型产生。</td></tr>
+<tr><td>向量指针</td><td><code>predicted_effect_key</code>, <code>true_effect_key</code></td><td>表中保存键名；几千维数组放在 NPZ 文件。</td></tr>
+<tr><td>评价标签</td><td><code>true_error_rmse</code></td><td>预测向量和真实向量之间的均方根误差，只能用于评价或训练允许读取标签的 learned risk。</td></tr>
+</tbody></table></div>
+<div class="callout"><b>n_genes：</b>协议把基因维数写入配置。<b>Silent change</b> 指代码没有记录就把 5,000 改成 1,000；这种变化会破坏结果可比性。</div>
+
+<h2>4. Held-out pair 与 L1–L4</h2>
+<figure class="figure"><svg class="svg" viewBox="0 0 900 280" role="img" aria-label="held-out pair"><rect x="30" y="30" width="250" height="190" rx="8" fill="#e8f0f8" stroke="#275f9d"/><text x="155" y="65" text-anchor="middle" font-size="18" font-weight="700">训练折</text><text x="155" y="105" text-anchor="middle">见过 context = 22RV1</text><text x="155" y="140" text-anchor="middle">见过 perturbation = Trametinib</text><text x="155" y="175" text-anchor="middle">没见过两者的目标组合</text><path d="M280 125 H410" stroke="#087f73" stroke-width="3"/><polygon points="410,125 396,117 396,133" fill="#087f73"/><rect x="430" y="55" width="260" height="140" rx="8" fill="#dff2ee" stroke="#087f73"/><text x="560" y="95" text-anchor="middle" font-size="18" font-weight="700">测试任务</text><text x="560" y="130" text-anchor="middle">22RV1 × Trametinib</text><text x="560" y="165" text-anchor="middle">检验组合迁移</text><rect x="720" y="55" width="150" height="140" rx="8" fill="#fff3d6" stroke="#946205"/><text x="795" y="92" text-anchor="middle" font-weight="700">允许</text><text x="795" y="122" text-anchor="middle">测试预测</text><text x="795" y="150" text-anchor="middle">测试后评价</text><text x="795" y="178" text-anchor="middle">禁止偷看真值</text></svg><figcaption>held-out pair 检验已经见过组成元素、尚未见过目标组合时的可靠性。</figcaption></figure>
+<div class="table"><table><thead><tr><th>约束</th><th>检查内容</th><th>原因</th></tr></thead><tbody>
+<tr><td>L1</td><td>测试 pair 不出现在 train 或 val</td><td>防止目标组合重复。</td></tr>
+<tr><td>L2</td><td>测试 perturbation 在训练中有其他 context</td><td>保证能够计算历史支持和迁移预测。</td></tr>
+<tr><td>L3</td><td>测试 context 在训练中有其他 perturbation</td><td>保证背景有训练参考。</td></tr>
+<tr><td>L4</td><td>特征计算不读取测试 true effect 或 error</td><td>防止标签泄漏。</td></tr>
+</tbody></table></div>
+
+<h2>5. 七类特征：设计全集与冻结公式子集</h2>
+<div class="table"><table><thead><tr><th>特征</th><th>人话</th><th>进入 frozen v0.2？</th><th>其他角色</th></tr></thead><tbody>
+<tr><td>context similarity</td><td>目标背景与训练背景有多相似</td><td>gene：是；chemical：否</td><td>learned 风险特征</td></tr>
+<tr><td>support count</td><td>同一扰动在训练折有多少有效历史</td><td>是</td><td>单特征基线</td></tr>
+<tr><td>perturbation stability</td><td>同一扰动跨背景的效应是否一致</td><td>否；chemical 明确置零</td><td>扩展诊断</td></tr>
+<tr><td>model disagreement</td><td>两个参考预测器的向量差异</td><td>是</td><td>消融中很重要，但贡献依数据集变化</td></tr>
+<tr><td>prediction magnitude</td><td>预测效应整体大小及偏离程度</td><td>否</td><td>强基线、混杂控制和 learned 特征</td></tr>
+<tr><td>OOD distance</td><td>目标任务距训练分布有多远</td><td>否</td><td>learned 特征组</td></tr>
+<tr><td>historical residual</td><td>训练内相似任务过去留下的误差模式</td><td>否</td><td>基线与 learned 特征</td></tr>
+</tbody></table></div>
+<div class="callout good"><b>关键区分：</b>“系统收集哪些特征”和“冻结公式使用哪些特征”是两个清单。当前 frozen v0.2 只组合 context、support、disagreement；learned risk 可使用更完整的特征组。</div>
+
+<h2>6. 预测器与适配器</h2>
+<div class="grid3">
+<div class="mini"><h3>V0StrongBaseline</h3><p>强 lookup 基线。<b>Lookup</b> 指从历史任务中检索并组合可用效应，不依赖大型神经网络。</p></div>
+<div class="mini"><h3>ContextSimBaseline</h3><p>按细胞背景相似度迁移历史扰动效应，是 frozen disagreement 的另一个参考预测器。</p></div>
+<div class="mini"><h3>GEARS / CPA</h3><p>协议计划中的深度模型扩展。<b>Adapter</b> 是把模型原输出转换成统一 PredictionRecord 的薄接口。</p></div>
+</div>
+<div class="callout warn"><b>Adapter 当前状态：</b>E20 显示旧 GEARS formal 输出缺少 gene order / normalization 字段，无法 strict pass；E25 已从 processed GEARS h5ad 恢复 gene order，把 Adamson/Dixit/Norman 的 54 条真实 GEARS formal 输出升级为 strict-pass PredictionRecord 包；E26 已在该包上完成 GEARS-only 单模型风险审计；E27 已用归档 scGPT 源码和 whole-human checkpoint 生成 strict-pass forward smoke；E28 已把 GEARS 与 scGPT 放到 Adamson 3 个共享任务和 512-gene panel 下 strict 对齐；E29 已扩展到 Adamson 7 个共享任务并计算双模型 disagreement 风险；E30 已确认 E25 三个 GEARS runs 任务重叠太少，不能直接写 seed uncertainty；E31 已给 GEARS exporter 增加 fixed-test 清单和 smoke/formal run_type，并完成 7-task strict smoke；E32 已跑通 fixed-test 3-seed smoke，形成 21 条 strict records 和 seed disagreement 初步信号。E17 旧记录的 record-scoped true key 已由 E21/E22 修法验证。统一 GEARS–scGPT–CPA 多模型验证仍需把 fixed-test 3-seed 提升到正式 epochs、扩大共享任务数、固定 split 和 CPA adapter。</div>
+
+<h2>7. 分数清单与论文角色</h2>
+<div class="table"><table><thead><tr><th>分数</th><th>类型</th><th>用途</th></tr></thead><tbody>
+<tr><td>random</td><td>随机基线</td><td>检查评价流程是否凭空产生关联。</td></tr>
+<tr><td>single feature</td><td>单特征基线</td><td>观察某一线索独立能做到什么。</td></tr>
+<tr><td>frozen v0.2</td><td>固定公式主方法</td><td>规则在测试前冻结，可解释、可复核。</td></tr>
+<tr><td>historical residual</td><td>强基线</td><td>检验历史误差模式本身的价值。</td></tr>
+<tr><td>HistGBT / ElasticNet</td><td>learned risk</td><td>学习非线性或线性风险规律，承担扩展和稳健性角色。</td></tr>
+<tr><td>magnitude-only</td><td>强混杂基线</td><td>判断 SafeConf 是否只在重复“效应越大越难”。</td></tr>
+<tr><td>oracle</td><td>不可部署上界</td><td>使用真实标签构造，只作为理论参照。</td></tr>
+</tbody></table></div>
+
+<h2>8. 主指标、附录指标和禁用写法</h2>
+<div class="grid3"><div class="mini"><h3>主指标</h3><p>aligned Spearman、partial rho、RC@80%、high-low ΔRMSE。结果按数据集报告。</p></div><div class="mini"><h3>补充指标</h3><p>Pearson、AURC/AUGRC、AUROC、calibration buckets 和 top-k enrichment。</p></div><div class="mini"><h3>禁用口径</h3><p>不把 pooled Spearman 当唯一 headline；不只报 learned；不省略 split 与泄漏检查。</p></div></div>
+
+<h2>9. 设计稿与当前项目怎样对上</h2>
+<div class="table"><table><thead><tr><th>设计稿内容</th><th>后续进展</th><th>当前处理</th></tr></thead><tbody>
+<tr><td>Haber/Parekh/KCC 开发线</td><td>后续形成 Cui、Frangieh、Lara、McFarland、Santinha、Srivatsan 七主表</td><td>保留为协议形成历史；正式数字看 corrected seven-main。</td></tr>
+<tr><td>Norman/Adamson blind 计划</td><td>当前稳定证据包未以这两者作为七主表主结果</td><td>不能写成已经完成。</td></tr>
+<tr><td>GEARS 至少两数据集门槛</td><td>完成 GEARS-only formal/probe 整理；E20 合同体检、E21/E22 strict 修法 smoke、E23 shared manifest、E24 兼容性审计、E25 GEARS strict-pass 证据包、E26 GEARS-only 风险审计、E27 scGPT smoke、E28 GEARS–scGPT shared smoke、E29 GEARS–scGPT shared risk audit、E30 GEARS seed-overlap audit、E31 GEARS fixed-test smoke、E32 GEARS fixed-test 3-seed smoke 已完成</td><td>双模型合同与小样本风险审计可行；fixed-test 3-seed 工作流已打通；seed uncertainty 需要正式 epochs 和更多任务；仍需扩大任务数/数据集、固定 split 和 CPA adapter。</td></tr>
+<tr><td>Tahoe 外部候选</td><td>D1–D5 已闭环</td><td>成为大型 chemical 补充证据；magnitude 仍更强。</td></tr>
+<tr><td>三数据集复现阶段</td><td>已有 corrected、预注册、负对照与证据矩阵</td><td>当前写作应使用后期正式证据。</td></tr>
+</tbody></table></div>
+
+<p class="source">源文件：<a href="../代码设计/PROTOCOL.md">PROTOCOL.md</a> · <a href="../代码设计/系统设计-扰动预测质检-v1.md">系统设计</a> · <a href="../代码设计/服务器目录结构_20260706.md">服务器目录结构</a></p>
+<div class="pager"><a href="09_术语词典.html">← 上一章</a><a href="11_实验结果完整谱系.html">下一章：实验证据谱系 →</a></div>
+</main></div><script src="assets/tutorial.js"></script></body></html>

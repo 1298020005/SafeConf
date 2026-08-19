@@ -1,0 +1,87 @@
+{
+  "experiment": "E149_replogle_two_cellline_contract",
+  "generated_at": "2026-07-14T14:11:17",
+  "status": "frozen_before_expression_values_predictions_or_errors",
+  "source_study": "Replogle et al. 2022 Perturb-seq",
+  "source_article_doi": "10.1016/j.cell.2022.05.013",
+  "source_article_pmcid": "PMC9380471",
+  "local_asset_provenance": "scPerturb-standardized h5ad",
+  "scope_limit": "shared high-coverage CRISPRi targets within one study; not genome-wide random-target or cross-study generalization",
+  "sources": {
+    "K562": {
+      "path": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/ReplogleWeissman2022_K562_essential.h5ad",
+      "sha256": "412fd0df8c4ccea9f4db91cd88033c49200838b29d40945e48574be588b48789",
+      "shape": [
+        310385,
+        8563
+      ]
+    },
+    "RPE1": {
+      "path": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/ReplogleWeissman2022_rpe1.h5ad",
+      "sha256": "12d6a0cf9378c4f09411e27f0ce07b59f1d97731bd576d6fadf112f6f088d1a4",
+      "shape": [
+        247914,
+        8749
+      ]
+    }
+  },
+  "vocabulary_path": "/home/yyf/archive/code/20260519_0958_home_cleanup/moved_top_level/codex_scgpt_attnres_workspace/checkpoints/whole-human/vocab.json",
+  "vocabulary_sha256": "acca93d114ca62c3f0f50debbd23e8c87f0714f4737764454f6b2b13f2e8580f",
+  "frozen_direction_model_path": "docs/实验结果/E135_directional_risk_lodo_20260714/E135_FROZEN_DIRECTION_MODEL.json",
+  "frozen_direction_model_sha256": "77caf3b7b46071ced9577a8bd5289ce4c7bf5899c329ab37e835c41bda07d4b3",
+  "frozen_direction_model_source_datasets": [
+    "Frangieh",
+    "Lara_exvivo",
+    "Liang",
+    "Santinha",
+    "Shifrut",
+    "Tian_CRISPRi"
+  ],
+  "replogle_absent_from_direction_model_development_sources": true,
+  "selection_rules": {
+    "selection_seed": "E149_REPLOGLE_K562_RPE1_EXTERNAL_20260714_V1",
+    "n_perturbations": 128,
+    "minimum_cells_per_context_perturbation": 100,
+    "minimum_batches_per_context_perturbation": 10,
+    "perturbation_unseen_fraction": 0.2,
+    "n_validation_pairs": 16,
+    "n_random_seen_test_pairs": 16,
+    "primary_analysis": "split == test and context == heldout_context",
+    "cluster_bootstrap_unit": "perturbation",
+    "cluster_bootstrap_draws": 3000
+  },
+  "selection_rules_sha256": "660472892536a04ba093965024c6d36076786a95da143e1ff23c355e1497ea39",
+  "n_shared_noncontrol_perturbations": 2055,
+  "n_eligible_perturbations": 394,
+  "n_selected_perturbations": 128,
+  "minimum_selected_cells_across_contexts": 100,
+  "minimum_selected_batches_across_contexts": 40,
+  "n_manifest_rows": 512,
+  "n_test_rows_all_diagnostics": 340,
+  "n_primary_heldout_context_test_rows": 256,
+  "n_primary_unique_context_perturbation_tasks": 256,
+  "metadata_fields_used": [
+    "obs.perturbation",
+    "obs.batch",
+    "obs.guide_id",
+    "obs.transcript",
+    "obs.gene_id",
+    "obs.cell_line",
+    "obs.perturbation_type",
+    "var_names",
+    "shape"
+  ],
+  "expression_matrix_X_indexed_or_decoded": false,
+  "expression_values_or_effect_sizes_used_for_selection_or_split": false,
+  "prediction_or_error_used_for_selection_or_split": false,
+  "model_training_executed": false,
+  "artifact_sha256": {
+    "PREREG_ANALYSIS_PLAN.md": "3d370bfdf79b4aac621c8aa9059f074a2e36da46d0095c43278e72fee4809e43",
+    "reports/E149_CONTRACT_REPORT.md": "a8962b4ed899b71a4b3615fb196956f2eeb8283b5140c6b2e67e4ae7ecd899cf",
+    "tables/E149_SOURCE_METADATA_AUDIT.csv": "8f40d879893530c6d79ab189cdf8e70bb4d6f51c342dbdc01745eb51071768ef",
+    "tables/E149_ELIGIBILITY_AUDIT.csv": "53a8f85dcdfe33f3003db0f3fcf507e96b8dea7a07c3ab3abcd6386ec6fbd110",
+    "tables/E149_SELECTED_PERTURBATIONS.csv": "12bc1bec94a3c223e5ce765380fad31f4570c09155fe3874ea1ff41c52ec44f2",
+    "tables/E149_SPLIT_SUMMARY.csv": "88ad477253bbd92a078cdb3dbe12c626dd867986d940e7f8cd6d204449bda1b4",
+    "manifests/E149_TASK_MANIFEST.csv": "445f665f18d273083d47c8f82d6beb379a6fbc212fdbcd37d9c8b65e16746f0a"
+  }
+}

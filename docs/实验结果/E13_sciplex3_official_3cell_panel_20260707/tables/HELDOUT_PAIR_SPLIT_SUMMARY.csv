@@ -1,0 +1,6 @@
+dataset_name,fold_id,n_tasks_total,n_candidate_test_pairs,n_skipped_candidate_pairs,n_train,n_val,n_test,n_contexts,n_perturbations,support_check_pass,support_errors,n_folds
+sciplex3_official_3cell,0,240,240,0,163,29,48,3,80,True,,5
+sciplex3_official_3cell,1,240,240,0,163,29,48,3,80,True,,5
+sciplex3_official_3cell,2,240,240,0,163,29,48,3,80,True,,5
+sciplex3_official_3cell,3,240,240,0,163,29,48,3,80,True,,5
+sciplex3_official_3cell,4,240,240,0,163,29,48,3,80,True,,5

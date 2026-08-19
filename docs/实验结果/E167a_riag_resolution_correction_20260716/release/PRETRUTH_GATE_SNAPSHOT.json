@@ -1,0 +1,40 @@
+{
+  "created_at": "2026-07-16T22:20:14+08:00",
+  "git_head": "abc98fa2ab41df2fd25a2b342dc895bd8568fe53",
+  "n_batches": 45,
+  "n_units": 19,
+  "postgate_truth_files_opened": 0,
+  "pretruth_files_sha256": {
+    "batch_certificates": {
+      "relative_path": "tables/E167A_BATCH_CERTIFICATES.csv",
+      "sha256": "524fb76c1ec8cc6d555be041d3d417184cd316c02d9d013f51451caeb7322dfa"
+    },
+    "coverage_boundaries": {
+      "relative_path": "tables/E167A_COVERAGE_BOUNDARIES.csv",
+      "sha256": "c92d0872c4accc21bb98d71480d6e744a0273bfeb23a1548d8227e8db8c7d0b7"
+    },
+    "predictor_certificates": {
+      "relative_path": "tables/E167A_PREDICTOR_CERTIFICATES.csv",
+      "sha256": "398e11fa1961216467856a4137d6274ac9e016b792cfcf36f0d4f1dbc910384e"
+    },
+    "pretruth_gate_summary": {
+      "relative_path": "tables/E167A_PRETRUTH_GATE_SUMMARY.csv",
+      "sha256": "5af38fdbd128f339640ccc19a7cd87ebe5350f0135a59a2d6345317372c69105"
+    },
+    "pretruth_input_hashes": {
+      "relative_path": "tables/E167A_PRETRUTH_INPUT_HASHES.csv",
+      "sha256": "5d6a3a5b3abe4bd7d4f21adb8d7e1a5243891e28bb4adfaef2e2ce711b589d26"
+    },
+    "synthetic_tests": {
+      "relative_path": "tables/E167A_SYNTHETIC_TESTS.csv",
+      "sha256": "ab8716bc899805c61bed01f65b88ed76e9a211ba98621d0fe7309d856bcf2c10"
+    },
+    "unit_summary": {
+      "relative_path": "tables/E167A_UNIT_SUMMARY.csv",
+      "sha256": "8d1747e2c104544401149b89a3a2e17cbeb9e1dbe2d0e03f2f9d313760c6a7e7"
+    }
+  },
+  "pretruth_gate_passed": true,
+  "schema": "safeconf_e167a_pretruth_gate_snapshot_v1",
+  "transaction_id": "88df7cbb386149788e6fb79c845d4adb"
+}

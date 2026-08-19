@@ -1,0 +1,7 @@
+primary_score,comparator,setting,train_fraction,bootstrap_unit,n_folds,n_unique_perturbations,n_task_rows,observed_macro_delta_spearman,bootstrap_ci95_low,bootstrap_ci95_high,bootstrap_probability_delta_gt_zero,n_bootstrap
+safeconf_calibrated_pair_risk,safeconf_frozen_pair_risk,all_test_settings_pooled,1.0,task_row,3,189,837,0.005565133146938739,-0.026950451656652587,0.03873115067621204,0.6505,2000
+safeconf_calibrated_pair_risk,safeconf_frozen_pair_risk,all_test_settings_pooled,1.0,outer_fold_plus_perturbation_cluster,3,189,837,0.005565133146938739,-0.0726984208300531,0.08817670211589619,0.572,2000
+safeconf_calibrated_pair_risk,risk_model_disagreement,all_test_settings_pooled,1.0,task_row,3,189,837,0.09730611823904937,0.048766462547959986,0.14480958666751761,1.0,2000
+safeconf_calibrated_pair_risk,risk_model_disagreement,all_test_settings_pooled,1.0,outer_fold_plus_perturbation_cluster,3,189,837,0.09730611823904937,-0.022105236859911667,0.2529933456065687,0.9115,2000
+safeconf_calibrated_pair_risk,baseline_predicted_magnitude,all_test_settings_pooled,1.0,task_row,3,189,837,0.05031292937999828,0.0041950158991614,0.09647697104499983,0.981,2000
+safeconf_calibrated_pair_risk,baseline_predicted_magnitude,all_test_settings_pooled,1.0,outer_fold_plus_perturbation_cluster,3,189,837,0.05031292937999828,-0.09829527660138516,0.2551868252282996,0.6755,2000

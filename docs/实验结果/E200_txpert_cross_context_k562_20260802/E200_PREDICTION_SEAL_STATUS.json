@@ -1,0 +1,22 @@
+{
+  "experiment": "E200_txpert_cross_context_k562",
+  "stage": "PREDICTION_SEAL",
+  "status": "PASS",
+  "generated_at": "2026-08-02T04:43:00+08:00",
+  "n_samples": 150472,
+  "n_genes": 3352,
+  "n_official_test_tasks": 1087,
+  "n_batches": 48,
+  "predictors": [
+    "official_K562_cross_cell_GAT",
+    "official_cross_cell_general_baseline"
+  ],
+  "row_metadata_aligned": true,
+  "gene_order_aligned": true,
+  "ground_truth_exact_equal": true,
+  "ground_truth_max_abs_delta": 0.0,
+  "control_allclose_atol_1e_6": true,
+  "control_max_abs_delta": 9.5367431640625e-07,
+  "target_outcomes_evaluated": false,
+  "pretruth_features_sealed": false
+}

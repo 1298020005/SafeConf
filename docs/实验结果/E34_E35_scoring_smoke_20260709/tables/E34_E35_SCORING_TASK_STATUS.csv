@@ -1,0 +1,9 @@
+dataset_name,selector,path,status,n_tasks,n_contexts,n_perturbations,context_col,perturbation_col,error,perturbation_type
+Haber,Haber,/home/yyf/datasets/singlecell_perturbation_atlas/extra_official/cellular_context_generalization/Haber.h5ad,ok,24,8,3,cell_type,perturbation,,genetic_single
+Parekh,Parekh,/home/yyf/datasets/singlecell_perturbation_atlas/extra_official/cellular_context_generalization/Parekh.h5ad,ok,30,3,10,cell_type,perturbation,,genetic_single
+kangCrossCell,kangCrossCell,/home/yyf/datasets/singlecell_perturbation_atlas/extra_official/cellular_context_generalization/kangCrossCell.h5ad,ok,8,8,1,cell_type,perturbation,,genetic_single
+kangCrossPatient,kangCrossPatient,/home/yyf/datasets/singlecell_perturbation_atlas/extra_official/cellular_context_generalization/kangCrossPatient.h5ad,ok,8,8,1,condition1,perturbation,,genetic_single
+TCDD,TCDD,/home/yyf/datasets/singlecell_perturbation_atlas/extra_official/cellular_context_generalization/TCDD.h5ad,ok,6,6,1,condition1,perturbation,,chemical_single
+sciplex3,sciplex3,/home/yyf/datasets/singlecell_perturbation_atlas/extra_official/cellular_context_generalization/sciplex3.h5ad,ok,105,3,36,cell_type,perturbation,,chemical_single
+ShifrutMarson2018,ShifrutMarson2018,/home/yyf/datasets/singlecell_perturbation_atlas/official_scperturb/ShifrutMarson2018.h5ad,ok,40,2,20,patient,perturbation,,genetic_single
+AissaBenevolenskaya2021,AissaBenevolenskaya2021,/home/yyf/datasets/singlecell_perturbation_atlas/official_scperturb/AissaBenevolenskaya2021.h5ad,no_tasks,0,0,0,,,missing context or perturbation column,genetic_single

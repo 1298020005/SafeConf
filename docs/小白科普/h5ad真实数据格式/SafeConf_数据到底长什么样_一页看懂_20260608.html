@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SafeConf 数据到底长什么样</title>
+<style>
+  :root{
+    --bg:#f6f7fb;
+    --paper:#fff;
+    --ink:#17202a;
+    --muted:#64748b;
+    --line:#d8dee9;
+    --blue:#2563eb;
+    --green:#15803d;
+    --orange:#c2410c;
+    --red:#b91c1c;
+    --purple:#7c3aed;
+    --soft-blue:#eff6ff;
+    --soft-green:#ecfdf5;
+    --soft-orange:#fff7ed;
+    --soft-red:#fef2f2;
+    --soft-purple:#f5f3ff;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"PingFang SC","Microsoft YaHei","Segoe UI",Arial,sans-serif;
+    font-size:16px;
+    line-height:1.75;
+  }
+  .page{max-width:1240px;margin:0 auto;padding:28px 20px 80px}
+  header{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:24px 28px;
+  }
+  h1{margin:0 0 8px;font-size:32px;letter-spacing:0}
+  h2{font-size:24px;margin:34px 0 14px}
+  h3{font-size:19px;margin:22px 0 10px}
+  p{margin:8px 0}
+  a{color:var(--blue)}
+  code{
+    background:#f1f5f9;
+    border:1px solid #e2e8f0;
+    border-radius:4px;
+    padding:1px 5px;
+    font-family:Consolas,Menlo,monospace;
+  }
+  .subtitle{color:var(--muted);font-size:18px}
+  .card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:20px;
+    margin:16px 0;
+  }
+  .note{
+    border-left:5px solid var(--blue);
+    background:#fff;
+    padding:12px 14px;
+    border-radius:7px;
+    margin:12px 0;
+  }
+  .warn{border-left-color:var(--orange);background:#fffaf0}
+  .danger{border-left-color:var(--red);background:#fff7f7}
+  .grid{display:grid;gap:12px}
+  .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .mini{
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:14px;
+    background:#fff;
+  }
+  .blue{background:var(--soft-blue);border-color:#bfdbfe}
+  .green{background:var(--soft-green);border-color:#bbf7d0}
+  .orange{background:var(--soft-orange);border-color:#fed7aa}
+  .purple{background:var(--soft-purple);border-color:#ddd6fe}
+  .red{background:var(--soft-red);border-color:#fecaca}
+  table{
+    border-collapse:collapse;
+    width:100%;
+    background:#fff;
+    border:1px solid var(--line);
+    margin:10px 0 18px;
+    font-size:14px;
+  }
+  th,td{border:1px solid var(--line);padding:8px 9px;text-align:left;vertical-align:top}
+  th{background:#f1f5f9}
+  .num{text-align:right;font-variant-numeric:tabular-nums}
+  .matrix th{font-size:13px}
+  .matrix td{font-family:Consolas,Menlo,monospace;text-align:right}
+  .matrix td:first-child,.matrix td:nth-child(2),.matrix td:nth-child(3){font-family:inherit;text-align:left}
+  .control{background:#eff6ff}
+  .drug{background:#fff7ed}
+  .arrow{
+    text-align:center;
+    font-size:26px;
+    font-weight:700;
+    color:#334155;
+    margin:4px 0;
+  }
+  .formula{
+    background:#0f172a;
+    color:#f8fafc;
+    border-radius:8px;
+    padding:14px 16px;
+    font-family:Consolas,Menlo,monospace;
+    overflow-x:auto;
+  }
+  .svgbox{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:10px;
+    overflow-x:auto;
+  }
+  .pill{
+    display:inline-block;
+    border-radius:999px;
+    padding:2px 8px;
+    background:#e2e8f0;
+    color:#334155;
+    font-size:13px;
+    font-weight:700;
+  }
+  .small{color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<div class="page">
+  <div style="background:#fff;border:1px solid #bfdbfe;border-radius:10px;padding:10px 14px;margin-bottom:14px;color:#334155;">
+    ← 返回主书：
+    <a href="../全流程拆解_创造者到使用者/SafeConf_全流程拆解_创造者到使用者.html">SafeConf 全流程拆解</a>
+  </div>
+  <header>
+    <h1>SafeConf 数据到底长什么样</h1>
+    <div class="subtitle">
+      不讲空话。只追一条真实数据：McFarland 数据集里的 <b>22RV1 × Trametinib</b>，看它从原始单细胞矩阵一路变成论文表格。
+    </div>
+  </header>
+
+  <section class="card">
+    <h2>0. 先别管 HDF5 是什么，先看“你真正会看到什么”</h2>
+    <p>
+      <code>.h5ad</code> 不是你熟悉的一张 Excel。你可以先把它当成一个“大盒子”，盒子里主要装三样东西：
+    </p>
+    <div class="grid three">
+      <div class="mini blue">
+        <b>obs：细胞表</b><br>
+        一行是一个细胞。写着这个细胞来自哪个 cell line、加了什么药、剂量多少。
+      </div>
+      <div class="mini orange">
+        <b>X：表达矩阵</b><br>
+        行是细胞，列是基因，格子里的数字是“这个细胞里这个基因表达多少”。
+      </div>
+      <div class="mini purple">
+        <b>var：基因表</b><br>
+        一行是一个基因。写着基因名、Ensembl ID、出现在哪些细胞里。
+      </div>
+    </div>
+    <div class="note warn">
+      你现在不用懂 HDF5。先记住：<b>h5ad = 细胞表 obs + 表达矩阵 X + 基因表 var</b>。这就够开始看数据了。
+    </div>
+    <div class="note">
+      我已经把真实 h5ad 拆成一组小 CSV 样例，可以直接用 Excel/Cursor 打开：
+      <a href="../h5ad可打开CSV样例/README_这些CSV怎么看.md">h5ad可打开CSV样例/README_这些CSV怎么看.md</a>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>0.5 一张图先看完整数据流</h2>
+    <p>这张图只追一条真实记录：<code>McFarland / 22RV1 × Trametinib / v2_rec_000930</code>。</p>
+    <div class="svgbox">
+      <svg width="1160" height="610" viewBox="0 0 1160 610" role="img" aria-label="SafeConf真实数据流图">
+        <defs>
+          <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="4" orient="auto">
+            <path d="M0,0 L0,8 L11,4 z" fill="#334155"/>
+          </marker>
+        </defs>
+        <rect x="20" y="30" width="210" height="118" rx="10" fill="#eff6ff" stroke="#93c5fd" stroke-width="2"/>
+        <text x="125" y="62" text-anchor="middle" font-size="18" font-weight="700">h5ad 原始数据</text>
+        <text x="125" y="91" text-anchor="middle" font-size="14">obs：细胞表</text>
+        <text x="125" y="116" text-anchor="middle" font-size="14">X：表达矩阵</text>
+        <text x="125" y="140" text-anchor="middle" font-size="14">var：基因表</text>
+
+        <rect x="310" y="30" width="230" height="118" rx="10" fill="#ecfdf5" stroke="#86efac" stroke-width="2"/>
+        <text x="425" y="62" text-anchor="middle" font-size="18" font-weight="700">分组</text>
+        <text x="425" y="91" text-anchor="middle" font-size="14">22RV1 control：158 cells</text>
+        <text x="425" y="116" text-anchor="middle" font-size="14">22RV1 Trametinib：84 cells</text>
+        <text x="425" y="140" text-anchor="middle" font-size="14">细胞级 -> 任务级</text>
+
+        <rect x="620" y="30" width="230" height="118" rx="10" fill="#fff7ed" stroke="#fdba74" stroke-width="2"/>
+        <text x="735" y="62" text-anchor="middle" font-size="18" font-weight="700">true_effect</text>
+        <text x="735" y="91" text-anchor="middle" font-size="14">drug_mean - control_mean</text>
+        <text x="735" y="116" text-anchor="middle" font-size="14">5000 个数字</text>
+        <text x="735" y="140" text-anchor="middle" font-size="14">标准答案向量</text>
+
+        <rect x="930" y="30" width="210" height="118" rx="10" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="2"/>
+        <text x="1035" y="62" text-anchor="middle" font-size="18" font-weight="700">predicted_effect</text>
+        <text x="1035" y="91" text-anchor="middle" font-size="14">预测器猜的向量</text>
+        <text x="1035" y="116" text-anchor="middle" font-size="14">也是 5000 个数字</text>
+        <text x="1035" y="140" text-anchor="middle" font-size="14">可以被 SafeConf 看</text>
+
+        <line x1="230" y1="89" x2="310" y2="89" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)"/>
+        <line x1="540" y1="89" x2="620" y2="89" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)"/>
+        <line x1="850" y1="89" x2="930" y2="89" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+        <rect x="160" y="245" width="250" height="126" rx="10" fill="#ffffff" stroke="#d8dee9" stroke-width="2"/>
+        <text x="285" y="278" text-anchor="middle" font-size="18" font-weight="700">PredictionRecord</text>
+        <text x="285" y="307" text-anchor="middle" font-size="14">一行 = 一次预测</text>
+        <text x="285" y="333" text-anchor="middle" font-size="14">record_id = v2_rec_000930</text>
+        <text x="285" y="358" text-anchor="middle" font-size="14">RMSE = 0.5776</text>
+
+        <rect x="510" y="245" width="250" height="126" rx="10" fill="#ffffff" stroke="#d8dee9" stroke-width="2"/>
+        <text x="635" y="278" text-anchor="middle" font-size="18" font-weight="700">ConfidenceFeatures</text>
+        <text x="635" y="307" text-anchor="middle" font-size="14">support = 121</text>
+        <text x="635" y="333" text-anchor="middle" font-size="14">disagreement = 0.3692</text>
+        <text x="635" y="358" text-anchor="middle" font-size="14">similarity = 0.9677</text>
+
+        <rect x="860" y="245" width="250" height="126" rx="10" fill="#ffffff" stroke="#d8dee9" stroke-width="2"/>
+        <text x="985" y="278" text-anchor="middle" font-size="18" font-weight="700">ConfidenceScores</text>
+        <text x="985" y="307" text-anchor="middle" font-size="14">多个 score 给同一行打分</text>
+        <text x="985" y="333" text-anchor="middle" font-size="14">simple_conf = -0.8523</text>
+        <text x="985" y="358" text-anchor="middle" font-size="14">learned_risk = 1.5918</text>
+
+        <line x1="1035" y1="148" x2="1035" y2="198" stroke="#334155" stroke-width="2.5"/>
+        <line x1="1035" y1="198" x2="285" y2="198" stroke="#334155" stroke-width="2.5"/>
+        <line x1="285" y1="198" x2="285" y2="245" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)"/>
+        <line x1="410" y1="308" x2="510" y2="308" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)"/>
+        <line x1="760" y1="308" x2="860" y2="308" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+        <rect x="360" y="470" width="430" height="82" rx="10" fill="#fef2f2" stroke="#fecaca" stroke-width="2"/>
+        <text x="575" y="502" text-anchor="middle" font-size="18" font-weight="700">Evaluation / 论文数字</text>
+        <text x="575" y="530" text-anchor="middle" font-size="14">很多 test records 一起算 aligned ρ / partial ρ / RC@80%</text>
+        <line x1="985" y1="371" x2="985" y2="430" stroke="#334155" stroke-width="2.5"/>
+        <line x1="985" y1="430" x2="575" y2="430" stroke="#334155" stroke-width="2.5"/>
+        <line x1="575" y1="430" x2="575" y2="470" stroke="#334155" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+        <text x="20" y="590" font-size="14" fill="#64748b">红线原则：SafeConf 打分时不能看 true_effect / true_error_rmse；这些只能最后评估时揭晓。</text>
+      </svg>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>1. 真实 h5ad 内部长这样</h2>
+    <p>真实文件：</p>
+    <p><code>McFarlandTsherniak2020__filtered_perturbation_type_drug.h5ad</code></p>
+    <table>
+      <tr><th>里面的东西</th><th>真实大小</th><th>具体意思</th></tr>
+      <tr><td><code>obs</code></td><td class="num">154,710 行</td><td>154,710 个细胞，每个细胞一行说明。</td></tr>
+      <tr><td><code>X</code></td><td class="num">154,710 × 32,738</td><td>154,710 个细胞 × 32,738 个基因的表达矩阵。</td></tr>
+      <tr><td><code>var</code></td><td class="num">32,738 行</td><td>32,738 个基因，每个基因一行说明。</td></tr>
+    </table>
+    <div class="note">
+      想看能打开的 CSV，对应这里：
+      <a href="../h5ad可打开CSV样例/00_h5ad内部结构说明.csv">00_h5ad内部结构说明.csv</a>，
+      <a href="../h5ad可打开CSV样例/01_obs细胞表_前30行.csv">01_obs细胞表_前30行.csv</a>，
+      <a href="../h5ad可打开CSV样例/03_var基因表_前30行.csv">03_var基因表_前30行.csv</a>。
+    </div>
+
+    <h3>1.1 obs：细胞表长这样</h3>
+    <table>
+      <tr><th>cell barcode</th><th>cell_line</th><th>perturbation</th><th>dose</th><th>time</th><th>disease</th><th>ncounts</th><th>ngenes</th></tr>
+      <tr><td>AAACCTGAGACAAGCC</td><td>CAL62</td><td>Navitoclax</td><td class="num">5 µM</td><td>24</td><td>thyroid cancer</td><td class="num">17160</td><td class="num">3758</td></tr>
+      <tr><td>AAACCTGAGAGATGAG</td><td>MIAPACA2</td><td>Navitoclax</td><td class="num">5 µM</td><td>24</td><td>pancreatic cancer</td><td class="num">19760</td><td class="num">4009</td></tr>
+      <tr><td>AAACCTGAGTAGGCCA</td><td>LOVO</td><td>Navitoclax</td><td class="num">5 µM</td><td>24</td><td>colon cancer</td><td class="num">74070</td><td class="num">5813</td></tr>
+    </table>
+    <p class="small">这张表的一行不是预测任务，只是一个原始细胞。</p>
+
+    <h3>1.2 X：表达矩阵大概长这样</h3>
+    <p>下面是从真实矩阵里抽出来的一小块。行是细胞，列是基因。</p>
+    <table class="matrix">
+      <tr><th>cell barcode</th><th>cell_line</th><th>perturbation</th><th>RPLP1</th><th>RPL41</th><th>RPS2</th><th>RPS18</th><th>TMSB10</th></tr>
+      <tr class="control"><td>AAAGCAACAATCCAAC</td><td>22RV1</td><td>control</td><td>128</td><td>345</td><td>165</td><td>111</td><td>238</td></tr>
+      <tr class="control"><td>AACCATGTCTTTCCTC</td><td>22RV1</td><td>control</td><td>272</td><td>605</td><td>412</td><td>255</td><td>485</td></tr>
+      <tr class="control"><td>AAGGAGCAGAGTACCG</td><td>22RV1</td><td>control</td><td>270</td><td>595</td><td>407</td><td>191</td><td>403</td></tr>
+      <tr class="drug"><td>AAAGTAGAGTTAAGTG-1</td><td>22RV1</td><td>Trametinib</td><td>56</td><td>151</td><td>67</td><td>87</td><td>57</td></tr>
+      <tr class="drug"><td>AACACGTGTCGGCATC</td><td>22RV1</td><td>Trametinib</td><td>143</td><td>256</td><td>124</td><td>175</td><td>177</td></tr>
+      <tr class="drug"><td>AACCATGCATGAAGTA</td><td>22RV1</td><td>Trametinib</td><td>73</td><td>114</td><td>58</td><td>49</td><td>79</td></tr>
+    </table>
+    <div class="note">
+      这就是“矩阵”的样子。不是神秘东西：横着是基因，竖着是细胞，格子里是表达量。
+    </div>
+
+    <h3>1.3 var：基因表长这样</h3>
+    <table>
+      <tr><th>gene name</th><th>ensembl_id</th><th>ncounts</th><th>ncells</th></tr>
+      <tr><td>MIR1302-10</td><td>ENSG00000243485</td><td class="num">8</td><td class="num">8</td></tr>
+      <tr><td>RP11-34P13.7</td><td>ENSG00000238009</td><td class="num">802</td><td class="num">798</td></tr>
+      <tr><td>AL627309.1</td><td>ENSG00000237683</td><td class="num">2674</td><td class="num">2580</td></tr>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>2. 数据第一步变化：很多细胞变成一个 effect 向量</h2>
+    <p>我们追的真实任务是：</p>
+    <div class="formula">context = 22RV1<br>perturbation = Trametinib</div>
+    <p>原始 h5ad 里，这不是一行，而是两堆细胞：</p>
+    <table>
+      <tr><th>组</th><th>筛选条件</th><th>真实细胞数</th></tr>
+      <tr class="control"><td>control 组</td><td><code>cell_line = 22RV1</code>, <code>perturbation = control</code></td><td class="num">158</td></tr>
+      <tr class="drug"><td>drug 组</td><td><code>cell_line = 22RV1</code>, <code>perturbation = Trametinib</code></td><td class="num">84</td></tr>
+    </table>
+    <h3>2.1 这句话逐词解释</h3>
+    <table>
+      <tr><th>词</th><th>怎么读</th><th>人话</th></tr>
+      <tr><td><code>22RV1</code></td><td>twenty-two R V one</td><td>一个癌细胞系名字。你可以先理解成“实验用的一种细胞背景”。</td></tr>
+      <tr><td><code>control</code></td><td>对照组</td><td>没有加目标药物的细胞，用来当基准线。</td></tr>
+      <tr><td><code>Trametinib</code></td><td>曲美替尼</td><td>一种药物名字。这里表示“给 22RV1 细胞加了这个药”。</td></tr>
+      <tr><td><code>cells</code></td><td>细胞</td><td>一个 cell 就是一条单细胞测序记录。158 cells 就是 158 个单细胞。</td></tr>
+      <tr><td><code>22RV1 control: 158 cells</code></td><td>22RV1 的对照组有 158 个细胞</td><td>在 22RV1 这个背景下，没加 Trametinib 的细胞有 158 个。</td></tr>
+      <tr><td><code>22RV1 Trametinib: 84 cells</code></td><td>22RV1 的 Trametinib 处理组有 84 个细胞</td><td>在 22RV1 这个背景下，加了 Trametinib 的细胞有 84 个。</td></tr>
+    </table>
+    <div class="note">
+      对应 CSV：
+      <a href="../h5ad可打开CSV样例/02_obs细胞表_22RV1_control和Trametinib样例.csv">02_obs细胞表_22RV1_control和Trametinib样例.csv</a>，
+      <a href="../h5ad可打开CSV样例/04_X表达矩阵小块_20个细胞x8个基因.csv">04_X表达矩阵小块_20个细胞x8个基因.csv</a>，
+      <a href="../h5ad可打开CSV样例/06_22RV1_Trametinib这句话逐词解释.csv">06_22RV1_Trametinib这句话逐词解释.csv</a>。
+    </div>
+
+    <div class="arrow">↓ 对每个基因分别求平均</div>
+
+    <table>
+      <tr><th>gene</th><th>control_mean</th><th>trametinib_mean</th><th>effect = trametinib_mean - control_mean</th></tr>
+      <tr><td>RPLP1</td><td class="num">141.354</td><td class="num">105.857</td><td class="num">-35.497</td></tr>
+      <tr><td>RPL41</td><td class="num">321.772</td><td class="num">225.667</td><td class="num">-96.105</td></tr>
+      <tr><td>RPS2</td><td class="num">186.532</td><td class="num">128.476</td><td class="num">-58.055</td></tr>
+      <tr><td>RPS18</td><td class="num">148.335</td><td class="num">126.440</td><td class="num">-21.895</td></tr>
+      <tr><td>TMSB10</td><td class="num">194.228</td><td class="num">140.988</td><td class="num">-53.240</td></tr>
+    </table>
+    <p>比如 RPLP1 这一列：</p>
+    <div class="formula">105.857 - 141.354 = -35.497</div>
+    <p>意思是：在 22RV1 里加 Trametinib 后，RPLP1 平均表达比 control 低了 35.497。</p>
+    <div class="note">
+      对应 CSV：
+      <a href="../h5ad可打开CSV样例/05_从表达矩阵到effect_8个基因演示.csv">05_从表达矩阵到effect_8个基因演示.csv</a>
+    </div>
+    <div class="note">
+      这一步的数据形状变化是：<b>很多行单细胞</b> → <b>一个任务的一条 effect 向量</b>。
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>3. 向量是什么：一串固定顺序的数字</h2>
+    <p>正式 pipeline 保存的 effect 不是只看 5 个基因，而是 5000 个位置：</p>
+    <div class="formula">true_effect = [第0个基因变化, 第1个基因变化, 第2个基因变化, ..., 第4999个基因变化]</div>
+    <p>同一条记录 <code>v2_rec_000930</code> 有两个向量：</p>
+    <table>
+      <tr><th>向量</th><th>哪里来的</th><th>打分时能不能看</th></tr>
+      <tr><td><code>true_effect</code></td><td>真实实验算出来的标准答案</td><td><span class="pill">不能</span></td></tr>
+      <tr><td><code>predicted_effect</code></td><td>V0StrongBaseline 猜出来的预测答案</td><td><span class="pill">能</span></td></tr>
+    </table>
+    <table>
+      <tr><th>gene_index</th><th>true_effect</th><th>predicted_effect</th><th>difference</th><th>squared_error</th></tr>
+      <tr><td class="num">0</td><td class="num">0</td><td class="num">-0.00001649</td><td class="num">-0.00001649</td><td class="num">0.000000000272</td></tr>
+      <tr><td class="num">3</td><td class="num">0.005576</td><td class="num">-0.001504</td><td class="num">-0.007079</td><td class="num">0.0000501</td></tr>
+      <tr><td class="num">5</td><td class="num">-0.01341</td><td class="num">-0.0006788</td><td class="num">0.01273</td><td class="num">0.000162</td></tr>
+      <tr><td class="num">8</td><td class="num">-0.2500</td><td class="num">-0.2186</td><td class="num">0.03137</td><td class="num">0.000984</td></tr>
+      <tr><td class="num">4027</td><td class="num">-53.240</td><td class="num">-28.664</td><td class="num">24.576</td><td class="num">603.957</td></tr>
+      <tr><td class="num">1989</td><td class="num">-17.188</td><td class="num">-1.263</td><td class="num">15.925</td><td class="num">253.595</td></tr>
+    </table>
+    <p>RMSE 就是把全部 5000 个位置都这样算：</p>
+    <div class="formula">RMSE = sqrt(mean((predicted_effect - true_effect)^2)) = 0.5776326656</div>
+    <p>所以 <code>PREDICTION_RECORDS.csv</code> 里这一条的 <code>true_error_rmse</code> 是 <b>0.5776</b>。</p>
+    <div class="note">
+      对应 CSV：
+      <a href="../h5ad可打开CSV样例/11_true_effect_vs_predicted_effect_前20个位置.csv">11_true_effect_vs_predicted_effect_前20个位置.csv</a>，
+      <a href="../h5ad可打开CSV样例/12_true_effect_vs_predicted_effect_误差最大30个位置.csv">12_true_effect_vs_predicted_effect_误差最大30个位置.csv</a>。
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>4. 一条 PredictionRecord 具体长这样</h2>
+    <table>
+      <tr><th>record_id</th><th>fold</th><th>split</th><th>context</th><th>perturbation</th><th>predictor</th><th>true_error_rmse</th></tr>
+      <tr><td>v2_rec_000930</td><td class="num">0</td><td>test</td><td>22RV1</td><td>Trametinib</td><td>V0StrongBaseline</td><td class="num">0.5776</td></tr>
+    </table>
+    <p>它对应的 split 是：</p>
+    <table>
+      <tr><th>context</th><th>perturbation</th><th>split</th><th>pair_seen_in_train</th><th>context_seen_in_train</th><th>perturbation_seen_in_train</th></tr>
+      <tr><td>22RV1</td><td>Trametinib</td><td>test</td><td>False</td><td>True</td><td>True</td></tr>
+    </table>
+    <div class="note">
+      这表示：训练时没见过 <b>22RV1 × Trametinib</b> 这个组合，但见过 22RV1 的其他药，也见过 Trametinib 的其他细胞系。
+    </div>
+    <div class="note">
+      对应 CSV：
+      <a href="../h5ad可打开CSV样例/07_切分表_这道题为什么是test.csv">07_切分表_这道题为什么是test.csv</a>，
+      <a href="../h5ad可打开CSV样例/08_PredictionRecord_单条预测记录.csv">08_PredictionRecord_单条预测记录.csv</a>。
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>5. SafeConf 打分时看到什么</h2>
+    <p>SafeConf 不能看 true_effect，也不能看 true_error_rmse。它只能看预测输出和训练集能提供的线索。</p>
+    <table>
+      <tr><th>feature</th><th>这条记录的值</th><th>人话解释</th></tr>
+      <tr><td>context_similarity_max</td><td class="num">0.9677</td><td>22RV1 和训练集中最像背景的相似度很高。</td></tr>
+      <tr><td>perturbation_support_count</td><td class="num">121</td><td>训练集中有 121 个 Trametinib 相关支持。</td></tr>
+      <tr><td>prediction_l2_norm</td><td class="num">47.92</td><td>预测出来的效应向量整体幅度。</td></tr>
+      <tr><td>prediction_magnitude_deviation</td><td class="num">0.7474</td><td>预测幅度偏离常见范围的程度。</td></tr>
+      <tr><td>model_disagreement_rmse</td><td class="num">0.3692</td><td>V0 和 ContextSim 对这道题分歧多大。</td></tr>
+      <tr><td>historical_residual_risk</td><td class="num">2.213</td><td>历史上类似情况的风险。</td></tr>
+    </table>
+    <p>这些 feature 再变成多个 score：</p>
+    <table>
+      <tr><th>score_name</th><th>score_type</th><th>score_value</th></tr>
+      <tr><td>context_similarity_score</td><td>confidence</td><td class="num">0.9677</td></tr>
+      <tr><td>support_count_score</td><td>confidence</td><td class="num">4.804</td></tr>
+      <tr><td>model_disagreement_risk</td><td>risk</td><td class="num">0.3692</td></tr>
+      <tr><td>simple_combined_confidence</td><td>confidence</td><td class="num">-0.8523</td></tr>
+      <tr><td>learned_risk_score</td><td>risk</td><td class="num">1.5918</td></tr>
+    </table>
+    <div class="note warn">
+      <b>confidence</b> 越高越可信；<b>risk</b> 越高越危险。方向相反，所以最后评估时要做方向对齐。
+    </div>
+    <div class="note">
+      对应 CSV：
+      <a href="../h5ad可打开CSV样例/09_ConfidenceFeatures_单条质检线索.csv">09_ConfidenceFeatures_单条质检线索.csv</a>，
+      <a href="../h5ad可打开CSV样例/10_ConfidenceScores_单条记录的多个分数.csv">10_ConfidenceScores_单条记录的多个分数.csv</a>。
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>6. 最后怎么变成论文数字</h2>
+    <p>一条记录看不出方法好坏。最后要把所有 test records 放一起，看分数和真实误差是否相关。</p>
+    <table>
+      <tr><th>dataset</th><th>n test records</th><th>aligned rho</th><th>magnitude-only rho</th><th>partial rho</th><th>RC@80%</th></tr>
+      <tr><td>McFarlandTsherniak2020</td><td class="num">2326</td><td class="num">-0.0859</td><td class="num">0.7954</td><td class="num">-0.0609</td><td class="num">3.951%</td></tr>
+    </table>
+    <p>这说明 McFarland 上 frozen v0.2 没成功，是 failure boundary。</p>
+    <div class="note danger">
+      但这不是“所有数据都没信号”。它说明：McFarland 这个药物数据集里，提前冻结的 v0.2 组合没有抓对信号。这个失败要诚实报告。
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>7. 文件入口</h2>
+    <p>这个目录是专门给你看的科普材料，不放在科研进展里。</p>
+    <ul>
+      <li><a href="./SafeConf_数据到底长什么样_一页看懂_20260608.html">当前这一页：数据到底长什么样</a></li>
+      <li><a href="../assets/SafeConf_数据变化一图看懂_20260608.svg">单张流程图：数据变化一图看懂</a></li>
+      <li><a href="../从h5ad到effect_真实数据实物拆解_20260608.md">详细 Markdown：真实数据实物拆解</a></li>
+      <li><a href="../SafeConf整体架构流程图_20260608.html">架构图：SafeConf 整体怎么工作</a></li>
+      <li><a href="../index.html">返回小白科普首页</a></li>
+    </ul>
+  </section>
+</div>
+</body>
+</html>

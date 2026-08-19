@@ -1,0 +1,66 @@
+{
+  "schema": "safeconf_e161_transaction_v1",
+  "experiment": "E161",
+  "transaction_id": "f5cb138af73c48c4a1d69d94e93f28b1",
+  "phase": "complete",
+  "created_at": "2026-07-15T14:42:20+08:00",
+  "phase_history": [
+    {
+      "phase": "building",
+      "at": "2026-07-15T14:42:20+08:00"
+    },
+    {
+      "phase": "ready_to_publish",
+      "at": "2026-07-15T14:43:13+08:00"
+    },
+    {
+      "phase": "asset_published",
+      "at": "2026-07-15T14:43:14+08:00"
+    },
+    {
+      "phase": "link_published",
+      "at": "2026-07-15T14:43:14+08:00"
+    },
+    {
+      "phase": "complete",
+      "at": "2026-07-15T14:43:15+08:00"
+    }
+  ],
+  "roots": {
+    "asset_staging": "/home/yyf/data/safeconf_e161_prescribe/.wessels_e160.staging",
+    "asset_final": "/home/yyf/data/safeconf_e161_prescribe/wessels_e160",
+    "prescribe_link": "/home/yyf/archive/external/PRESCRIBE/data/wessels_e160",
+    "repo_staging": "/home/yyf/proj/docs/实验结果/E161_wessels_trainval_preprocess_20260714/.release.staging",
+    "repo_release": "/home/yyf/proj/docs/实验结果/E161_wessels_trainval_preprocess_20260714/release"
+  },
+  "git_head": "146c8e7f9812fc9a72cd0d49aa9e35db7ba15034",
+  "runner_sha256": "61f51be306b6e3fa4714ae834f489609a8e2f922298a724abb73131e5608e790",
+  "contract_sha256": "950fffa95768320ecdd42986231e6ec42a82c15eedae76244ff3a042cda23b30",
+  "preflight_amendment_sha256": "d6975a9c713f091617b6c7c7dd17883d357baf1bb67609504e7290a7e6898b84",
+  "endogenous_axis_amendment_sha256": "92640583f56688df1a4bbe501d7b2f027928f4778312e1d049b8696d730de6c6",
+  "e161a_status_sha256": "60005a4a3f955c72ffa5f8613010034925493a29fd771be0558e984395de0231",
+  "e161a_manifest_sha256": "6325eaf234ad32b45e8165505dfaa5299feced4e5f3c8bbcf3f6da44ee0647fc",
+  "raw_sha256": "5da0485aed81b23bda57b4a7b4510a394682d54911416db89b4846ff6dd34732",
+  "runtime_environment": {
+    "python": "3.9.25",
+    "anndata": "0.10.8",
+    "scanpy": "1.10.3",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "scipy": "1.13.1",
+    "scikit-learn": "1.6.1",
+    "scikit-misc": "0.3.1",
+    "h5py": "3.14.0",
+    "torch": "2.1.2+cu118",
+    "torch-geometric": "2.6.1"
+  },
+  "previous_rolled_back_transaction": {
+    "transaction_id": "cbb902b6e99041e49e8809d711ccab07",
+    "updated_at": "2026-07-15T14:18:56+08:00"
+  },
+  "updated_at": "2026-07-15T14:43:15+08:00",
+  "asset_manifest_sha256": "c755ba6c70705187a45b32f0bfb95b05687a64860daa565dcdf5ad9b90a6f54d",
+  "repo_status_sha256": "9c1601bef3bac70e5b9b85cf523bd3d000d36e0c3f84f2f35e57fa6300e5213f",
+  "asset_final_sha256_manifest": "c755ba6c70705187a45b32f0bfb95b05687a64860daa565dcdf5ad9b90a6f54d",
+  "repo_final_status_sha256": "9c1601bef3bac70e5b9b85cf523bd3d000d36e0c3f84f2f35e57fa6300e5213f"
+}

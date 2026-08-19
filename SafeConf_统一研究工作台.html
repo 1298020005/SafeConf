@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SafeConf 统一研究工作台</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink:#17212b; --muted:#5c6874; --line:#d9e0e5;
+      --paper:#fff; --canvas:#f3f5f4; --nav:#172934;
+      --teal:#087f73; --teal-soft:#e8f4f1;
+      --blue:#275f9d; --blue-soft:#eaf1f8;
+      --amber:#9b6508; --amber-soft:#fff4d9;
+      --red:#a4403a; --red-soft:#faecea;
+      --green:#28734f; --green-soft:#eaf4ed;
+      --shadow:0 10px 28px rgba(27,39,51,.07);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:78px}
+    body{margin:0;overflow-x:hidden;background:var(--canvas);color:var(--ink);font-family:"Microsoft YaHei","PingFang SC","Segoe UI",Arial,sans-serif;font-size:16px;line-height:1.72}
+    a{color:var(--blue);text-decoration-thickness:1px;text-underline-offset:3px}
+    a:hover{color:#17487e}
+    button,input,select{font:inherit}
+    .shell{width:min(1220px,calc(100% - 32px));max-width:100%;margin:0 auto}
+    .topbar{position:sticky;z-index:30;top:0;border-bottom:1px solid #263844;background:var(--nav);color:#fff}
+    .topbar-inner{display:flex;min-height:58px;align-items:center;justify-content:space-between;gap:18px}
+    .brand{color:#fff;font-size:18px;font-weight:800;text-decoration:none;white-space:nowrap}
+    .nav{display:flex;flex-wrap:wrap;gap:5px;justify-content:flex-end}
+    .nav a{padding:7px 9px;border:1px solid transparent;border-radius:6px;color:#dce8ec;font-size:14px;text-decoration:none}
+    .nav a:hover{border-color:#55717e;background:#233d49;color:#fff}
+    .page-head{padding:42px 0 28px;border-bottom:1px solid var(--line);background:var(--paper)}
+    .eyebrow{margin:0 0 8px;color:var(--teal);font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    h1,h2,h3{margin-top:0;line-height:1.28}
+    h1{max-width:920px;margin-bottom:12px;font-size:40px}
+    h2{margin-bottom:12px;font-size:26px}
+    h3{margin-bottom:8px;font-size:19px}
+    .lead{max-width:930px;margin:0;overflow-wrap:anywhere;color:#43515d;font-size:18px}
+    .version-strip{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+    .tag,.status{display:inline-flex;max-width:100%;align-items:center;padding:4px 9px;border:1px solid var(--line);border-radius:5px;background:#f8faf9;color:#3e4b56;font-size:13px;font-weight:700}
+    .good{border-color:#b8d7c3!important;background:var(--green-soft)!important;color:var(--green)!important}
+    .warn{border-color:#ead29a!important;background:var(--amber-soft)!important;color:var(--amber)!important}
+    .danger{border-color:#e3b8b4!important;background:var(--red-soft)!important;color:var(--red)!important}
+    .info{border-color:#bdd0e3!important;background:var(--blue-soft)!important;color:var(--blue)!important}
+    main{padding:28px 0 60px}
+    .band{margin:0 0 30px}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:13px}
+    .section-head p{max-width:720px;margin:0;color:var(--muted)}
+    .grid{display:grid;gap:14px}
+    .start-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .grid2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid5{grid-template-columns:repeat(5,minmax(0,1fr))}
+    .entry,.panel,.metric,.problem{min-width:0;border:1px solid var(--line);border-radius:8px;background:var(--paper);box-shadow:var(--shadow)}
+    .entry{display:flex;min-height:188px;flex-direction:column;justify-content:space-between;padding:19px;color:var(--ink);text-decoration:none;transition:.15s ease}
+    .entry:hover{border-color:#9bb6c8;color:var(--ink);transform:translateY(-2px)}
+    .entry-kicker{color:var(--teal);font-size:12px;font-weight:800}
+    .entry h3{margin:6px 0 8px;font-size:21px}
+    .entry p{margin:0;color:var(--muted)}
+    .entry-action{margin-top:18px;color:var(--blue);font-weight:800}
+    .panel{padding:21px}
+    .notice{border-left:5px solid var(--teal);background:var(--teal-soft);box-shadow:none}
+    .notice.warn-box{border-left-color:var(--amber);background:var(--amber-soft)}
+    .notice.danger-box{border-left-color:var(--red);background:var(--red-soft)}
+    .metric{padding:18px;text-align:center}
+    .metric strong{display:block;color:var(--teal);font-size:31px;line-height:1.15}
+    .metric span{display:block;margin-top:7px;color:var(--muted);font-size:14px}
+    .flow{display:flex;align-items:stretch;gap:0;margin-top:16px}
+    .step{position:relative;flex:1;min-width:0;padding:16px 13px;border:1px solid var(--line);background:#fff;text-align:center}
+    .step:first-child{border-radius:8px 0 0 8px}.step:last-child{border-radius:0 8px 8px 0}
+    .step:not(:last-child)::after{content:"→";position:absolute;z-index:2;right:-13px;top:50%;width:25px;transform:translateY(-50%);background:#fff;color:var(--teal);font-size:21px;font-weight:800}
+    .step b{display:block;margin-bottom:4px}.step small{color:var(--muted)}
+    table{width:100%;border-collapse:collapse;background:#fff;font-size:14.5px}
+    th{padding:10px 12px;background:#edf2f3;color:#263844;text-align:left;font-weight:800}
+    td{padding:10px 12px;border-bottom:1px solid #e6ebee;vertical-align:top}
+    tbody tr:hover{background:#f8faf9}
+    .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow)}
+    .problem{padding:20px;border-top:4px solid var(--amber)}
+    .problem.red{border-top-color:var(--red)}.problem.blue{border-top-color:var(--blue)}.problem.teal{border-top-color:var(--teal)}
+    .problem p{margin:7px 0;color:var(--muted)}
+    .problem .answer{margin-top:12px;padding-top:10px;border-top:1px solid var(--line);color:var(--ink)}
+    .decision{display:grid;grid-template-columns:1fr 72px 1fr;align-items:stretch;gap:12px}
+    .decision-mid{display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:800}
+    .route{padding:22px;border:1px solid var(--line);border-radius:8px;background:#fff;box-shadow:var(--shadow)}
+    .route.a{border-top:5px solid var(--teal)}.route.b{border-top:5px solid var(--blue)}
+    .route ul{margin-bottom:0;padding-left:21px}
+    .route li{margin:7px 0}
+    .definition{display:grid;grid-template-columns:180px minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+    .definition:last-child{border-bottom:0}.definition strong{color:#243947}.definition span{color:var(--muted)}
+    .filters{display:grid;grid-template-columns:minmax(260px,1fr) 220px auto;gap:10px;margin:14px 0}
+    .filters input,.filters select{width:100%;padding:10px 12px;border:1px solid #cbd5da;border-radius:6px;background:#fff;color:var(--ink)}
+    .count{display:flex;align-items:center;justify-content:center;padding:8px 12px;border-radius:6px;background:var(--teal-soft);color:var(--teal);font-size:14px;font-weight:800}
+    .doc-groups{display:grid;gap:14px}
+    .doc-group{border:1px solid var(--line);border-radius:8px;background:#fff;box-shadow:var(--shadow);overflow:hidden}
+    .doc-group h3{display:flex;align-items:center;justify-content:space-between;margin:0;padding:14px 17px;background:#edf2f3;font-size:17px}
+    .doc-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0}
+    .doc-item{display:flex;min-height:86px;flex-direction:column;padding:13px 17px;border-top:1px solid #e6ebee;color:var(--ink);text-decoration:none}
+    .doc-item:nth-child(odd){border-right:1px solid #e6ebee}
+    .doc-item:hover{background:#f7faf9;color:var(--ink)}
+    .doc-item b{font-size:15px}.doc-item small{margin-top:3px;color:var(--muted);word-break:break-all}
+    .doc-item.server{border-left:4px solid var(--amber)}
+    .hidden{display:none!important}
+    code,.path{padding:2px 5px;border:1px solid #dde4e7;border-radius:4px;background:#f5f7f7;color:#31424f;font-family:Consolas,"SFMono-Regular",monospace;font-size:.9em}
+    .footer{padding:22px 0 42px;color:var(--muted);text-align:center;font-size:14px}
+    @media(max-width:960px){.start-grid,.grid5{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:1fr}.doc-list{grid-template-columns:1fr}.doc-item:nth-child(odd){border-right:0}.nav{display:none}}
+    @media(max-width:680px){h1{font-size:31px}.grid2,.start-grid,.grid5{grid-template-columns:1fr}.flow{flex-direction:column}.step{border-radius:7px!important}.step:not(:last-child)::after{content:"↓";right:auto;top:auto;bottom:-15px;left:50%;transform:translateX(-50%)}.decision{grid-template-columns:1fr}.decision-mid{min-height:34px}.filters{grid-template-columns:1fr}.definition{grid-template-columns:1fr}.shell{width:min(100% - 22px,1220px)}}
+    @media print{.topbar,.filters{display:none}.entry,.panel,.metric,.problem,.doc-group{box-shadow:none}body{background:#fff}.band{break-inside:avoid}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="#start">SafeConf 统一研究工作台</a>
+      <nav class="nav" aria-label="主导航">
+        <a href="#start">开始</a><a href="#system">系统</a><a href="#evidence">证据</a>
+        <a href="#problems">问题</a><a href="#teacher">老师六问</a><a href="#documents">文档</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-head" id="start">
+    <div class="shell">
+      <p class="eyebrow">Single source of truth · updated 2026-07-14</p>
+      <h1>SafeConf 统一研究工作台</h1>
+      <p class="lead">一个页面连接当前进度、组会汇报、实验证据、学习资料、代码、AI 协作和历史归档。无需再在服务器里猜“哪个才是最新版”。</p>
+      <div class="version-strip">
+        <span class="tag good">当前定位：task-risk triage</span>
+        <span class="tag good">主要实验已闭环</span>
+        <span class="tag good">E108 / E112 正式 scGPT–GEARS 已完成</span>
+        <span class="tag good">E131 六数据集元分析已完成</span>
+        <span class="tag warn">录用与期刊分区不能预先保证</span>
+        <span class="tag info">项目归档已集中</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="shell">
+    <section class="band">
+      <div class="section-head"><div><h2>现在从哪里开始</h2><p>这里放最高频入口。其他文档都放在本页底部的可搜索文档地图中。</p></div></div>
+      <div class="grid start-grid">
+        <a class="entry" href="docs/投稿准备/录用判断与项目总账_20260713/index.html"><div><span class="entry-kicker">更新至 2026-07-14</span><h3>周老师问题、六数据证据与录用边界</h3><p>逐项回答老师的追问，汇总 E108–E132 正式证据、失败复制和实际分诊效用。</p></div><span class="entry-action">打开当前总账 →</span></a>
+        <a class="entry" href="docs/投稿升级/Q1_CCFA_upgrade_20260707/Q1_PUBLICATION_WORKBENCH.html"><div><span class="entry-kicker">2026-07-07 历史规划</span><h3>一区 / CCF-A 早期作战台</h3><p>保留 E9–E12 阶段的强基线边界和实验规划，用于追溯；当前判断以已更新至 7 月 14 日的录用总账为准。</p></div><span class="entry-action">查看历史规划 →</span></a>
+        <a class="entry" href="workspace/group_meeting_20260709_MAINLINE_WHITE/SafeConf_主线汇报_术语跳转增强版_20260709.html"><div><span class="entry-kicker">当前第一入口</span><h3>7 月 9 日主线白底增强版</h3><p>14 页白底截图页，带术语跳转和详细解释，聚焦 task-risk 主线、E25–E32 模型级入口、边界和下一步决策。</p></div><span class="entry-action">打开增强版 →</span></a>
+        <a class="entry" href="agents/STATE.md"><div><span class="entry-kicker">权威口径</span><h3>当前项目状态</h3><p>哪些证据已经完成，哪些说法不能外推，以及下一阶段唯一真正的技术缺口。</p></div><span class="entry-action">查看状态 →</span></a>
+        <a class="entry" href="docs/SafeConf_完整项目讲解/index.html"><div><span class="entry-kicker">完整学习入口</span><h3>从零读懂整个 SafeConf</h3><p>十二章覆盖生物基础、真实数据、代码设计、全部实验谱系、结果边界和下一阶段；术语可搜索。</p></div><span class="entry-action">开始学习 →</span></a>
+        <a class="entry" href="code/README.md"><div><span class="entry-kicker">代码入口</span><h3>复跑、测试与输出</h3><p>当前 Python 包、复跑脚本、兼容实现和 runtime 大型产物的真实边界。</p></div><span class="entry-action">进入代码 →</span></a>
+      </div>
+    </section>
+
+    <section class="band" id="system">
+      <div class="section-head"><div><h2>这个系统到底做什么</h2><p>SafeConf 不代替 scGPT、GEARS 或 CPA 生成扰动预测；它站在预测后面，帮你排出“哪些结果最应该先查”。</p></div></div>
+      <div class="panel">
+        <div class="flow">
+          <div class="step"><b>已有扰动预测</b><small>context × perturbation</small></div>
+          <div class="step"><b>统一预测记录</b><small>PredictionRecord</small></div>
+          <div class="step"><b>Fold-safe 特征</b><small>相似度、支持量、分歧</small></div>
+          <div class="step"><b>SafeConf 任务风险</b><small>frozen / learned</small></div>
+          <div class="step"><b>复核与湿实验分诊</b><small>有限预算优先高风险</small></div>
+        </div>
+      </div>
+      <div class="grid grid5" style="margin-top:14px">
+        <div class="metric"><strong>7</strong><span>正式主数据集</span></div>
+        <div class="metric"><strong>6 / 7</strong><span>Frozen partial ρ 为正</span></div>
+        <div class="metric"><strong>9,000</strong><span>Tahoe 外部任务</span></div>
+        <div class="metric"><strong>14 / 15</strong><span>E8b 方法方向为正</span></div>
+        <div class="metric"><strong>83</strong><span>E10 外部 h5ad 资产</span></div>
+        <div class="metric"><strong>0.734</strong><span>E12 best external ρ</span></div>
+        <div class="metric"><strong>0.576</strong><span>E13 official sciplex3 ρ</span></div>
+        <div class="metric"><strong>0.862</strong><span>E14 full-743 learned ρ</span></div>
+        <div class="metric"><strong>0.899</strong><span>E15 2k learned ρ</span></div>
+        <div class="metric"><strong>0.903</strong><span>E16 3k learned ρ</span></div>
+        <div class="metric"><strong>0.891</strong><span>E17 5k learned ρ</span></div>
+        <div class="metric"><strong>54</strong><span>E18 GEARS records</span></div>
+        <div class="metric"><strong>0.624</strong><span>E19 GEARS formal ρ</span></div>
+        <div class="metric"><strong>10 / 10</strong><span>E20 non-strict usable</span></div>
+        <div class="metric"><strong>pass</strong><span>E21 strict smoke</span></div>
+        <div class="metric"><strong>240</strong><span>E22 generator records</span></div>
+        <div class="metric"><strong>120</strong><span>E23 shared tasks</span></div>
+        <div class="metric"><strong>54</strong><span>E24 GEARS candidates</span></div>
+        <div class="metric"><strong>0</strong><span>E25 strict issues</span></div>
+        <div class="metric"><strong>0.679</strong><span>E26 GEARS risk ρ</span></div>
+        <div class="metric"><strong>3</strong><span>E27 scGPT smoke records</span></div>
+        <div class="metric"><strong>6</strong><span>E28 shared records</span></div>
+        <div class="metric"><strong>14</strong><span>E29 risk records</span></div>
+        <div class="metric"><strong>5 / 47</strong><span>E30 repeated GEARS tasks</span></div>
+        <div class="metric"><strong>7 / 7</strong><span>E31 fixed test hit</span></div>
+        <div class="metric"><strong>0.679</strong><span>E32 seed disagreement ρ</span></div>
+        <div class="metric"><strong>1</strong><span>尚待决定的技术层</span></div>
+      </div>
+      <div class="grid grid2" style="margin-top:14px">
+        <div class="panel notice"><h3>已经证明较完整</h3><p><b>Task-level risk（任务层风险）：</b>这道 context–perturbation 任务总体上容不容易错，可用于高风险预测分诊。</p></div>
+        <div class="panel notice warn-box"><h3>还没有证明</h3><p><b>Model-specific risk（模型特异风险）：</b>同一道任务上，模型 A 和模型 B 哪个更可靠。这需要真实多模型的逐任务预测向量。</p></div>
+      </div>
+    </section>
+
+    <section class="band" id="evidence">
+      <div class="section-head"><div><h2>当前证据链</h2><p>这里只放现在仍然成立的结论。数字可直接追到下方的正式报告。</p></div></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>证据层</th><th>直接回答</th><th>关键数字</th><th>当前判定</th><th>边界</th></tr></thead>
+          <tbody>
+            <tr><td>Task-risk 动机</td><td>错误是否有稳定的任务结构？</td><td>task variance 93.6%<br>predictor error ρ=0.973</td><td><span class="status good">支持</span></td><td>只涉及当前参考预测器</td></tr>
+            <tr><td>Frozen v0.2</td><td>固定公式能否排序风险？</td><td>6/7 partial ρ&gt;0<br>top-10 macro 3.35x</td><td><span class="status good">多数成立</span></td><td>McFarland 失败；Santinha weak positive</td></tr>
+            <tr><td>E1–E4 fold-safe</td><td>信号是否只是 magnitude、泄漏或缺失伪影？</td><td>E2 7/7 residual CI&gt;0<br>E3 负对照 7/7</td><td><span class="status good">通过</span></td><td>Learned extension 不等于 Frozen 本身</td></tr>
+            <tr><td>E8b scPerturBench</td><td>多种方法的错误是否与任务风险相关？</td><td>15 methods，14/15 为正<br>median ρ=0.584</td><td><span class="status warn">有限支持</span></td><td>聚合关联；受样本量和 metric 影响</td></tr>
+            <tr><td>Tahoe D0–D5</td><td>大型 chemical 数据上是否仍有任务风险信号？</td><td>D1 ρ=0.453；D2 ρ=0.470<br>SafeConf 4.88x</td><td><span class="status good">闭环</span></td><td>magnitude 6.49x 更强；不是 held-out drug</td></tr>
+            <tr><td>E9 强基线审计</td><td>是否存在“SafeConf 过度声称”的风险？</td><td>Frozen 直接胜 magnitude 仅 2/7<br>E2 residual 仍 7/7 为正</td><td><span class="status warn">降火证据</span></td><td>主张应写 residual task-risk，而不是全面超越</td></tr>
+            <tr><td>E10 外部资产与探针</td><td>外部数据是否够用，管线能否跑通？</td><td>83 h5ad，约 107.3 GiB<br>metadata 覆盖 66/66<br>overall best ρ=0.559</td><td><span class="status good">探针完成</span></td><td>learned risk 未超过 disagreement；仍属外部探针</td></tr>
+            <tr><td>E12 外部面板扩展</td><td>更多外部候选是否适合 held-out pair？</td><td>6 候选，3 个可评估<br>best ρ=0.734<br>simple cov80 +11.51%</td><td><span class="status good">扩展完成</span></td><td>单 perturbation 数据需改用 context/dose split</td></tr>
+            <tr><td>E13 官方 sciplex3 三细胞系</td><td>官方 A549/K562/MCF7 drug-dose 能否进入任务风险审计？</td><td>240 tasks，480 test records<br>disagreement ρ=0.576<br>learned ρ=0.572</td><td><span class="status good">focused panel 完成</span></td><td>全量 743 shared drug-dose 需先优化 feature 计算</td></tr>
+            <tr><td>E14 sciplex3 full-743 gene1000</td><td>全量共享 drug-dose 是否能跑通？</td><td>2,229 tasks，4,458 test records<br>learned ρ=0.862<br>disagreement ρ=0.418</td><td><span class="status good">full perturbation 快速验证</span></td><td>1,000-gene 版本；5,000-gene 正式版待复跑</td></tr>
+            <tr><td>E15 sciplex3 full-743 gene2000</td><td>提高基因面板后信号是否保持？</td><td>2,229 tasks，4,458 test records<br>learned ρ=0.899<br>disagreement ρ=0.739</td><td><span class="status good">sensitivity 完成</span></td><td>仍需 3,000/5,000-gene 继续确认</td></tr>
+            <tr><td>E16 sciplex3 full-743 gene3000</td><td>继续提高基因面板后是否稳定？</td><td>2,229 tasks，4,458 test records<br>learned ρ=0.903<br>disagreement ρ=0.702</td><td><span class="status good">sensitivity 完成</span></td><td>5,000-gene 正式版和真实多模型仍待完成</td></tr>
+            <tr><td>E17 sciplex3 full-743 gene5000</td><td>5,000-gene 正式面板是否成立？</td><td>2,229 tasks，4,458 test records<br>learned ρ=0.891<br>disagreement ρ=0.692</td><td><span class="status good">formal full-743 完成</span></td><td>真实 GEARS/CPA/scGPT 逐模型验证仍待完成</td></tr>
+            <tr><td>E18 真实模型向量资产审计</td><td>本地是否已有 GEARS/CPA/scGPT 逐向量？</td><td>GEARS 54 records 可读<br>scGPT/CPA 无 SafeConf 向量<br>native uncertainty 缺失</td><td><span class="status warn">partial ready</span></td><td>只能做 GEARS-only supplement；统一多模型仍待 adapter</td></tr>
+            <tr><td>E19 GEARS-only supplement</td><td>GEARS-only 结果能否形成补充证据？</td><td>formal 54 records ρ=0.624<br>Frangieh supplement 62 records ρ=0.941</td><td><span class="status good">supplement 完成</span></td><td>不是 CPA/scGPT 统一多模型验证</td></tr>
+            <tr><td>E20 adapter contract validator</td><td>已有预测输出能否直接进入 strict 多模型合同？</td><td>10 bundles 可 non-strict 审计<br>strict pass = 0<br>E17/GEARS arrays coverage = 1.0</td><td><span class="status warn">合同体检完成</span></td><td>需修 task-scoped true_effect_key，并补 scGPT/CPA adapter</td></tr>
+            <tr><td>E21 strict contract remediation</td><td>task-scoped true effect 修法是否可行？</td><td>60 records，30 task groups<br>strict issue_count = 0<br>true diff within task = 0</td><td><span class="status good">修法样例通过</span></td><td>小型 smoke，不替代 E17 正式结果</td></tr>
+            <tr><td>E22 generator strict smoke</td><td>修改后的生成器新产物是否直接 strict pass？</td><td>Haber 200 genes<br>240 records，120 task groups<br>strict issue_count = 0</td><td><span class="status good">生成器 smoke 通过</span></td><td>工程合同验证，不是性能结论</td></tr>
+            <tr><td>E23 shared benchmark adapter</td><td>多模型 adapter 是否有共同输入台面？</td><td>120 task groups<br>manifest checks 5/5 pass<br>GEARS 优先接入</td><td><span class="status good">adapter 地基完成</span></td><td>scGPT/CPA 仍无本地预测向量</td></tr>
+            <tr><td>E24 model-family compatibility</td><td>E23 manifest 是否适合直接给 GEARS？</td><td>E23=stimulus/timecourse<br>GEARS candidates=54<br>scgpt_env 可 import GEARS</td><td><span class="status warn">路线纠偏完成</span></td><td>已转入 E25 GEARS strict 证据包，不再跑 GEARS-on-E23</td></tr>
+            <tr><td>E25 GEARS strict records</td><td>真实 GEARS formal 输出能否进入 strict SafeConf 合同？</td><td>9 formal runs<br>54 PredictionRecords<br>strict issues = 0</td><td><span class="status good">GEARS strict-pass</span></td><td>仍不是 GEARS/scGPT/CPA 统一多模型验证</td></tr>
+            <tr><td>E26 GEARS single-model risk</td><td>GEARS-only 场景下哪些单模型线索能排出高错误？</td><td>abs-mean risk ρ=0.679<br>L2 risk ρ=0.624<br>native uncertainty 缺失</td><td><span class="status good">GEARS-only 分析完成</span></td><td>下一步应接 scGPT/CPA 第二模型 adapter</td></tr>
+            <tr><td>E27 scGPT forward smoke</td><td>scGPT 能否生成 strict SafeConf PredictionRecord？</td><td>3 PredictionRecords<br>128 genes<br>strict issues = 0</td><td><span class="status good">scGPT adapter smoke 完成</span></td><td>只是 forward-only smoke，仍需与 GEARS 同任务对齐</td></tr>
+            <tr><td>E28 GEARS–scGPT shared smoke</td><td>GEARS 与 scGPT 能否在同一任务/gene panel 下 strict 对齐？</td><td>3 tasks × 2 predictors<br>512 genes<br>strict issues = 0</td><td><span class="status good">双模型合同 smoke 完成</span></td><td>仍需扩大任务数、固定 split，不能当正式 benchmark</td></tr>
+            <tr><td>E29 GEARS–scGPT risk audit</td><td>双模型 shared 合同下，分歧能否标出高误差任务？</td><td>7 tasks × 2 predictors<br>14 records<br>disagreement ρ=0.357<br>strict issues = 0</td><td><span class="status warn">小样本风险审计完成</span></td><td>n=7；scGPT 仍是 forward-only；不能当正式 benchmark</td></tr>
+            <tr><td>E30 GEARS seed overlap</td><td>E25 的 3 个 GEARS runs 能否直接当 seed uncertainty？</td><td>47 unique tasks<br>42 singleton<br>5 repeat ≥2<br>true diff = 0</td><td><span class="status warn">证据缺口已确认</span></td><td>只能支持固定任务三 seed 重跑，不能直接写 ensemble uncertainty</td></tr>
+            <tr><td>E31 GEARS fixed-test smoke</td><td>GEARS exporter 能否固定同一批 test perturbations？</td><td>7 expected tasks<br>7 observed<br>7 records<br>strict issues = 0</td><td><span class="status good">工程入口打通</span></td><td>1 epoch smoke；不能当性能结果</td></tr>
+            <tr><td>E32 GEARS 3-seed smoke</td><td>固定 test 后，seed disagreement 能否形成风险线索？</td><td>7 tasks × 3 seeds<br>21 records<br>seed disagreement ρ=0.679<br>strict issues = 0</td><td><span class="status good">三 seed 工作流跑通</span></td><td>1 epoch smoke；n=7，需正式 epochs 和更多任务</td></tr>
+            <tr><td>E11 selective prediction</td><td>丢掉高风险预测后误差是否下降？</td><td>80% coverage 下 7/7 RMSE 下降<br>macro improvement 16.67%</td><td><span class="status good">应用角度支持</span></td><td>尚无 formal conformal guarantee</td></tr>
+            <tr><td>实用分诊</td><td>有限预算下能否更早找到坏预测？</td><td>Random 1.11x<br>Frozen 3.35x</td><td><span class="status good">有实用价值</span></td><td>不能写成普遍超越 magnitude</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="band" id="problems">
+      <div class="section-head"><div><h2>当前真正的问题</h2><p>“还有问题”不等于“继续随便加实验”。下面六项是现在必须如实保留的技术边界。</p></div></div>
+      <div class="grid grid3">
+        <article class="problem red"><h3>1. 同一任务的模型选择</h3><p>Frozen task score 对同一任务上的所有模型给出相同先验。</p><div class="answer"><b>缺口：</b>需要 model-specific residual 和 model-selection regret。</div></article>
+        <article class="problem blue"><h3>2. 真实多模型逐向量验证</h3><p>GEARS 已有 strict-pass formal 证据包和 GEARS-only 风险分析；scGPT 已有 forward-only strict smoke；E28/E29 已证明 GEARS–scGPT 同任务/gene panel 合同和小样本风险审计可行；E30 说明现有 GEARS runs 不足以直接写 seed uncertainty；E31/E32 已打通 fixed-test 3-seed smoke；CPA 尚未接入。</p><div class="answer"><b>下一步：</b>把 fixed-test 3-seed 提升到正式 epochs、扩大 shared tasks/数据集，或推进 CPA 资产。</div></article>
+        <article class="problem"><h3>3. Magnitude 是强基线</h3><p>七主表宏平均两者接近；Tahoe 中 magnitude 的 top-10 更强。</p><div class="answer"><b>正确说法：</b>两者捕获不同风险模式，SafeConf 不是普遍替代品。</div></article>
+        <article class="problem red"><h3>4. McFarland 失败边界</h3><p>Frozen partial ρ=-0.061，不允许用 learned 结果把它改写成成功。</p><div class="answer"><b>价值：</b>它说明简单冻结公式的适用边界真实存在。</div></article>
+        <article class="problem"><h3>5. E8b 不是完整外部验证</h3><p>它是 perturbation-level 聚合方法错误关联，不是 15 个模型的逐预测风险校准。</p><div class="answer"><b>必须带：</b>sample-size、metric 和 DEG 选择 caveat。</div></article>
+        <article class="problem teal"><h3>6. Tahoe 已闭环，不应再扫参数</h3><p>D1–D5 已回答 pair、cell-line、triage、threshold 和 fixed combination。</p><div class="answer"><b>不再做：</b>增加 shard、扫 875/925/950 门槛或在 test set 调组合权重。</div></article>
+      </div>
+
+      <div class="section-head" style="margin-top:28px"><div><h2>下一阶段只有两条合理路线</h2></div></div>
+      <div class="decision">
+        <div class="route a"><span class="status good">Route A · 收口</span><h3 style="margin-top:12px">完成现有 task-risk triage 系统</h3><ul><li>统一正文图与 supplement</li><li>更新 Methods / Results / Discussion</li><li>运行 unified reproducibility pipeline</li><li>整理最终数据与代码清单</li></ul></div>
+        <div class="decision-mid">由老师确认</div>
+        <div class="route b"><span class="status info">Route B · 扩展</span><h3 style="margin-top:12px">进入 model-specific reliability</h3><ul><li>审计 ≥3 个真实模型的预测向量</li><li>冻结统一 benchmark / split / gene space</li><li>比较 task-only / model-only / combined</li><li>评价 calibration 与 model-selection regret</li></ul></div>
+      </div>
+    </section>
+
+    <section class="band" id="teacher">
+      <div class="section-head"><div><h2>老师上次六个问题：当前直接回答</h2><p>一个都不省略。最后一问只能说“任务层价值已回答，模型层仍待补”。</p></div></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th style="width:27%">老师的问题</th><th>当前回答</th><th style="width:20%">状态</th></tr></thead>
+        <tbody>
+          <tr><td>1. 数据是跨数据集切吗？</td><td>不是。七个数据集分别做 held-out pair，所有特征只读 fold-train。</td><td><span class="status good">已回答</span></td></tr>
+          <tr><td>2. 三个指标怎么算？</td><td>Control 最大余弦相似度、train 内历史支持量、两个固定参考预测向量的 RMSE 分歧。</td><td><span class="status good">定义已固化</span></td></tr>
+          <tr><td>3. Context / perturbation 各有多少？</td><td>七个主数据集结构差异很大；完整 data map 在汇报第 17 页。</td><td><span class="status good">7 datasets</span></td></tr>
+          <tr><td>4. 是否使用现成大型数据？</td><td>已完成 Tahoe 9,000-task sampled validation，覆盖 25 contexts 和 1,028 drug-dose perturbations。</td><td><span class="status good">D0–D5 闭环</span></td></tr>
+          <tr><td>5. 应该用公式还是模型？</td><td>Frozen 公式是可解释主协议；learned risk model 是扩展和敏感性分析，不能反向改写 Frozen 成功率。</td><td><span class="status good">两层已分开</span></td></tr>
+          <tr><td>6. 任务难度有什么用？</td><td>用于人工复核和湿实验优先级分诊；但同一任务上选择模型，还需要 model-specific residual。</td><td><span class="status warn">价值已答；模型层待补</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section class="band">
+      <div class="grid grid2">
+        <div class="panel notice"><h3>现在可以直接说</h3><div class="definition"><strong>系统能力</strong><span>对单细胞扰动预测做 task-risk 评估和验证优先级排序。</span></div><div class="definition"><strong>实用价值</strong><span>在固定复核预算下更集中地找到高错误预测。</span></div><div class="definition"><strong>诚实边界</strong><span>Magnitude 很强，McFarland 失败，Tahoe 上 Frozen 不是最强 top-k 基线。</span></div></div>
+        <div class="panel notice danger-box"><h3>现在不能说</h3><div class="definition"><strong>不能说</strong><span>SafeConf 已经对 GEARS、CPA、scGPT 等所有深度模型完成逐预测校准。</span></div><div class="definition"><strong>不能说</strong><span>Frozen v0.2 在 7/7 数据集成功，或普遍超越 magnitude。</span></div><div class="definition"><strong>不能做</strong><span>在 Tahoe test set 上继续搜索权重、阈值或修改冻结公式。</span></div></div>
+      </div>
+    </section>
+
+    <section class="band" id="documents">
+      <div class="section-head"><div><h2>统一文档地图</h2><p>搜索标题、路径或关键词；筛选后直接点击跳转。黄色左边线表示服务器本地归档，GitHub 网页上不会有该实体文件。</p></div></div>
+      <div class="filters">
+        <input id="docSearch" type="search" placeholder="搜索：Tahoe、E8b、组会、代码、归档…" aria-label="搜索文档">
+        <select id="docCategory" aria-label="文档类别">
+          <option value="all">所有类别</option><option value="entry">项目入口</option><option value="meeting">组会与决策</option>
+          <option value="design">协议与设计</option><option value="evidence">正式实验证据</option><option value="learn">学习资料</option>
+          <option value="agent">AI 协作</option><option value="code">代码与复现</option><option value="archive">服务器归档</option>
+        </select>
+        <div class="count"><span id="docCount">0</span>&nbsp;个入口</div>
+      </div>
+
+      <div class="doc-groups">
+        <section class="doc-group" data-group><h3>项目与当前工作 <span class="status info">CURRENT</span></h3><div class="doc-list">
+          <a class="doc-item" data-category="entry" href="INDEX.md"><b>项目总入口</b><small>INDEX.md</small></a>
+          <a class="doc-item" data-category="entry" href="README.md"><b>SafeConf 项目说明</b><small>README.md</small></a>
+          <a class="doc-item" data-category="entry agent" href="START_HERE_FOR_GPT.md"><b>给 GPT / Claude 的快速入口</b><small>START_HERE_FOR_GPT.md</small></a>
+          <a class="doc-item" data-category="meeting" href="workspace/README_先看这个.md"><b>当前工作区说明</b><small>workspace/README_先看这个.md</small></a>
+          <a class="doc-item" data-category="meeting" href="workspace/group_meeting_20260709_FINAL/README_只看这个.md"><b>7 月 9 日组会材料入口</b><small>workspace/group_meeting_20260709_FINAL/README_只看这个.md</small></a>
+          <a class="doc-item" data-category="meeting" href="workspace/group_meeting_20260709_MAINLINE_WHITE/README_先看这个.md"><b>7 月 9 日主线白底增强版入口</b><small>workspace/group_meeting_20260709_MAINLINE_WHITE/README_先看这个.md</small></a>
+          <a class="doc-item" data-category="meeting" href="workspace/group_meeting_20260709_MAINLINE_WHITE/导师组会_问题驱动汇报逻辑_20260709.md"><b>导师组会问题驱动汇报逻辑</b><small>workspace/group_meeting_20260709_MAINLINE_WHITE/导师组会_问题驱动汇报逻辑_20260709.md</small></a>
+          <a class="doc-item" data-category="meeting" href="workspace/group_meeting_20260709_MAINLINE_WHITE/SafeConf_主线汇报_术语跳转增强版_20260709.html"><b>14 页主线白底术语跳转增强版</b><small>workspace/group_meeting_20260709_MAINLINE_WHITE/SafeConf_主线汇报_术语跳转增强版_20260709.html</small></a>
+          <a class="doc-item" data-category="meeting" href="workspace/group_meeting_20260709_MAINLINE_WHITE/SafeConf_主线汇报_白底截图版_20260709.html"><b>12 页主线白底简版</b><small>workspace/group_meeting_20260709_MAINLINE_WHITE/SafeConf_主线汇报_白底截图版_20260709.html</small></a>
+          <a class="doc-item" data-category="meeting" href="workspace/group_meeting_20260709_MAINLINE_WHITE/汇报讲稿_主线白底版.md"><b>主线白底版汇报讲稿</b><small>workspace/group_meeting_20260709_MAINLINE_WHITE/汇报讲稿_主线白底版.md</small></a>
+          <a class="doc-item" data-category="meeting" href="workspace/group_meeting_20260709_FINAL/SafeConf_阶段进展汇报_20260709.html"><b>18 页阶段进展汇报</b><small>workspace/group_meeting_20260709_FINAL/SafeConf_阶段进展汇报_20260709.html</small></a>
+          <a class="doc-item" data-category="meeting" href="workspace/group_meeting_20260709_FINAL/汇报讲稿与问答.md"><b>汇报讲稿与问答</b><small>workspace/group_meeting_20260709_FINAL/汇报讲稿与问答.md</small></a>
+          <a class="doc-item" data-category="meeting" href="workspace/group_meeting_20260709_FINAL/当前进度与实验决策.md"><b>当前进度与实验决策</b><small>workspace/group_meeting_20260709_FINAL/当前进度与实验决策.md</small></a>
+          <a class="doc-item" data-category="entry evidence learn" href="docs/README.md"><b>当前文档库总说明</b><small>docs/README.md</small></a>
+          <a class="doc-item" data-category="entry evidence meeting" href="docs/投稿准备/录用判断与项目总账_20260713/index.html"><b>周老师问题、当前证据与录用判断总账</b><small>docs/投稿准备/录用判断与项目总账_20260713/index.html</small></a>
+          <a class="doc-item" data-category="entry evidence" href="docs/实验结果/GATE_STATUS_20260714.md"><b>2026-07-14 当前证据与投稿关卡</b><small>docs/实验结果/GATE_STATUS_20260714.md</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/E131_formal_six_dataset_meta_20260714/reports/E131_REPORT.md"><b>E131 六正式数据集元分析</b><small>docs/实验结果/E131_formal_six_dataset_meta_20260714/reports/E131_REPORT.md</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/E111_target_specific_mechanism_audit_20260713/reports/E111_REPORT.md"><b>E111 预测器依赖机制审计</b><small>docs/实验结果/E111_target_specific_mechanism_audit_20260713/reports/E111_REPORT.md</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/E114_split_conformal_error_bounds_20260713/reports/E114_REPORT.md"><b>E114 split-conformal 误差上界</b><small>docs/实验结果/E114_split_conformal_error_bounds_20260713/reports/E114_REPORT.md</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/"><b>全部正式实验证据目录</b><small>docs/实验结果/</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/E10_external_task_validation_assets_20260707/reports/E10_EXTERNAL_ASSET_AUDIT.html"><b>E10 外部数据资产审计</b><small>docs/实验结果/E10_external_task_validation_assets_20260707/reports/E10_EXTERNAL_ASSET_AUDIT.html</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/E10_external_task_validation_probe_20260707/reports/E10_EXTERNAL_PROBE.html"><b>E10 外部任务级验证探针</b><small>docs/实验结果/E10_external_task_validation_probe_20260707/reports/E10_EXTERNAL_PROBE.html</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/E12_external_panel_probe_20260707/reports/E12_EXTERNAL_PANEL_PROBE.html"><b>E12 外部面板扩展探针</b><small>docs/实验结果/E12_external_panel_probe_20260707/reports/E12_EXTERNAL_PANEL_PROBE.html</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/E13_sciplex3_official_3cell_panel_20260707/reports/E13_SCIPLEX3_OFFICIAL_3CELL.html"><b>E13 官方 sciplex3 三细胞系 focused panel</b><small>docs/实验结果/E13_sciplex3_official_3cell_panel_20260707/reports/E13_SCIPLEX3_OFFICIAL_3CELL.html</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/E14_sciplex3_full743_gene1000_20260707/reports/E14_SCIPLEX3_FULL743_GENE1000.html"><b>E14 sciplex3 full-743 gene1000</b><small>docs/实验结果/E14_sciplex3_full743_gene1000_20260707/reports/E14_SCIPLEX3_FULL743_GENE1000.html</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/E15_sciplex3_full743_gene2000_20260707/reports/E15_SCIPLEX3_FULL743_GENE2000.html"><b>E15 sciplex3 full-743 gene2000</b><small>docs/实验结果/E15_sciplex3_full743_gene2000_20260707/reports/E15_SCIPLEX3_FULL743_GENE2000.html</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/E16_sciplex3_full743_gene3000_20260707/reports/E16_SCIPLEX3_FULL743_GENE3000.html"><b>E16 sciplex3 full-743 gene3000</b><small>docs/实验结果/E16_sciplex3_full743_gene3000_20260707/reports/E16_SCIPLEX3_FULL743_GENE3000.html</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/E17_sciplex3_full743_gene5000_20260707/reports/E17_SCIPLEX3_FULL743_GENE5000.html"><b>E17 sciplex3 full-743 gene5000</b><small>docs/实验结果/E17_sciplex3_full743_gene5000_20260707/reports/E17_SCIPLEX3_FULL743_GENE5000.html</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/E18_model_vector_asset_audit_20260707/reports/E18_MODEL_VECTOR_ASSET_AUDIT.html"><b>E18 真实模型预测向量资产审计</b><small>docs/实验结果/E18_model_vector_asset_audit_20260707/reports/E18_MODEL_VECTOR_ASSET_AUDIT.html</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/E19_gears_only_supplement_20260707/reports/E19_GEARS_ONLY_SUPPLEMENT.html"><b>E19 GEARS-only supplement</b><small>docs/实验结果/E19_gears_only_supplement_20260707/reports/E19_GEARS_ONLY_SUPPLEMENT.html</small></a>
+          <a class="doc-item" data-category="evidence code" href="docs/实验结果/E20_adapter_contract_validator_20260707/reports/E20_ADAPTER_CONTRACT_VALIDATOR.html"><b>E20 adapter contract validator</b><small>docs/实验结果/E20_adapter_contract_validator_20260707/reports/E20_ADAPTER_CONTRACT_VALIDATOR.html</small></a>
+          <a class="doc-item" data-category="evidence code" href="docs/实验结果/E21_strict_contract_remediation_20260707/reports/E21_STRICT_CONTRACT_REMEDIATION.html"><b>E21 strict contract remediation</b><small>docs/实验结果/E21_strict_contract_remediation_20260707/reports/E21_STRICT_CONTRACT_REMEDIATION.html</small></a>
+          <a class="doc-item" data-category="evidence code" href="docs/实验结果/E22_generator_strict_smoke_20260707/reports/E22_GENERATOR_STRICT_SMOKE.html"><b>E22 generator strict smoke</b><small>docs/实验结果/E22_generator_strict_smoke_20260707/reports/E22_GENERATOR_STRICT_SMOKE.html</small></a>
+          <a class="doc-item" data-category="evidence code" href="docs/实验结果/E23_shared_benchmark_adapter_workbench_20260708/reports/E23_SHARED_BENCHMARK_ADAPTER_WORKBENCH.html"><b>E23 shared benchmark adapter workbench</b><small>docs/实验结果/E23_shared_benchmark_adapter_workbench_20260708/reports/E23_SHARED_BENCHMARK_ADAPTER_WORKBENCH.html</small></a>
+          <a class="doc-item" data-category="evidence code" href="docs/实验结果/E24_model_family_compatibility_audit_20260708/reports/E24_MODEL_FAMILY_COMPATIBILITY_AUDIT.html"><b>E24 model-family compatibility audit</b><small>docs/实验结果/E24_model_family_compatibility_audit_20260708/reports/E24_MODEL_FAMILY_COMPATIBILITY_AUDIT.html</small></a>
+          <a class="doc-item" data-category="evidence code" href="docs/实验结果/E25_gears_strict_prediction_records_20260708/reports/E25_GEARS_STRICT_REMEDIATION.html"><b>E25 GEARS strict PredictionRecord remediation</b><small>docs/实验结果/E25_gears_strict_prediction_records_20260708/reports/E25_GEARS_STRICT_REMEDIATION.html</small></a>
+          <a class="doc-item" data-category="evidence code" href="docs/实验结果/E26_gears_single_model_risk_audit_20260708/reports/E26_GEARS_SINGLE_MODEL_RISK_AUDIT.html"><b>E26 GEARS single-model risk audit</b><small>docs/实验结果/E26_gears_single_model_risk_audit_20260708/reports/E26_GEARS_SINGLE_MODEL_RISK_AUDIT.html</small></a>
+          <a class="doc-item" data-category="evidence code" href="docs/实验结果/E27_scgpt_forward_prediction_record_smoke_20260708/reports/E27_SCGPT_FORWARD_PREDICTION_RECORD_SMOKE.html"><b>E27 scGPT forward PredictionRecord smoke</b><small>docs/实验结果/E27_scgpt_forward_prediction_record_smoke_20260708/reports/E27_SCGPT_FORWARD_PREDICTION_RECORD_SMOKE.html</small></a>
+          <a class="doc-item" data-category="evidence code" href="docs/实验结果/E28_gears_scgpt_shared_adamson_smoke_20260708/reports/E28_GEARS_SCGPT_SHARED_ADAMSON_SMOKE.html"><b>E28 GEARS–scGPT shared Adamson smoke</b><small>docs/实验结果/E28_gears_scgpt_shared_adamson_smoke_20260708/reports/E28_GEARS_SCGPT_SHARED_ADAMSON_SMOKE.html</small></a>
+          <a class="doc-item" data-category="evidence code" href="docs/实验结果/E29_gears_scgpt_shared_adamson_risk_audit_20260708/reports/E29_GEARS_SCGPT_SHARED_ADAMSON_RISK_AUDIT.html"><b>E29 GEARS–scGPT shared Adamson risk audit</b><small>docs/实验结果/E29_gears_scgpt_shared_adamson_risk_audit_20260708/reports/E29_GEARS_SCGPT_SHARED_ADAMSON_RISK_AUDIT.html</small></a>
+          <a class="doc-item" data-category="evidence code" href="docs/实验结果/E30_gears_seed_overlap_feasibility_audit_20260708/reports/E30_GEARS_SEED_OVERLAP_FEASIBILITY_AUDIT.html"><b>E30 GEARS seed-overlap feasibility audit</b><small>docs/实验结果/E30_gears_seed_overlap_feasibility_audit_20260708/reports/E30_GEARS_SEED_OVERLAP_FEASIBILITY_AUDIT.html</small></a>
+          <a class="doc-item" data-category="evidence code" href="docs/实验结果/E31_gears_fixed_test_split_smoke_20260708/reports/E31_GEARS_FIXED_TEST_SPLIT_SMOKE.html"><b>E31 GEARS fixed-test split smoke</b><small>docs/实验结果/E31_gears_fixed_test_split_smoke_20260708/reports/E31_GEARS_FIXED_TEST_SPLIT_SMOKE.html</small></a>
+          <a class="doc-item" data-category="evidence code" href="docs/实验结果/E32_gears_fixed_test_3seed_smoke_20260708/reports/E32_GEARS_FIXED_TEST_3SEED_SMOKE.html"><b>E32 GEARS fixed-test 3-seed smoke</b><small>docs/实验结果/E32_gears_fixed_test_3seed_smoke_20260708/reports/E32_GEARS_FIXED_TEST_3SEED_SMOKE.html</small></a>
+        </div></section>
+
+        <section class="doc-group" data-group><h3>协议、系统设计与服务器边界 <span class="status good">FROZEN / CURRENT</span></h3><div class="doc-list">
+          <a class="doc-item" data-category="design" href="docs/代码设计/PROTOCOL.md"><b>Frozen protocol v0.2</b><small>docs/代码设计/PROTOCOL.md</small></a>
+          <a class="doc-item" data-category="design" href="docs/代码设计/系统设计-扰动预测质检-v1.md"><b>系统设计：扰动预测质检</b><small>docs/代码设计/系统设计-扰动预测质检-v1.md</small></a>
+          <a class="doc-item" data-category="design" href="docs/代码设计/服务器目录结构_20260706.md"><b>服务器目录结构</b><small>docs/代码设计/服务器目录结构_20260706.md</small></a>
+          <a class="doc-item" data-category="design evidence" href="docs/实验结果/Evidence_to_Claim_20260615/SAFE_CONF_EVIDENCE_TO_CLAIM_MATRIX.md"><b>Evidence-to-Claim 矩阵</b><small>docs/实验结果/Evidence_to_Claim_20260615/SAFE_CONF_EVIDENCE_TO_CLAIM_MATRIX.md</small></a>
+          <a class="doc-item" data-category="design evidence" href="docs/实验结果/Evidence_to_Claim_20260615/REPRODUCIBILITY_MANIFEST.md"><b>可复现性清单</b><small>docs/实验结果/Evidence_to_Claim_20260615/REPRODUCIBILITY_MANIFEST.md</small></a>
+          <a class="doc-item" data-category="design evidence" href="docs/实验结果/Evidence_to_Claim_20260615/PHASE5A0_COST_EFFECTIVENESS_REPORT.md"><b>成本效益报告</b><small>docs/实验结果/Evidence_to_Claim_20260615/PHASE5A0_COST_EFFECTIVENESS_REPORT.md</small></a>
+        </div></section>
+
+        <section class="doc-group" data-group><h3>正式实验证据 <span class="status good">AUDITABLE</span></h3><div class="doc-list">
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/Formal_main_20260604/README_先看这个.md"><b>七主数据集正式实验</b><small>docs/实验结果/Formal_main_20260604/README_先看这个.md</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/Formal_main_20260604/corrected_v3_drop_blank_1000_20260609/reports/CORRECTED_7MAIN_DECISION.md"><b>Corrected 7-main 最终判定</b><small>.../CORRECTED_7MAIN_DECISION.md</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/Task_risk_audit_20260611/reports/A1_task_risk_interpretation.md"><b>Task-risk 方差分解解读</b><small>docs/实验结果/Task_risk_audit_20260611/reports/A1_task_risk_interpretation.md</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/Task_risk_audit_20260611/reports/B1_bad_prediction_retrieval_interpretation.md"><b>坏预测检索价值</b><small>docs/实验结果/Task_risk_audit_20260611/reports/B1_bad_prediction_retrieval_interpretation.md</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/E1_E4_preregistered_20260614/README_先看这个.md"><b>E1–E4 预注册证据入口</b><small>docs/实验结果/E1_E4_preregistered_20260614/README_先看这个.md</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/E1_E4_preregistered_20260614/E1_E4_GATE_REPORT.md"><b>E1–E4 Gate Report</b><small>docs/实验结果/E1_E4_preregistered_20260614/E1_E4_GATE_REPORT.md</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/E1_E4_preregistered_20260614/LEAKAGE_CORRECTION.md"><b>Outer-fold 泄漏修正</b><small>docs/实验结果/E1_E4_preregistered_20260614/LEAKAGE_CORRECTION.md</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/E1_E4_preregistered_20260614/E8b_scperturbench_association/E8b_FINAL_REPORT.md"><b>E8b scPerturBench 最终报告</b><small>.../E8b_scperturbench_association/E8b_FINAL_REPORT.md</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/LOPO_robustness_20260613/README_先看这个.md"><b>LOPO 稳健性入口</b><small>docs/实验结果/LOPO_robustness_20260613/README_先看这个.md</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/Reliability_model_corrected_20260610/reports/CORRECTED_RELIABILITY_DECISION.md"><b>Learned reliability 修正判定</b><small>.../CORRECTED_RELIABILITY_DECISION.md</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/Tahoe_chemical_evidence_20260627/TAHOE_CHEMICAL_EVIDENCE_CARD.md"><b>Tahoe D0–D5 总证据卡</b><small>docs/实验结果/Tahoe_chemical_evidence_20260627/TAHOE_CHEMICAL_EVIDENCE_CARD.md</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/Tahoe_D1_300_shard_20260624/reports/TAHOE_D1_POSTPROCESS_REPORT.md"><b>Tahoe D1 9,000-task 报告</b><small>.../Tahoe_D1_300_shard_20260624/reports/TAHOE_D1_POSTPROCESS_REPORT.md</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/Tahoe_D2_heldout_cell_line_20260625/README_先看这个.md"><b>Tahoe D2 held-out cell line</b><small>docs/实验结果/Tahoe_D2_heldout_cell_line_20260625/README_先看这个.md</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/Tahoe_D3_triage_20260625/reports/TAHOE_D3_TRIAGE_REPORT.md"><b>Tahoe D3 实用分诊</b><small>.../Tahoe_D3_triage_20260625/reports/TAHOE_D3_TRIAGE_REPORT.md</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/Tahoe_D4_min900_sensitivity_20260627/README_先看这个.md"><b>Tahoe D4 min-900 敏感性</b><small>docs/实验结果/Tahoe_D4_min900_sensitivity_20260627/README_先看这个.md</small></a>
+          <a class="doc-item" data-category="evidence" href="docs/实验结果/Tahoe_D5_combined_triage_20260627/reports/TAHOE_D5_REPORT.md"><b>Tahoe D5 固定组合负结果</b><small>.../Tahoe_D5_combined_triage_20260627/reports/TAHOE_D5_REPORT.md</small></a>
+        </div></section>
+
+        <section class="doc-group" data-group><h3>学习与通俗理解 <span class="status info">LEARNING</span></h3><div class="doc-list">
+          <a class="doc-item" data-category="learn entry" href="docs/SafeConf_完整项目讲解/index.html"><b>SafeConf 完整项目讲解（推荐）</b><small>docs/SafeConf_完整项目讲解/index.html</small></a>
+          <a class="doc-item" data-category="learn" href="docs/小白科普/index.html"><b>小白科普总入口</b><small>docs/小白科普/index.html</small></a>
+          <a class="doc-item" data-category="learn" href="docs/小白科普/SafeConf_终版学习手册.html"><b>SafeConf 终版学习手册</b><small>docs/小白科普/SafeConf_终版学习手册.html</small></a>
+          <a class="doc-item" data-category="learn" href="docs/小白科普/SafeConf整体架构流程图_20260608.html"><b>SafeConf 整体架构流程图</b><small>docs/小白科普/SafeConf整体架构流程图_20260608.html</small></a>
+          <a class="doc-item" data-category="learn" href="docs/小白科普/h5ad真实数据格式/SafeConf_数据到底长什么样_一页看懂_20260608.html"><b>h5ad 真实数据一页看懂</b><small>docs/小白科普/h5ad真实数据格式/...</small></a>
+          <a class="doc-item" data-category="learn" href="docs/小白科普/从h5ad到effect_真实数据实物拆解_20260608.md"><b>从 h5ad 到 effect 实物拆解</b><small>docs/小白科普/从h5ad到effect_真实数据实物拆解_20260608.md</small></a>
+          <a class="doc-item" data-category="learn" href="docs/小白科普/全流程拆解_创造者到使用者/SafeConf_全流程拆解_创造者到使用者.html"><b>全流程拆解：创造者到使用者</b><small>docs/小白科普/全流程拆解_创造者到使用者/...</small></a>
+          <a class="doc-item" data-category="learn" href="docs/小白科普/h5ad可打开CSV样例/CSV样例_浏览器查看.html"><b>CSV 真实样例</b><small>docs/小白科普/h5ad可打开CSV样例/CSV样例_浏览器查看.html</small></a>
+        </div></section>
+
+        <section class="doc-group" data-group><h3>AI 协作、代码与运行 <span class="status info">WORKING</span></h3><div class="doc-list">
+          <a class="doc-item" data-category="agent" href="agents/README.md"><b>AI 协作入口</b><small>agents/README.md</small></a>
+          <a class="doc-item" data-category="agent" href="agents/STATE.md"><b>当前权威状态</b><small>agents/STATE.md</small></a>
+          <a class="doc-item" data-category="agent" href="agents/TASKS.md"><b>已完成与待决定任务</b><small>agents/TASKS.md</small></a>
+          <a class="doc-item" data-category="agent" href="agents/DECISIONS.md"><b>项目决策记录</b><small>agents/DECISIONS.md</small></a>
+          <a class="doc-item" data-category="agent" href="agents/LOG.md"><b>AI 协作日志</b><small>agents/LOG.md</small></a>
+          <a class="doc-item" data-category="agent" href="agents/THREAD.md"><b>当前协作线程</b><small>agents/THREAD.md</small></a>
+          <a class="doc-item" data-category="agent" href="CLAUDE.md"><b>Claude Code 项目规则</b><small>CLAUDE.md</small></a>
+          <a class="doc-item" data-category="agent learn" href="agents/qoder/SafeConf_全流程拆解_创造者到使用者.html"><b>Qoder 原始全流程输出（仅供对照）</b><small>agents/qoder/SafeConf_全流程拆解_创造者到使用者.html</small></a>
+          <a class="doc-item" data-category="code" href="code/README.md"><b>SafeConf 代码根说明</b><small>code/README.md</small></a>
+          <a class="doc-item" data-category="code" href="code/20260426_154505_perturb_transport_final_push/safetrans_confidence/tests/"><b>回归测试目录</b><small>code/.../safetrans_confidence/tests/</small></a>
+          <a class="doc-item" data-category="code" href="code/20260426_154505_perturb_transport_final_push/scripts/"><b>当前复跑与审计脚本</b><small>code/.../scripts/</small></a>
+          <a class="doc-item" data-category="code" href="tools/README.md"><b>项目维护工具</b><small>tools/README.md</small></a>
+          <a class="doc-item" data-category="code" href="runtime/README.md"><b>大型运行产物边界</b><small>runtime/README.md</small></a>
+          <a class="doc-item" data-category="code" href="../safeconf_runtime/README.md"><b>服务器 runtime 真实入口</b><small>/home/yyf/safeconf_runtime/README.md</small></a>
+        </div></section>
+
+        <section class="doc-group" data-group><h3>集中归档与全盘审计 <span class="status warn">SERVER ONLY</span></h3><div class="doc-list">
+          <a class="doc-item server" data-category="archive" href="../archive/README.md"><b>服务器历史归档总索引</b><small>/home/yyf/archive/README.md</small></a>
+          <a class="doc-item server" data-category="archive" href="../archive/safeconf/README.md"><b>SafeConf 集中历史库</b><small>/home/yyf/archive/safeconf/README.md</small></a>
+          <a class="doc-item server" data-category="archive" href="../archive/audits/SERVER_AUDIT_20260707.md"><b>2026-07-07 服务器大幅整改审计</b><small>/home/yyf/archive/audits/SERVER_AUDIT_20260707.md</small></a>
+          <a class="doc-item server" data-category="archive" href="../archive/audits/DUPLICATE_GROUP_SUMMARY_20260706.tsv"><b>大文件内容级重复汇总</b><small>/home/yyf/archive/audits/DUPLICATE_GROUP_SUMMARY_20260706.tsv</small></a>
+          <a class="doc-item server" data-category="archive" href="../archive/safeconf/workspace_history/"><b>历史组会与中间推演</b><small>/home/yyf/archive/safeconf/workspace_history/</small></a>
+          <a class="doc-item server" data-category="archive" href="../archive/safeconf/design_history/"><b>被取代的历史方案</b><small>/home/yyf/archive/safeconf/design_history/</small></a>
+          <a class="doc-item server" data-category="archive" href="../archive/safeconf/project_history/"><b>早期讨论、GPT 包和协作记录</b><small>/home/yyf/archive/safeconf/project_history/</small></a>
+          <a class="doc-item server" data-category="archive" href="../archive/courses/"><b>已结束课程材料</b><small>/home/yyf/archive/courses/</small></a>
+        </div></section>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="panel notice warn-box">
+        <h3>使用边界</h3>
+        <p>本页是“导航 + 当前判断”，不是新的实验证据。数字以 <code>docs/实验结果/</code> 内的冻结表和报告为准；归档文件只用于追溯，不反向覆盖当前结论。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="shell">SafeConf 统一研究工作台 · 灰白底 / 深青导航 / 克制状态色 · 延续 Claude Code 早期项目入口风格</div></footer>
+
+  <script>
+    const search=document.getElementById('docSearch');
+    const category=document.getElementById('docCategory');
+    const items=[...document.querySelectorAll('.doc-item')];
+    const groups=[...document.querySelectorAll('[data-group]')];
+    const count=document.getElementById('docCount');
+    function filterDocs(){
+      const q=search.value.trim().toLowerCase();
+      const c=category.value;
+      let visible=0;
+      items.forEach(item=>{
+        const matchText=!q||item.textContent.toLowerCase().includes(q);
+        const cats=(item.dataset.category||'').split(' ');
+        const matchCat=c==='all'||cats.includes(c);
+        const show=matchText&&matchCat;
+        item.classList.toggle('hidden',!show);
+        if(show) visible++;
+      });
+      groups.forEach(group=>group.classList.toggle('hidden',!group.querySelector('.doc-item:not(.hidden)')));
+      count.textContent=visible;
+    }
+    search.addEventListener('input',filterDocs);
+    category.addEventListener('change',filterDocs);
+    filterDocs();
+  </script>
+</body>
+</html>

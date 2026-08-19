@@ -1,0 +1,17 @@
+score,deployable,target,target_label,is_pre_specified_primary_target,n_tasks,spearman,bootstrap_rho_ci95_low,bootstrap_rho_ci95_high,top20_k,top20_error_enrichment
+risk_gears_scgpt_disagreement,True,gears_ensemble_rmse,GEARS ensemble RMSE,False,24,0.27304347826086955,-0.1787045894073412,0.6681516074145321,5,1.0664467941628055
+risk_gears_predicted_magnitude,True,gears_ensemble_rmse,GEARS ensemble RMSE,False,24,0.02260869565217391,-0.3319175793068956,0.4061032655844069,5,0.9555661938273396
+risk_scgpt_predicted_magnitude,True,gears_ensemble_rmse,GEARS ensemble RMSE,False,24,0.15391304347826085,-0.23568134178394623,0.4978162585877685,5,0.9555661938273396
+true_l2_diagnostic,False,gears_ensemble_rmse,GEARS ensemble RMSE,False,24,0.6565217391304347,,,0,
+risk_gears_scgpt_disagreement,True,scgpt_finetuned_rmse,fine-tuned scGPT RMSE,False,24,0.1434782608695652,-0.252736484652883,0.5395635243343978,5,1.096703133067426
+risk_gears_predicted_magnitude,True,scgpt_finetuned_rmse,fine-tuned scGPT RMSE,False,24,-0.36260869565217385,-0.6592435628151344,0.03067551931977181,5,0.8414269465079429
+risk_scgpt_predicted_magnitude,True,scgpt_finetuned_rmse,fine-tuned scGPT RMSE,False,24,0.03043478260869565,-0.4149641802707617,0.4980541235704102,5,0.8414269465079429
+true_l2_diagnostic,False,scgpt_finetuned_rmse,fine-tuned scGPT RMSE,False,24,0.35826086956521735,,,0,
+risk_gears_scgpt_disagreement,True,task_mean_rmse,mean RMSE across GEARS and scGPT (pre-specified primary),True,24,0.2626086956521739,-0.15463376179458505,0.6452570491848728,5,1.0822131510815072
+risk_gears_predicted_magnitude,True,task_mean_rmse,mean RMSE across GEARS and scGPT (pre-specified primary),True,24,-0.21478260869565213,-0.5269434171555079,0.15711503827644338,5,0.8960890668245489
+risk_scgpt_predicted_magnitude,True,task_mean_rmse,mean RMSE across GEARS and scGPT (pre-specified primary),True,24,0.09999999999999999,-0.300208450284693,0.4993489816972544,5,0.8960890668245489
+true_l2_diagnostic,False,task_mean_rmse,mean RMSE across GEARS and scGPT (pre-specified primary),True,24,0.5469565217391303,,,0,
+risk_gears_scgpt_disagreement,True,task_max_rmse,max RMSE across GEARS and scGPT,False,24,0.3356521739130434,-0.06059648095044442,0.6951413132779939,5,1.1570202344124356
+risk_gears_predicted_magnitude,True,task_max_rmse,max RMSE across GEARS and scGPT,False,24,-0.15652173913043477,-0.4960543656726083,0.23447905943326813,5,0.9386585481115488
+risk_scgpt_predicted_magnitude,True,task_max_rmse,max RMSE across GEARS and scGPT,False,24,0.16347826086956518,-0.25044059481645015,0.5694370128793321,5,0.9386585481115488
+true_l2_diagnostic,False,task_max_rmse,max RMSE across GEARS and scGPT,False,24,0.5452173913043478,,,0,

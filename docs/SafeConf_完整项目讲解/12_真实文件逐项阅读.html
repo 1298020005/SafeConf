@@ -1,0 +1,90 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>12 真实文件逐项阅读</title><link rel="stylesheet" href="assets/tutorial.css"></head><body>
+<header class="top"><div class="topin"><a class="brand" href="index.html">SafeConf 完整项目讲解</a><a class="back" href="../../SafeConf_统一研究工作台.html">返回工作台</a></div></header>
+<div class="layout"><aside class="side" id="chapterNav"></aside><main class="content">
+<section class="hero"><p class="eyebrow">CHAPTER 12 · docs/小白科普</p><h1>真实文件实习：跟完 22RV1 × Trametinib</h1><p class="lead">小白科普目录共有 29 个文件。本章按实际数据顺序串起全部 CSV/TSV 样例，并给出其余讲解文件的用途。</p><div class="chips"><span class="chip green">15 CSV</span><span class="chip">1 TSV</span><span class="chip">6 HTML</span><span class="chip">6 Markdown</span><span class="chip">1 SVG</span></div></section>
+
+<h2>1. 这一条任务在问什么</h2>
+<div class="card"><div class="flow"><div class="node"><b>22RV1</b><small>前列腺癌细胞系</small></div><div class="node"><b>Trametinib</b><small>抑制 MEK 的药物</small></div><div class="node"><b>24 小时</b><small>处理到测量的时间</small></div><div class="node"><b>效应向量</b><small>每个基因的表达变化</small></div><div class="node"><b>预测误差</b><small>预测和实验相差多少</small></div></div></div>
+<div class="term"><b>22RV1</b><p>一种人前列腺癌细胞系名称。它在任务中充当 context（细胞背景）。</p></div>
+<div class="term"><b>Trametinib</b><p>一种 MEK1/MEK2 抑制剂。它在任务中充当 chemical perturbation（药物扰动）。</p></div>
+<div class="term"><b>µM</b><p>微摩尔每升，药物浓度单位。5 µM 表示每升溶液中含 5 微摩尔药物。</p></div>
+
+<h2>2. 从 h5ad 到正式主表的 14 个编号样例</h2>
+<div class="table"><table><thead><tr><th>编号与文件</th><th>一行表示什么</th><th>需要看懂的点</th></tr></thead><tbody>
+<tr><td><a href="../小白科普/h5ad可打开CSV样例/00_h5ad内部结构说明.csv">00 h5ad 内部结构</a></td><td>h5ad 的一个组成部分</td><td><code>obs</code> 有 154,710 行细胞；<code>X</code> 为 154,710 × 32,738；<code>var</code> 有 32,738 行基因。</td></tr>
+<tr><td><a href="../小白科普/h5ad可打开CSV样例/01_obs细胞表_前30行.csv">01 obs 前 30 行</a></td><td>一个细胞</td><td>读 cell barcode、cell line、perturbation、dose、time、ncounts 和 ngenes。</td></tr>
+<tr><td><a href="../小白科普/h5ad可打开CSV样例/02_obs细胞表_22RV1_control和Trametinib样例.csv">02 22RV1 对照与药物</a></td><td>22RV1 的一个对照或处理细胞</td><td>同一 context 内分出 control 组和 Trametinib 组。</td></tr>
+<tr><td><a href="../小白科普/h5ad可打开CSV样例/03_var基因表_前30行.csv">03 var 前 30 行</a></td><td>一个基因</td><td>gene_name 是常用名；Ensembl ID 是稳定数据库编号；ncells 表示多少细胞检测到该基因。</td></tr>
+<tr><td><a href="../小白科普/h5ad可打开CSV样例/04_X表达矩阵小块_20个细胞x8个基因.csv">04 X 矩阵小块</a></td><td>一个细胞及 8 个基因表达量</td><td>前五列是细胞标签，后八列是 RPLP1、RPL41 等基因的数值。</td></tr>
+<tr><td><a href="../小白科普/h5ad可打开CSV样例/05_从表达矩阵到effect_8个基因演示.csv">05 expression 到 effect</a></td><td>一个基因的组均值与差值</td><td><code>effect = trametinib_mean − control_mean</code>；RPL41 示例为 −96.105。</td></tr>
+<tr><td><a href="../小白科普/h5ad可打开CSV样例/06_22RV1_Trametinib这句话逐词解释.csv">06 任务逐词解释</a></td><td>一个组的自然语言说明</td><td>样例包含 158 个对照细胞和 84 个 Trametinib 细胞。</td></tr>
+<tr><td><a href="../小白科普/h5ad可打开CSV样例/07_切分表_这道题为什么是test.csv">07 切分表</a></td><td>一个任务在某 fold 的归属</td><td>pair_seen=False，context_seen=True，perturbation_seen=True，所以它检验未见组合。</td></tr>
+<tr><td><a href="../小白科普/h5ad可打开CSV样例/08_PredictionRecord_单条预测记录.csv">08 PredictionRecord</a></td><td>一个预测器对一个任务的预测</td><td>记录身份、向量键、预测器和三种真实误差；示例 RMSE=0.5776。</td></tr>
+<tr><td><a href="../小白科普/h5ad可打开CSV样例/09_ConfidenceFeatures_单条质检线索.csv">09 ConfidenceFeatures</a></td><td>该预测的一整组风险线索</td><td>包含 similarity、support、stability、magnitude、disagreement、OOD 和 historical residual。</td></tr>
+<tr><td><a href="../小白科普/h5ad可打开CSV样例/10_ConfidenceScores_单条记录的多个分数.csv">10 ConfidenceScores</a></td><td>同一预测被一种方法打出的一个分数</td><td><code>score_name</code> 区分随机、单特征、frozen 和 learned；方向由 <code>score_type</code> 指定。</td></tr>
+<tr><td><a href="../小白科普/h5ad可打开CSV样例/11_true_effect_vs_predicted_effect_前20个位置.csv">11 向量前 20 位</a></td><td>一个基因位置的真值、预测和平方误差</td><td>展示 RMSE 怎样从逐位置误差累积而来。</td></tr>
+<tr><td><a href="../小白科普/h5ad可打开CSV样例/12_true_effect_vs_predicted_effect_误差最大30个位置.csv">12 最大误差 30 位</a></td><td>误差较大的一个基因位置</td><td>gene index 4027 的平方误差约 603.96，是该预测的重要误差来源。</td></tr>
+<tr><td><a href="../小白科普/h5ad可打开CSV样例/13_FORMAL_MAIN_TABLE_7个数据集总成绩.csv">13 七主表总成绩</a></td><td>一个数据集的一种正式分数结果</td><td>从单细胞一路汇总到 dataset-level 的 rho、partial rho、RC@80% 和 bootstrap CI。</td></tr>
+</tbody></table></div>
+
+<h2>3. 中文 TSV 与字段总字典</h2>
+<div class="grid2">
+<a class="mini" href="../小白科普/h5ad可打开CSV样例/02_obs细胞表_22RV1样例_中文表头.tsv"><h3>中文表头 TSV</h3><p>TSV 使用制表符分列。每个中文列名后保留原英文名，适合第一次查看 obs。</p></a>
+<a class="mini" href="../小白科普/h5ad可打开CSV样例/字段说明_所有CSV列名.csv"><h3>全部字段说明</h3><p>逐文件列出 column、meaning 和 first_value_example。遇到不认识的列名优先查这里。</p></a>
+</div>
+<div class="term"><b>Cell barcode</b><p>测序流程为每个细胞分配的唯一条形码，用于区分细胞；它不是细胞系名称。</p></div>
+<div class="term"><b>ncounts</b><p>该细胞记录到的表达计数总量，常用于质量控制。不同预处理流程中的数值尺度可能不同。</p></div>
+<div class="term"><b>ngenes</b><p>该细胞检测到非零表达的基因数量。过低可能提示捕获信息不足。</p></div>
+<div class="term"><b>Ensembl ID</b><p>Ensembl 数据库给基因分配的编号，例如 ENSG00000186092；比常用基因符号更适合稳定映射。</p></div>
+
+<h2>4. 用 8 个基因手算 effect</h2>
+<div class="table"><table><thead><tr><th>基因</th><th>Control mean</th><th>Trametinib mean</th><th>Effect</th><th>解释</th></tr></thead><tbody>
+<tr><td>RPLP1</td><td>141.354</td><td>105.857</td><td>−35.497</td><td>药物组均值较低。</td></tr>
+<tr><td>RPL41</td><td>321.772</td><td>225.667</td><td>−96.105</td><td>示例 8 个基因中下降较明显。</td></tr>
+<tr><td>RPS2</td><td>186.532</td><td>128.476</td><td>−58.055</td><td>负号表示处理后表达降低。</td></tr>
+</tbody></table></div>
+<pre class="code">effect_gene = mean(expression_gene | 22RV1, Trametinib)
+            - mean(expression_gene | 22RV1, control)</pre>
+<p>这个差值针对每个基因分别计算，按固定 gene order 排列后形成 true effect vector。</p>
+
+<h2>5. 切分表的十个字段</h2>
+<div class="table"><table><thead><tr><th>字段</th><th>样例</th><th>解释</th></tr></thead><tbody>
+<tr><td>dataset_name</td><td>McFarlandTsherniak2020</td><td>数据来源。</td></tr>
+<tr><td>task_id / task_key</td><td>3 / dataset::task_00003</td><td>任务短编号与跨文件稳定键。</td></tr>
+<tr><td>context</td><td>22RV1</td><td>细胞背景。</td></tr>
+<tr><td>perturbation</td><td>Trametinib</td><td>药物扰动。</td></tr>
+<tr><td>fold_id</td><td>0</td><td>第 0 个交叉验证折。</td></tr>
+<tr><td>split</td><td>test</td><td>该任务用于最终评价。</td></tr>
+<tr><td>pair_seen_in_train</td><td>False</td><td>训练折没有见过目标组合。</td></tr>
+<tr><td>perturbation_seen_in_train</td><td>True</td><td>训练折在其他背景见过该药。</td></tr>
+<tr><td>context_seen_in_train</td><td>True</td><td>训练折在其他扰动见过 22RV1。</td></tr>
+</tbody></table></div>
+
+<h2>6. 一条 PredictionRecord 为什么会有多行 Score</h2>
+<figure class="figure"><div class="flow"><div class="node"><b>1 条 PredictionRecord</b><small>预测身份固定</small></div><div class="node"><b>多组 Features</b><small>背景、支持、分歧等</small></div><div class="node"><b>Random score</b><small>随机基线</small></div><div class="node"><b>Single-feature scores</b><small>每个线索单独评价</small></div><div class="node"><b>Frozen / Learned</b><small>组合规则或学习模型</small></div></div><figcaption>长表中同一个 record_id 可对应多个 score_name，便于统一比较方法。</figcaption></figure>
+
+<h2>7. 误差怎样从基因位置汇总</h2>
+<pre class="code">difference_i    = predicted_effect_i - true_effect_i
+squared_error_i = difference_i²
+RMSE            = sqrt(mean(squared_error_i))</pre>
+<div class="grid2"><div class="mini"><h3>前 20 位表</h3><p>按原 gene order 展示，适合检查向量对齐与零值位置。</p></div><div class="mini"><h3>最大误差 30 位表</h3><p>按 squared_error 降序排列，适合定位哪个基因位置拉高了整体 RMSE。</p></div></div>
+<div class="callout warn"><b>gene_index 不是基因名。</b>它是向量位置。只有保存同一份 gene order，才能把 index 4027 映射到具体基因并跨模型比较。</div>
+
+<h2>8. 小白科普其余 13 个文件</h2>
+<div class="table"><table><thead><tr><th>文件或目录</th><th>内容</th></tr></thead><tbody>
+<tr><td><a href="../小白科普/index.html">index.html</a></td><td>旧版专题学习入口。</td></tr>
+<tr><td><a href="../小白科普/README_先看这个.md">README_先看这个.md</a></td><td>目录阅读顺序和专题边界。</td></tr>
+<tr><td><a href="../小白科普/SafeConf_终版学习手册.html">SafeConf_终版学习手册.html</a> / <a href="../小白科普/SafeConf_终版学习手册.md">Markdown</a></td><td>较早的成体系学习手册，两种格式内容对应。</td></tr>
+<tr><td><a href="../小白科普/SafeConf整体架构流程图_20260608.html">整体架构流程图</a></td><td>单页系统流程和模块关系。</td></tr>
+<tr><td><a href="../小白科普/从h5ad到effect_真实数据实物拆解_20260608.md">从 h5ad 到 effect</a></td><td>围绕真实字段解释数据聚合。</td></tr>
+<tr><td><a href="../小白科普/h5ad真实数据格式/README_h5ad到底长什么样.md">h5ad README</a> / <a href="../小白科普/h5ad真实数据格式/SafeConf_数据到底长什么样_一页看懂_20260608.html">一页看懂</a></td><td>h5ad 内部结构与实际尺寸。</td></tr>
+<tr><td><a href="../小白科普/h5ad可打开CSV样例/CSV样例_浏览器查看.html">CSV 浏览器页</a> / <a href="../小白科普/h5ad可打开CSV样例/README_这些CSV怎么看.md">CSV 阅读说明</a></td><td>集中打开上述样例，说明推荐顺序。</td></tr>
+<tr><td><a href="../小白科普/全流程拆解_创造者到使用者/SafeConf_全流程拆解_创造者到使用者.html">全流程拆解 HTML</a> / <a href="../小白科普/全流程拆解_创造者到使用者/SafeConf_全流程拆解_创造者到使用者.md">Markdown</a></td><td>从项目创建者、代码维护者和使用者三个视角解释系统。</td></tr>
+<tr><td><a href="../小白科普/assets/SafeConf_数据变化一图看懂_20260608.svg">数据变化 SVG</a></td><td>可缩放的单页数据流图。</td></tr>
+</tbody></table></div>
+
+<h2>9. 推荐动手顺序</h2>
+<div class="flow"><div class="node"><b>打开 01–04</b><small>认细胞、基因和矩阵</small></div><div class="node"><b>手算 05</b><small>验证 effect 公式</small></div><div class="node"><b>核对 07</b><small>理解 held-out pair</small></div><div class="node"><b>连接 08–10</b><small>记录、特征、分数</small></div><div class="node"><b>比较 11–12</b><small>看误差来自哪里</small></div><div class="node"><b>阅读 13</b><small>回到七数据集结论</small></div></div>
+<div class="callout good"><b>本章结果：</b>小白科普的 29 个文件均已归入阅读路径；16 个表格样例逐项标出了一行的含义、关键字段和它在项目中的位置。</div>
+<div class="pager"><a href="11_实验结果完整谱系.html">← 上一章</a><a href="index.html">回到总目录 →</a></div>
+</main></div><script src="assets/tutorial.js"></script></body></html>

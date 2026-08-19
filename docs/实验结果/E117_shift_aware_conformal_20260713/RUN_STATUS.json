@@ -1,0 +1,13 @@
+{
+  "experiment": "E117_shift_aware_conformal",
+  "generated_at": "2026-07-13T23:52:41",
+  "status": "complete",
+  "n_outer_folds": 3,
+  "n_test_tasks": 837,
+  "nominal_coverage": 0.9,
+  "pooled_empirical_coverage": 0.7264038231780168,
+  "pooled_mean_upper": 0.06307110538937437,
+  "e114_pooled_mean_upper": 0.10144768594276175,
+  "outer_test_truth_used_for_fit_or_quantile": false,
+  "preregistered_gate_passed": false
+}

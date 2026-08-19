@@ -1,0 +1,28 @@
+{
+  "experiment": "E77_repeated_panel_pair_risk",
+  "generated_at": "2026-07-12T00:38:59",
+  "git_head_before_run": "6a44ccff4a900ad48ef51ed191ba2c24c25ebc96",
+  "datasets": [
+    "Adamson_P1",
+    "Adamson_P2",
+    "Norman_P1",
+    "Norman_P2",
+    "Frangieh_P1",
+    "Frangieh_P2"
+  ],
+  "n_tasks": 144,
+  "all_triangle_mean_bounds_hold": true,
+  "all_triangle_max_bounds_hold": true,
+  "max_mse_identity_abs_error": 1.474514954580286e-17,
+  "target_truth_used_in_certificate": false,
+  "target_truth_used_for_evaluation_only": true,
+  "n_boot": 10000,
+  "n_permutation": 10000,
+  "underlying_datasets": [
+    "Adamson",
+    "Norman",
+    "Frangieh"
+  ],
+  "panels_per_dataset": 2,
+  "panel_task_overlap_within_dataset": 0
+}

@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SafeConf 阶段性进展汇报｜2026-07-09</title>
+<style>
+:root{--ink:#202124;--muted:#667078;--navy:#174a7e;--blue:#3b6fb6;--teal:#238b7f;--orange:#c57b28;--red:#b54a4a;--line:#d5dce1;--soft:#f5f7f8;--pale:#edf3f8;--pale2:#eef7f5;--white:#fff}
+*{box-sizing:border-box}html{background:#e9edf0;scroll-behavior:smooth}body{margin:0;padding:24px 0 80px;color:var(--ink);font-family:Arial,"Microsoft YaHei","Noto Sans CJK SC","Noto Sans CJK JP",sans-serif;line-height:1.45}
+.toolbar{position:sticky;top:0;z-index:20;width:1440px;margin:0 auto 14px;padding:10px 18px;background:rgba(255,255,255,.97);border:1px solid var(--line);font-size:14px;color:var(--muted)}.toolbar b{color:var(--ink);margin-right:22px}.toolbar a{color:var(--navy);text-decoration:none;margin-right:15px}
+.slide{position:relative;width:1440px;height:810px;margin:0 auto 26px;padding:50px 72px 45px;background:#fff;overflow:hidden;page-break-after:always}.slide h1{margin:0;font-size:38px;line-height:1.2;letter-spacing:-.4px}.subtitle{margin-top:7px;font-size:19px;color:var(--muted)}.rule{height:2px;background:var(--navy);margin-top:10px}.page{position:absolute;right:72px;bottom:20px;color:#9ba1a6;font-size:13px}
+.kicker{color:var(--navy);font-size:18px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}.lead{font-size:24px;line-height:1.55}.small{font-size:15px;color:var(--muted)}.strong{font-weight:700}.navy{color:var(--navy)}.teal{color:var(--teal)}.orange{color:var(--orange)}.red{color:var(--red)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:28px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.panel{position:relative;border:1px solid var(--line);padding:24px 26px;background:#fff}.panel h2{margin:0 0 18px;font-size:21px}.panel-label{font-weight:700;margin-right:15px}.topline{border-top:4px solid var(--navy)}.topline.teal-line{border-top-color:var(--teal)}.topline.orange-line{border-top-color:var(--orange)}.topline.red-line{border-top-color:var(--red)}
+.note{padding:14px 20px;background:var(--soft);border-left:4px solid var(--navy);font-size:18px}.note.teal-note{border-left-color:var(--teal)}.note.red-note{border-left-color:var(--red)}.note.orange-note{border-left-color:var(--orange)}
+.flow{display:flex;align-items:center;justify-content:space-between;gap:10px}.node{display:flex;flex-direction:column;justify-content:center;text-align:center;width:190px;height:120px;padding:12px;border:1.4px solid var(--line);background:#fff}.node.focus{border:2px solid var(--navy)}.node b{font-size:18px}.node span{margin-top:9px;color:var(--muted);font-size:13px}.arrow{position:relative;flex:0 0 38px;height:2px;background:#737a80}.arrow:after{content:"";position:absolute;right:-1px;top:-6px;border-left:11px solid #737a80;border-top:7px solid transparent;border-bottom:7px solid transparent}
+.timeline{display:flex;position:relative;margin:78px 10px 0;justify-content:space-between}.timeline:before{content:"";position:absolute;top:29px;left:3%;right:3%;height:2px;background:var(--line)}.event{position:relative;width:15%;text-align:center}.event i{display:block;position:relative;z-index:2;width:18px;height:18px;margin:20px auto 24px;border-radius:50%;background:var(--navy);border:4px solid #fff;box-shadow:0 0 0 2px var(--navy)}.event.teal-event i{background:var(--teal);box-shadow:0 0 0 2px var(--teal)}.event.orange-event i{background:var(--orange);box-shadow:0 0 0 2px var(--orange)}.event b{font-size:17px}.event p{font-size:14px;color:var(--muted);margin:8px 0}.date{font-size:14px;color:var(--navy);font-weight:700}
+.metric{font-size:39px;line-height:1.05;color:var(--navy);font-weight:700}.metric.teal{color:var(--teal)}.metric.orange{color:var(--orange)}.metric.red{color:var(--red)}
+table{width:100%;border-collapse:collapse;font-size:17px}th{text-align:left;padding:10px 12px;background:var(--pale);color:var(--navy);border-bottom:1px solid #bdc8d1}td{padding:9px 12px;border-bottom:1px solid #e1e5e8;vertical-align:middle}tbody tr:nth-child(even){background:var(--soft)}.compact-table th,.compact-table td{padding:4px 10px}
+.bullets{margin:0;padding-left:25px;font-size:19px;line-height:1.55}.bullets li{margin:7px 0}.formula{font-family:"Cambria Math","Times New Roman",serif;font-size:25px;line-height:1.65;text-align:center}
+.forest{margin-top:30px}.forest-head,.forest-row{display:grid;grid-template-columns:190px 1fr 82px;align-items:center}.forest-head{font-size:13px;color:var(--muted)}.forest-row{height:52px}.track{position:relative;height:22px;border-left:1px solid #333}.track:before{content:"";position:absolute;left:12.5%;top:0;bottom:0;border-left:1px dashed #d7dce0}.ci{position:absolute;top:10px;height:3px;background:var(--navy)}.dot{position:absolute;top:4px;width:14px;height:14px;border-radius:50%;background:var(--navy);transform:translateX(-50%)}.bad{background:var(--red)!important}.value{font-weight:700;color:var(--navy)}.value.red{color:var(--red)}
+.evidence-ladder{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:55px}.rung{position:relative;height:285px;padding:22px 19px;border-top:5px solid var(--navy);background:var(--soft)}.rung:nth-child(2){border-top-color:var(--blue)}.rung:nth-child(3){border-top-color:var(--teal)}.rung:nth-child(4){border-top-color:var(--orange)}.rung:nth-child(5){border-top-color:var(--red)}.rung b{font-size:19px}.rung .num{font-size:32px;font-weight:700;color:var(--navy);margin:30px 0 12px}.rung p{font-size:15px;color:var(--muted)}
+.matrix{display:grid;grid-template-columns:190px repeat(7,1fr);font-size:14px}.matrix>div{padding:8px 5px;text-align:center;border-right:1px solid #fff;border-bottom:1px solid #fff}.matrix .head{background:var(--pale);color:var(--navy);font-weight:700}.matrix .rowhead{text-align:left;background:var(--soft);font-weight:700}.pass{background:#d8eee9;color:#176c62;font-weight:700}.weak{background:#f4eadb;color:#985f1e;font-weight:700}.fail{background:#f2dddd;color:#923f3f;font-weight:700}
+.bar-row{display:grid;grid-template-columns:165px 1fr 80px;align-items:center;height:54px}.bar{height:25px}.bar.navy{background:var(--navy)}.bar.teal{background:var(--teal)}.bar.blue{background:var(--blue)}.bar.orange{background:var(--orange)}.bar.gray{background:#d7dce0}
+.method-dots{display:grid;grid-template-columns:repeat(15,1fr);gap:10px;margin-top:42px}.method-dots div{height:125px;border-top:6px solid var(--teal);background:var(--soft);display:flex;align-items:end;justify-content:center;padding-bottom:12px;font-size:12px;color:var(--muted)}.method-dots div:last-child{border-top-color:var(--red)}
+.chain{display:flex;align-items:center;margin-top:52px}.chain-step{flex:1;height:210px;border-top:5px solid var(--navy);background:var(--soft);padding:18px 16px}.chain-step:nth-of-type(3),.chain-step:nth-of-type(5){border-top-color:var(--teal)}.chain-step:nth-of-type(7){border-top-color:var(--orange)}.chain-step:nth-of-type(9){border-top-color:var(--blue)}.chain-step:nth-of-type(11){border-top-color:var(--red)}.chain-step b{font-size:19px}.chain-step p{font-size:14px;color:var(--muted)}.chain-arrow{flex:0 0 25px;text-align:center;color:#777;font-size:22px}
+.compare{display:grid;grid-template-columns:1fr 70px 1fr;margin-top:45px;align-items:center}.compare .side{height:420px;border:1px solid var(--line);padding:26px}.plus{text-align:center;font-size:35px;color:var(--muted)}
+.decision{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px}.decision>div{border-top:4px solid var(--navy);padding:24px 8px 0}.decision>div:last-child{border-top-color:var(--teal)}
+.bottom{position:absolute;left:150px;right:150px;bottom:48px;text-align:center;font-size:19px;font-weight:700}.status-pill{display:inline-block;padding:5px 10px;border:1px solid var(--teal);color:var(--teal);font-size:13px;font-weight:700}.status-pill.red{border-color:var(--red);color:var(--red)}
+.export{padding:0;background:#fff}.export .toolbar{display:none}.export .slide{display:none;margin:0}.export .slide.active{display:block}
+@media(max-width:1480px){body:not(.export){zoom:calc(100vw / 1480)}}
+@media print{@page{size:13.333in 7.5in;margin:0}html,body{background:#fff;padding:0}.toolbar{display:none}.slide{margin:0;width:13.333in;height:7.5in}}
+</style>
+</head>
+<body>
+<nav class="toolbar"><b>SafeConf · 2026-07-09</b><a href="#status">现状</a><a href="#timeline">进展</a><a href="#system">系统</a><a href="#evidence">证据</a><a href="#tahoe">Tahoe</a><a href="#boundary">边界</a><a href="#next">下一步</a></nav>
+
+<section class="slide" data-name="01_封面">
+  <div style="margin-top:105px"><div class="kicker">SafeConf · Stage Update</div><h1 style="font-size:54px;margin-top:18px">单细胞扰动预测的任务风险评估<br>阶段性进展与下一步</h1><p class="lead" style="color:var(--muted);margin-top:30px">七主数据集 · Fold-safe E1–E4 · scPerturBench E8b · Tahoe D0–D5</p></div>
+  <div class="grid3" style="margin-top:90px"><div class="topline" style="padding-top:18px"><b>已完成</b><p class="small">主要验证链条与chemical补强</p></div><div class="topline teal-line" style="padding-top:18px"><b>当前结论</b><p class="small">可进行task-risk triage</p></div><div class="topline red-line" style="padding-top:18px"><b>仍未解决</b><p class="small">同题不同模型的可靠性区分</p></div></div>
+  <div class="bottom">杨一帆｜导师组会｜2026年7月9日</div><div class="page">01</div>
+</section>
+
+<section class="slide" id="status" data-name="02_当前进度总览">
+  <h1>我现在做到哪一步？</h1><div class="subtitle">实验数量已经充足，当前处于“证据收口与下一技术阶段选择”</div><div class="rule"></div>
+  <div class="grid3" style="margin-top:55px">
+    <div class="panel topline" style="height:490px"><h2>基础方法与主验证</h2><div class="metric">7 datasets</div><ul class="bullets" style="margin-top:30px"><li>held-out pair与泄漏审计</li><li>Frozen v0.2正式验证</li><li>6/7 partial ρ为正</li><li>McFarland保留失败边界</li></ul><div class="note" style="margin-top:35px">任务风险信号已被正式验证</div></div>
+    <div class="panel topline teal-line" style="height:490px"><h2>稳健性与外部证据</h2><div class="metric teal">E1–E4 + E8b</div><ul class="bullets" style="margin-top:30px"><li>learned LOPO泄漏已修复</li><li>magnitude-residual 7/7</li><li>negative controls通过</li><li>外部15种方法中14种为正</li></ul><div class="note teal-note" style="margin-top:35px">风险信号不是单一伪影</div></div>
+    <div class="panel topline orange-line" style="height:490px"><h2>Chemical大型补强</h2><div class="metric orange">9,000 tasks</div><ul class="bullets" style="margin-top:30px"><li>Tahoe D0–D5完整闭环</li><li>25 contexts / 1,028 perturbations</li><li>held-out cell line仍为正</li><li>magnitude顶端检索更强</li></ul><div class="note orange-note" style="margin-top:35px">补强证据，同时明确边界</div></div>
+  </div><div class="bottom">当前不是“还缺很多实验”，而是需要决定下一项实验是否进入model-specific reliability。</div><div class="page">02</div>
+</section>
+
+<section class="slide" id="timeline" data-name="03_上次沟通后的进展">
+  <h1>从上次沟通到现在，新增了什么？</h1><div class="subtitle">不是重复原有七主表，而是依次补齐稳健性、外部证据与chemical规模</div><div class="rule"></div>
+  <div class="timeline">
+    <div class="event"><span class="date">06-11</span><i></i><b>任务风险审计</b><p>确认task difficulty问题<br>暴露model-specific缺口</p></div>
+    <div class="event"><span class="date">06-14</span><i></i><b>Fold-safe修正</b><p>修复learned LOPO泄漏<br>E1–E4正式重跑</p></div>
+    <div class="event teal-event"><span class="date">06-15</span><i></i><b>E8b外部关联</b><p>74 perturbations<br>15 benchmark methods</p></div>
+    <div class="event teal-event"><span class="date">06-16</span><i></i><b>实用分诊整理</b><p>top-k enrichment<br>evidence-to-claim</p></div>
+    <div class="event orange-event"><span class="date">06-24–27</span><i></i><b>Tahoe D0–D5</b><p>9,000 tasks<br>pair / cell-line / triage</p></div>
+    <div class="event"><span class="date">06-28</span><i></i><b>研究版本冻结</b><p>safeconf-2026.06.28<br>实验线暂停</p></div>
+  </div>
+  <div class="grid3" style="margin-top:90px"><div class="note"><b>修正</b><br><span class="small">先解决泄漏与评估公平性</span></div><div class="note teal-note"><b>扩展</b><br><span class="small">再检验跨方法与大规模chemical</span></div><div class="note orange-note"><b>收口</b><br><span class="small">不再通过调权重“救”负结果</span></div></div>
+  <div class="bottom">考试周没有新增实验，但前一阶段已经完成了完整的新证据链。</div><div class="page">03</div>
+</section>
+
+<section class="slide" id="system" data-name="04_系统与实际用途">
+  <h1>SafeConf 到底解决什么问题？</h1><div class="subtitle">不替代扰动预测器，而是在预测之后安排验证优先级</div><div class="rule"></div>
+  <div class="flow" style="margin-top:80px"><div class="node"><b>细胞背景 + 扰动</b><span>context, perturbation</span></div><div class="arrow"></div><div class="node"><b>预测模型</b><span>GEARS / CPA / scGPT 等</span></div><div class="arrow"></div><div class="node"><b>预测效应向量</b><span>predicted Δexpression</span></div><div class="arrow"></div><div class="node focus"><b>SafeConf 风险层</b><span>task evidence + output evidence</span></div><div class="arrow"></div><div class="node"><b>验证决策</b><span>复核 / 湿实验 / 暂缓</span></div></div>
+  <div class="compare">
+    <div class="side"><h2 class="navy">预测层</h2><p class="lead">回答“扰动后表达谱如何变化”</p><ul class="bullets"><li>输出高维效应向量</li><li>通常报告平均预测误差</li></ul></div><div class="plus">→</div>
+    <div class="side"><h2 class="teal">风险决策层</h2><p class="lead">回答“这条预测是否值得先验证”</p><ul class="bullets"><li>输出逐任务风险排序</li><li>改变有限实验预算的投放顺序</li></ul></div>
+  </div><div class="bottom">SafeConf的产品不是“另一份表达谱”，而是“高风险预测清单”。</div><div class="page">04</div>
+</section>
+
+<section class="slide" data-name="05_任务与防泄漏">
+  <h1>任务怎样定义，测试怎样避免泄漏？</h1><div class="subtitle">七个数据集分别切分；主分析不是把不同实验室数据混在一起训练</div><div class="rule"></div>
+  <div class="grid2" style="margin-top:48px">
+    <div class="panel" style="height:510px"><h2><span class="panel-label">a</span>一个任务</h2><div class="formula" style="margin-top:50px">task = (context, perturbation)</div><div class="flow" style="justify-content:center;margin-top:50px"><div class="node"><b>背景 c</b><span>control expression</span></div><div style="font-size:35px;margin:0 20px">×</div><div class="node"><b>扰动 p</b><span>gene / drug-dose</span></div></div><div class="note" style="margin-top:50px">测试的是未见过的组合，不是完全未见过的背景或扰动。</div></div>
+    <div class="panel" style="height:510px"><h2><span class="panel-label">b</span>四条泄漏约束</h2><table style="margin-top:30px"><tbody><tr><td class="navy strong">L1</td><td>test pair不在train</td><td>组合未见</td></tr><tr><td class="navy strong">L2</td><td>test perturbation在train出现</td><td>有扰动历史</td></tr><tr><td class="navy strong">L3</td><td>test context在train出现</td><td>有背景参考</td></tr><tr><td class="navy strong">L4</td><td>特征与标准化仅用fold-train</td><td>不看测试真值</td></tr></tbody></table><div class="note teal-note" style="margin-top:42px">Tahoe额外完成held-out-cell-line敏感性分析。</div></div>
+  </div><div class="bottom">主问题是“新组合的风险”，不是“新药零样本泛化”。</div><div class="page">05</div>
+</section>
+
+<section class="slide" data-name="06_核心风险证据">
+  <h1>风险分数由哪些证据组成？</h1><div class="subtitle">先区分训练历史证据、参考预测输出与目标模型特异信息</div><div class="rule"></div>
+  <div class="grid3" style="margin-top:48px">
+    <div class="panel topline" style="height:390px"><h2>背景相似度</h2><div class="formula">s<sub>ctx</sub> = max cos(x<sup>ctrl</sup><sub>c</sub>, x<sup>ctrl</sup><sub>c′</sub>)</div><p class="lead" style="font-size:19px">目标control与fold-train背景control比较。</p><p class="small">来源：目标control + train controls</p></div>
+    <div class="panel topline teal-line" style="height:390px"><h2>扰动支持量</h2><div class="formula">s<sub>sup</sub> = log(1+n<sub>train</sub>(p))</div><p class="lead" style="font-size:19px">统计同一扰动在多少训练背景中出现。</p><p class="small">来源：fold-train任务索引</p></div>
+    <div class="panel topline orange-line" style="height:390px"><h2>参考预测器分歧</h2><div class="formula">d<sub>ref</sub> = RMSE(ŷ<sup>V0</sup>, ŷ<sup>CS</sup>)</div><p class="lead" style="font-size:19px">同一任务上两个固定参考预测向量的差异。</p><p class="small">来源：参考预测输出，不读取测试真值</p></div>
+  </div>
+  <div class="grid2" style="margin-top:35px"><div class="note"><b>Frozen gene：</b> z(context) + z(log support) − z(disagreement)</div><div class="note teal-note"><b>Frozen chemical：</b> z(log support) − z(disagreement)</div></div>
+  <div class="bottom red">参考预测器分歧不等于目标模型自身的不确定性，这正是后续model-specific缺口。</div><div class="page">06</div>
+</section>
+
+<section class="slide" id="evidence" data-name="07_证据链全景">
+  <h1>当前证据链不是一个结果，而是五层验证</h1><div class="subtitle">每一层回答不同问题，不能互相替代或越界解释</div><div class="rule"></div>
+  <div class="evidence-ladder">
+    <div class="rung"><b>① 动机</b><div class="num">93.6%</div><p>误差方差来自task identity；两个参考预测器误差ρ=0.973。</p></div>
+    <div class="rung"><b>② Frozen主验证</b><div class="num">6 / 7</div><p>控制magnitude后为正；McFarland为失败边界。</p></div>
+    <div class="rung"><b>③ Fold-safe稳健性</b><div class="num">7 / 7</div><p>E2残差信号与combined AURC均通过预注册gate。</p></div>
+    <div class="rung"><b>④ 外部关联</b><div class="num">14 / 15</div><p>Frangieh多方法error association；带样本量与metric caveat。</p></div>
+    <div class="rung"><b>⑤ 大型chemical</b><div class="num">9,000</div><p>Tahoe tasks；pair、cell line、triage与敏感性闭环。</p></div>
+  </div><div class="note" style="margin:55px 110px 0;text-align:center"><b>证据已经足以支持task-risk triage，但不足以支持“所有具体模型的可靠性已被校准”。</b></div><div class="page">07</div>
+</section>
+
+<section class="slide" data-name="08_七主数据集结果">
+  <h1>七主数据集：Frozen v0.2的正式结果</h1><div class="subtitle">magnitude-controlled partial Spearman ρ；线为task-cluster bootstrap 95% CI</div><div class="rule"></div>
+  <div class="grid2" style="grid-template-columns:1.35fr .65fr;margin-top:34px">
+    <div><div class="forest"><div class="forest-head"><span>Dataset</span><span>−0.1　　　　0　　　　0.2　　　　0.4　　　　0.6</span><span>ρ</span></div>
+      <div class="forest-row"><span>Cui</span><div class="track"><i class="ci" style="left:49%;width:9%"></i><i class="dot" style="left:53.5%"></i></div><span class="value">0.328</span></div>
+      <div class="forest-row"><span>Frangieh</span><div class="track"><i class="ci" style="left:66%;width:10%"></i><i class="dot" style="left:71.8%"></i></div><span class="value">0.474</span></div>
+      <div class="forest-row"><span>Lara ex vivo</span><div class="track"><i class="ci" style="left:59.5%;width:16%"></i><i class="dot" style="left:67.9%"></i></div><span class="value">0.443</span></div>
+      <div class="forest-row"><span>Lara in vivo</span><div class="track"><i class="ci" style="left:49%;width:17%"></i><i class="dot" style="left:57.1%"></i></div><span class="value">0.357</span></div>
+      <div class="forest-row"><span>McFarland</span><div class="track"><i class="ci bad" style="left:0;width:10%"></i><i class="dot bad" style="left:4.9%"></i></div><span class="value red">−0.061</span></div>
+      <div class="forest-row"><span>Santinha</span><div class="track"><i class="ci" style="left:28.5%;width:21%"></i><i class="dot" style="left:39%"></i></div><span class="value">0.212</span></div>
+      <div class="forest-row"><span>Srivatsan</span><div class="track"><i class="ci" style="left:87%;width:8%"></i><i class="dot" style="left:91.1%"></i></div><span class="value">0.629</span></div></div></div>
+    <div><div class="panel topline" style="height:220px"><h2>成功范围</h2><div class="metric">6 / 7</div><p>大多数数据集中，Frozen分数与误差保持正相关。</p></div><div class="panel topline red-line" style="height:220px;margin-top:24px"><h2>失败边界</h2><div class="metric red">McFarland</div><p>partial ρ = −0.061；不能删除，也不能用learned结果挽救Frozen。</p></div></div>
+  </div><div class="bottom">这是“风险排序多数有效”的证据，不是“Frozen普遍优于magnitude”的证据。</div><div class="page">08</div>
+</section>
+
+<section class="slide" data-name="09_E1至E4稳健性">
+  <h1>Fold-safe E1–E4：风险信号是否只是伪影？</h1><div class="subtitle">修复outer-fold泄漏后重新运行；重点回答特征贡献、magnitude偏差、负对照和模型稳定性</div><div class="rule"></div>
+  <div class="grid2" style="margin-top:42px">
+    <div class="panel" style="height:270px;padding:18px 26px"><h2 style="margin-bottom:10px">E1 · Group ablation</h2><table class="compact-table" style="font-size:12px"><thead><tr><th>特征组</th><th>LOPO正向</th><th>LODO×LOPO正向</th></tr></thead><tbody><tr><td>context</td><td class="teal strong">5/7</td><td>3/7</td></tr><tr><td>support</td><td>3/7</td><td>1/7</td></tr><tr><td>prediction output</td><td>3/7</td><td class="teal strong">4/7</td></tr><tr><td>disagreement</td><td>2/7</td><td class="teal strong">4/7</td></tr><tr><td>OOD / historical</td><td>1/7 / 1/7</td><td>3/7 / 3/7</td></tr></tbody></table><p class="small" style="font-size:12px;margin-top:7px">只报告可核对的组别汇总；无全数据集通吃的单一特征组。</p></div>
+    <div class="panel" style="height:270px"><h2>E2 · Magnitude-residual</h2><div class="flow" style="justify-content:center;margin-top:35px"><div class="node"><b>Magnitude model</b><span>expected error</span></div><div style="font-size:28px;margin:0 16px">+</div><div class="node focus"><b>Residual risk</b><span>SafeConf features</span></div><div style="font-size:28px;margin:0 16px">→</div><div class="node"><b>Combined</b><span>predicted error</span></div></div><p class="teal strong" style="text-align:center;margin-top:25px">7/7 residual CI &gt; 0；7/7 combined AURC更好</p></div>
+    <div class="panel" style="height:270px"><h2>E3 · Negative controls</h2><table><tbody><tr><td>Observed vs shuffled target</td><td class="teal strong">7/7 FDR</td></tr><tr><td>Observed vs shuffled features</td><td class="teal strong">7/7 FDR</td></tr><tr><td>Missingness-only</td><td class="red strong">0/7 FDR</td></tr></tbody></table><p class="small">排除最简单的标签、特征映射和缺失模式伪影。</p></div>
+    <div class="panel" style="height:270px"><h2>E4 · Model stability</h2><div class="grid3" style="margin-top:28px;text-align:center"><div><div class="metric">7/7</div><p class="small">主要HistGBT</p></div><div><div class="metric teal">5 configs</div><p class="small">均保持7/7正</p></div><div><div class="metric orange">6/7</div><p class="small">ElasticNet</p></div></div><div class="note" style="margin-top:28px">结果依赖模型配置程度有限，但不是完全模型无关。</div></div>
+  </div><div class="page">09</div>
+</section>
+
+<section class="slide" data-name="10_E8b外部基准">
+  <h1>scPerturBench E8b：外部多方法关联</h1><div class="subtitle">共享Frangieh生物任务；74 perturbations × 15 methods；primary = MSE / DEG5000</div><div class="rule"></div>
+  <div class="grid3" style="margin-top:42px;grid-template-columns:1.25fr .75fr .75fr">
+    <div class="panel" style="height:485px"><h2><span class="panel-label">a</span>15种方法方向</h2><div class="method-dots"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>CPA</div><div>scF</div><div>MLP</div></div><div class="grid2" style="margin-top:38px;text-align:center"><div><div class="metric teal">14 / 15</div><p class="small">方向为正</p></div><div><div class="metric">0.584</div><p class="small">median Spearman ρ</p></div></div></div>
+    <div class="panel topline orange-line" style="height:485px"><h2><span class="panel-label">b</span>样本量 caveat</h2><div class="metric orange" style="margin-top:70px">0.764</div><p class="lead" style="font-size:19px">sample-size baseline median ρ</p><hr style="border:0;border-top:1px solid var(--line);margin:35px 0"><div class="metric">0.335</div><p class="small">控制log(Nstimulated)后的post hoc median partial ρ</p></div>
+    <div class="panel topline red-line" style="height:485px"><h2><span class="panel-label">c</span>不能外推</h2><ul class="bullets" style="font-size:18px;margin-top:45px"><li>不是逐向量验证</li><li>不是27种架构</li><li>不是所有metric成立</li><li>pearson distance方向相反</li><li>DEG选择影响明显</li></ul><div class="status-pill red" style="margin-top:40px">aggregate association only</div></div>
+  </div><div class="bottom">E8b支持“任务风险与多方法误差相关”，不等于“所有模型已经被SafeConf校准”。</div><div class="page">10</div>
+</section>
+
+<section class="slide" id="tahoe" data-name="11_Tahoe实验链">
+  <h1>Tahoe D0–D5：为什么做，以及怎样闭环？</h1><div class="subtitle">用大型现成chemical资源补足原有主表中chemical证据不足的问题</div><div class="rule"></div>
+  <div class="chain">
+    <div class="chain-step"><b>D0<br>数据地图</b><p>与主表药物重叠约7%</p><span class="status-pill">增量资源</span></div><div class="chain-arrow">→</div>
+    <div class="chain-step"><b>D1<br>Held-out pair</b><p>9,000 tasks<br>partial ρ=0.453</p><span class="status-pill">PASS</span></div><div class="chain-arrow">→</div>
+    <div class="chain-step"><b>D2<br>Held-out cell line</b><p>partial ρ=0.470<br>coverage=91.7%</p><span class="status-pill">PARTIAL</span></div><div class="chain-arrow">→</div>
+    <div class="chain-step"><b>D3<br>Practical triage</b><p>SafeConf 4.88x<br>Magnitude 6.49x</p><span class="status-pill">USEFUL</span></div><div class="chain-arrow">→</div>
+    <div class="chain-step"><b>D4<br>Min-900</b><p>partial ρ=0.461<br>门槛稳健</p><span class="status-pill">PASS</span></div><div class="chain-arrow">→</div>
+    <div class="chain-step"><b>D5<br>Fixed combine</b><p>50/50=5.73x<br>未超过Magnitude</p><span class="status-pill red">NEGATIVE</span></div>
+  </div>
+  <div class="grid4" style="margin-top:65px;text-align:center"><div><div class="metric">25</div><p class="small">contexts</p></div><div><div class="metric teal">1,028</div><p class="small">drug-dose perturbations</p></div><div><div class="metric orange">80,812</div><p class="small">PredictionRecords</p></div><div><div class="metric">145</div><p class="small">shards read before 9,000 tasks</p></div></div>
+  <div class="bottom">实验线已经闭环，不再增加shard、扫描阈值或搜索测试集最优权重。</div><div class="page">11</div>
+</section>
+
+<section class="slide" data-name="12_Tahoe定量结果">
+  <h1>Tahoe 的核心结果：有稳定信号，但不是最强基线</h1><div class="subtitle">关联、跨细胞系、敏感性与实际top-k分诊必须一起报告</div><div class="rule"></div>
+  <div class="grid2" style="margin-top:45px">
+    <div class="panel" style="height:510px"><h2><span class="panel-label">a</span>Magnitude-controlled association</h2><table style="margin-top:35px"><thead><tr><th>Analysis</th><th>partial ρ</th><th>95% CI / coverage</th></tr></thead><tbody><tr><td>D1 held-out pair</td><td class="navy strong">0.453</td><td>[0.441,0.467]</td></tr><tr><td>D2 held-out cell line</td><td class="teal strong">0.470</td><td>lower=0.457；91.7%</td></tr><tr><td>D4 min-900</td><td class="orange strong">0.461</td><td>[0.449,0.472]</td></tr></tbody></table><div class="note" style="margin-top:55px">说明chemical task-risk信号不只来自原始pair划分，也不依赖850-gene门槛。</div></div>
+    <div class="panel" style="height:510px"><h2><span class="panel-label">b</span>Top-10% high-error enrichment</h2><div style="margin-top:30px"><div class="bar-row"><span>Random</span><div class="bar gray" style="width:15%"></div><b>1.05x</b></div><div class="bar-row"><span>SafeConf</span><div class="bar navy" style="width:69.7%"></div><b class="navy">4.88x</b></div><div class="bar-row"><span>Magnitude</span><div class="bar teal" style="width:92.7%"></div><b class="teal">6.49x</b></div><div class="bar-row"><span>50/50 combined</span><div class="bar blue" style="width:81.9%"></div><b style="color:var(--blue)">5.73x</b></div></div><div class="note red-note" style="margin-top:45px">固定联合未超过magnitude；不能继续在test set调权重。</div></div>
+  </div><div class="bottom">正确结论：SafeConf有实用分诊价值，但Tahoe顶端错误主要由magnitude与disagreement捕获。</div><div class="page">12</div>
+</section>
+
+<section class="slide" data-name="13_实用价值与异质性">
+  <h1>风险分数怎样转化为实验验证价值？</h1><div class="subtitle">固定验证预算下，优先检查top-risk预测；macro平均不能掩盖数据集异质性</div><div class="rule"></div>
+  <div class="grid2" style="margin-top:45px;grid-template-columns:.9fr 1.1fr">
+    <div class="panel" style="height:505px"><h2><span class="panel-label">a</span>七主数据集 top-10 macro</h2><div style="margin-top:20px"><div class="bar-row"><span>Random</span><div class="bar gray" style="width:13.5%"></div><b>1.11x</b></div><div class="bar-row"><span>Magnitude</span><div class="bar teal" style="width:40.2%"></div><b>3.30x</b></div><div class="bar-row"><span>Frozen v0.2</span><div class="bar navy" style="width:40.8%"></div><b>3.35x</b></div><div class="bar-row"><span>LODO risk</span><div class="bar orange" style="width:28.1%"></div><b>2.31x</b></div><div class="bar-row"><span>Per-dataset</span><div class="bar blue" style="width:65.3%"></div><b>5.36x</b></div><div class="bar-row"><span>Oracle</span><div class="bar gray" style="width:100%;background:#7c858c"></div><b>8.21x</b></div></div></div>
+    <div class="panel" style="height:505px"><h2><span class="panel-label">b</span>不同数据集强弱互换</h2><table><thead><tr><th>Dataset</th><th>Frozen</th><th>Magnitude</th><th>Pattern</th></tr></thead><tbody><tr><td>Cui</td><td>3.30x</td><td>2.55x</td><td class="navy">Frozen higher</td></tr><tr><td>Frangieh</td><td>2.90x</td><td>8.08x</td><td class="teal">Magnitude higher</td></tr><tr><td>Lara ex vivo</td><td>7.80x</td><td>0.46x</td><td class="navy">Frozen much higher</td></tr><tr><td>McFarland</td><td>0.90x</td><td>2.57x</td><td class="red">Frozen failure</td></tr><tr><td>Srivatsan</td><td>4.95x</td><td>6.27x</td><td class="teal">Magnitude higher</td></tr></tbody></table><div class="note" style="margin-top:30px">二者是互补风险信号，不是稳定的单方胜出。</div></div>
+  </div><div class="bottom">实际用途成立：把有限复核与湿实验预算优先放在更可能失败的预测上。</div><div class="page">13</div>
+</section>
+
+<section class="slide" id="boundary" data-name="14_已解决与未解决">
+  <h1>现在可以说什么，不能说什么？</h1><div class="subtitle">这一步比继续增加实验更重要：明确系统能力边界</div><div class="rule"></div>
+  <div class="grid3" style="margin-top:52px">
+    <div class="panel topline teal-line" style="height:500px"><h2 class="teal">已经解决</h2><ul class="bullets" style="margin-top:35px"><li>定义了fold-safe task-risk评估协议</li><li>七主数据集6/7为正</li><li>证明存在magnitude之外的残差信号</li><li>完成负对照与配置稳健性</li><li>补充多方法外部关联</li><li>完成Tahoe chemical D0–D5</li><li>证明top-k风险分诊具有实际价值</li></ul></div>
+    <div class="panel topline orange-line" style="height:500px"><h2 class="orange">必须带限定</h2><ul class="bullets" style="margin-top:35px"><li>McFarland Frozen失败</li><li>Santinha只是weak positive</li><li>magnitude是强基线</li><li>E8b受样本量与metric影响</li><li>Tahoe不是full validation</li><li>Tahoe不是held-out drug</li><li>per-dataset risk是上界，不是冻结部署协议</li></ul></div>
+    <div class="panel topline red-line" style="height:500px"><h2 class="red">尚未解决</h2><ul class="bullets" style="margin-top:35px"><li>同一任务上模型A/B谁更可靠</li><li>真实深度模型逐预测向量校准</li><li>跨架构统一model-specific uncertainty</li><li>逐任务模型选择regret</li><li>新药零样本可靠性</li></ul><div class="note red-note" style="margin-top:50px">这不是再加一个Tahoe分析能够解决的问题。</div></div>
+  </div><div class="page">14</div>
+</section>
+
+<section class="slide" id="next" data-name="15_下一决定性实验">
+  <h1>如果继续做新实验，只做哪一个？</h1><div class="subtitle">真实多模型、同一任务、同一split的model-specific reliability验证</div><div class="rule"></div>
+  <div class="flow" style="margin-top:62px"><div class="node"><b>统一benchmark</b><span>shared tasks & gene space</span></div><div class="arrow"></div><div class="node"><b>冻结split</b><span>same held-out pairs</span></div><div class="arrow"></div><div class="node focus"><b>≥3真实模型</b><span>prediction vectors</span></div><div class="arrow"></div><div class="node"><b>三类风险</b><span>task / model / combined</span></div><div class="arrow"></div><div class="node"><b>决策评价</b><span>triage & model selection</span></div></div>
+  <div class="grid3" style="margin-top:60px">
+    <div class="panel topline"><h2>输入要求</h2><ul class="bullets" style="font-size:18px"><li>同一任务粒度</li><li>逐预测效应向量</li><li>模型身份与原生uncertainty</li><li>严格train/val/test来源</li></ul></div>
+    <div class="panel topline teal-line"><h2>对照设计</h2><ul class="bullets" style="font-size:18px"><li>task-only</li><li>magnitude / model-only</li><li>task + model combined</li><li>简单baseline与学习模型</li></ul></div>
+    <div class="panel topline orange-line"><h2>成功标准</h2><ul class="bullets" style="font-size:18px"><li>partial ρ</li><li>AURC与top-k enrichment</li><li>风险校准误差</li><li>model-selection regret</li></ul></div>
+  </div><div class="note red-note" style="margin:38px 160px 0;text-align:center"><b>周四前不仓促运行：必须先确认预测向量、数据粒度和模型集合可得。</b></div><div class="page">15</div>
+</section>
+
+<section class="slide" data-name="16_周四需要确认的决定">
+  <h1>周四汇报希望确认什么？</h1><div class="subtitle">不是重复旧问题，也不是请求“是否可以写论文”，而是确认下一技术优先级</div><div class="rule"></div>
+  <div class="decision">
+    <div><div class="kicker">Option A</div><h2 class="navy" style="font-size:28px">先收口现有task-risk系统</h2><ul class="bullets"><li>统一方法、结果与图表</li><li>完成reproducibility pipeline</li><li>将Tahoe作为large chemical supplement</li><li>保留model-specific为下一阶段</li></ul></div>
+    <div><div class="kicker teal">Option B</div><h2 class="teal" style="font-size:28px">进入model-specific扩展</h2><ul class="bullets"><li>先做真实模型预测向量可得性审计</li><li>冻结benchmark、split与模型集合</li><li>运行唯一的多模型决定性实验</li><li>把系统从任务分诊扩展到模型选择</li></ul></div>
+  </div>
+  <div class="grid3" style="margin-top:75px"><div class="note"><b>周一–周三</b><br><span class="small">冻结数字、整理汇报、演练</span></div><div class="note teal-note"><b>周四</b><br><span class="small">汇报完整证据链与边界</span></div><div class="note orange-note"><b>周五以后</b><br><span class="small">按老师确认的技术方向推进</span></div></div>
+  <div class="bottom">我的建议：周四前不增加实验；周四后只启动一个能解决model-specific缺口的实验。</div><div class="page">16</div>
+</section>
+
+<section class="slide" data-name="17_七数据集数据地图">
+  <h1>附录：七个主数据集的数据地图</h1><div class="subtitle">正式过滤后进入 PredictionRecord 的 context、perturbation 与可评估任务数</div><div class="rule"></div>
+  <table style="margin-top:42px;font-size:18px"><thead><tr><th>Dataset</th><th>Family</th><th>Contexts</th><th>Perturbations</th><th>Tasks</th><th>结构特点</th></tr></thead><tbody>
+    <tr><td>Cui</td><td>gene</td><td>15</td><td>86</td><td>1,253</td><td>背景与扰动较均衡</td></tr>
+    <tr><td>Frangieh</td><td>gene</td><td>3</td><td>211</td><td>633</td><td>背景数有限</td></tr>
+    <tr><td>Lara ex vivo</td><td>gene</td><td>8</td><td>42</td><td>323</td><td>中等规模</td></tr>
+    <tr><td>Lara in vivo</td><td>gene</td><td>15</td><td>39</td><td>375</td><td>背景多、扰动较少</td></tr>
+    <tr><td>McFarland</td><td class="teal">chemical</td><td>170</td><td>13</td><td>1,163</td><td class="red">背景很多、药物很少</td></tr>
+    <tr><td>Santinha</td><td>gene</td><td>10</td><td>29</td><td>273</td><td>规模较小</td></tr>
+    <tr><td>Srivatsan</td><td class="teal">chemical</td><td>3</td><td>188</td><td>564</td><td>背景数有限</td></tr>
+  </tbody></table>
+  <div class="grid2" style="margin-top:30px"><div class="note"><b>为什么要列这张表？</b><br><span class="small">数据结构高度不均衡，不能期待同一特征在所有数据集具有相同区分力。</span></div><div class="note teal-note"><b>两个典型例子</b><br><span class="small">Frangieh / Srivatsan 只有3个context；McFarland有170个context却只有13种扰动。</span></div></div>
+  <div class="page">17</div>
+</section>
+
+<section class="slide" data-name="18_老师六问逐项回答">
+  <h1>附录：老师上次六轮问题逐项回答</h1><div class="subtitle">保留原问题的技术焦点，用当前最新证据回答</div><div class="rule"></div>
+  <table style="margin-top:30px;font-size:16px"><thead><tr><th style="width:29%">老师的问题</th><th style="width:48%">当前直接回答</th><th>证据 / 状态</th></tr></thead><tbody>
+    <tr><td>1　数据是跨数据集切吗？</td><td>不是。七个数据集分别做 held-out pair；所有特征只读 fold-train。</td><td class="teal strong">已回答</td></tr>
+    <tr><td>2　三个指标怎么算？</td><td>control 最大余弦相似度、train support、两个固定参考预测向量的 RMSE。</td><td class="teal strong">精确定义已固化</td></tr>
+    <tr><td>3　context / perturbation 各多少？</td><td>见上一页完整 data map；结构高度不均衡，特征贡献会随数据变化。</td><td class="teal strong">7 datasets</td></tr>
+    <tr><td>4　是否使用现成大型数据？</td><td>已完成 Tahoe 9,000-task sampled validation，覆盖25个context和1,028个drug-dose。</td><td class="teal strong">D0–D5已闭环</td></tr>
+    <tr><td>5　应该用公式还是模型？</td><td>Frozen 公式作可解释主协议；learned risk model 作扩展与敏感性分析。</td><td class="teal strong">两条路线已分层</td></tr>
+    <tr><td>6　任务难度有什么用？</td><td>用于复核和湿实验分诊；但同题选模型仍需 model-specific residual。</td><td class="red strong">价值已回答；模型层待补</td></tr>
+  </tbody></table>
+  <div class="note red-note" style="margin-top:26px;text-align:center"><b>最后一问不能说“已经完全解决”：当前任务层证据较完整，模型特异层仍需真实多模型验证。</b></div><div class="page">18</div>
+</section>
+
+<script>
+const q=new URLSearchParams(location.search);const n=parseInt(q.get('slide')||'0',10);
+if(n){document.body.classList.add('export');const slides=[...document.querySelectorAll('.slide')];if(slides[n-1])slides[n-1].classList.add('active');}
+</script>
+</body>
+</html>

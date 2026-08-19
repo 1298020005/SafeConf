@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-07-14T15:30:54",
+  "run_id": "seed2_frac25",
+  "n_primary_unique_tasks": 256,
+  "score_sha256": "0f84eaca4410cb78fad186d093b9bc1f513a928a316e1874ecfa14eca9d63f34",
+  "model_sha256": "77caf3b7b46071ced9577a8bd5289ce4c7bf5899c329ab37e835c41bda07d4b3",
+  "model_refit": false,
+  "direction_truth_columns_read_for_score": [],
+  "note": "E154 is post-E152 sensitivity; this is not a prospective confirmation freeze"
+}

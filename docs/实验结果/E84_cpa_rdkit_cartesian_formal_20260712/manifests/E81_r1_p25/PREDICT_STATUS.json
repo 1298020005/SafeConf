@@ -1,0 +1,22 @@
+{
+  "experiment": "E83_cpa_rdkit_pilot",
+  "phase": "prediction_complete_truth_unread",
+  "generated_at": "2026-07-12T12:12:24",
+  "manifest_id": "E81_r1_p25",
+  "predictor": "CPA_0.8.8_RDKIT_Morgan_frozen_logdose",
+  "n_train_tasks": 8,
+  "n_val_tasks": 4,
+  "n_test_tasks": 91,
+  "n_train_cells_including_controls": 448,
+  "n_val_cells": 128,
+  "n_pseudo_test_control_cells": 1456,
+  "dose_input": "log10(max(nM,1)); control=0",
+  "drug_input": "frozen RDKit Morgan fingerprint from external SMILES",
+  "context_input": "target and source vehicle-control cells available",
+  "target_perturbed_truth_used_for_prediction": false,
+  "epochs_requested": 20,
+  "epochs_recorded": 20,
+  "gene_order_hash": "sha256:e53bfe14230003dbba9396958fae945532976804da8c5950a489b1f269953618",
+  "cpa_source_commit": "fbd7c0250edc23eff003a10c99655579c53afd63",
+  "cpa_compat_patch": "optional Ray tuner import only; core model unchanged"
+}

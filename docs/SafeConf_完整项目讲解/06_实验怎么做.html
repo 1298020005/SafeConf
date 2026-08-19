@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>06 实验怎么做</title>
+<link rel="stylesheet" href="assets/tutorial.css">
+</head>
+<body>
+<header class="top">
+<div class="topin">
+<a class="brand" href="index.html">SafeConf 完整项目讲解</a>
+<a class="back" href="../../SafeConf_统一研究工作台.html">返回工作台</a>
+</div>
+</header>
+<div class="layout">
+<aside class="side" id="chapterNav">
+</aside>
+<main class="content">
+<section class="hero">
+<p class="eyebrow">CHAPTER 06</p>
+<h1>实验如何证明结果可信</h1>
+<p class="lead">正式实验同时检查数据泄漏、强基线、随机性和数据集差异。单个正相关数值不足以形成结论。</p>
+</section>
+<h2>1. Held-out pair 与 fold-safe</h2>
+<figure class="figure">
+<div class="flow">
+<div class="node">
+<b>全部 tasks</b>
+</div>
+<div class="node">
+<b>Fold 1</b>
+<small>一部分 pair 只放 test</small>
+</div>
+<div class="node">
+<b>特征只读 train</b>
+<small>中位数、support、历史效应</small>
+</div>
+<div class="node">
+<b>对 test 打分</b>
+<small>不读 test true effect</small>
+</div>
+<div class="node">
+<b>评价</b>
+<small>完成打分后与真实误差比较</small>
+</div>
+</div>
+</figure>
+<div class="term">
+<b>Held-out pair</b>
+<p>把某个 context–perturbation 组合完整留到测试集，模拟“这道具体任务没有在训练中见过”。</p>
+</div>
+<div class="term">
+<b>Fold-safe</b>
+<p>每个交叉验证 fold 都独立计算参考统计，不用其他 fold 的测试答案。</p>
+</div>
+<div class="term">
+<b>Leakage</b>
+<p>测试信息以任何形式流入特征、标准化或模型训练，会让结果虚高。</p>
+</div>
+<h2>2. 看哪些评价指标</h2>
+<div class="grid3">
+<div class="mini">
+<h3>Spearman ρ</h3>
+<p>比较两组排名是否一致。风险排名越靠前的预测，真实误差是否也越大。</p>
+</div>
+<div class="mini">
+<h3>Partial ρ</h3>
+<p>统计分析控制 prediction magnitude（预测效应幅度）后，计算 SafeConf 与误差的剩余相关。</p>
+</div>
+<div class="mini">
+<h3>Top-k enrichment</h3>
+<p>取高风险 top 10%，其中高错误预测是随机选择的多少倍。</p>
+</div>
+<div class="mini">
+<h3>AURC</h3>
+<p>风险—覆盖曲线下面积。逐步剔除高风险预测后，剩余预测的平均误差越低越好。</p>
+</div>
+<div class="mini">
+<h3>Bootstrap CI</h3>
+<p>按 task cluster 重采样很多次，得到 95% 置信区间，不把同一 task 的相关行错当独立样本。</p>
+</div>
+<div class="mini">
+<h3>Negative control</h3>
+<p>打乱标签或特征后应该失效。如果打乱后仍然很强，就要怀疑泄漏或管道伪影。</p>
+</div>
+</div>
+<h2>3. E1–E4 分别防什么</h2>
+<div class="table">
+<table>
+<thead>
+<tr>
+<th>实验</th>
+<th>问题</th>
+<th>结果</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E1 特征组消融</td>
+<td>哪类线索真在贡献？</td>
+<td>不同数据集贡献不同</td>
+<td>没有一个特征组通吃所有数据</td>
+</tr>
+<tr>
+<td>E2 magnitude-residual</td>
+<td>是否只是幅度代理？</td>
+<td>7/7 residual CI lower&gt;0</td>
+<td>控制 magnitude 后仍有剩余信号</td>
+</tr>
+<tr>
+<td>E3 负对照</td>
+<td>是否来自随机或缺失模式？</td>
+<td>shuffled 7/7；missing-only 0/7</td>
+<td>排除最简单的伪影</td>
+</tr>
+<tr>
+<td>E4 模型稳定性</td>
+<td>是否只有一个参数配置有效？</td>
+<td>HistGBT 7/7；ElasticNet 6/7</td>
+<td>不同配置表现有差异；信号不依赖单一配置</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2>4. E8b 与 Tahoe 各自补什么</h2>
+<div class="grid2">
+<div class="card">
+<h3>E8b：多方法聚合关联</h3>
+<p>Frangieh 共享任务包含 74 个 perturbation 和 15 种方法，其中 14 种方法方向为正。该分析使用聚合误差，没有完整逐向量输入，证据级别属于方法—误差关联。</p>
+</div>
+<div class="card">
+<h3>Tahoe：大型 chemical 抽样验证</h3>
+<p>补足原主表 chemical 证据规模，检查 pair、cell-line、top-k、gene threshold 和 fixed combination。</p>
+</div>
+</div>
+<div class="callout warn">
+<b>预注册（preregistration）：</b>跑正式实验前写明数据、切分、指标、通过门槛和停止条件，减少看结果后改标准。</div>
+<div class="pager">
+<a href="05_目录与代码结构.html">← 上一章</a>
+<a href="07_结果与边界.html">下一章：结果与边界 →</a>
+</div>
+</main>
+</div>
+<script src="assets/tutorial.js">
+</script>
+</body>
+</html>

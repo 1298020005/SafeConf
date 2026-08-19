@@ -1,0 +1,12 @@
+{
+  "dataset": "Lara_exvivo",
+  "status": "complete",
+  "generated_at": "2026-07-13T11:14:22",
+  "n_folds": 5,
+  "n_test_tasks": 345,
+  "n_records": 690,
+  "strict_issue_count": 0,
+  "test_truth_used_for_training_calibration_score_or_threshold": false,
+  "wall_seconds": 154.01675605773926,
+  "revalidated_at": "2026-07-13T11:18:05"
+}

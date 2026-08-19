@@ -1,0 +1,24 @@
+{
+  "status": "ok",
+  "generated_at": "2026-07-07T21:21:33",
+  "script": "tools/scripts/package_sciplex3_full743_sensitivity.py",
+  "output_dir": "docs/实验结果/E17_sciplex3_full743_gene5000_20260707",
+  "runtime_source": "runtime/e17_sciplex3_full743_gene5000_20260707",
+  "input_git_commit": "ac033d20f987a6cf7ec13d79d8c479f6911a229e",
+  "input_git_dirty": true,
+  "run_id": "E17",
+  "genes": 5000,
+  "best_overall_score": "learned_risk_score",
+  "best_overall_aligned_spearman": 0.8907436061203022,
+  "best_overall_risk_cov_80_improve_pct": 18.73731117073114,
+  "learned_aligned_spearman": 0.8907436061203022,
+  "disagreement_aligned_spearman": 0.6921376713733933,
+  "simple_combined_aligned_spearman": 0.6743173125922279,
+  "panel": {
+    "n_tasks": 2229,
+    "n_contexts": 3,
+    "n_genes": 5000,
+    "n_shared_perturbations": 743,
+    "n_selected_perturbations": 743
+  }
+}

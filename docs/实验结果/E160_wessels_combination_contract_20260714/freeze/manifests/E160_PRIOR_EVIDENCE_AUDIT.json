@@ -1,0 +1,18 @@
+{
+  "E158_attempt1_phase": "failed_after_irreversible_test_unseal_preserve_attempt",
+  "E158_test_data_unsealed": true,
+  "E158_test_X_rows_materialized": true,
+  "E158_failure": "RuntimeError('Only 0 valid bootstrap replicates; need 9500')",
+  "E158_unseal_event_sha256": "40b1418002c8f32d0dbac67bd0260ed47d23645ff92f60c25c97d4ef38322f08",
+  "E159_phase": "complete_post_unseal_saturation_forensics",
+  "E159_analysis_timing": "post_unseal_forensic_not_preregistered",
+  "E159_official_combined_magnitude_and_PCA_predictions_saturated": true,
+  "E159_raw_log_prob_role": "posthoc_hypothesis_generating_only",
+  "E159_posthoc_rhos": {
+    "Norman_P3|pearson_effect_accuracy": 0.177391304347826,
+    "Norman_P4|pearson_effect_accuracy": 0.2904347826086956,
+    "Norman_P3|raw_pearson_effect_accuracy_sensitivity": -0.2730434782608695,
+    "Norman_P4|raw_pearson_effect_accuracy_sensitivity": -0.4999999999999999
+  },
+  "E160_hypothesis_disclosure": "new Wessels hypothesis jointly motivated after unseal by positive PCA10 rhos and negative raw-full-gene rhos; not retrospectively preregistered"
+}

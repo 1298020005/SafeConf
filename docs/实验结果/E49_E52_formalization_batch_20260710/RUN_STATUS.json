@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-07-10T17:20:40",
+  "git_head": "020ddea1b4e5c11f9e879ff4778d9bf19aac92e2",
+  "git_dirty": true,
+  "args": {
+    "sciplex3_genes": 1000,
+    "norman_genes": 1000,
+    "tcdd_genes": 1000,
+    "min_cells": 15,
+    "max_cells_per_group": 300,
+    "seed": 0
+  },
+  "output_dir": "docs/实验结果/E49_E52_formalization_batch_20260710",
+  "n_openproblems_rows": 1453,
+  "n_sciplex3_rows": 104,
+  "n_norman_combo_rows": 125,
+  "n_tcdd_rows": 48
+}

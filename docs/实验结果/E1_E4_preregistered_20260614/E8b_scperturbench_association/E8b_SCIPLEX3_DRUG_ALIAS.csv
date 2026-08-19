@@ -1,0 +1,76 @@
+safeconf_perturbation,scperturbench_drug,match_type,notes
+ABT-737,ABT737,exact,case/spacing/punctuation normalization only
+AC480 (BMS-599626),AC480,alias,matched after removing SafeConf parenthetical aliases
+AG-14361,AG14361,exact,case/spacing/punctuation normalization only
+AICAR (Acadesine),AICAR,alias,matched after removing SafeConf parenthetical aliases
+AZ 960,AZ,manual,manual proposal; excluded because manual count exceeds preregistered limit
+Abexinostat (PCI-24781),Abexinostat,alias,matched after removing SafeConf parenthetical aliases
+Alendronate sodium trihydrate,Alendronate,manual,manual proposal; excluded because manual count exceeds preregistered limit
+Altretamine,Altretamine,exact,case/spacing/punctuation normalization only
+Alvespimycin (17-DMAG) HCl,Alvespimycin,manual,manual proposal; excluded because manual count exceeds preregistered limit
+Azacitidine,Azacitidine,exact,case/spacing/punctuation normalization only
+BMS-536924,BMS536924,exact,case/spacing/punctuation normalization only
+Barasertib (AZD1152-HQPA),Barasertib,alias,matched after removing SafeConf parenthetical aliases
+Belinostat (PXD101),Belinostat,alias,matched after removing SafeConf parenthetical aliases
+Busulfan,Busulfan,exact,case/spacing/punctuation normalization only
+CEP-33779,CEP33779,exact,case/spacing/punctuation normalization only
+CYC116,CYC116,exact,case/spacing/punctuation normalization only
+Carmofur,Carmofur,exact,case/spacing/punctuation normalization only
+Cediranib (AZD2171),Cediranib,alias,matched after removing SafeConf parenthetical aliases
+Cimetidine,Cimetidine,exact,case/spacing/punctuation normalization only
+Clevudine,Clevudine,exact,case/spacing/punctuation normalization only
+Costunolide,Costunolide,exact,case/spacing/punctuation normalization only
+Crizotinib (PF-02341066),Crizotinib,alias,matched after removing SafeConf parenthetical aliases
+Curcumin,Curcumin,exact,case/spacing/punctuation normalization only
+Dacinostat (LAQ824),Dacinostat,alias,matched after removing SafeConf parenthetical aliases
+Danusertib (PHA-739358),Danusertib,alias,matched after removing SafeConf parenthetical aliases
+Droxinostat,Droxinostat,exact,case/spacing/punctuation normalization only
+EED226,EED226,exact,case/spacing/punctuation normalization only
+Epothilone A,Epothilone,manual,manual proposal; excluded because manual count exceeds preregistered limit
+Fasudil (HA-1077) HCl,Fasudil,manual,manual proposal; excluded because manual count exceeds preregistered limit
+Flavopiridol HCl,Flavopiridol,manual,manual proposal; excluded because manual count exceeds preregistered limit
+"Fluorouracil (5-Fluoracil, 5-FU)",Fluorouracil,alias,matched after removing SafeConf parenthetical aliases
+Fulvestrant,Fulvestrant,exact,case/spacing/punctuation normalization only
+GSK J1,GSK,manual,manual proposal; excluded because manual count exceeds preregistered limit
+Givinostat (ITF2357),Givinostat,alias,matched after removing SafeConf parenthetical aliases
+Glesatinib?(MGCD265),Glesatinib,alias,matched after removing SafeConf parenthetical aliases
+Hesperadin,Hesperadin,exact,case/spacing/punctuation normalization only
+ITSA-1 (ITSA1),ITSA1,alias,matched after removing SafeConf parenthetical aliases
+JNJ-26854165 (Serdemetan),JNJ26854165,alias,matched after removing SafeConf parenthetical aliases
+(+)-JQ1,JQ1,exact,case/spacing/punctuation normalization only
+Ki16425,Ki16425,exact,case/spacing/punctuation normalization only
+Lenalidomide (CC-5013),Lenalidomide,alias,matched after removing SafeConf parenthetical aliases
+MK-0752,MK0752,exact,case/spacing/punctuation normalization only
+Meprednisone,Meprednisone,exact,case/spacing/punctuation normalization only
+Mercaptopurine (6-MP),Mercaptopurine,alias,matched after removing SafeConf parenthetical aliases
+Mocetinostat (MGCD0103),Mocetinostat,alias,matched after removing SafeConf parenthetical aliases
+NVP-BSK805 2HCl,NVPBSK805,manual,manual proposal; excluded because manual count exceeds preregistered limit
+Obatoclax Mesylate (GX15-070),Obatoclax,manual,manual proposal; excluded because manual count exceeds preregistered limit
+Ofloxacin,Ofloxacin,exact,case/spacing/punctuation normalization only
+PCI-34051,PCI34051,exact,case/spacing/punctuation normalization only
+PF-573228,PF573228,exact,case/spacing/punctuation normalization only
+PHA-680632,PHA680632,exact,case/spacing/punctuation normalization only
+Panobinostat (LBH589),Panobinostat,alias,matched after removing SafeConf parenthetical aliases
+"Patupilone (EPO906, Epothilone B)",Patupilone,alias,matched after removing SafeConf parenthetical aliases
+Pracinostat (SB939),Pracinostat,alias,matched after removing SafeConf parenthetical aliases
+Prednisone,Prednisone,exact,case/spacing/punctuation normalization only
+Quercetin,Quercetin,exact,case/spacing/punctuation normalization only
+Quisinostat (JNJ-26481585) 2HCl,Quisinostat,manual,manual proposal; excluded because manual count exceeds preregistered limit
+Resveratrol,Resveratrol,exact,case/spacing/punctuation normalization only
+"Rucaparib (AG-014699,PF-01367338) phosphate",Rucaparib,manual,manual proposal; excluded because manual count exceeds preregistered limit
+Ruxolitinib (INCB018424),Ruxolitinib,alias,matched after removing SafeConf parenthetical aliases
+S3I-201,S3I201,exact,case/spacing/punctuation normalization only
+SRT1720 HCl,SRT1720,manual,manual proposal; excluded because manual count exceeds preregistered limit
+Sirtinol,Sirtinol,exact,case/spacing/punctuation normalization only
+TAK-901,TAK901,exact,case/spacing/punctuation normalization only
+TG101209,TG101209,exact,case/spacing/punctuation normalization only
+Tacedinaline (CI994),Tacedinaline,alias,matched after removing SafeConf parenthetical aliases
+Tanespimycin (17-AAG),Tanespimycin,alias,matched after removing SafeConf parenthetical aliases
+Thiotepa,Thiotepa,exact,case/spacing/punctuation normalization only
+Tofacitinib (CP-690550) Citrate,Tofacitinib,manual,manual proposal; excluded because manual count exceeds preregistered limit
+Triamcinolone Acetonide,Triamcinolone,manual,manual proposal; excluded because manual count exceeds preregistered limit
+Tubastatin A HCl,Tubastatin,manual,manual proposal; excluded because manual count exceeds preregistered limit
+UNC0379,UNC0379,exact,case/spacing/punctuation normalization only
+Vandetanib (ZD6474),Vandetanib,alias,matched after removing SafeConf parenthetical aliases
+Veliparib (ABT-888),Veliparib,alias,matched after removing SafeConf parenthetical aliases
+WHI-P154,WHIP154,exact,case/spacing/punctuation normalization only

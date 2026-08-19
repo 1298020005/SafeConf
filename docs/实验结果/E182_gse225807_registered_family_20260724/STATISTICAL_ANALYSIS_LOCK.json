@@ -1,0 +1,30 @@
+{
+  "calibration_cluster_unit": "target gene containing both guide replicates",
+  "centroid_upper": "constant target-cluster split-conformal quantile of the maximum centroid RMSE across both guides of each calibration target",
+  "evaluation_cluster_unit": "target gene containing both guide replicates",
+  "evaluation_truth_may_modify_method_model_or_threshold": false,
+  "family_diversity_lower": "sqrt(mean_i RMSE(prediction_i, registered_family_centroid)^2)",
+  "family_rms_upper": "sqrt(centroid_upper^2 + family_diversity_lower^2)",
+  "finite_sample_rank_one_based": 18,
+  "primary_success_gates": {
+    "evaluation_target_simultaneous_coverage_minimum": 0.85,
+    "family_rms_lower_violations": 0,
+    "hilbert_identity_max_absolute_residual": 1e-10,
+    "truth_access_or_target_split_violations": 0,
+    "worst_member_lower_violations": 0
+  },
+  "primary_truth_vector": "guide-level mean log1p-normalized expression minus pooled negative-guide control mean on a frozen 512-gene panel",
+  "ranking_metrics_are_primary": false,
+  "registered_family_rms_error": "sqrt(mean_i RMSE(prediction_i, truth)^2) across ten models",
+  "schema": "safeconf_e182_statistical_lock_v1",
+  "target_coverage": 0.9,
+  "target_split_counts": {
+    "conformal_calibration": 19,
+    "model_validation": 9,
+    "prospective_evaluation": 20,
+    "supervised_train": 28
+  },
+  "tightness_is_descriptive_not_a_selection_gate": true,
+  "worst_member_lower": "maximum pairwise family distance divided by two",
+  "worst_member_upper": "centroid_upper + maximum family radius"
+}

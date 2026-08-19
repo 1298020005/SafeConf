@@ -1,0 +1,12 @@
+{
+  "experiment": "E130_tian_confirmatory_high_error_router",
+  "generated_at": "2026-07-14T01:41:06",
+  "status": "complete",
+  "n_source_datasets": 5,
+  "n_source_tasks": 2221,
+  "n_target_folds": 4,
+  "n_target_tasks": 732,
+  "target_truth_used_for_model_score_transform_or_threshold": false,
+  "preregistered_gate_passed": false,
+  "model_spec": "E127 frozen HistGradientBoostingClassifier"
+}

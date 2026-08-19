@@ -1,0 +1,30 @@
+{
+  "experiment": "E193",
+  "stage": "POSTTRUTH_METRIC_ROBUSTNESS",
+  "status": "PASS",
+  "analysis_is_prospective_preregistration": false,
+  "independent_confirmation": false,
+  "truth_already_opened_before_analysis_design": true,
+  "analysis_freeze_committed_before_execution": true,
+  "datasets": [
+    "E190_K562",
+    "E192_RPE1"
+  ],
+  "geometries": [
+    "absolute_rmse",
+    "cosine",
+    "pearson"
+  ],
+  "unique_target_tasks": 867,
+  "dataset_geometry_task_instances": 2601,
+  "undefined_dataset_geometry_task_instances": 0,
+  "family_rms_lower_violations": 0,
+  "family_worst_lower_violations": 0,
+  "max_rms_identity_residual": 6.661338147750939e-16,
+  "max_raw_replication_abs_diff": 1.4128863412565806e-08,
+  "certificate_implementation_gate_pass": true,
+  "risk_ranking_results_are_exploratory": true,
+  "risk_ranking_has_no_activation_gate": true,
+  "e192_abstain_status_changed": false,
+  "systema_exact_metric_claimed": false
+}

@@ -1,0 +1,431 @@
+{
+  "experiment": "E65_scGPT_formal_fixed_panel",
+  "started_at": "2026-07-11T12:32:43",
+  "git_head_before_run": "3a89decf48ece8ca6c86d8e8157b396e05efcf6e",
+  "mode": "preflight",
+  "device": "cuda:0",
+  "amp": false,
+  "n_genes": 512,
+  "gene_order_hash": "sha256:586ea4c98066352ff566ac5a498c2702e484aacc80180f2d61a23262af34aeac",
+  "split": {
+    "train": 48,
+    "val": 5,
+    "test": 24
+  },
+  "sampling": {
+    "max_train_or_val_cells_per_condition": 192,
+    "conditions": {
+      "ctrl": {
+        "split": "train",
+        "before": 7629,
+        "after": 192
+      },
+      "CHERP+ctrl": {
+        "split": "train",
+        "before": 497,
+        "after": 192
+      },
+      "COPB1+ctrl": {
+        "split": "train",
+        "before": 235,
+        "after": 192
+      },
+      "DDOST+ctrl": {
+        "split": "train",
+        "before": 398,
+        "after": 192
+      },
+      "DDRGK1+ctrl": {
+        "split": "train",
+        "before": 633,
+        "after": 192
+      },
+      "DHDDS+ctrl": {
+        "split": "train",
+        "before": 526,
+        "after": 192
+      },
+      "EIF2AK3+ctrl": {
+        "split": "train",
+        "before": 173,
+        "after": 173
+      },
+      "EIF2B2+ctrl": {
+        "split": "train",
+        "before": 638,
+        "after": 192
+      },
+      "EIF2B3+ctrl": {
+        "split": "train",
+        "before": 427,
+        "after": 192
+      },
+      "EIF2B4+ctrl": {
+        "split": "train",
+        "before": 654,
+        "after": 192
+      },
+      "ERN1+ctrl": {
+        "split": "train",
+        "before": 88,
+        "after": 88
+      },
+      "FARSB+ctrl": {
+        "split": "train",
+        "before": 655,
+        "after": 192
+      },
+      "FECH+ctrl": {
+        "split": "train",
+        "before": 702,
+        "after": 192
+      },
+      "GMPPB+ctrl": {
+        "split": "train",
+        "before": 634,
+        "after": 192
+      },
+      "GNPNAT1+ctrl": {
+        "split": "train",
+        "before": 514,
+        "after": 192
+      },
+      "HSD17B12+ctrl": {
+        "split": "train",
+        "before": 421,
+        "after": 192
+      },
+      "HSPA5+ctrl": {
+        "split": "train",
+        "before": 1242,
+        "after": 192
+      },
+      "HSPA9+ctrl": {
+        "split": "train",
+        "before": 926,
+        "after": 192
+      },
+      "HYOU1+ctrl": {
+        "split": "train",
+        "before": 514,
+        "after": 192
+      },
+      "KCTD16+ctrl": {
+        "split": "train",
+        "before": 480,
+        "after": 192
+      },
+      "MANF+ctrl": {
+        "split": "train",
+        "before": 578,
+        "after": 192
+      },
+      "MRGBP+ctrl": {
+        "split": "train",
+        "before": 586,
+        "after": 192
+      },
+      "MTHFD1+ctrl": {
+        "split": "train",
+        "before": 540,
+        "after": 192
+      },
+      "P4HB+ctrl": {
+        "split": "train",
+        "before": 578,
+        "after": 192
+      },
+      "PPWD1+ctrl": {
+        "split": "train",
+        "before": 241,
+        "after": 192
+      },
+      "PSMA1+ctrl": {
+        "split": "train",
+        "before": 30,
+        "after": 30
+      },
+      "PSMD12+ctrl": {
+        "split": "train",
+        "before": 63,
+        "after": 63
+      },
+      "SAMM50+ctrl": {
+        "split": "train",
+        "before": 838,
+        "after": 192
+      },
+      "SCYL1+ctrl": {
+        "split": "train",
+        "before": 1268,
+        "after": 192
+      },
+      "SEC61A1+ctrl": {
+        "split": "train",
+        "before": 1228,
+        "after": 192
+      },
+      "SEC61B+ctrl": {
+        "split": "train",
+        "before": 1760,
+        "after": 192
+      },
+      "SEC63+ctrl": {
+        "split": "train",
+        "before": 684,
+        "after": 192
+      },
+      "SLC39A7+ctrl": {
+        "split": "train",
+        "before": 626,
+        "after": 192
+      },
+      "SOCS1+ctrl": {
+        "split": "train",
+        "before": 462,
+        "after": 192
+      },
+      "SPCS2+ctrl": {
+        "split": "train",
+        "before": 612,
+        "after": 192
+      },
+      "SRP72+ctrl": {
+        "split": "train",
+        "before": 541,
+        "after": 192
+      },
+      "SRPRB+ctrl": {
+        "split": "train",
+        "before": 732,
+        "after": 192
+      },
+      "STT3A+ctrl": {
+        "split": "train",
+        "before": 523,
+        "after": 192
+      },
+      "TIMM44+ctrl": {
+        "split": "train",
+        "before": 605,
+        "after": 192
+      },
+      "TMED10+ctrl": {
+        "split": "train",
+        "before": 649,
+        "after": 192
+      },
+      "TMED2+ctrl": {
+        "split": "train",
+        "before": 534,
+        "after": 192
+      },
+      "TMEM167A+ctrl": {
+        "split": "train",
+        "before": 488,
+        "after": 192
+      },
+      "TTI2+ctrl": {
+        "split": "train",
+        "before": 682,
+        "after": 192
+      },
+      "UFL1+ctrl": {
+        "split": "train",
+        "before": 611,
+        "after": 192
+      },
+      "UFM1+ctrl": {
+        "split": "train",
+        "before": 723,
+        "after": 192
+      },
+      "XBP1+ctrl": {
+        "split": "train",
+        "before": 66,
+        "after": 66
+      },
+      "XRN1+ctrl": {
+        "split": "train",
+        "before": 810,
+        "after": 192
+      },
+      "YIPF5+ctrl": {
+        "split": "train",
+        "before": 1457,
+        "after": 192
+      },
+      "AMIGO3+ctrl": {
+        "split": "val",
+        "before": 750,
+        "after": 192
+      },
+      "ARHGAP22+ctrl": {
+        "split": "val",
+        "before": 513,
+        "after": 192
+      },
+      "ASCC3+ctrl": {
+        "split": "val",
+        "before": 1824,
+        "after": 192
+      },
+      "CAD+ctrl": {
+        "split": "val",
+        "before": 295,
+        "after": 192
+      },
+      "CCND3+ctrl": {
+        "split": "val",
+        "before": 412,
+        "after": 192
+      },
+      "ATF4+ctrl": {
+        "split": "test",
+        "before": 382,
+        "after": 382
+      },
+      "COPZ1+ctrl": {
+        "split": "test",
+        "before": 291,
+        "after": 291
+      },
+      "DAD1+ctrl": {
+        "split": "test",
+        "before": 774,
+        "after": 774
+      },
+      "DERL2+ctrl": {
+        "split": "test",
+        "before": 676,
+        "after": 676
+      },
+      "DNAJC19+ctrl": {
+        "split": "test",
+        "before": 1588,
+        "after": 1588
+      },
+      "EIF2S1+ctrl": {
+        "split": "test",
+        "before": 534,
+        "after": 534
+      },
+      "GBF1+ctrl": {
+        "split": "test",
+        "before": 1012,
+        "after": 1012
+      },
+      "IARS2+ctrl": {
+        "split": "test",
+        "before": 1142,
+        "after": 1142
+      },
+      "IDH3A+ctrl": {
+        "split": "test",
+        "before": 690,
+        "after": 690
+      },
+      "MRPL39+ctrl": {
+        "split": "test",
+        "before": 712,
+        "after": 712
+      },
+      "NEDD8+ctrl": {
+        "split": "test",
+        "before": 518,
+        "after": 518
+      },
+      "OST4+ctrl": {
+        "split": "test",
+        "before": 669,
+        "after": 669
+      },
+      "PDIA6+ctrl": {
+        "split": "test",
+        "before": 618,
+        "after": 618
+      },
+      "PSMD4+ctrl": {
+        "split": "test",
+        "before": 639,
+        "after": 639
+      },
+      "PTDSS1+ctrl": {
+        "split": "test",
+        "before": 557,
+        "after": 557
+      },
+      "SEC61G+ctrl": {
+        "split": "test",
+        "before": 674,
+        "after": 674
+      },
+      "SEL1L+ctrl": {
+        "split": "test",
+        "before": 464,
+        "after": 464
+      },
+      "SLC35B1+ctrl": {
+        "split": "test",
+        "before": 644,
+        "after": 644
+      },
+      "SPCS3+ctrl": {
+        "split": "test",
+        "before": 672,
+        "after": 672
+      },
+      "SRP68+ctrl": {
+        "split": "test",
+        "before": 729,
+        "after": 729
+      },
+      "SYVN1+ctrl": {
+        "split": "test",
+        "before": 676,
+        "after": 676
+      },
+      "TELO2+ctrl": {
+        "split": "test",
+        "before": 711,
+        "after": 711
+      },
+      "TIMM23+ctrl": {
+        "split": "test",
+        "before": 789,
+        "after": 789
+      },
+      "TTI1+ctrl": {
+        "split": "test",
+        "before": 542,
+        "after": 542
+      }
+    }
+  },
+  "model": {
+    "checkpoint": "/home/yyf/archive/code/20260519_0958_home_cleanup/moved_top_level/codex_scgpt_attnres_workspace/checkpoints/whole-human",
+    "pretrained_prefixes": [
+      "encoder",
+      "value_encoder",
+      "transformer_encoder"
+    ],
+    "matched_pretrained_parameter_tensors": 129,
+    "model_parameter_tensors": 176,
+    "architecture": {
+      "embsize": 512,
+      "nheads": 8,
+      "d_hid": 512,
+      "nlayers": 12,
+      "n_layers_cls": 3
+    },
+    "vocab_size": 60697
+  },
+  "scgpt_protocol": "official Tutorial_Perturbation structure; full fixed panel replaces official random max_seq_len subsampling; deterministic do_sample=False evaluation",
+  "e60_manifest": "docs/实验结果/E60_gears_fixed_panel_formal_20260711/tables/E60_FIXED_TEST_PERTURBATIONS.csv",
+  "target_truth_used_to_train_or_rank": false,
+  "preflight_status": "ok",
+  "preflight_batch_size": 8,
+  "preflight_loss": 2.8366270065307617,
+  "preflight_gradient_norm_before_clip": 41.14226150512695,
+  "finished_at": "2026-07-11T12:32:44"
+}

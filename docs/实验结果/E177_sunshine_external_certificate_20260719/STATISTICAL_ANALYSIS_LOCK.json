@@ -1,0 +1,23 @@
+{
+  "evaluation_truth_may_select_or_modify_method": false,
+  "experiment": "E177_sunshine_external_certificate",
+  "finite_sample_order_rank_one_based": 28,
+  "independent_public_processed_study": true,
+  "n_technical_groups_per_target": 8,
+  "primary_calibration_targets": 30,
+  "primary_calibration_tasks": 240,
+  "primary_evaluation_targets": 50,
+  "primary_evaluation_tasks": 400,
+  "ranking_claim_is_diagnostic_only": true,
+  "schema": "safeconf_e177_statistical_lock_v1",
+  "target_cluster_definition": "one perturbation target across all eight technical groups",
+  "target_coverage": 0.9,
+  "target_identity_split_counts": {
+    "calibration": 30,
+    "evaluation": 50,
+    "train": 54,
+    "validation": 10
+  },
+  "technical_repeat_not_donor": true,
+  "wetlab_or_clinical_validation": false
+}

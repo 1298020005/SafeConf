@@ -1,0 +1,32 @@
+[start] confidence MVP v2.1 output: /home/yyf/proj/code/20260426_154505_perturb_transport_final_push/outputs/safeconf_supplement_v02_20260605/LaraAstiasoHuntly2023_leukemia
+[tasks] building LaraAstiasoHuntly2023_leukemia from /home/yyf/data/singlecell_perturbation_atlas/official_scperturb/LaraAstiasoHuntly2023_leukemia.h5ad
+Traceback (most recent call last):
+  File "/home/yyf/proj/code/20260426_154505_perturb_transport_final_push/scripts/run_blind_dataset.py", line 146, in <module>
+    raise SystemExit(main())
+  File "/home/yyf/proj/code/20260426_154505_perturb_transport_final_push/scripts/run_blind_dataset.py", line 142, in main
+    return int(mvp.main() or 0)
+  File "/home/yyf/proj/code/20260426_154505_perturb_transport_final_push/confidence_task/run_confidence_mvp_v2_1.py", line 1586, in main
+    split_df = build_pair_splits(tasks_by_dataset, dirs, seed=args.seed)
+  File "/home/yyf/proj/code/20260426_154505_perturb_transport_final_push/confidence_task/run_confidence_mvp_v2_1.py", line 480, in build_pair_splits
+    leakage = split_df[(split_df["split"] == "test") & (split_df["pair_seen_in_train"])]
+  File "/home/yyf/.conda/envs/scgpt_env/lib/python3.9/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/yyf/.conda/envs/scgpt_env/lib/python3.9/site-packages/pandas/core/indexes/range.py", line 417, in get_loc
+    raise KeyError(key)
+KeyError: 'split'
+[start] confidence MVP v2.1 output: /home/yyf/proj/code/20260426_154505_perturb_transport_final_push/outputs/safeconf_supplement_v02_20260605/LaraAstiasoHuntly2023_leukemia
+[tasks] building LaraAstiasoHuntly2023_leukemia from /home/yyf/data/singlecell_perturbation_atlas/official_scperturb/LaraAstiasoHuntly2023_leukemia.h5ad
+Traceback (most recent call last):
+  File "/home/yyf/proj/code/20260426_154505_perturb_transport_final_push/scripts/run_blind_dataset.py", line 146, in <module>
+    raise SystemExit(main())
+  File "/home/yyf/proj/code/20260426_154505_perturb_transport_final_push/scripts/run_blind_dataset.py", line 142, in main
+    return int(mvp.main() or 0)
+  File "/home/yyf/proj/code/20260426_154505_perturb_transport_final_push/confidence_task/run_confidence_mvp_v2_1.py", line 1586, in main
+    split_df = build_pair_splits(tasks_by_dataset, dirs, seed=args.seed)
+  File "/home/yyf/proj/code/20260426_154505_perturb_transport_final_push/confidence_task/run_confidence_mvp_v2_1.py", line 480, in build_pair_splits
+    leakage = split_df[(split_df["split"] == "test") & (split_df["pair_seen_in_train"])]
+  File "/home/yyf/.conda/envs/scgpt_env/lib/python3.9/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+  File "/home/yyf/.conda/envs/scgpt_env/lib/python3.9/site-packages/pandas/core/indexes/range.py", line 417, in get_loc
+    raise KeyError(key)
+KeyError: 'split'

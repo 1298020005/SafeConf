@@ -1,0 +1,31 @@
+{
+  "E162_validation_failure_overwritten": false,
+  "condition_order_sha256": "7c1546cf386ae557185b0647543044414f10c36c54eab0c1a814b65a63948050",
+  "n_rows": 48,
+  "passed": true,
+  "prediction_all_finite": true,
+  "prediction_constant": true,
+  "prediction_coordinate_sample_std_ddof1": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "prediction_exact_unique_vectors": 1,
+  "prediction_is_diagnostic_not_part_of_this_gate": true,
+  "raw_log_prob_all_finite": true,
+  "raw_log_prob_exact_unique": 48,
+  "raw_log_prob_sample_std_ddof1": 6232.111759781425,
+  "required_minimum_exact_unique": 24,
+  "required_rows": 48,
+  "required_std_strictly_greater_than": 1e-06,
+  "schema": "safeconf_e164_raw_score_gate_v1",
+  "seed": 3408,
+  "split": "test_label_only"
+}
