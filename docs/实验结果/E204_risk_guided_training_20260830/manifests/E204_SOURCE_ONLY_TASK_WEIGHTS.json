@@ -1,0 +1,40 @@
+{
+  "experiment": "E204_risk_guided_training",
+  "status": "SOURCE_ONLY_COMPLETE",
+  "created_at": "2026-08-30T01:59:59+00:00",
+  "input_path": "/home/yyf/proj/docs/实验结果/E201_txpert_multitarget_retraining_20260802/tables/E201_PRETRUTH_TASK_BASE.csv",
+  "input_sha256": "1d5f068fea76138ee9ba42d1e1a4f9674850fab923e36732d24aae73f8fcdab0",
+  "rows": 2008,
+  "targets": [
+    "K562",
+    "RPE1",
+    "hepg2",
+    "jurkat"
+  ],
+  "allowed_input_columns": [
+    "task_id",
+    "target",
+    "condition",
+    "n_source_cells",
+    "n_source_contexts",
+    "source_delta_dispersion",
+    "dispersion_imputed"
+  ],
+  "forbidden_target_derived_columns": [
+    "analysis_stratum",
+    "n_target_batches",
+    "n_target_cells",
+    "negative_log_source_cells",
+    "source_mean_delta_row",
+    "support_context_deficit"
+  ],
+  "target_expression_opened": false,
+  "lambda": 0.5,
+  "clip": [
+    0.5,
+    2.0
+  ],
+  "dispersion_imputation_value": 0.04448030172276995,
+  "formula": "clip(1 + lambda * mean(z(-log1p(n_source_cells)), z(3-n_source_contexts), z(source_delta_dispersion)), low, high)",
+  "csv_sha256": "cc65c07c5dd0f4e17a346cc301788db4c5865ca0958896e51d7027b7781b0afc"
+}
