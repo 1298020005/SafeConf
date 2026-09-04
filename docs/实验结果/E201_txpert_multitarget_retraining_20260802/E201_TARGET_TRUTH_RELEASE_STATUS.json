@@ -1,0 +1,52 @@
+{
+  "experiment": "E201_txpert_multitarget_retraining",
+  "stage": "TARGET_TRUTH_RELEASE",
+  "status": "PASS",
+  "released_at": "2026-09-05T00:37:43+08:00",
+  "safeconf_commit": "437113dc9c0a41d39bbf483c959497832f59d316",
+  "pretruth_risk_status_sha256": "d08b3f023d2f50eef0b594172f691efc7475e7bc580b2f55b9e09696a1202f94",
+  "pretruth_risk_sealed_before_release": true,
+  "pretruth_official_general_baseline_status_sha256": "849b4e20a35c002fdc56605cbfa3d969d982ef2a11dde6e8cb0bd5e98d934500",
+  "pretruth_official_general_baseline_sealed_before_release": true,
+  "official_general_baseline_centroid_sha256": "b21a20eefb3a5c93d045c80d386a5e73ce1311aeb616943453f8b9d5840bda45",
+  "n_targets": 4,
+  "n_target_expression_rows_opened": 354208,
+  "records": [
+    {
+      "target": "K562",
+      "n_samples": 150472,
+      "truth_path": "DATA/txpert_official_20260802/e201/formal/predictions/K562/shared/truth.npy",
+      "truth_bytes": 2017528704,
+      "truth_sha256": "729f420a48196e46917064069e828c0fbf5a7eb50e2749ad6be222a37ad9e82b",
+      "truth_manifest_path": "DATA/txpert_official_20260802/e201/formal/predictions/K562/shared/E201_TARGET_TRUTH_MANIFEST.json",
+      "truth_manifest_sha256": "d06a83e1ecea074bbad070af21d156a9dd1f8c512e5965f74f4b5a3debd26b83"
+    },
+    {
+      "target": "RPE1",
+      "n_samples": 67034,
+      "truth_path": "DATA/txpert_official_20260802/e201/formal/predictions/RPE1/shared/truth.npy",
+      "truth_bytes": 898792000,
+      "truth_sha256": "feec82bdf30ffad8fecd9bd9e178f57d74be33c82b5589505d1259a6338b9e11",
+      "truth_manifest_path": "DATA/txpert_official_20260802/e201/formal/predictions/RPE1/shared/E201_TARGET_TRUTH_MANIFEST.json",
+      "truth_manifest_sha256": "566d4d225b912ce2a6566c1f3e7d981161ade49888c3570d4d0c9af971a0d722"
+    },
+    {
+      "target": "hepg2",
+      "n_samples": 54911,
+      "truth_path": "DATA/txpert_official_20260802/e201/formal/predictions/hepg2/shared/truth.npy",
+      "truth_bytes": 736246816,
+      "truth_sha256": "4950e446124c9a16751878d654d34257b9ffc76c8b9a92fed257ea02aacf0d57",
+      "truth_manifest_path": "DATA/txpert_official_20260802/e201/formal/predictions/hepg2/shared/E201_TARGET_TRUTH_MANIFEST.json",
+      "truth_manifest_sha256": "4bba8aa543ad06f53d756ff2814fc047a4230e5b4af31dffdc5e73d617547168"
+    },
+    {
+      "target": "jurkat",
+      "n_samples": 81791,
+      "truth_path": "DATA/txpert_official_20260802/e201/formal/predictions/jurkat/shared/truth.npy",
+      "truth_bytes": 1096653856,
+      "truth_sha256": "0c56d151380109a6a51fde142a398db5798fdf6aa39637b966a78cbc8d3ea4d2",
+      "truth_manifest_path": "DATA/txpert_official_20260802/e201/formal/predictions/jurkat/shared/E201_TARGET_TRUTH_MANIFEST.json",
+      "truth_manifest_sha256": "f2dd70d18fc2bd4777add1e6d7ba4a597316c584a41a5f3f32a4aed059148440"
+    }
+  ]
+}
