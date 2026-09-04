@@ -46,9 +46,9 @@ def load_weights(path: Path, target: str, column: str) -> dict[str, float]:
     view = frame[frame["target"].astype(str) == target].copy()
     if view.empty:
         raise SystemExit(f"weight manifest has no rows for target {target}")
-    if len(view) != 1_366:
+    if len(view) != 1_365:
         raise SystemExit(
-            f"formal source-training manifest must have 1366 conditions for "
+            f"formal source-training manifest must have 1365 perturbation conditions for "
             f"{target}; found {len(view)} (target-task previews are invalid)"
         )
     if view["condition"].duplicated().any():

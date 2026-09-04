@@ -18,7 +18,8 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
 TARGETS = ("K562", "RPE1", "hepg2", "jurkat")
-EXPECTED_TRAIN_CONDITIONS = 1_366
+EXPECTED_SPLIT_LABELS = 1_366
+EXPECTED_PERTURBATION_CONDITIONS = 1_365
 FROZEN_FORMULA_COMMIT = "5bb3550"
 
 
@@ -78,12 +79,16 @@ def main() -> None:
         if not split_path.is_file():
             raise SystemExit(f"missing frozen split: {split_path}")
         split = joblib.load(split_path)
-        train_conditions = sorted(set(map(str, split.get("train", []))))
-        if len(train_conditions) != EXPECTED_TRAIN_CONDITIONS:
+        split_labels = sorted(set(map(str, split.get("train", []))))
+        if len(split_labels) != EXPECTED_SPLIT_LABELS or "ctrl" not in split_labels:
             raise SystemExit(
-                f"{target}: expected {EXPECTED_TRAIN_CONDITIONS} train conditions, "
-                f"found {len(train_conditions)}"
+                f"{target}: expected {EXPECTED_SPLIT_LABELS} labels including ctrl, "
+                f"found {len(split_labels)}"
             )
+        # Controls are appended separately by TxPert and must keep unit weight.
+        train_conditions = [label for label in split_labels if label != "ctrl"]
+        if len(train_conditions) != EXPECTED_PERTURBATION_CONDITIONS:
+            raise SystemExit(f"{target}: unexpected perturbation-condition count")
         deltas, support, access = source_evidence(
             target, cache, set(train_conditions)
         )
@@ -156,7 +161,8 @@ def main() -> None:
                 "blind_h5ad_sha256": TRAINING_VIEW_SHA256[target],
                 "blind_manifest_sha256": TRAINING_MANIFEST_SHA256[target],
                 "split_sha256": sha256(split_path),
-                "n_train_conditions": len(train_conditions),
+                "n_split_labels": len(split_labels),
+                "n_weighted_perturbation_conditions": len(train_conditions),
                 "dispersion_imputation_value": imputation,
             }
         )
@@ -167,7 +173,7 @@ def main() -> None:
     support_audit = pd.concat(support_blocks, ignore_index=True)
     access_audit = pd.concat(access_blocks, ignore_index=True)
     if (
-        len(manifest) != len(TARGETS) * EXPECTED_TRAIN_CONDITIONS
+        len(manifest) != len(TARGETS) * EXPECTED_PERTURBATION_CONDITIONS
         or manifest.task_id.nunique() != len(manifest)
         or not np.isfinite(
             manifest[
@@ -196,7 +202,9 @@ def main() -> None:
         "target_truth_files_opened_by_this_builder": 0,
         "n_rows": len(manifest),
         "n_targets": len(TARGETS),
-        "n_training_conditions_per_target": EXPECTED_TRAIN_CONDITIONS,
+        "n_split_labels_per_target": EXPECTED_SPLIT_LABELS,
+        "n_weighted_perturbation_conditions_per_target": EXPECTED_PERTURBATION_CONDITIONS,
+        "control_weight": 1.0,
         "weight_lambda": args.weight_lambda,
         "weight_clip": [args.clip_low, args.clip_high],
         "inputs": inputs,

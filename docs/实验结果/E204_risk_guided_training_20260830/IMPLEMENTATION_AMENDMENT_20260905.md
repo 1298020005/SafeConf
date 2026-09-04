@@ -8,9 +8,9 @@
 
 ## 修正
 
-新增 `build_e204_training_weight_manifest.py`，直接读取四个物理盲训练视图和冻结的 `train_test_split.pkl`，为每个 target 的 1,366 个 source 训练条件计算支持数、背景覆盖和 source effect dispersion。四个 target 合计应有 5,464 行权重。目标扰动表达在这些物理视图中不存在；程序继续审计访问行为。
+新增 `build_e204_training_weight_manifest.py`，直接读取四个物理盲训练视图和冻结的 `train_test_split.pkl`。split 每个 target 有 1,366 个标签，其中 `ctrl` 是未扰动对照，固定使用单位权重；其余 1,365 个 source 扰动条件计算支持数、背景覆盖和 source effect dispersion。四个 target 合计应有 5,460 行扰动权重。目标扰动表达在这些物理视图中不存在；程序继续审计访问行为。
 
-`run_e204_weighted_training.py` 现在拒绝每个 target 少于或多于 1,366 条的清单，防止旧 preview 被误用于正式训练。
+`run_e204_weighted_training.py` 现在拒绝每个 target 少于或多于 1,365 条扰动权重的清单，防止旧 preview 被误用于正式训练。
 
 ## 时间边界
 
