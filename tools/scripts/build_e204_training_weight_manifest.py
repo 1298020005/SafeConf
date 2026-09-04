@@ -12,6 +12,7 @@ from datetime import datetime
 from pathlib import Path
 
 import joblib
+import anndata as ad
 import numpy as np
 import pandas as pd
 
@@ -19,7 +20,18 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[2]
 TARGETS = ("K562", "RPE1", "hepg2", "jurkat")
 EXPECTED_SPLIT_LABELS = 1_366
-EXPECTED_PERTURBATION_CONDITIONS = 1_365
+EXPECTED_SOURCE_CONDITIONS = {
+    "K562": 1_365,
+    "RPE1": 1_298,
+    "hepg2": 1_241,
+    "jurkat": 1_308,
+}
+EXPECTED_SOURCE_ROWS = {
+    "K562": 255_786,
+    "RPE1": 233_838,
+    "hepg2": 275_226,
+    "jurkat": 242_967,
+}
 FROZEN_FORMULA_COMMIT = "5bb3550"
 
 
@@ -85,10 +97,33 @@ def main() -> None:
                 f"{target}: expected {EXPECTED_SPLIT_LABELS} labels including ctrl, "
                 f"found {len(split_labels)}"
             )
-        # Controls are appended separately by TxPert and must keep unit weight.
-        train_conditions = [label for label in split_labels if label != "ctrl"]
-        if len(train_conditions) != EXPECTED_PERTURBATION_CONDITIONS:
-            raise SystemExit(f"{target}: unexpected perturbation-condition count")
+        # A global split label can be present only in the held-out target and
+        # therefore contribute no row to this target's source training set.
+        # Weight the conditions that actually occur in the three source
+        # contexts; controls are appended separately and keep unit weight.
+        split_perturbations = set(split_labels) - {"ctrl"}
+        view = ad.read_h5ad(cache / "de_adata_test.h5ad", backed="r")
+        try:
+            obs = view.obs
+            source_mask = (
+                ~obs.control.astype(bool)
+                & ~obs.cell_line.astype(str).eq(target)
+                & obs.condition.astype(str).isin(split_perturbations)
+            )
+            train_conditions = sorted(
+                set(obs.loc[source_mask, "condition"].astype(str))
+            )
+            n_source_training_rows = int(source_mask.sum())
+        finally:
+            view.file.close()
+        if (
+            len(train_conditions) != EXPECTED_SOURCE_CONDITIONS[target]
+            or n_source_training_rows != EXPECTED_SOURCE_ROWS[target]
+        ):
+            raise SystemExit(
+                f"{target}: source training inventory changed: "
+                f"{len(train_conditions)} conditions/{n_source_training_rows} rows"
+            )
         deltas, support, access = source_evidence(
             target, cache, set(train_conditions)
         )
@@ -162,7 +197,11 @@ def main() -> None:
                 "blind_manifest_sha256": TRAINING_MANIFEST_SHA256[target],
                 "split_sha256": sha256(split_path),
                 "n_split_labels": len(split_labels),
-                "n_weighted_perturbation_conditions": len(train_conditions),
+                "n_source_training_conditions": len(train_conditions),
+                "n_source_training_rows": n_source_training_rows,
+                "n_split_labels_absent_from_source": len(
+                    split_perturbations - set(train_conditions)
+                ),
                 "dispersion_imputation_value": imputation,
             }
         )
@@ -173,7 +212,7 @@ def main() -> None:
     support_audit = pd.concat(support_blocks, ignore_index=True)
     access_audit = pd.concat(access_blocks, ignore_index=True)
     if (
-        len(manifest) != len(TARGETS) * EXPECTED_PERTURBATION_CONDITIONS
+        len(manifest) != sum(EXPECTED_SOURCE_CONDITIONS.values())
         or manifest.task_id.nunique() != len(manifest)
         or not np.isfinite(
             manifest[
@@ -203,7 +242,8 @@ def main() -> None:
         "n_rows": len(manifest),
         "n_targets": len(TARGETS),
         "n_split_labels_per_target": EXPECTED_SPLIT_LABELS,
-        "n_weighted_perturbation_conditions_per_target": EXPECTED_PERTURBATION_CONDITIONS,
+        "n_source_training_conditions_per_target": EXPECTED_SOURCE_CONDITIONS,
+        "n_source_training_rows_per_target": EXPECTED_SOURCE_ROWS,
         "control_weight": 1.0,
         "weight_lambda": args.weight_lambda,
         "weight_clip": [args.clip_low, args.clip_high],

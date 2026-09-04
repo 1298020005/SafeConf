@@ -8,9 +8,9 @@
 
 ## 修正
 
-新增 `build_e204_training_weight_manifest.py`，直接读取四个物理盲训练视图和冻结的 `train_test_split.pkl`。split 每个 target 有 1,366 个标签，其中 `ctrl` 是未扰动对照，固定使用单位权重；其余 1,365 个 source 扰动条件计算支持数、背景覆盖和 source effect dispersion。四个 target 合计应有 5,460 行扰动权重。目标扰动表达在这些物理视图中不存在；程序继续审计访问行为。
+新增 `build_e204_training_weight_manifest.py`，直接读取四个物理盲训练视图和冻结的 `train_test_split.pkl`。split 每个 target 有 1,366 个标签，其中 `ctrl` 是未扰动对照，固定使用单位权重。部分全局扰动标签只出现在被留出的 target，在三个 source 细胞系中没有训练行，因此只为实际进入 DataLoader 的 source 条件生成权重：K562 1,365 个、RPE1 1,298 个、HepG2 1,241 个、Jurkat 1,308 个，合计 5,212 行。目标扰动表达在这些物理视图中不存在；程序继续审计访问行为。
 
-`run_e204_weighted_training.py` 现在拒绝每个 target 少于或多于 1,365 条扰动权重的清单，防止旧 preview 被误用于正式训练。
+`run_e204_weighted_training.py` 按四个 source 训练清单的固定行数检查输入，并在作业结束时记录未匹配条件。正式 profile 要求非对照训练条件的回退数为 0，防止旧 preview 被误用于正式训练。
 
 ## 时间边界
 
