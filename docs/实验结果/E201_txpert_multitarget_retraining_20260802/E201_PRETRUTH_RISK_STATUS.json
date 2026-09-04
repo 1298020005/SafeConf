@@ -1,0 +1,169 @@
+{
+  "experiment": "E201_txpert_multitarget_retraining",
+  "stage": "PRETRUTH_RISK_FEATURES",
+  "status": "PASS",
+  "generated_at": "2026-09-05T00:30:16+08:00",
+  "safeconf_commit": "1c5fdba61b3170e919bd8f93786dd7511cce94da",
+  "family_seal_sha256": "c0ac184f5dcdcaea339678218a29ceddaf68f2ff1ee1cb971934110464ee2cc2",
+  "task_base_status_sha256": "5726902925669dfdbce79f33be14bef135d712db00b0c009a1cdcec8831c4689",
+  "n_tasks": 2008,
+  "n_primary_tasks": 1808,
+  "risk_components": [
+    "family_disagreement",
+    "model_source_gap",
+    "source_delta_dispersion",
+    "negative_log_source_cells",
+    "support_context_deficit"
+  ],
+  "standardization": "within target; parameters from primary_ge30 tasks",
+  "risk_identity_max_abs_residual": 0.0,
+  "target_expression_nonzero_values_seen": 0,
+  "target_truth_materialized": false,
+  "target_outcomes_evaluated": false,
+  "risk_table": {
+    "path": "docs/实验结果/E201_txpert_multitarget_retraining_20260802/tables/E201_PRETRUTH_RISK_FEATURES.csv",
+    "bytes": 752599,
+    "sha256": "003d7dec2912f7f24b39665c3166c25cffb4670b16579e354b23764f90a2caf6"
+  },
+  "vector_files": [
+    {
+      "path": "DATA/txpert_official_20260802/e201/pretruth_vectors/E201_SEED_CENTROIDS.npy",
+      "bytes": 107693184,
+      "sha256": "3237422dd064c611d1b66ca2ecc1d61a6cc2bc70bb3a98f6580a85816f34d786",
+      "shape": [
+        4,
+        2008,
+        3352
+      ],
+      "dtype": "float32"
+    },
+    {
+      "path": "DATA/txpert_official_20260802/e201/pretruth_vectors/E201_FAMILY_CENTROIDS.npy",
+      "bytes": 26923392,
+      "sha256": "e0c1bc8725988cf61c1c497d39ef95ab02354498c0b00aa5922d51b23d451a2c",
+      "shape": [
+        2008,
+        3352
+      ],
+      "dtype": "float32"
+    },
+    {
+      "path": "DATA/txpert_official_20260802/e201/pretruth_vectors/E201_CONTROL_CENTROIDS.npy",
+      "bytes": 26923392,
+      "sha256": "c2d6f56bec576b5154d574d91f37b5fdbb036d869573cdbaf9fda0e544454d3e",
+      "shape": [
+        2008,
+        3352
+      ],
+      "dtype": "float32"
+    },
+    {
+      "path": "DATA/txpert_official_20260802/e201/pretruth_vectors/E201_SOURCE_TRANSFER_CENTROIDS.npy",
+      "bytes": 26923392,
+      "sha256": "ef6847cfbb8c44cccaf051e5dbf7f60edaa8393a9aa09c116b58297903b7543b",
+      "shape": [
+        2008,
+        3352
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "prediction_inputs": [
+    {
+      "target": "K562",
+      "seed": 1,
+      "prediction_sha256": "de393cecede5b9affc564770b9a8e0c7903206ef5dfd0a88c5a0821fd36a46e9",
+      "prediction_status_sha256": "2afd6e4a0d96799148b8ec84d931ab4c72bb6a2ed2094fbbdeb6198e30d6cfa4"
+    },
+    {
+      "target": "K562",
+      "seed": 2,
+      "prediction_sha256": "7ea1a64d9c2800aadc7dbb147e30295ab86a3845a04cfc842692bc2512b85ce4",
+      "prediction_status_sha256": "619a1f280ae668b6b9c3c79173ec9ec2eaaa88002826c7f4a614c18585dab61d"
+    },
+    {
+      "target": "K562",
+      "seed": 3,
+      "prediction_sha256": "4283de4a870474e05f496de72b1c4f7ef2d94d991cb1adcab6c174310dbf94f2",
+      "prediction_status_sha256": "9595e794462ac4057a5b4d2b6cb941a9ca49e1b5ba311a4cd3589bbfa7c59670"
+    },
+    {
+      "target": "K562",
+      "seed": 4,
+      "prediction_sha256": "cdd5261f373673de8d24b0e6402940ea9de3434109f7455406f7745223331fbd",
+      "prediction_status_sha256": "3ac58d72cac78580612fbb681219ce0df3cd3ffc1c7b66f12ebbb02b7436d298"
+    },
+    {
+      "target": "RPE1",
+      "seed": 1,
+      "prediction_sha256": "3688924aa6d46a1482702b96cf1528251ccb4df648a65375a50befeef836c577",
+      "prediction_status_sha256": "c9aff3ab8c01321e59e3067313115e9e69007b847c58c54692fffadd8a36a42e"
+    },
+    {
+      "target": "RPE1",
+      "seed": 2,
+      "prediction_sha256": "098b0a291c393a5633c49659de349c759fd2bbd10aa99deb2bf5252d626e0ef9",
+      "prediction_status_sha256": "26cb9040aaea79bf5c7e268ef333d37fbffd8fd57ca98fc668ab5b193057aadb"
+    },
+    {
+      "target": "RPE1",
+      "seed": 3,
+      "prediction_sha256": "6521a735e1bbc43ea1ecbc53223301c8ad97d42d5ec449fb40cf6f2ad1c97e38",
+      "prediction_status_sha256": "2965877ac9678831f354db4a371555e1ccf7b2ed9698b9028b57e60421be36c5"
+    },
+    {
+      "target": "RPE1",
+      "seed": 4,
+      "prediction_sha256": "134102e72f5c6bcf62a7cda67f5407169d14328e76b676222e484962d0b5ea52",
+      "prediction_status_sha256": "4defe7464b33fbc14fea47715dbd52c53649deb4dd42368508c39d91d0b4e7d2"
+    },
+    {
+      "target": "hepg2",
+      "seed": 1,
+      "prediction_sha256": "816dd27f66901dba73f3f3306033a00690bc1ebfd4aca47b30acb0e6dd168608",
+      "prediction_status_sha256": "2edd1749bc99c29a7a6ff2c69e0bc3d31f7443029685e1667f6a184780c76321"
+    },
+    {
+      "target": "hepg2",
+      "seed": 2,
+      "prediction_sha256": "4d8e2a156c87fe1166c51a7e346b617cd02a8aabaafdc4db9b9a3f00132c031f",
+      "prediction_status_sha256": "7df35258e3c5f9dca22c003d53f739d705930ddfa1fcc3670554048cb99651af"
+    },
+    {
+      "target": "hepg2",
+      "seed": 3,
+      "prediction_sha256": "f7cdcdc51f5424e4c04b3d51f533af070f17a2e19f1f87f92833a4a53780044f",
+      "prediction_status_sha256": "b800b93274e506183395cae41250215259523cbb050cb8bdabf4709f7f6c8d4f"
+    },
+    {
+      "target": "hepg2",
+      "seed": 4,
+      "prediction_sha256": "9f78efb373b3e7387aab5f63694a02ddb5011bc505e6234c4b92b018aaa44a75",
+      "prediction_status_sha256": "5e0ef9e683d1a9f2c377478d99818969b111a9e007ef5e4b0a52d13db57002e5"
+    },
+    {
+      "target": "jurkat",
+      "seed": 1,
+      "prediction_sha256": "22c888164b0899b48c412effcbd3858b1b16f3515b1bf110c2e248946ca61423",
+      "prediction_status_sha256": "b3c69579ff54f0a0ca05f5aa2d424213969fbced303ae8a56e2bc99418514138"
+    },
+    {
+      "target": "jurkat",
+      "seed": 2,
+      "prediction_sha256": "5a1b31a7782e5b98d18e4a65e3c75c3e24e74112f70697f82a5a2636de6c8423",
+      "prediction_status_sha256": "941a5122229442c6ab45a77554b56c87b4cc36338ba8d88aa6eda4b662d63274"
+    },
+    {
+      "target": "jurkat",
+      "seed": 3,
+      "prediction_sha256": "2c83b2fa3b8dfbc6654015786c3163328358ce4772ddd532d600cc9f50a74dc1",
+      "prediction_status_sha256": "ec39c3fab7d15584d081bd85542f8a41a12daf35359a80d50d6b8bfd17d49687"
+    },
+    {
+      "target": "jurkat",
+      "seed": 4,
+      "prediction_sha256": "327c4f19c467353fd6e3fec3407f0a946c4f1751598168e6b389938b3b378e0d",
+      "prediction_status_sha256": "83f73aecf83ef6a7371db06dfabc0f0d36eaeaea21f8314283f35f90ce6b75e3"
+    }
+  ]
+}
