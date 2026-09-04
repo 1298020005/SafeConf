@@ -1,0 +1,39 @@
+{
+  "experiment": "E201_txpert_multitarget_retraining",
+  "stage": "FORMAL_CORE_EVALUATION",
+  "status": "PASS",
+  "generated_at": "2026-09-05T00:55:56+08:00",
+  "git_head": "4b18024d751bfe63899c564b1ccd2035ce1b8f11",
+  "pretruth_risk_status_sha256": "d08b3f023d2f50eef0b594172f691efc7475e7bc580b2f55b9e09696a1202f94",
+  "pretruth_official_general_baseline_status_sha256": "849b4e20a35c002fdc56605cbfa3d969d982ef2a11dde6e8cb0bd5e98d934500",
+  "target_truth_release_status_sha256": "9b82ed6c518a1455c4926d61b5624478b7e12c99892e5810ee03c3dd61f06288",
+  "target_truth_released_after_risk_seal": true,
+  "target_truth_released_after_general_baseline_seal": true,
+  "n_tasks": 2008,
+  "n_primary_tasks": 1808,
+  "n_sensitivity_tasks": 200,
+  "n_bootstrap": 5000,
+  "bootstrap_unit": "perturbation_condition_cluster_across_targets",
+  "review_budget": 0.2,
+  "execution_status": "PASS",
+  "certificate_status": "FAIL",
+  "empirical_routing_status": "SUPPORTED",
+  "incremental_vs_magnitude_status": "SUPPORTED",
+  "family_identity_max_abs_residual": 3.610783728627163e-10,
+  "family_lower_bound_violations": 0,
+  "truth_centroid_file": {
+    "path": "DATA/txpert_official_20260802/e201/evaluation_vectors/E201_TARGET_TRUTH_CENTROIDS.npy",
+    "bytes": 26923392,
+    "sha256": "9b9a4ee9b654056ec34557dfefffe2708cc2aefa5138f8b6ce85a5f30e19ab3d",
+    "shape": [
+      2008,
+      3352
+    ],
+    "dtype": "float32"
+  },
+  "output_hash_table": {
+    "path": "docs/实验结果/E201_txpert_multitarget_retraining_20260802/formal_core_evaluation/tables/E201_CORE_OUTPUT_HASHES.csv",
+    "bytes": 3055,
+    "sha256": "7bfa5d2f3fa23e1ad584f1d0fc46ad8764769e0d4672f6d1905e2e4463a4b158"
+  }
+}

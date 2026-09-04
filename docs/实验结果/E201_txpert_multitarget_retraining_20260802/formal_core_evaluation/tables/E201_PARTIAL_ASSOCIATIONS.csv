@@ -1,0 +1,6 @@
+scope,predictor,outcome,covariate,n_tasks,n_condition_clusters,bootstrap_unit,estimate,ci95_lower,ci95_upper,bootstrap_valid
+pooled,safeconf_e201_risk,family_rms_error,predicted_magnitude,1808,575,perturbation_condition,0.2503365828486241,0.20206961922798386,0.2980152082644555,5000
+K562,safeconf_e201_risk,family_rms_error,predicted_magnitude,566,566,perturbation_condition,0.3474892851822693,0.247486268743786,0.4363942658281891,5000
+RPE1,safeconf_e201_risk,family_rms_error,predicted_magnitude,416,416,perturbation_condition,0.14068289271689965,0.03904123624163413,0.23640983408812294,5000
+hepg2,safeconf_e201_risk,family_rms_error,predicted_magnitude,405,405,perturbation_condition,0.32589531956066875,0.22913506368947473,0.4173075531315608,5000
+jurkat,safeconf_e201_risk,family_rms_error,predicted_magnitude,421,421,perturbation_condition,0.3168642703285088,0.22590953973210282,0.4032000023410418,5000

@@ -1,0 +1,11 @@
+scope,estimator,baseline,outcome,measure,n_tasks,n_condition_clusters,bootstrap_unit,estimate,ci95_lower,ci95_upper,bootstrap_valid
+pooled,safeconf_e201_risk,predicted_magnitude,family_rms_error,delta_oracle_normalized_utility,1808,575,perturbation_condition,-0.2743357056519148,-0.3575951906932456,-0.20082985213451632,5000
+pooled,safeconf_e201_risk,predicted_magnitude,family_rms_error,delta_spearman,1808,575,perturbation_condition,-0.21063440642789705,-0.2651281089829719,-0.15737400958542488,5000
+K562,safeconf_e201_risk,predicted_magnitude,family_rms_error,delta_oracle_normalized_utility,566,566,perturbation_condition,-0.5098487787306207,-0.6185414990337493,-0.3894320846775528,5000
+K562,safeconf_e201_risk,predicted_magnitude,family_rms_error,delta_spearman,566,566,perturbation_condition,-0.4189367658769454,-0.49118724542552716,-0.34838346693766886,5000
+RPE1,safeconf_e201_risk,predicted_magnitude,family_rms_error,delta_oracle_normalized_utility,416,416,perturbation_condition,-0.3073762370195869,-0.4595585724934977,-0.17127612302213213,5000
+RPE1,safeconf_e201_risk,predicted_magnitude,family_rms_error,delta_spearman,416,416,perturbation_condition,-0.2957736313266347,-0.3976531943000743,-0.19976395152917445,5000
+hepg2,safeconf_e201_risk,predicted_magnitude,family_rms_error,delta_oracle_normalized_utility,405,405,perturbation_condition,-0.35379859555473203,-0.4940888609815586,-0.23713017964022023,5000
+hepg2,safeconf_e201_risk,predicted_magnitude,family_rms_error,delta_spearman,405,405,perturbation_condition,-0.21384097358832765,-0.29060532280636386,-0.1398753824877982,5000
+jurkat,safeconf_e201_risk,predicted_magnitude,family_rms_error,delta_oracle_normalized_utility,421,421,perturbation_condition,-0.44370063205902305,-0.5573496107984959,-0.29016187446699654,5000
+jurkat,safeconf_e201_risk,predicted_magnitude,family_rms_error,delta_spearman,421,421,perturbation_condition,-0.2641444347774345,-0.34688784696033786,-0.1816381575713924,5000

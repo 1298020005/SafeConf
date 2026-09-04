@@ -1,0 +1,16 @@
+scope,predictor,outcome,n_tasks,n_condition_clusters,bootstrap_unit,estimate,ci95_lower,ci95_upper,bootstrap_valid
+pooled,safeconf_e201_risk,family_rms_error,1808,575,perturbation_condition,0.40821841982841595,0.3506362461284376,0.4620692832838008,5000
+pooled,predicted_magnitude,family_rms_error,1808,575,perturbation_condition,0.618852826256313,0.5746551757101565,0.6579116526100827,5000
+pooled,family_disagreement,family_rms_error,1808,575,perturbation_condition,0.2401964938316256,0.18120715303195947,0.2974052248199717,5000
+K562,safeconf_e201_risk,family_rms_error,566,566,perturbation_condition,0.48032119623476455,0.4068506755158964,0.546709972290653,5000
+K562,predicted_magnitude,family_rms_error,566,566,perturbation_condition,0.8992579621117099,0.8682855096951976,0.9228546628156016,5000
+K562,family_disagreement,family_rms_error,566,566,perturbation_condition,0.5338684397879495,0.47084084112144153,0.5916940190018644,5000
+RPE1,safeconf_e201_risk,family_rms_error,416,416,perturbation_condition,0.2867586560964389,0.1927279996691154,0.37396758748682163,5000
+RPE1,predicted_magnitude,family_rms_error,416,416,perturbation_condition,0.5825322874230736,0.5115974337167725,0.6454413033065904,5000
+RPE1,family_disagreement,family_rms_error,416,416,perturbation_condition,0.03965352277955207,-0.060513515599041404,0.13552529613504125,5000
+hepg2,safeconf_e201_risk,family_rms_error,405,405,perturbation_condition,0.5632982345853633,0.48578499333873887,0.6304720583220011,5000
+hepg2,predicted_magnitude,family_rms_error,405,405,perturbation_condition,0.777139208173691,0.7277491486494325,0.818628031607791,5000
+hepg2,family_disagreement,family_rms_error,405,405,perturbation_condition,0.2826184424682206,0.1966887207078002,0.36622688120731306,5000
+jurkat,safeconf_e201_risk,family_rms_error,421,421,perturbation_condition,0.4453297352758127,0.36807099357163436,0.5209003969151372,5000
+jurkat,predicted_magnitude,family_rms_error,421,421,perturbation_condition,0.7094741700532472,0.6512282482189221,0.7592279065396947,5000
+jurkat,family_disagreement,family_rms_error,421,421,perturbation_condition,0.28855547532473375,0.19761764848712446,0.3730871693436447,5000

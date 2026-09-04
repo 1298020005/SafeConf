@@ -1,0 +1,6 @@
+gate,passed,observed,criterion,gate_type
+input_integrity,True,pretruth_max=3.4973438e-09;family_mean_max=4.7683716e-07;official_general_equivalence=2.7865171e-06,"2,008 aligned tasks; pretruth residual <5e-6",execution
+family_error_certificate,False,identity_max=3.6107837e-10;lower_bound_violations=0,identity residual <=1e-10; zero lower-bound violations,deterministic_certificate
+empirical_routing,True,rho_lower=0.35063625;utility_lower=0.24558702,both pooled 95% cluster-bootstrap lower bounds >0,scientific
+incremental_vs_magnitude,True,partial_lower=0.20206962;delta_utility_lower=-0.35759519,either paired 95% cluster-bootstrap lower bound >0,scientific
+target_reporting_complete,True,"K562,RPE1,hepg2,jurkat",all four targets reported without directional filtering,reporting
