@@ -1,0 +1,70 @@
+{
+  "experiment": "E201_txpert_multitarget_retraining",
+  "stage": "PRETRUTH_OFFICIAL_GENERAL_BASELINE",
+  "status": "PASS",
+  "generated_at": "2026-09-05T00:34:29+08:00",
+  "safeconf_commit": "c6fa63e89c0a0cd59d0f35186dbc25f6704e7863",
+  "task_base_status_sha256": "5726902925669dfdbce79f33be14bef135d712db00b0c009a1cdcec8831c4689",
+  "pretruth_risk_status_sha256": "d08b3f023d2f50eef0b594172f691efc7475e7bc580b2f55b9e09696a1202f94",
+  "official_general_baseline_preflight_sha256": "977010624679fa0192ebc19f7576830a8a0c6e2f2b4acf68f2bdd4b2f9109346",
+  "pretruth_risk_table_sha256": "003d7dec2912f7f24b39665c3166c25cffb4670b16579e354b23764f90a2caf6",
+  "sealed_control_centroid_sha256": "c2d6f56bec576b5154d574d91f37b5fdbb036d869573cdbaf9fda0e544454d3e",
+  "n_tasks": 2008,
+  "n_primary_tasks": 1808,
+  "n_source_support_rows": 5238,
+  "n_source_access_records": 24,
+  "target_perturbed_expression_rows_opened": 0,
+  "target_truth_materialized": false,
+  "target_outcomes_evaluated": false,
+  "e200_official_code_equivalence": {
+    "reference": "E200 TxPert public MeanBaseline cell-level output",
+    "n_tasks": 580,
+    "n_genes": 3352,
+    "maximum_absolute_delta_residual": 2.7865171432495117e-06,
+    "rms_delta_residual": 4.9673142782439826e-08,
+    "tolerance": 5e-06,
+    "tasks_exceeding_tolerance": 0,
+    "target_truth_opened": false,
+    "passed": true
+  },
+  "vector_files": [
+    {
+      "path": "DATA/txpert_official_20260802/e201/pretruth_vectors/E201_OFFICIAL_GENERAL_BASELINE_WEIGHTED_DELTAS.npy",
+      "bytes": 26923392,
+      "sha256": "54c7ff434feb1d84b7fbb0e6fdbe3deab901ba3a74dbce082b69d785ca1bb06c",
+      "shape": [
+        2008,
+        3352
+      ],
+      "dtype": "float32"
+    },
+    {
+      "path": "DATA/txpert_official_20260802/e201/pretruth_vectors/E201_OFFICIAL_GENERAL_BASELINE_CENTROIDS.npy",
+      "bytes": 26923392,
+      "sha256": "b21a20eefb3a5c93d045c80d386a5e73ce1311aeb616943453f8b9d5840bda45",
+      "shape": [
+        2008,
+        3352
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "tracked_outputs": [
+    {
+      "path": "docs/实验结果/E201_txpert_multitarget_retraining_20260802/tables/E201_OFFICIAL_GENERAL_BASELINE_SUPPORT_AUDIT.csv",
+      "bytes": 93085,
+      "sha256": "174b32342e95cb6a8acec4cf55be238c2667dc8362deebeb29f1b60c941fef70"
+    },
+    {
+      "path": "docs/实验结果/E201_txpert_multitarget_retraining_20260802/tables/E201_OFFICIAL_GENERAL_BASELINE_ACCESS_AUDIT.csv",
+      "bytes": 1028,
+      "sha256": "4f1edc2d55a2ebafb181fb0b2d9783168441b236bffe278cc357cee7608d42e5"
+    },
+    {
+      "path": "docs/实验结果/E201_txpert_multitarget_retraining_20260802/OFFICIAL_GENERAL_BASELINE_REPORT.md",
+      "bytes": 640,
+      "sha256": "733e6bff293b1bb0511c64f8b48a2038bd6048bb79afc42b903d732ccbc7ad8e"
+    }
+  ],
+  "task_base_safeconf_commit": "6ea03e01c0a2f7b06597651716f7904bf3be8c77"
+}
