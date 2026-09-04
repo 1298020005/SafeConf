@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Create E204 task weights from source-only E201 metadata.
+"""Create a deprecated E204 preview from target-task metadata.
 
-The script deliberately refuses target-derived columns.  It writes one
-condition-level weight per target; the training adapter later broadcasts that
-weight to the cells belonging to the condition.  No expression matrix is
-opened by this script.
+This first implementation covers only conditions that occur in the target
+task table and is therefore not valid for formal training.  Use
+``build_e204_training_weight_manifest.py`` for the complete 1,366-condition
+source-training manifest.  The old generator is retained only so the failed
+profile can be reproduced; no expression matrix is opened by it.
 """
 
 from __future__ import annotations
