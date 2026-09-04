@@ -473,7 +473,14 @@ def main() -> None:
     except ValueError as exc:
         raise BaselineFailure("vector output must stay under data root") from exc
     repo_outputs = (STATUS, SUPPORT_AUDIT, ACCESS_AUDIT, REPORT)
-    if vector_dir.exists() or any(path.exists() for path in repo_outputs):
+    vector_outputs = (
+        vector_dir / "E201_OFFICIAL_GENERAL_BASELINE_WEIGHTED_DELTAS.npy",
+        vector_dir / "E201_OFFICIAL_GENERAL_BASELINE_CENTROIDS.npy",
+    )
+    # STAGE_4 intentionally writes the risk vectors and the official general
+    # baseline into the same pretruth directory.  The directory therefore
+    # exists after risk sealing; refuse only the baseline's own outputs.
+    if any(path.exists() for path in (*vector_outputs, *repo_outputs)):
         raise BaselineFailure("general-baseline output already exists")
     head = verify_git_release(include_risk=True)
     preflight = json.loads(PREFLIGHT.read_text(encoding="utf-8"))
@@ -503,9 +510,8 @@ def main() -> None:
     if centroids.shape != (N_TASKS, N_GENES) or not np.isfinite(centroids).all():
         raise BaselineFailure("general-baseline centroid contract failed")
 
-    vector_dir.mkdir(parents=True)
-    weighted_path = vector_dir / "E201_OFFICIAL_GENERAL_BASELINE_WEIGHTED_DELTAS.npy"
-    centroid_path = vector_dir / "E201_OFFICIAL_GENERAL_BASELINE_CENTROIDS.npy"
+    vector_dir.mkdir(parents=True, exist_ok=True)
+    weighted_path, centroid_path = vector_outputs
     atomic_npy(weighted_path, weighted)
     atomic_npy(centroid_path, centroids.astype(np.float32, copy=False))
     atomic_csv(SUPPORT_AUDIT, support_audit)
