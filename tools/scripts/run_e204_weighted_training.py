@@ -73,8 +73,21 @@ def main() -> None:
     import gspp.data.datamodule as datamodule_module
     from gspp.predictor import PertPredictor
 
+    original_dataset_init = datamodule_module.XcelltypePerturbDataset.__init__
     original_dataset_getitem = datamodule_module.XcelltypePerturbDataset.__getitem__
     unknown_conditions: dict[str, int] = {}
+
+    def weighted_init(self, *init_args, **init_kwargs):
+        # Only the training dataset receives ``train_cond_names``.  Validation
+        # uses the same dataset class and collate function, but must not be
+        # included in the training-weight coverage audit.
+        train_cond_names = init_kwargs.get("train_cond_names")
+        if len(init_args) >= 6:
+            train_cond_names = init_args[5]
+        original_dataset_init(self, *init_args, **init_kwargs)
+        self._e204_apply_training_weights = train_cond_names is not None
+
+    datamodule_module.XcelltypePerturbDataset.__init__ = weighted_init
 
     def condition_weight(condition: str, perturbations) -> float | None:
         if condition in weights:
@@ -94,6 +107,11 @@ def main() -> None:
 
     def weighted_getitem(self, idx):
         item = original_dataset_getitem(self, idx)
+        if not getattr(self, "_e204_apply_training_weights", False):
+            # Validation loss and metrics retain their ordinary, unweighted
+            # meaning.  A unit value is attached only because the shared
+            # collate function expects the field.
+            return (*item, 1.0)
         condition = str(item[4])
         perturbations = item[3]
         # The adapter appends matched controls to the training dataset;
@@ -163,6 +181,7 @@ def main() -> None:
         str(args.smoke_train_batches),
     ]
     status = "FAILED"
+    coverage_failure = False
     try:
         runpy.run_path(
             "/home/yyf/proj/tools/scripts/txpert_blind_training_adapter.py",
@@ -170,12 +189,14 @@ def main() -> None:
         )
         status = "COMPLETE"
     finally:
+        coverage_failure = status == "COMPLETE" and bool(unknown_conditions)
+        recorded_status = "FAILED_COVERAGE" if coverage_failure else status
         run_dir = args.run_dir.resolve()
         run_dir.mkdir(parents=True, exist_ok=True)
         shutil.copy2(manifest, run_dir / "E204_SOURCE_ONLY_TASK_WEIGHTS.csv")
         metadata = {
             "experiment": "E204_risk_guided_training",
-            "status": status,
+            "status": recorded_status,
             "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "target": args.target,
             "seed": args.seed,
@@ -185,12 +206,19 @@ def main() -> None:
             "weight_manifest_rows_for_target": len(weights),
             "unit_weight_fallback_condition_counts": unknown_conditions,
             "unit_weight_fallback_samples": int(sum(unknown_conditions.values())),
+            "weights_applied_to_training_only": True,
             "target_expression_opened": False,
             "external_txpert_modified": False,
             "loss": "weighted per-condition TxPert reconstruction loss; controls have unit weight",
         }
         (run_dir / "E204_WEIGHTING_STATUS.json").write_text(
             json.dumps(metadata, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+        )
+    if coverage_failure:
+        raise SystemExit(
+            "E204 training-weight coverage failed: "
+            f"{sum(unknown_conditions.values())} non-control training samples "
+            f"across {len(unknown_conditions)} condition labels"
         )
 
 
