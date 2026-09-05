@@ -25,9 +25,9 @@ SafeConf 风险分与 family RMS error 的合并 Spearman 为 0.4082，95% CI �
 
 ## 接下来按这个顺序做
 
-### 1. 先完成 E204 工程验收
+### 1. E204 工程验收已完成
 
-用修正版清单对四个 target 各跑一次单 epoch profile。验收项：所有非对照训练条件均命中权重，未知条件回退数为 0；controls 固定权重 1；loss 有限；训练行数、validation 行数和 E201 一致。任何一项失败就停，不开始正式队列。
+四个 target 都已跑完一个完整 epoch。训练条件权重回退均为 0，controls 保持权重 1，验证集不加权，target 扰动表达读取为 0。工程门已通过，详见 `E204_risk_guided_training_20260830/PROFILE_ACCEPTANCE_20260905.md`。
 
 ### 2. 跑风险指导训练的主比较
 
