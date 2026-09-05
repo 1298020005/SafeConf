@@ -1,80 +1,50 @@
 # SafeConf
 
-SafeConf 是一个单细胞扰动预测结果的可靠性审计项目。
+SafeConf 研究单细胞扰动预测完成以后，怎样在不知道真实答案时识别高风险任务，以及能否把风险信息用于改进模型训练。
 
-一句话：
+当前分支：`exp/task-risk-audit-20260611`
 
-```text
-SafeConf 不预测细胞会怎么变；
-SafeConf 给冻结预测家族建立可复核的误差下界和上界。
-```
+事实截止：2026-09-05
 
-## 现在只看这些入口
+## 第一次进入只读这一份
 
-| 入口 | 用途 |
-|---|---|
-| `SafeConf_统一研究工作台.html` | 统一可跳转导航：当前问题、证据、组会、学习、代码和归档 |
-| `INDEX.md` | 项目总入口，新 AI 和人都先看这里 |
-| `START_HERE_FOR_AGENTS.md` | 给 Qoder / Gemini / Claude / 新 Codex 的完整学习地图 |
-| `docs/学习导航/README.md` | Agent 学习、目录权威、证据谱系和论文接力的统一目录 |
-| `START_HERE_FOR_GPT.md` | 给网页 GPT / Claude 的第一入口 |
-| `workspace/` | 当前组会和近期工作材料 |
-| `docs/实验结果/` | 已冻结实验结果和论文证据 |
-| `docs/实验结果/GATE_STATUS_20260729.md` | E194 后的最高事实入口：老师问题、外部验证、family 治理和投稿阻断项 |
-| `docs/投稿准备/期刊与文献定位_20260729/` | 当前期刊梯队、2024–2026 近邻论文与实验修正 |
-| `docs/实验结果/E194_family_governance_stress_20260729/` | family 重复、失衡、遗漏与合成攻击治理 |
-| `docs/实验结果/E193_multigeometry_certificate_robustness_20260729/` | RMSE、cosine、Pearson 多几何证书 |
-| `REPRODUCE_CURRENT_RELEASE.md` | 一条命令复核当前证书主数字，不依赖 GPU 或原始数据 |
-| `docs/实验结果/E186_presubmission_integrity_audit_20260724/` | 投稿前 18 项完整性对抗审计、0 失败 |
-| `docs/实验结果/E185_minimal_release_validation_20260724/` | 12,033 项发布物复现检查、0 失败 |
-| `docs/实验结果/E184_direct_competitor_positioning_20260724/` | 直接竞品、经典理论来源、可写贡献边界和白底定位图 |
-| `docs/实验结果/E183_all_study_family_synthesis_20260724/` | 四项研究 2,433 个任务、737 个靶点簇的统一审计和三张白底图 |
-| `docs/实验结果/E182_gse225807_registered_family_20260724/` | GSE225807 完整事前冻结流程、下界通过和上界注册门槛 FAIL |
-| `docs/实验结果/E181_registered_family_hilbert_certificate_20260724/` | 2,393 个任务的统一证书、五张白底图和复现表 |
-| `docs/实验结果/E180_xucao_fresh_guide_certificate_20260723/` | XuCao 一次性独立评价和自适应上界负结果 |
-| `docs/实验结果/E143_prospective_wetlab_validation_20260714/` | 前瞻湿实验的功效、候选、盲法、QC、图和交接模板 |
-| `docs/投稿准备/录用判断与项目总账_20260713/index.html` | 周老师问题、当前证据、投稿定位和不能保证录用的原因 |
-| `docs/SafeConf_完整项目讲解/index.html` | 从零读懂整个项目：生物、数据、代码、实验、结果和下一阶段 |
-| `docs/小白科普/` | 早期专题学习材料与真实数据样例 |
-| `agents/` | Codex / Qoder / Grok 等 AI 协作状态和原始输出 |
-| `code/` | SafeConf 正式代码 |
-| `tools/` | 下载、复跑、资源清单、Codex 环境等维护工具 |
-| `runtime/` | 临时输出说明；大型运行输出不进 Git |
-| `/home/yyf/archive/safeconf/` | 集中历史库，不在 Git 工作区内 |
+[当前项目手把手学习](docs/学习导航/00_当前项目手把手学习_20260905.md)
 
-## 顶层纪律
+它从单细胞、扰动、细胞系等基础概念讲起，继续解释 SafeConf 的输入和公式、E199–E205 的实验、真实结果、失败边界、代码位置、周老师的问题和下一步工作。文中所有仓库文件都使用相对链接，下载到其他电脑后仍可跳转。
 
-顶层只保留当前工作。旧讨论、旧草稿、旧汇报和旧计划统一迁往 `/home/yyf/archive/safeconf/`。
+## 当前进度
+
+| 工作 | 状态 | 当前结论 |
+| --- | --- | --- |
+| E199：K562 未见基因 | 完成 | 同一模型四个随机种子的分歧能识别一部分难任务 |
+| E200：整个 K562 背景留出 | 完成 | 预测幅度明显强于固定风险分 |
+| E201：四背景 × 四种子盲测 | 完成 | SafeConf 与误差稳定正相关，也有幅度之外的信息；但单独排序弱于幅度 |
+| E202：相对基线失败归因 | 完成，主门失败 | 当前 source dispersion 不能解释 GAT 相对简单基线多犯的错 |
+| E204：风险指导训练 | 四个背景的工程验收通过 | 权重确实进入训练且无覆盖缺口；正式 80 轮对照尚未运行完 |
+| E205：跨架构分歧 | 协议已设计 | 尚未运行，当前四个成员只是同架构四个随机种子 |
+
+详细数字以 [当前研究判断](docs/实验结果/CURRENT_RESEARCH_DECISION_20260905.md)、[E201 正式报告](docs/实验结果/E201_txpert_multitarget_retraining_20260802/formal_core_evaluation/reports/E201_CORE_REPORT.md) 和 [E204 工程验收](docs/实验结果/E204_risk_guided_training_20260830/PROFILE_ACCEPTANCE_20260905.md) 为准。
+
+## 目录
+
+| 路径 | 内容 |
+| --- | --- |
+| `code/` | SafeConf 正式代码和测试 |
+| `tools/` | E 编号实验运行脚本、审计和维护工具 |
+| `docs/实验结果/` | 冻结协议、结果表、报告和负结果 |
+| `docs/学习导航/` | 当前教程和历史学习材料 |
+| `workspace/` | 近期汇报与工作材料，不高于正式实验报告 |
+| `agents/` | Grok、GLM、Qoder 等原始意见，不是事实来源 |
+| `/home/yyf/archive/safeconf/` | 服务器历史归档，不属于 Git 仓库 |
+
+大型 H5AD、模型权重和运行缓存不提交 Git；仓库主要保存代码、协议、精简结果和可核验记录。
+
+## 远程同步
 
 ```text
-日常工作：workspace/
-Agent 学习：START_HERE_FOR_AGENTS.md -> docs/学习导航/
-完整学习：docs/SafeConf_完整项目讲解/index.html
-专题样例：docs/小白科普/
-论文证据：docs/实验结果/
-AI 协作：agents/
-代码运行：code/ + tools/
-旧东西：/home/yyf/archive/safeconf/
+GitHub: https://github.com/1298020005/SafeConf
+Gitee:  https://gitee.com/librety/safe-conf
+分支:   exp/task-risk-audit-20260611
 ```
 
-## 同步
-
-服务器主项目：
-
-```bash
-cd /home/yyf/proj
-git status --short --branch
-```
-
-远端：
-
-```text
-GitHub: git@github.com:1298020005/SafeConf.git
-Gitee:  https://gitee.com/librety/safe-conf.git
-```
-
-本分支：
-
-```text
-exp/task-risk-audit-20260611
-```
+完整拉取和新 Codex 初始化见 [REMOTE_CODEX_INIT.md](REMOTE_CODEX_INIT.md)。

@@ -1,15 +1,48 @@
-# E204 先看这个
+# E204 风险指导训练：当前入口
 
-E204 是在 E201 盲预测之后新增的训练方向：把训练数据中“支持少、背景覆盖窄、不同 source 背景反应差异大”的扰动条件标为难任务，提高它们的训练权重，再和原始 TxPert-GAT 比较。
+更新时间：2026-09-05
 
-当前只完成协议冻结和代码准备，尚未有 E204 结果。E201 的 target 真值仍然封存，任何“训练后变好”都不能提前写成结论。
+E204 回答周老师提出的第二个用途：既然 source 数据能提前指出某些扰动更难预测，训练时给这些条件更多权重，能否降低难任务误差？
 
-执行顺序：
+## 当前状态
 
-1. 完成 E201 四个细胞系 × 四个 seed 的盲预测；
-2. 封存预测分歧、预测幅度、source support 等预测前特征；
-3. 生成每个 target 的 source-only 任务权重清单并做列级审计；
-4. 先跑 `uniform` 与 `risk_weighted` 的 source smoke/profile，再跑正式四 seed；
-5. 三种训练条件全部封存后，才释放 E201 target 真值并评价。
+| 阶段 | 状态 | 证明了什么 |
+| --- | --- | --- |
+| source-only 难度公式冻结 | 完成 | 权重只依赖 source 支持数、覆盖背景数和跨背景效应离散度 |
+| 权重清单和防泄漏审计 | 完成 | 不使用 target 扰动后表达生成权重 |
+| K562/RPE1/HepG2/Jurkat 一轮 profile | 全部 PASS | 数据加载、权重覆盖、反向传播、验证和审计状态能完整运行 |
+| 正式 80 轮加权训练 | 待运行/待完成 | 尚不能判断难任务是否改善 |
+| 新数据前瞻确认 | 待后续 | 同数据开发的训练结果只能作为次级证据 |
 
-权重生成脚本只读取 E201 的 source 字段，不读取 `n_target_cells`、target expression 或任何 E199/E200 结果。
+四个 profile 的训练样本数分别为 K562 294,951、RPE1 273,003、HepG2 314,391、Jurkat 282,132，真实训练权重回退均为 0，target 扰动表达读取均为 0。
+
+## 公式
+
+```text
+difficulty = mean[
+  z(-log(1 + n_source_cells)),
+  z(3 - n_source_contexts),
+  z(source_delta_dispersion)
+]
+
+weight = clip(1 + 0.5 × difficulty, 0.5, 2.0)
+```
+
+对照细胞固定权重 1。正式比较包含：
+
+- `uniform`：普通训练；
+- `risk_weighted`：三个成分等权生成的难度权重；
+- `dispersion_only`：只使用 E201 中最强的 source dispersion 成分。
+
+## 先读文件
+
+1. [ANALYSIS_FREEZE.md](./ANALYSIS_FREEZE.md)：正式比较和停止规则；
+2. [IMPLEMENTATION_AMENDMENT_20260905.md](./IMPLEMENTATION_AMENDMENT_20260905.md)：验证集误计为训练回退的原因和修复；
+3. [PROFILE_ACCEPTANCE_20260905.md](./PROFILE_ACCEPTANCE_20260905.md)：四个 target 的工程验收；
+4. `profiles/<target>/profile_result.json`：每个 target 的机器可读结果。
+
+## 正式运行的边界
+
+E201 的 16 个 uniform 模型直接复用。需要新增 16 个 `risk_weighted` 和 16 个 `dispersion_only` 模型，每个 80 轮。主要比较高难 20% 任务 RMSE，同时检查全体 RMSE；若高难任务没有改善，或整体 RMSE 恶化超过 5%，当前加权方案停止扩展。
+
+profile PASS 只说明程序能正确训练，不能写成模型性能已经提高。

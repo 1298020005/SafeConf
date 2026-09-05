@@ -1,86 +1,57 @@
-# SafeConf 项目总入口
+# SafeConf 项目索引
 
-先别全盘乱扫。按下面顺序看。
+更新时间：2026-09-05
 
-## 1. 今天要看什么
+## 按目的打开
 
-| 你想做什么 | 打开 |
-|---|---|
-| 看一区路径、聊天审核和下一阶段 | `docs/投稿准备/Q1_PATH_SEMANTIC_AUDIT_20260815.md` |
-| 看 2026-08-15 当前状态 | `docs/实验结果/CURRENT_RESEARCH_STATUS_20260815.md` |
-| 准备 2026-08-13 中午组会（已结束，只作讲稿） | `workspace/group_meeting_20260813/README_先看这个.md` |
-| 在另一台电脑接手、看当前 E201 进度和数据边界 | `docs/项目交接_20260812.md` |
-| 在一个页面看全部进度、问题和文档 | `SafeConf_统一研究工作台.html` |
-| 看当前项目进度 | `workspace/README_先看这个.md` |
-| 看 2026-07-09 组会汇报 | `workspace/group_meeting_20260709_FINAL/README_只看这个.md` |
-| 从零学完整项目（推荐） | `docs/SafeConf_完整项目讲解/index.html` |
-| 查 h5ad 和真实数据专题 | `docs/小白科普/index.html` |
-| 看正式实验结果 | `docs/实验结果/` |
-| 看当前最高事实、E201 进度和下一步 | `docs/实验结果/CURRENT_RESEARCH_STATUS_20260814.md` |
-| 看 E181–E197 历史总账（不是今天主入口） | `docs/实验结果/GATE_STATUS_20260729.md` |
-| 看预测家族治理、防复制和合成攻击结果 | `docs/实验结果/E194_family_governance_stress_20260729/reports/E194_INTERPRETATION.md` |
-| 看 RMSE、cosine、Pearson 多几何证书 | `docs/实验结果/E193_multigeometry_certificate_robustness_20260729/reports/E193_INTERPRETATION.md` |
-| 看当前期刊梯队、近邻论文和实验阻断项 | `docs/投稿准备/期刊与文献定位_20260729/README.md` |
-| 一条命令复核当前证书 | `REPRODUCE_CURRENT_RELEASE.md` |
-| 看投稿前完整性对抗审计 | `docs/实验结果/E186_presubmission_integrity_audit_20260724/reports/E186_REPORT.md` |
-| 看最小复现实际运行结果 | `docs/实验结果/E185_minimal_release_validation_20260724/reports/E185_REPORT.md` |
-| 看直接竞品、理论来源和可写贡献边界 | `docs/实验结果/E184_direct_competitor_positioning_20260724/reports/E184_REPORT.md` |
-| 看四项研究统一审计与有限校准波动 | `docs/实验结果/E183_all_study_family_synthesis_20260724/reports/E183_SYNTHESIS_REPORT.md` |
-| 看 GSE225807 事前冻结评价与注册门槛 FAIL | `docs/实验结果/E182_gse225807_registered_family_20260724/final_evaluation/reports/E182_FINAL_REPORT.md` |
-| 看注册模型家族双侧证书和五张白底图 | `docs/实验结果/E181_registered_family_hilbert_certificate_20260724/README_先看这个.md` |
-| 看 XuCao 一次性独立评价 | `docs/实验结果/E180_xucao_fresh_guide_certificate_20260723/final_evaluation/reports/E180_FINAL_REPORT.md` |
-| 看周老师问题和模型特异性审计 | `docs/实验结果/E178_crossstudy_bilateral_certificate_audit_20260722/reports/E178_REPORT.md` |
-| 接着做前瞻湿实验 | `docs/实验结果/E143_prospective_wetlab_validation_20260714/README_先看这个.md` |
-| 看周老师的问题、投稿定位和录用边界 | `docs/投稿准备/录用判断与项目总账_20260713/index.html` |
-| 让 Qoder/Gemini/外部 agent 完整学习项目 | `START_HERE_FOR_AGENTS.md` |
-| 查看 Agent 学习目录、证据谱系和论文接力 | `docs/学习导航/README.md` |
-| 让 Claude/GPT 快速理解项目 | `START_HERE_FOR_GPT.md` |
-| 让多个 AI 协作 | `agents/README.md` |
+| 你现在要做什么 | 第一入口 | 接着读 |
+| --- | --- | --- |
+| 从零学习整个项目 | [手把手学习](docs/学习导航/00_当前项目手把手学习_20260905.md) | 按文中第 14 节的四遍路线学习 |
+| 只看当前结论 | [当前研究判断](docs/实验结果/CURRENT_RESEARCH_DECISION_20260905.md) | E201 报告、E204 验收 |
+| 核对 E201 数字 | [E201 正式报告](docs/实验结果/E201_txpert_multitarget_retraining_20260802/formal_core_evaluation/reports/E201_CORE_REPORT.md) | 同目录 `tables/` 与 `figures/` |
+| 接着运行 E204 | [E204 入口](docs/实验结果/E204_risk_guided_training_20260830/README_先看这个.md) | 协议、权重表、四背景 profile 验收 |
+| 回答周老师的问题 | 手把手学习第 12 节 | [问题—实验对应](docs/实验结果/E204_risk_guided_training_20260830/周老师要求与实验对应.md) |
+| 在新电脑接手 | [远程初始化](REMOTE_CODEX_INIT.md) | 拉取后先读手把手学习 |
+| 查七月以前的完整历史 | [历史 Gate](docs/实验结果/GATE_STATUS_20260729.md) | E173–E194 各正式报告 |
 
-## 2. 当前项目定位
+## 当前两条研究线
+
+### A. 当前任务风险线：E198–E205
 
 ```text
-SafeConf = registered-family reliability certificate
-中文：注册预测家族的可靠性误差证书
+TxPert 生成扰动预测
+        ↓
+不读取 target 真实扰动表达，计算分歧、幅度和 source 证据
+        ↓
+GitHub / Gitee 封存预测、特征和哈希
+        ↓
+打开真实答案，检查风险排序是否真能找到错误任务
+        ↓
+把 source-only 难度用于训练加权，检验难任务能否改善
 ```
 
-它做的不是：
+这条线直接回答周老师关于“分数和谁比、幅度是否偷看答案、困难切分有没有做、风险能否帮助训练”的问题。E201 已完成预测后风险评价；E204 正在做训练介入。
 
-```text
-输入扰动 -> 预测细胞变化
-```
+### B. 历史模型家族证书线：E173–E194
 
-它做的是：
+这条线研究多个冻结预测之间的几何距离能给出什么确定性误差下界，以及模型家族如何注册和审计。它是重要理论与审计支线，但不能替代 E201 的任务风险评价，也不能把“误差下界”写成“准确找出谁错了”。
 
-```text
-多个冻结预测结果 + 独立校准数据
-  -> 给出家族平均误差和最坏成员误差的下界
-  -> 给出继承 conformal 覆盖事件的经验上界
-```
+## 事实优先级
 
-## 3. 当前目录规则
+同一件事出现不同说法时，按以下顺序判断：
 
-| 目录 | 状态 |
-|---|---|
-| `code/` | 正式代码 |
-| `docs/` | 学习导航、完整项目讲解、稳定文档、实验结果和专题科普 |
-| `agents/` | AI 协作当前状态和原始输出 |
-| `workspace/` | 当前科研推进 |
-| `tools/` | 工具、脚本、服务器环境文档 |
-| `runtime/` | 临时输出说明 |
-| `/home/yyf/archive/safeconf/` | 集中历史库，不属于当前 Git 工作区 |
+1. 2026-09-05 当前研究判断；
+2. E201、E202、E204 正式报告和表格；
+3. E199、E200 正式报告；
+4. E181–E194 历史正式报告；
+5. 学习稿和 workspace 汇报；
+6. agents 目录中的原始模型意见。
 
-## 4. 禁止误读
+早期文件在生成当时可能正确，但其中“E201 正在盲训练”“target 真值尚未释放”等状态已经过期。
 
-- 不要把 `/home/yyf/archive/safeconf/` 当当前结论。
-- 不要把 `agents/qoder/` 的原始输出当最终学习资料。
-- 不要把 E8b 写成“27 个模型逐预测验证”。
-- 不要说 SafeConf 已经证明对所有深度模型普适。
-- 不要说 McFarland frozen v0.2 成功；它仍是失败边界。
+## 当前不能混淆的四句话
 
-## 5. 给 AI 的规矩
-
-1. 先读 `START_HERE_FOR_AGENTS.md` 和 `docs/学习导航/README.md`。
-2. 结论必须给证据路径。
-3. 新实验必须写输入、输出、通过标准。
-4. 用户是小白，英文第一次出现要写中文解释。
+- E201 的四个成员是同一 TxPert-GAT 架构的四个随机种子，不是四种模型。
+- SafeConf 有独立信息，不等于它单独超过 predicted magnitude（预测幅度）。
+- E204 profile 通过说明训练实现正确，不等于正式训练已经改善性能。
+- 所有难考法都运行过，不等于每种考法都被解决；双未见和部分跨域场景仍须暂停使用。
