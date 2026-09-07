@@ -225,26 +225,39 @@ L 379.898275 138.345284
         self.assertEqual(len(MCB_OFFICIAL), 61)
         self.assertEqual(len(BRM_OFFICIAL), 82)
         rows = catalog()
-        self.assertGreaterEqual(len(rows), 100)
+        self.assertGreaterEqual(len(rows), 400)
         tally = counts(rows)
         self.assertEqual(tally["mcb_official"], 61)
         self.assertEqual(tally["brm_official"], 82)
+        self.assertEqual(tally["genetics_official"], 186)
         self.assertEqual(official_unmatched(rows), [])
+        blurbs = [row["publishes"] for row in rows]
+        self.assertEqual(len(set(blurbs)), len(blurbs))
         by_name = {row["name"].lower(): row for row in rows}
-        self.assertEqual(by_name["chromatographia"]["verdict"], "off_track")
-        self.assertEqual(by_name["bioinformatics"]["verdict"], "q2_not_ready")
-        self.assertEqual(by_name["nature methods"]["verdict"], "q1_off")
-        self.assertEqual(by_name["bmc bioinformatics"]["verdict"], "discuss_narrow")
+        self.assertEqual(by_name["chromatographia"]["verdict_a"], "off_track")
+        self.assertEqual(by_name["chromatographia"]["verdict_b"], "off_track")
+        self.assertEqual(by_name["bioinformatics"]["verdict_a"], "q2_not_ready")
+        self.assertEqual(by_name["bioinformatics"]["verdict_b"], "q2_not_ready")
+        self.assertEqual(by_name["nature methods"]["verdict_a"], "q1_off")
+        self.assertEqual(by_name["bmc bioinformatics"]["verdict_a"], "discuss_narrow")
+        self.assertEqual(by_name["bmc bioinformatics"]["verdict_b"], "q2_not_ready")
+        self.assertNotEqual(
+            by_name["bioinformatics"]["publishes"],
+            by_name["bmc bioinformatics"]["publishes"],
+        )
         self.assertFalse(self.table["publication"]["q2_certain"])
         missing = check_universe_doc(REPO)
         self.assertEqual(missing, [])
         text = (pack_dir(REPO) / "06_全球相关期刊逐本评价.md").read_text()
+        self.assertIn("业务A", text)
+        self.assertIn("业务B", text)
         for row in rows:
             self.assertIn(row["name"], text)
         self.assertIn("不能把二区写成一定能发", text)
         csv_text = (pack_dir(REPO) / "journal_universe.csv").read_text()
         self.assertIn("Chromatographia", csv_text)
-        self.assertIn("Bioinformatics", csv_text)
+        self.assertIn("verdict_a", csv_text)
+        self.assertIn("verdict_b", csv_text)
 
 
 if __name__ == "__main__":
