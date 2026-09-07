@@ -297,6 +297,182 @@
     "k562_official_rmse": "0.0584",
     "n_primary_tasks": "1808"
   },
+  "journal_matrix": {
+    "items": [
+      {
+        "key": "blind_e201",
+        "label": "四细胞系盲测封存"
+      },
+      {
+        "key": "magnitude_baseline",
+        "label": "报告预测幅度基线"
+      },
+      {
+        "key": "partial_info",
+        "label": "幅度之外仍有信息"
+      },
+      {
+        "key": "beat_magnitude",
+        "label": "单独排序超过幅度"
+      },
+      {
+        "key": "e204_formal",
+        "label": "风险训练正式效果"
+      },
+      {
+        "key": "e205_family",
+        "label": "跨架构模型家族"
+      },
+      {
+        "key": "new_external",
+        "label": "冻结后的新外部数据"
+      },
+      {
+        "key": "wet_mechanism",
+        "label": "湿实验或机制闭环"
+      }
+    ],
+    "have": {
+      "blind_e201": 2,
+      "magnitude_baseline": 2,
+      "partial_info": 2,
+      "beat_magnitude": 0,
+      "e204_formal": 0,
+      "e205_family": 0,
+      "new_external": 0,
+      "wet_mechanism": 0
+    },
+    "journals": [
+      {
+        "key": "bmc_bioinfo",
+        "name": "BMC Bioinformatics",
+        "cas": "中科院常见3区口径",
+        "jcr": "Q2/Q3 视年度",
+        "care": {
+          "blind_e201": 2,
+          "magnitude_baseline": 2,
+          "partial_info": 1,
+          "beat_magnitude": 0,
+          "e204_formal": 0,
+          "e205_family": 0,
+          "new_external": 1,
+          "wet_mechanism": 0
+        }
+      },
+      {
+        "key": "bioinfo_adv",
+        "name": "Bioinformatics Advances",
+        "cas": "较新刊，分区不稳定",
+        "jcr": "新兴",
+        "care": {
+          "blind_e201": 2,
+          "magnitude_baseline": 2,
+          "partial_info": 1,
+          "beat_magnitude": 0,
+          "e204_formal": 0,
+          "e205_family": 0,
+          "new_external": 1,
+          "wet_mechanism": 0
+        }
+      },
+      {
+        "key": "bioinformatics",
+        "name": "Bioinformatics",
+        "cas": "中科院生物大类常见2区",
+        "jcr": "JCR Q1",
+        "care": {
+          "blind_e201": 2,
+          "magnitude_baseline": 2,
+          "partial_info": 2,
+          "beat_magnitude": 1,
+          "e204_formal": 1,
+          "e205_family": 1,
+          "new_external": 2,
+          "wet_mechanism": 0
+        }
+      },
+      {
+        "key": "bib",
+        "name": "Briefings in Bioinformatics",
+        "cas": "2026新锐表：大类生物2区、小类计算生物学1区、Top",
+        "jcr": "JCR Q1",
+        "care": {
+          "blind_e201": 2,
+          "magnitude_baseline": 2,
+          "partial_info": 2,
+          "beat_magnitude": 1,
+          "e204_formal": 1,
+          "e205_family": 1,
+          "new_external": 2,
+          "wet_mechanism": 0
+        }
+      },
+      {
+        "key": "nar",
+        "name": "Nucleic Acids Research",
+        "cas": "中科院常见1区或2区（年度表为准）",
+        "jcr": "JCR Q1",
+        "care": {
+          "blind_e201": 2,
+          "magnitude_baseline": 2,
+          "partial_info": 2,
+          "beat_magnitude": 1,
+          "e204_formal": 1,
+          "e205_family": 2,
+          "new_external": 2,
+          "wet_mechanism": 1
+        }
+      },
+      {
+        "key": "genome_biol",
+        "name": "Genome Biology",
+        "cas": "中科院常见1区",
+        "jcr": "JCR Q1",
+        "care": {
+          "blind_e201": 2,
+          "magnitude_baseline": 2,
+          "partial_info": 2,
+          "beat_magnitude": 2,
+          "e204_formal": 2,
+          "e205_family": 2,
+          "new_external": 2,
+          "wet_mechanism": 2
+        }
+      },
+      {
+        "key": "nat_commun",
+        "name": "Nature Communications",
+        "cas": "中科院1区",
+        "jcr": "JCR Q1",
+        "care": {
+          "blind_e201": 2,
+          "magnitude_baseline": 2,
+          "partial_info": 2,
+          "beat_magnitude": 2,
+          "e204_formal": 2,
+          "e205_family": 2,
+          "new_external": 2,
+          "wet_mechanism": 2
+        }
+      },
+      {
+        "key": "nat_methods",
+        "name": "Nature Methods",
+        "cas": "中科院1区 Top",
+        "jcr": "JCR Q1",
+        "care": {
+          "blind_e201": 2,
+          "magnitude_baseline": 2,
+          "partial_info": 2,
+          "beat_magnitude": 2,
+          "e204_formal": 2,
+          "e205_family": 2,
+          "new_external": 2,
+          "wet_mechanism": 2
+        }
+      }
+    ]
+  },
   "publication": {
     "q2_certain": false,
     "q1_sprint_ready": false,

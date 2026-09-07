@@ -26,7 +26,9 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties, fontManager
+from matplotlib.colors import BoundaryNorm, ListedColormap
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch, Rectangle
+import numpy as np
 import pandas as pd
 
 E199_TABLE = Path("docs/实验结果/E199_txpert_public_k562_20260802/formal_evaluation/tables")
@@ -37,6 +39,87 @@ E201_CORE = Path(
 E204_DIR = Path("docs/实验结果/E204_risk_guided_training_20260830")
 E205_FREEZE = Path("docs/实验结果/E205_cross_family_disagreement_20260830/ANALYSIS_FREEZE.md")
 PACK_REL = Path("docs/学习导航/20260906_论文审核与从零教学")
+
+# have: 2 closed official evidence, 1 partial/protocol, 0 absent or failed.
+# care: 2 typical desk-reject if missing, 1 expected in review, 0 not a usual desk item.
+EVIDENCE_ITEMS = (
+    ("blind_e201", "四细胞系盲测封存"),
+    ("magnitude_baseline", "报告预测幅度基线"),
+    ("partial_info", "幅度之外仍有信息"),
+    ("beat_magnitude", "单独排序超过幅度"),
+    ("e204_formal", "风险训练正式效果"),
+    ("e205_family", "跨架构模型家族"),
+    ("new_external", "冻结后的新外部数据"),
+    ("wet_mechanism", "湿实验或机制闭环"),
+)
+EVIDENCE_HAVE = {
+    "blind_e201": 2,
+    "magnitude_baseline": 2,
+    "partial_info": 2,
+    "beat_magnitude": 0,
+    "e204_formal": 0,
+    "e205_family": 0,
+    "new_external": 0,
+    "wet_mechanism": 0,
+}
+JOURNALS = (
+    {
+        "key": "bmc_bioinfo",
+        "name": "BMC Bioinformatics",
+        "cas": "中科院常见3区口径",
+        "jcr": "Q2/Q3 视年度",
+        "care": (2, 2, 1, 0, 0, 0, 1, 0),
+    },
+    {
+        "key": "bioinfo_adv",
+        "name": "Bioinformatics Advances",
+        "cas": "较新刊，分区不稳定",
+        "jcr": "新兴",
+        "care": (2, 2, 1, 0, 0, 0, 1, 0),
+    },
+    {
+        "key": "bioinformatics",
+        "name": "Bioinformatics",
+        "cas": "中科院生物大类常见2区",
+        "jcr": "JCR Q1",
+        "care": (2, 2, 2, 1, 1, 1, 2, 0),
+    },
+    {
+        "key": "bib",
+        "name": "Briefings in Bioinformatics",
+        "cas": "2026新锐表：大类生物2区、小类计算生物学1区、Top",
+        "jcr": "JCR Q1",
+        "care": (2, 2, 2, 1, 1, 1, 2, 0),
+    },
+    {
+        "key": "nar",
+        "name": "Nucleic Acids Research",
+        "cas": "中科院常见1区或2区（年度表为准）",
+        "jcr": "JCR Q1",
+        "care": (2, 2, 2, 1, 1, 2, 2, 1),
+    },
+    {
+        "key": "genome_biol",
+        "name": "Genome Biology",
+        "cas": "中科院常见1区",
+        "jcr": "JCR Q1",
+        "care": (2, 2, 2, 2, 2, 2, 2, 2),
+    },
+    {
+        "key": "nat_commun",
+        "name": "Nature Communications",
+        "cas": "中科院1区",
+        "jcr": "JCR Q1",
+        "care": (2, 2, 2, 2, 2, 2, 2, 2),
+    },
+    {
+        "key": "nat_methods",
+        "name": "Nature Methods",
+        "cas": "中科院1区 Top",
+        "jcr": "JCR Q1",
+        "care": (2, 2, 2, 2, 2, 2, 2, 2),
+    },
+)
 
 CJK_FONT_CANDIDATES = (
     "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
@@ -376,6 +459,20 @@ def load_claim_table(repo: Path) -> dict:
             "k562_control_rmse": round4(k562_err.control_error_mean),
             "k562_official_rmse": round4(k562_err.official_general_baseline_error_mean),
             "n_primary_tasks": str(n_primary),
+        },
+        "journal_matrix": {
+            "items": [{"key": k, "label": lab} for k, lab in EVIDENCE_ITEMS],
+            "have": EVIDENCE_HAVE,
+            "journals": [
+                {
+                    "key": j["key"],
+                    "name": j["name"],
+                    "cas": j["cas"],
+                    "jcr": j["jcr"],
+                    "care": dict(zip([k for k, _ in EVIDENCE_ITEMS], j["care"])),
+                }
+                for j in JOURNALS
+            ],
         },
         "publication": {
             "q2_certain": False,
@@ -867,6 +964,67 @@ def generate_fig4_components(repo: Path, table: dict, fp: FontProperties) -> dic
     return _save_fig(repo, fig, "fig4_components", plotted)
 
 
+def generate_fig5_journals(repo: Path, table: dict, fp: FontProperties) -> dict:
+    fig, axes = plt.subplots(1, 2, figsize=(12.2, 5.4), facecolor="white",
+                             gridspec_kw={"width_ratios": [1.05, 1.55]})
+    fig.patch.set_facecolor("white")
+    items = list(EVIDENCE_ITEMS)
+    have = [EVIDENCE_HAVE[k] for k, _ in items]
+    labels = [lab for _, lab in items]
+    ax = axes[0]
+    _style_axes(ax, fp)
+    _panel_id(ax, "a", fp)
+    y = list(range(len(items), 0, -1))
+    colors = {2: OKABE["green"], 1: OKABE["orange"], 0: OKABE["vermillion"]}
+    ax.barh(y, [1] * len(items), color=[colors[v] for v in have], height=0.62, linewidth=0)
+    ax.set_yticks(y, labels, fontproperties=fp, fontsize=8)
+    ax.set_xticks([])
+    ax.set_xlim(0, 1.35)
+    ax.set_title("当前证据：绿有、红没有", fontproperties=fp, fontsize=9, loc="left")
+    tag = {2: "有正式结果", 1: "部分", 0: "没有或失败"}
+    for yi, v in zip(y, have):
+        ax.text(1.04, yi, tag[v], va="center", fontproperties=fp, fontsize=7)
+
+    ax = axes[1]
+    ax.set_facecolor("white")
+    _panel_id(ax, "b", fp)
+    matrix = []
+    for journal in JOURNALS:
+        row = []
+        for i, (key, _lab) in enumerate(items):
+            care = journal["care"][i]
+            got = EVIDENCE_HAVE[key]
+            if care == 0:
+                row.append(0.45)
+            elif got >= 2:
+                row.append(1.0)
+            elif got == 1:
+                row.append(0.65)
+            else:
+                row.append(0.0)
+        matrix.append(row)
+    data = np.array(matrix)
+    cmap = ListedColormap(["#D55E00", "#C8C8C8", "#E69F00", "#009E73"])
+    bounds = [-0.1, 0.2, 0.55, 0.8, 1.1]
+    norm = BoundaryNorm(bounds, cmap.N)
+    im = ax.imshow(data, cmap=cmap, norm=norm, aspect="auto")
+    ax.set_xticks(range(len(labels)))
+    ax.set_xticklabels(labels, fontproperties=fp, fontsize=6, rotation=40, ha="right")
+    ax.set_yticks(range(len(JOURNALS)))
+    ax.set_yticklabels([j["name"] for j in JOURNALS], fontproperties=fp, fontsize=7)
+    ax.set_title("格子：绿=期刊在乎且我们有；红=期刊在乎但没有", fontproperties=fp, fontsize=8, loc="left")
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+    fig.subplots_adjust(left=0.22, right=0.98, top=0.88, bottom=0.28, wspace=0.35)
+    plotted = {
+        "have": EVIDENCE_HAVE,
+        "journals": [j["name"] for j in JOURNALS],
+        "item_keys": [k for k, _ in items],
+        "matrix": matrix,
+    }
+    return _save_fig(repo, fig, "fig5_journal_match", plotted)
+
+
 def _save_fig(repo: Path, fig, stem: str, plotted: dict) -> dict:
     fig_dir = pack_dir(repo) / "figures"
     fig_dir.mkdir(parents=True, exist_ok=True)
@@ -899,6 +1057,7 @@ def generate_figures(repo: Path, table: dict | None = None) -> list[dict]:
         generate_fig2_holdout(repo, table, fp),
         generate_fig3_e201(repo, table, fp),
         generate_fig4_components(repo, table, fp),
+        generate_fig5_journals(repo, table, fp),
     ]
 
 
@@ -1071,6 +1230,7 @@ def check_figures(repo: Path, table: dict) -> list[str]:
         ("fig2_holdout", ("a", "b", "c")),
         ("fig3_e201_main", ("a", "b", "c")),
         ("fig4_components", ("a", "b")),
+        ("fig5_journal_match", ("a", "b")),
     ):
         svg = fig_dir / f"{stem}.svg"
         png = fig_dir / f"{stem}.png"
@@ -1137,6 +1297,15 @@ def check_figures(repo: Path, table: dict) -> list[str]:
             for key in disp:
                 if str(plotted.get(key)) != disp[key]:
                     missing.append(f"fig4 {key}={plotted.get(key)} != csv {disp[key]}")
+        if stem == "fig5_journal_match":
+            if plotted.get("have", {}).get("beat_magnitude") != 0:
+                missing.append("fig5 must mark beat_magnitude as absent")
+            if plotted.get("have", {}).get("e204_formal") != 0:
+                missing.append("fig5 must mark e204_formal as absent")
+            if plotted.get("have", {}).get("blind_e201") != 2:
+                missing.append("fig5 must mark blind_e201 as present")
+            if "Nature Methods" not in plotted.get("journals", []):
+                missing.append("fig5 missing Nature Methods row")
     return missing
 
 
@@ -1155,6 +1324,24 @@ def check_component_doc(repo: Path, table: dict) -> list[str]:
     return missing
 
 
+def check_journal_doc(repo: Path) -> list[str]:
+    path = pack_dir(repo) / "05_期刊对照表.md"
+    if not path.is_file():
+        return [f"missing {path.name}"]
+    text = path.read_text()
+    missing = []
+    for name in ("Briefings in Bioinformatics", "Bioinformatics", "Genome Biology", "Nature Methods", "Nucleic Acids Research"):
+        if name not in text:
+            missing.append(f"{path.name} missing journal {name}")
+    for phrase in ("不能把二区写成一定能发", "0.4082", "0.6189", "E204"):
+        if phrase not in text:
+            missing.append(f"{path.name} missing {phrase}")
+    pack_dir_abs = pack_dir(repo)
+    if not (pack_dir_abs / "04_五成分与封存流程精讲.md").is_file():
+        missing.append("04 teaching file missing on disk")
+    return missing
+
+
 def run_all_checks(repo: Path, table: dict | None = None) -> dict:
     table = table or load_claim_table(repo)
     result = {
@@ -1163,6 +1350,7 @@ def run_all_checks(repo: Path, table: dict | None = None) -> dict:
         "gpt_mismatch": check_gpt_mismatch(pack_dir(repo) / "01_完成度与GPT误导对照.md"),
         "figures": check_figures(repo, table),
         "components": check_component_doc(repo, table),
+        "journals": check_journal_doc(repo),
     }
     result["ok"] = all(not v for v in result.values() if isinstance(v, list))
     return result
@@ -1214,6 +1402,7 @@ def write_scratch_reports(repo: Path, scratch: Path, table: dict, report: dict) 
                 "[PASS] fig3_e201_main panels a/b/c values match CSV rounding",
                 "[PASS] fig3b labels sit above errorbar whiskers",
                 "[PASS] fig4_components five-component Spearman match CSV",
+                "[PASS] fig5_journal_match Nature Methods row and missing E204/magnitude-win",
             ]
         )
         fig_lines.append("ALL PASS")

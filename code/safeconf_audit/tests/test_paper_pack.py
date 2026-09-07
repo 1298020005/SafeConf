@@ -181,6 +181,16 @@ L 379.898275 138.345284
             )
             self.assertEqual(disp[key], round4(row.spearman))
 
+    def test_journal_doc_names_target_venues_and_rejects_certain_q2(self):
+        from safeconf_audit.paper_pack import check_journal_doc
+
+        missing = check_journal_doc(REPO)
+        self.assertEqual(missing, [])
+        text = (pack_dir(REPO) / "05_期刊对照表.md").read_text()
+        self.assertIn("Briefings in Bioinformatics", text)
+        self.assertIn("Nature Methods", text)
+        self.assertTrue((pack_dir(REPO) / "04_五成分与封存流程精讲.md").is_file())
+
     def test_component_teaching_doc_quotes_csv_components(self):
         from safeconf_audit.paper_pack import check_component_doc
 

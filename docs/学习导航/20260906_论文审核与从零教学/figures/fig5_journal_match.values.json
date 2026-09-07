@@ -1,0 +1,119 @@
+{
+  "stem": "fig5_journal_match",
+  "plotted": {
+    "have": {
+      "blind_e201": 2,
+      "magnitude_baseline": 2,
+      "partial_info": 2,
+      "beat_magnitude": 0,
+      "e204_formal": 0,
+      "e205_family": 0,
+      "new_external": 0,
+      "wet_mechanism": 0
+    },
+    "journals": [
+      "BMC Bioinformatics",
+      "Bioinformatics Advances",
+      "Bioinformatics",
+      "Briefings in Bioinformatics",
+      "Nucleic Acids Research",
+      "Genome Biology",
+      "Nature Communications",
+      "Nature Methods"
+    ],
+    "item_keys": [
+      "blind_e201",
+      "magnitude_baseline",
+      "partial_info",
+      "beat_magnitude",
+      "e204_formal",
+      "e205_family",
+      "new_external",
+      "wet_mechanism"
+    ],
+    "matrix": [
+      [
+        1.0,
+        1.0,
+        1.0,
+        0.45,
+        0.45,
+        0.45,
+        0.0,
+        0.45
+      ],
+      [
+        1.0,
+        1.0,
+        1.0,
+        0.45,
+        0.45,
+        0.45,
+        0.0,
+        0.45
+      ],
+      [
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.45
+      ],
+      [
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.45
+      ],
+      [
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  "png": "docs/学习导航/20260906_论文审核与从零教学/figures/fig5_journal_match.png",
+  "svg": "docs/学习导航/20260906_论文审核与从零教学/figures/fig5_journal_match.svg"
+}
