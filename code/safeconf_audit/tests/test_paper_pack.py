@@ -108,6 +108,25 @@ class TestPaperPack(unittest.TestCase):
         on_disk = json.loads((pack_dir(REPO) / "CLAIM_TABLE.json").read_text())
         self.assertEqual(on_disk["locked_display"], locked_quotes(self.table))
 
+    def test_scratch_claim_check_lists_pass_per_locked_number(self):
+        from tempfile import TemporaryDirectory
+        from safeconf_audit.paper_pack import run_all_checks, write_scratch_reports
+
+        report = run_all_checks(REPO, self.table)
+        self.assertTrue(report["ok"])
+        with TemporaryDirectory() as tmp:
+            scratch = Path(tmp)
+            write_scratch_reports(REPO, scratch, self.table, report)
+            text = (scratch / "claim_check.txt").read_text()
+            for key, value in self.table["locked_display"].items():
+                self.assertIn(f"[PASS] {key}={value}", text)
+            self.assertIn("ALL PASS", text)
+            terms = (scratch / "term_scan.txt").read_text()
+            self.assertIn("[PASS] 扰动 (perturbation)", terms)
+            self.assertIn("ALL PASS", terms)
+            figs = (scratch / "figure_check.txt").read_text()
+            self.assertIn("[PASS] fig3_e201_main panels a/b/c values match CSV rounding", figs)
+
 
 if __name__ == "__main__":
     unittest.main()

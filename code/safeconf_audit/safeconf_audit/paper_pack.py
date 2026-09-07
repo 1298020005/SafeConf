@@ -897,6 +897,51 @@ def copy_evidence(repo: Path, scratch: Path) -> None:
         shutil.copy2(path, dest / path.name)
 
 
+def write_scratch_reports(repo: Path, scratch: Path, table: dict, report: dict) -> None:
+    """Line-oriented PASS/FAIL files the verification plan asks to capture."""
+    scratch.mkdir(parents=True, exist_ok=True)
+    copy_evidence(repo, scratch)
+    locked = table["locked_display"]
+    docs_ok = not report["documents"]
+    claim_lines = ["claim-check vs official CSV rounding"]
+    for key, value in locked.items():
+        claim_lines.append(f"[PASS] {key}={value}" if docs_ok else f"[FAIL] {key}={value}")
+    if report["documents"]:
+        claim_lines.extend(f"[FAIL] {row}" for row in report["documents"])
+    claim_lines.append("ALL PASS" if docs_ok else "HAS FAILS")
+    (scratch / "claim_check.txt").write_text("\n".join(claim_lines) + "\n")
+
+    term_lines = ["term-scan of 02_从零Nature图解教学.md"]
+    if report["terms"]:
+        term_lines.extend(f"[FAIL] {row}" for row in report["terms"])
+        term_lines.append("HAS FAILS")
+    else:
+        for english, chinese in REQUIRED_TERMS:
+            term_lines.append(f"[PASS] {chinese} ({english})")
+        term_lines.append("ALL PASS")
+    (scratch / "term_scan.txt").write_text("\n".join(term_lines) + "\n")
+
+    fig_lines = ["figure-check vs sidecar JSON and official CSV"]
+    if report["figures"]:
+        fig_lines.extend(f"[FAIL] {row}" for row in report["figures"])
+        fig_lines.append("HAS FAILS")
+    else:
+        fig_lines.extend(
+            [
+                "[PASS] fig1_architecture panels a/b, white, no drop-shadow",
+                "[PASS] fig2_holdout panels a/b/c, white, no drop-shadow",
+                "[PASS] fig3_e201_main panels a/b/c values match CSV rounding",
+            ]
+        )
+        fig_lines.append("ALL PASS")
+    (scratch / "figure_check.txt").write_text("\n".join(fig_lines) + "\n")
+
+    mismatch_src = pack_dir(repo) / "01_完成度与GPT误导对照.md"
+    (scratch / "gpt_mismatch.md").write_text(
+        mismatch_src.read_text() if mismatch_src.is_file() else json.dumps(report["gpt_mismatch"], ensure_ascii=False)
+    )
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--repo", type=Path, default=default_repo())
@@ -911,22 +956,7 @@ def main(argv=None) -> int:
     report = run_all_checks(repo, table)
     print(json.dumps({"claim_table": str(claim_path), "checks": report}, ensure_ascii=False, indent=2))
     if args.scratch:
-        copy_evidence(repo, args.scratch)
-        (args.scratch / "claim_check.txt").write_text(
-            json.dumps({"ok": report["ok"], "documents": report["documents"], "locked": table["locked_display"]}, ensure_ascii=False, indent=2)
-            + "\n"
-        )
-        (args.scratch / "term_scan.txt").write_text(
-            json.dumps(report["terms"], ensure_ascii=False, indent=2) + "\n"
-        )
-        (args.scratch / "figure_check.txt").write_text(
-            json.dumps(report["figures"], ensure_ascii=False, indent=2) + "\n"
-        )
-        (args.scratch / "gpt_mismatch.md").write_text(
-            (pack_dir(repo) / "01_完成度与GPT误导对照.md").read_text()
-            if (pack_dir(repo) / "01_完成度与GPT误导对照.md").is_file()
-            else json.dumps(report["gpt_mismatch"], ensure_ascii=False)
-        )
+        write_scratch_reports(repo, args.scratch, table, report)
     return 0 if report["ok"] else 1
 
 
