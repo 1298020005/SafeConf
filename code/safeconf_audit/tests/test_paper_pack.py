@@ -209,6 +209,43 @@ L 379.898275 138.345284
         self.assertNotIn(("four_seeds", "training_weights"), edges)
         self.assertNotIn(("safeconf", "training_weights"), edges)
 
+    def test_journal_universe_covers_wos_lists_and_scores_each_title(self):
+        from safeconf_audit.journal_universe import (
+            BRM_OFFICIAL,
+            EVIDENCE_HAVE as UNIVERSE_HAVE,
+            MCB_OFFICIAL,
+            catalog,
+            check_universe_doc,
+            counts,
+            official_unmatched,
+        )
+        from safeconf_audit.paper_pack import EVIDENCE_HAVE
+
+        self.assertEqual(UNIVERSE_HAVE, EVIDENCE_HAVE)
+        self.assertEqual(len(MCB_OFFICIAL), 61)
+        self.assertEqual(len(BRM_OFFICIAL), 82)
+        rows = catalog()
+        self.assertGreaterEqual(len(rows), 100)
+        tally = counts(rows)
+        self.assertEqual(tally["mcb_official"], 61)
+        self.assertEqual(tally["brm_official"], 82)
+        self.assertEqual(official_unmatched(rows), [])
+        by_name = {row["name"].lower(): row for row in rows}
+        self.assertEqual(by_name["chromatographia"]["verdict"], "off_track")
+        self.assertEqual(by_name["bioinformatics"]["verdict"], "q2_not_ready")
+        self.assertEqual(by_name["nature methods"]["verdict"], "q1_off")
+        self.assertEqual(by_name["bmc bioinformatics"]["verdict"], "discuss_narrow")
+        self.assertFalse(self.table["publication"]["q2_certain"])
+        missing = check_universe_doc(REPO)
+        self.assertEqual(missing, [])
+        text = (pack_dir(REPO) / "06_全球相关期刊逐本评价.md").read_text()
+        for row in rows:
+            self.assertIn(row["name"], text)
+        self.assertIn("不能把二区写成一定能发", text)
+        csv_text = (pack_dir(REPO) / "journal_universe.csv").read_text()
+        self.assertIn("Chromatographia", csv_text)
+        self.assertIn("Bioinformatics", csv_text)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1052,13 +1052,19 @@ def generate_figures(repo: Path, table: dict | None = None) -> list[dict]:
             "svg.fonttype": "none",
         }
     )
-    return [
+    from safeconf_audit.journal_universe import write_universe_pack
+
+    figs = [
         generate_fig1_architecture(repo, table, fp),
         generate_fig2_holdout(repo, table, fp),
         generate_fig3_e201(repo, table, fp),
         generate_fig4_components(repo, table, fp),
         generate_fig5_journals(repo, table, fp),
     ]
+    universe = write_universe_pack(repo, fp)
+    figs.append({"stem": "fig6_journal_universe", "png": universe["fig6"]})
+    figs.append({"stem": "fig7_journal_heatmap", "png": universe["fig7"]})
+    return figs
 
 
 def locked_quotes(table: dict) -> dict[str, str]:
@@ -1231,6 +1237,8 @@ def check_figures(repo: Path, table: dict) -> list[str]:
         ("fig3_e201_main", ("a", "b", "c")),
         ("fig4_components", ("a", "b")),
         ("fig5_journal_match", ("a", "b")),
+        ("fig6_journal_universe", ("a", "b")),
+        ("fig7_journal_heatmap", ("a", "b")),
     ):
         svg = fig_dir / f"{stem}.svg"
         png = fig_dir / f"{stem}.png"
@@ -1306,6 +1314,21 @@ def check_figures(repo: Path, table: dict) -> list[str]:
                 missing.append("fig5 must mark blind_e201 as present")
             if "Nature Methods" not in plotted.get("journals", []):
                 missing.append("fig5 missing Nature Methods row")
+        if stem == "fig6_journal_universe":
+            if plotted.get("mcb_official") != 61:
+                missing.append("fig6 must record MCB official n=61")
+            if plotted.get("brm_official") != 82:
+                missing.append("fig6 must record BRM official n=82")
+            if int(plotted.get("total") or 0) < 100:
+                missing.append("fig6 total < 100")
+        if stem == "fig7_journal_heatmap":
+            names = plotted.get("all_names") or []
+            if "Chromatographia" not in names:
+                missing.append("fig7 missing Chromatographia")
+            if plotted.get("verdicts", {}).get("Bioinformatics") != "q2_not_ready":
+                missing.append("fig7 Bioinformatics not q2_not_ready")
+            if plotted.get("have", {}).get("beat_magnitude") != 0:
+                missing.append("fig7 must mark beat_magnitude as absent")
     return missing
 
 
@@ -1322,6 +1345,12 @@ def check_component_doc(repo: Path, table: dict) -> list[str]:
         if required not in text:
             missing.append(f"{path.name} missing {required}")
     return missing
+
+
+def check_universe_doc(repo: Path) -> list[str]:
+    from safeconf_audit.journal_universe import check_universe_doc as _check
+
+    return _check(repo)
 
 
 def check_journal_doc(repo: Path) -> list[str]:
@@ -1351,6 +1380,7 @@ def run_all_checks(repo: Path, table: dict | None = None) -> dict:
         "figures": check_figures(repo, table),
         "components": check_component_doc(repo, table),
         "journals": check_journal_doc(repo),
+        "universe": check_universe_doc(repo),
     }
     result["ok"] = all(not v for v in result.values() if isinstance(v, list))
     return result
@@ -1403,6 +1433,8 @@ def write_scratch_reports(repo: Path, scratch: Path, table: dict, report: dict) 
                 "[PASS] fig3b labels sit above errorbar whiskers",
                 "[PASS] fig4_components five-component Spearman match CSV",
                 "[PASS] fig5_journal_match Nature Methods row and missing E204/magnitude-win",
+                "[PASS] fig6_journal_universe MCB 61 / BRM 82 / n>=100",
+                "[PASS] fig7_journal_heatmap scores Chromatographia and Bioinformatics",
             ]
         )
         fig_lines.append("ALL PASS")
