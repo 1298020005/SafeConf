@@ -1,0 +1,35 @@
+{
+  "stem": "fig3_e201_main",
+  "plotted": {
+    "safeconf_pooled_spearman": "0.4082",
+    "magnitude_pooled_spearman": "0.6189",
+    "partial_spearman": "0.2503",
+    "safeconf_utility_20": "0.3200",
+    "magnitude_utility_20": "0.5943",
+    "k562_spearman": "0.4803",
+    "rpe1_spearman": "0.2868",
+    "hepg2_spearman": "0.5633",
+    "jurkat_spearman": "0.4453",
+    "target_safeconf_spearman": {
+      "K562": 0.4803211962347645,
+      "RPE1": 0.2867586560964389,
+      "hepg2": 0.5632982345853633,
+      "jurkat": 0.4453297352758127
+    },
+    "target_magnitude_spearman": {
+      "K562": 0.8992579621117099,
+      "RPE1": 0.5825322874230736,
+      "hepg2": 0.777139208173691,
+      "jurkat": 0.7094741700532472
+    },
+    "partial_by_target": {
+      "pooled": 0.2503365828486241,
+      "K562": 0.3474892851822693,
+      "RPE1": 0.1406828927168996,
+      "hepg2": 0.3258953195606687,
+      "jurkat": 0.3168642703285088
+    }
+  },
+  "png": "docs/学习导航/20260906_论文审核与从零教学/figures/fig3_e201_main.png",
+  "svg": "docs/学习导航/20260906_论文审核与从零教学/figures/fig3_e201_main.svg"
+}

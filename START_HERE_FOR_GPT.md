@@ -6,11 +6,12 @@
 
 ## 必须先读
 
-1. [小白审核与从零入口](docs/学习导航/07_小白审核与从零入口_20260906.md)
-2. [当前项目手把手学习](docs/学习导航/00_当前项目手把手学习_20260905.md)
-3. [当前研究判断](docs/实验结果/CURRENT_RESEARCH_DECISION_20260905.md)
-4. [E201 正式报告](docs/实验结果/E201_txpert_multitarget_retraining_20260802/formal_core_evaluation/reports/E201_CORE_REPORT.md)
-5. [E204 四背景工程验收](docs/实验结果/E204_risk_guided_training_20260830/PROFILE_ACCEPTANCE_20260905.md)
+1. [2026-09-06 审核与图解教学](docs/学习导航/20260906_论文审核与从零教学/README.md)
+2. [小白审核与从零入口](docs/学习导航/07_小白审核与从零入口_20260906.md)
+3. [当前项目手把手学习](docs/学习导航/00_当前项目手把手学习_20260905.md)
+4. [当前研究判断](docs/实验结果/CURRENT_RESEARCH_DECISION_20260905.md)
+5. [E201 正式报告](docs/实验结果/E201_txpert_multitarget_retraining_20260802/formal_core_evaluation/reports/E201_CORE_REPORT.md)
+6. [E204 四背景工程验收](docs/实验结果/E204_risk_guided_training_20260830/PROFILE_ACCEPTANCE_20260905.md)
 
 不要先从 `agents/`、旧 HTML、七月状态文件、GPT 长会话或编号最小的实验开始。它们用于追溯，不能覆盖以上材料。
 

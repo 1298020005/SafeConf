@@ -1,0 +1,30 @@
+{
+  "stem": "fig1_architecture",
+  "plotted": {
+    "example_task": {
+      "id": "K562::AARS+ctrl",
+      "n_target_cells": 38,
+      "n_target_batches": 29,
+      "n_source_cells": 161,
+      "n_source_contexts": 3,
+      "source_delta_dispersion": 0.0628814875238473,
+      "source_delta_dispersion_display": "0.06288",
+      "family_disagreement": 0.0103534086443723,
+      "family_disagreement_display": "0.01035",
+      "predicted_magnitude": 0.1017303016257968,
+      "predicted_magnitude_display": "0.10173",
+      "model_source_gap": 0.0085512483207572,
+      "model_source_gap_display": "0.00855",
+      "safeconf_e201_risk": 0.1178989477695403,
+      "safeconf_e201_risk_display": "0.11790",
+      "family_centroid_rmse": 0.0884883515817724,
+      "family_centroid_rmse_display": "0.08849",
+      "family_rms_error": 0.0890919832101741,
+      "family_rms_error_display": "0.08909",
+      "worst_seed_error": 0.0947241851207216,
+      "worst_seed_error_display": "0.09472"
+    }
+  },
+  "png": "docs/学习导航/20260906_论文审核与从零教学/figures/fig1_architecture.png",
+  "svg": "docs/学习导航/20260906_论文审核与从零教学/figures/fig1_architecture.svg"
+}
