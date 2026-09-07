@@ -176,6 +176,20 @@
       "official_general_baseline": 0.0584002144462775,
       "official_general_baseline_display": "0.0584"
     },
+    "components": {
+      "family_disagreement": 0.2401964938316256,
+      "model_source_gap": 0.148805909805141,
+      "source_delta_dispersion": 0.4618167913533449,
+      "negative_log_source_cells": 0.0450116141317031,
+      "support_context_deficit": -0.0384571932054595
+    },
+    "component_display": {
+      "family_disagreement": "0.2402",
+      "model_source_gap": "0.1488",
+      "source_delta_dispersion": "0.4618",
+      "negative_log_source_cells": "0.0450",
+      "support_context_deficit": "-0.0385"
+    },
     "identity_residual_max": 3.6107837e-10,
     "identity_residual_display": "3.61e-10",
     "certificate_passed": false,

@@ -163,6 +163,30 @@ L 379.898275 138.345284
 """
         self.assertEqual(fig3_panel_b_label_errorbar_hits(svg), [])
 
+    def test_component_spearman_matches_descriptive_csv(self):
+        desc = pd.read_csv(
+            REPO
+            / E201_CORE
+            / "tables"
+            / "E201_DESCRIPTIVE_ASSOCIATIONS.csv"
+        )
+        disp = self.table["e201"]["component_display"]
+        for key in disp:
+            row = _row(
+                desc,
+                scope="pooled",
+                stratum="primary_ge30",
+                predictor=key,
+                outcome="family_rms_error",
+            )
+            self.assertEqual(disp[key], round4(row.spearman))
+
+    def test_component_teaching_doc_quotes_csv_components(self):
+        from safeconf_audit.paper_pack import check_component_doc
+
+        missing = check_component_doc(REPO, self.table)
+        self.assertEqual(missing, [])
+
     def test_fig1a_training_weights_come_from_source_evidence(self):
         sidecar = json.loads(
             (pack_dir(REPO) / "figures" / "fig1_architecture.values.json").read_text()

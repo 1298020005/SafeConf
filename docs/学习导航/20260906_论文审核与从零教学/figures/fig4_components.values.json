@@ -1,0 +1,21 @@
+{
+  "stem": "fig4_components",
+  "plotted": {
+    "components": {
+      "family_disagreement": "0.2402",
+      "model_source_gap": "0.1488",
+      "source_delta_dispersion": "0.4618",
+      "negative_log_source_cells": "0.0450",
+      "support_context_deficit": "-0.0385"
+    },
+    "source_delta_dispersion": "0.4618",
+    "family_disagreement": "0.2402",
+    "model_source_gap": "0.1488",
+    "negative_log_source_cells": "0.0450",
+    "support_context_deficit": "-0.0385",
+    "safeconf_pooled_spearman": "0.4082",
+    "magnitude_pooled_spearman": "0.6189"
+  },
+  "png": "docs/学习导航/20260906_论文审核与从零教学/figures/fig4_components.png",
+  "svg": "docs/学习导航/20260906_论文审核与从零教学/figures/fig4_components.svg"
+}

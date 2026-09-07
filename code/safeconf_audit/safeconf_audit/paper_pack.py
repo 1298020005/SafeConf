@@ -123,6 +123,7 @@ def load_claim_table(repo: Path) -> dict:
     e201_err = pd.read_csv(repo / E201_CORE / "tables" / "E201_TARGET_ERROR_SUMMARY.csv")
     e201_tasks = pd.read_csv(repo / E201_CORE / "tables" / "E201_TASK_METRICS.csv")
     e201_gates = pd.read_csv(repo / E201_CORE / "tables" / "E201_FORMAL_GATES.csv")
+    e201_desc = pd.read_csv(repo / E201_CORE / "tables" / "E201_DESCRIPTIVE_ASSOCIATIONS.csv")
     e199_risk = pd.read_csv(repo / E199_TABLE / "E199_RISK_ASSOCIATIONS.csv")
     e199_util = pd.read_csv(repo / E199_TABLE / "E199_REVIEW_UTILITY.csv")
     e200_risk = pd.read_csv(repo / E200_TABLE / "E200_RISK_ASSOCIATIONS.csv")
@@ -153,6 +154,26 @@ def load_claim_table(repo: Path) -> dict:
     delta_u = _row(e201_delta, scope="pooled", measure="delta_oracle_normalized_utility")
     k562_err = _row(e201_err, stratum="primary_ge30", target="K562", predictor="four_seed_family")
     aars = _row(e201_tasks, target="K562", condition="AARS+ctrl")
+
+    def desc_rho(predictor: str) -> float:
+        return float(
+            _row(
+                e201_desc,
+                scope="pooled",
+                stratum="primary_ge30",
+                predictor=predictor,
+                outcome="family_rms_error",
+            ).spearman
+        )
+
+    components = {
+        "family_disagreement": desc_rho("family_disagreement"),
+        "model_source_gap": desc_rho("model_source_gap"),
+        "source_delta_dispersion": desc_rho("source_delta_dispersion"),
+        "negative_log_source_cells": desc_rho("negative_log_source_cells"),
+        "support_context_deficit": desc_rho("support_context_deficit"),
+    }
+    component_display = {key: round4(val) for key, val in components.items()}
     cert = _row(e201_gates, gate="family_error_certificate")
     identity = float(str(cert.observed).split("identity_max=")[1].split(";")[0])
     e199_div = _row(e199_risk, predictor="diversity_lower_bound")
@@ -256,6 +277,8 @@ def load_claim_table(repo: Path) -> dict:
                     k562_err.official_general_baseline_error_mean
                 ),
             },
+            "components": components,
+            "component_display": component_display,
             "identity_residual_max": identity,
             "identity_residual_display": f"{identity:.2e}".replace("e-0", "e-"),
             "certificate_passed": bool(cert.passed),
@@ -767,6 +790,83 @@ def generate_fig3_e201(repo: Path, table: dict, fp: FontProperties) -> dict:
     return _save_fig(repo, fig, "fig3_e201_main", plotted)
 
 
+def generate_fig4_components(repo: Path, table: dict, fp: FontProperties) -> dict:
+    fig, axes = plt.subplots(1, 2, figsize=(11.2, 4.0), facecolor="white")
+    fig.patch.set_facecolor("white")
+    disp = table["e201"]["component_display"]
+    names = [
+        "家族分歧",
+        "模型–源域差距",
+        "源域效应离散度",
+        "源域细胞少",
+        "背景覆盖缺口",
+    ]
+    keys = [
+        "family_disagreement",
+        "model_source_gap",
+        "source_delta_dispersion",
+        "negative_log_source_cells",
+        "support_context_deficit",
+    ]
+    vals = [float(disp[k]) for k in keys]
+    ax = axes[0]
+    _style_axes(ax, fp)
+    _panel_id(ax, "a", fp)
+    y = list(range(len(names), 0, -1))
+    colors = [OKABE["blue"] if v >= 0 else OKABE["vermillion"] for v in vals]
+    ax.barh(y, vals, color=colors, height=0.62, linewidth=0)
+    ax.axvline(0, color="black", linewidth=0.7)
+    ax.set_yticks(y, names, fontproperties=fp, fontsize=8)
+    ax.set_xlabel("与家族均方根误差的 Spearman", fontproperties=fp, fontsize=8)
+    ax.set_xlim(-0.15, 0.55)
+    ax.set_title("五个风险成分单独有多强", fontproperties=fp, fontsize=9, loc="left")
+    for yi, val in zip(y, vals):
+        ax.text(val + (0.012 if val >= 0 else -0.012), yi, f"{val:.4f}", va="center",
+                ha="left" if val >= 0 else "right", fontproperties=fp, fontsize=7)
+
+    ax = axes[1]
+    _style_axes(ax, fp)
+    _panel_id(ax, "b", fp)
+    combo_names = ["源域离散度\n（单成分最强）", "SafeConf\n五成分等权", "预测幅度"]
+    combo_vals = [
+        float(disp["source_delta_dispersion"]),
+        float(table["locked_display"]["safeconf_pooled_spearman"]),
+        float(table["locked_display"]["magnitude_pooled_spearman"]),
+    ]
+    bars = ax.bar(
+        range(3),
+        combo_vals,
+        color=[OKABE["green"], OKABE["blue"], OKABE["orange"]],
+        width=0.62,
+        linewidth=0,
+    )
+    ax.set_xticks(range(3), combo_names, fontproperties=fp, fontsize=7)
+    ax.set_ylabel("Spearman 秩相关", fontproperties=fp, fontsize=8)
+    ax.set_ylim(0, 0.75)
+    ax.set_title("等权平均会把强信号稀释", fontproperties=fp, fontsize=9, loc="left")
+    for bar, val in zip(bars, combo_vals):
+        ax.text(
+            bar.get_x() + bar.get_width() / 2,
+            val + 0.02,
+            f"{val:.4f}",
+            ha="center",
+            fontproperties=fp,
+            fontsize=7,
+        )
+    fig.subplots_adjust(left=0.16, right=0.98, top=0.86, bottom=0.18, wspace=0.32)
+    plotted = {
+        "components": disp,
+        "source_delta_dispersion": disp["source_delta_dispersion"],
+        "family_disagreement": disp["family_disagreement"],
+        "model_source_gap": disp["model_source_gap"],
+        "negative_log_source_cells": disp["negative_log_source_cells"],
+        "support_context_deficit": disp["support_context_deficit"],
+        "safeconf_pooled_spearman": table["locked_display"]["safeconf_pooled_spearman"],
+        "magnitude_pooled_spearman": table["locked_display"]["magnitude_pooled_spearman"],
+    }
+    return _save_fig(repo, fig, "fig4_components", plotted)
+
+
 def _save_fig(repo: Path, fig, stem: str, plotted: dict) -> dict:
     fig_dir = pack_dir(repo) / "figures"
     fig_dir.mkdir(parents=True, exist_ok=True)
@@ -798,6 +898,7 @@ def generate_figures(repo: Path, table: dict | None = None) -> list[dict]:
         generate_fig1_architecture(repo, table, fp),
         generate_fig2_holdout(repo, table, fp),
         generate_fig3_e201(repo, table, fp),
+        generate_fig4_components(repo, table, fp),
     ]
 
 
@@ -969,6 +1070,7 @@ def check_figures(repo: Path, table: dict) -> list[str]:
         ("fig1_architecture", ("a", "b")),
         ("fig2_holdout", ("a", "b", "c")),
         ("fig3_e201_main", ("a", "b", "c")),
+        ("fig4_components", ("a", "b")),
     ):
         svg = fig_dir / f"{stem}.svg"
         png = fig_dir / f"{stem}.png"
@@ -1030,6 +1132,26 @@ def check_figures(repo: Path, table: dict) -> list[str]:
                         f"not above whisker_hi={item['whisker_hi']}"
                     )
             missing.extend(fig3_panel_b_label_errorbar_hits(xml))
+        if stem == "fig4_components":
+            disp = table["e201"]["component_display"]
+            for key in disp:
+                if str(plotted.get(key)) != disp[key]:
+                    missing.append(f"fig4 {key}={plotted.get(key)} != csv {disp[key]}")
+    return missing
+
+
+def check_component_doc(repo: Path, table: dict) -> list[str]:
+    path = pack_dir(repo) / "04_五成分与封存流程精讲.md"
+    if not path.is_file():
+        return [f"missing {path.name}"]
+    text = path.read_text()
+    missing = []
+    for key, value in table["e201"]["component_display"].items():
+        if value not in text:
+            missing.append(f"{path.name} missing {key}={value}")
+    for required in ("源域证据", "封存", "K562::AARS+ctrl", "dispersion_only"):
+        if required not in text:
+            missing.append(f"{path.name} missing {required}")
     return missing
 
 
@@ -1040,6 +1162,7 @@ def run_all_checks(repo: Path, table: dict | None = None) -> dict:
         "terms": check_terms(pack_dir(repo) / "02_从零Nature图解教学.md"),
         "gpt_mismatch": check_gpt_mismatch(pack_dir(repo) / "01_完成度与GPT误导对照.md"),
         "figures": check_figures(repo, table),
+        "components": check_component_doc(repo, table),
     }
     result["ok"] = all(not v for v in result.values() if isinstance(v, list))
     return result
@@ -1090,6 +1213,7 @@ def write_scratch_reports(repo: Path, scratch: Path, table: dict, report: dict) 
                 "[PASS] fig2_holdout panels a/b/c, white, no drop-shadow",
                 "[PASS] fig3_e201_main panels a/b/c values match CSV rounding",
                 "[PASS] fig3b labels sit above errorbar whiskers",
+                "[PASS] fig4_components five-component Spearman match CSV",
             ]
         )
         fig_lines.append("ALL PASS")
