@@ -209,7 +209,7 @@ L 379.898275 138.345284
         self.assertNotIn(("four_seeds", "training_weights"), edges)
         self.assertNotIn(("safeconf", "training_weights"), edges)
 
-    def test_journal_universe_covers_wos_lists_and_scores_each_title(self):
+    def test_journal_universe_covers_source_lists_and_labels_each_row(self):
         from safeconf_audit.journal_universe import (
             BRM_OFFICIAL,
             EVIDENCE_HAVE as UNIVERSE_HAVE,
@@ -231,8 +231,15 @@ L 379.898275 138.345284
         self.assertEqual(tally["brm_official"], 82)
         self.assertEqual(tally["genetics_official"], 186)
         self.assertEqual(official_unmatched(rows), [])
+        # Literal uniqueness comes partly from including the journal name.  It
+        # is a row-identity check, not evidence of 820 independent scope reads.
         blurbs = [row["publishes"] for row in rows]
         self.assertEqual(len(set(blurbs)), len(blurbs))
+        self.assertEqual(tally["hand_profile"], 45)
+        self.assertEqual(tally["title_category_rule"], 775)
+        self.assertTrue(
+            all(row["official_scope_verified"] == "not_recorded" for row in rows)
+        )
         by_name = {row["name"].lower(): row for row in rows}
         self.assertEqual(by_name["chromatographia"]["verdict_a"], "off_track")
         self.assertEqual(by_name["chromatographia"]["verdict_b"], "off_track")
@@ -254,10 +261,14 @@ L 379.898275 138.345284
         for row in rows:
             self.assertIn(row["name"], text)
         self.assertIn("不能把二区写成一定能发", text)
+        self.assertIn("不是 820 本官网精读", text)
+        self.assertIn("不能证明 820 本都做了独立调研", text)
         csv_text = (pack_dir(REPO) / "journal_universe.csv").read_text()
         self.assertIn("Chromatographia", csv_text)
         self.assertIn("verdict_a", csv_text)
         self.assertIn("verdict_b", csv_text)
+        self.assertIn("profile_origin", csv_text)
+        self.assertIn("official_scope_verified", csv_text)
 
 
 if __name__ == "__main__":

@@ -1,5 +1,7 @@
 # 2026-09-06 论文审核与从零教学
 
+这套材料同时包含科研事实、图解教学和期刊初筛。第一次阅读不要直接钻进 4 MB 的期刊长表；先看第 7 项的审核说明，弄清哪些内容来自实验数据，哪些只是规则初筛。
+
 先读顺序：
 
 1. [完成度与 GPT 误导对照](./01_完成度与GPT误导对照.md)
@@ -7,7 +9,8 @@
 3. [一区二区投稿就绪报告](./03_一区二区投稿就绪报告.md)
 4. [五成分与封存流程精讲](./04_五成分与封存流程精讲.md)
 5. [期刊对照表](./05_期刊对照表.md)（8 本放大）
-6. [全球相关期刊逐本评价](./06_全球相关期刊逐本评价.md)（WoS 两个小类完整名单 + 交叉刊，每本都有表）
+6. [820 本期刊宽口径初筛](./06_全球相关期刊逐本评价.md)（每行分开标记业务 A/B；45 行人工画像，775 行刊名/类别规则；不是 820 本官网精读）
+7. [Grok 会话与 820 期刊产物详细审核](./07_Grok会话与820期刊产物详细审核_20260907.md)（这次应当先读：需求、产物、数字、图片、代码和局限完整对照）
 
 若 Cursor 报找不到 04：工作区请打开 `/home/yyf/proj`，或直接粘贴
 
@@ -22,5 +25,5 @@
 ```bash
 cd /home/yyf/proj
 PYTHONPATH=code/safeconf_audit python3 -m safeconf_audit.paper_pack --repo /home/yyf/proj
-PYTHONPATH=code/safeconf_audit python3 -m pytest code/safeconf_audit/tests/test_paper_pack.py
+PYTHONPATH=code/safeconf_audit python3 code/safeconf_audit/tests/test_paper_pack.py
 ```

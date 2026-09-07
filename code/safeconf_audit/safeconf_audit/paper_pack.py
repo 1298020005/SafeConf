@@ -1034,6 +1034,13 @@ def _save_fig(repo: Path, fig, stem: str, plotted: dict) -> dict:
     fig.savefig(png, dpi=200, facecolor="white", edgecolor="none")
     fig.savefig(svg, facecolor="white", edgecolor="none")
     plt.close(fig)
+    # Matplotlib leaves spaces at the end of some SVG path lines.  Removing
+    # them keeps generated assets clean under `git diff --check`.
+    svg.write_text(
+        "\n".join(line.rstrip() for line in svg.read_text(encoding="utf-8").splitlines())
+        + "\n",
+        encoding="utf-8",
+    )
     payload = {"stem": stem, "plotted": plotted, "png": str(png.relative_to(repo)), "svg": str(svg.relative_to(repo))}
     sidecar.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n")
     return payload

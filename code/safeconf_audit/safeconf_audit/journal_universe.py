@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
-"""Score journals on two businesses, not one blended verdict.
+"""Build a broad journal-screening inventory for two separate businesses.
 
 业务A：预测后风险路由（SafeConf / E201 已有正式盲测）
 业务B：风险引导训练（源域证据给 TxPert 加权 / E204 只有工程验收）
 
-Opened complete WoS SCIE lists (impactfactor.cn, 2026-09-07):
+Collected category-title lists from third-party impactfactor.cn pages on 2026-09-07:
 MCB 61, BRM 82, Multidisciplinary 85, CS Interdisciplinary 115,
 Genetics 186, Biotech 177/178, Medical Informatics 32, CS AI 153/154,
-plus Nature/Cell/CCF extras. Each title gets a unique summary and two marks.
+plus Nature/Cell/CCF extras. Every row gets two heuristic marks. Only the
+small hand-profiled subset has journal-specific prose; the remainder uses
+title/category rules and must not be described as individually researched.
 """
 from __future__ import annotations
 
@@ -383,6 +385,7 @@ def keyword_extra(name: str) -> str:
 
 
 def unique_publishes(name: str, track: str, cats: list[str]) -> str:
+    """Render a distinguishable fallback row; this is not official-scope research."""
     hand = profile_for(name)
     if hand:
         return hand["publishes"]
@@ -543,6 +546,10 @@ def catalog() -> list[dict]:
             "care_a": care_a,
             "care_b": care_b,
             "source_opened": source,
+            "profile_origin": "hand_profile" if hand else "title_category_rule",
+            # No per-title official URL / access date is stored in the catalog.
+            # A hand profile is richer prose, not proof of current official scope.
+            "official_scope_verified": "not_recorded",
         }
         if not row["a_why"]:
             row["a_why"] = row["reason"]
@@ -572,6 +579,10 @@ def counts(rows: Iterable[dict] | None = None) -> dict[str, int]:
     tally["q1_off"] = tally["a_q1_off"]
     tally["off_track"] = tally["a_off_track"]
     tally["review_only"] = tally["a_review_only"]
+    tally["hand_profile"] = sum(r.get("profile_origin") == "hand_profile" for r in rows)
+    tally["title_category_rule"] = sum(
+        r.get("profile_origin") == "title_category_rule" for r in rows
+    )
     return tally
 
 
@@ -688,7 +699,7 @@ def render_markdown(rows: list[dict] | None = None) -> str:
     for row in rows:
         by_a[row["verdict_a"]].append(row)
     parts = [
-        "# 全球相关期刊逐本评价（两条业务分开打标）",
+        "# 820 本期刊宽口径初筛（两条业务分开打标）",
         "",
         f"评价日期：{OPENED_ON}。数字锁在 `CLAIM_TABLE.json`：SafeConf Spearman 0.4082，预测幅度 0.6189，偏相关 0.2503，20% 效用 0.3200 vs 0.5943。E204 没有 80 轮正式效果。E205 未跑。",
         "",
@@ -699,11 +710,19 @@ def render_markdown(rows: list[dict] | None = None) -> str:
         f"**{BIZ_A}** 是给已经做完的预测打“这题可能错”的分。E201 有正式盲测。",
         f"**{BIZ_B}** 是用源域证据给 TxPert 重新加权再训练。E204 只有工程验收，没有正式效果。",
         "",
-        "上一份把两条业务揉成一个判定，又用同一段“他们要什么”套在所有生信刊上，这是糊弄。下面每一本都有：它实际发什么、业务A判定、业务B判定、两套证据灯。",
+        "本表修正了上一版把两条业务揉成一个判定的问题。每一行都有业务A、业务B和两套证据灯；但“每行都有文字”不等于“每本期刊都查过官网”。",
         "",
-        "## 0.1 打开了哪些完整名单（不是只看前几本）",
+        "## 使用前先看：这是一张初筛表，不是 820 本官网精读",
         "",
-        "不是地球上全部 SCI。打开并写入的是：",
+        f"- 去重后共 {tally['total']} 行。其中 **{tally['hand_profile']} 行**命中人工编写的期刊画像；其余 **{tally['title_category_rule']} 行**由刊名关键词、来源小类和固定规则生成。",
+        "- 规则生成行没有逐本打开官方 `Aims & Scope`（办刊范围），也没有统一核验期刊是否仍在收稿、是否更名、是否停刊。",
+        "- `publishes` 文本加入刊名后在字面上互不相同，只能证明每行能区分，不能证明 820 本都做了独立调研。",
+        "- 原始名单来自第三方分类网页的当日抓取，不是 Clarivate 官方主表快照；生物技术和人工智能小类还各缺 1 本。",
+        "- 所以它的正确用途是：宽口径排除明显不对轨的期刊，并找出需要再查官网的候选。它不能直接证明当前分区，也不能代替投稿前的逐刊核验。",
+        "",
+        "## 0.1 收录了哪些分类名单（不是全部 SCI，也不是官方全集）",
+        "",
+        "第三方分类页面中抓取并写入的是：",
         "",
         f"1. SCIE 数学与计算生物学 61/61（sort-699）",
         f"2. SCIE 生化研究方法 82/82（sort-615）",
@@ -717,15 +736,15 @@ def render_markdown(rows: list[dict] | None = None) -> str:
         "",
         f"去重后共 **{tally['total']}** 本。业务A：可讨论 {tally['a_discuss_narrow']}，未就绪 {tally['a_q2_not_ready']}，一区不够 {tally['a_q1_off']}，综述 {tally['a_review_only']}，不对轨 {tally['a_off_track']}。业务B：可讨论 {tally['b_discuss_narrow']}，未就绪 {tally['b_q2_not_ready']}，一区不够 {tally['b_q1_off']}，综述 {tally['b_review_only']}，不对轨 {tally['b_off_track']}。",
         "",
-        "色谱、晶体、临床遗传凭刊名加小类判定不对轨，没有再点进每本 Aims & Scope。方法刊、基因组刊、顶刊按下表用 E201/E204 证据逐本写。",
+        f"人工画像覆盖 {tally['hand_profile']} 行；其余 {tally['title_category_rule']} 行依据刊名和小类做规则初筛。重点候选仍需逐本访问期刊官网，核对当前办刊范围、文章类型、是否收稿和学院采用的当年分区。",
         "",
         "![图 6 两条业务的判定计数](figures/fig6_journal_universe.png)",
         "",
         "**图 6a** 业务A和业务B的判定各有多少本。**图 6b** 业务A还可能被问到的刊，按轨道拆开。",
         "",
-        "![图 7 每一本对两条业务的格子](figures/fig7_journal_heatmap.png)",
+        "![图 7 候选逐行显示与不对轨类别汇总](figures/fig7_journal_heatmap.png)",
         "",
-        "**图 7a** 业务A或业务B不是“学科不对轨”的刊。绿=可讨论，橙=未就绪，蓝=一区不够，灰=综述，红=不对轨。**图 7b** 其余不对轨的刊也逐本打了两个标记。",
+        "**图 7a** 逐行显示至少一条业务未被判为“不对轨”的候选。绿=可讨论，橙=未就绪，蓝=一区不够，灰=综述，红=不对轨。**图 7b** 不是逐刊热图，而是把两条业务都不对轨的期刊按规则轨道汇总计数；完整名称仍在 CSV。",
         "",
         "机器可读总表：[journal_universe.csv](./journal_universe.csv)。",
         "",
@@ -733,22 +752,22 @@ def render_markdown(rows: list[dict] | None = None) -> str:
         "",
         master,
         "",
-        "## 2. 怎么读后面的逐本表",
+        "## 2. 怎么读后面的逐行表",
         "",
-        "每一本三块：它实际发什么；业务A vs 业务B对照表；两套八盏证据灯。业务A的灯里，E204 不是桌面拒项（那是另一篇稿）。业务B的灯里，E204 没有正式效果就是红灯。",
+        "每行三块：范围描述；业务A vs 业务B对照表；两套八盏证据灯。人工画像行可作为候选讨论的起点；规则生成行只能用于初筛。业务A的灯里，E204 不是桌面拒项（那是另一篇稿）。业务B的灯里，E204 没有正式效果就是红灯。",
         "",
     ]
     headings = {
-        "discuss_narrow": "## 3. 业务A可讨论——逐本（业务B仍可能未就绪）",
-        "q2_not_ready": "## 4. 业务A候选但未就绪——逐本",
-        "q1_off": "## 5. 业务A一区/顶刊不够——逐本",
-        "review_only": "## 6. 只收综述或方案——逐本",
-        "off_track": "## 7. 业务A学科不对轨——逐本（业务B同样逐本打标）",
+        "discuss_narrow": "## 3. 业务A可讨论——逐行初筛（业务B仍可能未就绪）",
+        "q2_not_ready": "## 4. 业务A候选但未就绪——逐行初筛",
+        "q1_off": "## 5. 业务A一区/顶刊不够——逐行初筛",
+        "review_only": "## 6. 只收综述或方案——逐行初筛",
+        "off_track": "## 7. 业务A学科不对轨——逐行初筛（业务B也有规则标记）",
     }
     for verdict in VERDICT_ORDER:
         parts.append(headings[verdict])
         parts.append("")
-        parts.append(f"这一类以业务A计 {len(by_a[verdict])} 本。每一本仍然同时给出业务B。")
+        parts.append(f"这一类以业务A计 {len(by_a[verdict])} 本。每行仍然同时给出业务B；请结合 `profile_origin` 判断是人工画像还是规则初筛。")
         parts.append("")
         for row in by_a[verdict]:
             parts.append(_journal_section(row))
@@ -794,11 +813,18 @@ def write_csv(path: Path, rows: list[dict] | None = None) -> Path:
         "b_have",
         "b_lack",
         "source_opened",
+        "profile_origin",
+        "official_scope_verified",
         "care_a",
         "care_b",
     ]
     with path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fieldnames, extrasaction="ignore")
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=fieldnames,
+            extrasaction="ignore",
+            lineterminator="\n",
+        )
         writer.writeheader()
         for row in rows:
             payload = dict(row)
@@ -845,6 +871,13 @@ def _save_fig(repo: Path, fig, stem: str, plotted: dict) -> dict:
     fig.savefig(png, dpi=180, facecolor="white", edgecolor="none")
     fig.savefig(svg, facecolor="white", edgecolor="none")
     plt.close(fig)
+    # Matplotlib emits harmless spaces at the end of a few SVG path lines.
+    # Normalize them so `git diff --check` remains a useful release gate.
+    svg.write_text(
+        "\n".join(line.rstrip() for line in svg.read_text(encoding="utf-8").splitlines())
+        + "\n",
+        encoding="utf-8",
+    )
     payload = {
         "stem": stem,
         "plotted": plotted,
@@ -959,16 +992,22 @@ def generate_fig7_heatmap(repo: Path, fp: FontProperties, rows: list[dict] | Non
     ax.barh(y, [n for _, n in items], color=OKABE["vermillion"], height=0.62, linewidth=0)
     ax.set_yticks(y, [name for name, _ in items], fontproperties=fp, fontsize=7)
     ax.set_xlabel("两条业务都不对轨的本数", fontproperties=fp, fontsize=8)
-    ax.set_title("不对轨的刊也按轨道点过名", fontproperties=fp, fontsize=9, loc="left")
+    ax.set_title("两条业务都不对轨：按规则轨道汇总", fontproperties=fp, fontsize=9, loc="left")
     for yi, (_, n) in zip(y, items):
         ax.text(n + 0.2, yi, str(n), va="center", fontproperties=fp, fontsize=7)
     fig.subplots_adjust(left=0.32, right=0.98, top=0.94, bottom=0.08, wspace=0.35)
+    method_tally = counts(rows)
     plotted = {
         "have": EVIDENCE_HAVE,
         "item_keys": [k for k, _ in EVIDENCE_ITEMS],
         "on_topic": [r["name"] for r in on_topic],
         "off_topic": [r["name"] for r in off_topic],
         "all_names": [r["name"] for r in rows],
+        "methodology": {
+            "hand_profile": method_tally["hand_profile"],
+            "title_category_rule": method_tally["title_category_rule"],
+            "panel_b_is_track_aggregate": True,
+        },
         "matrix_on": matrix,
         "verdicts": {r["name"]: r["verdict_a"] for r in rows},
         "verdicts_a": {r["name"]: r["verdict_a"] for r in rows},
@@ -1000,6 +1039,8 @@ def write_universe_pack(repo: Path, fp: FontProperties | None = None) -> dict:
         "n": len(rows),
         "unmatched_official": official_unmatched(rows),
         "unique_publishes": len(set(blurbs)) == len(blurbs),
+        "hand_profile": counts(rows)["hand_profile"],
+        "title_category_rule": counts(rows)["title_category_rule"],
         "markdown": str(md.relative_to(repo)),
         "csv": str(csv_path.relative_to(repo)),
         "fig6": fig6["png"],
@@ -1024,7 +1065,7 @@ def check_universe_doc(repo: Path) -> list[str]:
         missing.append(f"catalog too small: {len(rows)}")
     blurbs = [r["publishes"] for r in rows]
     if len(set(blurbs)) != len(blurbs):
-        missing.append("publishes text is not unique per journal")
+        missing.append("fallback display text does not identify each row")
     by_name = {r["name"].lower(): r for r in rows}
     required = {
         "chromatographia": ("off_track", "off_track"),
@@ -1052,6 +1093,10 @@ def check_universe_doc(repo: Path) -> list[str]:
         "业务B",
         "sort-699",
         "sort-672",
+        "45 行",
+        "775 行",
+        "不是 820 本官网精读",
+        "不能证明 820 本都做了独立调研",
     ):
         if phrase not in text:
             missing.append(f"{UNIVERSE_MD} missing {phrase}")

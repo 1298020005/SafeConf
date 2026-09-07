@@ -1667,6 +1667,11 @@
       "World Journal of Microbiology & Biotechnology",
       "Yeast"
     ],
+    "methodology": {
+      "hand_profile": 45,
+      "title_category_rule": 775,
+      "panel_b_is_track_aggregate": true
+    },
     "matrix_on": [
       [
         1.0,
