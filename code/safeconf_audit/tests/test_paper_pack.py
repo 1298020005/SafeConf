@@ -23,8 +23,10 @@ from safeconf_audit.paper_pack import (  # noqa: E402
     _row,
     check_documents,
     check_figures,
+    check_fig1_source_only_weights,
     check_gpt_mismatch,
     check_terms,
+    fig3_panel_b_label_errorbar_hits,
     load_claim_table,
     locked_quotes,
     pack_dir,
@@ -126,6 +128,52 @@ class TestPaperPack(unittest.TestCase):
             self.assertIn("ALL PASS", terms)
             figs = (scratch / "figure_check.txt").read_text()
             self.assertIn("[PASS] fig3_e201_main panels a/b/c values match CSV rounding", figs)
+            self.assertIn("[PASS] fig3b labels sit above errorbar whiskers", figs)
+            self.assertIn("[PASS] fig1a training weights from 源域证据 not four seeds", figs)
+
+    def test_fig3b_collision_detector_flags_label_on_whisker(self):
+        svg = """<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg">
+ <g id="axes_2">
+  <g id="LineCollection_1">
+   <path d="M 379.898275 170.597914
+L 379.898275 138.345284
+"/>
+  </g>
+  <text style="font-size: 7px" x="379.898275" y="145.561081">0.3200</text>
+ </g>
+</svg>
+"""
+        hits = fig3_panel_b_label_errorbar_hits(svg)
+        self.assertTrue(hits, "detector must flag 0.3200 sitting on the whisker")
+        self.assertTrue(any("0.3200" in row for row in hits))
+
+    def test_fig3b_collision_detector_accepts_label_above_whisker(self):
+        svg = """<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg">
+ <g id="axes_2">
+  <g id="LineCollection_1">
+   <path d="M 379.898275 170.597914
+L 379.898275 138.345284
+"/>
+  </g>
+  <text style="font-size: 7px" x="379.898275" y="128.0">0.3200</text>
+ </g>
+</svg>
+"""
+        self.assertEqual(fig3_panel_b_label_errorbar_hits(svg), [])
+
+    def test_fig1a_training_weights_come_from_source_evidence(self):
+        sidecar = json.loads(
+            (pack_dir(REPO) / "figures" / "fig1_architecture.values.json").read_text()
+        )
+        svg = (pack_dir(REPO) / "figures" / "fig1_architecture.svg").read_text()
+        missing = check_fig1_source_only_weights(sidecar["plotted"], svg)
+        self.assertEqual(missing, [])
+        edges = [tuple(item) for item in sidecar["plotted"]["layout"]["edges"]]
+        self.assertIn(("source_evidence", "training_weights"), edges)
+        self.assertNotIn(("four_seeds", "training_weights"), edges)
+        self.assertNotIn(("safeconf", "training_weights"), edges)
 
 
 if __name__ == "__main__":

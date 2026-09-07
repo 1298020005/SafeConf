@@ -23,6 +23,106 @@
       "family_rms_error_display": "0.08909",
       "worst_seed_error": 0.0947241851207216,
       "worst_seed_error_display": "0.09472"
+    },
+    "layout": {
+      "boxes": {
+        "unperturbed": {
+          "x": 0.02,
+          "y": 0.74,
+          "w": 0.24,
+          "h": 0.16,
+          "label": "未扰动细胞\n基础表达状态"
+        },
+        "perturbation": {
+          "x": 0.02,
+          "y": 0.52,
+          "w": 0.24,
+          "h": 0.16,
+          "label": "基因敲低\n扰动条件"
+        },
+        "txpert": {
+          "x": 0.34,
+          "y": 0.6,
+          "w": 0.24,
+          "h": 0.18,
+          "label": "TxPert\n预测扰动后表达"
+        },
+        "four_seeds": {
+          "x": 0.66,
+          "y": 0.76,
+          "w": 0.32,
+          "h": 0.14,
+          "label": "四个随机种子\n四份预测"
+        },
+        "safeconf": {
+          "x": 0.66,
+          "y": 0.54,
+          "w": 0.32,
+          "h": 0.16,
+          "label": "SafeConf\n风险特征"
+        },
+        "review": {
+          "x": 0.66,
+          "y": 0.32,
+          "w": 0.32,
+          "h": 0.16,
+          "label": "优先复核\n高风险任务"
+        },
+        "source_evidence": {
+          "x": 0.02,
+          "y": 0.06,
+          "w": 0.4,
+          "h": 0.2,
+          "label": "源域证据\n细胞数·背景数·离散度"
+        },
+        "training_weights": {
+          "x": 0.5,
+          "y": 0.06,
+          "w": 0.48,
+          "h": 0.2,
+          "label": "训练加权（E204）\n尚未有正式效果"
+        }
+      },
+      "edges": [
+        [
+          "unperturbed",
+          "txpert"
+        ],
+        [
+          "perturbation",
+          "txpert"
+        ],
+        [
+          "txpert",
+          "four_seeds"
+        ],
+        [
+          "four_seeds",
+          "safeconf"
+        ],
+        [
+          "safeconf",
+          "review"
+        ],
+        [
+          "source_evidence",
+          "training_weights"
+        ]
+      ],
+      "forbidden_edges": [
+        [
+          "four_seeds",
+          "training_weights"
+        ],
+        [
+          "safeconf",
+          "training_weights"
+        ],
+        [
+          "txpert",
+          "training_weights"
+        ]
+      ]
     }
   },
   "png": "docs/学习导航/20260906_论文审核与从零教学/figures/fig1_architecture.png",

@@ -440,7 +440,7 @@ def _arrow(ax, x1, y1, x2, y2):
 
 
 def generate_fig1_architecture(repo: Path, table: dict, fp: FontProperties) -> dict:
-    fig, axes = plt.subplots(1, 2, figsize=(11.2, 4.4), facecolor="white")
+    fig, axes = plt.subplots(1, 2, figsize=(11.2, 5.0), facecolor="white")
     fig.patch.set_facecolor("white")
 
     ax = axes[0]
@@ -449,20 +449,67 @@ def generate_fig1_architecture(repo: Path, table: dict, fp: FontProperties) -> d
     ax.axis("off")
     ax.set_facecolor("white")
     _panel_id(ax, "a", fp)
-    ax.text(0.02, 0.96, "系统逻辑：先预测，再打风险分", fontproperties=fp, fontsize=9)
-    _box(ax, 0.04, 0.70, 0.28, 0.18, "未扰动细胞\n基础表达状态", fp, "#EEF6FB", OKABE["blue"])
-    _box(ax, 0.04, 0.42, 0.28, 0.18, "基因敲低\n扰动条件", fp, "#EEF6FB", OKABE["blue"])
-    _box(ax, 0.40, 0.54, 0.26, 0.22, "TxPert\n预测扰动后表达", fp, "#FFF4DC", OKABE["orange"])
-    _box(ax, 0.72, 0.70, 0.24, 0.18, "四个随机种子\n四份预测", fp, "#F4F4F4")
-    _box(ax, 0.72, 0.38, 0.24, 0.22, "SafeConf\n风险特征", fp, "#E8F6F0", OKABE["green"])
-    _box(ax, 0.40, 0.08, 0.26, 0.16, "优先复核\n高风险任务", fp, "#FDECEC", OKABE["vermillion"])
-    _box(ax, 0.72, 0.08, 0.24, 0.16, "训练加权\n尚未有正式效果", fp, "#F4F4F4")
-    _arrow(ax, 0.32, 0.79, 0.40, 0.68)
-    _arrow(ax, 0.32, 0.51, 0.40, 0.62)
-    _arrow(ax, 0.66, 0.65, 0.72, 0.79)
-    _arrow(ax, 0.85, 0.70, 0.85, 0.60)
-    _arrow(ax, 0.72, 0.49, 0.66, 0.20)
-    _arrow(ax, 0.84, 0.38, 0.84, 0.24)
+    ax.text(0.02, 0.97, "预测后复核 与 源域训练加权 分开", fontproperties=fp, fontsize=9)
+    boxes = {
+        "unperturbed": (0.02, 0.74, 0.24, 0.16, "未扰动细胞\n基础表达状态", "#EEF6FB", OKABE["blue"]),
+        "perturbation": (0.02, 0.52, 0.24, 0.16, "基因敲低\n扰动条件", "#EEF6FB", OKABE["blue"]),
+        "txpert": (0.34, 0.60, 0.24, 0.18, "TxPert\n预测扰动后表达", "#FFF4DC", OKABE["orange"]),
+        "four_seeds": (0.66, 0.76, 0.32, 0.14, "四个随机种子\n四份预测", "#F4F4F4", "#222222"),
+        "safeconf": (0.66, 0.54, 0.32, 0.16, "SafeConf\n风险特征", "#E8F6F0", OKABE["green"]),
+        "review": (0.66, 0.32, 0.32, 0.16, "优先复核\n高风险任务", "#FDECEC", OKABE["vermillion"]),
+        "source_evidence": (
+            0.02,
+            0.06,
+            0.40,
+            0.20,
+            "源域证据\n细胞数·背景数·离散度",
+            "#EEF6FB",
+            OKABE["blue"],
+        ),
+        "training_weights": (
+            0.50,
+            0.06,
+            0.48,
+            0.20,
+            "训练加权（E204）\n尚未有正式效果",
+            "#F4F4F4",
+            "#222222",
+        ),
+    }
+    for _name, (x, y, w, h, text, face, edge) in boxes.items():
+        _box(ax, x, y, w, h, text, fp, face, edge)
+
+    def _mid(name, side):
+        x, y, w, h, *_ = boxes[name]
+        if side == "right":
+            return x + w, y + h / 2
+        if side == "left":
+            return x, y + h / 2
+        if side == "top":
+            return x + w / 2, y + h
+        return x + w / 2, y
+
+    edges = [
+        ("unperturbed", "right", "txpert", "left"),
+        ("perturbation", "right", "txpert", "left"),
+        ("txpert", "right", "four_seeds", "left"),
+        ("four_seeds", "bottom", "safeconf", "top"),
+        ("safeconf", "bottom", "review", "top"),
+        ("source_evidence", "right", "training_weights", "left"),
+    ]
+    for src, src_side, dst, dst_side in edges:
+        x1, y1 = _mid(src, src_side)
+        x2, y2 = _mid(dst, dst_side)
+        _arrow(ax, x1, y1, x2, y2)
+    layout = {
+        "boxes": {name: {"x": v[0], "y": v[1], "w": v[2], "h": v[3], "label": v[4]} for name, v in boxes.items()},
+        "edges": [(src, dst) for src, _a, dst, _b in edges],
+        "forbidden_edges": [
+            ("four_seeds", "training_weights"),
+            ("safeconf", "training_weights"),
+            ("txpert", "training_weights"),
+        ],
+    }
 
     ax = axes[1]
     ax.set_xlim(0, 1)
@@ -497,8 +544,13 @@ def generate_fig1_architecture(repo: Path, table: dict, fp: FontProperties) -> d
         "#FDECEC",
         OKABE["vermillion"],
     )
-    fig.subplots_adjust(left=0.06, right=0.98, top=0.90, bottom=0.06, wspace=0.18)
-    return _save_fig(repo, fig, "fig1_architecture", {"example_task": ex})
+    fig.subplots_adjust(left=0.05, right=0.98, top=0.92, bottom=0.05, wspace=0.16)
+    return _save_fig(
+        repo,
+        fig,
+        "fig1_architecture",
+        {"example_task": ex, "layout": layout},
+    )
 
 
 def generate_fig2_holdout(repo: Path, table: dict, fp: FontProperties) -> dict:
@@ -656,10 +708,18 @@ def generate_fig3_e201(repo: Path, table: dict, fp: FontProperties) -> dict:
     )
     ax.set_xticks(xs, ["SafeConf", "预测幅度"], fontproperties=fp, fontsize=8)
     ax.set_ylabel("20% 复核效用", fontproperties=fp, fontsize=8)
-    ax.set_ylim(0, 0.85)
+    upper = [pooled["safeconf_utility_ci"][1], pooled["magnitude_utility_ci"][1]]
+    ax.set_ylim(0, max(upper) + 0.12)
     ax.set_title("固定检查两成任务", fontproperties=fp, fontsize=9, loc="left")
-    for x, h, lab in zip(xs, heights, [pooled["safeconf_utility_20_display"], pooled["magnitude_utility_20_display"]]):
-        ax.text(x, h + 0.04, lab, ha="center", fontproperties=fp, fontsize=7)
+    bar_labels = []
+    for x, hi, lab in zip(
+        xs,
+        upper,
+        [pooled["safeconf_utility_20_display"], pooled["magnitude_utility_20_display"]],
+    ):
+        label_y = hi + 0.035
+        ax.text(x, label_y, lab, ha="center", va="bottom", fontproperties=fp, fontsize=7)
+        bar_labels.append({"text": lab, "data_y": label_y, "whisker_hi": hi})
 
     ax = axes[2]
     _style_axes(ax, fp)
@@ -702,6 +762,7 @@ def generate_fig3_e201(repo: Path, table: dict, fp: FontProperties) -> dict:
             "pooled": pooled["partial_spearman"],
             **{name: targets[name]["partial_spearman"] for name in order},
         },
+        "bar_labels": bar_labels,
     }
     return _save_fig(repo, fig, "fig3_e201_main", plotted)
 
@@ -814,6 +875,93 @@ def check_gpt_mismatch(path: Path) -> list[str]:
     return missing
 
 
+def _svg_local(tag: str) -> str:
+    return tag.split("}")[-1]
+
+
+def fig3_panel_b_label_errorbar_hits(svg_xml: str) -> list[str]:
+    """Return collisions between 4-decimal bar labels and vertical error bars.
+
+    Matplotlib SVG y grows downward. A label whose bounding box overlaps the
+    vertical whisker at the same x is unreadable (e.g. 0.3200 → 0.3 00).
+    """
+    root = ET.fromstring(svg_xml)
+    axes2 = None
+    for node in root.iter():
+        if _svg_local(node.tag) == "g" and node.get("id") == "axes_2":
+            axes2 = node
+            break
+    if axes2 is None:
+        return ["fig3 svg missing axes_2 (panel b)"]
+    labels = []
+    bars = []
+    for node in axes2.iter():
+        if _svg_local(node.tag) == "text":
+            body = "".join(node.itertext()).strip()
+            if re.fullmatch(r"0\.\d{4}", body):
+                labels.append(
+                    {
+                        "text": body,
+                        "x": float(node.get("x")),
+                        "y": float(node.get("y")),
+                        "size": float(re.search(r"([0-9.]+)px", node.get("style") or "font-size: 7px").group(1)),
+                    }
+                )
+        if _svg_local(node.tag) == "path":
+            d = (node.get("d") or "").replace("\n", " ")
+            match = re.match(
+                r"M\s+([0-9.]+)\s+([0-9.]+)\s+L\s+([0-9.]+)\s+([0-9.]+)",
+                d.strip(),
+            )
+            if not match:
+                continue
+            x1, y1, x2, y2 = map(float, match.groups())
+            if abs(x1 - x2) < 0.05 and abs(y1 - y2) > 5:
+                bars.append({"x": x1, "y0": min(y1, y2), "y1": max(y1, y2)})
+    hits = []
+    for lab in labels:
+        half_w = 0.33 * lab["size"] * len(lab["text"])
+        top = lab["y"] - lab["size"]
+        bottom = lab["y"] + 1.5
+        for bar in bars:
+            if abs(bar["x"] - lab["x"]) > half_w:
+                continue
+            if bottom < bar["y0"] - 1 or top > bar["y1"] + 1:
+                continue
+            hits.append(
+                f"fig3b label {lab['text']} at y={lab['y']:.1f} intersects errorbar "
+                f"[{bar['y0']:.1f},{bar['y1']:.1f}]"
+            )
+    return hits
+
+
+def check_fig1_source_only_weights(plotted: dict, svg_xml: str) -> list[str]:
+    missing = []
+    layout = plotted.get("layout") or {}
+    edges = [tuple(item) for item in layout.get("edges", [])]
+    if ("source_evidence", "training_weights") not in edges:
+        missing.append("fig1a missing edge 源域证据 → 训练加权")
+    for forbidden in layout.get("forbidden_edges", []):
+        if tuple(forbidden) in edges:
+            missing.append(f"fig1a forbidden edge {forbidden[0]} → {forbidden[1]}")
+    if "源域证据" not in svg_xml:
+        missing.append("fig1 svg missing text 源域证据")
+    if "训练加权" not in svg_xml:
+        missing.append("fig1 svg missing text 训练加权")
+    boxes = layout.get("boxes") or {}
+    src = boxes.get("source_evidence")
+    train = boxes.get("training_weights")
+    seeds = boxes.get("four_seeds")
+    safe = boxes.get("safeconf")
+    if src and train and src["y"] + src["h"] > 0.35:
+        missing.append("fig1a 源域证据 is not on the separate lower training row")
+    if train and seeds and abs(train["x"] - seeds["x"]) < 0.02 and abs(train["y"] - seeds["y"]) < 0.02:
+        missing.append("fig1a 训练加权 stacked on 四个随机种子")
+    if train and safe and abs(train["x"] - safe["x"]) < 0.05 and train["y"] < safe["y"]:
+        missing.append("fig1a 训练加权 still hangs off the SafeConf prediction stack")
+    return missing
+
+
 def check_figures(repo: Path, table: dict) -> list[str]:
     missing = []
     fig_dir = pack_dir(repo) / "figures"
@@ -873,6 +1021,15 @@ def check_figures(repo: Path, table: dict) -> list[str]:
             csv_ex = table["e201"]["example_task"]
             if ex["family_rms_error_display"] != csv_ex["family_rms_error_display"]:
                 missing.append("fig1 AARS family_rms_error mismatch")
+            missing.extend(check_fig1_source_only_weights(plotted, xml))
+        if stem == "fig3_e201_main":
+            for item in plotted.get("bar_labels") or []:
+                if float(item["data_y"]) <= float(item["whisker_hi"]):
+                    missing.append(
+                        f"fig3b label {item['text']} data_y={item['data_y']} "
+                        f"not above whisker_hi={item['whisker_hi']}"
+                    )
+            missing.extend(fig3_panel_b_label_errorbar_hits(xml))
     return missing
 
 
@@ -929,8 +1086,10 @@ def write_scratch_reports(repo: Path, scratch: Path, table: dict, report: dict) 
         fig_lines.extend(
             [
                 "[PASS] fig1_architecture panels a/b, white, no drop-shadow",
+                "[PASS] fig1a training weights from 源域证据 not four seeds",
                 "[PASS] fig2_holdout panels a/b/c, white, no drop-shadow",
                 "[PASS] fig3_e201_main panels a/b/c values match CSV rounding",
+                "[PASS] fig3b labels sit above errorbar whiskers",
             ]
         )
         fig_lines.append("ALL PASS")
