@@ -73,6 +73,18 @@ output/
 # Qoder 本地缓存
 .qoder/
 
+# Grok 本机状态绝不入库（会话、压缩摘要、锁文件）。
+# 仓库里已跟踪的只有两份很小的项目规则/技能：
+#   .grok/rules/copy-buffer.md
+#   .grok/skills/copy/SKILL.md
+# 那是 2026-08-20 snapshot（f155225）故意加的，不是 ~/.grok/ 聊天记录。
+# 已跟踪文件不受 ignore 影响；下面挡住以后误加的 sessions/ 等。
+.grok/sessions/
+.grok/**/*.jsonl
+.grok/**/*.lock
+.grok/**/compaction/
+.grok/**/assets/
+
 # === 第三道门：杂杂 ===
 
 # zip 包不进 git（太大）
