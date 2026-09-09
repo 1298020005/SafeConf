@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SafeConf 小白从头讲 V3（2026-09-09）</title>
+<style>
+  :root{
+    --red:#C0392B; --blue:#1F4E79; --teal:#1A7A5C; --orange:#B36B00;
+    --ink:#1a1a1a; --soft:#444; --faint:#666; --line:#ddd; --panel:#fafafa;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:#fff;color:var(--ink);
+    font-family:"Source Han Serif SC","Noto Serif CJK SC","Songti SC",Georgia,serif;
+    font-size:18px;line-height:1.95;}
+  .page{max-width:920px;margin:0 auto;padding:40px 28px 96px;}
+  h1,h2,h3,figcaption,.tag{font-family:"PingFang SC","Microsoft YaHei",Arial,sans-serif;}
+  h1{font-size:28px;line-height:1.35;margin:0 0 8px;}
+  .sub{color:var(--faint);font-size:15px;margin-bottom:8px;}
+  .meta{color:var(--faint);font-size:13.5px;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:24px;}
+  h2{font-size:22px;margin:52px 0 10px;padding-top:16px;border-top:2px solid var(--ink);}
+  h2 .no{color:var(--red);margin-right:8px;}
+  h3{font-size:18px;margin:28px 0 8px;color:var(--blue);}
+  p{margin:10px 0;}
+  .lede{font-size:19px;color:var(--soft);}
+  figure{margin:28px 0 32px;padding:18px 14px 12px;background:#fff;border:1px solid #eee;}
+  figure svg{display:block;margin:0 auto;max-width:100%;height:auto;}
+  figcaption{font-size:15px;line-height:1.75;color:var(--soft);margin-top:12px;}
+  figcaption b{color:var(--ink);}
+  .box{padding:12px 16px;margin:14px 0;border-left:4px solid var(--blue);background:#f5f8fb;font-size:16px;}
+  .warn{padding:12px 16px;margin:14px 0;border-left:4px solid var(--red);background:#fdf4f3;font-size:16px;}
+  .ok{padding:12px 16px;margin:14px 0;border-left:4px solid var(--teal);background:#f3f9f6;font-size:16px;}
+  .q{padding:12px 16px;margin:16px 0;background:#fff;border:1px dashed #aaa;}
+  .q b.who{color:var(--red);}
+  table{border-collapse:collapse;width:100%;margin:16px 0;font-size:15.5px;
+    font-family:"PingFang SC","Microsoft YaHei",Arial,sans-serif;}
+  th{border-top:2px solid var(--ink);border-bottom:1px solid #999;text-align:left;padding:8px 10px;}
+  td{border-bottom:1px solid #eee;padding:8px 10px;vertical-align:top;}
+  tr:last-child td{border-bottom:2px solid var(--ink);}
+  .toc{font-size:16px;background:var(--panel);border:1px solid #eee;padding:16px 22px;}
+  .toc a{color:var(--blue);text-decoration:none;}
+  .foot{margin-top:48px;padding-top:14px;border-top:1px solid var(--line);color:var(--faint);font-size:13px;}
+  code{font-family:Consolas,Menlo,monospace;font-size:14.5px;background:#f4f4f4;padding:1px 5px;}
+  ol.big>li{margin:10px 0;}
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>SafeConf：给完全小白的从头讲解</h1>
+<div class="sub">V3 · 2026-09-09 按作者原话重写 · 不假设你会计算机或单细胞 · 一张总图贯穿全文</div>
+<div class="meta">
+数字只认 E201 正式表：SafeConf 相关 0.4082，预测幅度 0.6189，偏相关 0.2503，20% 效用 0.3200 vs 0.5943。<br>
+V2 有两处必须作废：图挤在一起会挡字；图 2 用了旧数字 0.3343 / 0.4558，不是当前主实验 E201。本版只用正式表。
+</div>
+
+<p class="lede">这份教材默认三件事：① 你很久没看论文了；② 实验和文字很多是 AI 写的，你要重新学；③ 你没学过编程，也没学过单细胞。每一节先问「这是在干什么」，再给一个贯穿例子，最后才给正式数字。</p>
+
+<div class="warn"><b>贯穿例子（请记住这一道题）：</b>
+实验室里有一种叫 <b>K562</b> 的血癌细胞。有人用基因编辑把一个叫 <b>AARS</b> 的基因调低。问题是：调低之后，细胞里三千多个基因各自会升高还是降低？
+这道题的编号写成 <code>K562::AARS+ctrl</code>。后文所有「一道题」都指这一类问题。</div>
+
+<div class="toc">
+<b>目录（建议按顺序，一天 2 章）</b>
+<ol>
+<li><a href="#s0">先分清：谁答题，谁挑错题</a></li>
+<li><a href="#s1">细胞、基因、扰动：什么叫「一道题」</a></li>
+<li><a href="#s2">谁来预测「细胞会变多大」</a></li>
+<li><a href="#s3">什么叫排序（老师 8 月 20 日问的就是这个）</a></li>
+<li><a href="#s4">预测幅度：三个数就能算懂</a></li>
+<li><a href="#s5">「还不知道正确答案」是哪个时刻</a></li>
+<li><a href="#s6">封存、哈希、GitHub：不是 TxPert 去远程训练</a></li>
+<li><a href="#s7">业务 A 和业务 B：训练到底跟你有没有关系</a></li>
+<li><a href="#s8">PRESCRIBE 发了 NeurIPS，你还做什么</a></li>
+<li><a href="#s9">E201 是当前主考，以前那些表还在</a></li>
+<li><a href="#s10">CRISPR 不是唯一的扰动</a></li>
+<li><a href="#s11">当前能说什么、不能说什么</a></li>
+<li><a href="#s12">你刚才那些问题，按原话再答一遍</a></li>
+</ol>
+</div>
+
+<!-- ========== 0 ========== -->
+<h2 id="s0"><span class="no">00</span>先分清：谁答题，谁挑错题</h2>
+
+<p>想象高考阅卷。有人已经把卷子答完了。实验室没有钱把每一道题都拿去真做实验核对。你要在<b>还没对答案之前</b>，先把「比较可能答错的题」排个队，让人先核对最可疑的。</p>
+
+<p><b>答题的人不是你。</b>当前主实验里，答题程序叫 <b>TxPert</b>（别人发表的公开方法）。<b>你做的程序叫 SafeConf</b>：不改答案，只给每道题打一个「可能错」的分数。</p>
+
+<figure>
+<svg viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg">
+  <rect x="20" y="30" width="250" height="150" rx="8" fill="#EAF2F8" stroke="#1F4E79" stroke-width="1.5"/>
+  <text x="145" y="70" text-anchor="middle" font-size="16" font-weight="700" fill="#1F4E79">A 博士的预测程序</text>
+  <text x="145" y="100" text-anchor="middle" font-size="14" fill="#333">当前例子：TxPert</text>
+  <text x="145" y="126" text-anchor="middle" font-size="14" fill="#333">输入：细胞 + 扰动</text>
+  <text x="145" y="152" text-anchor="middle" font-size="14" fill="#333">输出：三千多个数字</text>
+  <path d="M280 105 L330 105" stroke="#333" stroke-width="2" marker-end="url(#a)"/>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#333"/></marker></defs>
+  <rect x="340" y="30" width="250" height="150" rx="8" fill="#EAF8F2" stroke="#1A7A5C" stroke-width="1.5"/>
+  <text x="465" y="70" text-anchor="middle" font-size="16" font-weight="700" fill="#1A7A5C">你的 SafeConf</text>
+  <text x="465" y="100" text-anchor="middle" font-size="14" fill="#333">不改那三千个数</text>
+  <text x="465" y="126" text-anchor="middle" font-size="14" fill="#333">给这道题打风险分</text>
+  <text x="465" y="152" text-anchor="middle" font-size="14" fill="#333">分数高 = 更可能错</text>
+  <path d="M600 105 L650 105" stroke="#333" stroke-width="2" marker-end="url(#a)"/>
+  <rect x="660" y="30" width="220" height="150" rx="8" fill="#FFF6E8" stroke="#B36B00" stroke-width="1.5"/>
+  <text x="770" y="70" text-anchor="middle" font-size="16" font-weight="700" fill="#B36B00">实验室</text>
+  <text x="770" y="100" text-anchor="middle" font-size="14" fill="#333">钱只够核对一部分</text>
+  <text x="770" y="126" text-anchor="middle" font-size="14" fill="#333">先核对高风险的题</text>
+  <text x="770" y="152" text-anchor="middle" font-size="14" fill="#333">这叫排序 / 路由</text>
+  <text x="450" y="220" text-anchor="middle" font-size="14" fill="#666">时间方向：先有预测，再打分，再决定先核对谁。此时还没有打开真实实验答案。</text>
+  <text x="450" y="250" text-anchor="middle" font-size="13.5" fill="#C0392B">TxPert 只是当前主实验用的答题程序。也可以换成别的答题程序。SafeConf 挂在后面。</text>
+</svg>
+<figcaption><b>图 1｜整件事就这一条流水线。</b>左边答题，中间你打分，右边实验室按分数决定先核对谁。TxPert 是现在用的例子，不是宇宙里唯一的答题程序。</figcaption>
+</figure>
+
+<div class="ok"><b>先记住：</b>你没有自己发明一个「猜基因表达」的新模型当主产品。你的产品是：别人猜完之后，你帮人排队。</div>
+
+<!-- ========== 1 ========== -->
+<h2 id="s1"><span class="no">01</span>细胞、基因、扰动：什么叫「一道题」</h2>
+
+<p><b>细胞</b>：人体里最小的活单位。这篇论文用的是实验室里能一直养下去的细胞品种，叫细胞系（cell line）。主实验四个：K562（血癌）、RPE1（眼底上皮）、HepG2（肝癌）、Jurkat（T 细胞）。</p>
+<p><b>基因</b>：细胞里的说明书片段。每个基因会「表达」成多少 RNA，可以测成一个数字。主实验里每个细胞状态用 <b>3352 个基因</b>的数字来表示。</p>
+<p><b>扰动</b>：人为改细胞。可以是把某个基因调低，也可以是加药、加细胞因子。当前主实验的数据是 <b>CRISPR 干扰（CRISPRi）</b>：用基因编辑工具把指定基因的表达压低，不是把基因从基因组里剪掉。扰动种类很多，CRISPRi 只是这批数据用的那一种，不是科学上只允许这一种。</p>
+<p><b>一道题（任务，task）</b> = 哪一种细胞 × 哪一种扰动。例子：<code>K562::AARS+ctrl</code> 就是「在 K562 里把 AARS 调低，对照是空操作」。</p>
+
+<figure>
+<svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg">
+  <rect x="30" y="40" width="240" height="120" rx="8" fill="#EAF2F8" stroke="#1F4E79"/>
+  <text x="150" y="85" text-anchor="middle" font-size="16" font-weight="700" fill="#1F4E79">细胞品种</text>
+  <text x="150" y="115" text-anchor="middle" font-size="15" fill="#333">K562</text>
+  <text x="150" y="140" text-anchor="middle" font-size="13" fill="#666">在哪种细胞里考</text>
+  <text x="290" y="105" font-size="28" fill="#999">×</text>
+  <rect x="330" y="40" width="240" height="120" rx="8" fill="#FDEDEC" stroke="#C0392B"/>
+  <text x="450" y="85" text-anchor="middle" font-size="16" font-weight="700" fill="#C0392B">扰动</text>
+  <text x="450" y="115" text-anchor="middle" font-size="15" fill="#333">把 AARS 调低</text>
+  <text x="450" y="140" text-anchor="middle" font-size="13" fill="#666">考哪一次干预</text>
+  <text x="590" y="105" font-size="28" fill="#999">=</text>
+  <rect x="630" y="40" width="240" height="120" rx="8" fill="#EAF8F2" stroke="#1A7A5C"/>
+  <text x="750" y="85" text-anchor="middle" font-size="16" font-weight="700" fill="#1A7A5C">一道题</text>
+  <text x="750" y="115" text-anchor="middle" font-size="14" fill="#333">K562::AARS+ctrl</text>
+  <text x="750" y="140" text-anchor="middle" font-size="13" fill="#666">要猜 3352 个数字</text>
+</svg>
+<figcaption><b>图 2｜一道题怎么拼出来。</b>答题程序对每一道题输出 3352 个数。主实验 E201 一共考 1808 道这样的主任务。</figcaption>
+</figure>
+
+<p>所以：<b>不是只做一个预测，是做一堆预测。</b> 每种细胞、每个被调低的基因，都是一道题。SafeConf 也不是「检测某一个数字对不对」，而是给<b>每一道题一个风险分</b>：这题风险高还是低，用来排队。</p>
+
+<!-- ========== 2 ========== -->
+<h2 id="s2"><span class="no">02</span>谁来预测「细胞会变多大」</h2>
+
+<p>「这次扰动会让细胞变化很大」<b>不是实验室先测出来的</b>，也<b>不是你 SafeConf 算的</b>。是<b>答题程序自己的猜测</b>。</p>
+<p>当前主实验里，这个答题程序是 <b>TxPert</b>。它是别人发表的深度学习模型（用很多层网络从数据里学规律）。内部用了图注意力网络（GAT）：把基因之间的关系当成一张网，敲一个基因时，影响沿着网传给别的基因。你「有注意力网络」，是因为<b>当前选用的答题程序 TxPert 里面带了这个零件</b>，不是你另外发明了一套注意力理论。</p>
+
+<div class="box"><b>TxPert 是例子，不是宇宙唯一。</b>
+领域里还有 GEARS、scGPT 等别的答题程序。早期实验用过它们。现在主实验 E201 把 TxPert 冻住当学生，方便把「答题」和「挑错题」分开讲。以后可以把 SafeConf 挂到别的学生后面。现在还没有把「挂到所有学生身上都一样好」做成正式结果。</div>
+
+<p>TxPert 看两样东西：① 没被扰动时细胞的 3352 个数字；② 这次要调低哪个基因。然后吐出「扰动之后」的 3352 个数字。这就是预测。</p>
+
+<!-- ========== 3 ========== -->
+<h2 id="s3"><span class="no">03</span>什么叫排序（老师 8 月 20 日问的）</h2>
+
+<p>2026-08-20 组会上，周老师反复问的不是「你的网络结构漂不漂亮」，而是：<b>你打的分，到底在跟什么一起涨一起跌？你有没有偷看答案？没见过的格子，你拿什么当输入？</b></p>
+<p>当时的答卷写在 <code>workspace/zhou_briefing_7q_20260820/七问汇报正文.md</code>。核心一句：</p>
+<div class="ok">已有程序先给出猜测。我做的是猜测发出去之后、真实实验还没对答案之前，帮人决定：哪些猜测值得先核对。</div>
+<p><b>排序</b>就是：把 1808 道题从「最可能错」排到「最可能对」。实验室只核对前 20%，看能不能多抓到真正错得狠的题。这不需要你会写代码。它就是「先改哪几本作业」。</p>
+
+<!-- ========== 4 ========== -->
+<h2 id="s4"><span class="no">04</span>预测幅度：三个数就能算懂</h2>
+
+<p>别被「把所有基因预测变化值平方加起来开根号」吓到。那只是在量「这道题的猜测整体跳了多大」。用三个基因装一下：</p>
+
+<table>
+<tr><th></th><th>基因 1 的猜测变化</th><th>基因 2</th><th>基因 3</th><th>幅度怎么算</th><th>人话</th></tr>
+<tr><td>题甲</td><td>0.1</td><td>−0.1</td><td>0</td><td>√(0.01+0.01+0) ≈ 0.14</td><td>模型觉得几乎没变</td></tr>
+<tr><td>题乙</td><td>3</td><td>4</td><td>0</td><td>√(9+16+0) = 5</td><td>模型觉得变很大</td></tr>
+</table>
+
+<p>真实实验里是 3352 个基因，算法一样：每个「预测变化」平方，加起来，再开根号。得到一个正数，叫 <b>预测幅度（predicted magnitude）</b>。</p>
+<ul>
+<li>它用的是<b>预测清单里的数</b>，不是实验室测出来的真变化。</li>
+<li>所以<b>对答案之前就能算</b>。老师问「是不是得先做实验才知道大小」：<b>不用。</b></li>
+<li>直觉：模型自己觉得「这题改动特别大」的题，绝对误差也常常大。E201 里这个笨办法相关 0.6189，比 SafeConf 的 0.4082 强。</li>
+</ul>
+<div class="warn">V2 图 2 写过幅度抓得更多（0.4558）。那不是当前 E201 主表。当前主表里，幅度的 20% 效用是 <b>0.5943</b>，SafeConf 是 <b>0.3200</b>。请忘掉 0.4558。</div>
+
+<!-- ========== 5 ========== -->
+<h2 id="s5"><span class="no">05</span>「还不知道正确答案」是哪个时刻</h2>
+
+<p>时间线只有三格：</p>
+<ol class="big">
+<li><b>训练答题程序时</b>（对 TxPert 而言）：可以用源域课本里的真答案，让它学会猜。考场那一套细胞的答案必须藏起来。</li>
+<li><b>预测已经做完、真实验答案还没打开</b>：这时算风险分、算幅度、排队。这就是「还不知道正确答案」。SafeConf 的主战场在这里。</li>
+<li><b>打开真答案之后</b>：只允许一次性打分，看风险分高的题是不是真的更错。不允许再改公式。</li>
+</ol>
+<p>所以：不是「科学上永远不知道答案」。是<b>打分那一刻不准看答案</b>，像考试不许看标准答案。</p>
+
+<!-- ========== 6 ========== -->
+<h2 id="s6"><span class="no">06</span>封存、哈希、GitHub：不是 TxPert 去远程训练</h2>
+
+<p>老师 8 月 20 日已经纠正过：交到 GitHub / Gitee 是<b>把猜测和打分锁死存档（交卷）</b>，不是远程训练。</p>
+<p><b>哈希</b>：给一份文件算一个指纹。文件改一个标点，指纹就变。把指纹写进仓库，以后有人改预测或改公式，对不上。</p>
+<p><b>推到 GitHub 和 Gitee</b>：这是<b>你们实验室自己的存证习惯</b>，证明「对答案之前，卷子已经交出去了」。TxPert 原论文并不要求你这么做。没有这两家远程，科学上也可以用别的存证；你们现在的正式流程是双远程一致才开答案。</p>
+<p><b>证明没有偷看有什么意义？</b> 风险研究最容易作弊的方式是：先看哪题错了，再把公式调到刚好能挑出这些题。那样论文一文不值。封存的意义不是「GitHub 比较高级」，是<b>让「先看答案再编分」做不成</b>。</p>
+
+<figure>
+<svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
+  <rect x="20" y="40" width="160" height="90" rx="6" fill="#EAF2F8" stroke="#1F4E79"/>
+  <text x="100" y="80" text-anchor="middle" font-size="14" fill="#333">写出预测</text>
+  <text x="100" y="104" text-anchor="middle" font-size="14" fill="#333">和风险分</text>
+  <text x="195" y="90" font-size="22" fill="#999">→</text>
+  <rect x="230" y="40" width="160" height="90" rx="6" fill="#FDEDEC" stroke="#C0392B"/>
+  <text x="310" y="80" text-anchor="middle" font-size="14" fill="#333">算指纹</text>
+  <text x="310" y="104" text-anchor="middle" font-size="14" fill="#333">交到网上</text>
+  <text x="405" y="90" font-size="22" fill="#999">→</text>
+  <rect x="440" y="40" width="160" height="90" rx="6" fill="#EAF8F2" stroke="#1A7A5C"/>
+  <text x="520" y="80" text-anchor="middle" font-size="14" fill="#333">两边一致</text>
+  <text x="520" y="104" text-anchor="middle" font-size="14" fill="#333">才开答案</text>
+  <text x="615" y="90" font-size="22" fill="#999">→</text>
+  <rect x="650" y="40" width="220" height="90" rx="6" fill="#FFF6E8" stroke="#B36B00"/>
+  <text x="760" y="80" text-anchor="middle" font-size="14" fill="#333">一次性打分</text>
+  <text x="760" y="104" text-anchor="middle" font-size="14" fill="#333">不许再改公式</text>
+  <text x="450" y="170" text-anchor="middle" font-size="14" fill="#666">这是你们的交卷纪律，不是 TxPert 软件自带的远程开关。</text>
+</svg>
+<figcaption><b>图 3｜封存是交卷，不是训练。</b></figcaption>
+</figure>
+
+<!-- ========== 7 ========== -->
+<h2 id="s7"><span class="no">07</span>业务 A 和业务 B：训练到底跟你有没有关系</h2>
+
+<p>用 A 博士例子说完整流程。</p>
+<ol class="big">
+<li>A 博士做了一个扰动预测模型（可以是 TxPert，也可以是别的）。</li>
+<li><b>业务 A（你现在有正式成绩的部分）：</b> A 博士的模型已经猜完。你在猜完之后、对答案之前打风险分，给实验室排队。你<b>不改</b>他怎么猜。</li>
+<li><b>业务 B（程序能跑，正式效果还没有）：</b> 下一次让模型重新学习时，你根据「课本里哪些题看起来更难」，把那些题的训练权重调大，希望它多练难题。这才碰到「训练阶段」。</li>
+</ol>
+<p><b>训练阶段</b>：答题程序还在学习，用很多已知对错的课本题目改自己的内部参数。像学生刷题。</p>
+<p><b>你在训练阶段有没有影响？</b> 业务 A：没有，预测已经做完了。业务 B：有，你在改「哪些课本题目练得更勤」。E204 现在只证明权重没写错、没偷看考场答案，<b>没有证明练完真的更准</b>。</p>
+<p>「把难题的训练权重调大」：难题在这里指源域课本里证据少、效应很散的题，不是考场上已经打开的错题。权重 2 表示这道课本题当两道来练；权重 0.5 表示少练一点。</p>
+
+<figure>
+<svg viewBox="0 0 900 240" xmlns="http://www.w3.org/2000/svg">
+  <rect x="20" y="20" width="860" height="90" rx="8" fill="#EAF8F2" stroke="#1A7A5C"/>
+  <text x="40" y="50" font-size="16" font-weight="700" fill="#1A7A5C">业务 A · 预测之后</text>
+  <text x="40" y="80" font-size="15" fill="#333">A 博士已经交卷 → 你给每题打分 → 实验室按分数先核对。E201 有正式数字。</text>
+  <rect x="20" y="130" width="860" height="90" rx="8" fill="#FFF6E8" stroke="#B36B00"/>
+  <text x="40" y="160" font-size="16" font-weight="700" fill="#B36B00">业务 B · 下一次学习之前</text>
+  <text x="40" y="190" font-size="15" fill="#333">还没重新交卷 → 你只改课本题练多少遍 → 再让 TxPert 学一遍。E204 效果未出。</text>
+</svg>
+<figcaption><b>图 4｜两条业务发生在不同时间。</b>不要问「训练跟我有啥关系」时把两条线混在一起。</figcaption>
+</figure>
+
+<!-- ========== 8 ========== -->
+<h2 id="s8"><span class="no">08</span>PRESCRIBE 发了 NeurIPS，你还做什么</h2>
+
+<p>网上能核到的原文：Cheng 等，<i>PRESCRIBE: Predicting Single-Cell Responses with Bayesian Estimation</i>，arXiv:2510.07964，NeurIPS 2025。它同时预测扰动后状态，并估计把握；用伪 E-distance 当不确定度；过滤低把握预测后，他们报告精度相对对照提升超过 3%。</p>
+<p>它<b>自己带着答题模型</b>。可信度和预测是一起训的。</p>
+<p>你<b>没有自己的答题模型当主产品</b>。你挂在已经猜完的程序后面。</p>
+<p>所以他发了，你不是无事可做。你做的是另一件商品：实验室已经在用 TxPert（或别的），不想重训一套带不确定度的新模型时，能不能在外面加一层排队。</p>
+<p>这关还没过完：你还没在同一套题目合同上正式头对头赢过 PRESCRIBE；单独排序也没赢过幅度。能写的是「不改现成模型的事后任务风险」，不能写「首个可信度」或「已经比 PRESCRIBE 好」。</p>
+
+<table>
+<tr><th></th><th>PRESCRIBE</th><th>你（SafeConf）</th></tr>
+<tr><td>有没有自己的答题模型</td><td>有，和把握绑在一起</td><td>主产品没有；当前学生是公开的 TxPert</td></tr>
+<tr><td>什么时候打分</td><td>模型内部一起算</td><td>猜完之后、对答案之前</td></tr>
+<tr><td>已发表</td><td>NeurIPS 2025</td><td>还没有这篇主文</td></tr>
+<tr><td>已有硬结果</td><td>过滤后精度 +3% 以上（他们的实验）</td><td>E201：有相关、有独立信息，单独排序弱于幅度</td></tr>
+</table>
+
+<!-- ========== 9 ========== -->
+<h2 id="s9"><span class="no">09</span>E201 是当前主考，以前那些表还在</h2>
+
+<p>仓库里从很早的 E 编号一直做到现在。有工时表、找不同、多数据集统计，那些不是幻觉。那是<b>历史实验</b>。</p>
+<p><b>E199–E205 是 2026 年 8 月之后对着老师「排序」问题收束的当前主线</b>，不是把以前全部作废。</p>
+<ul>
+<li>E199：见过这种细胞，没见过这个基因。那时「几个模型吵不吵」比较有用。</li>
+<li>E200：整一种细胞都没见过。那时幅度特别强。</li>
+<li>E201：四种细胞轮流当考场，先封存再对答案。这是现在对外讲的主成绩单。</li>
+<li>E204：训练加权，效果未出。</li>
+<li>E205：不同架构互相比，还没跑。</li>
+</ul>
+<p>老师 8 月 20 日说随机抠格子太简单。后来才把主考改成「整行细胞留出」。你觉得 E201 陌生，是因为主战场换了，不是有人偷偷换了题目还不告诉你。</p>
+
+<!-- ========== 10 ========== -->
+<h2 id="s10"><span class="no">10</span>CRISPR 不是唯一的扰动</h2>
+
+<p>扰动可以是：调低基因、敲除基因、加小分子药、加细胞因子。当前主数据是 CRISPRi 调低基因。早期化学扰动线上，幅度往往更强，不能把基因扰动的结论直接说成「所有扰动都成立」。</p>
+
+<!-- ========== 11 ========== -->
+<h2 id="s11"><span class="no">11</span>当前能说什么</h2>
+
+<div class="ok">
+SafeConf 不预测扰动结果，而是在预测完成后评估任务风险；E204 则尝试把风险信息用于模型训练，两条线必须分开。<br><br>
+E201 中 SafeConf 与真实错误正相关（0.4082），但预测幅度更强（0.6189）；控制幅度后仍有独立关联（0.2503）。<br><br>
+当前结论是「有独立风险信息，但尚未证明能改善实际复核决策」，不能直接说优于幅度。<br><br>
+E204 只有工程验收；32 个正式模型只回答业务 B。业务 A 还缺组合效用、E205、新外部。
+</div>
+<p>能不能发二区：栏目对得上 Bioinformatics 这类，<b>证据还没闭合，不能写一定能发</b>。PRESCRIBE 先发了，只是封死「首个打分」，没有封死「事后排队」这条题。</p>
+
+<!-- ========== 12 ========== -->
+<h2 id="s12"><span class="no">12</span>你刚才那些问题，按原话再答一遍</h2>
+
+<div class="q"><b class="who">问：</b>「细胞会变很大」是谁预测的？<br>
+<b>答：</b>答题程序预测的。当前主实验是 TxPert。不是 SafeConf，也不是实验室先测。</div>
+
+<div class="q"><b class="who">问：</b>我自己有模型吗？他有吗？<br>
+<b>答：</b>你没有自己的扰动预测模型当主产品。PRESCRIBE 有。你的东西挂在别人已经猜完的输出后面。</div>
+
+<div class="q"><b class="who">问：</b>TxPert 是例子还是全部？我怎么有注意力网络？<br>
+<b>答：</b>TxPert 是当前主实验选用的学生。GAT 是这个学生内部的零件。可以换学生，换了就不是这个零件了。</div>
+
+<div class="q"><b class="who">问：</b>是做一个预测还是一堆？SafeConf 是检测排序吗？<br>
+<b>答：</b>一堆题、一堆预测。SafeConf 给每题一个风险分，按分数从高到低排，让人先核对高分题。</div>
+
+<div class="q"><b class="who">问：</b>GitHub 封存不对吧？正式哪有远程？<br>
+<b>答：</b>那是你们交卷存证，不是 TxPert 去网上训练。老师原话：交 GitHub/Gitee 是锁死猜测和打分。</div>
+
+<div class="q"><b class="who">问：</b>证明没偷看有什么意义？<br>
+<b>答：</b>防止先看错题再编分。没有这一步，风险论文没有信誉。</div>
+
+<div class="q"><b class="who">问：</b>训练阶段是啥？我在训练里有影响吗？<br>
+<b>答：</b>训练=答题程序还在刷课本。业务 A 发生在刷完之后，不影响这次训练。业务 B 想影响下一次刷课本，效果还没出来。</div>
+
+<div class="q"><b class="who">问：</b>A 博士做完模型之后我才参与吗？<br>
+<b>答：</b>业务 A 是的：他猜完你再排队。业务 B 是下一次他重新学的时候你改权重。现在主成绩单是业务 A。</div>
+
+<div class="q"><b class="who">问：</b>0.4558 是什么？<br>
+<b>答：</b>旧图混进来的数，不是 E201 主表。请用 0.6189 / 0.5943。</div>
+
+<div class="q"><b class="who">问：</b>网上有没有人做过？当前真能发吗？<br>
+<b>答：</b>有。最近的直接竞品是 PRESCRIBE（NeurIPS 2025）。还有 TISSUE、GPerturb 等不确定度工作。方向有人做，做法不是同一件商品。现在不能说稳二区。</div>
+
+<div class="q"><b class="who">问：</b>E201 怎么和以前工时表、找不同不一样？<br>
+<b>答：</b>以前那些实验还在仓库里。E201 是按老师「别用太简单的随机抠格」之后，四种细胞整行留出的主考。主线换了，不是记忆错了。</div>
+
+<div class="foot">
+V3 替代 V2 作为本包主教材。数字：CLAIM_TABLE.json 与 E201 正式 CSV。PRESCRIBE：arXiv 2510.07964 / NeurIPS 2025。组会：2026-08-20 七问汇报正文。不要用 V2 图 2 的 0.4558。
+</div>
+</div>
+</body>
+</html>
