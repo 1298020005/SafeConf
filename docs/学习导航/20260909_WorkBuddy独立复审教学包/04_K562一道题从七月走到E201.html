@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一道题走完：从 7 月多表到现在的 E201（计算机一区口径）</title>
+<style>
+  body{margin:0;background:#fff;color:#1a1a1a;font-family:"Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;font-size:18px;line-height:1.95;}
+  .page{max-width:900px;margin:0 auto;padding:36px 24px 80px;}
+  h1,h2,h3,figcaption{font-family:"PingFang SC","Microsoft YaHei",Arial,sans-serif;}
+  h1{font-size:26px;margin:0 0 8px;}
+  .meta{color:#666;font-size:14px;border-bottom:1px solid #ddd;padding-bottom:14px;margin-bottom:22px;}
+  h2{font-size:21px;margin:40px 0 10px;padding-top:12px;border-top:2px solid #1a1a1a;}
+  h3{font-size:17px;color:#1F4E79;margin:22px 0 8px;}
+  .warn{border-left:4px solid #C0392B;background:#fdf4f3;padding:12px 16px;margin:14px 0;}
+  .ok{border-left:4px solid #1A7A5C;background:#f3f9f6;padding:12px 16px;margin:14px 0;}
+  .box{border-left:4px solid #1F4E79;background:#f5f8fb;padding:12px 16px;margin:14px 0;}
+  table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px;font-family:"PingFang SC","Microsoft YaHei",Arial,sans-serif;}
+  th{border-top:2px solid #111;border-bottom:1px solid #999;text-align:left;padding:8px 10px;}
+  td{border-bottom:1px solid #eee;padding:8px 10px;vertical-align:top;}
+  tr:last-child td{border-bottom:2px solid #111;}
+  figure{margin:22px 0;padding:12px;border:1px solid #eee;}
+  svg{display:block;margin:0 auto;max-width:100%;height:auto;}
+  figcaption{font-size:15px;color:#444;margin-top:8px;}
+  code{background:#f4f4f4;padding:1px 5px;font-family:Consolas,monospace;font-size:14.5px;}
+  ol.step>li{margin:12px 0;}
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>只用一道题：从 7 月那些 CSV，走到现在的 TxPert / E201</h1>
+<div class="meta">
+给完全小白。目标口径：<b>计算机一区 / CCF 期刊或会议</b>，不是生物一区。<br>
+贯穿例子永远是：<code>K562::AARS+ctrl</code>＝在 K562 这种血癌细胞里，把 AARS 这个基因调低，猜三千多个基因会怎么变。
+</div>
+
+<div class="warn"><b>先改口：</b>你要发的是计算机方向的顶刊或顶会（比如 CCF-A 的 Bioinformatics 期刊，或 NeurIPS 这类会议）。PRESCRIBE 发的 NeurIPS 2025 就是计算机顶会，和你同一把尺子。下面不再拿「生物 1 区」说事。</div>
+
+<h2>第 0 步：你到底卖什么（先钉死）</h2>
+<p>领域里大家都在做：<b>细胞 + 扰动 → 猜基因怎么变</b>。</p>
+<p>你这篇<b>不重新猜</b>。别人已经猜完了。你给这道猜打一个「可能错」的分，按分数从高到低排，好决定先核对哪几道。排序就是排序。</p>
+<p>选修（现在没成绩、可以先不看）：下次让答题程序重新学习时，难题多练。那叫训练加权。主关<b>不必</b>从头再训一个新模型。</p>
+
+<h2>第 1 步：把这道题写成一行表（CSV 长这样）</h2>
+<p>CSV 就是 Excel 能打开的表格。一行一道题。7 月和现在，表头精神是一样的：</p>
+<table>
+<tr><th>列</th><th>人话</th><th>这道题填什么</th></tr>
+<tr><td>题号</td><td>哪次考试</td><td><code>K562::AARS+ctrl</code></td></tr>
+<tr><td>细胞</td><td>在谁身上考</td><td>K562</td></tr>
+<tr><td>扰动</td><td>做了什么</td><td>把 AARS 调低</td></tr>
+<tr><td>学生猜的变化有多大</td><td>幅度（猜的，不是实验室测的）</td><td>现在 E201 里这题是 0.10173</td></tr>
+<tr><td>几个学生吵不吵</td><td>分歧</td><td>现在 E201 里这题是 0.01035</td></tr>
+<tr><td>你的风险分</td><td>SafeConf 盖的章</td><td>现在 E201 里这题是 0.11790</td></tr>
+<tr><td>对完答案才有的错多少</td><td>真实误差</td><td>现在 E201 里这题是 0.08909</td></tr>
+</table>
+<p>7 月那些「很多 CSV、很多公式」，就是对<b>成百上千行这样的表</b>算：风险分高的题，误差是不是也高。</p>
+
+<h2>第 2 步：7 月那种考法（具体细胞）</h2>
+<p>还是 K562。练习册和考场可以是同一类细胞。老师后来说这种太简单：每个基因都见过一点、每种细胞也见过一点，只是某个组合没见过。像：语文、数学都复习过，只是「这两科合在一张卷」没做过。</p>
+<p><b>当时的学生可以是 scGPT、GEARS</b>（两个别人的答题程序）。同一道题他们各猜一份。你们不算新答案，只拿他们的猜测算表、算相关。</p>
+
+<figure>
+<svg viewBox="0 0 880 220" xmlns="http://www.w3.org/2000/svg">
+  <text x="440" y="28" text-anchor="middle" font-size="15" font-weight="700">7 月：同一类细胞上，抠掉若干格子当考试</text>
+  <text x="80" y="70" font-size="13">基因 →</text>
+  <text x="20" y="130" font-size="13">K562</text>
+  <rect x="80" y="90" width="50" height="36" fill="#ddd"/><rect x="135" y="90" width="50" height="36" fill="#ddd"/>
+  <rect x="190" y="90" width="50" height="36" fill="#C0392B"/><text x="215" y="113" text-anchor="middle" font-size="11" fill="#fff">考</text>
+  <rect x="245" y="90" width="50" height="36" fill="#ddd"/><rect x="300" y="90" width="50" height="36" fill="#ddd"/>
+  <rect x="355" y="90" width="50" height="36" fill="#ddd"/>
+  <text x="80" y="160" font-size="14" fill="#333">灰＝练习时见过答案。红＝这格没练过，让 scGPT / GEARS 猜，你们算分。</text>
+  <text x="80" y="188" font-size="14" fill="#666">同一行里左右都见过别的基因，所以老师说：这是比较容易的考法。</text>
+</svg>
+<figcaption><b>图 A｜7 月的格子。</b>还是 K562 这一行。只藏几格。学生是当时那些公开程序，不是现在的 TxPert 主考。</figcaption>
+</figure>
+
+<p>步骤（7 月）：</p>
+<ol class="step">
+<li>选好几套公开数据（不止 K562 一套）。</li>
+<li>scGPT、GEARS 已经或当场给出每格的猜测。</li>
+<li>把每格写成 CSV 一行：幅度、分歧、风险分。</li>
+<li>对答案，算「分高的是不是更错」。</li>
+<li>得到的是统计质检：很多表、很多公式。不是「你们发明了 scGPT」。</li>
+</ol>
+
+<h2>第 3 步：老师说太简单之后（还是这道 K562 题）</h2>
+<p>老师原话大意：你现在每个药见过一些细胞、每个细胞也见过一些药，这是更简单的 task。</p>
+<p>后来主考改成：<b>考 K562 时，K562 整行的答案全部藏起来。</b> 练习册只许看 RPE1、HepG2、Jurkat 三种细胞。K562 上包括 <code>AARS+ctrl</code> 在内的所有题，练习时都不能看答案。</p>
+<p>答题学生换成公开的 <b>TxPert</b>（当前这一场指定的学生）。同一套 TxPert 用四个不同的随机起点各猜一遍，得到四份猜测。</p>
+
+<figure>
+<svg viewBox="0 0 880 260" xmlns="http://www.w3.org/2000/svg">
+  <text x="440" y="24" text-anchor="middle" font-size="15" font-weight="700">现在 E201：考 K562 时，整行 K562 都藏起来</text>
+  <text x="70" y="70" font-size="13">RPE1 练习</text>
+  <rect x="160" y="52" width="40" height="28" fill="#ddd"/><rect x="205" y="52" width="40" height="28" fill="#ddd"/><rect x="250" y="52" width="40" height="28" fill="#ddd"/><rect x="295" y="52" width="40" height="28" fill="#ddd"/>
+  <text x="70" y="112" font-size="13">HepG2 练习</text>
+  <rect x="160" y="94" width="40" height="28" fill="#ddd"/><rect x="205" y="94" width="40" height="28" fill="#ddd"/><rect x="250" y="94" width="40" height="28" fill="#ddd"/><rect x="295" y="94" width="40" height="28" fill="#ddd"/>
+  <text x="70" y="154" font-size="13">Jurkat 练习</text>
+  <rect x="160" y="136" width="40" height="28" fill="#ddd"/><rect x="205" y="136" width="40" height="28" fill="#ddd"/><rect x="250" y="136" width="40" height="28" fill="#ddd"/><rect x="295" y="136" width="40" height="28" fill="#ddd"/>
+  <text x="70" y="200" font-size="13" font-weight="700" fill="#C0392B">K562 考试</text>
+  <rect x="160" y="182" width="40" height="28" fill="#C0392B"/><rect x="205" y="182" width="40" height="28" fill="#C0392B"/>
+  <rect x="250" y="182" width="40" height="28" fill="#C0392B"/><text x="270" y="201" text-anchor="middle" font-size="10" fill="#fff">AARS</text>
+  <rect x="295" y="182" width="40" height="28" fill="#C0392B"/>
+  <text x="430" y="90" font-size="14">练习：三种细胞，答案可以看。</text>
+  <text x="430" y="118" font-size="14">考试：K562 整行，答案全藏。</text>
+  <text x="430" y="146" font-size="14">红格里的 AARS 就是那道题。</text>
+  <text x="430" y="174" font-size="14">学生现在是 TxPert，猜四遍。</text>
+  <text x="430" y="202" font-size="14">你仍然不猜，只打分。</text>
+</svg>
+<figcaption><b>图 B｜现在的考场。</b>同一道 AARS 题，从「K562 行里抠一格」变成「K562 整行都是考场」。</figcaption>
+</figure>
+
+<p>步骤（现在 E201，只盯 K562 这一行）：</p>
+<ol class="step">
+<li>练习册 = RPE1 + HepG2 + Jurkat 的答案。TxPert 在这里学习。</li>
+<li>考试 = K562 全部题。其中包括 AARS。</li>
+<li>TxPert 对 K562 的每一题猜 3352 个数。四个随机起点各猜一份，共四份。</li>
+<li>对答案之前就算：四份吵不吵、幅度多大、练习册里 AARS 的证据多少。合成风险分 0.11790。</li>
+<li>指纹锁死，交到 GitHub / Gitee（交卷，不是网上训练）。</li>
+<li>再打开 K562 的真答案。这题误差 0.08909。</li>
+<li>1808 道题都这么干，看「分高的是不是更错」。总成绩：你的分 0.4082，笨办法幅度 0.6189。</li>
+</ol>
+
+<div class="ok"><b>7 月和现在差在哪，就三句话：</b>
+1. 还是质检和排序，不是改行当。<br>
+2. 考法更难：从「抠几格」变成「一种细胞整行当考场」。<br>
+3. 指定学生换成 TxPert。以前的 CSV 还在仓库，对外讲主成绩用 E201。</div>
+
+<h2>第 4 步：幅度还用这道题算一遍</h2>
+<p>TxPert 猜完，每个基因有一个「我猜会变多少」。把这些数平方、加起来、开根号，得到一个正数。这题是 <b>0.10173</b>。对答案前就能算。实验室还没测。</p>
+<p>1808 道题都有这样一个数。按这个数从大到小排队，和「真的错多少」排得有多齐，就是 0.6189。按你的风险分排，是 0.4082。所以笨排队目前更齐。</p>
+
+<h2>第 5 步：计算机一区怎么理解（不再说生物区）</h2>
+<table>
+<tr><th>名字</th><th>它是什么</th><th>和你的关系</th></tr>
+<tr><td>NeurIPS</td><td>计算机顶会（CCF-A 会议）</td><td>PRESCRIBE 发在这。同一把「计算机」尺子。</td></tr>
+<tr><td>Bioinformatics</td><td>计算机/生物信息期刊，CCF-A，常被国内算计算机或交叉一区/二区（以学院系统为准）</td><td>你更常被点去的期刊，不是会议。</td></tr>
+<tr><td>你的目标</td><td>计算机一区口径的期刊或会议</td><td>证据还没闭合：单独排序没赢幅度；和 PRESCRIBE 没有正式头对头。不能写一定能发。</td></tr>
+</table>
+<p>PRESCRIBE 能发顶会，是因为它做了「自己猜 + 自己报把握」并给出过滤后精度提升。你做的是猜完之后排序。同一领域、同一把计算机尺子，货不同。不是「他能做模型所以你不能」；是你这篇主关没做成新猜题模型。</p>
+
+<div class="box">主关不必重新训练。训练加权是选修。先把「K562 上 AARS 这题：TxPert 猜完 → 你打 0.11790 → 再对答案 0.08909」讲顺，7 月那些表就是同一套列，换了更简单的考法和当时的学生。</div>
+
+<p style="color:#666;font-size:14px;">数字来自 CLAIM_TABLE.json 的 example_task 与 E201 主表。7 月格子图是示意考法，不是某一张旧 CSV 的逐格复制。</p>
+</div>
+</body>
+</html>
