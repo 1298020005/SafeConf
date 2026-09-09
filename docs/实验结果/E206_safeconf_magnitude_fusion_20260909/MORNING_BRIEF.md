@@ -118,6 +118,6 @@ SafeConf-M 的重点不在于又训练一个更大的预测模型，而是在已
 3. 给出不读取目标真实答案的轻量排序方法和留痕流程；
 4. 明确不同泛化场景的使用边界，并在证据不足时选择暂停。
 
-比较合适的二区目标是 **Briefings in Bioinformatics** 的 problem-solving protocol（问题解决协议）或 case study（案例研究）类型。官方范围明确接收真实生物数据上的新方法、软件组合、预测信息准确性、基准比较和可复现流程，也明确服务把计算机方法用于生物问题的研究者。投稿前仍需要完成一项不同数据或不同预测器的冻结确认。
+从内容范围看，**Briefings in Bioinformatics** 的 problem-solving protocol（问题解决协议）或 case study（案例研究）类型比较匹配。官方范围接收真实生物数据上的新方法、软件组合、预测信息准确性、基准比较和可复现流程，也面向把计算机方法用于生物问题的研究者。它能否满足学校要求的“计算机方向二区”，必须按学校采用的当年分区表单独确认，不能仅凭期刊方向或影响因子下结论。投稿前仍需要完成一项不同数据或不同预测器的冻结确认。
 
 不要把 Computers in Biology and Medicine 当当前保底：检索到的 2026 年信息对其 Web of Science 状态存在严重风险。IEEE Transactions on Computational Biology and Bioinformatics 虽然学科对口，但当前中科院大类通常按 3 区记录，不满足“必须二区”的硬条件。
