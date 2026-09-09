@@ -1,0 +1,97 @@
+{
+  "status": "PASS_DEVELOPMENT_ONLY",
+  "generated_at": "2026-09-09T23:20:33+08:00",
+  "evidence_level": "post-outcome internal development",
+  "external_validation": false,
+  "input": {
+    "path": "docs/实验结果/E201_txpert_multitarget_retraining_20260802/formal_core_evaluation/tables/E201_TASK_METRICS.csv",
+    "bytes": 1208271,
+    "sha256": "4a02d132cae1605a2f6f54bee8912f45e835d1fc3936e6cda0fcc98e2c6bcd35",
+    "n_primary_tasks": 1808
+  },
+  "n_tasks": 1808,
+  "targets": [
+    "K562",
+    "RPE1",
+    "hepg2",
+    "jurkat"
+  ],
+  "candidate_formula": {
+    "magnitude_weight": 0.8,
+    "safeconf_weight": 0.2,
+    "transform": "within-target percentile rank"
+  },
+  "selection_rule": "leave-one-target-out; maximize training-target macro Spearman; larger alpha wins ties",
+  "bootstrap": {
+    "unit": "perturbation condition",
+    "replicates": 5000,
+    "seed": 20260909
+  },
+  "outputs": [
+    {
+      "path": "docs/实验结果/E206_safeconf_magnitude_fusion_20260909/ANALYSIS_PLAN.md",
+      "bytes": 3420,
+      "sha256": "b2739c3253c616f0b83178ea274a61258ab51d73b261850a2d5eaa24e083218c"
+    },
+    {
+      "path": "docs/实验结果/E206_safeconf_magnitude_fusion_20260909/E206_REPORT.md",
+      "bytes": 3669,
+      "sha256": "a9aa6a94c5ca13e2f6c5e44dd98a3db6587c8f180dcaa92716d576556823b854"
+    },
+    {
+      "path": "docs/实验结果/E206_safeconf_magnitude_fusion_20260909/MORNING_BRIEF.md",
+      "bytes": 7040,
+      "sha256": "105b2b3fdd03438e68bff61538b4780e9a79b93389db1f190531917c2834fc28"
+    },
+    {
+      "path": "docs/实验结果/E206_safeconf_magnitude_fusion_20260909/figures/E206_leave_one_target_out.pdf",
+      "bytes": 34531,
+      "sha256": "c787de768479ab2630d0b7bde301dbea54d69e7af848ce3b5dd44ba0ed6ee344"
+    },
+    {
+      "path": "docs/实验结果/E206_safeconf_magnitude_fusion_20260909/figures/E206_leave_one_target_out.png",
+      "bytes": 182693,
+      "sha256": "f548cd2b99fb596b7e2a5016e00545456b99a2e7c4b53d5200310c3ff29b4a64"
+    },
+    {
+      "path": "docs/实验结果/E206_safeconf_magnitude_fusion_20260909/figures/E206_risk_decomposition.pdf",
+      "bytes": 64461,
+      "sha256": "1bd2fb8a053946ea65e312fdac89bc2b63b8773f022ca6bad4eccb3f76a4eeb7"
+    },
+    {
+      "path": "docs/实验结果/E206_safeconf_magnitude_fusion_20260909/figures/E206_risk_decomposition.png",
+      "bytes": 303353,
+      "sha256": "86fa1cb88553680d2b502f1f05d3400ef0b4ac3ca98e67d1e0aa30dcf52ba628"
+    },
+    {
+      "path": "docs/实验结果/E206_safeconf_magnitude_fusion_20260909/figures/E206_weight_sweep.pdf",
+      "bytes": 37592,
+      "sha256": "4440f95e7b6cb80f79d441c3a544882ed0b6328e0ccf9c1226787a2d1a4c1eed"
+    },
+    {
+      "path": "docs/实验结果/E206_safeconf_magnitude_fusion_20260909/figures/E206_weight_sweep.png",
+      "bytes": 213077,
+      "sha256": "9b611ff40fd67256ea9fdf93be0db4395f541218ed9886030c295d439a5cb1d0"
+    },
+    {
+      "path": "docs/实验结果/E206_safeconf_magnitude_fusion_20260909/tables/E206_BOOTSTRAP_SUMMARY.csv",
+      "bytes": 1340,
+      "sha256": "455dc58ea20694dbdebe2b8bfbea1bfe944cef1b1d68e248376f3bfda907fb36"
+    },
+    {
+      "path": "docs/实验结果/E206_safeconf_magnitude_fusion_20260909/tables/E206_INPUT_HASHES.csv",
+      "bytes": 226,
+      "sha256": "5c5ce6cc77dc43b43dc6c494ea740272abe5d26ca3425e209563131a805fe8cf"
+    },
+    {
+      "path": "docs/实验结果/E206_safeconf_magnitude_fusion_20260909/tables/E206_LOTO_RESULTS.csv",
+      "bytes": 2487,
+      "sha256": "37e9d807a0df79124b7750b2185374fd78b266323a7de9e875f673f171ff08bb"
+    },
+    {
+      "path": "docs/实验结果/E206_safeconf_magnitude_fusion_20260909/tables/E206_WEIGHT_SWEEP.csv",
+      "bytes": 1768,
+      "sha256": "b267789a6887dd51eddc003a39d162b139aedd2141c2486af2fbaa3d3f461588"
+    }
+  ]
+}

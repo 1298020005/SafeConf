@@ -19,13 +19,25 @@ E201 已完成四个细胞系、四个随机种子的整背景留出评价：
 - 控制预测幅度后的偏 Spearman：`0.2503 [0.2021, 0.2980]`；
 - 20% 复核效用：SafeConf `0.3200`，幅度 `0.5943`，差值 `-0.2743`。
 
-因此能说“SafeConf 有幅度之外的关联”，不能说“SafeConf 优于幅度”，也不能把“幅度主排序、SafeConf 补充”写成已经验证的用法。
+因此能说“SafeConf 有幅度之外的关联”，不能说“SafeConf 单独优于幅度”。
+
+E206 在 E201 结果已经打开后进行公式开发，保留全部 1,808 个主任务：
+
+- 候选公式为目标背景内 `80% × 预测幅度百分位 + 20% × 原 SafeConf 百分位`；
+- 四背景宏平均 Spearman：融合 `0.7604`，幅度 `0.7421`；
+- 四背景轮流留出时，融合相对幅度的 Spearman 均提高；
+- 5,000 次按扰动条件成簇重抽样，固定候选的 ΔSpearman 95% 区间为 `[0.0091, 0.0271]`；
+- 20% 复核效用为 `0.7822` 对 `0.7688`，但差值区间 `[-0.0139, 0.0520]` 跨 0。
+
+因此可以把“幅度主排序、SafeConf 校正”作为**内部开发出的候选用法**，不能写成已经完成独立外部验证，也不能把复核效用的点估计写成确定改善。
 
 证据：
 
 ```text
 docs/实验结果/E201_txpert_multitarget_retraining_20260802/formal_core_evaluation/reports/E201_CORE_REPORT.md
 docs/实验结果/E201_txpert_multitarget_retraining_20260802/formal_core_evaluation/tables/
+docs/实验结果/E206_safeconf_magnitude_fusion_20260909/E206_REPORT.md
+docs/实验结果/E206_safeconf_magnitude_fusion_20260909/tables/
 docs/学习导航/20260906_论文审核与从零教学/CLAIM_TABLE.json
 ```
 
