@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SafeConf 论文全景教学 V2 · 超详细图解版（2026-09-09）</title>
+<style>
+  :root{
+    --npg-red:#E64B35; --npg-blue:#3C5488; --npg-teal:#00A087;
+    --npg-cyan:#4DBBD5; --npg-salmon:#F39B7F; --npg-muted:#8491B4;
+    --npg-lightteal:#91D1C2; --npg-brown:#7E6148; --npg-orange:#E69F00;
+    --ink:#1a1a1a; --soft:#444; --faint:#767676; --line:#d9d9d9;
+    --panel:#fafafa; --warn-bg:#fdf3f2; --ok-bg:#f2f8f6; --note-bg:#f5f7fb;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:#fff; color:var(--ink);
+    font-family:"Source Han Serif SC","Noto Serif CJK SC","Songti SC",Georgia,"Times New Roman",serif;
+    font-size:17px; line-height:1.9;
+  }
+  .page{max-width:980px; margin:0 auto; padding:48px 40px 96px;}
+  h1,h2,h3,h4,.fig-title,.panel-letter,figcaption,.tag{
+    font-family:"Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;
+  }
+  h1{font-size:30px; line-height:1.4; margin:0 0 8px;}
+  .subtitle{color:var(--faint); font-size:15px; margin-bottom:6px;}
+  .meta{color:var(--faint); font-size:13.5px; border-bottom:1px solid var(--line); padding-bottom:18px; margin-bottom:28px;}
+  h2{font-size:23px; margin:60px 0 6px; padding-top:18px; border-top:2px solid var(--ink);}
+  h2 .no{color:var(--npg-red); margin-right:10px;}
+  h3{font-size:18.5px; margin:32px 0 4px; color:var(--npg-blue);}
+  p{margin:10px 0;}
+  .lede{font-size:18.5px; color:var(--soft);}
+  figure{margin:32px 0 36px; padding:22px 18px 14px; background:var(--panel); border:1px solid #eee;}
+  figure svg{display:block; margin:0 auto; max-width:100%; height:auto;}
+  figcaption{font-size:14.5px; line-height:1.8; color:var(--soft); margin-top:14px; text-align:left;}
+  figcaption b{color:var(--ink);}
+  .term{background:var(--note-bg); border-left:4px solid var(--npg-cyan); padding:12px 16px; margin:16px 0; font-size:15.5px;}
+  .warn{background:var(--warn-bg); border-left:4px solid var(--npg-red); padding:12px 16px; margin:16px 0; font-size:15.5px;}
+  .ok{background:var(--ok-bg); border-left:4px solid var(--npg-teal); padding:12px 16px; margin:16px 0; font-size:15.5px;}
+  .num{font-family:Arial,sans-serif; font-weight:700; color:var(--npg-blue);}
+  .num-red{font-family:Arial,sans-serif; font-weight:700; color:var(--npg-red);}
+  .num-teal{font-family:Arial,sans-serif; font-weight:700; color:var(--npg-teal);}
+  .en{color:var(--npg-muted); font-size:.92em;}
+  table{border-collapse:collapse; width:100%; margin:18px 0; font-size:14.5px;
+    font-family:"Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;}
+  th{border-top:2px solid var(--ink); border-bottom:1px solid #999; text-align:left; padding:7px 10px;}
+  td{border-bottom:1px solid #e5e5e5; padding:7px 10px; vertical-align:top;}
+  tr:last-child td{border-bottom:2px solid var(--ink);}
+  .tag{display:inline-block; font-size:12px; font-weight:700; padding:1px 8px; border-radius:3px; color:#fff; vertical-align:middle;}
+  .tag.ok{background:var(--npg-teal);} .tag.no{background:var(--npg-red);}
+  .tag.half{background:var(--npg-orange);} .tag.planned{background:var(--npg-muted);}
+  ul,ol{padding-left:24px;}
+  li{margin:6px 0;}
+  .toc{columns:2; column-gap:40px; font-size:15px; background:var(--panel); border:1px solid #eee; padding:20px 26px;}
+  .toc a{color:var(--npg-blue); text-decoration:none;}
+  .quiz{background:#fff; border:1px dashed var(--npg-muted); padding:16px 20px; margin:14px 0;}
+  .foot{margin-top:64px; padding-top:16px; border-top:1px solid var(--line); color:var(--faint); font-size:13px;}
+  code{font-family:Consolas,Menlo,monospace; font-size:14px; background:#f4f4f4; padding:1px 5px; border-radius:3px;}
+</style>
+</head>
+<body>
+<div class="page">
+
+<h1>SafeConf 论文全景教学 V2 · 超详细图解版</h1>
+<div class="subtitle">对标 Nature 论文图解格式 · 全中文 · 每个科研名词都带（英文，解释）· 共 24 张体系图</div>
+<div class="meta">
+  版本：2026-09-09 V2（WorkBuddy 独立复审 + 服务器代码实查后扩写）｜数字来源：E201 正式结果表（CSV）与 CLAIM_TABLE.json，逐个人工核对｜<br>
+  本版新增：服务器代码结构、训练管线、E204 队列实况三章；并按 2026-09-08《当前能说什么（记忆提纲）》收紧了三处表述。<br>
+  适用读者：完全没有单细胞背景的论文作者本人。建议读法：每天 2–3 章，一周读完；每张图都要能讲给别人听。
+</div>
+
+<p class="lede">这份教材只有一个目标：<b>让你真正看懂自己的论文</b>。规则：① 所有数字都能追溯到正式结果表；② 每个和单细胞、机器学习、统计、科研流程相关的名词，都写成「中文（English，一句话解释）」；③ 讲不清的地方就画图，全文共 24 张图。</p>
+
+<div class="toc">
+<b>目录（14 章）</b>
+<ol>
+  <li><a href="#s0">怎么用这份教材（学习路线图）</a></li>
+  <li><a href="#s1">这篇研究到底在解决什么问题</a></li>
+  <li><a href="#s2">基础概念：细胞、基因表达与「一道题」</a></li>
+  <li><a href="#s3">两个主角：TxPert 与 SafeConf</a></li>
+  <li><a href="#s4">考试有四种难度（留出考法）</a></li>
+  <li><a href="#s5">先交卷再对答案（封存纪律）</a></li>
+  <li><a href="#s6">风险分的五个成分</a></li>
+  <li><a href="#s7">主实验 E201 得到了什么</a></li>
+  <li><a href="#s8">三把统计尺子学明白</a></li>
+  <li><a href="#s9">必须记住的四个坏消息</a></li>
+  <li><a href="#s10">实验家族地图（E199–E205）</a></li>
+  <li><a href="#s11">代码与数据是怎么跑起来的</a></li>
+  <li><a href="#s12">E204 训练队列实况（已启动）</a></li>
+  <li><a href="#s13">离投稿还有多远 + 防误导手册</a></li>
+</ol>
+</div>
+
+<!-- ============ 第 0 章 ============ -->
+<h2 id="s0"><span class="no">00</span>怎么用这份教材（学习路线图）</h2>
+
+<p>你现在的状态是「完全不懂」，这很正常——这篇论文横跨三个领域：单细胞生物学（single-cell biology，在单个细胞层面研究生命的学科）、机器学习（machine learning，让计算机从数据中学习规律的学科）、统计学（statistics，从数据中得出结论并量化不确定性的学科）。好消息是：你不需要先学完三个领域，只需要学会「这篇论文用到的 1%」。</p>
+
+<figure>
+<svg viewBox="0 0 920 360" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555"/>
+    </marker>
+  </defs>
+  <text x="20" y="30" font-size="15" font-weight="bold" fill="#1a1a1a">a</text>
+  <text x="60" y="30" font-size="12.5" fill="#555">三遍学习法：每遍都有明确的「会什么」</text>
+  <!-- 三遍 -->
+  <rect x="20" y="55" width="280" height="200" rx="6" fill="#EAF3FB" stroke="#3C5488" stroke-width="1.4"/>
+  <text x="160" y="84" font-size="14" font-weight="bold" text-anchor="middle" fill="#3C5488">第一遍：讲故事（2 小时）</text>
+  <text x="40" y="114" font-size="12" fill="#333">读第 1–3 章</text>
+  <text x="40" y="140" font-size="12" fill="#555">学完能向朋友介绍：</text>
+  <text x="40" y="162" font-size="12" fill="#555">「模型答题、SafeConf 挑错题、</text>
+  <text x="40" y="184" font-size="12" fill="#555">　幅度是更强的基线、</text>
+  <text x="40" y="206" font-size="12" fill="#555">　先封存再对答案」</text>
+  <rect x="320" y="55" width="280" height="200" rx="6" fill="#F2F8F6" stroke="#00A087" stroke-width="1.4"/>
+  <text x="460" y="84" font-size="14" font-weight="bold" text-anchor="middle" fill="#00A087">第二遍：懂数字（3 小时）</text>
+  <text x="340" y="114" font-size="12" fill="#333">读第 4–9 章</text>
+  <text x="340" y="140" font-size="12" fill="#555">学完能解释每个核心数字：</text>
+  <text x="340" y="162" font-size="12" fill="#555">0.4082 / 0.6189 / 0.2503 /</text>
+  <text x="340" y="184" font-size="12" fill="#555">0.3200 / 0.5943 各自回答什么，</text>
+  <text x="340" y="206" font-size="12" fill="#555">以及四个负结果为什么必须留着</text>
+  <rect x="620" y="55" width="280" height="200" rx="6" fill="#FFF9EC" stroke="#E69F00" stroke-width="1.4"/>
+  <text x="760" y="84" font-size="14" font-weight="bold" text-anchor="middle" fill="#7E6148">第三遍：管项目（3 小时）</text>
+  <text x="640" y="114" font-size="12" fill="#333">读第 10–14 章</text>
+  <text x="640" y="140" font-size="12" fill="#555">学完能管这件事：</text>
+  <text x="640" y="162" font-size="12" fill="#555">E204 队列在跑什么、代码在哪、</text>
+  <text x="640" y="184" font-size="12" fill="#555">投稿还缺什么、哪句话写进论文</text>
+  <text x="640" y="206" font-size="12" fill="#555">会被审稿人当场抓住</text>
+  <line x1="300" y1="155" x2="316" y2="155" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="600" y1="155" x2="616" y2="155" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+  <!-- 底部规则 -->
+  <rect x="20" y="285" width="880" height="58" rx="4" fill="#F5F7FB" stroke="#8491B4" stroke-width="1"/>
+  <text x="40" y="310" font-size="12" font-weight="bold" fill="#3C5488">三条学习纪律</text>
+  <text x="40" y="332" font-size="11.5" fill="#333">① 数字只信正式结果表，不信任何 AI 的聊天记录　② 每张图合上书能讲出来才算过　③ 看不懂的名词先查第 14 章术语总表，还看不懂就直接问</text>
+</svg>
+<figcaption><b>图 1｜三遍学习路线图。</b>第一遍只求会讲故事，第二遍要求懂每个数字，第三遍学会管理项目（实验、代码、投稿）。</figcaption>
+</figure>
+
+<!-- ============ 第 1 章 ============ -->
+<h2 id="s1"><span class="no">01</span>这篇研究到底在解决什么问题</h2>
+
+<p>先用一句大白话概括整篇论文：</p>
+
+<div class="term"><b>一句话版本：</b>计算机模型可以预测「把细胞里某个基因敲低后，几千个基因会怎么变」，但它有时猜得准、有时错得离谱。<b>这篇论文不发明新的预测模型，而是研究：在还不知道正确答案之前，能不能先把「比较可能猜错的题」挑出来。</b>干这件事的工具叫 SafeConf。</div>
+
+<h3>1.1 为什么这件事值钱</h3>
+
+<p>关键在于<b>验证成本（validation cost，用实验确认一个预测要花多少钱）</b>。生物实验室里验证一个预测，要做一次真实的扰动实验（perturbation experiment，人为改动细胞再测量的实验）：养细胞、做 CRISPR 操作、测序，一个条件动辄几百到几千元、几天到几周。模型一次能生成上千个预测，但实验室只验证得起其中一小部分——<b>先验证哪一些，就是省钱问题</b>。</p>
+
+<figure>
+<svg viewBox="0 0 920 330" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
+  <text x="20" y="30" font-size="15" font-weight="bold" fill="#1a1a1a">a</text>
+  <text x="60" y="30" font-size="12.5" fill="#555">没有风险排序：闭眼抽查，坏预测混进好预测里被浪费掉</text>
+  <!-- 左侧：无排序 -->
+  <g>
+    <rect x="40" y="55" width="380" height="56" rx="4" fill="#F5F7FB" stroke="#8491B4"/>
+    <text x="230" y="79" font-size="12" text-anchor="middle" fill="#333">模型给出 1,808 个预测（题目）</text>
+    <text x="230" y="98" font-size="11" text-anchor="middle" fill="#767676">里面混着好预测和坏预测，但事先不知道</text>
+    <line x1="230" y1="115" x2="230" y2="145" stroke="#555" stroke-width="1.4" marker-end="url(#arr)"/>
+    <rect x="40" y="150" width="380" height="56" rx="4" fill="#FDF3F2" stroke="#E64B35"/>
+    <text x="230" y="174" font-size="12" text-anchor="middle" fill="#333">闭眼抽查 20%：约 20% 的坏预测被抓到</text>
+    <text x="230" y="193" font-size="11" text-anchor="middle" fill="#767676">大部分复核预算浪费在本来就好题上</text>
+  </g>
+  <!-- 右侧：有排序 -->
+  <text x="490" y="30" font-size="12.5" fill="#555">有风险排序：先查最可疑的，同样的钱抓更多坏预测</text>
+  <g>
+    <rect x="490" y="55" width="380" height="56" rx="4" fill="#F2F8F6" stroke="#00A087"/>
+    <text x="680" y="79" font-size="12" text-anchor="middle" fill="#333">SafeConf 给每题打风险分（risk score）</text>
+    <text x="680" y="98" font-size="11" text-anchor="middle" fill="#767676">只看对答案前就能算的信息，不偷看结果</text>
+    <line x1="680" y1="115" x2="680" y2="145" stroke="#555" stroke-width="1.4" marker-end="url(#arr)"/>
+    <rect x="490" y="150" width="380" height="56" rx="4" fill="#F2F8F6" stroke="#00A087"/>
+    <text x="680" y="174" font-size="12" text-anchor="middle" fill="#333">先查风险最高的 20%：33.4% 的坏预测被抓到</text>
+    <text x="680" y="193" font-size="11" text-anchor="middle" fill="#767676">E201 实测：高错误捕获率 0.3343，约为抽查的 1.67 倍</text>
+  </g>
+  <!-- 底部 -->
+  <rect x="40" y="235" width="830" height="70" rx="4" fill="#FFF9EC" stroke="#E69F00"/>
+  <text x="60" y="262" font-size="12.5" font-weight="bold" fill="#7E6148">这篇论文的真实定位</text>
+  <text x="60" y="286" font-size="12" fill="#333">SafeConf 确实比闭眼抽查强（0.3343 vs 0.2002）；但另一个更简单的信号「预测幅度（predicted magnitude，模型自己认为变化有多大）」抓得更多（0.4558）。所以论文的诚实结论是：风险排序有用，但当前最强的单一排序信号是幅度；SafeConf 含有幅度之外的独立信息，两者如何组合使用还需要专门实验验证。</text>
+</svg>
+<figcaption><b>图 2｜为什么「挑错题」值钱。</b>左：没有风险排序时，复核预算（review budget，能用于人工复核的题目比例）被平均浪费；右：按风险分先查最可疑的题，同样的 20% 预算抓到更多坏预测。高错误捕获率（high-error capture，被查出的高误差任务占全部高误差任务的比例）从 0.2002 升到 0.3343；但幅度信号的 0.4558 更高。</figcaption>
+</figure>
+
+<h3>1.2 这项研究在整个领域的位置</h3>
+
+<figure>
+<svg viewBox="0 0 920 400" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
+  <text x="20" y="30" font-size="15" font-weight="bold" fill="#1a1a1a">a</text>
+  <rect x="20" y="50" width="200" height="92" rx="4" fill="#EAF3FB" stroke="#3C5488" stroke-width="1.2"/>
+  <text x="120" y="76" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#3C5488">湿实验世界</text>
+  <text x="120" y="98" font-size="11.5" text-anchor="middle" fill="#333">CRISPR干扰（CRISPRi）</text>
+  <text x="120" y="116" font-size="11.5" text-anchor="middle" fill="#333">敲低基因，测细胞反应</text>
+  <text x="120" y="134" font-size="10.5" text-anchor="middle" fill="#767676">慢、贵，但答案是真相</text>
+  <rect x="280" y="50" width="200" height="92" rx="4" fill="#EAF3FB" stroke="#3C5488" stroke-width="1.2"/>
+  <text x="380" y="76" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#3C5488">数据</text>
+  <text x="380" y="98" font-size="11.5" text-anchor="middle" fill="#333">单细胞RNA测序</text>
+  <text x="380" y="116" font-size="11.5" text-anchor="middle" fill="#333">（scRNA-seq）表达矩阵</text>
+  <text x="380" y="134" font-size="10.5" text-anchor="middle" fill="#767676">每个细胞 × 几千个基因</text>
+  <rect x="540" y="50" width="200" height="92" rx="4" fill="#FFF4E5" stroke="#E64B35" stroke-width="1.2"/>
+  <text x="640" y="76" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#E64B35">计算预测模型</text>
+  <text x="640" y="98" font-size="11.5" text-anchor="middle" fill="#333">TxPert 等：输入细胞状态</text>
+  <text x="640" y="116" font-size="11.5" text-anchor="middle" fill="#333">输出扰动后表达预测</text>
+  <text x="640" y="134" font-size="10.5" text-anchor="middle" fill="#767676">快、便宜，但会出错</text>
+  <line x1="220" y1="96" x2="276" y2="96" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="480" y1="96" x2="536" y2="96" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="280" y="182" width="460" height="66" rx="4" fill="#FDF3F2" stroke="#E64B35" stroke-width="1.4" stroke-dasharray="5,3"/>
+  <text x="510" y="209" font-size="13" font-weight="bold" text-anchor="middle" fill="#E64B35">痛点：预测有时错得离谱，但用之前不知道哪题错</text>
+  <text x="510" y="231" font-size="11.5" text-anchor="middle" fill="#333">逐题用湿实验验证成本极高 → 需要「事先挑最可疑的题」</text>
+  <line x1="640" y1="142" x2="640" y2="178" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="280" y="286" width="460" height="88" rx="4" fill="#F2F8F6" stroke="#00A087" stroke-width="1.6"/>
+  <text x="510" y="313" font-size="14" font-weight="bold" text-anchor="middle" fill="#00A087">SafeConf（本论文）：预测后的风险打分层</text>
+  <text x="510" y="336" font-size="11.5" text-anchor="middle" fill="#333">业务A：给已生成的预测排「复核顺序」（已有正式盲测证据）</text>
+  <text x="510" y="356" font-size="11.5" text-anchor="middle" fill="#333">业务B：训练时给难样本加权（程序就绪，效果实验正在进行）</text>
+  <line x1="510" y1="248" x2="510" y2="282" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+</svg>
+<figcaption><b>图 3｜研究在领域中的位置。</b>湿实验（wet lab，在实验室里用真实细胞做的实验，与「计算实验」相对）产生数据；计算模型据此学习预测；SafeConf 层解决「哪份预测更可能错」。两条业务线：业务A＝预测后风险路由（risk routing，给预测结果安排复核顺序）；业务B＝风险引导训练（risk-guided training，训练阶段给难样本更大权重）。</figcaption>
+</figure>
+
+<div class="ok"><b>读懂检查：</b>合上书，用两句话向别人讲清「这篇论文不发明新的答题模型，它发明的是挑错题的标记笔；挑错题值钱是因为实验室验证很贵」。能做到，就进入第 2 章。</div>
+
+<!-- ============ 第 2 章 ============ -->
+<h2 id="s2"><span class="no">02</span>基础概念：细胞、基因表达与「一道题」</h2>
+
+<p>这一章建立全部基础词汇。每个词都会反复使用，请务必逐字读懂。</p>
+
+<h3>2.1 把细胞写成一行数字：基因表达与 scRNA-seq</h3>
+
+<p>每个细胞里有约两万个基因，每个基因都在以不同强度「工作」。基因工作的强度叫<b>基因表达（gene expression，某基因在细胞里被读出多少的量）</b>。用<b>单细胞RNA测序（single-cell RNA sequencing, scRNA-seq，逐个细胞测量基因表达的技术）</b>测完一个细胞，就得到一行数字：每一列是一个基因，数字是它的表达量。本论文主实验里，每个细胞用 <span class="num">3,352</span> 个基因来描述——可以想象成每个细胞是一张 3,352 格的答卷。</p>
+
+<p>单细胞测量噪声很大（同一个条件的两个细胞，测出来可能差不少）。评价时会把同一条件下许多细胞的表达取平均，得到的平均向量叫<b>质心（centroid，同一条件下许多细胞表达的平均向量，相当于「标准答案卷」）</b>。</p>
+
+<h3>2.2 人为改动细胞：扰动与 CRISPRi</h3>
+
+<p>科学家会故意改动细胞，看其他基因怎么跟着变，这种操作叫<b>扰动（perturbation，人为对细胞做的干预）</b>。本论文用的是 <b>CRISPR干扰（CRISPR interference, CRISPRi，利用 CRISPR 系统把某个基因的表达压低的技术）</b>——俗称「敲低（knockdown，把某基因的表达量人为降低）」。记号 <code>AARS+ctrl</code> 读作：敲低 AARS 这个基因，另一个位置放<b>对照（control，不做有效处理的参照样本，用来排除干扰因素）</b>。</p>
+
+<h3>2.3 一道题 = 一个任务</h3>
+
+<p>整篇论文最基本的单位是<b>任务（task，一个「细胞背景 × 扰动条件」的组合，模型要回答的最小问题）</b>。例如 <code>K562::AARS+ctrl</code>：在 K562 这种白血病细胞里，敲低 AARS 基因后，那 3,352 个基因各自怎么变？——这就是「一道题」。<b>细胞背景（context，实验在哪个细胞品种里做）</b>决定「在哪种细胞里考」；<b>扰动条件（perturbation condition，敲低哪个基因）</b>决定「考哪个基因的改动」。</p>
+
+<figure>
+<svg viewBox="0 0 920 440" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
+  <text x="20" y="28" font-size="15" font-weight="bold" fill="#1a1a1a">a</text>
+  <circle cx="80" cy="80" r="26" fill="#91D1C2" stroke="#00A087" stroke-width="1.5"/>
+  <circle cx="130" cy="100" r="20" fill="#91D1C2" stroke="#00A087" stroke-width="1.5" opacity="0.8"/>
+  <circle cx="105" cy="55" r="16" fill="#91D1C2" stroke="#00A087" stroke-width="1.5" opacity="0.6"/>
+  <text x="105" y="140" font-size="12" text-anchor="middle" fill="#333">许多个单细胞</text>
+  <line x1="170" y1="85" x2="215" y2="85" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="220" y="60" width="330" height="34" fill="#EAF3FB" stroke="#3C5488" stroke-width="1"/>
+  <g fill="#4DBBD5" opacity="0.85">
+    <rect x="226" y="66" width="14" height="22"/><rect x="244" y="66" width="8" height="22"/>
+    <rect x="256" y="66" width="18" height="22"/><rect x="278" y="66" width="6" height="22"/>
+    <rect x="288" y="66" width="12" height="22"/><rect x="304" y="66" width="20" height="22"/>
+    <rect x="328" y="66" width="9" height="22"/><rect x="341" y="66" width="15" height="22"/>
+    <rect x="360" y="66" width="7" height="22"/><rect x="371" y="66" width="17" height="22"/>
+    <rect x="392" y="66" width="11" height="22"/><rect x="407" y="66" width="19" height="22"/>
+    <rect x="430" y="66" width="8" height="22"/><rect x="442" y="66" width="14" height="22"/>
+    <rect x="460" y="66" width="10" height="22"/><rect x="474" y="66" width="16" height="22"/>
+    <rect x="494" y="66" width="12" height="22"/><rect x="510" y="66" width="9" height="22"/>
+    <rect x="523" y="66" width="18" height="22"/>
+  </g>
+  <text x="385" y="118" font-size="12" text-anchor="middle" fill="#333">每个细胞 → 3,352 个基因的表达值（一行数字）</text>
+  <line x1="556" y1="77" x2="600" y2="77" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="606" y="55" width="290" height="58" rx="4" fill="#F2F8F6" stroke="#00A087" stroke-width="1.3"/>
+  <text x="751" y="79" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#00A087">同条件取平均 → 质心（centroid）</text>
+  <text x="751" y="99" font-size="11.5" text-anchor="middle" fill="#333">降噪后的「标准答案卷」</text>
+
+  <text x="20" y="190" font-size="15" font-weight="bold" fill="#1a1a1a">b</text>
+  <rect x="20" y="205" width="880" height="210" rx="6" fill="#FFF" stroke="#d9d9d9" stroke-width="1"/>
+  <text x="460" y="233" font-size="13.5" font-weight="bold" text-anchor="middle" fill="#1a1a1a">解剖一道真题：K562::AARS+ctrl</text>
+  <rect x="50" y="254" width="250" height="126" rx="4" fill="#EAF3FB" stroke="#3C5488" stroke-width="1.2"/>
+  <text x="175" y="280" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#3C5488">细胞背景（context）</text>
+  <text x="175" y="302" font-size="11.5" text-anchor="middle" fill="#333">K562：白血病细胞系</text>
+  <text x="175" y="322" font-size="11.5" text-anchor="middle" fill="#333">决定「在哪种细胞里考」</text>
+  <text x="175" y="352" font-size="11" text-anchor="middle" fill="#767676">四种之一：K562 / RPE1 / HepG2 / Jurkat</text>
+  <text x="330" y="324" font-size="22" text-anchor="middle" fill="#999">×</text>
+  <rect x="360" y="254" width="250" height="126" rx="4" fill="#FFF4E5" stroke="#E64B35" stroke-width="1.2"/>
+  <text x="485" y="280" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#E64B35">扰动条件（perturbation）</text>
+  <text x="485" y="302" font-size="11.5" text-anchor="middle" fill="#333">AARS+ctrl：敲低 AARS 基因</text>
+  <text x="485" y="322" font-size="11.5" text-anchor="middle" fill="#333">另一个位置放无效对照（ctrl）</text>
+  <text x="485" y="352" font-size="11" text-anchor="middle" fill="#767676">决定「考哪个基因的改动」</text>
+  <text x="640" y="324" font-size="22" text-anchor="middle" fill="#999">＝</text>
+  <rect x="668" y="254" width="212" height="126" rx="4" fill="#F2F8F6" stroke="#00A087" stroke-width="1.2"/>
+  <text x="774" y="280" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#00A087">一个任务（task）</text>
+  <text x="774" y="302" font-size="11.5" text-anchor="middle" fill="#333">要回答：敲低后 3,352 个</text>
+  <text x="774" y="320" font-size="11.5" text-anchor="middle" fill="#333">基因各自怎么变？</text>
+  <text x="774" y="352" font-size="11" text-anchor="middle" fill="#767676">E201 主分析共 1,808 道题</text>
+</svg>
+<figcaption><b>图 4｜从细胞到一道题。</b><b>a</b>，单细胞经 scRNA-seq 变成 3,352 维的表达向量（expression vector，用一串数字表示一个细胞的状态）；同一条件下许多细胞取平均得到质心。<b>b</b>，任务＝细胞背景 × 扰动条件。主实验 E201 在四种细胞系上共考核 1,808 个主任务（另有 200 个小样本敏感性任务，合计 2,008 个）。</figcaption>
+</figure>
+
+<h3>2.4 四种细胞系与「训练能看 / 不能看」</h3>
+
+<p>主实验用了四种<b>细胞系（cell line，实验室里能长期传代培养的细胞品种）</b>，性格迥异，用来考验方法是不是只对某一种细胞有效：</p>
+
+<figure>
+<svg viewBox="0 0 920 360" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
+  <text x="20" y="28" font-size="15" font-weight="bold" fill="#1a1a1a">a</text>
+  <text x="60" y="28" font-size="12.5" fill="#555">四种细胞系卡片（都是癌症研究最常用的模型细胞）</text>
+  <g font-size="11.5">
+    <rect x="20" y="45" width="205" height="120" rx="4" fill="#EAF3FB" stroke="#3C5488" stroke-width="1.2"/>
+    <text x="122" y="72" font-size="14" font-weight="bold" text-anchor="middle" fill="#3C5488">K562</text>
+    <text x="122" y="95" text-anchor="middle" fill="#333">慢性髓性白血病细胞</text>
+    <text x="122" y="116" text-anchor="middle" fill="#333">悬浮生长，血细胞模型</text>
+    <text x="122" y="143" text-anchor="middle" fill="#767676">E201 中 566 道主任务</text>
+    <rect x="245" y="45" width="205" height="120" rx="4" fill="#EAF3FB" stroke="#3C5488" stroke-width="1.2"/>
+    <text x="347" y="72" font-size="14" font-weight="bold" text-anchor="middle" fill="#3C5488">RPE1</text>
+    <text x="347" y="95" text-anchor="middle" fill="#333">视网膜色素上皮细胞</text>
+    <text x="347" y="116" text-anchor="middle" fill="#333">贴壁生长，接近正常细胞</text>
+    <text x="347" y="143" text-anchor="middle" fill="#767676">E201 中 416 道主任务</text>
+    <rect x="470" y="45" width="205" height="120" rx="4" fill="#EAF3FB" stroke="#3C5488" stroke-width="1.2"/>
+    <text x="572" y="72" font-size="14" font-weight="bold" text-anchor="middle" fill="#3C5488">HepG2</text>
+    <text x="572" y="95" text-anchor="middle" fill="#333">肝细胞癌细胞</text>
+    <text x="572" y="116" text-anchor="middle" fill="#333">肝脏代谢研究常用</text>
+    <text x="572" y="143" text-anchor="middle" fill="#767676">E201 中 405 道主任务</text>
+    <rect x="695" y="45" width="205" height="120" rx="4" fill="#EAF3FB" stroke="#3C5488" stroke-width="1.2"/>
+    <text x="797" y="72" font-size="14" font-weight="bold" text-anchor="middle" fill="#3C5488">Jurkat</text>
+    <text x="797" y="95" text-anchor="middle" fill="#333">T 淋巴细胞（白血病来源）</text>
+    <text x="797" y="116" text-anchor="middle" fill="#333">免疫学研究常用</text>
+    <text x="797" y="143" text-anchor="middle" fill="#767676">E201 中 421 道主任务</text>
+  </g>
+  <!-- source/target -->
+  <text x="20" y="215" font-size="15" font-weight="bold" fill="#1a1a1a">b</text>
+  <text x="60" y="215" font-size="12.5" fill="#555">源域（source）与目标域（target）：训练能看与考试藏起来的数据</text>
+  <rect x="20" y="232" width="420" height="105" rx="4" fill="#F2F8F6" stroke="#00A087" stroke-width="1.3"/>
+  <text x="230" y="260" font-size="13" font-weight="bold" text-anchor="middle" fill="#00A087">源域（source）＝ 课本</text>
+  <text x="230" y="284" font-size="11.5" text-anchor="middle" fill="#333">训练时允许模型看答案的 3 个细胞背景</text>
+  <text x="230" y="304" font-size="11.5" text-anchor="middle" fill="#333">（例如考 K562 时，课本是 RPE1 + HepG2 + Jurkat）</text>
+  <text x="230" y="326" font-size="11" text-anchor="middle" fill="#767676">SafeConf 的「经验」全部只能来自这里</text>
+  <rect x="480" y="232" width="420" height="105" rx="4" fill="#FDF3F2" stroke="#E64B35" stroke-width="1.3"/>
+  <text x="690" y="260" font-size="13" font-weight="bold" text-anchor="middle" fill="#E64B35">目标域（target）＝ 考场</text>
+  <text x="690" y="284" font-size="11.5" text-anchor="middle" fill="#333">考试时整套答案都藏起来的 1 个细胞背景</text>
+  <text x="690" y="304" font-size="11.5" text-anchor="middle" fill="#333">（例如 K562 的 566 道题，答案封存）</text>
+  <text x="690" y="326" font-size="11" text-anchor="middle" fill="#767676">评价「真本事」只能在这里进行</text>
+</svg>
+<figcaption><b>图 5｜四种细胞系与源域/目标域。</b><b>a</b>，四种细胞系（cell line）卡片。<b>b</b>，源域（source，训练时允许看到答案的细胞背景）与目标域（target，测试时答案被完全藏起来的细胞背景）；故意不给模型看某类数据的做法叫留出（holdout）。E201 的考法是「整行留出」：考哪个细胞系，那个细胞系的全部扰动答案都对模型保密。</figcaption>
+</figure>
+
+<div class="ok"><b>本章十个词回顾：</b>基因表达（gene expression）、单细胞RNA测序（scRNA-seq）、表达向量（expression vector）、质心（centroid）、扰动（perturbation）、CRISPR干扰（CRISPRi）、敲低（knockdown）、对照（control）、任务（task）、细胞系（cell line）、源域（source）／目标域（target）、留出（holdout）。</div>
+
+<!-- ============ 第 3 章 ============ -->
+<h2 id="s3"><span class="no">03</span>两个主角：TxPert 与 SafeConf</h2>
+
+<p>整篇论文有两个角色，千万不要混淆：<b>TxPert 是答题的学生，SafeConf 是给学生划重点的阅卷组长</b>。</p>
+
+<h3>3.1 TxPert 怎么答题（看过代码后的通俗版）</h3>
+
+<p>TxPert 是一个<b>深度学习（deep learning，用多层人工神经网络从数据中学习规律的技术）</b>模型。它的内部可以粗略理解为三个零件（我已读过服务器上的实际运行代码，下面是准确描述）：</p>
+
+<figure>
+<svg viewBox="0 0 920 380" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
+  <text x="20" y="28" font-size="15" font-weight="bold" fill="#1a1a1a">a</text>
+  <text x="60" y="28" font-size="12.5" fill="#555">TxPert 的输入 → 三个零件 → 输出（按实际代码 PertPredictor 的工作方式绘制）</text>
+  <!-- 输入 -->
+  <rect x="20" y="55" width="170" height="90" rx="4" fill="#EAF3FB" stroke="#3C5488" stroke-width="1.2"/>
+  <text x="105" y="82" font-size="12" font-weight="bold" text-anchor="middle" fill="#3C5488">输入 ① 未扰动细胞</text>
+  <text x="105" y="102" font-size="11" text-anchor="middle" fill="#333">对照细胞的表达向量</text>
+  <text x="105" y="120" font-size="11" text-anchor="middle" fill="#333">（control cells）</text>
+  <rect x="20" y="170" width="170" height="90" rx="4" fill="#EAF3FB" stroke="#3C5488" stroke-width="1.2"/>
+  <text x="105" y="197" font-size="12" font-weight="bold" text-anchor="middle" fill="#3C5488">输入 ② 敲低哪个基因</text>
+  <text x="105" y="217" font-size="11" text-anchor="middle" fill="#333">扰动标签（perturbation</text>
+  <text x="105" y="235" font-size="11" text-anchor="middle" fill="#333">index，基因的编号）</text>
+  <!-- 零件 -->
+  <rect x="260" y="55" width="190" height="205" rx="4" fill="#FFF4E5" stroke="#E64B35" stroke-width="1.4"/>
+  <text x="355" y="82" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#E64B35">零件 ① 基底编码器</text>
+  <text x="355" y="104" font-size="11" text-anchor="middle" fill="#333">变分自编码器（VAE）</text>
+  <text x="355" y="124" font-size="11" text-anchor="middle" fill="#333">把 3,352 维细胞状态压缩成</text>
+  <text x="355" y="142" font-size="11" text-anchor="middle" fill="#333">一个紧凑的「状态摘要」</text>
+  <text x="355" y="170" font-size="11" text-anchor="middle" fill="#767676">同时输出均值和不确定度</text>
+  <text x="355" y="188" font-size="11" text-anchor="middle" fill="#767676">（代码里叫 intrinsic</text>
+  <text x="355" y="206" font-size="11" text-anchor="middle" fill="#767676">mean / log_var）</text>
+  <rect x="480" y="55" width="190" height="205" rx="4" fill="#FFF4E5" stroke="#E64B35" stroke-width="1.4"/>
+  <text x="575" y="82" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#E64B35">零件 ② 基因关系网</text>
+  <text x="575" y="104" font-size="11" text-anchor="middle" fill="#333">图注意力网络（GAT）</text>
+  <text x="575" y="124" font-size="11" text-anchor="middle" fill="#333">基因不是孤立的：它们组成</text>
+  <text x="575" y="142" font-size="11" text-anchor="middle" fill="#333">一张「谁影响谁」的关系网</text>
+  <text x="575" y="160" font-size="11" text-anchor="middle" fill="#333">（STRING 数据库）</text>
+  <text x="575" y="188" font-size="11" text-anchor="middle" fill="#767676">敲低一个基因的影响</text>
+  <text x="575" y="206" font-size="11" text-anchor="middle" fill="#767676">沿网络传播到其他基因</text>
+  <rect x="700" y="55" width="200" height="205" rx="4" fill="#FFF4E5" stroke="#E64B35" stroke-width="1.4"/>
+  <text x="800" y="82" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#E64B35">零件 ③ 扰动翻译器</text>
+  <text x="800" y="104" font-size="11" text-anchor="middle" fill="#333">把「敲低了哪个基因」</text>
+  <text x="800" y="124" font-size="11" text-anchor="middle" fill="#333">翻译成对状态摘要的修改，</text>
+  <text x="800" y="142" font-size="11" text-anchor="middle" fill="#333">再展开回 3,352 维的</text>
+  <text x="800" y="160" font-size="11" text-anchor="middle" fill="#333">扰动后表达预测</text>
+  <line x1="190" y1="100" x2="256" y2="100" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="190" y1="215" x2="256" y2="180" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="450" y1="157" x2="476" y2="157" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="670" y1="157" x2="696" y2="157" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+  <!-- 输出 -->
+  <rect x="330" y="300" width="370" height="60" rx="4" fill="#F2F8F6" stroke="#00A087" stroke-width="1.4"/>
+  <text x="515" y="326" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#00A087">输出：预测的扰动后表达（3,352 个数）</text>
+  <text x="515" y="346" font-size="11" text-anchor="middle" fill="#333">训练目标：让预测尽量接近真实测量的扰动后表达</text>
+  <line x1="800" y1="260" x2="700" y2="296" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+</svg>
+<figcaption><b>图 6｜TxPert 的工作原理（按实际代码绘制）。</b>输入是「没被扰动的对照细胞 + 敲低哪个基因」；内部三个零件：变分自编码器（variational autoencoder, VAE，把高维数据压缩成紧凑表示并能给出不确定度的神经网络）负责压缩细胞状态；图注意力网络（graph attention network, GAT，在基因关系图上做信息传递的神经网络）负责让敲低的影响沿 STRING 基因互作网络（STRING database，收录基因/蛋白相互作用关系的公开数据库）传播；最后翻译回 3,352 维表达预测。训练时用的损失函数（loss function，衡量预测与真值差距、指导模型改进的数值）是均方误差与余弦相似度的加权和。</figcaption>
+</figure>
+
+<h3>3.2 四个随机种子：同一个学生考四次</h3>
+
+<p>主实验里不是只训练一个 TxPert，而是用<b>同一个架构、四个不同的随机种子（random seed，控制训练初始「运气」的编号，不同种子会让模型学到略有差异的参数）</b>训练出四份模型。四个成员结构、食谱完全一样，只有初始化运气不同，合起来叫一个<b>模型家族（model family，同一架构不同随机种子训练出的一组模型）</b>。它们答案之间的差异叫<b>家族分歧（family disagreement，同架构多种子预测之间的不一致程度）</b>——这是 SafeConf 的重要线索之一。</p>
+
+<div class="warn"><b>最容易被误导的第一句话：</b>「四个随机种子」<b>不是</b>「四种不同的模型」。它们之间的差异只能叫<b>初始化敏感性（initialization sensitivity，模型效果对随机初始化运气的敏感程度）</b>，不能叫<b>跨架构分歧（cross-architecture disagreement，不同模型结构之间的预测差异）</b>。GPT 的历史学习记录里曾多次混用这两个说法（见第 13 章防误导手册）。</div>
+
+<h3>3.3 SafeConf 怎么打分</h3>
+
+<p>SafeConf 不答题。它读取「对答案前就能算」的信息——四份预测互相吵得多凶、模型觉得变化有多大、源域里这个扰动的证据有多少——给每道题打风险分（risk score，对「这道题可能预测错」的估计分数）。它有两条业务线：</p>
+
+<figure>
+<svg viewBox="0 0 920 470" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
+  <text x="20" y="28" font-size="15" font-weight="bold" fill="#1a1a1a">a</text>
+  <text x="200" y="28" font-size="12.5" fill="#555">业务A：预测后复核（主实验 E201 已完成正式盲测）</text>
+  <rect x="20" y="45" width="150" height="60" rx="4" fill="#EAF3FB" stroke="#3C5488" stroke-width="1.2"/>
+  <text x="95" y="70" font-size="11.5" text-anchor="middle" fill="#333">未扰动细胞状态</text>
+  <text x="95" y="88" font-size="11.5" text-anchor="middle" fill="#333">+ 敲低哪个基因</text>
+  <line x1="174" y1="75" x2="214" y2="75" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="220" y="45" width="130" height="60" rx="4" fill="#FFF4E5" stroke="#E64B35" stroke-width="1.2"/>
+  <text x="285" y="70" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#E64B35">TxPert</text>
+  <text x="285" y="88" font-size="11.5" text-anchor="middle" fill="#333">× 4 个随机种子</text>
+  <line x1="354" y1="75" x2="394" y2="75" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="400" y="45" width="140" height="60" rx="4" fill="#F5F7FB" stroke="#8491B4" stroke-width="1.2"/>
+  <text x="470" y="70" font-size="11.5" text-anchor="middle" fill="#333">四份预测 + 源域证据</text>
+  <text x="470" y="88" font-size="11.5" text-anchor="middle" fill="#333">（对答案前都能算）</text>
+  <line x1="544" y1="75" x2="584" y2="75" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="590" y="45" width="140" height="60" rx="4" fill="#F2F8F6" stroke="#00A087" stroke-width="1.6"/>
+  <text x="660" y="70" font-size="13" font-weight="bold" text-anchor="middle" fill="#00A087">SafeConf</text>
+  <text x="660" y="88" font-size="11.5" text-anchor="middle" fill="#333">每题一个风险分</text>
+  <line x1="734" y1="75" x2="774" y2="75" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="780" y="45" width="120" height="60" rx="4" fill="#fff" stroke="#00A087" stroke-width="1.2"/>
+  <text x="840" y="70" font-size="11.5" text-anchor="middle" fill="#333">高风险题优先</text>
+  <text x="840" y="88" font-size="11.5" text-anchor="middle" fill="#333">人工复核</text>
+  <text x="20" y="158" font-size="15" font-weight="bold" fill="#1a1a1a">b</text>
+  <text x="200" y="158" font-size="12.5" fill="#555">业务B：训练前加权（E204，工程验收通过，正式训练已排队启动）</text>
+  <rect x="20" y="175" width="180" height="64" rx="4" fill="#EAF3FB" stroke="#3C5488" stroke-width="1.2"/>
+  <text x="110" y="199" font-size="11.5" text-anchor="middle" fill="#333">源域证据（允许看）</text>
+  <text x="110" y="217" font-size="11.5" text-anchor="middle" fill="#333">细胞数 · 背景数 · 离散度</text>
+  <line x1="204" y1="207" x2="244" y2="207" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="250" y="175" width="170" height="64" rx="4" fill="#F2F8F6" stroke="#00A087" stroke-width="1.2"/>
+  <text x="335" y="199" font-size="12" font-weight="bold" text-anchor="middle" fill="#00A087">难度 → 权重公式</text>
+  <text x="335" y="217" font-size="11.5" text-anchor="middle" fill="#333">（已冻结，0.5～2.0 倍）</text>
+  <line x1="424" y1="207" x2="464" y2="207" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="470" y="175" width="190" height="64" rx="4" fill="#FFF4E5" stroke="#E64B35" stroke-width="1.2"/>
+  <text x="565" y="199" font-size="12" font-weight="bold" text-anchor="middle" fill="#E64B35">加权训练 TxPert</text>
+  <text x="565" y="217" font-size="11.5" text-anchor="middle" fill="#333">难题样本权重更大</text>
+  <line x1="664" y1="207" x2="704" y2="207" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="710" y="175" width="190" height="64" rx="4" fill="#FDF3F2" stroke="#E64B35" stroke-width="1.2" stroke-dasharray="5,3"/>
+  <text x="805" y="199" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#E64B35">是否更准？</text>
+  <text x="805" y="217" font-size="11.5" text-anchor="middle" fill="#E64B35">正式 32 模型训练中</text>
+  <line x1="20" y1="285" x2="900" y2="285" stroke="#E64B35" stroke-width="1.2" stroke-dasharray="6,4"/>
+  <text x="460" y="306" font-size="12" text-anchor="middle" fill="#E64B35">纪律红线：训练权重只允许来自源域证据；禁止读取目标域的预测、表达或误差</text>
+  <text x="20" y="350" font-size="15" font-weight="bold" fill="#1a1a1a">c</text>
+  <text x="200" y="350" font-size="12.5" fill="#555">两条业务当前状态（截至 2026-09-09 本次复审）</text>
+  <rect x="20" y="365" width="430" height="80" rx="4" fill="#F2F8F6" stroke="#00A087" stroke-width="1.4"/>
+  <circle cx="48" cy="392" r="8" fill="#00A087"/>
+  <text x="66" y="396" font-size="12.5" font-weight="bold" fill="#1a1a1a">业务A（E201）</text>
+  <text x="66" y="418" font-size="11.5" fill="#333">有正式盲测证据：四细胞系、1,808 任务、先封存后对答案</text>
+  <rect x="480" y="365" width="420" height="80" rx="4" fill="#FFF9EC" stroke="#E69F00" stroke-width="1.4"/>
+  <circle cx="508" cy="392" r="8" fill="#E69F00"/>
+  <text x="526" y="396" font-size="12.5" font-weight="bold" fill="#1a1a1a">业务B（E204）</text>
+  <text x="526" y="418" font-size="11.5" fill="#333">工程验收通过；32 个正式模型已由队列监管器排队（见第 12 章）</text>
+</svg>
+<figcaption><b>图 7｜系统架构与两条业务。</b><b>a</b>，业务A：TxPert 家族给出四份预测，SafeConf 结合源域证据给每题打风险分。<b>b</b>，业务B：用源域证据给训练样本加权。<b>c</b>，证据状态：业务A 已完成正式盲测；业务B 程序验收通过，正式训练已于 2026-09-09 由队列监管器（queue supervisor，自动按顺序调度训练作业的程序）接管排队。</figcaption>
+</figure>
+
+<!-- ============ 第 4 章 ============ -->
+<h2 id="s4"><span class="no">04</span>考试有四种难度（留出考法）</h2>
+
+<p>评价一个预测模型，关键在于「怎么出题」。把细胞背景想成表格的行、扰动基因想成表格的列：灰色格子是训练时见过的，橙色格子是考试时没见过、要预测的。没见过的方式有四种，难度天差地别。这个设计叫<b>留出（holdout，故意把一部分数据藏起来不参与训练，用来检验模型的真实外推能力）</b>。</p>
+
+<figure>
+<svg viewBox="0 0 920 500" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
+  <g font-size="11.5">
+    <text x="30" y="28" font-size="15" font-weight="bold" fill="#1a1a1a">a</text>
+    <text x="120" y="28" font-size="12.5" fill="#333">随机缺格（最容易）</text>
+    <g>
+      <rect x="30" y="42" width="34" height="22" fill="#d9d9d9"/><rect x="68" y="42" width="34" height="22" fill="#d9d9d9"/><rect x="106" y="42" width="34" height="22" fill="#d9d9d9"/><rect x="144" y="42" width="34" height="22" fill="#d9d9d9"/>
+      <rect x="30" y="68" width="34" height="22" fill="#d9d9d9"/><rect x="68" y="68" width="34" height="22" fill="#d9d9d9"/><rect x="106" y="68" width="34" height="22" fill="#E64B35"/><rect x="144" y="68" width="34" height="22" fill="#d9d9d9"/>
+      <rect x="30" y="94" width="34" height="22" fill="#d9d9d9"/><rect x="68" y="94" width="34" height="22" fill="#d9d9d9"/><rect x="106" y="94" width="34" height="22" fill="#d9d9d9"/><rect x="144" y="94" width="34" height="22" fill="#d9d9d9"/>
+      <rect x="30" y="120" width="34" height="22" fill="#d9d9d9"/><rect x="68" y="120" width="34" height="22" fill="#d9d9d9"/><rect x="106" y="120" width="34" height="22" fill="#d9d9d9"/><rect x="144" y="120" width="34" height="22" fill="#d9d9d9"/>
+    </g>
+    <text x="104" y="162" font-size="11" text-anchor="middle" fill="#555">细胞见过、基因见过</text>
+    <text x="104" y="178" font-size="11" text-anchor="middle" fill="#555">只缺这个组合</text>
+    <text x="260" y="28" font-size="15" font-weight="bold" fill="#1a1a1a">b</text>
+    <text x="350" y="28" font-size="12.5" fill="#333">整列留出：未见基因（E199）</text>
+    <g>
+      <rect x="260" y="42" width="34" height="22" fill="#d9d9d9"/><rect x="298" y="42" width="34" height="22" fill="#d9d9d9"/><rect x="336" y="42" width="34" height="22" fill="#E64B35"/><rect x="374" y="42" width="34" height="22" fill="#d9d9d9"/>
+      <rect x="260" y="68" width="34" height="22" fill="#d9d9d9"/><rect x="298" y="68" width="34" height="22" fill="#d9d9d9"/><rect x="336" y="68" width="34" height="22" fill="#E64B35"/><rect x="374" y="68" width="34" height="22" fill="#d9d9d9"/>
+      <rect x="260" y="94" width="34" height="22" fill="#d9d9d9"/><rect x="298" y="94" width="34" height="22" fill="#d9d9d9"/><rect x="336" y="94" width="34" height="22" fill="#E64B35"/><rect x="374" y="94" width="34" height="22" fill="#d9d9d9"/>
+      <rect x="260" y="120" width="34" height="22" fill="#d9d9d9"/><rect x="298" y="120" width="34" height="22" fill="#d9d9d9"/><rect x="336" y="120" width="34" height="22" fill="#E64B35"/><rect x="374" y="120" width="34" height="22" fill="#d9d9d9"/>
+    </g>
+    <text x="334" y="162" font-size="11" text-anchor="middle" fill="#555">这个基因的所有扰动</text>
+    <text x="334" y="178" font-size="11" text-anchor="middle" fill="#555">训练时都没出现</text>
+    <text x="490" y="28" font-size="15" font-weight="bold" fill="#1a1a1a">c</text>
+    <text x="580" y="28" font-size="12.5" fill="#333">整行留出：未见细胞背景（E200 / E201）</text>
+    <g>
+      <rect x="490" y="42" width="34" height="22" fill="#d9d9d9"/><rect x="528" y="42" width="34" height="22" fill="#d9d9d9"/><rect x="566" y="42" width="34" height="22" fill="#d9d9d9"/><rect x="604" y="42" width="34" height="22" fill="#d9d9d9"/>
+      <rect x="490" y="68" width="34" height="22" fill="#E64B35"/><rect x="528" y="68" width="34" height="22" fill="#E64B35"/><rect x="566" y="68" width="34" height="22" fill="#E64B35"/><rect x="604" y="68" width="34" height="22" fill="#E64B35"/>
+      <rect x="490" y="94" width="34" height="22" fill="#d9d9d9"/><rect x="528" y="94" width="34" height="22" fill="#d9d9d9"/><rect x="566" y="94" width="34" height="22" fill="#d9d9d9"/><rect x="604" y="94" width="34" height="22" fill="#d9d9d9"/>
+      <rect x="490" y="120" width="34" height="22" fill="#d9d9d9"/><rect x="528" y="120" width="34" height="22" fill="#d9d9d9"/><rect x="566" y="120" width="34" height="22" fill="#d9d9d9"/><rect x="604" y="120" width="34" height="22" fill="#d9d9d9"/>
+    </g>
+    <text x="564" y="162" font-size="11" text-anchor="middle" fill="#555">这种细胞的任何扰动答案</text>
+    <text x="564" y="178" font-size="11" text-anchor="middle" fill="#555">都没给模型看过（最难的主考法）</text>
+    <text x="720" y="28" font-size="15" font-weight="bold" fill="#1a1a1a">d</text>
+    <text x="800" y="28" font-size="12.5" fill="#333">双未见（应暂停使用）</text>
+    <g>
+      <rect x="720" y="42" width="34" height="22" fill="#d9d9d9"/><rect x="758" y="42" width="34" height="22" fill="#d9d9d9"/><rect x="796" y="42" width="34" height="22" fill="#E64B35" opacity="0.55"/><rect x="834" y="42" width="34" height="22" fill="#d9d9d9"/>
+      <rect x="720" y="68" width="34" height="22" fill="#E64B35" opacity="0.55"/><rect x="758" y="68" width="34" height="22" fill="#E64B35"/><rect x="796" y="68" width="34" height="22" fill="#E64B35" opacity="0.55"/><rect x="834" y="68" width="34" height="22" fill="#E64B35" opacity="0.55"/>
+      <rect x="720" y="94" width="34" height="22" fill="#d9d9d9"/><rect x="758" y="94" width="34" height="22" fill="#d9d9d9"/><rect x="796" y="94" width="34" height="22" fill="#E64B35" opacity="0.55"/><rect x="834" y="94" width="34" height="22" fill="#d9d9d9"/>
+      <rect x="720" y="120" width="34" height="22" fill="#d9d9d9"/><rect x="758" y="120" width="34" height="22" fill="#d9d9d9"/><rect x="796" y="120" width="34" height="22" fill="#E64B35" opacity="0.55"/><rect x="834" y="120" width="34" height="22" fill="#d9d9d9"/>
+    </g>
+    <text x="794" y="162" font-size="11" text-anchor="middle" fill="#555">细胞和基因都没见过</text>
+    <text x="794" y="178" font-size="11" text-anchor="middle" fill="#555">已有失败记录，不给排序</text>
+  </g>
+  <line x1="60" y1="215" x2="860" y2="215" stroke="#8491B4" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="460" y="206" font-size="11.5" text-anchor="middle" fill="#8491B4">考试难度递增</text>
+  <text x="30" y="268" font-size="15" font-weight="bold" fill="#1a1a1a">e</text>
+  <text x="210" y="268" font-size="12.5" fill="#333">重要教训：同一条「挑错线索」，换一种考法可能完全翻转</text>
+  <g font-size="11">
+    <text x="130" y="300" text-anchor="middle" fill="#333">E199 未见基因</text>
+    <rect x="70" y="310" width="52" height="98" fill="#3C5488"/>
+    <text x="96" y="326" text-anchor="middle" fill="#fff">0.3948</text>
+    <text x="96" y="424" text-anchor="middle" fill="#555">模型分歧</text>
+    <rect x="140" y="384" width="52" height="24" fill="#E64B35"/>
+    <text x="166" y="400" text-anchor="middle" fill="#fff">0.0955</text>
+    <text x="166" y="424" text-anchor="middle" fill="#555">预测幅度</text>
+    <text x="130" y="452" text-anchor="middle" fill="#00A087" font-weight="bold">分歧赢</text>
+  </g>
+  <g font-size="11">
+    <text x="360" y="300" text-anchor="middle" fill="#333">E200 整行留出（K562）</text>
+    <rect x="300" y="303" width="52" height="105" fill="#3C5488"/>
+    <text x="326" y="320" text-anchor="middle" fill="#fff">0.4240</text>
+    <text x="326" y="424" text-anchor="middle" fill="#555">旧风险分</text>
+    <rect x="370" y="189" width="52" height="219" fill="#E64B35"/>
+    <text x="396" y="206" text-anchor="middle" fill="#fff">0.8797</text>
+    <text x="396" y="424" text-anchor="middle" fill="#555">预测幅度</text>
+    <text x="360" y="452" text-anchor="middle" fill="#E64B35" font-weight="bold">幅度赢，且大胜</text>
+  </g>
+  <rect x="520" y="290" width="380" height="150" rx="4" fill="#F5F7FB" stroke="#8491B4" stroke-width="1"/>
+  <text x="540" y="318" font-size="12" font-weight="bold" fill="#3C5488">这告诉作者什么？</text>
+  <text x="540" y="342" font-size="11.5" fill="#333">1. 不能宣称「某条线索在所有考法下都有用」；</text>
+  <text x="540" y="364" font-size="11.5" fill="#333">2. 主战场 E201 是整行留出，这里幅度（0.8797）极强，</text>
+  <text x="540" y="386" font-size="11.5" fill="#333">　 所以幅度是必须正面比较的强基线（strong baseline，</text>
+  <text x="540" y="408" font-size="11.5" fill="#333">　 评价新方法时必须打败的最强简单方法）；</text>
+  <text x="540" y="430" font-size="11.5" fill="#333">3. 论文把「适用边界」写清楚，审稿人最吃这一套。</text>
+</svg>
+<figcaption><b>图 8｜四种留出考法与线索翻转。</b><b>a–d</b>，灰＝训练见过，橙＝考试没见过。<b>e</b>，正式数字说明线索随考法翻转：E199（未见基因）中模型分歧（0.3948）远强于幅度（0.0955）；E200（整行留出）中幅度（0.8797）碾压旧风险分（0.4240）。柱高按数值等比绘制（约 249px / 1.0）。这解释了为什么本项目反复强调「不同考法要分别报告，不能混为一谈」。</figcaption>
+</figure>
+
+<div class="term"><b>本章新词：</b>留出（holdout）、未见基因（unseen gene，训练集中从未作为扰动出现过的基因）、未见细胞背景（unseen context，训练时答案完全没见过的细胞品种）、双未见（double-unseen，细胞与基因都没见过的极端考法）、强基线（strong baseline）。</div>
+
+<!-- ============ 第 5 章 ============ -->
+<h2 id="s5"><span class="no">05</span>先交卷再对答案（封存纪律）</h2>
+
+<p>这是本论文在科研诚信上最硬的一块。做风险研究最大的诱惑是：先偷看哪道题错了，再回头调风险公式，让公式「恰好」能挑出这些题。这样得出的结论一文不值。E201 用一套叫<b>封存（freeze / sealing，在看答案之前把预测、公式和参数全部锁定并公开存证的纪律）</b>的流程堵死这条路。</p>
+
+<figure>
+<svg viewBox="0 0 920 340" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
+  <g font-size="11.5">
+    <rect x="15" y="60" width="135" height="86" rx="4" fill="#EAF3FB" stroke="#3C5488" stroke-width="1.2"/>
+    <text x="82" y="84" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#3C5488">第 1 步</text>
+    <text x="82" y="104" text-anchor="middle" fill="#333">构造盲训练视图</text>
+    <text x="82" y="122" text-anchor="middle" fill="#555">目标域答案物理缺失</text>
+    <rect x="163" y="60" width="135" height="86" rx="4" fill="#EAF3FB" stroke="#3C5488" stroke-width="1.2"/>
+    <text x="230" y="84" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#3C5488">第 2 步</text>
+    <text x="230" y="104" text-anchor="middle" fill="#333">4 细胞系 × 4 种子</text>
+    <text x="230" y="122" text-anchor="middle" fill="#555">训练 16 个模型</text>
+    <rect x="311" y="60" width="135" height="86" rx="4" fill="#EAF3FB" stroke="#3C5488" stroke-width="1.2"/>
+    <text x="378" y="84" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#3C5488">第 3 步</text>
+    <text x="378" y="104" text-anchor="middle" fill="#333">零真值预测</text>
+    <text x="378" y="122" text-anchor="middle" fill="#555">算分歧/幅度/源域特征</text>
+    <rect x="459" y="60" width="135" height="86" rx="4" fill="#FFF4E5" stroke="#E64B35" stroke-width="1.6"/>
+    <text x="526" y="84" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#E64B35">第 4 步：封存</text>
+    <text x="526" y="104" text-anchor="middle" fill="#333">哈希写入并推到</text>
+    <text x="526" y="122" text-anchor="middle" fill="#333">GitHub + Gitee</text>
+    <rect x="607" y="60" width="135" height="86" rx="4" fill="#F2F8F6" stroke="#00A087" stroke-width="1.2"/>
+    <text x="674" y="84" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#00A087">第 5 步</text>
+    <text x="674" y="104" text-anchor="middle" fill="#333">两处远程与本地一致</text>
+    <text x="674" y="122" text-anchor="middle" fill="#555">才允许打开真值</text>
+    <rect x="755" y="60" width="150" height="86" rx="4" fill="#F2F8F6" stroke="#00A087" stroke-width="1.2"/>
+    <text x="830" y="84" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#00A087">第 6 步</text>
+    <text x="830" y="104" text-anchor="middle" fill="#333">一次性正式评价</text>
+    <text x="830" y="122" text-anchor="middle" fill="#555">1,808 主任务 + 200 敏感性</text>
+    <line x1="150" y1="103" x2="161" y2="103" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+    <line x1="298" y1="103" x2="309" y2="103" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+    <line x1="446" y1="103" x2="457" y2="103" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+    <line x1="594" y1="103" x2="605" y2="103" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+    <line x1="742" y1="103" x2="753" y2="103" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+  </g>
+  <line x1="15" y1="180" x2="905" y2="180" stroke="#E64B35" stroke-width="1.3" stroke-dasharray="6,4"/>
+  <text x="460" y="202" font-size="12.5" text-anchor="middle" fill="#E64B35">红线上方全部发生在「不知道答案」的状态下；红线之后才能看答案，且不再允许改公式</text>
+  <rect x="15" y="225" width="890" height="90" rx="4" fill="#F5F7FB" stroke="#8491B4" stroke-width="1"/>
+  <text x="35" y="253" font-size="12.5" font-weight="bold" fill="#3C5488">两个类比帮你记住</text>
+  <text x="35" y="277" font-size="12" fill="#333">① 密封卷：先把答卷封存盖章、公示指纹（哈希（hash，内容的数字指纹，改一个字就全变）），确认没人能偷换后才拆封对答案。</text>
+  <text x="35" y="299" font-size="12" fill="#333">② 临床试验的盲法（blinding，让评价者不知道分组信息以防偏见）：先注册分析方案，再揭盲看结果——结果好赖都必须认账。</text>
+</svg>
+<figcaption><b>图 9｜E201 的封存流程。</b>预测、风险特征与公式在第 4 步以哈希形式封存在 GitHub 与 Gitee 两个远程仓库；确认两处远程与本地完全一致后才打开真实答案，做一次性评价。所以 E201 的数字（0.4082 等）不是「调到最好看」的结果，而是一次性开出的盲盒。这套纪律是本研究可信度的根基，也是向审稿人交代「没有偷看答案」的直接证据。</figcaption>
+</figure>
+
+<!-- ============ 第 6 章 ============ -->
+<h2 id="s6"><span class="no">06</span>风险分的五个成分</h2>
+
+<p>SafeConf 给每道题打的风险分，是五个「嫌疑线索」等权平均出来的。先把每个线索在该细胞系内转成 <b>z 分数（z-score，标准分：减去均值再除以标准差，让不同量纲的指标可以相加）</b>，再五样各占 1/5 平均：</p>
+
+<div class="term">
+<b>风险分公式（已冻结，不许改）：</b><br>
+风险分 R ＝ 平均 [ z(家族分歧), z(模型–源域差距), z(源域离散度), z(源域细胞少), z(背景缺口) ]<br>
+<span style="font-size:13.5px;color:#767676;">等权是事先规定的，没有用目标域真实误差去学权重（learned weights，用数据反推出来的最优权重）——好处是审得清、不怕过拟合（overfitting，模型死记训练数据而丧失外推能力）；坏处是弱成分会稀释强成分，下面马上会看到。</span>
+</div>
+
+<figure>
+<svg viewBox="0 0 920 420" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
+  <text x="20" y="28" font-size="15" font-weight="bold" fill="#1a1a1a">a</text>
+  <text x="180" y="28" font-size="12.5" fill="#555">五个成分各自与真实误差的相关（越高越强；合并 1,808 主任务）</text>
+  <g font-size="11.5">
+    <line x1="330" y1="45" x2="330" y2="250" stroke="#999" stroke-width="1"/>
+    <text x="250" y="66" text-anchor="end" fill="#333">源域效应离散度</text>
+    <rect x="330" y="50" width="277" height="20" fill="#00A087"/>
+    <text x="612" y="65" fill="#1a1a1a" font-weight="bold">0.4618</text>
+    <text x="250" y="106" text-anchor="end" fill="#333">家族分歧</text>
+    <rect x="330" y="90" width="144" height="20" fill="#3C5488"/>
+    <text x="479" y="105" fill="#1a1a1a">0.2402</text>
+    <text x="250" y="146" text-anchor="end" fill="#333">模型–源域差距</text>
+    <rect x="330" y="130" width="89" height="20" fill="#3C5488"/>
+    <text x="424" y="145" fill="#1a1a1a">0.1488</text>
+    <text x="250" y="186" text-anchor="end" fill="#333">源域细胞少</text>
+    <rect x="330" y="170" width="27" height="20" fill="#8491B4"/>
+    <text x="362" y="185" fill="#1a1a1a">0.0450</text>
+    <text x="250" y="226" text-anchor="end" fill="#333">背景覆盖缺口</text>
+    <rect x="307" y="210" width="23" height="20" fill="#E64B35"/>
+    <text x="340" y="225" fill="#1a1a1a">-0.0385（反向）</text>
+    <text x="640" y="250" font-size="10.5" fill="#767676" text-anchor="end">来源：E201_DESCRIPTIVE_ASSOCIATIONS.csv</text>
+  </g>
+  <text x="20" y="305" font-size="15" font-weight="bold" fill="#1a1a1a">b</text>
+  <text x="180" y="305" font-size="12.5" fill="#555">等权平均的代价：最强成分被两个弱成分稀释</text>
+  <g font-size="11.5">
+    <rect x="140" y="144" width="110" height="231" fill="#00A087"/>
+    <text x="195" y="136" text-anchor="middle" font-weight="bold" fill="#1a1a1a">0.4618</text>
+    <text x="195" y="393" text-anchor="middle" fill="#333">离散度（单成分）</text>
+    <rect x="330" y="171" width="110" height="204" fill="#3C5488"/>
+    <text x="385" y="163" text-anchor="middle" font-weight="bold" fill="#1a1a1a">0.4082</text>
+    <text x="385" y="393" text-anchor="middle" fill="#333">SafeConf 五成分等权</text>
+    <rect x="520" y="66" width="110" height="309" fill="#E64B35"/>
+    <text x="575" y="58" text-anchor="middle" font-weight="bold" fill="#1a1a1a">0.6189</text>
+    <text x="575" y="393" text-anchor="middle" fill="#333">预测幅度（强基线）</text>
+    <rect x="680" y="125" width="220" height="185" rx="4" fill="#FFF9EC" stroke="#E69F00" stroke-width="1"/>
+    <text x="700" y="153" font-size="11.5" font-weight="bold" fill="#7E6148">为什么会变低？</text>
+    <text x="700" y="177" font-size="11" fill="#333">五样各占 1/5：</text>
+    <text x="700" y="197" font-size="11" fill="#333">0.0450 和 -0.0385 几乎</text>
+    <text x="700" y="217" font-size="11" fill="#333">没信号，把 0.4618 往下拉。</text>
+    <text x="700" y="245" font-size="11" font-weight="bold" fill="#7E6148">这不是算错，是等权规则</text>
+    <text x="700" y="265" font-size="11" font-weight="bold" fill="#7E6148">的代价；E204 因此设置</text>
+    <text x="700" y="285" font-size="11" font-weight="bold" fill="#7E6148">「只用离散度加权」对照。</text>
+  </g>
+</svg>
+<figcaption><b>图 10｜五个风险成分的拆解。</b><b>a</b>，五个成分单独与真实误差的斯皮尔曼秩相关（Spearman correlation，衡量两组排序一致性的指标，详见第 8 章）：源域效应离散度（source delta dispersion，同一扰动在多个源域背景中真实效应的不稳定程度）一枝独秀（0.4618）。<b>b</b>，等权组合后 SafeConf 为 0.4082，反低于最强单成分——两个弱信号成分稀释了强信号。这解释了为什么 E204 要专门设置「只用离散度加权（dispersion_only）」的对照组，也指出了等权公式是未来改进的靶点。</figcaption>
+</figure>
+
+<table>
+  <tr><th>成分（中文）</th><th>英文</th><th>人话解释</th><th style="width:14%">单独战力*</th></tr>
+  <tr><td>源域效应离散度</td><td>source delta dispersion</td><td>同一个扰动在三个源域细胞里的反应一不一致；越不稳定，新背景里越容易错</td><td class="num">0.4618</td></tr>
+  <tr><td>家族分歧</td><td>family disagreement</td><td>四个随机种子的预测互相吵得多凶</td><td class="num">0.2402</td></tr>
+  <tr><td>模型–源域差距</td><td>model–source gap</td><td>模型预测与「把源域平均变化直接搬过来」差多少</td><td class="num">0.1488</td></tr>
+  <tr><td>源域细胞少</td><td>negative log source cells</td><td>训练侧可参考的细胞越少，心里越没底</td><td class="num">0.0450</td></tr>
+  <tr><td>背景覆盖缺口</td><td>support context deficit</td><td>三个源域背景里缺了几个</td><td class="num-red">-0.0385</td></tr>
+</table>
+<p style="font-size:13.5px;color:#767676;">*「单独战力」指该成分单独与真实误差的合并 Spearman 相关（描述性数值，来源：E201_DESCRIPTIVE_ASSOCIATIONS.csv）。</p>
+
+<!-- ============ 第 7 章 ============ -->
+<h2 id="s7"><span class="no">07</span>主实验 E201 得到了什么</h2>
+
+<p>E201 是本论文当前的主实验：四种细胞系全部整行留出，先封存后对答案，主分析 <span class="num">1,808</span> 个任务（另有 200 个小样本敏感性任务只作稳健性检查）。统计上，区间估计以扰动条件为簇（cluster，把同一扰动条件的任务视为相关的一组）做 5,000 次自助法（bootstrap，反复有放回重抽样来估计统计量不确定性的方法）。</p>
+
+<h3>7.1 结果一：风险分确实能挑错题，但幅度更强</h3>
+
+<figure>
+<svg viewBox="0 0 920 360" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
+  <text x="20" y="28" font-size="15" font-weight="bold" fill="#1a1a1a">a</text>
+  <line x1="150" y1="300" x2="850" y2="300" stroke="#999" stroke-width="1"/>
+  <g font-size="10.5" fill="#767676">
+    <text x="150" y="318" text-anchor="middle">0</text><text x="325" y="318" text-anchor="middle">0.25</text>
+    <text x="500" y="318" text-anchor="middle">0.50</text><text x="675" y="318" text-anchor="middle">0.75</text>
+    <text x="850" y="318" text-anchor="middle">1.0</text>
+  </g>
+  <line x1="150" y1="300" x2="150" y2="40" stroke="#bbb" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="500" y="342" text-anchor="middle" font-size="12" fill="#555">与真实误差的 Spearman 相关（点＝估计值，横线＝95% 置信区间）</text>
+  <g font-size="12">
+    <text x="130" y="66" text-anchor="end" font-weight="bold" fill="#1a1a1a">合并（1,808 题）</text>
+    <line x1="395" y1="62" x2="473" y2="62" stroke="#3C5488" stroke-width="2"/>
+    <circle cx="436" cy="62" r="6" fill="#3C5488"/>
+    <text x="480" y="66" fill="#3C5488" font-weight="bold">0.4082</text>
+    <line x1="552" y1="78" x2="610" y2="78" stroke="#E64B35" stroke-width="2"/>
+    <circle cx="583" cy="78" r="6" fill="#E64B35"/>
+    <text x="617" y="82" fill="#E64B35" font-weight="bold">0.6189</text>
+    <text x="130" y="116" text-anchor="end" fill="#333">K562（566 题）</text>
+    <line x1="436" y1="112" x2="532" y2="112" stroke="#3C5488" stroke-width="2"/>
+    <circle cx="486" cy="112" r="5" fill="#3C5488"/>
+    <text x="539" y="116" fill="#3C5488">0.4803</text>
+    <line x1="758" y1="128" x2="796" y2="128" stroke="#E64B35" stroke-width="2"/>
+    <circle cx="779" cy="128" r="5" fill="#E64B35"/>
+    <text x="803" y="132" fill="#E64B35">0.8993</text>
+    <text x="130" y="166" text-anchor="end" fill="#333">RPE1（416 题）</text>
+    <line x1="285" y1="162" x2="411" y2="162" stroke="#3C5488" stroke-width="2"/>
+    <circle cx="351" cy="162" r="5" fill="#3C5488"/>
+    <text x="418" y="166" fill="#3C5488">0.2868</text>
+    <line x1="508" y1="178" x2="602" y2="178" stroke="#E64B35" stroke-width="2"/>
+    <circle cx="558" cy="178" r="5" fill="#E64B35"/>
+    <text x="609" y="182" fill="#E64B35">0.5825</text>
+    <text x="130" y="216" text-anchor="end" fill="#333">HepG2（405 题）</text>
+    <line x1="490" y1="212" x2="591" y2="212" stroke="#3C5488" stroke-width="2"/>
+    <circle cx="544" cy="212" r="5" fill="#3C5488"/>
+    <text x="598" y="216" fill="#3C5488">0.5633</text>
+    <line x1="660" y1="228" x2="723" y2="228" stroke="#E64B35" stroke-width="2"/>
+    <circle cx="694" cy="228" r="5" fill="#E64B35"/>
+    <text x="730" y="232" fill="#E64B35">0.7771</text>
+    <text x="130" y="266" text-anchor="end" fill="#333">Jurkat（421 题）</text>
+    <line x1="408" y1="262" x2="515" y2="262" stroke="#3C5488" stroke-width="2"/>
+    <circle cx="462" cy="262" r="5" fill="#3C5488"/>
+    <text x="522" y="266" fill="#3C5488">0.4453</text>
+    <line x1="607" y1="278" x2="682" y2="278" stroke="#E64B35" stroke-width="2"/>
+    <circle cx="646" cy="278" r="5" fill="#E64B35"/>
+    <text x="689" y="282" fill="#E64B35">0.7095</text>
+  </g>
+  <circle cx="620" y="30" r="5" fill="#3C5488"/><text x="632" y="34" font-size="11.5" fill="#333">SafeConf 风险分</text>
+  <circle cx="760" y="30" r="5" fill="#E64B35"/><text x="772" y="34" font-size="11.5" fill="#333">预测幅度（magnitude）</text>
+</svg>
+<figcaption><b>图 11｜E201 主结果：谁更能给「容易错的题」排队。</b>蓝点为 SafeConf 风险分，红点为预测幅度（predicted magnitude，模型自己预测的变化有多大）。四个细胞系上 SafeConf 都为正，合并 0.4082（区间 [0.3506, 0.4621]）；但幅度在每一处都更高（合并 0.6189）。横线为 95% 置信区间（confidence interval, CI，估计值的不确定范围，理解为「真值有 95% 把握落在这段里」）。</figcaption>
+</figure>
+
+<h3>7.2 结果二：只查 20% 的题时，幅度抓得更多</h3>
+
+<figure>
+<svg viewBox="0 0 920 330" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
+  <text x="20" y="28" font-size="15" font-weight="bold" fill="#1a1a1a">a</text>
+  <line x1="150" y1="270" x2="850" y2="270" stroke="#999" stroke-width="1"/>
+  <g font-size="10.5" fill="#767676">
+    <text x="150" y="288" text-anchor="middle">0（＝乱抽）</text>
+    <text x="700" y="288" text-anchor="middle">0.5</text>
+  </g>
+  <line x1="150" y1="270" x2="150" y2="60" stroke="#bbb" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="850" y1="270" x2="850" y2="60" stroke="#00A087" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <text x="850" y="52" text-anchor="middle" font-size="11" fill="#00A087">1.0 ＝ 未卜先知</text>
+  <rect x="300" y="199.6" width="130" height="70.4" fill="#3C5488"/>
+  <line x1="365" y1="215.9" x2="365" y2="183.5" stroke="#1a1a1a" stroke-width="1.6"/>
+  <line x1="353" y1="183.5" x2="377" y2="183.5" stroke="#1a1a1a" stroke-width="1.6"/>
+  <line x1="353" y1="215.9" x2="377" y2="215.9" stroke="#1a1a1a" stroke-width="1.6"/>
+  <text x="365" y="190" text-anchor="middle" font-size="13" font-weight="bold" fill="#3C5488">0.3200</text>
+  <text x="365" y="305" text-anchor="middle" font-size="12" fill="#333">SafeConf</text>
+  <rect x="560" y="139.3" width="130" height="130.7" fill="#E64B35"/>
+  <line x1="625" y1="151.5" x2="625" y2="126.5" stroke="#1a1a1a" stroke-width="1.6"/>
+  <line x1="613" y1="126.5" x2="637" y2="126.5" stroke="#1a1a1a" stroke-width="1.6"/>
+  <line x1="613" y1="151.5" x2="637" y2="151.5" stroke="#1a1a1a" stroke-width="1.6"/>
+  <text x="625" y="131" text-anchor="middle" font-size="13" font-weight="bold" fill="#E64B35">0.5943</text>
+  <text x="625" y="305" text-anchor="middle" font-size="12" fill="#333">预测幅度</text>
+  <rect x="60" y="60" width="230" height="96" rx="4" fill="#F5F7FB" stroke="#8491B4" stroke-width="1"/>
+  <text x="78" y="86" font-size="11.5" font-weight="bold" fill="#3C5488">怎么读这张图？</text>
+  <text x="78" y="108" font-size="11" fill="#333">两者都明显高于「乱抽」，</text>
+  <text x="78" y="128" font-size="11" fill="#333">都有实用价值；</text>
+  <text x="78" y="148" font-size="11" fill="#333">但幅度多抓了约一倍坏题。</text>
+  <text x="500" y="52" font-size="12" fill="#555" text-anchor="middle">固定检查 20% 任务时的复核效用（含 95% 置信区间）</text>
+</svg>
+<figcaption><b>图 12｜20% 复核预算下的抓错效率。</b>复核效用（review utility，有限预算下抓坏题的效率，0＝乱抽，1＝未卜先知）SafeConf 为 0.3200（区间 [0.2456, 0.3929]），幅度为 0.5943（区间 [0.5386, 0.6525]）；配对差值 -0.2743（区间 [-0.3576, -0.2008]，完全小于 0）。准确说法：SafeConf 有用，但单独用不如幅度。</figcaption>
+</figure>
+
+<h3>7.3 结果三：SafeConf 含有幅度之外的信息（但还不是「组合更好用」的证明）</h3>
+
+<p>既然幅度这么强，SafeConf 还有存在的意义吗？关键证据叫<b>偏相关（partial correlation，先把某个变量（这里是幅度）能解释的部分从两边都扣掉，再看剩下的部分还有没有关联）</b>。</p>
+
+<figure>
+<svg viewBox="0 0 920 300" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
+  <text x="20" y="28" font-size="15" font-weight="bold" fill="#1a1a1a">a</text>
+  <line x1="150" y1="260" x2="881" y2="260" stroke="#999" stroke-width="1"/>
+  <g font-size="10.5" fill="#767676">
+    <text x="150" y="278" text-anchor="middle">0</text><text x="312" y="278" text-anchor="middle">0.1</text>
+    <text x="475" y="278" text-anchor="middle">0.2</text><text x="637" y="278" text-anchor="middle">0.3</text>
+    <text x="800" y="278" text-anchor="middle">0.4</text><text x="881" y="278" text-anchor="middle">0.45</text>
+  </g>
+  <line x1="150" y1="260" x2="150" y2="40" stroke="#E64B35" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <text x="156" y="50" font-size="11" fill="#E64B35">0 ＝ 没有独立信息</text>
+  <g font-size="12">
+    <text x="140" y="66" text-anchor="end" font-weight="bold" fill="#1a1a1a">合并</text>
+    <line x1="478" y1="62" x2="633" y2="62" stroke="#00A087" stroke-width="2.4"/>
+    <circle cx="556" cy="62" r="6" fill="#00A087"/>
+    <text x="643" y="66" fill="#00A087" font-weight="bold">0.2503</text>
+    <text x="140" y="116" text-anchor="end" fill="#333">K562</text>
+    <line x1="551" y1="112" x2="857" y2="112" stroke="#00A087" stroke-width="2" opacity="0.9"/>
+    <circle cx="713" cy="112" r="5" fill="#00A087"/>
+    <text x="140" y="166" text-anchor="end" fill="#333">RPE1</text>
+    <line x1="213" y1="162" x2="533" y2="162" stroke="#00A087" stroke-width="2" opacity="0.9"/>
+    <circle cx="378" cy="162" r="5" fill="#00A087"/>
+    <text x="140" y="216" text-anchor="end" fill="#333">HepG2</text>
+    <line x1="522" y1="212" x2="828" y2="212" stroke="#00A087" stroke-width="2" opacity="0.9"/>
+    <circle cx="678" cy="216" r="5" fill="#00A087"/>
+    <text x="140" y="250" text-anchor="end" fill="#333">Jurkat</text>
+    <line x1="517" y1="246" x2="803" y2="246" stroke="#00A087" stroke-width="2" opacity="0.9"/>
+    <circle cx="664" cy="246" r="5" fill="#00A087"/>
+  </g>
+</svg>
+<figcaption><b>图 13｜控制幅度后的偏斯皮尔曼相关（partial Spearman）。</b>合并值为 0.2503，区间 [0.2021, 0.2980]；四个细胞系的区间下限全部大于 0（K562 0.3475、RPE1 0.1407、HepG2 0.3259、Jurkat 0.3169）。人话：即使幅度已经把话说完了，SafeConf 还能补充它没说出来的那一部分风险信息。</figcaption>
+</figure>
+
+<div class="warn"><b>2026-09-08 记忆提纲收紧的第一句（重要）：</b>偏相关 0.2503 只证明 SafeConf 含有幅度解释不了的信息；<b>还没有实验证明</b>：把幅度和 SafeConf 组合起来排序，20% 复核效用会高于单用幅度。所以正确说法是——「预测幅度是当前更强的单一排序基线；SafeConf 仍有独立关联，但能否作为有效补充，需要组合实验（combination experiment，专门检验「两个信号合起来用是否比单用更好」的实验）验证」。在这项实验完成前，论文里不能写「幅度主排序、SafeConf 做补充」是已成立的用法。</div>
+
+<h3>7.4 把一道真题的全部字段拆开看</h3>
+
+<figure>
+<svg viewBox="0 0 920 400" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
+  <text x="20" y="28" font-size="15" font-weight="bold" fill="#1a1a1a">a</text>
+  <text x="200" y="28" font-size="12.5" fill="#555">主表一行：K562::AARS+ctrl（E201_TASK_METRICS.csv 的真实一行）</text>
+  <rect x="20" y="50" width="430" height="330" rx="4" fill="#F2F8F6" stroke="#00A087" stroke-width="1.3"/>
+  <text x="235" y="78" font-size="13" font-weight="bold" text-anchor="middle" fill="#00A087">对答案前就能算（封存阶段）</text>
+  <g font-size="11.5" fill="#333">
+    <text x="45" y="108">目标细胞数（对答案用的细胞数）</text><text x="400" y="108" text-anchor="end" font-weight="bold">38</text>
+    <text x="45" y="134">源域细胞数 →「细胞少」成分</text><text x="400" y="134" text-anchor="end" font-weight="bold">161</text>
+    <text x="45" y="160">源域背景数 →「背景缺口」成分</text><text x="400" y="160" text-anchor="end" font-weight="bold">3</text>
+    <text x="45" y="186">源域离散度 →「离散度」成分</text><text x="400" y="186" text-anchor="end" font-weight="bold">0.06288</text>
+    <text x="45" y="212">家族分歧 →「分歧」成分</text><text x="400" y="212" text-anchor="end" font-weight="bold">0.01035</text>
+    <text x="45" y="238">模型–源域差距 →「差距」成分</text><text x="400" y="238" text-anchor="end" font-weight="bold">0.00855</text>
+    <text x="45" y="264">预测幅度（不进等权，单独当基线）</text><text x="400" y="264" text-anchor="end" font-weight="bold">0.10173</text>
+    <line x1="45" y1="280" x2="405" y2="280" stroke="#00A087" stroke-width="1"/>
+    <text x="45" y="304" font-weight="bold">SafeConf 风险分（五个 z 分数平均）</text><text x="400" y="304" text-anchor="end" font-weight="bold" fill="#00A087">0.11790</text>
+  </g>
+  <rect x="480" y="50" width="420" height="330" rx="4" fill="#FDF3F2" stroke="#E64B35" stroke-width="1.3"/>
+  <text x="690" y="78" font-size="13" font-weight="bold" text-anchor="middle" fill="#E64B35">对答案后才有（解封阶段）</text>
+  <g font-size="11.5" fill="#333">
+    <text x="505" y="108">质心误差（平均预测的 RMSE）</text><text x="850" y="108" text-anchor="end" font-weight="bold">0.08849</text>
+    <text x="505" y="134">家族均方根误差（family RMS error）</text><text x="850" y="134" text-anchor="end" font-weight="bold">0.08909</text>
+    <text x="505" y="160">最差种子误差（worst seed error）</text><text x="850" y="160" text-anchor="end" font-weight="bold">0.09472</text>
+    <line x1="505" y1="186" x2="855" y2="186" stroke="#E64B35" stroke-width="1"/>
+    <text x="505" y="214" font-weight="bold" fill="#E64B35">这题比 K562 平均（0.0543）难不少</text>
+    <text x="505" y="244" font-size="11" fill="#555">幅度 0.10173 偏大 → 模型认为变化不小，</text>
+    <text x="505" y="266" font-size="11" fill="#555">后面误差也确实不小——这就是</text>
+    <text x="505" y="288" font-size="11" fill="#555">「幅度大的题更容易绝对误差大」。</text>
+  </g>
+</svg>
+<figcaption><b>图 14｜一道真题的全字段解剖。</b>左：封存阶段（对答案前）可算的字段——五个风险成分 + 幅度 + 风险分。右：解封阶段（对答案后）才有的三种误差：质心误差（centroid RMSE，平均预测与真值的均方根误差）、家族均方根误差（family RMS error，把四个种子的误差平方平均再开方）、最差种子误差（worst seed error，四个种子里最差那个的误差）。</figcaption>
+</figure>
+
+<div class="ok"><b>第七章三句话总结：</b>① SafeConf 能挑错题（0.4082），四个细胞系全部为正；② 但幅度（0.6189）是更强的单一排序器，20% 复核效用 0.5943 对 0.3200；③ 扣掉幅度后 SafeConf 仍有 0.2503 的独立信息——但这只是「有独立信息」，「组合起来更好用」还需专门实验验证。</div>
+
+<!-- ============ 第 8 章 ============ -->
+<h2 id="s8"><span class="no">08</span>三把统计尺子学明白</h2>
+
+<p>读这篇论文只需要三把统计尺子。这一章把每把尺子画出来，学完你就超过了大多数「只会看 P 值」的人。</p>
+
+<h3>8.1 尺子一：斯皮尔曼秩相关（只看顺序，不看数值）</h3>
+
+<p><b>斯皮尔曼秩相关（Spearman correlation，把两组数据各自排名后，看排名的一致程度，范围 -1 到 1）</b>：<b>1</b> ＝两支队伍完全同序；<b>0</b> ＝顺序毫无关系；<b>-1</b> ＝完全颠倒。它不怕异常值，因为它只认「名次」不认「分数」。</p>
+
+<figure>
+<svg viewBox="0 0 920 330" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
+  <text x="20" y="28" font-size="15" font-weight="bold" fill="#1a1a1a">a</text>
+  <text x="60" y="28" font-size="12.5" fill="#555">Spearman ≈ +0.9：风险分高的题，误差名次也靠前（好排序器）</text>
+  <g font-size="10.5">
+    <text x="60" y="55" fill="#333">题目</text>
+    <text x="140" y="55" fill="#333">风险分名次</text>
+    <text x="240" y="55" fill="#333">真实误差名次</text>
+    <g fill="#333">
+      <text x="60" y="80">题1</text><text x="150" y="80">1</text><text x="260" y="80">2</text>
+      <text x="60" y="105">题2</text><text x="150" y="105">2</text><text x="260" y="105">1</text>
+      <text x="60" y="130">题3</text><text x="150" y="130">3</text><text x="260" y="130">3</text>
+      <text x="60" y="155">题4</text><text x="150" y="155">4</text><text x="260" y="155">5</text>
+      <text x="60" y="180">题5</text><text x="150" y="180">5</text><text x="260" y="180">4</text>
+    </g>
+    <path d="M70,200 C100,240 260,240 300,205" stroke="#00A087" stroke-width="2" fill="none"/>
+    <text x="185" y="250" text-anchor="middle" fill="#00A087" font-weight="bold">名次几乎一致 → 强正相关</text>
+  </g>
+  <text x="480" y="28" font-size="12.5" fill="#555">Spearman ≈ 0：风险名次和误差名次乱配（没用）</text>
+  <g font-size="10.5">
+    <text x="480" y="55" fill="#333">题目</text>
+    <text x="560" y="55" fill="#333">风险分名次</text>
+    <text x="660" y="55" fill="#333">真实误差名次</text>
+    <g fill="#333">
+      <text x="480" y="80">题1</text><text x="570" y="80">1</text><text x="680" y="80">4</text>
+      <text x="480" y="105">题2</text><text x="570" y="105">2</text><text x="680" y="105">1</text>
+      <text x="480" y="130">题3</text><text x="570" y="130">3</text><text x="680" y="130">5</text>
+      <text x="480" y="155">题4</text><text x="570" y="155">4</text><text x="680" y="155">2</text>
+      <text x="480" y="180">题5</text><text x="570" y="180">5</text><text x="680" y="180">3</text>
+    </g>
+    <path d="M490,205 C560,170 640,250 720,200" stroke="#E64B35" stroke-width="2" fill="none"/>
+    <text x="605" y="250" text-anchor="middle" fill="#E64B35" font-weight="bold">名次乱跳 → 没有排序能力</text>
+  </g>
+  <rect x="60" y="275" width="800" height="42" rx="4" fill="#F5F7FB" stroke="#8491B4"/>
+  <text x="80" y="301" font-size="11.5" fill="#333">论文里的用法：把所有题按风险分排一队、按真实误差排一队，算 Spearman——SafeConf 合并 0.4082 表示「中等偏强的排序能力」，幅度 0.6189 表示「相当强的排序能力」。</text>
+</svg>
+<figcaption><b>图 15｜斯皮尔曼秩相关的直觉。</b>左：两列名次几乎一致 → 强正相关；右：名次乱配 → 接近 0。论文用它衡量「风险分能不能把更容易错的题排到前面」。</figcaption>
+</figure>
+
+<h3>8.2 尺子二：置信区间与自助法（估计值的可信范围）</h3>
+
+<p><b>置信区间（confidence interval, CI，给一个估计值配上「真值有 95% 把握落在其中」的区间）</b>：只说「相关是 0.4082」不够，还要说「大概在 0.35 到 0.46 之间」。区间越窄越稳。本论文用<b>自助法（bootstrap，把数据反复有放回地重抽样、每次重算统计量，用波动估计不确定性）</b>算区间，并且以扰动条件为<b>簇（cluster，统计上相关的一组样本；同一扰动在不同细胞系里不算完全独立的证据）</b>抽样 5,000 次——这样不会把「同一个扰动出现多次」误当成「很多独立证据」。</p>
+
+<figure>
+<svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
+  <text x="20" y="28" font-size="15" font-weight="bold" fill="#1a1a1a">a</text>
+  <text x="60" y="28" font-size="12.5" fill="#555">簇自助法的流程（5,000 次重抽，得到区间的上下沿）</text>
+  <g font-size="11.5">
+    <rect x="30" y="50" width="180" height="70" rx="4" fill="#EAF3FB" stroke="#3C5488"/>
+    <text x="120" y="76" text-anchor="middle" fill="#333">1,808 道题</text>
+    <text x="120" y="94" text-anchor="middle" fill="#333">（575 个扰动条件簇）</text>
+    <line x1="214" y1="85" x2="252" y2="85" stroke="#555" stroke-width="1.4" marker-end="url(#arr)"/>
+    <rect x="258" y="50" width="200" height="70" rx="4" fill="#EAF3FB" stroke="#3C5488"/>
+    <text x="358" y="76" text-anchor="middle" fill="#333">每次整簇随机重抽</text>
+    <text x="358" y="94" text-anchor="middle" fill="#333">重算一次 Spearman</text>
+    <line x1="462" y1="85" x2="500" y2="85" stroke="#555" stroke-width="1.4" marker-end="url(#arr)"/>
+    <rect x="506" y="50" width="180" height="70" rx="4" fill="#EAF3FB" stroke="#3C5488"/>
+    <text x="596" y="76" text-anchor="middle" fill="#333">重复 5,000 次</text>
+    <text x="596" y="94" text-anchor="middle" fill="#333">得到 5,000 个估计值</text>
+    <line x1="690" y1="85" x2="728" y2="85" stroke="#555" stroke-width="1.4" marker-end="url(#arr)"/>
+    <rect x="734" y="50" width="170" height="70" rx="4" fill="#F2F8F6" stroke="#00A087"/>
+    <text x="819" y="76" text-anchor="middle" fill="#333">取 2.5% 和 97.5%</text>
+    <text x="819" y="94" text-anchor="middle" fill="#333">分位点作为区间两端</text>
+  </g>
+  <!-- 区间示意 -->
+  <line x1="100" y1="180" x2="820" y2="180" stroke="#ccc" stroke-width="1"/>
+  <line x1="330" y1="172" x2="590" y2="172" stroke="#3C5488" stroke-width="4"/>
+  <circle cx="460" cy="180" r="7" fill="#3C5488"/>
+  <text x="460" y="160" text-anchor="middle" font-size="12" font-weight="bold" fill="#3C5488">0.4082</text>
+  <text x="330" y="205" text-anchor="middle" font-size="11" fill="#555">下沿 0.3506</text>
+  <text x="590" y="205" text-anchor="middle" font-size="11" fill="#555">上沿 0.4621</text>
+  <text x="460" y="238" text-anchor="middle" font-size="11.5" fill="#333">读法：真值有 95% 把握落在 [0.3506, 0.4621]；下沿 &gt; 0，所以「相关为正」是稳的</text>
+</svg>
+<figcaption><b>图 16｜簇自助法与置信区间。</b>整簇重抽（而不是逐题重抽）是本论文统计严谨的关键细节：它避免把同一扰动条件的重复出现误当成独立证据，区间更诚实。</figcaption>
+</figure>
+
+<h3>8.3 尺子三：偏相关（扣掉一个变量后还剩什么）</h3>
+
+<p><b>偏相关（partial correlation，衡量 X 和 Y 在扣掉第三变量 Z 的影响后剩余的关联）</b>。论文里的用法：SafeConf 和误差都与幅度相关——那 SafeConf 是不是只是幅度的「复读机」？把幅度能解释的部分从两边都扣掉后，SafeConf 与误差还剩 0.2503 的相关，且四个细胞系区间下限都大于 0——说明它不是复读机，确实带有幅度之外的信息。</p>
+
+<figure>
+<svg viewBox="0 0 920 300" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
+  <text x="20" y="28" font-size="15" font-weight="bold" fill="#1a1a1a">a</text>
+  <text x="60" y="28" font-size="12.5" fill="#555">偏相关的直觉：三个圆的重叠与剩余</text>
+  <!-- Venn -->
+  <circle cx="330" cy="150" r="95" fill="#3C5488" opacity="0.25"/>
+  <circle cx="450" cy="150" r="95" fill="#E64B35" opacity="0.25"/>
+  <circle cx="390" cy="220" r="95" fill="#00A087" opacity="0.25"/>
+  <text x="265" y="120" font-size="12" fill="#3C5488" font-weight="bold">SafeConf</text>
+  <text x="480" y="120" font-size="12" fill="#E64B35" font-weight="bold">幅度</text>
+  <text x="360" y="290" font-size="12" fill="#00A087" font-weight="bold">真实误差</text>
+  <g font-size="11" fill="#333">
+    <text x="620" y="80">● SafeConf 与误差的全部相关：0.4082</text>
+    <text x="620" y="110">● 其中幅度也能解释的部分：大部分</text>
+    <text x="620" y="140">● 扣掉幅度后剩余（偏相关）：0.2503</text>
+    <text x="620" y="180" font-weight="bold" fill="#00A087">0.2503 ＞ 0（且区间下限都＞0）</text>
+    <text x="620" y="210">＝ SafeConf 不是幅度的复读机，</text>
+    <text x="620" y="232">　带有独立的补充信息</text>
+  </g>
+</svg>
+<figcaption><b>图 17｜偏相关的直觉。</b>SafeConf 与误差的相关（0.4082）中有一大块能被幅度解释；扣掉后剩余 0.2503 是 SafeConf 独有的贡献。注意（2026-09-08 收紧）：「有独立信息」≠「组合起来更好用」，后者需要组合实验证明。</figcaption>
+</figure>
+
+<!-- ============ 第 9 章 ============ -->
+<h2 id="s9"><span class="no">09</span>必须记住的四个坏消息</h2>
+
+<p>好的论文不是只报喜。下面四个<b>负结果（negative result，假设未获支持的诚实结果）</b>每一个都已经写进正式报告——主动写出来是加分项，删掉则是送命项。</p>
+
+<figure>
+<svg viewBox="0 0 920 430" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
+  <text x="20" y="28" font-size="15" font-weight="bold" fill="#1a1a1a">a</text>
+  <text x="170" y="28" font-size="12.5" fill="#555">坏消息一：K562 上，深度模型没赢过「猜成没变化」</text>
+  <g font-size="11.5">
+    <rect x="90" y="83" width="90" height="189" fill="#3C5488"/>
+    <text x="135" y="75" text-anchor="middle" font-weight="bold" fill="#1a1a1a">0.0540</text>
+    <text x="135" y="196" text-anchor="middle" fill="#333">深度模型</text>
+    <text x="135" y="212" text-anchor="middle" fill="#767676" font-size="10">四种子质心</text>
+    <rect x="230" y="89" width="90" height="183" fill="#00A087"/>
+    <text x="275" y="81" text-anchor="middle" font-weight="bold" fill="#00A087">0.0523 ✓更低</text>
+    <text x="275" y="196" text-anchor="middle" fill="#333">「猜成没变化」</text>
+    <text x="275" y="212" text-anchor="middle" fill="#767676" font-size="10">批次匹配对照</text>
+    <rect x="370" y="68" width="90" height="204" fill="#8491B4"/>
+    <text x="415" y="60" text-anchor="middle" font-weight="bold" fill="#1a1a1a">0.0584</text>
+    <text x="415" y="196" text-anchor="middle" fill="#333">官方简单规则</text>
+    <text x="415" y="212" text-anchor="middle" fill="#767676" font-size="10">official baseline</text>
+    <line x1="60" y1="272" x2="500" y2="272" stroke="#999" stroke-width="1"/>
+    <text x="60" y="292" font-size="10.5" fill="#767676">纵轴＝误差（RMSE），越低越好。注：四个细胞系合并后深度模型整体优于对照，仅 K562 这一条落败。</text>
+  </g>
+  <text x="540" y="28" font-size="15" font-weight="bold" fill="#1a1a1a">b</text>
+  <text x="660" y="28" font-size="12.5" fill="#555">坏消息二：几何证书门 FAIL</text>
+  <rect x="540" y="45" width="360" height="135" rx="4" fill="#FDF3F2" stroke="#E64B35" stroke-width="1.4"/>
+  <text x="720" y="76" font-size="13" font-weight="bold" text-anchor="middle" fill="#E64B35">证书门：未通过（FAIL）</text>
+  <text x="720" y="100" font-size="11.5" text-anchor="middle" fill="#333">恒等式最大残差 3.61×10⁻¹⁰，</text>
+  <text x="720" y="118" font-size="11.5" text-anchor="middle" fill="#333">高于事前写死的阈值 1×10⁻¹⁰</text>
+  <text x="720" y="142" font-size="11.5" text-anchor="middle" fill="#555">更像 float32 数值精度问题；下界违反数 = 0</text>
+  <text x="720" y="162" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#E64B35">不许事后改阈值再宣称通过</text>
+  <text x="20" y="356" font-size="15" font-weight="bold" fill="#1a1a1a">c</text>
+  <text x="170" y="356" font-size="12.5" fill="#555">坏消息三：RPE1 上「模型吵架」单独不管用（区间跨 0）</text>
+  <line x1="230" y1="392" x2="620" y2="392" stroke="#999" stroke-width="1"/>
+  <g font-size="10.5" fill="#767676">
+    <text x="255" y="410" text-anchor="middle">-0.1</text><text x="365" y="410" text-anchor="middle">0</text>
+    <text x="475" y="410" text-anchor="middle">0.1</text><text x="585" y="410" text-anchor="middle">0.2</text>
+  </g>
+  <line x1="365" y1="380" x2="365" y2="404" stroke="#E64B35" stroke-width="1.4"/>
+  <line x1="298" y1="388" x2="514" y2="388" stroke="#3C5488" stroke-width="3"/>
+  <circle cx="409" cy="388" r="6" fill="#3C5488"/>
+  <text x="525" y="392" font-size="11.5" fill="#333">RPE1 家族分歧相关 0.0397，区间 [-0.0605, 0.1355]</text>
+  <text x="540" y="356" font-size="15" font-weight="bold" fill="#1a1a1a">d</text>
+  <text x="660" y="356" font-size="12.5" fill="#555">坏消息四：E202 主检验失败</text>
+  <rect x="540" y="372" width="360" height="40" rx="4" fill="#FDF3F2" stroke="#E64B35" stroke-width="1.2"/>
+  <text x="720" y="397" font-size="11.5" text-anchor="middle" fill="#333">偏相关 -0.0680，区间跨 0 → NOT SUPPORTED</text>
+</svg>
+<figcaption><b>图 18｜四个必须保留的负结果。</b><b>a</b>，K562 上深度模型（0.0540）误差高于「猜成没变化」的强对照（0.0523）；<b>b</b>，预先注册的几何证书门（certificate gate，用代数恒等式给误差下界做的确定性检查）因数值残差超标记为 FAIL，下界违反数为 0，不许事后放宽阈值；<b>c</b>，RPE1 上单独的家族分歧与误差相关仅 0.0397 且区间跨 0；<b>d</b>，E202 问「源域离散度能否解释深度模型的相对失败」，答案是不能（-0.0680，区间跨 0）。</figcaption>
+</figure>
+
+<!-- ============ 第 10 章 ============ -->
+<h2 id="s10"><span class="no">10</span>实验家族地图（E199–E205）</h2>
+
+<p>这个项目用编号管理实验。你只需要记住当前主线的五个（E 是 Experiment 的缩写，编号没有特殊含义，只是顺序）：</p>
+
+<figure>
+<svg viewBox="0 0 920 480" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
+  <line x1="60" y1="70" x2="60" y2="462" stroke="#8491B4" stroke-width="2"/>
+  <circle cx="60" cy="90" r="9" fill="#00A087"/>
+  <text x="84" y="86" font-size="13.5" font-weight="bold" fill="#1a1a1a">E199 ｜ 未见基因考法 ｜ <tspan fill="#00A087">已完成</tspan></text>
+  <text x="84" y="108" font-size="11.5" fill="#333">三个公开检查点（checkpoint，训练到某个阶段保存下来的模型快照）：GAT、Exphormer、Exphormer-MG。</text>
+  <text x="84" y="126" font-size="11.5" fill="#333">分歧有用（0.3948），幅度弱（0.0955）。注意：是三个公开模型，<tspan fill="#E64B35">不是四个随机种子</tspan>——历史材料最常写错的一句。</text>
+  <circle cx="60" cy="172" r="9" fill="#00A087"/>
+  <text x="84" y="168" font-size="13.5" font-weight="bold" fill="#1a1a1a">E200 ｜ 整个 K562 整行留出 ｜ <tspan fill="#00A087">已完成</tspan></text>
+  <text x="84" y="190" font-size="11.5" fill="#333">整行留出下幅度极强（0.8797），旧风险分 0.4240。教训：换考法，线索会翻转。</text>
+  <circle cx="60" cy="252" r="12" fill="#3C5488"/>
+  <text x="84" y="248" font-size="14" font-weight="bold" fill="#3C5488">E201 ｜ 四细胞系盲测（当前主实验）｜ <tspan fill="#00A087">已完成</tspan></text>
+  <text x="84" y="270" font-size="11.5" fill="#333">1,808 主任务，先封存后对答案：SafeConf 0.4082 ｜ 幅度 0.6189 ｜ 偏相关 0.2503 ｜ 效用 0.3200 vs 0.5943。</text>
+  <text x="84" y="288" font-size="11" fill="#555">回答周老师用途一：「预测出来后，把更可能错的任务提前挑出来」——相关成立，幅度更强，SafeConf 有独立信息。</text>
+  <circle cx="60" cy="332" r="9" fill="#E64B35"/>
+  <text x="84" y="328" font-size="13.5" font-weight="bold" fill="#1a1a1a">E202 ｜ 解释相对失败 ｜ <tspan fill="#E64B35">主检验失败（负结果，保留）</tspan></text>
+  <text x="84" y="350" font-size="11.5" fill="#333">源域离散度不能解释深度模型比简单规则多犯的错（-0.0680，区间跨 0）。</text>
+  <circle cx="60" cy="394" r="9" fill="#E69F00"/>
+  <text x="84" y="390" font-size="13.5" font-weight="bold" fill="#1a1a1a">E204 ｜ 风险引导训练（业务B）｜ <tspan fill="#E69F00">工程验收通过；正式 32 模型已排队</tspan></text>
+  <text x="84" y="412" font-size="11.5" fill="#333">四背景各训一轮验证管线正确；正式 32 个模型（16 风险加权 + 16 仅离散度加权，各 80 轮）已于 2026-09-09 由队列监管器接管（见第 12 章）。</text>
+  <text x="84" y="430" font-size="11" fill="#555">回答周老师用途二：「训练时更重视难任务」——程序就绪，效果未知。</text>
+  <circle cx="60" cy="462" r="9" fill="#8491B4"/>
+  <text x="84" y="458" font-size="13.5" font-weight="bold" fill="#1a1a1a">E205 ｜ 跨架构家族 ｜ <tspan fill="#8491B4">只有冻结协议，0 张结果表</tspan></text>
+  <text x="84" y="476" font-size="11.5" fill="#333">用一个结构不同的预测家族区分「换种子会吵」（初始化敏感性）与「换架构会吵」（跨架构分歧）。</text>
+</svg>
+<figcaption><b>图 19｜实验家族状态地图。</b>绿点＝已完成正式评价；红点＝完成但主检验失败（负结果保留）；黄点＝程序就绪、正式训练进行中；灰点＝仅冻结协议。当前论文的全部「能对外讲的正式结果」只来自 E199、E200、E201 三项。</figcaption>
+</figure>
+
+<!-- ============ 第 11 章 ============ -->
+<h2 id="s11"><span class="no">11</span>代码与数据是怎么跑起来的（服务器实查版）</h2>
+
+<p>这一章是 2026-09-09 我登录 168 服务器（10.11.52.168）完整读完代码后写的。读完你将知道：论文里的每个数字是从哪些文件里长出来的、训练一次模型要多久、以及去哪查任何作业的状态。</p>
+
+<h3>11.1 两台机器的分工</h3>
+
+<figure>
+<svg viewBox="0 0 920 330" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
+  <text x="20" y="28" font-size="15" font-weight="bold" fill="#1a1a1a">a</text>
+  <!-- Windows -->
+  <rect x="20" y="50" width="420" height="230" rx="6" fill="#EAF3FB" stroke="#3C5488" stroke-width="1.4"/>
+  <text x="230" y="80" font-size="14" font-weight="bold" text-anchor="middle" fill="#3C5488">你的 Windows 电脑（D:\workplace\safe-conf）</text>
+  <g font-size="11.5" fill="#333">
+    <text x="45" y="112">● 写文档、做审核、画教材图的地方</text>
+    <text x="45" y="140">● 保存 git 仓库（代码版本管理（git，记录</text>
+    <text x="45" y="160">　文件每次修改历史的工具）的完整历史）</text>
+    <text x="45" y="188">● 没有 GPU（显卡），不能训练模型</text>
+    <text x="45" y="216">● 通过 SSH（secure shell，安全的远程登录</text>
+    <text x="45" y="236">　协议）连接服务器干活</text>
+    <text x="45" y="264" fill="#00A087" font-weight="bold">✓ 2026-09-09 已与服务器同步到同一版本</text>
+  </g>
+  <!-- Server -->
+  <rect x="480" y="50" width="420" height="230" rx="6" fill="#FFF4E5" stroke="#E64B35" stroke-width="1.4"/>
+  <text x="690" y="80" font-size="14" font-weight="bold" text-anchor="middle" fill="#E64B35">168 服务器（10.11.52.168，/home/yyf）</text>
+  <g font-size="11.5" fill="#333">
+    <text x="505" y="112">● 2 张 Quadro RTX 6000 显卡（各 24 GB 显存）</text>
+    <text x="505" y="140">● 训练模型的车间：E201/E204 都在这里跑</text>
+    <text x="505" y="168">● 项目代码在 /home/yyf/proj</text>
+    <text x="505" y="188">● 数据在 /home/yyf/data（约 18 TB）</text>
+    <text x="505" y="216">● 与其他用户（lsq）共享：GPU 要排队用</text>
+    <text x="505" y="244" fill="#E69F00" font-weight="bold">● E204 队列监管器正在此运行（见第 12 章）</text>
+  </g>
+  <line x1="440" y1="165" x2="476" y2="165" stroke="#555" stroke-width="1.6" marker-end="url(#arr)"/>
+  <text x="458" y="155" font-size="10.5" text-anchor="middle" fill="#555">SSH</text>
+</svg>
+<figcaption><b>图 20｜两台机器的分工。</b>Windows 电脑负责写作和审核；168 服务器负责训练。两边保存同一个 git 仓库，2026-09-09 已确认同步到同一版本（提交 0ec4b0f）。</figcaption>
+</figure>
+
+<h3>11.2 一次训练是怎么发生的（五个文件的故事）</h3>
+
+<p>训练一个 E204 加权模型，实际由五个文件协作完成。这张「代码地图」你以后查任何问题都用得上：</p>
+
+<figure>
+<svg viewBox="0 0 920 470" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
+  <text x="20" y="28" font-size="15" font-weight="bold" fill="#1a1a1a">a</text>
+  <!-- 队列监管器 -->
+  <rect x="20" y="55" width="270" height="120" rx="4" fill="#F5F7FB" stroke="#3C5488" stroke-width="1.4"/>
+  <text x="155" y="82" font-size="12" font-weight="bold" text-anchor="middle" fill="#3C5488">① 队列监管器（本次新写）</text>
+  <text x="155" y="104" font-size="10.5" text-anchor="middle" fill="#333">run_e204_formal_training_queue.py</text>
+  <text x="155" y="126" font-size="10.5" text-anchor="middle" fill="#555">排队 32 个作业、等 GPU 空闲、</text>
+  <text x="155" y="144" font-size="10.5" text-anchor="middle" fill="#555">检查每个模型的验收门、失败重试</text>
+  <line x1="290" y1="115" x2="326" y2="115" stroke="#555" stroke-width="1.4" marker-end="url(#arr)"/>
+  <!-- 加权启动器 -->
+  <rect x="330" y="55" width="270" height="120" rx="4" fill="#F2F8F6" stroke="#00A087" stroke-width="1.4"/>
+  <text x="465" y="82" font-size="12" font-weight="bold" text-anchor="middle" fill="#00A087">② 加权训练启动器</text>
+  <text x="465" y="104" font-size="10.5" text-anchor="middle" fill="#333">run_e204_weighted_training.py</text>
+  <text x="465" y="126" font-size="10.5" text-anchor="middle" fill="#555">读权重清单 → 校验 5,212 行 →</text>
+  <text x="465" y="144" font-size="10.5" text-anchor="middle" fill="#555">把权重缝进损失函数（不动 TxPert 源码）</text>
+  <line x1="600" y1="115" x2="636" y2="115" stroke="#555" stroke-width="1.4" marker-end="url(#arr)"/>
+  <!-- 冻结适配器 -->
+  <rect x="640" y="55" width="260" height="120" rx="4" fill="#F2F8F6" stroke="#00A087" stroke-width="1.4"/>
+  <text x="770" y="82" font-size="12" font-weight="bold" text-anchor="middle" fill="#00A087">③ 冻结训练适配器</text>
+  <text x="770" y="104" font-size="10.5" text-anchor="middle" fill="#333">txpert_blind_training_adapter.py</text>
+  <text x="770" y="126" font-size="10.5" text-anchor="middle" fill="#555">E201 起就冻结：正式任务训 80 轮、</text>
+  <text x="770" y="144" font-size="10.5" text-anchor="middle" fill="#555">每 5 轮存检查点、写运行状态文件</text>
+  <!-- 权重清单 -->
+  <rect x="20" y="220" width="420" height="105" rx="4" fill="#FFF9EC" stroke="#E69F00" stroke-width="1.4"/>
+  <text x="230" y="248" font-size="12" font-weight="bold" text-anchor="middle" fill="#7E6148">④ 权重清单（已冻结，防偷看）</text>
+  <text x="230" y="270" font-size="10.5" text-anchor="middle" fill="#333">E204_SOURCE_ONLY_TRAINING_WEIGHTS.csv（5,212 行）</text>
+  <text x="230" y="290" font-size="10.5" text-anchor="middle" fill="#555">每个训练条件两个权重：风险加权（task_weight）和仅离散度加权</text>
+  <text x="230" y="308" font-size="10.5" text-anchor="middle" fill="#555">（dispersion_only_weight）；只用源域信息算，公式冻结于提交 5bb3550</text>
+  <line x1="230" y1="220" x2="400" y2="178" stroke="#555" stroke-width="1.4" marker-end="url(#arr)"/>
+  <!-- TxPert -->
+  <rect x="480" y="220" width="420" height="105" rx="4" fill="#FFF4E5" stroke="#E64B35" stroke-width="1.4"/>
+  <text x="690" y="248" font-size="12" font-weight="bold" text-anchor="middle" fill="#E64B35">⑤ TxPert 官方代码（只读，不许改）</text>
+  <text x="690" y="270" font-size="10.5" text-anchor="middle" fill="#333">/home/yyf/archive/external/TxPert（提交 08d82eea）</text>
+  <text x="690" y="290" font-size="10.5" text-anchor="middle" fill="#555">上游开源模型；本论文的所有训练都通过「运行时补丁」注入权重，</text>
+  <text x="690" y="308" font-size="10.5" text-anchor="middle" fill="#555">源码一行不动——这样别人能精确复现我们的实验</text>
+  <line x1="770" y1="220" x2="770" y2="178" stroke="#555" stroke-width="1.4" marker-end="url(#arr)"/>
+  <!-- 底部产物 -->
+  <rect x="20" y="365" width="880" height="85" rx="4" fill="#F2F8F6" stroke="#00A087" stroke-width="1.4"/>
+  <text x="460" y="393" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#00A087">每个模型训完留下什么（都能自己查）</text>
+  <text x="460" y="416" font-size="11" text-anchor="middle" fill="#333">E201_RUN_STATUS.json（训练状态/轮数/显存峰值）＋ E204_WEIGHTING_STATUS.json（权重审计：回退数、是否偷看答案）＋ checkpoints/（每 5 轮的模型快照）＋ logs/（训练曲线）</text>
+  <text x="460" y="438" font-size="10.5" text-anchor="middle" fill="#767676">位置：/home/yyf/data/txpert_official_20260802/e204/formal/&lt;细胞系&gt;/seed_&lt;编号&gt;_&lt;risk 或 dispersion&gt;/</text>
+</svg>
+<figcaption><b>图 21｜代码地图：一次加权训练的五个协作文件。</b>① 队列监管器排队调度；② 加权启动器把权重清单缝进损失函数（loss function，衡量预测与真值差距、指导学习的数值；加权后＝难样本的差距被放大）；③ 冻结适配器执行 80 轮训练；④ 冻结的权重清单提供每个条件的权重；⑤ 官方 TxPert 源码只读使用。所有产物都写在数据盘的正式目录里，可独立复查。</figcaption>
+</figure>
+
+<h3>11.3 权重公式：从源域证据到 0.5–2.0 倍权重</h3>
+
+<div class="term">
+<b>已冻结的权重公式（分析协议（analysis freeze，预先写死、不许根据结果调整的方案））：</b><br>
+难度 difficulty ＝ 平均 [ z(-log(1+源域细胞数)), z(3-源域背景数), z(源域离散度) ]<br>
+权重 w ＝ clip(1 + 0.5 × difficulty, 0.5, 2.0)<br>
+<span style="font-size:13.5px;color:#767676;">读法：源域证据越少（细胞少、背景少）、效应越不稳（离散度大）的条件，训练时权重越大，最大 2 倍、最小 0.5 倍。z 是 z 分数（z-score）；clip 是截断（clip，把数值限制在区间内）；0.5 是强度系数 λ（lambda）。对照细胞（control）永远权重 1。源域离散度缺失时用冻结的源域中位数填补（imputation，用规则补上缺失值）并记录标记。整个公式在 2026-08-30 冻结，那时 E201 的答案还没解封——所以权重不可能偷看答案。</span>
+</div>
+
+<figure>
+<svg viewBox="0 0 920 300" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
+  <text x="20" y="28" font-size="15" font-weight="bold" fill="#1a1a1a">a</text>
+  <text x="60" y="28" font-size="12.5" fill="#555">从难度到权重的映射（w = clip(1 + 0.5×difficulty, 0.5, 2.0)）</text>
+  <!-- 坐标 -->
+  <line x1="100" y1="250" x2="880" y2="250" stroke="#999" stroke-width="1"/>
+  <line x1="100" y1="250" x2="100" y2="50" stroke="#999" stroke-width="1"/>
+  <g font-size="10.5" fill="#767676">
+    <text x="100" y="268" text-anchor="middle">-3</text><text x="255" y="268" text-anchor="middle">-2</text>
+    <text x="410" y="268" text-anchor="middle">-1</text><text x="565" y="268" text-anchor="middle">0</text>
+    <text x="720" y="268" text-anchor="middle">1</text><text x="875" y="268" text-anchor="middle">2</text>
+    <text x="95" y="254" text-anchor="end">0.5</text><text x="95" y="187" text-anchor="end">1.0</text>
+    <text x="95" y="120" text-anchor="end">1.5</text><text x="95" y="57" text-anchor="end">2.0</text>
+    <text x="490" y="290" text-anchor="middle" font-size="11.5" fill="#555">难度 difficulty（z 分数）</text>
+  </g>
+  <!-- y 轴刻度线 -->
+  <line x1="100" y1="250" x2="880" y2="250" stroke="#eee"/>
+  <line x1="100" y1="183" x2="880" y2="183" stroke="#eee"/>
+  <line x1="100" y1="116" x2="880" y2="116" stroke="#eee"/>
+  <line x1="100" y1="53" x2="880" y2="53" stroke="#eee"/>
+  <!-- 折线：w = 1+0.5d clipped: d=-3→0.5(clip), d=-2→0.5(clip 边界 1-1=0... 算: 1+0.5*(-3)=-0.5→0.5; d=-2→0; →0.5; d=-1→0.5; d=0→1.0; d=1→1.5; d=2→2.0 -->
+  <!-- y 映射: 0.5→250, 1.0→183, 1.5→116, 2.0→53 (每 0.5 = 67px) -->
+  <polyline points="100,250 255,250 410,250 565,183 720,116 875,53" fill="none" stroke="#3C5488" stroke-width="2.5"/>
+  <circle cx="565" cy="183" r="5" fill="#3C5488"/>
+  <text x="580" y="175" font-size="11" fill="#3C5488">难度=0 → 权重 1（普通样本）</text>
+  <circle cx="720" cy="116" r="5" fill="#E64B35"/>
+  <text x="735" y="108" font-size="11" fill="#E64B35">难度=1 → 权重 1.5</text>
+  <circle cx="410" cy="250" r="5" fill="#00A087"/>
+  <text x="425" y="242" font-size="11" fill="#00A087">难度很低 → 权重被截断在 0.5（最少也要学一半）</text>
+  <rect x="620" y="180" width="280" height="62" rx="4" fill="#F5F7FB" stroke="#8491B4"/>
+  <text x="640" y="204" font-size="11" fill="#333">为什么截断在 [0.5, 2.0]？</text>
+  <text x="640" y="224" font-size="10.5" fill="#555">防止某个条件权重过大主导训练，</text>
+  <text x="640" y="240" font-size="10.5" fill="#555">或过小等于被删除——纪律性设计。</text>
+</svg>
+<figcaption><b>图 22｜权重公式的形状。</b>难度为 0 的样本权重 1；难度每高 1 个标准分，权重加 0.5，最高 2.0；难度很低的样本权重最多降到 0.5。这个「温和、有界」的设计是为了避免加权过度反而训坏模型。</figcaption>
+</figure>
+
+<!-- ============ 第 12 章 ============ -->
+<h2 id="s12"><span class="no">12</span>E204 训练队列实况（2026-09-09 已启动）</h2>
+
+<p>这一章记录的是「现在进行时」。2026-09-09 下午，我在 168 服务器上完成了 E204 正式训练的安排：<b>32 个模型（4 细胞系 × 4 种子 × 2 种加权方式，每个训 80 轮）已交给队列监管器自动执行</b>。</p>
+
+<h3>12.1 队列怎么工作</h3>
+
+<figure>
+<svg viewBox="0 0 920 350" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
+  <text x="20" y="28" font-size="15" font-weight="bold" fill="#1a1a1a">a</text>
+  <text x="60" y="28" font-size="12.5" fill="#555">队列监管器的循环（每 5 分钟一圈，无人值守）</text>
+  <!-- 循环图 -->
+  <rect x="30" y="55" width="200" height="80" rx="4" fill="#EAF3FB" stroke="#3C5488" stroke-width="1.3"/>
+  <text x="130" y="84" font-size="12" font-weight="bold" text-anchor="middle" fill="#3C5488">① 检查两张 GPU</text>
+  <text x="130" y="104" font-size="10.5" text-anchor="middle" fill="#333">空闲显存 ≥ 20 GB 且</text>
+  <text x="130" y="122" font-size="10.5" text-anchor="middle" fill="#333">没有别人的大作业才用</text>
+  <line x1="230" y1="95" x2="268" y2="95" stroke="#555" stroke-width="1.4" marker-end="url(#arr)"/>
+  <rect x="272" y="55" width="200" height="80" rx="4" fill="#F2F8F6" stroke="#00A087" stroke-width="1.3"/>
+  <text x="372" y="84" font-size="12" font-weight="bold" text-anchor="middle" fill="#00A087">② 启动下一个作业</text>
+  <text x="372" y="104" font-size="10.5" text-anchor="middle" fill="#333">每张 GPU 同时只跑 1 个模型</text>
+  <text x="372" y="122" font-size="10.5" text-anchor="middle" fill="#333">（训练峰值约 16.5 GB）</text>
+  <line x1="472" y1="95" x2="510" y2="95" stroke="#555" stroke-width="1.4" marker-end="url(#arr)"/>
+  <rect x="514" y="55" width="200" height="80" rx="4" fill="#F2F8F6" stroke="#00A087" stroke-width="1.3"/>
+  <text x="614" y="84" font-size="12" font-weight="bold" text-anchor="middle" fill="#00A087">③ 训练 80 轮（约 13 小时）</text>
+  <text x="614" y="104" font-size="10.5" text-anchor="middle" fill="#333">每 5 轮自动存检查点</text>
+  <text x="614" y="122" font-size="10.5" text-anchor="middle" fill="#333">状态写入状态文件</text>
+  <line x1="714" y1="95" x2="752" y2="95" stroke="#555" stroke-width="1.4" marker-end="url(#arr)"/>
+  <rect x="756" y="55" width="150" height="80" rx="4" fill="#FFF9EC" stroke="#E69F00" stroke-width="1.3"/>
+  <text x="831" y="84" font-size="12" font-weight="bold" text-anchor="middle" fill="#7E6148">④ 验收门检查</text>
+  <text x="831" y="104" font-size="10.5" text-anchor="middle" fill="#333">轮数够 80？</text>
+  <text x="831" y="122" font-size="10.5" text-anchor="middle" fill="#333">没偷看答案？</text>
+  <!-- 回环 -->
+  <path d="M831,135 C831,190 130,190 130,138" fill="none" stroke="#8491B4" stroke-width="1.6" stroke-dasharray="5,3" marker-end="url(#arr)"/>
+  <text x="460" y="186" font-size="11" text-anchor="middle" fill="#8491B4">失败自动重试（最多 2 次）；全部完成才停</text>
+  <!-- 当前状态 -->
+  <rect x="30" y="220" width="876" height="110" rx="4" fill="#F2F8F6" stroke="#00A087" stroke-width="1.4"/>
+  <text x="50" y="248" font-size="12.5" font-weight="bold" fill="#00A087">当前实况（2026-09-09 16:07 启动）</text>
+  <g font-size="11.5" fill="#333">
+    <text x="50" y="274">● 监管器进程号 4106032，状态 RUNNING，已登记 32 个作业</text>
+    <text x="50" y="296">● 另一用户（lsq）的作业正占满两张 GPU → 监管器礼貌等待，GPU 一空就自动开训</text>
+    <text x="50" y="318">● 预计总时长：两张卡都空时约 8–10 天；以后随时可以问我「队列跑到哪了」</text>
+  </g>
+</svg>
+<figcaption><b>图 23｜E204 队列监管器的工作循环。</b>监管器（queue supervisor）每 5 分钟检查一次 GPU：空闲显存（VRAM，显卡内存，训练模型时存放数据和计算的空间）足够且无他人作业就启动下一个模型；每个模型训完自动过验收门（gate，预先写死的一组通过标准），失败自动重试。整个流程不需要人看守。</figcaption>
+</figure>
+
+<h3>12.2 训练完成后会得到什么</h3>
+
+<p>32 个模型训完后，按冻结协议做的比较（都已写死，不许根据结果调整）：</p>
+
+<table>
+  <tr><th style="width:24%">比较</th><th style="width:38%">怎么比</th><th>回答什么</th></tr>
+  <tr><td>主比较 ①</td><td>同一细胞系、同一种子：风险加权 − 普通训练的难任务（难度最高 20%）RMSE 差值</td><td>难题有没有被训得更准</td></tr>
+  <tr><td>主比较 ②</td><td>同样的配对：全部任务的 RMSE 差值</td><td>整体有没有被拖坏（恶化超 5% 就只能写成「有针对性的取舍」）</td></tr>
+  <tr><td>成分对照</td><td>仅离散度加权 vs 风险组合加权</td><td>改进到底来自「风险组合」还是单一强成分</td></tr>
+  <tr><td>基线</td><td>E201 已有的 16 个普通训练模型直接复用，不重训</td><td>公平配对，省算力</td></tr>
+</table>
+
+<div class="warn"><b>纪律重申（2026-09-08 记忆提纲第三条）：</b>E204 的 32 个模型只回答<b>业务B</b>（训练加权是否有效）。业务A（复核排序）另有缺口：幅度与 SafeConf 组合排序的效用实验、E205 跨架构检验、冻结后的新外部数据确认。两条线的「下一步」不是一件事，不要混写。</div>
+
+<!-- ============ 第 13 章 ============ -->
+<h2 id="s13"><span class="no">13</span>离投稿还有多远 + 防误导手册</h2>
+
+<p>你的目标是「2 区一定能发，1 区可以冲刺」。先解释两个词：<b>期刊分区（journal quartile，把同学科期刊按影响力分成 Q1–Q4 四档的评价方式，国内常用中科院分区）</b>——2 区是良好期刊，1 区是顶级期刊。分区是期刊的属性，不是你论文的保证书；同一篇论文投不同期刊结果完全不同。我中立核对全部正式结果后，给你的诚实答案是：</p>
+
+<div class="warn">
+<b>当前不能说「2 区一定能发」。</b>已有一条完整、可复核的主结果（E201），但还缺三块关键拼图；<b>1 区更不是现在能冲的状态</b>。这不是泼冷水——下面把缺口逐条列清，每一条都有明确的补上路径。在缺口补上之前，任何 AI 对你说「稳发」都是在哄你。
+</div>
+
+<h3>13.1 用审稿人的六个问题做体检</h3>
+
+<table>
+  <tr><th style="width:26%">审稿人会问</th><th style="width:14%">现状</th><th>依据</th></tr>
+  <tr><td>问题清不清楚？</td><td><span class="tag ok">已闭合</span></td><td>预测后任务风险审计，定义清楚、场景真实</td></tr>
+  <tr><td>评价严不严？</td><td><span class="tag ok">已闭合</span></td><td>四细胞系整行留出 + 封存纪律 + 5,000 次簇自助法</td></tr>
+  <tr><td>相对最强基线有增量吗？</td><td><span class="tag half">卡在这里</span></td><td>单独排序输给幅度（效用差 -0.2743）；偏相关 0.2503 只证明「有独立信息」，未证明「组合更好用」</td></tr>
+  <tr><td>失败边界写了吗？</td><td><span class="tag ok">已闭合</span></td><td>K562 负结果、证书门 FAIL、E202 失败、RPE1 分歧弱，全部在案</td></tr>
+  <tr><td>方法改变了实际决策吗？</td><td><span class="tag no">未闭合</span></td><td>E204 训练介入效果未知（32 模型排队中）；组合复核策略未实现</td></tr>
+  <tr><td>结论能外推吗？</td><td><span class="tag no">未闭合</span></td><td>只有同一架构的四个种子；无跨架构（E205）、无全新外部数据确认</td></tr>
+</table>
+
+<h3>13.2 缺口 → 行动地图</h3>
+
+<figure>
+<svg viewBox="0 0 920 440" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
+  <rect x="20" y="30" width="200" height="115" rx="4" fill="#F2F8F6" stroke="#00A087" stroke-width="1.6"/>
+  <text x="120" y="56" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#00A087">现在在这里</text>
+  <text x="120" y="80" font-size="11" text-anchor="middle" fill="#333">E201 主结果完整：</text>
+  <text x="120" y="98" font-size="11" text-anchor="middle" fill="#333">风险审计现象成立</text>
+  <text x="120" y="116" font-size="11" text-anchor="middle" fill="#333">+ 独立信息确认</text>
+  <line x1="224" y1="88" x2="264" y2="88" stroke="#555" stroke-width="1.6" marker-end="url(#arr)"/>
+  <rect x="270" y="30" width="205" height="115" rx="4" fill="#FFF9EC" stroke="#E69F00" stroke-width="1.4"/>
+  <text x="372" y="56" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#7E6148">缺口①（进行中）</text>
+  <text x="372" y="80" font-size="11" text-anchor="middle" fill="#333">E204 正式训练：32 模型</text>
+  <text x="372" y="98" font-size="11" text-anchor="middle" fill="#333">× 80 轮（队列已启动）</text>
+  <text x="372" y="116" font-size="11" text-anchor="middle" fill="#333">难任务改善且不拖垮整体</text>
+  <line x1="479" y1="88" x2="519" y2="88" stroke="#555" stroke-width="1.6" marker-end="url(#arr)"/>
+  <rect x="525" y="30" width="205" height="115" rx="4" fill="#FFF9EC" stroke="#E69F00" stroke-width="1.4"/>
+  <text x="627" y="56" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#7E6148">缺口②</text>
+  <text x="627" y="80" font-size="11" text-anchor="middle" fill="#333">幅度 + SafeConf 组合排序</text>
+  <text x="627" y="98" font-size="11" text-anchor="middle" fill="#333">效用实验；策略冻结后到</text>
+  <text x="627" y="116" font-size="11" text-anchor="middle" fill="#333">全新数据一次性评价</text>
+  <rect x="270" y="185" width="205" height="105" rx="4" fill="#FFF9EC" stroke="#E69F00" stroke-width="1.4"/>
+  <text x="372" y="211" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#7E6148">缺口③</text>
+  <text x="372" y="235" font-size="11" text-anchor="middle" fill="#333">E205 跨架构家族，</text>
+  <text x="372" y="253" font-size="11" text-anchor="middle" fill="#333">或把主张降级为</text>
+  <text x="372" y="271" font-size="11" text-anchor="middle" fill="#333">「初始化敏感性指标」</text>
+  <rect x="525" y="185" width="205" height="105" rx="4" fill="#EAF3FB" stroke="#3C5488" stroke-width="1.6"/>
+  <text x="627" y="211" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#3C5488">可认真讨论 2 区投稿</text>
+  <text x="627" y="235" font-size="11" text-anchor="middle" fill="#333">＝ 缺口①②③补齐 +</text>
+  <text x="627" y="253" font-size="11" text-anchor="middle" fill="#333">主文定位为「审计协议</text>
+  <text x="627" y="271" font-size="11" text-anchor="middle" fill="#333">+ 幅度强基线 + 有限增量」</text>
+  <line x1="627" y1="145" x2="627" y2="181" stroke="#555" stroke-width="1.6" marker-end="url(#arr)"/>
+  <rect x="270" y="325" width="460" height="85" rx="4" fill="#FDF3F2" stroke="#E64B35" stroke-width="1.4"/>
+  <text x="500" y="353" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#E64B35">1 区（更远）：在 2 区基础上还要求</text>
+  <text x="500" y="375" font-size="11" text-anchor="middle" fill="#333">稳定实用增益 + 跨架构普适 + 全新外部一次性确认 + 更强方法新意</text>
+  <text x="500" y="395" font-size="11" text-anchor="middle" fill="#555">先例审查：PRESCRIBE（NeurIPS 2025）等已占「原理性不确定性」位置，新颖性是最大短板</text>
+  <line x1="627" y1="290" x2="627" y2="321" stroke="#555" stroke-width="1.6" marker-end="url(#arr)"/>
+  <text x="460" y="432" font-size="11" fill="#767676" text-anchor="middle">任何分区都不是录用保证：录用由期刊定位、审稿人、写作与当年竞争共同决定。</text>
+</svg>
+<figcaption><b>图 24｜从现状到投稿的缺口地图。</b>缺口①已在 2026-09-09 启动（E204 队列）；缺口②是业务A 的组合效用实验与冻结后外部确认；缺口③解决「四个种子 ≠ 四种架构」。三项补齐后才适合认真讨论 2 区投稿。</figcaption>
+</figure>
+
+<h3>13.3 防误导手册：GPT / Grok / Codex 都翻过哪些车</h3>
+
+<p>你用过的几个 AI 助手都留下过「看起来对、其实错」的说法。全部核实结果如下（详细证据见同目录《02_独立审核报告》）：</p>
+
+<table>
+  <tr><th style="width:8%">谁</th><th style="width:26%">说法</th><th style="width:36%">事实真相（已核对正式表）</th><th>危害</th></tr>
+  <tr><td rowspan="6">GPT</td><td>四个随机种子＝四种模型</td><td>E201 四名成员是同一 TxPert STRING-GAT 架构，仅初始化不同</td><td>高估外推性，审稿人一票发现即崩</td></tr>
+  <tr><td>E199 是「四个随机种子的分歧」</td><td>E199 用的是三个公开检查点：GAT、Exphormer、Exphormer-MG</td><td>两个实验张冠李戴</td></tr>
+  <tr><td>E204 工程验收＝已提升性能</td><td>验收只证明权重管线正确；正式效果实验现在才刚排队</td><td>把「程序对」写成「效果好」</td></tr>
+  <tr><td>「稳定二区 / 一区冲刺」</td><td>GPT 自己 7 月 11 日也写过「还达不到稳定二区」</td><td>目标被偷换成既定事实</td></tr>
+  <tr><td>SafeConf 超过幅度</td><td>那是 7 月旧合同（GEARS–scGPT，72 任务）的说法；E201 效用差 -0.2743</td><td>把过期实验合同搬到今天</td></tr>
+  <tr><td>拿 7 月 Gate 或 agents/ 原始意见当现状</td><td>7 月 Gate 截止于 E201 解封前；agents/ 不是事实源</td><td>引用过期状态</td></tr>
+  <tr><td rowspan="2">Grok</td><td>820 行期刊＝「每本都详细研究」</td><td>45 行人工画像 + 775 行刊名/类别规则模板；名单还含已改名/已停刊条目</td><td>把宽筛当成选刊依据</td></tr>
+  <tr><td>期刊名单＝「完整 WoS 名单」</td><td>来自第三方页面 8 个小类，无 ISSN/官网快照</td><td>投稿前必须以官网为准</td></tr>
+  <tr><td>Codex</td><td>个别指控过头</td><td>把 Grok 未认领的「官网精读」当靶子；把图 7 图注修正说成图结构修正（主判断仍成立）</td><td>审核者也需要被审</td></tr>
+</table>
+
+<h3>13.4 论文里现在「禁止写 / 允许写」的话</h3>
+
+<table>
+  <tr><th style="width:48%">🚫 禁止写（写了就是雷）</th><th>✅ 允许写（有正式表撑腰）</th></tr>
+  <tr><td>SafeConf 普遍优于预测幅度</td><td>SafeConf 与误差稳定正相关（0.4082），控制幅度后仍有 0.2503 独立关联</td></tr>
+  <tr><td>「幅度主排序 + SafeConf 补充」已成立</td><td>幅度是更强的单一排序基线；组合使用是否更优，需要组合实验验证（2026-09-08 收紧）</td></tr>
+  <tr><td>四个随机种子＝四种不同模型 / 跨架构家族</td><td>四名成员为同一 GAT 架构的四个种子，度量的是初始化敏感性</td></tr>
+  <tr><td>E204 已提升 TxPert 性能 / 正式 80 轮已完成</td><td>E204 工程验收通过；正式 32 模型训练中（2026-09-09 队列启动）</td></tr>
+  <tr><td>稳定二区已达到 / 一区可按现有表冲刺</td><td>当前证据不足以保证任何分区，缺口见第 13.2 节</td></tr>
+  <tr><td>对化学扰动、全部数据集、双未见任务都通用</td><td>双未见与部分跨域场景已有失败记录，应暂停给出排序</td></tr>
+  <tr><td>820 本期刊每本都评价过</td><td>820 行是宽口径初筛：45 行人工画像、775 行规则模板，含历史刊名</td></tr>
+</table>
+
+<!-- ============ 第 14 章 ============ -->
+<h2 id="s14"><span class="no">14</span>结业自测与全术语总表</h2>
+
+<h3>14.1 不看答案，试着讲这十句</h3>
+
+<div class="quiz">
+<ol>
+  <li>为什么 <code>K562::AARS+ctrl</code> 是一个任务（task）？</li>
+  <li>TxPert 和 SafeConf，谁在答题、谁在打标记？</li>
+  <li>整行留出（holdout）和整列留出有什么区别？E201 考的是哪种？</li>
+  <li>封存（freeze）流程防的是什么？为什么第 4 步要推送到两个远程仓库？</li>
+  <li>0.4082 说明什么？为什么不能说自己赢了 0.6189？</li>
+  <li>0.2503 回答的是哪句质疑？它为什么不能直接写成「组合更好用」？</li>
+  <li>为什么五成分等权（0.4082）反而低于最强的单成分（0.4618）？</li>
+  <li>E204 的工程验收证明了什么、没证明什么？</li>
+  <li>权重公式里为什么要有 clip 截断？对照细胞为什么永远权重 1？</li>
+  <li>队列监管器在服务器上替你看守什么？</li>
+</ol>
+<p style="font-size:13.5px;color:#767676;">能讲清八句以上，你已经可以独立向周老师汇报现状。参考答案就在第 2–12 章。</p>
+</div>
+
+<h3>14.2 全术语总表（按字母序速查）</h3>
+
+<table>
+  <tr><th style="width:26%">中文</th><th style="width:30%">English</th><th>一句话解释</th></tr>
+  <tr><td>变分自编码器</td><td>variational autoencoder (VAE)</td><td>把高维数据压缩成紧凑表示并给出不确定度的神经网络</td></tr>
+  <tr><td>表达向量</td><td>expression vector</td><td>用一串数字表示一个细胞的状态</td></tr>
+  <tr><td>偏相关</td><td>partial correlation</td><td>扣掉第三变量影响后剩余的相关</td></tr>
+  <tr><td>簇</td><td>cluster</td><td>统计上相关的一组样本，不能当作独立证据</td></tr>
+  <tr><td>CRISPR干扰</td><td>CRISPR interference (CRISPRi)</td><td>把某基因表达压低的扰动技术</td></tr>
+  <tr><td>单细胞RNA测序</td><td>single-cell RNA sequencing (scRNA-seq)</td><td>逐个细胞测基因表达的技术</td></tr>
+  <tr><td>对照</td><td>control</td><td>不做有效处理的参照样本</td></tr>
+  <tr><td>负结果</td><td>negative result</td><td>假设未获支持的诚实记录</td></tr>
+  <tr><td>复核效用</td><td>review utility</td><td>有限预算下抓坏题的效率（0–1）</td></tr>
+  <tr><td>细胞系</td><td>cell line</td><td>实验室长期培养的细胞品种</td></tr>
+  <tr><td>高错误捕获率</td><td>high-error capture</td><td>被查出的高误差任务占全部高误差任务的比例</td></tr>
+  <tr><td>过拟合</td><td>overfitting</td><td>模型死记训练数据而丧失外推能力</td></tr>
+  <tr><td>哈希</td><td>hash</td><td>内容的数字指纹，改一个字就全变</td></tr>
+  <tr><td>家族分歧</td><td>family disagreement</td><td>同架构多种子预测之间的不一致程度</td></tr>
+  <tr><td>检查点</td><td>checkpoint</td><td>训练到某个阶段保存的模型快照</td></tr>
+  <tr><td>截断</td><td>clip</td><td>把数值限制在指定区间内</td></tr>
+  <tr><td>均方根误差</td><td>root mean square error (RMSE)</td><td>预测与真值的距离，越小越好</td></tr>
+  <tr><td>留口/留出</td><td>holdout</td><td>故意不给模型看某类数据的考法</td></tr>
+  <tr><td>盲法</td><td>blinding</td><td>让评价者不知道关键信息以防偏见的设计</td></tr>
+  <tr><td>模型家族</td><td>model family</td><td>同架构多种子训练出的一组模型</td></tr>
+  <tr><td>目标域 / 源域</td><td>target / source</td><td>考试藏答案的 / 训练能看答案的细胞背景</td></tr>
+  <tr><td>期刊分区</td><td>journal quartile</td><td>把同学科期刊按影响力分 Q1–Q4 四档</td></tr>
+  <tr><td>敲低</td><td>knockdown</td><td>人为降低某基因的表达量</td></tr>
+  <tr><td>扰动</td><td>perturbation</td><td>人为对细胞做的干预</td></tr>
+  <tr><td>任务</td><td>task</td><td>细胞背景 × 扰动条件的最小问题单位</td></tr>
+  <tr><td>深度学习</td><td>deep learning</td><td>用多层神经网络从数据中学习规律</td></tr>
+  <tr><td>湿实验</td><td>wet lab experiment</td><td>在实验室用真实细胞做的实验</td></tr>
+  <tr><td>损失函数</td><td>loss function</td><td>衡量预测与真值差距、指导学习的数值</td></tr>
+  <tr><td>随机种子</td><td>random seed</td><td>控制训练初始运气的编号</td></tr>
+  <tr><td>斯皮尔曼秩相关</td><td>Spearman correlation</td><td>两组排名的一致性（-1 到 1）</td></tr>
+  <tr><td>图注意力网络</td><td>graph attention network (GAT)</td><td>在基因关系图上传递信息的神经网络</td></tr>
+  <tr><td>填补</td><td>imputation</td><td>用规则补上缺失值</td></tr>
+  <tr><td>显存</td><td>VRAM</td><td>显卡内存，训练时存放数据和计算的空间</td></tr>
+  <tr><td>测序</td><td>sequencing</td><td>读取生物分子序列的技术</td></tr>
+  <tr><td>验证成本</td><td>validation cost</td><td>用实验确认一个预测要花的钱和时间</td></tr>
+  <tr><td>预测幅度</td><td>predicted magnitude</td><td>模型自己预测的变化有多大</td></tr>
+  <tr><td>源域效应离散度</td><td>source delta dispersion</td><td>同一扰动在多个源域背景中效应的不稳定程度</td></tr>
+  <tr><td>质心</td><td>centroid</td><td>同条件多细胞的平均表达向量</td></tr>
+  <tr><td>置信区间</td><td>confidence interval (CI)</td><td>真值有 95% 把握落入的区间</td></tr>
+  <tr><td>自助法</td><td>bootstrap</td><td>反复有放回重抽样估计不确定性的方法</td></tr>
+  <tr><td>z 分数</td><td>z-score</td><td>减去均值除以标准差的标准分</td></tr>
+</table>
+
+<h3>14.3 这份文档怎么迭代</h3>
+<ul>
+  <li><b>数字更新：</b>所有数字唯一来源是 <code>docs/学习导航/20260906_论文审核与从零教学/CLAIM_TABLE.json</code> 及其上游 E201 正式 CSV。新正式结果出来后，先改 CLAIM_TABLE，再同步改本文数字，最后改图。</li>
+  <li><b>状态更新：</b>E204 队列训练完成、E205 结果出来后，更新第 10、12、13 章的状态灯与缺口地图。</li>
+  <li><b>表述纪律：</b>口语表述以服务器端《00_当前能说什么_记忆提纲》（2026-09-08）为准；改数字必附来源表名；禁止凭聊天记录改数字；禁止把「计划」写成「结果」。</li>
+</ul>
+
+<div class="foot">
+  本文档由 WorkBuddy 于 2026-09-09 编写（V2 超详细图解版，24 张图）：数字已与 E201 正式 CSV 逐一核对；代码细节来自 168 服务器实查；表述已按 2026-09-08《当前能说什么（记忆提纲）》收紧。<br>
+  配套材料：《01_论文全景教学_小白零基础版》（V1，12 张图）、《02_独立审核报告_20260909.md》（完成度、误导清单、投稿评估）；权威口语版：服务器端 docs/学习导航/20260906_论文审核与从零教学/00_当前能说什么_记忆提纲.md。<br>
+  设计风格参照 Nature 系列论文图解惯例：白底、面板小写字母、图注置于图下、克制配色（NPG 色板）。
+</div>
+
+</div>
+</body>
+</html>
+
+
+
+
+
