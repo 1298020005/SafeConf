@@ -1,6 +1,6 @@
 # SafeConf 外部 Agent 当前入口
 
-更新时间：2026-09-05
+更新时间：2026-09-09
 
 事实分支：`exp/task-risk-audit-20260611`
 
@@ -8,12 +8,13 @@ Qoder、Gemini、Claude、Grok、新 Codex 和其他 Agent 统一从这里进入
 
 ## 阅读顺序
 
-1. [当前项目手把手学习](docs/学习导航/00_当前项目手把手学习_20260905.md)
-2. [当前研究判断](docs/实验结果/CURRENT_RESEARCH_DECISION_20260905.md)
+1. [当前 24 图学习入口](docs/学习导航/20260909_WorkBuddy独立复审教学包/README.md)
+2. [当前能说什么](docs/学习导航/20260906_论文审核与从零教学/00_当前能说什么_记忆提纲.md)
 3. [E201 正式核心报告](docs/实验结果/E201_txpert_multitarget_retraining_20260802/formal_core_evaluation/reports/E201_CORE_REPORT.md)
-4. [E204 实现修正](docs/实验结果/E204_risk_guided_training_20260830/IMPLEMENTATION_AMENDMENT_20260905.md)
-5. [E204 四 target 验收](docs/实验结果/E204_risk_guided_training_20260830/PROFILE_ACCEPTANCE_20260905.md)
-6. 按任务再读 E199、E200、E202、E173–E194 的正式报告。
+4. [E204 冻结协议](docs/实验结果/E204_risk_guided_training_20260830/ANALYSIS_FREEZE.md)
+5. [E204 四 target 工程验收](docs/实验结果/E204_risk_guided_training_20260830/PROFILE_ACCEPTANCE_20260905.md)
+6. [Codex 对 Kimi-K3 的复核与执行决定](agents/codex/2026-09-09_Kimi-K3复核与执行决定.md)
+7. 按任务再读 E199、E200、E202、E205 的正式报告或冻结协议。
 
 ## 接手前必须复述正确的事实
 
@@ -21,7 +22,7 @@ Qoder、Gemini、Claude、Grok、新 Codex 和其他 Agent 统一从这里进入
 E201 已完成并解封评价。
 SafeConf 有幅度之外的信息，但预测幅度是更强的单一排序器。
 E202 主门失败。
-E204 四个背景仅完成工程 profile，不是正式效果结果。
+E204 四个背景仅完成工程 profile；32 个正式任务已登记，但服务器复核时尚未开训，不是效果结果。
 E205 尚未运行。
 ```
 

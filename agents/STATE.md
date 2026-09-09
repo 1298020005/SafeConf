@@ -1,78 +1,77 @@
 # SafeConf 当前权威状态
 
-更新时间：2026-07-14
+更新时间：2026-09-09
+当前分支：`exp/task-risk-audit-20260611`
 
-当前事实基线：`f3af843 experiments: confirm six-dataset SafeConf evidence`
+本文件只做当前事实摘要。科研数字以正式 CSV/JSON 为准；运行状态以数据盘状态文件和进程检查为准；Agent 教材与聊天均不能覆盖它们。
 
-当前工作分支：`exp/task-risk-audit-20260611`
+## 1. 当前研究分成两条业务
 
-本文件是多 Agent 的共享状态摘要。完整事实以 `docs/实验结果/GATE_STATUS_20260714.md` 为最高入口。
+### 业务 A：预测后风险审计
 
-## 1. 当前定位
+TxPert 已经产生扰动预测后，SafeConf 尝试在不知道真实答案时，把更容易出错的任务排到前面。
 
-> SafeConf 是单细胞扰动预测后的任务风险路由方法，用来判断哪些已有预测更可能失败、最值得优先复核。
+E201 已完成四个细胞系、四个随机种子的整背景留出评价：
 
-SafeConf 不替代 scGPT、GEARS 等扰动预测器，也不能无条件称为 predictor-agnostic（预测器无关）置信度。
+- 主任务 1,808，敏感性任务 200；
+- SafeConf 与 family RMS error 的合并 Spearman：`0.4082 [0.3506, 0.4621]`；
+- 预测幅度：`0.6189`，是更强的单一排序器；
+- 控制预测幅度后的偏 Spearman：`0.2503 [0.2021, 0.2980]`；
+- 20% 复核效用：SafeConf `0.3200`，幅度 `0.5943`，差值 `-0.2743`。
 
-## 2. 当前正式闭环
+因此能说“SafeConf 有幅度之外的关联”，不能说“SafeConf 优于幅度”，也不能把“幅度主排序、SafeConf 补充”写成已经验证的用法。
+
+证据：
 
 ```text
-正式 scGPT–GEARS 数据集：6
-外层 folds：30
-测试任务：2,953
-strict PredictionRecord：5,906
-严格合同问题：0
+docs/实验结果/E201_txpert_multitarget_retraining_20260802/formal_core_evaluation/reports/E201_CORE_REPORT.md
+docs/实验结果/E201_txpert_multitarget_retraining_20260802/formal_core_evaluation/tables/
+docs/学习导航/20260906_论文审核与从零教学/CLAIM_TABLE.json
 ```
 
-六数据集 calibrated SafeConf 相对：
+### 业务 B：训练时加权
 
-- predicted magnitude：Δρ=0.111，dataset-population 95% CI `[0.0007, 0.215]`；
-- model disagreement：Δρ=0.155，95% CI `[0.059, 0.251]`；
-- frozen SafeConf：Δρ=0.059，95% CI `[-0.0067, 0.150]`。
+E204 用 source-only difficulty（只从训练侧支持度、背景覆盖和效应离散度得到的难度）调整训练权重。
 
-主证据：
+- 四个 target 的一轮工程 profile 已通过；
+- 32 个正式训练项已经登记：16 个 `risk_weighted`、16 个 `dispersion_only`；
+- 2026-09-09 服务器复核时，两张 GPU 被其他作业占用，32 项均尚未启动；
+- 当前没有 80 轮效果结果，不能说加权训练让模型变准。
+
+证据：
 
 ```text
-docs/实验结果/E131_formal_six_dataset_meta_20260714/reports/E131_REPORT.md
-docs/实验结果/E132_six_dataset_triage_utility_20260714/reports/E132_REPORT.md
+docs/实验结果/E204_risk_guided_training_20260830/ANALYSIS_FREEZE.md
+docs/实验结果/E204_risk_guided_training_20260830/PROFILE_ACCEPTANCE_20260905.md
+/home/yyf/data/txpert_official_20260802/e204/formal/E204_QUEUE_STATUS.json
+/home/yyf/data/txpert_official_20260802/e204/formal/E204_QUEUE_SUPERVISOR.log
 ```
 
-## 3. 当前边界
+## 2. 必须保留的边界
 
-- Santinha 是弱复制；Shifrut 未超过 magnitude；Tian 含负 fold。
-- Tian 的 context 是技术批次，不是新的生物细胞类型。
-- E111 显示风险信号对 GEARS 明显强于 scGPT。
-- E132 支持 normalized AURC 相对 disagreement 改善；固定 top-20% 捕获增益未稳定。
-- E114 的 90% split-conformal 上界经验覆盖 98%，但约为真实平均误差 1.86 倍。
-- E117 紧化后覆盖 0.726，不能使用。
-- E118 正式 CPA chemical 合同中 magnitude 强于 disagreement，chemical 属于失败边界。
-- E126 和 E130 的学习型路由器未通过预设门槛，不继续在已解封真值上调参。
-- 高风险基因通路没有通过预设显著性阈值。
+- SafeConf 单独排序弱于预测幅度；
+- K562 上 TxPert 四种子质心误差 `0.0540`，差于 batch-matched control 的 `0.0523`；
+- RPE1 的家族分歧相关为 `0.0397`，区间跨 0；
+- E201 确定性证书门因 `3.61e-10 > 1e-10` 保持 FAIL，下界违反数为 0；
+- E202 主检验失败；
+- E201 四个预测成员是同一 TxPert-GAT 架构的四个随机种子，不是四种模型；
+- E205 只有冻结协议，没有跨架构正式结果；
+- 没有冻结后的全新外部确认，不能把既有开发数据重新包装成新外部验证。
 
-## 4. 三个版本
+## 3. Git 与协作状态
 
-| 名称 | 当前含义 |
-|---|---|
-| calibrated SafeConf | 使用 fold 内 source validation pair 校准的当前主结果 |
-| frozen SafeConf v0.2 | 预先固定、可解释的协议基线 |
-| learned router / reliability layer | 补充或负结果，不能修改 frozen 的成功率 |
+- Kimi-K3 提交 `b6991c1` 已进入服务器、GitHub 和 Gitee 同名实验分支；
+- `agents/kimi/` 的手工副本与教学包报告逐字相同，已并入 `agents/kimi-k3` 的索引并去除重复；
+- Kimi 初稿所写“远程停在六月、无共同祖先、27 个提交未推送”已经作废；
+- Windows 本地是否同步无法从服务器独立证明，只能确认相同提交已进入服务器和双远程。
 
-## 5. 当前论文状态
-
-研究证据已经形成投稿闭环，但现有 `PHASE5A1_METHODS_DRAFT.md` 和 `PHASE5A2_RESULTS_DRAFT.md` 仍是 2026-06-16 的旧七数据集/V0-ContextSim 主线。下一步是以 E131/E132 为主线重写统一 manuscript，而不是继续在当前六数据上堆事后路由器。
-
-论文接力先读：
+## 4. 当前事实优先级
 
 ```text
-docs/学习导航/04_论文创作接力说明.md
-```
-
-## 6. 权威顺序
-
-```text
-当前 gate
-  > E131/E132 主证据
-  > E111/E114/E116/E117/E118/E130 边界与解释
-  > 阶段性实验
-  > agents/workspace/旧草稿/archive
+正式 CSV / JSON / 运行状态文件
+  > 当前实验正式报告与冻结协议
+  > START_HERE_FOR_AGENTS.md 和本 STATE
+  > 学习材料
+  > Agent 审核意见
+  > 聊天转述
 ```

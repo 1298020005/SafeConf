@@ -11,7 +11,7 @@ docs/学习导航/README.md
 docs/学习导航/03_Agent学习任务与验收.md
 ```
 
-`agents/` 保存协作状态和原始意见，不是当前实验事实入口。发生冲突时以 `docs/实验结果/GATE_STATUS_20260714.md` 为准。
+`agents/` 保存协作状态和原始意见，不是统计数字的最终来源。发生冲突时，先读 `START_HERE_FOR_AGENTS.md`，再回到其中链接的当前正式报告、CSV 和状态文件；2026-07-14 的 Gate 只用于七月阶段，不能覆盖 E201 解封后的结论。
 
 ## 文件怎么用
 
@@ -32,6 +32,7 @@ docs/学习导航/03_Agent学习任务与验收.md
 | `cursor/` | Cursor 本地编辑/侦察任务交接 |
 | `qoder/` | Qoder 原始输出和图解草稿 |
 | `grok/` | Grok 原始输出和复制工具 |
+| `kimi-k3/` | Kimi-K3 / WorkBuddy 的独立审核、讨论问题及产物索引 |
 
 根目录下的 `STATE.md`、`TASKS.md`、`DECISIONS.md` 是共享状态；角色目录只放各自材料。
 

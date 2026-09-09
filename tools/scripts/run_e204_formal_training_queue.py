@@ -9,8 +9,8 @@ The supervisor is polite on a shared server: a job only starts on a GPU whose
 free memory exceeds --min-free-mb AND that has no foreign compute processes
 above --foreign-proc-mb.  One concurrent job per GPU.  Jobs whose run
 directory already passed all gates are skipped, so the supervisor is safe to
-restart.  Failed jobs are retried up to --max-attempts times and then recorded
-without blocking the rest of the queue.
+restart.  Each job is attempted at most --max-attempts times in total; failed
+run directories are archived rather than overwritten.
 """
 
 from __future__ import annotations
@@ -19,6 +19,8 @@ import argparse
 import fcntl
 import json
 import os
+import re
+import signal
 import subprocess
 import sys
 import time
@@ -29,6 +31,7 @@ TARGETS = ("K562", "RPE1", "hepg2", "jurkat")
 SEEDS = (1, 2, 3, 4)
 ARMS = ("risk", "dispersion")
 WEIGHT_COLUMNS = {"risk": "task_weight", "dispersion": "dispersion_only_weight"}
+EXPECTED_WEIGHT_ROWS = {"K562": 1_365, "RPE1": 1_298, "hepg2": 1_241, "jurkat": 1_308}
 JOBS = tuple(
     (target, seed, arm) for seed in SEEDS for target in TARGETS for arm in ARMS
 )
@@ -40,10 +43,6 @@ class QueueFailure(RuntimeError):
 
 def now() -> str:
     return datetime.now().astimezone().isoformat(timespec="seconds")
-
-
-def log_line(message: str) -> None:
-    print(f"{now()} {message}", flush=True)
 
 
 def parse_args() -> argparse.Namespace:
@@ -139,6 +138,7 @@ def validate_complete(run_dir: Path, target: str, seed: int, arm: str) -> None:
         raise QueueFailure(f"missing status files in {run_dir}")
     run_status = read_json(run_status_path)
     weight_status = read_json(weight_status_path)
+    last_model_path = Path(str(run_status.get("last_model_path", "")))
     required = {
         "run_status": run_status.get("status") == "COMPLETE",
         "kind": run_status.get("kind") == "formal",
@@ -147,9 +147,19 @@ def validate_complete(run_dir: Path, target: str, seed: int, arm: str) -> None:
         "epochs": int(run_status.get("current_epoch", -1)) == 80,
         "target_access": int(run_status.get("target_perturbed_cells_accessed", -1)) == 0,
         "test_not_constructed": run_status.get("target_test_dataset_constructed") is False,
+        "last_checkpoint": last_model_path.is_file() and last_model_path.stat().st_size > 0,
         "weight_status": weight_status.get("status") == "COMPLETE",
+        "weight_target": weight_status.get("target") == target,
+        "weight_seed": int(weight_status.get("seed", -1)) == seed,
+        "weight_kind": weight_status.get("kind") == "formal",
         "weight_column": weight_status.get("weight_column") == WEIGHT_COLUMNS[arm],
+        "weight_rows": int(weight_status.get("weight_manifest_rows_for_target", -1))
+        == EXPECTED_WEIGHT_ROWS[target],
+        "zero_weight_fallback": int(weight_status.get("unit_weight_fallback_samples", -1))
+        == 0,
+        "training_only": weight_status.get("weights_applied_to_training_only") is True,
         "weight_target_access": weight_status.get("target_expression_opened") is False,
+        "external_source_unchanged": weight_status.get("external_txpert_modified") is False,
     }
     failed = sorted(name for name, passed in required.items() if not passed)
     if failed:
@@ -163,18 +173,58 @@ def job_state(run_dir: Path) -> str:
     weight_status_path = run_dir / "E204_WEIGHTING_STATUS.json"
     run_status_path = run_dir / "E201_RUN_STATUS.json"
     if weight_status_path.is_file():
-        status = read_json(weight_status_path).get("status")
+        try:
+            status = read_json(weight_status_path).get("status")
+        except (OSError, ValueError, TypeError):
+            return "failed"
         if status == "COMPLETE":
             return "complete"
         if status in ("FAILED", "FAILED_COVERAGE"):
             return "failed"
     if run_status_path.is_file():
-        status = read_json(run_status_path).get("status")
+        try:
+            status = read_json(run_status_path).get("status")
+        except (OSError, ValueError, TypeError):
+            return "failed"
         if status == "RUNNING":
             return "running"
         if status == "FAILED":
             return "failed"
     return "pending"
+
+
+def attempts_from_logs(log_root: Path, target: str, seed: int, arm: str) -> int:
+    """Recover the number of starts after a supervisor restart."""
+    pattern = re.compile(
+        rf"^{re.escape(target)}_seed{seed}_{re.escape(arm)}_attempt(\d+)\.log$"
+    )
+    attempts = []
+    for path in log_root.glob(f"{target}_seed{seed}_{arm}_attempt*.log"):
+        match = pattern.match(path.name)
+        if match:
+            attempts.append(int(match.group(1)))
+    return max(attempts, default=0)
+
+
+def archive_failed_run(
+    run_dir: Path,
+    runs_root: Path,
+    target: str,
+    seed: int,
+    arm: str,
+    attempt: int,
+) -> Path | None:
+    """Preserve a failed/stale directory before a clean retry."""
+    if not run_dir.exists():
+        return None
+    archive_root = runs_root / "_failed_attempts"
+    archive_root.mkdir(exist_ok=True)
+    stamp = datetime.now().astimezone().strftime("%Y%m%dT%H%M%S%z")
+    destination = archive_root / (
+        f"{target}_seed{seed}_{arm}_attempt{attempt}_{stamp}"
+    )
+    os.replace(run_dir, destination)
+    return destination
 
 
 def start_job(
@@ -189,7 +239,12 @@ def start_job(
     device: str,
     log_path: Path,
 ) -> subprocess.Popen:
-    run_dir.mkdir(parents=True, exist_ok=True)
+    # The frozen adapter deliberately refuses an existing run directory.  The
+    # supervisor may create the parent, but must leave the job directory for
+    # the adapter to create after all preflight gates pass.
+    run_dir.parent.mkdir(parents=True, exist_ok=True)
+    if run_dir.exists():
+        raise QueueFailure(f"refusing to start into an existing run directory: {run_dir}")
     command = [
         str(python),
         str(launcher),
@@ -213,16 +268,21 @@ def start_job(
     environment = dict(os.environ)
     environment["CUDA_VISIBLE_DEVICES"] = device
     log_handle = log_path.open("a", encoding="utf-8")
-    log_handle.write(f"\n===== {now()} START {command} on GPU {device} =====\n")
-    log_handle.flush()
-    return subprocess.Popen(
-        command,
-        cwd=txpert_repo,
-        env=environment,
-        stdout=log_handle,
-        stderr=subprocess.STDOUT,
-        start_new_session=True,
-    )
+    try:
+        log_handle.write(f"\n===== {now()} START {command} on GPU {device} =====\n")
+        log_handle.flush()
+        return subprocess.Popen(
+            command,
+            cwd=txpert_repo,
+            env=environment,
+            stdout=log_handle,
+            stderr=subprocess.STDOUT,
+            start_new_session=True,
+        )
+    finally:
+        # Popen duplicated the descriptor for the child.  The supervisor must
+        # close its copy or a long queue leaks one descriptor per attempt.
+        log_handle.close()
 
 
 def main() -> None:
@@ -282,9 +342,21 @@ def main() -> None:
     write_json(state_path, queue_status)
     log(f"E204 formal queue started: {len(JOBS)} jobs, devices={devices}")
 
-    attempts: dict[tuple[str, int, str], int] = {}
+    attempts: dict[tuple[str, int, str], int] = {
+        job: attempts_from_logs(log_root, *job) for job in JOBS
+    }
     active: dict[str, dict] = {}
     permanently_failed: list[dict] = []
+    archived_attempts: list[dict] = []
+    stop_requested = False
+
+    def request_stop(signum, _frame) -> None:
+        nonlocal stop_requested
+        stop_requested = True
+        log(f"received signal {signum}; stop scheduling and preserve running children")
+
+    signal.signal(signal.SIGTERM, request_stop)
+    signal.signal(signal.SIGINT, request_stop)
 
     try:
         while True:
@@ -319,18 +391,84 @@ def main() -> None:
                         )
                 del active[device]
 
+            if stop_requested:
+                break
+
             # 2. Count remaining work.
             remaining = []
+            detached_running = []
             for target, seed, arm in JOBS:
                 run_dir = run_dir_for(runs_root, target, seed, arm)
-                if job_state(run_dir) == "complete":
-                    continue
+                state = job_state(run_dir)
+                if state == "complete":
+                    try:
+                        validate_complete(run_dir, target, seed, arm)
+                    except QueueFailure as exc:
+                        log(f"GATE-FAIL-ON-SCAN {target}/seed_{seed}/{arm}: {exc}")
+                        state = "failed"
+                    else:
+                        continue
                 if any(entry["job"] == (target, seed, arm) for entry in active.values()):
                     continue
-                if [rec for rec in permanently_failed if rec == {"target": target, "seed": seed, "arm": arm}]:
+                detached_pids = training_pids_for(run_dir, launcher)
+                if detached_pids:
+                    detached_running.append(
+                        {
+                            "target": target,
+                            "seed": seed,
+                            "arm": arm,
+                            "pids": sorted(detached_pids),
+                        }
+                    )
+                    continue
+                record = {"target": target, "seed": seed, "arm": arm}
+                if record in permanently_failed:
+                    continue
+                used = attempts.get((target, seed, arm), 0)
+                if state in ("failed", "running"):
+                    archived = archive_failed_run(
+                        run_dir, runs_root, target, seed, arm, max(used, 1)
+                    )
+                    if archived is not None:
+                        archived_record = {**record, "path": str(archived)}
+                        archived_attempts.append(archived_record)
+                        log(
+                            f"ARCHIVE {target}/seed_{seed}/{arm} state={state} "
+                            f"to {archived}"
+                        )
+                if used >= args.max_attempts:
+                    permanently_failed.append(record)
+                    log(
+                        f"FAILED-FINAL {target}/seed_{seed}/{arm} "
+                        f"after {used} total attempts"
+                    )
                     continue
                 remaining.append((target, seed, arm))
             if not remaining and not active:
+                if detached_running:
+                    log(
+                        f"waiting for {len(detached_running)} detached jobs: "
+                        f"{detached_running}"
+                    )
+                    queue_status.update(
+                        {
+                            "status": "RUNNING",
+                            "updated_at": now(),
+                            "active": [],
+                            "detached_running": detached_running,
+                            "waiting": 0,
+                            "permanently_failed": permanently_failed,
+                            "attempts": {
+                                f"{t}/seed_{s}/{a}": n
+                                for (t, s, a), n in attempts.items()
+                                if n
+                            },
+                            "archived_attempts": archived_attempts,
+                        }
+                    )
+                    write_json(state_path, queue_status)
+                    time.sleep(args.poll_seconds)
+                    continue
                 break
 
             # 3. Launch new jobs where GPUs allow.
@@ -383,15 +521,66 @@ def main() -> None:
                     f"on GPU {device} (free={free_mb}MB) pid={process.pid}"
                 )
 
+            queue_status.update(
+                {
+                    "status": "RUNNING",
+                    "updated_at": now(),
+                    "active": [
+                        {
+                            "device": device,
+                            "target": entry["job"][0],
+                            "seed": entry["job"][1],
+                            "arm": entry["job"][2],
+                            "pid": entry["process"].pid,
+                            "attempt": entry["attempt"],
+                        }
+                        for device, entry in active.items()
+                    ],
+                    "detached_running": detached_running,
+                    "waiting": len(remaining),
+                    "permanently_failed": permanently_failed,
+                    "attempts": {
+                        f"{t}/seed_{s}/{a}": n
+                        for (t, s, a), n in attempts.items()
+                        if n
+                    },
+                    "archived_attempts": archived_attempts,
+                }
+            )
+            write_json(state_path, queue_status)
+
             time.sleep(args.poll_seconds)
     finally:
-        final_state = "COMPLETE" if not permanently_failed and not active else "FAILED"
+        all_complete = not permanently_failed
+        if all_complete:
+            for target, seed, arm in JOBS:
+                run_dir = run_dir_for(runs_root, target, seed, arm)
+                if job_state(run_dir) != "complete":
+                    all_complete = False
+                    break
+                try:
+                    validate_complete(run_dir, target, seed, arm)
+                except QueueFailure:
+                    all_complete = False
+                    break
+        if all_complete:
+            final_state = "COMPLETE"
+        elif permanently_failed:
+            final_state = "FAILED"
+        else:
+            final_state = "INTERRUPTED"
         queue_status.update(
             {
                 "status": final_state,
                 "finished_at": now(),
                 "permanently_failed": permanently_failed,
                 "attempts": {f"{t}/seed_{s}/{a}": n for (t, s, a), n in attempts.items()},
+                "archived_attempts": archived_attempts,
+                "running_children_preserved": [
+                    entry["process"].pid
+                    for entry in active.values()
+                    if entry["process"].poll() is None
+                ],
             }
         )
         write_json(state_path, queue_status)

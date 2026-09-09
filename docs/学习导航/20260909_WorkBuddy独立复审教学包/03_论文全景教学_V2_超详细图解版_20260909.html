@@ -37,6 +37,8 @@
   .term{background:var(--note-bg); border-left:4px solid var(--npg-cyan); padding:12px 16px; margin:16px 0; font-size:15.5px;}
   .warn{background:var(--warn-bg); border-left:4px solid var(--npg-red); padding:12px 16px; margin:16px 0; font-size:15.5px;}
   .ok{background:var(--ok-bg); border-left:4px solid var(--npg-teal); padding:12px 16px; margin:16px 0; font-size:15.5px;}
+  .evidence{background:var(--note-bg); border:1px solid var(--line); padding:12px 16px; margin:16px 0; font-size:14px;}
+  .evidence a{display:inline-block; margin-right:14px; color:var(--npg-blue);}
   .num{font-family:Arial,sans-serif; font-weight:700; color:var(--npg-blue);}
   .num-red{font-family:Arial,sans-serif; font-weight:700; color:var(--npg-red);}
   .num-teal{font-family:Arial,sans-serif; font-weight:700; color:var(--npg-teal);}
@@ -62,17 +64,26 @@
 <div class="page">
 
 <h1>SafeConf 论文全景教学 V2 · 超详细图解版</h1>
-<div class="subtitle">对标 Nature 论文图解格式 · 全中文 · 每个科研名词都带（英文，解释）· 共 24 张体系图</div>
+<div class="subtitle">白底论文图解格式 · 全中文 · 核心术语附英文与解释 · 共 24 张体系图</div>
 <div class="meta">
   版本：2026-09-09 V2（WorkBuddy 独立复审 + 服务器代码实查后扩写）｜数字来源：E201 正式结果表（CSV）与 CLAIM_TABLE.json，逐个人工核对｜<br>
   本版新增：服务器代码结构、训练管线、E204 队列实况三章；并按 2026-09-08《当前能说什么（记忆提纲）》收紧了三处表述。<br>
   适用读者：完全没有单细胞背景的论文作者本人。建议读法：每天 2–3 章，一周读完；每张图都要能讲给别人听。
 </div>
 
-<p class="lede">这份教材只有一个目标：<b>让你真正看懂自己的论文</b>。规则：① 所有数字都能追溯到正式结果表；② 每个和单细胞、机器学习、统计、科研流程相关的名词，都写成「中文（English，一句话解释）」；③ 讲不清的地方就画图，全文共 24 张图。</p>
+<p class="lede">这份教材只有一个目标：<b>让你真正看懂当前研究</b>。规则：① E201 的统计数字追溯到正式结果表；② 核心单细胞、机器学习、统计和科研流程术语，首次出现时尽量附上英文与白话解释；③ 关键关系用图说明，全文共 24 张图。它是学习入口，不替代正式协议、CSV 和状态文件。</p>
+
+<div class="evidence"><b>可点击证据入口：</b>
+  <a href="../../实验结果/E201_txpert_multitarget_retraining_20260802/formal_core_evaluation/reports/E201_CORE_REPORT.md">E201 正式报告</a>
+  <a href="../20260906_论文审核与从零教学/CLAIM_TABLE.json">E201 数字表</a>
+  <a href="../../实验结果/E204_risk_guided_training_20260830/ANALYSIS_FREEZE.md">E204 冻结协议</a>
+  <a href="../../实验结果/E204_risk_guided_training_20260830/PROFILE_ACCEPTANCE_20260905.md">E204 工程验收</a>
+  <a href="../../../tools/scripts/run_e204_formal_training_queue.py">E204 队列代码</a>
+  <a href="../../../agents/STATE.md">当前状态</a>
+</div>
 
 <div class="toc">
-<b>目录（14 章）</b>
+<b>目录（00–14，共 15 章）</b>
 <ol>
   <li><a href="#s0">怎么用这份教材（学习路线图）</a></li>
   <li><a href="#s1">这篇研究到底在解决什么问题</a></li>
@@ -86,15 +97,16 @@
   <li><a href="#s9">必须记住的四个坏消息</a></li>
   <li><a href="#s10">实验家族地图（E199–E205）</a></li>
   <li><a href="#s11">代码与数据是怎么跑起来的</a></li>
-  <li><a href="#s12">E204 训练队列实况（已启动）</a></li>
+  <li><a href="#s12">E204 训练队列实况（已登记，等待 GPU）</a></li>
   <li><a href="#s13">离投稿还有多远 + 防误导手册</a></li>
+  <li><a href="#s14">结业自测与核心术语表</a></li>
 </ol>
 </div>
 
 <!-- ============ 第 0 章 ============ -->
 <h2 id="s0"><span class="no">00</span>怎么用这份教材（学习路线图）</h2>
 
-<p>你现在的状态是「完全不懂」，这很正常——这篇论文横跨三个领域：单细胞生物学（single-cell biology，在单个细胞层面研究生命的学科）、机器学习（machine learning，让计算机从数据中学习规律的学科）、统计学（statistics，从数据中得出结论并量化不确定性的学科）。好消息是：你不需要先学完三个领域，只需要学会「这篇论文用到的 1%」。</p>
+<p>这项研究横跨三个领域：单细胞生物学（single-cell biology，在单个细胞层面研究生命的学科）、机器学习（machine learning，让计算机从数据中学习规律的学科）、统计学（statistics，从数据中得出结论并量化不确定性的学科）。学习时不必先学完整个领域，先掌握本项目实际用到的概念和证据链。</p>
 
 <figure>
 <svg viewBox="0 0 920 360" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
@@ -132,7 +144,7 @@
   <!-- 底部规则 -->
   <rect x="20" y="285" width="880" height="58" rx="4" fill="#F5F7FB" stroke="#8491B4" stroke-width="1"/>
   <text x="40" y="310" font-size="12" font-weight="bold" fill="#3C5488">三条学习纪律</text>
-  <text x="40" y="332" font-size="11.5" fill="#333">① 数字只信正式结果表，不信任何 AI 的聊天记录　② 每张图合上书能讲出来才算过　③ 看不懂的名词先查第 14 章术语总表，还看不懂就直接问</text>
+  <text x="40" y="332" font-size="11.5" fill="#333">① 数字只信正式结果表，不信任何 AI 的聊天记录　② 每张图合上书能讲出来才算过　③ 看不懂的名词先查第 14 章核心术语表，再回到证据文件</text>
 </svg>
 <figcaption><b>图 1｜三遍学习路线图。</b>第一遍只求会讲故事，第二遍要求懂每个数字，第三遍学会管理项目（实验、代码、投稿）。</figcaption>
 </figure>
@@ -429,7 +441,7 @@
   <text x="840" y="70" font-size="11.5" text-anchor="middle" fill="#333">高风险题优先</text>
   <text x="840" y="88" font-size="11.5" text-anchor="middle" fill="#333">人工复核</text>
   <text x="20" y="158" font-size="15" font-weight="bold" fill="#1a1a1a">b</text>
-  <text x="200" y="158" font-size="12.5" fill="#555">业务B：训练前加权（E204，工程验收通过，正式训练已排队启动）</text>
+  <text x="200" y="158" font-size="12.5" fill="#555">业务B：训练前加权（E204，工程验收通过，32 项已登记）</text>
   <rect x="20" y="175" width="180" height="64" rx="4" fill="#EAF3FB" stroke="#3C5488" stroke-width="1.2"/>
   <text x="110" y="199" font-size="11.5" text-anchor="middle" fill="#333">源域证据（允许看）</text>
   <text x="110" y="217" font-size="11.5" text-anchor="middle" fill="#333">细胞数 · 背景数 · 离散度</text>
@@ -444,7 +456,7 @@
   <line x1="664" y1="207" x2="704" y2="207" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
   <rect x="710" y="175" width="190" height="64" rx="4" fill="#FDF3F2" stroke="#E64B35" stroke-width="1.2" stroke-dasharray="5,3"/>
   <text x="805" y="199" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#E64B35">是否更准？</text>
-  <text x="805" y="217" font-size="11.5" text-anchor="middle" fill="#E64B35">正式 32 模型训练中</text>
+  <text x="805" y="217" font-size="11.5" text-anchor="middle" fill="#E64B35">等待 GPU，效果未知</text>
   <line x1="20" y1="285" x2="900" y2="285" stroke="#E64B35" stroke-width="1.2" stroke-dasharray="6,4"/>
   <text x="460" y="306" font-size="12" text-anchor="middle" fill="#E64B35">纪律红线：训练权重只允许来自源域证据；禁止读取目标域的预测、表达或误差</text>
   <text x="20" y="350" font-size="15" font-weight="bold" fill="#1a1a1a">c</text>
@@ -540,7 +552,7 @@
   <text x="540" y="364" font-size="11.5" fill="#333">2. 主战场 E201 是整行留出，这里幅度（0.8797）极强，</text>
   <text x="540" y="386" font-size="11.5" fill="#333">　 所以幅度是必须正面比较的强基线（strong baseline，</text>
   <text x="540" y="408" font-size="11.5" fill="#333">　 评价新方法时必须打败的最强简单方法）；</text>
-  <text x="540" y="430" font-size="11.5" fill="#333">3. 论文把「适用边界」写清楚，审稿人最吃这一套。</text>
+  <text x="540" y="430" font-size="11.5" fill="#333">3. 把「适用边界」写清楚，便于复核结论没有超出证据。</text>
 </svg>
 <figcaption><b>图 8｜四种留出考法与线索翻转。</b><b>a–d</b>，灰＝训练见过，橙＝考试没见过。<b>e</b>，正式数字说明线索随考法翻转：E199（未见基因）中模型分歧（0.3948）远强于幅度（0.0955）；E200（整行留出）中幅度（0.8797）碾压旧风险分（0.4240）。柱高按数值等比绘制（约 249px / 1.0）。这解释了为什么本项目反复强调「不同考法要分别报告，不能混为一谈」。</figcaption>
 </figure>
@@ -722,7 +734,7 @@
   <circle cx="620" y="30" r="5" fill="#3C5488"/><text x="632" y="34" font-size="11.5" fill="#333">SafeConf 风险分</text>
   <circle cx="760" y="30" r="5" fill="#E64B35"/><text x="772" y="34" font-size="11.5" fill="#333">预测幅度（magnitude）</text>
 </svg>
-<figcaption><b>图 11｜E201 主结果：谁更能给「容易错的题」排队。</b>蓝点为 SafeConf 风险分，红点为预测幅度（predicted magnitude，模型自己预测的变化有多大）。四个细胞系上 SafeConf 都为正，合并 0.4082（区间 [0.3506, 0.4621]）；但幅度在每一处都更高（合并 0.6189）。横线为 95% 置信区间（confidence interval, CI，估计值的不确定范围，理解为「真值有 95% 把握落在这段里」）。</figcaption>
+<figcaption><b>图 11｜E201 主结果：谁更能给「容易错的题」排队。</b>蓝点为 SafeConf 风险分，红点为预测幅度（predicted magnitude，模型自己预测的变化有多大）。四个细胞系上 SafeConf 都为正，合并 0.4082（区间 [0.3506, 0.4621]）；但幅度在每一处都更高（合并 0.6189）。横线为 95% 簇自助置信区间（confidence interval, CI，表示在当前抽样方案下估计的不确定范围）。</figcaption>
 </figure>
 
 <h3>7.2 结果二：只查 20% 的题时，幅度抓得更多</h3>
@@ -794,7 +806,7 @@
     <circle cx="664" cy="246" r="5" fill="#00A087"/>
   </g>
 </svg>
-<figcaption><b>图 13｜控制幅度后的偏斯皮尔曼相关（partial Spearman）。</b>合并值为 0.2503，区间 [0.2021, 0.2980]；四个细胞系的区间下限全部大于 0（K562 0.3475、RPE1 0.1407、HepG2 0.3259、Jurkat 0.3169）。人话：即使幅度已经把话说完了，SafeConf 还能补充它没说出来的那一部分风险信息。</figcaption>
+<figcaption><b>图 13｜控制幅度后的偏斯皮尔曼相关（partial Spearman）。</b>合并值为 0.2503，区间 [0.2021, 0.2980]。四个细胞系的点估计分别为 K562 0.3475、RPE1 0.1407、HepG2 0.3259、Jurkat 0.3169；它们的区间下限分别为 0.2475、0.0390、0.2291、0.2259，均大于 0。人话：扣除预测幅度能解释的排序关系后，SafeConf 与误差仍保留正向关联。</figcaption>
 </figure>
 
 <div class="warn"><b>2026-09-08 记忆提纲收紧的第一句（重要）：</b>偏相关 0.2503 只证明 SafeConf 含有幅度解释不了的信息；<b>还没有实验证明</b>：把幅度和 SafeConf 组合起来排序，20% 复核效用会高于单用幅度。所以正确说法是——「预测幅度是当前更强的单一排序基线；SafeConf 仍有独立关联，但能否作为有效补充，需要组合实验（combination experiment，专门检验「两个信号合起来用是否比单用更好」的实验）验证」。在这项实验完成前，论文里不能写「幅度主排序、SafeConf 做补充」是已成立的用法。</div>
@@ -839,7 +851,7 @@
 <!-- ============ 第 8 章 ============ -->
 <h2 id="s8"><span class="no">08</span>三把统计尺子学明白</h2>
 
-<p>读这篇论文只需要三把统计尺子。这一章把每把尺子画出来，学完你就超过了大多数「只会看 P 值」的人。</p>
+<p>理解当前主结果需要三把统计尺子：秩相关、置信区间和偏相关。这一章分别说明它们回答什么、不能回答什么。</p>
 
 <h3>8.1 尺子一：斯皮尔曼秩相关（只看顺序，不看数值）</h3>
 
@@ -879,14 +891,14 @@
     <text x="605" y="250" text-anchor="middle" fill="#E64B35" font-weight="bold">名次乱跳 → 没有排序能力</text>
   </g>
   <rect x="60" y="275" width="800" height="42" rx="4" fill="#F5F7FB" stroke="#8491B4"/>
-  <text x="80" y="301" font-size="11.5" fill="#333">论文里的用法：把所有题按风险分排一队、按真实误差排一队，算 Spearman——SafeConf 合并 0.4082 表示「中等偏强的排序能力」，幅度 0.6189 表示「相当强的排序能力」。</text>
+  <text x="80" y="301" font-size="11.5" fill="#333">本项目的用法：分别按风险分和真实误差排序，再算 Spearman。SafeConf 为 0.4082，幅度为 0.6189；后者在本数据和端点上更高。</text>
 </svg>
 <figcaption><b>图 15｜斯皮尔曼秩相关的直觉。</b>左：两列名次几乎一致 → 强正相关；右：名次乱配 → 接近 0。论文用它衡量「风险分能不能把更容易错的题排到前面」。</figcaption>
 </figure>
 
 <h3>8.2 尺子二：置信区间与自助法（估计值的可信范围）</h3>
 
-<p><b>置信区间（confidence interval, CI，给一个估计值配上「真值有 95% 把握落在其中」的区间）</b>：只说「相关是 0.4082」不够，还要说「大概在 0.35 到 0.46 之间」。区间越窄越稳。本论文用<b>自助法（bootstrap，把数据反复有放回地重抽样、每次重算统计量，用波动估计不确定性）</b>算区间，并且以扰动条件为<b>簇（cluster，统计上相关的一组样本；同一扰动在不同细胞系里不算完全独立的证据）</b>抽样 5,000 次——这样不会把「同一个扰动出现多次」误当成「很多独立证据」。</p>
+<p><b>置信区间（confidence interval, CI，在同一抽样与计算流程反复进行时，按设定比例覆盖目标参数的区间方法）</b>：只说「相关是 0.4082」不够，还要同时给出它在当前抽样假设下的不确定范围。区间越窄，估计通常越精确。本项目用<b>自助法（bootstrap，把数据反复有放回地重抽样、每次重算统计量，用波动估计不确定性）</b>算区间，并且以扰动条件为<b>簇（cluster，统计上相关的一组样本；同一扰动在不同细胞系里不算完全独立的证据）</b>抽样 5,000 次——这样不会把「同一个扰动出现多次」误当成「很多独立证据」。</p>
 
 <figure>
 <svg viewBox="0 0 920 260" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
@@ -916,7 +928,7 @@
   <text x="460" y="160" text-anchor="middle" font-size="12" font-weight="bold" fill="#3C5488">0.4082</text>
   <text x="330" y="205" text-anchor="middle" font-size="11" fill="#555">下沿 0.3506</text>
   <text x="590" y="205" text-anchor="middle" font-size="11" fill="#555">上沿 0.4621</text>
-  <text x="460" y="238" text-anchor="middle" font-size="11.5" fill="#333">读法：真值有 95% 把握落在 [0.3506, 0.4621]；下沿 &gt; 0，所以「相关为正」是稳的</text>
+  <text x="460" y="238" text-anchor="middle" font-size="11.5" fill="#333">读法：当前 95% 簇自助区间为 [0.3506, 0.4621]；下沿 &gt; 0，支持正向关联</text>
 </svg>
 <figcaption><b>图 16｜簇自助法与置信区间。</b>整簇重抽（而不是逐题重抽）是本论文统计严谨的关键细节：它避免把同一扰动条件的重复出现误当成独立证据，区间更诚实。</figcaption>
 </figure>
@@ -945,13 +957,13 @@
     <text x="620" y="232">　带有独立的补充信息</text>
   </g>
 </svg>
-<figcaption><b>图 17｜偏相关的直觉。</b>SafeConf 与误差的相关（0.4082）中有一大块能被幅度解释；扣掉后剩余 0.2503 是 SafeConf 独有的贡献。注意（2026-09-08 收紧）：「有独立信息」≠「组合起来更好用」，后者需要组合实验证明。</figcaption>
+<figcaption><b>图 17｜偏相关的直觉。</b>控制预测幅度后，SafeConf 与误差的剩余秩相关为 0.2503。它说明还有统计关联，不代表 SafeConf 带来了 0.2503 的因果贡献，也不证明组合排序更好；组合效用需要单独实验。</figcaption>
 </figure>
 
 <!-- ============ 第 9 章 ============ -->
 <h2 id="s9"><span class="no">09</span>必须记住的四个坏消息</h2>
 
-<p>好的论文不是只报喜。下面四个<b>负结果（negative result，假设未获支持的诚实结果）</b>每一个都已经写进正式报告——主动写出来是加分项，删掉则是送命项。</p>
+<p>下面四个<b>负结果（negative result，预设假设没有获得支持的结果）</b>都已经写进正式报告。它们限定了方法在哪些情况下不能使用，后续汇报和写作都应保留。</p>
 
 <figure>
 <svg viewBox="0 0 920 430" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
@@ -1023,20 +1035,20 @@
   <text x="84" y="328" font-size="13.5" font-weight="bold" fill="#1a1a1a">E202 ｜ 解释相对失败 ｜ <tspan fill="#E64B35">主检验失败（负结果，保留）</tspan></text>
   <text x="84" y="350" font-size="11.5" fill="#333">源域离散度不能解释深度模型比简单规则多犯的错（-0.0680，区间跨 0）。</text>
   <circle cx="60" cy="394" r="9" fill="#E69F00"/>
-  <text x="84" y="390" font-size="13.5" font-weight="bold" fill="#1a1a1a">E204 ｜ 风险引导训练（业务B）｜ <tspan fill="#E69F00">工程验收通过；正式 32 模型已排队</tspan></text>
-  <text x="84" y="412" font-size="11.5" fill="#333">四背景各训一轮验证管线正确；正式 32 个模型（16 风险加权 + 16 仅离散度加权，各 80 轮）已于 2026-09-09 由队列监管器接管（见第 12 章）。</text>
+  <text x="84" y="390" font-size="13.5" font-weight="bold" fill="#1a1a1a">E204 ｜ 风险引导训练（业务B）｜ <tspan fill="#E69F00">工程验收通过；32 项已登记</tspan></text>
+  <text x="84" y="412" font-size="11.5" fill="#333">四背景各训一轮验证管线正确；32 项训练（16 风险加权 + 16 仅离散度加权，各 80 轮）已登记，检查时仍在等待 GPU。</text>
   <text x="84" y="430" font-size="11" fill="#555">回答周老师用途二：「训练时更重视难任务」——程序就绪，效果未知。</text>
   <circle cx="60" cy="462" r="9" fill="#8491B4"/>
   <text x="84" y="458" font-size="13.5" font-weight="bold" fill="#1a1a1a">E205 ｜ 跨架构家族 ｜ <tspan fill="#8491B4">只有冻结协议，0 张结果表</tspan></text>
   <text x="84" y="476" font-size="11.5" fill="#333">用一个结构不同的预测家族区分「换种子会吵」（初始化敏感性）与「换架构会吵」（跨架构分歧）。</text>
 </svg>
-<figcaption><b>图 19｜实验家族状态地图。</b>绿点＝已完成正式评价；红点＝完成但主检验失败（负结果保留）；黄点＝程序就绪、正式训练进行中；灰点＝仅冻结协议。当前论文的全部「能对外讲的正式结果」只来自 E199、E200、E201 三项。</figcaption>
+<figcaption><b>图 19｜实验家族状态地图。</b>绿点＝已完成且主结论得到支持；红点＝已完成但主检验失败；黄点＝工程就绪、正式任务仍在队列；灰点＝只有冻结协议。图中已有正式评价的是 E199、E200、E201 和 E202；E204 尚无效果结果，E205 尚无结果表。</figcaption>
 </figure>
 
 <!-- ============ 第 11 章 ============ -->
 <h2 id="s11"><span class="no">11</span>代码与数据是怎么跑起来的（服务器实查版）</h2>
 
-<p>这一章是 2026-09-09 我登录 168 服务器（10.11.52.168）完整读完代码后写的。读完你将知道：论文里的每个数字是从哪些文件里长出来的、训练一次模型要多久、以及去哪查任何作业的状态。</p>
+<p>这一章根据 2026-09-09 对 168 服务器代码、状态文件和运行进程的检查整理。它说明当前训练链的主要文件、模型运行位置和状态查询入口；正式复核仍应打开对应源码与状态文件。</p>
 
 <h3>11.1 两台机器的分工</h3>
 
@@ -1045,15 +1057,15 @@
   <text x="20" y="28" font-size="15" font-weight="bold" fill="#1a1a1a">a</text>
   <!-- Windows -->
   <rect x="20" y="50" width="420" height="230" rx="6" fill="#EAF3FB" stroke="#3C5488" stroke-width="1.4"/>
-  <text x="230" y="80" font-size="14" font-weight="bold" text-anchor="middle" fill="#3C5488">你的 Windows 电脑（D:\workplace\safe-conf）</text>
+  <text x="230" y="80" font-size="14" font-weight="bold" text-anchor="middle" fill="#3C5488">Windows 工作副本（WorkBuddy 使用端）</text>
   <g font-size="11.5" fill="#333">
     <text x="45" y="112">● 写文档、做审核、画教材图的地方</text>
     <text x="45" y="140">● 保存 git 仓库（代码版本管理（git，记录</text>
     <text x="45" y="160">　文件每次修改历史的工具）的完整历史）</text>
-    <text x="45" y="188">● 没有 GPU（显卡），不能训练模型</text>
+    <text x="45" y="188">● 主要承担文档与版本操作；硬件状态未由服务器复核</text>
     <text x="45" y="216">● 通过 SSH（secure shell，安全的远程登录</text>
     <text x="45" y="236">　协议）连接服务器干活</text>
-    <text x="45" y="264" fill="#00A087" font-weight="bold">✓ 2026-09-09 已与服务器同步到同一版本</text>
+    <text x="45" y="264" fill="#7E6148" font-weight="bold">△ WorkBuddy 报告已同步；服务器不能独立读取 Windows 引用</text>
   </g>
   <!-- Server -->
   <rect x="480" y="50" width="420" height="230" rx="6" fill="#FFF4E5" stroke="#E64B35" stroke-width="1.4"/>
@@ -1169,9 +1181,9 @@
 </figure>
 
 <!-- ============ 第 12 章 ============ -->
-<h2 id="s12"><span class="no">12</span>E204 训练队列实况（2026-09-09 已启动）</h2>
+<h2 id="s12"><span class="no">12</span>E204 训练队列实况（2026-09-09 已登记，尚在等待 GPU）</h2>
 
-<p>这一章记录的是「现在进行时」。2026-09-09 下午，我在 168 服务器上完成了 E204 正式训练的安排：<b>32 个模型（4 细胞系 × 4 种子 × 2 种加权方式，每个训 80 轮）已交给队列监管器自动执行</b>。</p>
+<p>这一章保存 2026-09-09 的状态快照：<b>32 个模型（4 细胞系 × 4 种子 × 2 种加权方式，每个训 80 轮）已经登记到队列</b>。检查时两张 GPU 都被其他作业占用，因此监管器只在等待，尚未启动 E204 模型；登记任务不等于训练已经发生。</p>
 
 <h3>12.1 队列怎么工作</h3>
 
@@ -1201,17 +1213,17 @@
   <text x="831" y="122" font-size="10.5" text-anchor="middle" fill="#333">没偷看答案？</text>
   <!-- 回环 -->
   <path d="M831,135 C831,190 130,190 130,138" fill="none" stroke="#8491B4" stroke-width="1.6" stroke-dasharray="5,3" marker-end="url(#arr)"/>
-  <text x="460" y="186" font-size="11" text-anchor="middle" fill="#8491B4">失败自动重试（最多 2 次）；全部完成才停</text>
+  <text x="460" y="186" font-size="11" text-anchor="middle" fill="#8491B4">每项最多尝试 2 次（首次失败后重试 1 次）；失败目录保留</text>
   <!-- 当前状态 -->
   <rect x="30" y="220" width="876" height="110" rx="4" fill="#F2F8F6" stroke="#00A087" stroke-width="1.4"/>
   <text x="50" y="248" font-size="12.5" font-weight="bold" fill="#00A087">当前实况（2026-09-09 16:07 启动）</text>
   <g font-size="11.5" fill="#333">
-    <text x="50" y="274">● 监管器进程号 4106032，状态 RUNNING，已登记 32 个作业</text>
-    <text x="50" y="296">● 另一用户（lsq）的作业正占满两张 GPU → 监管器礼貌等待，GPU 一空就自动开训</text>
+    <text x="50" y="274">● 初始监管器进程号 4106032；已登记 32 个作业，当时完成数与启动数均为 0</text>
+    <text x="50" y="296">● 另一用户（lsq）的作业占用两张 GPU → 监管器等待，满足门槛后才启动</text>
     <text x="50" y="318">● 预计总时长：两张卡都空时约 8–10 天；以后随时可以问我「队列跑到哪了」</text>
   </g>
 </svg>
-<figcaption><b>图 23｜E204 队列监管器的工作循环。</b>监管器（queue supervisor）每 5 分钟检查一次 GPU：空闲显存（VRAM，显卡内存，训练模型时存放数据和计算的空间）足够且无他人作业就启动下一个模型；每个模型训完自动过验收门（gate，预先写死的一组通过标准），失败自动重试。整个流程不需要人看守。</figcaption>
+<figcaption><b>图 23｜E204 队列监管器的工作循环。</b>监管器（queue supervisor）每 5 分钟检查一次 GPU：空闲显存（VRAM，显卡内存，训练模型时存放数据和计算的空间）足够且没有占用显存较多的他人作业时，才启动下一个模型。训练完成后检查轮数、权重覆盖、目标答案读取和模型文件；单项总计最多尝试 2 次。队列可无人值守，但仍需查看状态文件和失败日志。</figcaption>
 </figure>
 
 <h3>12.2 训练完成后会得到什么</h3>
@@ -1231,10 +1243,10 @@
 <!-- ============ 第 13 章 ============ -->
 <h2 id="s13"><span class="no">13</span>离投稿还有多远 + 防误导手册</h2>
 
-<p>你的目标是「2 区一定能发，1 区可以冲刺」。先解释两个词：<b>期刊分区（journal quartile，把同学科期刊按影响力分成 Q1–Q4 四档的评价方式，国内常用中科院分区）</b>——2 区是良好期刊，1 区是顶级期刊。分区是期刊的属性，不是你论文的保证书；同一篇论文投不同期刊结果完全不同。我中立核对全部正式结果后，给你的诚实答案是：</p>
+<p>你的目标是争取较好的期刊。<b>期刊分区（journal quartile 或国内采用的分区体系，把期刊按学科与指标分档）</b>存在不同版本，不能简单等同于论文质量，也不是录用保证。当前先根据证据完整性判断哪些结论已经成立、哪些仍需实验。</p>
 
 <div class="warn">
-<b>当前不能说「2 区一定能发」。</b>已有一条完整、可复核的主结果（E201），但还缺三块关键拼图；<b>1 区更不是现在能冲的状态</b>。这不是泼冷水——下面把缺口逐条列清，每一条都有明确的补上路径。在缺口补上之前，任何 AI 对你说「稳发」都是在哄你。
+<b>当前不能说「2 区一定能发」。</b>E201 已有可复核结果，但业务 B、组合效用、跨架构和新外部确认尚未闭合。分区判断还会受到投稿范围、审稿意见、写作质量和同期工作的影响，因此只能评估证据是否更接近目标，不能承诺录用。
 </div>
 
 <h3>13.1 用审稿人的六个问题做体检</h3>
@@ -1297,7 +1309,7 @@
 
 <table>
   <tr><th style="width:8%">谁</th><th style="width:26%">说法</th><th style="width:36%">事实真相（已核对正式表）</th><th>危害</th></tr>
-  <tr><td rowspan="6">GPT</td><td>四个随机种子＝四种模型</td><td>E201 四名成员是同一 TxPert STRING-GAT 架构，仅初始化不同</td><td>高估外推性，审稿人一票发现即崩</td></tr>
+  <tr><td rowspan="6">GPT</td><td>四个随机种子＝四种模型</td><td>E201 四名成员是同一 TxPert STRING-GAT 架构，仅初始化不同</td><td>会高估跨架构外推性</td></tr>
   <tr><td>E199 是「四个随机种子的分歧」</td><td>E199 用的是三个公开检查点：GAT、Exphormer、Exphormer-MG</td><td>两个实验张冠李戴</td></tr>
   <tr><td>E204 工程验收＝已提升性能</td><td>验收只证明权重管线正确；正式效果实验现在才刚排队</td><td>把「程序对」写成「效果好」</td></tr>
   <tr><td>「稳定二区 / 一区冲刺」</td><td>GPT 自己 7 月 11 日也写过「还达不到稳定二区」</td><td>目标被偷换成既定事实</td></tr>
@@ -1315,14 +1327,14 @@
   <tr><td>SafeConf 普遍优于预测幅度</td><td>SafeConf 与误差稳定正相关（0.4082），控制幅度后仍有 0.2503 独立关联</td></tr>
   <tr><td>「幅度主排序 + SafeConf 补充」已成立</td><td>幅度是更强的单一排序基线；组合使用是否更优，需要组合实验验证（2026-09-08 收紧）</td></tr>
   <tr><td>四个随机种子＝四种不同模型 / 跨架构家族</td><td>四名成员为同一 GAT 架构的四个种子，度量的是初始化敏感性</td></tr>
-  <tr><td>E204 已提升 TxPert 性能 / 正式 80 轮已完成</td><td>E204 工程验收通过；正式 32 模型训练中（2026-09-09 队列启动）</td></tr>
+  <tr><td>E204 已提升 TxPert 性能 / 正式 80 轮已完成</td><td>E204 工程验收通过；32 项已登记，检查时仍在等待 GPU，效果未知</td></tr>
   <tr><td>稳定二区已达到 / 一区可按现有表冲刺</td><td>当前证据不足以保证任何分区，缺口见第 13.2 节</td></tr>
   <tr><td>对化学扰动、全部数据集、双未见任务都通用</td><td>双未见与部分跨域场景已有失败记录，应暂停给出排序</td></tr>
   <tr><td>820 本期刊每本都评价过</td><td>820 行是宽口径初筛：45 行人工画像、775 行规则模板，含历史刊名</td></tr>
 </table>
 
 <!-- ============ 第 14 章 ============ -->
-<h2 id="s14"><span class="no">14</span>结业自测与全术语总表</h2>
+<h2 id="s14"><span class="no">14</span>结业自测与核心术语表</h2>
 
 <h3>14.1 不看答案，试着讲这十句</h3>
 
@@ -1339,13 +1351,22 @@
   <li>权重公式里为什么要有 clip 截断？对照细胞为什么永远权重 1？</li>
   <li>队列监管器在服务器上替你看守什么？</li>
 </ol>
-<p style="font-size:13.5px;color:#767676;">能讲清八句以上，你已经可以独立向周老师汇报现状。参考答案就在第 2–12 章。</p>
+<p style="font-size:13.5px;color:#767676;">这些问题用于检查是否真正理解。答不清时回到第 2–12 章和顶部的证据链接核对，不用靠背结论。</p>
 </div>
 
-<h3>14.2 全术语总表（按字母序速查）</h3>
+<h3>14.2 核心术语表（按主题速查）</h3>
 
 <table>
   <tr><th style="width:26%">中文</th><th style="width:30%">English</th><th>一句话解释</th></tr>
+  <tr><td>逗号分隔表格</td><td>comma-separated values (CSV)</td><td>用逗号分列的纯文本数据表，本项目正式统计结果主要采用这种格式</td></tr>
+  <tr><td>结构化记录文件</td><td>JavaScript Object Notation (JSON)</td><td>用键和值保存状态、配置和哈希等结构化信息的文本格式</td></tr>
+  <tr><td>版本控制</td><td>Git</td><td>记录文件修改历史并比较不同提交的工具</td></tr>
+  <tr><td>远程代码托管</td><td>GitHub / Gitee</td><td>保存 Git 提交的两个远程平台，本项目用双远程留下封存记录</td></tr>
+  <tr><td>图形处理器</td><td>graphics processing unit (GPU)</td><td>用于并行训练深度模型的计算硬件</td></tr>
+  <tr><td>进程号</td><td>process identifier (PID)</td><td>操作系统给正在运行程序分配的编号，只代表某次运行实例</td></tr>
+  <tr><td>SHA-256 摘要</td><td>SHA-256 digest</td><td>由文件内容计算出的固定长度数字指纹，用来发现内容是否改变</td></tr>
+  <tr><td>源域专用</td><td>source-only</td><td>计算只允许使用训练侧信息，不读取目标细胞扰动真值</td></tr>
+  <tr><td>强度系数</td><td>lambda (λ)</td><td>控制难度分数对训练权重影响大小的预先固定参数</td></tr>
   <tr><td>变分自编码器</td><td>variational autoencoder (VAE)</td><td>把高维数据压缩成紧凑表示并给出不确定度的神经网络</td></tr>
   <tr><td>表达向量</td><td>expression vector</td><td>用一串数字表示一个细胞的状态</td></tr>
   <tr><td>偏相关</td><td>partial correlation</td><td>扣掉第三变量影响后剩余的相关</td></tr>
@@ -1363,11 +1384,11 @@
   <tr><td>检查点</td><td>checkpoint</td><td>训练到某个阶段保存的模型快照</td></tr>
   <tr><td>截断</td><td>clip</td><td>把数值限制在指定区间内</td></tr>
   <tr><td>均方根误差</td><td>root mean square error (RMSE)</td><td>预测与真值的距离，越小越好</td></tr>
-  <tr><td>留口/留出</td><td>holdout</td><td>故意不给模型看某类数据的考法</td></tr>
+  <tr><td>留出</td><td>holdout</td><td>故意不给模型看某类数据的考法</td></tr>
   <tr><td>盲法</td><td>blinding</td><td>让评价者不知道关键信息以防偏见的设计</td></tr>
   <tr><td>模型家族</td><td>model family</td><td>同架构多种子训练出的一组模型</td></tr>
   <tr><td>目标域 / 源域</td><td>target / source</td><td>考试藏答案的 / 训练能看答案的细胞背景</td></tr>
-  <tr><td>期刊分区</td><td>journal quartile</td><td>把同学科期刊按影响力分 Q1–Q4 四档</td></tr>
+  <tr><td>期刊分区</td><td>journal quartile / journal ranking tier</td><td>按指定数据库、学科和版本对期刊分档；不同体系的结果可能不同</td></tr>
   <tr><td>敲低</td><td>knockdown</td><td>人为降低某基因的表达量</td></tr>
   <tr><td>扰动</td><td>perturbation</td><td>人为对细胞做的干预</td></tr>
   <tr><td>任务</td><td>task</td><td>细胞背景 × 扰动条件的最小问题单位</td></tr>
@@ -1384,29 +1405,24 @@
   <tr><td>预测幅度</td><td>predicted magnitude</td><td>模型自己预测的变化有多大</td></tr>
   <tr><td>源域效应离散度</td><td>source delta dispersion</td><td>同一扰动在多个源域背景中效应的不稳定程度</td></tr>
   <tr><td>质心</td><td>centroid</td><td>同条件多细胞的平均表达向量</td></tr>
-  <tr><td>置信区间</td><td>confidence interval (CI)</td><td>真值有 95% 把握落入的区间</td></tr>
+  <tr><td>置信区间</td><td>confidence interval (CI)</td><td>在重复抽样意义下按设定比例覆盖目标参数的区间方法</td></tr>
   <tr><td>自助法</td><td>bootstrap</td><td>反复有放回重抽样估计不确定性的方法</td></tr>
   <tr><td>z 分数</td><td>z-score</td><td>减去均值除以标准差的标准分</td></tr>
 </table>
 
 <h3>14.3 这份文档怎么迭代</h3>
 <ul>
-  <li><b>数字更新：</b>所有数字唯一来源是 <code>docs/学习导航/20260906_论文审核与从零教学/CLAIM_TABLE.json</code> 及其上游 E201 正式 CSV。新正式结果出来后，先改 CLAIM_TABLE，再同步改本文数字，最后改图。</li>
+  <li><b>数字更新：</b>E201 核心统计数字以 <code>docs/学习导航/20260906_论文审核与从零教学/CLAIM_TABLE.json</code> 及其上游正式 CSV 为准；代码、Git 和队列状态另以对应状态文件及当前服务器检查为准。新结果不能只改教学 HTML。</li>
   <li><b>状态更新：</b>E204 队列训练完成、E205 结果出来后，更新第 10、12、13 章的状态灯与缺口地图。</li>
   <li><b>表述纪律：</b>口语表述以服务器端《00_当前能说什么_记忆提纲》（2026-09-08）为准；改数字必附来源表名；禁止凭聊天记录改数字；禁止把「计划」写成「结果」。</li>
 </ul>
 
 <div class="foot">
   本文档由 WorkBuddy 于 2026-09-09 编写（V2 超详细图解版，24 张图）：数字已与 E201 正式 CSV 逐一核对；代码细节来自 168 服务器实查；表述已按 2026-09-08《当前能说什么（记忆提纲）》收紧。<br>
-  配套材料：《01_论文全景教学_小白零基础版》（V1，12 张图）、《02_独立审核报告_20260909.md》（完成度、误导清单、投稿评估）；权威口语版：服务器端 docs/学习导航/20260906_论文审核与从零教学/00_当前能说什么_记忆提纲.md。<br>
-  设计风格参照 Nature 系列论文图解惯例：白底、面板小写字母、图注置于图下、克制配色（NPG 色板）。
+  配套材料：《02_独立审核报告_20260909.md》（证据状态、误导清单、投稿评估）；权威口语版：服务器端 docs/学习导航/20260906_论文审核与从零教学/00_当前能说什么_记忆提纲.md。早期 12 图 V1 已由本版覆盖，不再重复保留。<br>
+  设计采用白底、面板小写字母、图注置于图下和克制配色；这只是阅读样式，不代表已经达到任何期刊的科学或排版标准。
 </div>
 
 </div>
 </body>
 </html>
-
-
-
-
-
