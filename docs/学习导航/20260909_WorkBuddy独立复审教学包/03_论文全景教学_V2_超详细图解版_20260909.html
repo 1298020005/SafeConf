@@ -619,7 +619,7 @@
 </div>
 
 <figure>
-<svg viewBox="0 0 920 420" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
+<svg viewBox="0 0 920 690" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
   <text x="20" y="28" font-size="15" font-weight="bold" fill="#1a1a1a">a</text>
   <text x="180" y="28" font-size="12.5" fill="#555">五个成分各自与真实误差的相关（越高越强；合并 1,808 主任务）</text>
   <g font-size="11.5">
@@ -641,26 +641,30 @@
     <text x="340" y="225" fill="#1a1a1a">-0.0385（反向）</text>
     <text x="640" y="250" font-size="10.5" fill="#767676" text-anchor="end">来源：E201_DESCRIPTIVE_ASSOCIATIONS.csv</text>
   </g>
-  <text x="20" y="305" font-size="15" font-weight="bold" fill="#1a1a1a">b</text>
-  <text x="180" y="305" font-size="12.5" fill="#555">等权平均的代价：最强成分被两个弱成分稀释</text>
+  <!-- 分隔线，避免与 panel a 重叠 -->
+  <line x1="20" y1="282" x2="900" y2="282" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="20" y="318" font-size="15" font-weight="bold" fill="#1a1a1a">b</text>
+  <text x="180" y="318" font-size="12.5" fill="#555">等权平均的代价：最强成分被两个弱成分稀释</text>
   <g font-size="11.5">
-    <rect x="140" y="144" width="110" height="231" fill="#00A087"/>
-    <text x="195" y="136" text-anchor="middle" font-weight="bold" fill="#1a1a1a">0.4618</text>
-    <text x="195" y="393" text-anchor="middle" fill="#333">离散度（单成分）</text>
-    <rect x="330" y="171" width="110" height="204" fill="#3C5488"/>
-    <text x="385" y="163" text-anchor="middle" font-weight="bold" fill="#1a1a1a">0.4082</text>
-    <text x="385" y="393" text-anchor="middle" fill="#333">SafeConf 五成分等权</text>
-    <rect x="520" y="66" width="110" height="309" fill="#E64B35"/>
-    <text x="575" y="58" text-anchor="middle" font-weight="bold" fill="#1a1a1a">0.6189</text>
-    <text x="575" y="393" text-anchor="middle" fill="#333">预测幅度（强基线）</text>
-    <rect x="680" y="125" width="220" height="185" rx="4" fill="#FFF9EC" stroke="#E69F00" stroke-width="1"/>
-    <text x="700" y="153" font-size="11.5" font-weight="bold" fill="#7E6148">为什么会变低？</text>
-    <text x="700" y="177" font-size="11" fill="#333">五样各占 1/5：</text>
-    <text x="700" y="197" font-size="11" fill="#333">0.0450 和 -0.0385 几乎</text>
-    <text x="700" y="217" font-size="11" fill="#333">没信号，把 0.4618 往下拉。</text>
-    <text x="700" y="245" font-size="11" font-weight="bold" fill="#7E6148">这不是算错，是等权规则</text>
-    <text x="700" y="265" font-size="11" font-weight="bold" fill="#7E6148">的代价；E204 因此设置</text>
-    <text x="700" y="285" font-size="11" font-weight="bold" fill="#7E6148">「只用离散度加权」对照。</text>
+    <!-- 基线 y=650，比例约 485px/单位；柱子只画在 panel b 区域内（y≥350），不与 panel a 重叠 -->
+    <rect x="140" y="426" width="110" height="224" fill="#00A087"/>
+    <text x="195" y="416" text-anchor="middle" font-weight="bold" fill="#1a1a1a">0.4618</text>
+    <text x="195" y="668" text-anchor="middle" fill="#333">离散度（单成分）</text>
+    <rect x="330" y="452" width="110" height="198" fill="#3C5488"/>
+    <text x="385" y="442" text-anchor="middle" font-weight="bold" fill="#1a1a1a">0.4082</text>
+    <text x="385" y="668" text-anchor="middle" fill="#333">SafeConf 五成分等权</text>
+    <rect x="520" y="350" width="110" height="300" fill="#E64B35"/>
+    <text x="575" y="340" text-anchor="middle" font-weight="bold" fill="#1a1a1a">0.6189</text>
+    <text x="575" y="668" text-anchor="middle" fill="#333">预测幅度（强基线）</text>
+    <line x1="110" y1="650" x2="660" y2="650" stroke="#999" stroke-width="1"/>
+    <rect x="680" y="360" width="220" height="200" rx="4" fill="#FFF9EC" stroke="#E69F00" stroke-width="1"/>
+    <text x="700" y="388" font-size="11.5" font-weight="bold" fill="#7E6148">为什么会变低？</text>
+    <text x="700" y="412" font-size="11" fill="#333">五样各占 1/5：</text>
+    <text x="700" y="432" font-size="11" fill="#333">0.0450 和 -0.0385 几乎</text>
+    <text x="700" y="452" font-size="11" fill="#333">没信号，把 0.4618 往下拉。</text>
+    <text x="700" y="480" font-size="11" font-weight="bold" fill="#7E6148">这不是算错，是等权规则</text>
+    <text x="700" y="500" font-size="11" font-weight="bold" fill="#7E6148">的代价；E204 因此设置</text>
+    <text x="700" y="520" font-size="11" font-weight="bold" fill="#7E6148">「只用离散度加权」对照。</text>
   </g>
 </svg>
 <figcaption><b>图 10｜五个风险成分的拆解。</b><b>a</b>，五个成分单独与真实误差的斯皮尔曼秩相关（Spearman correlation，衡量两组排序一致性的指标，详见第 8 章）：源域效应离散度（source delta dispersion，同一扰动在多个源域背景中真实效应的不稳定程度）一枝独秀（0.4618）。<b>b</b>，等权组合后 SafeConf 为 0.4082，反低于最强单成分——两个弱信号成分稀释了强信号。这解释了为什么 E204 要专门设置「只用离散度加权（dispersion_only）」的对照组，也指出了等权公式是未来改进的靶点。</figcaption>
@@ -966,24 +970,24 @@
 <p>下面四个<b>负结果（negative result，预设假设没有获得支持的结果）</b>都已经写进正式报告。它们限定了方法在哪些情况下不能使用，后续汇报和写作都应保留。</p>
 
 <figure>
-<svg viewBox="0 0 920 430" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
+<svg viewBox="0 0 920 446" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica,Arial,'Microsoft YaHei',sans-serif">
   <text x="20" y="28" font-size="15" font-weight="bold" fill="#1a1a1a">a</text>
   <text x="170" y="28" font-size="12.5" fill="#555">坏消息一：K562 上，深度模型没赢过「猜成没变化」</text>
   <g font-size="11.5">
     <rect x="90" y="83" width="90" height="189" fill="#3C5488"/>
     <text x="135" y="75" text-anchor="middle" font-weight="bold" fill="#1a1a1a">0.0540</text>
-    <text x="135" y="196" text-anchor="middle" fill="#333">深度模型</text>
-    <text x="135" y="212" text-anchor="middle" fill="#767676" font-size="10">四种子质心</text>
+    <text x="135" y="292" text-anchor="middle" fill="#333">深度模型</text>
+    <text x="135" y="310" text-anchor="middle" fill="#767676" font-size="10">四种子质心</text>
     <rect x="230" y="89" width="90" height="183" fill="#00A087"/>
     <text x="275" y="81" text-anchor="middle" font-weight="bold" fill="#00A087">0.0523 ✓更低</text>
-    <text x="275" y="196" text-anchor="middle" fill="#333">「猜成没变化」</text>
-    <text x="275" y="212" text-anchor="middle" fill="#767676" font-size="10">批次匹配对照</text>
+    <text x="275" y="292" text-anchor="middle" fill="#333">「猜成没变化」</text>
+    <text x="275" y="310" text-anchor="middle" fill="#767676" font-size="10">批次匹配对照</text>
     <rect x="370" y="68" width="90" height="204" fill="#8491B4"/>
     <text x="415" y="60" text-anchor="middle" font-weight="bold" fill="#1a1a1a">0.0584</text>
-    <text x="415" y="196" text-anchor="middle" fill="#333">官方简单规则</text>
-    <text x="415" y="212" text-anchor="middle" fill="#767676" font-size="10">official baseline</text>
+    <text x="415" y="292" text-anchor="middle" fill="#333">官方简单规则</text>
+    <text x="415" y="310" text-anchor="middle" fill="#767676" font-size="10">official baseline</text>
     <line x1="60" y1="272" x2="500" y2="272" stroke="#999" stroke-width="1"/>
-    <text x="60" y="292" font-size="10.5" fill="#767676">纵轴＝误差（RMSE），越低越好。注：四个细胞系合并后深度模型整体优于对照，仅 K562 这一条落败。</text>
+    <text x="60" y="332" font-size="10.5" fill="#767676">纵轴＝误差（RMSE），越低越好。注：四个细胞系合并后深度模型整体优于对照，仅 K562 这一条落败。</text>
   </g>
   <text x="540" y="28" font-size="15" font-weight="bold" fill="#1a1a1a">b</text>
   <text x="660" y="28" font-size="12.5" fill="#555">坏消息二：几何证书门 FAIL</text>
@@ -995,15 +999,15 @@
   <text x="720" y="162" font-size="11.5" font-weight="bold" text-anchor="middle" fill="#E64B35">不许事后改阈值再宣称通过</text>
   <text x="20" y="356" font-size="15" font-weight="bold" fill="#1a1a1a">c</text>
   <text x="170" y="356" font-size="12.5" fill="#555">坏消息三：RPE1 上「模型吵架」单独不管用（区间跨 0）</text>
-  <line x1="230" y1="392" x2="620" y2="392" stroke="#999" stroke-width="1"/>
+  <line x1="230" y1="392" x2="515" y2="392" stroke="#999" stroke-width="1"/>
   <g font-size="10.5" fill="#767676">
-    <text x="255" y="410" text-anchor="middle">-0.1</text><text x="365" y="410" text-anchor="middle">0</text>
-    <text x="475" y="410" text-anchor="middle">0.1</text><text x="585" y="410" text-anchor="middle">0.2</text>
+    <text x="295" y="408" text-anchor="middle">-0.1</text><text x="365" y="408" text-anchor="middle">0</text>
+    <text x="435" y="408" text-anchor="middle">0.1</text><text x="505" y="408" text-anchor="middle">0.2</text>
   </g>
   <line x1="365" y1="380" x2="365" y2="404" stroke="#E64B35" stroke-width="1.4"/>
-  <line x1="298" y1="388" x2="514" y2="388" stroke="#3C5488" stroke-width="3"/>
-  <circle cx="409" cy="388" r="6" fill="#3C5488"/>
-  <text x="525" y="392" font-size="11.5" fill="#333">RPE1 家族分歧相关 0.0397，区间 [-0.0605, 0.1355]</text>
+  <line x1="323" y1="388" x2="460" y2="388" stroke="#3C5488" stroke-width="3"/>
+  <circle cx="393" cy="388" r="6" fill="#3C5488"/>
+  <text x="372" y="424" font-size="11.5" text-anchor="middle" fill="#333">RPE1 家族分歧相关 0.0397，区间 [-0.0605, 0.1355]</text>
   <text x="540" y="356" font-size="15" font-weight="bold" fill="#1a1a1a">d</text>
   <text x="660" y="356" font-size="12.5" fill="#555">坏消息四：E202 主检验失败</text>
   <rect x="540" y="372" width="360" height="40" rx="4" fill="#FDF3F2" stroke="#E64B35" stroke-width="1.2"/>
