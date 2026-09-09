@@ -3,146 +3,948 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>一道题走完：从 7 月多表到现在的 E201（计算机一区口径）</title>
+<title>从 CSV 看懂：K562 压低 AARS，7 月到 E201</title>
 <style>
-  body{margin:0;background:#fff;color:#1a1a1a;font-family:"Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;font-size:18px;line-height:1.95;}
-  .page{max-width:900px;margin:0 auto;padding:36px 24px 80px;}
-  h1,h2,h3,figcaption{font-family:"PingFang SC","Microsoft YaHei",Arial,sans-serif;}
-  h1{font-size:26px;margin:0 0 8px;}
-  .meta{color:#666;font-size:14px;border-bottom:1px solid #ddd;padding-bottom:14px;margin-bottom:22px;}
-  h2{font-size:21px;margin:40px 0 10px;padding-top:12px;border-top:2px solid #1a1a1a;}
-  h3{font-size:17px;color:#1F4E79;margin:22px 0 8px;}
-  .warn{border-left:4px solid #C0392B;background:#fdf4f3;padding:12px 16px;margin:14px 0;}
-  .ok{border-left:4px solid #1A7A5C;background:#f3f9f6;padding:12px 16px;margin:14px 0;}
-  .box{border-left:4px solid #1F4E79;background:#f5f8fb;padding:12px 16px;margin:14px 0;}
-  table{border-collapse:collapse;width:100%;margin:14px 0;font-size:15.5px;font-family:"PingFang SC","Microsoft YaHei",Arial,sans-serif;}
-  th{border-top:2px solid #111;border-bottom:1px solid #999;text-align:left;padding:8px 10px;}
-  td{border-bottom:1px solid #eee;padding:8px 10px;vertical-align:top;}
+  :root{
+    --red:#C0392B; --blue:#1F4E79; --teal:#1A7A5C; --orange:#B36B00;
+    --ink:#1a1a1a; --soft:#333; --faint:#555; --line:#ddd;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:#fff;color:var(--ink);
+    font-family:"Source Han Serif SC","Noto Serif CJK SC","Songti SC",Georgia,serif;
+    font-size:18px;line-height:1.9;}
+  .page{max-width:960px;margin:0 auto;padding:36px 22px 96px;}
+  h1,h2,h3,figcaption,th,td,.toc{font-family:"PingFang SC","Microsoft YaHei",Arial,sans-serif;}
+  h1{font-size:26px;line-height:1.35;margin:0 0 8px;}
+  .meta{font-size:14px;color:var(--faint);border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:20px;}
+  h2{font-size:21px;margin:40px 0 10px;padding-top:14px;border-top:2px solid #111;}
+  h3{font-size:17px;color:var(--blue);margin:22px 0 8px;}
+  p{margin:10px 0;}
+  .warn{border-left:4px solid var(--red);background:#fdf4f3;padding:12px 14px;margin:12px 0;}
+  .ok{border-left:4px solid var(--teal);background:#f3f9f6;padding:12px 14px;margin:12px 0;}
+  .note{border-left:4px solid var(--blue);background:#f4f7fb;padding:12px 14px;margin:12px 0;}
+  table{border-collapse:collapse;width:100%;margin:12px 0 18px;font-size:14.5px;}
+  th{border-top:2px solid #111;border-bottom:1px solid #999;text-align:left;padding:7px 8px;background:#fafafa;}
+  td{border-bottom:1px solid #eee;padding:7px 8px;vertical-align:top;}
   tr:last-child td{border-bottom:2px solid #111;}
-  figure{margin:22px 0;padding:12px;border:1px solid #eee;}
+  .num{font-variant-numeric:tabular-nums;font-family:Arial,sans-serif;white-space:nowrap;}
+  figure{margin:20px 0 28px;padding:10px;border:1px solid #eee;background:#fff;}
   svg{display:block;margin:0 auto;max-width:100%;height:auto;}
-  figcaption{font-size:15px;color:#444;margin-top:8px;}
-  code{background:#f4f4f4;padding:1px 5px;font-family:Consolas,monospace;font-size:14.5px;}
-  ol.step>li{margin:12px 0;}
+  figcaption{font-size:15px;color:#333;margin-top:10px;line-height:1.7;}
+  code{background:#f3f3f3;padding:1px 5px;font-size:13.5px;font-family:Consolas,Menlo,monospace;}
+  .src{font-size:13px;color:#666;}
+  .toc{font-size:15.5px;background:#fafafa;border:1px solid #eee;padding:14px 20px;margin:16px 0 24px;}
+  .toc a{color:var(--blue);text-decoration:none;}
+  .toc ol{margin:8px 0 0 22px;padding:0;}
+  .toc li{margin:4px 0;}
+  .tiny{font-size:13px;color:#666;overflow-x:auto;}
 </style>
 </head>
 <body>
 <div class="page">
 
-<h1>只用一道题：从 7 月那些 CSV，走到现在的 TxPert / E201</h1>
+<h1>从 CSV 看懂：K562 压低 AARS，7 月到现在的 E201</h1>
 <div class="meta">
-给完全小白。目标口径：<b>计算机一区 / CCF 期刊或会议</b>，不是生物一区。<br>
-贯穿例子永远是：<code>K562::AARS+ctrl</code>＝在 K562 这种血癌细胞里，把 AARS 这个基因调低，猜三千多个基因会怎么变。
+发表口径：计算机期刊 / 会议（CCF、JCR 计算类）。不是生物分区。<br>
+数字只从正式表读出，显示四位或五位小数，和 <code>CLAIM_TABLE.json</code> 同一套取整。<br>
+贯穿条件：K562 细胞，把 AARS 调低。表里的编号 <code>K562::AARS+ctrl</code>。
 </div>
 
-<div class="warn"><b>先改口：</b>你要发的是计算机方向的顶刊或顶会（比如 CCF-A 的 Bioinformatics 期刊，或 NeurIPS 这类会议）。PRESCRIBE 发的 NeurIPS 2025 就是计算机顶会，和你同一把尺子。下面不再拿「生物 1 区」说事。</div>
+<div class="warn">上一版用考试、学生、老师打比方，作废。下面只用：细胞、基因、模型、质检、真实测序、使用者。</div>
 
-<h2>第 0 步：你到底卖什么（先钉死）</h2>
-<p>领域里大家都在做：<b>细胞 + 扰动 → 猜基因怎么变</b>。</p>
-<p>你这篇<b>不重新猜</b>。别人已经猜完了。你给这道猜打一个「可能错」的分，按分数从高到低排，好决定先核对哪几道。排序就是排序。</p>
-<p>选修（现在没成绩、可以先不看）：下次让答题程序重新学习时，难题多练。那叫训练加权。主关<b>不必</b>从头再训一个新模型。</p>
+<div class="toc">
+<b>按表走，不跳</b>
+<ol>
+<li><a href="#s1">这件事在干什么</a></li>
+<li><a href="#s2">打开这一行 CSV</a></li>
+<li><a href="#s3">39 列各是什么</a></li>
+<li><a href="#s4">幅度 0.10173 怎么来的</a></li>
+<li><a href="#s5">四个随机起点</a></li>
+<li><a href="#s6">风险分 0.11790 怎么平均出来</a></li>
+<li><a href="#s7">在 K562 566 组里排第几</a></li>
+<li><a href="#s8">旁边几组对照</a></li>
+<li><a href="#s9">主表有多少行</a></li>
+<li><a href="#s10">四种细胞怎么切</a></li>
+<li><a href="#s11">1808 组排得齐不齐</a></li>
+<li><a href="#s12">只能核对 20% 时</a></li>
+<li><a href="#s13">拿掉幅度之后还剩什么</a></li>
+<li><a href="#s14">五个成分各自多强</a></li>
+<li><a href="#s15">TxPert 本身准不准</a></li>
+<li><a href="#s16">7 月那张六套数据表</a></li>
+<li><a href="#s17">从 7 月走到 E201</a></li>
+<li><a href="#s18">指纹文件</a></li>
+<li><a href="#s19">五扇门</a></li>
+<li><a href="#s20">计算机投稿</a></li>
+<li><a href="#s21">数字收在一页</a></li>
+</ol>
+</div>
 
-<h2>第 1 步：把这道题写成一行表（CSV 长这样）</h2>
-<p>CSV 就是 Excel 能打开的表格。一行一道题。7 月和现在，表头精神是一样的：</p>
-<table>
-<tr><th>列</th><th>人话</th><th>这道题填什么</th></tr>
-<tr><td>题号</td><td>哪次考试</td><td><code>K562::AARS+ctrl</code></td></tr>
-<tr><td>细胞</td><td>在谁身上考</td><td>K562</td></tr>
-<tr><td>扰动</td><td>做了什么</td><td>把 AARS 调低</td></tr>
-<tr><td>学生猜的变化有多大</td><td>幅度（猜的，不是实验室测的）</td><td>现在 E201 里这题是 0.10173</td></tr>
-<tr><td>几个学生吵不吵</td><td>分歧</td><td>现在 E201 里这题是 0.01035</td></tr>
-<tr><td>你的风险分</td><td>SafeConf 盖的章</td><td>现在 E201 里这题是 0.11790</td></tr>
-<tr><td>对完答案才有的错多少</td><td>真实误差</td><td>现在 E201 里这题是 0.08909</td></tr>
-</table>
-<p>7 月那些「很多 CSV、很多公式」，就是对<b>成百上千行这样的表</b>算：风险分高的题，误差是不是也高。</p>
-
-<h2>第 2 步：7 月那种考法（具体细胞）</h2>
-<p>还是 K562。练习册和考场可以是同一类细胞。老师后来说这种太简单：每个基因都见过一点、每种细胞也见过一点，只是某个组合没见过。像：语文、数学都复习过，只是「这两科合在一张卷」没做过。</p>
-<p><b>当时的学生可以是 scGPT、GEARS</b>（两个别人的答题程序）。同一道题他们各猜一份。你们不算新答案，只拿他们的猜测算表、算相关。</p>
+<h2 id="s1">1. 这件事在干什么</h2>
+<p>实验室把 K562（一种长期培养的血癌细胞）里的 AARS 基因调低，然后测序，看三千多个基因各自升高还是降低。真做一遍贵、慢。</p>
+<p>公开模型 <b>TxPert</b> 先输出 3352 个猜测。当前主结果用的就是它。它不是唯一能用的模型：7 月那张正式表用的是 scGPT 和 GEARS。</p>
+<p><b>SafeConf 不输出这 3352 个数。</b>TxPert 猜完之后，在还没有打开「K562 压低 AARS」这组真实测序之前，SafeConf 给一个风险分。风险分高，表示这组猜测更可能偏。使用者按风险分从高到低排，预算只够核对一部分时，先做高风险的那些。这是质检，也是排序。</p>
 
 <figure>
-<svg viewBox="0 0 880 220" xmlns="http://www.w3.org/2000/svg">
-  <text x="440" y="28" text-anchor="middle" font-size="15" font-weight="700">7 月：同一类细胞上，抠掉若干格子当考试</text>
-  <text x="80" y="70" font-size="13">基因 →</text>
-  <text x="20" y="130" font-size="13">K562</text>
-  <rect x="80" y="90" width="50" height="36" fill="#ddd"/><rect x="135" y="90" width="50" height="36" fill="#ddd"/>
-  <rect x="190" y="90" width="50" height="36" fill="#C0392B"/><text x="215" y="113" text-anchor="middle" font-size="11" fill="#fff">考</text>
-  <rect x="245" y="90" width="50" height="36" fill="#ddd"/><rect x="300" y="90" width="50" height="36" fill="#ddd"/>
-  <rect x="355" y="90" width="50" height="36" fill="#ddd"/>
-  <text x="80" y="160" font-size="14" fill="#333">灰＝练习时见过答案。红＝这格没练过，让 scGPT / GEARS 猜，你们算分。</text>
-  <text x="80" y="188" font-size="14" fill="#666">同一行里左右都见过别的基因，所以老师说：这是比较容易的考法。</text>
+<svg viewBox="0 0 900 230" xmlns="http://www.w3.org/2000/svg" role="img" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
+<rect x="10" y="28" width="190" height="128" fill="#EAF2F8" stroke="#1F4E79" stroke-width="1.6" />
+<text x="105" y="70" font-size="16" fill="#1F4E79" text-anchor="middle" font-weight="700" >K562 细胞</text>
+<text x="105" y="96" font-size="14" fill="#222" text-anchor="middle" font-weight="400" >把 AARS 调低</text>
+<text x="105" y="122" font-size="13" fill="#555" text-anchor="middle" font-weight="400" >真实测序很贵</text>
+<text x="215" y="96" font-size="22" fill="#999" text-anchor="middle" font-weight="400" >→</text>
+<rect x="236" y="28" width="190" height="128" fill="#FDEDEC" stroke="#C0392B" stroke-width="1.6" />
+<text x="331" y="70" font-size="16" fill="#C0392B" text-anchor="middle" font-weight="700" >TxPert 模型</text>
+<text x="331" y="96" font-size="14" fill="#222" text-anchor="middle" font-weight="400" >猜 3352 个数</text>
+<text x="331" y="122" font-size="13" fill="#555" text-anchor="middle" font-weight="400" >公开方法，不是你写的</text>
+<text x="441" y="96" font-size="22" fill="#999" text-anchor="middle" font-weight="400" >→</text>
+<rect x="462" y="28" width="190" height="128" fill="#EAF8F2" stroke="#1A7A5C" stroke-width="1.6" />
+<text x="557" y="70" font-size="16" fill="#1A7A5C" text-anchor="middle" font-weight="700" >SafeConf 质检</text>
+<text x="557" y="96" font-size="14" fill="#222" text-anchor="middle" font-weight="400" >一个风险分</text>
+<text x="557" y="122" font-size="13" fill="#555" text-anchor="middle" font-weight="400" >此时不看这组真值</text>
+<text x="667" y="96" font-size="22" fill="#999" text-anchor="middle" font-weight="400" >→</text>
+<rect x="688" y="28" width="200" height="128" fill="#FFF6E8" stroke="#B36B00" stroke-width="1.6" />
+<text x="788" y="70" font-size="16" fill="#B36B00" text-anchor="middle" font-weight="700" >使用者决定</text>
+<text x="788" y="96" font-size="14" fill="#222" text-anchor="middle" font-weight="400" >先测高风险组</text>
+<text x="788" y="122" font-size="13" fill="#555" text-anchor="middle" font-weight="400" >预算只够测一部分</text>
+<text x="450" y="190" font-size="14" fill="#333" text-anchor="middle" font-weight="400" >SafeConf 不替换 TxPert。当前 E201 用 TxPert；7 月那张表用的是 scGPT 和 GEARS。</text>
+<text x="450" y="214" font-size="14" fill="#333" text-anchor="middle" font-weight="400" >四个随机起点是同一套 TxPert 换四个启动值，不是四种不同结构。</text>
 </svg>
-<figcaption><b>图 A｜7 月的格子。</b>还是 K562 这一行。只藏几格。学生是当时那些公开程序，不是现在的 TxPert 主考。</figcaption>
+<figcaption><b>图 1｜真实流程。</b> 细胞处理 → 模型猜测 → 质检打分 → 有限次数的真实测序。TxPert 可换成别的预测模型。</figcaption>
 </figure>
 
-<p>步骤（7 月）：</p>
-<ol class="step">
-<li>选好几套公开数据（不止 K562 一套）。</li>
-<li>scGPT、GEARS 已经或当场给出每格的猜测。</li>
-<li>把每格写成 CSV 一行：幅度、分歧、风险分。</li>
-<li>对答案，算「分高的是不是更错」。</li>
-<li>得到的是统计质检：很多表、很多公式。不是「你们发明了 scGPT」。</li>
-</ol>
+<div class="note">四个随机起点 = 同一套 TxPert STRING-GAT，换四个启动值。不是四种结构。三种不同结构（GAT / Exphormer / Exphormer-MG）出现在 E199，那是另一张表，263 组，不要和 E201 的四个起点混谈。</div>
 
-<h2>第 3 步：老师说太简单之后（还是这道 K562 题）</h2>
-<p>老师原话大意：你现在每个药见过一些细胞、每个细胞也见过一些药，这是更简单的 task。</p>
-<p>后来主考改成：<b>考 K562 时，K562 整行的答案全部藏起来。</b> 练习册只许看 RPE1、HepG2、Jurkat 三种细胞。K562 上包括 <code>AARS+ctrl</code> 在内的所有题，练习时都不能看答案。</p>
-<p>答题学生换成公开的 <b>TxPert</b>（当前这一场指定的学生）。同一套 TxPert 用四个不同的随机起点各猜一遍，得到四份猜测。</p>
+<h2 id="s2">2. 打开这一行 CSV</h2>
+<p class="src">文件：<code>docs/实验结果/E201_txpert_multitarget_retraining_20260802/formal_core_evaluation/tables/E201_TASK_METRICS.csv</code>。全表 2008 行、39 列。这一行 <code>task_id=K562::AARS+ctrl</code>，<code>analysis_stratum=primary_ge30</code>。</p>
+
+<h3>打开真实测序之前就能写进表的</h3>
+<table>
+<tr><th>列名</th><th>这一行</th><th>人话</th></tr>
+<tr><td>task_id</td><td class="num">K562::AARS+ctrl</td><td>K562 上把 AARS 调低</td></tr>
+<tr><td>n_target_cells</td><td class="num">38</td><td>K562 上测到 38 个细胞，最后用来核对</td></tr>
+<tr><td>n_target_batches</td><td class="num">29</td><td>这 38 个细胞来自 29 个批次</td></tr>
+<tr><td>n_source_cells</td><td class="num">161</td><td>另外三种细胞里有 161 个参考细胞</td></tr>
+<tr><td>n_source_contexts</td><td class="num">3</td><td>三种源细胞都覆盖了这个扰动</td></tr>
+<tr><td>predicted_magnitude</td><td class="num">0.10173</td><td>模型猜的变化有多大</td></tr>
+<tr><td>family_disagreement</td><td class="num">0.01035</td><td>四个起点猜得差多少</td></tr>
+<tr><td>source_delta_dispersion</td><td class="num">0.06288</td><td>源侧三种细胞变化散得有多开</td></tr>
+<tr><td>model_source_gap</td><td class="num">0.00855</td><td>模型和「源侧平均搬过来」差多少</td></tr>
+<tr><td>safeconf_e201_risk</td><td class="num">0.11790</td><td>五个标准分的平均</td></tr>
+</table>
+
+<h3>打开真实测序之后才有的</h3>
+<table>
+<tr><th>列名</th><th>这一行</th><th>人话</th></tr>
+<tr><td>family_centroid_rmse</td><td class="num">0.08849</td><td>四个猜测先平均，再跟真值比</td></tr>
+<tr><td>family_rms_error</td><td class="num">0.08909</td><td>四个误差的均方根。后面说的「真实误差」就是它</td></tr>
+<tr><td>worst_seed_error</td><td class="num">0.09472</td><td>四个里最差的，等于起点 3</td></tr>
+<tr><td>control_error</td><td class="num">0.09367</td><td>假如猜成什么都没变</td></tr>
+<tr><td>official_general_baseline_error</td><td class="num">0.08774</td><td>官方简单规则</td></tr>
+<tr><td>source_transfer_error</td><td class="num">0.08735</td><td>把源侧平均搬过来</td></tr>
+</table>
 
 <figure>
-<svg viewBox="0 0 880 260" xmlns="http://www.w3.org/2000/svg">
-  <text x="440" y="24" text-anchor="middle" font-size="15" font-weight="700">现在 E201：考 K562 时，整行 K562 都藏起来</text>
-  <text x="70" y="70" font-size="13">RPE1 练习</text>
-  <rect x="160" y="52" width="40" height="28" fill="#ddd"/><rect x="205" y="52" width="40" height="28" fill="#ddd"/><rect x="250" y="52" width="40" height="28" fill="#ddd"/><rect x="295" y="52" width="40" height="28" fill="#ddd"/>
-  <text x="70" y="112" font-size="13">HepG2 练习</text>
-  <rect x="160" y="94" width="40" height="28" fill="#ddd"/><rect x="205" y="94" width="40" height="28" fill="#ddd"/><rect x="250" y="94" width="40" height="28" fill="#ddd"/><rect x="295" y="94" width="40" height="28" fill="#ddd"/>
-  <text x="70" y="154" font-size="13">Jurkat 练习</text>
-  <rect x="160" y="136" width="40" height="28" fill="#ddd"/><rect x="205" y="136" width="40" height="28" fill="#ddd"/><rect x="250" y="136" width="40" height="28" fill="#ddd"/><rect x="295" y="136" width="40" height="28" fill="#ddd"/>
-  <text x="70" y="200" font-size="13" font-weight="700" fill="#C0392B">K562 考试</text>
-  <rect x="160" y="182" width="40" height="28" fill="#C0392B"/><rect x="205" y="182" width="40" height="28" fill="#C0392B"/>
-  <rect x="250" y="182" width="40" height="28" fill="#C0392B"/><text x="270" y="201" text-anchor="middle" font-size="10" fill="#fff">AARS</text>
-  <rect x="295" y="182" width="40" height="28" fill="#C0392B"/>
-  <text x="430" y="90" font-size="14">练习：三种细胞，答案可以看。</text>
-  <text x="430" y="118" font-size="14">考试：K562 整行，答案全藏。</text>
-  <text x="430" y="146" font-size="14">红格里的 AARS 就是那道题。</text>
-  <text x="430" y="174" font-size="14">学生现在是 TxPert，猜四遍。</text>
-  <text x="430" y="202" font-size="14">你仍然不猜，只打分。</text>
+<svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg" role="img" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
+<rect x="0" y="0" width="900" height="320" fill="#fff" stroke="none" stroke-width="1" />
+<text x="20" y="26" font-size="14" fill="#555" text-anchor="start" font-weight="400" >同一把尺子（0–0.13）：幅度、风险分、真实误差</text>
+<rect x="50" y="101.31725146998929" width="110" height="148.6827485300107" fill="#4C78A8" stroke="none" stroke-width="1" />
+<text x="105" y="93.31725146998929" font-size="14" fill="#111" text-anchor="middle" font-weight="400" >0.10173</text>
+<text x="105" y="272" font-size="14" fill="#222" text-anchor="middle" font-weight="400" >幅度</text>
+<rect x="200" y="77.68615325990265" width="110" height="172.31384674009735" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<text x="255" y="69.68615325990265" font-size="14" fill="#111" text-anchor="middle" font-weight="400" >0.11790</text>
+<text x="255" y="272" font-size="14" fill="#222" text-anchor="middle" font-weight="400" >风险分</text>
+<rect x="350" y="119.78863992359163" width="110" height="130.21136007640837" fill="#C0392B" stroke="none" stroke-width="1" />
+<text x="405" y="111.78863992359163" font-size="14" fill="#111" text-anchor="middle" font-weight="400" >0.08909</text>
+<text x="405" y="272" font-size="14" fill="#222" text-anchor="middle" font-weight="400" >真实误差</text>
+<text x="50" y="288" font-size="13" fill="#555" text-anchor="start" font-weight="400" >左两个未见本条件真值；真实误差要打开测序才有。</text>
+<line x1="540" y1="50" x2="540" y2="250" stroke="#ddd" stroke-width="1" />
+<text x="620" y="26" font-size="14" fill="#555" text-anchor="start" font-weight="400" >另一把尺子（0–0.020）：分歧</text>
+<rect x="600" y="151.64261787846317" width="110" height="98.35738212153684" fill="#E07A2F" stroke="none" stroke-width="1" />
+<text x="655" y="143.64261787846317" font-size="14" fill="#111" text-anchor="middle" font-weight="400" >0.01035</text>
+<text x="655" y="272" font-size="14" fill="#222" text-anchor="middle" font-weight="400" >分歧</text>
+<text x="560" y="288" font-size="13" fill="#555" text-anchor="start" font-weight="400" >四个起点几乎没吵，所以单独放大才看得见。</text>
 </svg>
-<figcaption><b>图 B｜现在的考场。</b>同一道 AARS 题，从「K562 行里抠一格」变成「K562 整行都是考场」。</figcaption>
+<figcaption><b>图 2｜这一组的四个数。</b> 左图三根柱同一把尺子。分歧太小，单独放在右图放大。左两个和右图在未见本条件真值时就能算；真实误差要打开测序才有。</figcaption>
 </figure>
 
-<p>步骤（现在 E201，只盯 K562 这一行）：</p>
-<ol class="step">
-<li>练习册 = RPE1 + HepG2 + Jurkat 的答案。TxPert 在这里学习。</li>
-<li>考试 = K562 全部题。其中包括 AARS。</li>
-<li>TxPert 对 K562 的每一题猜 3352 个数。四个随机起点各猜一份，共四份。</li>
-<li>对答案之前就算：四份吵不吵、幅度多大、练习册里 AARS 的证据多少。合成风险分 0.11790。</li>
-<li>指纹锁死，交到 GitHub / Gitee（交卷，不是网上训练）。</li>
-<li>再打开 K562 的真答案。这题误差 0.08909。</li>
-<li>1808 道题都这么干，看「分高的是不是更错」。总成绩：你的分 0.4082，笨办法幅度 0.6189。</li>
-</ol>
+<p>K562 主分析 566 组的平均真实误差是 0.0543。AARS 这一组 0.08909，比该细胞平均更高，核对时更难。</p>
 
-<div class="ok"><b>7 月和现在差在哪，就三句话：</b>
-1. 还是质检和排序，不是改行当。<br>
-2. 考法更难：从「抠几格」变成「一种细胞整行当考场」。<br>
-3. 指定学生换成 TxPert。以前的 CSV 还在仓库，对外讲主成绩用 E201。</div>
-
-<h2>第 4 步：幅度还用这道题算一遍</h2>
-<p>TxPert 猜完，每个基因有一个「我猜会变多少」。把这些数平方、加起来、开根号，得到一个正数。这题是 <b>0.10173</b>。对答案前就能算。实验室还没测。</p>
-<p>1808 道题都有这样一个数。按这个数从大到小排队，和「真的错多少」排得有多齐，就是 0.6189。按你的风险分排，是 0.4082。所以笨排队目前更齐。</p>
-
-<h2>第 5 步：计算机一区怎么理解（不再说生物区）</h2>
+<h2 id="s3">3. 39 列各是什么</h2>
+<p>下面按这一行的真实值解释。没列出的两列是 <code>source_mean_delta_row=1</code>（源侧平均变化有这一行）和 <code>dispersion_imputation_value=0.04630</code>（填补备用值；本行没用）。</p>
 <table>
-<tr><th>名字</th><th>它是什么</th><th>和你的关系</th></tr>
-<tr><td>NeurIPS</td><td>计算机顶会（CCF-A 会议）</td><td>PRESCRIBE 发在这。同一把「计算机」尺子。</td></tr>
-<tr><td>Bioinformatics</td><td>计算机/生物信息期刊，CCF-A，常被国内算计算机或交叉一区/二区（以学院系统为准）</td><td>你更常被点去的期刊，不是会议。</td></tr>
-<tr><td>你的目标</td><td>计算机一区口径的期刊或会议</td><td>证据还没闭合：单独排序没赢幅度；和 PRESCRIBE 没有正式头对头。不能写一定能发。</td></tr>
+<tr><th>列名</th><th>K562::AARS+ctrl</th><th>含义</th></tr>
+<tr><td>task_id</td><td class="num">K562::AARS+ctrl</td><td>条件编号：哪种细胞 + 调低哪个基因</td></tr>
+<tr><td>target</td><td class="num">K562</td><td>被整组藏起真实测序的那种细胞</td></tr>
+<tr><td>condition</td><td class="num">AARS+ctrl</td><td>扰动写法。+ctrl 表示相对对照的基因调低</td></tr>
+<tr><td>gene</td><td class="num">AARS</td><td>被调低的基因名</td></tr>
+<tr><td>n_target_cells</td><td class="num">38</td><td>K562 上这组条件测到的细胞个数，用来最后核对</td></tr>
+<tr><td>n_target_batches</td><td class="num">29</td><td>这 38 个细胞来自多少个实验批次</td></tr>
+<tr><td>n_source_cells</td><td class="num">161</td><td>另外三种细胞里，同一扰动能拿来参考的细胞个数</td></tr>
+<tr><td>n_source_contexts</td><td class="num">3</td><td>另外三种细胞里覆盖了几种。这里是 3，三种都有</td></tr>
+<tr><td>source_delta_dispersion_observed</td><td class="num">0.06288</td><td>源侧三种细胞里，变化散得有多开（观测值）</td></tr>
+<tr><td>dispersion_imputed</td><td class="num">False</td><td>离散度有没有用填补值。这里 False，没用填补</td></tr>
+<tr><td>negative_log_source_cells</td><td class="num">-5.08760</td><td>−ln(1+源细胞数) = −ln(162)。细胞越多这个数越负</td></tr>
+<tr><td>support_context_deficit</td><td class="num">0</td><td>3 − 源背景数。这里 3−3=0，没有缺口</td></tr>
+<tr><td>analysis_stratum</td><td class="num">primary_ge30</td><td>primary_ge30 = 目标细胞至少 30，进主分析</td></tr>
+<tr><td>source_delta_dispersion</td><td class="num">0.06288</td><td>打分用的离散度。这里和观测值相同</td></tr>
+<tr><td>family_disagreement</td><td class="num">0.01035</td><td>四个随机起点的猜测差多少。未见真值就能算</td></tr>
+<tr><td>family_radius</td><td class="num">0.01578</td><td>四个起点散开的半径</td></tr>
+<tr><td>predicted_magnitude</td><td class="num">0.10173</td><td>幅度：3352 个猜测平方和再开根。未见真值就能算。不进五个 z 的平均</td></tr>
+<tr><td>model_source_gap</td><td class="num">0.00855</td><td>TxPert 的猜测，和「把源侧平均变化搬过来」差多少</td></tr>
+<tr><td>source_transfer_magnitude</td><td class="num">0.09951</td><td>把源侧平均变化搬过来，本身有多大</td></tr>
+<tr><td>z_family_disagreement</td><td class="num">1.92799</td><td>分歧在 K562 566 组里的标准分</td></tr>
+<tr><td>z_model_source_gap</td><td class="num">-1.64378</td><td>模型–源侧差的标准分</td></tr>
+<tr><td>z_source_delta_dispersion</td><td class="num">1.18193</td><td>离散度的标准分</td></tr>
+<tr><td>z_negative_log_source_cells</td><td class="num">-0.12962</td><td>细胞少的标准分。源细胞 161 个并不少，所以是负数</td></tr>
+<tr><td>z_support_context_deficit</td><td class="num">-0.74702</td><td>背景缺口的标准分。缺口是 0，所以是负数</td></tr>
+<tr><td>safeconf_e201_risk</td><td class="num">0.11790</td><td>五个 z 相加除以 5。可以是负数，不是概率</td></tr>
+<tr><td>family_centroid_rmse</td><td class="num">0.08849</td><td>四个猜测先平均，再跟真实测序比。打开真值之后才有</td></tr>
+<tr><td>family_rms_error</td><td class="num">0.08909</td><td>四个起点误差的均方根。主评价用的「真实误差」</td></tr>
+<tr><td>worst_seed_error</td><td class="num">0.09472</td><td>四个里最差的一个，等于起点 3 的 0.09472</td></tr>
+<tr><td>control_error</td><td class="num">0.09367</td><td>假如猜成「什么都没变」，误差是多少</td></tr>
+<tr><td>official_general_baseline_error</td><td class="num">0.08774</td><td>官方简单规则的误差</td></tr>
+<tr><td>source_transfer_error</td><td class="num">0.08735</td><td>把源侧平均搬过来的误差</td></tr>
+<tr><td>family_rms_sq_identity_residual</td><td class="num">3.8552945273609245e-11</td><td>核对：误差² 是否等于 平均后误差² + 分歧²</td></tr>
+<tr><td>family_rms_lower_bound_violation</td><td class="num">False</td><td>误差有没有小于分歧（不应发生）。这里 False</td></tr>
+<tr><td>pretruth_disagreement_abs_residual</td><td class="num">1.1820906579973478e-10</td><td>封存前后分歧对得上的残差，应接近 0</td></tr>
+<tr><td>pretruth_magnitude_abs_residual</td><td class="num">8.355562075568201e-10</td><td>封存前后幅度对得上的残差</td></tr>
+<tr><td>pretruth_model_source_gap_abs_residual</td><td class="num">1.0762091565141851e-10</td><td>封存前后模型–源侧差对得上的残差</td></tr>
 </table>
-<p>PRESCRIBE 能发顶会，是因为它做了「自己猜 + 自己报把握」并给出过滤后精度提升。你做的是猜完之后排序。同一领域、同一把计算机尺子，货不同。不是「他能做模型所以你不能」；是你这篇主关没做成新猜题模型。</p>
 
-<div class="box">主关不必重新训练。训练加权是选修。先把「K562 上 AARS 这题：TxPert 猜完 → 你打 0.11790 → 再对答案 0.08909」讲顺，7 月那些表就是同一套列，换了更简单的考法和当时的学生。</div>
+<h2 id="s4">4. 幅度 0.10173 怎么来的</h2>
+<p>TxPert 对每个基因输出「我猜会变多少」。把 3352 个数每个平方，相加，再开根号，得到一个正数。表里叫 <code>predicted_magnitude</code>。</p>
+<figure>
+<svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg" role="img" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
+<rect x="0" y="0" width="900" height="220" fill="#fff" stroke="none" stroke-width="1" />
+<text x="20" y="28" font-size="14" fill="#555" text-anchor="start" font-weight="400" >用 3 个数说明算法（不是这组实验的 3352 维）</text>
+<rect x="40" y="70" width="70" height="70" fill="#EAF2F8" stroke="#1F4E79" stroke-width="1" />
+<text x="75" y="112" font-size="22" fill="#1F4E79" text-anchor="middle" font-weight="700" >3</text>
+<rect x="130" y="70" width="70" height="70" fill="#EAF2F8" stroke="#1F4E79" stroke-width="1" />
+<text x="165" y="112" font-size="22" fill="#1F4E79" text-anchor="middle" font-weight="700" >4</text>
+<rect x="220" y="70" width="70" height="70" fill="#EAF2F8" stroke="#1F4E79" stroke-width="1" />
+<text x="255" y="112" font-size="22" fill="#1F4E79" text-anchor="middle" font-weight="700" >0</text>
+<text x="330" y="112" font-size="16" fill="#555" text-anchor="middle" font-weight="400" >平方相加</text>
+<text x="410" y="112" font-size="16" fill="#111" text-anchor="middle" font-weight="400" >9+16+0</text>
+<text x="490" y="112" font-size="16" fill="#555" text-anchor="middle" font-weight="400" >开根号</text>
+<rect x="540" y="60" width="120" height="90" fill="#EAF8F2" stroke="#1A7A5C" stroke-width="1.6" />
+<text x="600" y="100" font-size="28" fill="#1A7A5C" text-anchor="middle" font-weight="700" >5</text>
+<text x="600" y="128" font-size="14" fill="#1A7A5C" text-anchor="middle" font-weight="400" >幅度</text>
+<text x="20" y="170" font-size="14" fill="#222" text-anchor="start" font-weight="400" >真实计算：TxPert 输出 3352 个「我猜这个基因会变多少」，每个平方，加总，开根号。</text>
+<text x="20" y="194" font-size="14" fill="#222" text-anchor="start" font-weight="400" >这一组得到 0.10173。输入全是模型猜测，没有测序仪读数。</text>
+</svg>
+<figcaption><b>图 3｜幅度的算法。</b> 3、4、0 → √(9+16+0)=5。真实计算对 3352 维做同一件事。没有测序仪读数。</figcaption>
+</figure>
+<p>幅度大，往往绝对误差也大：猜的变化本身就多，差一点点也会在平方和里显出来。所以幅度经常能把「误差大的组」排到前面。这不是 SafeConf 的功劳，是幅度自己的性质。E201 里幅度必须单独拿出来比，而且它更强。</p>
 
-<p style="color:#666;font-size:14px;">数字来自 CLAIM_TABLE.json 的 example_task 与 E201 主表。7 月格子图是示意考法，不是某一张旧 CSV 的逐格复制。</p>
+<h2 id="s5">5. 四个随机起点</h2>
+<p>同一套 TxPert，换四个启动值，对 AARS 各猜一次。打开真值之后，各有一个误差。文件：<code>E201_SEED_TASK_ERRORS.csv</code>。</p>
+<table>
+<tr><th>seed</th><th>seed_centroid_rmse</th></tr>
+<tr><td>1</td><td class="num">0.08678</td></tr>
+<tr><td>2</td><td class="num">0.08892</td></tr>
+<tr><td>3</td><td class="num">0.09472</td></tr>
+<tr><td>4</td><td class="num">0.08567</td></tr>
+</table>
+<p>均方根：√[(0.08678² + 0.08892² + 0.09472² + 0.08567²) / 4] = <b>0.08909</b>。与 <code>family_rms_error</code> 相同。四个起点是同一套结构，不是四种模型。</p>
+<figure>
+<svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" role="img" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
+<rect x="0" y="0" width="900" height="300" fill="#fff" stroke="none" stroke-width="1" />
+<line x1="70" y1="222.0" x2="876" y2="222.0" stroke="#888" stroke-width="1.2" />
+<line x1="70" y1="222.0" x2="876" y2="222.0" stroke="#eee" stroke-width="1" />
+<text x="62" y="226.0" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.0</text>
+<text x="170.75" y="244" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >起点 1</text>
+<rect x="156.75" y="97.44761630950217" width="28" height="124.55238369049783" fill="#C0392B" stroke="none" stroke-width="1" />
+<text x="170.75" y="91.44761630950217" font-size="12" fill="#111" text-anchor="middle" font-weight="400" >0.0868</text>
+<text x="372.25" y="244" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >起点 2</text>
+<rect x="358.25" y="94.38853248130653" width="28" height="127.61146751869347" fill="#C0392B" stroke="none" stroke-width="1" />
+<text x="372.25" y="88.38853248130653" font-size="12" fill="#111" text-anchor="middle" font-weight="400" >0.0889</text>
+<text x="573.75" y="244" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >起点 3</text>
+<rect x="559.75" y="86.05325283600129" width="28" height="135.9467471639987" fill="#C0392B" stroke="none" stroke-width="1" />
+<text x="573.75" y="80.05325283600129" font-size="12" fill="#111" text-anchor="middle" font-weight="400" >0.0947</text>
+<text x="775.25" y="244" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >起点 4</text>
+<rect x="761.25" y="99.04963670856046" width="28" height="122.95036329143954" fill="#C0392B" stroke="none" stroke-width="1" />
+<text x="775.25" y="93.04963670856046" font-size="12" fill="#111" text-anchor="middle" font-weight="400" >0.0857</text>
+<rect x="70" y="10" width="14" height="14" fill="#C0392B" stroke="none" stroke-width="1" />
+<text x="88" y="22" font-size="13" fill="#222" text-anchor="start" font-weight="400" >打开真值后，该组条件的误差</text>
+<text x="70" y="288" font-size="12" fill="#555" text-anchor="start" font-weight="400" >四个数接近，所以分歧只有 0.01035。均方根 = 0.08909，与 family_rms_error 逐位相同。</text>
+</svg>
+<figcaption><b>图 4｜四个起点的误差。</b> 起点 3 最差，等于 worst_seed_error 0.09472。</figcaption>
+</figure>
+
+<h2 id="s6">6. 风险分 0.11790 怎么平均出来</h2>
+<p>五个量先在 <b>K562 主分析 566 组内部</b>做标准分：减去这 566 组的均值，再除以这 566 组的总体标准差。然后五个标准分相加，除以 5。事先规定各占 1/5，<b>没有用 K562 的真实误差去学权重</b>。</p>
+<p>幅度不进这五个。幅度是拿来对比的强基线。</p>
+<table>
+<tr><th>成分</th><th>原始值</th><th>标准分 z</th><th>人话</th></tr>
+<tr><td>四个起点的分歧</td><td class="num">0.01035</td><td class="num">1.92799</td><td>四个猜测差多少</td></tr>
+<tr><td>模型–源侧差</td><td class="num">0.00855</td><td class="num">-1.64378</td><td>模型和把源侧平均搬过来差多少</td></tr>
+<tr><td>源侧离散</td><td class="num">0.06288</td><td class="num">1.18193</td><td>另外三种细胞里变化一不一致</td></tr>
+<tr><td>细胞少</td><td class="num">−ln(162)=−5.08760</td><td class="num">-0.12962</td><td>参考细胞 161 个并不少，z 为负</td></tr>
+<tr><td>背景缺口</td><td class="num">3−3=0</td><td class="num">-0.74702</td><td>三种源细胞都有，z 为负</td></tr>
+</table>
+<div class="ok">验算：(1.92799 + (-1.64378) + 1.18193 + (-0.12962) + (-0.74702)) / 5 = <b>0.11790</b>。表里 <code>safeconf_e201_risk</code> = 0.11790。对上了。</div>
+<p>风险分可以是负数，因为它是标准分的平均，不是 0 到 1 的概率。不能读成「百分之多少会错」。</p>
+<figure>
+<svg viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg" role="img" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
+<rect x="0" y="0" width="900" height="340" fill="#fff" stroke="none" stroke-width="1" />
+<line x1="70" y1="156.75125752715147" x2="876" y2="156.75125752715147" stroke="#888" stroke-width="1.2" />
+<line x1="70" y1="211.29782286386336" x2="876" y2="211.29782286386336" stroke="#eee" stroke-width="1" />
+<text x="62" y="215.29782286386336" font-size="12" fill="#666" text-anchor="end" font-weight="400" >-1</text>
+<line x1="70" y1="156.75125752715147" x2="876" y2="156.75125752715147" stroke="#eee" stroke-width="1" />
+<text x="62" y="160.75125752715147" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.0</text>
+<line x1="70" y1="102.20469219043959" x2="876" y2="102.20469219043959" stroke="#eee" stroke-width="1" />
+<text x="62" y="106.20469219043959" font-size="12" fill="#666" text-anchor="end" font-weight="400" >1</text>
+<line x1="70" y1="47.658126853727694" x2="876" y2="47.658126853727694" stroke="#eee" stroke-width="1" />
+<text x="62" y="51.658126853727694" font-size="12" fill="#666" text-anchor="end" font-weight="400" >2</text>
+<text x="150.6" y="284" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >分歧 z</text>
+<rect x="136.6" y="51.58620689655172" width="28" height="105.16505063059975" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<text x="150.6" y="45.58620689655172" font-size="12" fill="#111" text-anchor="middle" font-weight="400" >1.9280</text>
+<text x="311.79999999999995" y="284" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >模型–源侧差 z</text>
+<rect x="297.79999999999995" y="156.75125752715147" width="28" height="89.66253557629682" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<text x="311.79999999999995" y="240.41379310344828" font-size="12" fill="#111" text-anchor="middle" font-weight="400" >-1.6438</text>
+<text x="473.0" y="284" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >源侧离散 z</text>
+<rect x="459.0" y="92.28094264320352" width="28" height="64.47031488394795" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<text x="473.0" y="86.28094264320352" font-size="12" fill="#111" text-anchor="middle" font-weight="400" >1.1819</text>
+<text x="634.1999999999999" y="284" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >细胞少 z</text>
+<rect x="620.1999999999999" y="156.75125752715147" width="28" height="7.070454547729042" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<text x="634.1999999999999" y="177.8217120748805" font-size="12" fill="#111" text-anchor="middle" font-weight="400" >-0.1296</text>
+<text x="795.4" y="284" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >背景缺口 z</text>
+<rect x="781.4" y="156.75125752715147" width="28" height="40.74746210231777" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<text x="795.4" y="211.49871962946924" font-size="12" fill="#111" text-anchor="middle" font-weight="400" >-0.7470</text>
+<rect x="70" y="10" width="14" height="14" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<text x="88" y="22" font-size="13" fill="#222" text-anchor="start" font-weight="400" >K562 主分析 566 组内部的标准分（减均值、除总体标准差）</text>
+<text x="70" y="328" font-size="12" fill="#555" text-anchor="start" font-weight="400" >五个数相加再除以 5 = 0.11790，与表里 safeconf_e201_risk 相同。幅度不在这五个里面。</text>
+</svg>
+<figcaption><b>图 5｜AARS 的五个标准分。</b> 有正有负。负的两块表示：参考细胞不少、背景没有缺口。风险分主要来自分歧和离散。</figcaption>
+</figure>
+
+<h2 id="s7">7. 在 K562 566 组里，AARS 排第几</h2>
+<p>只看 K562 主分析 566 组。第 1 是数值最大的那一组。只能核对 20% 时，要挑前 114 名。</p>
+<table>
+<tr><th>按什么排</th><th>AARS 的名次 / 566</th><th>进不进前 114</th></tr>
+<tr><td>真实误差（打开测序之后，越大越难）</td><td class="num">第 31</td><td>这一列是答案，质检当时看不见</td></tr>
+<tr><td>幅度（模型猜的变化大小）</td><td class="num">第 52</td><td>进。按幅度会把这组列入先核对</td></tr>
+<tr><td>SafeConf 风险分</td><td class="num">第 215</td><td>不进。按 SafeConf 不会先核这组</td></tr>
+</table>
+<figure>
+<svg viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg" role="img" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
+<rect x="0" y="0" width="900" height="280" fill="#fff" stroke="none" stroke-width="1" />
+<text x="20" y="28" font-size="14" fill="#555" text-anchor="start" font-weight="400" >K562 主分析 566 组里，AARS 这一组排第几（第 1 = 数值最大）</text>
+<text x="20" y="62" font-size="14" fill="#222" text-anchor="start" font-weight="400" >真实误差</text>
+<line x1="80" y1="80" x2="860" y2="80" stroke="#ccc" stroke-width="6" stroke-linecap="round"/>
+<text x="80" y="102" font-size="12" fill="#666" text-anchor="start" font-weight="400" >第 1（最大）</text>
+<text x="860" y="102" font-size="12" fill="#666" text-anchor="end" font-weight="400" >第 566（最小）</text>
+<circle cx="121.41592920353983" cy="80" r="9" fill="#C0392B"/>
+<text x="121.41592920353983" y="64" font-size="14" fill="#C0392B" text-anchor="middle" font-weight="700" >第 31</text>
+<text x="20" y="132" font-size="14" fill="#222" text-anchor="start" font-weight="400" >幅度（模型猜的变化大小）</text>
+<line x1="80" y1="150" x2="860" y2="150" stroke="#ccc" stroke-width="6" stroke-linecap="round"/>
+<text x="80" y="172" font-size="12" fill="#666" text-anchor="start" font-weight="400" >第 1（最大）</text>
+<text x="860" y="172" font-size="12" fill="#666" text-anchor="end" font-weight="400" >第 566（最小）</text>
+<circle cx="150.40707964601768" cy="150" r="9" fill="#4C78A8"/>
+<text x="150.40707964601768" y="134" font-size="14" fill="#4C78A8" text-anchor="middle" font-weight="700" >第 52</text>
+<text x="20" y="202" font-size="14" fill="#222" text-anchor="start" font-weight="400" >SafeConf 风险分</text>
+<line x1="80" y1="220" x2="860" y2="220" stroke="#ccc" stroke-width="6" stroke-linecap="round"/>
+<text x="80" y="242" font-size="12" fill="#666" text-anchor="start" font-weight="400" >第 1（最大）</text>
+<text x="860" y="242" font-size="12" fill="#666" text-anchor="end" font-weight="400" >第 566（最小）</text>
+<circle cx="375.4336283185841" cy="220" r="9" fill="#1A7A5C"/>
+<text x="375.4336283185841" y="204" font-size="14" fill="#1A7A5C" text-anchor="middle" font-weight="700" >第 215</text>
+<text x="80" y="268" font-size="13" fill="#555" text-anchor="start" font-weight="400" >前 20% = 前 114 名。幅度第 52，进；风险分第 215，不进。</text>
+</svg>
+<figcaption><b>图 6｜三条名次轴。</b> 真实误差偏高（第 31），幅度也偏高（第 52），风险分只在中游（第 215）。这组是「幅度会抓到、SafeConf 会漏」的具体例子。</figcaption>
+</figure>
+<p>这不是说 SafeConf 算错了。风险分没用幅度，又把「细胞少」「背景缺口」两块几乎没信息的东西平均进去了。AARS 参考细胞有 161 个、三种背景都在，这两块还往下拉。真实误差高，主要和「变化本身大」有关，而那一块在幅度里，不在五个 z 里。</p>
+
+<h2 id="s8">8. 旁边几组对照（同一张 CSV 的 K562 段）</h2>
+<p>前 12 行，按表里的顺序，不是按风险排序。</p>
+<table>
+<tr><th>task_id</th><th>目标细胞</th><th>源细胞</th><th>源背景</th><th>幅度</th><th>分歧</th><th>风险分</th><th>真实误差</th></tr>
+<tr><td>K562::AAMP+ctrl</td><td class="num">76</td><td class="num">39</td><td class="num">1</td><td class="num">0.04713</td><td class="num">0.00734</td><td class="num">1.33653</td><td class="num">0.04420</td></tr>
+<tr><td>K562::AARS+ctrl</td><td class="num">38</td><td class="num">161</td><td class="num">3</td><td class="num">0.10173</td><td class="num">0.01035</td><td class="num">0.11790</td><td class="num">0.08909</td></tr>
+<tr><td>K562::ABCE1+ctrl</td><td class="num">177</td><td class="num">112</td><td class="num">3</td><td class="num">0.12626</td><td class="num">0.00897</td><td class="num">0.47376</td><td class="num">0.08009</td></tr>
+<tr><td>K562::ABCF1+ctrl</td><td class="num">159</td><td class="num">239</td><td class="num">3</td><td class="num">0.05228</td><td class="num">0.00523</td><td class="num">-0.60939</td><td class="num">0.03834</td></tr>
+<tr><td>K562::ABT1+ctrl</td><td class="num">92</td><td class="num">275</td><td class="num">3</td><td class="num">0.05327</td><td class="num">0.00215</td><td class="num">-0.36190</td><td class="num">0.04696</td></tr>
+<tr><td>K562::ACTB+ctrl</td><td class="num">140</td><td class="num">400</td><td class="num">3</td><td class="num">0.04791</td><td class="num">0.00151</td><td class="num">-1.04690</td><td class="num">0.03698</td></tr>
+<tr><td>K562::ACTR6+ctrl</td><td class="num">104</td><td class="num">254</td><td class="num">3</td><td class="num">0.02364</td><td class="num">0.00338</td><td class="num">-0.88586</td><td class="num">0.03101</td></tr>
+<tr><td>K562::AHCTF1+ctrl</td><td class="num">161</td><td class="num">144</td><td class="num">3</td><td class="num">0.03847</td><td class="num">0.00372</td><td class="num">-0.35118</td><td class="num">0.03642</td></tr>
+<tr><td>K562::AKIRIN2+ctrl</td><td class="num">144</td><td class="num">167</td><td class="num">3</td><td class="num">0.02062</td><td class="num">0.00211</td><td class="num">-0.60503</td><td class="num">0.02635</td></tr>
+<tr><td>K562::ALDOA+ctrl</td><td class="num">77</td><td class="num">145</td><td class="num">2</td><td class="num">0.07816</td><td class="num">0.00778</td><td class="num">-0.04814</td><td class="num">0.06400</td></tr>
+<tr><td>K562::ALG13+ctrl</td><td class="num">167</td><td class="num">171</td><td class="num">3</td><td class="num">0.01981</td><td class="num">0.00307</td><td class="num">-0.56336</td><td class="num">0.02608</td></tr>
+<tr><td>K562::ANAPC2+ctrl</td><td class="num">237</td><td class="num">30</td><td class="num">1</td><td class="num">0.05896</td><td class="num">0.00555</td><td class="num">1.19519</td><td class="num">0.05475</td></tr>
+</table>
+<p>风险分可以是负数，例如 <code>K562::ABCF1+ctrl</code> 是 −0.60939。真实误差 0.03834，确实偏低。</p>
+<p>再看 8 组刻意挑出来的对照。点上的数字对表。绿点是 AARS。</p>
+<figure>
+<svg viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" role="img" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
+<rect x="0" y="0" width="900" height="360" fill="#fff" stroke="none" stroke-width="1" />
+<text x="20" y="24" font-size="14" fill="#555" text-anchor="start" font-weight="400" >8 组真实 K562 条件：横轴风险分，纵轴真实误差。点上的数字对下面的表。</text>
+<line x1="70" y1="310" x2="660" y2="310" stroke="#888" stroke-width="1" />
+<line x1="70" y1="40" x2="70" y2="310" stroke="#888" stroke-width="1" />
+<text x="365.0" y="348" font-size="13" fill="#555" text-anchor="middle" font-weight="400" >SafeConf 风险分 →</text>
+<text x="18" y="175.0" font-size="13" fill="#555" text-anchor="middle" font-weight="400" transform="rotate(-90,18,175.0)">真实误差</text>
+<line x1="334.22253196324425" y1="40" x2="334.22253196324425" y2="310" stroke="#ddd" stroke-width="1" stroke-dasharray="4 4"/>
+<circle cx="346.8436455752981" cy="180.59710141003225" r="11" fill="#1A7A5C"/>
+<text x="346.8436455752981" y="184.59710141003225" font-size="12" fill="#fff" text-anchor="middle" font-weight="700" >1</text>
+<circle cx="606.4748674571523" cy="214.48059126874884" r="11" fill="#4C78A8"/>
+<text x="606.4748674571523" y="218.48059126874884" font-size="12" fill="#fff" text-anchor="middle" font-weight="700" >2</text>
+<circle cx="586.8039813381288" cy="239.19145012037663" r="11" fill="#4C78A8"/>
+<text x="586.8039813381288" y="243.19145012037663" font-size="12" fill="#fff" text-anchor="middle" font-weight="700" >3</text>
+<circle cx="102.11507952570861" cy="272.0001537769435" r="11" fill="#4C78A8"/>
+<text x="102.11507952570861" y="276.0001537769435" font-size="12" fill="#fff" text-anchor="middle" font-weight="700" >4</text>
+<circle cx="417.7776598128474" cy="83.57392009717553" r="11" fill="#4C78A8"/>
+<text x="417.7776598128474" y="87.57392009717553" font-size="12" fill="#fff" text-anchor="middle" font-weight="700" >5</text>
+<circle cx="485.8776602242774" cy="96.98836861124059" r="11" fill="#4C78A8"/>
+<text x="485.8776602242774" y="100.98836861124059" font-size="12" fill="#fff" text-anchor="middle" font-weight="700" >6</text>
+<circle cx="268.98693009071246" cy="254.31903124722982" r="11" fill="#4C78A8"/>
+<text x="268.98693009071246" y="258.3190312472298" font-size="12" fill="#fff" text-anchor="middle" font-weight="700" >7</text>
+<circle cx="222.15173025321099" cy="256.2871641958286" r="11" fill="#4C78A8"/>
+<text x="222.15173025321099" y="260.2871641958286" font-size="12" fill="#fff" text-anchor="middle" font-weight="700" >8</text>
+<text x="680" y="50" font-size="13" fill="#222" text-anchor="start" font-weight="400" >1. AARS</text>
+<text x="680" y="72" font-size="13" fill="#222" text-anchor="start" font-weight="400" >2. RPLP1</text>
+<text x="680" y="94" font-size="13" fill="#222" text-anchor="start" font-weight="400" >3. AP2S1</text>
+<text x="680" y="116" font-size="13" fill="#222" text-anchor="start" font-weight="400" >4. GFM1</text>
+<text x="680" y="138" font-size="13" fill="#222" text-anchor="start" font-weight="400" >5. SMU1</text>
+<text x="680" y="160" font-size="13" fill="#222" text-anchor="start" font-weight="400" >6. PSMD1</text>
+<text x="680" y="182" font-size="13" fill="#222" text-anchor="start" font-weight="400" >7. ABCF1</text>
+<text x="680" y="204" font-size="13" fill="#222" text-anchor="start" font-weight="400" >8. ACTB</text>
+<text x="680" y="234" font-size="12" fill="#1A7A5C" text-anchor="start" font-weight="400" >绿点 = AARS</text>
+</svg>
+<figcaption><b>图 7｜风险分对真实误差。</b> 高风险不一定最高误差（点 2 RPLP1）。最高误差也不一定最高风险（点 5 SMU1）。幅度这一维没画在这张图上。</figcaption>
+</figure>
+<table>
+<tr><th>点</th><th>条件</th><th>风险分</th><th>幅度</th><th>真实误差</th><th>源细胞</th><th>源背景</th></tr>
+<tr><td>1</td><td>K562::AARS+ctrl</td><td class="num">0.11790</td><td class="num">0.10173</td><td class="num">0.08909</td><td class="num">161</td><td class="num">3</td></tr>
+<tr><td>2</td><td>K562::RPLP1+ctrl</td><td class="num">2.54322</td><td class="num">0.05380</td><td class="num">0.06576</td><td class="num">22</td><td class="num">1</td></tr>
+<tr><td>3</td><td>K562::AP2S1+ctrl</td><td class="num">2.35947</td><td class="num">0.05066</td><td class="num">0.04875</td><td class="num">23</td><td class="num">1</td></tr>
+<tr><td>4</td><td>K562::GFM1+ctrl</td><td class="num">-2.16821</td><td class="num">0.02789</td><td class="num">0.02616</td><td class="num">3739</td><td class="num">3</td></tr>
+<tr><td>5</td><td>K562::SMU1+ctrl</td><td class="num">0.78052</td><td class="num">0.17398</td><td class="num">0.15589</td><td class="num">77</td><td class="num">1</td></tr>
+<tr><td>6</td><td>K562::PSMD1+ctrl</td><td class="num">1.41667</td><td class="num">0.17261</td><td class="num">0.14666</td><td class="num">41</td><td class="num">2</td></tr>
+<tr><td>7</td><td>K562::ABCF1+ctrl</td><td class="num">-0.60939</td><td class="num">0.05228</td><td class="num">0.03834</td><td class="num">239</td><td class="num">3</td></tr>
+<tr><td>8</td><td>K562::ACTB+ctrl</td><td class="num">-1.04690</td><td class="num">0.04791</td><td class="num">0.03698</td><td class="num">400</td><td class="num">3</td></tr>
+</table>
+
+<h2 id="s9">9. 主表有多少行</h2>
+<p>任务表 <code>E201_TASK_METRICS.csv</code> 有 <b>2008</b> 行。主分析只用目标细胞至少 30 个的 <b>1808</b> 行。另外 200 行是目标细胞 10–29 个的敏感性，不进主门。</p>
+<table>
+<tr><th>细胞</th><th>主分析 ≥30</th><th>敏感性 10–29</th><th>合计</th></tr>
+<tr><td>K562</td><td class="num">566</td><td class="num">14</td><td class="num">580</td></tr>
+<tr><td>RPE1</td><td class="num">416</td><td class="num">51</td><td class="num">467</td></tr>
+<tr><td>HepG2</td><td class="num">405</td><td class="num">75</td><td class="num">480</td></tr>
+<tr><td>Jurkat</td><td class="num">421</td><td class="num">60</td><td class="num">481</td></tr>
+<tr><td>合计</td><td class="num">1808</td><td class="num">200</td><td class="num">2008</td></tr>
+</table>
+<figure>
+<svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg" role="img" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
+<rect x="0" y="0" width="900" height="320" fill="#fff" stroke="none" stroke-width="1" />
+<line x1="70" y1="242.0" x2="876" y2="242.0" stroke="#888" stroke-width="1.2" />
+<line x1="70" y1="242.0" x2="876" y2="242.0" stroke="#eee" stroke-width="1" />
+<text x="62" y="246.0" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.0</text>
+<line x1="70" y1="212.65527065527067" x2="876" y2="212.65527065527067" stroke="#eee" stroke-width="1" />
+<text x="62" y="216.65527065527067" font-size="12" fill="#666" text-anchor="end" font-weight="400" >100</text>
+<line x1="70" y1="183.3105413105413" x2="876" y2="183.3105413105413" stroke="#eee" stroke-width="1" />
+<text x="62" y="187.3105413105413" font-size="12" fill="#666" text-anchor="end" font-weight="400" >200</text>
+<line x1="70" y1="153.96581196581195" x2="876" y2="153.96581196581195" stroke="#eee" stroke-width="1" />
+<text x="62" y="157.96581196581195" font-size="12" fill="#666" text-anchor="end" font-weight="400" >300</text>
+<line x1="70" y1="124.62108262108262" x2="876" y2="124.62108262108262" stroke="#eee" stroke-width="1" />
+<text x="62" y="128.62108262108262" font-size="12" fill="#666" text-anchor="end" font-weight="400" >400</text>
+<line x1="70" y1="95.27635327635328" x2="876" y2="95.27635327635328" stroke="#eee" stroke-width="1" />
+<text x="62" y="99.27635327635328" font-size="12" fill="#666" text-anchor="end" font-weight="400" >500</text>
+<line x1="70" y1="65.93162393162393" x2="876" y2="65.93162393162393" stroke="#eee" stroke-width="1" />
+<text x="62" y="69.93162393162393" font-size="12" fill="#666" text-anchor="end" font-weight="400" >600</text>
+<line x1="70" y1="36.58689458689459" x2="876" y2="36.58689458689459" stroke="#eee" stroke-width="1" />
+<text x="62" y="40.58689458689459" font-size="12" fill="#666" text-anchor="end" font-weight="400" >700</text>
+<text x="170.75" y="264" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >K562</text>
+<rect x="140.75" y="75.9088319088319" width="28" height="166.0911680911681" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<rect x="172.75" y="237.8917378917379" width="28" height="4.108262108262096" fill="#E07A2F" stroke="none" stroke-width="1" />
+<text x="372.25" y="264" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >RPE1</text>
+<rect x="342.25" y="119.92592592592592" width="28" height="122.07407407407408" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<rect x="374.25" y="227.03418803418805" width="28" height="14.965811965811952" fill="#E07A2F" stroke="none" stroke-width="1" />
+<text x="573.75" y="264" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >HepG2</text>
+<rect x="543.75" y="123.15384615384615" width="28" height="118.84615384615385" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<rect x="575.75" y="219.991452991453" width="28" height="22.008547008546998" fill="#E07A2F" stroke="none" stroke-width="1" />
+<text x="775.25" y="264" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >Jurkat</text>
+<rect x="745.25" y="118.45868945868945" width="28" height="123.54131054131055" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<rect x="777.25" y="224.39316239316238" width="28" height="17.606837606837615" fill="#E07A2F" stroke="none" stroke-width="1" />
+<rect x="70" y="10" width="14" height="14" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<text x="88" y="22" font-size="13" fill="#222" text-anchor="start" font-weight="400" >主分析（目标细胞 ≥ 30）</text>
+<rect x="286" y="10" width="14" height="14" fill="#E07A2F" stroke="none" stroke-width="1" />
+<text x="304" y="22" font-size="13" fill="#222" text-anchor="start" font-weight="400" >敏感性（目标细胞 10–29）</text>
+<text x="70" y="308" font-size="12" fill="#555" text-anchor="start" font-weight="400" >主分析 566+416+405+421=1808。加上 14+51+75+60=200 行敏感性，任务表共 2008 行。</text>
+</svg>
+<figcaption><b>图 8｜四种细胞的行数。</b> 主分析数字来自 RISK_ASSOCIATIONS 的 n_tasks，与 TASK_METRICS 里 analysis_stratum=primary_ge30 逐细胞对得上。</figcaption>
+</figure>
+
+<h2 id="s10">10. 四种细胞怎么切</h2>
+<p>评价某一种细胞时，这一种细胞上所有条件的真实测序，学习阶段都不能用。学习只用另外三种。四种轮流当「真实结果被藏起来的那一种」。</p>
+<figure>
+<svg viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg" role="img" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
+<rect x="0" y="0" width="900" height="250" fill="#fff" stroke="none" stroke-width="1" />
+<text x="20" y="28" font-size="14" fill="#555" text-anchor="start" font-weight="400" >评价 K562 时：另外三种细胞的真实结果可以进学习；K562 的真实结果全部不用</text>
+<rect x="30" y="50" width="200" height="50" fill="#ddd" stroke="none" stroke-width="1" />
+<text x="130" y="82" font-size="15" fill="#222" text-anchor="middle" font-weight="400" >RPE1 可学</text>
+<rect x="250" y="50" width="200" height="50" fill="#ddd" stroke="none" stroke-width="1" />
+<text x="350" y="82" font-size="15" fill="#222" text-anchor="middle" font-weight="400" >HepG2 可学</text>
+<rect x="470" y="50" width="200" height="50" fill="#ddd" stroke="none" stroke-width="1" />
+<text x="570" y="82" font-size="15" fill="#222" text-anchor="middle" font-weight="400" >Jurkat 可学</text>
+<rect x="30" y="120" width="640" height="56" fill="#C0392B" stroke="none" stroke-width="1" />
+<text x="350" y="154" font-size="15" fill="#fff" text-anchor="middle" font-weight="400" >K562 全部条件的真实测序，学习阶段都不用（含压低 AARS）</text>
+<text x="20" y="210" font-size="14" fill="#333" text-anchor="start" font-weight="400" >四种细胞轮流当红条。红条组数：K562 566，RPE1 416，HepG2 405，Jurkat 421，合计 1808。</text>
+<text x="20" y="234" font-size="14" fill="#333" text-anchor="start" font-weight="400" >AARS 这一组：K562 上 38 个细胞用于最后核对；另外三种细胞里有 161 个参考细胞、3 种背景。</text>
+</svg>
+<figcaption><b>图 9｜整组细胞留出。</b> 和 7 月常见的「同一种细胞内部藏一部分组合」不是同一种切法。</figcaption>
+</figure>
+
+<h2 id="s11">11. 1808 组排得齐不齐</h2>
+<p>Spearman 只看名次齐不齐：把各组按风险分从高到低排一份名单，再按真实误差从高到低排一份，看两份名单齐不齐。完全齐是 1，完全乱是 0，完全反是 −1。不看数字差几倍。</p>
+<p class="src">文件：<code>E201_RISK_ASSOCIATIONS.csv</code>。括号里是 95% 区间，按扰动条件做 5000 次聚类重抽样。</p>
+<table>
+<tr><th>范围</th><th>组数</th><th>SafeConf（区间）</th><th>幅度（区间）</th><th>分歧（区间）</th></tr>
+<tr><td>四细胞合并</td><td class="num">1808</td><td>0.4082（0.3506, 0.4621）</td><td>0.6189（0.5747, 0.6579）</td><td>0.2402（0.1812, 0.2974）</td></tr>
+<tr><td>K562</td><td class="num">566</td><td>0.4803（0.4069, 0.5467）</td><td>0.8993（0.8683, 0.9229）</td><td>0.5339（0.4708, 0.5917）</td></tr>
+<tr><td>RPE1</td><td class="num">416</td><td>0.2868（0.1927, 0.3740）</td><td>0.5825（0.5116, 0.6454）</td><td>0.0397（-0.0605, 0.1355）</td></tr>
+<tr><td>HepG2</td><td class="num">405</td><td>0.5633（0.4858, 0.6305）</td><td>0.7771（0.7277, 0.8186）</td><td>0.2826（0.1967, 0.3662）</td></tr>
+<tr><td>Jurkat</td><td class="num">421</td><td>0.4453（0.3681, 0.5209）</td><td>0.7095（0.6512, 0.7592）</td><td>0.2886（0.1976, 0.3731）</td></tr>
+</table>
+<figure>
+<svg viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" role="img" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
+<rect x="0" y="0" width="900" height="360" fill="#fff" stroke="none" stroke-width="1" />
+<line x1="70" y1="282.0" x2="876" y2="282.0" stroke="#888" stroke-width="1.2" />
+<line x1="70" y1="282.0" x2="876" y2="282.0" stroke="#eee" stroke-width="1" />
+<text x="62" y="286.0" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.0</text>
+<line x1="70" y1="236.44444444444446" x2="876" y2="236.44444444444446" stroke="#eee" stroke-width="1" />
+<text x="62" y="240.44444444444446" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.2</text>
+<line x1="70" y1="190.88888888888889" x2="876" y2="190.88888888888889" stroke="#eee" stroke-width="1" />
+<text x="62" y="194.88888888888889" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.4</text>
+<line x1="70" y1="145.33333333333331" x2="876" y2="145.33333333333331" stroke="#eee" stroke-width="1" />
+<text x="62" y="149.33333333333331" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.6</text>
+<line x1="70" y1="99.77777777777777" x2="876" y2="99.77777777777777" stroke="#eee" stroke-width="1" />
+<text x="62" y="103.77777777777777" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.8</text>
+<line x1="70" y1="54.22222222222224" x2="876" y2="54.22222222222224" stroke="#eee" stroke-width="1" />
+<text x="62" y="58.22222222222224" font-size="12" fill="#666" text-anchor="end" font-weight="400" >1.0</text>
+<text x="150.6" y="304" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >四细胞合并</text>
+<rect x="104.6" y="189.01691548352747" width="28" height="92.98308451647253" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<rect x="136.6" y="141.03907846383981" width="28" height="140.96092153616019" fill="#C0392B" stroke="none" stroke-width="1" />
+<rect x="168.6" y="227.2885764050186" width="28" height="54.7114235949814" fill="#4C78A8" stroke="none" stroke-width="1" />
+<text x="311.79999999999995" y="304" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >K562</text>
+<rect x="265.79999999999995" y="172.5935053020814" width="28" height="109.40649469791859" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<rect x="297.79999999999995" y="77.16901974122163" width="28" height="204.83098025877837" fill="#C0392B" stroke="none" stroke-width="1" />
+<rect x="329.79999999999995" y="160.39663315941152" width="28" height="121.60336684058848" fill="#4C78A8" stroke="none" stroke-width="1" />
+<text x="473.0" y="304" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >RPE1</text>
+<rect x="427.0" y="216.68275055581114" width="28" height="65.31724944418886" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<rect x="459.0" y="149.31209008696658" width="28" height="132.68790991303342" fill="#C0392B" stroke="none" stroke-width="1" />
+<rect x="491.0" y="272.96780870021314" width="28" height="9.03219129978686" fill="#4C78A8" stroke="none" stroke-width="1" />
+<text x="634.1999999999999" y="304" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >HepG2</text>
+<rect x="588.1999999999999" y="153.6931799000006" width="28" height="128.3068200999994" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<rect x="620.1999999999999" y="104.98495813821485" width="28" height="177.01504186178516" fill="#C0392B" stroke="none" stroke-width="1" />
+<rect x="652.1999999999999" y="217.62579921557202" width="28" height="64.37420078442798" fill="#4C78A8" stroke="none" stroke-width="1" />
+<text x="795.4" y="304" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >Jurkat</text>
+<rect x="749.4" y="180.56378252050933" width="28" height="101.43621747949067" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<rect x="781.4" y="120.39755015453814" width="28" height="161.60244984546188" fill="#C0392B" stroke="none" stroke-width="1" />
+<rect x="813.4" y="216.27347506492177" width="28" height="65.72652493507823" fill="#4C78A8" stroke="none" stroke-width="1" />
+<rect x="70" y="10" width="14" height="14" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<text x="88" y="22" font-size="13" fill="#222" text-anchor="start" font-weight="400" >SafeConf 风险分</text>
+<rect x="260" y="10" width="14" height="14" fill="#C0392B" stroke="none" stroke-width="1" />
+<text x="278" y="22" font-size="13" fill="#222" text-anchor="start" font-weight="400" >幅度</text>
+<rect x="320" y="10" width="14" height="14" fill="#4C78A8" stroke="none" stroke-width="1" />
+<text x="338" y="22" font-size="13" fill="#222" text-anchor="start" font-weight="400" >四个起点的分歧</text>
+<text x="70" y="348" font-size="12" fill="#555" text-anchor="start" font-weight="400" >柱高 = 与真实误差的 Spearman。1 为名次完全同向，0 为无关。每一格幅度都高于 SafeConf。</text>
+</svg>
+<figcaption><b>图 10｜与真实误差的 Spearman。</b> 每一个范围里，幅度都高于 SafeConf。RPE1 上四个起点的分歧几乎是 0（0.0397，区间跨过 0）。</figcaption>
+</figure>
+<p>合并 1808 组：SafeConf <b>0.4082</b>，幅度 <b>0.6189</b>，分歧 <b>0.2402</b>。不能写成 SafeConf 已经比幅度更能把误差大的组排到前面。</p>
+
+<h2 id="s12">12. 只能核对 20% 时</h2>
+<p>合并 1808 组，20% 是 362 组。K562 566 组的 20% 是 114 组。下面有两列，<b>不要合成一个数</b>。</p>
+<p><b>抓取比例 high_error_capture</b>：真实误差最高的那一批里，有多大比例被你挑去核对了。随机乱挑，期望就是 362÷1808=<b>0.2002</b>。</p>
+<p><b>效用 oracle_normalized_utility</b>：如果全知道谁最错，挑 362 组能达到的平均误差是上限；乱挑是下限。你的排法相对乱挑，往「全知道」挪了多少。0 等于乱挑，1 等于全知道。</p>
+<p class="src">文件：<code>E201_REVIEW_UTILITY.csv</code>，budget=0.2。</p>
+<table>
+<tr><th>范围</th><th>组数</th><th>核对组数</th><th>SafeConf 抓取</th><th>幅度抓取</th><th>随机</th><th>SafeConf 效用</th><th>幅度效用</th></tr>
+<tr><td>四细胞合并</td><td class="num">1808</td><td class="num">362</td><td class="num">0.3343</td><td class="num">0.4558</td><td class="num">0.2002</td><td class="num">0.3200</td><td class="num">0.5943</td></tr>
+<tr><td>K562</td><td class="num">566</td><td class="num">114</td><td class="num">0.3860</td><td class="num">0.8158</td><td class="num">0.2014</td><td class="num">0.4239</td><td class="num">0.9338</td></tr>
+<tr><td>RPE1</td><td class="num">416</td><td class="num">84</td><td class="num">0.3452</td><td class="num">0.4881</td><td class="num">0.2019</td><td class="num">0.3011</td><td class="num">0.6084</td></tr>
+<tr><td>HepG2</td><td class="num">405</td><td class="num">81</td><td class="num">0.4568</td><td class="num">0.6667</td><td class="num">0.2000</td><td class="num">0.4425</td><td class="num">0.7963</td></tr>
+<tr><td>Jurkat</td><td class="num">421</td><td class="num">85</td><td class="num">0.3529</td><td class="num">0.6000</td><td class="num">0.2019</td><td class="num">0.2930</td><td class="num">0.7367</td></tr>
+</table>
+<div class="warn">0.4558 就是 E201 合并表里、幅度的 high_error_capture。不是 7 月旧实验，也不是效用 0.5943。效用另一列：SafeConf 0.3200（区间 0.2456, 0.3929），幅度 0.5943（区间 0.5386, 0.6525）。</div>
+<figure>
+<svg viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" role="img" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
+<rect x="0" y="0" width="900" height="360" fill="#fff" stroke="none" stroke-width="1" />
+<line x1="70" y1="282.0" x2="876" y2="282.0" stroke="#888" stroke-width="1.2" />
+<line x1="70" y1="282.0" x2="876" y2="282.0" stroke="#eee" stroke-width="1" />
+<text x="62" y="286.0" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.0</text>
+<line x1="70" y1="236.44444444444446" x2="876" y2="236.44444444444446" stroke="#eee" stroke-width="1" />
+<text x="62" y="240.44444444444446" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.2</text>
+<line x1="70" y1="190.88888888888889" x2="876" y2="190.88888888888889" stroke="#eee" stroke-width="1" />
+<text x="62" y="194.88888888888889" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.4</text>
+<line x1="70" y1="145.33333333333331" x2="876" y2="145.33333333333331" stroke="#eee" stroke-width="1" />
+<text x="62" y="149.33333333333331" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.6</text>
+<line x1="70" y1="99.77777777777777" x2="876" y2="99.77777777777777" stroke="#eee" stroke-width="1" />
+<text x="62" y="103.77777777777777" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.8</text>
+<line x1="70" y1="54.22222222222224" x2="876" y2="54.22222222222224" stroke="#eee" stroke-width="1" />
+<text x="62" y="58.22222222222224" font-size="12" fill="#666" text-anchor="end" font-weight="400" >1.0</text>
+<text x="150.6" y="304" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >四细胞合并</text>
+<rect x="104.6" y="205.8643339472069" width="28" height="76.13566605279311" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<rect x="136.6" y="178.17863720073666" width="28" height="103.82136279926334" fill="#C0392B" stroke="none" stroke-width="1" />
+<rect x="168.6" y="236.3940511307768" width="28" height="45.6059488692232" fill="#888" stroke="none" stroke-width="1" />
+<text x="311.79999999999995" y="304" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >K562</text>
+<rect x="265.79999999999995" y="194.08576998050683" width="28" height="87.91423001949317" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<rect x="297.79999999999995" y="96.18128654970762" width="28" height="185.81871345029236" fill="#C0392B" stroke="none" stroke-width="1" />
+<rect x="329.79999999999995" y="236.12249705535925" width="28" height="45.87750294464075" fill="#888" stroke="none" stroke-width="1" />
+<text x="473.0" y="304" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >RPE1</text>
+<rect x="427.0" y="203.36243386243385" width="28" height="78.63756613756615" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<rect x="459.0" y="170.82275132275134" width="28" height="111.17724867724866" fill="#C0392B" stroke="none" stroke-width="1" />
+<rect x="491.0" y="236.00641025641028" width="28" height="45.99358974358972" fill="#888" stroke="none" stroke-width="1" />
+<text x="634.1999999999999" y="304" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >HepG2</text>
+<rect x="588.1999999999999" y="177.95336076817557" width="28" height="104.04663923182443" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<rect x="620.1999999999999" y="130.14814814814815" width="28" height="151.85185185185185" fill="#C0392B" stroke="none" stroke-width="1" />
+<rect x="652.1999999999999" y="236.44444444444446" width="28" height="45.55555555555554" fill="#888" stroke="none" stroke-width="1" />
+<text x="795.4" y="304" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >Jurkat</text>
+<rect x="749.4" y="201.6078431372549" width="28" height="80.39215686274511" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<rect x="781.4" y="145.33333333333334" width="28" height="136.66666666666666" fill="#C0392B" stroke="none" stroke-width="1" />
+<rect x="813.4" y="236.01161256268142" width="28" height="45.98838743731858" fill="#888" stroke="none" stroke-width="1" />
+<rect x="70" y="10" width="14" height="14" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<text x="88" y="22" font-size="13" fill="#222" text-anchor="start" font-weight="400" >SafeConf 抓取比例</text>
+<rect x="273" y="10" width="14" height="14" fill="#C0392B" stroke="none" stroke-width="1" />
+<text x="291" y="22" font-size="13" fill="#222" text-anchor="start" font-weight="400" >幅度抓取比例</text>
+<rect x="385" y="10" width="14" height="14" fill="#888" stroke="none" stroke-width="1" />
+<text x="403" y="22" font-size="13" fill="#222" text-anchor="start" font-weight="400" >随机核对</text>
+<text x="70" y="348" font-size="12" fill="#555" text-anchor="start" font-weight="400" >这是 high_error_capture，不是效用。合并 1808 组：SafeConf 0.3343，幅度 0.4558，随机 0.2002。</text>
+</svg>
+<figcaption><b>图 11｜20% 预算的抓取比例。</b> K562 上幅度抓取 0.8158，几乎把误差最大的那批都列入先核对。SafeConf 在同一范围只有 0.3860。</figcaption>
+</figure>
+<figure>
+<svg viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" role="img" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
+<rect x="0" y="0" width="900" height="360" fill="#fff" stroke="none" stroke-width="1" />
+<line x1="70" y1="282.0" x2="876" y2="282.0" stroke="#888" stroke-width="1.2" />
+<line x1="70" y1="282.0" x2="876" y2="282.0" stroke="#eee" stroke-width="1" />
+<text x="62" y="286.0" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.0</text>
+<line x1="70" y1="236.44444444444446" x2="876" y2="236.44444444444446" stroke="#eee" stroke-width="1" />
+<text x="62" y="240.44444444444446" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.2</text>
+<line x1="70" y1="190.88888888888889" x2="876" y2="190.88888888888889" stroke="#eee" stroke-width="1" />
+<text x="62" y="194.88888888888889" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.4</text>
+<line x1="70" y1="145.33333333333331" x2="876" y2="145.33333333333331" stroke="#eee" stroke-width="1" />
+<text x="62" y="149.33333333333331" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.6</text>
+<line x1="70" y1="99.77777777777777" x2="876" y2="99.77777777777777" stroke="#eee" stroke-width="1" />
+<text x="62" y="103.77777777777777" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.8</text>
+<line x1="70" y1="54.22222222222224" x2="876" y2="54.22222222222224" stroke="#eee" stroke-width="1" />
+<text x="62" y="58.22222222222224" font-size="12" fill="#666" text-anchor="end" font-weight="400" >1.0</text>
+<text x="150.6" y="304" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >四细胞合并</text>
+<rect x="120.6" y="209.11723150082796" width="28" height="72.88276849917204" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<rect x="152.6" y="146.62965410233625" width="28" height="135.37034589766375" fill="#C0392B" stroke="none" stroke-width="1" />
+<text x="311.79999999999995" y="304" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >K562</text>
+<rect x="281.79999999999995" y="185.4402361706032" width="28" height="96.55976382939679" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<rect x="313.79999999999995" y="69.30801434862849" width="28" height="212.6919856513715" fill="#C0392B" stroke="none" stroke-width="1" />
+<text x="473.0" y="304" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >RPE1</text>
+<rect x="443.0" y="213.4221782979629" width="28" height="68.57782170203711" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<rect x="475.0" y="143.40870208794587" width="28" height="138.59129791205413" fill="#C0392B" stroke="none" stroke-width="1" />
+<text x="634.1999999999999" y="304" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >HepG2</text>
+<rect x="604.1999999999999" y="181.21249136333245" width="28" height="100.78750863666755" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<rect x="636.1999999999999" y="100.62503348697682" width="28" height="181.3749665130232" fill="#C0392B" stroke="none" stroke-width="1" />
+<text x="795.4" y="304" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >Jurkat</text>
+<rect x="765.4" y="215.25084580410194" width="28" height="66.74915419589806" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<rect x="797.4" y="114.18570183510224" width="28" height="167.81429816489776" fill="#C0392B" stroke="none" stroke-width="1" />
+<rect x="70" y="10" width="14" height="14" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<text x="88" y="22" font-size="13" fill="#222" text-anchor="start" font-weight="400" >SafeConf 效用</text>
+<rect x="247" y="10" width="14" height="14" fill="#C0392B" stroke="none" stroke-width="1" />
+<text x="265" y="22" font-size="13" fill="#222" text-anchor="start" font-weight="400" >幅度效用</text>
+<text x="70" y="348" font-size="12" fill="#555" text-anchor="start" font-weight="400" >这是 oracle_normalized_utility。合并：SafeConf 0.3200，幅度 0.5943。不要和上一张 0.3343 / 0.4558 混成一个数。</text>
+</svg>
+<figcaption><b>图 12｜20% 预算的效用。</b> 和上一张不是同一个指标。K562 上幅度效用 0.9338。合并幅度 0.5943，SafeConf 0.3200。</figcaption>
+</figure>
+<p>被挑中的 362 组，平均真实误差：SafeConf 0.07310，幅度 0.08322，全体平均 0.06130，全知道时 0.09818。幅度挑中的组平均误差更高，所以效用更高。</p>
+
+<h2 id="s13">13. 拿掉幅度之后还剩什么</h2>
+<p>偏相关：先把幅度和真实误差的关系拿掉，看 SafeConf 还跟误差齐不齐。文件：<code>E201_PARTIAL_ASSOCIATIONS.csv</code>。</p>
+<table>
+<tr><th>范围</th><th>组数</th><th>偏相关</th><th>区间下限</th><th>区间上限</th></tr>
+<tr><td>四细胞合并</td><td class="num">1808</td><td class="num">0.2503</td><td class="num">0.2021</td><td class="num">0.2980</td></tr>
+<tr><td>K562</td><td class="num">566</td><td class="num">0.3475</td><td class="num">0.2475</td><td class="num">0.4364</td></tr>
+<tr><td>RPE1</td><td class="num">416</td><td class="num">0.1407</td><td class="num">0.0390</td><td class="num">0.2364</td></tr>
+<tr><td>HepG2</td><td class="num">405</td><td class="num">0.3259</td><td class="num">0.2291</td><td class="num">0.4173</td></tr>
+<tr><td>Jurkat</td><td class="num">421</td><td class="num">0.3169</td><td class="num">0.2259</td><td class="num">0.4032</td></tr>
+</table>
+<figure>
+<svg viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg" role="img" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
+<rect x="0" y="0" width="900" height="320" fill="#fff" stroke="none" stroke-width="1" />
+<line x1="70" y1="242.0" x2="876" y2="242.0" stroke="#888" stroke-width="1.2" />
+<line x1="70" y1="242.0" x2="876" y2="242.0" stroke="#eee" stroke-width="1" />
+<text x="62" y="246.0" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.0</text>
+<line x1="70" y1="165.7037037037037" x2="876" y2="165.7037037037037" stroke="#eee" stroke-width="1" />
+<text x="62" y="169.7037037037037" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.2</text>
+<line x1="70" y1="89.4074074074074" x2="876" y2="89.4074074074074" stroke="#eee" stroke-width="1" />
+<text x="62" y="93.4074074074074" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.4</text>
+<text x="150.6" y="264" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >四细胞合并</text>
+<rect x="136.6" y="146.50122950589525" width="28" height="95.49877049410475" fill="#6C3483" stroke="none" stroke-width="1" />
+<text x="150.6" y="140.50122950589525" font-size="12" fill="#111" text-anchor="middle" font-weight="400" >0.2503</text>
+<text x="311.79999999999995" y="264" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >K562</text>
+<rect x="297.79999999999995" y="109.4392726897269" width="28" height="132.56072731027308" fill="#6C3483" stroke="none" stroke-width="1" />
+<text x="311.79999999999995" y="103.4392726897269" font-size="12" fill="#111" text-anchor="middle" font-weight="400" >0.3475</text>
+<text x="473.0" y="264" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >RPE1</text>
+<rect x="459.0" y="188.3320816672568" width="28" height="53.6679183327432" fill="#6C3483" stroke="none" stroke-width="1" />
+<text x="473.0" y="182.3320816672568" font-size="12" fill="#111" text-anchor="middle" font-weight="400" >0.1407</text>
+<text x="634.1999999999999" y="264" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >HepG2</text>
+<rect x="620.1999999999999" y="117.67697068611527" width="28" height="124.32302931388473" fill="#6C3483" stroke="none" stroke-width="1" />
+<text x="634.1999999999999" y="111.67697068611527" font-size="12" fill="#111" text-anchor="middle" font-weight="400" >0.3259</text>
+<text x="795.4" y="264" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >Jurkat</text>
+<rect x="781.4" y="121.12214872653185" width="28" height="120.87785127346815" fill="#6C3483" stroke="none" stroke-width="1" />
+<text x="795.4" y="115.12214872653185" font-size="12" fill="#111" text-anchor="middle" font-weight="400" >0.3169</text>
+<rect x="70" y="10" width="14" height="14" fill="#6C3483" stroke="none" stroke-width="1" />
+<text x="88" y="22" font-size="13" fill="#222" text-anchor="start" font-weight="400" >控制幅度之后，SafeConf 与真实误差的偏相关</text>
+<text x="70" y="308" font-size="12" fill="#555" text-anchor="start" font-weight="400" >合并 0.2503。大于 0 只说明「不全是幅度的影子」，不能写成已经比幅度更好用。</text>
+</svg>
+<figcaption><b>图 13｜控制幅度后的偏相关。</b> 合并 0.2503，区间 (0.2021, 0.2980)，下限大于 0。说明风险分不全是幅度的影子。</figcaption>
+</figure>
+<p>再直接减：SafeConf 减去幅度。文件：<code>E201_INCREMENTAL_TESTS.csv</code>。全是负数——幅度更强。</p>
+<table>
+<tr><th>范围</th><th>Spearman 差</th><th>Spearman 差区间</th><th>效用差</th><th>效用差区间</th></tr>
+<tr><td>四细胞合并</td><td class="num">-0.2106</td><td class="num">-0.2651, -0.1574</td><td class="num">-0.2743</td><td class="num">-0.3576, -0.2008</td></tr>
+<tr><td>K562</td><td class="num">-0.4189</td><td class="num">-0.4912, -0.3484</td><td class="num">-0.5098</td><td class="num">-0.6185, -0.3894</td></tr>
+<tr><td>RPE1</td><td class="num">-0.2958</td><td class="num">-0.3977, -0.1998</td><td class="num">-0.3074</td><td class="num">-0.4596, -0.1713</td></tr>
+<tr><td>HepG2</td><td class="num">-0.2138</td><td class="num">-0.2906, -0.1399</td><td class="num">-0.3538</td><td class="num">-0.4941, -0.2371</td></tr>
+<tr><td>Jurkat</td><td class="num">-0.2641</td><td class="num">-0.3469, -0.1816</td><td class="num">-0.4437</td><td class="num">-0.5573, -0.2902</td></tr>
+</table>
+<div class="note">合并效用差 <b>−0.2743</b>，区间全在 0 以下。增量门仍然写「过」，靠的是偏相关下限 0.2021 &gt; 0，不是效用打赢幅度。封面写 SUPPORTED，不要读成排序已经强于幅度。</div>
+
+<h2 id="s14">14. 五个成分各自多强</h2>
+<p>把五个成分各自拿去和真实误差排名次。文件：<code>E201_DESCRIPTIVE_ASSOCIATIONS.csv</code>，合并 1808 组，outcome=family_rms_error。表上写明 <code>descriptive_point_only</code>，只报点估计。</p>
+<table>
+<tr><th>成分</th><th>列名</th><th>与真实误差的 Spearman</th></tr>
+<tr><td>源侧离散</td><td>source_delta_dispersion</td><td class="num">0.4618</td></tr>
+<tr><td>分歧</td><td>family_disagreement</td><td class="num">0.2402</td></tr>
+<tr><td>模型–源侧差</td><td>model_source_gap</td><td class="num">0.1488</td></tr>
+<tr><td>细胞少</td><td>negative_log_source_cells</td><td class="num">0.0450</td></tr>
+<tr><td>背景缺口</td><td>support_context_deficit</td><td class="num">-0.0385</td></tr>
+<tr><td>五个 z 的平均（SafeConf）</td><td>safeconf_e201_risk</td><td class="num">0.4082</td></tr>
+<tr><td>幅度（不进五个 z）</td><td>predicted_magnitude</td><td class="num">0.6189</td></tr>
+</table>
+<figure>
+<svg viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg" role="img" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
+<rect x="0" y="0" width="900" height="340" fill="#fff" stroke="none" stroke-width="1" />
+<line x1="70" y1="235.01502858948714" x2="876" y2="235.01502858948714" stroke="#888" stroke-width="1.2" />
+<line x1="70" y1="235.01502858948714" x2="876" y2="235.01502858948714" stroke="#eee" stroke-width="1" />
+<text x="62" y="239.01502858948714" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.0</text>
+<line x1="70" y1="175.73475582978455" x2="876" y2="175.73475582978455" stroke="#eee" stroke-width="1" />
+<text x="62" y="179.73475582978455" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.2</text>
+<line x1="70" y1="116.45448307008192" x2="876" y2="116.45448307008192" stroke="#eee" stroke-width="1" />
+<text x="62" y="120.45448307008192" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.4</text>
+<line x1="70" y1="57.17421031037928" x2="876" y2="57.17421031037928" stroke="#eee" stroke-width="1" />
+<text x="62" y="61.17421031037928" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.6</text>
+<text x="127.57142857142857" y="284" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >源侧离散</text>
+<rect x="113.57142857142857" y="98.13190180730234" width="28" height="136.8831267821848" fill="#4C78A8" stroke="none" stroke-width="1" />
+<text x="127.57142857142857" y="92.13190180730234" font-size="12" fill="#111" text-anchor="middle" font-weight="400" >0.4618</text>
+<text x="242.71428571428572" y="284" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >分歧</text>
+<rect x="228.71428571428572" y="163.8204602381722" width="28" height="71.19456835131496" fill="#4C78A8" stroke="none" stroke-width="1" />
+<text x="242.71428571428572" y="157.8204602381722" font-size="12" fill="#111" text-anchor="middle" font-weight="400" >0.2402</text>
+<text x="357.85714285714283" y="284" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >模型–源侧差</text>
+<rect x="343.85714285714283" y="190.9087539819648" width="28" height="44.10627460752235" fill="#4C78A8" stroke="none" stroke-width="1" />
+<text x="357.85714285714283" y="184.9087539819648" font-size="12" fill="#111" text-anchor="middle" font-weight="400" >0.1488</text>
+<text x="473.0" y="284" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >细胞少</text>
+<rect x="459.0" y="221.6735247740779" width="28" height="13.341503815409254" fill="#4C78A8" stroke="none" stroke-width="1" />
+<text x="473.0" y="215.6735247740779" font-size="12" fill="#111" text-anchor="middle" font-weight="400" >0.0450</text>
+<text x="588.1428571428571" y="284" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >背景缺口</text>
+<rect x="574.1428571428571" y="235.01502858948714" width="28" height="11.398764513961112" fill="#4C78A8" stroke="none" stroke-width="1" />
+<text x="588.1428571428571" y="240.41379310344826" font-size="12" fill="#111" text-anchor="middle" font-weight="400" >-0.0385</text>
+<text x="703.2857142857142" y="284" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >五成分平均</text>
+<rect x="689.2857142857142" y="114.0185322246707" width="28" height="120.99649636481645" fill="#4C78A8" stroke="none" stroke-width="1" />
+<text x="703.2857142857142" y="108.0185322246707" font-size="12" fill="#111" text-anchor="middle" font-weight="400" >0.4082</text>
+<text x="818.4285714285714" y="284" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >幅度</text>
+<rect x="804.4285714285714" y="51.586206896551715" width="28" height="183.42882169293543" fill="#4C78A8" stroke="none" stroke-width="1" />
+<text x="818.4285714285714" y="45.586206896551715" font-size="12" fill="#111" text-anchor="middle" font-weight="400" >0.6189</text>
+<rect x="70" y="10" width="14" height="14" fill="#4C78A8" stroke="none" stroke-width="1" />
+<text x="88" y="22" font-size="13" fill="#222" text-anchor="start" font-weight="400" >与真实误差的 Spearman（合并 1808 组）</text>
+<text x="70" y="328" font-size="12" fill="#555" text-anchor="start" font-weight="400" >源侧离散单独 0.4618，已经高于五成分平均 0.4082。等权会把弱的两块（0.0450、-0.0385）平均进去。</text>
+</svg>
+<figcaption><b>图 14｜成分拆开。</b> 源侧离散单独 0.4618 &gt; SafeConf 0.4082。细胞少 0.0450、背景缺口 −0.0385 几乎没有同向信息，等权平均会稀释。</figcaption>
+</figure>
+<p>RPE1 上四个起点的分歧单独只有 0.0397，区间跨 0。不能说「模型起点不一致」在每种细胞上都够用。</p>
+
+<h2 id="s15">15. TxPert 本身准不准（这不是 SafeConf）</h2>
+<p>质检排得好不好，和模型猜得准不准，是两件事。下面是 TxPert 四个起点平均之后的误差，对比三条简单规则。文件：<code>E201_TARGET_ERROR_SUMMARY.csv</code>、<code>E201_BASELINE_COMPARISONS.csv</code>。</p>
+<table>
+<tr><th>细胞</th><th>组数</th><th>四个起点平均后</th><th>四个误差的均方根</th><th>当成没变化</th><th>官方简单规则</th><th>源侧搬过来</th></tr>
+<tr><td>K562</td><td class="num">566</td><td class="num">0.0540</td><td class="num">0.0543</td><td class="num">0.0523</td><td class="num">0.0584</td><td class="num">0.0593</td></tr>
+<tr><td>RPE1</td><td class="num">416</td><td class="num">0.0788</td><td class="num">0.0790</td><td class="num">0.0959</td><td class="num">0.0801</td><td class="num">0.0786</td></tr>
+<tr><td>HepG2</td><td class="num">405</td><td class="num">0.0576</td><td class="num">0.0577</td><td class="num">0.0697</td><td class="num">0.0598</td><td class="num">0.0590</td></tr>
+<tr><td>Jurkat</td><td class="num">421</td><td class="num">0.0564</td><td class="num">0.0566</td><td class="num">0.0666</td><td class="num">0.0583</td><td class="num">0.0608</td></tr>
+</table>
+<p>K562：四个起点平均后 0.0540，「当成没变化」0.0523。这一条细胞上，深度模型没有赢过「猜成没变化」。必须留着说。</p>
+<table>
+<tr><th>范围</th><th>对比</th><th>TxPert 平均误差</th><th>对比项平均误差</th><th>TxPert 更好的组占比</th><th>平均差（负=TxPert 更小）</th></tr>
+<tr><td>四细胞合并</td><td>官方简单规则</td><td class="num">0.0611</td><td class="num">0.0637</td><td class="num">0.9121</td><td class="num">-0.0026</td></tr>
+<tr><td>四细胞合并</td><td>当成没变化</td><td class="num">0.0611</td><td class="num">0.0696</td><td class="num">0.7561</td><td class="num">-0.0085</td></tr>
+<tr><td>四细胞合并</td><td>源侧平均搬过来</td><td class="num">0.0611</td><td class="num">0.0640</td><td class="num">0.7235</td><td class="num">-0.0029</td></tr>
+<tr><td>K562</td><td>官方简单规则</td><td class="num">0.0540</td><td class="num">0.0584</td><td class="num">0.9488</td><td class="num">-0.0044</td></tr>
+<tr><td>K562</td><td>当成没变化</td><td class="num">0.0540</td><td class="num">0.0523</td><td class="num">0.5159</td><td class="num">0.0017</td></tr>
+<tr><td>K562</td><td>源侧平均搬过来</td><td class="num">0.0540</td><td class="num">0.0593</td><td class="num">0.8481</td><td class="num">-0.0053</td></tr>
+<tr><td>RPE1</td><td>官方简单规则</td><td class="num">0.0788</td><td class="num">0.0801</td><td class="num">0.8582</td><td class="num">-0.0012</td></tr>
+<tr><td>RPE1</td><td>当成没变化</td><td class="num">0.0788</td><td class="num">0.0959</td><td class="num">0.9639</td><td class="num">-0.0171</td></tr>
+<tr><td>RPE1</td><td>源侧平均搬过来</td><td class="num">0.0788</td><td class="num">0.0786</td><td class="num">0.5000</td><td class="num">0.0003</td></tr>
+<tr><td>HepG2</td><td>官方简单规则</td><td class="num">0.0576</td><td class="num">0.0598</td><td class="num">0.9383</td><td class="num">-0.0022</td></tr>
+<tr><td>HepG2</td><td>当成没变化</td><td class="num">0.0576</td><td class="num">0.0697</td><td class="num">0.8099</td><td class="num">-0.0122</td></tr>
+<tr><td>HepG2</td><td>源侧平均搬过来</td><td class="num">0.0576</td><td class="num">0.0590</td><td class="num">0.6519</td><td class="num">-0.0015</td></tr>
+<tr><td>Jurkat</td><td>官方简单规则</td><td class="num">0.0564</td><td class="num">0.0583</td><td class="num">0.8907</td><td class="num">-0.0019</td></tr>
+<tr><td>Jurkat</td><td>当成没变化</td><td class="num">0.0564</td><td class="num">0.0666</td><td class="num">0.8219</td><td class="num">-0.0102</td></tr>
+<tr><td>Jurkat</td><td>源侧平均搬过来</td><td class="num">0.0564</td><td class="num">0.0608</td><td class="num">0.8456</td><td class="num">-0.0043</td></tr>
+</table>
+<p>四种细胞合并：TxPert 平均误差 0.0611，官方简单规则 0.0637，91.21% 的组 TxPert 更好。合并赢了，K562 单条没有赢过对照——两句都要留。</p>
+
+<h2 id="s16">16. 7 月那张六套数据表（E131）</h2>
+<p>7 月对外的一套正式汇总是 E131。预测模型是 scGPT 和 GEARS 成对使用，不是 TxPert。切法是各套数据内部按背景留出，不是 E201 这种「一种细胞整组藏起」。</p>
+<p class="src">文件：<code>docs/实验结果/E131_formal_six_dataset_meta_20260714/tables/E131_DATASET_MACRO.csv</code>，折的任务数来自 <code>E131_FOLD_SUMMARY.csv</code>。</p>
+<table>
+<tr><th>公开数据</th><th>折数</th><th>每折组数</th><th>SafeConf 校准</th><th>SafeConf 冻结</th><th>两模型分歧</th><th>幅度</th></tr>
+<tr><td>Frangieh</td><td class="num">3</td><td class="num">279</td><td class="num">0.2530</td><td class="num">0.2418</td><td class="num">0.1373</td><td class="num">0.1481</td></tr>
+<tr><td>Lara_exvivo</td><td class="num">5</td><td class="num">69</td><td class="num">0.3871</td><td class="num">0.3550</td><td class="num">0.1761</td><td class="num">0.1475</td></tr>
+<tr><td>Liang</td><td class="num">9</td><td class="num">68</td><td class="num">0.2124</td><td class="num">0.2022</td><td class="num">0.0746</td><td class="num">0.0742</td></tr>
+<tr><td>Santinha</td><td class="num">5</td><td class="num">51</td><td class="num">0.0646</td><td class="num">-0.0949</td><td class="num">-0.1268</td><td class="num">-0.0893</td></tr>
+<tr><td>Shifrut</td><td class="num">4</td><td class="num">43</td><td class="num">0.1727</td><td class="num">0.0533</td><td class="num">0.0513</td><td class="num">0.2087</td></tr>
+<tr><td>Tian_CRISPRi</td><td class="num">4</td><td class="num">183</td><td class="num">0.1342</td><td class="num">0.1114</td><td class="num">-0.0179</td><td class="num">0.0667</td></tr>
+</table>
+<figure>
+<svg viewBox="0 0 900 380" xmlns="http://www.w3.org/2000/svg" role="img" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
+<rect x="0" y="0" width="900" height="380" fill="#fff" stroke="none" stroke-width="1" />
+<line x1="70" y1="227.07587993664907" x2="876" y2="227.07587993664907" stroke="#888" stroke-width="1.2" />
+<line x1="70" y1="227.07587993664907" x2="876" y2="227.07587993664907" stroke="#eee" stroke-width="1" />
+<text x="62" y="231.07587993664907" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.0</text>
+<line x1="70" y1="137.83791506761662" x2="876" y2="137.83791506761662" stroke="#eee" stroke-width="1" />
+<text x="62" y="141.83791506761662" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.2</text>
+<line x1="70" y1="48.599950198584125" x2="876" y2="48.599950198584125" stroke="#eee" stroke-width="1" />
+<text x="62" y="52.599950198584125" font-size="12" fill="#666" text-anchor="end" font-weight="400" >0.4</text>
+<text x="137.16666666666669" y="324" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >Frangieh</text>
+<rect x="91.16666666666667" y="114.18700162709801" width="28" height="112.88887830955106" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<rect x="123.16666666666667" y="160.97365634362336" width="28" height="66.10222359302571" fill="#C0392B" stroke="none" stroke-width="1" />
+<rect x="155.16666666666669" y="165.81634952165004" width="28" height="61.259530414999034" fill="#4C78A8" stroke="none" stroke-width="1" />
+<text x="271.5" y="324" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >Lara</text>
+<rect x="225.5" y="54.344827586206904" width="28" height="172.73105235044216" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<rect x="257.5" y="161.26084307708425" width="28" height="65.81503685956483" fill="#C0392B" stroke="none" stroke-width="1" />
+<rect x="289.5" y="148.5027810919719" width="28" height="78.57309884467716" fill="#4C78A8" stroke="none" stroke-width="1" />
+<text x="405.83333333333337" y="324" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >Liang</text>
+<rect x="359.83333333333337" y="132.30415108995177" width="28" height="94.7717288466973" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<rect x="391.83333333333337" y="193.96926981973888" width="28" height="33.10661011691019" fill="#C0392B" stroke="none" stroke-width="1" />
+<rect x="423.83333333333337" y="193.812196043604" width="28" height="33.26368389304508" fill="#4C78A8" stroke="none" stroke-width="1" />
+<text x="540.1666666666666" y="324" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >Santinha</text>
+<rect x="494.1666666666667" y="198.2551124086737" width="28" height="28.820767527975363" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<rect x="526.1666666666667" y="227.07587993664907" width="28" height="39.84616458495981" fill="#C0392B" stroke="none" stroke-width="1" />
+<rect x="558.1666666666667" y="227.07587993664907" width="28" height="56.579292477144065" fill="#4C78A8" stroke="none" stroke-width="1" />
+<text x="674.5" y="324" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >Shifrut</text>
+<rect x="628.5" y="150.02694243458126" width="28" height="77.04893750206782" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<rect x="660.5" y="133.95683172689155" width="28" height="93.11904820975752" fill="#C0392B" stroke="none" stroke-width="1" />
+<rect x="692.5" y="204.16670743931363" width="28" height="22.909172497335447" fill="#4C78A8" stroke="none" stroke-width="1" />
+<text x="808.8333333333334" y="324" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >Tian</text>
+<rect x="762.8333333333334" y="167.1898807873643" width="28" height="59.88599914928477" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<rect x="794.8333333333334" y="197.29789979264822" width="28" height="29.77798014400085" fill="#C0392B" stroke="none" stroke-width="1" />
+<rect x="826.8333333333334" y="227.07587993664907" width="28" height="7.9726991897380515" fill="#4C78A8" stroke="none" stroke-width="1" />
+<rect x="70" y="10" width="14" height="14" fill="#1A7A5C" stroke="none" stroke-width="1" />
+<text x="88" y="22" font-size="13" fill="#222" text-anchor="start" font-weight="400" >SafeConf 校准</text>
+<rect x="247" y="10" width="14" height="14" fill="#C0392B" stroke="none" stroke-width="1" />
+<text x="265" y="22" font-size="13" fill="#222" text-anchor="start" font-weight="400" >幅度</text>
+<rect x="307" y="10" width="14" height="14" fill="#4C78A8" stroke="none" stroke-width="1" />
+<text x="325" y="22" font-size="13" fill="#222" text-anchor="start" font-weight="400" >两模型分歧</text>
+<text x="70" y="368" font-size="12" fill="#555" text-anchor="start" font-weight="400" >7 月 E131，模型是 scGPT+GEARS，不是 TxPert。Santinha 上幅度和分歧都是负数：换一套数据，质检可以失灵。</text>
+</svg>
+<figcaption><b>图 15｜E131 六套数据。</b> Santinha 上幅度 −0.0893、分歧 −0.1268，校准版 SafeConf 只剩 0.0646。失败数据集留在表里，没有删。</figcaption>
+</figure>
+<p>Tian_CRISPRi 是 CRISPR 干扰。E201 的条件写法也是基因名+ctrl，同属调低，不是化学药、不是过表达。不能把「只做了 CRISPRi」说成已经覆盖所有扰动。</p>
+<p>7 月和现在做的是同一类工作：预测之后质检、排序。模型和切法都换了，数字不能加总，也不能用 7 月某套「校准版高于幅度」去覆盖 E201。</p>
+
+<h2 id="s17">17. 从 7 月走到 E201</h2>
+<figure>
+<svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" role="img" font-family="PingFang SC, Microsoft YaHei, Arial, sans-serif">
+<rect x="0" y="0" width="900" height="260" fill="#fff" stroke="none" stroke-width="1" />
+<text x="20" y="28" font-size="14" fill="#555" text-anchor="start" font-weight="400" >同一类质检工作，换模型和切法之后，幅度和质检谁更齐会翻转</text>
+<rect x="20" y="50" width="200" height="90" fill="#EAF2F8" stroke="#1F4E79" stroke-width="1" />
+<text x="120" y="78" font-size="15" fill="#1F4E79" text-anchor="middle" font-weight="700" >7 月 E131</text>
+<text x="120" y="102" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >scGPT + GEARS</text>
+<text x="120" y="124" font-size="13" fill="#555" text-anchor="middle" font-weight="400" >六套公开数据</text>
+<text x="235" y="98" font-size="22" fill="#999" text-anchor="middle" font-weight="400" >→</text>
+<rect x="255" y="50" width="200" height="90" fill="#F5EEF8" stroke="#6C3483" stroke-width="1" />
+<text x="355" y="78" font-size="15" fill="#6C3483" text-anchor="middle" font-weight="700" >E199</text>
+<text x="355" y="102" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >未见过的基因</text>
+<text x="355" y="124" font-size="13" fill="#555" text-anchor="middle" font-weight="400" >分歧 0.3948 &gt; 幅度 0.0955</text>
+<text x="470" y="98" font-size="22" fill="#999" text-anchor="middle" font-weight="400" >→</text>
+<rect x="490" y="50" width="180" height="90" fill="#FEF5E7" stroke="#B36B00" stroke-width="1" />
+<text x="580" y="78" font-size="15" fill="#B36B00" text-anchor="middle" font-weight="700" >E200</text>
+<text x="580" y="102" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >整组 K562 藏起</text>
+<text x="580" y="124" font-size="13" fill="#555" text-anchor="middle" font-weight="400" >幅度 0.8797 更强</text>
+<text x="685" y="98" font-size="22" fill="#999" text-anchor="middle" font-weight="400" >→</text>
+<rect x="705" y="50" width="175" height="90" fill="#EAF8F2" stroke="#1A7A5C" stroke-width="1" />
+<text x="792" y="78" font-size="15" fill="#1A7A5C" text-anchor="middle" font-weight="700" >现在 E201</text>
+<text x="792" y="102" font-size="13" fill="#222" text-anchor="middle" font-weight="400" >四细胞轮流整组藏</text>
+<text x="792" y="124" font-size="13" fill="#555" text-anchor="middle" font-weight="400" >幅度 0.6189 更强</text>
+<text x="20" y="170" font-size="14" fill="#222" text-anchor="start" font-weight="400" >E199：263 组，公开三种结构的检查点（GAT / Exphormer / Exphormer-MG），不是四个随机起点。</text>
+<text x="20" y="196" font-size="14" fill="#222" text-anchor="start" font-weight="400" >E200：566 组，只看 K562 整组留出。E201：四种细胞都做一遍，主分析 1808 组。</text>
+<text x="20" y="222" font-size="14" fill="#222" text-anchor="start" font-weight="400" >不能把 7 月六套、E199、E201 加总成一张成绩。当前对外引用 E201。</text>
+</svg>
+<figcaption><b>图 16｜中间两张表会翻转。</b> E199 未见基因时分歧高于幅度；整组细胞藏起之后幅度明显高于质检分。</figcaption>
+</figure>
+<table>
+<tr><th>表</th><th>模型</th><th>切法</th><th>组数</th><th>质检分 vs 幅度（Spearman）</th></tr>
+<tr><td>E131（7 月）</td><td>scGPT + GEARS</td><td>六套公开数据内部留出</td><td>见上一节每折组数</td><td>按数据集不同，有的校准版高于幅度，Santinha 两边都弱</td></tr>
+<tr><td>E199</td><td>公开三种结构检查点，不是四起点</td><td>K562 上未见过的基因，263 组</td><td>263</td><td>分歧下界 0.3948，幅度 0.0955</td></tr>
+<tr><td>E200</td><td>TxPert GAT 质心</td><td>K562 整组留出</td><td>566</td><td>转移风险 0.4240，幅度 0.8797</td></tr>
+<tr><td>E201（当前）</td><td>TxPert 同一结构四个随机起点</td><td>四细胞轮流整组留出</td><td>1808</td><td>SafeConf 0.4082，幅度 0.6189</td></tr>
+</table>
+<p>E199 的 20% 效用：分歧下界 0.2084，幅度只有 0.0397（区间跨 0）。到了 E200 / E201，幅度反过来压过质检分。2026-08-20 起的要求是：不要承诺一个永远管用的分数；换切法就要重新看表。</p>
+<p>E204 是另一件事：用源侧细胞数、背景数、离散度给训练加权。正式 80 轮没有跑完，只有工程验收。没有 80 轮效果数字。E205 是跨结构分歧的协议，还没有结果表。</p>
+
+<h2 id="s18">18. 指纹文件</h2>
+<p><code>E201_CORE_OUTPUT_HASHES.csv</code> 每一行是路径、字节数、sha256。把这张表放到 GitHub 和 Gitee，是把当时的预测和分数锁死。不是把 TxPert 拿到远程去训练。</p>
+<table>
+<tr><th>文件</th><th>字节</th><th>sha256（头 16 + 尾 8）</th></tr>
+<tr><td>E201_CORE_REPORT.md</td><td>4050</td><td>153626af7c669841…7708207d</td></tr>
+<tr><td>E201_PARTIAL_ASSOCIATIONS.csv</td><td>907</td><td>2a082f60a21d5849…b81e9160</td></tr>
+<tr><td>E201_REVIEW_UTILITY.csv</td><td>2839</td><td>fb54eded0eca189b…13cbb16d</td></tr>
+<tr><td>E201_RISK_ASSOCIATIONS.csv</td><td>2164</td><td>f811e2b742e5a93f…9c8da3b2</td></tr>
+<tr><td>E201_SEED_TASK_ERRORS.csv</td><td>563154</td><td>2162723dca76519e…9f0f6de1</td></tr>
+<tr><td>E201_TASK_METRICS.csv</td><td>1208271</td><td>4a02d132cae1605a…2c6bcd35</td></tr>
+</table>
+<p>顺序是：先在未见目标细胞真实测序时写出风险分并做哈希，再打开真值算 0.08909 这种误差。这样不能先看误差再回头改 0.11790。</p>
+<p>AARS 这一行的封存核对：分歧残差 1.18×10⁻¹⁰，幅度残差 8.36×10⁻¹⁰，模型–源侧差残差 1.08×10⁻¹⁰。都接近 0。</p>
+
+<h2 id="s19">19. 五扇门</h2>
+<p class="src">文件：<code>E201_FORMAL_GATES.csv</code>。表里这一行的英文列名是 empirical_routing，口语叫经验排序门。</p>
+<table>
+<tr><th>门（人话）</th><th>表里的英文</th><th>结果</th><th>事先写死的标准</th><th>观察到的</th></tr>
+<tr><td>输入对齐</td><td>input_integrity</td><td>过</td><td>2,008 aligned tasks; pretruth residual <5e-6</td><td>pretruth_max=3.4973438e-09;family_mean_max=4.7683716e-07;official_general_equivalence=2.7865171e-06</td></tr>
+<tr><td>误差恒等式证书</td><td>family_error_certificate</td><td>没过</td><td>identity residual <=1e-10; zero lower-bound violations</td><td>identity_max=3.6107837e-10;lower_bound_violations=0</td></tr>
+<tr><td>经验排序门</td><td>empirical_routing</td><td>过</td><td>both pooled 95% cluster-bootstrap lower bounds >0</td><td>rho_lower=0.35063625;utility_lower=0.24558702</td></tr>
+<tr><td>相对幅度的增量门</td><td>incremental_vs_magnitude</td><td>过</td><td>either paired 95% cluster-bootstrap lower bound >0</td><td>partial_lower=0.20206962;delta_utility_lower=-0.35759519</td></tr>
+<tr><td>四细胞都报告</td><td>target_reporting_complete</td><td>过</td><td>all four targets reported without directional filtering</td><td>K562,RPE1,hepg2,jurkat</td></tr>
+</table>
+<p>误差恒等式：真实误差² 应当等于「平均后误差² + 分歧²」。AARS 这一行对得上。全表最大残差 3.61×10⁻¹⁰，事先要求 ≤1×10⁻¹⁰，所以证书门没过。下界违反数仍是 0（没有误差比分歧还小的组）。</p>
+<p>经验排序门过了：SafeConf 相关区间下限 0.3506 &gt; 0，20% 效用下限 0.2456 &gt; 0。这只说明「不是随机」，不说明强于幅度。</p>
+
+<h2 id="s20">20. 计算机投稿</h2>
+<table>
+<tr><th>名称</th><th>性质</th><th>和本工作</th></tr>
+<tr><td>NeurIPS</td><td>计算机会议，CCF-A。会议没有中科院期刊分区</td><td>PRESCRIBE（Cheng 等，arXiv:2510.07964）发在 2025。它把把握写进预测模型里。和 SafeConf 不是同一张对照表</td></tr>
+<tr><td>Bioinformatics 等</td><td>CCF 计算 / 生信期刊。分区以学院查询系统为准，这里不写死几区</td><td>质检工作常被点到这里。E201 尚未显示排序强于幅度</td></tr>
+</table>
+<p>不必为了质检从头训练一个新的表达预测模型。那是 PRESCRIBE 那一类。当前有数字的是：TxPert 已经给出 3352 维猜测之后，SafeConf 的风险分与真实误差同向（0.4082），但单独排序弱于幅度（0.6189；20% 抓取 0.3343 对 0.4558；效用 0.3200 对 0.5943）。</p>
+<p>组合「幅度 + SafeConf」有没有更好用，E201 没有给出已证明的效用提升。不能写已经合在一起更好。</p>
+
+<h2 id="s21">21. 数字收在一页</h2>
+<table>
+<tr><th>说什么</th><th>数</th><th>表</th></tr>
+<tr><td>贯穿条件</td><td>K562::AARS+ctrl；38 个目标细胞，161 个源细胞，3 种源背景</td><td>TASK_METRICS</td></tr>
+<tr><td>未见真值：幅度 / 分歧 / 风险分</td><td>0.10173 / 0.01035 / 0.11790</td><td>TASK_METRICS</td></tr>
+<tr><td>打开真值：四个起点误差 → 均方根</td><td>0.08678, 0.08892, 0.09472, 0.08567 → 0.08909</td><td>SEED_TASK_ERRORS</td></tr>
+<tr><td>AARS 在 K562 566 组的名次</td><td>误差第 31，幅度第 52（进前 114），风险分第 215（不进）</td><td>TASK_METRICS 排序</td></tr>
+<tr><td>主分析组数</td><td>1808（K562 566，RPE1 416，HepG2 405，Jurkat 421）；任务表另有 200 行敏感性</td><td>RISK_ASSOCIATIONS / TASK_METRICS</td></tr>
+<tr><td>合并 Spearman</td><td>SafeConf 0.4082，幅度 0.6189，分歧 0.2402，偏相关 0.2503</td><td>RISK / PARTIAL</td></tr>
+<tr><td>20% 抓取（不要和效用混）</td><td>SafeConf 0.3343，幅度 0.4558，随机 0.2002</td><td>REVIEW_UTILITY</td></tr>
+<tr><td>20% 效用</td><td>SafeConf 0.3200（0.2456, 0.3929），幅度 0.5943（0.5386, 0.6525），差 −0.2743</td><td>REVIEW_UTILITY / INCREMENTAL</td></tr>
+<tr><td>五成分（合并）</td><td>离散 0.4618，分歧 0.2402，模型–源侧 0.1488，细胞少 0.0450，缺口 −0.0385</td><td>DESCRIPTIVE</td></tr>
+<tr><td>K562 上 TxPert vs 当成没变化</td><td>0.0540 vs 0.0523（没有赢）</td><td>TARGET_ERROR_SUMMARY</td></tr>
+<tr><td>7 月 E131 校准版六套</td><td>0.2530, 0.3871, 0.2124, 0.0646, 0.1727, 0.1342</td><td>E131_DATASET_MACRO</td></tr>
+<tr><td>证书门</td><td>没过（残差 3.61×10⁻¹⁰ &gt; 10⁻¹⁰）</td><td>FORMAL_GATES</td></tr>
+<tr><td>E204 / E205</td><td>没有正式效果表</td><td>profile / protocol</td></tr>
+</table>
+
+<div class="ok">
+记住这一组就够把表串起来：K562 压低 AARS → TxPert 猜 3352 个数 → 幅度 0.10173、风险分 0.11790（都还没看这组真值）→ 打开测序后误差 0.08909。1808 组合并，幅度比 SafeConf 更能把误差大的组排到前面。7 月是 scGPT/GEARS 的六套表，不是这张 E201。
+</div>
+
+<p class="src">生成时已核对：五个 z 的平均 = 风险分；四个起点的均方根 = family_rms_error；−ln(1+161) = negative_log_source_cells；z 分数在 K562 主分析 566 组上用总体标准差重算后与表一致；主分析行数 1808 与 RISK_ASSOCIATIONS 的 pooled n_tasks 一致。</p>
 </div>
 </body>
 </html>
