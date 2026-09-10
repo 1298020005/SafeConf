@@ -33,7 +33,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--txpert-repo", type=Path, required=True)
     parser.add_argument("--python", type=Path, required=True)
     parser.add_argument("--runs-root", type=Path, required=True)
-    parser.add_argument("--cuda-device", default="1")
+    parser.add_argument("--cuda-devices", default="0,1")
     parser.add_argument("--min-free-mb", type=int, default=20480)
     parser.add_argument("--foreign-proc-mb", type=int, default=1024)
     parser.add_argument("--poll-seconds", type=int, default=300)
@@ -135,6 +135,9 @@ def main() -> None:
         raise QueueFailure("unsupported target")
     if args.seed not in {1, 2, 3, 4}:
         raise QueueFailure("seed must be 1..4")
+    devices = [item.strip() for item in args.cuda_devices.split(",") if item.strip()]
+    if not devices:
+        raise QueueFailure("no CUDA devices configured")
 
     safeconf_repo = args.safeconf_repo.resolve()
     txpert_repo = args.txpert_repo.resolve()
@@ -190,21 +193,27 @@ def main() -> None:
         "started_at": now(),
         "target": args.target,
         "seed": args.seed,
-        "cuda_device": args.cuda_device,
+        "cuda_devices": devices,
         "min_free_mb": args.min_free_mb,
         "foreign_proc_mb": args.foreign_proc_mb,
         "run_dir": str(run_dir),
     }
     write_json(state_path, state)
 
+    selected_device = None
     while not stop_requested:
-        free_mb = nvidia_free_mb(args.cuda_device)
-        foreign = foreign_gpu_pids(args.cuda_device, args.foreign_proc_mb)
-        state.update(
-            {"updated_at": now(), "free_mb": free_mb, "foreign_pids": foreign}
-        )
+        observations = []
+        for device in devices:
+            free_mb = nvidia_free_mb(device)
+            foreign = foreign_gpu_pids(device, args.foreign_proc_mb)
+            observations.append(
+                {"device": device, "free_mb": free_mb, "foreign_pids": foreign}
+            )
+            if selected_device is None and free_mb >= args.min_free_mb and not foreign:
+                selected_device = device
+        state.update({"updated_at": now(), "gpu_observations": observations})
         write_json(state_path, state)
-        if free_mb >= args.min_free_mb and not foreign:
+        if selected_device is not None:
             break
         time.sleep(args.poll_seconds)
     if stop_requested:
@@ -232,7 +241,7 @@ def main() -> None:
         str(args.batch_size),
     ]
     environment = dict(os.environ)
-    environment["CUDA_VISIBLE_DEVICES"] = args.cuda_device
+    environment["CUDA_VISIBLE_DEVICES"] = selected_device
     with log_path.open("a", encoding="utf-8") as log_handle:
         log_handle.write(f"\n===== {now()} START {command} =====\n")
         log_handle.flush()
@@ -244,7 +253,14 @@ def main() -> None:
             stderr=subprocess.STDOUT,
             start_new_session=True,
         )
-    state.update({"status": "RUNNING", "updated_at": now(), "pid": process.pid})
+    state.update(
+        {
+            "status": "RUNNING",
+            "updated_at": now(),
+            "pid": process.pid,
+            "selected_cuda_device": selected_device,
+        }
+    )
     write_json(state_path, state)
     return_code = process.wait()
     if return_code != 0:
