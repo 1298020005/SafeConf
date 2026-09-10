@@ -8,7 +8,7 @@
 - 冻结 SafeConf-M 为 `0.80 × 幅度百分位 + 0.20 × SafeConf 百分位`，禁止在 E205 结果上重新调权重；
 - 新增 Exphormer 训练适配器并通过 Python 语法、命令行参数和 Hydra 配置组合检查；
 - 确认合成后的配置保留 `config-x-cell-gat` 的整细胞留出数据合同，同时将 `pert_model` 换成 `exphormer_w_mpnn`；
-- 提交并同步 Gitee/GitHub，运行代码对应提交为 `bee36d5`。
+- 提交并同步 Gitee/GitHub；profile 与正式队列代码对应提交链为 `bee36d5`、`2302bff`。
 
 ## 正在等待
 
@@ -45,6 +45,8 @@ E204 监管器收到正常停止信号时没有活动训练子进程，32 项均
 
 profile 的训练损失或验证值不用于选择 target、seed、权重或删除任务。
 
+`tmux safeconf_e205_formal` 已作为后续监管器启动。它现在只等待 profile 状态，不会提前训练；profile 全部门通过后，才会自动建立 16 项正式队列并使用满足共享服务器门槛的 GPU。这样可以避免 profile 夜间完成后 GPU 空置。
+
 ## 下一步
 
 1. profile 通过：建立 4 target × 4 seed 的正式队列；
@@ -52,4 +54,3 @@ profile 的训练损失或验证值不用于选择 target、seed、权重或删�
 3. 先封存 Exphormer 幅度、五分量 SafeConf 和固定 SafeConf-M，再读取现有目标结果；
 4. 主要检查 20% 复核效用相对幅度的配对增量，完整保留每个目标背景的结果；
 5. E205 结束后再启动 E204，避免两条问题同时争抢 GPU。
-
