@@ -149,10 +149,17 @@ def add_scores(frame: pd.DataFrame, batch_columns: list[str]) -> pd.DataFrame:
     blocks = []
     for _, block in frame.groupby(batch_columns, sort=True, dropna=False):
         block = block.copy()
-        block["magnitude"] = percentile(block[MAG])
-        block["safeconf"] = percentile(block[SAFE])
+        n_tasks = len(block)
+        magnitude_rank = rankdata(block[MAG].to_numpy(float), method="average")
+        safeconf_rank = rankdata(block[SAFE].to_numpy(float), method="average")
+        block["magnitude"] = magnitude_rank / n_tasks
+        block["safeconf"] = safeconf_rank / n_tasks
         block["disagreement"] = percentile(block[DIS])
-        block["safeconf_m"] = ALPHA * block["magnitude"] + (1.0 - ALPHA) * block["safeconf"]
+        # 0.80 == 4/5 and 0.20 == 1/5.  Combine the (half-integer)
+        # average ranks before the single division so theoretically tied
+        # scores remain bitwise tied.  Computing 1.0 - 0.80 introduces a
+        # binary floating-point asymmetry that can spuriously break ties.
+        block["safeconf_m"] = (4.0 * magnitude_rank + safeconf_rank) / (5.0 * n_tasks)
         blocks.append(block)
     return pd.concat(blocks, ignore_index=True)
 
@@ -299,6 +306,22 @@ def run_self_test() -> None:
     })
     scored = add_scores(frame, ["dataset", "fold_id"])
     assert np.isclose(scored.safeconf_m.iloc[-1], 0.82)
+    tied_combo = pd.DataFrame({
+        "dataset": ["d"] * 5,
+        "fold_id": ["f"] * 5,
+        "perturbation": ["a", "b", "c", "d", "e"],
+        ERROR: [0.0, 1.0, 2.0, 3.0, 4.0],
+        MAG: [1.0, 2.0, 3.0, 4.0, 5.0],
+        SAFE: [5.0, 1.0, 2.0, 3.0, 4.0],
+        DIS: [1.0, 2.0, 3.0, 4.0, 5.0],
+    })
+    tied_combo = add_scores(tied_combo, ["dataset", "fold_id"])
+    # The first two rows both have weighted-rank numerator 9.
+    assert tied_combo.safeconf_m.iloc[0] == tied_combo.safeconf_m.iloc[1]
+    expected = (4.0 * rankdata(tied_combo[MAG]) + rankdata(tied_combo[SAFE]))
+    for value in np.unique(expected):
+        mask = expected == value
+        assert tied_combo.loc[mask, "safeconf_m"].nunique() == 1
     assert np.isclose(review_utility(scored.magnitude, scored[ERROR], 0.20), 1.0)
     tied = np.ones(10)
     assert np.isclose(tie_aware_selected_mean(tied, frame[ERROR].to_numpy(), 0.20), 4.5)
