@@ -31,3 +31,9 @@
 ## 训练后第一道门
 
 已新增 `tools/scripts/seal_e205_exphormer_checkpoint_family.py`。16 项全部完成后，该入口逐项检查：80 轮计数、模型结构、训练与验证行数、零目标真值访问、检查点 SHA-256、参数有限性和 16 项状态张量结构一致性。只有全部通过才生成 E205 checkpoint family seal；任何一项失败都会阻止后续预测。
+
+## 封存预测入口已准备
+
+`tools/scripts/run_e201_txpert_sealed_prediction.py` 已在保留原 E201 默认行为的前提下增加显式 `--architecture exphormer` 路径。该路径只接受 `SEALED_16_EXPHORMER_CHECKPOINTS`，并检查 `TxPert-Exphormer` 家族身份、`exphormer_w_mpnn` 层、STRING 图、目标表达零读取以及两个远程与本地 HEAD 一致。`tools/scripts/run_e205_prediction_resume.sh` 负责可恢复的两卡目标分组运行。详细顺序见 `PREDICTION_RUNBOOK.md`。
+
+相关 13 项 E204/E205/E208 测试于 2026-09-12 通过。预测仍未启动；训练未完成时不生成临时家族证书，也不提前读取目标真值。

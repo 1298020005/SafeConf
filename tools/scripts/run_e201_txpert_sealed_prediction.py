@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Predict one E201 target/seed only after the 16-checkpoint family is sealed."""
+"""Run one sealed E201/E205 prediction without materializing target truth."""
 
 from __future__ import annotations
 
@@ -27,6 +27,29 @@ BLIND_MANIFEST_SHA256 = (
     "27448df0378aab32e1a9fd22bf20c18c90089816cee6c28b9710cd2d6f812e7d"
 )
 
+FAMILY_CONTRACTS = {
+    "gat": {
+        "experiment": "E201_txpert_multitarget_retraining",
+        "seal_status": "SEALED_16_CHECKPOINTS",
+        "status_file": "E201_PREDICTION_RUN.json",
+        "shared_manifest_file": "E201_SHARED_TARGET_MANIFEST.json",
+        "model_family": "TxPert-STRING-GAT",
+        "architecture_config": None,
+        "model_type": "gnn",
+        "layer_type": "gat_v2",
+    },
+    "exphormer": {
+        "experiment": "E205_cross_family_exphormer",
+        "seal_status": "SEALED_16_EXPHORMER_CHECKPOINTS",
+        "status_file": "E205_PREDICTION_RUN.json",
+        "shared_manifest_file": "E205_SHARED_TARGET_MANIFEST.json",
+        "model_family": "TxPert-Exphormer",
+        "architecture_config": "config-exphormer",
+        "model_type": "exphormer",
+        "layer_type": "exphormer_w_mpnn",
+    },
+}
+
 
 class PredictionFailure(RuntimeError):
     pass
@@ -43,6 +66,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--family-seal", type=Path, required=True)
     parser.add_argument("--target", choices=TARGETS, required=True)
     parser.add_argument("--seed", choices=SEEDS, type=int, required=True)
+    parser.add_argument(
+        "--architecture",
+        choices=tuple(FAMILY_CONTRACTS),
+        default="gat",
+        help="sealed checkpoint family; gat preserves the original E201 behavior",
+    )
     parser.add_argument(
         "--checkpoint-role",
         choices=("last", "best_source_validation"),
@@ -93,14 +122,24 @@ def resolve_data_path(value: str, data_root: Path) -> Path:
     return resolved
 
 
-def compose(repo: Path, overrides: list[str]):
+def compose(repo: Path, overrides: list[str], architecture: str):
     from hydra import compose as hydra_compose
     from hydra import initialize_config_dir
+    from omegaconf import OmegaConf
 
     with initialize_config_dir(
         config_dir=str((repo / "configs").resolve()), version_base="1.3"
     ):
-        return hydra_compose(config_name="config-x-cell-gat", overrides=overrides)
+        cfg = hydra_compose(config_name="config-x-cell-gat", overrides=overrides)
+        architecture_config = FAMILY_CONTRACTS[architecture]["architecture_config"]
+        if architecture_config is not None:
+            architecture_cfg = hydra_compose(config_name=architecture_config)
+            cfg.model.pert_model = OmegaConf.create(
+                OmegaConf.to_container(
+                    architecture_cfg.model.pert_model, resolve=True
+                )
+            )
+        return cfg
 
 
 def array_bytes(value) -> bytes:
@@ -136,6 +175,7 @@ def verify_shared_files(shared_dir: Path, manifest: dict) -> dict[str, Path]:
 
 def main() -> None:
     args = parse_args()
+    family = FAMILY_CONTRACTS[args.architecture]
     if args.batch_size <= 0:
         raise PredictionFailure("batch-size must be positive")
     txpert_repo = args.txpert_repo.resolve()
@@ -175,12 +215,17 @@ def main() -> None:
 
     seal = json.loads(family_seal_path.read_text(encoding="utf-8"))
     if (
-        seal.get("status") != "SEALED_16_CHECKPOINTS"
+        seal.get("status") != family["seal_status"]
         or int(seal.get("n_jobs", -1)) != 16
         or seal.get("target_truth_opened") is not False
         or seal.get("txpert_commit") != TXPERT_COMMIT
     ):
-        raise PredictionFailure("invalid E201 family seal")
+        raise PredictionFailure(f"invalid {family['experiment']} family seal")
+    if args.architecture == "exphormer" and (
+        seal.get("model_family") != family["model_family"]
+        or seal.get("comparison_family") != "TxPert-STRING-GAT"
+    ):
+        raise PredictionFailure("E205 family identity is missing or changed")
     records = seal.get("records", [])
     expected_jobs = {(target, seed) for target in TARGETS for seed in SEEDS}
     actual_jobs = {
@@ -191,7 +236,9 @@ def main() -> None:
         or actual_jobs != expected_jobs
         or canonical_hash(records) != seal.get("records_sha256")
     ):
-        raise PredictionFailure("E201 family seal records are incomplete or changed")
+        raise PredictionFailure(
+            f"{family['experiment']} family seal records are incomplete or changed"
+        )
     matches = [
         record
         for record in records
@@ -236,15 +283,15 @@ def main() -> None:
     if args.seed == 1:
         if shared_dir.exists():
             raise PredictionFailure(f"seed 1 refuses existing shared dir: {shared_dir}")
-    elif not (shared_dir / "E201_SHARED_TARGET_MANIFEST.json").is_file():
+    elif not (shared_dir / family["shared_manifest_file"]).is_file():
         raise PredictionFailure(
             "seed 2-4 require the sealed seed-1 shared target files"
         )
 
     output_dir.mkdir(parents=True)
-    status_path = output_dir / "E201_PREDICTION_RUN.json"
+    status_path = output_dir / family["status_file"]
     metadata = {
-        "experiment": "E201_txpert_multitarget_retraining",
+        "experiment": family["experiment"],
         "status": "RUNNING",
         "started_at": now(),
         "target": args.target,
@@ -252,6 +299,9 @@ def main() -> None:
         "checkpoint_role": args.checkpoint_role,
         "checkpoint_path": checkpoint_record["path"],
         "checkpoint_sha256": checkpoint_record["sha256"],
+        "model_family": family["model_family"],
+        "architecture": args.architecture,
+        "architecture_config": family["architecture_config"],
         "family_seal_path": seal_relpath,
         "family_seal_sha256": sha256_file(family_seal_path),
         "family_records_sha256": seal["records_sha256"],
@@ -298,16 +348,19 @@ def main() -> None:
                 f"datamodule.batch_size={args.batch_size}",
                 f"seed={args.seed}",
             ],
+            args.architecture,
         )
         if (
             cfg.datamodule.match_cntr is not True
             or cfg.datamodule.avg_cntr is not True
             or cfg.datamodule.obsm_key != "raw"
+            or cfg.model.pert_model.model_type != family["model_type"]
+            or cfg.model.pert_model.layer_type != family["layer_type"]
         ):
-            raise PredictionFailure("unexpected target control construction")
+            raise PredictionFailure("unexpected architecture or target control construction")
         set_seed(args.seed)
         if not torch.cuda.is_available():
-            raise PredictionFailure("CUDA is required for E201 prediction")
+            raise PredictionFailure("CUDA is required for sealed prediction")
         datamodule = PertDataModule(
             **OmegaConf.to_container(cfg.datamodule, resolve=True)
         )
@@ -341,7 +394,7 @@ def main() -> None:
             shape=(n_samples, n_genes),
         )
 
-        shared_manifest_path = shared_dir / "E201_SHARED_TARGET_MANIFEST.json"
+        shared_manifest_path = shared_dir / family["shared_manifest_file"]
         if args.seed == 1:
             shared_dir.mkdir(parents=True)
             control_partial = shared_dir / "controls.partial.npy"
@@ -496,7 +549,7 @@ def main() -> None:
             os.replace(control_partial, control_final)
             os.replace(obs_partial, obs_final)
             shared_manifest = {
-                "experiment": "E201_txpert_multitarget_retraining",
+                "experiment": family["experiment"],
                 "status": "SEALED_PRETRUTH_TARGET_INPUTS",
                 "created_at": now(),
                 "target": args.target,
