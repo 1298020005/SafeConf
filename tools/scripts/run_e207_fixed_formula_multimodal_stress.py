@@ -84,7 +84,7 @@ def atomic_json(path: Path, value: dict) -> None:
 
 def percentile(values: pd.Series | np.ndarray) -> np.ndarray:
     array = np.asarray(values, dtype=float)
-    if len(array) < 2 or not np.isfinite(array).all():
+    if len(array) < 1 or not np.isfinite(array).all():
         raise ContractError("percentile input is invalid")
     return rankdata(array, method="average") / len(array)
 
@@ -302,6 +302,14 @@ def run_self_test() -> None:
     assert np.isclose(review_utility(scored.magnitude, scored[ERROR], 0.20), 1.0)
     tied = np.ones(10)
     assert np.isclose(tie_aware_selected_mean(tied, frame[ERROR].to_numpy(), 0.20), 4.5)
+    # Cluster bootstrap can leave only one sampled task in an operational
+    # batch.  Ranking that batch is valid; correlation/utility are simply not
+    # estimable and must be recorded as NaN instead of aborting the run.
+    singleton = frame.iloc[[0]].copy()
+    singleton_scored = add_scores(singleton, ["dataset", "fold_id"])
+    singleton_metrics = batch_metrics(singleton_scored, ["dataset", "fold_id"])
+    assert singleton_metrics.spearman.isna().all()
+    assert singleton_metrics.review_utility.isna().all()
     print("E207 self-test: PASS")
 
 
