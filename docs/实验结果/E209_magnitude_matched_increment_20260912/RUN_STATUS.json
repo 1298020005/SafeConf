@@ -1,0 +1,19 @@
+{
+  "experiment": "E209_magnitude_matched_increment",
+  "status": "PASS",
+  "evidence_identity": "retrospective_posthoc_mechanism_analysis",
+  "generated_at": "2026-09-12T23:03:59+08:00",
+  "git_head_at_run": "5f901dd38f4dedc7bb3d57407641b0782fab1cdd",
+  "bootstrap_replicates": 2000,
+  "workers": 16,
+  "primary_analysis": "E153_genetic_8study",
+  "primary_partial_spearman": 0.16456935081048552,
+  "primary_ci95": [
+    0.1178819418579397,
+    0.20755788910600445
+  ],
+  "primary_positive_studies": 8,
+  "primary_total_studies": 8,
+  "target_truth_used_as_deployment_feature": false,
+  "external_confirmation": false
+}
