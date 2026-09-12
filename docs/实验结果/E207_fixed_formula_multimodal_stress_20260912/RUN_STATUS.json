@@ -1,0 +1,13 @@
+{
+  "experiment": "E207_fixed_formula_multimodal_stress",
+  "status": "COMPLETE_RETROSPECTIVE",
+  "generated_at": "2026-09-12T14:27:36+08:00",
+  "formula": "0.80*within_batch_rank(magnitude)+0.20*within_batch_rank(safeconf)",
+  "weights_retuned": false,
+  "independent_confirmation": false,
+  "bootstrap_replicates": 2000,
+  "bootstrap_workers": 32,
+  "bootstrap_unit": "perturbation cluster within dataset",
+  "truth_role": "retrospective evaluation only; outcomes were previously released",
+  "e205_confirmation_status": "PENDING_TRAINING"
+}
