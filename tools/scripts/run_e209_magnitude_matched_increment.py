@@ -310,7 +310,7 @@ def plot_forest(studies: pd.DataFrame, bootstrap: pd.DataFrame, output: Path) ->
         bootstrap.analysis.eq("E153_genetic_8study") & bootstrap.metric.eq("partial_spearman")
     ].iloc[0]
     labels = focus.study.tolist() + ["Eight-study mean"]
-    values = focus.partial_spearman.tolist() + [float(overall.bootstrap_median)]
+    values = focus.partial_spearman.tolist() + [float(focus.partial_spearman.mean())]
     y = np.arange(len(labels))
     fig, ax = plt.subplots(figsize=(8.2, 5.2), facecolor="white")
     ax.set_facecolor("white")
@@ -375,6 +375,9 @@ def write_report(overall: pd.DataFrame, studies: pd.DataFrame, ci: pd.DataFrame)
         "该结果支持“双因素”叙述：预测幅度描述响应规模，SafeConf 描述证据质量。"
         "它不证明 SafeConf 单独优于幅度，也不把回顾性偏相关当成节省实验成本的证据。"
         "固定 SafeConf-M 的最终效果仍由 E205 和 E208 按冻结合同确认。",
+        "",
+        "E201 此处的 0.2827 是先在四个目标内分别计算、再取宏平均；E201 原正式报告的 "
+        "0.2503 是把 1,808 个任务合并计算。两者回答的聚合问题不同，不能互相替换。",
         "",
         "## 逐研究结果",
         "",
