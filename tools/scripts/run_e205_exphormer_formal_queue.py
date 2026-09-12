@@ -187,6 +187,27 @@ def job_state(run_dir: Path) -> str:
     return "failed"
 
 
+def resume_checkpoint_for(run_dir: Path, target: str, seed: int) -> Path | None:
+    status_path = run_dir / "E205_RUN_STATUS.json"
+    checkpoint = run_dir / "checkpoints/last.ckpt"
+    if not status_path.is_file() or not checkpoint.is_file():
+        return None
+    try:
+        status = read_json(status_path)
+    except (OSError, ValueError, TypeError):
+        return None
+    if (
+        status.get("status") not in {"RUNNING", "FAILED"}
+        or status.get("kind") != "formal"
+        or status.get("target") != target
+        or int(status.get("seed", -1)) != seed
+        or status.get("model_family") != "TxPert-Exphormer"
+        or checkpoint.stat().st_size <= 0
+    ):
+        return None
+    return checkpoint.resolve()
+
+
 def attempts_from_logs(log_root: Path, target: str, seed: int) -> int:
     pattern = re.compile(rf"^{re.escape(target)}_seed{seed}_attempt(\d+)\.log$")
     attempts = []
@@ -218,7 +239,8 @@ def start_job(
     log_path: Path,
 ) -> subprocess.Popen:
     run_dir.parent.mkdir(parents=True, exist_ok=True)
-    if run_dir.exists():
+    resume_checkpoint = resume_checkpoint_for(run_dir, target, seed)
+    if run_dir.exists() and resume_checkpoint is None:
         raise QueueFailure(f"refusing existing run directory: {run_dir}")
     command = [
         str(python),
@@ -238,6 +260,8 @@ def start_job(
         "--batch-size",
         str(batch_size),
     ]
+    if resume_checkpoint is not None:
+        command.extend(["--resume-checkpoint", str(resume_checkpoint)])
     environment = dict(os.environ)
     environment["CUDA_VISIBLE_DEVICES"] = device
     log_handle = log_path.open("a", encoding="utf-8")
@@ -387,10 +411,15 @@ def main() -> None:
                 if record in permanent_failures:
                     continue
                 used = attempts[(target, seed)]
-                if state in {"failed", "running", "orphan"}:
+                resume_checkpoint = resume_checkpoint_for(run_dir, target, seed)
+                if state in {"failed", "running", "orphan"} and resume_checkpoint is None:
                     archived = archive_run(run_dir, root, target, seed, max(used, 1))
                     archives.append({**record, "path": str(archived)})
                     log(f"ARCHIVE {target}/seed_{seed} to {archived}")
+                elif resume_checkpoint is not None:
+                    log(
+                        f"RESUME-READY {target}/seed_{seed} from {resume_checkpoint}"
+                    )
                 if used >= args.max_attempts:
                     permanent_failures.append(record)
                     continue

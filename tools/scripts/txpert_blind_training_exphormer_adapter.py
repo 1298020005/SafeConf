@@ -44,6 +44,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--batch-size", type=int, default=64)
     parser.add_argument("--smoke-train-batches", type=int, default=20)
+    parser.add_argument("--resume-checkpoint", type=Path)
     return parser.parse_args()
 
 
@@ -71,10 +72,34 @@ def main() -> None:
     args = parse_args()
     repo = args.txpert_repo.resolve()
     run_dir = args.run_dir.resolve()
+    resume_checkpoint = (
+        args.resume_checkpoint.resolve() if args.resume_checkpoint is not None else None
+    )
     adapter_path = Path(__file__).resolve()
     safeconf_repo = adapter_path.parents[2]
-    if run_dir.exists():
+    previous_status = None
+    if resume_checkpoint is None and run_dir.exists():
         raise TrainingFailure(f"refusing to overwrite: {run_dir}")
+    if resume_checkpoint is not None:
+        status_path = run_dir / "E205_RUN_STATUS.json"
+        if not run_dir.is_dir() or not status_path.is_file():
+            raise TrainingFailure("resume requires an existing E205 run directory")
+        expected_checkpoint_root = (run_dir / "checkpoints").resolve()
+        try:
+            resume_checkpoint.relative_to(expected_checkpoint_root)
+        except ValueError as exc:
+            raise TrainingFailure("resume checkpoint is outside the run directory") from exc
+        if not resume_checkpoint.is_file() or resume_checkpoint.stat().st_size <= 0:
+            raise TrainingFailure("resume checkpoint is missing or empty")
+        previous_status = json.loads(status_path.read_text(encoding="utf-8"))
+        if (
+            previous_status.get("experiment") != "E205_cross_family_exphormer"
+            or previous_status.get("kind") != args.kind
+            or previous_status.get("target") != args.target
+            or int(previous_status.get("seed", -1)) != args.seed
+            or previous_status.get("model_family") != "TxPert-Exphormer"
+        ):
+            raise TrainingFailure("resume status does not match requested E205 job")
     if git_text(repo, "rev-parse", "HEAD") != (
         "08d82eea86746b044cf7531f4ec8c5f60e1cb73f"
     ):
@@ -110,7 +135,7 @@ def main() -> None:
     if view_manifest.get("uns_keys") != []:
         raise TrainingFailure("blind view contains unapproved uns metadata")
 
-    run_dir.mkdir(parents=True)
+    run_dir.mkdir(parents=True, exist_ok=resume_checkpoint is not None)
     metadata = {
         "experiment": "E205_cross_family_exphormer",
         "kind": args.kind,
@@ -136,6 +161,31 @@ def main() -> None:
         "cuda_visible_devices": os.environ.get("CUDA_VISIBLE_DEVICES", ""),
         "command": sys.argv,
     }
+    if previous_status is not None:
+        history = list(previous_status.get("resume_history", []))
+        history.append(
+            {
+                "resumed_at": now(),
+                "checkpoint_path": str(resume_checkpoint),
+                "checkpoint_bytes": resume_checkpoint.stat().st_size,
+                "checkpoint_sha256": sha256_file(resume_checkpoint),
+                "previous_started_at": previous_status.get("started_at"),
+                "previous_safeconf_commit": previous_status.get("safeconf_commit"),
+                "previous_adapter_sha256": previous_status.get(
+                    "training_adapter_sha256"
+                ),
+            }
+        )
+        metadata.update(
+            {
+                "first_started_at": previous_status.get(
+                    "first_started_at", previous_status.get("started_at")
+                ),
+                "resume_history": history,
+                "resume_checkpoint": str(resume_checkpoint),
+                "resume_checkpoint_sha256": sha256_file(resume_checkpoint),
+            }
+        )
     write_json(run_dir / "E205_RUN_STATUS.json", metadata)
 
     os.chdir(repo)
@@ -392,7 +442,11 @@ def main() -> None:
         )
         torch.cuda.reset_peak_memory_stats()
         fit_started = time.perf_counter()
-        trainer.fit(model, datamodule=datamodule)
+        trainer.fit(
+            model,
+            datamodule=datamodule,
+            ckpt_path=(str(resume_checkpoint) if resume_checkpoint is not None else None),
+        )
         fit_wall_seconds = time.perf_counter() - fit_started
         checkpoint_files = []
         checkpoint_paths = {
@@ -430,6 +484,7 @@ def main() -> None:
                 "global_step": int(trainer.global_step),
                 "current_epoch": int(trainer.current_epoch),
                 "fit_wall_seconds": fit_wall_seconds,
+                "resumed": resume_checkpoint is not None,
                 "cuda_peak_memory_allocated_bytes": int(
                     torch.cuda.max_memory_allocated()
                 ),

@@ -110,6 +110,30 @@ class E205QueueTests(unittest.TestCase):
             (logs / "K562_seed1_attempt2.log").write_text("two", encoding="utf-8")
             self.assertEqual(E205.attempts_from_logs(logs, "K562", 1), 2)
 
+    def test_stale_formal_run_can_resume_from_last_checkpoint(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            run_dir = root / "formal/RPE1/seed_1"
+            checkpoint = run_dir / "checkpoints/last.ckpt"
+            checkpoint.parent.mkdir(parents=True)
+            checkpoint.write_bytes(b"checkpoint")
+            (run_dir / "E205_RUN_STATUS.json").write_text(
+                json.dumps(
+                    {
+                        "status": "RUNNING",
+                        "kind": "formal",
+                        "target": "RPE1",
+                        "seed": 1,
+                        "model_family": "TxPert-Exphormer",
+                    }
+                ),
+                encoding="utf-8",
+            )
+            self.assertEqual(
+                E205.resume_checkpoint_for(run_dir, "RPE1", 1), checkpoint.resolve()
+            )
+            self.assertIsNone(E205.resume_checkpoint_for(run_dir, "K562", 1))
+
 
 if __name__ == "__main__":
     unittest.main()
