@@ -1,6 +1,6 @@
 # E206：预测幅度加入 SafeConf 的开发结果
 
-生成时间：2026-09-09T23:20:33+08:00
+生成时间：2026-09-12T14:39:06+08:00
 
 证据等级：**E201 结局打开后的内部方法开发；不是新外部盲测**
 
@@ -34,7 +34,7 @@ SafeConf-M = 0.80 × 目标背景内的预测幅度百分位
 
 | 留出背景 | 选定幅度权重 | Spearman：融合 / 幅度 | 差值 | 20% 效用：融合 / 幅度 | 差值 |
 |---|---:|---:|---:|---:|---:|
-| K562 | 0.80 | 0.9122 / 0.8993 | +0.0130 | 0.9385 / 0.9338 | +0.0047 |
+| K562 | 0.80 | 0.9122 / 0.8993 | +0.0129 | 0.9385 / 0.9338 | +0.0047 |
 | RPE1 | 0.75 | 0.5869 / 0.5825 | +0.0044 | 0.6478 / 0.6084 | +0.0394 |
 | hepg2 | 0.80 | 0.8012 / 0.7771 | +0.0241 | 0.8197 / 0.7963 | +0.0234 |
 | jurkat | 0.80 | 0.7375 / 0.7095 | +0.0280 | 0.7460 / 0.7367 | +0.0093 |
@@ -47,10 +47,10 @@ SafeConf-M = 0.80 × 目标背景内的预测幅度百分位
 |---|---|---:|---:|
 | fixed_candidate | delta_spearman_vs_magnitude | [0.0091, 0.0271] | 1.000 |
 | fixed_candidate | delta_utility_vs_magnitude | [-0.0139, 0.0520] | 0.839 |
-| fixed_candidate | delta_capture_vs_magnitude | [-0.0201, 0.0361] | 0.708 |
-| loto_selected | delta_spearman_vs_magnitude | [0.0073, 0.0270] | 1.000 |
-| loto_selected | delta_utility_vs_magnitude | [-0.0141, 0.0566] | 0.847 |
-| loto_selected | delta_capture_vs_magnitude | [-0.0213, 0.0365] | 0.705 |
+| fixed_candidate | delta_capture_vs_magnitude | [-0.0201, 0.0360] | 0.708 |
+| loto_selected | delta_spearman_vs_magnitude | [0.0073, 0.0271] | 1.000 |
+| loto_selected | delta_utility_vs_magnitude | [-0.0141, 0.0567] | 0.847 |
+| loto_selected | delta_capture_vs_magnitude | [-0.0212, 0.0365] | 0.704 |
 
 ## 明早可以向老师说什么
 

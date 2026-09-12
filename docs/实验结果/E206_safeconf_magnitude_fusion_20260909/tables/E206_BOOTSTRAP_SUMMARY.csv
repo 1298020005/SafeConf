@@ -1,0 +1,7 @@
+estimator,metric,ci95_lower,bootstrap_median,ci95_upper,fraction_positive,bootstrap_valid,point_estimate,alpha_by_target
+fixed_candidate,delta_spearman_vs_magnitude,0.009092144424350584,0.017814891552071777,0.027112341668763938,1.0,5000,0.01829439927915777,"{""K562"": 0.8, ""RPE1"": 0.8, ""hepg2"": 0.8, ""jurkat"": 0.8}"
+fixed_candidate,delta_utility_vs_magnitude,-0.013923727949599613,0.015011258227235924,0.05200455861234733,0.8386,5000,0.013393730614787214,"{""K562"": 0.8, ""RPE1"": 0.8, ""hepg2"": 0.8, ""jurkat"": 0.8}"
+fixed_candidate,delta_capture_vs_magnitude,-0.020122215181657105,0.00780038217525586,0.03600878448339984,0.708,5000,0.0068458182493269515,"{""K562"": 0.8, ""RPE1"": 0.8, ""hepg2"": 0.8, ""jurkat"": 0.8}"
+loto_selected,delta_spearman_vs_magnitude,0.0072891807149426755,0.017044289643706856,0.02706587220357645,1.0,5000,0.017365587288096118,"{""K562"": 0.8, ""RPE1"": 0.75, ""hepg2"": 0.8, ""jurkat"": 0.8}"
+loto_selected,delta_utility_vs_magnitude,-0.014116388201363758,0.01669536826293294,0.05671296193950544,0.8466,5000,0.0191877348734929,"{""K562"": 0.8, ""RPE1"": 0.75, ""hepg2"": 0.8, ""jurkat"": 0.8}"
+loto_selected,delta_capture_vs_magnitude,-0.021227012059635862,0.007843500918374213,0.036540421001919884,0.7038,5000,0.009822008725517528,"{""K562"": 0.8, ""RPE1"": 0.75, ""hepg2"": 0.8, ""jurkat"": 0.8}"

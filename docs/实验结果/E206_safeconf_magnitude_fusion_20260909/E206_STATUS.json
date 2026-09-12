@@ -1,6 +1,6 @@
 {
   "status": "PASS_DEVELOPMENT_ONLY",
-  "generated_at": "2026-09-09T23:20:33+08:00",
+  "generated_at": "2026-09-12T14:39:06+08:00",
   "evidence_level": "post-outcome internal development",
   "external_validation": false,
   "input": {
@@ -30,33 +30,38 @@
   "outputs": [
     {
       "path": "docs/实验结果/E206_safeconf_magnitude_fusion_20260909/ANALYSIS_PLAN.md",
-      "bytes": 3420,
-      "sha256": "b2739c3253c616f0b83178ea274a61258ab51d73b261850a2d5eaa24e083218c"
+      "bytes": 3809,
+      "sha256": "a892061dc612d905d30351e5e9814ae071377cbcdb39b8ec05193152b7501c8b"
     },
     {
       "path": "docs/实验结果/E206_safeconf_magnitude_fusion_20260909/E206_REPORT.md",
-      "bytes": 3669,
-      "sha256": "a9aa6a94c5ca13e2f6c5e44dd98a3db6587c8f180dcaa92716d576556823b854"
+      "bytes": 3668,
+      "sha256": "7ec284e2a2097bf9ec1a1b7aa4b474369e20836db1f656216582c83424104b1d"
     },
     {
       "path": "docs/实验结果/E206_safeconf_magnitude_fusion_20260909/MORNING_BRIEF.md",
-      "bytes": 7040,
-      "sha256": "105b2b3fdd03438e68bff61538b4780e9a79b93389db1f190531917c2834fc28"
+      "bytes": 7905,
+      "sha256": "faf35dcb5290408284444ac81ba8ac05ec0220422ed1491c4a004930e85dddf3"
+    },
+    {
+      "path": "docs/实验结果/E206_safeconf_magnitude_fusion_20260909/NUMERICAL_CORRECTION_20260912.md",
+      "bytes": 2584,
+      "sha256": "1215852fa1c2e91fc51f762c05af186900c9d0a448a93f4407dcbf1f4ee60769"
     },
     {
       "path": "docs/实验结果/E206_safeconf_magnitude_fusion_20260909/figures/E206_leave_one_target_out.pdf",
-      "bytes": 34531,
-      "sha256": "c787de768479ab2630d0b7bde301dbea54d69e7af848ce3b5dd44ba0ed6ee344"
+      "bytes": 34526,
+      "sha256": "f5ba06b11f8f6c2aa22e2ae16da96ae5f1ed8708f0ac4ecb73e14c981fb4f8e0"
     },
     {
       "path": "docs/实验结果/E206_safeconf_magnitude_fusion_20260909/figures/E206_leave_one_target_out.png",
-      "bytes": 182693,
-      "sha256": "f548cd2b99fb596b7e2a5016e00545456b99a2e7c4b53d5200310c3ff29b4a64"
+      "bytes": 181278,
+      "sha256": "59afef21da00124d46faea949cd37051e3b7107645524e80ed3d1f83dd18968f"
     },
     {
       "path": "docs/实验结果/E206_safeconf_magnitude_fusion_20260909/figures/E206_risk_decomposition.pdf",
       "bytes": 64461,
-      "sha256": "1bd2fb8a053946ea65e312fdac89bc2b63b8773f022ca6bad4eccb3f76a4eeb7"
+      "sha256": "49640da7a8ad55e736479f6e05e2b2cda54493f33c999f846b9b39993fc3ad4a"
     },
     {
       "path": "docs/实验结果/E206_safeconf_magnitude_fusion_20260909/figures/E206_risk_decomposition.png",
@@ -65,18 +70,18 @@
     },
     {
       "path": "docs/实验结果/E206_safeconf_magnitude_fusion_20260909/figures/E206_weight_sweep.pdf",
-      "bytes": 37592,
-      "sha256": "4440f95e7b6cb80f79d441c3a544882ed0b6328e0ccf9c1226787a2d1a4c1eed"
+      "bytes": 37594,
+      "sha256": "ada5d7b8b5ce8febc931e0034d04b649c297cb248a3da92146a7e80725154f69"
     },
     {
       "path": "docs/实验结果/E206_safeconf_magnitude_fusion_20260909/figures/E206_weight_sweep.png",
-      "bytes": 213077,
-      "sha256": "9b611ff40fd67256ea9fdf93be0db4395f541218ed9886030c295d439a5cb1d0"
+      "bytes": 213063,
+      "sha256": "bc6054dfa87398db61b0a91cd964e9439386c9d8a3771c8948a50a23934c50eb"
     },
     {
       "path": "docs/实验结果/E206_safeconf_magnitude_fusion_20260909/tables/E206_BOOTSTRAP_SUMMARY.csv",
       "bytes": 1340,
-      "sha256": "455dc58ea20694dbdebe2b8bfbea1bfe944cef1b1d68e248376f3bfda907fb36"
+      "sha256": "8081de482cd40ea36386afc0f047c4118619b6251c06fce5d8c708977c38e99b"
     },
     {
       "path": "docs/实验结果/E206_safeconf_magnitude_fusion_20260909/tables/E206_INPUT_HASHES.csv",
@@ -85,13 +90,13 @@
     },
     {
       "path": "docs/实验结果/E206_safeconf_magnitude_fusion_20260909/tables/E206_LOTO_RESULTS.csv",
-      "bytes": 2487,
-      "sha256": "37e9d807a0df79124b7750b2185374fd78b266323a7de9e875f673f171ff08bb"
+      "bytes": 2484,
+      "sha256": "8c2c767e4f561002c13079786bac51b25313925bcc7d78493b60686d41157059"
     },
     {
       "path": "docs/实验结果/E206_safeconf_magnitude_fusion_20260909/tables/E206_WEIGHT_SWEEP.csv",
-      "bytes": 1768,
-      "sha256": "b267789a6887dd51eddc003a39d162b139aedd2141c2486af2fbaa3d3f461588"
+      "bytes": 1769,
+      "sha256": "fbf44c38350ecc09e2f684e725db58a80b0aa4fb3757f131bf8c1c338ef1ee2f"
     }
   ]
 }
