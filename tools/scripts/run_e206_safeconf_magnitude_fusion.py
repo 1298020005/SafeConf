@@ -37,6 +37,7 @@ DEFAULT_OUTPUT = (
 )
 TARGETS = ("K562", "RPE1", "hepg2", "jurkat")
 ALPHAS = np.round(np.linspace(0.0, 1.0, 21), 2)
+ALPHA_DENOMINATOR = 20
 BUDGET = 0.20
 MASTER_SEED = 20_260_909
 DEFAULT_BOOTSTRAP = 5_000
@@ -168,10 +169,41 @@ def add_target_ranks(frame: pd.DataFrame) -> pd.DataFrame:
     return pd.concat(blocks, ignore_index=True)
 
 
+def rank_fusion(
+    magnitude: Iterable[float], safeconf: Iterable[float], alpha: float
+) -> np.ndarray:
+    """Combine average ranks without floating-point tie splitting.
+
+    The registered alpha grid advances in twentieths.  Combining the raw
+    half-integer average ranks with the corresponding integer numerator before
+    one final division is mathematically identical to the percentile formula,
+    while preserving every theoretical tie exactly.
+    """
+    magnitude = np.asarray(list(magnitude), dtype=float)
+    safeconf = np.asarray(list(safeconf), dtype=float)
+    if len(magnitude) != len(safeconf) or len(magnitude) < 2:
+        raise AnalysisFailure("rank fusion requires aligned finite arrays")
+    if not np.isfinite(magnitude).all() or not np.isfinite(safeconf).all():
+        raise AnalysisFailure("rank fusion requires aligned finite arrays")
+    numerator = int(round(float(alpha) * ALPHA_DENOMINATOR))
+    if not math.isclose(
+        float(alpha), numerator / ALPHA_DENOMINATOR, rel_tol=0.0, abs_tol=1e-12
+    ):
+        raise AnalysisFailure("alpha is outside the registered twentieth grid")
+    magnitude_rank = rankdata(magnitude, method="average")
+    safeconf_rank = rankdata(safeconf, method="average")
+    weighted_rank = (
+        numerator * magnitude_rank
+        + (ALPHA_DENOMINATOR - numerator) * safeconf_rank
+    )
+    return weighted_rank / (ALPHA_DENOMINATOR * len(magnitude))
+
+
 def fusion_score(frame: pd.DataFrame, alpha: float) -> np.ndarray:
-    return (
-        alpha * frame.rank_magnitude.to_numpy(float)
-        + (1.0 - alpha) * frame.rank_safeconf.to_numpy(float)
+    return rank_fusion(
+        frame.predicted_magnitude.to_numpy(float),
+        frame.safeconf_e201_risk.to_numpy(float),
+        alpha,
     )
 
 
@@ -254,8 +286,11 @@ def macro_bootstrap_metrics(
         indices = sampled_indices[keep]
         target_occurrences = occurrences[keep]
         rank_magnitude = percentile_rank(arrays["magnitude"][indices])
-        rank_safeconf = percentile_rank(arrays["safeconf"][indices])
-        fused = alphas[target] * rank_magnitude + (1.0 - alphas[target]) * rank_safeconf
+        fused = rank_fusion(
+            arrays["magnitude"][indices],
+            arrays["safeconf"][indices],
+            alphas[target],
+        )
         fusion_rows.append(
             review_metrics(
                 fused,
@@ -670,6 +705,11 @@ def self_test() -> None:
         metrics["utility"], 1.0
     ):
         raise AnalysisFailure("metric self-test failed")
+    magnitude = np.asarray([1.0, 2.0, 3.0, 4.0, 5.0])
+    safeconf = np.asarray([5.0, 1.0, 2.0, 3.0, 4.0])
+    fused = rank_fusion(magnitude, safeconf, 0.80)
+    if fused[0] != fused[1]:
+        raise AnalysisFailure("fusion tie-stability self-test failed")
     print("E206 self-test PASS")
 
 
