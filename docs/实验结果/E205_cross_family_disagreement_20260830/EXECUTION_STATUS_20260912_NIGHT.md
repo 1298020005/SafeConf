@@ -27,3 +27,7 @@
 - 已完成状态：`.../K562/seed_1/E205_RUN_STATUS.json` 与 `.../RPE1/seed_1/E205_RUN_STATUS.json`。
 
 绝对路径只用于服务器执行审计，不写入论文图表。
+
+## 训练后第一道门
+
+已新增 `tools/scripts/seal_e205_exphormer_checkpoint_family.py`。16 项全部完成后，该入口逐项检查：80 轮计数、模型结构、训练与验证行数、零目标真值访问、检查点 SHA-256、参数有限性和 16 项状态张量结构一致性。只有全部通过才生成 E205 checkpoint family seal；任何一项失败都会阻止后续预测。
