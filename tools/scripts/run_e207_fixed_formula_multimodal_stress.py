@@ -127,6 +127,8 @@ def validate_and_load() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.Da
         manifest.append({"path": path.relative_to(ROOT).as_posix(), "rows": len(frame), "bytes": path.stat().st_size, "sha256": observed})
         frames.append(frame)
     e153, e187, chemical_summary, chemical_boot = frames
+    if "model_disagreement_rmse" in e187.columns and DIS not in e187.columns:
+        e187 = e187.rename(columns={"model_disagreement_rmse": DIS})
     required = {"dataset", "fold_id", "perturbation", ERROR, MAG, SAFE, DIS}
     for name, frame in (("E153", e153), ("E187", e187)):
         missing = required.difference(frame.columns)

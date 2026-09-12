@@ -32,7 +32,7 @@ E207 的输入真值早已解封，项目人员也已经看过这些数据的历
 - 规模：8,196 行，4 个数据集，4 档训练量，4 种测试设置。
 - Frangieh、Lara、Santinha 为遗传扰动；Cui_direct41 为细胞因子扰动。
 - 排序批次：`dataset × fold_id × train_fraction × setting`。
-- 误差和分数字段与 E153 对齐。
+- 误差、幅度和 SafeConf 字段与 E153 对齐；分歧字段在 E187 中命名为 `model_disagreement_rmse`，运行器只做列名映射，不改变数值。
 
 ### 2.3 化学扰动边界
 
