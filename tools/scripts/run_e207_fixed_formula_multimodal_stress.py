@@ -9,6 +9,7 @@ confirmation experiment.
 from __future__ import annotations
 
 import argparse
+import concurrent.futures
 import hashlib
 import json
 import math
@@ -53,6 +54,7 @@ class ContractError(RuntimeError):
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--bootstrap", type=int, default=N_BOOT)
+    parser.add_argument("--workers", type=int, default=min(8, os.cpu_count() or 1))
     parser.add_argument("--self-test", action="store_true")
     return parser.parse_args()
 
@@ -207,13 +209,12 @@ def resample_clusters(frame: pd.DataFrame, rng: np.random.Generator) -> pd.DataF
     return pd.concat(blocks, ignore_index=True)
 
 
-def bootstrap_delta(frame: pd.DataFrame, batch_columns: list[str], n_bootstrap: int, label: str) -> tuple[pd.DataFrame, pd.DataFrame]:
-    if n_bootstrap < 100:
-        raise ContractError("bootstrap must be at least 100")
+def bootstrap_chunk(frame: pd.DataFrame, batch_columns: list[str], label: str, indices: list[int]) -> pd.DataFrame:
     datasets = sorted(frame.dataset.unique())
-    rng = np.random.default_rng(SEED + sum(map(ord, label)))
     rows = []
-    for replicate in range(n_bootstrap):
+    label_seed = sum((index + 1) * ord(char) for index, char in enumerate(label))
+    for replicate in indices:
+        rng = np.random.default_rng(SEED + label_seed + replicate * 1_000_003)
         study_values = []
         for dataset in datasets:
             sampled = resample_clusters(frame.loc[frame.dataset.eq(dataset)], rng)
@@ -232,7 +233,29 @@ def bootstrap_delta(frame: pd.DataFrame, batch_columns: list[str], n_bootstrap: 
             "delta_spearman": float(np.mean([x["spearman"] for x in study_values])),
             "delta_review_utility": float(np.mean([x["review_utility"] for x in study_values])),
         })
-    draws = pd.DataFrame(rows)
+    return pd.DataFrame(rows)
+
+
+def bootstrap_delta(frame: pd.DataFrame, batch_columns: list[str], n_bootstrap: int, label: str, workers: int) -> tuple[pd.DataFrame, pd.DataFrame]:
+    if n_bootstrap < 100:
+        raise ContractError("bootstrap must be at least 100")
+    if workers < 1:
+        raise ContractError("workers must be positive")
+    chunks = [
+        list(map(int, chunk))
+        for chunk in np.array_split(np.arange(n_bootstrap), min(workers, n_bootstrap))
+        if len(chunk)
+    ]
+    if len(chunks) == 1:
+        draws = bootstrap_chunk(frame, batch_columns, label, chunks[0])
+    else:
+        with concurrent.futures.ProcessPoolExecutor(max_workers=len(chunks)) as pool:
+            futures = [
+                pool.submit(bootstrap_chunk, frame, batch_columns, label, chunk)
+                for chunk in chunks
+            ]
+            draws = pd.concat([future.result() for future in futures], ignore_index=True)
+        draws = draws.sort_values("replicate", kind="stable").reset_index(drop=True)
     summary = []
     for metric in ("delta_spearman", "delta_review_utility"):
         values = draws[metric].dropna().to_numpy(float)
@@ -344,7 +367,7 @@ def main() -> None:
         ("E187-genetic", e187.loc[e187.dataset.ne("Cui_direct41")], ["dataset", "fold_id", "train_fraction", "setting"], "E187_genetic_difficulty"),
         ("E187-cytokine", e187.loc[e187.dataset.eq("Cui_direct41")], ["dataset", "fold_id", "train_fraction", "setting"], "E187_cytokine_difficulty"),
     ):
-        d, s = bootstrap_delta(frame, batches, args.bootstrap, label)
+        d, s = bootstrap_delta(frame, batches, args.bootstrap, label, args.workers)
         draws.append(d)
         summaries.append(s)
 
@@ -376,6 +399,7 @@ def main() -> None:
         "weights_retuned": False,
         "independent_confirmation": False,
         "bootstrap_replicates": args.bootstrap,
+        "bootstrap_workers": args.workers,
         "bootstrap_unit": "perturbation cluster within dataset",
         "truth_role": "retrospective evaluation only; outcomes were previously released",
         "e205_confirmation_status": "PENDING_TRAINING",
