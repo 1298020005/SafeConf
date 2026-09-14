@@ -1,0 +1,13 @@
+{
+  "experiment": "E210_adaptive_router_development",
+  "evidence_identity": "released_data_method_development",
+  "input_sha256": "b75f5edae0bb585ba5ff18aecafcc2389b0f05fd5cc86b36960afb4b62e4a15a",
+  "n_tasks": 3465,
+  "n_studies": 8,
+  "n_folds": 34,
+  "bootstrap_replicates": 2000,
+  "primary_formula": "one_sided_025",
+  "primary_gate": "PASS",
+  "external_confirmation": false,
+  "target_truth_modified": false
+}
