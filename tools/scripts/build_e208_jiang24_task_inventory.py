@@ -15,7 +15,7 @@ import pandas as pd
 
 PRIMARY_CELL_TYPES = ("k562", "mcf7", "ht29", "hap1")
 PRIMARY_TREATMENTS = ("IFNG", "INS", "TGFB")
-EXPECTED_H5AD_SHAPE = (1_628_476, 15_476)
+EXPECTED_H5AD_SHAPE = (1_628_476, 15_473)
 EXPECTED_SPLIT_SHA256 = (
     "5af7da86a5b3994d570c0b1957d91f17cebb9f9b1943bac738b74fdb14b2ef5d"
 )
@@ -77,6 +77,13 @@ def main() -> None:
         raise InventoryFailure("D0 raw audit gates are incomplete")
     if sha256_file(split_path) != EXPECTED_SPLIT_SHA256:
         raise InventoryFailure("official split changed")
+    audited_h5ad = audit.get("h5ad", {})
+    if (
+        Path(audited_h5ad.get("path", "")).resolve() != h5ad_path
+        or (audited_h5ad.get("n_obs"), audited_h5ad.get("n_vars"))
+        != EXPECTED_H5AD_SHAPE
+    ):
+        raise InventoryFailure("H5AD path or audited matrix shape changed")
 
     adata = ad.read_h5ad(h5ad_path, backed="r")
     try:
