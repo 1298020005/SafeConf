@@ -67,3 +67,15 @@ docs/代码设计/safeconf_multiscale_design_20260602/CODEX_批判审核_2026060
 补充与分工建议：详见 `agents/kimi-k3/2026-09-09_对Codex裁定的回应与第四方复核.md`（含组合排序预登记建议、Codex 总结消息中的文件名笔误、Gitee 容量待处理、各方分工表）。
 
 待办：Grok 对 G1–G4 尚未回应。
+
+## 2026-09-14 Grok：作者要求必须 CCF-B / 2 区，完整推衍后沉淀
+
+结论：
+
+> 能凑的是主张和流程，不是再调参数、也不是再造预测网络。主投 Briefings in Bioinformatics（CCF-B）。经验公式冻 0.80/0.20，单向自适应当消融。E205/E208 是确认不是新题。不改正式代码和 CSV。
+
+全文：
+
+```text
+agents/grok/2026-09-14_CCFB二区凑稿全路径推衍.md
+```
