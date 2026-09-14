@@ -201,6 +201,16 @@ def add_lodo_scores(frame: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     return pd.concat(blocks, ignore_index=True), pd.DataFrame(weights)
 
 
+def materialize_fixed_scores(frame: pd.DataFrame) -> pd.DataFrame:
+    blocks = []
+    for _, block in frame.groupby(["dataset", "fold_id"], sort=True):
+        block = block.copy()
+        for formula, values in fixed_scores(block).items():
+            block[formula] = values
+        blocks.append(block)
+    return pd.concat(blocks, ignore_index=True)
+
+
 def top20_metrics(score: np.ndarray, outcome: np.ndarray) -> tuple[float, float]:
     n = len(score)
     k = max(1, int(math.ceil(0.20 * n)))
@@ -218,9 +228,8 @@ def study_metrics(frame: pd.DataFrame) -> pd.DataFrame:
         fold_rows = []
         for fold_id, block in study.groupby("fold_id", sort=True):
             outcome = block.error_two_predictor_mean_rmse.to_numpy(float)
-            scores = fixed_scores(block)
-            scores["setting_adaptive_lodo"] = block.setting_adaptive_lodo.to_numpy(float)
-            for formula, score in scores.items():
+            for formula in FORMULAS:
+                score = block[formula].to_numpy(float)
                 enrichment, capture = top20_metrics(score, outcome)
                 fold_rows.append(
                     {
@@ -255,15 +264,36 @@ def bootstrap_study(frame: pd.DataFrame, n_bootstrap: int) -> pd.DataFrame:
     rng = np.random.default_rng(MASTER_SEED)
     rows = []
     for dataset, study in frame.groupby("dataset", sort=True):
+        study = study.reset_index(drop=True)
+        folds = study.fold_id.astype(str).to_numpy()
+        outcome = study.error_two_predictor_mean_rmse.to_numpy(float)
+        score_arrays = {
+            formula: study[formula].to_numpy(float)
+            for formula in ("magnitude", "one_sided_025", "setting_adaptive_lodo")
+        }
         clusters = sorted(study.perturbation.astype(str).unique())
-        members = {cluster: study.index[study.perturbation.astype(str).eq(cluster)].to_numpy() for cluster in clusters}
+        perturbations = study.perturbation.astype(str).to_numpy()
+        members = {
+            cluster: np.flatnonzero(perturbations == cluster) for cluster in clusters
+        }
         for replicate in range(n_bootstrap):
             chosen = rng.choice(clusters, size=len(clusters), replace=True)
-            sampled = pd.concat([study.loc[members[cluster]].copy() for cluster in chosen], ignore_index=True)
-            metrics = study_metrics(sampled.assign(dataset=dataset))
-            mag = float(metrics.loc[metrics.formula.eq("magnitude"), "spearman"].iloc[0])
+            positions = np.concatenate([members[cluster] for cluster in chosen])
+            fold_values = np.unique(folds[positions])
+            formula_values = {}
+            for formula, scores in score_arrays.items():
+                correlations = []
+                for fold in fold_values:
+                    selected = positions[folds[positions] == fold]
+                    if len(selected) < 4:
+                        continue
+                    value = spearman(scores[selected], outcome[selected])
+                    if math.isfinite(value):
+                        correlations.append(value)
+                formula_values[formula] = float(np.mean(correlations))
+            mag = formula_values["magnitude"]
             for formula in ("one_sided_025", "setting_adaptive_lodo"):
-                value = float(metrics.loc[metrics.formula.eq(formula), "spearman"].iloc[0])
+                value = formula_values[formula]
                 rows.append({"dataset": dataset, "replicate": replicate, "formula": formula, "delta_spearman_vs_magnitude": value - mag})
     return pd.DataFrame(rows)
 
@@ -320,6 +350,7 @@ def main() -> None:
         raise AnalysisFailure("at least 100 bootstrap replicates are required")
     frame = validate_input(args.input.resolve())
     frame, weights = add_lodo_scores(frame)
+    frame = materialize_fixed_scores(frame)
     studies = study_metrics(frame)
     draws = bootstrap_study(frame, args.bootstrap)
     summary = hierarchical_summary(studies, draws, args.bootstrap)
