@@ -77,3 +77,24 @@ LinearAdditive 的单批 smoke：
 
 只有 smoke 全部通过，才启动四个 LatentAdditive 种子和一个 LinearAdditive 正式
 模型。延迟读取解决内存风险，不代表模型训练门已经通过。
+
+## 5. 已启动的等待监管器
+
+2026-09-15 19:36（Asia/Shanghai）已启动 tmux 会话：
+
+```text
+safeconf_e208_after_e205_h5_smoke
+```
+
+状态文件位于：
+
+```text
+DATA/perturbench_e208/after_e205_smoke_supervisor_20260915/
+E208_AFTER_E205_SUPERVISOR_STATUS.json
+```
+
+监管器每 60 秒读取 E205 队列状态。只有 E205 达到 16/16、无永久失败且仍未授权读取
+真值时，才重新核验 93 GB H5 哈希并运行 E208 smoke。只有 CUDA OOM 可以依次尝试
+2000、1000、500、250 四个已登记批量；数据、配置、checkpoint 或隔离错误会立即
+停止。Smoke 通过后状态写为 `SMOKE_PASS_FORMAL_QUEUE_NOT_STARTED`，不会擅自打开
+测试真值，也不会在正式队列尚未验收时直接启动五个模型。
