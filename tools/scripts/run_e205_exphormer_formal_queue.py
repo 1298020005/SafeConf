@@ -187,6 +187,29 @@ def job_state(run_dir: Path) -> str:
     return "failed"
 
 
+def count_valid_completed(root: Path) -> int:
+    """Count only jobs that pass the full formal completion contract.
+
+    The queue used to update ``completed`` only before sleeping.  If the last
+    active jobs finished together, the loop could exit before writing the
+    final count, leaving ``status=COMPLETE`` with a stale value such as 14.
+    Downstream supervisors correctly reject that inconsistent state.  Keeping
+    the count in one validated helper lets both the loop and finalizer publish
+    the same fail-closed value.
+    """
+    completed = 0
+    for target, seed in JOBS:
+        run_dir = run_dir_for(root, target, seed)
+        if job_state(run_dir) != "complete":
+            continue
+        try:
+            validate_complete(run_dir, target, seed)
+        except QueueFailure:
+            continue
+        completed += 1
+    return completed
+
+
 def resume_checkpoint_for(run_dir: Path, target: str, seed: int) -> Path | None:
     status_path = run_dir / "E205_RUN_STATUS.json"
     checkpoint = run_dir / "checkpoints/last.ckpt"
@@ -468,16 +491,7 @@ def main() -> None:
                 own_pids.add(process.pid)
                 log(f"START {target}/seed_{seed} attempt={attempt} GPU {device}")
 
-            completed = 0
-            for target, seed in JOBS:
-                run_dir = run_dir_for(root, target, seed)
-                if job_state(run_dir) == "complete":
-                    try:
-                        validate_complete(run_dir, target, seed)
-                    except QueueFailure:
-                        pass
-                    else:
-                        completed += 1
+            completed = count_valid_completed(root)
             queue_status.update(
                 {
                     "updated_at": now(),
@@ -517,16 +531,30 @@ def main() -> None:
             for device, entry in active.items()
             if entry["process"].poll() is None
         ]
+        final_completed = count_valid_completed(root)
         if stop_requested:
             final_status = "INTERRUPTED"
         elif permanent_failures:
             final_status = "FAILED"
+        elif final_completed != len(JOBS):
+            final_status = "FAILED"
+            permanent_failures.append(
+                {
+                    "reason": "queue drained without all formal completion gates",
+                    "completed": final_completed,
+                    "expected": len(JOBS),
+                }
+            )
         else:
             final_status = "COMPLETE"
         queue_status.update(
             {
                 "status": final_status,
                 "finished_at": now(),
+                "completed": final_completed,
+                "waiting": max(len(JOBS) - final_completed - len(running), 0),
+                "active": running,
+                "detached": [],
                 "running_children_preserved": running,
                 "permanent_failures": permanent_failures,
                 "archives": archives,

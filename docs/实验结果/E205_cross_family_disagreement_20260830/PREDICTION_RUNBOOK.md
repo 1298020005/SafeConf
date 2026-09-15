@@ -27,7 +27,7 @@ E205 要检验跨模型结构分歧。若看到部分目标误差后再决定用
 python tools/scripts/run_e205_pretruth_risk_features.py \
   --data-root /home/yyf/data \
   --family-seal docs/实验结果/E205_cross_family_disagreement_20260830/E205_EXPHORMER_FAMILY_SEAL.json \
-  --prediction-root /home/yyf/data/txpert_official_20260802/e205/predictions \
+  --prediction-root /home/yyf/data/txpert_official_20260802/e205/formal/predictions \
   --risk-table docs/实验结果/E205_cross_family_disagreement_20260830/tables/E205_PRETRUTH_RISK_FEATURES.csv \
   --risk-status docs/实验结果/E205_cross_family_disagreement_20260830/E205_PRETRUTH_RISK_STATUS.json \
   --vector-output-dir /home/yyf/data/txpert_official_20260802/e205/pretruth_vectors

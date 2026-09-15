@@ -134,6 +134,45 @@ class E205QueueTests(unittest.TestCase):
             )
             self.assertIsNone(E205.resume_checkpoint_for(run_dir, "K562", 1))
 
+    def test_final_completion_count_revalidates_run_contracts(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            checkpoint = root / "last.ckpt"
+            checkpoint.write_bytes(b"checkpoint")
+            valid = root / "K562/seed_1"
+            self.write_status(
+                valid,
+                {
+                    "status": "COMPLETE",
+                    "kind": "formal",
+                    "target": "K562",
+                    "seed": 1,
+                    "model_family": "TxPert-Exphormer",
+                    "architecture_change_only": True,
+                    "base_config": "config-x-cell-gat",
+                    "resolved_model_config": {
+                        "pert_model": {"model_type": "exphormer"}
+                    },
+                    "current_epoch": 80,
+                    "target_perturbed_cells_accessed": 0,
+                    "target_test_dataset_constructed": False,
+                    "last_model_path": str(checkpoint),
+                },
+            )
+            invalid = root / "RPE1/seed_1"
+            self.write_status(
+                invalid,
+                {
+                    "status": "COMPLETE",
+                    "kind": "formal",
+                    "target": "RPE1",
+                    "seed": 1,
+                    "model_family": "TxPert-STRING-GAT",
+                },
+            )
+
+            self.assertEqual(E205.count_valid_completed(root), 1)
+
 
 if __name__ == "__main__":
     unittest.main()

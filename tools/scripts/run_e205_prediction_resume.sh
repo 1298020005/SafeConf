@@ -4,15 +4,17 @@ set -euo pipefail
 # Resume sealed E205 Exphormer prediction for selected targets.  Run at most
 # one copy per GPU.  Target truth remains absent from the prediction cache.
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SAFECONF_REPO="${SAFECONF_REPO:-$(cd "$SCRIPT_DIR/../.." && pwd)}"
 PYTHON_BIN="${PYTHON_BIN:-/home/yyf/.venvs/txpert-08d82eea/bin/python}"
 TXPERT_REPO="${TXPERT_REPO:-/home/yyf/archive/external/TxPert}"
 DATA_ROOT="${DATA_ROOT:-/home/yyf/data}"
-FAMILY_SEAL="${FAMILY_SEAL:-/home/yyf/proj/docs/实验结果/E205_cross_family_disagreement_20260830/E205_EXPHORMER_FAMILY_SEAL.json}"
+FAMILY_SEAL="${FAMILY_SEAL:-$SAFECONF_REPO/docs/实验结果/E205_cross_family_disagreement_20260830/E205_EXPHORMER_FAMILY_SEAL.json}"
 PRED_ROOT="${PRED_ROOT:-/home/yyf/data/txpert_official_20260802/e205/formal/predictions}"
 BATCH_SIZE="${BATCH_SIZE:-16}"
 TARGETS_CSV="${TARGETS_CSV:-K562,RPE1,hepg2,jurkat}"
 
-RUNNER="/home/yyf/proj/tools/scripts/run_e201_txpert_sealed_prediction.py"
+RUNNER="$SAFECONF_REPO/tools/scripts/run_e201_txpert_sealed_prediction.py"
 IFS=',' read -r -a TARGETS <<< "$TARGETS_CSV"
 
 if [[ ! -x "$PYTHON_BIN" ]]; then
