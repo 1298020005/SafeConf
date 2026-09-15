@@ -10,7 +10,12 @@
 - `linear_best_params_jiang24.yaml` SHA-256：`798180ada8e75f521d0def1347cec1b95a171216f6e64dd96c6139d3d8500a39`；
 - 数据与官方切分哈希见 `D0_TASK_INVENTORY_REPORT.md`。
 
-正式环境使用独立的 Python 3.11 环境，安装上述固定提交，不修改 PerturBench 源码。环境锁文件和 GPU/软件版本在第一次 smoke 通过后写入，不事后改包版本追逐结果。
+正式环境使用独立的 Python 3.12.4 环境，安装上述固定提交，不修改 PerturBench 源码。环境锁文件和 GPU/软件版本在第一次 smoke 通过后写入，不事后改包版本追逐结果。
+
+2026-09-15 透明更正：本合同最初写成 Python 3.11，实际预检环境为 Python 3.12.4。
+更正在正式训练和测试真值访问之前完成，只修正环境身份，不改变数据、模型、超参数、
+任务、风险公式或评价门；旧值与更正原因保留在 Git 历史和
+`D1_ENVIRONMENT_PREFLIGHT.md` 中。
 
 ## 2. 正式上游模型
 

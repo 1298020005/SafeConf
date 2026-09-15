@@ -1,6 +1,6 @@
 # SafeConf 外部 Agent 当前入口
 
-更新时间：2026-09-09
+更新时间：2026-09-15
 
 事实分支：`exp/task-risk-audit-20260611`
 
@@ -8,22 +8,24 @@ Qoder、Gemini、Claude、Grok、新 Codex 和其他 Agent 统一从这里进入
 
 ## 阅读顺序
 
-1. [当前 24 图学习入口](docs/学习导航/20260909_WorkBuddy独立复审教学包/README.md)
-2. [当前能说什么](docs/学习导航/20260906_论文审核与从零教学/00_当前能说什么_记忆提纲.md)
-3. [E201 正式核心报告](docs/实验结果/E201_txpert_multitarget_retraining_20260802/formal_core_evaluation/reports/E201_CORE_REPORT.md)
-4. [E204 冻结协议](docs/实验结果/E204_risk_guided_training_20260830/ANALYSIS_FREEZE.md)
-5. [E204 四 target 工程验收](docs/实验结果/E204_risk_guided_training_20260830/PROFILE_ACCEPTANCE_20260905.md)
-6. [Codex 对 Kimi-K3 的复核与执行决定](agents/codex/2026-09-09_Kimi-K3复核与执行决定.md)
-7. 按任务再读 E199、E200、E202、E205 的正式报告或冻结协议。
+1. [2026-09-15 方法主线与执行门](docs/投稿准备/20260915_TCBB方法主线与执行门.md)
+2. [决策记录 D12–D13](agents/DECISIONS.md)
+3. [E181 注册模型家族证书](docs/实验结果/E181_registered_family_hilbert_certificate_20260724/README_先看这个.md)
+4. [E183 四研究综合及 E182 FAIL 边界](docs/实验结果/E183_all_study_family_synthesis_20260724/README_先看这个.md)
+5. [E201 正式核心报告](docs/实验结果/E201_txpert_multitarget_retraining_20260802/formal_core_evaluation/reports/E201_CORE_REPORT.md)
+6. [E205 跨结构实验入口](docs/实验结果/E205_cross_family_disagreement_20260830/README_先看这个.md)
+7. [E208 新外部证书副协议](docs/实验结果/E208_jiang24_external_confirmation_20260912/E208_CERTIFICATE_PREREGISTRATION_20260915.md)
+8. 需要从零学习时，再读[当前 24 图学习入口](docs/学习导航/20260909_WorkBuddy独立复审教学包/README.md)。
 
 ## 接手前必须复述正确的事实
 
 ```text
-E201 已完成并解封评价。
-SafeConf 有幅度之外的信息，但预测幅度是更强的单一排序器。
-E202 主门失败。
-E204 四个背景仅完成工程 profile；32 个正式任务已登记，但服务器复核时尚未开训，不是效果结果。
-E205 尚未运行。
+当前论文主线是注册模型家族的确定性误差下界、条件性 conformal 上界和失败关闭审计；经验排序为附加模块。
+E181 在 2,393 个任务、717 个靶点簇上得到两类下界 0 违反；E182 的上界覆盖 16/20，预注册门仍为 FAIL；E183 的 666/737 只是事后综合，不能替 E182 改判。
+E201 已完成并解封：SafeConf 与误差相关 0.4082，预测幅度为 0.6189，控制幅度后的偏相关为 0.2503。SafeConf 有幅度之外的信息，但不是更强的单一排序器。
+E205 正在运行 TxPert-Exphormer 的 4 背景×4 种子训练；截至 2026-09-15 13:31 已完成 6/16，两个任务从服务器重启断点恢复，目标真值未授权读取。
+E208 只完成 D0 元数据清单、模型合同和环境预检；没有正式训练、风险结果或外部确认成绩。
+E204 训练加权是独立问题，不阻塞当前最快的证书论文主线。
 ```
 
 若不能准确复述，不得开始改代码或设计新结论。
@@ -36,7 +38,8 @@ E205 尚未运行。
 4. 负结果不能删除、换口径或用事后阈值改判。
 5. 大型数据和模型权重留在数据盘，Git 保存代码、协议、摘要表与审计记录。
 6. 不将四个随机种子描述为四种模型；不把 profile PASS 描述为性能提升。
-7. 不承诺期刊录用。可以根据证据评价完整性，但录用还受审稿、选刊、写作和外部竞争影响。
+7. 不承诺期刊录用。可以按 TCBB 的计算方法口径关闭可控门，但录用仍受编辑、审稿、
+   选刊和外部竞争影响。
 
 ## 输出要求
 
