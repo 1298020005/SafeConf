@@ -7,9 +7,9 @@ E205/E208 truth artifact.
 
 For an application error tolerance ``tau`` and a deterministic lower bound
 ``L``, ``L > tau`` certifies that the corresponding observed error ``R`` is
-also above ``tau``.  A small lower bound is *unknown*, not evidence of safety.
-The calibrated upper bound is audited separately because its coverage is
-conditional on the stated conformal assumptions, not a pointwise guarantee.
+also above ``tau``.  A calibrated upper bound ``U <= tau`` is recorded as a
+conformal-low release, not a pointwise safety guarantee.  All remaining units
+are unknown.
 """
 from __future__ import annotations
 
@@ -404,10 +404,22 @@ def _curve_row(
     study: str,
     unit: str,
 ) -> dict[str, object]:
-    true_high = values["error"].to_numpy(float) > tau
-    certified_high = values["lower"].to_numpy(float) > tau
+    error = values["error"].to_numpy(float)
+    lower = values["lower"].to_numpy(float)
+    upper = values["upper"].to_numpy(float)
+    true_high = error > tau
+    certified_high = lower > tau
+    conformal_low = upper <= tau
+    overlap = certified_high & conformal_low
+    if overlap.any():
+        raise CertificateIntegrityError(
+            f"{study}/{objective}/{unit}: high and low decisions overlap"
+        )
+    unknown = ~(certified_high | conformal_low)
     false_certificate = certified_high & ~true_high
     true_positive = certified_high & true_high
+    false_low = conformal_low & true_high
+    correct_low = conformal_low & ~true_high
     upper_covered = (
         values["upper_covered"].to_numpy(bool)
         if "upper_covered" in values
@@ -418,6 +430,8 @@ def _curve_row(
     n_true = int(true_high.sum())
     n_certified = int(certified_high.sum())
     n_tp = int(true_positive.sum())
+    n_low = int(conformal_low.sum())
+    n_correct_low = int(correct_low.sum())
     return {
         "unit": unit,
         "study": study,
@@ -431,10 +445,20 @@ def _curve_row(
         "certified_high_coverage": _safe_ratio(n_certified, n),
         "certified_high_recall": _safe_ratio(n_tp, n_true),
         "certified_high_precision": _safe_ratio(n_tp, n_certified),
-        "unknown_fraction": _safe_ratio(n - n_certified, n),
+        "n_conformal_low": n_low,
+        "n_correct_conformal_low": n_correct_low,
+        "n_false_conformal_low": int(false_low.sum()),
+        "conformal_low_coverage": _safe_ratio(n_low, n),
+        "conformal_low_empirical_precision": _safe_ratio(n_correct_low, n_low),
+        "false_low_population_rate": _safe_ratio(int(false_low.sum()), n),
+        "n_unknown": int(unknown.sum()),
+        "unknown_fraction": _safe_ratio(int(unknown.sum()), n),
+        "decision_partition_complete": bool(
+            n_certified + n_low + int(unknown.sum()) == n
+        ),
         "upper_empirical_coverage": float(upper_covered.mean()),
         "guarantee_scope": (
-            "high certificate is deterministic; upper coverage is conformal/empirical"
+            "high is deterministic; low and upper coverage are marginal conformal/empirical"
         ),
     }
 
@@ -649,6 +673,52 @@ def make_figures(task_curves: pd.DataFrame, geometry: pd.DataFrame, out: Path) -
         fig.savefig(out / f"F2_CERTIFICATE_GEOMETRY.{suffix}", **kwargs)
     plt.close(fig)
 
+    family = task_curves.loc[
+        task_curves.objective.eq("family_rms")
+        & ~task_curves.study.eq("POOLED_DESCRIPTIVE")
+    ]
+    fig, axes = plt.subplots(2, 2, figsize=(8.4, 5.8), sharex=True, sharey=True)
+    for ax, (study, block) in zip(axes.flat, family.groupby("study", sort=False, observed=True)):
+        ax.plot(
+            block["tau"],
+            block["certified_high_coverage"],
+            color="#B84A4A",
+            lw=1.4,
+            marker="o",
+            ms=2.6,
+            label="certified high",
+        )
+        ax.plot(
+            block["tau"],
+            block["conformal_low_coverage"],
+            color="#2A8C82",
+            lw=1.4,
+            marker="s",
+            ms=2.4,
+            label="conformal low",
+        )
+        ax.plot(
+            block["tau"],
+            block["unknown_fraction"],
+            color="#6B7280",
+            lw=1.1,
+            ls="--",
+            label="unknown",
+        )
+        ax.set_title(study.replace("_", " "))
+        ax.set_xscale("log")
+        ax.set_ylim(-0.03, 1.03)
+        ax.grid(color="#E9EEF3", lw=0.7)
+    axes[1, 0].set_xlabel("Error tolerance tau (RMSE)")
+    axes[1, 1].set_xlabel("Error tolerance tau (RMSE)")
+    axes[0, 0].set_ylabel("Fraction of tasks")
+    axes[1, 0].set_ylabel("Fraction of tasks")
+    axes[0, 0].legend(frameon=False, fontsize=7, loc="center right")
+    fig.tight_layout()
+    for suffix, kwargs in (("png", {"dpi": 300}), ("svg", {})):
+        fig.savefig(out / f"F3_THREE_WAY_DECISION_COVERAGE.{suffix}", **kwargs)
+    plt.close(fig)
+
 
 def run(
     repo: Path,
@@ -683,7 +753,7 @@ def run(
         ["git", "-C", str(repo), "rev-parse", "HEAD"], text=True
     ).strip()
     status = {
-        "schema": "safeconf_certificate_operating_curves_v1",
+        "schema": "safeconf_certificate_operating_curves_v2",
         "status": "PASS",
         "analysis_type": "retrospective_recomputation_from_released_e183_table",
         "git_head_at_run": git_head,
@@ -715,7 +785,8 @@ def run(
         "interpretation_limits": [
             "E181 and E183 are retrospective; E183 was produced after E182 truth was opened.",
             "E182 remains a preregistered FAIL (16/20 target clusters); this audit does not reclassify it.",
-            "L > tau is a deterministic high-error certificate; L <= tau is UNKNOWN, not safe.",
+            "L > tau is a deterministic high-error certificate; L <= tau alone is not evidence of safety.",
+            "U <= tau is a marginal conformal-low release, not a pointwise or selective conditional safety guarantee.",
             "Upper-bound coverage is marginal/conditional on the conformal contract, not a pointwise guarantee after arbitrary selection.",
             "The default tau grid is a retrospective diagnostic grid and must be frozen or externally justified before a new prospective study.",
             "Pooled absolute-tau rows are descriptive because error normalization and biology differ by study.",
@@ -735,11 +806,17 @@ This directory is rebuilt only from the released E181/E182/E183 tables.
   technical tasks for one target; maxima preserve the lower-bound implication.
 - `CERTIFICATE_GEOMETRY_SUMMARY.csv`: recomputed lower-bound tightness,
   interval width, and empirical upper coverage.
+- `F3_THREE_WAY_DECISION_COVERAGE`: retrospective high / conformal-low /
+  unknown decision fractions by study and tolerance.
 - `STATUS.json`: input lineage, numerical gates, and interpretation limits.
+- `REPORT.md`: Chinese result interpretation, boundary conditions, and the
+  prospective E205/E208 hand-off.
 
 `certified_high_coverage` is the fraction of all units with `lower > tau`; it
-is an issuance rate, not conformal coverage.  `lower <= tau` means `UNKNOWN`,
-not safe.  Pooled rows and the default tau grid are retrospective diagnostics.
+is an issuance rate, not conformal coverage.  `conformal_low_coverage` is the
+fraction with `upper <= tau`; it remains a marginal conformal statement.
+Everything between the bounds is `UNKNOWN`.  Pooled rows and the default tau
+grid are retrospective diagnostics.
 """
     _atomic_text(output_dir / "README.md", readme)
     return status

@@ -71,14 +71,29 @@ class CertificateCurveTests(unittest.TestCase):
         self.assertEqual(int(target_row.n_units), 2)
         self.assertEqual(int(target_row.n_certified_high), 2)
 
-    def test_threshold_is_strict_and_unknown_is_not_safe(self) -> None:
+    def test_high_low_unknown_partition_is_complete(self) -> None:
         task, _ = compute_operating_curves(synthetic_tasks(), [0.30])
         row = task.loc[
             task.study.eq("S") & task.objective.eq("family_rms")
         ].iloc[0]
-        # lower == tau is UNKNOWN; only 0.45 is certified high.
+        # lower == tau is not high; upper == tau is a conformal-low release.
         self.assertEqual(int(row.n_certified_high), 1)
-        self.assertAlmostEqual(float(row.unknown_fraction), 2 / 3)
+        self.assertEqual(int(row.n_conformal_low), 1)
+        self.assertEqual(int(row.n_unknown), 1)
+        self.assertAlmostEqual(float(row.unknown_fraction), 1 / 3)
+        self.assertTrue(bool(row.decision_partition_complete))
+
+    def test_false_low_is_reported_not_hidden(self) -> None:
+        tasks = synthetic_tasks()
+        tasks.loc[tasks.task_id.eq("a1"), "family_upper"] = 0.15
+        task, _ = compute_operating_curves(tasks, [0.18])
+        row = task.loc[
+            task.study.eq("S") & task.objective.eq("family_rms")
+        ].iloc[0]
+        self.assertEqual(int(row.n_conformal_low), 1)
+        self.assertEqual(int(row.n_false_conformal_low), 1)
+        self.assertAlmostEqual(float(row.false_low_population_rate), 1 / 3)
+        self.assertAlmostEqual(float(row.conformal_low_empirical_precision), 0.0)
 
     def test_target_upper_coverage_is_simultaneous_not_max_vs_max(self) -> None:
         tasks = synthetic_tasks()
@@ -112,6 +127,9 @@ class CertificateCurveTests(unittest.TestCase):
         self.assertEqual(status["status"], "PASS")
         self.assertEqual(int(task.n_false_certificates.sum()), 0)
         self.assertEqual(int(target.n_false_certificates.sum()), 0)
+        self.assertTrue(task.decision_partition_complete.all())
+        self.assertTrue(target.decision_partition_complete.all())
+        self.assertEqual(saved["schema"], "safeconf_certificate_operating_curves_v2")
         self.assertEqual(saved["provenance"]["truth_array_files_read"], 0)
         self.assertEqual(saved["provenance"]["e205_truth_read"], 0)
         self.assertEqual(saved["provenance"]["e208_truth_read"], 0)
