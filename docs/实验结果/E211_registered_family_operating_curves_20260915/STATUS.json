@@ -1,7 +1,7 @@
 {
   "analysis_type": "retrospective_recomputation_from_released_e183_table",
-  "code_sha256": "33f98410363a6f819384b23615f07f366c5c543a6f2d78c09ca4e364e4525c9f",
-  "git_head_at_run": "77091912340e0090b768f509ddac723ce6d1e1fe",
+  "code_sha256": "5f64c89cdd467870be9a6fa2d82583e672b13ac06807d56f4d5a0eaecb06fde1",
+  "git_head_at_run": "371f500cc8471ece85c975f8cd1565845eae375c",
   "input_sha256": {
     "docs/实验结果/E181_registered_family_hilbert_certificate_20260724/tables/E181_TASK_CERTIFICATES.csv": "47fe92eeb7613c4121eaa6559009ea9bb96f034b8386bf1b6e8db1f91cb8df4c",
     "docs/实验结果/E182_gse225807_registered_family_20260724/final_evaluation/E182_FINAL_SUMMARY.json": "7673b756758e3e61af7c56472745b49eb652ee4572c15504a80bf4074373a2a5",
@@ -27,7 +27,8 @@
   "interpretation_limits": [
     "E181 and E183 are retrospective; E183 was produced after E182 truth was opened.",
     "E182 remains a preregistered FAIL (16/20 target clusters); this audit does not reclassify it.",
-    "L > tau is a deterministic high-error certificate; L <= tau is UNKNOWN, not safe.",
+    "L > tau is a deterministic high-error certificate; L <= tau alone is not evidence of safety.",
+    "U <= tau is a marginal conformal-low release, not a pointwise or selective conditional safety guarantee.",
     "Upper-bound coverage is marginal/conditional on the conformal contract, not a pointwise guarantee after arbitrary selection.",
     "The default tau grid is a retrospective diagnostic grid and must be frozen or externally justified before a new prospective study.",
     "Pooled absolute-tau rows are descriptive because error normalization and biology differ by study."
@@ -51,7 +52,7 @@
     ],
     "truth_array_files_read": 0
   },
-  "schema": "safeconf_certificate_operating_curves_v1",
+  "schema": "safeconf_certificate_operating_curves_v2",
   "status": "PASS",
   "tau_grid": [
     0.01,

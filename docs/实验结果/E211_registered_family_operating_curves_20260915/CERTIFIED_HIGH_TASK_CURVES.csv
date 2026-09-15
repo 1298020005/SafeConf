@@ -1,141 +1,141 @@
-unit,study,objective,tau,n_units,n_true_high,n_certified_high,n_certified_true_high,n_false_certificates,certified_high_coverage,certified_high_recall,certified_high_precision,unknown_fraction,upper_empirical_coverage,guarantee_scope
-task,E176_primary_CD4,family_rms,0.01,1920,1920,1920,1920,0,1,1,1,0,0.9526041666666667,high certificate is deterministic; upper coverage is conformal/empirical
-task,E176_primary_CD4,family_rms,0.014999999999999999,1920,1920,1918,1918,0,0.99895833333333328,0.99895833333333328,1,0.0010416666666666667,0.9526041666666667,high certificate is deterministic; upper coverage is conformal/empirical
-task,E176_primary_CD4,family_rms,0.02,1920,1920,1575,1575,0,0.8203125,0.8203125,1,0.1796875,0.9526041666666667,high certificate is deterministic; upper coverage is conformal/empirical
-task,E176_primary_CD4,family_rms,0.025000000000000001,1920,1920,662,662,0,0.34479166666666666,0.34479166666666666,1,0.65520833333333328,0.9526041666666667,high certificate is deterministic; upper coverage is conformal/empirical
-task,E176_primary_CD4,family_rms,0.029999999999999999,1920,1920,141,141,0,0.073437500000000003,0.073437500000000003,1,0.92656249999999996,0.9526041666666667,high certificate is deterministic; upper coverage is conformal/empirical
-task,E176_primary_CD4,family_rms,0.040000000000000001,1920,1920,15,15,0,0.0078125,0.0078125,1,0.9921875,0.9526041666666667,high certificate is deterministic; upper coverage is conformal/empirical
-task,E176_primary_CD4,family_rms,0.050000000000000003,1920,1920,3,3,0,0.0015625000000000001,0.0015625000000000001,1,0.99843749999999998,0.9526041666666667,high certificate is deterministic; upper coverage is conformal/empirical
-task,E176_primary_CD4,family_rms,0.059999999999999998,1920,1876,3,3,0,0.0015625000000000001,0.0015991471215351812,1,0.99843749999999998,0.9526041666666667,high certificate is deterministic; upper coverage is conformal/empirical
-task,E176_primary_CD4,family_rms,0.070000000000000007,1920,1703,0,0,0,0,0,,1,0.9526041666666667,high certificate is deterministic; upper coverage is conformal/empirical
-task,E176_primary_CD4,family_rms,0.080000000000000002,1920,1442,0,0,0,0,0,,1,0.9526041666666667,high certificate is deterministic; upper coverage is conformal/empirical
-task,E176_primary_CD4,family_rms,0.10000000000000001,1920,906,0,0,0,0,0,,1,0.9526041666666667,high certificate is deterministic; upper coverage is conformal/empirical
-task,E176_primary_CD4,family_rms,0.14999999999999999,1920,306,0,0,0,0,0,,1,0.9526041666666667,high certificate is deterministic; upper coverage is conformal/empirical
-task,E176_primary_CD4,family_rms,0.20000000000000001,1920,121,0,0,0,0,0,,1,0.9526041666666667,high certificate is deterministic; upper coverage is conformal/empirical
-task,E176_primary_CD4,family_rms,0.29999999999999999,1920,25,0,0,0,0,0,,1,0.9526041666666667,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,family_rms,0.01,400,400,400,400,0,1,1,1,0,0.98250000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,family_rms,0.014999999999999999,400,400,400,400,0,1,1,1,0,0.98250000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,family_rms,0.02,400,400,400,400,0,1,1,1,0,0.98250000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,family_rms,0.025000000000000001,400,400,400,400,0,1,1,1,0,0.98250000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,family_rms,0.029999999999999999,400,400,392,392,0,0.97999999999999998,0.97999999999999998,1,0.02,0.98250000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,family_rms,0.040000000000000001,400,400,138,138,0,0.34499999999999997,0.34499999999999997,1,0.65500000000000003,0.98250000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,family_rms,0.050000000000000003,400,400,8,8,0,0.02,0.02,1,0.97999999999999998,0.98250000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,family_rms,0.059999999999999998,400,400,0,0,0,0,0,,1,0.98250000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,family_rms,0.070000000000000007,400,400,0,0,0,0,0,,1,0.98250000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,family_rms,0.080000000000000002,400,400,0,0,0,0,0,,1,0.98250000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,family_rms,0.10000000000000001,400,400,0,0,0,0,0,,1,0.98250000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,family_rms,0.14999999999999999,400,370,0,0,0,0,0,,1,0.98250000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,family_rms,0.20000000000000001,400,257,0,0,0,0,0,,1,0.98250000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,family_rms,0.29999999999999999,400,77,0,0,0,0,0,,1,0.98250000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,family_rms,0.01,73,73,73,73,0,1,1,1,0,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,family_rms,0.014999999999999999,73,73,73,73,0,1,1,1,0,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,family_rms,0.02,73,73,73,73,0,1,1,1,0,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,family_rms,0.025000000000000001,73,73,3,3,0,0.041095890410958902,0.041095890410958902,1,0.95890410958904104,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,family_rms,0.029999999999999999,73,73,0,0,0,0,0,,1,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,family_rms,0.040000000000000001,73,73,0,0,0,0,0,,1,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,family_rms,0.050000000000000003,73,72,0,0,0,0,0,,1,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,family_rms,0.059999999999999998,73,65,0,0,0,0,0,,1,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,family_rms,0.070000000000000007,73,54,0,0,0,0,0,,1,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,family_rms,0.080000000000000002,73,45,0,0,0,0,0,,1,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,family_rms,0.10000000000000001,73,27,0,0,0,0,0,,1,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,family_rms,0.14999999999999999,73,4,0,0,0,0,0,,1,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,family_rms,0.20000000000000001,73,0,0,0,0,0,,,1,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,family_rms,0.29999999999999999,73,0,0,0,0,0,,,1,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,family_rms,0.01,40,40,40,40,0,1,1,1,0,0.90000000000000002,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,family_rms,0.014999999999999999,40,40,40,40,0,1,1,1,0,0.90000000000000002,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,family_rms,0.02,40,40,40,40,0,1,1,1,0,0.90000000000000002,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,family_rms,0.025000000000000001,40,40,40,40,0,1,1,1,0,0.90000000000000002,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,family_rms,0.029999999999999999,40,40,40,40,0,1,1,1,0,0.90000000000000002,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,family_rms,0.040000000000000001,40,40,40,40,0,1,1,1,0,0.90000000000000002,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,family_rms,0.050000000000000003,40,40,40,40,0,1,1,1,0,0.90000000000000002,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,family_rms,0.059999999999999998,40,40,40,40,0,1,1,1,0,0.90000000000000002,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,family_rms,0.070000000000000007,40,40,40,40,0,1,1,1,0,0.90000000000000002,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,family_rms,0.080000000000000002,40,40,0,0,0,0,0,,1,0.90000000000000002,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,family_rms,0.10000000000000001,40,39,0,0,0,0,0,,1,0.90000000000000002,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,family_rms,0.14999999999999999,40,17,0,0,0,0,0,,1,0.90000000000000002,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,family_rms,0.20000000000000001,40,4,0,0,0,0,0,,1,0.90000000000000002,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,family_rms,0.29999999999999999,40,1,0,0,0,0,0,,1,0.90000000000000002,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,family_rms,0.01,2433,2433,2433,2433,0,1,1,1,0,0.95807644882860665,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,family_rms,0.014999999999999999,2433,2433,2431,2431,0,0.99917796958487459,0.99917796958487459,1,0.00082203041512535961,0.95807644882860665,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,family_rms,0.02,2433,2433,2088,2088,0,0.85819975339087551,0.85819975339087551,1,0.14180024660912455,0.95807644882860665,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,family_rms,0.025000000000000001,2433,2433,1105,1105,0,0.45417180435676119,0.45417180435676119,1,0.54582819564323881,0.95807644882860665,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,family_rms,0.029999999999999999,2433,2433,573,573,0,0.23551171393341552,0.23551171393341552,1,0.76448828606658448,0.95807644882860665,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,family_rms,0.040000000000000001,2433,2433,193,193,0,0.079325935059597202,0.079325935059597202,1,0.92067406494040283,0.95807644882860665,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,family_rms,0.050000000000000003,2433,2432,51,51,0,0.02096177558569667,0.020970394736842105,1,0.97903822441430333,0.95807644882860665,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,family_rms,0.059999999999999998,2433,2381,43,43,0,0.017673653925195234,0.018059638807223857,1,0.98232634607480473,0.95807644882860665,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,family_rms,0.070000000000000007,2433,2197,40,40,0,0.016440608302507192,0.018206645425580335,1,0.98355939169749285,0.95807644882860665,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,family_rms,0.080000000000000002,2433,1927,0,0,0,0,0,,1,0.95807644882860665,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,family_rms,0.10000000000000001,2433,1372,0,0,0,0,0,,1,0.95807644882860665,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,family_rms,0.14999999999999999,2433,697,0,0,0,0,0,,1,0.95807644882860665,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,family_rms,0.20000000000000001,2433,382,0,0,0,0,0,,1,0.95807644882860665,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,family_rms,0.29999999999999999,2433,103,0,0,0,0,0,,1,0.95807644882860665,high certificate is deterministic; upper coverage is conformal/empirical
-task,E176_primary_CD4,worst_member,0.01,1920,1920,1920,1920,0,1,1,1,0,0.97135416666666663,high certificate is deterministic; upper coverage is conformal/empirical
-task,E176_primary_CD4,worst_member,0.014999999999999999,1920,1920,1920,1920,0,1,1,1,0,0.97135416666666663,high certificate is deterministic; upper coverage is conformal/empirical
-task,E176_primary_CD4,worst_member,0.02,1920,1920,1692,1692,0,0.88124999999999998,0.88124999999999998,1,0.11874999999999999,0.97135416666666663,high certificate is deterministic; upper coverage is conformal/empirical
-task,E176_primary_CD4,worst_member,0.025000000000000001,1920,1920,1017,1017,0,0.52968749999999998,0.52968749999999998,1,0.47031250000000002,0.97135416666666663,high certificate is deterministic; upper coverage is conformal/empirical
-task,E176_primary_CD4,worst_member,0.029999999999999999,1920,1920,358,358,0,0.18645833333333334,0.18645833333333334,1,0.81354166666666672,0.97135416666666663,high certificate is deterministic; upper coverage is conformal/empirical
-task,E176_primary_CD4,worst_member,0.040000000000000001,1920,1920,70,70,0,0.036458333333333336,0.036458333333333336,1,0.96354166666666663,0.97135416666666663,high certificate is deterministic; upper coverage is conformal/empirical
-task,E176_primary_CD4,worst_member,0.050000000000000003,1920,1920,21,21,0,0.010937499999999999,0.010937499999999999,1,0.98906249999999996,0.97135416666666663,high certificate is deterministic; upper coverage is conformal/empirical
-task,E176_primary_CD4,worst_member,0.059999999999999998,1920,1917,9,9,0,0.0046874999999999998,0.0046948356807511738,1,0.99531250000000004,0.97135416666666663,high certificate is deterministic; upper coverage is conformal/empirical
-task,E176_primary_CD4,worst_member,0.070000000000000007,1920,1856,6,6,0,0.0031250000000000002,0.0032327586206896551,1,0.99687499999999996,0.97135416666666663,high certificate is deterministic; upper coverage is conformal/empirical
-task,E176_primary_CD4,worst_member,0.080000000000000002,1920,1668,6,6,0,0.0031250000000000002,0.0035971223021582736,1,0.99687499999999996,0.97135416666666663,high certificate is deterministic; upper coverage is conformal/empirical
-task,E176_primary_CD4,worst_member,0.10000000000000001,1920,1129,0,0,0,0,0,,1,0.97135416666666663,high certificate is deterministic; upper coverage is conformal/empirical
-task,E176_primary_CD4,worst_member,0.14999999999999999,1920,345,0,0,0,0,0,,1,0.97135416666666663,high certificate is deterministic; upper coverage is conformal/empirical
-task,E176_primary_CD4,worst_member,0.20000000000000001,1920,141,0,0,0,0,0,,1,0.97135416666666663,high certificate is deterministic; upper coverage is conformal/empirical
-task,E176_primary_CD4,worst_member,0.29999999999999999,1920,28,0,0,0,0,0,,1,0.97135416666666663,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,worst_member,0.01,400,400,400,400,0,1,1,1,0,0.98750000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,worst_member,0.014999999999999999,400,400,400,400,0,1,1,1,0,0.98750000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,worst_member,0.02,400,400,400,400,0,1,1,1,0,0.98750000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,worst_member,0.025000000000000001,400,400,400,400,0,1,1,1,0,0.98750000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,worst_member,0.029999999999999999,400,400,400,400,0,1,1,1,0,0.98750000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,worst_member,0.040000000000000001,400,400,346,346,0,0.86499999999999999,0.86499999999999999,1,0.13500000000000001,0.98750000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,worst_member,0.050000000000000003,400,400,209,209,0,0.52249999999999996,0.52249999999999996,1,0.47749999999999998,0.98750000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,worst_member,0.059999999999999998,400,400,65,65,0,0.16250000000000001,0.16250000000000001,1,0.83750000000000002,0.98750000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,worst_member,0.070000000000000007,400,400,16,16,0,0.040000000000000001,0.040000000000000001,1,0.95999999999999996,0.98750000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,worst_member,0.080000000000000002,400,400,8,8,0,0.02,0.02,1,0.97999999999999998,0.98750000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,worst_member,0.10000000000000001,400,400,0,0,0,0,0,,1,0.98750000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,worst_member,0.14999999999999999,400,390,0,0,0,0,0,,1,0.98750000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,worst_member,0.20000000000000001,400,309,0,0,0,0,0,,1,0.98750000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E177_Sunshine,worst_member,0.29999999999999999,400,98,0,0,0,0,0,,1,0.98750000000000004,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,worst_member,0.01,73,73,73,73,0,1,1,1,0,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,worst_member,0.014999999999999999,73,73,73,73,0,1,1,1,0,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,worst_member,0.02,73,73,73,73,0,1,1,1,0,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,worst_member,0.025000000000000001,73,73,24,24,0,0.32876712328767121,0.32876712328767121,1,0.67123287671232879,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,worst_member,0.029999999999999999,73,73,5,5,0,0.068493150684931503,0.068493150684931503,1,0.93150684931506844,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,worst_member,0.040000000000000001,73,73,0,0,0,0,0,,1,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,worst_member,0.050000000000000003,73,72,0,0,0,0,0,,1,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,worst_member,0.059999999999999998,73,71,0,0,0,0,0,,1,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,worst_member,0.070000000000000007,73,58,0,0,0,0,0,,1,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,worst_member,0.080000000000000002,73,50,0,0,0,0,0,,1,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,worst_member,0.10000000000000001,73,29,0,0,0,0,0,,1,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,worst_member,0.14999999999999999,73,7,0,0,0,0,0,,1,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,worst_member,0.20000000000000001,73,1,0,0,0,0,0,,1,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E180_XuCao,worst_member,0.29999999999999999,73,0,0,0,0,0,,,1,1,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,worst_member,0.01,40,40,40,40,0,1,1,1,0,0.97499999999999998,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,worst_member,0.014999999999999999,40,40,40,40,0,1,1,1,0,0.97499999999999998,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,worst_member,0.02,40,40,40,40,0,1,1,1,0,0.97499999999999998,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,worst_member,0.025000000000000001,40,40,40,40,0,1,1,1,0,0.97499999999999998,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,worst_member,0.029999999999999999,40,40,40,40,0,1,1,1,0,0.97499999999999998,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,worst_member,0.040000000000000001,40,40,40,40,0,1,1,1,0,0.97499999999999998,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,worst_member,0.050000000000000003,40,40,40,40,0,1,1,1,0,0.97499999999999998,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,worst_member,0.059999999999999998,40,40,40,40,0,1,1,1,0,0.97499999999999998,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,worst_member,0.070000000000000007,40,40,40,40,0,1,1,1,0,0.97499999999999998,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,worst_member,0.080000000000000002,40,40,40,40,0,1,1,1,0,0.97499999999999998,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,worst_member,0.10000000000000001,40,40,40,40,0,1,1,1,0,0.97499999999999998,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,worst_member,0.14999999999999999,40,40,0,0,0,0,0,,1,0.97499999999999998,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,worst_member,0.20000000000000001,40,40,0,0,0,0,0,,1,0.97499999999999998,high certificate is deterministic; upper coverage is conformal/empirical
-task,E182_GSE225807,worst_member,0.29999999999999999,40,3,0,0,0,0,0,,1,0.97499999999999998,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,worst_member,0.01,2433,2433,2433,2433,0,1,1,1,0,0.97492807233867651,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,worst_member,0.014999999999999999,2433,2433,2433,2433,0,1,1,1,0,0.97492807233867651,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,worst_member,0.02,2433,2433,2205,2205,0,0.90628853267570897,0.90628853267570897,1,0.093711467324291003,0.97492807233867651,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,worst_member,0.025000000000000001,2433,2433,1481,1481,0,0.60871352240032883,0.60871352240032883,1,0.39128647759967117,0.97492807233867651,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,worst_member,0.029999999999999999,2433,2433,803,803,0,0.33004521167283191,0.33004521167283191,1,0.66995478832716815,0.97492807233867651,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,worst_member,0.040000000000000001,2433,2433,456,456,0,0.18742293464858201,0.18742293464858201,1,0.81257706535141805,0.97492807233867651,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,worst_member,0.050000000000000003,2433,2432,270,270,0,0.11097410604192355,0.11101973684210527,1,0.88902589395807641,0.97492807233867651,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,worst_member,0.059999999999999998,2433,2428,114,114,0,0.046855733662145502,0.046952224052718289,1,0.95314426633785454,0.97492807233867651,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,worst_member,0.070000000000000007,2433,2354,62,62,0,0.025482942868886149,0.026338147833474938,1,0.97451705713111381,0.97492807233867651,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,worst_member,0.080000000000000002,2433,2158,54,54,0,0.022194821208384709,0.025023169601482854,1,0.97780517879161533,0.97492807233867651,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,worst_member,0.10000000000000001,2433,1598,40,40,0,0.016440608302507192,0.025031289111389236,1,0.98355939169749285,0.97492807233867651,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,worst_member,0.14999999999999999,2433,782,0,0,0,0,0,,1,0.97492807233867651,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,worst_member,0.20000000000000001,2433,491,0,0,0,0,0,,1,0.97492807233867651,high certificate is deterministic; upper coverage is conformal/empirical
-task,POOLED_DESCRIPTIVE,worst_member,0.29999999999999999,2433,129,0,0,0,0,0,,1,0.97492807233867651,high certificate is deterministic; upper coverage is conformal/empirical
+unit,study,objective,tau,n_units,n_true_high,n_certified_high,n_certified_true_high,n_false_certificates,certified_high_coverage,certified_high_recall,certified_high_precision,n_conformal_low,n_correct_conformal_low,n_false_conformal_low,conformal_low_coverage,conformal_low_empirical_precision,false_low_population_rate,n_unknown,unknown_fraction,decision_partition_complete,upper_empirical_coverage,guarantee_scope
+task,E176_primary_CD4,family_rms,0.01,1920,1920,1920,1920,0,1,1,1,0,0,0,0,,0,0,0,True,0.9526041666666667,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E176_primary_CD4,family_rms,0.014999999999999999,1920,1920,1918,1918,0,0.99895833333333328,0.99895833333333328,1,0,0,0,0,,0,2,0.0010416666666666667,True,0.9526041666666667,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E176_primary_CD4,family_rms,0.02,1920,1920,1575,1575,0,0.8203125,0.8203125,1,0,0,0,0,,0,345,0.1796875,True,0.9526041666666667,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E176_primary_CD4,family_rms,0.025000000000000001,1920,1920,662,662,0,0.34479166666666666,0.34479166666666666,1,0,0,0,0,,0,1258,0.65520833333333328,True,0.9526041666666667,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E176_primary_CD4,family_rms,0.029999999999999999,1920,1920,141,141,0,0.073437500000000003,0.073437500000000003,1,0,0,0,0,,0,1779,0.92656249999999996,True,0.9526041666666667,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E176_primary_CD4,family_rms,0.040000000000000001,1920,1920,15,15,0,0.0078125,0.0078125,1,0,0,0,0,,0,1905,0.9921875,True,0.9526041666666667,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E176_primary_CD4,family_rms,0.050000000000000003,1920,1920,3,3,0,0.0015625000000000001,0.0015625000000000001,1,0,0,0,0,,0,1917,0.99843749999999998,True,0.9526041666666667,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E176_primary_CD4,family_rms,0.059999999999999998,1920,1876,3,3,0,0.0015625000000000001,0.0015991471215351812,1,0,0,0,0,,0,1917,0.99843749999999998,True,0.9526041666666667,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E176_primary_CD4,family_rms,0.070000000000000007,1920,1703,0,0,0,0,0,,0,0,0,0,,0,1920,1,True,0.9526041666666667,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E176_primary_CD4,family_rms,0.080000000000000002,1920,1442,0,0,0,0,0,,0,0,0,0,,0,1920,1,True,0.9526041666666667,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E176_primary_CD4,family_rms,0.10000000000000001,1920,906,0,0,0,0,0,,0,0,0,0,,0,1920,1,True,0.9526041666666667,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E176_primary_CD4,family_rms,0.14999999999999999,1920,306,0,0,0,0,0,,329,316,13,0.17135416666666667,0.96048632218844987,0.0067708333333333336,1591,0.8286458333333333,True,0.9526041666666667,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E176_primary_CD4,family_rms,0.20000000000000001,1920,121,0,0,0,0,0,,960,940,20,0.5,0.97916666666666663,0.010416666666666666,960,0.5,True,0.9526041666666667,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E176_primary_CD4,family_rms,0.29999999999999999,1920,25,0,0,0,0,0,,1920,1895,25,1,0.98697916666666663,0.013020833333333334,0,0,True,0.9526041666666667,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,family_rms,0.01,400,400,400,400,0,1,1,1,0,0,0,0,,0,0,0,True,0.98250000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,family_rms,0.014999999999999999,400,400,400,400,0,1,1,1,0,0,0,0,,0,0,0,True,0.98250000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,family_rms,0.02,400,400,400,400,0,1,1,1,0,0,0,0,,0,0,0,True,0.98250000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,family_rms,0.025000000000000001,400,400,400,400,0,1,1,1,0,0,0,0,,0,0,0,True,0.98250000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,family_rms,0.029999999999999999,400,400,392,392,0,0.97999999999999998,0.97999999999999998,1,0,0,0,0,,0,8,0.02,True,0.98250000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,family_rms,0.040000000000000001,400,400,138,138,0,0.34499999999999997,0.34499999999999997,1,0,0,0,0,,0,262,0.65500000000000003,True,0.98250000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,family_rms,0.050000000000000003,400,400,8,8,0,0.02,0.02,1,0,0,0,0,,0,392,0.97999999999999998,True,0.98250000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,family_rms,0.059999999999999998,400,400,0,0,0,0,0,,0,0,0,0,,0,400,1,True,0.98250000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,family_rms,0.070000000000000007,400,400,0,0,0,0,0,,0,0,0,0,,0,400,1,True,0.98250000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,family_rms,0.080000000000000002,400,400,0,0,0,0,0,,0,0,0,0,,0,400,1,True,0.98250000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,family_rms,0.10000000000000001,400,400,0,0,0,0,0,,0,0,0,0,,0,400,1,True,0.98250000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,family_rms,0.14999999999999999,400,370,0,0,0,0,0,,0,0,0,0,,0,400,1,True,0.98250000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,family_rms,0.20000000000000001,400,257,0,0,0,0,0,,0,0,0,0,,0,400,1,True,0.98250000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,family_rms,0.29999999999999999,400,77,0,0,0,0,0,,0,0,0,0,,0,400,1,True,0.98250000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,family_rms,0.01,73,73,73,73,0,1,1,1,0,0,0,0,,0,0,0,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,family_rms,0.014999999999999999,73,73,73,73,0,1,1,1,0,0,0,0,,0,0,0,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,family_rms,0.02,73,73,73,73,0,1,1,1,0,0,0,0,,0,0,0,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,family_rms,0.025000000000000001,73,73,3,3,0,0.041095890410958902,0.041095890410958902,1,0,0,0,0,,0,70,0.95890410958904104,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,family_rms,0.029999999999999999,73,73,0,0,0,0,0,,0,0,0,0,,0,73,1,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,family_rms,0.040000000000000001,73,73,0,0,0,0,0,,0,0,0,0,,0,73,1,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,family_rms,0.050000000000000003,73,72,0,0,0,0,0,,0,0,0,0,,0,73,1,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,family_rms,0.059999999999999998,73,65,0,0,0,0,0,,0,0,0,0,,0,73,1,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,family_rms,0.070000000000000007,73,54,0,0,0,0,0,,0,0,0,0,,0,73,1,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,family_rms,0.080000000000000002,73,45,0,0,0,0,0,,0,0,0,0,,0,73,1,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,family_rms,0.10000000000000001,73,27,0,0,0,0,0,,0,0,0,0,,0,73,1,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,family_rms,0.14999999999999999,73,4,0,0,0,0,0,,0,0,0,0,,0,73,1,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,family_rms,0.20000000000000001,73,0,0,0,0,0,,,0,0,0,0,,0,73,1,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,family_rms,0.29999999999999999,73,0,0,0,0,0,,,73,73,0,1,1,0,0,0,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,family_rms,0.01,40,40,40,40,0,1,1,1,0,0,0,0,,0,0,0,True,0.90000000000000002,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,family_rms,0.014999999999999999,40,40,40,40,0,1,1,1,0,0,0,0,,0,0,0,True,0.90000000000000002,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,family_rms,0.02,40,40,40,40,0,1,1,1,0,0,0,0,,0,0,0,True,0.90000000000000002,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,family_rms,0.025000000000000001,40,40,40,40,0,1,1,1,0,0,0,0,,0,0,0,True,0.90000000000000002,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,family_rms,0.029999999999999999,40,40,40,40,0,1,1,1,0,0,0,0,,0,0,0,True,0.90000000000000002,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,family_rms,0.040000000000000001,40,40,40,40,0,1,1,1,0,0,0,0,,0,0,0,True,0.90000000000000002,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,family_rms,0.050000000000000003,40,40,40,40,0,1,1,1,0,0,0,0,,0,0,0,True,0.90000000000000002,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,family_rms,0.059999999999999998,40,40,40,40,0,1,1,1,0,0,0,0,,0,0,0,True,0.90000000000000002,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,family_rms,0.070000000000000007,40,40,40,40,0,1,1,1,0,0,0,0,,0,0,0,True,0.90000000000000002,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,family_rms,0.080000000000000002,40,40,0,0,0,0,0,,0,0,0,0,,0,40,1,True,0.90000000000000002,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,family_rms,0.10000000000000001,40,39,0,0,0,0,0,,0,0,0,0,,0,40,1,True,0.90000000000000002,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,family_rms,0.14999999999999999,40,17,0,0,0,0,0,,0,0,0,0,,0,40,1,True,0.90000000000000002,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,family_rms,0.20000000000000001,40,4,0,0,0,0,0,,0,0,0,0,,0,40,1,True,0.90000000000000002,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,family_rms,0.29999999999999999,40,1,0,0,0,0,0,,40,39,1,1,0.97499999999999998,0.025000000000000001,0,0,True,0.90000000000000002,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,family_rms,0.01,2433,2433,2433,2433,0,1,1,1,0,0,0,0,,0,0,0,True,0.95807644882860665,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,family_rms,0.014999999999999999,2433,2433,2431,2431,0,0.99917796958487459,0.99917796958487459,1,0,0,0,0,,0,2,0.00082203041512535961,True,0.95807644882860665,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,family_rms,0.02,2433,2433,2088,2088,0,0.85819975339087551,0.85819975339087551,1,0,0,0,0,,0,345,0.14180024660912455,True,0.95807644882860665,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,family_rms,0.025000000000000001,2433,2433,1105,1105,0,0.45417180435676119,0.45417180435676119,1,0,0,0,0,,0,1328,0.54582819564323881,True,0.95807644882860665,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,family_rms,0.029999999999999999,2433,2433,573,573,0,0.23551171393341552,0.23551171393341552,1,0,0,0,0,,0,1860,0.76448828606658448,True,0.95807644882860665,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,family_rms,0.040000000000000001,2433,2433,193,193,0,0.079325935059597202,0.079325935059597202,1,0,0,0,0,,0,2240,0.92067406494040283,True,0.95807644882860665,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,family_rms,0.050000000000000003,2433,2432,51,51,0,0.02096177558569667,0.020970394736842105,1,0,0,0,0,,0,2382,0.97903822441430333,True,0.95807644882860665,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,family_rms,0.059999999999999998,2433,2381,43,43,0,0.017673653925195234,0.018059638807223857,1,0,0,0,0,,0,2390,0.98232634607480473,True,0.95807644882860665,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,family_rms,0.070000000000000007,2433,2197,40,40,0,0.016440608302507192,0.018206645425580335,1,0,0,0,0,,0,2393,0.98355939169749285,True,0.95807644882860665,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,family_rms,0.080000000000000002,2433,1927,0,0,0,0,0,,0,0,0,0,,0,2433,1,True,0.95807644882860665,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,family_rms,0.10000000000000001,2433,1372,0,0,0,0,0,,0,0,0,0,,0,2433,1,True,0.95807644882860665,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,family_rms,0.14999999999999999,2433,697,0,0,0,0,0,,329,316,13,0.13522400328812165,0.96048632218844987,0.0053431976983148374,2104,0.86477599671187833,True,0.95807644882860665,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,family_rms,0.20000000000000001,2433,382,0,0,0,0,0,,960,940,20,0.39457459926017263,0.97916666666666663,0.0082203041512535959,1473,0.60542540073982742,True,0.95807644882860665,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,family_rms,0.29999999999999999,2433,103,0,0,0,0,0,,2033,2007,26,0.83559391697492802,0.98721101819970491,0.010686395396629675,400,0.16440608302507193,True,0.95807644882860665,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E176_primary_CD4,worst_member,0.01,1920,1920,1920,1920,0,1,1,1,0,0,0,0,,0,0,0,True,0.97135416666666663,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E176_primary_CD4,worst_member,0.014999999999999999,1920,1920,1920,1920,0,1,1,1,0,0,0,0,,0,0,0,True,0.97135416666666663,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E176_primary_CD4,worst_member,0.02,1920,1920,1692,1692,0,0.88124999999999998,0.88124999999999998,1,0,0,0,0,,0,228,0.11874999999999999,True,0.97135416666666663,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E176_primary_CD4,worst_member,0.025000000000000001,1920,1920,1017,1017,0,0.52968749999999998,0.52968749999999998,1,0,0,0,0,,0,903,0.47031250000000002,True,0.97135416666666663,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E176_primary_CD4,worst_member,0.029999999999999999,1920,1920,358,358,0,0.18645833333333334,0.18645833333333334,1,0,0,0,0,,0,1562,0.81354166666666672,True,0.97135416666666663,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E176_primary_CD4,worst_member,0.040000000000000001,1920,1920,70,70,0,0.036458333333333336,0.036458333333333336,1,0,0,0,0,,0,1850,0.96354166666666663,True,0.97135416666666663,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E176_primary_CD4,worst_member,0.050000000000000003,1920,1920,21,21,0,0.010937499999999999,0.010937499999999999,1,0,0,0,0,,0,1899,0.98906249999999996,True,0.97135416666666663,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E176_primary_CD4,worst_member,0.059999999999999998,1920,1917,9,9,0,0.0046874999999999998,0.0046948356807511738,1,0,0,0,0,,0,1911,0.99531250000000004,True,0.97135416666666663,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E176_primary_CD4,worst_member,0.070000000000000007,1920,1856,6,6,0,0.0031250000000000002,0.0032327586206896551,1,0,0,0,0,,0,1914,0.99687499999999996,True,0.97135416666666663,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E176_primary_CD4,worst_member,0.080000000000000002,1920,1668,6,6,0,0.0031250000000000002,0.0035971223021582736,1,0,0,0,0,,0,1914,0.99687499999999996,True,0.97135416666666663,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E176_primary_CD4,worst_member,0.10000000000000001,1920,1129,0,0,0,0,0,,0,0,0,0,,0,1920,1,True,0.97135416666666663,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E176_primary_CD4,worst_member,0.14999999999999999,1920,345,0,0,0,0,0,,0,0,0,0,,0,1920,1,True,0.97135416666666663,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E176_primary_CD4,worst_member,0.20000000000000001,1920,141,0,0,0,0,0,,438,435,3,0.22812499999999999,0.99315068493150682,0.0015625000000000001,1482,0.77187499999999998,True,0.97135416666666663,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E176_primary_CD4,worst_member,0.29999999999999999,1920,28,0,0,0,0,0,,1816,1788,28,0.9458333333333333,0.98458149779735682,0.014583333333333334,104,0.054166666666666669,True,0.97135416666666663,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,worst_member,0.01,400,400,400,400,0,1,1,1,0,0,0,0,,0,0,0,True,0.98750000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,worst_member,0.014999999999999999,400,400,400,400,0,1,1,1,0,0,0,0,,0,0,0,True,0.98750000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,worst_member,0.02,400,400,400,400,0,1,1,1,0,0,0,0,,0,0,0,True,0.98750000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,worst_member,0.025000000000000001,400,400,400,400,0,1,1,1,0,0,0,0,,0,0,0,True,0.98750000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,worst_member,0.029999999999999999,400,400,400,400,0,1,1,1,0,0,0,0,,0,0,0,True,0.98750000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,worst_member,0.040000000000000001,400,400,346,346,0,0.86499999999999999,0.86499999999999999,1,0,0,0,0,,0,54,0.13500000000000001,True,0.98750000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,worst_member,0.050000000000000003,400,400,209,209,0,0.52249999999999996,0.52249999999999996,1,0,0,0,0,,0,191,0.47749999999999998,True,0.98750000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,worst_member,0.059999999999999998,400,400,65,65,0,0.16250000000000001,0.16250000000000001,1,0,0,0,0,,0,335,0.83750000000000002,True,0.98750000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,worst_member,0.070000000000000007,400,400,16,16,0,0.040000000000000001,0.040000000000000001,1,0,0,0,0,,0,384,0.95999999999999996,True,0.98750000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,worst_member,0.080000000000000002,400,400,8,8,0,0.02,0.02,1,0,0,0,0,,0,392,0.97999999999999998,True,0.98750000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,worst_member,0.10000000000000001,400,400,0,0,0,0,0,,0,0,0,0,,0,400,1,True,0.98750000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,worst_member,0.14999999999999999,400,390,0,0,0,0,0,,0,0,0,0,,0,400,1,True,0.98750000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,worst_member,0.20000000000000001,400,309,0,0,0,0,0,,0,0,0,0,,0,400,1,True,0.98750000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E177_Sunshine,worst_member,0.29999999999999999,400,98,0,0,0,0,0,,0,0,0,0,,0,400,1,True,0.98750000000000004,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,worst_member,0.01,73,73,73,73,0,1,1,1,0,0,0,0,,0,0,0,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,worst_member,0.014999999999999999,73,73,73,73,0,1,1,1,0,0,0,0,,0,0,0,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,worst_member,0.02,73,73,73,73,0,1,1,1,0,0,0,0,,0,0,0,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,worst_member,0.025000000000000001,73,73,24,24,0,0.32876712328767121,0.32876712328767121,1,0,0,0,0,,0,49,0.67123287671232879,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,worst_member,0.029999999999999999,73,73,5,5,0,0.068493150684931503,0.068493150684931503,1,0,0,0,0,,0,68,0.93150684931506844,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,worst_member,0.040000000000000001,73,73,0,0,0,0,0,,0,0,0,0,,0,73,1,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,worst_member,0.050000000000000003,73,72,0,0,0,0,0,,0,0,0,0,,0,73,1,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,worst_member,0.059999999999999998,73,71,0,0,0,0,0,,0,0,0,0,,0,73,1,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,worst_member,0.070000000000000007,73,58,0,0,0,0,0,,0,0,0,0,,0,73,1,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,worst_member,0.080000000000000002,73,50,0,0,0,0,0,,0,0,0,0,,0,73,1,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,worst_member,0.10000000000000001,73,29,0,0,0,0,0,,0,0,0,0,,0,73,1,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,worst_member,0.14999999999999999,73,7,0,0,0,0,0,,0,0,0,0,,0,73,1,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,worst_member,0.20000000000000001,73,1,0,0,0,0,0,,0,0,0,0,,0,73,1,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E180_XuCao,worst_member,0.29999999999999999,73,0,0,0,0,0,,,73,73,0,1,1,0,0,0,True,1,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,worst_member,0.01,40,40,40,40,0,1,1,1,0,0,0,0,,0,0,0,True,0.97499999999999998,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,worst_member,0.014999999999999999,40,40,40,40,0,1,1,1,0,0,0,0,,0,0,0,True,0.97499999999999998,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,worst_member,0.02,40,40,40,40,0,1,1,1,0,0,0,0,,0,0,0,True,0.97499999999999998,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,worst_member,0.025000000000000001,40,40,40,40,0,1,1,1,0,0,0,0,,0,0,0,True,0.97499999999999998,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,worst_member,0.029999999999999999,40,40,40,40,0,1,1,1,0,0,0,0,,0,0,0,True,0.97499999999999998,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,worst_member,0.040000000000000001,40,40,40,40,0,1,1,1,0,0,0,0,,0,0,0,True,0.97499999999999998,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,worst_member,0.050000000000000003,40,40,40,40,0,1,1,1,0,0,0,0,,0,0,0,True,0.97499999999999998,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,worst_member,0.059999999999999998,40,40,40,40,0,1,1,1,0,0,0,0,,0,0,0,True,0.97499999999999998,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,worst_member,0.070000000000000007,40,40,40,40,0,1,1,1,0,0,0,0,,0,0,0,True,0.97499999999999998,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,worst_member,0.080000000000000002,40,40,40,40,0,1,1,1,0,0,0,0,,0,0,0,True,0.97499999999999998,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,worst_member,0.10000000000000001,40,40,40,40,0,1,1,1,0,0,0,0,,0,0,0,True,0.97499999999999998,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,worst_member,0.14999999999999999,40,40,0,0,0,0,0,,0,0,0,0,,0,40,1,True,0.97499999999999998,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,worst_member,0.20000000000000001,40,40,0,0,0,0,0,,0,0,0,0,,0,40,1,True,0.97499999999999998,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,E182_GSE225807,worst_member,0.29999999999999999,40,3,0,0,0,0,0,,0,0,0,0,,0,40,1,True,0.97499999999999998,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,worst_member,0.01,2433,2433,2433,2433,0,1,1,1,0,0,0,0,,0,0,0,True,0.97492807233867651,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,worst_member,0.014999999999999999,2433,2433,2433,2433,0,1,1,1,0,0,0,0,,0,0,0,True,0.97492807233867651,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,worst_member,0.02,2433,2433,2205,2205,0,0.90628853267570897,0.90628853267570897,1,0,0,0,0,,0,228,0.093711467324291003,True,0.97492807233867651,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,worst_member,0.025000000000000001,2433,2433,1481,1481,0,0.60871352240032883,0.60871352240032883,1,0,0,0,0,,0,952,0.39128647759967117,True,0.97492807233867651,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,worst_member,0.029999999999999999,2433,2433,803,803,0,0.33004521167283191,0.33004521167283191,1,0,0,0,0,,0,1630,0.66995478832716815,True,0.97492807233867651,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,worst_member,0.040000000000000001,2433,2433,456,456,0,0.18742293464858201,0.18742293464858201,1,0,0,0,0,,0,1977,0.81257706535141805,True,0.97492807233867651,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,worst_member,0.050000000000000003,2433,2432,270,270,0,0.11097410604192355,0.11101973684210527,1,0,0,0,0,,0,2163,0.88902589395807641,True,0.97492807233867651,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,worst_member,0.059999999999999998,2433,2428,114,114,0,0.046855733662145502,0.046952224052718289,1,0,0,0,0,,0,2319,0.95314426633785454,True,0.97492807233867651,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,worst_member,0.070000000000000007,2433,2354,62,62,0,0.025482942868886149,0.026338147833474938,1,0,0,0,0,,0,2371,0.97451705713111381,True,0.97492807233867651,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,worst_member,0.080000000000000002,2433,2158,54,54,0,0.022194821208384709,0.025023169601482854,1,0,0,0,0,,0,2379,0.97780517879161533,True,0.97492807233867651,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,worst_member,0.10000000000000001,2433,1598,40,40,0,0.016440608302507192,0.025031289111389236,1,0,0,0,0,,0,2393,0.98355939169749285,True,0.97492807233867651,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,worst_member,0.14999999999999999,2433,782,0,0,0,0,0,,0,0,0,0,,0,2433,1,True,0.97492807233867651,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,worst_member,0.20000000000000001,2433,491,0,0,0,0,0,,438,435,3,0.18002466091245375,0.99315068493150682,0.0012330456226880395,1995,0.81997533908754627,True,0.97492807233867651,high is deterministic; low and upper coverage are marginal conformal/empirical
+task,POOLED_DESCRIPTIVE,worst_member,0.29999999999999999,2433,129,0,0,0,0,0,,1889,1861,28,0.77640772708590222,0.98517734250926414,0.011508425811755036,544,0.22359227291409783,True,0.97492807233867651,high is deterministic; low and upper coverage are marginal conformal/empirical

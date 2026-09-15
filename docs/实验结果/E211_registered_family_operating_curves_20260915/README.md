@@ -8,10 +8,14 @@ This directory is rebuilt only from the released E181/E182/E183 tables.
   technical tasks for one target; maxima preserve the lower-bound implication.
 - `CERTIFICATE_GEOMETRY_SUMMARY.csv`: recomputed lower-bound tightness,
   interval width, and empirical upper coverage.
+- `F3_THREE_WAY_DECISION_COVERAGE`: retrospective high / conformal-low /
+  unknown decision fractions by study and tolerance.
 - `STATUS.json`: input lineage, numerical gates, and interpretation limits.
 - `REPORT.md`: Chinese result interpretation, boundary conditions, and the
   prospective E205/E208 hand-off.
 
 `certified_high_coverage` is the fraction of all units with `lower > tau`; it
-is an issuance rate, not conformal coverage.  `lower <= tau` means `UNKNOWN`,
-not safe.  Pooled rows and the default tau grid are retrospective diagnostics.
+is an issuance rate, not conformal coverage.  `conformal_low_coverage` is the
+fraction with `upper <= tau`; it remains a marginal conformal statement.
+Everything between the bounds is `UNKNOWN`.  Pooled rows and the default tau
+grid are retrospective diagnostics.
