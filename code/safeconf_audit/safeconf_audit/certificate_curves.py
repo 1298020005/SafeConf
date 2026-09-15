@@ -28,6 +28,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from matplotlib.lines import Line2D
 
 
 E181_REL = Path(
@@ -590,7 +591,7 @@ def make_figures(task_curves: pd.DataFrame, geometry: pd.DataFrame, out: Path) -
         ]
         for study, block in data.groupby("study", sort=False, observed=True):
             ax.plot(
-                block["certified_high_coverage"],
+                block["tau"],
                 block["certified_high_recall"],
                 marker="o",
                 ms=2.8,
@@ -598,11 +599,30 @@ def make_figures(task_curves: pd.DataFrame, geometry: pd.DataFrame, out: Path) -
                 color=colors.get(study, "#4D4D4D"),
                 label=study.replace("_", " "),
             )
+            ax.plot(
+                block["tau"],
+                block["certified_high_coverage"],
+                ls="--",
+                lw=1.0,
+                alpha=0.65,
+                color=colors.get(study, "#4D4D4D"),
+            )
         ax.set_title(objective.replace("_", " "))
-        ax.set_xlabel("Certified-high task coverage")
+        ax.set_xlabel("Error tolerance tau (RMSE)")
+        ax.set_xscale("log")
+        ax.set_ylim(-0.03, 1.03)
         ax.grid(color="#E9EEF3", lw=0.7)
-    axes[0].set_ylabel("Recall among observed high-error tasks")
-    axes[1].legend(frameon=False, fontsize=6.8, loc="lower right")
+    axes[0].set_ylabel("Fraction of tasks")
+    axes[0].legend(frameon=False, fontsize=6.4, loc="upper right")
+    axes[1].legend(
+        handles=[
+            Line2D([0], [0], color="#333333", lw=1.2, marker="o", ms=2.8, label="high-error recall"),
+            Line2D([0], [0], color="#333333", lw=1.0, ls="--", label="certificate issuance"),
+        ],
+        frameon=False,
+        fontsize=7,
+        loc="upper right",
+    )
     fig.tight_layout()
     for suffix, kwargs in (("png", {"dpi": 300}), ("svg", {})):
         fig.savefig(out / f"F1_CERTIFIED_HIGH_OPERATING_CURVES.{suffix}", **kwargs)
