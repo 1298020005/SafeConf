@@ -13,6 +13,7 @@ dependencies = ["numpy", "pandas", "scipy", "matplotlib"]
 
 [project.scripts]
 safeconf-audit = "safeconf_audit.verify:main"
+safeconf-certificate-curves = "safeconf_audit.certificate_curves:main"
 
 [tool.setuptools.packages.find]
 include = ["safeconf_audit*"]

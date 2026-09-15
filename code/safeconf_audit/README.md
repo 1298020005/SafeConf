@@ -13,6 +13,20 @@ safeconf-audit --repo /home/yyf/proj
 python3 -m safeconf_audit.verify --repo /home/yyf/proj   # 需在包目录下
 ```
 
+E181/E182/E183 已发布证书的阈值—召回、下界紧致度和区间宽度可统一重算：
+
+```bash
+safeconf-certificate-curves --repo /home/yyf/proj \
+  --output-dir runtime/certificate_operating_curves
+# 也可以在独立应用容差已确定时显式给出绝对 RMSE 阈值：
+safeconf-certificate-curves --repo /home/yyf/proj \
+  --tau-grid 0.02,0.03,0.05,0.08,0.10
+```
+
+这里的 `certified_high_coverage` 是 `L > tau` 的任务占比（证书签发率），
+不是 conformal coverage；`L <= tau` 只能标为 `UNKNOWN`，不能称为安全。
+默认阈值网格只作已揭盲数据上的诊断，进入新外部实验前必须冻结或由应用成本给定。
+
 ## 验证内容（与冻结报告逐项对照）
 
 - E199（K562 未见基因，263 主任务）：diversity 下界与 predicted magnitude 的

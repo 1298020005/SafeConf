@@ -19,6 +19,44 @@ E205 要检验跨模型结构分歧。若看到部分目标误差后再决定用
 5. 四个种子的预测、对照和任务顺序全部哈希封存后，才计算同结构分歧、GAT–Exphormer 质心分歧和 SafeConf-M 风险表。
 6. 风险表再次同步双远程后，才允许一次性释放目标真实表达进行正式评价。
 
+## 已实现的真值前与评价入口
+
+检查点和 16 份预测完成后，在项目根目录运行真值前入口：
+
+```bash
+python tools/scripts/run_e205_pretruth_risk_features.py \
+  --data-root /home/yyf/data \
+  --family-seal docs/实验结果/E205_cross_family_disagreement_20260830/E205_EXPHORMER_FAMILY_SEAL.json \
+  --prediction-root /home/yyf/data/txpert_official_20260802/e205/predictions \
+  --risk-table docs/实验结果/E205_cross_family_disagreement_20260830/tables/E205_PRETRUTH_RISK_FEATURES.csv \
+  --risk-status docs/实验结果/E205_cross_family_disagreement_20260830/E205_PRETRUTH_RISK_STATUS.json \
+  --vector-output-dir /home/yyf/data/txpert_official_20260802/e205/pretruth_vectors
+```
+
+该入口没有真值参数，并拒绝包含 `truth` 命名资产的预测目录。它同时封存：
+
+- Exphormer 四种子的幅度、分歧和原五成分风险；
+- GAT 与 Exphormer 质心之间的跨结构分歧；
+- GAT 四种子与 Exphormer 四种子组成的八成员注册家族下界；
+- 两个架构各占 0.5 的权重，以及根据封存预测固定的九个误差阈值。
+
+风险表和状态文件必须作为一个独立提交推送到 GitHub、Gitee。之后在更晚的提交中新增
+授权 JSON，精确绑定风险表、状态表、E201 已发布真值状态和前一提交哈希。只有此时才可
+运行：
+
+```bash
+python tools/scripts/run_e205_formal_evaluation.py \
+  --data-root /home/yyf/data \
+  --risk-table docs/实验结果/E205_cross_family_disagreement_20260830/tables/E205_PRETRUTH_RISK_FEATURES.csv \
+  --risk-status docs/实验结果/E205_cross_family_disagreement_20260830/E205_PRETRUTH_RISK_STATUS.json \
+  --release-authorization docs/实验结果/E205_cross_family_disagreement_20260830/E205_TARGET_TRUTH_REUSE_AUTHORIZATION.json \
+  --output-dir docs/实验结果/E205_cross_family_disagreement_20260830/formal_evaluation \
+  --n-bootstrap 5000
+```
+
+评价入口除原排序结果外，还输出八成员家族的恒等式残差、下界违反数、下界紧致度以及
+冻结阈值下的证书召回/覆盖曲线。授权文件不能由评价入口自动创建。
+
 ## 两卡并行方式
 
 训练全部结束后可将四个目标分成两组；每张卡一次只运行一个预测进程：
