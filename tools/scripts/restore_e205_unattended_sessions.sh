@@ -12,9 +12,11 @@ REPO=/home/yyf/proj
 RELEASE_REPO=/home/yyf/runtime_worktrees/e205_postprocess_20260915
 RUNS=/home/yyf/data/txpert_official_20260802/e205/formal
 STATE=/home/yyf/data/txpert_official_20260802/e205/posttraining_supervisor_20260915
+E208_SMOKE=/home/yyf/data/perturbench_e208/after_e205_postprocess_20260915
+E208_RUNS=/home/yyf/data/perturbench_e208/formal_20260917
 RESTORE_LOG="$STATE/reboot_restore.log"
 
-mkdir -p "$STATE"
+mkdir -p "$STATE" "$E208_RUNS"
 exec 9>"$STATE/reboot_restore.lock"
 if ! flock -n 9; then
   exit 0
@@ -54,4 +56,12 @@ if ! tmux has-session -t safeconf_e205_posttraining_release 2>/dev/null; then
   log "STARTED post-training release supervisor"
 else
   log "SKIP post-training release supervisor already exists"
+fi
+
+if ! tmux has-session -t safeconf_e208_formal_queue 2>/dev/null; then
+  tmux new-session -d -s safeconf_e208_formal_queue -c "$REPO" \
+    "/home/yyf/.venvs/perturbench-c84038bc/bin/python tools/scripts/run_e208_formal_training_queue.py --repo /home/yyf/proj --perturbench-repo /home/yyf/archive/external/PerturBench --python /home/yyf/.venvs/perturbench-c84038bc/bin/python --data-dir /home/yyf/data/external/perturbench_2025/jiang24 --smoke-supervisor-status $E208_SMOKE/E208_AFTER_E205_SUPERVISOR_STATUS.json --runs-root $E208_RUNS --cuda-devices 0,1 --min-free-mb 22000 --foreign-proc-mb 1024 --poll-seconds 60 --max-attempts 3 >> $E208_RUNS/E208_FORMAL_QUEUE_CONSOLE.log 2>&1"
+  log "STARTED E208 formal queue supervisor (waiting for smoke PASS)"
+else
+  log "SKIP E208 formal queue supervisor already exists"
 fi
