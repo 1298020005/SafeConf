@@ -28,6 +28,17 @@ PREDICTOR_LABELS = {
     "cross_family_disagreement": "Cross-architecture disagreement",
 }
 
+PALETTE = {
+    "safeconf_m_4to1": "#118A7E",
+    "predicted_magnitude": "#D55E5E",
+    "safeconf_e205_risk": "#54769A",
+    "family_disagreement": "#7E6AAD",
+    "gat_family_disagreement": "#B07C45",
+    "registered_family_disagreement": "#3F8F72",
+    "cross_family_disagreement": "#8A8F98",
+}
+TARGET_ORDER = ("K562", "RPE1", "hepg2", "jurkat")
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
@@ -58,6 +69,181 @@ def extract_unique(frame: pd.DataFrame, **filters: object) -> pd.Series:
     if len(block) != 1:
         raise SummaryFailure(f"expected one row for {filters}, found {len(block)}")
     return block.iloc[0]
+
+
+def clean_axis(axis: plt.Axes, grid_axis: str | None = None) -> None:
+    axis.spines["top"].set_visible(False)
+    axis.spines["right"].set_visible(False)
+    axis.tick_params(width=0.8, length=3, color="#4A4A4A")
+    if grid_axis is not None:
+        axis.grid(axis=grid_axis, color="#E6E8EB", linewidth=0.6)
+        axis.set_axisbelow(True)
+
+
+def save_figure(fig: plt.Figure, path: Path, extra_formats: bool = True) -> list[Path]:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    outputs = [path]
+    if extra_formats:
+        outputs.extend([path.with_suffix(".pdf"), path.with_suffix(".png")])
+    for output in outputs:
+        if output.exists():
+            raise SummaryFailure(f"refusing to overwrite: {output}")
+        options = {"bbox_inches": "tight", "facecolor": "white"}
+        if output.suffix.lower() == ".png":
+            options["dpi"] = 300
+        fig.savefig(output, **options)
+    return outputs
+
+
+def annotate_panel(axis: plt.Axes, letter: str) -> None:
+    axis.text(
+        -0.16,
+        1.05,
+        letter,
+        transform=axis.transAxes,
+        fontweight="bold",
+        fontsize=13,
+        va="top",
+    )
+
+
+def render_context_matrix(
+    associations: pd.DataFrame,
+    utilities: pd.DataFrame,
+    predictors: list[str],
+    output: Path,
+) -> None:
+    selected = [
+        name
+        for name in (
+            "safeconf_m_4to1",
+            "predicted_magnitude",
+            "safeconf_e205_risk",
+            "registered_family_disagreement",
+        )
+        if name in predictors
+    ]
+    labels = [PREDICTOR_LABELS[name] for name in selected]
+    assoc = (
+        associations.loc[
+            associations.scope.isin(TARGET_ORDER)
+            & associations.predictor.isin(selected)
+        ]
+        .pivot(index="scope", columns="predictor", values="spearman")
+        .reindex(index=TARGET_ORDER, columns=selected)
+    )
+    utility = (
+        utilities.loc[
+            utilities.scope.isin(TARGET_ORDER)
+            & utilities.predictor.isin(selected)
+            & np.isclose(utilities.budget.astype(float), 0.20)
+        ]
+        .pivot(index="scope", columns="predictor", values="oracle_normalized_utility")
+        .reindex(index=TARGET_ORDER, columns=selected)
+    )
+    if assoc.isna().any().any() or utility.isna().any().any():
+        raise SummaryFailure("per-context result matrix is incomplete")
+
+    fig, axes = plt.subplots(1, 2, figsize=(10.8, 4.0), facecolor="white")
+    for axis, frame, label, letter in (
+        (axes[0], assoc, "Spearman correlation", "a"),
+        (axes[1], utility, "Review utility at 20% budget", "b"),
+    ):
+        values = frame.to_numpy(float)
+        bound = max(0.25, float(np.nanmax(np.abs(values))))
+        image = axis.imshow(
+            values,
+            cmap="RdBu_r",
+            vmin=-bound,
+            vmax=bound,
+            aspect="auto",
+            interpolation="nearest",
+        )
+        axis.set_xticks(np.arange(len(labels)), labels, rotation=30, ha="right")
+        axis.set_yticks(np.arange(len(TARGET_ORDER)), TARGET_ORDER)
+        axis.set_xlabel(label)
+        for row in range(values.shape[0]):
+            for column in range(values.shape[1]):
+                color = "white" if abs(values[row, column]) > 0.62 * bound else "#222222"
+                axis.text(
+                    column,
+                    row,
+                    f"{values[row, column]:.2f}",
+                    ha="center",
+                    va="center",
+                    fontsize=8.5,
+                    color=color,
+                )
+        colorbar = fig.colorbar(image, ax=axis, fraction=0.046, pad=0.04)
+        colorbar.outline.set_linewidth(0.6)
+        annotate_panel(axis, letter)
+        for spine in axis.spines.values():
+            spine.set_visible(False)
+    fig.tight_layout(w_pad=2.3)
+    save_figure(fig, output)
+    plt.close(fig)
+
+
+def render_operating_curves(
+    utilities: pd.DataFrame,
+    curves: pd.DataFrame,
+    predictors: list[str],
+    output: Path,
+) -> None:
+    fig, axes = plt.subplots(1, 2, figsize=(10.8, 4.0), facecolor="white")
+    selected = [
+        name
+        for name in ("safeconf_m_4to1", "predicted_magnitude", "safeconf_e205_risk")
+        if name in predictors
+    ]
+    pooled = utilities.loc[utilities.scope.eq("pooled")]
+    for predictor in selected:
+        block = pooled.loc[pooled.predictor.eq(predictor)].sort_values("budget")
+        axes[0].plot(
+            100 * block.budget.to_numpy(float),
+            block.oracle_normalized_utility.to_numpy(float),
+            marker="o",
+            linewidth=1.8,
+            markersize=4.5,
+            color=PALETTE[predictor],
+            label=PREDICTOR_LABELS[predictor],
+        )
+    axes[0].set_xlabel("Review budget (%)")
+    axes[0].set_ylabel("Oracle-normalized utility")
+    axes[0].legend(frameon=False, fontsize=8.5)
+    clean_axis(axes[0], "both")
+    annotate_panel(axes[0], "a")
+
+    for scope in ("pooled", *TARGET_ORDER):
+        block = curves.loc[
+            curves.unit.eq("task") & curves.scope.eq(scope)
+        ].sort_values("certified_high_coverage")
+        if block.empty:
+            continue
+        color = "#222222" if scope == "pooled" else PALETTE[
+            ("safeconf_m_4to1", "predicted_magnitude", "safeconf_e205_risk", "family_disagreement")[
+                TARGET_ORDER.index(scope)
+            ]
+        ]
+        axes[1].plot(
+            block.certified_high_coverage.to_numpy(float),
+            block.certified_high_recall.to_numpy(float),
+            marker="o" if scope == "pooled" else None,
+            linewidth=2.2 if scope == "pooled" else 1.2,
+            color=color,
+            alpha=1.0 if scope == "pooled" else 0.72,
+            label=scope,
+        )
+    axes[1].set_xlabel("Certified fraction")
+    axes[1].set_ylabel("Recall of observed high-error tasks")
+    axes[1].set_xlim(left=0)
+    axes[1].set_ylim(bottom=0)
+    axes[1].legend(frameon=False, fontsize=8.5, ncol=2)
+    clean_axis(axes[1], "both")
+    annotate_panel(axes[1], "b")
+    fig.tight_layout(w_pad=2.5)
+    save_figure(fig, output)
+    plt.close(fig)
 
 
 def main() -> None:
@@ -98,7 +284,7 @@ def main() -> None:
     if len(task_curves) != 9:
         raise SummaryFailure("expected nine frozen certificate thresholds")
 
-    colors = ["#118A7E" if p == "safeconf_m_4to1" else "#D55E5E" if p == "predicted_magnitude" else "#54769A" for p in predictors]
+    colors = [PALETTE[p] for p in predictors]
     labels = [PREDICTOR_LABELS[p] for p in predictors]
     y = np.arange(len(predictors))
     plt.rcParams.update({"font.family": "DejaVu Sans", "axes.linewidth": 0.8})
@@ -125,14 +311,26 @@ def main() -> None:
     axes[2].legend(frameon=False)
     axes[2].text(-0.18, 1.04, "c", transform=axes[2].transAxes, fontweight="bold", fontsize=13)
     for axis in axes:
-        axis.spines["top"].set_visible(False)
-        axis.spines["right"].set_visible(False)
-        axis.grid(axis="x", color="#E6E8EB", linewidth=0.6)
-        axis.set_axisbelow(True)
-    figure.parent.mkdir(parents=True, exist_ok=True)
+        clean_axis(axis, "x")
     fig.tight_layout()
-    fig.savefig(figure, bbox_inches="tight")
+    overview_outputs = save_figure(fig, figure)
     plt.close(fig)
+
+    figure_dir = figure.parent / "figures"
+    context_figure = figure_dir / "E205_CONTEXT_RESOLVED_RESULTS.svg"
+    operating_figure = figure_dir / "E205_OPERATING_CHARACTERISTICS.svg"
+    render_context_matrix(
+        associations,
+        utilities,
+        predictors,
+        context_figure,
+    )
+    render_operating_curves(
+        utilities,
+        curves,
+        predictors,
+        operating_figure,
+    )
 
     certificate_word = (
         "SUPPORTED"
@@ -201,7 +399,13 @@ SafeConf-M 相对预测幅度的 Spearman 差为 {finite(spearman_interval['esti
 3. “数学下界成立”“下界足够紧，能签发高风险证书”“经验排序超过预测幅度”是三个不同结论，按上表分别报告。
 4. 即使排序增量未通过，跨结构证书结果仍可独立解释；如果证书操作性门也未通过，则 E205 给出的有效结论是适用边界，而不是性能提升。
 
-图：`{figure.name}`。
+## 图件
+
+- 总体排序、20% 复核效用与冻结证书阈值：`{figure.name}`（同时生成 PDF 与 300 dpi PNG）。
+- 四个细胞背景的分解结果：`figures/{context_figure.name}`（同时生成 PDF 与 300 dpi PNG）。
+- 不同复核预算及证书覆盖—召回关系：`figures/{operating_figure.name}`（同时生成 PDF 与 300 dpi PNG）。
+
+图件共 {len(overview_outputs) + 6} 个文件；所有面板由同一批正式 CSV 自动生成，未按结果删除细胞背景、风险信号或预算点。
 """
     atomic_text(report, text)
 

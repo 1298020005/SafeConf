@@ -39,21 +39,31 @@ class E205ResultSummaryTests(unittest.TestCase):
                 encoding="utf-8",
             )
             predictors = list(MODULE.PREDICTOR_LABELS)
+            scopes = ["pooled", "K562", "RPE1", "hepg2", "jurkat"]
             pd.DataFrame(
                 [
-                    {"scope": "pooled", "predictor": name, "spearman": 0.1 + index / 100}
+                    {
+                        "scope": scope,
+                        "predictor": name,
+                        "spearman": 0.1 + index / 100 + scope_index / 200,
+                    }
+                    for scope_index, scope in enumerate(scopes)
                     for index, name in enumerate(predictors)
                 ]
             ).to_csv(evaluation / "E205_RISK_ASSOCIATIONS.csv", index=False)
             pd.DataFrame(
                 [
                     {
-                        "scope": "pooled",
+                        "scope": scope,
                         "predictor": name,
-                        "budget": 0.20,
-                        "oracle_normalized_utility": 0.2 + index / 100,
+                        "budget": budget,
+                        "oracle_normalized_utility": (
+                            0.2 + index / 100 + scope_index / 200 + budget / 20
+                        ),
                     }
+                    for scope_index, scope in enumerate(scopes)
                     for index, name in enumerate(predictors)
+                    for budget in (0.05, 0.10, 0.20, 0.30)
                 ]
             ).to_csv(evaluation / "E205_REVIEW_UTILITY.csv", index=False)
             pd.DataFrame(
@@ -76,11 +86,12 @@ class E205ResultSummaryTests(unittest.TestCase):
                 [
                     {
                         "unit": "task",
-                        "scope": "pooled",
+                        "scope": scope,
                         "quantile": number / 10,
-                        "certified_high_recall": number / 20,
-                        "certified_high_coverage": number / 30,
+                        "certified_high_recall": number / 20 + scope_index / 100,
+                        "certified_high_coverage": number / 30 + scope_index / 100,
                     }
+                    for scope_index, scope in enumerate(scopes)
                     for number in range(1, 10)
                 ]
             ).to_csv(
@@ -107,6 +118,20 @@ class E205ResultSummaryTests(unittest.TestCase):
             self.assertIn("排序增量 | NOT_SUPPORTED", text)
             self.assertIn("排序模块不得作为主要胜利", text)
             self.assertTrue(figure.is_file() and figure.stat().st_size > 0)
+            self.assertTrue(figure.with_suffix(".pdf").is_file())
+            self.assertTrue(figure.with_suffix(".png").is_file())
+            self.assertTrue(
+                (
+                    evaluation
+                    / "figures/E205_CONTEXT_RESOLVED_RESULTS.svg"
+                ).is_file()
+            )
+            self.assertTrue(
+                (
+                    evaluation
+                    / "figures/E205_OPERATING_CHARACTERISTICS.png"
+                ).is_file()
+            )
 
 
 if __name__ == "__main__":
