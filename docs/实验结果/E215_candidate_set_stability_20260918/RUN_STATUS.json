@@ -1,0 +1,17 @@
+{
+  "experiment": "E215_candidate_set_stability",
+  "evidence_identity": "released_data_deployment_stability_audit",
+  "input_sha256": "b75f5edae0bb585ba5ff18aecafcc2389b0f05fd5cc86b36960afb4b62e4a15a",
+  "n_tasks": 3465,
+  "n_studies": 8,
+  "n_folds": 34,
+  "replicates_per_fraction_per_fold": 1000,
+  "fractions": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "workers": 24,
+  "raw_rows": 204000,
+  "target_truth_modified": false
+}
