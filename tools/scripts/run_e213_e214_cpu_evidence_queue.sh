@@ -70,6 +70,7 @@ fi
 
 write_status "RUNNING" "RUNNING" "E213 and E214 executing concurrently"
 "$PYTHON" tools/scripts/run_e213_selective_prediction_endpoints.py \
+  --input /home/yyf/proj/docs/实验结果/E153_eight_study_formal_meta_20260714/tables/E153_ABSOLUTE_TASK_INPUT.csv \
   --bootstrap 5000 \
   --workers 32 \
   --scratch /home/yyf/data/safeconf_cpu/e213_20260918 \
@@ -110,4 +111,3 @@ GIT_SSH_COMMAND='ssh -i /home/yyf/.ssh/id_ed25519_github_safeconf -o IdentitiesO
 
 write_status "COMPLETE" "PASS" "results tested, committed, and pushed"
 trap - EXIT
-
