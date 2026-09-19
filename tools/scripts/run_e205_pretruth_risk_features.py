@@ -221,6 +221,33 @@ def rank_fusion_4_to_1(magnitude: np.ndarray, safeconf: np.ndarray) -> np.ndarra
     return (4.0 * m_rank + s_rank) / (5.0 * len(magnitude))
 
 
+def certificate_priority_score(
+    magnitude: np.ndarray,
+    lower_bound: np.ndarray,
+    tau: float,
+) -> np.ndarray:
+    """Prioritize frozen high-error certificates, then break ties by magnitude.
+
+    The score is deliberately lexicographic rather than a tuned weighted sum:
+    every task with ``lower_bound > tau`` ranks above every uncertified task,
+    while predicted magnitude determines order within the two groups.
+    """
+    magnitude = np.asarray(magnitude, dtype=float)
+    lower_bound = np.asarray(lower_bound, dtype=float)
+    if (
+        magnitude.shape != lower_bound.shape
+        or magnitude.ndim != 1
+        or len(magnitude) < 2
+        or not np.isfinite(magnitude).all()
+        or not np.isfinite(lower_bound).all()
+        or not math.isfinite(float(tau))
+    ):
+        raise RiskFailure("certificate-priority routing requires aligned finite inputs")
+    magnitude_rank = rankdata(magnitude, method="average") / len(magnitude)
+    certified = (lower_bound > float(tau)).astype(float)
+    return 2.0 * certified + magnitude_rank
+
+
 def verify_record(path: Path, record: dict, label: str) -> None:
     if (
         not path.is_file()
@@ -480,6 +507,9 @@ def main() -> None:
                         )
                     ),
                     "predicted_magnitude": rmse(family, control),
+                    "registered_predicted_magnitude": rmse(
+                        registered_family, control
+                    ),
                     "model_source_gap": rmse(family, source_prediction),
                     "source_transfer_magnitude": rmse(source_prediction, control),
                     "cross_family_disagreement": rmse(family, gat_family),
@@ -589,6 +619,28 @@ def main() -> None:
         }
         for quantile in TAU_QUANTILES
     ]
+    tau_q80 = next(
+        float(record["tau"])
+        for record in tau_grid
+        if math.isclose(float(record["quantile"]), 0.8)
+    )
+    features["certificate_priority_q80"] = np.nan
+    for target in TARGETS:
+        index = features.index[features.target.eq(target)]
+        features.loc[index, "certificate_priority_q80"] = certificate_priority_score(
+            features.loc[index, "registered_predicted_magnitude"].to_numpy(float),
+            features.loc[index, "registered_family_disagreement"].to_numpy(float),
+            tau_q80,
+        )
+    if not np.isfinite(
+        features[
+            [
+                "registered_predicted_magnitude",
+                "certificate_priority_q80",
+            ]
+        ].to_numpy(float)
+    ).all():
+        raise RiskFailure("certificate-priority pretruth score is non-finite")
 
     vector_dir.mkdir(parents=True)
     vector_records = []
@@ -640,6 +692,22 @@ def main() -> None:
             "tau_grid": tau_grid,
         },
         "safeconf_m_formula": "(4*rank(predicted_magnitude)+rank(safeconf_e205_risk))/(5*N), within target",
+        "certificate_priority_router": {
+            "status": "PREREGISTERED_SECONDARY",
+            "outcome": "registered_family_rms_error",
+            "magnitude": "registered_predicted_magnitude",
+            "lower_bound": "registered_family_disagreement",
+            "tau_quantile": 0.8,
+            "tau": tau_q80,
+            "formula": (
+                "2*I(registered_family_disagreement>tau_q80) + "
+                "rank(registered_predicted_magnitude)/N, within target"
+            ),
+            "interpretation": (
+                "certified tasks first; predicted magnitude orders tasks within "
+                "certified and uncertified groups"
+            ),
+        },
         "standardization": "within target; parameters from primary_ge30 tasks",
         "family_mean_max_abs_residual": family_residual,
         "registered_family_mean_max_abs_residual": registered_centroid_residual,

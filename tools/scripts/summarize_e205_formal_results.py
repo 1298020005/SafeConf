@@ -38,6 +38,16 @@ PALETTE = {
     "cross_family_disagreement": "#8A8F98",
 }
 TARGET_ORDER = ("K562", "RPE1", "hepg2", "jurkat")
+REGISTERED_ROUTER_LABELS = {
+    "certificate_priority_q80": "Certificate first + magnitude",
+    "registered_predicted_magnitude": "Registered-family magnitude",
+    "registered_family_disagreement": "Registered-family lower bound",
+}
+REGISTERED_ROUTER_COLORS = {
+    "certificate_priority_q80": "#118A7E",
+    "registered_predicted_magnitude": "#D55E5E",
+    "registered_family_disagreement": "#7E6AAD",
+}
 
 
 def parse_args() -> argparse.Namespace:
@@ -246,6 +256,66 @@ def render_operating_curves(
     plt.close(fig)
 
 
+def render_certificate_priority_router(
+    utilities: pd.DataFrame,
+    output: Path,
+) -> None:
+    predictors = list(REGISTERED_ROUTER_LABELS)
+    pooled = utilities.loc[
+        utilities.scope.eq("pooled") & utilities.predictor.isin(predictors)
+    ]
+    if set(pooled.predictor) != set(predictors):
+        raise SummaryFailure("registered-family routing table is incomplete")
+    at_twenty = utilities.loc[
+        utilities.scope.isin(("pooled", *TARGET_ORDER))
+        & np.isclose(utilities.budget.astype(float), 0.20)
+        & utilities.predictor.isin(
+            ("certificate_priority_q80", "registered_predicted_magnitude")
+        )
+    ]
+    matrix = (
+        at_twenty.pivot(
+            index="scope", columns="predictor", values="oracle_normalized_utility"
+        )
+        .reindex(index=("pooled", *TARGET_ORDER))
+    )
+    if matrix.isna().any().any():
+        raise SummaryFailure("registered-family per-context routing table is incomplete")
+    delta = (
+        matrix["certificate_priority_q80"]
+        - matrix["registered_predicted_magnitude"]
+    )
+
+    fig, axes = plt.subplots(1, 2, figsize=(10.8, 4.0), facecolor="white")
+    colors = ["#118A7E" if value >= 0 else "#D55E5E" for value in delta]
+    axes[0].bar(np.arange(len(delta)), delta.to_numpy(float), color=colors, width=0.65)
+    axes[0].set_xticks(np.arange(len(delta)), delta.index, rotation=25, ha="right")
+    axes[0].axhline(0, color="#333333", linewidth=0.8)
+    axes[0].set_ylabel("20% review-utility difference")
+    clean_axis(axes[0], "y")
+    annotate_panel(axes[0], "a")
+
+    for predictor in predictors:
+        block = pooled.loc[pooled.predictor.eq(predictor)].sort_values("budget")
+        axes[1].plot(
+            100 * block.budget.to_numpy(float),
+            block.oracle_normalized_utility.to_numpy(float),
+            marker="o",
+            linewidth=1.8,
+            markersize=4.5,
+            color=REGISTERED_ROUTER_COLORS[predictor],
+            label=REGISTERED_ROUTER_LABELS[predictor],
+        )
+    axes[1].set_xlabel("Review budget (%)")
+    axes[1].set_ylabel("Registered-family review utility")
+    axes[1].legend(frameon=False, fontsize=8.0)
+    clean_axis(axes[1], "both")
+    annotate_panel(axes[1], "b")
+    fig.tight_layout(w_pad=2.5)
+    save_figure(fig, output)
+    plt.close(fig)
+
+
 def main() -> None:
     args = parse_args()
     evaluation = args.evaluation_dir.resolve()
@@ -266,6 +336,12 @@ def main() -> None:
     utilities = pd.read_csv(evaluation / "E205_REVIEW_UTILITY.csv")
     intervals = pd.read_csv(evaluation / "E205_INCREMENTAL_INTERVALS.csv")
     curves = pd.read_csv(evaluation / "E205_REGISTERED_CERTIFICATE_CURVES.csv")
+    registered_utilities = pd.read_csv(
+        evaluation / "E205_REGISTERED_ROUTING_UTILITY.csv"
+    )
+    registered_intervals = pd.read_csv(
+        evaluation / "E205_REGISTERED_ROUTING_INTERVALS.csv"
+    )
 
     predictors = [name for name in PREDICTOR_LABELS if name in set(associations.predictor)]
     pooled_assoc = associations.loc[
@@ -319,6 +395,7 @@ def main() -> None:
     figure_dir = figure.parent / "figures"
     context_figure = figure_dir / "E205_CONTEXT_RESOLVED_RESULTS.svg"
     operating_figure = figure_dir / "E205_OPERATING_CHARACTERISTICS.svg"
+    router_figure = figure_dir / "E205_CERTIFICATE_PRIORITY_ROUTER.svg"
     render_context_matrix(
         associations,
         utilities,
@@ -331,6 +408,7 @@ def main() -> None:
         predictors,
         operating_figure,
     )
+    render_certificate_priority_router(registered_utilities, router_figure)
 
     certificate_word = (
         "SUPPORTED"
@@ -340,6 +418,11 @@ def main() -> None:
     ranking_word = (
         "SUPPORTED"
         if status.get("primary_increment_status") == "SUPPORTED"
+        else "NOT_SUPPORTED"
+    )
+    router_word = (
+        "SUPPORTED"
+        if status.get("certificate_priority_router_status") == "SUPPORTED"
         else "NOT_SUPPORTED"
     )
     conclusion = []
@@ -355,6 +438,17 @@ def main() -> None:
         conclusion.append("固定 SafeConf-M 在 20% 复核预算下确认了相对预测幅度的增量。")
     else:
         conclusion.append("固定 SafeConf-M 未确认相对预测幅度的复核增量，排序模块不得作为主要胜利。")
+    if router_word == "SUPPORTED":
+        conclusion.append("证书优先、幅度组内排序确认了对注册家族幅度的次要复核增量。")
+    else:
+        conclusion.append("证书优先路由未确认复核增量，不影响确定性下界本身的有效性。")
+
+    router_utility_interval = extract_unique(
+        registered_intervals, measure="delta_utility_20"
+    )
+    router_spearman_interval = extract_unique(
+        registered_intervals, measure="delta_spearman"
+    )
 
     rows = []
     for predictor in predictors:
@@ -378,6 +472,7 @@ def main() -> None:
 | --- | --- |
 | 正式评价执行 | {status['execution_status']} |
 | 排序增量 | {ranking_word} |
+| 证书优先路由（次要） | {router_word} |
 | 注册家族证书 | {certificate_word} |
 | 主任务数 | {int(status['n_primary_tasks'])} |
 | 注册家族下界违反 | {int(status['registered_family_lower_bound_violations'])} |
@@ -392,6 +487,10 @@ def main() -> None:
 
 SafeConf-M 相对预测幅度的 Spearman 差为 {finite(spearman_interval['estimate']):.4f}，扰动簇自助法 95% 区间为 [{finite(spearman_interval['ci95_lower']):.4f}, {finite(spearman_interval['ci95_upper']):.4f}]。20% 复核效用差为 {finite(utility_interval['estimate']):.4f}，95% 区间为 [{finite(utility_interval['ci95_lower']):.4f}, {finite(utility_interval['ci95_upper']):.4f}]。
 
+## 证书优先路由（预登记次要分析）
+
+在注册跨架构家族自身的 RMS 误差上，证书优先路由相对注册家族预测幅度的 Spearman 差为 {finite(router_spearman_interval['estimate']):.4f}，95% 区间为 [{finite(router_spearman_interval['ci95_lower']):.4f}, {finite(router_spearman_interval['ci95_upper']):.4f}]；20% 复核效用差为 {finite(router_utility_interval['estimate']):.4f}，95% 区间为 [{finite(router_utility_interval['ci95_lower']):.4f}, {finite(router_utility_interval['ci95_upper']):.4f}]。该分析不替换固定 SafeConf-M 的主要门，也不替换证书正确性门。
+
 ## 可用于汇报的逻辑
 
 1. E201 只有同一 GAT 架构的随机种子；E205 加入 Exphormer 后，检验对象变成预先注册的跨结构模型家族。
@@ -404,8 +503,9 @@ SafeConf-M 相对预测幅度的 Spearman 差为 {finite(spearman_interval['esti
 - 总体排序、20% 复核效用与冻结证书阈值：`{figure.name}`（同时生成 PDF 与 300 dpi PNG）。
 - 四个细胞背景的分解结果：`figures/{context_figure.name}`（同时生成 PDF 与 300 dpi PNG）。
 - 不同复核预算及证书覆盖—召回关系：`figures/{operating_figure.name}`（同时生成 PDF 与 300 dpi PNG）。
+- 证书优先路由相对注册家族幅度：`figures/{router_figure.name}`（同时生成 PDF 与 300 dpi PNG）。
 
-图件共 {len(overview_outputs) + 6} 个文件；所有面板由同一批正式 CSV 自动生成，未按结果删除细胞背景、风险信号或预算点。
+图件共 {len(overview_outputs) + 9} 个文件；所有面板由同一批正式 CSV 自动生成，未按结果删除细胞背景、风险信号或预算点。
 """
     atomic_text(report, text)
 
