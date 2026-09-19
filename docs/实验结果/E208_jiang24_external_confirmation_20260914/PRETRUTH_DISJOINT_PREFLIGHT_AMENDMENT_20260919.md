@@ -14,7 +14,7 @@
 4. 预检输出写入独立目录，并标记 `DISJOINT_ENGINEERING_PREFLIGHT`；
 5. 此结果不得释放 E208 正式训练队列。正式队列仍等待原定的 E205 完成后 smoke 门。
 
-工程预检第一次实际执行发现虚拟环境入口被解析成基础解释器，第二次发现 PerturBench 固定提交使用的 `weights_only` 参数需要 Lightning 2.6。修复后，运行合同固定为 PerturBench `c84038bc`、PyTorch `2.6.0+cu124`、Lightning `2.6.6`；环境版本不符时直接停止。两次失败均发生在训练开始前，测试表达读取仍为 0 行。
+工程预检第一次执行发现虚拟环境入口被解析成基础解释器；第二次发现关闭进度条却仍加载 RichProgressBar 的配置冲突；第三次发现 PerturBench 固定提交使用的 `weights_only` 参数需要 Lightning 2.6。修复后，运行合同固定为 PerturBench `c84038bc`、PyTorch `2.6.0+cu124`、Lightning `2.6.6`；环境版本不符时直接停止。三次失败均发生在首个参数更新前，测试表达读取仍为 0 行。
 
 ## 目的与结论边界
 
