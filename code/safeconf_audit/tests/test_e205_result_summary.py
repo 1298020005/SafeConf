@@ -34,6 +34,7 @@ class E205ResultSummaryTests(unittest.TestCase):
                         "registered_family_lower_bound_violations": 0,
                         "registered_family_identity_failures": 0,
                         "registered_family_lower_tightness_median": 0.25,
+                        "certificate_priority_router_status": "NOT_SUPPORTED",
                     }
                 ),
                 encoding="utf-8",
@@ -97,6 +98,41 @@ class E205ResultSummaryTests(unittest.TestCase):
             ).to_csv(
                 evaluation / "E205_REGISTERED_CERTIFICATE_CURVES.csv", index=False
             )
+            pd.DataFrame(
+                [
+                    {
+                        "scope": scope,
+                        "predictor": predictor,
+                        "budget": budget,
+                        "oracle_normalized_utility": (
+                            0.25 + index / 100 + scope_index / 200 + budget / 20
+                        ),
+                    }
+                    for scope_index, scope in enumerate(scopes)
+                    for index, predictor in enumerate(MODULE.REGISTERED_ROUTER_LABELS)
+                    for budget in (0.05, 0.10, 0.20, 0.30)
+                ]
+            ).to_csv(
+                evaluation / "E205_REGISTERED_ROUTING_UTILITY.csv", index=False
+            )
+            pd.DataFrame(
+                [
+                    {
+                        "measure": "delta_spearman",
+                        "estimate": 0.01,
+                        "ci95_lower": -0.01,
+                        "ci95_upper": 0.03,
+                    },
+                    {
+                        "measure": "delta_utility_20",
+                        "estimate": -0.01,
+                        "ci95_lower": -0.03,
+                        "ci95_upper": 0.02,
+                    },
+                ]
+            ).to_csv(
+                evaluation / "E205_REGISTERED_ROUTING_INTERVALS.csv", index=False
+            )
             report = evaluation / "REPORT.md"
             figure = evaluation / "overview.svg"
             with patch(
@@ -117,6 +153,7 @@ class E205ResultSummaryTests(unittest.TestCase):
             self.assertIn("注册家族证书 | SUPPORTED", text)
             self.assertIn("排序增量 | NOT_SUPPORTED", text)
             self.assertIn("排序模块不得作为主要胜利", text)
+            self.assertIn("证书优先路由未确认复核增量", text)
             self.assertTrue(figure.is_file() and figure.stat().st_size > 0)
             self.assertTrue(figure.with_suffix(".pdf").is_file())
             self.assertTrue(figure.with_suffix(".png").is_file())
@@ -130,6 +167,12 @@ class E205ResultSummaryTests(unittest.TestCase):
                 (
                     evaluation
                     / "figures/E205_OPERATING_CHARACTERISTICS.png"
+                ).is_file()
+            )
+            self.assertTrue(
+                (
+                    evaluation
+                    / "figures/E205_CERTIFICATE_PRIORITY_ROUTER.png"
                 ).is_file()
             )
 

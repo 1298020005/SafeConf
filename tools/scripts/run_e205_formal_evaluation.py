@@ -49,6 +49,11 @@ PREDICTORS = (
     "registered_family_disagreement",
     "cross_family_disagreement",
 )
+REGISTERED_ROUTING_PREDICTORS = (
+    "certificate_priority_q80",
+    "registered_predicted_magnitude",
+    "registered_family_disagreement",
+)
 
 
 class EvaluationFailure(RuntimeError):
@@ -307,6 +312,7 @@ def load_risk_inputs(
         "predicted_magnitude", "safeconf_e205_risk", "safeconf_m_4to1",
         "family_disagreement", "gat_family_disagreement",
         "registered_family_disagreement", "cross_family_disagreement",
+        "registered_predicted_magnitude", "certificate_priority_q80",
     }
     if not required.issubset(features.columns):
         raise EvaluationFailure(f"E205 risk schema missing: {sorted(required-set(features.columns))}")
@@ -317,6 +323,9 @@ def load_risk_inputs(
         or not np.array_equal(features.source_mean_delta_row.to_numpy(int), np.arange(N_TASKS))
         or tuple(pd.unique(features.target.astype(str))) != TARGETS
         or not np.isfinite(features[list(PREDICTORS)].to_numpy(float)).all()
+        or not np.isfinite(
+            features[list(REGISTERED_ROUTING_PREDICTORS)].to_numpy(float)
+        ).all()
     ):
         raise EvaluationFailure("E205 risk task contract changed")
     records = {Path(item["path"]).name: item for item in status.get("vector_files", [])}
@@ -572,6 +581,42 @@ def scope_rows(frame: pd.DataFrame) -> tuple[list[dict], list[dict]]:
     return associations, utilities
 
 
+def registered_routing_rows(frame: pd.DataFrame) -> tuple[list[dict], list[dict]]:
+    """Evaluate the frozen certificate-priority router on its declared family."""
+    associations, utilities = [], []
+    scopes = [("pooled", frame)] + [
+        (target, frame.loc[frame.target.eq(target)]) for target in TARGETS
+    ]
+    for scope, block in scopes:
+        outcome = block.registered_family_rms_error.to_numpy(float)
+        for predictor in REGISTERED_ROUTING_PREDICTORS:
+            associations.append(
+                {
+                    "scope": scope,
+                    "predictor": predictor,
+                    "outcome": "registered_family_rms_error",
+                    "n_tasks": len(block),
+                    "spearman": spearman(
+                        block[predictor].to_numpy(float), outcome
+                    ),
+                }
+            )
+            for budget in BUDGETS:
+                utilities.append(
+                    {
+                        "scope": scope,
+                        "predictor": predictor,
+                        **review_metrics(
+                            block[predictor].to_numpy(float),
+                            outcome,
+                            block.task_id.to_numpy(),
+                            budget,
+                        ),
+                    }
+                )
+    return associations, utilities
+
+
 def bootstrap_increment(frame: pd.DataFrame, n_bootstrap: int) -> pd.DataFrame:
     if n_bootstrap < 100:
         raise EvaluationFailure("formal E205 bootstrap requires at least 100 draws")
@@ -598,6 +643,52 @@ def bootstrap_increment(frame: pd.DataFrame, n_bootstrap: int) -> pd.DataFrame:
                 "draw": draw,
                 "delta_spearman": spearman(combined, outcome) - spearman(magnitude, outcome),
                 "delta_utility_20": combined_utility - magnitude_utility,
+            }
+        )
+    return pd.DataFrame(rows)
+
+
+def bootstrap_registered_router(
+    frame: pd.DataFrame, n_bootstrap: int
+) -> pd.DataFrame:
+    """Cluster-bootstrap certificate-priority routing versus family magnitude."""
+    if n_bootstrap < 100:
+        raise EvaluationFailure("formal E205 bootstrap requires at least 100 draws")
+    clusters = sorted(frame.condition.astype(str).unique())
+    members = [
+        np.flatnonzero(frame.condition.astype(str).to_numpy() == item)
+        for item in clusters
+    ]
+    rng = np.random.default_rng(216_202_609)
+    rows = []
+    for draw in range(n_bootstrap):
+        chosen = rng.integers(0, len(members), len(members))
+        indices = np.concatenate([members[index] for index in chosen])
+        block = frame.iloc[indices]
+        outcome = block.registered_family_rms_error.to_numpy(float)
+        routed = block.certificate_priority_q80.to_numpy(float)
+        magnitude = block.registered_predicted_magnitude.to_numpy(float)
+        occurrences = block.groupby("task_id", sort=False).cumcount().to_numpy(int)
+        routed_utility = review_metrics(
+            routed,
+            outcome,
+            block.task_id.to_numpy(),
+            0.20,
+            occurrences,
+        )["oracle_normalized_utility"]
+        magnitude_utility = review_metrics(
+            magnitude,
+            outcome,
+            block.task_id.to_numpy(),
+            0.20,
+            occurrences,
+        )["oracle_normalized_utility"]
+        rows.append(
+            {
+                "draw": draw,
+                "delta_spearman": spearman(routed, outcome)
+                - spearman(magnitude, outcome),
+                "delta_utility_20": routed_utility - magnitude_utility,
             }
         )
     return pd.DataFrame(rows)
@@ -726,6 +817,51 @@ def main() -> None:
             }
         )
 
+    registered_associations, registered_utilities = registered_routing_rows(primary)
+    registered_draws = bootstrap_registered_router(primary, args.n_bootstrap)
+    registered_intervals = []
+    for column in ("delta_spearman", "delta_utility_20"):
+        values = registered_draws[column].to_numpy(float)
+        routed_association = next(
+            row["spearman"]
+            for row in registered_associations
+            if row["scope"] == "pooled"
+            and row["predictor"] == "certificate_priority_q80"
+        )
+        magnitude_association = next(
+            row["spearman"]
+            for row in registered_associations
+            if row["scope"] == "pooled"
+            and row["predictor"] == "registered_predicted_magnitude"
+        )
+        routed_utility = next(
+            row["oracle_normalized_utility"]
+            for row in registered_utilities
+            if row["scope"] == "pooled"
+            and row["predictor"] == "certificate_priority_q80"
+            and math.isclose(row["budget"], 0.20)
+        )
+        magnitude_utility = next(
+            row["oracle_normalized_utility"]
+            for row in registered_utilities
+            if row["scope"] == "pooled"
+            and row["predictor"] == "registered_predicted_magnitude"
+            and math.isclose(row["budget"], 0.20)
+        )
+        registered_intervals.append(
+            {
+                "measure": column,
+                "estimate": float(
+                    routed_association - magnitude_association
+                    if column == "delta_spearman"
+                    else routed_utility - magnitude_utility
+                ),
+                "ci95_lower": float(np.quantile(values, 0.025)),
+                "ci95_upper": float(np.quantile(values, 0.975)),
+                "positive_fraction": float(np.mean(values > 0)),
+            }
+        )
+
     output_dir.mkdir(parents=True)
     atomic_csv(output_dir / "E205_TASK_METRICS.csv", evaluated)
     atomic_csv(output_dir / "E205_RISK_ASSOCIATIONS.csv", pd.DataFrame(associations))
@@ -733,7 +869,28 @@ def main() -> None:
     atomic_csv(output_dir / "E205_INCREMENTAL_BOOTSTRAP_DRAWS.csv", draws)
     atomic_csv(output_dir / "E205_INCREMENTAL_INTERVALS.csv", pd.DataFrame(intervals))
     atomic_csv(output_dir / "E205_REGISTERED_CERTIFICATE_CURVES.csv", certificate)
+    atomic_csv(
+        output_dir / "E205_REGISTERED_ROUTING_ASSOCIATIONS.csv",
+        pd.DataFrame(registered_associations),
+    )
+    atomic_csv(
+        output_dir / "E205_REGISTERED_ROUTING_UTILITY.csv",
+        pd.DataFrame(registered_utilities),
+    )
+    atomic_csv(
+        output_dir / "E205_REGISTERED_ROUTING_BOOTSTRAP_DRAWS.csv",
+        registered_draws,
+    )
+    atomic_csv(
+        output_dir / "E205_REGISTERED_ROUTING_INTERVALS.csv",
+        pd.DataFrame(registered_intervals),
+    )
     utility_interval = next(row for row in intervals if row["measure"] == "delta_utility_20")
+    registered_utility_interval = next(
+        row
+        for row in registered_intervals
+        if row["measure"] == "delta_utility_20"
+    )
     status = {
         "experiment": "E205_cross_family_exphormer",
         "stage": "FORMAL_EVALUATION",
@@ -772,6 +929,16 @@ def main() -> None:
         ),
         "primary_gate": "pooled 20% SafeConf-M minus magnitude utility cluster-bootstrap CI lower > 0",
         "primary_observed": utility_interval,
+        "certificate_priority_router_status": (
+            "SUPPORTED"
+            if registered_utility_interval["ci95_lower"] > 0
+            else "NOT_SUPPORTED"
+        ),
+        "certificate_priority_router_role": (
+            "preregistered secondary; does not replace the frozen SafeConf-M "
+            "primary gate or the registered-family certificate gate"
+        ),
+        "certificate_priority_router_observed": registered_utility_interval,
     }
     atomic_json(output_dir / "E205_FORMAL_EVALUATION_STATUS.json", status)
     print(json.dumps(status, ensure_ascii=False, indent=2))

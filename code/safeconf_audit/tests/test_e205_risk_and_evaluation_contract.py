@@ -43,6 +43,25 @@ class E205PretruthRiskTests(unittest.TestCase):
                 np.asarray([1.0, np.nan]), np.asarray([1.0, 2.0])
             )
 
+    def test_certificate_priority_is_lexicographic_and_untuned(self) -> None:
+        magnitude = np.asarray([0.1, 0.9, 0.2, 0.8])
+        lower_bound = np.asarray([0.6, 0.4, 0.7, 0.3])
+
+        observed = RISK.certificate_priority_score(
+            magnitude, lower_bound, tau=0.5
+        )
+
+        certified = lower_bound > 0.5
+        self.assertGreater(float(observed[certified].min()), float(observed[~certified].max()))
+        self.assertGreater(float(observed[2]), float(observed[0]))
+        self.assertGreater(float(observed[1]), float(observed[3]))
+
+    def test_certificate_priority_rejects_nonfinite_inputs(self) -> None:
+        with self.assertRaises(RISK.RiskFailure):
+            RISK.certificate_priority_score(
+                np.asarray([0.1, np.nan]), np.asarray([0.2, 0.3]), 0.25
+            )
+
     def test_prediction_tree_fails_closed_on_truth_named_artifact(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
@@ -212,6 +231,8 @@ class E205EvaluationMetricTests(unittest.TestCase):
     def test_bootstrap_rejects_informal_draw_count(self) -> None:
         with self.assertRaisesRegex(EVALUATION.EvaluationFailure, "at least 100"):
             EVALUATION.bootstrap_increment(pd.DataFrame(), 99)
+        with self.assertRaisesRegex(EVALUATION.EvaluationFailure, "at least 100"):
+            EVALUATION.bootstrap_registered_router(pd.DataFrame(), 99)
 
 
 if __name__ == "__main__":
