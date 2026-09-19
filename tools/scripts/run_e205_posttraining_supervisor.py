@@ -498,11 +498,11 @@ def run(args: argparse.Namespace) -> dict:
         if not e208_done:
             run_checked(
                 [
-                    str(args.perturbench_python.resolve()),
+                    str(args.perturbench_python.expanduser().absolute()),
                     str(args.repo / "tools/scripts/run_e208_after_e205_smoke_supervisor.py"),
                     "--repo", str(args.repo),
                     "--perturbench-repo", str(args.perturbench_repo.resolve()),
-                    "--python", str(args.perturbench_python.resolve()),
+                    "--python", str(args.perturbench_python.expanduser().absolute()),
                     "--data-dir", str(args.e208_data_dir.resolve()),
                     "--e205-queue-status", str(args.queue_status),
                     "--output-root", str(args.e208_output_root.resolve()),

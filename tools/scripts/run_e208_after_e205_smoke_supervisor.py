@@ -130,12 +130,12 @@ def run(args: argparse.Namespace) -> dict:
     for index, batch_size in enumerate(BATCH_FALLBACKS):
         attempt = root / f"smoke_batch_{batch_size}"
         command = [
-            str(args.python.resolve()),
+            str(args.python.expanduser().absolute()),
             str(smoke),
             "--perturbench-repo",
             str(args.perturbench_repo.resolve()),
             "--python",
-            str(args.python.resolve()),
+            str(args.python.expanduser().absolute()),
             "--data-dir",
             str(args.data_dir.resolve()),
             "--output-root",

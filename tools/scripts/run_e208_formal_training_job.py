@@ -197,7 +197,9 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
 
 def run(args: argparse.Namespace) -> dict:
     repo = args.perturbench_repo.resolve()
-    python = args.python.resolve()
+    # Preserve the venv entry-point symlink; resolving it selects the base
+    # interpreter and loses the registered PerturBench environment.
+    python = args.python.expanduser().absolute()
     data_dir = args.data_dir.resolve()
     run_dir = args.run_dir.resolve()
     if not python.is_file():

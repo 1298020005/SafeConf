@@ -311,7 +311,9 @@ def run(args: argparse.Namespace) -> dict:
         raise QueueFailure("no CUDA devices configured")
     repo = args.repo.resolve()
     perturbench_repo = args.perturbench_repo.resolve()
-    python = args.python.resolve()
+    # Preserve the venv entry-point symlink instead of resolving to its base
+    # interpreter.
+    python = args.python.expanduser().absolute()
     data_dir = args.data_dir.resolve()
     root = args.runs_root.resolve()
     runner = repo / "tools/scripts/run_e208_formal_training_job.py"
