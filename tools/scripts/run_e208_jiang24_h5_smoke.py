@@ -107,6 +107,14 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--batch-size", type=int, default=2000)
     parser.add_argument("--min-free-mb", type=int, default=22_000)
     parser.add_argument(
+        "--allow-disjoint-running-e205",
+        action="store_true",
+        help=(
+            "engineering-only preflight on a GPU not used by a still-blind E205 "
+            "queue; this status must not release the formal E208 queue"
+        ),
+    )
+    parser.add_argument(
         "--rehash-h5",
         action="store_true",
         help="recompute the 93 GB H5 SHA-256 in addition to the frozen D0 record",
@@ -114,19 +122,40 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     return parser.parse_args(argv)
 
 
-def check_e205_complete(path: Path) -> dict:
+def check_e205_gate(
+    path: Path,
+    *,
+    cuda_device: str,
+    allow_disjoint_running: bool,
+) -> tuple[dict, str]:
     if not path.is_file():
         raise SmokeFailure(f"missing E205 queue status: {path}")
     status = json.loads(path.read_text(encoding="utf-8"))
-    if (
+    common = (
         status.get("experiment") != "E205_cross_family_exphormer"
-        or status.get("status") != "COMPLETE"
-        or int(status.get("completed", -1)) != 16
         or status.get("permanent_failures") not in ([], None)
         or status.get("target_truth_access") != "NOT_AUTHORIZED"
-    ):
+    )
+    if common:
+        raise SmokeFailure("E205 blind-state contract changed")
+    if status.get("status") == "COMPLETE" and int(status.get("completed", -1)) == 16:
+        return status, "AFTER_E205_COMPLETE"
+    if not allow_disjoint_running:
         raise SmokeFailure("E205 has not completed cleanly in blind state")
-    return status
+    active_devices = {
+        str(item.get("device"))
+        for item in status.get("active", [])
+        if isinstance(item, dict)
+    }
+    if (
+        status.get("status") != "RUNNING"
+        or int(status.get("completed", -1)) < 1
+        or int(status.get("waiting", -1)) != 0
+        or status.get("detached") not in ([], None)
+        or str(cuda_device) in active_devices
+    ):
+        raise SmokeFailure("E205 does not permit a disjoint engineering preflight")
+    return status, "DISJOINT_ENGINEERING_PREFLIGHT"
 
 
 def check_inputs(args: argparse.Namespace) -> dict:
@@ -251,7 +280,11 @@ def execute(command: list[str], log_path: Path, env: dict[str, str]) -> None:
 
 
 def run_smoke(args: argparse.Namespace) -> dict:
-    check_e205_complete(args.e205_queue_status.resolve())
+    _, scheduling_gate = check_e205_gate(
+        args.e205_queue_status.resolve(),
+        cuda_device=str(args.cuda_device),
+        allow_disjoint_running=bool(args.allow_disjoint_running_e205),
+    )
     lineage = check_inputs(args)
     if args.output_root.exists():
         raise SmokeFailure(f"refusing to overwrite smoke output: {args.output_root}")
@@ -272,6 +305,8 @@ def run_smoke(args: argparse.Namespace) -> dict:
         "cuda_device": str(args.cuda_device),
         "free_gpu_mb_before": free_before,
         "lineage": lineage,
+        "scheduling_gate": scheduling_gate,
+        "formal_queue_release_authorized": scheduling_gate == "AFTER_E205_COMPLETE",
         "test_truth_access": "NOT_AUTHORIZED",
         "test_perturbed_expression_rows_read": 0,
         "architectures": {},
