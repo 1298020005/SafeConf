@@ -1,0 +1,21 @@
+{
+  "experiment": "E214_runtime_scaling",
+  "cpu_model": "Intel(R) Xeon(R) Gold 6240R CPU @ 2.40GHz",
+  "logical_cpus": 96,
+  "python": "3.12.4",
+  "numpy": "1.26.4",
+  "scipy": "1.15.2",
+  "platform": "Linux-6.8.0-45-generic-x86_64-with-glibc2.35",
+  "sizes": [
+    1000,
+    10000,
+    100000,
+    1000000,
+    5000000
+  ],
+  "repeats": 5,
+  "parallel_batches": 32,
+  "parallel_batch_size": 250000,
+  "max_workers": 32,
+  "upstream_model_time_included": false
+}
