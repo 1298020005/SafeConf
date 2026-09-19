@@ -58,6 +58,7 @@ write_status "VERIFY" "RUNNING" "running E215 unit tests"
   > "$STATE/logs/tests.log" 2>&1
 
 git add -- docs/实验结果/E215_candidate_set_stability_20260918
+git add -f -- docs/实验结果/E215_candidate_set_stability_20260918/tables/*.csv
 git commit -m "experiment: publish E215 candidate-set stability audit" \
   > "$STATE/logs/git_commit.log" 2>&1
 write_status "PUBLISH" "RUNNING" "pushing E215 result branch"
@@ -67,4 +68,3 @@ GIT_SSH_COMMAND='ssh -i /home/yyf/.ssh/id_ed25519_github_safeconf -o IdentitiesO
   > "$STATE/logs/push_github.log" 2>&1
 write_status "COMPLETE" "PASS" "results tested, committed, and pushed"
 trap - ERR
-

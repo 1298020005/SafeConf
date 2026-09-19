@@ -96,6 +96,12 @@ write_status "VERIFY" "RUNNING" "running complete safeconf_audit test suite"
 git add -- \
   docs/实验结果/E213_selective_prediction_endpoints_20260918 \
   docs/实验结果/E214_runtime_scaling_20260918
+# Project-wide policy ignores newly generated CSV files by default.  These are
+# small audited summaries (raw bootstrap draws stay under /home/yyf/data), so
+# add only the named result tables explicitly.
+git add -f -- \
+  docs/实验结果/E213_selective_prediction_endpoints_20260918/tables/*.csv \
+  docs/实验结果/E214_runtime_scaling_20260918/tables/*.csv
 if git diff --cached --quiet; then
   write_status "PUBLISH" "FAILED" "no result files were generated"
   exit 3
