@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import importlib.util
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -18,6 +19,37 @@ SPEC.loader.exec_module(MODULE)
 
 
 class E208H5SmokeTests(unittest.TestCase):
+    def test_disjoint_preflight_requires_an_unused_gpu_and_blind_e205(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "e205.json"
+            path.write_text(
+                json.dumps(
+                    {
+                        "experiment": "E205_cross_family_exphormer",
+                        "status": "RUNNING",
+                        "completed": 15,
+                        "waiting": 0,
+                        "active": [{"device": "0"}],
+                        "detached": [],
+                        "permanent_failures": [],
+                        "target_truth_access": "NOT_AUTHORIZED",
+                    }
+                ),
+                encoding="utf-8",
+            )
+            _, mode = MODULE.check_e205_gate(
+                path, cuda_device="1", allow_disjoint_running=True
+            )
+            self.assertEqual(mode, "DISJOINT_ENGINEERING_PREFLIGHT")
+            with self.assertRaises(MODULE.SmokeFailure):
+                MODULE.check_e205_gate(
+                    path, cuda_device="0", allow_disjoint_running=True
+                )
+            with self.assertRaises(MODULE.SmokeFailure):
+                MODULE.check_e205_gate(
+                    path, cuda_device="1", allow_disjoint_running=False
+                )
+
     def test_command_is_one_batch_h5_and_truth_isolated(self) -> None:
         command = MODULE.build_command(
             python=Path("/env/python"),
