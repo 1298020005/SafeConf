@@ -1,0 +1,13 @@
+{
+  "experiment": "E213_selective_prediction_endpoints",
+  "evidence_identity": "released_data_retrospective_endpoint_extension",
+  "input_sha256": "b75f5edae0bb585ba5ff18aecafcc2389b0f05fd5cc86b36960afb4b62e4a15a",
+  "n_tasks": 3465,
+  "n_studies": 8,
+  "n_folds": 34,
+  "bootstrap_replicates": 5000,
+  "workers": 32,
+  "raw_bootstrap_rows": 80000,
+  "e205_or_e208_truth_used": false,
+  "target_truth_modified": false
+}
