@@ -99,7 +99,6 @@ def build_command(
         "trainer.max_epochs=400",
         "trainer.min_epochs=5",
         "trainer.deterministic=true",
-        "trainer.enable_progress_bar=false",
         "callbacks.early_stopping.patience=50",
         "+callbacks.model_checkpoint.save_last=true",
         f"hydra.run.dir={run_dir}",
