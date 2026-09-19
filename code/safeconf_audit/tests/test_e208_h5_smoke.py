@@ -67,6 +67,7 @@ class E208H5SmokeTests(unittest.TestCase):
         self.assertIn("SingleCellPerturbationWithControls.from_h5", joined)
         self.assertNotIn("trainer.test", joined)
         self.assertNotIn("target_truth", joined)
+        self.assertNotIn("trainer.enable_progress_bar=false", joined)
 
     def test_only_registered_batch_fallbacks_are_allowed(self) -> None:
         for batch_size in (2000, 1000, 500, 250):

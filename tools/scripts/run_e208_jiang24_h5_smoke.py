@@ -87,7 +87,6 @@ def build_command(
         "+trainer.limit_train_batches=1",
         "+trainer.limit_val_batches=1",
         "+trainer.num_sanity_val_steps=0",
-        "+trainer.enable_progress_bar=false",
         "+callbacks.model_checkpoint.save_last=true",
         f"hydra.run.dir={run_dir}",
     ]

@@ -46,6 +46,7 @@ class E208FormalTrainingTests(unittest.TestCase):
         self.assertIn("SingleCellPerturbationWithControls.from_h5", joined)
         self.assertNotIn("trainer.test", joined)
         self.assertNotIn("target_truth", joined)
+        self.assertNotIn("trainer.enable_progress_bar=false", joined)
 
     def test_unregistered_architecture_seed_pair_is_rejected(self) -> None:
         with self.assertRaises(JOB.FormalJobFailure):
