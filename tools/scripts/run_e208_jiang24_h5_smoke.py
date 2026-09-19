@@ -160,7 +160,9 @@ def check_e205_gate(
 
 def check_inputs(args: argparse.Namespace) -> dict:
     repo = args.perturbench_repo.resolve()
-    python = args.python.resolve()
+    # ``venv/bin/python`` is a symlink.  ``resolve()`` would replace it with the
+    # base interpreter and silently discard the virtual environment.
+    python = args.python.expanduser().absolute()
     data = args.data_dir.resolve()
     if not python.is_file() or not (repo / "src/perturbench/modelcore/train.py").is_file():
         raise SmokeFailure("PerturBench Python or training entry point is missing")
@@ -327,7 +329,7 @@ def run_smoke(args: argparse.Namespace) -> dict:
         for architecture in ("latent", "linear"):
             run_dir = root / architecture / "fit"
             command = build_command(
-                python=args.python.resolve(),
+                python=args.python.expanduser().absolute(),
                 perturbench_repo=args.perturbench_repo.resolve(),
                 data_dir=args.data_dir.resolve(),
                 run_dir=run_dir,
@@ -343,7 +345,7 @@ def run_smoke(args: argparse.Namespace) -> dict:
 
             resume_dir = root / architecture / "resume"
             resume_command = build_command(
-                python=args.python.resolve(),
+                python=args.python.expanduser().absolute(),
                 perturbench_repo=args.perturbench_repo.resolve(),
                 data_dir=args.data_dir.resolve(),
                 run_dir=resume_dir,
