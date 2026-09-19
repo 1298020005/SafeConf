@@ -21,6 +21,8 @@ import yaml
 
 
 PERTURBENCH_COMMIT = "c84038bc1ea409aa54f3832cfa6f34f5059adf0c"
+LIGHTNING_VERSION = "2.6.6"
+TORCH_VERSION = "2.6.0+cu124"
 H5_BYTES = 93_532_364_449
 SPLIT_SHA256 = "5af7da86a5b3994d570c0b1957d91f17cebb9f9b1943bac738b74fdb14b2ef5d"
 EXPERIMENTS = {
@@ -203,9 +205,31 @@ def run(args: argparse.Namespace) -> dict:
     run_dir = args.run_dir.resolve()
     if not python.is_file():
         raise FormalJobFailure(f"missing Python: {python}")
+    versions = json.loads(
+        subprocess.check_output(
+            [
+                str(python),
+                "-c",
+                (
+                    "import json, lightning, torch; "
+                    "print(json.dumps({'lightning': lightning.__version__, "
+                    "'torch': torch.__version__}))"
+                ),
+            ],
+            text=True,
+        )
+    )
+    if versions != {"lightning": LIGHTNING_VERSION, "torch": TORCH_VERSION}:
+        raise FormalJobFailure(f"PerturBench Python environment changed: {versions}")
     if args.architecture not in REGISTERED_SEEDS or args.seed not in REGISTERED_SEEDS[args.architecture]:
         raise FormalJobFailure("architecture/seed is outside the preregistration")
     lineage = validate_frozen_inputs(repo, data_dir)
+    lineage.update(
+        {
+            "python_executable": str(python),
+            "environment_versions": versions,
+        }
+    )
     run_dir.mkdir(parents=True, exist_ok=True)
     status_path = run_dir / "E208_RUN_STATUS.json"
     status: dict[str, object] = {

@@ -22,6 +22,8 @@ import yaml
 
 
 PERTURBENCH_COMMIT = "c84038bc1ea409aa54f3832cfa6f34f5059adf0c"
+LIGHTNING_VERSION = "2.6.6"
+TORCH_VERSION = "2.6.0+cu124"
 H5_BYTES = 93_532_364_449
 H5_SHA256 = "5d876c0fa5770dc632ad8ed8b211ad7aef00ccc93481f6ac029d439a0d7cd4d9"
 SPLIT_SHA256 = "5af7da86a5b3994d570c0b1957d91f17cebb9f9b1943bac738b74fdb14b2ef5d"
@@ -165,6 +167,22 @@ def check_inputs(args: argparse.Namespace) -> dict:
     data = args.data_dir.resolve()
     if not python.is_file() or not (repo / "src/perturbench/modelcore/train.py").is_file():
         raise SmokeFailure("PerturBench Python or training entry point is missing")
+    versions = json.loads(
+        subprocess.check_output(
+            [
+                str(python),
+                "-c",
+                (
+                    "import json, lightning, torch; "
+                    "print(json.dumps({'lightning': lightning.__version__, "
+                    "'torch': torch.__version__}))"
+                ),
+            ],
+            text=True,
+        )
+    )
+    if versions != {"lightning": LIGHTNING_VERSION, "torch": TORCH_VERSION}:
+        raise SmokeFailure(f"PerturBench Python environment changed: {versions}")
     commit = subprocess.check_output(
         ["git", "-C", str(repo), "rev-parse", "HEAD"], text=True
     ).strip()
@@ -199,6 +217,8 @@ def check_inputs(args: argparse.Namespace) -> dict:
         raise SmokeFailure("Jiang24 H5 hash changed")
     return {
         "perturbench_commit": commit,
+        "python_executable": str(python),
+        "environment_versions": versions,
         "h5ad_bytes": h5ad.stat().st_size,
         "h5ad_sha256": observed_h5_hash,
         "h5ad_rehashed_now": bool(args.rehash_h5),
