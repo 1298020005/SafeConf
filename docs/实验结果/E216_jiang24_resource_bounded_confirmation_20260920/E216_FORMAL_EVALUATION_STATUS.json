@@ -1,0 +1,36 @@
+{
+  "experiment": "E216_jiang24_resource_bounded_confirmation",
+  "stage": "D4_AUTHORIZED_FORMAL_EVALUATION",
+  "status": "PASS",
+  "finished_at": "2026-09-20T15:18:20+08:00",
+  "test_truth_released_after_risk_seal": true,
+  "risk_seal_commit": "8fb985d408c8cca4409683c37c116f3bbbc2dede",
+  "test_perturbed_expression_rows_read": 214901,
+  "registered_tasks": 224,
+  "primary_macro_spearman_delta": 0.0012060661726922487,
+  "primary_macro_spearman_bootstrap": {
+    "estimate": 0.0008710998314857113,
+    "ci95_lower": -0.04600171653953298,
+    "ci95_upper": 0.04708703431257044
+  },
+  "primary_external_confirmation": "NOT_SUPPORTED",
+  "utility_20_delta": -1.0006528259429706,
+  "utility_20_bootstrap": {
+    "estimate": -0.9869726807924574,
+    "ci95_lower": -1.2365077830770401,
+    "ci95_upper": -0.7419058462725566
+  },
+  "high_error_capture_delta": -0.6,
+  "positive_states": 7,
+  "practical_effect_gate": "NOT_SUPPORTED",
+  "upstream": {
+    "latent_mean_rmse": 0.16064915799490806,
+    "linear_mean_rmse": 0.4296087701622545,
+    "no_change_mean_rmse": 0.023219903620283328
+  },
+  "upstream_competence": "NOT_SUPPORTED",
+  "certificate_identity_failures": 200,
+  "certificate_lower_violations": 0,
+  "certificate_median_tightness": 0.6187499222848294,
+  "registered_family_certificate": "NOT_SUPPORTED"
+}
