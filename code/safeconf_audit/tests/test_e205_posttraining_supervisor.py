@@ -35,6 +35,20 @@ class E205PostTrainingSupervisorTests(unittest.TestCase):
             path.write_text(
                 json.dumps(
                     {
+                        "status": "RUNNING",
+                        "completed": 16,
+                        "target_truth_access": "NOT_AUTHORIZED",
+                        "permanent_failures": [],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            gate, reason = MODULE.training_gate(path)
+            self.assertEqual(gate, "WAIT")
+            self.assertIn("terminal queue state", reason)
+            path.write_text(
+                json.dumps(
+                    {
                         "status": "COMPLETE",
                         "completed": 16,
                         "target_truth_access": "NOT_AUTHORIZED",

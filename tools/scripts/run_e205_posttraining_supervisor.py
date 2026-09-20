@@ -103,8 +103,14 @@ def training_gate(path: Path) -> tuple[str, str]:
     status = str(value.get("status", ""))
     if status == "COMPLETE" and completed == 16:
         return "GO", "E205 formal training completed 16/16"
-    if status in {"RUNNING", "WAITING", "INTERRUPTED", ""} and completed < 16:
-        return "WAIT", f"E205 formal training completed {completed}/16"
+    # A child can publish the sixteenth completion just before the queue
+    # atomically changes RUNNING to COMPLETE.  That short publication window
+    # is not a permanent failure.
+    if status in {"RUNNING", "WAITING", "INTERRUPTED", ""} and completed <= 16:
+        return "WAIT", (
+            f"E205 formal training completed {completed}/16; "
+            "waiting for terminal queue state"
+        )
     return "FAIL", f"unexpected queue state status={status}, completed={completed}"
 
 
