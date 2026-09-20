@@ -286,6 +286,21 @@ def context_holdout_router(
     )
 
 
+def historical_nonnegative_router(
+    magnitude: np.ndarray,
+    safeconf: np.ndarray,
+    cross_architecture_disagreement: np.ndarray,
+) -> np.ndarray:
+    """E218 nonnegative fit on all eight released E153 studies."""
+    return monotone_evidence_router(
+        magnitude,
+        safeconf,
+        cross_architecture_disagreement,
+        0.5533545399558647,
+        0.10610102453715037,
+    )
+
+
 def certificate_priority_score(
     magnitude: np.ndarray,
     lower_bound: np.ndarray,
@@ -608,6 +623,11 @@ def main() -> None:
             block.safeconf_e205_risk.to_numpy(float),
             block.cross_family_disagreement.to_numpy(float),
         )
+        block["historical_nonnegative_router"] = historical_nonnegative_router(
+            block.registered_predicted_magnitude.to_numpy(float),
+            block.safeconf_e205_risk.to_numpy(float),
+            block.cross_family_disagreement.to_numpy(float),
+        )
         feature_blocks.append(block)
         seed_blocks.append(np.stack(target_seed, axis=1))
         family_blocks.append(np.stack(target_family))
@@ -645,6 +665,7 @@ def main() -> None:
                     "gat_family_disagreement",
                     "architecture_aware_router",
                     "context_holdout_router",
+                    "historical_nonnegative_router",
                 ]
             ].to_numpy(float)
         ).all()
@@ -798,6 +819,23 @@ def main() -> None:
                 "E217 released E153 context-unseen cross-architecture subset; "
                 "fixed before E205 target-truth authorization"
             ),
+        },
+        "historical_nonnegative_router": {
+            "status": "PREREGISTERED_E218_SECONDARY_CONFIRMATION",
+            "outcome": "registered_family_rms_error",
+            "magnitude": "registered_predicted_magnitude",
+            "safeconf": "safeconf_e205_risk",
+            "disagreement": "cross_family_disagreement",
+            "formula": (
+                "m + 0.5533545399558647*max(s-m,0) + "
+                "0.10610102453715037*max(d-m,0), where m/s/d are "
+                "within-target percentile ranks"
+            ),
+            "development_source": (
+                "E218 nonnegative fit on all eight released E153 studies; "
+                "registered before E205 target-truth authorization"
+            ),
+            "role": "secondary robustness analysis; cannot replace the E217 primary context router",
         },
         "certificate_priority_router": {
             "status": "PREREGISTERED_SECONDARY",

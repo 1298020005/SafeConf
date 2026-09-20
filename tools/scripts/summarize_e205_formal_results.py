@@ -41,6 +41,7 @@ TARGET_ORDER = ("K562", "RPE1", "hepg2", "jurkat")
 REGISTERED_ROUTER_LABELS = {
     "context_holdout_router": "Context-holdout SafeConf",
     "architecture_aware_router": "Architecture-aware SafeConf",
+    "historical_nonnegative_router": "Historical nonnegative SafeConf",
     "certificate_priority_q80": "Certificate first + magnitude",
     "registered_predicted_magnitude": "Registered-family magnitude",
     "registered_family_disagreement": "Registered-family lower bound",
@@ -48,6 +49,7 @@ REGISTERED_ROUTER_LABELS = {
 REGISTERED_ROUTER_COLORS = {
     "context_holdout_router": "#B07C45",
     "architecture_aware_router": "#54769A",
+    "historical_nonnegative_router": "#8E6C3A",
     "certificate_priority_q80": "#118A7E",
     "registered_predicted_magnitude": "#D55E5E",
     "registered_family_disagreement": "#7E6AAD",
@@ -277,6 +279,7 @@ def render_certificate_priority_router(
             (
                 "architecture_aware_router",
                 "context_holdout_router",
+                "historical_nonnegative_router",
                 "certificate_priority_q80",
                 "registered_predicted_magnitude",
             )
@@ -299,28 +302,38 @@ def render_certificate_priority_router(
     context_delta = matrix["context_holdout_router"] - matrix[
         "registered_predicted_magnitude"
     ]
+    nonnegative_delta = matrix["historical_nonnegative_router"] - matrix[
+        "registered_predicted_magnitude"
+    ]
 
     fig, axes = plt.subplots(1, 2, figsize=(10.8, 4.0), facecolor="white")
     positions = np.arange(len(certificate_delta))
     axes[0].bar(
-        positions - 0.24,
+        positions - 0.27,
         context_delta.to_numpy(float),
         color=REGISTERED_ROUTER_COLORS["context_holdout_router"],
-        width=0.24,
+        width=0.18,
         label=REGISTERED_ROUTER_LABELS["context_holdout_router"],
     )
     axes[0].bar(
-        positions,
+        positions - 0.09,
         architecture_delta.to_numpy(float),
         color=REGISTERED_ROUTER_COLORS["architecture_aware_router"],
-        width=0.24,
+        width=0.18,
         label=REGISTERED_ROUTER_LABELS["architecture_aware_router"],
     )
     axes[0].bar(
-        positions + 0.24,
+        positions + 0.09,
+        nonnegative_delta.to_numpy(float),
+        color=REGISTERED_ROUTER_COLORS["historical_nonnegative_router"],
+        width=0.18,
+        label=REGISTERED_ROUTER_LABELS["historical_nonnegative_router"],
+    )
+    axes[0].bar(
+        positions + 0.27,
         certificate_delta.to_numpy(float),
         color=REGISTERED_ROUTER_COLORS["certificate_priority_q80"],
-        width=0.24,
+        width=0.18,
         label=REGISTERED_ROUTER_LABELS["certificate_priority_q80"],
     )
     axes[0].set_xticks(
@@ -472,6 +485,11 @@ def main() -> None:
         if status.get("context_holdout_router_status") == "SUPPORTED"
         else "NOT_SUPPORTED"
     )
+    nonnegative_word = (
+        "SUPPORTED"
+        if status.get("historical_nonnegative_router_status") == "SUPPORTED"
+        else "NOT_SUPPORTED"
+    )
     conclusion = []
     if int(status.get("registered_family_lower_bound_violations", -1)) == 0:
         conclusion.append("注册家族确定性下界在本次跨结构评价中没有发生违反。")
@@ -497,6 +515,10 @@ def main() -> None:
         conclusion.append("整背景留出专用路由通过了预先冻结的首要复核效用门。")
     else:
         conclusion.append("整背景留出专用路由未通过首要复核效用门，不能改用次要公式代替判定。")
+    if nonnegative_word == "SUPPORTED":
+        conclusion.append("历史非负学习路由在次要稳健性分析中也确认了增量。")
+    else:
+        conclusion.append("历史非负学习路由未通过次要门，不根据 E205 重新拟合权重。")
 
     router_utility_interval = extract_unique(
         registered_intervals,
@@ -528,6 +550,16 @@ def main() -> None:
         predictor="context_holdout_router",
         measure="delta_spearman",
     )
+    nonnegative_utility_interval = extract_unique(
+        registered_intervals,
+        predictor="historical_nonnegative_router",
+        measure="delta_utility_20",
+    )
+    nonnegative_spearman_interval = extract_unique(
+        registered_intervals,
+        predictor="historical_nonnegative_router",
+        measure="delta_spearman",
+    )
 
     rows = []
     for predictor in predictors:
@@ -553,6 +585,7 @@ def main() -> None:
 | 排序增量 | {ranking_word} |
 | 整背景留出路由（首要确认） | {context_word} |
 | 架构感知路由确认 | {architecture_word} |
+| 历史非负学习路由（次要） | {nonnegative_word} |
 | 证书优先路由（次要） | {router_word} |
 | 注册家族证书 | {certificate_word} |
 | 主任务数 | {int(status['n_primary_tasks'])} |
@@ -575,6 +608,10 @@ SafeConf-M 相对预测幅度的 Spearman 差为 {finite(spearman_interval['esti
 ## 架构感知单向路由（E217 真值前冻结）
 
 在注册跨架构家族自身的 RMS 误差上，架构感知路由相对注册家族预测幅度的 Spearman 差为 {finite(architecture_spearman_interval['estimate']):.4f}，95% 区间为 [{finite(architecture_spearman_interval['ci95_lower']):.4f}, {finite(architecture_spearman_interval['ci95_upper']):.4f}]；20% 复核效用差为 {finite(architecture_utility_interval['estimate']):.4f}，95% 区间为 [{finite(architecture_utility_interval['ci95_lower']):.4f}, {finite(architecture_utility_interval['ci95_upper']):.4f}]。公式在 E205 真值授权前固定，不按本次结果重新调权。
+
+## 历史非负学习路由（E218 次要分析）
+
+用八个已释放研究固定的非负权重路由相对注册家族预测幅度的 Spearman 差为 {finite(nonnegative_spearman_interval['estimate']):.4f}，95% 区间为 [{finite(nonnegative_spearman_interval['ci95_lower']):.4f}, {finite(nonnegative_spearman_interval['ci95_upper']):.4f}]；20% 复核效用差为 {finite(nonnegative_utility_interval['estimate']):.4f}，95% 区间为 [{finite(nonnegative_utility_interval['ci95_lower']):.4f}, {finite(nonnegative_utility_interval['ci95_upper']):.4f}]。它只是次要稳健性分析，不替换整背景留出的首要判定。
 
 ## 证书优先路由（预登记次要分析）
 

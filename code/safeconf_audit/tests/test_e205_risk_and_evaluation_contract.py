@@ -85,6 +85,23 @@ class E205PretruthRiskTests(unittest.TestCase):
         )
         np.testing.assert_allclose(observed, expected)
 
+    def test_historical_nonnegative_router_uses_e218_frozen_weights(self) -> None:
+        magnitude = np.asarray([0.0, 1.0, 2.0, 3.0])
+        safeconf = np.asarray([3.0, 2.0, 1.0, 0.0])
+        disagreement = np.asarray([1.0, 3.0, 0.0, 2.0])
+        observed = RISK.historical_nonnegative_router(
+            magnitude, safeconf, disagreement
+        )
+        m = np.asarray([0.25, 0.50, 0.75, 1.00])
+        s = np.asarray([1.00, 0.75, 0.50, 0.25])
+        d = np.asarray([0.50, 1.00, 0.25, 0.75])
+        expected = (
+            m
+            + 0.5533545399558647 * np.maximum(s - m, 0.0)
+            + 0.10610102453715037 * np.maximum(d - m, 0.0)
+        )
+        np.testing.assert_allclose(observed, expected)
+
     def test_certificate_priority_is_lexicographic_and_untuned(self) -> None:
         magnitude = np.asarray([0.1, 0.9, 0.2, 0.8])
         lower_bound = np.asarray([0.6, 0.4, 0.7, 0.3])

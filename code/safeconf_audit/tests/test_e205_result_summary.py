@@ -37,6 +37,7 @@ class E205ResultSummaryTests(unittest.TestCase):
                         "certificate_priority_router_status": "NOT_SUPPORTED",
                         "architecture_aware_router_status": "NOT_SUPPORTED",
                         "context_holdout_router_status": "NOT_SUPPORTED",
+                        "historical_nonnegative_router_status": "NOT_SUPPORTED",
                     }
                 ),
                 encoding="utf-8",
@@ -129,6 +130,7 @@ class E205ResultSummaryTests(unittest.TestCase):
                     for predictor in (
                         "context_holdout_router",
                         "architecture_aware_router",
+                        "historical_nonnegative_router",
                         "certificate_priority_q80",
                     )
                     for measure in ("delta_spearman", "delta_utility_20")
