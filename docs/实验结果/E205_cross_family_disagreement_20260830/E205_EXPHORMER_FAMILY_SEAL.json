@@ -1,0 +1,507 @@
+{
+  "experiment": "E205_cross_family_exphormer",
+  "status": "SEALED_16_EXPHORMER_CHECKPOINTS",
+  "sealed_at": "2026-09-20T22:07:41+08:00",
+  "target_truth_opened": false,
+  "targets": [
+    "K562",
+    "RPE1",
+    "hepg2",
+    "jurkat"
+  ],
+  "seeds": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "n_jobs": 16,
+  "txpert_commit": "08d82eea86746b044cf7531f4ec8c5f60e1cb73f",
+  "training_adapter_sha256": "fe4e1a2e6861403fe5c650cc11ac0c58177fddb0ea9cf6f0ed0e48578613a285",
+  "model_family": "TxPert-Exphormer",
+  "comparison_family": "TxPert-STRING-GAT",
+  "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+  "records_sha256": "0dafbd2eb5ca331543e40369ed6faf06b20c8bd3368fbd555fbfd8b36cfca803",
+  "records": [
+    {
+      "target": "K562",
+      "seed": 1,
+      "run_status_path": "DATA/txpert_official_20260802/e205/formal/K562/seed_1/E205_RUN_STATUS.json",
+      "run_status_sha256": "fbba7c6f391536914ff9dd15a99336b5c4ef690e089b78cd100df40757d9e529",
+      "safeconf_commit": "13bb5105e76fe08ae0f8765ef09cd597c73234b0",
+      "training_adapter_sha256": "fe4e1a2e6861403fe5c650cc11ac0c58177fddb0ea9cf6f0ed0e48578613a285",
+      "fit_wall_seconds": 26517.106854165002,
+      "best_source_validation_score": 0.464997798204422,
+      "last": {
+        "path": "DATA/txpert_official_20260802/e205/formal/K562/seed_1/checkpoints/last.ckpt",
+        "bytes": 45957096,
+        "sha256": "b7febed2f2cf6112e39a112306ce414c3f80d7957f35d7e08a9c8c7a307159c9",
+        "epoch_zero_based": 79,
+        "global_step": 368640,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      },
+      "best_source_validation": {
+        "path": "DATA/txpert_official_20260802/e205/formal/K562/seed_1/checkpoints/best-epoch=24-val_pearson_delta=0.46500.ckpt",
+        "bytes": 45957160,
+        "sha256": "09310df11a46637346591b16a87dcbfbb8fca1944916a91eaf1b78aaba183d84",
+        "epoch_zero_based": 24,
+        "global_step": 115200,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      }
+    },
+    {
+      "target": "K562",
+      "seed": 2,
+      "run_status_path": "DATA/txpert_official_20260802/e205/formal/K562/seed_2/E205_RUN_STATUS.json",
+      "run_status_sha256": "39a716ce7cae6248a81e260ee9dbb737d5b9ce6821edfe5ed64269fbaf9946c4",
+      "safeconf_commit": "e557e5f7afb17f1943944af8858925c727acdb3a",
+      "training_adapter_sha256": "fe4e1a2e6861403fe5c650cc11ac0c58177fddb0ea9cf6f0ed0e48578613a285",
+      "fit_wall_seconds": 80207.74446069202,
+      "best_source_validation_score": 0.4673554003238678,
+      "last": {
+        "path": "DATA/txpert_official_20260802/e205/formal/K562/seed_2/checkpoints/last.ckpt",
+        "bytes": 45957160,
+        "sha256": "aae354da206eb41986797def1cb1be78f06fdeebc20065afc6313ecdcb901e4d",
+        "epoch_zero_based": 79,
+        "global_step": 368640,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      },
+      "best_source_validation": {
+        "path": "DATA/txpert_official_20260802/e205/formal/K562/seed_2/checkpoints/best-epoch=79-val_pearson_delta=0.46736.ckpt",
+        "bytes": 45957160,
+        "sha256": "aae354da206eb41986797def1cb1be78f06fdeebc20065afc6313ecdcb901e4d",
+        "epoch_zero_based": 79,
+        "global_step": 368640,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      }
+    },
+    {
+      "target": "K562",
+      "seed": 3,
+      "run_status_path": "DATA/txpert_official_20260802/e205/formal/K562/seed_3/E205_RUN_STATUS.json",
+      "run_status_sha256": "1defd4e7cc84c6733d3a79c2af194bfd914b0e3c000766ddd366105ee363bcfa",
+      "safeconf_commit": "30553b47ab43b52bda3599b88f8a0398faa842d2",
+      "training_adapter_sha256": "fe4e1a2e6861403fe5c650cc11ac0c58177fddb0ea9cf6f0ed0e48578613a285",
+      "fit_wall_seconds": 81178.314703259,
+      "best_source_validation_score": 0.4650095999240875,
+      "last": {
+        "path": "DATA/txpert_official_20260802/e205/formal/K562/seed_3/checkpoints/last.ckpt",
+        "bytes": 45957160,
+        "sha256": "7d772aee8745d39468f15227d343682aacc7780de273f632d91aeb52571856af",
+        "epoch_zero_based": 79,
+        "global_step": 368640,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      },
+      "best_source_validation": {
+        "path": "DATA/txpert_official_20260802/e205/formal/K562/seed_3/checkpoints/best-epoch=54-val_pearson_delta=0.46501.ckpt",
+        "bytes": 45957160,
+        "sha256": "54062fb2707ed8131df0ce3b5d7fddd5a6e3ca4e4e796c33ab623d67f4cb3413",
+        "epoch_zero_based": 54,
+        "global_step": 253440,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      }
+    },
+    {
+      "target": "K562",
+      "seed": 4,
+      "run_status_path": "DATA/txpert_official_20260802/e205/formal/K562/seed_4/E205_RUN_STATUS.json",
+      "run_status_sha256": "92498a2b78b5857dd3995d4ffb49305ce83737c62f1727f1ddae81a59691ebcf",
+      "safeconf_commit": "7048bb20729205b32b39d4100dbcb726304177b2",
+      "training_adapter_sha256": "fe4e1a2e6861403fe5c650cc11ac0c58177fddb0ea9cf6f0ed0e48578613a285",
+      "fit_wall_seconds": 80445.97844011703,
+      "best_source_validation_score": 0.46897056698799133,
+      "last": {
+        "path": "DATA/txpert_official_20260802/e205/formal/K562/seed_4/checkpoints/last.ckpt",
+        "bytes": 45957160,
+        "sha256": "f98d19bf3818eebd963edba7c216b3561b6ccd0b06d0577c19ed574cccd60b64",
+        "epoch_zero_based": 79,
+        "global_step": 368640,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      },
+      "best_source_validation": {
+        "path": "DATA/txpert_official_20260802/e205/formal/K562/seed_4/checkpoints/best-epoch=59-val_pearson_delta=0.46897.ckpt",
+        "bytes": 45957160,
+        "sha256": "94c553e1f077571498bd2ad4102d608f5090b70a51903a4a811dc7e874c0eed4",
+        "epoch_zero_based": 59,
+        "global_step": 276480,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      }
+    },
+    {
+      "target": "RPE1",
+      "seed": 1,
+      "run_status_path": "DATA/txpert_official_20260802/e205/formal/RPE1/seed_1/E205_RUN_STATUS.json",
+      "run_status_sha256": "667afc25c0024e168bdbea8d2468c9568a474f486c1c515632bd33feb21e193d",
+      "safeconf_commit": "13bb5105e76fe08ae0f8765ef09cd597c73234b0",
+      "training_adapter_sha256": "fe4e1a2e6861403fe5c650cc11ac0c58177fddb0ea9cf6f0ed0e48578613a285",
+      "fit_wall_seconds": 20672.173052041006,
+      "best_source_validation_score": 0.4243049919605255,
+      "last": {
+        "path": "DATA/txpert_official_20260802/e205/formal/RPE1/seed_1/checkpoints/last.ckpt",
+        "bytes": 45957160,
+        "sha256": "14a26ecb097d9797a1f5096cdfbb01488d226fe32e777ad230489d524deb9a8a",
+        "epoch_zero_based": 79,
+        "global_step": 341200,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      },
+      "best_source_validation": {
+        "path": "DATA/txpert_official_20260802/e205/formal/RPE1/seed_1/checkpoints/best-epoch=79-val_pearson_delta=0.42430.ckpt",
+        "bytes": 45957160,
+        "sha256": "14a26ecb097d9797a1f5096cdfbb01488d226fe32e777ad230489d524deb9a8a",
+        "epoch_zero_based": 79,
+        "global_step": 341200,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      }
+    },
+    {
+      "target": "RPE1",
+      "seed": 2,
+      "run_status_path": "DATA/txpert_official_20260802/e205/formal/RPE1/seed_2/E205_RUN_STATUS.json",
+      "run_status_sha256": "bc00bcbb9c57746b0606a13c92a6a3523fc7b924c3d1e7cee0c30a340185db1e",
+      "safeconf_commit": "e557e5f7afb17f1943944af8858925c727acdb3a",
+      "training_adapter_sha256": "fe4e1a2e6861403fe5c650cc11ac0c58177fddb0ea9cf6f0ed0e48578613a285",
+      "fit_wall_seconds": 75125.50631143601,
+      "best_source_validation_score": 0.4194987714290619,
+      "last": {
+        "path": "DATA/txpert_official_20260802/e205/formal/RPE1/seed_2/checkpoints/last.ckpt",
+        "bytes": 45957160,
+        "sha256": "57bc5c18c4d6c5ac6e34b7db49811a21057dd66dc6cbeca05fbf832218964822",
+        "epoch_zero_based": 79,
+        "global_step": 341200,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      },
+      "best_source_validation": {
+        "path": "DATA/txpert_official_20260802/e205/formal/RPE1/seed_2/checkpoints/best-epoch=74-val_pearson_delta=0.41950.ckpt",
+        "bytes": 45957160,
+        "sha256": "55c81408733ecd204f604cde24ee2893728f9c360ec544676ce2b18eaf755191",
+        "epoch_zero_based": 74,
+        "global_step": 319875,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      }
+    },
+    {
+      "target": "RPE1",
+      "seed": 3,
+      "run_status_path": "DATA/txpert_official_20260802/e205/formal/RPE1/seed_3/E205_RUN_STATUS.json",
+      "run_status_sha256": "a2aa689fcff1a5b3f61cedb9232bf1182a7ce40191fc45de46d38c2d2fd570a2",
+      "safeconf_commit": "0a28bb840b2fbc37394f4c55dcae8dcbdf4898e0",
+      "training_adapter_sha256": "fe4e1a2e6861403fe5c650cc11ac0c58177fddb0ea9cf6f0ed0e48578613a285",
+      "fit_wall_seconds": 74960.90481745401,
+      "best_source_validation_score": 0.42895084619522095,
+      "last": {
+        "path": "DATA/txpert_official_20260802/e205/formal/RPE1/seed_3/checkpoints/last.ckpt",
+        "bytes": 45957160,
+        "sha256": "31d064bce9691b07cc2905ba89c688d6226ed18139665f6783765eb19a919de1",
+        "epoch_zero_based": 79,
+        "global_step": 341200,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      },
+      "best_source_validation": {
+        "path": "DATA/txpert_official_20260802/e205/formal/RPE1/seed_3/checkpoints/best-epoch=74-val_pearson_delta=0.42895.ckpt",
+        "bytes": 45957160,
+        "sha256": "224d319eefb300b44c25c20aa8e4cb98c65376bb41c95b7688fadfb908024c08",
+        "epoch_zero_based": 74,
+        "global_step": 319875,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      }
+    },
+    {
+      "target": "RPE1",
+      "seed": 4,
+      "run_status_path": "DATA/txpert_official_20260802/e205/formal/RPE1/seed_4/E205_RUN_STATUS.json",
+      "run_status_sha256": "add1b115f24ecad770ddbf9bb991d7b203f8fab82f7f025cb4be4512260fc3a9",
+      "safeconf_commit": "f7977030b7487056f17363b2849d8921fda2150d",
+      "training_adapter_sha256": "fe4e1a2e6861403fe5c650cc11ac0c58177fddb0ea9cf6f0ed0e48578613a285",
+      "fit_wall_seconds": 9501.632907103,
+      "best_source_validation_score": 0.42157644033432007,
+      "last": {
+        "path": "DATA/txpert_official_20260802/e205/formal/RPE1/seed_4/checkpoints/last.ckpt",
+        "bytes": 45957160,
+        "sha256": "af666e0cbc43fe169dfa04ee3308d811fbd82c422392208540cc6edaf2b292eb",
+        "epoch_zero_based": 79,
+        "global_step": 341200,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      },
+      "best_source_validation": {
+        "path": "DATA/txpert_official_20260802/e205/formal/RPE1/seed_4/checkpoints/best-epoch=74-val_pearson_delta=0.42158.ckpt",
+        "bytes": 45957160,
+        "sha256": "495368e1f631ea6f5fce1930103c46707af4cf4f0e7db021038a3fb9ea4684b9",
+        "epoch_zero_based": 74,
+        "global_step": 319875,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      }
+    },
+    {
+      "target": "hepg2",
+      "seed": 1,
+      "run_status_path": "DATA/txpert_official_20260802/e205/formal/hepg2/seed_1/E205_RUN_STATUS.json",
+      "run_status_sha256": "aedd0499b9813b49ada6912f2a9e0326934ee6d2c4d32b6c79eedc771eaa139d",
+      "safeconf_commit": "407c24e8ad67ebf02731b0d886855b7d0a94493e",
+      "training_adapter_sha256": "fe4e1a2e6861403fe5c650cc11ac0c58177fddb0ea9cf6f0ed0e48578613a285",
+      "fit_wall_seconds": 86622.53635269901,
+      "best_source_validation_score": 0.4922120273113251,
+      "last": {
+        "path": "DATA/txpert_official_20260802/e205/formal/hepg2/seed_1/checkpoints/last.ckpt",
+        "bytes": 45957160,
+        "sha256": "4079d4ba1fdb3bc0da8acfbe49d35e98a8a8355d22286c097fa5154fb6204563",
+        "epoch_zero_based": 79,
+        "global_step": 392960,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      },
+      "best_source_validation": {
+        "path": "DATA/txpert_official_20260802/e205/formal/hepg2/seed_1/checkpoints/best-epoch=29-val_pearson_delta=0.49221.ckpt",
+        "bytes": 45957160,
+        "sha256": "538d1313f59f08810c158a612290202ed92bc7faa8505d4001f0a321ad479581",
+        "epoch_zero_based": 29,
+        "global_step": 147360,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      }
+    },
+    {
+      "target": "hepg2",
+      "seed": 2,
+      "run_status_path": "DATA/txpert_official_20260802/e205/formal/hepg2/seed_2/E205_RUN_STATUS.json",
+      "run_status_sha256": "da89935f2eee14fc518d6ddd58b7ff9c63f9c0f032baa709640f66eefe061348",
+      "safeconf_commit": "f7977030b7487056f17363b2849d8921fda2150d",
+      "training_adapter_sha256": "fe4e1a2e6861403fe5c650cc11ac0c58177fddb0ea9cf6f0ed0e48578613a285",
+      "fit_wall_seconds": 25148.041201115,
+      "best_source_validation_score": 0.4949895143508911,
+      "last": {
+        "path": "DATA/txpert_official_20260802/e205/formal/hepg2/seed_2/checkpoints/last.ckpt",
+        "bytes": 45957160,
+        "sha256": "ae8a42c833ae73e35e3483545700a71fbee3454bec1480d078dc5a61bc08e047",
+        "epoch_zero_based": 79,
+        "global_step": 392960,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      },
+      "best_source_validation": {
+        "path": "DATA/txpert_official_20260802/e205/formal/hepg2/seed_2/checkpoints/best-epoch=74-val_pearson_delta=0.49499.ckpt",
+        "bytes": 45957160,
+        "sha256": "dadbe51ff9d721fa0a879d96d4cd7275aa07fb689f13196d3afbac03e1c30dd7",
+        "epoch_zero_based": 74,
+        "global_step": 368400,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      }
+    },
+    {
+      "target": "hepg2",
+      "seed": 3,
+      "run_status_path": "DATA/txpert_official_20260802/e205/formal/hepg2/seed_3/E205_RUN_STATUS.json",
+      "run_status_sha256": "d039042222b257909bdabcf726c33b3c018ec91e5b639617f6b10aa3b8d32cae",
+      "safeconf_commit": "bb25f167c03d32cb551c871b32a2e99d4640ea64",
+      "training_adapter_sha256": "fe4e1a2e6861403fe5c650cc11ac0c58177fddb0ea9cf6f0ed0e48578613a285",
+      "fit_wall_seconds": 86309.38874325801,
+      "best_source_validation_score": 0.4988136291503906,
+      "last": {
+        "path": "DATA/txpert_official_20260802/e205/formal/hepg2/seed_3/checkpoints/last.ckpt",
+        "bytes": 45957160,
+        "sha256": "03c86d7829e7044c46d0460526572c370524707e2cee59aac658112e0ee3c737",
+        "epoch_zero_based": 79,
+        "global_step": 392960,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      },
+      "best_source_validation": {
+        "path": "DATA/txpert_official_20260802/e205/formal/hepg2/seed_3/checkpoints/best-epoch=69-val_pearson_delta=0.49881.ckpt",
+        "bytes": 45957160,
+        "sha256": "0e2aff5f977639b1d67abc646d136e844d2f46fbe23550e82e2257a7f6776c19",
+        "epoch_zero_based": 69,
+        "global_step": 343840,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      }
+    },
+    {
+      "target": "hepg2",
+      "seed": 4,
+      "run_status_path": "DATA/txpert_official_20260802/e205/formal/hepg2/seed_4/E205_RUN_STATUS.json",
+      "run_status_sha256": "d26f787611d2430c80ffe5e4014e51fb89b068eac742f545dcb6eaab21048df6",
+      "safeconf_commit": "6247bab8a1145000731cfe99c7d780e535f3788b",
+      "training_adapter_sha256": "fe4e1a2e6861403fe5c650cc11ac0c58177fddb0ea9cf6f0ed0e48578613a285",
+      "fit_wall_seconds": 85741.11926958797,
+      "best_source_validation_score": 0.4948902130126953,
+      "last": {
+        "path": "DATA/txpert_official_20260802/e205/formal/hepg2/seed_4/checkpoints/last.ckpt",
+        "bytes": 45957160,
+        "sha256": "735f83bd5df5d720da8fb9724890f706ebda40e335b5b44e40574d841484f743",
+        "epoch_zero_based": 79,
+        "global_step": 392960,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      },
+      "best_source_validation": {
+        "path": "DATA/txpert_official_20260802/e205/formal/hepg2/seed_4/checkpoints/best-epoch=49-val_pearson_delta=0.49489.ckpt",
+        "bytes": 45957160,
+        "sha256": "c05dec041acc7a5284d75947cb8126267f41f4698f1f3153e9b9fc5262f56d52",
+        "epoch_zero_based": 49,
+        "global_step": 245600,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      }
+    },
+    {
+      "target": "jurkat",
+      "seed": 1,
+      "run_status_path": "DATA/txpert_official_20260802/e205/formal/jurkat/seed_1/E205_RUN_STATUS.json",
+      "run_status_sha256": "6cd87eeb055f4051bffde9532c97829c0556baebff18c33edd50023a37eac60e",
+      "safeconf_commit": "407c24e8ad67ebf02731b0d886855b7d0a94493e",
+      "training_adapter_sha256": "fe4e1a2e6861403fe5c650cc11ac0c58177fddb0ea9cf6f0ed0e48578613a285",
+      "fit_wall_seconds": 77696.85464383301,
+      "best_source_validation_score": 0.488478422164917,
+      "last": {
+        "path": "DATA/txpert_official_20260802/e205/formal/jurkat/seed_1/checkpoints/last.ckpt",
+        "bytes": 45957160,
+        "sha256": "fe8760be0dee8350b492c72654516276f5a22e7f4ebeb18648f146a9095acacb",
+        "epoch_zero_based": 79,
+        "global_step": 352640,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      },
+      "best_source_validation": {
+        "path": "DATA/txpert_official_20260802/e205/formal/jurkat/seed_1/checkpoints/best-epoch=64-val_pearson_delta=0.48848.ckpt",
+        "bytes": 45957160,
+        "sha256": "99fad2cc5d12321d032eeec190074aea2c168e9d114f7295acfc6e66edd6a4e9",
+        "epoch_zero_based": 64,
+        "global_step": 286520,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      }
+    },
+    {
+      "target": "jurkat",
+      "seed": 2,
+      "run_status_path": "DATA/txpert_official_20260802/e205/formal/jurkat/seed_2/E205_RUN_STATUS.json",
+      "run_status_sha256": "2389dde51817511b590e83ce696746334ad314dc640f26d6bfe51c8550138730",
+      "safeconf_commit": "f6e03479a4ccd7030167f080546c15d05af98489",
+      "training_adapter_sha256": "fe4e1a2e6861403fe5c650cc11ac0c58177fddb0ea9cf6f0ed0e48578613a285",
+      "fit_wall_seconds": 77911.341670374,
+      "best_source_validation_score": 0.4831557869911194,
+      "last": {
+        "path": "DATA/txpert_official_20260802/e205/formal/jurkat/seed_2/checkpoints/last.ckpt",
+        "bytes": 45957160,
+        "sha256": "c3aded14c6bfae0fefe430378356f2e537b4368498dff555829d3a4cd48794de",
+        "epoch_zero_based": 79,
+        "global_step": 352640,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      },
+      "best_source_validation": {
+        "path": "DATA/txpert_official_20260802/e205/formal/jurkat/seed_2/checkpoints/best-epoch=74-val_pearson_delta=0.48316.ckpt",
+        "bytes": 45957160,
+        "sha256": "3d88c8d09b739aa2eb542d8163fad5c149229f9b5b77ad51d1a45120b3671d30",
+        "epoch_zero_based": 74,
+        "global_step": 330600,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      }
+    },
+    {
+      "target": "jurkat",
+      "seed": 3,
+      "run_status_path": "DATA/txpert_official_20260802/e205/formal/jurkat/seed_3/E205_RUN_STATUS.json",
+      "run_status_sha256": "53bcdf2c97e53787c760d7ee6656dd005bdd389aef5695ba10da52bfb5fb182a",
+      "safeconf_commit": "bb25f167c03d32cb551c871b32a2e99d4640ea64",
+      "training_adapter_sha256": "fe4e1a2e6861403fe5c650cc11ac0c58177fddb0ea9cf6f0ed0e48578613a285",
+      "fit_wall_seconds": 76751.697308306,
+      "best_source_validation_score": 0.48849302530288696,
+      "last": {
+        "path": "DATA/txpert_official_20260802/e205/formal/jurkat/seed_3/checkpoints/last.ckpt",
+        "bytes": 45957160,
+        "sha256": "c8d74207fd079e26973e5585ab3004089b4d1f8001553e531774c79d4d3f6563",
+        "epoch_zero_based": 79,
+        "global_step": 352640,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      },
+      "best_source_validation": {
+        "path": "DATA/txpert_official_20260802/e205/formal/jurkat/seed_3/checkpoints/best-epoch=69-val_pearson_delta=0.48849.ckpt",
+        "bytes": 45957160,
+        "sha256": "a1f8f126a7b3a7aaf54ab18dfadcccca7e49c64f278ac9c69107d7896f5acbfc",
+        "epoch_zero_based": 69,
+        "global_step": 308560,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      }
+    },
+    {
+      "target": "jurkat",
+      "seed": 4,
+      "run_status_path": "DATA/txpert_official_20260802/e205/formal/jurkat/seed_4/E205_RUN_STATUS.json",
+      "run_status_sha256": "73192a8226ffe023b0dccf45fb0736fad724d7447a815c16508707ad6623f7f3",
+      "safeconf_commit": "d1b031f64d906a4c8ac00a6510d01fe02546eff3",
+      "training_adapter_sha256": "fe4e1a2e6861403fe5c650cc11ac0c58177fddb0ea9cf6f0ed0e48578613a285",
+      "fit_wall_seconds": 77036.45277680497,
+      "best_source_validation_score": 0.48518046736717224,
+      "last": {
+        "path": "DATA/txpert_official_20260802/e205/formal/jurkat/seed_4/checkpoints/last.ckpt",
+        "bytes": 45957160,
+        "sha256": "0e6957db1231c7dcc446b922b204645f7c8b77850acf17ceedffe25cf091f33e",
+        "epoch_zero_based": 79,
+        "global_step": 352640,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      },
+      "best_source_validation": {
+        "path": "DATA/txpert_official_20260802/e205/formal/jurkat/seed_4/checkpoints/best-epoch=74-val_pearson_delta=0.48518.ckpt",
+        "bytes": 45957160,
+        "sha256": "af7590850a14138262c037619fca9e7ec75663bb64eefeb83e7d168eab649963",
+        "epoch_zero_based": 74,
+        "global_step": 330600,
+        "state_schema_sha256": "aa7c826dd898d7018bc5fa483f57f1c6d872e43ea792ae3996c94e85df6faee4",
+        "state_tensor_count": 117,
+        "state_element_count": 3821673
+      }
+    }
+  ]
+}
