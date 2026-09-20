@@ -268,13 +268,31 @@ def review_metrics(
 
 
 def bootstrap_increments(frame: pd.DataFrame) -> pd.DataFrame:
-    conditions = sorted(frame.condition.astype(str).unique())
-    members = [np.flatnonzero(frame.condition.astype(str).to_numpy() == item) for item in conditions]
+    strata = []
+    for treatment, treatment_frame in frame.groupby("treatment", sort=True):
+        condition_values = treatment_frame.condition.astype(str).to_numpy()
+        treatment_indices = treatment_frame.index.to_numpy(dtype=int)
+        conditions = sorted(np.unique(condition_values))
+        members = [
+            treatment_indices[condition_values == condition]
+            for condition in conditions
+        ]
+        strata.append((str(treatment), members))
+    if len(strata) != 3 or any(len(members) < 2 for _, members in strata):
+        raise EvaluationFailure("registered bootstrap strata changed")
     rng = np.random.default_rng(BOOTSTRAP_SEED)
     rows = []
-    for draw in range(N_BOOTSTRAP):
-        chosen = rng.integers(0, len(members), len(members))
-        indices = np.concatenate([members[index] for index in chosen])
+    attempts = 0
+    maximum_attempts = N_BOOTSTRAP * 10
+    while len(rows) < N_BOOTSTRAP:
+        attempts += 1
+        if attempts > maximum_attempts:
+            raise EvaluationFailure("unable to obtain the registered evaluable bootstrap draws")
+        sampled = []
+        for _, members in strata:
+            chosen = rng.integers(0, len(members), len(members))
+            sampled.extend(members[index] for index in chosen)
+        indices = np.concatenate(sampled)
         block = frame.iloc[indices].copy()
         block["occurrence"] = block.groupby("task_id", sort=False).cumcount()
         combined_review = review_metrics(
@@ -289,15 +307,26 @@ def bootstrap_increments(frame: pd.DataFrame) -> pd.DataFrame:
             block.task_id.to_numpy(),
             block.occurrence.to_numpy(int),
         )
+        try:
+            delta_spearman = macro_state_spearman(
+                block, "safeconf_m_4to1", "latent_centroid_error"
+            ) - macro_state_spearman(
+                block, "predicted_magnitude", "latent_centroid_error"
+            )
+        except EvaluationFailure:
+            continue
+        delta_utility = (
+            combined_review["oracle_normalized_utility"]
+            - magnitude_review["oracle_normalized_utility"]
+        )
+        if not np.isfinite([delta_spearman, delta_utility]).all():
+            continue
         rows.append(
             {
-                "draw": draw,
-                "delta_macro_spearman": macro_state_spearman(
-                    block, "safeconf_m_4to1", "latent_centroid_error"
-                )
-                - macro_state_spearman(block, "predicted_magnitude", "latent_centroid_error"),
-                "delta_utility_20": combined_review["oracle_normalized_utility"]
-                - magnitude_review["oracle_normalized_utility"],
+                "draw": len(rows),
+                "attempt": attempts - 1,
+                "delta_macro_spearman": delta_spearman,
+                "delta_utility_20": delta_utility,
             }
         )
     return pd.DataFrame(rows)
