@@ -1,0 +1,287 @@
+{
+  "experiment": "E205_cross_family_exphormer",
+  "stage": "PRETRUTH_RISK_FEATURES",
+  "status": "PASS",
+  "generated_at": "2026-09-20T23:16:39+08:00",
+  "safeconf_commit": "1b51ba847a1fe32a43a422fd9450234736507132",
+  "family_seal_sha256": "56cc25820dac2e65aa3cd0b2f76c39950cd86732e9c3337188c0ba58f0975740",
+  "task_base_status_sha256": "5726902925669dfdbce79f33be14bef135d712db00b0c009a1cdcec8831c4689",
+  "gat_pretruth_risk_status_sha256": "d08b3f023d2f50eef0b594172f691efc7475e7bc580b2f55b9e09696a1202f94",
+  "n_tasks": 2008,
+  "n_primary_tasks": 1808,
+  "risk_components": [
+    "family_disagreement",
+    "model_source_gap",
+    "source_delta_dispersion",
+    "negative_log_source_cells",
+    "support_context_deficit"
+  ],
+  "registered_family": {
+    "members": [
+      "TxPert-STRING-GAT/seed_1",
+      "TxPert-STRING-GAT/seed_2",
+      "TxPert-STRING-GAT/seed_3",
+      "TxPert-STRING-GAT/seed_4",
+      "TxPert-Exphormer/seed_1",
+      "TxPert-Exphormer/seed_2",
+      "TxPert-Exphormer/seed_3",
+      "TxPert-Exphormer/seed_4"
+    ],
+    "architecture_total_weights": {
+      "TxPert-STRING-GAT": 0.5,
+      "TxPert-Exphormer": 0.5
+    },
+    "member_weights": [
+      0.125,
+      0.125,
+      0.125,
+      0.125,
+      0.125,
+      0.125,
+      0.125,
+      0.125
+    ],
+    "lower_bound": "registered_family_disagreement",
+    "tau_grid_source": "10%-90% quantiles of registered-family disagreement on the sealed 1808-task primary prediction table",
+    "tau_grid": [
+      {
+        "quantile": 0.1,
+        "tau": 0.003364159519586211
+      },
+      {
+        "quantile": 0.2,
+        "tau": 0.003870082280706508
+      },
+      {
+        "quantile": 0.3,
+        "tau": 0.004398234804013016
+      },
+      {
+        "quantile": 0.4,
+        "tau": 0.004904438551037312
+      },
+      {
+        "quantile": 0.5,
+        "tau": 0.005480961464107082
+      },
+      {
+        "quantile": 0.6,
+        "tau": 0.006115895310671559
+      },
+      {
+        "quantile": 0.7,
+        "tau": 0.00689114860066347
+      },
+      {
+        "quantile": 0.8,
+        "tau": 0.00808331453615503
+      },
+      {
+        "quantile": 0.9,
+        "tau": 0.00992596250370223
+      }
+    ]
+  },
+  "safeconf_m_formula": "(4*rank(predicted_magnitude)+rank(safeconf_e205_risk))/(5*N), within target",
+  "architecture_aware_router": {
+    "status": "PREREGISTERED_E217_CONFIRMATION",
+    "outcome": "registered_family_rms_error",
+    "magnitude": "registered_predicted_magnitude",
+    "safeconf": "safeconf_e205_risk",
+    "disagreement": "cross_family_disagreement",
+    "formula": "m + 0.50*max(s-m,0) + 0.125*max(d-m,0), where m/s/d are within-target percentile ranks",
+    "development_source": "E217 released E153 cross-architecture parameter landscape; fixed before E205 target-truth authorization"
+  },
+  "context_holdout_router": {
+    "status": "PREREGISTERED_E217_PRIMARY_CONTEXT_CONFIRMATION",
+    "outcome": "registered_family_rms_error",
+    "magnitude": "registered_predicted_magnitude",
+    "safeconf": "safeconf_e205_risk",
+    "disagreement": "cross_family_disagreement",
+    "formula": "m + 0.125*max(s-m,0) + 0.125*max(d-m,0), where m/s/d are within-target percentile ranks",
+    "development_source": "E217 released E153 context-unseen cross-architecture subset; fixed before E205 target-truth authorization"
+  },
+  "historical_nonnegative_router": {
+    "status": "PREREGISTERED_E218_SECONDARY_CONFIRMATION",
+    "outcome": "registered_family_rms_error",
+    "magnitude": "registered_predicted_magnitude",
+    "safeconf": "safeconf_e205_risk",
+    "disagreement": "cross_family_disagreement",
+    "formula": "m + 0.5533545399558647*max(s-m,0) + 0.10610102453715037*max(d-m,0), where m/s/d are within-target percentile ranks",
+    "development_source": "E218 nonnegative fit on all eight released E153 studies; registered before E205 target-truth authorization",
+    "role": "secondary robustness analysis; cannot replace the E217 primary context router"
+  },
+  "certificate_priority_router": {
+    "status": "PREREGISTERED_SECONDARY",
+    "outcome": "registered_family_rms_error",
+    "magnitude": "registered_predicted_magnitude",
+    "lower_bound": "registered_family_disagreement",
+    "tau_quantile": 0.8,
+    "tau": 0.00808331453615503,
+    "formula": "2*I(registered_family_disagreement>tau_q80) + rank(registered_predicted_magnitude)/N, within target",
+    "interpretation": "certified tasks first; predicted magnitude orders tasks within certified and uncertified groups"
+  },
+  "standardization": "within target; parameters from primary_ge30 tasks",
+  "family_mean_max_abs_residual": 4.76837158203125e-07,
+  "registered_family_mean_max_abs_residual": 4.76837158203125e-07,
+  "gat_control_max_rmse_residual": 1.3870634413140156e-08,
+  "target_expression_nonzero_values_seen": 0,
+  "target_truth_materialized": false,
+  "target_outcomes_evaluated": false,
+  "risk_table": {
+    "path": "docs/实验结果/E205_cross_family_disagreement_20260830/tables/E205_PRETRUTH_RISK_FEATURES.csv",
+    "bytes": 1234174,
+    "sha256": "961a45d928b5e534ec31260e41b833b22a6b1d5e8db1bf93432477eec7c60927"
+  },
+  "vector_files": [
+    {
+      "path": "DATA/txpert_official_20260802/e205/pretruth_vectors/E205_SEED_CENTROIDS.npy",
+      "bytes": 107693184,
+      "sha256": "7303c45c8993efd10eeb29a70628d6e2b4276bec33aaccb1d4194bd423a4b1e9",
+      "shape": [
+        4,
+        2008,
+        3352
+      ],
+      "dtype": "float32"
+    },
+    {
+      "path": "DATA/txpert_official_20260802/e205/pretruth_vectors/E205_FAMILY_CENTROIDS.npy",
+      "bytes": 26923392,
+      "sha256": "de23a582fc5a9094f1208baa881ea76b317616afc6e81983658ad96500586d33",
+      "shape": [
+        2008,
+        3352
+      ],
+      "dtype": "float32"
+    },
+    {
+      "path": "DATA/txpert_official_20260802/e205/pretruth_vectors/E205_REGISTERED_FAMILY_CENTROIDS.npy",
+      "bytes": 26923392,
+      "sha256": "beeb9c9a2d4753a8d8c6808cc0f1e0d112918fbda1135022424849f150a3a067",
+      "shape": [
+        2008,
+        3352
+      ],
+      "dtype": "float32"
+    },
+    {
+      "path": "DATA/txpert_official_20260802/e205/pretruth_vectors/E205_CONTROL_CENTROIDS.npy",
+      "bytes": 26923392,
+      "sha256": "c2d6f56bec576b5154d574d91f37b5fdbb036d869573cdbaf9fda0e544454d3e",
+      "shape": [
+        2008,
+        3352
+      ],
+      "dtype": "float32"
+    },
+    {
+      "path": "DATA/txpert_official_20260802/e205/pretruth_vectors/E205_SOURCE_TRANSFER_CENTROIDS.npy",
+      "bytes": 26923392,
+      "sha256": "ef6847cfbb8c44cccaf051e5dbf7f60edaa8393a9aa09c116b58297903b7543b",
+      "shape": [
+        2008,
+        3352
+      ],
+      "dtype": "float32"
+    }
+  ],
+  "prediction_inputs": [
+    {
+      "target": "K562",
+      "seed": 1,
+      "status_sha256": "2563957ac4d27024d15f457787347df0c650845b6287ce5b25433d79de377777",
+      "prediction_sha256": "800e3227628bfe4a8495ce05895094c743eebad6812f51b7985bc12e3cf1c2d0"
+    },
+    {
+      "target": "K562",
+      "seed": 2,
+      "status_sha256": "847f5fb30e6cc3aa7d881b7fc3f180f7fd0f7048bf04ddb3ac80f21c9408259b",
+      "prediction_sha256": "1beb4000b3b6d5d5719f6833169abf484ac5d6211b4f3ba325204a8744c71cfe"
+    },
+    {
+      "target": "K562",
+      "seed": 3,
+      "status_sha256": "ab3e66d48c2a12d95b6fc6af005b3c5457450e8b8e4caa3fd78c323d421d483b",
+      "prediction_sha256": "98f78f2c56cf86a8c0cd2e8d541c81459924ddc82a4e80d75d1f67f48b9e289b"
+    },
+    {
+      "target": "K562",
+      "seed": 4,
+      "status_sha256": "4409f7590333e092d35a5d580b54347a6f384e11da35fb22dd9b01e1b891ff10",
+      "prediction_sha256": "9b2870b3b2dfa6fa02fccd35d69ffe1cdac7b1734c8348966cec5e96f4510563"
+    },
+    {
+      "target": "RPE1",
+      "seed": 1,
+      "status_sha256": "8fa46e14ffc67dc3d78f740bb24a8a74298e05ada2996bda1c4c9a14cd5546e8",
+      "prediction_sha256": "7925087d403f67bfe5d68e2ea7da9b71fd792ecd010a801a763b5bb150d594e5"
+    },
+    {
+      "target": "RPE1",
+      "seed": 2,
+      "status_sha256": "8c5bdcc605f15ee3d4212aef861255585fa982a28e378521a0bc98eeb8f32e83",
+      "prediction_sha256": "72472695c8d25c6992602ad56834b82268fbc32f2e1fba29e8c4133cafb96717"
+    },
+    {
+      "target": "RPE1",
+      "seed": 3,
+      "status_sha256": "e1be0c51eabe4c357bbc605d6223b9f213ca0019a137b42e445df46ae8367060",
+      "prediction_sha256": "f7e2e47fbe6b51809d3c492e400f05d9fa4c3c28cb1e602736530b8149b60113"
+    },
+    {
+      "target": "RPE1",
+      "seed": 4,
+      "status_sha256": "e6adf1500a181db252a4fc57339aa0d3cf24a35bd7e7f45d8491d53c2f11faeb",
+      "prediction_sha256": "e3ef22f1fe9ea1f57f35063209150b0749be1150ae9d8a067fb6351c7ffbf23d"
+    },
+    {
+      "target": "hepg2",
+      "seed": 1,
+      "status_sha256": "9e32d0ce9fd0f5a13bb3538560e033a78141e0dcde71c86f36d4596bdeddef11",
+      "prediction_sha256": "d89395fae64740e5afce441a320e4a9674879eae3b37248bc15f98a1f81b0d62"
+    },
+    {
+      "target": "hepg2",
+      "seed": 2,
+      "status_sha256": "4aacd47656f3b3147a7addd15d3f889a5c771dd59720aee3771c01f07edb4c0f",
+      "prediction_sha256": "167937f4ea7bd5d6207b0d0e191edd913ab1be00069dbe052b0b0661a1c2406f"
+    },
+    {
+      "target": "hepg2",
+      "seed": 3,
+      "status_sha256": "f08ead02840eb561db21d7b677a9fdcf320a5ddf894595cf36e762d1b54ad145",
+      "prediction_sha256": "bf691584fcd5153d91fce4b43c4b9492ba1bab0314ae69342603fb2efe008141"
+    },
+    {
+      "target": "hepg2",
+      "seed": 4,
+      "status_sha256": "38ea9968485a4de9efcaf2e1ab2bc9d930e886fa915c02b84813a04706a6967b",
+      "prediction_sha256": "cfaee2345d956d67411e70ef02ed79fbf8656b1c63e58f51a89f518d34942272"
+    },
+    {
+      "target": "jurkat",
+      "seed": 1,
+      "status_sha256": "d2d30a0351e48724aa2dcfead0a1e114529c67c63f0575d8e126b55cdfd4e25b",
+      "prediction_sha256": "1b6fd26967aa5f01f272013df27ee9049fc49239f7c0e8adf8e4d3d889049697"
+    },
+    {
+      "target": "jurkat",
+      "seed": 2,
+      "status_sha256": "cb08baedc39a3eed5b7edf68fb9771d293675d8101212a9c84d866b99953c959",
+      "prediction_sha256": "40260eb1a20ad672a0e8b72d91415197cf9e2ccb7019a23ee105e6fa06518403"
+    },
+    {
+      "target": "jurkat",
+      "seed": 3,
+      "status_sha256": "30894c8a854b94c008e322183758e9c42924d7c4dfb5fa318a4029301dff22ca",
+      "prediction_sha256": "2730e3d7097addacf0f8f04647ac338b4dd42ba0045a669158dff7a8b6adfff7"
+    },
+    {
+      "target": "jurkat",
+      "seed": 4,
+      "status_sha256": "a001f870d2f28a4f2a0c2881dc508882132eb45350690cee38d661a7f46f3d12",
+      "prediction_sha256": "c5a7b934e28f9a9f4407da0a68ef5298c0b738d8b92e49acda9a7d0af43a2cb5"
+    }
+  ]
+}
