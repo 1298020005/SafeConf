@@ -1,0 +1,24 @@
+{
+  "experiment": "E219_Adamson_unseen_perturbation_smoke",
+  "stage": "PRETRUTH_SEAL",
+  "status": "PASS",
+  "generated_at": "2026-09-20T22:38:39+08:00",
+  "n_train": 52,
+  "n_validation": 8,
+  "n_test": 16,
+  "n_output_genes": 5043,
+  "predictors": [
+    "scGPT_embedding_effect_KNN",
+    "scGPT_embedding_ridge"
+  ],
+  "ridge_alpha_selected_on_validation": 1.0,
+  "validation_truth_used_for_model_selection": true,
+  "test_truth_used": false,
+  "source_rows_read": 46784,
+  "target_test_expression_rows_read": 0,
+  "normalization": "source_h5ad_X_logNor_as_provided",
+  "prediction_sha256": "cf7d098e3bade573c116fa68e4ef44bbb9c1c68eb47aa444d5a163ce5a4d20cd",
+  "risk_table_sha256": "2e39e2e57f94a27335f88145e4e9b391a511ea9355e7f132d7f179553f49a37f",
+  "ridge_validation_sha256": "aaa0fabe371e770b51d3941082b5d5b7491a27cde30ed6ad2da167788f39568d",
+  "method_scope": "exploratory external adapter smoke; the structural proxy is not claimed to be identical to the E201 five-component SafeConf score"
+}
