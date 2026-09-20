@@ -1,0 +1,25 @@
+{
+  "experiment": "E216_jiang24_resource_bounded_confirmation",
+  "stage": "D3_PRETRUTH_SCORE_FREEZE",
+  "status": "PRETRUTH_COMPLETE_UNPUSHED",
+  "created_at": "2026-09-20T15:05:20+08:00",
+  "registered_tasks": 224,
+  "registered_states": 12,
+  "members": [
+    "latent/seed_1",
+    "latent/seed_2",
+    "latent/seed_3",
+    "latent/seed_4",
+    "linear/seed_1"
+  ],
+  "architecture_weights": {
+    "latent_total": 0.5,
+    "linear_total": 0.5
+  },
+  "certificate_thresholds": 9,
+  "all_states_evaluable": true,
+  "test_truth_access": "NOT_AUTHORIZED",
+  "test_perturbed_expression_rows_read": 0,
+  "target_truth_used_for_selection": false,
+  "manifest_sha256": "a017a8da63655ad791bd71ecd9692f3338598aaf3e0e02604f4912c8f044ea6a"
+}
