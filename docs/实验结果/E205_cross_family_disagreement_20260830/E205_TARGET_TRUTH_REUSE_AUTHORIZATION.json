@@ -1,0 +1,13 @@
+{
+  "experiment": "E205_cross_family_exphormer",
+  "stage": "TARGET_TRUTH_REUSE_AUTHORIZATION",
+  "status": "AUTHORIZED",
+  "authorized_at": "2026-09-20T23:16:46+08:00",
+  "allow_released_e201_target_centroids": true,
+  "risk_sealed_and_pushed_before_authorization": true,
+  "risk_seal_commit": "75dcc651d1d3d0dbb6943c142b0ce77c179c8577",
+  "pretruth_risk_status_sha256": "cb69d6c143ed2f52aa529e068d8f463922c82ffceba3a39285e4486e000147a8",
+  "pretruth_risk_table_sha256": "961a45d928b5e534ec31260e41b833b22a6b1d5e8db1bf93432477eec7c60927",
+  "e201_core_final_status_sha256": "a4a8e2c7f80c7d6ab6bc1a1451b6c1a53d1c3869a54e0255fd93f7791be72577",
+  "scope": "reuse previously released E201 target centroids only after E205 pretruth seal"
+}
