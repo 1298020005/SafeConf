@@ -189,6 +189,12 @@ class E205EvaluationMetricTests(unittest.TestCase):
         )
         self.assertTrue(
             np.all(
+                result.registered_family_identity_tolerance.to_numpy(float)
+                >= 1e-9
+            )
+        )
+        self.assertTrue(
+            np.all(
                 result.registered_family_disagreement.to_numpy(float)
                 <= result.registered_family_rms_error.to_numpy(float) + 1e-12
             )

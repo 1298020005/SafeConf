@@ -445,8 +445,14 @@ def task_errors(
         np.square(registered_centroid_rmse)
         + np.square(result.registered_family_disagreement.to_numpy(float)),
     )
+    # The sealed prediction vectors are float32 while the registered
+    # disagreements were computed in float64 immediately before sealing.
+    # A fixed squared-error floor prevents harmless float32 serialization
+    # residuals from being misclassified as violations of the Hilbert
+    # identity.  This floor was fixed before E205 truth release after the
+    # independent E216 run exposed a maximum residual of 3.12e-10.
     result["registered_family_identity_tolerance"] = np.maximum(
-        1e-12, 1e-10 * scale
+        1e-9, 1e-8 * scale
     )
     result["registered_family_lower_tightness"] = np.divide(
         result.registered_family_disagreement.to_numpy(float),
