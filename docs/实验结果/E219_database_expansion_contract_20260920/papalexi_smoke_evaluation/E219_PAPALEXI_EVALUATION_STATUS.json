@@ -1,0 +1,14 @@
+{
+  "experiment": "E219_Papalexi_technical_replicate_smoke",
+  "stage": "POSTSEAL_EVALUATION",
+  "status": "PASS",
+  "evaluated_at": "2026-09-20T22:47:30+08:00",
+  "n_test_rows": 111,
+  "n_unique_context_perturbation_pairs": 72,
+  "mean_two_predictor_error": 0.050454381612032584,
+  "mean_no_change_error": 0.05057636153886812,
+  "relative_error_reduction_vs_no_change": 0.0024117971938687477,
+  "overall_upstream_competence_gate": "PASS",
+  "context_scope": "technical replicate stability, not biological context generalization",
+  "claim_rule": "only settings with upstream_gate PASS may contribute routing evidence"
+}

@@ -1,0 +1,17 @@
+setting,score,n_folds,mean_spearman,mean_top20_error_enrichment
+context_and_perturbation_unseen,e218_transfer_router,3,0.1573605330907937,0.12923514469478584
+context_and_perturbation_unseen,model_disagreement,3,-0.1666666666666666,0.043297878236880104
+context_and_perturbation_unseen,predicted_magnitude,3,0.6,0.12923514469478584
+context_and_perturbation_unseen,safeconf_structural_proxy,3,-0.1666666666666666,0.043297878236880104
+context_unseen,e218_transfer_router,3,0.8894736842105262,0.4438366375762061
+context_unseen,model_disagreement,3,0.8450292397660819,0.46116280277357213
+context_unseen,predicted_magnitude,3,0.9140350877192982,0.4438366375762061
+context_unseen,safeconf_structural_proxy,3,0.7012614742224829,0.3357751808077467
+perturbation_unseen,e218_transfer_router,3,0.6848484848484847,0.22793681552714493
+perturbation_unseen,model_disagreement,3,0.3131313131313131,0.1269949048395307
+perturbation_unseen,predicted_magnitude,3,0.7050505050505049,0.22793681552714493
+perturbation_unseen,safeconf_structural_proxy,3,0.3131313131313131,0.1269949048395307
+random_pair,e218_transfer_router,3,0.5,0.1721378360424728
+random_pair,model_disagreement,3,0.3333333333333333,0.1721378360424728
+random_pair,predicted_magnitude,3,0.5,0.1721378360424728
+random_pair,safeconf_structural_proxy,3,0.6666666666666666,0.1721378360424728
