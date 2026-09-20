@@ -50,6 +50,7 @@ PREDICTORS = (
     "cross_family_disagreement",
 )
 REGISTERED_ROUTING_PREDICTORS = (
+    "context_holdout_router",
     "architecture_aware_router",
     "certificate_priority_q80",
     "registered_predicted_magnitude",
@@ -315,6 +316,7 @@ def load_risk_inputs(
         "registered_family_disagreement", "cross_family_disagreement",
         "registered_predicted_magnitude", "certificate_priority_q80",
         "architecture_aware_router",
+        "context_holdout_router",
     }
     if not required.issubset(features.columns):
         raise EvaluationFailure(f"E205 risk schema missing: {sorted(required-set(features.columns))}")
@@ -683,7 +685,11 @@ def bootstrap_registered_router(
             0.20,
             occurrences,
         )["oracle_normalized_utility"]
-        for predictor in ("architecture_aware_router", "certificate_priority_q80"):
+        for predictor in (
+            "context_holdout_router",
+            "architecture_aware_router",
+            "certificate_priority_q80",
+        ):
             routed = block[predictor].to_numpy(float)
             routed_utility = review_metrics(
                 routed,
@@ -843,7 +849,11 @@ def main() -> None:
         and row["predictor"] == "registered_predicted_magnitude"
         and math.isclose(row["budget"], 0.20)
     )
-    for predictor in ("architecture_aware_router", "certificate_priority_q80"):
+    for predictor in (
+        "context_holdout_router",
+        "architecture_aware_router",
+        "certificate_priority_q80",
+    ):
         routed_association = next(
             row["spearman"]
             for row in registered_associations
@@ -912,6 +922,12 @@ def main() -> None:
         if row["predictor"] == "architecture_aware_router"
         and row["measure"] == "delta_utility_20"
     )
+    context_utility_interval = next(
+        row
+        for row in registered_intervals
+        if row["predictor"] == "context_holdout_router"
+        and row["measure"] == "delta_utility_20"
+    )
     status = {
         "experiment": "E205_cross_family_exphormer",
         "stage": "FORMAL_EVALUATION",
@@ -970,6 +986,16 @@ def main() -> None:
             "cross-architecture development data"
         ),
         "architecture_aware_router_observed": architecture_utility_interval,
+        "context_holdout_router_status": (
+            "SUPPORTED"
+            if context_utility_interval["ci95_lower"] > 0
+            else "NOT_SUPPORTED"
+        ),
+        "context_holdout_router_role": (
+            "E217 primary whole-context-holdout confirmation; coefficients "
+            "frozen on the released E153 context-unseen subset"
+        ),
+        "context_holdout_router_observed": context_utility_interval,
     }
     atomic_json(output_dir / "E205_FORMAL_EVALUATION_STATUS.json", status)
     print(json.dumps(status, ensure_ascii=False, indent=2))

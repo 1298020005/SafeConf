@@ -154,6 +154,18 @@ def load_e201(path: Path) -> pd.DataFrame:
     return result
 
 
+def rerank_e153_blocks(frame: pd.DataFrame) -> pd.DataFrame:
+    """Recompute deployment percentiles after a pretruth setting restriction."""
+    blocks = []
+    for _, block in frame.groupby(["dataset", "fold_id"], sort=True):
+        block = block.copy()
+        block["m"] = percentile(block.baseline_predicted_magnitude)
+        block["s"] = percentile(block.safeconf_calibrated_pair_risk)
+        block["d"] = percentile(block.risk_model_disagreement)
+        blocks.append(block)
+    return pd.concat(blocks, ignore_index=True)
+
+
 def block_metrics(block: pd.DataFrame, lambda_s: float, lambda_d: float,
                   outcome_column: str) -> dict[str, float]:
     magnitude = block.m.to_numpy(float)
@@ -259,7 +271,7 @@ def e201_contrast(frame: pd.DataFrame, cross_parameters: tuple[float, float]) ->
     rows = []
     formulas = {
         "homogeneous_seed_rule": (0.125, 0.0),
-        "cross_architecture_rule": cross_parameters,
+        "mixed_cross_architecture_rule": cross_parameters,
     }
     for target, block in frame.groupby("target", sort=True):
         for name, parameters in formulas.items():
@@ -317,30 +329,62 @@ def main() -> None:
     e153, e201 = load_e153(args.e153_input), load_e201(args.e201_input)
     landscape, selected = parameter_landscape(e153)
     studies = e153_study_metrics(e153, *selected)
+    context_e153 = rerank_e153_blocks(
+        e153.loc[
+            e153.setting.astype(str).isin(
+                ("context_unseen", "context_unseen_row")
+            )
+        ].copy()
+    )
+    if context_e153.dataset.nunique() != 8:
+        raise DevelopmentFailure("E153 context-holdout subset lost a study")
+    context_landscape, context_selected = parameter_landscape(context_e153)
+    context_studies = e153_study_metrics(context_e153, *context_selected)
     lodo = lodo_selection(e153)
     contrast = e201_contrast(e201, selected)
     bootstrap = study_bootstrap(studies, args.bootstrap)
+    context_bootstrap = study_bootstrap(context_studies, args.bootstrap)
 
     tables = output / "tables"
     atomic_csv(tables / "E217_PARAMETER_LANDSCAPE.csv", landscape)
+    atomic_csv(
+        tables / "E217_CONTEXT_HOLDOUT_PARAMETER_LANDSCAPE.csv",
+        context_landscape,
+    )
     atomic_csv(tables / "E217_CROSS_ARCH_STUDY_RESULTS.csv", studies)
+    atomic_csv(
+        tables / "E217_CONTEXT_HOLDOUT_STUDY_RESULTS.csv", context_studies
+    )
     atomic_csv(tables / "E217_LODO_SELECTION.csv", lodo)
     atomic_csv(tables / "E217_E201_ARCHITECTURE_CONTRAST.csv", contrast)
     atomic_csv(tables / "E217_STUDY_BOOTSTRAP_SUMMARY.csv", bootstrap)
+    atomic_csv(
+        tables / "E217_CONTEXT_HOLDOUT_BOOTSTRAP_SUMMARY.csv",
+        context_bootstrap,
+    )
 
     utility_columns = [f"delta_utility_{int(100 * value):02d}" for value in BUDGETS]
     same_arch = contrast.loc[contrast.formula.eq("homogeneous_seed_rule")]
-    cross_on_same = contrast.loc[contrast.formula.eq("cross_architecture_rule")]
+    cross_on_same = contrast.loc[
+        contrast.formula.eq("mixed_cross_architecture_rule")
+    ]
     status = {
         "experiment": "E217_architecture_aware_router_development",
         "evidence_identity": "released_data_method_development",
         "cross_architecture_formula": (
             "m + 0.50*max(s-m,0) + 0.125*max(d-m,0)"
         ),
+        "cross_architecture_context_holdout_formula": (
+            "m + 0.125*max(s-m,0) + 0.125*max(d-m,0)"
+        ),
         "homogeneous_seed_formula": "m + 0.125*max(s-m,0)",
         "selected_cross_parameters": {
             "lambda_safeconf": selected[0],
             "lambda_disagreement": selected[1],
+        },
+        "selected_cross_context_parameters": {
+            "lambda_safeconf": context_selected[0],
+            "lambda_disagreement": context_selected[1],
         },
         "cross_architecture_positive_spearman_studies": int(
             (studies.delta_spearman > 0).sum()
@@ -351,6 +395,16 @@ def main() -> None:
         ),
         "cross_architecture_mean_delta_utilities": {
             column: float(studies[column].mean()) for column in utility_columns
+        },
+        "cross_context_positive_spearman_studies": int(
+            (context_studies.delta_spearman > 0).sum()
+        ),
+        "cross_context_mean_delta_spearman": float(
+            context_studies.delta_spearman.mean()
+        ),
+        "cross_context_mean_delta_utilities": {
+            column: float(context_studies[column].mean())
+            for column in utility_columns
         },
         "lodo_positive_spearman_studies": int((lodo.delta_spearman > 0).sum()),
         "lodo_mean_delta_spearman": float(lodo.delta_spearman.mean()),
@@ -388,6 +442,12 @@ E153 的八个研究使用跨结构预测器，E201 使用同一 TxPert 结构�
 R_{{cross}}=m+0.50[s-m]_+ +0.125[d-m]_+ .
 \]
 
+其中 E205 对应的“整个细胞背景未见”使用更窄的历史子场景，冻结为：
+
+\[
+R_{{cross,context}}=m+0.125[s-m]_+ +0.125[d-m]_+ .
+\]
+
 同结构种子家族保留弱修正：
 
 \[
@@ -401,6 +461,7 @@ R_{{seed}}=m+0.125[s-m]_+ .
 
 - 跨结构公式相对幅度的八研究平均 Spearman 增量：{status['cross_architecture_mean_delta_spearman']:+.4f}；
 - Spearman 正向研究：{status['cross_architecture_positive_spearman_studies']}/8；
+- 整背景留出专用公式平均 Spearman 增量：{status['cross_context_mean_delta_spearman']:+.4f}，正向 {status['cross_context_positive_spearman_studies']}/8；
 - 留一研究重新选参后的平均增量：{status['lodo_mean_delta_spearman']:+.4f}，正向 {status['lodo_positive_spearman_studies']}/8；
 - 同结构 E201 使用弱修正时平均 Spearman 增量：{status['e201_homogeneous_mean_delta_spearman']:+.4f}；
 - 把跨结构强修正规则误用到 E201 时平均增量：{status['e201_cross_rule_mean_delta_spearman']:+.4f}。

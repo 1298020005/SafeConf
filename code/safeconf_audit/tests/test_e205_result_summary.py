@@ -36,6 +36,7 @@ class E205ResultSummaryTests(unittest.TestCase):
                         "registered_family_lower_tightness_median": 0.25,
                         "certificate_priority_router_status": "NOT_SUPPORTED",
                         "architecture_aware_router_status": "NOT_SUPPORTED",
+                        "context_holdout_router_status": "NOT_SUPPORTED",
                     }
                 ),
                 encoding="utf-8",
@@ -126,6 +127,7 @@ class E205ResultSummaryTests(unittest.TestCase):
                         "ci95_upper": 0.03 if measure == "delta_spearman" else 0.02,
                     }
                     for predictor in (
+                        "context_holdout_router",
                         "architecture_aware_router",
                         "certificate_priority_q80",
                     )

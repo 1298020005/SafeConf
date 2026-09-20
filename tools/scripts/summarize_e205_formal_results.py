@@ -39,12 +39,14 @@ PALETTE = {
 }
 TARGET_ORDER = ("K562", "RPE1", "hepg2", "jurkat")
 REGISTERED_ROUTER_LABELS = {
+    "context_holdout_router": "Context-holdout SafeConf",
     "architecture_aware_router": "Architecture-aware SafeConf",
     "certificate_priority_q80": "Certificate first + magnitude",
     "registered_predicted_magnitude": "Registered-family magnitude",
     "registered_family_disagreement": "Registered-family lower bound",
 }
 REGISTERED_ROUTER_COLORS = {
+    "context_holdout_router": "#B07C45",
     "architecture_aware_router": "#54769A",
     "certificate_priority_q80": "#118A7E",
     "registered_predicted_magnitude": "#D55E5E",
@@ -274,6 +276,7 @@ def render_certificate_priority_router(
         & utilities.predictor.isin(
             (
                 "architecture_aware_router",
+                "context_holdout_router",
                 "certificate_priority_q80",
                 "registered_predicted_magnitude",
             )
@@ -293,21 +296,31 @@ def render_certificate_priority_router(
     architecture_delta = matrix["architecture_aware_router"] - matrix[
         "registered_predicted_magnitude"
     ]
+    context_delta = matrix["context_holdout_router"] - matrix[
+        "registered_predicted_magnitude"
+    ]
 
     fig, axes = plt.subplots(1, 2, figsize=(10.8, 4.0), facecolor="white")
     positions = np.arange(len(certificate_delta))
     axes[0].bar(
-        positions - 0.18,
+        positions - 0.24,
+        context_delta.to_numpy(float),
+        color=REGISTERED_ROUTER_COLORS["context_holdout_router"],
+        width=0.24,
+        label=REGISTERED_ROUTER_LABELS["context_holdout_router"],
+    )
+    axes[0].bar(
+        positions,
         architecture_delta.to_numpy(float),
         color=REGISTERED_ROUTER_COLORS["architecture_aware_router"],
-        width=0.35,
+        width=0.24,
         label=REGISTERED_ROUTER_LABELS["architecture_aware_router"],
     )
     axes[0].bar(
-        positions + 0.18,
+        positions + 0.24,
         certificate_delta.to_numpy(float),
         color=REGISTERED_ROUTER_COLORS["certificate_priority_q80"],
-        width=0.35,
+        width=0.24,
         label=REGISTERED_ROUTER_LABELS["certificate_priority_q80"],
     )
     axes[0].set_xticks(
@@ -454,6 +467,11 @@ def main() -> None:
         if status.get("architecture_aware_router_status") == "SUPPORTED"
         else "NOT_SUPPORTED"
     )
+    context_word = (
+        "SUPPORTED"
+        if status.get("context_holdout_router_status") == "SUPPORTED"
+        else "NOT_SUPPORTED"
+    )
     conclusion = []
     if int(status.get("registered_family_lower_bound_violations", -1)) == 0:
         conclusion.append("注册家族确定性下界在本次跨结构评价中没有发生违反。")
@@ -475,6 +493,10 @@ def main() -> None:
         conclusion.append("架构感知单向修正确认了相对注册家族幅度的复核增量。")
     else:
         conclusion.append("架构感知单向修正未通过跨结构确认，E217 公式不得按本次结果再调权。")
+    if context_word == "SUPPORTED":
+        conclusion.append("整背景留出专用路由通过了预先冻结的首要复核效用门。")
+    else:
+        conclusion.append("整背景留出专用路由未通过首要复核效用门，不能改用次要公式代替判定。")
 
     router_utility_interval = extract_unique(
         registered_intervals,
@@ -494,6 +516,16 @@ def main() -> None:
     architecture_spearman_interval = extract_unique(
         registered_intervals,
         predictor="architecture_aware_router",
+        measure="delta_spearman",
+    )
+    context_utility_interval = extract_unique(
+        registered_intervals,
+        predictor="context_holdout_router",
+        measure="delta_utility_20",
+    )
+    context_spearman_interval = extract_unique(
+        registered_intervals,
+        predictor="context_holdout_router",
         measure="delta_spearman",
     )
 
@@ -519,6 +551,7 @@ def main() -> None:
 | --- | --- |
 | 正式评价执行 | {status['execution_status']} |
 | 排序增量 | {ranking_word} |
+| 整背景留出路由（首要确认） | {context_word} |
 | 架构感知路由确认 | {architecture_word} |
 | 证书优先路由（次要） | {router_word} |
 | 注册家族证书 | {certificate_word} |
@@ -534,6 +567,10 @@ def main() -> None:
 {chr(10).join(rows)}
 
 SafeConf-M 相对预测幅度的 Spearman 差为 {finite(spearman_interval['estimate']):.4f}，扰动簇自助法 95% 区间为 [{finite(spearman_interval['ci95_lower']):.4f}, {finite(spearman_interval['ci95_upper']):.4f}]。20% 复核效用差为 {finite(utility_interval['estimate']):.4f}，95% 区间为 [{finite(utility_interval['ci95_lower']):.4f}, {finite(utility_interval['ci95_upper']):.4f}]。
+
+## 整背景留出专用路由（E217 首要确认）
+
+相对注册家族预测幅度的 Spearman 差为 {finite(context_spearman_interval['estimate']):.4f}，95% 区间为 [{finite(context_spearman_interval['ci95_lower']):.4f}, {finite(context_spearman_interval['ci95_upper']):.4f}]；20% 复核效用差为 {finite(context_utility_interval['estimate']):.4f}，95% 区间为 [{finite(context_utility_interval['ci95_lower']):.4f}, {finite(context_utility_interval['ci95_upper']):.4f}]。这是 E205 的首要路由确认量。
 
 ## 架构感知单向路由（E217 真值前冻结）
 
