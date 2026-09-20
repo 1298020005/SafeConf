@@ -1,0 +1,11 @@
+{
+  "experiment": "E219_Papalexi_technical_replicate_smoke",
+  "stage": "TARGET_TRUTH_AUTHORIZATION",
+  "status": "AUTHORIZED",
+  "authorized_at": "2026-09-20T22:47:00+08:00",
+  "pretruth_commit": "83bfda62b01e303edd2058e7d9d8d90595895e79",
+  "pretruth_status_sha256": "e95d24d19325af9d8308aa46ce7c9892da5f4ac7d577decd991841f77cc6c29c",
+  "pretruth_pushed_to_github": true,
+  "pretruth_pushed_to_gitee": true,
+  "scope": "read the 111 frozen Papalexi fold-test rows only for post-seal technical-replicate smoke evaluation"
+}
