@@ -1,0 +1,43 @@
+{
+  "experiment": "E219_database_expansion_contract",
+  "status": "PASS",
+  "generated_at": "2026-09-20T22:22:30+08:00",
+  "minimum_cells_per_pair": 30,
+  "datasets": [
+    {
+      "dataset": "Parekh",
+      "context_identity": "biological_cell_state",
+      "source_cells": 4346,
+      "source_genes": 5000,
+      "n_contexts": 3,
+      "n_perturbations": 10,
+      "n_folds": 3,
+      "minimum_pair_cells": 36
+    },
+    {
+      "dataset": "Papalexi",
+      "context_identity": "technical_replicate",
+      "source_cells": 20343,
+      "source_genes": 5013,
+      "n_contexts": 3,
+      "n_perturbations": 24,
+      "n_folds": 3,
+      "minimum_pair_cells": 34
+    },
+    {
+      "dataset": "Adamson",
+      "context_identity": "single_context",
+      "source_cells": 56998,
+      "source_genes": 5043,
+      "n_contexts": 1,
+      "n_perturbations": 76,
+      "n_folds": 1,
+      "minimum_pair_cells": 30
+    }
+  ],
+  "manifest_rows": 382,
+  "selection_namespace": "E219_DATABASE_EXPANSION_V1",
+  "expression_values_read_for_selection": false,
+  "truth_or_model_error_used_for_selection": false,
+  "next_gate": "model compatibility smoke before any formal prediction claim"
+}

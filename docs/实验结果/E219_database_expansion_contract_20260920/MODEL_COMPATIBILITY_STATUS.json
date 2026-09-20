@@ -1,0 +1,36 @@
+{
+  "experiment": "E219_database_expansion_contract",
+  "stage": "MODEL_COMPATIBILITY_PREFLIGHT",
+  "status": "PASS",
+  "vocab_path": "/home/yyf/archive/code/20260519_0958_home_cleanup/moved_top_level/codex_scgpt_attnres_workspace/checkpoints/whole-human/vocab.json",
+  "vocab_sha256": "acca93d114ca62c3f0f50debbd23e8c87f0714f4737764454f6b2b13f2e8580f",
+  "expression_values_read": false,
+  "target_effect_or_error_used": false,
+  "datasets": [
+    {
+      "dataset": "Adamson",
+      "n_perturbations": 76,
+      "expression_axis_compatible": 76,
+      "scgpt_vocab_compatible": 76,
+      "dual_adapter_compatible": 76,
+      "compatibility_fraction": 1.0
+    },
+    {
+      "dataset": "Papalexi",
+      "n_perturbations": 24,
+      "expression_axis_compatible": 24,
+      "scgpt_vocab_compatible": 23,
+      "dual_adapter_compatible": 23,
+      "compatibility_fraction": 0.9583333333333334
+    },
+    {
+      "dataset": "Parekh",
+      "n_perturbations": 10,
+      "expression_axis_compatible": 5,
+      "scgpt_vocab_compatible": 10,
+      "dual_adapter_compatible": 5,
+      "compatibility_fraction": 0.5
+    }
+  ],
+  "next_gate": "run one-fold prediction smoke on datasets with adequate compatible targets"
+}

@@ -1,0 +1,16 @@
+dataset,context_identity,setting,split,n_tasks,min_cells
+Adamson,single_context,perturbation_unseen,test,16,63
+Adamson,single_context,source_train,train,52,30
+Adamson,single_context,source_validation,val,8,88
+Papalexi,technical_replicate,context_and_perturbation_unseen,test,15,69
+Papalexi,technical_replicate,context_unseen,test,57,34
+Papalexi,technical_replicate,perturbation_unseen,test,30,69
+Papalexi,technical_replicate,random_pair,test,9,165
+Papalexi,technical_replicate,source_train,train,96,34
+Papalexi,technical_replicate,source_validation,val,9,131
+Parekh,biological_cell_state,context_and_perturbation_unseen,test,6,56
+Parekh,biological_cell_state,context_unseen,test,24,36
+Parekh,biological_cell_state,perturbation_unseen,test,12,36
+Parekh,biological_cell_state,random_pair,test,3,53
+Parekh,biological_cell_state,source_train,train,42,36
+Parekh,biological_cell_state,source_validation,val,3,52
