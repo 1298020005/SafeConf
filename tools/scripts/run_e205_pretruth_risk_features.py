@@ -221,6 +221,40 @@ def rank_fusion_4_to_1(magnitude: np.ndarray, safeconf: np.ndarray) -> np.ndarra
     return (4.0 * m_rank + s_rank) / (5.0 * len(magnitude))
 
 
+def architecture_aware_router(
+    magnitude: np.ndarray,
+    safeconf: np.ndarray,
+    cross_architecture_disagreement: np.ndarray,
+) -> np.ndarray:
+    """Frozen E217 cross-architecture monotone correction.
+
+    E217 selected the two coefficients on released E153 data before E205
+    target truth was authorized.  Every input is converted to a within-target
+    percentile.  Evidence may only raise the magnitude-anchored score.
+    """
+    arrays = [
+        np.asarray(magnitude, dtype=float),
+        np.asarray(safeconf, dtype=float),
+        np.asarray(cross_architecture_disagreement, dtype=float),
+    ]
+    if (
+        any(value.ndim != 1 for value in arrays)
+        or len({value.shape for value in arrays}) != 1
+        or len(arrays[0]) < 2
+        or any(not np.isfinite(value).all() for value in arrays)
+    ):
+        raise RiskFailure("architecture-aware router requires aligned finite vectors")
+    n_tasks = len(arrays[0])
+    magnitude_rank, safeconf_rank, disagreement_rank = [
+        rankdata(value, method="average") / n_tasks for value in arrays
+    ]
+    return (
+        magnitude_rank
+        + 0.50 * np.maximum(safeconf_rank - magnitude_rank, 0.0)
+        + 0.125 * np.maximum(disagreement_rank - magnitude_rank, 0.0)
+    )
+
+
 def certificate_priority_score(
     magnitude: np.ndarray,
     lower_bound: np.ndarray,
@@ -533,6 +567,11 @@ def main() -> None:
             block.predicted_magnitude.to_numpy(float),
             block.safeconf_e205_risk.to_numpy(float),
         )
+        block["architecture_aware_router"] = architecture_aware_router(
+            block.registered_predicted_magnitude.to_numpy(float),
+            block.safeconf_e205_risk.to_numpy(float),
+            block.cross_family_disagreement.to_numpy(float),
+        )
         feature_blocks.append(block)
         seed_blocks.append(np.stack(target_seed, axis=1))
         family_blocks.append(np.stack(target_family))
@@ -568,6 +607,7 @@ def main() -> None:
                     "cross_family_disagreement",
                     "registered_family_disagreement",
                     "gat_family_disagreement",
+                    "architecture_aware_router",
                 ]
             ].to_numpy(float)
         ).all()
@@ -692,6 +732,21 @@ def main() -> None:
             "tau_grid": tau_grid,
         },
         "safeconf_m_formula": "(4*rank(predicted_magnitude)+rank(safeconf_e205_risk))/(5*N), within target",
+        "architecture_aware_router": {
+            "status": "PREREGISTERED_E217_CONFIRMATION",
+            "outcome": "registered_family_rms_error",
+            "magnitude": "registered_predicted_magnitude",
+            "safeconf": "safeconf_e205_risk",
+            "disagreement": "cross_family_disagreement",
+            "formula": (
+                "m + 0.50*max(s-m,0) + 0.125*max(d-m,0), "
+                "where m/s/d are within-target percentile ranks"
+            ),
+            "development_source": (
+                "E217 released E153 cross-architecture parameter landscape; "
+                "fixed before E205 target-truth authorization"
+            ),
+        },
         "certificate_priority_router": {
             "status": "PREREGISTERED_SECONDARY",
             "outcome": "registered_family_rms_error",

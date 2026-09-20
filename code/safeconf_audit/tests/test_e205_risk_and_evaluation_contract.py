@@ -43,6 +43,32 @@ class E205PretruthRiskTests(unittest.TestCase):
                 np.asarray([1.0, np.nan]), np.asarray([1.0, 2.0])
             )
 
+    def test_architecture_router_is_upward_only_and_uses_frozen_coefficients(self) -> None:
+        magnitude = np.asarray([0.0, 1.0, 2.0, 3.0])
+        safeconf = np.asarray([3.0, 2.0, 1.0, 0.0])
+        disagreement = np.asarray([1.0, 3.0, 0.0, 2.0])
+
+        observed = RISK.architecture_aware_router(
+            magnitude, safeconf, disagreement
+        )
+        m = np.asarray([0.25, 0.50, 0.75, 1.00])
+        s = np.asarray([1.00, 0.75, 0.50, 0.25])
+        d = np.asarray([0.50, 1.00, 0.25, 0.75])
+        expected = m + 0.50 * np.maximum(s - m, 0.0) + 0.125 * np.maximum(
+            d - m, 0.0
+        )
+
+        np.testing.assert_allclose(observed, expected)
+        self.assertTrue(np.all(observed >= m))
+
+    def test_architecture_router_rejects_misaligned_inputs(self) -> None:
+        with self.assertRaises(RISK.RiskFailure):
+            RISK.architecture_aware_router(
+                np.asarray([1.0, 2.0]),
+                np.asarray([1.0]),
+                np.asarray([1.0, 2.0]),
+            )
+
     def test_certificate_priority_is_lexicographic_and_untuned(self) -> None:
         magnitude = np.asarray([0.1, 0.9, 0.2, 0.8])
         lower_bound = np.asarray([0.6, 0.4, 0.7, 0.3])

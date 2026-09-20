@@ -39,11 +39,13 @@ PALETTE = {
 }
 TARGET_ORDER = ("K562", "RPE1", "hepg2", "jurkat")
 REGISTERED_ROUTER_LABELS = {
+    "architecture_aware_router": "Architecture-aware SafeConf",
     "certificate_priority_q80": "Certificate first + magnitude",
     "registered_predicted_magnitude": "Registered-family magnitude",
     "registered_family_disagreement": "Registered-family lower bound",
 }
 REGISTERED_ROUTER_COLORS = {
+    "architecture_aware_router": "#54769A",
     "certificate_priority_q80": "#118A7E",
     "registered_predicted_magnitude": "#D55E5E",
     "registered_family_disagreement": "#7E6AAD",
@@ -270,7 +272,11 @@ def render_certificate_priority_router(
         utilities.scope.isin(("pooled", *TARGET_ORDER))
         & np.isclose(utilities.budget.astype(float), 0.20)
         & utilities.predictor.isin(
-            ("certificate_priority_q80", "registered_predicted_magnitude")
+            (
+                "architecture_aware_router",
+                "certificate_priority_q80",
+                "registered_predicted_magnitude",
+            )
         )
     ]
     matrix = (
@@ -281,17 +287,35 @@ def render_certificate_priority_router(
     )
     if matrix.isna().any().any():
         raise SummaryFailure("registered-family per-context routing table is incomplete")
-    delta = (
-        matrix["certificate_priority_q80"]
-        - matrix["registered_predicted_magnitude"]
-    )
+    certificate_delta = matrix["certificate_priority_q80"] - matrix[
+        "registered_predicted_magnitude"
+    ]
+    architecture_delta = matrix["architecture_aware_router"] - matrix[
+        "registered_predicted_magnitude"
+    ]
 
     fig, axes = plt.subplots(1, 2, figsize=(10.8, 4.0), facecolor="white")
-    colors = ["#118A7E" if value >= 0 else "#D55E5E" for value in delta]
-    axes[0].bar(np.arange(len(delta)), delta.to_numpy(float), color=colors, width=0.65)
-    axes[0].set_xticks(np.arange(len(delta)), delta.index, rotation=25, ha="right")
+    positions = np.arange(len(certificate_delta))
+    axes[0].bar(
+        positions - 0.18,
+        architecture_delta.to_numpy(float),
+        color=REGISTERED_ROUTER_COLORS["architecture_aware_router"],
+        width=0.35,
+        label=REGISTERED_ROUTER_LABELS["architecture_aware_router"],
+    )
+    axes[0].bar(
+        positions + 0.18,
+        certificate_delta.to_numpy(float),
+        color=REGISTERED_ROUTER_COLORS["certificate_priority_q80"],
+        width=0.35,
+        label=REGISTERED_ROUTER_LABELS["certificate_priority_q80"],
+    )
+    axes[0].set_xticks(
+        positions, certificate_delta.index, rotation=25, ha="right"
+    )
     axes[0].axhline(0, color="#333333", linewidth=0.8)
     axes[0].set_ylabel("20% review-utility difference")
+    axes[0].legend(frameon=False, fontsize=7.5)
     clean_axis(axes[0], "y")
     annotate_panel(axes[0], "a")
 
@@ -425,6 +449,11 @@ def main() -> None:
         if status.get("certificate_priority_router_status") == "SUPPORTED"
         else "NOT_SUPPORTED"
     )
+    architecture_word = (
+        "SUPPORTED"
+        if status.get("architecture_aware_router_status") == "SUPPORTED"
+        else "NOT_SUPPORTED"
+    )
     conclusion = []
     if int(status.get("registered_family_lower_bound_violations", -1)) == 0:
         conclusion.append("注册家族确定性下界在本次跨结构评价中没有发生违反。")
@@ -442,12 +471,30 @@ def main() -> None:
         conclusion.append("证书优先、幅度组内排序确认了对注册家族幅度的次要复核增量。")
     else:
         conclusion.append("证书优先路由未确认复核增量，不影响确定性下界本身的有效性。")
+    if architecture_word == "SUPPORTED":
+        conclusion.append("架构感知单向修正确认了相对注册家族幅度的复核增量。")
+    else:
+        conclusion.append("架构感知单向修正未通过跨结构确认，E217 公式不得按本次结果再调权。")
 
     router_utility_interval = extract_unique(
-        registered_intervals, measure="delta_utility_20"
+        registered_intervals,
+        predictor="certificate_priority_q80",
+        measure="delta_utility_20",
     )
     router_spearman_interval = extract_unique(
-        registered_intervals, measure="delta_spearman"
+        registered_intervals,
+        predictor="certificate_priority_q80",
+        measure="delta_spearman",
+    )
+    architecture_utility_interval = extract_unique(
+        registered_intervals,
+        predictor="architecture_aware_router",
+        measure="delta_utility_20",
+    )
+    architecture_spearman_interval = extract_unique(
+        registered_intervals,
+        predictor="architecture_aware_router",
+        measure="delta_spearman",
     )
 
     rows = []
@@ -472,6 +519,7 @@ def main() -> None:
 | --- | --- |
 | 正式评价执行 | {status['execution_status']} |
 | 排序增量 | {ranking_word} |
+| 架构感知路由确认 | {architecture_word} |
 | 证书优先路由（次要） | {router_word} |
 | 注册家族证书 | {certificate_word} |
 | 主任务数 | {int(status['n_primary_tasks'])} |
@@ -486,6 +534,10 @@ def main() -> None:
 {chr(10).join(rows)}
 
 SafeConf-M 相对预测幅度的 Spearman 差为 {finite(spearman_interval['estimate']):.4f}，扰动簇自助法 95% 区间为 [{finite(spearman_interval['ci95_lower']):.4f}, {finite(spearman_interval['ci95_upper']):.4f}]。20% 复核效用差为 {finite(utility_interval['estimate']):.4f}，95% 区间为 [{finite(utility_interval['ci95_lower']):.4f}, {finite(utility_interval['ci95_upper']):.4f}]。
+
+## 架构感知单向路由（E217 真值前冻结）
+
+在注册跨架构家族自身的 RMS 误差上，架构感知路由相对注册家族预测幅度的 Spearman 差为 {finite(architecture_spearman_interval['estimate']):.4f}，95% 区间为 [{finite(architecture_spearman_interval['ci95_lower']):.4f}, {finite(architecture_spearman_interval['ci95_upper']):.4f}]；20% 复核效用差为 {finite(architecture_utility_interval['estimate']):.4f}，95% 区间为 [{finite(architecture_utility_interval['ci95_lower']):.4f}, {finite(architecture_utility_interval['ci95_upper']):.4f}]。公式在 E205 真值授权前固定，不按本次结果重新调权。
 
 ## 证书优先路由（预登记次要分析）
 

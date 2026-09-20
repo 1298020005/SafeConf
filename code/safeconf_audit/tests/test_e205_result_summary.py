@@ -35,6 +35,7 @@ class E205ResultSummaryTests(unittest.TestCase):
                         "registered_family_identity_failures": 0,
                         "registered_family_lower_tightness_median": 0.25,
                         "certificate_priority_router_status": "NOT_SUPPORTED",
+                        "architecture_aware_router_status": "NOT_SUPPORTED",
                     }
                 ),
                 encoding="utf-8",
@@ -118,17 +119,17 @@ class E205ResultSummaryTests(unittest.TestCase):
             pd.DataFrame(
                 [
                     {
-                        "measure": "delta_spearman",
-                        "estimate": 0.01,
-                        "ci95_lower": -0.01,
-                        "ci95_upper": 0.03,
-                    },
-                    {
-                        "measure": "delta_utility_20",
-                        "estimate": -0.01,
-                        "ci95_lower": -0.03,
-                        "ci95_upper": 0.02,
-                    },
+                        "predictor": predictor,
+                        "measure": measure,
+                        "estimate": 0.01 if measure == "delta_spearman" else -0.01,
+                        "ci95_lower": -0.01 if measure == "delta_spearman" else -0.03,
+                        "ci95_upper": 0.03 if measure == "delta_spearman" else 0.02,
+                    }
+                    for predictor in (
+                        "architecture_aware_router",
+                        "certificate_priority_q80",
+                    )
+                    for measure in ("delta_spearman", "delta_utility_20")
                 ]
             ).to_csv(
                 evaluation / "E205_REGISTERED_ROUTING_INTERVALS.csv", index=False
