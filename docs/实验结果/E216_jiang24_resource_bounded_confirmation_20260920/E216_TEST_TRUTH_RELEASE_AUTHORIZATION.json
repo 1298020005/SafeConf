@@ -1,0 +1,27 @@
+{
+  "experiment": "E216_jiang24_resource_bounded_confirmation",
+  "stage": "TEST_TRUTH_RELEASE_AUTHORIZATION",
+  "status": "AUTHORIZED",
+  "authorized_at": "2026-09-20T15:06:43+08:00",
+  "allow_test_perturbed_expression": true,
+  "risk_sealed_and_pushed_before_authorization": true,
+  "risk_seal_commit": "8fb985d408c8cca4409683c37c116f3bbbc2dede",
+  "pretruth_files": {
+    "E216_PRETRUTH_STATUS.json": "f7765b60a05a533f01e6f6a7c169e5483a936b17a3aec5f0529142583179cf00",
+    "E216_PRETRUTH_TASK_SCORES.csv": "75c110c4ae26fb041a5a8ee986eaf8b7e4cb7923c562950221e0880e0aa8281f",
+    "E216_PRETRUTH_STATE_STANDARDIZATION.csv": "144e327c6785494c0458c5c65afb8d667714cb125ab715f40c1d6b4b9ad72d7b",
+    "E216_CERTIFICATE_THRESHOLDS.csv": "9978087d24279f90baa62ae6201ec2a27a028232fd432779d71b665028598ade",
+    "E216_ARCHITECTURE_BALANCED_FAMILY.npz": "c00f9d5ffaefa0281ae04e6c636e30fa5794b0802183420da7346f518eb5bb29",
+    "E216_PRETRUTH_MANIFEST.csv": "a017a8da63655ad791bd71ecd9692f3338598aaf3e0e02604f4912c8f044ea6a"
+  },
+  "sealed_repo_files": {
+    "docs/实验结果/E216_jiang24_resource_bounded_confirmation_20260920/E216_PRETRUTH_STATUS.json": "f7765b60a05a533f01e6f6a7c169e5483a936b17a3aec5f0529142583179cf00",
+    "docs/实验结果/E216_jiang24_resource_bounded_confirmation_20260920/E216_PRETRUTH_TASK_SCORES.csv": "75c110c4ae26fb041a5a8ee986eaf8b7e4cb7923c562950221e0880e0aa8281f",
+    "docs/实验结果/E216_jiang24_resource_bounded_confirmation_20260920/E216_PRETRUTH_STATE_STANDARDIZATION.csv": "144e327c6785494c0458c5c65afb8d667714cb125ab715f40c1d6b4b9ad72d7b",
+    "docs/实验结果/E216_jiang24_resource_bounded_confirmation_20260920/E216_CERTIFICATE_THRESHOLDS.csv": "9978087d24279f90baa62ae6201ec2a27a028232fd432779d71b665028598ade",
+    "docs/实验结果/E216_jiang24_resource_bounded_confirmation_20260920/E216_PRETRUTH_MANIFEST.csv": "a017a8da63655ad791bd71ecd9692f3338598aaf3e0e02604f4912c8f044ea6a"
+  },
+  "control_centroid_file": "/home/yyf/data/perturbench_e216/predictions_20260920/latent/seed_1/E216_CONTROL_CENTROIDS.npz",
+  "control_centroid_sha256": "7b6ede2f6476b81c2028509fdbc196f56b0b442377f510eca9ddf9798d76cf4c",
+  "selection_statement": "The registered task set, prediction members, architecture weighting, SafeConf-M 4:1 combination, metrics, certificate thresholds and bootstrap procedure were committed and pushed before this authorization. No test perturbation expression was used for model, score, weight, threshold or endpoint selection."
+}
