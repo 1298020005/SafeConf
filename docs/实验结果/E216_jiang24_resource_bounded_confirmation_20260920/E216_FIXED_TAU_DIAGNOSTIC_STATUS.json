@@ -1,0 +1,13 @@
+{
+  "experiment": "E216_jiang24_resource_bounded_confirmation",
+  "stage": "POST_RELEASE_FIXED_E211_TAU_NUMERICAL_DIAGNOSTIC",
+  "status": "PASS",
+  "created_at": "2026-09-20T15:27:04+08:00",
+  "e216_formal_primary_gate_changed": false,
+  "tau_grid_source": "E211 fixed absolute grid committed 2026-09-15",
+  "registered_tasks": 224,
+  "max_abs_longdouble_identity_residual": 1.2874900798265365e-19,
+  "lower_bound_violations": 0,
+  "median_lower_bound_tightness": 0.6187499222848294,
+  "all_fixed_tau_false_certificates": 0
+}
