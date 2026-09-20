@@ -76,6 +76,14 @@ def git_text(repo: Path, *args: str) -> str:
     ).strip()
 
 
+def staged_paths(repo: Path) -> list[str]:
+    """Return staged path names without Git's locale-dependent quoting."""
+    payload = subprocess.check_output(
+        ["git", "-C", str(repo), "diff", "--cached", "--name-only", "-z"]
+    )
+    return [item.decode("utf-8") for item in payload.split(b"\0") if item]
+
+
 def ensure_release_branch(repo: Path, expected_branch: str) -> str:
     branch = git_text(repo, "branch", "--show-current")
     if branch != expected_branch:
@@ -145,11 +153,7 @@ def commit_and_push(repo: Path, paths: list[Path], message: str) -> str:
     subprocess.run(
         ["git", "-C", str(repo), "add", "-f", "--", *relative], check=True
     )
-    staged = [
-        item
-        for item in git_text(repo, "diff", "--cached", "--name-only").splitlines()
-        if item
-    ]
+    staged = staged_paths(repo)
     allowed = tuple(item.rstrip("/") for item in relative)
     unexpected = [
         item

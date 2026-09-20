@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import subprocess
 import tempfile
 import unittest
 from pathlib import Path
@@ -16,6 +17,18 @@ SPEC.loader.exec_module(MODULE)
 
 
 class E205PostTrainingSupervisorTests(unittest.TestCase):
+    def test_staged_paths_preserve_unicode_names(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            repo = Path(temporary)
+            subprocess.run(["git", "init", "-q", str(repo)], check=True)
+            path = repo / "docs" / "实验结果" / "seal.json"
+            path.parent.mkdir(parents=True)
+            path.write_text("{}\n", encoding="utf-8")
+            subprocess.run(["git", "-C", str(repo), "add", str(path)], check=True)
+            self.assertEqual(
+                MODULE.staged_paths(repo), ["docs/实验结果/seal.json"]
+            )
+
     def test_training_gate_wait_go_and_fail(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             path = Path(temporary) / "queue.json"
