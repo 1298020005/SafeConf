@@ -118,7 +118,9 @@ def main() -> int:
             continue
         output_dir.mkdir(parents=True, exist_ok=True)
         command = [
-            str(args.python.resolve()),
+            # Keep the venv entry point itself.  Path.resolve() follows its
+            # symlink to the system interpreter and silently loses the venv.
+            str(args.python),
             str(prediction_script),
             "--perturbench-repo", str(args.perturbench_repo.resolve()),
             "--run-dir", str(run_dir),
