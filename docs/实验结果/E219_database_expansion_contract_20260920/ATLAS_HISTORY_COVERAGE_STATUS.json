@@ -1,0 +1,17 @@
+{
+  "experiment": "E219_atlas_history_coverage_audit",
+  "status": "PASS",
+  "n_manifest_records": 83,
+  "n_readable_records": 83,
+  "n_records_with_explicit_perturbation_column": 83,
+  "n_e201_primary_genes": 575,
+  "n_e201_genes_with_any_atlas_history": 575,
+  "n_e201_genes_with_two_or_more_studies": 575,
+  "fraction_with_any_atlas_history": 1.0,
+  "fraction_with_two_or_more_studies": 1.0,
+  "expression_values_read": false,
+  "truth_prediction_or_error_used": false,
+  "coverage_scope": "manifest-confirmed genetic_single records only",
+  "coverage_is_label_presence_not_harmonized_effect": true,
+  "interpretation": "Gene labels are broadly covered, but label presence is not yet a usable historical effect database. Expression normalization, context harmonization and source-only effect estimation remain separate gates."
+}
