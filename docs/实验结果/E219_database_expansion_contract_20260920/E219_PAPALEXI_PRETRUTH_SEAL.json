@@ -1,0 +1,44 @@
+{
+  "experiment": "E219_Papalexi_technical_replicate_smoke",
+  "stage": "PRETRUTH_SEAL",
+  "status": "PASS",
+  "generated_at": "2026-09-20T22:45:55+08:00",
+  "n_folds": 3,
+  "n_train_rows": 96,
+  "n_validation_rows": 9,
+  "n_test_rows": 111,
+  "n_output_genes": 5013,
+  "predictors": [
+    "source_effect_scGPT_KNN",
+    "scGPT_embedding_context_ridge"
+  ],
+  "validation_truth_used_for_model_selection": true,
+  "test_truth_used": false,
+  "target_test_expression_rows_read": 0,
+  "source_rows_by_fold": [
+    {
+      "fold_id": "Papalexi_holdout_rep1",
+      "source_rows_read": 9321,
+      "target_test_expression_rows_read": 0
+    },
+    {
+      "fold_id": "Papalexi_holdout_rep2",
+      "source_rows_read": 12220,
+      "target_test_expression_rows_read": 0
+    },
+    {
+      "fold_id": "Papalexi_holdout_rep3",
+      "source_rows_read": 11822,
+      "target_test_expression_rows_read": 0
+    }
+  ],
+  "normalization": "source_h5ad_X_logNor_as_provided",
+  "symbol_aliases": {
+    "MARCH8": "MARCHF8"
+  },
+  "prediction_sha256": "45d849346505acbd95f9c650608fa85bae5180bf1e6ee516ab19a9d7d3125b24",
+  "risk_table_sha256": "48da3e2a94352ac0aeca3e5e37ded64c9eafb1fac6ceb59a5dd6565ac77d2343",
+  "ridge_validation_sha256": "6f3d77ed9fd00417ab27befc961f51fadfade9b8240a0911d7fb01986222c5a7",
+  "context_scope": "technical replicates; no claim of new biological cell context",
+  "method_scope": "exploratory external adapter smoke"
+}

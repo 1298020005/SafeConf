@@ -20,6 +20,7 @@ VOCAB = Path(
     "/home/yyf/archive/code/20260519_0958_home_cleanup/"
     "moved_top_level/codex_scgpt_attnres_workspace/checkpoints/whole-human/vocab.json"
 )
+GENE_ALIASES = {"MARCH8": "MARCHF8"}
 
 
 class CompatibilityFailure(RuntimeError):
@@ -57,13 +58,18 @@ def main() -> None:
             manifest.loc[manifest.dataset.eq(dataset), "perturbation"].astype(str).unique()
         )
         for perturbation in perturbations:
-            token = perturbation.upper()
+            token = GENE_ALIASES.get(perturbation.upper(), perturbation.upper())
             rows.append({
                 "dataset": dataset,
                 "perturbation": perturbation,
                 "expression_axis_present": perturbation in genes or token in genes,
                 "scgpt_token": token,
                 "scgpt_vocab_present": token in vocab,
+                "symbol_mapping": (
+                    "NCBI/HGNC alias MARCH8->MARCHF8"
+                    if perturbation.upper() in GENE_ALIASES
+                    else "uppercase exact symbol"
+                ),
                 "basic_dual_adapter_compatible": bool(
                     (perturbation in genes or token in genes) and token in vocab
                 ),

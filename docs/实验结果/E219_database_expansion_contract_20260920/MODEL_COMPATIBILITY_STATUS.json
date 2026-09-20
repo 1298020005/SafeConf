@@ -19,9 +19,9 @@
       "dataset": "Papalexi",
       "n_perturbations": 24,
       "expression_axis_compatible": 24,
-      "scgpt_vocab_compatible": 23,
-      "dual_adapter_compatible": 23,
-      "compatibility_fraction": 0.9583333333333334
+      "scgpt_vocab_compatible": 24,
+      "dual_adapter_compatible": 24,
+      "compatibility_fraction": 1.0
     },
     {
       "dataset": "Parekh",
