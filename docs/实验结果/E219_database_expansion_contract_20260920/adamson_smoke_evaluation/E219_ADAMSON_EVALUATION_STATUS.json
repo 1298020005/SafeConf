@@ -1,0 +1,27 @@
+{
+  "experiment": "E219_Adamson_unseen_perturbation_smoke",
+  "stage": "POSTSEAL_EVALUATION",
+  "status": "PASS",
+  "evaluated_at": "2026-09-20T22:41:28+08:00",
+  "n_test_tasks": 16,
+  "mean_two_predictor_error": 0.045956439444148595,
+  "mean_no_change_error": 0.05140364305720185,
+  "relative_error_reduction_vs_no_change": 0.10596921325190167,
+  "upstream_competence_gate": "PASS",
+  "risk_evaluation_allowed_for_claim": true,
+  "interpretation": "risk metrics may be used as external evidence",
+  "bootstrap_seed": 20260920,
+  "n_bootstrap": 20000,
+  "router_delta_spearman": 0.06277905469235945,
+  "router_delta_spearman_ci95": [
+    -0.10541557372689458,
+    0.33056016573152375
+  ],
+  "router_probability_delta_gt_zero": 0.65205,
+  "upstream_absolute_rmse_gain": 0.005447203613053255,
+  "upstream_absolute_rmse_gain_ci95": [
+    0.0012937590439268166,
+    0.010025875660971992
+  ],
+  "upstream_probability_gain_gt_zero": 0.99645
+}

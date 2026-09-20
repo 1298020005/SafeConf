@@ -84,6 +84,42 @@ def percentile(values: np.ndarray) -> np.ndarray:
     return rankdata(values, method="average") / len(values)
 
 
+def paired_bootstrap_summary(evaluated: pd.DataFrame, n_bootstrap: int = 20_000) -> dict:
+    """Quantify fixed-score increment and upstream improvement without refitting."""
+    rng = np.random.default_rng(20260920)
+    error = evaluated.error_two_predictor_mean_rmse.to_numpy(float)
+    no_change = evaluated.error_no_change_rmse.to_numpy(float)
+    magnitude = evaluated.predicted_magnitude.to_numpy(float)
+    combined = evaluated.e218_transfer_router.to_numpy(float)
+    delta_rho, upstream_gain = [], []
+    for _ in range(n_bootstrap):
+        index = rng.integers(0, len(evaluated), len(evaluated))
+        rho_magnitude = spearmanr(magnitude[index], error[index]).statistic
+        rho_combined = spearmanr(combined[index], error[index]).statistic
+        if np.isfinite(rho_magnitude) and np.isfinite(rho_combined):
+            delta_rho.append(float(rho_combined - rho_magnitude))
+        upstream_gain.append(float(np.mean(no_change[index] - error[index])))
+    delta_rho = np.asarray(delta_rho, dtype=float)
+    upstream_gain = np.asarray(upstream_gain, dtype=float)
+    return {
+        "bootstrap_seed": 20260920,
+        "n_bootstrap": n_bootstrap,
+        "router_delta_spearman": float(
+            spearmanr(combined, error).statistic
+            - spearmanr(magnitude, error).statistic
+        ),
+        "router_delta_spearman_ci95": np.quantile(
+            delta_rho, [0.025, 0.975]
+        ).astype(float).tolist(),
+        "router_probability_delta_gt_zero": float(np.mean(delta_rho > 0)),
+        "upstream_absolute_rmse_gain": float(np.mean(no_change - error)),
+        "upstream_absolute_rmse_gain_ci95": np.quantile(
+            upstream_gain, [0.025, 0.975]
+        ).astype(float).tolist(),
+        "upstream_probability_gain_gt_zero": float(np.mean(upstream_gain > 0)),
+    }
+
+
 def group_means(matrix: sp.csr_matrix, labels: np.ndarray) -> dict[str, np.ndarray]:
     groups, codes = np.unique(labels.astype(str), return_inverse=True)
     membership = sp.csr_matrix(
@@ -299,7 +335,8 @@ def evaluate(run_root: Path, authorization: Path) -> None:
         "e218_transfer_router",
     ):
         values = evaluated[score].to_numpy(float)
-        rho = float(spearmanr(values, error).statistic)
+        association = spearmanr(values, error)
+        rho = float(association.statistic)
         n_review = max(1, int(np.ceil(0.20 * len(values))))
         selected = np.argsort(-values, kind="stable")[:n_review]
         utility = float(error[selected].mean() / error.mean() - 1.0)
@@ -308,6 +345,7 @@ def evaluate(run_root: Path, authorization: Path) -> None:
                 "score": score,
                 "n_tasks": len(values),
                 "spearman_vs_mean_model_error": rho,
+                "spearman_pvalue": float(association.pvalue),
                 "top20_error_enrichment": utility,
             }
         )
@@ -315,6 +353,7 @@ def evaluate(run_root: Path, authorization: Path) -> None:
     model_error = float(evaluated.error_two_predictor_mean_rmse.mean())
     no_change = float(evaluated.error_no_change_rmse.mean())
     competence = model_error < no_change
+    bootstrap = paired_bootstrap_summary(evaluated)
     output = E219 / "adamson_smoke_evaluation"
     output.mkdir(parents=True, exist_ok=True)
     atomic_csv(output / "E219_ADAMSON_TASK_RESULTS.csv", evaluated)
@@ -327,6 +366,7 @@ def evaluate(run_root: Path, authorization: Path) -> None:
         "n_test_tasks": len(evaluated),
         "mean_two_predictor_error": model_error,
         "mean_no_change_error": no_change,
+        "relative_error_reduction_vs_no_change": float(1.0 - model_error / no_change),
         "upstream_competence_gate": "PASS" if competence else "NOT_SUPPORTED",
         "risk_evaluation_allowed_for_claim": competence,
         "interpretation": (
@@ -334,6 +374,7 @@ def evaluate(run_root: Path, authorization: Path) -> None:
             if competence
             else "upstream predictors did not beat no-change; risk metrics are diagnostic only"
         ),
+        **bootstrap,
     }
     atomic_json(output / "E219_ADAMSON_EVALUATION_STATUS.json", result)
     lines = [
@@ -342,9 +383,13 @@ def evaluate(run_root: Path, authorization: Path) -> None:
         f"- 测试任务：{len(evaluated)}。",
         f"- 两预测器平均 RMSE：{model_error:.6f}。",
         f"- no-change RMSE：{no_change:.6f}。",
+        f"- 相对 no-change 的平均误差降低：{100.0 * (1.0 - model_error / no_change):.1f}%。",
         f"- 上游能力门：{result['upstream_competence_gate']}。",
+        f"- 固定组合相对幅度的 ΔSpearman：{bootstrap['router_delta_spearman']:+.3f}，"
+        f"配对自举 95% 区间 [{bootstrap['router_delta_spearman_ci95'][0]:+.3f}, "
+        f"{bootstrap['router_delta_spearman_ci95'][1]:+.3f}]。",
         "",
-        "若上游能力门未通过，本结果只说明轻量适配器不适合该数据，不能据此判定 SafeConf 有效或无效。",
+        "上游能力门已通过，因此可以检查风险排序；但只有 16 个测试扰动，组合相对幅度的区间跨 0，本结果属于外部冒烟，不单独承担确证结论。",
         "",
         metrics.to_markdown(index=False),
         "",
