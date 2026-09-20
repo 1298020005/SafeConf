@@ -1,0 +1,11 @@
+{
+  "experiment": "E219_Adamson_unseen_perturbation_smoke",
+  "stage": "TARGET_TRUTH_AUTHORIZATION",
+  "status": "AUTHORIZED",
+  "authorized_at": "2026-09-20T22:40:00+08:00",
+  "pretruth_commit": "8a193631d71aeb2809099dd00496338392647ea9",
+  "pretruth_status_sha256": "0564f07d231811a973148092233d7b805e9af53313887c0aedf0bc21388c6393",
+  "pretruth_pushed_to_github": true,
+  "pretruth_pushed_to_gitee": true,
+  "scope": "read the 16 frozen Adamson test perturbation effects only for post-seal smoke evaluation"
+}
