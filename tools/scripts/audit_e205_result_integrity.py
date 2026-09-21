@@ -281,8 +281,8 @@ def main() -> None:
         "n_bootstrap_draws": len(draws),
         "bootstrap_interval_checks": interval_checks,
         "scope_note": (
-            "SafeConf-M percentiles are computed over all 502 preregistered tasks "
-            "within each target; evaluation then retains the 1808 primary tasks."
+            "SafeConf-M percentiles are computed over all preregistered tasks within each target "
+            "(K562 580, RPE1 467, HepG2 480, Jurkat 481); evaluation then retains the 1808 primary tasks."
         ),
         "boundary_note": (
             "All four targets have positive rank-correlation increments. K562 has "

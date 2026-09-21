@@ -1,0 +1,23 @@
+{
+  "experiment": "E221_nested_study_adaptation",
+  "status": "COMPLETE",
+  "evidence_class": "retrospective_leave_one_study_out_dictionary_selection",
+  "inner_model_fitting": false,
+  "script_sha256": "dfb5f840bb1080c5eaed751fc0eece2211c65cd072a3051cb624098831283f4c",
+  "input_sha256": "b75f5edae0bb585ba5ff18aecafcc2389b0f05fd5cc86b36960afb4b62e4a15a",
+  "n_tasks": 3465,
+  "n_studies": 8,
+  "n_folds": 34,
+  "n_candidates": 44,
+  "bootstrap": 5000,
+  "adaptive_delta_spearman": 0.044988978445957575,
+  "adaptive_delta_utility20": 0.02693497500713111,
+  "adaptive_utility20_ci95": [
+    -0.014759530080505455,
+    0.06259261992342038
+  ],
+  "outer_truth_used_for_selection": false,
+  "source_data_modified": false,
+  "all_candidates_retained": true,
+  "seed": 20260921
+}

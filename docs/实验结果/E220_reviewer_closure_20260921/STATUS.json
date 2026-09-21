@@ -1,0 +1,32 @@
+{
+  "experiment": "E220_reviewer_closure",
+  "status": "COMPLETE",
+  "evidence_class": "post_release_sensitivity",
+  "created_at": "2026-09-21T18:01:27.210222+08:00",
+  "source_sha256": "6e6fca36c62ba9dbb1d7133e75cc07c485df675d7da2dced7f423f0d92620929",
+  "source": "docs/实验结果/E205_cross_family_disagreement_20260830/formal_evaluation/E205_TASK_METRICS.csv",
+  "script_sha256": "f89d1cfba40cd3e052eeb84e3122e82c503ad264bf3edaece2ae16152cd2aa9f",
+  "n_all_tasks": 2008,
+  "n_primary_tasks": 1808,
+  "all_target_counts": {
+    "K562": 580,
+    "RPE1": 467,
+    "hepg2": 480,
+    "jurkat": 481
+  },
+  "primary_target_counts": {
+    "K562": 566,
+    "RPE1": 416,
+    "hepg2": 405,
+    "jurkat": 421
+  },
+  "n_bootstrap": 2000,
+  "workers": 4,
+  "elapsed_seconds": 54.25050910306163,
+  "e208_test_rows_read": 0,
+  "new_weights_selected": false,
+  "source_data_modified": false,
+  "summary_rows": 744,
+  "interval_rows": 1860,
+  "seed": 20260921
+}

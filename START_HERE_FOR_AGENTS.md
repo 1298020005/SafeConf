@@ -1,6 +1,6 @@
 # SafeConf 外部 Agent 当前入口
 
-更新时间：2026-09-15
+更新时间：2026-09-21
 
 事实分支：`exp/task-risk-audit-20260611`
 
@@ -9,13 +9,15 @@ Qoder、Gemini、Claude、Grok、新 Codex 和其他 Agent 统一从这里进入
 ## 阅读顺序
 
 1. [2026-09-15 方法主线与执行门](docs/投稿准备/20260915_TCBB方法主线与执行门.md)
-2. [决策记录 D12–D13](agents/DECISIONS.md)
-3. [E181 注册模型家族证书](docs/实验结果/E181_registered_family_hilbert_certificate_20260724/README_先看这个.md)
-4. [E183 四研究综合及 E182 FAIL 边界](docs/实验结果/E183_all_study_family_synthesis_20260724/README_先看这个.md)
-5. [E201 正式核心报告](docs/实验结果/E201_txpert_multitarget_retraining_20260802/formal_core_evaluation/reports/E201_CORE_REPORT.md)
-6. [E205 跨结构实验入口](docs/实验结果/E205_cross_family_disagreement_20260830/README_先看这个.md)
-7. [E208 新外部证书副协议](docs/实验结果/E208_jiang24_external_confirmation_20260912/E208_CERTIFICATE_PREREGISTRATION_20260915.md)
-8. 需要从零学习时，再读[当前 24 图学习入口](docs/学习导航/20260909_WorkBuddy独立复审教学包/README.md)。
+2. [2026-09-21 CCF-B/二区审稿判断](docs/投稿准备/20260921_当前CCFB与计算机二区审稿判断.md)
+3. [决策记录 D12–D15](agents/DECISIONS.md)
+4. [E181 注册模型家族证书](docs/实验结果/E181_registered_family_hilbert_certificate_20260724/README_先看这个.md)
+5. [E183 四研究综合及 E182 FAIL 边界](docs/实验结果/E183_all_study_family_synthesis_20260724/README_先看这个.md)
+6. [E201 正式核心报告](docs/实验结果/E201_txpert_multitarget_retraining_20260802/formal_core_evaluation/reports/E201_CORE_REPORT.md)
+7. [E205 跨结构实验入口](docs/实验结果/E205_cross_family_disagreement_20260830/README_先看这个.md)
+8. [E208 新外部证书副协议](docs/实验结果/E208_jiang24_external_confirmation_20260912/E208_CERTIFICATE_PREREGISTRATION_20260915.md)
+9. [E220/E221/E222 复核实验](docs/实验结果/E220_reviewer_closure_20260921/REPORT.md)
+10. 需要从零学习时，再读[当前 24 图学习入口](docs/学习导航/20260909_WorkBuddy独立复审教学包/README.md)。
 
 ## 接手前必须复述正确的事实
 
@@ -23,8 +25,9 @@ Qoder、Gemini、Claude、Grok、新 Codex 和其他 Agent 统一从这里进入
 当前论文主线是注册模型家族的确定性误差下界、条件性 conformal 上界和失败关闭审计；经验排序为附加模块。
 E181 在 2,393 个任务、717 个靶点簇上得到两类下界 0 违反；E182 的上界覆盖 16/20，预注册门仍为 FAIL；E183 的 666/737 只是事后综合，不能替 E182 改判。
 E201 已完成并解封：SafeConf 与误差相关 0.4082，预测幅度为 0.6189，控制幅度后的偏相关为 0.2503。SafeConf 有幅度之外的信息，但不是更强的单一排序器。
-E205 正在运行 TxPert-Exphormer 的 4 背景×4 种子训练；截至 2026-09-15 13:31 已完成 6/16，两个任务从服务器重启断点恢复，目标真值未授权读取。
-E208 只完成 D0 元数据清单、模型合同和环境预检；没有正式训练、风险结果或外部确认成绩。
+E205 的正式表已发布；E220 已发现原 pooled 结果与幅度基线存在尺度口径差异，E205 历史表保留、以 E220 同口径复核为当前解释。
+E208 目前 5 个 Jiang24 正式训练任务中 2 个运行、3 个等待，完成数 0，测试真实表达读取 0；不得把训练进度写成外部结果。
+E221 的固定公式字典留一研究点估计为正但 utility 区间跨 0；E222 的轻量误差评分器开发门未通过。两轮结果都已完整保留。
 E204 训练加权是独立问题，不阻塞当前最快的证书论文主线。
 ```
 

@@ -9,6 +9,6 @@
 3. `../docs/实验结果/E201_txpert_multitarget_retraining_20260802/formal_core_evaluation/reports/E201_CORE_REPORT.md`
 4. `../docs/实验结果/E204_risk_guided_training_20260830/PROFILE_ACCEPTANCE_20260905.md`
 
-当前状态：E201 已完成正式评价；E202 主门失败；E204 四背景工程 profile 通过但正式训练效果尚未产生；E205 尚未运行。
+当前状态（2026-09-21）：E201 已完成正式评价；E202 主门失败；E204 训练加权仍是独立问题；E205 已完成但其原始 pooled 增量需要结合 E220 同口径审计解读；E208 Jiang24 正式训练仍在进行，测试真值未授权；E221/E222 为已完成的历史数据审计，均未改 E208 协议。
 
 修改或续跑前先查看根目录 `START_HERE_FOR_AGENTS.md` 的审计纪律。
