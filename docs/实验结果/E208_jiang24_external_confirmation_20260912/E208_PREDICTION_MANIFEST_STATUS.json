@@ -1,0 +1,28 @@
+{
+  "experiment": "E208_jiang24_external_confirmation",
+  "stage": "D1_PRETRUTH_PREDICTION_MANIFEST",
+  "status": "PASS",
+  "generated_at": "2026-09-21T11:35:04+08:00",
+  "inventory_path": "/home/yyf/data/external/perturbench_2025/jiang24/task_inventory/E208_PRIMARY_TEST_TASKS.csv",
+  "inventory_sha256": "53e3a5f363bf70a81f4074b0c001712698db8acd0852354745989db091d9d4de",
+  "manifest_path": "/home/yyf/runtime_worktrees/e205_postprocess_20260915/docs/实验结果/E208_jiang24_external_confirmation_20260912/E208_PREDICTION_TASKS.csv",
+  "manifest_sha256": "c499c7085bb6b32e4d275dc3007929a79f6617b66d2196686e36915d0ea78964",
+  "n_tasks": 224,
+  "n_contexts": 12,
+  "context_task_counts": {
+    "hap1|IFNG": 21,
+    "hap1|INS": 16,
+    "hap1|TGFB": 19,
+    "ht29|IFNG": 21,
+    "ht29|INS": 16,
+    "ht29|TGFB": 19,
+    "k562|IFNG": 21,
+    "k562|INS": 16,
+    "k562|TGFB": 19,
+    "mcf7|IFNG": 21,
+    "mcf7|INS": 16,
+    "mcf7|TGFB": 19
+  },
+  "test_perturbed_expression_rows_read": 0,
+  "target_truth_access": "NOT_AUTHORIZED"
+}
