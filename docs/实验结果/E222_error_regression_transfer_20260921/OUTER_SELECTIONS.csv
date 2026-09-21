@@ -1,0 +1,9 @@
+outer_study,training_studies,n_train,n_test,magnitude_candidate,full_candidate,full_admitted
+Frangieh,Lara_exvivo|Liang|Nadig_two_cellline|Replogle_two_cellline|Santinha|Shifrut|Tian_CRISPRi,2628,837,ridge_1,ridge_10,True
+Lara_exvivo,Frangieh|Liang|Nadig_two_cellline|Replogle_two_cellline|Santinha|Shifrut|Tian_CRISPRi,3120,345,ridge_1,ridge_10,False
+Liang,Frangieh|Lara_exvivo|Nadig_two_cellline|Replogle_two_cellline|Santinha|Shifrut|Tian_CRISPRi,2853,612,ridge_1,ridge_10,False
+Nadig_two_cellline,Frangieh|Lara_exvivo|Liang|Replogle_two_cellline|Santinha|Shifrut|Tian_CRISPRi,3209,256,ridge_10,ridge_1,False
+Replogle_two_cellline,Frangieh|Lara_exvivo|Liang|Nadig_two_cellline|Santinha|Shifrut|Tian_CRISPRi,3209,256,ridge_10,hgb_7,False
+Santinha,Frangieh|Lara_exvivo|Liang|Nadig_two_cellline|Replogle_two_cellline|Shifrut|Tian_CRISPRi,3210,255,ridge_1,ridge_1,True
+Shifrut,Frangieh|Lara_exvivo|Liang|Nadig_two_cellline|Replogle_two_cellline|Santinha|Tian_CRISPRi,3293,172,ridge_1,ridge_10,True
+Tian_CRISPRi,Frangieh|Lara_exvivo|Liang|Nadig_two_cellline|Replogle_two_cellline|Santinha|Shifrut,2733,732,ridge_1,hgb_7,False

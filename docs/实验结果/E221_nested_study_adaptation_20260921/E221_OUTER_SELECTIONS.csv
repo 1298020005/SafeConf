@@ -1,0 +1,9 @@
+outer_heldout_study,selected_candidate,selected_spec,n_train_tasks,n_test_tasks
+Frangieh,simplex_M0.25_S0.75_D0.00,"('linear', array([0.25, 0.75, 0.  ]))",2628,837
+Lara_exvivo,simplex_M0.25_S0.75_D0.00,"('linear', array([0.25, 0.75, 0.  ]))",3120,345
+Liang,one_sided_S0.50_D0.50,"('one_sided', array([0.5, 0.5]))",2853,612
+Nadig_two_cellline,simplex_M0.25_S0.75_D0.00,"('linear', array([0.25, 0.75, 0.  ]))",3209,256
+Replogle_two_cellline,simplex_M0.25_S0.75_D0.00,"('linear', array([0.25, 0.75, 0.  ]))",3209,256
+Santinha,simplex_M0.25_S0.75_D0.00,"('linear', array([0.25, 0.75, 0.  ]))",3210,255
+Shifrut,simplex_M0.25_S0.75_D0.00,"('linear', array([0.25, 0.75, 0.  ]))",3293,172
+Tian_CRISPRi,simplex_M0.25_S0.75_D0.00,"('linear', array([0.25, 0.75, 0.  ]))",2733,732
