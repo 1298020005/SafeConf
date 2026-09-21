@@ -104,8 +104,12 @@ def main() -> None:
         raise ValidationCacheFailure("Jiang24 H5 byte count changed")
     if sha256_file(split_path) != EXPECTED_SPLIT_SHA256:
         raise ValidationCacheFailure("Jiang24 split hash changed")
-    if output.exists() and any(output.iterdir()):
-        raise ValidationCacheFailure(f"refusing to overwrite nonempty directory: {output}")
+    if output.exists():
+        existing = [path for path in output.iterdir() if path.name != "BUILD.log"]
+        if existing:
+            raise ValidationCacheFailure(
+                f"refusing to overwrite validation artifacts: {existing[0]}"
+            )
 
     split = pd.read_csv(split_path, header=None, names=["cell_id", "split"])
     with h5py.File(h5ad, "r") as handle:
