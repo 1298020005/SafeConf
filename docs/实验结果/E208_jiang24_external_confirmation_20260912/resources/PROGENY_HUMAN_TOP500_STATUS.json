@@ -1,0 +1,33 @@
+{
+  "experiment": "E208_jiang24_external_confirmation",
+  "stage": "D1_PRETRUTH_PROGENY_RESOURCE",
+  "status": "PASS",
+  "generated_at": "2026-09-21T12:18:21+08:00",
+  "source_repository": "https://github.com/saezlab/progeny",
+  "source_commit": "cad6be0514c3248b9465e48f1cfd2f6a4c3dfb6f",
+  "source_rda_sha256": "3094f1fa1bb5395c1074280402c0e30ef47ba9ec36f4829ca3e539d019255ee5",
+  "pyreadr_version": "0.5.3",
+  "selection": "top 500 per pathway by ascending p.value, gene-symbol tie break",
+  "n_pathways": 14,
+  "n_rows": 7000,
+  "pathway_counts": {
+    "Androgen": 500,
+    "EGFR": 500,
+    "Estrogen": 500,
+    "Hypoxia": 500,
+    "JAK-STAT": 500,
+    "MAPK": 500,
+    "NFkB": 500,
+    "PI3K": 500,
+    "TGFb": 500,
+    "TNFa": 500,
+    "Trail": 500,
+    "VEGF": 500,
+    "WNT": 500,
+    "p53": 500
+  },
+  "output_csv": "docs/实验结果/E208_jiang24_external_confirmation_20260912/resources/PROGENY_HUMAN_TOP500.csv",
+  "output_sha256": "a0454939734139e85a3c0c674ca5532e64f8b21eb464e88339fccec01bc29188",
+  "test_perturbed_expression_rows_read": 0,
+  "target_truth_access": "NOT_AUTHORIZED"
+}
