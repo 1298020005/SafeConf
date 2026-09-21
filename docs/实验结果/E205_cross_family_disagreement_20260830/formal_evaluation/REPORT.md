@@ -62,8 +62,16 @@ SafeConf-M 相对预测幅度的 Spearman 差为 0.0925，扰动簇自助法 95%
 ## 图件
 
 - 总体排序、20% 复核效用与冻结证书阈值：`E205_RESULT_OVERVIEW.svg`（同时生成 PDF 与 300 dpi PNG）。
-- 四个细胞背景的分解结果：`figures/E205_CONTEXT_RESOLVED_RESULTS.svg`（同时生成 PDF 与 300 dpi PNG）。
-- 不同复核预算及证书覆盖—召回关系：`figures/E205_OPERATING_CHARACTERISTICS.svg`（同时生成 PDF 与 300 dpi PNG）。
-- 证书优先路由相对注册家族幅度：`figures/E205_CERTIFICATE_PRIORITY_ROUTER.svg`（同时生成 PDF 与 300 dpi PNG）。
+- 四个细胞背景的分解结果：`E205_CONTEXT_RESOLVED_RESULTS.svg`（同时生成 PDF 与 300 dpi PNG）。
+- 不同复核预算及证书覆盖—召回关系：`E205_OPERATING_CHARACTERISTICS.svg`（同时生成 PDF 与 300 dpi PNG）。
+- 证书优先路由相对注册家族幅度：`E205_CERTIFICATE_PRIORITY_ROUTER.svg`（同时生成 PDF 与 300 dpi PNG）。
 
 图件共 12 个文件；所有面板由同一批正式 CSV 自动生成，未按结果删除细胞背景、风险信号或预算点。
+
+## 独立复算
+
+`E205_INDEPENDENT_RESULT_AUDIT.json` 与 `E205_INDEPENDENT_TARGET_AUDIT.csv`
+由独立审计脚本 `tools/scripts/audit_e205_result_integrity.py` 生成。审计重新检查任务唯一性、
+封存表与正式表的共享字段、五项风险公式、4:1 排名融合、主结果与自助法区间，并保留四个
+细胞背景各自的增量。4:1 排名先在每个背景的全部 502 个预登记任务内计算，再将 1808 个
+`primary_ge30` 任务用于正式评价；不能改成只在主任务内重新排名。

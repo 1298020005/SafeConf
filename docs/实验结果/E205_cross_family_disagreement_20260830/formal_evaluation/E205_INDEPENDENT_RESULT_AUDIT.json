@@ -1,0 +1,43 @@
+{
+  "experiment": "E205_cross_family_exphormer",
+  "stage": "INDEPENDENT_RELEASE_AUDIT",
+  "status": "PASS",
+  "generated_at": "2026-09-21T11:29:56+08:00",
+  "source_formal_git_head": "29a77b5f79664f356d1f6ee332178ee8da231b39",
+  "n_all_tasks": 2008,
+  "n_primary_tasks": 1808,
+  "n_unique_primary_tasks": 1808,
+  "target_primary_counts": {
+    "K562": 566,
+    "RPE1": 416,
+    "hepg2": 405,
+    "jurkat": 421
+  },
+  "pretruth_shared_columns_checked": 38,
+  "pretruth_mismatch_count": 0,
+  "safeconf_formula_max_abs_error": 2.6645352591003757e-15,
+  "safeconf_m_formula_max_abs_error": 1.1102230246251565e-16,
+  "published_safeconf_m_spearman": 0.6934928386771626,
+  "recomputed_safeconf_m_spearman": 0.6934928386771626,
+  "published_safeconf_m_utility_20": 0.6724381708844869,
+  "recomputed_safeconf_m_utility_20": 0.6724381708844865,
+  "n_bootstrap_draws": 5000,
+  "bootstrap_interval_checks": [
+    {
+      "measure": "delta_spearman",
+      "published_lower": 0.0816990348449844,
+      "recomputed_lower": 0.08169903484498447,
+      "published_upper": 0.105197563292943,
+      "recomputed_upper": 0.10519756329294294
+    },
+    {
+      "measure": "delta_utility_20",
+      "published_lower": 0.0577383152340197,
+      "recomputed_lower": 0.05773831523401966,
+      "published_upper": 0.1209265109113418,
+      "recomputed_upper": 0.12092651091134178
+    }
+  ],
+  "scope_note": "SafeConf-M percentiles are computed over all 502 preregistered tasks within each target; evaluation then retains the 1808 primary tasks.",
+  "boundary_note": "All four targets have positive rank-correlation increments. K562 has an approximately zero, slightly negative 20% utility increment."
+}
