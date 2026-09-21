@@ -98,7 +98,7 @@ def main() -> None:
         raise ValidationPredictionFailure(f"unexpected validation cache: {controls.shape}")
     rows = pd.read_csv(rows_path)
     tasks = pd.read_csv(tasks_path)
-    if len(rows) != len(controls) or len(tasks) != 216 or tasks.task_id.nunique() != 216:
+    if len(rows) != controls.shape[0] or len(tasks) != 216 or tasks.task_id.nunique() != 216:
         raise ValidationPredictionFailure("validation rows or tasks changed")
     formal = args.smoke_limit <= 0
     if not formal:
