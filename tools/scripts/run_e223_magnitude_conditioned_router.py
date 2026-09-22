@@ -253,14 +253,16 @@ def main() -> None:
     nested_rules = selections.selected_rule.value_counts().to_dict()
     nested_rows = fold.loc[fold.rule.isin(nested_rules)].copy()
     nested_study = nested_rows.groupby(['outer_heldout_study', 'rule']).utility_20.mean().reset_index()
-    base = nested_study.loc[nested_study.rule.eq('magnitude')].set_index('outer_heldout_study')
+    # The magnitude reference is always evaluated, even when it is not selected;
+    # do not rely on it being present in the selected-rule subset.
+    base = fold.loc[fold.rule.eq('magnitude')].groupby('outer_heldout_study').utility_20.mean()
     nested_delta = []
     for study in sorted(nested_study.outer_heldout_study.unique()):
         rule = selections.loc[selections.outer_heldout_study.eq(study), 'selected_rule'].iloc[0]
         if rule == 'magnitude':
             val = 0.0
         else:
-            val = float(nested_study.loc[(nested_study.outer_heldout_study.eq(study)) & (nested_study.rule.eq(rule)), 'utility_20'].iloc[0] - base.loc[study, 'utility_20'])
+            val = float(nested_study.loc[(nested_study.outer_heldout_study.eq(study)) & (nested_study.rule.eq(rule)), 'utility_20'].iloc[0] - base.loc[study])
         nested_delta.append({'outer_heldout_study': study, 'selected_rule': rule, 'delta_utility_20_vs_magnitude': val})
     nested_table = pd.DataFrame(nested_delta)
     nested_mean = float(nested_table.delta_utility_20_vs_magnitude.mean())
