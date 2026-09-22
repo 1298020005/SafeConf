@@ -1,0 +1,40 @@
+{
+  "status": "OUTER_PIPELINE_ISOLATION_NOT_ESTABLISHED",
+  "feature_sha256": "003d7dec2912f7f24b39665c3166c25cffb4670b16579e354b23764f90a2caf6",
+  "support_sha256": "6e1df0403f74ad01c53cc0d3d2364afda5dcaae8c413afde64a290404f3fd5d7",
+  "rows": [
+    {
+      "outer_target": "K562",
+      "n_scoring_training_tasks": 1428,
+      "training_tasks_with_outer_target_expression_in_source": 1428,
+      "training_tasks_with_outer_test_condition_as_source": 1428,
+      "outer_test_conditions_seen_in_training_task_source": 580,
+      "original_per_target_self_source_rows": 0
+    },
+    {
+      "outer_target": "RPE1",
+      "n_scoring_training_tasks": 1541,
+      "training_tasks_with_outer_target_expression_in_source": 1249,
+      "training_tasks_with_outer_test_condition_as_source": 1249,
+      "outer_test_conditions_seen_in_training_task_source": 467,
+      "original_per_target_self_source_rows": 0
+    },
+    {
+      "outer_target": "hepg2",
+      "n_scoring_training_tasks": 1528,
+      "training_tasks_with_outer_target_expression_in_source": 1286,
+      "training_tasks_with_outer_test_condition_as_source": 1286,
+      "outer_test_conditions_seen_in_training_task_source": 480,
+      "original_per_target_self_source_rows": 0
+    },
+    {
+      "outer_target": "jurkat",
+      "n_scoring_training_tasks": 1527,
+      "training_tasks_with_outer_target_expression_in_source": 1275,
+      "training_tasks_with_outer_test_condition_as_source": 1275,
+      "outer_test_conditions_seen_in_training_task_source": 481,
+      "original_per_target_self_source_rows": 0
+    }
+  ],
+  "interpretation": "E228 removed outer error labels only; other-target feature source includes outer-target experimental expression. Original E201 per-target self-source isolation remains intact."
+}
