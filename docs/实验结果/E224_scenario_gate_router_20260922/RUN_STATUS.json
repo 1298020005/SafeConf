@@ -1,0 +1,24 @@
+{
+  "experiment": "E224_scenario_gate_router",
+  "status": "COMPLETE",
+  "evidence_class": "retrospective_nested_leave_study_out_rule_dictionary",
+  "input_sha256": "c84cb0f2b8c36c27b33d62cfbad7e98d2228288a85937e18351ab13d069d7ba0",
+  "script_sha256": "1c829598d9c176e080633ee5f4d8a834636bf35ba4edf7ee8d03078ebf633a39",
+  "helper_sha256": "26092676f29f87aca21e2ad8330a905afe286655933493f2116b5fcb4c56387b",
+  "n_tasks": 8196,
+  "n_studies": 4,
+  "n_rules": 7,
+  "outer_truth_used_for_selection": false,
+  "e208_truth_used": false,
+  "source_data_modified": false,
+  "all_studies_retained": true,
+  "nested_selected_rule_counts": {
+    "gate_hard_context_only": 3,
+    "global_max_m_s": 1
+  },
+  "nested_mean_utility_delta": 0.02063087143332415,
+  "nested_positive_outer_studies": 3,
+  "bootstrap": 10000,
+  "seed": 20260922,
+  "created_at": "2026-09-22T11:49:03.942468+08:00"
+}

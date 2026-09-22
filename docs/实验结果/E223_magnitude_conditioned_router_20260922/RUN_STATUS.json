@@ -1,0 +1,22 @@
+{
+  "experiment": "E223_magnitude_conditioned_router",
+  "status": "COMPLETE",
+  "evidence_class": "retrospective_nested_leave_study_out_rule_dictionary",
+  "input_sha256": "c84cb0f2b8c36c27b33d62cfbad7e98d2228288a85937e18351ab13d069d7ba0",
+  "script_sha256": "26092676f29f87aca21e2ad8330a905afe286655933493f2116b5fcb4c56387b",
+  "n_tasks": 8196,
+  "n_studies": 4,
+  "n_rules": 11,
+  "n_outer_selections": 4,
+  "outer_truth_used_for_selection": false,
+  "e208_truth_used": false,
+  "source_data_modified": false,
+  "all_studies_retained": true,
+  "nested_selected_rule_counts": {
+    "one_sided_s1.00": 4
+  },
+  "nested_mean_utility_delta": 0.022856752159748903,
+  "nested_positive_outer_studies": 3,
+  "bootstrap": 10000,
+  "seed": 20260922
+}
