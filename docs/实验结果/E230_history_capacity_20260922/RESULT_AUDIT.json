@@ -1,0 +1,61 @@
+{
+  "audited_at": "2026-09-22T21:39:42.871992+08:00",
+  "experiment_protocol_commit": "116cc9f",
+  "execution_script_sha256": "ce22b181f6806940d0ee2bca86367aab1d30db934f5812d4cbadec330e558d2b",
+  "metrics_recomputed": true,
+  "scores_recomputed": true,
+  "prediction_fields_fixed": true,
+  "source_capacity_counts_nested": true,
+  "matched_cells_equal_30": true,
+  "primary_tasks": 1808,
+  "all_tasks": 2008,
+  "targets": [
+    {
+      "target": "K562",
+      "rows": 17883,
+      "unique_tasks": 580,
+      "matched_primary_tasks": 243,
+      "target_source_expression_rows_read": 0,
+      "max_full_source_parity_error": 3.831596925157887e-09
+    },
+    {
+      "target": "RPE1",
+      "rows": 14985,
+      "unique_tasks": 467,
+      "matched_primary_tasks": 243,
+      "target_source_expression_rows_read": 0,
+      "max_full_source_parity_error": 1.9653913704842374e-09
+    },
+    {
+      "target": "hepg2",
+      "rows": 15399,
+      "unique_tasks": 480,
+      "matched_primary_tasks": 243,
+      "target_source_expression_rows_read": 0,
+      "max_full_source_parity_error": 2.5620494718825437e-09
+    },
+    {
+      "target": "jurkat",
+      "rows": 15453,
+      "unique_tasks": 481,
+      "matched_primary_tasks": 243,
+      "target_source_expression_rows_read": 0,
+      "max_full_source_parity_error": 1.8525235234712056e-09
+    }
+  ],
+  "secondary_contrast": {
+    "comparison": "full_history_minus_fixed_m_plus_d",
+    "scope": "secondary_development",
+    "delta": 0.029656967797260986,
+    "ci95_lower": 0.020505168999045975,
+    "ci95_upper": 0.04275245989561499,
+    "positive_targets": 4
+  },
+  "development_gate": "NOT_SUPPORTED",
+  "scope_note": "Retrospective E201 development analysis, four target contexts; not four new independent studies.",
+  "environment": {
+    "python": "3.12.4 | packaged by Anaconda, Inc. | (main, Jun 18 2024, 15:12:24) [GCC 11.2.0]",
+    "numpy": "2.4.4",
+    "pandas": "2.3.3"
+  }
+}
