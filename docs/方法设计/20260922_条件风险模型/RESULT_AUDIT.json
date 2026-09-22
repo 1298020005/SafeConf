@@ -1,0 +1,46 @@
+{
+  "checked_at": "2026-09-22T16:24:00.910341+08:00",
+  "reports": [
+    {
+      "experiment": "E225_raw_evidence_residual_ranker_20260922",
+      "summary_recomputed": true,
+      "block_rows": 5472,
+      "undefined_utility_rows": 0,
+      "run_script_sha256": "83dbaf8deffba9fb97d0263cf9d0c9429207ba75d66ce7c572e32501633cad74",
+      "development_gate": "NOT_SUPPORTED",
+      "archive_bytes": 512229
+    },
+    {
+      "experiment": "E226_local_history_calibration_20260922",
+      "summary_recomputed": true,
+      "block_rows": 247680,
+      "undefined_utility_rows": 33840,
+      "run_script_sha256": "6f3eb129dab82ab0cb4f58145209068757d51908bbc38658ad9dfd4b418bff21",
+      "development_gate": "NOT_SUPPORTED",
+      "archive_bytes": 3371850
+    },
+    {
+      "experiment": "E227_local_nonlinear_ranker_20260922",
+      "summary_recomputed": true,
+      "block_rows": 160992,
+      "undefined_utility_rows": 21996,
+      "run_script_sha256": "935037816b2aa206bb28a494419ace86b95c768a8f92fc1209ca9bdda5002762",
+      "development_gate": "NOT_SUPPORTED",
+      "archive_bytes": 2532387
+    }
+  ],
+  "e226_e227_ridge_replication_agrees": true,
+  "all_calibration_test_groups_disjoint": true,
+  "n_split_records": 240,
+  "e225_frozen_prediction_checks_pass": true,
+  "e226_blocks_per_fixed_method_seed_fraction_budget": 1376,
+  "e226_singleton_blocks_per_fixed_slice": 188,
+  "note": "Repeated budget/method/seed rows are not independent experiments. Undefined utility is retained, not changed to zero.",
+  "environment": {
+    "python": "3.12.4",
+    "numpy": "2.4.4",
+    "pandas": "2.3.3",
+    "scipy": "1.17.1",
+    "scikit_learn": "1.8.0"
+  }
+}

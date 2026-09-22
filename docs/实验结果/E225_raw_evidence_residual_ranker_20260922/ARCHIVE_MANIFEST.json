@@ -1,0 +1,44 @@
+{
+  "files": [
+    {
+      "raw_file": "BLOCK_RESULTS.csv",
+      "raw_bytes": 923584,
+      "raw_sha256": "fee49598b8d6c395352d946cb44217b24029695256055bc28502289844349e1b",
+      "git_archive": "BLOCK_RESULTS.csv.gz",
+      "archive_bytes": 184762,
+      "archive_sha256": "e8253311d46ea5c7d5688dad727fceedac15755db66539f0ae291ef5f27c81e7"
+    },
+    {
+      "raw_file": "PREDICTIONS_Cui_direct41.csv",
+      "raw_bytes": 676611,
+      "raw_sha256": "0be08529b5c8e277f2dc8a89776c8f3af523756e878500a05f6b5db49be330b9",
+      "git_archive": "PREDICTIONS_Cui_direct41.csv.gz",
+      "archive_bytes": 94481,
+      "archive_sha256": "5eb27af00322524de71fb1f1d817bb27bb36d452cfc48326cc8c45f1fb66f474"
+    },
+    {
+      "raw_file": "PREDICTIONS_Frangieh.csv",
+      "raw_bytes": 933993,
+      "raw_sha256": "13e273052ec493cc71de43320521d5badbdb1d2d6ebf14095948a998973c3086",
+      "git_archive": "PREDICTIONS_Frangieh.csv.gz",
+      "archive_bytes": 143051,
+      "archive_sha256": "8a08ccd79f470db5db9bb01ddcdc5c8b7cd4cf0875907a3d3bb5ee7bb4502e3d"
+    },
+    {
+      "raw_file": "PREDICTIONS_Lara_exvivo.csv",
+      "raw_bytes": 376370,
+      "raw_sha256": "3afbe03300d958514aafc1e974cfabc1b50a6f3ad810f3715bed62452dbcf8c1",
+      "git_archive": "PREDICTIONS_Lara_exvivo.csv.gz",
+      "archive_bytes": 53240,
+      "archive_sha256": "da404b1ad032593d137793d18a691f6475af054059c6e7d30c9bd85ccbc5b2ca"
+    },
+    {
+      "raw_file": "PREDICTIONS_Santinha.csv",
+      "raw_bytes": 284823,
+      "raw_sha256": "13962c10628685305e2fcaea7fc896978d2257e7e136634cb983c36061776876",
+      "git_archive": "PREDICTIONS_Santinha.csv.gz",
+      "archive_bytes": 36695,
+      "archive_sha256": "97ddc717f195b5ac8ef7245674dd4720d90c9f9329016ee053b0fa8132357394"
+    }
+  ]
+}

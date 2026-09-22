@@ -1,0 +1,95 @@
+{
+  "experiment": "E225_raw_evidence_residual_ranker",
+  "status": "COMPLETE",
+  "development_gate": "NOT_SUPPORTED",
+  "evidence_class": "retrospective_development_not_external_confirmation",
+  "created_at": "2026-09-22T13:48:04.367766+08:00",
+  "input_sha256": "c84cb0f2b8c36c27b33d62cfbad7e98d2228288a85937e18351ab13d069d7ba0",
+  "script_sha256": "83dbaf8deffba9fb97d0263cf9d0c9429207ba75d66ce7c572e32501633cad74",
+  "n_records": 8196,
+  "n_unique_dataset_context_perturbation": 1083,
+  "n_studies": 4,
+  "outer_error_labels_used_for_fitting_or_selection": false,
+  "target_calibrated_score_used_as_feature": false,
+  "e208_rows_read": 0,
+  "all_studies_retained": true,
+  "source_data_modified": false,
+  "workers": 4,
+  "fits": 160,
+  "feature_allowlist": [
+    "m",
+    "d",
+    "cn",
+    "scarcity",
+    "setting"
+  ],
+  "prediction_files": [
+    {
+      "study": "Cui_direct41",
+      "file": "PREDICTIONS_Cui_direct41.csv",
+      "sha256": "0be08529b5c8e277f2dc8a89776c8f3af523756e878500a05f6b5db49be330b9"
+    },
+    {
+      "study": "Frangieh",
+      "file": "PREDICTIONS_Frangieh.csv",
+      "sha256": "13e273052ec493cc71de43320521d5badbdb1d2d6ebf14095948a998973c3086"
+    },
+    {
+      "study": "Lara_exvivo",
+      "file": "PREDICTIONS_Lara_exvivo.csv",
+      "sha256": "3afbe03300d958514aafc1e974cfabc1b50a6f3ad810f3715bed62452dbcf8c1"
+    },
+    {
+      "study": "Santinha",
+      "file": "PREDICTIONS_Santinha.csv",
+      "sha256": "13962c10628685305e2fcaea7fc896978d2257e7e136634cb983c36061776876"
+    }
+  ],
+  "elapsed_seconds": 8.318549411953427,
+  "primary": [
+    {
+      "baseline": "magnitude",
+      "method": "MDH_condition",
+      "budget": 0.2,
+      "metric": "utility",
+      "delta": -0.0006845435335112726,
+      "ci95_lower": -0.03300319038913055,
+      "ci95_upper": 0.01864129003700793,
+      "positive_studies": 3,
+      "n_studies": 4
+    },
+    {
+      "baseline": "M",
+      "method": "MDH_condition",
+      "budget": 0.2,
+      "metric": "utility",
+      "delta": -0.0006845435335112726,
+      "ci95_lower": -0.03300319038913055,
+      "ci95_upper": 0.01864129003700793,
+      "positive_studies": 3,
+      "n_studies": 4
+    },
+    {
+      "baseline": "MD",
+      "method": "MDH_condition",
+      "budget": 0.2,
+      "metric": "utility",
+      "delta": 0.006000943517754556,
+      "ci95_lower": -0.003883267237011101,
+      "ci95_upper": 0.015885154272520213,
+      "positive_studies": 2,
+      "n_studies": 4
+    },
+    {
+      "baseline": "MDH",
+      "method": "MDH_condition",
+      "budget": 0.2,
+      "metric": "utility",
+      "delta": 0.0018564486748604628,
+      "ci95_lower": -0.016152277616365465,
+      "ci95_upper": 0.019779268719893696,
+      "positive_studies": 2,
+      "n_studies": 4
+    }
+  ]
+}

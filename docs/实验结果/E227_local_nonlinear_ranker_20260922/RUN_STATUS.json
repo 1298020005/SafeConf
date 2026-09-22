@@ -1,0 +1,82 @@
+{
+  "experiment": "E227_local_nonlinear_ranker",
+  "status": "COMPLETE",
+  "created_at": "2026-09-22T14:04:12.440114+08:00",
+  "input_sha256": "c84cb0f2b8c36c27b33d62cfbad7e98d2228288a85937e18351ab13d069d7ba0",
+  "script_sha256": "935037816b2aa206bb28a494419ace86b95c768a8f92fc1209ca9bdda5002762",
+  "helper_sha256": "970a0ce1d6f1928b6c9c07fb50153e80673e4179c3a16bb34a37d21e17ac2916",
+  "split_helper_sha256": "6f3eb129dab82ab0cb4f58145209068757d51908bbc38658ad9dfd4b418bff21",
+  "fits": 720,
+  "elapsed_seconds": 22.6369482439477,
+  "n_records": 8196,
+  "n_studies": 4,
+  "primary_method": "tree_direct_MDH_condition",
+  "feature_allowlist": [
+    "m",
+    "d",
+    "cn",
+    "scarcity",
+    "setting"
+  ],
+  "evidence_class": "retrospective_development",
+  "e208_rows_read": 0,
+  "target_calibrated_score_used_as_feature": false,
+  "development_gate": "NOT_SUPPORTED",
+  "primary": [
+    {
+      "method": "tree_direct_MDH_condition",
+      "baseline": "magnitude",
+      "budget": 0.2,
+      "metric": "utility",
+      "delta": -0.014885408205849597,
+      "ci95_lower": -0.07501106887328031,
+      "ci95_upper": 0.02008641319317176,
+      "positive_studies": 3,
+      "n_studies": 4
+    },
+    {
+      "method": "tree_direct_MDH_condition",
+      "baseline": "tree_direct_M",
+      "budget": 0.2,
+      "metric": "utility",
+      "delta": 0.016162176048674835,
+      "ci95_lower": -0.0016473196229923742,
+      "ci95_upper": 0.031522369063996775,
+      "positive_studies": 3,
+      "n_studies": 4
+    },
+    {
+      "method": "tree_direct_MDH_condition",
+      "baseline": "tree_direct_MD",
+      "budget": 0.2,
+      "metric": "utility",
+      "delta": 0.02234146623172014,
+      "ci95_lower": 9.778057490116704e-05,
+      "ci95_upper": 0.03990936734331961,
+      "positive_studies": 3,
+      "n_studies": 4
+    },
+    {
+      "method": "tree_direct_MDH_condition",
+      "baseline": "tree_direct_MDH",
+      "budget": 0.2,
+      "metric": "utility",
+      "delta": 0.01878740419678314,
+      "ci95_lower": 0.006340741662787142,
+      "ci95_upper": 0.036464525337723694,
+      "positive_studies": 4,
+      "n_studies": 4
+    },
+    {
+      "method": "tree_direct_MDH_condition",
+      "baseline": "ridge_MDH_condition",
+      "budget": 0.2,
+      "metric": "utility",
+      "delta": -0.0256224568947839,
+      "ci95_lower": -0.07877999367655436,
+      "ci95_upper": 0.0036251139644229435,
+      "positive_studies": 1,
+      "n_studies": 4
+    }
+  ]
+}
