@@ -1,0 +1,29 @@
+{
+  "experiment": "E228_target_holdout_history_ablation",
+  "status": "COMPLETE",
+  "created_at": "2026-09-22T16:28:17.197932+08:00",
+  "input_sha256": "4a02d132cae1605a2f6f54bee8912f45e835d1fc3936e6cda0fcc98e2c6bcd35",
+  "script_sha256": "b8405466d4c593dcdd9d04c3c4831da852b32aef83b22563bd5622537a6e6840",
+  "n_records": 2008,
+  "heldout_targets": [
+    "K562",
+    "RPE1",
+    "hepg2",
+    "jurkat"
+  ],
+  "fits": 12,
+  "e208_rows_read": 0,
+  "development_gate": "NOT_SUPPORTED",
+  "primary": {
+    "method": "MDH",
+    "baseline": "magnitude",
+    "budget": 0.2,
+    "metric": "utility",
+    "delta": 0.017607589757414693,
+    "ci95_lower": -0.01578332862838,
+    "ci95_upper": 0.054147590689375746,
+    "positive_targets": 2,
+    "n_targets": 4
+  },
+  "evidence_class": "retrospective_target_holdout_development"
+}

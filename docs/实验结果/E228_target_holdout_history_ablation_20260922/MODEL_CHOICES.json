@@ -1,0 +1,382 @@
+[
+  {
+    "heldout": "K562",
+    "arm": "M",
+    "features": [
+      "predicted_magnitude"
+    ],
+    "means": {
+      "predicted_magnitude": 0.04849145414885475
+    },
+    "scale_mean": [
+      0.04849145414885475
+    ],
+    "scale_scale": [
+      0.024587016197976604
+    ],
+    "coef": [
+      0.16550322459489317
+    ],
+    "intercept": 0.5003501400560224
+  },
+  {
+    "heldout": "K562",
+    "arm": "MD",
+    "features": [
+      "predicted_magnitude",
+      "family_disagreement"
+    ],
+    "means": {
+      "predicted_magnitude": 0.04849145414885475,
+      "family_disagreement": 0.00424690357517256
+    },
+    "scale_mean": [
+      0.04849145414885475,
+      0.00424690357517256
+    ],
+    "scale_scale": [
+      0.024587016197976604,
+      0.002048242528169792
+    ],
+    "coef": [
+      0.16070840816874957,
+      0.020056487472584275
+    ],
+    "intercept": 0.5003501400560224
+  },
+  {
+    "heldout": "K562",
+    "arm": "MDH",
+    "features": [
+      "predicted_magnitude",
+      "family_disagreement",
+      "model_source_gap",
+      "source_delta_dispersion",
+      "negative_log_source_cells",
+      "support_context_deficit",
+      "dispersion_imputed"
+    ],
+    "means": {
+      "predicted_magnitude": 0.04849145414885475,
+      "family_disagreement": 0.00424690357517256,
+      "model_source_gap": 0.02164605758664043,
+      "source_delta_dispersion": 0.04347911336096766,
+      "negative_log_source_cells": -5.459561874703221,
+      "support_context_deficit": 0.3319327731092437,
+      "dispersion_imputed": 0.052521008403361345
+    },
+    "scale_mean": [
+      0.04849145414885475,
+      0.00424690357517256,
+      0.02164605758664043,
+      0.04347911336096766,
+      -5.459561874703221,
+      0.3319327731092437,
+      0.052521008403361345
+    ],
+    "scale_scale": [
+      0.024587016197976604,
+      0.002048242528169792,
+      0.00838028873474225,
+      0.014177658473901874,
+      0.5612654798447212,
+      0.5716602348003347,
+      0.22307521619322795
+    ],
+    "coef": [
+      0.15546873449981624,
+      0.007406586556178235,
+      0.02977771014864471,
+      -0.0009213046445916765,
+      0.023258848737655886,
+      -0.00421050232967543,
+      0.004001720890147804
+    ],
+    "intercept": 0.5003501400560224
+  },
+  {
+    "heldout": "RPE1",
+    "arm": "M",
+    "features": [
+      "predicted_magnitude"
+    ],
+    "means": {
+      "predicted_magnitude": 0.05372180725841633
+    },
+    "scale_mean": [
+      0.05372180725841633
+    ],
+    "scale_scale": [
+      0.027827662352209338
+    ],
+    "coef": [
+      0.21523620386991946
+    ],
+    "intercept": 0.500324464633355
+  },
+  {
+    "heldout": "RPE1",
+    "arm": "MD",
+    "features": [
+      "predicted_magnitude",
+      "family_disagreement"
+    ],
+    "means": {
+      "predicted_magnitude": 0.05372180725841633,
+      "family_disagreement": 0.004678518295032322
+    },
+    "scale_mean": [
+      0.05372180725841633,
+      0.004678518295032322
+    ],
+    "scale_scale": [
+      0.027827662352209338,
+      0.002314811916058328
+    ],
+    "coef": [
+      0.20832670880620188,
+      0.018207993026224688
+    ],
+    "intercept": 0.500324464633355
+  },
+  {
+    "heldout": "RPE1",
+    "arm": "MDH",
+    "features": [
+      "predicted_magnitude",
+      "family_disagreement",
+      "model_source_gap",
+      "source_delta_dispersion",
+      "negative_log_source_cells",
+      "support_context_deficit",
+      "dispersion_imputed"
+    ],
+    "means": {
+      "predicted_magnitude": 0.05372180725841633,
+      "family_disagreement": 0.004678518295032322,
+      "model_source_gap": 0.022894036362656557,
+      "source_delta_dispersion": 0.0461533136245049,
+      "negative_log_source_cells": -5.273211848366338,
+      "support_context_deficit": 0.41142115509409477,
+      "dispersion_imputed": 0.0791693705386113
+    },
+    "scale_mean": [
+      0.05372180725841633,
+      0.004678518295032322,
+      0.022894036362656557,
+      0.0461533136245049,
+      -5.273211848366338,
+      0.41142115509409477,
+      0.0791693705386113
+    ],
+    "scale_scale": [
+      0.027827662352209338,
+      0.002314811916058328,
+      0.00890512353772057,
+      0.014238303511214538,
+      0.6754610216795311,
+      0.6328447908550392,
+      0.2700029283306597
+    ],
+    "coef": [
+      0.15992796008791096,
+      0.02359614864584497,
+      0.030410179384501614,
+      0.06586378403483935,
+      -0.029965090130579568,
+      0.040412796297440975,
+      -0.021246677983688303
+    ],
+    "intercept": 0.500324464633355
+  },
+  {
+    "heldout": "hepg2",
+    "arm": "M",
+    "features": [
+      "predicted_magnitude"
+    ],
+    "means": {
+      "predicted_magnitude": 0.05218120007824391
+    },
+    "scale_mean": [
+      0.05218120007824391
+    ],
+    "scale_scale": [
+      0.02787850754966827
+    ],
+    "coef": [
+      0.16397722250724683
+    ],
+    "intercept": 0.50032722513089
+  },
+  {
+    "heldout": "hepg2",
+    "arm": "MD",
+    "features": [
+      "predicted_magnitude",
+      "family_disagreement"
+    ],
+    "means": {
+      "predicted_magnitude": 0.05218120007824391,
+      "family_disagreement": 0.004716555943516868
+    },
+    "scale_mean": [
+      0.05218120007824391,
+      0.004716555943516868
+    ],
+    "scale_scale": [
+      0.02787850754966827,
+      0.002434183597078595
+    ],
+    "coef": [
+      0.1630711082963461,
+      0.002446913829835335
+    ],
+    "intercept": 0.50032722513089
+  },
+  {
+    "heldout": "hepg2",
+    "arm": "MDH",
+    "features": [
+      "predicted_magnitude",
+      "family_disagreement",
+      "model_source_gap",
+      "source_delta_dispersion",
+      "negative_log_source_cells",
+      "support_context_deficit",
+      "dispersion_imputed"
+    ],
+    "means": {
+      "predicted_magnitude": 0.05218120007824391,
+      "family_disagreement": 0.004716555943516868,
+      "model_source_gap": 0.021949439250356147,
+      "source_delta_dispersion": 0.04387177114082405,
+      "negative_log_source_cells": -5.258793383267533,
+      "support_context_deficit": 0.41361256544502617,
+      "dispersion_imputed": 0.08704188481675393
+    },
+    "scale_mean": [
+      0.05218120007824391,
+      0.004716555943516868,
+      0.021949439250356147,
+      0.04387177114082405,
+      -5.258793383267533,
+      0.41361256544502617,
+      0.08704188481675393
+    ],
+    "scale_scale": [
+      0.02787850754966827,
+      0.002434183597078595,
+      0.00854783469142399,
+      0.013402288090223091,
+      0.670971023709408,
+      0.645461835265663,
+      0.2818964261999447
+    ],
+    "coef": [
+      0.14585591163525177,
+      0.019819964098759402,
+      0.02390866102512425,
+      0.01552851651703425,
+      -0.037142756599362926,
+      0.0006010577745061717,
+      -0.0032358254983149873
+    ],
+    "intercept": 0.5003272251308899
+  },
+  {
+    "heldout": "jurkat",
+    "arm": "M",
+    "features": [
+      "predicted_magnitude"
+    ],
+    "means": {
+      "predicted_magnitude": 0.0527131229648527
+    },
+    "scale_mean": [
+      0.0527131229648527
+    ],
+    "scale_scale": [
+      0.028013702393503308
+    ],
+    "coef": [
+      0.16745426531362279
+    ],
+    "intercept": 0.5003274394237066
+  },
+  {
+    "heldout": "jurkat",
+    "arm": "MD",
+    "features": [
+      "predicted_magnitude",
+      "family_disagreement"
+    ],
+    "means": {
+      "predicted_magnitude": 0.0527131229648527,
+      "family_disagreement": 0.00475470462148023
+    },
+    "scale_mean": [
+      0.0527131229648527,
+      0.00475470462148023
+    ],
+    "scale_scale": [
+      0.028013702393503308,
+      0.0024159224511351805
+    ],
+    "coef": [
+      0.1689354000348619,
+      -0.0038445886148165973
+    ],
+    "intercept": 0.5003274394237066
+  },
+  {
+    "heldout": "jurkat",
+    "arm": "MDH",
+    "features": [
+      "predicted_magnitude",
+      "family_disagreement",
+      "model_source_gap",
+      "source_delta_dispersion",
+      "negative_log_source_cells",
+      "support_context_deficit",
+      "dispersion_imputed"
+    ],
+    "means": {
+      "predicted_magnitude": 0.0527131229648527,
+      "family_disagreement": 0.00475470462148023,
+      "model_source_gap": 0.02220579936143692,
+      "source_delta_dispersion": 0.04453750311181557,
+      "negative_log_source_cells": -5.3003859586576665,
+      "support_context_deficit": 0.40471512770137524,
+      "dispersion_imputed": 0.07858546168958742
+    },
+    "scale_mean": [
+      0.0527131229648527,
+      0.00475470462148023,
+      0.02220579936143692,
+      0.04453750311181557,
+      -5.3003859586576665,
+      0.40471512770137524,
+      0.07858546168958742
+    ],
+    "scale_scale": [
+      0.028013702393503308,
+      0.0024159224511351805,
+      0.008817554338569141,
+      0.014320192260015605,
+      0.6807967219188301,
+      0.6309450978414919,
+      0.26909066669177106
+    ],
+    "coef": [
+      0.1620236653385186,
+      0.005718769853974993,
+      0.0332432956654448,
+      0.0027746172277638642,
+      -0.030737384387806318,
+      0.012102015374176815,
+      -0.00940087301082227
+    ],
+    "intercept": 0.5003274394237066
+  }
+]
