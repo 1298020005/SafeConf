@@ -18,6 +18,12 @@ class TestE225(unittest.TestCase):
         y=np.arange(1,12,dtype=float)
         self.assertAlmostEqual(m.top_weights(y,.2).sum(),3.)
         self.assertAlmostEqual(m.metrics(y,y,.2)['utility'],1.)
+    def test_no_remaining_tasks_is_undefined_not_divide_by_zero(self):
+        with np.errstate(all='raise'):
+            r=m.metrics([.2],[.7],.2)
+            self.assertTrue(np.isnan(r['utility']))
+            self.assertTrue(np.isnan(r['remaining_relative_error']))
+            self.assertAlmostEqual(r['capture'],1.)
     def test_error_and_calibrated_scores_not_features(self):
         self.assertNotIn(m.ERROR,m.FEATURES)
         self.assertNotIn('safeconf_calibrated_pair_risk',m.FEATURES)

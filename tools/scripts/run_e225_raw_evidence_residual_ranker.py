@@ -86,9 +86,11 @@ def metrics(score, y, fraction):
     avg = y.mean()
     denom = np.dot(oracle, y) / oracle.sum() - avg
     selected = np.dot(w, y)
+    remaining_n = len(y) - w.sum()
     return {'utility': float((selected/w.sum()-avg)/denom) if denom > 1e-15 else np.nan,
             'capture': float(selected/y.sum()) if y.sum() > 0 else np.nan,
-            'remaining_relative_error': float((y.sum()-selected)/(len(y)-w.sum())/avg) if avg > 0 else np.nan}
+            'remaining_relative_error': float((y.sum()-selected)/remaining_n/avg)
+            if avg > 0 and remaining_n > 0 else np.nan}
 
 def evaluate(frame, score, budgets=(.2,)):
     rows = []
