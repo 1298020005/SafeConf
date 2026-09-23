@@ -7,6 +7,7 @@ from pathlib import Path
 
 import h5py
 import numpy as np
+import pytest
 
 
 SCRIPT = Path(__file__).resolve().parents[1] / "scripts" / "audit_e247_kaden_labels.py"
@@ -38,3 +39,16 @@ def test_count_reader_never_needs_expression_values(tmp_path):
     assert [(row["perturbation"], row["n_cells"], row["eligible_ge30"]) for row in rows] == [
         ("control", 2, 0), ("A", 35, 1), ("B", 31, 1)
     ]
+
+
+def test_missing_label_fails_closed(tmp_path):
+    path = tmp_path / "missing_label.h5ad"
+    with h5py.File(path, "w") as handle:
+        x = handle.create_group("X")
+        x.attrs["shape"] = np.asarray([2, 1])
+        obs = handle.create_group("obs").create_group("perturbation")
+        obs.create_dataset("categories", data=np.asarray([b"control"]))
+        obs.create_dataset("codes", data=np.asarray([0, -1]))
+        handle.create_group("var").create_dataset("_index", data=np.asarray([b"G1"]))
+    with pytest.raises(RuntimeError, match="unlabeled cells"):
+        MODULE.read_label_counts(path)

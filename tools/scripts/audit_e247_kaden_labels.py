@@ -93,6 +93,8 @@ def read_label_counts(path: Path) -> tuple[list[dict[str, object]], int, int, in
         codes = np.asarray(obs["codes"][:], dtype=np.int64)
         if np.any((codes < -1) | (codes >= len(categories))):
             raise RuntimeError("invalid categorical codes")
+        if np.any(codes == -1):
+            raise RuntimeError("unlabeled cells present; label-only split refused")
         n_cells = len(codes)
         x_shape = tuple(int(x) for x in handle["X"].attrs["shape"])
         n_genes = len(handle["var"]["_index"])
