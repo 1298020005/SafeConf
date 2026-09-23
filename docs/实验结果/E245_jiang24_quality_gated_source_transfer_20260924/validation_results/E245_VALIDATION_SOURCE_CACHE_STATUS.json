@@ -1,0 +1,21 @@
+{
+  "experiment": "E245_jiang24_quality_gated_source_transfer",
+  "stage": "VALIDATION_TRAIN_ONLY_SOURCE_CACHE",
+  "status": "PASS",
+  "created_at": "2026-09-24T01:44:25+08:00",
+  "n_validation_tasks": 216,
+  "n_eligible": 212,
+  "n_abstain": 4,
+  "n_source_effects": 235,
+  "min_source_cells": 30,
+  "train_source_expression_rows_read": 227397,
+  "train_control_expression_rows_read": 68559,
+  "sparse_row_runs": 286430,
+  "validation_perturbed_expression_rows_read": 0,
+  "test_perturbed_expression_rows_read": 0,
+  "validation_task_manifest_sha256": "82e9b84e4f0c00d226fca555a6183366989699a65abe49e3e3abac7d6e99d986",
+  "split_sha256": "5af7da86a5b3994d570c0b1957d91f17cebb9f9b1943bac738b74fdb14b2ef5d",
+  "effects_sha256": "c711cf6c62e39aaf7923a511e99050c24059d4f71cb54ccf23aba22395df0f14",
+  "manifest_sha256": "ff5e904a9c128d64e5d242dc503fa2698e7e267c1d89bb16b23b74e4d627dd3a",
+  "gene_axis_sha256": "ca36a3d678ea5ecccccd46a658604988262a69dee6e3eacb92db8638f9b19728"
+}

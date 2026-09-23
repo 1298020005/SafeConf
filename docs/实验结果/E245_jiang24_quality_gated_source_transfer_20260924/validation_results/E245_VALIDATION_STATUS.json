@@ -1,0 +1,23 @@
+{
+  "experiment": "E245_jiang24_quality_gated_source_transfer",
+  "status": "BLOCKED_UPSTREAM_COMPETENCE",
+  "created_at": "2026-09-24T01:45:14+08:00",
+  "n_validation_tasks": 216,
+  "n_eligible": 212,
+  "n_abstain": 4,
+  "alphas": [
+    0.05,
+    0.1,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "selected_alpha": null,
+  "gate": "mean_MSE_gain>=0.02_and_8_of_12_states_not_worse",
+  "source_cache_status_sha256": "a37d9f9a74ff0dae4129a1f2bd2c1a4cca84265a1ef4165c349acc99cf72185f",
+  "validation_truth_sha256": "260902ee88091b1983434862394579a2c583e73b2347243bbc0239f1cec21bb0",
+  "test_perturbed_expression_rows_read": 0,
+  "table_sha256": "fec2a9cec60cd4d3acd843e98be86b921fb6bfd984aa2b70b54a6a2527326949",
+  "contexts_sha256": "bbe63995a45fe8ce624cf0f4faa86348bb61135a82fa02cdb81a9dc9b0490f6e",
+  "tasks_sha256": "f6b9b56d7adf9a4f74eecc35e7c8786e58a263419cb147469f7124d0b90f777a"
+}
