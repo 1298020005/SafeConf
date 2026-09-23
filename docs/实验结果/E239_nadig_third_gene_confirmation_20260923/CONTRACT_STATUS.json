@@ -1,0 +1,36 @@
+{
+  "status": "FROZEN_BEFORE_E239_EXPRESSION_OR_PREDICTION",
+  "created_at": "2026-09-23T19:58:06",
+  "n_eligible_total": 785,
+  "n_previously_used_genes_excluded": 224,
+  "n_eligible_remaining": 561,
+  "n_selected_disjoint_genes": 128,
+  "n_test_rows": 332,
+  "n_folds": 2,
+  "selection_is_post_E139_E237_scenario_followup": true,
+  "target_expression_values_read": 0,
+  "source_files": {
+    "HepG2": {
+      "path": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/NadigOConner2024_hepg2.h5ad",
+      "shape": [
+        145473,
+        9624
+      ],
+      "sha256": "1af2f7b3e692ad3d077e6027d68a1f800619e29aa3f7a0efa70146fb7223a4bf"
+    },
+    "Jurkat": {
+      "path": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/NadigOConner2024_jurkat.h5ad",
+      "shape": [
+        262956,
+        8882
+      ],
+      "sha256": "ade3d83150fd6944212363cd11da77c0d2143fa6df1febb3f15a66d4dab0677f"
+    }
+  },
+  "prior_selection_hashes": {
+    "docs/实验结果/E136_nadig_two_cellline_contract_20260714/tables/E136_SELECTED_PERTURBATIONS.csv": "796266fd7ad80d9ae590f54569147c1ac102aa70c09220f41dff620fb5baa7f3",
+    "docs/实验结果/E237_nadig_disjoint_gene_confirmation_20260923/tables/E237_SELECTED_PERTURBATIONS.csv": "90922eaef44cef9e6a452e91ea3626574bbf60890c5a0e665cbfa8ad64061357"
+  },
+  "frozen_direction_model_sha256": "77caf3b7b46071ced9577a8bd5289ce4c7bf5899c329ab37e835c41bda07d4b3",
+  "manifest_sha256": "087c8e9df2429bbff74e10016e04c58d933e27f51249cd209e0b875fa45b0e79"
+}

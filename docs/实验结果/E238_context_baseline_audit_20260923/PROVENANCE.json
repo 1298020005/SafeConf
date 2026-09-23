@@ -1,0 +1,15 @@
+{
+  "status": "posthoc_diagnostic",
+  "draws": 1500,
+  "sources": [
+    {
+      "cohort": "E139_original_96",
+      "task_audit_sha256": "ce9133d65e56d6b905f9efaf84313a1e64026229e9e64df60a166ef67767bda6"
+    },
+    {
+      "cohort": "E237_disjoint_128",
+      "task_audit_sha256": "e19b0b246ae22a981c4276aa09dfe674ad882cb9f6c444aedcf1dc02014fadfa",
+      "fixed_score_sha256": "fcea67a3737f99635db0a39bec97586995853f0dfb2a2722fb616636ac821b66"
+    }
+  ]
+}

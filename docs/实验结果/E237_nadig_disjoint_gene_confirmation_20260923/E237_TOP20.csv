@@ -1,0 +1,11 @@
+fold_id,score,n_tasks,k,normalized_directional_error_capture
+E237_cellline_holdout_1_HepG2,directional_risk_frozen,166,34,0.9893763525477078
+E237_cellline_holdout_1_HepG2,magnitude,166,34,0.6654534723588432
+E237_cellline_holdout_1_HepG2,novelty,166,34,0.47639189455046227
+E237_cellline_holdout_1_HepG2,disagreement,166,34,0.6713554987212276
+E237_cellline_holdout_1_HepG2,magnitude_plus_novelty,166,34,0.7264410781034822
+E237_cellline_holdout_2_Jurkat,directional_risk_frozen,166,34,0.9913436946685027
+E237_cellline_holdout_2_Jurkat,magnitude,166,34,0.6646665355105251
+E237_cellline_holdout_2_Jurkat,novelty,166,34,0.9803265787920519
+E237_cellline_holdout_2_Jurkat,disagreement,166,34,0.663977965768247
+E237_cellline_holdout_2_Jurkat,magnitude_plus_novelty,166,34,0.7305724965571512
