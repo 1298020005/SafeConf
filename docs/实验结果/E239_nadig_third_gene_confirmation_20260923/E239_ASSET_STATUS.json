@@ -1,0 +1,13 @@
+{
+  "status": "COMPLETE",
+  "created_at": "2026-09-23T20:04:56",
+  "asset": "/home/yyf/data/safeconf_e239_nadig/Nadig_E239_disjoint.h5ad",
+  "asset_sha256": "74e4fc72f243df3d05dfa599578263b01062c6210a7d77a3cccb859b50a57c5f",
+  "shape": [
+    48366,
+    7632
+  ],
+  "n_selected_genes": 128,
+  "selection_or_split_changed_after_expression_read": false,
+  "target_error_computed": false
+}

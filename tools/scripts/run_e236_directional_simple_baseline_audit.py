@@ -102,12 +102,16 @@ def load_dataset(name: str, asset_root: Path) -> tuple[pd.DataFrame, dict]:
     }
 
 
-def summarize(frame: pd.DataFrame, draws: int, seed: int) -> tuple[pd.DataFrame, pd.DataFrame]:
+def summarize(frame: pd.DataFrame, draws: int, seed: int,
+              scores: list[str] | None = None,
+              comparators: list[str] | None = None) -> tuple[pd.DataFrame, pd.DataFrame]:
+    scores = SCORES if scores is None else scores
+    comparators = ["magnitude", "novelty", "magnitude_plus_novelty"] if comparators is None else comparators
     rows = []
     for (dataset, fold), part in frame.groupby(["dataset", "fold_id"], sort=True):
         for endpoint in ENDPOINTS:
             target = part[endpoint].to_numpy(float)
-            for score in SCORES:
+            for score in scores:
                 rows.append({"dataset": dataset, "fold_id": fold, "endpoint": endpoint, "score": score,
                              "n_tasks": len(part), "spearman": correlation(part[score].to_numpy(float), target)})
     folds = pd.DataFrame(rows)
@@ -117,25 +121,25 @@ def summarize(frame: pd.DataFrame, draws: int, seed: int) -> tuple[pd.DataFrame,
         groups = [group.copy() for _, group in frame[frame.dataset.eq(dataset)].groupby("fold_id", sort=True)]
         genes = sorted(frame.loc[frame.dataset.eq(dataset), "perturbation"].astype(str).unique())
         point = part.groupby("score").spearman.mean().to_dict()
-        sample_values = {score: [] for score in SCORES}
+        sample_values = {score: [] for score in scores}
         for _ in range(draws):
             chosen = rng.choice(genes, size=len(genes), replace=True)
             counts = pd.Series(chosen).value_counts()
-            for score in SCORES:
+            for score in scores:
                 fold_values = []
                 for group in groups:
                     weights = group.perturbation.astype(str).map(counts).fillna(0).to_numpy(int)
                     indices = np.repeat(np.arange(len(group)), weights)
                     fold_values.append(correlation(group[score].to_numpy(float)[indices], group[endpoint].to_numpy(float)[indices]))
                 sample_values[score].append(float(np.nanmean(fold_values)))
-        for score in SCORES:
+        for score in scores:
             values = np.asarray(sample_values[score])
             row = {"dataset": dataset, "endpoint": endpoint, "score": score,
                    "n_folds": len(groups), "n_gene_clusters": len(genes),
                    "fold_macro_spearman": point[score],
                    "ci95_low": float(np.nanquantile(values, .025)),
                    "ci95_high": float(np.nanquantile(values, .975))}
-            for comparator in ["magnitude", "novelty", "magnitude_plus_novelty"]:
+            for comparator in comparators:
                 difference = values - np.asarray(sample_values[comparator])
                 row[f"delta_vs_{comparator}"] = point[score] - point[comparator]
                 row[f"delta_vs_{comparator}_ci95_low"] = float(np.nanquantile(difference, .025))
