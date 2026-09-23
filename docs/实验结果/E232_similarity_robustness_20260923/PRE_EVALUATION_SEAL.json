@@ -1,0 +1,84 @@
+{
+  "status": "SEALED_NOT_EVALUATED",
+  "candidate": "similarity_variance_shrink",
+  "coefficient_search": false,
+  "score_sha256": "43ad18b730135ab53d2cba9c25f0a2d48da913d920aaabc2333a84389fe466c7",
+  "corruption_map_sha256": "a098d28dd139d44c2a1a403f42261aa395c119cb427531fb67cf6b3fa293d9a1",
+  "score_rows": 38152,
+  "unique_tasks": 2008,
+  "scenarios": [
+    "clean",
+    "corrupt_010_seed101",
+    "corrupt_010_seed211",
+    "corrupt_010_seed307",
+    "corrupt_025_seed101",
+    "corrupt_025_seed211",
+    "corrupt_025_seed307",
+    "corrupt_050_seed101",
+    "corrupt_050_seed211",
+    "corrupt_050_seed307",
+    "corrupt_100_seed101",
+    "corrupt_100_seed211",
+    "corrupt_100_seed307",
+    "one_source_keep_K562",
+    "one_source_keep_RPE1",
+    "one_source_keep_hepg2",
+    "one_source_keep_jurkat",
+    "two_sources_drop_K562",
+    "two_sources_drop_RPE1",
+    "two_sources_drop_hepg2",
+    "two_sources_drop_jurkat"
+  ],
+  "target_truth_fields": [],
+  "target_audits": [
+    {
+      "target": "K562",
+      "device": "cuda:0",
+      "n_source_rows": 1428,
+      "contexts": [
+        "RPE1",
+        "hepg2",
+        "jurkat"
+      ],
+      "effects_sha256": "05ace7d9785ea527c5bcac8390b376016b52bd0c60a0f11ee19126affcef7f46",
+      "e208_test_rows_read": 0
+    },
+    {
+      "target": "RPE1",
+      "device": "cuda:1",
+      "n_source_rows": 1249,
+      "contexts": [
+        "K562",
+        "hepg2",
+        "jurkat"
+      ],
+      "effects_sha256": "7383c96a6c1cf72b50bf5923d0288d028285941702d43ce1ee5756d6bdb9cb3e",
+      "e208_test_rows_read": 0
+    },
+    {
+      "target": "hepg2",
+      "device": "cuda:0",
+      "n_source_rows": 1286,
+      "contexts": [
+        "K562",
+        "RPE1",
+        "jurkat"
+      ],
+      "effects_sha256": "aee513d4f8d5272219e48f7548e728e655d699f5e9df959b5afc7ac25e807dde",
+      "e208_test_rows_read": 0
+    },
+    {
+      "target": "jurkat",
+      "device": "cuda:1",
+      "n_source_rows": 1275,
+      "contexts": [
+        "K562",
+        "RPE1",
+        "hepg2"
+      ],
+      "effects_sha256": "67b6377293d4184abede7c1c2fba69740e8c405ddbde1d6426cb64ec7d7c881d",
+      "e208_test_rows_read": 0
+    }
+  ],
+  "e208_test_rows_read": 0
+}
