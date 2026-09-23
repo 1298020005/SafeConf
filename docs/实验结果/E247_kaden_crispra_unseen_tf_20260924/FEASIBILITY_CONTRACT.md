@@ -49,6 +49,12 @@ guide 的灵敏度分析；取不到元数据时不作这种更强的解释。
 以固定 20% 人工复核预算的高错误捕获效用为主，逐任务表、随机基线、全部
 训练种子和负结果都保留。测试真值只在预测与风险分双远程封存后授权读取。
 
+最近的 PertEMA 软件同样研究预测后的可靠性。若进入投稿级比较，应在同一
+Kaden 划分上用**训练集扰动的折外误差**重新拟合其监督式元评估器，再比较
+相同测试任务与复核预算；不能直接拿它在 CD4 数据上冻结的示例模型测 Kaden，
+也不能让 SafeConf 使用更少信息却声称无条件优于可见误差标签的方法。无法按
+其公开流程公平复现时，比较表中明确标为缺失，不能写成已经战胜该方法。
+
 这份阶段计划**不保证**模型能力门或风险增益通过；若两者失败，E247 仍给出
 可复核的适用范围边界。若正向，也只支持“RPE1 转录因子 CRISPRa 未见扰动”
 这一范围，不自动推广到药物、其他细胞背景或所有基因扰动。
@@ -56,3 +62,4 @@ guide 的灵敏度分析；取不到元数据时不作这种更强的解释。
 来源：
 - Southard et al., *Nature Genetics* 2025, DOI: 10.1038/s41588-025-02284-1。
 - scPertEval datasets: https://scperteval.readthedocs.io/en/latest/user-guide/datasets.html。
+- PertEMA official software: https://github.com/OfficialBishal/PertEMA。
