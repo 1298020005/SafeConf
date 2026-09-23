@@ -1,0 +1,31 @@
+{
+  "e208_e233_test_perturbed_expression_rows_read": 0,
+  "input_sha256": {
+    "E201_PRETRUTH_RISK_FEATURES.csv": "003d7dec2912f7f24b39665c3166c25cffb4670b16579e354b23764f90a2caf6",
+    "PREDICTIONS.csv.gz": "532c77e34508917ac690ef204c6d010a960400106d355e7224578c03ba38297a",
+    "SCORES.csv.gz": "43ad18b730135ab53d2cba9c25f0a2d48da913d920aaabc2333a84389fe466c7"
+  },
+  "methods": [
+    "M",
+    "M+D",
+    "M+G",
+    "M+H",
+    "M+N",
+    "M+C",
+    "E230",
+    "E232"
+  ],
+  "n_tasks": 2008,
+  "primary_tasks": 1808,
+  "score_file_sha256": "780b87fc0dfa63da04225a156c171fd6ad2bb244cef4d5f2d757e5533929e68d",
+  "script_sha256": "9de0a4519f6bab5074bfe1417014a7f52fe73c1c30225557e5368af7905dcedf",
+  "sealed_at": "2026-09-23T15:45:37.464120+08:00",
+  "status": "SEALED_NOT_EVALUATED",
+  "targets": [
+    "K562",
+    "RPE1",
+    "hepg2",
+    "jurkat"
+  ],
+  "truth_columns_in_scores": []
+}
