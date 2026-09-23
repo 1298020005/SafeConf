@@ -1,0 +1,29 @@
+{
+  "status": "COMPLETE_POSTHOC_DESCRIPTIVE_ONLY",
+  "method_selected_after_E234_truth": true,
+  "n_tasks": 1808,
+  "n_genes": 575,
+  "n_targets": 4,
+  "target_deltas": [
+    {
+      "target": "K562",
+      "delta_utility_20": 0.004647677635157055
+    },
+    {
+      "target": "RPE1",
+      "delta_utility_20": 0.020001061701383605
+    },
+    {
+      "target": "hepg2",
+      "delta_utility_20": 0.023757015921105018
+    },
+    {
+      "target": "jurkat",
+      "delta_utility_20": 0.007305682813038894
+    }
+  ],
+  "macro_delta_utility_20": 0.013927859517671143,
+  "gene_cluster_ci95_lower": -0.010165299337336418,
+  "gene_cluster_ci95_upper": 0.056282687192436176,
+  "e208_e233_test_perturbed_expression_rows_read": 0
+}
