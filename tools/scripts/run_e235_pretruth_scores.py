@@ -121,6 +121,10 @@ def score_tasks(members: np.ndarray, controls: np.ndarray, tasks: pd.DataFrame,
     frame = pd.DataFrame(rows)
     if len(frame) != 224 or frame.task_id.nunique() != 224:
         raise RuntimeError("E235 task list did not remain complete and unique")
+    frame["score_random_fixed"] = frame.task_id.map(
+        lambda task_id: int(hashlib.sha256(f"E235_RANDOM_V1\0{task_id}".encode()).hexdigest()[:16], 16)
+        / 2**64
+    )
     for _, indexes in frame.groupby(["cell_type", "treatment"], sort=True).groups.items():
         indexes = list(indexes)
         if len(indexes) < 10:
@@ -226,6 +230,7 @@ def main() -> None:
         "registered_primary_score": "score_M_plus_H",
         "registered_comparator": "rank_M",
         "registered_formula": "0.8*rank_state(M)+0.2*rank_state(H)",
+        "random_baseline": "SHA256(E235_RANDOM_V1\\0task_id)/2**64; frozen before truth",
     }
     write_json(status_path, record)
     print(json.dumps(record, ensure_ascii=False, indent=2))
