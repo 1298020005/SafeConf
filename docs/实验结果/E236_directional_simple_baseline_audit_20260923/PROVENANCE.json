@@ -1,0 +1,24 @@
+{
+  "status": "retrospective_exploratory",
+  "bootstrap_draws": 1500,
+  "datasets": [
+    {
+      "dataset": "Nadig",
+      "n_rows": 256,
+      "n_folds": 2,
+      "n_gene_clusters": 96,
+      "pretruth_score_sha256": "61c5804c6d714bc01235b0176e62309d80847549458b8a91a97c763b801f7307",
+      "predictor_risk_table_sha256": "c9f0e726396a4727dff0ad0f9c6fb723c0e26aa1d6f808d704c543797f5894ce",
+      "archived_audit_sha256": "ce9133d65e56d6b905f9efaf84313a1e64026229e9e64df60a166ef67767bda6"
+    },
+    {
+      "dataset": "Replogle",
+      "n_rows": 256,
+      "n_folds": 2,
+      "n_gene_clusters": 128,
+      "pretruth_score_sha256": "611ac06b5630b33dd3e2f16e62f5a1c5bd903d1cb895ce69ee97e56578011b42",
+      "predictor_risk_table_sha256": "f1c1d9290cf5519ac702e214b2783f37cf6a9bc723f81d4405bb3891aa625118",
+      "archived_audit_sha256": "c5dd3bb6b61dab9938f88e389e068a3ab856d44f59db76a587b24f4452a0c353"
+    }
+  ]
+}
