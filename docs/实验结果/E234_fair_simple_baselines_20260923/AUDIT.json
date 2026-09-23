@@ -1,0 +1,18 @@
+{
+  "all_tasks": 2008,
+  "best_simple_baseline_macro_utility_20": 0.7827391929532951,
+  "best_simple_baselines": [
+    "M+H"
+  ],
+  "candidate_macro_utility_20": 0.7855711901663052,
+  "development_gate": "NOT_SUPPORTED",
+  "e208_e233_test_perturbed_expression_rows_read": 0,
+  "independent_new_data_confirmation": false,
+  "n_unique_primary_genes": 575,
+  "primary_tasks": 1808,
+  "protocol_commit_required_before_evaluation": true,
+  "scope": "E201 primary_ge30 gene perturbations; all four targets",
+  "sealed_scores_sha256": "780b87fc0dfa63da04225a156c171fd6ad2bb244cef4d5f2d757e5533929e68d",
+  "status": "COMPLETE",
+  "truth_sha256": "4a02d132cae1605a2f6f54bee8912f45e835d1fc3936e6cda0fcc98e2c6bcd35"
+}

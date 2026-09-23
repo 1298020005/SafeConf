@@ -40,9 +40,10 @@ def main() -> None:
     parser.add_argument("--run-dir", type=Path, required=True)
     parser.add_argument("--variant", choices=sorted(VARIANTS), required=True)
     parser.add_argument("--seed", type=int, default=1)
+    parser.add_argument("--stage", choices=("stage1", "stage2"), default="stage1")
     args = parser.parse_args()
-    if args.seed != 1:
-        raise RuntimeError("E233 stage 1 registers seed 1 only")
+    if (args.stage == "stage1" and args.seed != 1) or (args.stage == "stage2" and args.seed not in (2, 3, 4)):
+        raise RuntimeError("E233 stage 1 uses seed 1; stage 2 uses seeds 2, 3, 4")
     repo = args.perturbench_repo.resolve()
     data = args.data_dir.resolve()
     run = args.run_dir.resolve()
@@ -55,7 +56,7 @@ def main() -> None:
     if h5ad.stat().st_size != H5_BYTES or sha256(split) != SPLIT_SHA256:
         raise RuntimeError("Jiang24 inputs changed")
     status = {
-        "experiment": "E233_corrected_jiang24_predictor", "stage": "STAGE1_TRAINING",
+        "experiment": "E233_corrected_jiang24_predictor", "stage": args.stage.upper() + "_TRAINING",
         "status": "RUNNING", "started_at": datetime.now().astimezone().isoformat(),
         "variant": args.variant, "seed": args.seed, "test_perturbed_expression_rows_read": 0,
         "perturbench_commit": PERTURBENCH_COMMIT, "split_sha256": SPLIT_SHA256,
