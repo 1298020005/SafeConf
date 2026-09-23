@@ -138,7 +138,11 @@ def audit(path: Path, out: Path, wait_seconds: int, timeout_hours: float) -> Non
     out.mkdir(parents=True, exist_ok=True)
     table = out / "E247_LABEL_ONLY_SPLIT.csv"
     with table.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=["perturbation", "n_cells", "eligible_ge30", "split"])
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=["perturbation", "n_cells", "eligible_ge30", "split"],
+            lineterminator="\n",
+        )
         writer.writeheader()
         writer.writerows(sorted(rows, key=lambda row: str(row["perturbation"])))
     write_status(

@@ -1,0 +1,22 @@
+{
+  "experiment": "E247_kaden_crispra_unseen_tf",
+  "updated_at": "2026-09-24T02:37:37+08:00",
+  "status": "PASS_LABEL_ONLY",
+  "asset": "/home/yyf/data/scperteval_official_20260802/kaden25rpe1_processed_complete.h5ad",
+  "bytes": 5641728720,
+  "md5": "bda7f3ea0173f64a0898ab6bb21a4a16",
+  "sha256": "837f05b08c5227bb91e19929896251f6d263ad8d3eb4b3f60f8fffc887c42012",
+  "n_cells": 850225,
+  "n_genes": 28907,
+  "n_controls": 42233,
+  "n_perturbations": 1836,
+  "n_eligible": 1836,
+  "split_counts": {
+    "train": 1093,
+    "validation": 376,
+    "test": 367
+  },
+  "label_table_sha256": "3b6992bad649e4c7a12932ba016eb99fb61830209d29a3ffc7389b55c2ea09af",
+  "expression_values_read": 0,
+  "test_truth_read": false
+}
