@@ -1,0 +1,11 @@
+{
+  "dataset": "Nadig_E239_disjoint",
+  "status": "complete",
+  "generated_at": "2026-09-23T20:10:56",
+  "n_folds": 2,
+  "n_test_tasks": 332,
+  "n_records": 664,
+  "strict_issue_count": 0,
+  "test_truth_used_for_training_calibration_score_or_threshold": false,
+  "wall_seconds": 44.50240659713745
+}

@@ -1,0 +1,13 @@
+{
+  "status": "SCORES_FIXED_BEFORE_DIRECTIONAL_EVALUATION",
+  "created_at": "2026-09-23T20:10:56",
+  "n_test_rows": 332,
+  "score_sha256": "036417cd483cae97b50a0c519d7806746b954f167f189c8b59d3eb8f598b4e00",
+  "risk_table_sha256": "b6a5cc210fb3ab2b1fe469db39289e4aa6a786b80c95ad8018e396c417a2ed94",
+  "prediction_record_sha256": "731cd9ea2d420500021c7716f2353a9866e0a8c0c91a4acb53df8af3650bade2",
+  "model_sha256": "77caf3b7b46071ced9577a8bd5289ce4c7bf5899c329ab37e835c41bda07d4b3",
+  "manifest_sha256": "087c8e9df2429bbff74e10016e04c58d933e27f51249cd209e0b875fa45b0e79",
+  "target_directional_truth_used_in_score_formula": false,
+  "strict_prior_test_expression_read_blindness": false,
+  "upstream_note": "E112 model implementation materializes test target vectors before score release; no pretruth claim."
+}
