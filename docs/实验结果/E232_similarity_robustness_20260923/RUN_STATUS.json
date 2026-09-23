@@ -1,0 +1,11 @@
+{
+  "status": "COMPLETE",
+  "clean_candidate_minus_magnitude": 0.016759856730681255,
+  "clean_positive_targets": 4,
+  "clean_minus_full_corruption": 0.031152376374302237,
+  "specificity_positive_targets": 4,
+  "corruption_trend_utility_per_percent": -0.0003037149002195047,
+  "two_source_minus_one_source": 0.009549105810862324,
+  "registered_mechanism_gate": "PASS",
+  "e208_test_rows_read": 0
+}
