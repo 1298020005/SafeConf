@@ -37,7 +37,15 @@ def load_source(manifest: Path, out: Path, asset: Path, dataset: str, seed: int)
     module.CONTRACT = manifest
     module.OUT = out
     module.SPECS = {dataset: {"source": asset, "context": "context"}}
-    module.ALIASES.update({"C17orf58": "C17orf58"})
+    # The upstream helper uppercases symbols, but some legitimate scGPT tokens
+    # retain their mixed case. Resolve these from metadata/vocabulary alone.
+    round_id = dataset.split("_")[1]
+    selected = pd.read_csv(out / f"tables/{round_id}_SELECTED_PERTURBATIONS.csv").perturbation.astype(str)
+    vocab = set(json.loads(module.SCGPT_VOCAB.read_text()))
+    module.ALIASES.update({gene: gene for gene in selected if gene in vocab and gene.upper() not in vocab})
+    missing = [gene for gene in selected if module.human_token(gene) not in vocab]
+    if missing:
+        raise RuntimeError(f"selected perturbation tokens absent after case resolution: {missing}")
     module.SEED = seed
     return module
 
