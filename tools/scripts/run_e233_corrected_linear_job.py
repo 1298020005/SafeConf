@@ -70,7 +70,7 @@ def main() -> None:
         "+data.data_iter_factory.cache_size=0", "+data.loader.persistent_workers=true",
         "data.loader.batch_size=2000", "data.loader.num_workers=8",
         "model._target_=e233_corrected_models.CorrectedLinearAdditive",
-        f"model.softplus_output={'true' if VARIANTS[args.variant] else 'false'}",
+        f"+model.softplus_output={'true' if VARIANTS[args.variant] else 'false'}",
         "trainer.max_epochs=400", "trainer.min_epochs=5", "trainer.deterministic=true",
         "callbacks.early_stopping.patience=50", "+callbacks.model_checkpoint.save_last=true",
         f"hydra.run.dir={run}",
@@ -78,6 +78,7 @@ def main() -> None:
     environment = dict(os.environ)
     environment["PYTHONPATH"] = os.pathsep.join([str(Path(__file__).resolve().parent), str(repo / "src")])
     environment["HDF5_USE_FILE_LOCKING"] = "FALSE"
+    environment["MLFLOW_DISABLE_AGENT_HINT"] = "1"
     try:
         with (run / "formal_train.log").open("a") as log:
             completed = subprocess.run(command, cwd=repo, env=environment, stdout=log,
