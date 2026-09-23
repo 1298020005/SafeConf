@@ -18,7 +18,7 @@ class CorrectedLinearAdditive(LinearAdditive):
         self.log(
             name,
             loss,
-            on_step=name.startswith("val"),
+            on_step=True,
             prog_bar=True,
             logger=True,
             batch_size=len(batch),
