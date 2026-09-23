@@ -1,0 +1,202 @@
+{
+  "sealed_at": "2026-09-22T22:45:32.749513+08:00",
+  "files": {
+    "PREDICTIONS.csv.gz": "532c77e34508917ac690ef204c6d010a960400106d355e7224578c03ba38297a",
+    "FEATURES.csv.gz": "3539729d0ceef716115c753518efb87e72332fee8fc6fcc46f4343a9bed99149",
+    "SOURCE_QUALITY.csv.gz": "3c0fbc1bc10882da27b0bb3db15fa99528ee0d144a956affd24d8b72bff723e3",
+    "SHUFFLE_MAP.csv.gz": "9d53cdf9cc573688cca88f3bb73f63c5911b8c6b4460219fbcfa096bcac7d2eb"
+  },
+  "source_audits": [
+    {
+      "target": "K562",
+      "file_sha256": "8a19d3d4048800c06827e2f28e983bfa6f67b1945d2081692ce3d69a45d471db",
+      "gene_axis_hash": "d67c176fda6515159421fea6fbaca860240cb6980ccc51745bff619dfec489ca",
+      "source_pairs": 1428,
+      "source_records": [
+        {
+          "target": "K562",
+          "context": "RPE1",
+          "source_perturbed_cells": 38543,
+          "source_control_cells": 11485,
+          "target_perturbed_rows_read": 0,
+          "expression_min": 0.0,
+          "expression_max": 7.439715385437012
+        },
+        {
+          "target": "K562",
+          "context": "hepg2",
+          "source_perturbed_cells": 30139,
+          "source_control_cells": 4976,
+          "target_perturbed_rows_read": 0,
+          "expression_min": 0.0,
+          "expression_max": 6.373339653015137
+        },
+        {
+          "target": "K562",
+          "context": "jurkat",
+          "source_perturbed_cells": 43604,
+          "source_control_cells": 12013,
+          "target_perturbed_rows_read": 0,
+          "expression_min": 0.0,
+          "expression_max": 6.854189872741699
+        }
+      ],
+      "duplicate_obs_names": 149527,
+      "raw_quality_columns_available": false,
+      "processed_control_labels_valid": true,
+      "condition_gene_consistency": true,
+      "expressions_finite": true
+    },
+    {
+      "target": "RPE1",
+      "file_sha256": "9aeec2bdc56461713e9039348428d63aa1b98f6000835ed3253c35d6d85a387d",
+      "gene_axis_hash": "d67c176fda6515159421fea6fbaca860240cb6980ccc51745bff619dfec489ca",
+      "source_pairs": 1249,
+      "source_records": [
+        {
+          "target": "RPE1",
+          "context": "K562",
+          "source_perturbed_cells": 65674,
+          "source_control_cells": 10691,
+          "target_perturbed_rows_read": 0,
+          "expression_min": 0.0,
+          "expression_max": 7.25615119934082
+        },
+        {
+          "target": "RPE1",
+          "context": "hepg2",
+          "source_perturbed_cells": 26808,
+          "source_control_cells": 4976,
+          "target_perturbed_rows_read": 0,
+          "expression_min": 0.0,
+          "expression_max": 6.373339653015137
+        },
+        {
+          "target": "RPE1",
+          "context": "jurkat",
+          "source_perturbed_cells": 37188,
+          "source_control_cells": 12013,
+          "target_perturbed_rows_read": 0,
+          "expression_min": 0.0,
+          "expression_max": 6.854189872741699
+        }
+      ],
+      "duplicate_obs_names": 120026,
+      "raw_quality_columns_available": false,
+      "processed_control_labels_valid": true,
+      "condition_gene_consistency": true,
+      "expressions_finite": true
+    },
+    {
+      "target": "hepg2",
+      "file_sha256": "1f0dc20806bd40cd151ebfebb59a9fdac5ad14c4e223a655ae0ed6de890ed891",
+      "gene_axis_hash": "d67c176fda6515159421fea6fbaca860240cb6980ccc51745bff619dfec489ca",
+      "source_pairs": 1286,
+      "source_records": [
+        {
+          "target": "hepg2",
+          "context": "K562",
+          "source_perturbed_cells": 67944,
+          "source_control_cells": 10691,
+          "target_perturbed_rows_read": 0,
+          "expression_min": 0.0,
+          "expression_max": 7.25615119934082
+        },
+        {
+          "target": "hepg2",
+          "context": "RPE1",
+          "source_perturbed_cells": 33186,
+          "source_control_cells": 11485,
+          "target_perturbed_rows_read": 0,
+          "expression_min": 0.0,
+          "expression_max": 7.439715385437012
+        },
+        {
+          "target": "hepg2",
+          "context": "jurkat",
+          "source_perturbed_cells": 39258,
+          "source_control_cells": 12013,
+          "target_perturbed_rows_read": 0,
+          "expression_min": 0.0,
+          "expression_max": 6.854189872741699
+        }
+      ],
+      "duplicate_obs_names": 157385,
+      "raw_quality_columns_available": false,
+      "processed_control_labels_valid": true,
+      "condition_gene_consistency": true,
+      "expressions_finite": true
+    },
+    {
+      "target": "jurkat",
+      "file_sha256": "5a944ec0f114e2398f2058072121d130deee5af1f97def926619f5ee30c231fb",
+      "gene_axis_hash": "d67c176fda6515159421fea6fbaca860240cb6980ccc51745bff619dfec489ca",
+      "source_pairs": 1275,
+      "source_records": [
+        {
+          "target": "jurkat",
+          "context": "K562",
+          "source_perturbed_cells": 65685,
+          "source_control_cells": 10691,
+          "target_perturbed_rows_read": 0,
+          "expression_min": 0.0,
+          "expression_max": 7.124958515167236
+        },
+        {
+          "target": "jurkat",
+          "context": "RPE1",
+          "source_perturbed_cells": 31315,
+          "source_control_cells": 11485,
+          "target_perturbed_rows_read": 0,
+          "expression_min": 0.0,
+          "expression_max": 6.265317440032959
+        },
+        {
+          "target": "jurkat",
+          "context": "hepg2",
+          "source_perturbed_cells": 26443,
+          "source_control_cells": 4976,
+          "target_perturbed_rows_read": 0,
+          "expression_min": 0.0,
+          "expression_max": 6.373339653015137
+        }
+      ],
+      "duplicate_obs_names": 128540,
+      "raw_quality_columns_available": false,
+      "processed_control_labels_valid": true,
+      "condition_gene_consistency": true,
+      "expressions_finite": true
+    }
+  ],
+  "compute": [
+    {
+      "target": "K562",
+      "device": "cuda:0",
+      "seconds": 1.3151525760767981,
+      "bootstrap_replicates_per_pair": 128,
+      "gpu_cpu_max_abs_difference": 0.0
+    },
+    {
+      "target": "RPE1",
+      "device": "cuda:0",
+      "seconds": 0.9203456600662321,
+      "bootstrap_replicates_per_pair": 128,
+      "gpu_cpu_max_abs_difference": 0.0
+    },
+    {
+      "target": "hepg2",
+      "device": "cuda:0",
+      "seconds": 0.9628306640079245,
+      "bootstrap_replicates_per_pair": 128,
+      "gpu_cpu_max_abs_difference": 0.0
+    },
+    {
+      "target": "jurkat",
+      "device": "cuda:0",
+      "seconds": 0.9203220140188932,
+      "bootstrap_replicates_per_pair": 128,
+      "gpu_cpu_max_abs_difference": 0.0
+    }
+  ],
+  "target_errors_in_features": false
+}

@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "sealed_file_hashes_match": true,
+  "prediction_rows": 8032,
+  "unique_tasks": 2008,
+  "targets": [
+    "K562",
+    "RPE1",
+    "hepg2",
+    "jurkat"
+  ],
+  "variants": [
+    "clean",
+    "shuffle11",
+    "shuffle23",
+    "shuffle47"
+  ],
+  "max_abs_utility_recompute_error": 1.1102230246251565e-16,
+  "max_abs_spearman_recompute_error": 9.161168823579313e-05,
+  "duplicate_index_scope": [
+    {
+      "target": "K562",
+      "rows": 375291,
+      "global_duplicate_obs_names": 149527,
+      "within_cell_line_duplicate_obs_names": 0
+    },
+    {
+      "target": "RPE1",
+      "rows": 349953,
+      "global_duplicate_obs_names": 120026,
+      "within_cell_line_duplicate_obs_names": 0
+    },
+    {
+      "target": "hepg2",
+      "rows": 403508,
+      "global_duplicate_obs_names": 157385,
+      "within_cell_line_duplicate_obs_names": 0
+    },
+    {
+      "target": "jurkat",
+      "rows": 360814,
+      "global_duplicate_obs_names": 128540,
+      "within_cell_line_duplicate_obs_names": 0
+    }
+  ],
+  "target_truth_fields_in_sealed_predictions": []
+}
