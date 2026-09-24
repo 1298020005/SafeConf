@@ -40,3 +40,12 @@ def test_residual_model_starts_at_source_mean_and_backpropagates():
     torch.testing.assert_close(network(x, base), base)
     network(x, base).square().mean().backward()
     assert network.network[-1].weight.grad is not None
+
+
+def test_train_only_shrinkage_fits_scalar_without_validation():
+    base = np.asarray([[1.0, 2.0], [2.0, 4.0]], dtype=np.float32)
+    truth = base * 0.5
+    alpha = model.train_only_shrinkage(base, truth,
+                                       np.ones_like(base, dtype=bool),
+                                       np.asarray(["train_1", "train_2"]))
+    assert alpha == 0.5

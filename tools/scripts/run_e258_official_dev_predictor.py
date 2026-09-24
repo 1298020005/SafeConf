@@ -93,6 +93,23 @@ def line_mse(pred: np.ndarray, truth: np.ndarray, mask: np.ndarray,
     return {line: float(task_mse[lines == line].mean()) for line in sorted(set(lines.tolist()))}
 
 
+def train_only_shrinkage(base: np.ndarray, truth: np.ndarray, mask: np.ndarray,
+                         lines: np.ndarray) -> float:
+    """LOO-training-donor scalar fit with equal weight for each training line."""
+    numerator = denominator = 0.0
+    for line in sorted(set(lines.tolist())):
+        selected = lines == line
+        valid = mask[selected]
+        x = base[selected].astype(np.float64)
+        y = truth[selected].astype(np.float64)
+        weight = 1.0 / (selected.sum() * valid.sum(axis=1).mean())
+        numerator += weight * float((x * y * valid).sum())
+        denominator += weight * float((x * x * valid).sum())
+    if denominator <= 0:
+        raise ValueError("zero training source-signal norm")
+    return float(np.clip(numerator / denominator, 0.0, 1.0))
+
+
 class ResidualMLP(nn.Module):
     def __init__(self, genes: int, hidden: tuple[int, ...]):
         super().__init__()
@@ -111,9 +128,14 @@ class ResidualMLP(nn.Module):
         return base + self.network(x)
 
 
-def train(view_path: Path, output_dir: Path, variant: str, device_name: str) -> dict:
+def train(view_path: Path, output_dir: Path, variant: str, device_name: str,
+          mode: str = "official", base_mode: str = "mean") -> dict:
     if variant not in VARIANTS:
         raise ValueError("unregistered model variant")
+    if mode not in {"official", "raw"}:
+        raise ValueError("unregistered input mode")
+    if base_mode not in {"mean", "train_shrunk"}:
+        raise ValueError("unregistered model base")
     seed = 25801 if variant == "small" else 25802
     np.random.seed(seed)
     torch.manual_seed(seed)
@@ -132,14 +154,17 @@ def train(view_path: Path, output_dir: Path, variant: str, device_name: str) -> 
     val_idx = np.flatnonzero(np.isin(donor, VALIDATION))
     if not 1527 <= len(val_idx) <= 1530:
         raise ValueError("more than three validation tasks missing from official engineering summary")
-    scale = np.maximum(np.std(np.concatenate((base[train_idx], delta[train_idx]), axis=1), axis=0), 1e-3)
-    x = np.concatenate((base, delta), axis=1) / scale
+    alpha_train = train_only_shrinkage(base[train_idx], y[train_idx], mask[train_idx],
+                                       lines[train_idx])
+    model_base = (alpha_train if base_mode == "train_shrunk" else 1.0) * base
+    scale = np.maximum(np.std(np.concatenate((model_base[train_idx], delta[train_idx]), axis=1), axis=0), 1e-3)
+    x = np.concatenate((model_base, delta), axis=1) / scale
     x_train = torch.as_tensor(x[train_idx], device=device)
     y_train = torch.as_tensor(y[train_idx], device=device)
-    b_train = torch.as_tensor(base[train_idx], device=device)
+    b_train = torch.as_tensor(model_base[train_idx], device=device)
     m_train = torch.as_tensor(mask[train_idx], device=device)
     x_val = torch.as_tensor(x[val_idx], device=device)
-    b_val = torch.as_tensor(base[val_idx], device=device)
+    b_val = torch.as_tensor(model_base[val_idx], device=device)
     model = ResidualMLP(y.shape[1], VARIANTS[variant]).to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=2e-4, weight_decay=1e-3)
     best_error = float("inf")
@@ -188,16 +213,25 @@ def train(view_path: Path, output_dir: Path, variant: str, device_name: str) -> 
         "control_similarity": line_mse(similar[val_idx], truth, val_mask, val_lines),
         f"residual_mlp_{variant}": line_mse(prediction, truth, val_mask, val_lines),
     }
+    comparisons["train_only_shrunk_mean"] = line_mse(
+        alpha_train * base[val_idx], truth, val_mask, val_lines)
+    comparisons["train_only_shrunk_similarity"] = line_mse(
+        alpha_train * similar[val_idx], truth, val_mask, val_lines)
     macro = {name: float(np.mean(list(by_line.values()))) for name, by_line in comparisons.items()}
-    simple = min(("no_change", "train_source_mean", "control_similarity"), key=macro.get)
+    simple_names = ["no_change", "train_source_mean", "control_similarity",
+                    "train_only_shrunk_mean", "train_only_shrunk_similarity"]
+    simple = min(simple_names, key=macro.get)
     model_name = f"residual_mlp_{variant}"
     passed = (macro[model_name] < 0.98 * macro[simple]
               and sum(comparisons[model_name][line] < comparisons[simple][line]
                       for line in comparisons[simple]) >= 3
               and macro[model_name] < macro["no_change"])
     output_dir.mkdir(parents=True, exist_ok=True)
-    prediction_file = output_dir / f"E258_OFFICIAL_DEV_{variant.upper()}_VAL_PRED.npz"
-    checkpoint_file = output_dir / f"E258_OFFICIAL_DEV_{variant.upper()}_CHECKPOINT.pt"
+    prefix = "E258_OFFICIAL_DEV" if mode == "official" else "E258_RAW_DEV"
+    if base_mode == "train_shrunk":
+        prefix += "_SHRUNK"
+    prediction_file = output_dir / f"{prefix}_{variant.upper()}_VAL_PRED.npz"
+    checkpoint_file = output_dir / f"{prefix}_{variant.upper()}_CHECKPOINT.pt"
     if prediction_file.exists() or checkpoint_file.exists():
         raise FileExistsError("existing model artifact")
     np.savez_compressed(prediction_file, line=val_lines, target=view["task_target"][val_idx],
@@ -205,8 +239,11 @@ def train(view_path: Path, output_dir: Path, variant: str, device_name: str) -> 
     torch.save({"model": best_state, "variant": variant, "epoch": best_epoch,
                 "view_sha256": sha256(view_path)}, checkpoint_file)
     result = {
-        "stage": "E258_OFFICIAL_LFC_ENGINEERING_ONLY",
+        "stage": ("E258_OFFICIAL_LFC_ENGINEERING_ONLY" if mode == "official"
+                  else "E258_RAW_COUNT_VALIDATION_UPSTREAM_GATE"),
         "variant": variant,
+        "base_mode": base_mode,
+        "train_only_shrinkage_alpha": alpha_train,
         "device": str(device),
         "best_epoch": best_epoch,
         "n_validation_tasks": len(val_idx),
@@ -215,13 +252,14 @@ def train(view_path: Path, output_dir: Path, variant: str, device_name: str) -> 
         "strong_simple_baseline": simple,
         "strict_upstream_gate_passed": bool(passed),
         "test_donor_effect_values_loaded": 0,
-        "formal_raw_count_result": False,
+        "formal_raw_count_validation_result": mode == "raw",
+        "final_test_result": False,
         "view_sha256": sha256(view_path),
         "prediction_sha256": sha256(prediction_file),
         "checkpoint_sha256": sha256(checkpoint_file),
         "training_history": history,
     }
-    status_file = output_dir / f"E258_OFFICIAL_DEV_{variant.upper()}_STATUS.json"
+    status_file = output_dir / f"{prefix}_{variant.upper()}_STATUS.json"
     status_file.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
     print(json.dumps({k: v for k, v in result.items() if k != "training_history"},
                      ensure_ascii=False, indent=2), flush=True)
@@ -236,5 +274,7 @@ if __name__ == "__main__":
         "/home/yyf/data/feng2025_candidate/official_dev_models"))
     parser.add_argument("--variant", choices=tuple(VARIANTS), required=True)
     parser.add_argument("--device", required=True)
+    parser.add_argument("--mode", choices=("official", "raw"), default="official")
+    parser.add_argument("--base-mode", choices=("mean", "train_shrunk"), default="mean")
     args = parser.parse_args()
-    train(args.view, args.output_dir, args.variant, args.device)
+    train(args.view, args.output_dir, args.variant, args.device, args.mode, args.base_mode)

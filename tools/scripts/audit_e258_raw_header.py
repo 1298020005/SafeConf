@@ -63,6 +63,6 @@ if __name__ == "__main__":
     parser.add_argument("--metadata", type=Path, default=Path(
         "/home/yyf/data/feng2025_candidate/TargetedScreen_Cell-Metadata.tsv.gz"))
     parser.add_argument("--counts", type=Path, default=Path(
-        "/home/yyf/data/feng2025_candidate/TargetedScreen_RNA-UMI-Counts.csv.gz.part"))
+        "/home/yyf/data/feng2025_candidate/TargetedScreen_RNA-UMI-Counts.csv.gz"))
     args = parser.parse_args()
     audit(args.metadata, args.counts)
