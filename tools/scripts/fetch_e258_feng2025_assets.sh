@@ -18,15 +18,26 @@ fetch_one() {
     printf 'Existing file failed checksum: %s\n' "$path" >&2
     return 1
   fi
-  for attempt in {1..20}; do
+  for attempt in {1..200}; do
     printf 'FETCH %s attempt %s\n' "$name" "$attempt"
-    if curl --fail --location --retry 3 --retry-all-errors \
+    # Curl's built-in --retry can discard an incomplete output on a TLS reset.
+    # Retry at this outer level so --continue-at reads the saved .part size.
+    if curl --fail --location \
       --connect-timeout 30 --speed-limit 1024 --speed-time 180 \
       --continue-at - --output "$part" \
       "https://ndownloader.figshare.com/files/$id"; then
       size="$(stat -c '%s' "$part")"
+      if (( size < expected_size )); then
+        printf 'Short transfer for %s: %s/%s bytes; resuming\n' "$name" "$size" "$expected_size" >&2
+        sleep 10
+        continue
+      fi
+      if (( size > expected_size )); then
+        printf 'Oversized transfer for %s: %s/%s bytes\n' "$name" "$size" "$expected_size" >&2
+        return 1
+      fi
       actual="$(md5sum "$part" | awk '{print $1}')"
-      if [[ "$size" == "$expected_size" && "$actual" == "$expected_md5" ]]; then
+      if [[ "$actual" == "$expected_md5" ]]; then
         mv "$part" "$path"
         printf 'VERIFIED %s %s bytes\n' "$name" "$size"
         return
