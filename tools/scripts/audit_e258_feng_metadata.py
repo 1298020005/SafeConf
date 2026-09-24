@@ -49,6 +49,9 @@ def main() -> None:
     assigned = frame[frame.Guide_Call.ne("unassigned")].copy()
     assigned["gene"] = assigned.Guide_Call.str.rsplit("_", n=1).str[0]
     controls = assigned[assigned.gene.eq("NonTarget")]
+    unassigned = frame[frame.Guide_Call.eq("unassigned")]
+    control_pool = pd.concat([controls, unassigned], ignore_index=True)
+    pooled_by_line_batch = control_pool.groupby(["Cell_Line", "Batch"]).size()
     genes = assigned[assigned.gene.ne("NonTarget")]
     tasks = (
         genes.groupby(["donor", "Cell_Line", "gene"])
@@ -68,6 +71,8 @@ def main() -> None:
             "eligible_tasks": len(block),
             "eligible_with_2_train_donors": int((block.source_donors >= 2).sum()),
             "non_target_cells": int((controls.Cell_Line == line).sum()),
+            "unassigned_cells": int((unassigned.Cell_Line == line).sum()),
+            "pooled_control_cells": int((control_pool.Cell_Line == line).sum()),
         })
     result = {
         "experiment": "E258_feng2025_external_candidate_metadata_only",
@@ -82,6 +87,11 @@ def main() -> None:
         "assigned_cells": len(assigned),
         "gene_targeted_cells": len(genes),
         "non_target_control_cells": len(controls),
+        "unassigned_control_cells": len(unassigned),
+        "pooled_control_cells": len(control_pool),
+        "pooled_control_line_batch_groups": len(pooled_by_line_batch),
+        "pooled_control_line_batch_lt10": int((pooled_by_line_batch < 10).sum()),
+        "pooled_control_line_batch_min": int(pooled_by_line_batch.min()),
         "eligible_line_gene_tasks": len(tasks),
         "task_rule": ">=30 assigned cells and >=2 guides per line-gene",
         "source_rule": ">=2 independent training donors satisfying the task rule",
