@@ -1,0 +1,124 @@
+{
+  "status": "POSTHOC_DIAGNOSTIC_NOT_INDEPENDENT_CONFIRMATION",
+  "input_tasks_sha256": "7facb6a35ae2a9633b775baae6a8922282f87452d04e3a5825e6e2336bbda88a",
+  "input_top20_sha256": "c5e2fc94dbc2df21a3fefec41bb8c7f50a362f7916536c751dc9cab4d1fce20b",
+  "n_tasks": 332,
+  "n_gene_clusters": 128,
+  "n_folds": 2,
+  "risk_fold_macro_spearman": 0.75922659567885,
+  "source_seen_fold_macro_spearman": 0.7275768502037608,
+  "risk_minus_source_seen_spearman": 0.03164974547508914,
+  "risk_minus_source_seen_gene_cluster_bootstrap_ci95": [
+    -0.013026934239262983,
+    0.07575924566228054
+  ],
+  "bootstrap_draws": 2000,
+  "bootstrap_seed": 20260924,
+  "top20_risk_minus_source_seen_by_fold": {
+    "E239_cellline_holdout_1_HepG2": 0.0013771394845564222,
+    "E239_cellline_holdout_2_Jurkat": -0.0024591776509935714
+  },
+  "top20_risk_minus_source_seen_fold_mean": -0.0005410190832185746,
+  "within_setting": [
+    {
+      "setting": "context_and_perturbation_unseen",
+      "n_tasks": 52,
+      "n_genes": 46,
+      "directional_risk_frozen_within_setting_by_fold": [
+        {
+          "fold_id": "E239_cellline_holdout_1_HepG2",
+          "rho": 0.3921367521367521
+        },
+        {
+          "fold_id": "E239_cellline_holdout_2_Jurkat",
+          "rho": -0.15865960225046472
+        }
+      ],
+      "magnitude_within_setting_by_fold": [
+        {
+          "fold_id": "E239_cellline_holdout_1_HepG2",
+          "rho": 0.4044444444444444
+        },
+        {
+          "fold_id": "E239_cellline_holdout_2_Jurkat",
+          "rho": -0.1313044984141777
+        }
+      ]
+    },
+    {
+      "setting": "context_unseen",
+      "n_tasks": 204,
+      "n_genes": 122,
+      "directional_risk_frozen_within_setting_by_fold": [
+        {
+          "fold_id": "E239_cellline_holdout_1_HepG2",
+          "rho": 0.6213727310112144
+        },
+        {
+          "fold_id": "E239_cellline_holdout_2_Jurkat",
+          "rho": 0.4957984628456298
+        }
+      ],
+      "magnitude_within_setting_by_fold": [
+        {
+          "fold_id": "E239_cellline_holdout_1_HepG2",
+          "rho": 0.6907923961601345
+        },
+        {
+          "fold_id": "E239_cellline_holdout_2_Jurkat",
+          "rho": 0.4584652802355171
+        }
+      ]
+    },
+    {
+      "setting": "perturbation_unseen",
+      "n_tasks": 52,
+      "n_genes": 46,
+      "directional_risk_frozen_within_setting_by_fold": [
+        {
+          "fold_id": "E239_cellline_holdout_1_HepG2",
+          "rho": 0.2595315476467731
+        },
+        {
+          "fold_id": "E239_cellline_holdout_2_Jurkat",
+          "rho": -0.1620789902300006
+        }
+      ],
+      "magnitude_within_setting_by_fold": [
+        {
+          "fold_id": "E239_cellline_holdout_1_HepG2",
+          "rho": 0.2650025684140305
+        },
+        {
+          "fold_id": "E239_cellline_holdout_2_Jurkat",
+          "rho": -0.1566079694627432
+        }
+      ]
+    },
+    {
+      "setting": "random_seen_pair",
+      "n_tasks": 24,
+      "n_genes": 19,
+      "directional_risk_frozen_within_setting_by_fold": [
+        {
+          "fold_id": "E239_cellline_holdout_1_HepG2",
+          "rho": 0.17482517482517487
+        },
+        {
+          "fold_id": "E239_cellline_holdout_2_Jurkat",
+          "rho": -0.49650349650349657
+        }
+      ],
+      "magnitude_within_setting_by_fold": [
+        {
+          "fold_id": "E239_cellline_holdout_1_HepG2",
+          "rho": 0.23076923076923078
+        },
+        {
+          "fold_id": "E239_cellline_holdout_2_Jurkat",
+          "rho": -0.49650349650349657
+        }
+      ]
+    }
+  ]
+}

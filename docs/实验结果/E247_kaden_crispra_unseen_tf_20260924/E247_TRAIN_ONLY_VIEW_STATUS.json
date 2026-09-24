@@ -1,0 +1,23 @@
+{
+  "experiment": "E247_kaden_crispra_unseen_tf",
+  "status": "PASS_TRAIN_ONLY_VIEW",
+  "created_at": "2026-09-24T11:55:56+08:00",
+  "source_sha256": "837f05b08c5227bb91e19929896251f6d263ad8d3eb4b3f60f8fffc887c42012",
+  "split_sha256": "3b6992bad649e4c7a12932ba016eb99fb61830209d29a3ffc7389b55c2ea09af",
+  "output": "/home/yyf/data/perturbench_e247/train_only_view_20260924/kaden_train_only.h5ad",
+  "output_bytes": 3485205708,
+  "output_sha256": "e39d9949a13e7a80d101058069bafb4dda101d20b1c93d7d9c6db0d4a89bb70f",
+  "n_train_labels": 1093,
+  "n_validation_labels_excluded": 376,
+  "n_test_labels_excluded": 367,
+  "n_rows": 524758,
+  "n_controls": 42233,
+  "n_genes": 28907,
+  "nnz": 1516348121,
+  "source_contiguous_runs_indexed": 433,
+  "heldout_expression_rows_indexed": 0,
+  "anndata_backed_open_check": "PASS",
+  "sampled_train_control_csr_rows_equal_source": 16,
+  "upstream_models_trained": 0,
+  "validation_or_test_results": "NONE"
+}
