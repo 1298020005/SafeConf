@@ -8,6 +8,8 @@ Feng 等（*Cell Genomics*, 2026，DOI `10.1016/j.xgen.2025.101076`）的靶向 
 
 Jiang24 的 E233 验证预测器未过能力门，Kaden 是单背景且 E247 候选同样未过能力门；这些失败保留，不以事后挑选替代。Feng 的上游预测器同样必须先在验证供体过门，才可以打开测试供体扰动真值。它只支持**基因 CRISPRi / iPSC / 留供体**范围，不代表药物、组合扰动或其他组织通用。
 
+作者还报告，供体差异可归因的 trans 效应只出现在其筛出的部分显著效应中；靶向筛选里多数表达变化较小，导向 RNA 效力和细胞系也会影响测量。因此“多供体”提供检验机会，**不预示历史方差一定会改善风险排序**。不能先按测试供体的敲低成败或显著效应挑子集；这些仅作预先标记的解释性分层。
+
 ## 已完成的元数据事实（不能冒充实验成绩）
 
 原始文件 `TargetedScreen_Cell-Metadata.tsv.gz` 来自 Figshare 文件 `51051809`，13,491,635 字节，MD5 `980a440a8132a20567c4c3610e6a5b20`。审计命令：`python tools/scripts/audit_e258_feng_metadata.py /home/yyf/data/feng2025_candidate/TargetedScreen_Cell-Metadata.tsv.gz`。程序**不打开**扰动表达或作者效应汇总。
