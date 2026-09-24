@@ -1,0 +1,5 @@
+dataset,predictor,n_folds,n_competent
+Lara_exvivo,GEARS_context_mean_trainonly_graphs,345,201
+Lara_exvivo,scGPT_context_mean_finetuned,345,107
+Santinha,GEARS_context_mean_trainonly_graphs,255,37
+Santinha,scGPT_context_mean_finetuned,255,22

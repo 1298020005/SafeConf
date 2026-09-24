@@ -1,0 +1,15 @@
+{
+  "seed": 47,
+  "stage": "E247_GNN_VALIDATION",
+  "created_at": "2026-09-24T13:13:54.164184+08:00",
+  "device": "cuda:1",
+  "epochs_completed": 40,
+  "best_epoch": 10,
+  "tuning_best_mean_rmse": 0.04235702008008957,
+  "gate_mean_rmse": 0.04130232334136963,
+  "gate_no_change_mean_rmse": 0.04160049557685852,
+  "gate_train_mean_effect_rmse": 0.04067281633615494,
+  "n_test_expression_rows_read": 0,
+  "prediction_sha256": "ceb50ca5844a4682cf245da1576da2b6edf03e9b9594e7aa57ebc4c45cdec84a",
+  "checkpoint_sha256": "f70bf7bdb4bcd5b8359d6271f72bb2f799fc277b2dba7cb34af5a448fe889af0"
+}

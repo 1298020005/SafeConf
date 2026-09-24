@@ -1,0 +1,16 @@
+{
+  "status": "RETROSPECTIVE_EVALUATED",
+  "n_tasks_per_model": 313,
+  "n_fold_model_pairs": 6,
+  "mean_utility_M": 0.27678754810205475,
+  "mean_utility_M_plus_H": 0.44010123301020765,
+  "mean_delta": 0.16331368490815293,
+  "positive_pairs": 6,
+  "competent_pairs": 0,
+  "result_sha256": "0c2398e3de221721cbe5a6b647e1b19f9fd4473ceccf9f3ad9e675b958e51f86",
+  "truth_sha256": {
+    "/home/yyf/proj/docs/实验结果/E106_frangieh_context_scgpt_20260713/E106_ALL_TEST_TASK_METRICS.csv": "f4897fe81d91ed4cd6587657157c481cd3e9def8f80bb5eb7abbd9777d55142a",
+    "/home/yyf/proj/docs/实验结果/E107_frangieh_context_gears_20260713/E107_ALL_TEST_TASK_METRICS.csv": "414ca48839675dd260ae49a20b52f499c2b2cde98ff2278416f9a21d02c58eda"
+  },
+  "warning": "Retrospective; E106/E107 test truth was already public"
+}

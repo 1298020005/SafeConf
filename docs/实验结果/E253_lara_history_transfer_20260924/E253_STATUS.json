@@ -1,0 +1,13 @@
+{
+  "status": "RETROSPECTIVE_EXTERNAL_STUDY_AUDIT",
+  "created_at": "2026-09-24T13:10:22.024677+08:00",
+  "n_tasks": 116,
+  "n_unsupported_tasks": 4,
+  "n_folds": 5,
+  "all_folds_GEARS_beats_no_change": true,
+  "manifest_sha256": "dd927ab638fad15575ad888f71c30b29ce13739c97da62bba59560ec71993137",
+  "cache_sha256": "b3307b2961dbdba0c6106f94ef79acd463f649eefc02460a0956a021f5037c5b",
+  "task_table_sha256": "45fc1bcf9283d5f4a5edd89a36496391649671bce985bbe775a05859f88f65ac",
+  "truth_previously_public": true,
+  "cache_physical_isolation": false
+}

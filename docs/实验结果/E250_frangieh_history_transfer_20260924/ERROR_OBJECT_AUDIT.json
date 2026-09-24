@@ -1,0 +1,23 @@
+{
+  "status": "POST_RESULT_EXPLORATORY_DIAGNOSTIC",
+  "endpoints": {
+    "excess_rmse": {
+      "mean_delta_MH_vs_M": -0.08953420633782438,
+      "positive_pairs": 1,
+      "n_pairs": 6
+    },
+    "no_change_rmse": {
+      "mean_delta_MH_vs_M": 0.18824920638333145,
+      "positive_pairs": 6,
+      "n_pairs": 6
+    },
+    "true_error_rmse": {
+      "mean_delta_MH_vs_M": 0.16331368490815293,
+      "positive_pairs": 6,
+      "n_pairs": 6
+    }
+  },
+  "n_model_beats_no_change_taskwise": 96,
+  "n_task_model_rows": 626,
+  "warning": "Analysis chosen after absolute-error E250 results; upstream capability failed in all six fold-model pairs."
+}

@@ -1,0 +1,28 @@
+{
+  "status": "SEALED_RETROSPECTIVE",
+  "created_at": "2026-09-24T12:46:33.703594+08:00",
+  "formula": "M_plus_H = 0.8*rank(M) + 0.2*rank(H)",
+  "scope": "context_unseen_row",
+  "n_score_rows": 626,
+  "counts": {
+    "scGPT": {
+      "primary_candidates": 477,
+      "history_supported": 313
+    },
+    "GEARS": {
+      "primary_candidates": 477,
+      "history_supported": 313
+    }
+  },
+  "source_expression_policy": "train pairs and source controls only",
+  "known_limitation": "E106/E107 test truth was public before this analysis; not a blind confirmation",
+  "input_sha256": {
+    "/home/yyf/proj/docs/实验结果/E97_frangieh_gene_cartesian_contract_20260713/manifests/E97_TASK_MANIFEST.csv": "8194ef3a2376d2c7377534f31189979acd9709fe90a7002cbe370f7cabe05cec",
+    "/home/yyf/data/scgpt_formal_frangieh_fixed_panel_20260711/frangieh_e72_fixed512/perturb_processed.h5ad": "62ffca7f0e209cfa75db0b84c7524a7f1c262a36dd75823ed9c96171db52cd72",
+    "/home/yyf/proj/docs/实验结果/E106_frangieh_context_scgpt_20260713/E106_ALL_TEST_TASK_METRICS.csv": "f4897fe81d91ed4cd6587657157c481cd3e9def8f80bb5eb7abbd9777d55142a",
+    "/home/yyf/proj/docs/实验结果/E107_frangieh_context_gears_20260713/E107_ALL_TEST_TASK_METRICS.csv": "414ca48839675dd260ae49a20b52f499c2b2cde98ff2278416f9a21d02c58eda"
+  },
+  "score_sha256": "d7be677da1e115b17f116c2e246229762b4f1b9fbf4a9759be875a466596b7d0",
+  "history_sha256": "53f9e7a94f8a3fc42539bd7fa4a3bc9cce5265069ddf6cf625f04399d399183a",
+  "script_sha256": "fe9d5bcc9f4e882f5cc0be898dd4c32777fc825e0ed673b723bcf79baad5daf5"
+}

@@ -1,0 +1,21 @@
+{
+  "stage": "E247_GNN_TWO_SEED_ENSEMBLE_VALIDATION",
+  "created_at": "2026-09-24T13:14:19.199505+08:00",
+  "gate_mean_rmse": {
+    "ensemble": 0.04102487117052078,
+    "train_mean_effect": 0.04067281633615494,
+    "no_change": 0.04160049557685852
+  },
+  "relative_gain_vs_train_mean_effect": -0.008655786514282227,
+  "bootstrap_95_ci": [
+    -0.011145225167274475,
+    -0.006217539310455322
+  ],
+  "strict_capability_gate_passed": false,
+  "n_test_expression_rows_read": 0,
+  "seed_checkpoints": {
+    "31": "1cacd7f59ad3dbe99355f94fb131599cd8b0e7e7709db296dd3677869a29ffd2",
+    "47": "f70bf7bdb4bcd5b8359d6271f72bb2f799fc277b2dba7cb34af5a448fe889af0"
+  },
+  "GO_kernel_checkpoint_sha256": "d8e41f6f697ca67dc526dc23171dad90351d60c7c6fd34fe3b6755c262df2381"
+}

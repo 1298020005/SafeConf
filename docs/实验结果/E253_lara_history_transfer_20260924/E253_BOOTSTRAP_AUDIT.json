@@ -1,0 +1,18 @@
+{
+  "status": "RETROSPECTIVE_DESCRIPTIVE_INTERVAL",
+  "cluster": "perturbation gene across all five folds",
+  "n_unique_genes": 31,
+  "n_draws": 2000,
+  "intervals": {
+    "absolute_error": {
+      "lower_95": -0.11204445043736969,
+      "upper_95": 0.13061743836318315,
+      "fraction_positive": 0.3705
+    },
+    "excess_error": {
+      "lower_95": -0.053555849433572986,
+      "upper_95": 0.20390676315032766,
+      "fraction_positive": 0.675
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "stage": "E247_GEARS_TWO_SEED_ENSEMBLE_VALIDATION",
+  "created_at": "2026-09-24T17:21:02.704863+08:00",
+  "gate_mean_rmse": {
+    "ensemble": 0.04136395826935768,
+    "train_mean_effect": 0.04067281633615494,
+    "no_change": 0.04160049557685852
+  },
+  "relative_gain_vs_train_mean_effect": -0.016992688179016113,
+  "bootstrap_95_ci": [
+    -0.022779199481010436,
+    -0.01172049343585968
+  ],
+  "strict_capability_gate_passed": false,
+  "test_expression_rows_read": 0,
+  "seed_checkpoints": {
+    "31": "6f901e1a88b1fe41c15ac925e7496b50bb6ec6ade0f579cc43c1d83ef5955fa4",
+    "47": "aeed6c5539929f97fffa8c3e999aac2b3a22d890923c3dae4954bfc18880e50d"
+  }
+}

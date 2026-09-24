@@ -1,0 +1,17 @@
+{
+  "stage": "E247_GEARS_MEAN_ADAPTER_VALIDATION",
+  "created_at": "2026-09-24T13:22:13.357674+08:00",
+  "seed": 47,
+  "device": "cuda:1",
+  "epochs_completed": 29,
+  "best_epoch": 17,
+  "tuning_best_mean_rmse": 0.04351598769426346,
+  "gate_mean_rmse": 0.04251289367675781,
+  "gate_train_mean_effect_rmse": 0.04067281633615494,
+  "gate_no_change_mean_rmse": 0.04160049557685852,
+  "test_expression_rows_read": 0,
+  "graph_sha256": "8daedf7bed33117897e81b66f6cebcadd13da162dd1e4cd556f1e52869d3f93c",
+  "source_sha256": "07fee864bc5020807c90ed5443ff17530116f47f257332466243c233ef2bc857",
+  "prediction_sha256": "3ad780ccafe702073206554ca662b4c68c20448bd76ce3839f5e75eecdadd80b",
+  "checkpoint_sha256": "aeed6c5539929f97fffa8c3e999aac2b3a22d890923c3dae4954bfc18880e50d"
+}

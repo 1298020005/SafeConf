@@ -1,0 +1,13 @@
+{
+  "status": "RETROSPECTIVE_DIAGNOSTIC",
+  "n_matched_task_pairs": 600,
+  "n_original_simple_baseline_pairs": 4584,
+  "n_modern_E205_cross_architecture_pairs": 1808,
+  "datasets": [
+    "Lara_exvivo",
+    "Santinha"
+  ],
+  "bootstrap_reps": 2000,
+  "nochange_uses_truth_and_is_not_deployable": true,
+  "test_truth_previously_public": true
+}

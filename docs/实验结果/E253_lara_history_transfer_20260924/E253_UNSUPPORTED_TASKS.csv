@@ -1,0 +1,5 @@
+fold_id,task_id,perturbation,n_train_source_contexts,reason
+Lara_exvivo_context_holdout_2_GMP,GMP::Brd9,Brd9,1,H requires at least two train source contexts
+Lara_exvivo_context_holdout_3_GMP_(late),GMP (late)::Hmgxb4,Hmgxb4,1,H requires at least two train source contexts
+Lara_exvivo_context_holdout_5_MkP,MkP::Ehmt2,Ehmt2,1,H requires at least two train source contexts
+Lara_exvivo_context_holdout_5_MkP,MkP::Phf10,Phf10,1,H requires at least two train source contexts

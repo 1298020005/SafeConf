@@ -1,0 +1,9 @@
+{
+  "status": "POST_E253_RETROSPECTIVE_DEVELOPMENT",
+  "created_at": "2026-09-24T13:16:18.274617+08:00",
+  "n_tasks": 116,
+  "source_radius_coverage": 0.7413793103448276,
+  "bound_holds_fraction": 1.0,
+  "L_nonzero_fraction": 0.0,
+  "warning": "A conditional triangle bound is not a distribution-free certificate; target coverage must be established separately."
+}
