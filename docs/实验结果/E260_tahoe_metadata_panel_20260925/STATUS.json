@@ -1,0 +1,107 @@
+{
+  "status": "METADATA_ONLY_PANEL_LOCKED_NO_EXPRESSION_READ",
+  "generated_at": "2026-09-25T18:42:59.970265+08:00",
+  "metadata": "/home/yyf/data/singlecell_perturbation_atlas/mega_external/Tahoe-100M/metadata/obs_metadata.parquet",
+  "metadata_sha256": "e51b24f3666f5f433c59ff01dd6fa33934627091455e89d929f2c1ddc87401fe",
+  "rules": {
+    "pass_filter": "full",
+    "minimum_treatment_cells": 64,
+    "minimum_plate_matched_DMSO_cells": 64,
+    "max_cells_extracted_per_condition": 128,
+    "tiers": [
+      [
+        24,
+        100,
+        [
+          12,
+          6,
+          6
+        ]
+      ],
+      [
+        18,
+        100,
+        [
+          9,
+          4,
+          5
+        ]
+      ],
+      [
+        12,
+        100,
+        [
+          6,
+          3,
+          3
+        ]
+      ],
+      [
+        12,
+        60,
+        [
+          6,
+          3,
+          3
+        ]
+      ]
+    ],
+    "plate_selection": "highest eligible treated-cell count, lexical tie"
+  },
+  "audit": {
+    "raw_metadata_rows": 100648790,
+    "full_filter_cells": 95624334,
+    "row_groups": 96,
+    "n_context_condition_plate_groups": 65918
+  },
+  "n_eligible_line_drugdose_pairs": 53582,
+  "selected": {
+    "tier": [
+      24,
+      100,
+      [
+        12,
+        6,
+        6
+      ]
+    ],
+    "attempts": [
+      {
+        "n_lines": 24,
+        "requested_conditions": 100,
+        "common_conditions": 1132
+      }
+    ],
+    "split_seed": "SafeConf-E260-Tahoe-panel-20260925-v1",
+    "line_splits": {
+      "CVCL_1119": "train",
+      "CVCL_0359": "train",
+      "CVCL_0399": "train",
+      "CVCL_0332": "train",
+      "CVCL_1495": "train",
+      "CVCL_0428": "train",
+      "CVCL_0366": "train",
+      "CVCL_1550": "train",
+      "CVCL_1517": "train",
+      "CVCL_0320": "train",
+      "CVCL_0546": "train",
+      "CVCL_1098": "train",
+      "CVCL_0459": "validation",
+      "CVCL_0293": "validation",
+      "CVCL_C466": "validation",
+      "CVCL_1381": "validation",
+      "CVCL_0023": "validation",
+      "CVCL_0480": "validation",
+      "CVCL_1056": "test_sealed",
+      "CVCL_0292": "test_sealed",
+      "CVCL_1285": "test_sealed",
+      "CVCL_0152": "test_sealed",
+      "CVCL_0131": "test_sealed",
+      "CVCL_1097": "test_sealed"
+    },
+    "selection_uses_expression_or_model_error": false,
+    "test_perturbation_truth_loaded": 0,
+    "test_label_status": "SEALED",
+    "interpretation": "locked new panel within previously studied Tahoe, not independent external study"
+  }
+}

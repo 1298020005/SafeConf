@@ -1,0 +1,14 @@
+{
+  "status": "EXACT_SAMPLE_MAP_NO_EXPRESSION_READ",
+  "generated_at": "2026-09-25T18:54:12.000258+08:00",
+  "candidate_map_sha256": "2bf223fdfa297013cc1470d077694fdb14fce294247fa8b21ce90e332246460e",
+  "selected_barcode_sha256": "376cf00c9e61f9843c92aecd57d8781b583e0d79096d5d2fac7eeea511d4cede",
+  "n_selected_samples": 139,
+  "n_candidate_shards": 2793,
+  "n_exact_shards": 2793,
+  "n_candidate_row_groups": 26232,
+  "n_exact_row_groups": 26134,
+  "n_exact_rows_upper_bound": 25644622,
+  "exact_map_sha256": "0260b186d573d96d65cd39ccb2d83ae41790d9ba702e13026f5786a9b029224d",
+  "expression_columns_read": false
+}

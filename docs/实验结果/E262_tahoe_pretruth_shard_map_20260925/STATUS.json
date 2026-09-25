@@ -1,0 +1,14 @@
+{
+  "status": "FOOTER_ONLY_SHARD_MAP_COMPLETE",
+  "generated_at": "2026-09-25T18:50:03.136721+08:00",
+  "selected_barcode_sha256": "376cf00c9e61f9843c92aecd57d8781b583e0d79096d5d2fac7eeea511d4cede",
+  "n_selected_samples": 139,
+  "n_raw_shards": 3388,
+  "n_total_row_groups": 98252,
+  "n_candidate_shards": 2793,
+  "n_candidate_row_groups": 26232,
+  "n_candidate_rows_upper_bound": 25741070,
+  "candidate_map_sha256": "2bf223fdfa297013cc1470d077694fdb14fce294247fa8b21ce90e332246460e",
+  "test_treatment_expression_loaded": 0,
+  "expression_columns_read": false
+}

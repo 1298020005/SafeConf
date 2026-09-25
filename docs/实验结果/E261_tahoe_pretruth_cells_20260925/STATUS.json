@@ -1,0 +1,17 @@
+{
+  "status": "PRETRUTH_METADATA_SELECTION_COMPLETE",
+  "generated_at": "2026-09-25T18:48:27.534196+08:00",
+  "panel_sha256": "5e3652a75e07c7e56d8d26302c0da19c350370cdbb7bc02a6f35fc3f97199565",
+  "metadata_sha256": "e51b24f3666f5f433c59ff01dd6fa33934627091455e89d929f2c1ddc87401fe",
+  "sampling_seed": "SafeConf-E261-Tahoe-cell-sampling-20260925-v1",
+  "max_cells_per_group": 128,
+  "metadata_rows_scanned": 100648790,
+  "metadata_candidate_rows": 11922926,
+  "selected_train_validation_treated_cells": 230400,
+  "selected_available_control_cells": 35584,
+  "selected_test_treated_cells": 0,
+  "selected_test_control_cells": 8832,
+  "selected_barcode_file_sha256": "376cf00c9e61f9843c92aecd57d8781b583e0d79096d5d2fac7eeea511d4cede",
+  "target_perturbation_expression_read": 0,
+  "target_perturbation_error_read": 0
+}
