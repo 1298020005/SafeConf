@@ -1,0 +1,13 @@
+{
+  "status": "CONTRACT_FAILED_NO_FORMAL_RESULT",
+  "dataset": "LaraAstiasoHuntly2023_exvivo",
+  "attempt": "rebuild E256 fixed 5000-gene, min6, cap2200, seed5201 source split-half",
+  "max_archived_effect_difference_first_check": "<2e-4 for the audited first task subset",
+  "max_historical_variance_difference": 0.1425170898437358,
+  "decision": "do not use the reconstructed split-half table for claims",
+  "possible_causes_to_audit": [
+    "float32 reduction order",
+    "cell truncation/order contract",
+    "archived preprocessing or layer selection"
+  ]
+}

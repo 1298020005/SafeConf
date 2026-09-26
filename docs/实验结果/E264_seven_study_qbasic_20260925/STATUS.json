@@ -1,0 +1,150 @@
+{
+  "status": "RETROSPECTIVE_BASIC_Q_ONLY_NOT_FINAL_BIOLOGICAL_HISTORY",
+  "same_risk_error_label_budget": "Ridge(alpha=10), train on four public outer test folds, evaluate fifth",
+  "risk_scale": "within-fold feature percentiles",
+  "utility_definition": "oracle-adjusted utility from E256",
+  "n_prespecified_studies": 7,
+  "n_qbasic_aligned_studies": 3,
+  "results": [
+    {
+      "dataset": "CuiHacohen2023",
+      "status": "RETROSPECTIVE_QBASIC_DONE",
+      "n_tasks_per_predictor": 1253,
+      "n_folds": 5,
+      "predictor_results": {
+        "ContextSimBaseline": {
+          "n_tasks": 1253,
+          "delta_Qbasic_utility20_mean": -0.009151622248323504,
+          "delta_Hraw_given_Qbasic_utility20_mean": 0.02774183416187582,
+          "Q_positive_folds": 2,
+          "H_positive_folds": 3,
+          "M_utility20_mean": 0.35432909377876504,
+          "MQ_utility20_mean": 0.3451774715304416,
+          "MQH_utility20_mean": 0.3729193056923174
+        },
+        "PertMeanPredictor": {
+          "n_tasks": 1253,
+          "delta_Qbasic_utility20_mean": -0.034414391333781144,
+          "delta_Hraw_given_Qbasic_utility20_mean": -0.023729068636731493,
+          "Q_positive_folds": 1,
+          "H_positive_folds": 3,
+          "M_utility20_mean": 0.35457965975587236,
+          "MQ_utility20_mean": 0.3201652684220912,
+          "MQH_utility20_mean": 0.29643619978535973
+        },
+        "V0StrongBaseline": {
+          "n_tasks": 1253,
+          "delta_Qbasic_utility20_mean": 0.01234918330843221,
+          "delta_Hraw_given_Qbasic_utility20_mean": -0.03991432696684839,
+          "Q_positive_folds": 3,
+          "H_positive_folds": 2,
+          "M_utility20_mean": 0.39172479359858403,
+          "MQ_utility20_mean": 0.40407397690701624,
+          "MQH_utility20_mean": 0.36415964994016786
+        }
+      }
+    },
+    {
+      "dataset": "Frangieh",
+      "status": "NOT_ELIGIBLE_YET",
+      "reason": "context/dose/time mapping must be audited before raw-cell Q"
+    },
+    {
+      "dataset": "LaraAstiasoHuntly2023_exvivo",
+      "status": "RETROSPECTIVE_QBASIC_DONE",
+      "n_tasks_per_predictor": 323,
+      "n_folds": 5,
+      "predictor_results": {
+        "ContextSimBaseline": {
+          "n_tasks": 323,
+          "delta_Qbasic_utility20_mean": 0.063320780836907,
+          "delta_Hraw_given_Qbasic_utility20_mean": 0.19996458072848408,
+          "Q_positive_folds": 4,
+          "H_positive_folds": 5,
+          "M_utility20_mean": 0.04998711491015096,
+          "MQ_utility20_mean": 0.11330789574705794,
+          "MQH_utility20_mean": 0.313272476475542
+        },
+        "PertMeanPredictor": {
+          "n_tasks": 323,
+          "delta_Qbasic_utility20_mean": -0.007038626251575926,
+          "delta_Hraw_given_Qbasic_utility20_mean": 0.0059122174408565865,
+          "Q_positive_folds": 0,
+          "H_positive_folds": 3,
+          "M_utility20_mean": 0.2158660843333183,
+          "MQ_utility20_mean": 0.2088274580817424,
+          "MQH_utility20_mean": 0.21473967552259898
+        },
+        "V0StrongBaseline": {
+          "n_tasks": 323,
+          "delta_Qbasic_utility20_mean": -0.005363493425802501,
+          "delta_Hraw_given_Qbasic_utility20_mean": 0.004037879808702749,
+          "Q_positive_folds": 1,
+          "H_positive_folds": 1,
+          "M_utility20_mean": 0.15720537268975837,
+          "MQ_utility20_mean": 0.15184187926395587,
+          "MQH_utility20_mean": 0.15587975907265858
+        }
+      }
+    },
+    {
+      "dataset": "LaraAstiasoHuntly2023_invivo",
+      "status": "CONTRACT_FAILED",
+      "reason": "ValueError: target context contaminated train history"
+    },
+    {
+      "dataset": "McFarlandTsherniak2020",
+      "status": "NOT_ELIGIBLE_YET",
+      "reason": "context/dose/time mapping must be audited before raw-cell Q"
+    },
+    {
+      "dataset": "SantinhaPlatt2023",
+      "status": "RETROSPECTIVE_QBASIC_DONE",
+      "n_tasks_per_predictor": 273,
+      "n_folds": 5,
+      "predictor_results": {
+        "ContextSimBaseline": {
+          "n_tasks": 273,
+          "delta_Qbasic_utility20_mean": -0.06614555438112081,
+          "delta_Hraw_given_Qbasic_utility20_mean": -0.026797886855496778,
+          "Q_positive_folds": 1,
+          "H_positive_folds": 1,
+          "M_utility20_mean": 0.24827933876097258,
+          "MQ_utility20_mean": 0.18213378437985175,
+          "MQH_utility20_mean": 0.15533589752435498
+        },
+        "PertMeanPredictor": {
+          "n_tasks": 273,
+          "delta_Qbasic_utility20_mean": -0.0015704908217422432,
+          "delta_Hraw_given_Qbasic_utility20_mean": -0.035094065120917554,
+          "Q_positive_folds": 1,
+          "H_positive_folds": 0,
+          "M_utility20_mean": 0.14925077247582658,
+          "MQ_utility20_mean": 0.1476802816540843,
+          "MQH_utility20_mean": 0.11258621653316676
+        },
+        "V0StrongBaseline": {
+          "n_tasks": 273,
+          "delta_Qbasic_utility20_mean": -0.0003812280195841969,
+          "delta_Hraw_given_Qbasic_utility20_mean": 0.05843395343565731,
+          "Q_positive_folds": 2,
+          "H_positive_folds": 3,
+          "M_utility20_mean": 0.1477950162511418,
+          "MQ_utility20_mean": 0.1474137882315576,
+          "MQH_utility20_mean": 0.20584774166721492
+        }
+      }
+    },
+    {
+      "dataset": "SrivatsanTrapnell2020_sciplex3",
+      "status": "NOT_ELIGIBLE_YET",
+      "reason": "context/dose/time mapping must be audited before raw-cell Q"
+    }
+  ],
+  "limits": [
+    "Qbasic lacks source split-half sampling variation.",
+    "All E256 target truths were previously public; these are development results.",
+    "Raw available cell counts may exceed the archived task-view cap and require a contract audit before definitive Q claims.",
+    "No study or predictor removed based on the sign of the risk result."
+  ]
+}

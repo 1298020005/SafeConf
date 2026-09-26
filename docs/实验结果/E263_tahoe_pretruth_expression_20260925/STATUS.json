@@ -1,0 +1,19 @@
+{
+  "status": "PRETRUTH_EXPRESSION_EXTRACT_COMPLETE",
+  "completed_at": "2026-09-25T19:22:17.700672+08:00",
+  "selected_barcode_sha256": "376cf00c9e61f9843c92aecd57d8781b583e0d79096d5d2fac7eeea511d4cede",
+  "exact_map_sha256": "0260b186d573d96d65cd39ccb2d83ae41790d9ba702e13026f5786a9b029224d",
+  "n_selected_cells": 265984,
+  "n_extracted_cells": 265984,
+  "n_shards_read": 2793,
+  "n_candidate_row_groups": 26134,
+  "count_by_role": {
+    "train_validation_treatment": 230400,
+    "available_control": 35584
+  },
+  "n_test_treated_records_exported": 0,
+  "expression_file": "/home/yyf/data/singlecell_perturbation_atlas/mega_external/Tahoe-100M/safeconf_e263_pretruth/E263_SELECTED_PRETRUTH.parquet",
+  "expression_file_size_bytes": 1232031690,
+  "expression_file_sha256": "fd707feb6f571066dc8401028ae92379ca82c9cf6ded82f2684d4c27609d1650",
+  "scope_note": "Some unrelated raw cells may have been decompressed within selected row groups; no test treated row is persisted, aggregated or evaluated."
+}

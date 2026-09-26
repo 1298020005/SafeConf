@@ -1,0 +1,59 @@
+{
+  "status": "RETROSPECTIVE_SOURCE_DISCRIMINATION_DEVELOPMENT_ONLY",
+  "studies": [
+    "CuiHacohen2023",
+    "LaraAstiasoHuntly2023_exvivo",
+    "SantinhaPlatt2023"
+  ],
+  "predictors": [
+    "ContextSimBaseline",
+    "PertMeanPredictor",
+    "V0StrongBaseline"
+  ],
+  "outer_folds": 5,
+  "task_source": "/home/yyf/safeconf_runtime/outputs/safeconf_lopo_robustness_20260613/tables/LOPO_FEATURE_MATRIX_PertMeanPredictor.csv",
+  "methods": [
+    "M",
+    "P",
+    "P_plus_B",
+    "P_plus_Bsafe",
+    "P_plus_E",
+    "P_plus_B_plus_E",
+    "P_plus_Bsafe_plus_E",
+    "P_plus_B_plus_E_dynamic",
+    "P_plus_Bsafe_plus_E_dynamic"
+  ],
+  "P_definition": [
+    "prediction_l2_norm",
+    "prediction_abs_mean",
+    "model_disagreement_rmse"
+  ],
+  "B_definition": [
+    "perturbation_support_count",
+    "perturbation_effect_stability",
+    "perturbation_effect_variance",
+    "context_similarity_max",
+    "context_similarity_mean"
+  ],
+  "B_safe_definition": [
+    "perturbation_support_count",
+    "context_similarity_max",
+    "context_similarity_mean"
+  ],
+  "E_definition": [
+    "error_hist_pert_mean",
+    "error_hist_pert_std",
+    "error_hist_pert_n",
+    "error_hist_context_mean",
+    "error_hist_context_n"
+  ],
+  "E_contract": "same-predictor true errors from other outer folds; leave-one-row-out for fit rows",
+  "limits": [
+    "All labels were previously public development labels; this is not independent confirmation.",
+    "B fields are existing biological/context history features and are not newly reconstructed here.",
+    "E tests availability of past model-error labels; it is not available in a cold start with no labels.",
+    "No study or predictor was removed according to the result sign.",
+    "No upstream perturbation predictor or graph model was trained."
+  ],
+  "summary_rows": 72
+}
