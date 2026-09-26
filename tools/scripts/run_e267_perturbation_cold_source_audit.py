@@ -19,7 +19,7 @@ from scipy.stats import spearmanr
 
 from run_e256_biological_history_feature_ablation import utility
 from run_e266_source_discrimination import (
-    B_FEATURES, E_FEATURES, MATRIX, P_FEATURES, fit_score,
+    B_FEATURES, B_SAFE_FEATURES, E_FEATURES, MATRIX, P_FEATURES, fit_score,
     percentile_against, rank_frame, safe_error_history,
 )
 
@@ -47,8 +47,10 @@ def run(args: argparse.Namespace) -> dict:
         'M': ('prediction_l2_norm',),
         'P': P_FEATURES,
         'P_plus_B': P_FEATURES + B_FEATURES,
+        'P_plus_Bsafe': P_FEATURES + B_SAFE_FEATURES,
         'P_plus_E': P_FEATURES + E_FEATURES,
         'P_plus_B_plus_E': P_FEATURES + B_FEATURES + E_FEATURES,
+        'P_plus_Bsafe_plus_E': P_FEATURES + B_SAFE_FEATURES + E_FEATURES,
     }
     rows = []
     for (dataset, predictor), task in raw.groupby(['dataset_name', 'predictor_name'], sort=True):
@@ -78,6 +80,14 @@ def run(args: argparse.Namespace) -> dict:
             rows.append({'dataset': dataset, 'predictor': predictor,
                          'held_perturbation_bucket': held,
                          'method': 'P_plus_B_plus_E_dynamic', 'n_fit': len(fit),
+                         'n_test': len(test), 'n_fit_perturbations': fit.perturbation.nunique(),
+                         'n_test_perturbations': test.perturbation.nunique(),
+                         'utility20': float(utility(score, y)),
+                         'spearman': float(spearmanr(score, y).statistic)})
+            score = fit_score(fit_r, test_r, groups['P_plus_Bsafe_plus_E'], dynamic=True)
+            rows.append({'dataset': dataset, 'predictor': predictor,
+                         'held_perturbation_bucket': held,
+                         'method': 'P_plus_Bsafe_plus_E_dynamic', 'n_fit': len(fit),
                          'n_test': len(test), 'n_fit_perturbations': fit.perturbation.nunique(),
                          'n_test_perturbations': test.perturbation.nunique(),
                          'utility20': float(utility(score, y)),

@@ -1,0 +1,32 @@
+{
+  "status": "PERTURBATION_COLD_RETROSPECTIVE_DEVELOPMENT_ONLY",
+  "studies": [
+    "CuiHacohen2023",
+    "LaraAstiasoHuntly2023_exvivo",
+    "SantinhaPlatt2023"
+  ],
+  "predictors": [
+    "ContextSimBaseline",
+    "PertMeanPredictor",
+    "V0StrongBaseline"
+  ],
+  "n_buckets": 5,
+  "hash": "blake2b(E267:<perturbation>) mod 5",
+  "methods": [
+    "M",
+    "P",
+    "P_plus_B",
+    "P_plus_Bsafe",
+    "P_plus_E",
+    "P_plus_B_plus_E",
+    "P_plus_Bsafe_plus_E",
+    "P_plus_B_plus_E_dynamic"
+  ],
+  "limits": [
+    "All labels are previously public development labels.",
+    "The public B fields were created by the older fold contract; this run does not rebuild raw expression.",
+    "This tests cold perturbation transfer, not unseen cell-background transfer.",
+    "No rows/studies were removed according to result sign."
+  ],
+  "summary_rows": 72
+}

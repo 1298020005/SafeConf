@@ -1,0 +1,20 @@
+{
+  "status": "PERTURBATION_COLD_LABEL_FREE_FIXED_FORMULA",
+  "formula": "M + mean(rank(-support), rank(-context_similarity_max), rank(-context_similarity_mean)); optional current disagreement",
+  "n_buckets": 5,
+  "studies": [
+    "CuiHacohen2023",
+    "LaraAstiasoHuntly2023_exvivo",
+    "SantinhaPlatt2023"
+  ],
+  "predictors": [
+    "ContextSimBaseline",
+    "PertMeanPredictor",
+    "V0StrongBaseline"
+  ],
+  "limits": [
+    "Existing public task table and previously public truth; development audit only.",
+    "Bsafe fields are not rebuilt from raw expression in this run.",
+    "Weights are fixed equal weights; no labels or result-based selection used."
+  ]
+}
