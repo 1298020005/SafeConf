@@ -1,0 +1,59 @@
+{
+  "status": "DEVELOPMENT_ONLY_TRAIN_VAL_PERTURBATION_COLD_GPU_MLP",
+  "source": "/home/yyf/safeconf_runtime/outputs/safeconf_lopo_robustness_20260613/tables/LOPO_FEATURE_MATRIX_PertMeanPredictor.csv",
+  "source_splits": [
+    "train",
+    "val"
+  ],
+  "source_fold_id": 0,
+  "no_final_test_rows_read": true,
+  "device": "cuda:1",
+  "gpu_name": "Quadro RTX 6000",
+  "seeds": 8,
+  "epochs": 80,
+  "groups": {
+    "P": [
+      "prediction_l2_norm",
+      "prediction_abs_mean",
+      "prediction_norm_ratio",
+      "prediction_magnitude_deviation",
+      "model_disagreement_rmse",
+      "model_disagreement_cosine"
+    ],
+    "P_plus_Q": [
+      "prediction_l2_norm",
+      "prediction_abs_mean",
+      "prediction_norm_ratio",
+      "prediction_magnitude_deviation",
+      "model_disagreement_rmse",
+      "model_disagreement_cosine",
+      "context_similarity_max",
+      "context_similarity_mean",
+      "perturbation_support_count"
+    ],
+    "P_plus_Q_plus_H_plus_E": [
+      "prediction_l2_norm",
+      "prediction_abs_mean",
+      "prediction_norm_ratio",
+      "prediction_magnitude_deviation",
+      "model_disagreement_rmse",
+      "model_disagreement_cosine",
+      "context_similarity_max",
+      "context_similarity_mean",
+      "perturbation_support_count",
+      "historical_residual_risk",
+      "perturbation_effect_stability",
+      "perturbation_effect_variance",
+      "error_hist_pert_mean",
+      "error_hist_pert_std",
+      "error_hist_pert_n",
+      "error_hist_context_mean",
+      "error_hist_context_std",
+      "error_hist_context_n"
+    ]
+  },
+  "limits": [
+    "MLP is a feasibility comparator, not a new perturbation predictor.",
+    "Confirmatory claims require a frozen raw-history reconstruction and a blind external panel."
+  ]
+}

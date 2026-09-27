@@ -1,0 +1,23 @@
+{
+  "status": "TAHOE_RAW_HISTORY_AUDIT_COMPLETE",
+  "expression_file": "/home/yyf/data/singlecell_perturbation_atlas/mega_external/Tahoe-100M/safeconf_e263_pretruth/E263_SELECTED_PRETRUTH.parquet",
+  "panel_file": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/E260_tahoe_metadata_panel_20260925/LOCKED_PANEL.csv",
+  "parquet_rows": 265984,
+  "metadata_rows_scanned": 265984,
+  "expression_rows_scanned": 265984,
+  "role_counts": {
+    "train_validation_treatment": 230400,
+    "available_control": 35584
+  },
+  "n_test_treated_records_seen": 0,
+  "n_train_validation_panel_keys": 1800,
+  "n_task_keys_in_extract": 2078,
+  "all_train_validation_keys_match_panel": false,
+  "max_selected_cells_per_key": 128,
+  "min_genes_per_cell": 378,
+  "max_genes_per_cell": 6591,
+  "finite_value_fraction": 1.0,
+  "value_min": -2.0,
+  "value_max": 2314.0,
+  "scope": "Provenance/quality audit only. No test treated expression is aggregated or evaluated."
+}
