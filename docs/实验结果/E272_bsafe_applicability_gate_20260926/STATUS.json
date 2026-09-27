@@ -1,0 +1,20 @@
+{
+  "status": "PERTURBATION_COLD_LABEL_FREE_MEDIAN_APPLICABILITY_GATE",
+  "gate": "use Bsafe only when support >= fit median AND context_similarity_max >= fit median; otherwise M",
+  "n_buckets": 5,
+  "studies": [
+    "CuiHacohen2023",
+    "LaraAstiasoHuntly2023_exvivo",
+    "SantinhaPlatt2023"
+  ],
+  "predictors": [
+    "ContextSimBaseline",
+    "PertMeanPredictor",
+    "V0StrongBaseline"
+  ],
+  "limits": [
+    "Previously public development task table and truth.",
+    "No target error labels used for gate or weights.",
+    "Bsafe fields are inherited from the old fold contract and need a new blind reconstruction."
+  ]
+}

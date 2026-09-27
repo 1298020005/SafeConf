@@ -1,0 +1,19 @@
+{
+  "status": "DEVELOPMENT_ONLY_TRAIN_VAL_PERTURBATION_COLD",
+  "source": "/home/yyf/safeconf_runtime/outputs/safeconf_lopo_robustness_20260613/tables/LOPO_FEATURE_MATRIX_PertMeanPredictor.csv",
+  "no_final_test_rows_read": true,
+  "memory_fractions": [
+    0.0,
+    0.05,
+    0.1,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "n_rows": 11004,
+  "note": "Memory pool is deterministically thinned; held perturbation bucket never contributes labels.",
+  "limits": [
+    "Development feature matrix; no blind external panel.",
+    "Availability simulation does not reconstruct raw biological provenance."
+  ]
+}
