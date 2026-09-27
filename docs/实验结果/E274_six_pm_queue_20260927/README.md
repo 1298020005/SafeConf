@@ -14,3 +14,5 @@
 
 方法判断与升级/停止门见：
 [`docs/方法设计/20260927_SafeConf_Codex_主方法审查与实验计划.md`](../../方法设计/20260927_SafeConf_Codex_主方法审查与实验计划.md)。
+
+截至 17:59 CST，结果摘要见 [`E274_RESULT_SUMMARY.md`](E274_RESULT_SUMMARY.md)。v1 Tahoe 审计的 control/treatment key 误比已在 `tahoe_raw_audit_v2/` 修正，科学结论只引用 v2。

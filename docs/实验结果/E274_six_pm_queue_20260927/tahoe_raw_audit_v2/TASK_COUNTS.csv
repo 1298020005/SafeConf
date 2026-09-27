@@ -1,0 +1,2079 @@
+cell_line,drug_dose,plate,split,role,n_selected_cells,panel_match,panel_cap
+CVCL_0023,,plate1,validation,available_control,128,,
+CVCL_0023,,plate10,validation,available_control,128,,
+CVCL_0023,,plate12,validation,available_control,128,,
+CVCL_0023,,plate13,validation,available_control,128,,
+CVCL_0023,,plate2,validation,available_control,128,,
+CVCL_0023,,plate3,validation,available_control,128,,
+CVCL_0023,,plate4,validation,available_control,128,,
+CVCL_0023,,plate5,validation,available_control,128,,
+CVCL_0023,,plate6,validation,available_control,128,,
+CVCL_0023,,plate8,validation,available_control,128,,
+CVCL_0023,,plate9,validation,available_control,128,,
+CVCL_0023,"[('(R)-Verapamil (hydrochloride)', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('4EGI-1', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('8-Hydroxyquinoline', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Adagrasib', 0.05, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Adenine', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Afatinib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Afatinib', 5.0, 'uM')]",plate3,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Almonertinib (mesylate)', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Anastrozole', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Anethole trithione', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Anethole trithione', 0.5, 'uM')]",plate5,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Apalutamide', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Artemether', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Artesunate', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Ataluren', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Baicalin', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Balsalazide (sodium hydrate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Berbamine (dihydrochloride)', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Berbamine', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Berberine (chloride hydrate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Bicalutamide', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Bicalutamide', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Binimetinib', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Brimonidine', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Canagliflozin (hemihydrate)', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Capivasertib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Carbidopa (monohydrate)', 0.05, 'uM')]",plate13,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Chlorhexidine (diacetate)', 0.5, 'uM')]",plate5,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Cinacalcet', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Clonidine (hydrochloride)', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Clonidine (hydrochloride)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Cloxacillin (sodium)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Crizotinib (hydrochloride)', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Cysteamine (hydrochloride)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('DT-061', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('DTP3', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Dabrafenib', 5.0, 'uM')]",plate3,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Daidzin', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Dimethyl fumarate', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Diphenhydramine', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Drospirenone', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('ETC-206', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Elimusertib hydrochloride', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Encorafenib', 5.0, 'uM')]",plate3,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Entecavir (monohydrate)', 5.0, 'uM')]",plate9,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Esmolol (hydrochloride)', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Everolimus', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Filgotinib', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Folic acid', 0.5, 'uM')]",plate5,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Folic acid', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Fulvestrant', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Fusidic acid', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Gallic acid', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Gefitinib', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Gemcitabine', 0.05, 'uM')]",plate1,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Gemcitabine', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Goserelin (acetate)', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Goserelin (acetate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Hexylresorcinol', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Hydroxyfasudil', 0.05, 'uM')]",plate13,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('L-Thyroxine (sodium salt pentahydrate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Lonafarnib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Lumateperone (tosylate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Methotrexate', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Methylthiouracil', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Methylthiouracil', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Minodronic acid', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Neratinib (maleate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Niclosamide (olamine)', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Oleic acid', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Omeprazole', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Omeprazole', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Ouabain (Octahydrate)', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Oxaliplatin', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Paclitaxel', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Palmatine (chloride)', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Pentagastrin', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Perindopril (erbumine)', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Ponatinib', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Posaconazole', 5.0, 'uM')]",plate9,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Pyridoxine (hydrochloride)', 0.5, 'uM')]",plate5,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Pyridoxine (hydrochloride)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Quinestrol', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('RMC-6236', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Raltitrexed', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Regorafenib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Relugolix', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Resveratrol', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Riluzole hydrochloride', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Rimonabant', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Selinexor ', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Selinexor ', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Sivelestat (sodium tetrahydrate)', 5.0, 'uM')]",plate9,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Sonidegib', 0.05, 'uM')]",plate13,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Tolcapone', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Torkinib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Tubulin inhibitor 6', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Uridine', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('Vemurafenib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0023,"[('olaparib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0131,,plate1,test_sealed,available_control,128,,
+CVCL_0131,,plate10,test_sealed,available_control,128,,
+CVCL_0131,,plate12,test_sealed,available_control,128,,
+CVCL_0131,,plate13,test_sealed,available_control,128,,
+CVCL_0131,,plate2,test_sealed,available_control,128,,
+CVCL_0131,,plate3,test_sealed,available_control,128,,
+CVCL_0131,,plate4,test_sealed,available_control,128,,
+CVCL_0131,,plate5,test_sealed,available_control,128,,
+CVCL_0131,,plate6,test_sealed,available_control,128,,
+CVCL_0131,,plate8,test_sealed,available_control,128,,
+CVCL_0131,,plate9,test_sealed,available_control,128,,
+CVCL_0152,,plate1,test_sealed,available_control,128,,
+CVCL_0152,,plate10,test_sealed,available_control,128,,
+CVCL_0152,,plate12,test_sealed,available_control,128,,
+CVCL_0152,,plate13,test_sealed,available_control,128,,
+CVCL_0152,,plate14,test_sealed,available_control,128,,
+CVCL_0152,,plate2,test_sealed,available_control,128,,
+CVCL_0152,,plate3,test_sealed,available_control,128,,
+CVCL_0152,,plate4,test_sealed,available_control,128,,
+CVCL_0152,,plate5,test_sealed,available_control,128,,
+CVCL_0152,,plate6,test_sealed,available_control,128,,
+CVCL_0152,,plate8,test_sealed,available_control,128,,
+CVCL_0152,,plate9,test_sealed,available_control,128,,
+CVCL_0292,,plate1,test_sealed,available_control,128,,
+CVCL_0292,,plate10,test_sealed,available_control,128,,
+CVCL_0292,,plate12,test_sealed,available_control,128,,
+CVCL_0292,,plate13,test_sealed,available_control,128,,
+CVCL_0292,,plate2,test_sealed,available_control,128,,
+CVCL_0292,,plate3,test_sealed,available_control,128,,
+CVCL_0292,,plate4,test_sealed,available_control,128,,
+CVCL_0292,,plate5,test_sealed,available_control,128,,
+CVCL_0292,,plate6,test_sealed,available_control,128,,
+CVCL_0292,,plate8,test_sealed,available_control,128,,
+CVCL_0292,,plate9,test_sealed,available_control,128,,
+CVCL_0293,,plate1,validation,available_control,128,,
+CVCL_0293,,plate10,validation,available_control,128,,
+CVCL_0293,,plate12,validation,available_control,128,,
+CVCL_0293,,plate13,validation,available_control,128,,
+CVCL_0293,,plate14,validation,available_control,128,,
+CVCL_0293,,plate2,validation,available_control,128,,
+CVCL_0293,,plate3,validation,available_control,128,,
+CVCL_0293,,plate4,validation,available_control,128,,
+CVCL_0293,,plate5,validation,available_control,128,,
+CVCL_0293,,plate6,validation,available_control,128,,
+CVCL_0293,,plate8,validation,available_control,128,,
+CVCL_0293,,plate9,validation,available_control,128,,
+CVCL_0293,"[('(R)-Verapamil (hydrochloride)', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('4EGI-1', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('8-Hydroxyquinoline', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Adagrasib', 0.05, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Adenine', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Afatinib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Afatinib', 5.0, 'uM')]",plate3,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Almonertinib (mesylate)', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Anastrozole', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Anethole trithione', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Anethole trithione', 0.5, 'uM')]",plate5,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Apalutamide', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Artemether', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Artesunate', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Ataluren', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Baicalin', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Balsalazide (sodium hydrate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Berbamine (dihydrochloride)', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Berbamine', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Berberine (chloride hydrate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Bicalutamide', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Bicalutamide', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Binimetinib', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Brimonidine', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Canagliflozin (hemihydrate)', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Capivasertib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Carbidopa (monohydrate)', 0.05, 'uM')]",plate13,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Chlorhexidine (diacetate)', 0.5, 'uM')]",plate5,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Cinacalcet', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Clonidine (hydrochloride)', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Clonidine (hydrochloride)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Cloxacillin (sodium)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Crizotinib (hydrochloride)', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Cysteamine (hydrochloride)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('DT-061', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('DTP3', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Dabrafenib', 5.0, 'uM')]",plate3,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Daidzin', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Dimethyl fumarate', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Diphenhydramine', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Drospirenone', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('ETC-206', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Elimusertib hydrochloride', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Encorafenib', 5.0, 'uM')]",plate3,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Entecavir (monohydrate)', 5.0, 'uM')]",plate9,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Esmolol (hydrochloride)', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Everolimus', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Filgotinib', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Folic acid', 0.5, 'uM')]",plate5,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Folic acid', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Fulvestrant', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Fusidic acid', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Gallic acid', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Gefitinib', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Gemcitabine', 0.05, 'uM')]",plate1,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Gemcitabine', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Goserelin (acetate)', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Goserelin (acetate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Hexylresorcinol', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Hydroxyfasudil', 0.05, 'uM')]",plate13,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('L-Thyroxine (sodium salt pentahydrate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Lonafarnib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Lumateperone (tosylate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Methotrexate', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Methylthiouracil', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Methylthiouracil', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Minodronic acid', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Neratinib (maleate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Niclosamide (olamine)', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Oleic acid', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Omeprazole', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Omeprazole', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Ouabain (Octahydrate)', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Oxaliplatin', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Paclitaxel', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Palmatine (chloride)', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Pentagastrin', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Perindopril (erbumine)', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Ponatinib', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Posaconazole', 5.0, 'uM')]",plate9,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Pyridoxine (hydrochloride)', 0.5, 'uM')]",plate5,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Pyridoxine (hydrochloride)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Quinestrol', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('RMC-6236', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Raltitrexed', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Regorafenib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Relugolix', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Resveratrol', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Riluzole hydrochloride', 5.0, 'uM')]",plate14,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Rimonabant', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Selinexor ', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Selinexor ', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Sivelestat (sodium tetrahydrate)', 5.0, 'uM')]",plate9,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Sonidegib', 0.05, 'uM')]",plate13,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Tolcapone', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Torkinib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Tubulin inhibitor 6', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Uridine', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('Vemurafenib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0293,"[('olaparib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0320,,plate1,train,available_control,128,,
+CVCL_0320,,plate10,train,available_control,128,,
+CVCL_0320,,plate12,train,available_control,128,,
+CVCL_0320,,plate13,train,available_control,128,,
+CVCL_0320,,plate14,train,available_control,128,,
+CVCL_0320,,plate2,train,available_control,128,,
+CVCL_0320,,plate3,train,available_control,128,,
+CVCL_0320,,plate4,train,available_control,128,,
+CVCL_0320,,plate5,train,available_control,128,,
+CVCL_0320,,plate6,train,available_control,128,,
+CVCL_0320,,plate8,train,available_control,128,,
+CVCL_0320,,plate9,train,available_control,128,,
+CVCL_0320,"[('(R)-Verapamil (hydrochloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('4EGI-1', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('8-Hydroxyquinoline', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Adagrasib', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Adenine', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Afatinib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Afatinib', 5.0, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Almonertinib (mesylate)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Anastrozole', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Anethole trithione', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Anethole trithione', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Apalutamide', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Artemether', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Artesunate', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Ataluren', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Baicalin', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Balsalazide (sodium hydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Berbamine (dihydrochloride)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Berbamine', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Berberine (chloride hydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Bicalutamide', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Bicalutamide', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Binimetinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Brimonidine', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Canagliflozin (hemihydrate)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Capivasertib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Carbidopa (monohydrate)', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Chlorhexidine (diacetate)', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Cinacalcet', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Clonidine (hydrochloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Clonidine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Cloxacillin (sodium)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Crizotinib (hydrochloride)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Cysteamine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('DT-061', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('DTP3', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Dabrafenib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Daidzin', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Dimethyl fumarate', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Diphenhydramine', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Drospirenone', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('ETC-206', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Elimusertib hydrochloride', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Encorafenib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Entecavir (monohydrate)', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Esmolol (hydrochloride)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Everolimus', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Filgotinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Folic acid', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Folic acid', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Fulvestrant', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Fusidic acid', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Gallic acid', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Gefitinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Gemcitabine', 0.05, 'uM')]",plate1,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Gemcitabine', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Goserelin (acetate)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Goserelin (acetate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Hexylresorcinol', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Hydroxyfasudil', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('L-Thyroxine (sodium salt pentahydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Lonafarnib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Lumateperone (tosylate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Methotrexate', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Methylthiouracil', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Methylthiouracil', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Minodronic acid', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Neratinib (maleate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Niclosamide (olamine)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Oleic acid', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Omeprazole', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Omeprazole', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Ouabain (Octahydrate)', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Oxaliplatin', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Paclitaxel', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Palmatine (chloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Pentagastrin', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Perindopril (erbumine)', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Ponatinib', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Posaconazole', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Pyridoxine (hydrochloride)', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Pyridoxine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Quinestrol', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('RMC-6236', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Raltitrexed', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Regorafenib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Relugolix', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Resveratrol', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Riluzole hydrochloride', 5.0, 'uM')]",plate14,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Rimonabant', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Selinexor ', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Selinexor ', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Sivelestat (sodium tetrahydrate)', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Sonidegib', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Tolcapone', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Torkinib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Tubulin inhibitor 6', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Uridine', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('Vemurafenib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0320,"[('olaparib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0332,,plate1,train,available_control,128,,
+CVCL_0332,,plate10,train,available_control,128,,
+CVCL_0332,,plate12,train,available_control,128,,
+CVCL_0332,,plate13,train,available_control,128,,
+CVCL_0332,,plate2,train,available_control,128,,
+CVCL_0332,,plate3,train,available_control,128,,
+CVCL_0332,,plate4,train,available_control,128,,
+CVCL_0332,,plate5,train,available_control,128,,
+CVCL_0332,,plate6,train,available_control,128,,
+CVCL_0332,,plate7,train,available_control,128,,
+CVCL_0332,,plate8,train,available_control,128,,
+CVCL_0332,,plate9,train,available_control,128,,
+CVCL_0332,"[('(R)-Verapamil (hydrochloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('4EGI-1', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('8-Hydroxyquinoline', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Adagrasib', 0.05, 'uM')]",plate7,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Adenine', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Afatinib', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Afatinib', 5.0, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Almonertinib (mesylate)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Anastrozole', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Anethole trithione', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Anethole trithione', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Apalutamide', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Artemether', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Artesunate', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Ataluren', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Baicalin', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Balsalazide (sodium hydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Berbamine (dihydrochloride)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Berbamine', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Berberine (chloride hydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Bicalutamide', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Bicalutamide', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Binimetinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Brimonidine', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Canagliflozin (hemihydrate)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Capivasertib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Carbidopa (monohydrate)', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Chlorhexidine (diacetate)', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Cinacalcet', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Clonidine (hydrochloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Clonidine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Cloxacillin (sodium)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Crizotinib (hydrochloride)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Cysteamine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('DT-061', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('DTP3', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Dabrafenib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Daidzin', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Dimethyl fumarate', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Diphenhydramine', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Drospirenone', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('ETC-206', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Elimusertib hydrochloride', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Encorafenib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Entecavir (monohydrate)', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Esmolol (hydrochloride)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Everolimus', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Filgotinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Folic acid', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Folic acid', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Fulvestrant', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Fusidic acid', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Gallic acid', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Gefitinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Gemcitabine', 0.05, 'uM')]",plate1,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Gemcitabine', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Goserelin (acetate)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Goserelin (acetate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Hexylresorcinol', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Hydroxyfasudil', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('L-Thyroxine (sodium salt pentahydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Lonafarnib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Lumateperone (tosylate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Methotrexate', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Methylthiouracil', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Methylthiouracil', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Minodronic acid', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Neratinib (maleate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Niclosamide (olamine)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Oleic acid', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Omeprazole', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Omeprazole', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Ouabain (Octahydrate)', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Oxaliplatin', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Paclitaxel', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Palmatine (chloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Pentagastrin', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Perindopril (erbumine)', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Ponatinib', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Posaconazole', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Pyridoxine (hydrochloride)', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Pyridoxine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Quinestrol', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('RMC-6236', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Raltitrexed', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Regorafenib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Relugolix', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Resveratrol', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Riluzole hydrochloride', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Rimonabant', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Selinexor ', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Selinexor ', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Sivelestat (sodium tetrahydrate)', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Sonidegib', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Tolcapone', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Torkinib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Tubulin inhibitor 6', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Uridine', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('Vemurafenib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0332,"[('olaparib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0359,,plate1,train,available_control,128,,
+CVCL_0359,,plate10,train,available_control,128,,
+CVCL_0359,,plate12,train,available_control,128,,
+CVCL_0359,,plate13,train,available_control,128,,
+CVCL_0359,,plate2,train,available_control,128,,
+CVCL_0359,,plate3,train,available_control,128,,
+CVCL_0359,,plate4,train,available_control,128,,
+CVCL_0359,,plate5,train,available_control,128,,
+CVCL_0359,,plate6,train,available_control,128,,
+CVCL_0359,,plate8,train,available_control,128,,
+CVCL_0359,,plate9,train,available_control,128,,
+CVCL_0359,"[('(R)-Verapamil (hydrochloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('4EGI-1', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('8-Hydroxyquinoline', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Adagrasib', 0.05, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Adenine', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Afatinib', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Afatinib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Almonertinib (mesylate)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Anastrozole', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Anethole trithione', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Anethole trithione', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Apalutamide', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Artemether', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Artesunate', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Ataluren', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Baicalin', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Balsalazide (sodium hydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Berbamine (dihydrochloride)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Berbamine', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Berberine (chloride hydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Bicalutamide', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Bicalutamide', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Binimetinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Brimonidine', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Canagliflozin (hemihydrate)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Capivasertib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Carbidopa (monohydrate)', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Chlorhexidine (diacetate)', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Cinacalcet', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Clonidine (hydrochloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Clonidine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Cloxacillin (sodium)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Crizotinib (hydrochloride)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Cysteamine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('DT-061', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('DTP3', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Dabrafenib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Daidzin', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Dimethyl fumarate', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Diphenhydramine', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Drospirenone', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('ETC-206', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Elimusertib hydrochloride', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Encorafenib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Entecavir (monohydrate)', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Esmolol (hydrochloride)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Everolimus', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Filgotinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Folic acid', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Folic acid', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Fulvestrant', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Fusidic acid', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Gallic acid', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Gefitinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Gemcitabine', 0.05, 'uM')]",plate1,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Gemcitabine', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Goserelin (acetate)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Goserelin (acetate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Hexylresorcinol', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Hydroxyfasudil', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('L-Thyroxine (sodium salt pentahydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Lonafarnib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Lumateperone (tosylate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Methotrexate', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Methylthiouracil', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Methylthiouracil', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Minodronic acid', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Neratinib (maleate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Niclosamide (olamine)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Oleic acid', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Omeprazole', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Omeprazole', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Ouabain (Octahydrate)', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Oxaliplatin', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Paclitaxel', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Palmatine (chloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Pentagastrin', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Perindopril (erbumine)', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Ponatinib', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Posaconazole', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Pyridoxine (hydrochloride)', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Pyridoxine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Quinestrol', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('RMC-6236', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Raltitrexed', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Regorafenib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Relugolix', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Resveratrol', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Riluzole hydrochloride', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Rimonabant', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Selinexor ', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Selinexor ', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Sivelestat (sodium tetrahydrate)', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Sonidegib', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Tolcapone', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Torkinib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Tubulin inhibitor 6', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Uridine', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('Vemurafenib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0359,"[('olaparib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0366,,plate1,train,available_control,128,,
+CVCL_0366,,plate10,train,available_control,128,,
+CVCL_0366,,plate12,train,available_control,128,,
+CVCL_0366,,plate13,train,available_control,128,,
+CVCL_0366,,plate2,train,available_control,128,,
+CVCL_0366,,plate3,train,available_control,128,,
+CVCL_0366,,plate4,train,available_control,128,,
+CVCL_0366,,plate5,train,available_control,128,,
+CVCL_0366,,plate6,train,available_control,128,,
+CVCL_0366,,plate8,train,available_control,128,,
+CVCL_0366,,plate9,train,available_control,128,,
+CVCL_0366,"[('(R)-Verapamil (hydrochloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('4EGI-1', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('8-Hydroxyquinoline', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Adagrasib', 0.05, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Adenine', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Afatinib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Afatinib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Almonertinib (mesylate)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Anastrozole', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Anethole trithione', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Anethole trithione', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Apalutamide', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Artemether', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Artesunate', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Ataluren', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Baicalin', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Balsalazide (sodium hydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Berbamine (dihydrochloride)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Berbamine', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Berberine (chloride hydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Bicalutamide', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Bicalutamide', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Binimetinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Brimonidine', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Canagliflozin (hemihydrate)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Capivasertib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Carbidopa (monohydrate)', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Chlorhexidine (diacetate)', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Cinacalcet', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Clonidine (hydrochloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Clonidine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Cloxacillin (sodium)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Crizotinib (hydrochloride)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Cysteamine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('DT-061', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('DTP3', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Dabrafenib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Daidzin', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Dimethyl fumarate', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Diphenhydramine', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Drospirenone', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('ETC-206', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Elimusertib hydrochloride', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Encorafenib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Entecavir (monohydrate)', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Esmolol (hydrochloride)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Everolimus', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Filgotinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Folic acid', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Folic acid', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Fulvestrant', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Fusidic acid', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Gallic acid', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Gefitinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Gemcitabine', 0.05, 'uM')]",plate1,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Gemcitabine', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Goserelin (acetate)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Goserelin (acetate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Hexylresorcinol', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Hydroxyfasudil', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('L-Thyroxine (sodium salt pentahydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Lonafarnib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Lumateperone (tosylate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Methotrexate', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Methylthiouracil', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Methylthiouracil', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Minodronic acid', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Neratinib (maleate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Niclosamide (olamine)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Oleic acid', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Omeprazole', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Omeprazole', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Ouabain (Octahydrate)', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Oxaliplatin', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Paclitaxel', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Palmatine (chloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Pentagastrin', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Perindopril (erbumine)', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Ponatinib', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Posaconazole', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Pyridoxine (hydrochloride)', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Pyridoxine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Quinestrol', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('RMC-6236', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Raltitrexed', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Regorafenib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Relugolix', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Resveratrol', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Riluzole hydrochloride', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Rimonabant', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Selinexor ', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Selinexor ', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Sivelestat (sodium tetrahydrate)', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Sonidegib', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Tolcapone', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Torkinib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Tubulin inhibitor 6', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Uridine', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('Vemurafenib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0366,"[('olaparib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0399,,plate1,train,available_control,128,,
+CVCL_0399,,plate10,train,available_control,128,,
+CVCL_0399,,plate12,train,available_control,128,,
+CVCL_0399,,plate13,train,available_control,128,,
+CVCL_0399,,plate14,train,available_control,128,,
+CVCL_0399,,plate2,train,available_control,128,,
+CVCL_0399,,plate3,train,available_control,128,,
+CVCL_0399,,plate4,train,available_control,128,,
+CVCL_0399,,plate5,train,available_control,128,,
+CVCL_0399,,plate6,train,available_control,128,,
+CVCL_0399,,plate8,train,available_control,128,,
+CVCL_0399,,plate9,train,available_control,128,,
+CVCL_0399,"[('(R)-Verapamil (hydrochloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('4EGI-1', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('8-Hydroxyquinoline', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Adagrasib', 0.05, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Adenine', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Afatinib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Afatinib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Almonertinib (mesylate)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Anastrozole', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Anethole trithione', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Anethole trithione', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Apalutamide', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Artemether', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Artesunate', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Ataluren', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Baicalin', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Balsalazide (sodium hydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Berbamine (dihydrochloride)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Berbamine', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Berberine (chloride hydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Bicalutamide', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Bicalutamide', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Binimetinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Brimonidine', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Canagliflozin (hemihydrate)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Capivasertib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Carbidopa (monohydrate)', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Chlorhexidine (diacetate)', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Cinacalcet', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Clonidine (hydrochloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Clonidine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Cloxacillin (sodium)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Crizotinib (hydrochloride)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Cysteamine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('DT-061', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('DTP3', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Dabrafenib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Daidzin', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Dimethyl fumarate', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Diphenhydramine', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Drospirenone', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('ETC-206', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Elimusertib hydrochloride', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Encorafenib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Entecavir (monohydrate)', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Esmolol (hydrochloride)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Everolimus', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Filgotinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Folic acid', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Folic acid', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Fulvestrant', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Fusidic acid', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Gallic acid', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Gefitinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Gemcitabine', 0.05, 'uM')]",plate1,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Gemcitabine', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Goserelin (acetate)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Goserelin (acetate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Hexylresorcinol', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Hydroxyfasudil', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('L-Thyroxine (sodium salt pentahydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Lonafarnib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Lumateperone (tosylate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Methotrexate', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Methylthiouracil', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Methylthiouracil', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Minodronic acid', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Neratinib (maleate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Niclosamide (olamine)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Oleic acid', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Omeprazole', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Omeprazole', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Ouabain (Octahydrate)', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Oxaliplatin', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Paclitaxel', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Palmatine (chloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Pentagastrin', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Perindopril (erbumine)', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Ponatinib', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Posaconazole', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Pyridoxine (hydrochloride)', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Pyridoxine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Quinestrol', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('RMC-6236', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Raltitrexed', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Regorafenib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Relugolix', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Resveratrol', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Riluzole hydrochloride', 5.0, 'uM')]",plate14,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Rimonabant', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Selinexor ', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Selinexor ', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Sivelestat (sodium tetrahydrate)', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Sonidegib', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Tolcapone', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Torkinib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Tubulin inhibitor 6', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Uridine', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('Vemurafenib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0399,"[('olaparib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0428,,plate1,train,available_control,128,,
+CVCL_0428,,plate10,train,available_control,128,,
+CVCL_0428,,plate12,train,available_control,128,,
+CVCL_0428,,plate13,train,available_control,128,,
+CVCL_0428,,plate2,train,available_control,128,,
+CVCL_0428,,plate3,train,available_control,128,,
+CVCL_0428,,plate4,train,available_control,128,,
+CVCL_0428,,plate5,train,available_control,128,,
+CVCL_0428,,plate6,train,available_control,128,,
+CVCL_0428,,plate8,train,available_control,128,,
+CVCL_0428,,plate9,train,available_control,128,,
+CVCL_0428,"[('(R)-Verapamil (hydrochloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('4EGI-1', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('8-Hydroxyquinoline', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Adagrasib', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Adenine', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Afatinib', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Afatinib', 5.0, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Almonertinib (mesylate)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Anastrozole', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Anethole trithione', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Anethole trithione', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Apalutamide', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Artemether', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Artesunate', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Ataluren', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Baicalin', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Balsalazide (sodium hydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Berbamine (dihydrochloride)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Berbamine', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Berberine (chloride hydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Bicalutamide', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Bicalutamide', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Binimetinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Brimonidine', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Canagliflozin (hemihydrate)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Capivasertib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Carbidopa (monohydrate)', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Chlorhexidine (diacetate)', 0.5, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Cinacalcet', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Clonidine (hydrochloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Clonidine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Cloxacillin (sodium)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Crizotinib (hydrochloride)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Cysteamine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('DT-061', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('DTP3', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Dabrafenib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Daidzin', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Dimethyl fumarate', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Diphenhydramine', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Drospirenone', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('ETC-206', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Elimusertib hydrochloride', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Encorafenib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Entecavir (monohydrate)', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Esmolol (hydrochloride)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Everolimus', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Filgotinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Folic acid', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Folic acid', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Fulvestrant', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Fusidic acid', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Gallic acid', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Gefitinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Gemcitabine', 0.05, 'uM')]",plate1,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Gemcitabine', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Goserelin (acetate)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Goserelin (acetate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Hexylresorcinol', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Hydroxyfasudil', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('L-Thyroxine (sodium salt pentahydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Lonafarnib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Lumateperone (tosylate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Methotrexate', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Methylthiouracil', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Methylthiouracil', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Minodronic acid', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Neratinib (maleate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Niclosamide (olamine)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Oleic acid', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Omeprazole', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Omeprazole', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Ouabain (Octahydrate)', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Oxaliplatin', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Paclitaxel', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Palmatine (chloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Pentagastrin', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Perindopril (erbumine)', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Ponatinib', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Posaconazole', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Pyridoxine (hydrochloride)', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Pyridoxine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Quinestrol', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('RMC-6236', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Raltitrexed', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Regorafenib', 0.5, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Relugolix', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Resveratrol', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Riluzole hydrochloride', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Rimonabant', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Selinexor ', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Selinexor ', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Sivelestat (sodium tetrahydrate)', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Sonidegib', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Tolcapone', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Torkinib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Tubulin inhibitor 6', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Uridine', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('Vemurafenib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0428,"[('olaparib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0459,,plate1,validation,available_control,128,,
+CVCL_0459,,plate10,validation,available_control,128,,
+CVCL_0459,,plate12,validation,available_control,128,,
+CVCL_0459,,plate13,validation,available_control,128,,
+CVCL_0459,,plate14,validation,available_control,128,,
+CVCL_0459,,plate2,validation,available_control,128,,
+CVCL_0459,,plate3,validation,available_control,128,,
+CVCL_0459,,plate4,validation,available_control,128,,
+CVCL_0459,,plate5,validation,available_control,128,,
+CVCL_0459,,plate6,validation,available_control,128,,
+CVCL_0459,,plate8,validation,available_control,128,,
+CVCL_0459,,plate9,validation,available_control,128,,
+CVCL_0459,"[('(R)-Verapamil (hydrochloride)', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('4EGI-1', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('8-Hydroxyquinoline', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Adagrasib', 0.05, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Adenine', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Afatinib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Afatinib', 5.0, 'uM')]",plate13,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Almonertinib (mesylate)', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Anastrozole', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Anethole trithione', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Anethole trithione', 0.5, 'uM')]",plate5,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Apalutamide', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Artemether', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Artesunate', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Ataluren', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Baicalin', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Balsalazide (sodium hydrate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Berbamine (dihydrochloride)', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Berbamine', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Berberine (chloride hydrate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Bicalutamide', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Bicalutamide', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Binimetinib', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Brimonidine', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Canagliflozin (hemihydrate)', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Capivasertib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Carbidopa (monohydrate)', 0.05, 'uM')]",plate13,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Chlorhexidine (diacetate)', 0.5, 'uM')]",plate13,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Cinacalcet', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Clonidine (hydrochloride)', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Clonidine (hydrochloride)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Cloxacillin (sodium)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Crizotinib (hydrochloride)', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Cysteamine (hydrochloride)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('DT-061', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('DTP3', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Dabrafenib', 5.0, 'uM')]",plate3,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Daidzin', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Dimethyl fumarate', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Diphenhydramine', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Drospirenone', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('ETC-206', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Elimusertib hydrochloride', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Encorafenib', 5.0, 'uM')]",plate3,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Entecavir (monohydrate)', 5.0, 'uM')]",plate9,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Esmolol (hydrochloride)', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Everolimus', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Filgotinib', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Folic acid', 0.5, 'uM')]",plate5,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Folic acid', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Fulvestrant', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Fusidic acid', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Gallic acid', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Gefitinib', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Gemcitabine', 0.05, 'uM')]",plate1,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Gemcitabine', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Goserelin (acetate)', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Goserelin (acetate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Hexylresorcinol', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Hydroxyfasudil', 0.05, 'uM')]",plate13,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('L-Thyroxine (sodium salt pentahydrate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Lonafarnib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Lumateperone (tosylate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Methotrexate', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Methylthiouracil', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Methylthiouracil', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Minodronic acid', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Neratinib (maleate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Niclosamide (olamine)', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Oleic acid', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Omeprazole', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Omeprazole', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Ouabain (Octahydrate)', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Oxaliplatin', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Paclitaxel', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Palmatine (chloride)', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Pentagastrin', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Perindopril (erbumine)', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Ponatinib', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Posaconazole', 5.0, 'uM')]",plate9,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Pyridoxine (hydrochloride)', 0.5, 'uM')]",plate5,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Pyridoxine (hydrochloride)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Quinestrol', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('RMC-6236', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Raltitrexed', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Regorafenib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Relugolix', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Resveratrol', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Riluzole hydrochloride', 5.0, 'uM')]",plate14,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Rimonabant', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Selinexor ', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Selinexor ', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Sivelestat (sodium tetrahydrate)', 5.0, 'uM')]",plate9,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Sonidegib', 0.05, 'uM')]",plate13,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Tolcapone', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Torkinib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Tubulin inhibitor 6', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Uridine', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('Vemurafenib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0459,"[('olaparib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,,plate1,validation,available_control,128,,
+CVCL_0480,,plate10,validation,available_control,128,,
+CVCL_0480,,plate12,validation,available_control,128,,
+CVCL_0480,,plate13,validation,available_control,128,,
+CVCL_0480,,plate2,validation,available_control,128,,
+CVCL_0480,,plate3,validation,available_control,128,,
+CVCL_0480,,plate4,validation,available_control,128,,
+CVCL_0480,,plate5,validation,available_control,128,,
+CVCL_0480,,plate6,validation,available_control,128,,
+CVCL_0480,,plate8,validation,available_control,128,,
+CVCL_0480,,plate9,validation,available_control,128,,
+CVCL_0480,"[('(R)-Verapamil (hydrochloride)', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('4EGI-1', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('8-Hydroxyquinoline', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Adagrasib', 0.05, 'uM')]",plate13,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Adenine', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Afatinib', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Afatinib', 5.0, 'uM')]",plate13,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Almonertinib (mesylate)', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Anastrozole', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Anethole trithione', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Anethole trithione', 0.5, 'uM')]",plate5,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Apalutamide', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Artemether', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Artesunate', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Ataluren', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Baicalin', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Balsalazide (sodium hydrate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Berbamine (dihydrochloride)', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Berbamine', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Berberine (chloride hydrate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Bicalutamide', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Bicalutamide', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Binimetinib', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Brimonidine', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Canagliflozin (hemihydrate)', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Capivasertib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Carbidopa (monohydrate)', 0.05, 'uM')]",plate13,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Chlorhexidine (diacetate)', 0.5, 'uM')]",plate13,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Cinacalcet', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Clonidine (hydrochloride)', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Clonidine (hydrochloride)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Cloxacillin (sodium)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Crizotinib (hydrochloride)', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Cysteamine (hydrochloride)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('DT-061', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('DTP3', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Dabrafenib', 5.0, 'uM')]",plate3,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Daidzin', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Dimethyl fumarate', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Diphenhydramine', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Drospirenone', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('ETC-206', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Elimusertib hydrochloride', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Encorafenib', 5.0, 'uM')]",plate3,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Entecavir (monohydrate)', 5.0, 'uM')]",plate9,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Esmolol (hydrochloride)', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Everolimus', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Filgotinib', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Folic acid', 0.5, 'uM')]",plate5,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Folic acid', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Fulvestrant', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Fusidic acid', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Gallic acid', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Gefitinib', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Gemcitabine', 0.05, 'uM')]",plate1,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Gemcitabine', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Goserelin (acetate)', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Goserelin (acetate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Hexylresorcinol', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Hydroxyfasudil', 0.05, 'uM')]",plate13,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('L-Thyroxine (sodium salt pentahydrate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Lonafarnib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Lumateperone (tosylate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Methotrexate', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Methylthiouracil', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Methylthiouracil', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Minodronic acid', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Neratinib (maleate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Niclosamide (olamine)', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Oleic acid', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Omeprazole', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Omeprazole', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Ouabain (Octahydrate)', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Oxaliplatin', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Paclitaxel', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Palmatine (chloride)', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Pentagastrin', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Perindopril (erbumine)', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Ponatinib', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Posaconazole', 5.0, 'uM')]",plate9,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Pyridoxine (hydrochloride)', 0.5, 'uM')]",plate5,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Pyridoxine (hydrochloride)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Quinestrol', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('RMC-6236', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Raltitrexed', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Regorafenib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Relugolix', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Resveratrol', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Riluzole hydrochloride', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Rimonabant', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Selinexor ', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Selinexor ', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Sivelestat (sodium tetrahydrate)', 5.0, 'uM')]",plate9,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Sonidegib', 0.05, 'uM')]",plate13,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Tolcapone', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Torkinib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Tubulin inhibitor 6', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Uridine', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('Vemurafenib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0480,"[('olaparib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_0546,,plate1,train,available_control,128,,
+CVCL_0546,,plate10,train,available_control,128,,
+CVCL_0546,,plate12,train,available_control,128,,
+CVCL_0546,,plate13,train,available_control,128,,
+CVCL_0546,,plate14,train,available_control,128,,
+CVCL_0546,,plate2,train,available_control,128,,
+CVCL_0546,,plate3,train,available_control,128,,
+CVCL_0546,,plate4,train,available_control,128,,
+CVCL_0546,,plate5,train,available_control,128,,
+CVCL_0546,,plate6,train,available_control,128,,
+CVCL_0546,,plate8,train,available_control,128,,
+CVCL_0546,,plate9,train,available_control,128,,
+CVCL_0546,"[('(R)-Verapamil (hydrochloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('4EGI-1', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('8-Hydroxyquinoline', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Adagrasib', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Adenine', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Afatinib', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Afatinib', 5.0, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Almonertinib (mesylate)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Anastrozole', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Anethole trithione', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Anethole trithione', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Apalutamide', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Artemether', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Artesunate', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Ataluren', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Baicalin', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Balsalazide (sodium hydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Berbamine (dihydrochloride)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Berbamine', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Berberine (chloride hydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Bicalutamide', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Bicalutamide', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Binimetinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Brimonidine', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Canagliflozin (hemihydrate)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Capivasertib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Carbidopa (monohydrate)', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Chlorhexidine (diacetate)', 0.5, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Cinacalcet', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Clonidine (hydrochloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Clonidine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Cloxacillin (sodium)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Crizotinib (hydrochloride)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Cysteamine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('DT-061', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('DTP3', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Dabrafenib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Daidzin', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Dimethyl fumarate', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Diphenhydramine', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Drospirenone', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('ETC-206', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Elimusertib hydrochloride', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Encorafenib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Entecavir (monohydrate)', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Esmolol (hydrochloride)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Everolimus', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Filgotinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Folic acid', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Folic acid', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Fulvestrant', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Fusidic acid', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Gallic acid', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Gefitinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Gemcitabine', 0.05, 'uM')]",plate1,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Gemcitabine', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Goserelin (acetate)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Goserelin (acetate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Hexylresorcinol', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Hydroxyfasudil', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('L-Thyroxine (sodium salt pentahydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Lonafarnib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Lumateperone (tosylate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Methotrexate', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Methylthiouracil', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Methylthiouracil', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Minodronic acid', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Neratinib (maleate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Niclosamide (olamine)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Oleic acid', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Omeprazole', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Omeprazole', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Ouabain (Octahydrate)', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Oxaliplatin', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Paclitaxel', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Palmatine (chloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Pentagastrin', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Perindopril (erbumine)', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Ponatinib', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Posaconazole', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Pyridoxine (hydrochloride)', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Pyridoxine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Quinestrol', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('RMC-6236', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Raltitrexed', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Regorafenib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Relugolix', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Resveratrol', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Riluzole hydrochloride', 5.0, 'uM')]",plate14,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Rimonabant', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Selinexor ', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Selinexor ', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Sivelestat (sodium tetrahydrate)', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Sonidegib', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Tolcapone', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Torkinib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Tubulin inhibitor 6', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Uridine', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('Vemurafenib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_0546,"[('olaparib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1056,,plate1,test_sealed,available_control,128,,
+CVCL_1056,,plate10,test_sealed,available_control,128,,
+CVCL_1056,,plate12,test_sealed,available_control,128,,
+CVCL_1056,,plate13,test_sealed,available_control,128,,
+CVCL_1056,,plate2,test_sealed,available_control,128,,
+CVCL_1056,,plate3,test_sealed,available_control,128,,
+CVCL_1056,,plate4,test_sealed,available_control,128,,
+CVCL_1056,,plate5,test_sealed,available_control,128,,
+CVCL_1056,,plate6,test_sealed,available_control,128,,
+CVCL_1056,,plate7,test_sealed,available_control,128,,
+CVCL_1056,,plate8,test_sealed,available_control,128,,
+CVCL_1056,,plate9,test_sealed,available_control,128,,
+CVCL_1097,,plate1,test_sealed,available_control,128,,
+CVCL_1097,,plate10,test_sealed,available_control,128,,
+CVCL_1097,,plate12,test_sealed,available_control,128,,
+CVCL_1097,,plate13,test_sealed,available_control,128,,
+CVCL_1097,,plate14,test_sealed,available_control,128,,
+CVCL_1097,,plate2,test_sealed,available_control,128,,
+CVCL_1097,,plate3,test_sealed,available_control,128,,
+CVCL_1097,,plate4,test_sealed,available_control,128,,
+CVCL_1097,,plate5,test_sealed,available_control,128,,
+CVCL_1097,,plate6,test_sealed,available_control,128,,
+CVCL_1097,,plate8,test_sealed,available_control,128,,
+CVCL_1097,,plate9,test_sealed,available_control,128,,
+CVCL_1098,,plate1,train,available_control,128,,
+CVCL_1098,,plate10,train,available_control,128,,
+CVCL_1098,,plate12,train,available_control,128,,
+CVCL_1098,,plate13,train,available_control,128,,
+CVCL_1098,,plate14,train,available_control,128,,
+CVCL_1098,,plate2,train,available_control,128,,
+CVCL_1098,,plate3,train,available_control,128,,
+CVCL_1098,,plate4,train,available_control,128,,
+CVCL_1098,,plate5,train,available_control,128,,
+CVCL_1098,,plate6,train,available_control,128,,
+CVCL_1098,,plate8,train,available_control,128,,
+CVCL_1098,,plate9,train,available_control,128,,
+CVCL_1098,"[('(R)-Verapamil (hydrochloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('4EGI-1', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('8-Hydroxyquinoline', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Adagrasib', 0.05, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Adenine', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Afatinib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Afatinib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Almonertinib (mesylate)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Anastrozole', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Anethole trithione', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Anethole trithione', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Apalutamide', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Artemether', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Artesunate', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Ataluren', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Baicalin', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Balsalazide (sodium hydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Berbamine (dihydrochloride)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Berbamine', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Berberine (chloride hydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Bicalutamide', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Bicalutamide', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Binimetinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Brimonidine', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Canagliflozin (hemihydrate)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Capivasertib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Carbidopa (monohydrate)', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Chlorhexidine (diacetate)', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Cinacalcet', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Clonidine (hydrochloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Clonidine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Cloxacillin (sodium)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Crizotinib (hydrochloride)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Cysteamine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('DT-061', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('DTP3', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Dabrafenib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Daidzin', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Dimethyl fumarate', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Diphenhydramine', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Drospirenone', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('ETC-206', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Elimusertib hydrochloride', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Encorafenib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Entecavir (monohydrate)', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Esmolol (hydrochloride)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Everolimus', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Filgotinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Folic acid', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Folic acid', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Fulvestrant', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Fusidic acid', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Gallic acid', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Gefitinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Gemcitabine', 0.05, 'uM')]",plate1,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Gemcitabine', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Goserelin (acetate)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Goserelin (acetate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Hexylresorcinol', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Hydroxyfasudil', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('L-Thyroxine (sodium salt pentahydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Lonafarnib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Lumateperone (tosylate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Methotrexate', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Methylthiouracil', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Methylthiouracil', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Minodronic acid', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Neratinib (maleate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Niclosamide (olamine)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Oleic acid', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Omeprazole', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Omeprazole', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Ouabain (Octahydrate)', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Oxaliplatin', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Paclitaxel', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Palmatine (chloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Pentagastrin', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Perindopril (erbumine)', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Ponatinib', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Posaconazole', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Pyridoxine (hydrochloride)', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Pyridoxine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Quinestrol', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('RMC-6236', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Raltitrexed', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Regorafenib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Relugolix', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Resveratrol', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Riluzole hydrochloride', 5.0, 'uM')]",plate14,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Rimonabant', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Selinexor ', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Selinexor ', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Sivelestat (sodium tetrahydrate)', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Sonidegib', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Tolcapone', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Torkinib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Tubulin inhibitor 6', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Uridine', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('Vemurafenib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1098,"[('olaparib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1119,,plate1,train,available_control,128,,
+CVCL_1119,,plate10,train,available_control,128,,
+CVCL_1119,,plate12,train,available_control,128,,
+CVCL_1119,,plate13,train,available_control,128,,
+CVCL_1119,,plate14,train,available_control,128,,
+CVCL_1119,,plate2,train,available_control,128,,
+CVCL_1119,,plate3,train,available_control,128,,
+CVCL_1119,,plate4,train,available_control,128,,
+CVCL_1119,,plate5,train,available_control,128,,
+CVCL_1119,,plate6,train,available_control,128,,
+CVCL_1119,,plate8,train,available_control,128,,
+CVCL_1119,,plate9,train,available_control,128,,
+CVCL_1119,"[('(R)-Verapamil (hydrochloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('4EGI-1', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('8-Hydroxyquinoline', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Adagrasib', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Adenine', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Afatinib', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Afatinib', 5.0, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Almonertinib (mesylate)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Anastrozole', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Anethole trithione', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Anethole trithione', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Apalutamide', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Artemether', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Artesunate', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Ataluren', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Baicalin', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Balsalazide (sodium hydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Berbamine (dihydrochloride)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Berbamine', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Berberine (chloride hydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Bicalutamide', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Bicalutamide', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Binimetinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Brimonidine', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Canagliflozin (hemihydrate)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Capivasertib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Carbidopa (monohydrate)', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Chlorhexidine (diacetate)', 0.5, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Cinacalcet', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Clonidine (hydrochloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Clonidine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Cloxacillin (sodium)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Crizotinib (hydrochloride)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Cysteamine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('DT-061', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('DTP3', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Dabrafenib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Daidzin', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Dimethyl fumarate', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Diphenhydramine', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Drospirenone', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('ETC-206', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Elimusertib hydrochloride', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Encorafenib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Entecavir (monohydrate)', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Esmolol (hydrochloride)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Everolimus', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Filgotinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Folic acid', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Folic acid', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Fulvestrant', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Fusidic acid', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Gallic acid', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Gefitinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Gemcitabine', 0.05, 'uM')]",plate1,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Gemcitabine', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Goserelin (acetate)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Goserelin (acetate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Hexylresorcinol', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Hydroxyfasudil', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('L-Thyroxine (sodium salt pentahydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Lonafarnib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Lumateperone (tosylate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Methotrexate', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Methylthiouracil', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Methylthiouracil', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Minodronic acid', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Neratinib (maleate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Niclosamide (olamine)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Oleic acid', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Omeprazole', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Omeprazole', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Ouabain (Octahydrate)', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Oxaliplatin', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Paclitaxel', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Palmatine (chloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Pentagastrin', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Perindopril (erbumine)', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Ponatinib', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Posaconazole', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Pyridoxine (hydrochloride)', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Pyridoxine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Quinestrol', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('RMC-6236', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Raltitrexed', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Regorafenib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Relugolix', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Resveratrol', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Riluzole hydrochloride', 5.0, 'uM')]",plate14,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Rimonabant', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Selinexor ', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Selinexor ', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Sivelestat (sodium tetrahydrate)', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Sonidegib', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Tolcapone', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Torkinib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Tubulin inhibitor 6', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Uridine', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('Vemurafenib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1119,"[('olaparib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1285,,plate1,test_sealed,available_control,128,,
+CVCL_1285,,plate10,test_sealed,available_control,128,,
+CVCL_1285,,plate12,test_sealed,available_control,128,,
+CVCL_1285,,plate13,test_sealed,available_control,128,,
+CVCL_1285,,plate2,test_sealed,available_control,128,,
+CVCL_1285,,plate3,test_sealed,available_control,128,,
+CVCL_1285,,plate4,test_sealed,available_control,128,,
+CVCL_1285,,plate5,test_sealed,available_control,128,,
+CVCL_1285,,plate6,test_sealed,available_control,128,,
+CVCL_1285,,plate8,test_sealed,available_control,128,,
+CVCL_1285,,plate9,test_sealed,available_control,128,,
+CVCL_1381,,plate1,validation,available_control,128,,
+CVCL_1381,,plate10,validation,available_control,128,,
+CVCL_1381,,plate12,validation,available_control,128,,
+CVCL_1381,,plate13,validation,available_control,128,,
+CVCL_1381,,plate2,validation,available_control,128,,
+CVCL_1381,,plate3,validation,available_control,128,,
+CVCL_1381,,plate4,validation,available_control,128,,
+CVCL_1381,,plate5,validation,available_control,128,,
+CVCL_1381,,plate6,validation,available_control,128,,
+CVCL_1381,,plate8,validation,available_control,128,,
+CVCL_1381,,plate9,validation,available_control,128,,
+CVCL_1381,"[('(R)-Verapamil (hydrochloride)', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('4EGI-1', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('8-Hydroxyquinoline', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Adagrasib', 0.05, 'uM')]",plate13,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Adenine', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Afatinib', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Afatinib', 5.0, 'uM')]",plate13,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Almonertinib (mesylate)', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Anastrozole', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Anethole trithione', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Anethole trithione', 0.5, 'uM')]",plate5,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Apalutamide', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Artemether', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Artesunate', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Ataluren', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Baicalin', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Balsalazide (sodium hydrate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Berbamine (dihydrochloride)', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Berbamine', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Berberine (chloride hydrate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Bicalutamide', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Bicalutamide', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Binimetinib', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Brimonidine', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Canagliflozin (hemihydrate)', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Capivasertib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Carbidopa (monohydrate)', 0.05, 'uM')]",plate13,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Chlorhexidine (diacetate)', 0.5, 'uM')]",plate5,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Cinacalcet', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Clonidine (hydrochloride)', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Clonidine (hydrochloride)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Cloxacillin (sodium)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Crizotinib (hydrochloride)', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Cysteamine (hydrochloride)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('DT-061', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('DTP3', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Dabrafenib', 5.0, 'uM')]",plate3,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Daidzin', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Dimethyl fumarate', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Diphenhydramine', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Drospirenone', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('ETC-206', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Elimusertib hydrochloride', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Encorafenib', 5.0, 'uM')]",plate3,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Entecavir (monohydrate)', 5.0, 'uM')]",plate9,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Esmolol (hydrochloride)', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Everolimus', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Filgotinib', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Folic acid', 0.5, 'uM')]",plate5,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Folic acid', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Fulvestrant', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Fusidic acid', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Gallic acid', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Gefitinib', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Gemcitabine', 0.05, 'uM')]",plate1,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Gemcitabine', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Goserelin (acetate)', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Goserelin (acetate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Hexylresorcinol', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Hydroxyfasudil', 0.05, 'uM')]",plate13,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('L-Thyroxine (sodium salt pentahydrate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Lonafarnib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Lumateperone (tosylate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Methotrexate', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Methylthiouracil', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Methylthiouracil', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Minodronic acid', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Neratinib (maleate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Niclosamide (olamine)', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Oleic acid', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Omeprazole', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Omeprazole', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Ouabain (Octahydrate)', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Oxaliplatin', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Paclitaxel', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Palmatine (chloride)', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Pentagastrin', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Perindopril (erbumine)', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Ponatinib', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Posaconazole', 5.0, 'uM')]",plate9,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Pyridoxine (hydrochloride)', 0.5, 'uM')]",plate5,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Pyridoxine (hydrochloride)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Quinestrol', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('RMC-6236', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Raltitrexed', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Regorafenib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Relugolix', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Resveratrol', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Riluzole hydrochloride', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Rimonabant', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Selinexor ', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Selinexor ', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Sivelestat (sodium tetrahydrate)', 5.0, 'uM')]",plate9,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Sonidegib', 0.05, 'uM')]",plate13,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Tolcapone', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Torkinib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Tubulin inhibitor 6', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Uridine', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('Vemurafenib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_1381,"[('olaparib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_1495,,plate1,train,available_control,128,,
+CVCL_1495,,plate10,train,available_control,128,,
+CVCL_1495,,plate12,train,available_control,128,,
+CVCL_1495,,plate13,train,available_control,128,,
+CVCL_1495,,plate14,train,available_control,128,,
+CVCL_1495,,plate2,train,available_control,128,,
+CVCL_1495,,plate3,train,available_control,128,,
+CVCL_1495,,plate4,train,available_control,128,,
+CVCL_1495,,plate5,train,available_control,128,,
+CVCL_1495,,plate6,train,available_control,128,,
+CVCL_1495,,plate8,train,available_control,128,,
+CVCL_1495,,plate9,train,available_control,128,,
+CVCL_1495,"[('(R)-Verapamil (hydrochloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('4EGI-1', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('8-Hydroxyquinoline', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Adagrasib', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Adenine', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Afatinib', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Afatinib', 5.0, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Almonertinib (mesylate)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Anastrozole', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Anethole trithione', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Anethole trithione', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Apalutamide', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Artemether', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Artesunate', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Ataluren', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Baicalin', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Balsalazide (sodium hydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Berbamine (dihydrochloride)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Berbamine', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Berberine (chloride hydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Bicalutamide', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Bicalutamide', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Binimetinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Brimonidine', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Canagliflozin (hemihydrate)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Capivasertib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Carbidopa (monohydrate)', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Chlorhexidine (diacetate)', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Cinacalcet', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Clonidine (hydrochloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Clonidine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Cloxacillin (sodium)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Crizotinib (hydrochloride)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Cysteamine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('DT-061', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('DTP3', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Dabrafenib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Daidzin', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Dimethyl fumarate', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Diphenhydramine', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Drospirenone', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('ETC-206', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Elimusertib hydrochloride', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Encorafenib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Entecavir (monohydrate)', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Esmolol (hydrochloride)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Everolimus', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Filgotinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Folic acid', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Folic acid', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Fulvestrant', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Fusidic acid', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Gallic acid', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Gefitinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Gemcitabine', 0.05, 'uM')]",plate1,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Gemcitabine', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Goserelin (acetate)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Goserelin (acetate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Hexylresorcinol', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Hydroxyfasudil', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('L-Thyroxine (sodium salt pentahydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Lonafarnib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Lumateperone (tosylate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Methotrexate', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Methylthiouracil', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Methylthiouracil', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Minodronic acid', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Neratinib (maleate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Niclosamide (olamine)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Oleic acid', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Omeprazole', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Omeprazole', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Ouabain (Octahydrate)', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Oxaliplatin', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Paclitaxel', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Palmatine (chloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Pentagastrin', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Perindopril (erbumine)', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Ponatinib', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Posaconazole', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Pyridoxine (hydrochloride)', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Pyridoxine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Quinestrol', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('RMC-6236', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Raltitrexed', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Regorafenib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Relugolix', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Resveratrol', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Riluzole hydrochloride', 5.0, 'uM')]",plate14,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Rimonabant', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Selinexor ', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Selinexor ', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Sivelestat (sodium tetrahydrate)', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Sonidegib', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Tolcapone', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Torkinib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Tubulin inhibitor 6', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Uridine', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('Vemurafenib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1495,"[('olaparib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1517,,plate1,train,available_control,128,,
+CVCL_1517,,plate10,train,available_control,128,,
+CVCL_1517,,plate12,train,available_control,128,,
+CVCL_1517,,plate13,train,available_control,128,,
+CVCL_1517,,plate14,train,available_control,128,,
+CVCL_1517,,plate2,train,available_control,128,,
+CVCL_1517,,plate3,train,available_control,128,,
+CVCL_1517,,plate4,train,available_control,128,,
+CVCL_1517,,plate5,train,available_control,128,,
+CVCL_1517,,plate6,train,available_control,128,,
+CVCL_1517,,plate8,train,available_control,128,,
+CVCL_1517,,plate9,train,available_control,128,,
+CVCL_1517,"[('(R)-Verapamil (hydrochloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('4EGI-1', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('8-Hydroxyquinoline', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Adagrasib', 0.05, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Adenine', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Afatinib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Afatinib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Almonertinib (mesylate)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Anastrozole', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Anethole trithione', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Anethole trithione', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Apalutamide', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Artemether', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Artesunate', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Ataluren', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Baicalin', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Balsalazide (sodium hydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Berbamine (dihydrochloride)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Berbamine', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Berberine (chloride hydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Bicalutamide', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Bicalutamide', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Binimetinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Brimonidine', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Canagliflozin (hemihydrate)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Capivasertib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Carbidopa (monohydrate)', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Chlorhexidine (diacetate)', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Cinacalcet', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Clonidine (hydrochloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Clonidine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Cloxacillin (sodium)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Crizotinib (hydrochloride)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Cysteamine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('DT-061', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('DTP3', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Dabrafenib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Daidzin', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Dimethyl fumarate', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Diphenhydramine', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Drospirenone', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('ETC-206', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Elimusertib hydrochloride', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Encorafenib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Entecavir (monohydrate)', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Esmolol (hydrochloride)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Everolimus', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Filgotinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Folic acid', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Folic acid', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Fulvestrant', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Fusidic acid', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Gallic acid', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Gefitinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Gemcitabine', 0.05, 'uM')]",plate1,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Gemcitabine', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Goserelin (acetate)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Goserelin (acetate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Hexylresorcinol', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Hydroxyfasudil', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('L-Thyroxine (sodium salt pentahydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Lonafarnib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Lumateperone (tosylate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Methotrexate', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Methylthiouracil', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Methylthiouracil', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Minodronic acid', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Neratinib (maleate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Niclosamide (olamine)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Oleic acid', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Omeprazole', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Omeprazole', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Ouabain (Octahydrate)', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Oxaliplatin', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Paclitaxel', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Palmatine (chloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Pentagastrin', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Perindopril (erbumine)', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Ponatinib', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Posaconazole', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Pyridoxine (hydrochloride)', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Pyridoxine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Quinestrol', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('RMC-6236', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Raltitrexed', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Regorafenib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Relugolix', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Resveratrol', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Riluzole hydrochloride', 5.0, 'uM')]",plate14,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Rimonabant', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Selinexor ', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Selinexor ', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Sivelestat (sodium tetrahydrate)', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Sonidegib', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Tolcapone', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Torkinib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Tubulin inhibitor 6', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Uridine', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('Vemurafenib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1517,"[('olaparib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1550,,plate1,train,available_control,128,,
+CVCL_1550,,plate10,train,available_control,128,,
+CVCL_1550,,plate12,train,available_control,128,,
+CVCL_1550,,plate13,train,available_control,128,,
+CVCL_1550,,plate2,train,available_control,128,,
+CVCL_1550,,plate3,train,available_control,128,,
+CVCL_1550,,plate4,train,available_control,128,,
+CVCL_1550,,plate5,train,available_control,128,,
+CVCL_1550,,plate6,train,available_control,128,,
+CVCL_1550,,plate8,train,available_control,128,,
+CVCL_1550,,plate9,train,available_control,128,,
+CVCL_1550,"[('(R)-Verapamil (hydrochloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('4EGI-1', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('8-Hydroxyquinoline', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Adagrasib', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Adenine', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Afatinib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Afatinib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Almonertinib (mesylate)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Anastrozole', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Anethole trithione', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Anethole trithione', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Apalutamide', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Artemether', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Artesunate', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Ataluren', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Baicalin', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Balsalazide (sodium hydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Berbamine (dihydrochloride)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Berbamine', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Berberine (chloride hydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Bicalutamide', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Bicalutamide', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Binimetinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Brimonidine', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Canagliflozin (hemihydrate)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Capivasertib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Carbidopa (monohydrate)', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Chlorhexidine (diacetate)', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Cinacalcet', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Clonidine (hydrochloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Clonidine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Cloxacillin (sodium)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Crizotinib (hydrochloride)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Cysteamine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('DT-061', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('DTP3', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Dabrafenib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Daidzin', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Dimethyl fumarate', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Diphenhydramine', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Drospirenone', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('ETC-206', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Elimusertib hydrochloride', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Encorafenib', 5.0, 'uM')]",plate3,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Entecavir (monohydrate)', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Esmolol (hydrochloride)', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Everolimus', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Filgotinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Folic acid', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Folic acid', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Fulvestrant', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Fusidic acid', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Gallic acid', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Gefitinib', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Gemcitabine', 0.05, 'uM')]",plate1,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Gemcitabine', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Goserelin (acetate)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Goserelin (acetate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Hexylresorcinol', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Hydroxyfasudil', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('L-Thyroxine (sodium salt pentahydrate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Lonafarnib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Lumateperone (tosylate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Methotrexate', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Methylthiouracil', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Methylthiouracil', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Minodronic acid', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Neratinib (maleate)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Niclosamide (olamine)', 0.5, 'uM')]",plate8,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Oleic acid', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Omeprazole', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Omeprazole', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Ouabain (Octahydrate)', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Oxaliplatin', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Paclitaxel', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Palmatine (chloride)', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Pentagastrin', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Perindopril (erbumine)', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Ponatinib', 0.05, 'uM')]",plate10,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Posaconazole', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Pyridoxine (hydrochloride)', 0.5, 'uM')]",plate5,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Pyridoxine (hydrochloride)', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Quinestrol', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('RMC-6236', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Raltitrexed', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Regorafenib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Relugolix', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Resveratrol', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Riluzole hydrochloride', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Rimonabant', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Selinexor ', 0.05, 'uM')]",plate4,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Selinexor ', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Sivelestat (sodium tetrahydrate)', 5.0, 'uM')]",plate9,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Sonidegib', 0.05, 'uM')]",plate13,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Tolcapone', 5.0, 'uM')]",plate6,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Torkinib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Tubulin inhibitor 6', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Uridine', 5.0, 'uM')]",plate12,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('Vemurafenib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_1550,"[('olaparib', 0.5, 'uM')]",plate2,train,train_validation_treatment,128,True,128.0
+CVCL_C466,,plate1,validation,available_control,128,,
+CVCL_C466,,plate10,validation,available_control,128,,
+CVCL_C466,,plate12,validation,available_control,128,,
+CVCL_C466,,plate13,validation,available_control,128,,
+CVCL_C466,,plate14,validation,available_control,128,,
+CVCL_C466,,plate2,validation,available_control,128,,
+CVCL_C466,,plate3,validation,available_control,128,,
+CVCL_C466,,plate4,validation,available_control,128,,
+CVCL_C466,,plate5,validation,available_control,128,,
+CVCL_C466,,plate6,validation,available_control,128,,
+CVCL_C466,,plate8,validation,available_control,128,,
+CVCL_C466,,plate9,validation,available_control,128,,
+CVCL_C466,"[('(R)-Verapamil (hydrochloride)', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('4EGI-1', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('8-Hydroxyquinoline', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Adagrasib', 0.05, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Adenine', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Afatinib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Afatinib', 5.0, 'uM')]",plate3,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Almonertinib (mesylate)', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Anastrozole', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Anethole trithione', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Anethole trithione', 0.5, 'uM')]",plate5,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Apalutamide', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Artemether', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Artesunate', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Ataluren', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Baicalin', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Balsalazide (sodium hydrate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Berbamine (dihydrochloride)', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Berbamine', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Berberine (chloride hydrate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Bicalutamide', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Bicalutamide', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Binimetinib', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Brimonidine', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Canagliflozin (hemihydrate)', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Capivasertib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Carbidopa (monohydrate)', 0.05, 'uM')]",plate13,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Chlorhexidine (diacetate)', 0.5, 'uM')]",plate5,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Cinacalcet', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Clonidine (hydrochloride)', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Clonidine (hydrochloride)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Cloxacillin (sodium)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Crizotinib (hydrochloride)', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Cysteamine (hydrochloride)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('DT-061', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('DTP3', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Dabrafenib', 5.0, 'uM')]",plate3,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Daidzin', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Dimethyl fumarate', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Diphenhydramine', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Drospirenone', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('ETC-206', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Elimusertib hydrochloride', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Encorafenib', 5.0, 'uM')]",plate3,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Entecavir (monohydrate)', 5.0, 'uM')]",plate9,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Esmolol (hydrochloride)', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Everolimus', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Filgotinib', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Folic acid', 0.5, 'uM')]",plate5,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Folic acid', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Fulvestrant', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Fusidic acid', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Gallic acid', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Gefitinib', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Gemcitabine', 0.05, 'uM')]",plate1,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Gemcitabine', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Goserelin (acetate)', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Goserelin (acetate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Hexylresorcinol', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Hydroxyfasudil', 0.05, 'uM')]",plate13,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('L-Thyroxine (sodium salt pentahydrate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Lonafarnib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Lumateperone (tosylate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Methotrexate', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Methylthiouracil', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Methylthiouracil', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Minodronic acid', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Neratinib (maleate)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Niclosamide (olamine)', 0.5, 'uM')]",plate8,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Oleic acid', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Omeprazole', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Omeprazole', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Ouabain (Octahydrate)', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Oxaliplatin', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Paclitaxel', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Palmatine (chloride)', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Pentagastrin', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Perindopril (erbumine)', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Ponatinib', 0.05, 'uM')]",plate10,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Posaconazole', 5.0, 'uM')]",plate9,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Pyridoxine (hydrochloride)', 0.5, 'uM')]",plate5,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Pyridoxine (hydrochloride)', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Quinestrol', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('RMC-6236', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Raltitrexed', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Regorafenib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Relugolix', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Resveratrol', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Riluzole hydrochloride', 5.0, 'uM')]",plate14,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Rimonabant', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Selinexor ', 0.05, 'uM')]",plate4,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Selinexor ', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Sivelestat (sodium tetrahydrate)', 5.0, 'uM')]",plate9,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Sonidegib', 0.05, 'uM')]",plate13,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Tolcapone', 5.0, 'uM')]",plate6,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Torkinib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Tubulin inhibitor 6', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Uridine', 5.0, 'uM')]",plate12,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('Vemurafenib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0
+CVCL_C466,"[('olaparib', 0.5, 'uM')]",plate2,validation,train_validation_treatment,128,True,128.0

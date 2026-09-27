@@ -23,13 +23,18 @@ def main(a):
     for batch in pf.iter_batches(batch_size=4096,columns=['cell_line','drug','plate','drug_dose','split','role']):
         d=batch.to_pydict(); m=len(d['split']); n+=m
         for i in range(m):
-            key=(str(d['cell_line'][i]),str(d['drug_dose'][i]),str(d['plate'][i]),str(d['split'][i]))
-            roles[str(d['role'][i])]+=1; counts[key]+=1
-            if str(d['role'][i])=='test_treated': n_test_treated+=1
+            role=str(d['role'][i])
+            key=(str(d['cell_line'][i]),str(d['drug_dose'][i]),str(d['plate'][i]),str(d['split'][i]),role)
+            roles[role]+=1; counts[key]+=1
+            if role=='test_treated': n_test_treated+=1
     rows=[]
     for key,ncells in sorted(counts.items()):
-        cl,dd,plate,split=key; rows.append({'cell_line':cl,'drug_dose':dd,'plate':plate,'split':split,'n_selected_cells':ncells,
-          'panel_match':key in pkeys,'panel_cap':int(panel.loc[(panel.cell_line==cl)&(panel.drug_dose==dd)&(panel.plate==plate)&(panel.split==split),'maximum_cells_to_extract'].iloc[0]) if key in pkeys else None})
+        cl,dd,plate,split,role=key
+        is_treatment=(role=='train_validation_treatment')
+        panel_key=(cl,dd,plate,split)
+        rows.append({'cell_line':cl,'drug_dose':dd,'plate':plate,'split':split,'role':role,'n_selected_cells':ncells,
+          'panel_match':(panel_key in pkeys) if is_treatment else None,
+          'panel_cap':int(panel.loc[(panel.cell_line==cl)&(panel.drug_dose==dd)&(panel.plate==plate)&(panel.split==split),'maximum_cells_to_extract'].iloc[0]) if is_treatment and panel_key in pkeys else None})
     table=pd.DataFrame(rows); table.to_csv(out/'TASK_COUNTS.csv',index=False)
     # Expression pass: summary only; never writes test treated data.
     expr_rows=0; nonzero_sum=0; nonzero_min=10**9; nonzero_max=0; finite_bad=0; value_min=math.inf; value_max=-math.inf; value_sum=0.; value_sq=0.; value_n=0
@@ -47,8 +52,10 @@ def main(a):
     pd.DataFrame(role_rows).to_csv(out/'EXPRESSION_ROLE_SUMMARY.csv',index=False)
     status={'status':'TAHOE_RAW_HISTORY_AUDIT_COMPLETE','expression_file':str(a.expression),'panel_file':str(a.panel),
       'parquet_rows':pf.metadata.num_rows,'metadata_rows_scanned':n,'expression_rows_scanned':expr_rows,'role_counts':dict(roles),
-      'n_test_treated_records_seen':n_test_treated,'n_train_validation_panel_keys':len(pkeys),'n_task_keys_in_extract':len(counts),
-      'all_train_validation_keys_match_panel':bool(table.loc[table.split.isin(['train','validation']),'panel_match'].all()),
+      'n_test_treated_records_seen':n_test_treated,'n_train_validation_panel_keys':len(pkeys),
+      'n_treatment_keys_in_extract':int(table.loc[table.role.eq('train_validation_treatment')].shape[0]),
+      'n_all_keys_including_controls':len(counts),
+      'all_train_validation_treatment_keys_match_panel':bool(table.loc[table.role.eq('train_validation_treatment'),'panel_match'].all()),
       'max_selected_cells_per_key':int(table.n_selected_cells.max()),'min_genes_per_cell':int(nonzero_min),'max_genes_per_cell':int(nonzero_max),
       'finite_value_fraction':float(value_n/max(1,value_n+finite_bad)),'value_min':value_min,'value_max':value_max,
       'scope':'Provenance/quality audit only. No test treated expression is aggregated or evaluated.'}
