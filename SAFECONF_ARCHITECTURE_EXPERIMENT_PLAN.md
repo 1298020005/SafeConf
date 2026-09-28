@@ -1,5 +1,7 @@
 # SafeConf 主方法决定性实验设计
 
+> 2026-09-28 更新：9 月 30 日交开题与进展，论文稿后续推进。当前实验顺序见 [最小决定性实验](docs/方法设计/20260928_证据驱动开题/实验与投稿路线.md)，优先同信息、同反馈预算与完整 Q；本旧计划中的估时不代表任务已排队或启动。
+
 **版本**：v0.2（2026-09-28）
 **目标**：决定 SafeConf 是否应保留 `Prediction Evidence + Public History + Model Error Memory`，以及是否有资格升级到 residual correction 和 learned gates。
 
@@ -77,7 +79,7 @@ provenance
 
 ## 4. 数据线路和角色
 
-### 4.1 基因开发线路
+### 4.1 混合类型开发面板（旧标题“基因开发线路”已纠正）
 
 使用已有 E131/LOPO 任务级预测和误差表，当前可直接核验的开发单元包括：
 
@@ -89,7 +91,7 @@ provenance
 - SantinhaPlatt2023
 - SrivatsanTrapnell2020_sciplex3
 
-这些单元已经有 `P`、`Q`、`H`、部分 `E` 的开发材料。基因机制不完整的记录保留 unknown，不能因名称猜测为 KO、CRISPRi 或 CRISPRa。
+这些单元已有开发材料，其中 McFarland 与 sci-Plex3 为化学线，不应列作七个基因研究。E273 的 Q 只是相似度/支持数代理，E 的上游 OOF 合同仍需核验。基因机制不完整的记录保留 unknown，不能因名称猜测为 KO、CRISPRi 或 CRISPRa。
 
 确认线路使用：
 

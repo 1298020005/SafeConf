@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-28",
+  "status": "COMPLETED_DESCRIPTIVE_REANALYSIS",
+  "source": "docs/实验结果/E273_dual_history_review_20260927/CPU_FOLD_RESULTS.csv",
+  "source_sha256": "b2e344848ece9ea17aaf53acb0deff92f6b082e2047f0abf7718704d3ac4f245",
+  "source_rows": 612,
+  "n_paired_units": 102,
+  "n_dataset_predictor_units": 21,
+  "n_datasets": 7,
+  "training_performed": false,
+  "new_predictions_generated": false,
+  "raw_expression_read": false,
+  "new_final_test_truth_read": false,
+  "uncertainty_intervals": "not computed: clustered and previously inspected data",
+  "aggregation": "paired fold -> mean within dataset/predictor -> mean within dataset -> equal dataset macro",
+  "corrections": [
+    "Original positive_cells counts any positive fold vs M, not positive cell mean.",
+    "Seven dataset groups include chemical studies and two related Lara arms; not seven independent genetic studies.",
+    "Q lacks complete source-cell and split-half noise controls.",
+    "OOF provenance of upstream predictions is not established by risk-learner cold buckets."
+  ]
+}
