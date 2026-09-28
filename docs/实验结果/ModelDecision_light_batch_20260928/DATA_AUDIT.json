@@ -1,0 +1,35 @@
+{
+  "source": "/home/yyf/safeconf_runtime/outputs/safeconf_lopo_robustness_20260613/tables/LOPO_FEATURE_MATRIX_PertMeanPredictor.csv",
+  "sha256": "dcbfa2763ec23ed83062ad143a7c773cb3409291e33f9d705c8e5d8ab6235b5d",
+  "metadata_rows": 68775,
+  "feature_rows_train_val": 11004,
+  "risk_training_candidate_rows": 1656,
+  "unique_validation_tasks": 552,
+  "final_test_label_rows_used": 0,
+  "error_labels_loaded_by_audit": false,
+  "source_fold": 0,
+  "n_splits": 3,
+  "feature_order": [
+    "prediction_l2_norm",
+    "prediction_abs_mean",
+    "model_disagreement_rmse",
+    "model_disagreement_cosine",
+    "context_similarity_max",
+    "context_similarity_mean",
+    "perturbation_support_count",
+    "prediction_norm_ratio",
+    "prediction_magnitude_deviation",
+    "historical_residual_risk",
+    "perturbation_effect_stability",
+    "perturbation_effect_variance"
+  ],
+  "original_run_paths_present": {
+    "outputs/safeconf_formal_main_v3_drop_blank_inputs_20260609/Frangieh": true,
+    "outputs/safeconf_formal_main_v3_drop_blank_inputs_20260609/LaraAstiasoHuntly2023_exvivo": true,
+    "outputs/safeconf_formal_main_v3_drop_blank_inputs_20260609/LaraAstiasoHuntly2023_invivo": true,
+    "outputs/safeconf_formal_main_v3_drop_blank_inputs_20260609/SantinhaPlatt2023": true,
+    "outputs/safeconf_formal_main_v3_drop_blank_inputs_20260609/SrivatsanTrapnell2020_sciplex3": true,
+    "outputs/safeconf_formal_main_v3_drop_blank_inputs_20260609/McFarlandTsherniak2020": true,
+    "outputs/safeconf_formal_main_v3_drop_blank_inputs_20260609/safeconf_cui_go_nogo_probe": true
+  }
+}

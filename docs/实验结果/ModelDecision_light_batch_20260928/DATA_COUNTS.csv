@@ -1,0 +1,8 @@
+dataset,type,tasks_train_val,tasks_val,contexts,perturbations,val_contexts,val_perturbations,public_same_pert_support_pct,public_multicontext_content_pct,history_residual_finite_pct,verified_checkpoint_linked_error_records,recorded_heldout_error_candidates
+CuiHacohen2023,gene,1002,150,15,86,15,72,100.0,100.0,100.0,0,450
+Frangieh,gene,507,76,3,211,3,66,100.0,39.473684210526315,100.0,0,228
+LaraAstiasoHuntly2023_exvivo,gene,259,38,8,42,8,25,100.0,100.0,100.0,0,114
+LaraAstiasoHuntly2023_invivo,gene,301,46,15,39,14,28,97.82608695652173,97.82608695652173,100.0,0,138
+McFarlandTsherniak2020,chemical,930,140,170,13,92,13,100.0,100.0,100.0,0,420
+SantinhaPlatt2023,gene,218,34,10,29,9,20,100.0,100.0,100.0,0,102
+SrivatsanTrapnell2020_sciplex3,chemical,451,68,3,188,3,57,95.58823529411765,38.23529411764706,100.0,0,204
