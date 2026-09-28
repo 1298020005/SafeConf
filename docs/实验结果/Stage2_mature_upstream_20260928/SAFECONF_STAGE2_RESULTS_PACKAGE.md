@@ -19,6 +19,10 @@
 
 CPA 八个 sciPlex3 划分的原始幅度宏 U20 为 0.5816，Ridge P+Q 为 0.5396，Ridge P+Q+H 为 0.6069。P+Q+H 相对幅度点增量 +0.0253，但八划分 bootstrap 区间为 [-0.0952,+0.1590]；上游 CPA 自身此前没有稳定胜过简单来源均值。它证明了化学数据可以接入统一风险接口，也显示剂量/来源覆盖不足会造成明显异质性，暂不能作为主方法独立确认。
 
+### 同模型错误反馈：预算曲线
+
+在两个 TxPert 结构上按基因完全留出，逐步提供同一上游模型的真实错误标签。GAT 在 75%–100% 训练基因反馈后达到 0.7699–0.7759 的 U20，高于无反馈幅度基线 0.7615；Exphormer 在 50%–75% 反馈时达到 0.7688–0.7681，高于无反馈基线 0.7514。10% 反馈在两个结构上都不稳定，因此 Error Memory 应被定义为部署后的周期性增强，而不是冷启动主模型的必需输入。该实验是严格留出下的样本效率模拟，不冒充在线时间序列自学习。
+
 ## 第一版统一方法
 
 输入任务表示保持统一：`cell context + perturbation type/target + condition + upstream prediction + control/reference`。风险侧只看预测和预测前可获得的公共历史。
@@ -38,6 +42,7 @@ CPA 八个 sciPlex3 划分的原始幅度宏 U20 为 0.5816，Ridge P+Q 为 0.53
 4. **跨上游迁移表**：按基因完全留出的联合风险学习，检验风险模型是否依赖某一上游结构。
 4. **化学表**：八个 CPA 划分的逐划分结果、剂量/来源支持分层和压力边界。
 5. **消融表**：P→P+Q、P+Q→P+Q+H、Ridge/HGB/MLP；不再上 Transformer 或复杂 gate。
+6. **反馈表**：Error Memory 0/10/25/50/75/100% 预算曲线，以及后续真实时间批次更新协议。
 
 ## 当前论文定位
 
@@ -47,9 +52,23 @@ CPA 八个 sciPlex3 划分的原始幅度宏 U20 为 0.5816，Ridge P+Q 为 0.53
 
 这条主线已经有可展示的新结果：TxPert 两种结构、1,808 个任务、四背景复现，以及化学压力线。它足以支撑 9 月 30 日进展/开题汇报，并形成二区/CCF-B 方向的完整方法雏形。正式投稿前仍需要把化学线换成能力合格的成熟药物上游或明确将 CPA 定义为压力测试，并补一套真正独立的新背景/新数据确认。
 
+### 风险覆盖结果（跨上游 OOF）
+
+在 1,808 个任务、两个 TxPert 结构的联合 OOF 结果中，按预测风险从低到高保留任务时，SafeConf 的平均真实 RMSE 低于原始幅度排序：
+
+| 保留比例 | 原始幅度 | Ridge(P+Q) | Ridge(P+Q+H) |
+|---:|---:|---:|---:|
+| 10% | 0.03858 | **0.03704** | 0.03769 |
+| 20% | 0.04205 | 0.04138 | **0.04117** |
+| 50% | 0.04944 | 0.04903 | **0.04857** |
+| 100% | 0.06158 | 0.06158 | 0.06158 |
+
+这把 Utility@20 的增量转成了更直观的复核收益：如果只执行风险最低的 10% 任务，Ridge(P+Q) 的平均实际误差比幅度排序低约 4.0%；保留 20% 时，P+Q+H 低约 2.1%。
+
 ## 结果位置
 
 - GAT 主结果：[txpert_risk_batch/REPORT.md](txpert_risk_batch/REPORT.md)
 - Exphormer 复现：[txpert_exphormer_risk_batch/REPORT.md](txpert_exphormer_risk_batch/REPORT.md)
 - CPA 化学压力：[cpa_risk_batch_v2/REPORT.md](cpa_risk_batch_v2/REPORT.md)
+- 同模型反馈预算：[error_memory_budget/REPORT.md](error_memory_budget/REPORT.md)
 - 统一运行脚本：`tools/scripts/run_stage2_txpert_risk_batch.py`、`tools/scripts/run_stage2_cpa_risk_batch.py`

@@ -1,0 +1,19 @@
+{
+  "status": "COMPLETE_STOPPED_AFTER_REGISTERED_BATCH",
+  "n_records": 3616,
+  "budgets": [
+    0.0,
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "grouped_by_gene": true,
+  "feature_group": "P+Q",
+  "same_upstream_feedback": true,
+  "target_truth_used_only_as_label": true,
+  "new_upstream_training_runs": 0,
+  "result_sha256": "60a5e8c0dbe0a152be7285c82477ab76c2ae09f7d9ea0134f9767b99f963248e",
+  "python": "3.12.4"
+}
