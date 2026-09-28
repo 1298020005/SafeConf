@@ -1,0 +1,14 @@
+{
+  "summary_checks_passed": true,
+  "n_outer_cells": 63,
+  "n_rows": 1071,
+  "n_methods": 17,
+  "n_unique_tasks": 552,
+  "same_splits_across_predictors": true,
+  "no_outer_task_or_perturbation_overlap": true,
+  "aggregation": "fold -> predictor -> dataset-group equal weighting; gene and chemical reported separately",
+  "intervals": "not estimated: pilot, related groups, and tiny folds; fold count is not independent n",
+  "no_additional_model_fits": true,
+  "main_comparison_fits": 945,
+  "auxiliary_magnitude_fits_including_inner_crossfit": 252
+}

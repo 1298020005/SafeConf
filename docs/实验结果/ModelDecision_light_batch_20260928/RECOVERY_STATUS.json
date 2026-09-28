@@ -1,0 +1,17 @@
+{
+  "metadata_columns_read": [
+    "dataset_name",
+    "task_key",
+    "predictor_name",
+    "fold_id",
+    "split"
+  ],
+  "labels_or_expression_read": false,
+  "new_training_runs": 0,
+  "unique_original_development_tasks": 3668,
+  "all_other_fold_val_candidates": 1764,
+  "additional_val_candidates": 1212,
+  "any_heldout_role_upper_bound": 3668,
+  "new_provenance_verified_formal_tasks": 0,
+  "caution": "Different outer folds have different upstream training sets/states. Do not combine as one frozen model. Test-role metadata are not permission to consume sealed truth. Repeated tasks/predictors/folds are not independent samples."
+}

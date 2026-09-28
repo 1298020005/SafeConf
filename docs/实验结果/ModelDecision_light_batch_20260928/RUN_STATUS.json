@@ -1,0 +1,72 @@
+{
+  "status": "COMPLETE_STOPPED_AFTER_FIRST_BATCH",
+  "started_unix": 1790586958.2225492,
+  "source_sha256": "dcbfa2763ec23ed83062ad143a7c773cb3409291e33f9d705c8e5d8ab6235b5d",
+  "script_sha256": "dfcd788da541c39d78d4b33e232117358fa3a515c1abeda001893eb4b6917c87",
+  "protocol_sha256": "a5d5bb510d5e4798f186997ebfd1b7b5a321c4726ac7e477a1ed88f3e1e0eb99",
+  "source_fold": 0,
+  "original_split": "val",
+  "final_test_label_rows_used": 0,
+  "candidate_error_memory_status": "NOT_RUN_PROVENANCE",
+  "new_upstream_training_runs": 0,
+  "n_unique_tasks": 552,
+  "n_prediction_rows": 1656,
+  "seed": 928,
+  "hyperparameter_trials_per_method": 1,
+  "device": "cuda:0",
+  "gpu": "Quadro RTX 6000",
+  "torch": "2.6.0+cu124",
+  "numpy": "1.26.4",
+  "pandas": "2.2.3",
+  "scipy": "1.15.2",
+  "sklearn": "1.5.2",
+  "python": "3.12.4",
+  "feature_groups": {
+    "M": [
+      "prediction_l2_norm"
+    ],
+    "P": [
+      "prediction_l2_norm",
+      "prediction_abs_mean",
+      "model_disagreement_rmse",
+      "model_disagreement_cosine"
+    ],
+    "PQ": [
+      "prediction_l2_norm",
+      "prediction_abs_mean",
+      "model_disagreement_rmse",
+      "model_disagreement_cosine",
+      "context_similarity_max",
+      "context_similarity_mean",
+      "perturbation_support_count"
+    ],
+    "PQH": [
+      "prediction_l2_norm",
+      "prediction_abs_mean",
+      "model_disagreement_rmse",
+      "model_disagreement_cosine",
+      "context_similarity_max",
+      "context_similarity_mean",
+      "perturbation_support_count",
+      "prediction_norm_ratio",
+      "prediction_magnitude_deviation",
+      "historical_residual_risk",
+      "perturbation_effect_stability",
+      "perturbation_effect_variance"
+    ]
+  },
+  "evidence_level": "RETROSPECTIVE_VALIDATION_DEVELOPMENT_ONLY",
+  "upstream_artifact_lineage": "INCOMPLETE",
+  "outer_split": "GroupKFold(3), perturbation within dataset/predictor",
+  "completed_unix": 1790587193.955419,
+  "elapsed_seconds": 235.73287081718445,
+  "n_micro_model_fits": 945,
+  "n_metric_rows": 1071,
+  "n_outer_cells": 63,
+  "n_methods": 17,
+  "all_same_outer_tasks": true,
+  "outer_perturbation_overlap": 0,
+  "inner_anchor_perturbation_overlap": 0,
+  "post_batch_jobs_started": 0,
+  "result_sha256": "1834accfca546ca3228987a6694c4bb4a9cf2273aa8f29e522db06517c9fe4ef"
+}

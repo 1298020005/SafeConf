@@ -1,0 +1,102 @@
+{
+  "COMPARISON_TABLE.md": {
+    "bytes": 3350,
+    "sha256": "3ba803fc4baa096bddcb6e337ff7b785fdef70fda66be7f0babd090a0b493756"
+  },
+  "DATASET_PREDICTOR_RESULTS.csv": {
+    "bytes": 40427,
+    "sha256": "f8123bde974adb67b6dba93a2c1af100d45b7e9bb7613c516895148410eccbed"
+  },
+  "DATASET_RESULTS.csv": {
+    "bytes": 11363,
+    "sha256": "c5f3f71afd9133d18cc58887dacbc64780b3d99b846efc635fb5bab0da064721"
+  },
+  "DATA_AUDIT.json": {
+    "bytes": 1581,
+    "sha256": "0fe746dafda13b4aeadf33d2364527db441b9f112117240c9ce8a28e62d77fc8"
+  },
+  "DATA_COUNTS.csv": {
+    "bytes": 815,
+    "sha256": "7deb13758c02ef958af0b9f5378524a8da0d6c404f289901e4211474f0dd8dfd"
+  },
+  "DOMAIN_MACRO.csv": {
+    "bytes": 2530,
+    "sha256": "85db6e0454860262499dc38ae11a60f02a737d41de7d6c05e5487d953ffa2229"
+  },
+  "ERROR_LINEAGE_AUDIT.csv": {
+    "bytes": 4570,
+    "sha256": "577b3b3e047b3b5194f9e8d5b8e402e4d6088d8fa1ce4c30395239bd25b45a02"
+  },
+  "FEATURE_MISSINGNESS.csv": {
+    "bytes": 2458,
+    "sha256": "f80cede02d59814e6ae9b842cdc4ecbd43eace69d7ea5dcc909300917b790a80"
+  },
+  "MACRO.csv": {
+    "bytes": 1156,
+    "sha256": "934b355a6b329245c5372205cf577a10b8900a7c0f58265c771a4def13f70de2"
+  },
+  "MODEL_COMPARISON.pdf": {
+    "bytes": 24896,
+    "sha256": "062f87b395d792c16eac78895f38c46ce481f33369a2a8268d0c4ac1791ef922"
+  },
+  "MODEL_COMPARISON.png": {
+    "bytes": 185462,
+    "sha256": "97e367181b4e9a0b90e7384bc86972af8d91c2b25605e0b7ff240c4ecfc0e6fb"
+  },
+  "PAIRED_COMPARISONS.csv": {
+    "bytes": 2010,
+    "sha256": "295bf31b53d6399e293ea7eb33b7d95af92745ffc623dccda068ff7db0f62dd0"
+  },
+  "PREDICTIONS.csv.gz": {
+    "bytes": 430696,
+    "sha256": "dc0b49ae2721bfb29e4b5bec568f4fca7a95cd2bc29b45b4d46e44f47027cd98"
+  },
+  "RECOVERABLE_TASKS.csv": {
+    "bytes": 588,
+    "sha256": "04dadf9678ef3c96215630778e19ee7b227cdf0cfdf85903877df4a436fb1819"
+  },
+  "RECOVERABLE_TASK_KEYS.csv.gz": {
+    "bytes": 14790,
+    "sha256": "b4ad9b99f3f26ce8bdab85dd81890a8452ba8d4cb62228280dcd10ee89a0b672"
+  },
+  "RECOVERY_STATUS.json": {
+    "bytes": 638,
+    "sha256": "8353e310750a03bdac57265e41233cd371255bdf1bb53413d99ebedbdd0464fc"
+  },
+  "REPORT.md": {
+    "bytes": 17044,
+    "sha256": "23cb50634414efbf1e4cf6db65309862b2df843284897cf1b452964c9e41222e"
+  },
+  "RESULTS.csv": {
+    "bytes": 290499,
+    "sha256": "1834accfca546ca3228987a6694c4bb4a9cf2273aa8f29e522db06517c9fe4ef"
+  },
+  "RESULT_TABLE.md": {
+    "bytes": 1530,
+    "sha256": "417f40cc651353d64210bd30a6de1feb5027d4a9217ee148ed3a0c845f74980e"
+  },
+  "RUN_STATUS.json": {
+    "bytes": 2292,
+    "sha256": "3562cf3a5167431252e863c914f77e1fe5377313d6418227a9863129474410fa"
+  },
+  "SPLIT_COUNTS.csv": {
+    "bytes": 792,
+    "sha256": "129dc456bf35c573b961089ba3a878ae81bcf699c686a4f5192a1382ff11540f"
+  },
+  "SPLIT_MANIFEST.csv": {
+    "bytes": 424994,
+    "sha256": "9da5ee9be32cc7ba118e8989490bf3acb1e295f0a890f7fa3decbc571da43f31"
+  },
+  "SUMMARY_AUDIT.json": {
+    "bytes": 552,
+    "sha256": "f380e5b1e0c9c26ce8acea9e6e396f6135d369b9116617edb0ddba1172eb4c65"
+  },
+  "SafeConf_模型决策首批结果_20260928.docx": {
+    "bytes": 217269,
+    "sha256": "0d5fde2c1ad0cc72a94d2e1912ebc6f1c4ef779055b7ce1d8d49108b794e8d44"
+  },
+  "SafeConf_模型决策首批结果_20260928.pdf": {
+    "bytes": 519625,
+    "sha256": "78a4fe98812f891af42cfd334a734fcde61764949f884767a8dae78139bd234d"
+  }
+}

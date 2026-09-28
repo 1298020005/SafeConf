@@ -1,5 +1,7 @@
 # SafeConf 外部 Agent 当前入口
 
+**2026-09-28 最新：**用户要求完成一次模型决策与首批轻量比较，然后停止。已完成，见 [模型决策](SAFECONF_MODEL_DECISION.md) 和 [首批结果](docs/实验结果/ModelDecision_light_batch_20260928/REPORT.md)。552 个任务是开发子集；旧 P 含历史尺度字段、旧 train 行不满足完整 held-out 解释。直接 Ridge 本批总体较好，显式锚定未获一致支持，公共历史内容仍需重建质量与来源。未启动第二批，不得接手后自动扩网；用户最新指示优先于下方旧路线。
+
 更新时间：2026-09-23
 
 事实分支：`exp/task-risk-audit-20260611`

@@ -1,0 +1,25 @@
+| comparison                   |   delta_u20 |   positive_dataset_groups |   total_dataset_groups |   gene_delta |   chemical_delta |
+|:-----------------------------|------------:|--------------------------:|-----------------------:|-------------:|-----------------:|
+| Ridge:P_given_M              |      0.0967 |                         5 |                      7 |       0.0903 |           0.1127 |
+| Ridge:Q_given_P              |      0.2362 |                         6 |                      7 |       0.3059 |           0.0618 |
+| Ridge:H_given_PQ             |      0.0527 |                         3 |                      7 |      -0.0080 |           0.2044 |
+| Ridge:anchor_given_same_info |     -0.0351 |                         0 |                      7 |      -0.0139 |          -0.0881 |
+| Ridge:PQH_vs_magnitude       |      0.3332 |                         7 |                      7 |       0.3882 |           0.1958 |
+| HGB:P_given_M                |      0.1854 |                         5 |                      7 |       0.2137 |           0.1148 |
+| HGB:Q_given_P                |      0.1657 |                         6 |                      7 |       0.2105 |           0.0535 |
+| HGB:H_given_PQ               |      0.0299 |                         3 |                      7 |      -0.0175 |           0.1483 |
+| HGB:anchor_given_same_info   |      0.0162 |                         4 |                      7 |       0.0226 |           0.0001 |
+| HGB:PQH_vs_magnitude         |      0.2818 |                         6 |                      7 |       0.3377 |           0.1422 |
+| MLP:P_given_M                |      0.0968 |                         4 |                      7 |       0.1442 |          -0.0218 |
+| MLP:Q_given_P                |      0.1931 |                         6 |                      7 |       0.2168 |           0.1337 |
+| MLP:H_given_PQ               |     -0.0172 |                         3 |                      7 |      -0.0125 |          -0.0292 |
+| MLP:anchor_given_same_info   |     -0.0343 |                         2 |                      7 |      -0.0477 |          -0.0007 |
+| MLP:PQH_vs_magnitude         |      0.2294 |                         6 |                      7 |       0.3203 |           0.0024 |
+| M:HGB_vs_Ridge               |     -0.0468 |                         2 |                      7 |      -0.0691 |           0.0087 |
+| M:MLP_vs_Ridge               |      0.0092 |                         2 |                      7 |      -0.0283 |           0.1028 |
+| P:HGB_vs_Ridge               |      0.0419 |                         3 |                      7 |       0.0543 |           0.0108 |
+| P:MLP_vs_Ridge               |      0.0093 |                         3 |                      7 |       0.0257 |          -0.0318 |
+| PQ:HGB_vs_Ridge              |     -0.0286 |                         3 |                      7 |      -0.0411 |           0.0025 |
+| PQ:MLP_vs_Ridge              |     -0.0339 |                         2 |                      7 |      -0.0635 |           0.0401 |
+| PQH:HGB_vs_Ridge             |     -0.0514 |                         2 |                      7 |      -0.0505 |          -0.0536 |
+| PQH:MLP_vs_Ridge             |     -0.1038 |                         2 |                      7 |      -0.0679 |          -0.1934 |

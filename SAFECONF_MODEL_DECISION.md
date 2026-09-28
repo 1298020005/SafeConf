@@ -1,6 +1,10 @@
 # SafeConf 模型决策：先证明下游风险增量，再决定复杂度
 
-日期：2026-09-28。第一版决策在本轮模型训练前写定；本轮仅做开发比较，结果附录会与事前决策分开保存。
+日期：2026-09-28。第一版决策在本轮模型训练前写定并提交为 `eea1bfc`；本轮仅做开发比较，结果附录与事前决策分开保存。运行中的事实更正：旧目录存在，缺的是其中的运行脚本/独立 split 清单；此更正不改变输入、模型、折或调参预算。
+
+**运行后更新：第一批已完成并停止。** 同 P+Q+H 下直接 Ridge/树/小 MLP 的 U20 为 **0.8091 / 0.7577 / 0.7053**；显式幅度锚定的增量为 **−0.0351 / +0.0162 / −0.0343**。Q 支持代理的方向较一致；旧 H 的正均值主要由 McFarland 驱动，不能宣布公共历史内容普遍有效或无效。Ridge 只是当前开发参考，最终 SafeConf 尚未定型。
+
+552 个任务是本批开发子集；纯元数据核对找到 **1764 个已有 val 候选任务（可多 1212 个）**，3668 是含其他折 test 角色的候选上限，均需来源核验。完整结果、三种上游的实际定义、应撤回的旧解释与恢复清单见 [第一批结果报告](docs/实验结果/ModelDecision_light_batch_20260928/REPORT.md)。以下 12 节保留事前模型决策，不能将其中待验证假设读成已验证结论。
 
 ## 先给结论
 
@@ -56,7 +60,7 @@
 
 若未来合法记录齐备，优先记住交叉拟合后的剩余误差 `e - r_previous`，避免重复学习幅度与 Q/H 已解释的部分；按有效支持量收缩，支持为零时修正为零。类型和版本不相容时不检索。零 E 特征预算不等于零目标模型误差标签预算，两者必须分别计数。
 
-来源代码：[原始预测与历史生成](code/20260426_154505_perturb_transport_final_push/confidence_task/run_confidence_mvp_v2_1.py)、[LOPO 表生成](code/20260426_154505_perturb_transport_final_push/safetrans_confidence/cli/run_lopo_third_predictor.py)。旧表记录的七个原始 run_dir 当前均未在原位置找到，限制了逐行产物验证；不能用当前代码审阅替代旧运行血缘证明。
+来源代码：[原始预测与历史生成](code/20260426_154505_perturb_transport_final_push/confidence_task/run_confidence_mvp_v2_1.py)、[LOPO 表生成](code/20260426_154505_perturb_transport_final_push/safetrans_confidence/cli/run_lopo_third_predictor.py)。七个旧目录和预测归档都存在，但目录内缺少原始运行脚本与独立 split 清单。进一步核对确认：V0/ContextSim 共 1104 条 val 错误与原始记录一致；PertMean 的 552 条是后来派生记录，不能在两模型旧表中直接找到。当前代码意图和错误值一致性还不能替代原始冻结状态与训练排除证明。见 [逐模型血缘核对](docs/实验结果/ModelDecision_light_batch_20260928/ERROR_LINEAGE_AUDIT.csv)。
 
 ## 3. 现有实验已经证明了什么
 
