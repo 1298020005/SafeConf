@@ -319,17 +319,6 @@ def score_predictions(pred: pd.DataFrame):
     return target, summary
 
 
-def macro_metrics(sample: pd.DataFrame, method: str):
-    values_u, values_rho = [], []
-    for target in TARGETS:
-        group = sample[(sample.target == target) & (sample.method == method)]
-        if len(group) < 5:
-            return float("nan"), float("nan")
-        values_u.append(utility20(group.predicted_risk.to_numpy(), group.true_error_rmse.to_numpy()))
-        values_rho.append(spearman(group.predicted_risk.to_numpy(), group.true_error_rmse.to_numpy()))
-    return float(np.nanmean(values_u)), float(np.nanmean(values_rho))
-
-
 def bootstrap_increments(pred: pd.DataFrame, summary: pd.DataFrame):
     methods = set(summary.method)
     comparisons = []
@@ -342,21 +331,39 @@ def bootstrap_increments(pred: pd.DataFrame, summary: pd.DataFrame):
         ]
     assert all(a in methods and b in methods for _, _, a, b in comparisons)
     point = summary.set_index("method")
-    genes = sorted(pred.gene.unique())
-    by_gene = {gene: pred.index[pred.gene.eq(gene)].to_numpy() for gene in genes}
+    wide = pred.pivot(
+        index=["task_id", "target", "gene", "true_error_rmse"],
+        columns="method",
+        values="predicted_risk",
+    ).reset_index()
+    assert len(wide) == 1808 and not wide.isna().any().any()
+    genes = np.asarray(sorted(wide.gene.unique()))
+    by_gene = [np.flatnonzero(wide.gene.to_numpy() == gene) for gene in genes]
+    target_values = wide.target.to_numpy()
+    outcome = wide.true_error_rmse.to_numpy(float)
+    needed = sorted({method for _, _, a, b in comparisons for method in (a, b)})
+    risks = {method: wide[method].to_numpy(float) for method in needed}
     rng = np.random.default_rng(SEED)
     draws = {item[1] + "::" + item[0]: [] for item in comparisons}
     rho_draws = {key: [] for key in draws}
     for _ in range(N_BOOTSTRAP):
         chosen = rng.integers(0, len(genes), len(genes))
-        pieces = []
-        for occurrence, index in enumerate(chosen):
-            block = pred.loc[by_gene[genes[index]]].copy()
-            block["bootstrap_occurrence"] = occurrence
-            pieces.append(block)
-        sample = pd.concat(pieces, ignore_index=True)
-        needed = sorted({method for _, _, a, b in comparisons for method in (a, b)})
-        stats = {method: macro_metrics(sample, method) for method in needed}
+        indices = np.concatenate([by_gene[index] for index in chosen])
+        stats = {}
+        for method in needed:
+            values_u, values_rho = [], []
+            for target_name in TARGETS:
+                use = indices[target_values[indices] == target_name]
+                if len(use) < 5:
+                    values_u = []
+                    break
+                values_u.append(utility20(risks[method][use], outcome[use]))
+                values_rho.append(spearman(risks[method][use], outcome[use]))
+            stats[method] = (
+                (float(np.nanmean(values_u)), float(np.nanmean(values_rho)))
+                if values_u
+                else (float("nan"), float("nan"))
+            )
         for kind, name, a, b in comparisons:
             key = name + "::" + kind
             draws[key].append(stats[a][0] - stats[b][0])
