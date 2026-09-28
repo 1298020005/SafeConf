@@ -123,6 +123,27 @@ def build_role_registry() -> None:
         "notes": "Small retrospective development/transfer line; not confirmation.",
     })
 
+    # E190 is an already-opened cross-study GEARS asset.  It is useful for
+    # independent-family development evidence, but can never be relabelled as
+    # confirmation because its target truth and earlier risk summaries were
+    # inspected in July 2026.
+    e190_public = PUB / "E190_adamson_to_replogle_direct_transfer_20260729"
+    rows.append({
+        "dataset": "E190_Adamson_to_Replogle_K562",
+        "context": "Replogle K562;48 target batches",
+        "task_range": "692 tasks;47 gene clusters",
+        "upstream_model": "GEARS_3seed_centroid",
+        "past_experiment_ids": "E190;E193;E197",
+        "result_seen": "true",
+        "method_design_influenced": "true",
+        "role": "SEEN",
+        "data_hash": sha256(e190_public / "E190_QUERY_MANIFEST.csv"),
+        "prediction_version": sha256(e190_public / "pretruth_release/arrays/PRETRUTH_PREDICTIONS.npz"),
+        "truth_version": sha256(e190_public / "evaluation_truth/arrays/TARGET_TRUE_EFFECTS.npz"),
+        "metadata_only_until_freeze": "false",
+        "notes": "Already-opened cross-study asset. Eligible only for exploratory cross-family development evidence.",
+    })
+
     # E216 was already formally evaluated on 2026-09-20.  Its result existed
     # before this v4 freeze and therefore must be SEEN, even though the sparse
     # mirror under /home/yyf/proj contained only the analysis contract.
@@ -253,6 +274,44 @@ def build_history_audit() -> None:
             "notes": "E201 contract permits three non-target source contexts; external history not verified in this asset.",
         })
 
+    # E190 predicts Replogle K562 perturbations using an Adamson K562 source
+    # study.  The Adamson effects were frozen before Replogle truth was built,
+    # so they are genuine cross-study external history for this opened asset.
+    rows.extend([
+        {
+            "dataset_id": "E190_Adamson_to_Replogle_K562",
+            "source_type": "H_internal",
+            "study_id": "none_verified",
+            "n_records": 0,
+            "n_tasks": 0,
+            "independent_contexts": 0,
+            "eligibility_status": "not_used",
+            "same_dataset_as_target": "true",
+            "same_study_as_target": "true",
+            "independent_public_source": "false",
+            "quality_proxy_coverage": 0.0,
+            "conflict_proxy_coverage": 0.0,
+            "leakage_safe": "not_applicable",
+            "notes": "No Replogle target-study history is used in the E190 SafeConf adapter.",
+        },
+        {
+            "dataset_id": "E190_Adamson_to_Replogle_K562",
+            "source_type": "H_external",
+            "study_id": "Adamson_source_K562",
+            "n_records": 270,
+            "n_tasks": 692,
+            "independent_contexts": 1,
+            "eligibility_status": "eligible_frozen_pretruth",
+            "same_dataset_as_target": "false",
+            "same_study_as_target": "false",
+            "independent_public_source": "true",
+            "quality_proxy_coverage": 0.0,
+            "conflict_proxy_coverage": 1.0,
+            "leakage_safe": "true",
+            "notes": "Adamson train/validation fold effects and cell counts were frozen before Replogle target truth; conflict is fold dispersion, not multi-study quality.",
+        },
+    ])
+
     # Other published assets have prediction/truth but no contract-proven
     # public-history table; mark that absence instead of fabricating quality.
     for dataset in ["E112_Lara_exvivo", "E112_Santinha", "E84_E81", "E87", "E89", "GEARS_formal_54"]:
@@ -297,6 +356,7 @@ def build_field_matrix() -> None:
         ("E87", "CPA_0.8.8_RDKIT_cross_dataset", "chemical", 553),
         ("E89", "CPA_0.8.8_RDKIT_sciPlex3", "chemical", 28),
         ("GEARS_formal_54", "GEARS", "gene", 54),
+        ("E190_Adamson_to_Replogle_K562", "GEARS_3seed_centroid", "gene", 692),
     ]
     e201 = pd.read_csv(ROOT / "docs/实验结果/E201_txpert_multitarget_retraining_20260802/tables/E201_PRETRUTH_RISK_FEATURES.csv")
     e201 = e201[e201.analysis_stratum.eq("primary_ge30")].copy()
@@ -343,6 +403,34 @@ def build_field_matrix() -> None:
                     studies = 0
                     contexts = 0
                 leakage_safe = safe
+            elif dataset.startswith("E190"):
+                if field in {"support", "relevance", "conflict", "content"}:
+                    raw = eligible = 1.0
+                    missing = 0
+                    studies = 1
+                    contexts = 1
+                    leakage_safe = "true"
+                else:
+                    raw = eligible = 0.0
+                    missing = n_tasks
+                    studies = 0
+                    contexts = 0
+                    leakage_safe = "false"
+                if field == "support":
+                    derivation = "Adamson pretruth source cell/guide counts"
+                    formula = "count frozen Adamson source records by gene"
+                elif field == "relevance":
+                    derivation = "prediction/source effect geometry"
+                    formula = "cosine and negative RMSE between GEARS prediction and frozen Adamson gene effect"
+                elif field == "quality":
+                    derivation = "not_available"
+                    formula = "one source study/context cannot establish formal Quality"
+                elif field == "conflict":
+                    derivation = "Adamson fold dispersion proxy"
+                    formula = "RMS dispersion of source pseudobulk fold effects"
+                elif field == "content":
+                    derivation = "Adamson frozen source gene effect"
+                    formula = "magnitude of the cross-study source effect"
             else:
                 raw = eligible = 0.0
                 missing = n_tasks
