@@ -1,0 +1,47 @@
+{
+  "status": "COMPLETE_STOPPED_AFTER_REGISTERED_BATCH",
+  "n_records": 3616,
+  "n_tasks": 1808,
+  "n_upstreams": 2,
+  "gene_held_out_folds": 5,
+  "feature_groups": {
+    "P+Q": [
+      "predicted_magnitude",
+      "family_disagreement",
+      "family_radius",
+      "prediction_abs_mean",
+      "prediction_signed_mean",
+      "prediction_std",
+      "prediction_abs_q95",
+      "n_source_cells",
+      "n_source_contexts",
+      "n_source_batches",
+      "min_source_cells"
+    ],
+    "P+Q+H": [
+      "predicted_magnitude",
+      "family_disagreement",
+      "family_radius",
+      "prediction_abs_mean",
+      "prediction_signed_mean",
+      "prediction_std",
+      "prediction_abs_q95",
+      "n_source_cells",
+      "n_source_contexts",
+      "n_source_batches",
+      "min_source_cells",
+      "source_transfer_magnitude",
+      "source_delta_dispersion",
+      "model_source_gap",
+      "prediction_source_cosine"
+    ]
+  },
+  "target_truth_used_only_as_label": true,
+  "upstream_records_shared_tasks": true,
+  "evidence_level": "RETROSPECTIVE_CROSS_UPSTREAM_DEVELOPMENT",
+  "new_upstream_training_runs": 0,
+  "python": "3.12.4",
+  "numpy": "1.26.4",
+  "sklearn": "1.5.2",
+  "result_sha256": "53578a621f37dfda508aa7fa4df070c82f83ed95764500197bcca82d0ba6a37c"
+}
