@@ -1,0 +1,20 @@
+{
+  "status": "COMPLETE",
+  "candidate_unique_tasks": 1764,
+  "all_records_pass_unique_tasks": 1764,
+  "n_prediction_records": 6612,
+  "passed_prediction_records": 6612,
+  "elapsed_seconds": 29.33973455429077,
+  "vector_tolerance": 1e-05,
+  "error_tolerance": 1e-05,
+  "source_sha256": "dcbfa2763ec23ed83062ad143a7c773cb3409291e33f9d705c8e5d8ab6235b5d",
+  "new_deep_upstream_training_runs": 0,
+  "test_error_records_used": 0,
+  "history_features_recovered": false,
+  "can_pool_different_upstream_folds_for_risk_without_further_audit": false,
+  "limits": [
+    "Replay demonstrates fold-source compatibility, not historical temporal attestation.",
+    "Records remain retrospective development; source folds are different upstream states.",
+    "Q/H and cross-model Error Memory are not automatically recovered."
+  ]
+}

@@ -1,0 +1,51 @@
+[
+  {
+    "dataset": "CuiHacohen2023",
+    "run_dir": "/home/yyf/safeconf_runtime/outputs/safeconf_formal_main_v3_drop_blank_inputs_20260609/safeconf_cui_go_nogo_probe",
+    "split_sha256": "8e0ae971ef66d6769b2c97da7866065a6189873539349f8c629b70ad5eb61a36",
+    "prediction_archive_sha256": "ad6c06331cb3c6382001526125d5cad0f1821a951785ac72a4eca562083b853d",
+    "true_archive_sha256": "cab8fd1c7e80d33153f5f133f1f0240134f642a1017b19907a4766c832fb0dd3"
+  },
+  {
+    "dataset": "Frangieh",
+    "run_dir": "/home/yyf/safeconf_runtime/outputs/safeconf_formal_main_v3_drop_blank_inputs_20260609/Frangieh",
+    "split_sha256": "33ec11dcbebc15702e2c8977467fc35e940b49ac7a4518dfd244cafd1e559575",
+    "prediction_archive_sha256": "87725b5977f351badfcb2b8b5c90df42687a1c36844f95098c86190b247744ca",
+    "true_archive_sha256": "073c48d732fd6f01ab609534a5d1b5517ac497e47ff74e9d8a1986145ff34fdc"
+  },
+  {
+    "dataset": "LaraAstiasoHuntly2023_exvivo",
+    "run_dir": "/home/yyf/safeconf_runtime/outputs/safeconf_formal_main_v3_drop_blank_inputs_20260609/LaraAstiasoHuntly2023_exvivo",
+    "split_sha256": "08a167940ec1aec843692b1814087fc0c2a3339d758f6fba4035752e0e293d61",
+    "prediction_archive_sha256": "4f26cc7ee011bc4671742f26380ad93def5dfd63c6790a102fdf0ad13c0eb1c7",
+    "true_archive_sha256": "2a2e25811051a4cd8a4355af1c817381bf6decac846e2995a6c8e62eb0c93ca0"
+  },
+  {
+    "dataset": "LaraAstiasoHuntly2023_invivo",
+    "run_dir": "/home/yyf/safeconf_runtime/outputs/safeconf_formal_main_v3_drop_blank_inputs_20260609/LaraAstiasoHuntly2023_invivo",
+    "split_sha256": "0124a80dc411d991e46a2465e8462d402aebeb0ca2829b23d47e6f55dbf3be23",
+    "prediction_archive_sha256": "4974af286cf98b44b28b2a546c2bc6bfcddbde3606a674d626ebf321432e4e88",
+    "true_archive_sha256": "401bb88625613023977cfbd4f1ef8ef180a0a81d464e2cbba60328d6b11d5241"
+  },
+  {
+    "dataset": "McFarlandTsherniak2020",
+    "run_dir": "/home/yyf/safeconf_runtime/outputs/safeconf_formal_main_v3_drop_blank_inputs_20260609/McFarlandTsherniak2020",
+    "split_sha256": "4c941a7da47f54df7da045ce37152e062feaa325885315a8a9401adcad1ccd44",
+    "prediction_archive_sha256": "2b2ea120873c9bb4b7375f14ef8d3a58e0412c851720c6ff0701a354c8ce07ba",
+    "true_archive_sha256": "862f86e5ad9be727a00f3e88fd7d8c78ff4d5c2621cf9e3c1a918955d53a5cdb"
+  },
+  {
+    "dataset": "SantinhaPlatt2023",
+    "run_dir": "/home/yyf/safeconf_runtime/outputs/safeconf_formal_main_v3_drop_blank_inputs_20260609/SantinhaPlatt2023",
+    "split_sha256": "264708d379350ac50ee5006c2a7d1ff0dc971057b6bc319c3cb1dce7277550e0",
+    "prediction_archive_sha256": "1cc89232697ce59c36da488d78fd984ce426bd58312da1b2c15d606950da1706",
+    "true_archive_sha256": "a77a7d370e9efd3e17ecb41ca1bd40515ffec2ef8953367e27f3257499251e69"
+  },
+  {
+    "dataset": "SrivatsanTrapnell2020_sciplex3",
+    "run_dir": "/home/yyf/safeconf_runtime/outputs/safeconf_formal_main_v3_drop_blank_inputs_20260609/SrivatsanTrapnell2020_sciplex3",
+    "split_sha256": "304b2db2c83c4ba07d4ab656566b45db708f0fb343f069bfb239e97c825fe5f3",
+    "prediction_archive_sha256": "b5898a46634e1ab65fb8ed9fd11e445bb60cc91221009ca2fab9d0d60884612d",
+    "true_archive_sha256": "c47a06a4e30baa132cc715baa9816880735d49e84915e3722c034c06dcf043a8"
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "initial_attempt": "stopped on exact split/table equality at Lara exvivo after two groups passed",
+  "cause": "drop-blank historical copy filtered tables but preserved input records and full array stores",
+  "resolution": "original V0/ContextSim replay uses input/PREDICTION_RECORDS; later PertMean replay uses filtered table sources, matching their respective generators",
+  "tolerances_unchanged": true,
+  "evidence": "code/20260426_154505_perturb_transport_final_push/safetrans_confidence/cli/build_drop_blank_run.py",
+  "not_a_model_tuning_change": true
+}

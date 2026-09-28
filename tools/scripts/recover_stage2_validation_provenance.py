@@ -27,7 +27,9 @@ def main():
   want=lambda x:(x.dataset_name==ds)&x.task_key.isin(ids)&x.split.eq('val')
   vals=selected_csv(SRC,['dataset_name','task_key','split'],want,source_cols)
   spl=pd.read_csv(run/'input/HELDOUT_PAIR_SPLITS.csv')
-  recmeta=pd.read_csv(run/'tables/PREDICTION_RECORDS.csv',usecols=['task_key','task_id','context','perturbation','fold_id','split','predictor_name','predicted_effect_key','true_effect_key','target_control_key'])
+  cols=['task_key','task_id','context','perturbation','fold_id','split','predictor_name','predicted_effect_key','true_effect_key','target_control_key']
+  recmeta=pd.read_csv(run/'input/PREDICTION_RECORDS.csv',usecols=cols)
+  filtered=pd.read_csv(run/'tables/PREDICTION_RECORDS.csv',usecols=cols)
   sm=spl[['fold_id','task_key','split']].merge(recmeta[['fold_id','task_key','split']].drop_duplicates(),on=['fold_id','task_key'],suffixes=('_split','_record'),validate='one_to_one')
   assert len(sm)==len(spl) and sm.split_split.eq(sm.split_record).all()
   with np.load(run/'input/true_effects.npz') as tz,np.load(run/'input/predicted_effects.npz') as pz,np.load(run/'input/target_control_means.npz') as cz:
@@ -37,12 +39,18 @@ def main():
     assert set(train.task_key)==allowed and not (set(v.task_key)&allowed)
     y=np.stack([tz[k] for k in train.true_effect_key]);ctrl=np.stack([cz[k] for k in train.target_control_key])
     pp=train.perturbation.to_numpy(str);cc=train.context.to_numpy(str);global_mean=y.mean(0)
+    # The historical drop-blank copy filtered tables, not the original model's
+    # training inputs. The later PertMean uses the filtered table instead.
+    pertmean_allowed=set(filtered[(filtered.fold_id==fold)&filtered.split.eq('train')].task_key)
+    pm_mask=train.task_key.isin(pertmean_allowed).to_numpy()
     query=recmeta[(recmeta.fold_id==fold)&recmeta.split.eq('val')&recmeta.task_key.isin(ids)]
     identity=hashlib.sha256('\n'.join(sorted(allowed)).encode()).hexdigest()
     for key,vv in v.groupby('task_key'):
      raw=query[query.task_key==key];first=raw.iloc[0];context=str(first.context);pert=str(first.perturbation)
      true=np.asarray(tz[first.true_effect_key],np.float32);control=np.asarray(cz[first.target_control_key],np.float64)
      same=np.flatnonzero(pp==pert);basepred=y[same].mean(0) if len(same) else global_mean
+     pm_same=np.flatnonzero((pp==pert)&pm_mask)
+     pm_pred=y[pm_same].mean(0) if len(pm_same) else y[pm_mask].mean(0)
      cp=np.flatnonzero(cc==context)
      v0=(.85*basepred+.15*y[cp].mean(0)) if len(cp) else basepred
      idx=np.flatnonzero((pp==pert)&(cc!=context));idx=idx if len(idx) else same
@@ -50,14 +58,16 @@ def main():
       sims=np.array([float(np.dot(control,ctrl[j])/(np.linalg.norm(control)*np.linalg.norm(ctrl[j])+1e-8)) for j in idx])
       w=np.exp(5*(sims-sims.max()));w/=w.sum();sim=(w[:,None]*y[idx]).sum(0).astype(np.float32)
      else: sim=global_mean
-     for predictor,pred in [('V0StrongBaseline',v0),('ContextSimBaseline',sim),('PertMeanPredictor',basepred)]:
+     for predictor,pred in [('V0StrongBaseline',v0),('ContextSimBaseline',sim),('PertMeanPredictor',pm_pred)]:
       target=vv[vv.predictor_name==predictor].iloc[0]
       reconstructed=float(np.sqrt(np.mean((pred.astype(np.float32)-true)**2)))
       errdiff=abs(reconstructed-float(target.true_error_rmse));normdiff=abs(float(np.linalg.norm(pred))-float(target.prediction_l2_norm))
       old=raw[raw.predictor_name==predictor]
       vd=float(np.max(np.abs(np.asarray(pz[old.iloc[0].predicted_effect_key])-pred))) if len(old) else np.nan
       match=errdiff<=TOL and normdiff<=TOL and (not len(old) or vd<=TOL)
-      rows.append(dict(dataset=ds,task_key=key,original_fold=int(fold),predictor=predictor,upstream_state_id=f'{ds}/fold{fold}/{predictor}/{identity[:12]}',split='val',n_upstream_train=len(train),query_in_train=False,split_manifest_match=True,error_replay_absdiff=errdiff,magnitude_replay_absdiff=normdiff,vector_replay_maxdiff=vd,status='REPLAY_VERIFIED_DEVELOPMENT' if match else 'REPLAY_MISMATCH',history_features_recovered=False,error_memory_accepted=False))
+      own_allowed=pertmean_allowed if predictor=='PertMeanPredictor' else allowed
+      own_hash=hashlib.sha256('\n'.join(sorted(own_allowed)).encode()).hexdigest()
+      rows.append(dict(dataset=ds,task_key=key,original_fold=int(fold),predictor=predictor,upstream_state_id=f'{ds}/fold{fold}/{predictor}/{own_hash[:12]}',split='val',n_upstream_train=len(own_allowed),query_in_train=False,split_manifest_match=True,error_replay_absdiff=errdiff,magnitude_replay_absdiff=normdiff,vector_replay_maxdiff=vd,status='REPLAY_VERIFIED_DEVELOPMENT' if match else 'REPLAY_MISMATCH',history_features_recovered=False,error_memory_accepted=False))
     print(f'{ds} fold {fold}: replayed {len(v)} validation records',flush=True)
   provenance.append(dict(dataset=ds,run_dir=str(run),split_sha256=sha(run/'input/HELDOUT_PAIR_SPLITS.csv'),prediction_archive_sha256=sha(run/'input/predicted_effects.npz'),true_archive_sha256=sha(run/'input/true_effects.npz')))
   pd.DataFrame(rows).to_csv(OUT/'RECOVERY_REPLAY_ROWS.csv',index=False)

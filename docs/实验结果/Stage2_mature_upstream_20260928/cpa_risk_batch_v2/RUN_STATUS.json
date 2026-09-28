@@ -1,0 +1,15 @@
+{
+  "status": "COMPLETE_STOPPED_AFTER_REGISTERED_BATCH",
+  "predictor": "CPA_0.8.8_RDKIT_logdose",
+  "n_tasks": 629,
+  "n_manifests": 8,
+  "n_methods": 5,
+  "truth_union_tasks": 103,
+  "new_upstream_training_runs": 0,
+  "final_test_label_rows_used": 0,
+  "evidence_level": "RELEASED_RETROSPECTIVE_DEVELOPMENT",
+  "python": "3.12.4",
+  "numpy": "1.26.4",
+  "sklearn": "1.5.2",
+  "result_sha256": "6befd8a5e9e8d649b4fb8cf9664b0e12f14f7cd9d7dc19dd5982a5905fad1757"
+}
