@@ -8,6 +8,7 @@ import math
 import os
 import platform
 import time
+import argparse
 from pathlib import Path
 
 os.environ.setdefault("OMP_NUM_THREADS", "2")
@@ -29,14 +30,16 @@ from torch import nn
 
 ROOT = Path(__file__).resolve().parents[2]
 E201 = ROOT / "docs/实验结果/E201_txpert_multitarget_retraining_20260802"
-OUT = ROOT / "docs/实验结果/Stage2_mature_upstream_20260928/txpert_risk_batch"
 DATA = Path("/home/yyf/data/txpert_official_20260802/e201")
-CONTRACT = OUT.parent / "TXPERT_RISK_BATCH_CONTRACT.md"
-FEATURES = E201 / "tables/E201_PRETRUTH_RISK_FEATURES.csv"
 SUPPORT = E201 / "tables/E201_SOURCE_CONTEXT_SUPPORT.csv"
-METRICS = E201 / "formal_core_evaluation/tables/E201_TASK_METRICS.csv"
-VECTORS = DATA / "pretruth_vectors"
 TRUTH = DATA / "evaluation_vectors/E201_TARGET_TRUTH_CENTROIDS.npy"
+OUT: Path
+CONTRACT: Path
+FEATURES: Path
+METRICS: Path
+VECTORS: Path
+VECTOR_PREFIX: str
+UPSTREAM_LABEL: str
 
 SEED = 20260928
 N_BOOTSTRAP = 2000
@@ -63,6 +66,30 @@ H = [
     "prediction_source_cosine",
 ]
 GROUPS = {"M": P[:1], "P": P, "PQ": P + Q, "PQH": P + Q + H}
+
+
+def configure(upstream: str) -> None:
+    global OUT, CONTRACT, FEATURES, METRICS, VECTORS, VECTOR_PREFIX, UPSTREAM_LABEL
+    stage = ROOT / "docs/实验结果/Stage2_mature_upstream_20260928"
+    if upstream == "e201":
+        OUT = stage / "txpert_risk_batch"
+        CONTRACT = stage / "TXPERT_RISK_BATCH_CONTRACT.md"
+        FEATURES = E201 / "tables/E201_PRETRUTH_RISK_FEATURES.csv"
+        METRICS = E201 / "formal_core_evaluation/tables/E201_TASK_METRICS.csv"
+        VECTORS = DATA / "pretruth_vectors"
+        VECTOR_PREFIX = "E201"
+        UPSTREAM_LABEL = "TxPert STRING-GAT"
+    elif upstream == "e205":
+        e205 = ROOT / "docs/实验结果/E205_cross_family_disagreement_20260830"
+        OUT = stage / "txpert_exphormer_risk_batch"
+        CONTRACT = stage / "TXPERT_EXPHORMER_RISK_BATCH_CONTRACT.md"
+        FEATURES = e205 / "tables/E205_PRETRUTH_RISK_FEATURES.csv"
+        METRICS = e205 / "formal_evaluation/E205_TASK_METRICS.csv"
+        VECTORS = Path("/home/yyf/data/txpert_official_20260802/e205/pretruth_vectors")
+        VECTOR_PREFIX = "E205"
+        UPSTREAM_LABEL = "TxPert Exphormer"
+    else:
+        raise ValueError(upstream)
 
 
 def sha256(path: Path) -> str:
@@ -191,10 +218,10 @@ def build_frame() -> tuple[pd.DataFrame, dict]:
     frame = frame[frame.analysis_stratum.eq("primary_ge30")].copy().reset_index(drop=True)
     assert len(frame) == 1808 and tuple(sorted(frame.target.unique())) == tuple(sorted(TARGETS))
 
-    seed = np.load(VECTORS / "E201_SEED_CENTROIDS.npy", mmap_mode="r")[:, :]
-    family = np.load(VECTORS / "E201_FAMILY_CENTROIDS.npy", mmap_mode="r")
-    control = np.load(VECTORS / "E201_CONTROL_CENTROIDS.npy", mmap_mode="r")
-    source = np.load(VECTORS / "E201_SOURCE_TRANSFER_CENTROIDS.npy", mmap_mode="r")
+    seed = np.load(VECTORS / f"{VECTOR_PREFIX}_SEED_CENTROIDS.npy", mmap_mode="r")[:, :]
+    family = np.load(VECTORS / f"{VECTOR_PREFIX}_FAMILY_CENTROIDS.npy", mmap_mode="r")
+    control = np.load(VECTORS / f"{VECTOR_PREFIX}_CONTROL_CENTROIDS.npy", mmap_mode="r")
+    source = np.load(VECTORS / f"{VECTOR_PREFIX}_SOURCE_TRANSFER_CENTROIDS.npy", mmap_mode="r")
     truth = np.load(TRUTH, mmap_mode="r")
     original = base.index[base.analysis_stratum.eq("primary_ge30")].to_numpy()
     family = np.asarray(family[original], dtype=np.float64)
@@ -279,7 +306,7 @@ def evaluate(frame: pd.DataFrame, device: str):
                                 predicted_risk=float(value),
                             )
                         )
-        print(f"[TxPert risk] {target} complete; fits={fit_count}", flush=True)
+        print(f"[{UPSTREAM_LABEL} risk] {target} complete; fits={fit_count}", flush=True)
     pred = pd.DataFrame(predictions)
     assert fit_count == 240
     counts = pred.groupby(["target", "method"]).size()
@@ -404,7 +431,7 @@ def make_figure(summary: pd.DataFrame, increments: pd.DataFrame):
     axes[0].bar(range(len(order)), view.utility20, color=["#777777", "#5677A6", "#4C956C", "#E09F3E", "#A23B72"])
     axes[0].set_xticks(range(len(order)), ["Raw M", "Learned M", "P", "P+Q", "P+Q+H"], rotation=20)
     axes[0].set_ylabel("Macro Utility@20")
-    axes[0].set_title("TxPert risk-information staircase (Ridge)")
+    axes[0].set_title(f"{UPSTREAM_LABEL} risk-information staircase (Ridge)")
     axes[0].axhline(0, color="black", lw=0.7)
     inc = increments[increments.comparison.isin(["P_given_M", "Q_given_P", "H_given_PQ"])]
     pivot = inc.pivot(index="comparison", columns="algorithm", values="delta_utility20").reindex(["P_given_M", "Q_given_P", "H_given_PQ"])
@@ -423,6 +450,10 @@ def make_figure(summary: pd.DataFrame, increments: pd.DataFrame):
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--upstream", choices=["e201", "e205"], default="e201")
+    args = parser.parse_args()
+    configure(args.upstream)
     OUT.mkdir(parents=True, exist_ok=True)
     if (OUT / "RUN_STATUS.json").exists():
         raise FileExistsError("refusing to overwrite an existing TxPert risk batch")
@@ -434,6 +465,8 @@ def main():
     started = time.time()
     status = {
         "status": "RUNNING",
+        "upstream": args.upstream,
+        "upstream_label": UPSTREAM_LABEL,
         "started_unix": started,
         "git_head": os.popen(f"git -C '{ROOT}' rev-parse HEAD").read().strip(),
         "contract_sha256": sha256(CONTRACT),
