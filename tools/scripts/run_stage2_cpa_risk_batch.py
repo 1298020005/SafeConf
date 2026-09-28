@@ -24,7 +24,7 @@ ROOT = Path(__file__).resolve().parents[2]
 PUB = Path("/home/yyf/proj/docs/实验结果")
 PARENT = PUB / "E84_cpa_rdkit_cartesian_formal_20260712/manifests"
 SPLITS = PUB / "E81_sciplex_cartesian_contract_20260712/tables/E81_SPLIT_MANIFEST.csv"
-OUT = ROOT / "docs/实验结果/Stage2_mature_upstream_20260928/cpa_risk_batch"
+OUT = ROOT / "docs/实验结果/Stage2_mature_upstream_20260928/cpa_risk_batch_v2"
 IDS = ["E81_r1_p25", "E81_r1_p50", "E81_r2_p25", "E81_r2_p50", "E81_r2_p75", "E81_r3_p25", "E81_r3_p50", "E81_r3_p75"]
 P = ["predicted_magnitude", "prediction_abs_mean", "prediction_std", "prediction_abs_q95"]
 Q = ["n_source_cells", "n_source_contexts", "n_source_batches", "min_source_cells"]
@@ -159,6 +159,24 @@ def evaluate(frame, predictor):
     return pred, target, summary, pd.DataFrame(splits)
 
 
+def bootstrap_summary(target):
+    rng = np.random.default_rng(SEED)
+    manifests = np.asarray(sorted(target.manifest.unique()))
+    comparisons = [("Ridge_PQ", "Magnitude_raw"), ("Ridge_PQH", "Magnitude_raw"), ("Ridge_PQH", "Ridge_PQ")]
+    rows = []
+    for a, b in comparisons:
+        wide = target[target.method.isin([a, b])].pivot(index="manifest", columns="method", values="utility20")
+        rho_wide = target[target.method.isin([a, b])].pivot(index="manifest", columns="method", values="spearman")
+        delta_u, delta_r = wide[a] - wide[b], rho_wide[a] - rho_wide[b]
+        sampled_u, sampled_r = [], []
+        for _ in range(2000):
+            chosen = rng.choice(manifests, size=len(manifests), replace=True)
+            sampled_u.append(float(delta_u.loc[chosen].mean()))
+            sampled_r.append(float(delta_r.loc[chosen].mean()))
+        rows.append(dict(comparison=f"{a}_minus_{b}", delta_utility20=float(delta_u.mean()), utility_ci95_lower=float(np.quantile(sampled_u,.025)), utility_ci95_upper=float(np.quantile(sampled_u,.975)), delta_spearman=float(delta_r.mean()), spearman_ci95_lower=float(np.quantile(sampled_r,.025)), spearman_ci95_upper=float(np.quantile(sampled_r,.975)), positive_manifests=int((delta_u>0).sum()), n_manifests=len(manifests), bootstrap_draws=2000))
+    return pd.DataFrame(rows)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--predictor", default="CPA_0.8.8_RDKIT_logdose")
@@ -174,6 +192,7 @@ def main():
     pred.to_csv(OUT / "OOF_PREDICTIONS.csv", index=False)
     target.to_csv(OUT / "MANIFEST_RESULTS.csv", index=False)
     summary.to_csv(OUT / "SUMMARY.csv", index=False)
+    bootstrap_summary(target).to_csv(OUT / "INCREMENTAL_RESULTS.csv", index=False)
     splits.to_csv(OUT / "SPLIT_MANIFEST.csv", index=False)
     status = dict(status="COMPLETE_STOPPED_AFTER_REGISTERED_BATCH", predictor=args.predictor, n_tasks=len(frame), n_manifests=len(IDS), n_methods=summary.method.nunique(), truth_union_tasks=len(truth), new_upstream_training_runs=0, final_test_label_rows_used=0, evidence_level="RELEASED_RETROSPECTIVE_DEVELOPMENT", python=platform.python_version(), numpy=np.__version__, sklearn=__import__("sklearn").__version__, result_sha256=hashlib.sha256((OUT/"SUMMARY.csv").read_bytes()).hexdigest())
     (OUT / "RUN_STATUS.json").write_text(json.dumps(status, indent=2) + "\n")
