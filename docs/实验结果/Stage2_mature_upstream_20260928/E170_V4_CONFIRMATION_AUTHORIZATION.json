@@ -61,7 +61,9 @@
     "docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/FINAL_METHOD_CONFIG.json": "4dfdcea23d126f497a7b30d875187976bbef7cc63a1986d0f0fdf5371b0c48e1",
     "docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/FINAL_CANDIDATE_FREEZE.json": "17349418afaf1366b6af78e247fc9ef3558c9deddc172b2283b31dba3e400c0e",
     "tools/scripts/run_safeconf_v4_development.py": "4e7c78837e27b3d478d6b0f72fc698f2086d858888a0d6a5e60aec38142337c8",
-    "tools/scripts/build_e170_v4_confirmation_truth.py": "75889aa033d7520dbcd2bb1686857b3c7dcdc63fe47e487774b04215be8d3b62",
+    "tools/scripts/build_e168_primary_cd4_isolated_assets.py": "8abcad80a259c541932404aaeed2a99a6f105897c749df1a106c010d0765bfcb",
+    "tools/scripts/build_e170_primary_cd4_panel_assets.py": "8fd04d5e95c61aa1f17d1a5000a84f44dce57cd53510a0b3c0d3ac22d1d872cb",
+    "tools/scripts/build_e170_v4_confirmation_truth.py": "45bf15afcbe76b8a62d3fe6af475ea15b7cdd6c74e56935b86e625f1a4cf4233",
     "tools/scripts/run_e170_safeconf_v4_confirmation.py": "6e5b580824043052da8e01788a25348941d694565a6e9a7769b2c5e151773ec7"
   },
   "rules": {

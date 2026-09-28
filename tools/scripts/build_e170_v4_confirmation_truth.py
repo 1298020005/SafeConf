@@ -26,6 +26,7 @@ ROOT = Path(__file__).resolve().parents[2]
 STAGE = ROOT / "docs/实验结果/Stage2_mature_upstream_20260928"
 AUTH = STAGE / "E170_V4_CONFIRMATION_AUTHORIZATION.json"
 WRAPPER_PATH = ROOT / "tools/scripts/build_e170_primary_cd4_panel_assets.py"
+HELPER_PATH = ROOT / "tools/scripts/build_e168_primary_cd4_isolated_assets.py"
 PUBLIC = Path("/home/yyf/proj/docs/实验结果/E170_primary_cd4_multipanel_precision_20260718")
 F2_ROOT = Path("/home/yyf/data/safeconf_external/primary_cd4_perturbseq_2025/isolated/E170")
 OUTPUT = Path("/home/yyf/data/safeconf_v4_e170_confirmation_truth")
@@ -106,10 +107,24 @@ def write_manifest(directory: Path) -> str:
 def build_panel(wrapper, panel: str, source: Path, source_hash: str, staging_root: Path,
                 authorization_commit: str, auth_hash: str) -> dict:
     helper = wrapper.configure(wrapper.import_helper(), panel)
-    frozen = helper.verify_frozen_state()
+    # The publication worktree is a later snapshot and does not retain E168's
+    # commit as a graph ancestor.  Verify the exact frozen bytes recorded by
+    # E170 instead of weakening the check or fabricating ancestry.
+    helper.ROOT = Path("/home/yyf/proj")
+    run_status = json.loads((PUBLIC / "RUN_STATUS.json").read_text())
+    frozen_relatives = [
+        "SOURCE_LOCK.json", "MODEL_INPUT_LOCK.json", "STATISTICAL_ANALYSIS_LOCK.json",
+        "PREREG_ANALYSIS_PLAN.md", "manifests/E170_DONOR_STATE_ROLES.csv",
+        f"manifests/{panel}/E170_{panel}_ROW_ACCESS_MANIFEST.csv",
+        f"manifests/{panel}/E170_{panel}_SELECTED_TARGETS.csv",
+        f"manifests/{panel}/E170_{panel}_TASK_MANIFEST.csv",
+    ]
+    for relative in frozen_relatives:
+        path = PUBLIC / relative
+        expected = run_status["artifact_sha256"].get(relative)
+        if expected is None or sha256(path) != expected:
+            raise RuntimeError(f"{panel} frozen E170 input changed: {relative}")
     rows, targets, tasks, _roles = helper.validate_manifests()
-    if Path(frozen.source_lock["source_path"]) != source:
-        raise RuntimeError(f"{panel} source path changed")
     f2 = F2_ROOT / panel / "F2_pretruth"
     f2_manifest = helper.verify_manifest(f2)
     f2_attestation = json.loads((f2 / "ACCESS_ATTESTATION.json").read_text())

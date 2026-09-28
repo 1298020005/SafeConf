@@ -48,6 +48,8 @@ def main() -> None:
         STAGE / "FINAL_METHOD_CONFIG.json",
         STAGE / "FINAL_CANDIDATE_FREEZE.json",
         ROOT / "tools/scripts/run_safeconf_v4_development.py",
+        ROOT / "tools/scripts/build_e168_primary_cd4_isolated_assets.py",
+        ROOT / "tools/scripts/build_e170_primary_cd4_panel_assets.py",
         ROOT / "tools/scripts/build_e170_v4_confirmation_truth.py",
         ROOT / "tools/scripts/run_e170_safeconf_v4_confirmation.py",
     ]
