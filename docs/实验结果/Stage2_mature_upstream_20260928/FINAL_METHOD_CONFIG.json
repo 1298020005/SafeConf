@@ -1,0 +1,149 @@
+{
+  "config_version": "safeconf-final-execution-v4",
+  "status": "FINAL_CANDIDATE_FROZEN_PRE_CONFIRMATION",
+  "final_candidate": "V2_nested_evidence_shrinkage",
+  "v1": {
+    "model": "Ridge",
+    "features": [
+      "Universal_P",
+      "Support",
+      "Relevance"
+    ],
+    "alpha": 10.0,
+    "quality_conflict_content_allowed": false
+  },
+  "v2": {
+    "formula": "rP_calibrated + w * (rPQ_calibrated - rP_calibrated)",
+    "weight": "sigmoid(bias + a_support*support + a_relevance*relevance + a_quality*quality - a_conflict*conflict - a_missing*missingness)",
+    "monotonic_constraints": {
+      "support": 1,
+      "relevance": 1,
+      "quality": 1,
+      "conflict": -1,
+      "missingness": -1
+    },
+    "nested_cross_fitted": true,
+    "same_error_target": true,
+    "same_outer_train_scale": true
+  },
+  "competence_gate": {
+    "relative_noninferiority_margin": 0.02,
+    "minimum_nonnegative_strata_fraction": 0.6,
+    "baseline_selection": "strongest_simple_baseline_registered_before_new_family_safeconf_results"
+  },
+  "final_candidate_gate": {
+    "minimum_delta_u20_vs_v1": 0.005,
+    "minimum_nonnegative_evaluation_strata_fraction": 0.6,
+    "max_coverage_relative_degradation": 0.05,
+    "max_high_risk_miss_rate_degradation": 0.02,
+    "max_aurc_relative_degradation": 0.05,
+    "minimum_valid_strata_fraction": 0.8
+  },
+  "evaluation": {
+    "primary_endpoint": "Utility@20",
+    "top_k_rule": "ceil(0.2*n_tasks)",
+    "tie_break": "task_id_lexicographic",
+    "min_tasks": 20,
+    "oracle_denominator_epsilon": 1e-12,
+    "bootstrap_replicates": 5000,
+    "bootstrap_unit": "biological_perturbation_cluster",
+    "evaluation_stratum": [
+      "dataset_id",
+      "upstream_model_id",
+      "context_id",
+      "outer_fold"
+    ]
+  },
+  "confirmation": {
+    "pre_freeze_allowed": [
+      "existence",
+      "schema",
+      "hash",
+      "provenance",
+      "version"
+    ],
+    "pre_freeze_forbidden": [
+      "row_count",
+      "coverage",
+      "missingness",
+      "feature_distribution",
+      "prediction",
+      "truth",
+      "error",
+      "result_summary"
+    ],
+    "opened_only_after_final_candidate_freeze": true
+  },
+  "final_candidate_frozen_at_utc": "2026-09-28T17:32:19.667579+00:00",
+  "development_gate_result": {
+    "delta_u20_macro": 0.009711226587606037,
+    "nonnegative_strata_fraction": 0.875,
+    "risk10_relative_degradation": 0.0177281386903658,
+    "risk20_relative_degradation": 0.0,
+    "risk50_relative_degradation": 0.0,
+    "high_risk_miss_rate_degradation": 0.0,
+    "aurc_relative_degradation": 0.0,
+    "valid_strata_fraction": 1.0,
+    "n_evaluation_strata": 8
+  },
+  "per_upstream_gate_result": {
+    "txpert_gat": {
+      "delta_u20_macro": 0.009906266582347167,
+      "nonnegative_strata_fraction": 1.0,
+      "risk10_relative_degradation": 0.01960119956636262,
+      "risk20_relative_degradation": 0.0,
+      "risk50_relative_degradation": 0.0,
+      "high_risk_miss_rate_degradation": 0.0,
+      "aurc_relative_degradation": 0.0,
+      "valid_strata_fraction": 1.0,
+      "v2_passes_development_gate": true
+    },
+    "txpert_exphormer": {
+      "delta_u20_macro": 0.009516186592865017,
+      "nonnegative_strata_fraction": 0.75,
+      "risk10_relative_degradation": 0.01585645718276718,
+      "risk20_relative_degradation": 0.0,
+      "risk50_relative_degradation": 0.0,
+      "high_risk_miss_rate_degradation": 0.0,
+      "aurc_relative_degradation": 0.0,
+      "valid_strata_fraction": 1.0,
+      "v2_passes_development_gate": true
+    }
+  },
+  "final_candidate_features": {
+    "prediction_only": [
+      "predicted_magnitude",
+      "prediction_abs_mean",
+      "prediction_signed_mean",
+      "prediction_std",
+      "prediction_abs_q95",
+      "prediction_sparsity"
+    ],
+    "support": [
+      "n_source_cells",
+      "n_source_contexts",
+      "n_source_batches",
+      "min_source_cells"
+    ],
+    "relevance": [
+      "prediction_source_cosine",
+      "negative_model_source_gap"
+    ],
+    "quality": [],
+    "conflict_proxy": [
+      "source_delta_dispersion",
+      "conflict_missing"
+    ],
+    "content": [
+      "source_transfer_magnitude"
+    ]
+  },
+  "limitations_at_freeze": [
+    "No legal replicate/split-half Quality field exists in the TxPert development assets.",
+    "Conflict is represented by source-effect dispersion and is not a pure measurement-quality variable.",
+    "Development bootstrap CI for the V2-V1 Utility@20 increment crosses zero in each architecture; independent confirmation remains required.",
+    "TxPert GAT and Exphormer are cross-architecture evidence within one upstream family."
+  ],
+  "implementation_sha256": "4e7c78837e27b3d478d6b0f72fc698f2086d858888a0d6a5e60aec38142337c8",
+  "git_head_before_freeze_commit": "1241f339236b15ec9ebe558330b6881433d5c30b"
+}

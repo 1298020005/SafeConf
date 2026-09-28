@@ -1,0 +1,10 @@
+{
+  "rule_version": "competence-v1",
+  "strongest_simple_baseline": "registered before new-family SafeConf results",
+  "primary_error_metric": "task-level RMSE on aligned effect vector",
+  "relative_noninferiority_margin": 0.02,
+  "minimum_noninferior_strata_fraction": 0.6,
+  "bootstrap_replicates": 5000,
+  "stable_disadvantage": "bootstrap relative gap lower CI > margin",
+  "safeconf_results_used_for_selection": false
+}

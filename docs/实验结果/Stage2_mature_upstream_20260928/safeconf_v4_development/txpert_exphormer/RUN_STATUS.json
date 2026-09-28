@@ -1,0 +1,43 @@
+{
+  "status": "COMPLETE",
+  "upstream": "e205",
+  "label": "TxPert Exphormer",
+  "seed": 20260929,
+  "bootstrap_replicates": 5000,
+  "data_role": "SEEN",
+  "sealed_confirmation_opened": false,
+  "quality_fields_available": false,
+  "history_layers": [
+    "Support",
+    "Relevance",
+    "ConflictProxy",
+    "Content"
+  ],
+  "elapsed_seconds": 150.838458776474,
+  "audit": {
+    "n_tasks": 1808,
+    "n_targets": 4,
+    "error_max_absdiff": 9.71445146547012e-17,
+    "magnitude_max_absdiff": 3.502777956576608e-09,
+    "quality_fields_available": false,
+    "conflict_proxy_coverage": 0.9269911504424779,
+    "relevance_fields": [
+      "prediction_source_cosine",
+      "negative_model_source_gap"
+    ]
+  },
+  "n_methods": 12,
+  "n_oof_rows": 21696,
+  "development_gate": {
+    "delta_u20_macro": 0.009516186592865017,
+    "nonnegative_strata_fraction": 0.75,
+    "risk10_relative_degradation": 0.01585645718276718,
+    "risk20_relative_degradation": 0.0,
+    "risk50_relative_degradation": 0.0,
+    "high_risk_miss_rate_degradation": 0.0,
+    "aurc_relative_degradation": 0.0,
+    "valid_strata_fraction": 1.0,
+    "v2_passes_development_gate": true
+  },
+  "summary_sha256": "dc41b5ab90cb437e35bc4a1b31d86646b346cb5d5f3ddef7501f5a2da812e9c2"
+}

@@ -1,0 +1,29 @@
+{
+  "status": "COMPLETE",
+  "elapsed_seconds": 172.72822642326355,
+  "official_software_commit": "43c09a32e23d0ee2ae5dfbab21b2deeab27f1803",
+  "implementation_label": "official-algorithm adaptation; not bundled-weight reproduction",
+  "official_gbt_hyperparameters": {
+    "n_estimators": 300,
+    "max_depth": 6,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "tree_method": "hist"
+  },
+  "same_tasks": true,
+  "same_outer_label_budget": true,
+  "outer_gene_disjoint": true,
+  "inner_isotonic_calibration": true,
+  "split_conformal_target": 0.9,
+  "features": [
+    "predicted_magnitude",
+    "prediction_abs_mean",
+    "prediction_signed_mean",
+    "prediction_std",
+    "prediction_abs_q95",
+    "prediction_sparsity"
+  ],
+  "sealed_confirmation_opened": false,
+  "summary_sha256": "69d6b9b17f5d74903d3f1eefd8752f1d3a61be4b400a83523a90e6796e1cadca"
+}

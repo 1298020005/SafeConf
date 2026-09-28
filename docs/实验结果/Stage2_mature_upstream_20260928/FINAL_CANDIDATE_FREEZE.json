@@ -1,0 +1,42 @@
+{
+  "candidate": "V2_nested_evidence_shrinkage",
+  "passed_v2_gate": true,
+  "aggregate": {
+    "delta_u20_macro": 0.009711226587606037,
+    "nonnegative_strata_fraction": 0.875,
+    "risk10_relative_degradation": 0.0177281386903658,
+    "risk20_relative_degradation": 0.0,
+    "risk50_relative_degradation": 0.0,
+    "high_risk_miss_rate_degradation": 0.0,
+    "aurc_relative_degradation": 0.0,
+    "valid_strata_fraction": 1.0,
+    "n_evaluation_strata": 8
+  },
+  "per_upstream": {
+    "txpert_gat": {
+      "delta_u20_macro": 0.009906266582347167,
+      "nonnegative_strata_fraction": 1.0,
+      "risk10_relative_degradation": 0.01960119956636262,
+      "risk20_relative_degradation": 0.0,
+      "risk50_relative_degradation": 0.0,
+      "high_risk_miss_rate_degradation": 0.0,
+      "aurc_relative_degradation": 0.0,
+      "valid_strata_fraction": 1.0,
+      "v2_passes_development_gate": true
+    },
+    "txpert_exphormer": {
+      "delta_u20_macro": 0.009516186592865017,
+      "nonnegative_strata_fraction": 0.75,
+      "risk10_relative_degradation": 0.01585645718276718,
+      "risk20_relative_degradation": 0.0,
+      "risk50_relative_degradation": 0.0,
+      "high_risk_miss_rate_degradation": 0.0,
+      "aurc_relative_degradation": 0.0,
+      "valid_strata_fraction": 1.0,
+      "v2_passes_development_gate": true
+    }
+  },
+  "config_sha256": "4dfdcea23d126f497a7b30d875187976bbef7cc63a1986d0f0fdf5371b0c48e1",
+  "implementation_sha256": "4e7c78837e27b3d478d6b0f72fc698f2086d858888a0d6a5e60aec38142337c8",
+  "confirmation_opened_before_freeze": false
+}

@@ -1,0 +1,13 @@
+{
+  "status": "COMPLETE_STOPPED_AFTER_REGISTERED_BATCH",
+  "records": 54,
+  "datasets": [
+    "adamson",
+    "dixit",
+    "norman"
+  ],
+  "grouped_by_perturbation": true,
+  "truth_used_only_as_label": true,
+  "new_upstream_training_runs": 0,
+  "summary_sha256": "33418835ee4f373d5cc3420e22d5ebed4ea23a7d192f39987a67d0282e0b7192"
+}

@@ -1,0 +1,9 @@
+dataset_id,source_type,study_id,n_records,n_tasks,independent_contexts,eligibility_status,same_dataset_as_target,same_study_as_target,independent_public_source,quality_proxy_coverage,conflict_proxy_coverage,leakage_safe,notes
+E201_TxPert,H_internal,E201_source_contexts,5238,1808,4,eligible_outer_train_only,true,true,false,0.0,0.9269911504424779,true,E201 contract permits three non-target source contexts; external history not verified in this asset.
+E201_TxPert,H_external,none_verified,0,0,0,not_available,false,false,false,0.0,0.0,not_applicable,E201 contract permits three non-target source contexts; external history not verified in this asset.
+E112_Lara_exvivo,H_internal,not_verified,0,0,0,not_available,unknown,unknown,unknown,0.0,0.0,not_verified,No legal history table registered; do not claim Public History quality/content.
+E112_Santinha,H_internal,not_verified,0,0,0,not_available,unknown,unknown,unknown,0.0,0.0,not_verified,No legal history table registered; do not claim Public History quality/content.
+E84_E81,H_internal,not_verified,0,0,0,not_available,unknown,unknown,unknown,0.0,0.0,not_verified,No legal history table registered; do not claim Public History quality/content.
+E87,H_internal,not_verified,0,0,0,not_available,unknown,unknown,unknown,0.0,0.0,not_verified,No legal history table registered; do not claim Public History quality/content.
+E89,H_internal,not_verified,0,0,0,not_available,unknown,unknown,unknown,0.0,0.0,not_verified,No legal history table registered; do not claim Public History quality/content.
+GEARS_formal_54,H_internal,not_verified,0,0,0,not_available,unknown,unknown,unknown,0.0,0.0,not_verified,No legal history table registered; do not claim Public History quality/content.
