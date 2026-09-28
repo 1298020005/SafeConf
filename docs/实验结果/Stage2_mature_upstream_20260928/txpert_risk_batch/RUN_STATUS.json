@@ -1,0 +1,93 @@
+{
+  "status": "COMPLETE_STOPPED_AFTER_REGISTERED_BATCH",
+  "started_unix": 1790598611.6127307,
+  "git_head": "d1ca31ce0e0b361845c505b708f6f3a47493000c",
+  "contract_sha256": "ebb40a9679ba6a30f3f0b6d2609c2b53241a93b1ecb1041493c49136e6b5e4d2",
+  "feature_groups": {
+    "M": [
+      "predicted_magnitude"
+    ],
+    "P": [
+      "predicted_magnitude",
+      "family_disagreement",
+      "family_radius",
+      "prediction_abs_mean",
+      "prediction_signed_mean",
+      "prediction_std",
+      "prediction_abs_q95"
+    ],
+    "PQ": [
+      "predicted_magnitude",
+      "family_disagreement",
+      "family_radius",
+      "prediction_abs_mean",
+      "prediction_signed_mean",
+      "prediction_std",
+      "prediction_abs_q95",
+      "n_source_cells",
+      "n_source_contexts",
+      "n_source_batches",
+      "min_source_cells"
+    ],
+    "PQH": [
+      "predicted_magnitude",
+      "family_disagreement",
+      "family_radius",
+      "prediction_abs_mean",
+      "prediction_signed_mean",
+      "prediction_std",
+      "prediction_abs_q95",
+      "n_source_cells",
+      "n_source_contexts",
+      "n_source_batches",
+      "min_source_cells",
+      "source_transfer_magnitude",
+      "source_delta_dispersion",
+      "model_source_gap",
+      "prediction_source_cosine"
+    ]
+  },
+  "seed": 20260928,
+  "n_bootstrap": 2000,
+  "device": "cuda:0",
+  "gpu": "Quadro RTX 6000",
+  "python": "3.12.4",
+  "numpy": "1.26.4",
+  "pandas": "2.2.3",
+  "scipy": "1.15.2",
+  "sklearn": "1.5.2",
+  "torch": "2.6.0+cu124",
+  "new_upstream_training_runs": 0,
+  "evidence_level": "RELEASED_RETROSPECTIVE_DEVELOPMENT",
+  "completed_unix": 1790598759.6815088,
+  "elapsed_seconds": 148.06877827644348,
+  "n_tasks": 1808,
+  "n_targets": 4,
+  "n_unique_genes": 575,
+  "n_model_fits": 240,
+  "n_methods": 13,
+  "n_oof_rows": 23504,
+  "label_rows_used": 1808,
+  "final_sealed_external_test_rows_used": 0,
+  "error_memory_used": false,
+  "vector_audit": {
+    "magnitude_max_absdiff": 3.497343838143596e-09,
+    "error_max_absdiff": 2.2760847651071003e-09,
+    "disagreement_max_absdiff": 9.924102841590843e-10
+  },
+  "parameter_counts": {
+    "Ridge_M": 3,
+    "HGB_M": null,
+    "MLP_M": 193,
+    "Ridge_P": 15,
+    "HGB_P": null,
+    "MLP_P": 385,
+    "Ridge_PQ": 23,
+    "HGB_PQ": null,
+    "MLP_PQ": 513,
+    "Ridge_PQH": 31,
+    "HGB_PQH": null,
+    "MLP_PQH": 641
+  },
+  "result_sha256": "9a08d0abe03dff675519e3e8eb576bfb0cac7d5e2345b28f375254ed3db2cfaf"
+}
