@@ -19,4 +19,4 @@
 
 当前真正成立的是 Support/Relevance-aware shrinkage；Quality 未进入正式实证。V2 的价值来自在历史模块整体不稳时学习收缩，而不是因为更大的网络。小 MLP 明显落后，因此不扩 Transformer 或 set encoder。
 
-正式投稿主张暂定为 `architecture-agnostic within TxPert`。取得独立 family 正结果后才升级为跨模型家族；取得 external history 增量后才使用 `public experimental history`。
+E190 表明 V1 的 Support/Relevance 点增量可延伸到独立 GEARS family，但冻结 V2 没有复现。正式投稿主张暂定为 `black-box interface with cross-family development stress evidence`；取得 sealed family/context 正结果后才升级为跨模型家族确认。E190 的 Adamson→Replogle history 可称 cross-study history，但不扩写为广泛 public-history 泛化。

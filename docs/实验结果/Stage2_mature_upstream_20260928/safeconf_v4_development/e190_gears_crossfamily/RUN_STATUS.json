@@ -1,0 +1,29 @@
+{
+  "status": "COMPLETE",
+  "data_role": "SEEN",
+  "independent_confirmation": false,
+  "sealed_confirmation_opened": false,
+  "final_candidate_changed": false,
+  "contract": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/E190_GEARS_SAFECONF_V4_CONTRACT.md",
+  "input_hashes": {
+    "prediction": "2ea7b10acf281334155797c570f4c9c58d8c1190a2c51f2035987bb01170c7c0",
+    "truth": "fee77eea3033b2315327c1b4f741fb5dd67c56f47d3d7d98ea4306c358b65644",
+    "source_effect": "3d6b2ef0f080b959795c75d94c8c78286c321efdc8d30e0c44972a66a8c9c7f6",
+    "train_effects": "f755dd64c155e833ac2a1bc738fffb76a05fa546025ea65102928a09500be0ba",
+    "validation_effects": "e946ddc579bf03c34700ec1d4c10e0969b4e69e8258a023f949cb36f6cf7a3f4"
+  },
+  "audit": {
+    "n_tasks": 692,
+    "n_gene_clusters": 47,
+    "n_target_batches": 48,
+    "upstream": "GEARS_3seed_centroid",
+    "output_contract_id": "E190_GEARS_direct_effect_512gene_v1",
+    "history_source": "external_Adamson_source_study_frozen_pretruth",
+    "quality_fields_available": false,
+    "conflict_proxy_coverage": 1.0,
+    "sealed_confirmation_opened": false
+  },
+  "elapsed_seconds": 42.50262403488159,
+  "summary_sha256": "5ba637966857d6fb5fb7acbcb4bf8f6fc3d3906c24acd950b1e796a4a88410de",
+  "incremental_results_sha256": "6f6ff72325df12247be9793461b974b0c75051b6766df7f2e6d8861813ebe776"
+}

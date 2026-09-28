@@ -23,6 +23,18 @@ DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,HGB_USR
 DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,HGB_USRCH,1808,4,0.7481355312813809,-0.010590789382063703,0.7404821104293153,0.0487990686176149,False
 DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,MLP_USRCH,1808,4,0.7237784619339073,-0.03494785872953732,0.6695429004947048,0.0501846319208034,False
 DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,MLP_USR,1808,4,0.7224279920153142,-0.03629832864813043,0.6749230090511127,0.0501928249129311,False
+SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,Ridge_USRC,692,1,0.3894297147054679,0.15467799857457618,0.3751843827465151,0.2227775365027267,False
+SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,Ridge_USRCH,692,1,0.365208992324731,0.13045727619383926,0.3528513513205213,0.2232849300853897,False
+SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,Ridge_USR,692,1,0.3034876966622067,0.068735980531315,0.248872609479253,0.2265333605278899,False
+SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,Magnitude_raw,692,1,0.2347517161308917,0.0,0.2387815458676989,0.2321064720371682,False
+SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,MLP_USRCH,692,1,0.1508940334205097,-0.08385768271038202,0.2473489497321925,0.2261724225503684,False
+SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,HGB_USR,692,1,0.1166995069077579,-0.11805220922313381,0.2015513464355964,0.2271980091847141,False
+SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,HGB_USRCH,692,1,0.0789321505787884,-0.1558195655521033,0.2181558353135126,0.2255487086397142,False
+SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,MLP_USR,692,1,0.0504500672492949,-0.1843016488815968,0.0858386608489636,0.2307724679170307,False
+SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,V2_nested,692,1,-0.0113790866828518,-0.2461308028137435,0.2029619800631068,0.2272883504603279,False
+SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,Ridge_USR_history_shuffled,692,1,-0.0264872704209603,-0.261238986551852,0.0681279604763204,0.2373520037231742,False
+SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,Ridge_U,692,1,-0.0491211714439511,-0.2838728875748428,0.0901990274433662,0.2361324230791685,False
+SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,Ridge_US,692,1,-0.0913498887503355,-0.3261016048812272,0.0520128369103214,0.2319246317843373,False
 DEV_fair_comparator,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,PertEMA_official_algorithm_adaptation,1808,4,0.7180733793248864,-0.040652941338558235,0.6854981974816089,0.0495471549799782,False
 DEV_fair_comparator,TxPert four-context panel,TxPert,TxPert GAT,genetic,PertEMA_official_algorithm_adaptation,1808,4,0.7237428558948653,-0.04447350543487116,0.6933690908895808,0.0497926842995714,False
 SEEN_small_transfer,Adamson+Dixit+Norman formal subset,GEARS,GEARS formal released,genetic,HGB_P+Q,54,3,0.8459330216123844,-0.055710502297657616,0.3770070528319529,,False

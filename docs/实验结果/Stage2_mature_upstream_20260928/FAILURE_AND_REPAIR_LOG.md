@@ -9,3 +9,4 @@
 | E258 Feng | 学习型上游没有实质超过收缩历史均值 | residual MLP、历史距离、分半噪声诊断 | 最佳 MLP 只多 0.071%；历史增量可被支持度/噪声解释 | 测试供体真值继续封存 |
 | V4 risk learner | 复杂模型可能过拟合 1,808 tasks | 同 split 比 Ridge/HGB/small MLP | Ridge 稳定最好，MLP 明显落后 | 不扩大型网络 |
 | Quality evidence | 无合法 replicate/split-half 字段 | 不用 conflict proxy 冒充 Quality | eligible coverage 0 | 收缩主张为 Support/Relevance-aware |
+| E190 GEARS V2 | 独立 family 仅 47 个 gene clusters，gate 在一折退回 prediction-only | 核验输入哈希、同尺度校准、inner/outer 隔离与 fold gate；未发现执行错误 | V1 点增量为正但区间宽；V2−V1 为负 | 保留为跨家族失败边界，不修改冻结候选 |

@@ -84,6 +84,25 @@ def test_quality_is_not_claimed_without_eligible_fields() -> None:
     assert (quality.eligible_coverage == 0).all()
 
 
+def test_e190_is_qualified_but_never_promoted_to_confirmation() -> None:
+    registry = pd.read_csv(STAGE / "DATA_ROLE_REGISTRY.csv")
+    row = registry.loc[registry.dataset.eq("E190_Adamson_to_Replogle_K562")].iloc[0]
+    assert row.role == "SEEN"
+    assert bool(row.result_seen) is True
+    competence = pd.read_csv(STAGE / "UPSTREAM_COMPETENCE_V4.csv")
+    gate = competence.loc[
+        competence.asset.eq("E190_Adamson_to_Replogle_K562")
+        & competence.upstream_model.eq("GEARS_3seed_centroid")
+    ].iloc[0]
+    assert bool(gate.passes_2pct_competence_gate) is True
+    assert gate.relative_macro_error_gap <= 0.02
+    status = json.loads((STAGE / "safeconf_v4_development/e190_gears_crossfamily/RUN_STATUS.json").read_text())
+    assert status["data_role"] == "SEEN"
+    assert status["independent_confirmation"] is False
+    assert status["sealed_confirmation_opened"] is False
+    assert status["final_candidate_changed"] is False
+
+
 if __name__ == "__main__":
     checks = [
         test_frozen_implementation_and_candidate_are_unchanged,
@@ -92,6 +111,7 @@ if __name__ == "__main__":
         test_development_gate_matches_released_tables,
         test_pertema_comparison_uses_registered_contract,
         test_quality_is_not_claimed_without_eligible_fields,
+        test_e190_is_qualified_but_never_promoted_to_confirmation,
     ]
     for check in checks:
         check()

@@ -26,8 +26,9 @@
 2. Magnitude 强，但 Support/Relevance 提供开发增量。
 3. V2 通过预注册开发门；复杂模型没有收益。
 4. 历史 shuffle、within-context 与 matched-support 排除明显 shortcut。
-5. 同合同 PertEMA 适配比较。
-6. E208/E216/E247/E258 展示能力门和适用边界。
+5. E190 GEARS 跨 study 压力线：V1 信号与 V2 gate 失效边界。
+6. 同合同 PertEMA 适配比较。
+7. E208/E216/E247/E258 展示能力门和适用边界。
 
 ## 4. Discussion
 
@@ -38,6 +39,6 @@
 
 ## 5. 必须在投稿前补齐
 
-- 一个能力合格且此前未用于设计的独立 family/context confirmation。
+- 一个能力合格且此前未用于设计的 sealed family/context confirmation；E190 只能作为已开封开发证据。
 - 对应 confirmation 的一次性 Gate A/B 表。
 - 若无法取得，则把稿件转为 Gate C，并在独立 split/context 复现至少两条边界规律。

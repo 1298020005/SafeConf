@@ -123,7 +123,7 @@ def build_confirmation_audit() -> pd.DataFrame:
 
 def load_results() -> tuple[dict[str, pd.DataFrame], pd.DataFrame, pd.DataFrame]:
     dev = {}
-    for name in ("txpert_gat", "txpert_exphormer"):
+    for name in ("txpert_gat", "txpert_exphormer", "e190_gears_crossfamily"):
         dev[name] = pd.read_csv(DEV / name / "SUMMARY.csv")
     pertema = pd.read_csv(PERTEMA / "SUMMARY.csv")
     boot = pd.read_csv(PERTEMA / "PAIRED_BOOTSTRAP.csv")
@@ -132,18 +132,23 @@ def load_results() -> tuple[dict[str, pd.DataFrame], pd.DataFrame, pd.DataFrame]
 
 def build_master(dev: dict[str, pd.DataFrame], pertema: pd.DataFrame) -> pd.DataFrame:
     rows: list[dict] = []
-    labels = {"txpert_gat": "TxPert GAT", "txpert_exphormer": "TxPert Exphormer"}
+    labels = {
+        "txpert_gat": "TxPert GAT",
+        "txpert_exphormer": "TxPert Exphormer",
+        "e190_gears_crossfamily": "GEARS 3-seed centroid",
+    }
     for upstream, frame in dev.items():
         mag = float(frame.loc[frame.method.eq("Magnitude_raw"), "utility20"].iloc[0])
+        is_e190 = upstream == "e190_gears_crossfamily"
         for row in frame.itertuples():
             rows.append({
-                "evidence_stage": "DEV_nested_OOF",
-                "dataset": "TxPert four-context panel",
-                "upstream_family": "TxPert",
+                "evidence_stage": "SEEN_crossfamily_nested_OOF" if is_e190 else "DEV_nested_OOF",
+                "dataset": "Adamson→Replogle K562 cross-study" if is_e190 else "TxPert four-context panel",
+                "upstream_family": "GEARS" if is_e190 else "TxPert",
                 "upstream_model": labels[upstream],
                 "perturbation_type": "genetic",
                 "method": row.method,
-                "n_tasks": 1808,
+                "n_tasks": 692 if is_e190 else 1808,
                 "n_strata": row.n_strata,
                 "utility20": row.utility20,
                 "delta_utility20_vs_magnitude": row.utility20 - mag,
@@ -279,6 +284,8 @@ def build_reports(dev: dict[str, pd.DataFrame], pertema: pd.DataFrame, boot: pd.
     txq = quality[quality.dataset_id.astype(str).str.contains("TxPert")]
     quality_cov = txq[txq.field_name.astype(str).str.contains("quality", case=False, na=False)].eligible_coverage.max() if len(txq) else 0.0
     freeze = json.loads((OUT / "FINAL_CANDIDATE_FREEZE.json").read_text())
+    e190 = dev["e190_gears_crossfamily"].set_index("method")
+    e190_inc = pd.read_csv(DEV / "e190_gears_crossfamily/INCREMENTAL_RESULTS.csv").set_index("comparison")
 
     report = f"""# SafeConf v4 论文结果包
 
@@ -296,28 +303,40 @@ def build_reports(dev: dict[str, pd.DataFrame], pertema: pd.DataFrame, boot: pd.
 
 `PertEMA*` 是官方算法与原超参数在同一 TxPert 任务、同一 gene-disjoint outer split、同一错误标签预算上的适配，不是把官方 CD4 冻结权重直接搬到 TxPert。SafeConf 多使用合法历史证据，因此这里检验的是“历史证据在同标签预算下能否提供增量”，不声称覆盖一切 PertEMA 特征工程。
 
+## 独立 GEARS 家族压力结果
+
+E190 在运行 SafeConf 前通过既定能力门：三 seed GEARS centroid 相对最强 Adamson source-effect baseline 的误差差为 **+0.115%**，48/48 batch strata 在 +2% margin 内，gene-cluster bootstrap 95% CI 为 **[-0.607%, +0.893%]**。该资产此前已开封，因此属于 SEEN cross-family development evidence。
+
+{md_table(["方法", "Utility@20", "Spearman", "AURC"], [[m, e190.loc[m, "utility20"], e190.loc[m, "spearman"], e190.loc[m, "aurc"]] for m in ["Magnitude_raw", "Ridge_U", "Ridge_USR", "Ridge_USRC", "V2_nested"]])}
+
+- V1−Magnitude：ΔU20={e190_inc.loc['V1_vs_magnitude', 'delta_utility20']:+.4f}，95% CI [{e190_inc.loc['V1_vs_magnitude', 'utility_ci95_lower']:+.4f}, {e190_inc.loc['V1_vs_magnitude', 'utility_ci95_upper']:+.4f}]。
+- Relevance given Support：ΔU20={e190_inc.loc['Relevance_given_support', 'delta_utility20']:+.4f}；ΔSpearman={e190_inc.loc['Relevance_given_support', 'delta_spearman']:+.4f}。
+- V2−V1：ΔU20={e190_inc.loc['V2_vs_V1', 'delta_utility20']:+.4f}。V2 没有跨家族复现 V1 的点增量，作为正式失败边界保留。
+- Conflict proxy 带来 ΔSpearman={e190_inc.loc['Conflict_given_relevance', 'delta_spearman']:+.4f}，95% CI [{e190_inc.loc['Conflict_given_relevance', 'spearman_ci95_lower']:+.4f}, {e190_inc.loc['Conflict_given_relevance', 'spearman_ci95_upper']:+.4f}]；该信号来自单一 source study 的 fold dispersion，不能升级成完整 Quality 结论。
+
 ## 能支持的结论
 
 1. 在两个通过能力门的 TxPert 架构上，Magnitude 是强基线，V1/V2 的开发点估计均进一步提高 Utility@20 和 Spearman。
-2. Support 后加入 Relevance，在两个架构上的 Spearman 增量均为正且簇自举区间下限大于 0；历史字段打乱后，V1 的 Spearman 明显下降。
+2. Support 后加入 Relevance，在两个 TxPert 架构上的 Spearman 增量均为正且簇自举区间下限大于 0；历史字段打乱后，V1 的 Spearman 明显下降。E190 GEARS 上同方向但区间宽。
 3. 固定 Ridge 比 HGB 和小 MLP 稳定；增加复杂度没有收益。
 4. V2 的 40 个 outer fits 中，32 个（80%）产生随任务变化的 evidence weight；K562 多数折退化成常数混合，必须保留为边界。
-5. Quality 的合法 eligible coverage 为 **{quality_cov:.1%}**。当前结果只能叫 Support/Relevance-aware，不能写成已经证明 Quality-aware。
+5. E190 提供一个能力合格的独立 GEARS family 和真正跨 study 的 Adamson history；V1 点估计超过 magnitude，但 V2 失败且 cluster CI 宽，因此它加强“跨家族可运行/有信号”，不构成确认。
+6. Quality 的合法 eligible coverage 为 **{quality_cov:.1%}**。当前结果只能叫 Support/Relevance-aware，不能写成已经证明 Quality-aware。
 
 ## 尚未获得的证据
 
 - Gate A/B 尚未通过：没有一个同时满足“未见、上游能力合格、V2 字段可用”的 sealed confirmation。
-- 跨模型家族强主张尚未成立：54-task GEARS 只能作小样本压力线；E208/E247/E258 均在打开测试真值前被能力门阻断。
-- 外部公共历史尚未验证；TxPert 的有效历史是同研究、目标背景排除后的 internal historical evidence。
+- 跨模型家族 confirmation 尚未成立：E190 GEARS 是 692-task 已开封开发压力线；E208/E247/E258 均在打开测试真值前被能力门阻断。
+- 外部历史在 E190 中合法存在且有开发点增量，但只有一个 source/target cell context，区间不足以支持广泛 external-public-history 主张。
 - V2 相对 V1 的单架构 Utility@20 自举区间均跨 0；不能把开发门通过写成统计确认。
 
 ## 当前论文决策
 
-本轮选择 **V2 作为冻结候选，不宣布最终方法已获外部确认**。现阶段最有价值的论文骨架是：
+本轮维持 **V2 作为冻结候选，不因 E190 压力结果事后切换方法，也不宣布最终方法已获外部确认**。现阶段最有价值的论文骨架是：
 
 > 一个带上游能力门和输出合同的黑盒扰动预测风险审计框架；在合格 TxPert 上，Support/Relevance 历史证据和嵌套收缩提高开发期风险排序；在不合格上游上，系统拒绝生成看似漂亮但无部署意义的风险结论。
 
-这已经形成真实的方法与结果包，但投稿前的最高优先级仍是一个能力合格的独立上游 family 或新的 sealed context。不能用已揭盲 E216、弱上游或重新切分看过的数据补这个空位。
+E190 已补上能力合格的独立上游 family 开发线；投稿前的最高优先级收敛为新的 sealed family/context confirmation。不能用已揭盲 E190/E216、弱上游或重新切分看过的数据补这个空位。
 """
     (OUT / "PAPER_RESULT_TABLES.md").write_text(report, encoding="utf-8")
 
@@ -342,7 +361,7 @@ def build_reports(dev: dict[str, pd.DataFrame], pertema: pd.DataFrame, boot: pd.
 
 当前真正成立的是 Support/Relevance-aware shrinkage；Quality 未进入正式实证。V2 的价值来自在历史模块整体不稳时学习收缩，而不是因为更大的网络。小 MLP 明显落后，因此不扩 Transformer 或 set encoder。
 
-正式投稿主张暂定为 `architecture-agnostic within TxPert`。取得独立 family 正结果后才升级为跨模型家族；取得 external history 增量后才使用 `public experimental history`。
+E190 表明 V1 的 Support/Relevance 点增量可延伸到独立 GEARS family，但冻结 V2 没有复现。正式投稿主张暂定为 `black-box interface with cross-family development stress evidence`；取得 sealed family/context 正结果后才升级为跨模型家族确认。E190 的 Adamson→Replogle history 可称 cross-study history，但不扩写为广泛 public-history 泛化。
 """
     (OUT / "METHOD_DECISION.md").write_text(method, encoding="utf-8")
 
@@ -357,6 +376,7 @@ def build_reports(dev: dict[str, pd.DataFrame], pertema: pd.DataFrame, boot: pd.
 | E258 Feng | 学习型上游没有实质超过收缩历史均值 | residual MLP、历史距离、分半噪声诊断 | 最佳 MLP 只多 0.071%；历史增量可被支持度/噪声解释 | 测试供体真值继续封存 |
 | V4 risk learner | 复杂模型可能过拟合 1,808 tasks | 同 split 比 Ridge/HGB/small MLP | Ridge 稳定最好，MLP 明显落后 | 不扩大型网络 |
 | Quality evidence | 无合法 replicate/split-half 字段 | 不用 conflict proxy 冒充 Quality | eligible coverage 0 | 收缩主张为 Support/Relevance-aware |
+| E190 GEARS V2 | 独立 family 仅 47 个 gene clusters，gate 在一折退回 prediction-only | 核验输入哈希、同尺度校准、inner/outer 隔离与 fold gate；未发现执行错误 | V1 点增量为正但区间宽；V2−V1 为负 | 保留为跨家族失败边界，不修改冻结候选 |
 """
     (OUT / "FAILURE_AND_REPAIR_LOG.md").write_text(failures, encoding="utf-8")
 
@@ -369,9 +389,9 @@ def build_reports(dev: dict[str, pd.DataFrame], pertema: pd.DataFrame, boot: pd.
 | Support/Relevance 有额外信息 | V1 超幅度；Relevance 的 Spearman 增量两架构 CI 下限为正；shuffle 下降 | 开发支持 | development evidence, pending external confirmation |
 | V2 可安全收缩历史 | 开发门通过；8/8 valid strata，7/8 非负；risk guards 通过 | 开发支持 | frozen candidate, not confirmed |
 | Quality-aware | TxPert legal Quality coverage 0 | 不支持 | 不使用该主张 |
-| External public history | 只有 H_internal 已验证 | 不支持 | historical experimental evidence |
+| External cross-study history | E190 使用 target-truth 前冻结的 Adamson history；V1 点增量为正但 CI 宽 | 初步支持 | cross-study historical evidence; not confirmed broadly |
 | 跨结构 | TxPert GAT 与 Exphormer 同方向 | 支持 | cross-architecture within one family |
-| 跨模型家族/model-agnostic | GEARS 仅 54 tasks；其他 family 能力门失败 | 不支持强主张 | black-box interface; family generalization pending |
+| 跨模型家族/model-agnostic | E190 GEARS 692 tasks 通过能力门；V1 点增量为正，V2 失败，且资产已开封 | 开发压力支持，未确认 | black-box interface with cross-family development evidence |
 | 胜过 PertEMA | 同任务适配中 V2 高 0.066–0.069，CI 下限 >0 | 支持限定比较 | beats official-algorithm adaptation under registered contract |
 | 独立 confirmation | E208/E247/E258 因上游能力门阻断；E216 已揭盲且失败 | 未完成 | 不声称 confirmed |
 | 化学通用性 | CPA 多数资产弱于简单基线 | 压力测试 | chemical stress test only |
@@ -401,7 +421,7 @@ SafeConf 不能把“黑盒后置可靠性”或“GBDT/Ridge 预测误差”写
 1. 当前 Quality 没有实证，名称必须收缩。
 2. GAT/Exphormer 同属 TxPert，不能据此声称广泛 model-agnostic。
 3. PertEMA 是官方算法适配，不是其 CD4 冻结模型复现；比较合同要在正文写清。
-4. V2−V1 的 Utility CI 跨 0；真正方法确认需要新 family/context。
+4. V2−V1 的 TxPert Utility CI 跨 0，E190 GEARS 点差为负；真正方法确认需要新 sealed family/context。
 5. 旧 SafeConf 证书线与本次历史风险线是不同研究对象，稿件不能混成一个模糊贡献。
 """
     (OUT / "NOVELTY_POSITIONING.md").write_text(novelty, encoding="utf-8")
@@ -434,8 +454,9 @@ SafeConf 不能把“黑盒后置可靠性”或“GBDT/Ridge 预测误差”写
 2. Magnitude 强，但 Support/Relevance 提供开发增量。
 3. V2 通过预注册开发门；复杂模型没有收益。
 4. 历史 shuffle、within-context 与 matched-support 排除明显 shortcut。
-5. 同合同 PertEMA 适配比较。
-6. E208/E216/E247/E258 展示能力门和适用边界。
+5. E190 GEARS 跨 study 压力线：V1 信号与 V2 gate 失效边界。
+6. 同合同 PertEMA 适配比较。
+7. E208/E216/E247/E258 展示能力门和适用边界。
 
 ## 4. Discussion
 
@@ -446,7 +467,7 @@ SafeConf 不能把“黑盒后置可靠性”或“GBDT/Ridge 预测误差”写
 
 ## 5. 必须在投稿前补齐
 
-- 一个能力合格且此前未用于设计的独立 family/context confirmation。
+- 一个能力合格且此前未用于设计的 sealed family/context confirmation；E190 只能作为已开封开发证据。
 - 对应 confirmation 的一次性 Gate A/B 表。
 - 若无法取得，则把稿件转为 Gate C，并在独立 split/context 复现至少两条边界规律。
 """
@@ -458,7 +479,7 @@ SafeConf 不能把“黑盒后置可靠性”或“GBDT/Ridge 预测误差”写
 2. **Figure 2：主结果。** 已生成 `SAFECONF_V4_MAIN_RESULTS.pdf/png`，包含 U20、成对增量和 risk-coverage。
 3. **Figure 3：Evidence weight。** 各 context/fold 的 gate weight 分布与系数；突出 K562 常数退化边界。
 4. **Figure 4：历史来源与 shortcut。** history shuffle、matched-support、within-context 结果。
-5. **Figure 5：能力门与失败边界。** 合格 TxPert 对比 E208/E216/E247/E258 的 fail-closed 流程。
+5. **Figure 5：跨家族与失败边界。** E190 GEARS 的 V1 正向点增量、V2 gate 失败，以及 E208/E216/E247/E258 的 fail-closed 流程。
 6. **Supplement：** 全 strata、bootstrap、MLP/HGB 消融、Error Memory budget、化学压力测试。
 """
     (OUT / "PAPER_FIGURE_PLAN.md").write_text(figure_plan, encoding="utf-8")
@@ -468,6 +489,8 @@ SafeConf 不能把“黑盒后置可靠性”或“GBDT/Ridge 预测误差”写
         OUT / "FIELD_AVAILABILITY_MATRIX.csv", OUT / "HISTORY_SOURCE_AUDIT.csv",
         OUT / "UPSTREAM_COMPETENCE_V4.csv", OUT / "EXPERIMENT_MASTER_TABLE.csv",
         PERTEMA / "RUN_STATUS.json", PERTEMA / "SUMMARY.csv",
+        DEV / "e190_gears_crossfamily/RUN_STATUS.json",
+        DEV / "e190_gears_crossfamily/SUMMARY.csv",
     ]
     hashes = [[str(p.relative_to(ROOT)), sha256(p)] for p in repro_files if p.exists()]
     repro = f"""# SafeConf v4 复现报告
@@ -492,6 +515,7 @@ python tools/scripts/build_safeconf_governance_artifacts.py
 python tools/scripts/run_safeconf_v4_development.py --upstream e201
 python tools/scripts/run_safeconf_v4_development.py --upstream e205
 python tools/scripts/audit_safeconf_competence_gate.py
+python tools/scripts/run_e190_gears_safeconf_v4.py
 /tmp/pertema-venv/bin/python tools/scripts/run_safeconf_pertema_fair_comparison.py
 python tools/scripts/freeze_safeconf_final_candidate.py
 python tools/scripts/build_safeconf_v4_paper_package.py

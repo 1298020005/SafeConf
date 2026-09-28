@@ -21,5 +21,5 @@ SafeConf 不能把“黑盒后置可靠性”或“GBDT/Ridge 预测误差”写
 1. 当前 Quality 没有实证，名称必须收缩。
 2. GAT/Exphormer 同属 TxPert，不能据此声称广泛 model-agnostic。
 3. PertEMA 是官方算法适配，不是其 CD4 冻结模型复现；比较合同要在正文写清。
-4. V2−V1 的 Utility CI 跨 0；真正方法确认需要新 family/context。
+4. V2−V1 的 TxPert Utility CI 跨 0，E190 GEARS 点差为负；真正方法确认需要新 sealed family/context。
 5. 旧 SafeConf 证书线与本次历史风险线是不同研究对象，稿件不能混成一个模糊贡献。
