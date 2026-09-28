@@ -144,6 +144,41 @@ def build_role_registry() -> None:
         "notes": "Already-opened cross-study asset. Eligible only for exploratory cross-family development evidence.",
     })
 
+    # E170 was frozen in July 2026. Its train/validation effects and pretruth
+    # predictions are SEEN, while all four test panels remain outcome-sealed.
+    # The v4 candidate was frozen before this endpoint was admitted.
+    e170_public = PUB / "E170_primary_cd4_multipanel_precision_20260718"
+    rows.append({
+        "dataset": "E170_primary_CD4_development",
+        "context": "2 train donors + 1 validation donor;3 states;4 panels",
+        "task_range": "5760 labelled train/validation tasks",
+        "upstream_model": "scGPT_GEARS_6member_ensemble",
+        "past_experiment_ids": "E170 pretruth",
+        "result_seen": "true",
+        "method_design_influenced": "false",
+        "role": "SEEN",
+        "data_hash": sha256(e170_public / "PRETRUTH_RUN_STATUS.json"),
+        "prediction_version": None,
+        "truth_version": None,
+        "metadata_only_until_freeze": "false",
+        "notes": "Validation truth is legal for competence and confirmation-model fitting; final v4 candidate was already frozen.",
+    })
+    rows.append({
+        "dataset": "E170_primary_CD4_test",
+        "context": "1 held-out donor;3 states;4 simultaneously frozen panels",
+        "task_range": "2400 test tasks;800 target clusters",
+        "upstream_model": "scGPT_GEARS_6member_ensemble",
+        "past_experiment_ids": "E170 pretruth;SafeConf-v4 confirmation",
+        "result_seen": "false",
+        "method_design_influenced": "false",
+        "role": "SEALED_CONFIRMATION",
+        "data_hash": sha256(e170_public / "manifests/E170_ALL_TASKS.csv"),
+        "prediction_version": None,
+        "truth_version": None,
+        "metadata_only_until_freeze": "true",
+        "notes": "Late-discovered pre-existing sealed endpoint. All four panels must be opened together; old legacy gate outcomes cannot select one panel.",
+    })
+
     # E216 was already formally evaluated on 2026-09-20.  Its result existed
     # before this v4 freeze and therefore must be SEEN, even though the sparse
     # mirror under /home/yyf/proj contained only the analysis contract.
@@ -312,6 +347,41 @@ def build_history_audit() -> None:
         },
     ])
 
+    rows.extend([
+        {
+            "dataset_id": "E170_primary_CD4_test",
+            "source_type": "H_internal",
+            "study_id": "E170_two_train_donors",
+            "n_records": 3840,
+            "n_tasks": 1920,
+            "independent_contexts": 6,
+            "eligibility_status": "eligible_for_160_of_200_targets_per_panel",
+            "same_dataset_as_target": "true",
+            "same_study_as_target": "true",
+            "independent_public_source": "false",
+            "quality_proxy_coverage": 0.0,
+            "conflict_proxy_coverage": 0.8,
+            "leakage_safe": "true",
+            "notes": "Two train-donor effects per matched condition are legal history for the held-out test donor; 40/200 targets per panel are column-unseen and must fall back.",
+        },
+        {
+            "dataset_id": "E170_primary_CD4_test",
+            "source_type": "H_external",
+            "study_id": "none_verified",
+            "n_records": 0,
+            "n_tasks": 0,
+            "independent_contexts": 0,
+            "eligibility_status": "not_available",
+            "same_dataset_as_target": "false",
+            "same_study_as_target": "false",
+            "independent_public_source": "false",
+            "quality_proxy_coverage": 0.0,
+            "conflict_proxy_coverage": 0.0,
+            "leakage_safe": "not_applicable",
+            "notes": "E170 confirmation tests internal historical evidence across a held-out donor, not external-study history.",
+        },
+    ])
+
     # Other published assets have prediction/truth but no contract-proven
     # public-history table; mark that absence instead of fabricating quality.
     for dataset in ["E112_Lara_exvivo", "E112_Santinha", "E84_E81", "E87", "E89", "GEARS_formal_54"]:
@@ -357,6 +427,7 @@ def build_field_matrix() -> None:
         ("E89", "CPA_0.8.8_RDKIT_sciPlex3", "chemical", 28),
         ("GEARS_formal_54", "GEARS", "gene", 54),
         ("E190_Adamson_to_Replogle_K562", "GEARS_3seed_centroid", "gene", 692),
+        ("E170_primary_CD4_test", "scGPT_GEARS_6member_ensemble", "gene", 2400),
     ]
     e201 = pd.read_csv(ROOT / "docs/实验结果/E201_txpert_multitarget_retraining_20260802/tables/E201_PRETRUTH_RISK_FEATURES.csv")
     e201 = e201[e201.analysis_stratum.eq("primary_ge30")].copy()
@@ -431,6 +502,34 @@ def build_field_matrix() -> None:
                 elif field == "content":
                     derivation = "Adamson frozen source gene effect"
                     formula = "magnitude of the cross-study source effect"
+            elif dataset.startswith("E170"):
+                if field in {"support", "relevance", "conflict", "content"}:
+                    raw = eligible = 0.8
+                    missing = int(n_tasks * 0.2)
+                    studies = 1
+                    contexts = 6
+                    leakage_safe = "true"
+                else:
+                    raw = eligible = 0.0
+                    missing = n_tasks
+                    studies = 0
+                    contexts = 0
+                    leakage_safe = "false"
+                if field == "support":
+                    derivation = "two train-donor matched-condition effects"
+                    formula = "count eligible train donor/context effects; 40/200 targets per panel are column-unseen"
+                elif field == "relevance":
+                    derivation = "prediction/source effect geometry"
+                    formula = "cosine and negative RMSE between frozen ensemble prediction and train-donor mean effect"
+                elif field == "quality":
+                    derivation = "not_in_frozen_candidate"
+                    formula = "guide-level consistency exists but was not part of frozen v4 feature list"
+                elif field == "conflict":
+                    derivation = "train-donor effect dispersion"
+                    formula = "RMS dispersion between two matched-condition train-donor effects"
+                elif field == "content":
+                    derivation = "matched train-donor mean effect"
+                    formula = "magnitude of the legal same-study historical effect"
             else:
                 raw = eligible = 0.0
                 missing = n_tasks

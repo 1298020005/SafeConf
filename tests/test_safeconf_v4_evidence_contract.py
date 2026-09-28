@@ -31,7 +31,8 @@ def test_seen_and_sealed_endpoints_are_not_conflated() -> None:
     registry = pd.read_csv(STAGE / "DATA_ROLE_REGISTRY.csv")
     sealed = registry[registry.role.eq("SEALED_CONFIRMATION")]
     assert set(sealed.dataset) == {
-        "E208_Jiang24_test", "E247_Kaden_CRISPRa_test", "E258_Feng2025_test"
+        "E208_Jiang24_test", "E247_Kaden_CRISPRa_test", "E258_Feng2025_test",
+        "E170_primary_CD4_test",
     }
     assert sealed.truth_version.isna().all()
     assert (~sealed.result_seen.astype(bool)).all()
@@ -103,6 +104,21 @@ def test_e190_is_qualified_but_never_promoted_to_confirmation() -> None:
     assert status["final_candidate_changed"] is False
 
 
+def test_e170_authorization_is_post_freeze_and_outcome_sealed() -> None:
+    auth = json.loads((STAGE / "E170_V4_CONFIRMATION_AUTHORIZATION.json").read_text())
+    freeze = json.loads((STAGE / "FINAL_METHOD_CONFIG.json").read_text())
+    assert auth["status"] == "AUTHORIZED_AFTER_FINAL_CANDIDATE_FREEZE"
+    assert auth["final_candidate"] == freeze["final_candidate"]
+    assert auth["all_four_panels_required"] is True
+    assert auth["test_truth_opened_at_authorization"] is False
+    assert auth["n_test_tasks"] == 2400
+    assert auth["upstream_competence"]["passes_2pct_competence_gate"] is True
+    audit = pd.read_csv(STAGE / "E170_PREOPEN_FIELD_AUDIT.csv")
+    assert set(audit.panel_id) == {"P01", "P02", "P03", "P04"}
+    assert (~audit.test_truth_opened_during_audit.astype(bool)).all()
+    assert audit.loc[audit.field_name.eq("Quality"), "eligible_coverage"].eq(0).all()
+
+
 if __name__ == "__main__":
     checks = [
         test_frozen_implementation_and_candidate_are_unchanged,
@@ -112,6 +128,7 @@ if __name__ == "__main__":
         test_pertema_comparison_uses_registered_contract,
         test_quality_is_not_claimed_without_eligible_fields,
         test_e190_is_qualified_but_never_promoted_to_confirmation,
+        test_e170_authorization_is_post_freeze_and_outcome_sealed,
     ]
     for check in checks:
         check()

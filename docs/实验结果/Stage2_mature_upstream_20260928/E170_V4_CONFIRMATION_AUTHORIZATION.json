@@ -1,0 +1,75 @@
+{
+  "status": "AUTHORIZED_AFTER_FINAL_CANDIDATE_FREEZE",
+  "final_candidate": "V2_nested_evidence_shrinkage",
+  "final_candidate_frozen_at_utc": "2026-09-28T17:32:19.667579+00:00",
+  "all_four_panels_required": true,
+  "test_truth_opened_at_authorization": false,
+  "n_test_tasks": 2400,
+  "n_target_clusters": 800,
+  "n_evaluation_strata": 12,
+  "confirmation_level": "new perturbations and held-out donor within the same study",
+  "source_path": "/home/yyf/data/safeconf_external/primary_cd4_perturbseq_2025/source/GWCD4i.pseudobulk_merged.h5ad",
+  "source_bytes": 44566657140,
+  "source_sha256": "fd2b8c21d357f8699ec34e2d5ebc1639612c27a0147a9ca94d4983822d93247e",
+  "upstream_competence": {
+    "upstream_model": "scGPT_GEARS_6member_ensemble",
+    "asset": "E170_primary_CD4_four_panel",
+    "baseline": "matched_train_donor_mean_effect",
+    "n_tasks": 1920,
+    "n_strata": 12,
+    "relative_macro_error_gap": -0.0781519106378392,
+    "noninferior_strata_fraction": 1.0,
+    "bootstrap_relative_gap_ci95_lower": -0.086188946606981,
+    "bootstrap_relative_gap_ci95_upper": -0.0703940503125789,
+    "bootstrap_guard": "pass",
+    "passes_2pct_competence_gate": true,
+    "qualified_formal_family": true,
+    "notes": "Competence uses 1,920 pretruth validation tasks only. All 2,400 test-donor task truths remain sealed; all four panels must be opened together."
+  },
+  "panels": {
+    "P01": {
+      "prediction_sha256": "6b78fe3db6322f1284ec16f82875248dab2775730c8d7c742f72ec8584b40b38",
+      "f2_manifest_sha256": "a29b7f2d0b53b1e95b54e90433de4cab88628d2543dce2c6fa15883cfc12ac84",
+      "old_legacy_gate_status": "FAIL",
+      "n_test_tasks": 600,
+      "n_target_clusters": 200
+    },
+    "P02": {
+      "prediction_sha256": "3e01a5677cbf98ad4dc816ddff0d7025110ce37274ff71ff0f86c6c5ba39d046",
+      "f2_manifest_sha256": "b8ac15892f8fe430e6da1406fb24c95f58cd8f7fdeb412912c8fe1793720b97f",
+      "old_legacy_gate_status": "FAIL",
+      "n_test_tasks": 600,
+      "n_target_clusters": 200
+    },
+    "P03": {
+      "prediction_sha256": "3d76b7409ed1452ca58b0a9e50fc409d0dc37aefa559b5e61b9da7fad2793383",
+      "f2_manifest_sha256": "60990c71e9303d199a008d4137a4ebfae67afae23886209bedb6630b19e9d2ef",
+      "old_legacy_gate_status": "PASS",
+      "n_test_tasks": 600,
+      "n_target_clusters": 200
+    },
+    "P04": {
+      "prediction_sha256": "2557ae4aec128efff9c6ec1c27f9d14970735d62f0af2e865c79271d4c4cb0a1",
+      "f2_manifest_sha256": "962a5d4c39463f5b9814a9c98661a6cd862977df38e790911b84863b15cf2d0d",
+      "old_legacy_gate_status": "FAIL",
+      "n_test_tasks": 600,
+      "n_target_clusters": 200
+    }
+  },
+  "frozen_file_sha256": {
+    "docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/E170_SAFECONF_V4_CONFIRMATION_CONTRACT.md": "8ac268733ef383ecb3140ca963f0d1a79949f749e1c75c2a77f85293a287d2bd",
+    "docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/FINAL_METHOD_CONFIG.json": "4dfdcea23d126f497a7b30d875187976bbef7cc63a1986d0f0fdf5371b0c48e1",
+    "docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/FINAL_CANDIDATE_FREEZE.json": "17349418afaf1366b6af78e247fc9ef3558c9deddc172b2283b31dba3e400c0e",
+    "tools/scripts/run_safeconf_v4_development.py": "4e7c78837e27b3d478d6b0f72fc698f2086d858888a0d6a5e60aec38142337c8",
+    "tools/scripts/build_e170_v4_confirmation_truth.py": "75889aa033d7520dbcd2bb1686857b3c7dcdc63fe47e487774b04215be8d3b62",
+    "tools/scripts/run_e170_safeconf_v4_confirmation.py": "6e5b580824043052da8e01788a25348941d694565a6e9a7769b2c5e151773ec7"
+  },
+  "rules": {
+    "panel_selection": "all P01-P04; no selection by old legacy gate",
+    "risk_fit_labels": "validation-donor errors only",
+    "test_truth_use": "evaluation only after every risk score is generated",
+    "primary_comparison": "Frozen V2 versus Magnitude",
+    "v1_role": "pre-specified secondary benchmark",
+    "post_result_method_switching": false
+  }
+}

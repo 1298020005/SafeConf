@@ -54,3 +54,8 @@ E190_Adamson_to_Replogle_K562,GEARS_3seed_centroid,Relevance,1.0,1.0,0,1,1,predi
 E190_Adamson_to_Replogle_K562,GEARS_3seed_centroid,Quality,0.0,0.0,692,0,0,not_available,one source study/context cannot establish formal Quality,false,HistoryEligibility-v1
 E190_Adamson_to_Replogle_K562,GEARS_3seed_centroid,Conflict,1.0,1.0,0,1,1,Adamson fold dispersion proxy,RMS dispersion of source pseudobulk fold effects,true,HistoryEligibility-v1
 E190_Adamson_to_Replogle_K562,GEARS_3seed_centroid,Content,1.0,1.0,0,1,1,Adamson frozen source gene effect,magnitude of the cross-study source effect,true,HistoryEligibility-v1
+E170_primary_CD4_test,scGPT_GEARS_6member_ensemble,Support,0.8,0.8,480,1,6,two train-donor matched-condition effects,count eligible train donor/context effects; 40/200 targets per panel are column-unseen,true,HistoryEligibility-v1
+E170_primary_CD4_test,scGPT_GEARS_6member_ensemble,Relevance,0.8,0.8,480,1,6,prediction/source effect geometry,cosine and negative RMSE between frozen ensemble prediction and train-donor mean effect,true,HistoryEligibility-v1
+E170_primary_CD4_test,scGPT_GEARS_6member_ensemble,Quality,0.0,0.0,2400,0,0,not_in_frozen_candidate,guide-level consistency exists but was not part of frozen v4 feature list,false,HistoryEligibility-v1
+E170_primary_CD4_test,scGPT_GEARS_6member_ensemble,Conflict,0.8,0.8,480,1,6,train-donor effect dispersion,RMS dispersion between two matched-condition train-donor effects,true,HistoryEligibility-v1
+E170_primary_CD4_test,scGPT_GEARS_6member_ensemble,Content,0.8,0.8,480,1,6,matched train-donor mean effect,magnitude of the legal same-study historical effect,true,HistoryEligibility-v1

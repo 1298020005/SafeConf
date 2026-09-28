@@ -15,6 +15,8 @@ E201 = ROOT / "docs/实验结果/E201_txpert_multitarget_retraining_20260802"
 E205 = ROOT / "docs/实验结果/E205_cross_family_disagreement_20260830"
 E190 = Path("/home/yyf/proj/docs/实验结果/E190_adamson_to_replogle_direct_transfer_20260729")
 E190_ASSETS = Path("/home/yyf/data/safeconf_e190_adamson_replogle/model_assets")
+E170 = Path("/home/yyf/proj/docs/实验结果/E170_primary_cd4_multipanel_precision_20260718")
+E170_DATA = Path("/home/yyf/data/safeconf_external/primary_cd4_perturbseq_2025/isolated/E170")
 SEED = 20260929
 N_BOOTSTRAP = 5000
 MARGIN = 0.02
@@ -118,6 +120,68 @@ def e190_rows() -> list[dict]:
     }]
 
 
+def e170_rows() -> list[dict]:
+    """Evaluate E170 upstream competence using pretruth validation labels only.
+
+    All four panels are kept together.  No test-donor targeting expression is
+    read.  The strongest simple baseline is the mean matched-condition effect
+    across the two supervised train donors.
+    """
+    parts = []
+    for panel in ("P01", "P02", "P03", "P04"):
+        release = E170 / "pretruth_release" / panel
+        interface = pd.read_csv(release / "tables/PRETRUTH_SCORING_INTERFACE.csv", keep_default_na=False)
+        interface["prediction_row"] = np.arange(len(interface))
+        with np.load(release / "arrays/PRETRUTH_PREDICTIONS.npz", allow_pickle=False) as archive:
+            prediction = np.asarray(archive["ensemble_seed_family_mean"], np.float64)
+        with np.load(E170_DATA / panel / "F2_pretruth/SEEN_TARGET_EFFECTS.npz", allow_pickle=False) as archive:
+            effects = {key: np.asarray(archive[key], np.float64) for key in archive.files}
+        train = interface[interface.split.eq("train")].copy()
+        validation = interface[interface.split.eq("validation")].copy()
+        source = {
+            (gene, condition): np.mean([effects[key] for key in group.effect_asset_key.astype(str)], axis=0)
+            for (gene, condition), group in train.groupby(["perturbed_gene_id", "culture_condition"], sort=True)
+        }
+        truth = np.stack([effects[key] for key in validation.effect_asset_key.astype(str)])
+        baseline = np.stack([
+            source[(gene, condition)]
+            for gene, condition in zip(validation.perturbed_gene_id.astype(str), validation.culture_condition.astype(str))
+        ])
+        model = prediction[validation.prediction_row.to_numpy(int)]
+        rmse = lambda left, right: np.sqrt(np.mean((left - right) ** 2, axis=1))
+        part = pd.DataFrame({
+            "gene": panel + "::" + validation.perturbed_gene_id.astype(str),
+            "stratum": panel + "::" + validation.culture_condition.astype(str),
+            "model_error": rmse(model, truth),
+            "baseline_error": rmse(baseline, truth),
+        })
+        parts.append(part)
+    frame = pd.concat(parts, ignore_index=True)
+    by_stratum = frame.groupby("stratum", as_index=False).agg(
+        model_error=("model_error", "mean"), baseline_error=("baseline_error", "mean")
+    )
+    gap = float(frame.model_error.mean() / frame.baseline_error.mean() - 1.0)
+    noninferior = float((by_stratum.model_error <= by_stratum.baseline_error * (1.0 + MARGIN)).mean())
+    low, high = bootstrap_ci(frame, "model_error", "baseline_error")
+    stable_disadvantage = low > MARGIN
+    passed = bool(gap <= MARGIN and noninferior >= MIN_FRACTION and not stable_disadvantage)
+    return [{
+        "upstream_model": "scGPT_GEARS_6member_ensemble",
+        "asset": "E170_primary_CD4_four_panel",
+        "baseline": "matched_train_donor_mean_effect",
+        "n_tasks": int(len(frame)),
+        "n_strata": int(len(by_stratum)),
+        "relative_macro_error_gap": gap,
+        "noninferior_strata_fraction": noninferior,
+        "bootstrap_relative_gap_ci95_lower": low,
+        "bootstrap_relative_gap_ci95_upper": high,
+        "bootstrap_guard": "pass" if not stable_disadvantage else "fail",
+        "passes_2pct_competence_gate": passed,
+        "qualified_formal_family": passed,
+        "notes": "Competence uses 1,920 pretruth validation tasks only. All 2,400 test-donor task truths remain sealed; all four panels must be opened together.",
+    }]
+
+
 def released_rows() -> list[dict]:
     old = pd.read_csv(STAGE / "UPSTREAM_COMPETENCE.csv")
     rows = []
@@ -148,7 +212,7 @@ def released_rows() -> list[dict]:
 
 
 def main() -> None:
-    rows = txpert_rows() + e190_rows() + released_rows()
+    rows = txpert_rows() + e190_rows() + e170_rows() + released_rows()
     output = STAGE / "UPSTREAM_COMPETENCE_V4.csv"
     pd.DataFrame(rows).to_csv(output, index=False)
     rule = {

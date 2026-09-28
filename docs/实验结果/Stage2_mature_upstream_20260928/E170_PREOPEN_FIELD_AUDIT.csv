@@ -1,0 +1,25 @@
+dataset_id,panel_id,field_name,raw_coverage,eligible_coverage,missing_after_eligibility,n_independent_studies,n_independent_contexts,derivation,leakage_safe,audited_after_final_candidate_freeze,test_truth_opened_during_audit
+E170_primary_CD4_test,P01,Universal_P,1.0,1.0,0,1,6,frozen ensemble prediction,True,True,False
+E170_primary_CD4_test,P01,Support,0.8,0.8,120,1,6,two train-donor matched-condition effects,True,True,False
+E170_primary_CD4_test,P01,Relevance,0.8,0.8,120,1,6,prediction/source cosine and negative RMSE gap,True,True,False
+E170_primary_CD4_test,P01,Quality,0.0,0.0,600,0,0,not in frozen candidate,False,True,False
+E170_primary_CD4_test,P01,Conflict,0.8,0.8,120,1,6,two train-donor effect dispersion,True,True,False
+E170_primary_CD4_test,P01,Content,0.8,0.8,120,1,6,train-donor mean effect magnitude,True,True,False
+E170_primary_CD4_test,P02,Universal_P,1.0,1.0,0,1,6,frozen ensemble prediction,True,True,False
+E170_primary_CD4_test,P02,Support,0.8,0.8,120,1,6,two train-donor matched-condition effects,True,True,False
+E170_primary_CD4_test,P02,Relevance,0.8,0.8,120,1,6,prediction/source cosine and negative RMSE gap,True,True,False
+E170_primary_CD4_test,P02,Quality,0.0,0.0,600,0,0,not in frozen candidate,False,True,False
+E170_primary_CD4_test,P02,Conflict,0.8,0.8,120,1,6,two train-donor effect dispersion,True,True,False
+E170_primary_CD4_test,P02,Content,0.8,0.8,120,1,6,train-donor mean effect magnitude,True,True,False
+E170_primary_CD4_test,P03,Universal_P,1.0,1.0,0,1,6,frozen ensemble prediction,True,True,False
+E170_primary_CD4_test,P03,Support,0.8,0.8,120,1,6,two train-donor matched-condition effects,True,True,False
+E170_primary_CD4_test,P03,Relevance,0.8,0.8,120,1,6,prediction/source cosine and negative RMSE gap,True,True,False
+E170_primary_CD4_test,P03,Quality,0.0,0.0,600,0,0,not in frozen candidate,False,True,False
+E170_primary_CD4_test,P03,Conflict,0.8,0.8,120,1,6,two train-donor effect dispersion,True,True,False
+E170_primary_CD4_test,P03,Content,0.8,0.8,120,1,6,train-donor mean effect magnitude,True,True,False
+E170_primary_CD4_test,P04,Universal_P,1.0,1.0,0,1,6,frozen ensemble prediction,True,True,False
+E170_primary_CD4_test,P04,Support,0.8,0.8,120,1,6,two train-donor matched-condition effects,True,True,False
+E170_primary_CD4_test,P04,Relevance,0.8,0.8,120,1,6,prediction/source cosine and negative RMSE gap,True,True,False
+E170_primary_CD4_test,P04,Quality,0.0,0.0,600,0,0,not in frozen candidate,False,True,False
+E170_primary_CD4_test,P04,Conflict,0.8,0.8,120,1,6,two train-donor effect dispersion,True,True,False
+E170_primary_CD4_test,P04,Content,0.8,0.8,120,1,6,train-donor mean effect magnitude,True,True,False
