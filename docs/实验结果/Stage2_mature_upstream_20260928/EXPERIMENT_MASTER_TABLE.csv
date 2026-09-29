@@ -1,49 +1,49 @@
 evidence_stage,dataset,upstream_family,upstream_model,perturbation_type,method,n_tasks,n_strata,utility20,delta_utility20_vs_magnitude,spearman,aurc,formal_confirmation
-DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert GAT,genetic,V2_nested,1808,4,0.7962935279936026,0.02807716666386617,0.7640095620057173,0.0485573826863495,False
-DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert GAT,genetic,Ridge_USR,1808,4,0.7863872614112555,0.018170900081519004,0.7593137358065755,0.0486093092131578,False
-DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert GAT,genetic,Ridge_USRC,1808,4,0.7833331214173225,0.015116760087586001,0.7623795076113977,0.0485716124880869,False
-DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert GAT,genetic,HGB_USRCH,1808,4,0.7812887722478057,0.01307241091806921,0.7491305696501166,0.0489174441106693,False
-DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert GAT,genetic,Ridge_USRCH,1808,4,0.780282081464584,0.012065720134847524,0.7610962169117175,0.0485828524544409,False
-DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert GAT,genetic,Ridge_US,1808,4,0.775655027449873,0.00743866612013655,0.7502403366647264,0.0486265268437768,False
-DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert GAT,genetic,Ridge_USR_history_shuffled,1808,4,0.7748589434787965,0.0066425821490599946,0.7394528663768039,0.049093536283053,False
+DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert GAT,genetic,V2_nested,1808,4,0.7962935279936026,0.0280771666638661,0.7640095620057173,0.0485573826863495,False
+DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert GAT,genetic,Ridge_USR,1808,4,0.7863872614112555,0.018170900081519,0.7593137358065755,0.0486093092131578,False
+DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert GAT,genetic,Ridge_USRC,1808,4,0.7833331214173225,0.015116760087586,0.7623795076113977,0.0485716124880869,False
+DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert GAT,genetic,HGB_USRCH,1808,4,0.7812887722478057,0.0130724109180692,0.7491305696501166,0.0489174441106693,False
+DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert GAT,genetic,Ridge_USRCH,1808,4,0.780282081464584,0.0120657201348475,0.7610962169117175,0.0485828524544409,False
+DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert GAT,genetic,Ridge_US,1808,4,0.775655027449873,0.0074386661201365,0.7502403366647264,0.0486265268437768,False
+DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert GAT,genetic,Ridge_USR_history_shuffled,1808,4,0.7748589434787965,0.0066425821490599,0.7394528663768039,0.049093536283053,False
 DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert GAT,genetic,Magnitude_raw,1808,4,0.7682163613297365,0.0,0.7419773026432539,0.0488308571846827,False
-DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert GAT,genetic,Ridge_U,1808,4,0.7673507219043117,-0.0008656394254247246,0.7444741432475886,0.0489513727499036,False
-DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert GAT,genetic,HGB_USR,1808,4,0.7541573203788192,-0.014059040950917256,0.7439835347491257,0.0489501337490325,False
+DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert GAT,genetic,Ridge_U,1808,4,0.7673507219043117,-0.0008656394254247,0.7444741432475886,0.0489513727499036,False
+DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert GAT,genetic,HGB_USR,1808,4,0.7541573203788192,-0.0140590409509172,0.7439835347491257,0.0489501337490325,False
 DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert GAT,genetic,MLP_USRCH,1808,4,0.7354918007528787,-0.0327245605768578,0.6857920938961138,0.0501612146262609,False
-DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert GAT,genetic,MLP_USR,1808,4,0.7239697429208757,-0.044246618408860794,0.6755976230815743,0.0505149736270878,False
-DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,V2_nested,1808,4,0.7917813479362414,0.033055027272796855,0.7577453492365223,0.0484713425784859,False
-DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,Ridge_USR,1808,4,0.7822651613433764,0.02353884067993184,0.7517631945059912,0.0485192752242278,False
-DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,Ridge_US,1808,4,0.7765541277260775,0.017827807062632872,0.7389208937341276,0.0486629003069337,False
-DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,Ridge_U,1808,4,0.7659385438601791,0.007212223196734535,0.7333760977185748,0.0490900589343153,False
-DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,Ridge_USRCH,1808,4,0.765916444760657,0.007190124097212425,0.754259246441062,0.0485281291913971,False
-DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,Ridge_USRC,1808,4,0.7653723632277858,0.0066460425643412036,0.7550950148849618,0.0485196599474283,False
+DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert GAT,genetic,MLP_USR,1808,4,0.7239697429208757,-0.0442466184088607,0.6755976230815743,0.0505149736270878,False
+DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,V2_nested,1808,4,0.7917813479362414,0.0330550272727968,0.7577453492365223,0.0484713425784859,False
+DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,Ridge_USR,1808,4,0.7822651613433764,0.0235388406799318,0.7517631945059912,0.0485192752242278,False
+DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,Ridge_US,1808,4,0.7765541277260775,0.0178278070626328,0.7389208937341276,0.0486629003069337,False
+DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,Ridge_U,1808,4,0.7659385438601791,0.0072122231967345,0.7333760977185748,0.0490900589343153,False
+DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,Ridge_USRCH,1808,4,0.765916444760657,0.0071901240972124,0.754259246441062,0.0485281291913971,False
+DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,Ridge_USRC,1808,4,0.7653723632277858,0.0066460425643412,0.7550950148849618,0.0485196599474283,False
 DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,Magnitude_raw,1808,4,0.7587263206634446,0.0,0.7276340808285227,0.0489265921351404,False
-DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,Ridge_USR_history_shuffled,1808,4,0.7572225282899014,-0.0015037923735431447,0.7286860259068089,0.0492175627545817,False
-DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,HGB_USR,1808,4,0.7529077903513264,-0.005818530312118209,0.7320586817033075,0.0489556990448107,False
-DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,HGB_USRCH,1808,4,0.7481355312813809,-0.010590789382063703,0.7404821104293153,0.0487990686176149,False
-DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,MLP_USRCH,1808,4,0.7237784619339073,-0.03494785872953732,0.6695429004947048,0.0501846319208034,False
-DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,MLP_USR,1808,4,0.7224279920153142,-0.03629832864813043,0.6749230090511127,0.0501928249129311,False
-SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,Ridge_USRC,692,1,0.3894297147054679,0.15467799857457618,0.3751843827465151,0.2227775365027267,False
-SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,Ridge_USRCH,692,1,0.365208992324731,0.13045727619383926,0.3528513513205213,0.2232849300853897,False
+DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,Ridge_USR_history_shuffled,1808,4,0.7572225282899014,-0.0015037923735431,0.7286860259068089,0.0492175627545817,False
+DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,HGB_USR,1808,4,0.7529077903513264,-0.0058185303121182,0.7320586817033075,0.0489556990448107,False
+DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,HGB_USRCH,1808,4,0.7481355312813809,-0.0105907893820637,0.7404821104293153,0.0487990686176149,False
+DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,MLP_USRCH,1808,4,0.7237784619339073,-0.0349478587295373,0.6695429004947048,0.0501846319208034,False
+DEV_nested_OOF,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,MLP_USR,1808,4,0.7224279920153142,-0.0362983286481304,0.6749230090511127,0.0501928249129311,False
+SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,Ridge_USRC,692,1,0.3894297147054679,0.1546779985745761,0.3751843827465151,0.2227775365027267,False
+SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,Ridge_USRCH,692,1,0.365208992324731,0.1304572761938392,0.3528513513205213,0.2232849300853897,False
 SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,Ridge_USR,692,1,0.3034876966622067,0.068735980531315,0.248872609479253,0.2265333605278899,False
 SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,Magnitude_raw,692,1,0.2347517161308917,0.0,0.2387815458676989,0.2321064720371682,False
-SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,MLP_USRCH,692,1,0.1508940334205097,-0.08385768271038202,0.2473489497321925,0.2261724225503684,False
-SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,HGB_USR,692,1,0.1166995069077579,-0.11805220922313381,0.2015513464355964,0.2271980091847141,False
+SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,MLP_USRCH,692,1,0.1508940334205097,-0.083857682710382,0.2473489497321925,0.2261724225503684,False
+SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,HGB_USR,692,1,0.1166995069077579,-0.1180522092231338,0.2015513464355964,0.2271980091847141,False
 SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,HGB_USRCH,692,1,0.0789321505787884,-0.1558195655521033,0.2181558353135126,0.2255487086397142,False
 SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,MLP_USR,692,1,0.0504500672492949,-0.1843016488815968,0.0858386608489636,0.2307724679170307,False
 SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,V2_nested,692,1,-0.0113790866828518,-0.2461308028137435,0.2029619800631068,0.2272883504603279,False
 SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,Ridge_USR_history_shuffled,692,1,-0.0264872704209603,-0.261238986551852,0.0681279604763204,0.2373520037231742,False
 SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,Ridge_U,692,1,-0.0491211714439511,-0.2838728875748428,0.0901990274433662,0.2361324230791685,False
 SEEN_crossfamily_nested_OOF,Adamson→Replogle K562 cross-study,GEARS,GEARS 3-seed centroid,genetic,Ridge_US,692,1,-0.0913498887503355,-0.3261016048812272,0.0520128369103214,0.2319246317843373,False
-DEV_fair_comparator,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,PertEMA_official_algorithm_adaptation,1808,4,0.7180733793248864,-0.040652941338558235,0.6854981974816089,0.0495471549799782,False
-DEV_fair_comparator,TxPert four-context panel,TxPert,TxPert GAT,genetic,PertEMA_official_algorithm_adaptation,1808,4,0.7237428558948653,-0.04447350543487116,0.6933690908895808,0.0497926842995714,False
-SEEN_small_transfer,Adamson+Dixit+Norman formal subset,GEARS,GEARS formal released,genetic,HGB_P+Q,54,3,0.8459330216123844,-0.055710502297657616,0.3770070528319529,,False
-SEEN_small_transfer,Adamson+Dixit+Norman formal subset,GEARS,GEARS formal released,genetic,MLP_P+Q,54,3,0.8998033955763984,-0.0018401283336435537,0.5338288545835714,,False
+DEV_fair_comparator,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,PertEMA_official_algorithm_adaptation,1808,4,0.7180733793248864,-0.0406529413385582,0.6854981974816089,0.0495471549799782,False
+DEV_fair_comparator,TxPert four-context panel,TxPert,TxPert GAT,genetic,PertEMA_official_algorithm_adaptation,1808,4,0.7237428558948653,-0.0444735054348711,0.6933690908895808,0.0497926842995714,False
+SEEN_small_transfer,Adamson+Dixit+Norman formal subset,GEARS,GEARS formal released,genetic,HGB_P+Q,54,3,0.8459330216123844,-0.0557105022976576,0.3770070528319529,,False
+SEEN_small_transfer,Adamson+Dixit+Norman formal subset,GEARS,GEARS formal released,genetic,MLP_P+Q,54,3,0.8998033955763984,-0.0018401283336435,0.5338288545835714,,False
 SEEN_small_transfer,Adamson+Dixit+Norman formal subset,GEARS,GEARS formal released,genetic,Magnitude_raw,54,3,0.901643523910042,0.0,0.6244711263579188,,False
-SEEN_small_transfer,Adamson+Dixit+Norman formal subset,GEARS,GEARS formal released,genetic,Ridge_P+Q,54,3,0.9123966359575696,0.010753112047527602,0.5182771107299409,,False
-SEALED_CONFIRMATION_ONE_SHOT,E170 primary CD4 four-panel held-out donor,scGPT+GEARS ensemble,Frozen 6-member scGPT+GEARS ensemble,genetic,Ridge_USRCH,2400,12,0.215895446353543,0.050386856424903204,0.189081727043176,0.1139301771864538,True
-SEALED_CONFIRMATION_ONE_SHOT,E170 primary CD4 four-panel held-out donor,scGPT+GEARS ensemble,Frozen 6-member scGPT+GEARS ensemble,genetic,V2_nested,2400,12,0.215895446353543,0.050386856424903204,0.1889865996649916,0.1139581913820496,True
-SEALED_CONFIRMATION_ONE_SHOT,E170 primary CD4 four-panel held-out donor,scGPT+GEARS ensemble,Frozen 6-member scGPT+GEARS ensemble,genetic,Ridge_USR,2400,12,0.2010322119738459,0.03552362204520612,0.1897221180529513,0.1137223795947434,True
+SEEN_small_transfer,Adamson+Dixit+Norman formal subset,GEARS,GEARS formal released,genetic,Ridge_P+Q,54,3,0.9123966359575696,0.0107531120475276,0.5182771107299409,,False
+SEALED_CONFIRMATION_ONE_SHOT,E170 primary CD4 four-panel held-out donor,scGPT+GEARS ensemble,Frozen 6-member scGPT+GEARS ensemble,genetic,Ridge_USRCH,2400,12,0.215895446353543,0.0503868564249032,0.189081727043176,0.1139301771864538,True
+SEALED_CONFIRMATION_ONE_SHOT,E170 primary CD4 four-panel held-out donor,scGPT+GEARS ensemble,Frozen 6-member scGPT+GEARS ensemble,genetic,V2_nested,2400,12,0.215895446353543,0.0503868564249032,0.1889865996649916,0.1139581913820496,True
+SEALED_CONFIRMATION_ONE_SHOT,E170 primary CD4 four-panel held-out donor,scGPT+GEARS ensemble,Frozen 6-member scGPT+GEARS ensemble,genetic,Ridge_USR,2400,12,0.2010322119738459,0.0355236220452061,0.1897221180529513,0.1137223795947434,True
 SEALED_CONFIRMATION_ONE_SHOT,E170 primary CD4 four-panel held-out donor,scGPT+GEARS ensemble,Frozen 6-member scGPT+GEARS ensemble,genetic,Ridge_U,2400,12,0.183584081982284,0.0180754920536442,0.1650055001375034,0.1163757110985967,True
 SEALED_CONFIRMATION_ONE_SHOT,E170 primary CD4 four-panel held-out donor,scGPT+GEARS ensemble,Frozen 6-member scGPT+GEARS ensemble,genetic,Ridge_US,2400,12,0.183584081982284,0.0180754920536442,0.1650055001375034,0.1163757110985967,True
 SEALED_CONFIRMATION_ONE_SHOT,E170 primary CD4 four-panel held-out donor,scGPT+GEARS ensemble,Frozen 6-member scGPT+GEARS ensemble,genetic,Magnitude_raw,2400,12,0.1655085899286398,0.0,0.1733600840021001,0.1161116190226148,True
@@ -60,7 +60,47 @@ DEV_feedback_budget,TxPert four-context panel,TxPert,TxPert_GAT,genetic,ErrorMem
 DEV_feedback_budget,TxPert four-context panel,TxPert,TxPert_GAT,genetic,ErrorMemory_budget_0.75,1808,20,0.7699438322685419,,0.7618416695994923,,False
 DEV_feedback_budget,TxPert four-context panel,TxPert,TxPert_GAT,genetic,ErrorMemory_budget_1.00,1808,20,0.7758807543488013,,0.761963416173473,,False
 SEEN_chemical_stress,sciPlex3 eight fixed splits,CPA,CPA 0.8.8 RDKIT log-dose,chemical,Magnitude_raw,629,8,0.5816188089268347,0.0,0.5905836008177722,,False
-SEEN_chemical_stress,sciPlex3 eight fixed splits,CPA,CPA 0.8.8 RDKIT log-dose,chemical,Ridge_M,629,8,0.5132384429795968,-0.06838036594723795,0.5065570842206295,,False
-SEEN_chemical_stress,sciPlex3 eight fixed splits,CPA,CPA 0.8.8 RDKIT log-dose,chemical,Ridge_P,629,8,0.5253809875086072,-0.05623782141822753,0.5036142805712764,,False
+SEEN_chemical_stress,sciPlex3 eight fixed splits,CPA,CPA 0.8.8 RDKIT log-dose,chemical,Ridge_M,629,8,0.5132384429795968,-0.0683803659472379,0.5065570842206295,,False
+SEEN_chemical_stress,sciPlex3 eight fixed splits,CPA,CPA 0.8.8 RDKIT log-dose,chemical,Ridge_P,629,8,0.5253809875086072,-0.0562378214182275,0.5036142805712764,,False
 SEEN_chemical_stress,sciPlex3 eight fixed splits,CPA,CPA 0.8.8 RDKIT log-dose,chemical,Ridge_PQ,629,8,0.5395836235369249,-0.0420351853899098,0.5567623766003582,,False
-SEEN_chemical_stress,sciPlex3 eight fixed splits,CPA,CPA 0.8.8 RDKIT log-dose,chemical,Ridge_PQH,629,8,0.6068827992313242,0.025263990304489448,0.612202251897614,,False
+SEEN_chemical_stress,sciPlex3 eight fixed splits,CPA,CPA 0.8.8 RDKIT log-dose,chemical,Ridge_PQH,629,8,0.6068827992313242,0.0252639903044894,0.612202251897614,,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,budget_0.10_P,1808,4,0.7239682318465817,,0.7005510710348152,0.0496389600558318,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,budget_0.10_P+ErrorMemory,1808,4,0.7172892538979314,,0.6865042117677431,0.0499002385770672,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,budget_0.10_P+PublicHistory,1808,4,0.7246908824671179,,0.689876649762075,0.0497507654846348,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,budget_0.10_P+PublicHistory+ErrorMemory,1808,4,0.7130295015185871,,0.6749538602503273,0.0500483007864035,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,budget_0.25_P,1808,4,0.7592400870697731,,0.7237103689219685,0.0492951186766841,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,budget_0.25_P+ErrorMemory,1808,4,0.749359202952828,,0.7169903562669541,0.0493114601153577,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,budget_0.25_P+PublicHistory,1808,4,0.7439349727203138,,0.7276869411470739,0.0488327588471808,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,budget_0.25_P+PublicHistory+ErrorMemory,1808,4,0.7374719722602852,,0.7199785633314989,0.048963467827837,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,budget_0.50_P,1808,4,0.759017526553345,,0.7287633626584249,0.0491458253809373,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,budget_0.50_P+ErrorMemory,1808,4,0.7497076293288645,,0.729997106496088,0.0489981604250903,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,budget_0.50_P+PublicHistory,1808,4,0.7561991755977292,,0.7463861414283168,0.04859462130263,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,budget_0.50_P+PublicHistory+ErrorMemory,1808,4,0.7582557345092534,,0.7485075464727075,0.0484822162785554,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,budget_0.75_P,1808,4,0.7631137620765225,,0.7339794359451137,0.0491184766762674,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,budget_0.75_P+ErrorMemory,1808,4,0.7647589705368132,,0.7375828375749494,0.0488363185590217,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,budget_0.75_P+PublicHistory,1808,4,0.7844774857835701,,0.7528461134771044,0.0484913564134253,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,budget_0.75_P+PublicHistory+ErrorMemory,1808,4,0.7796521314465858,,0.7565983452064189,0.0483149242643263,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,budget_1.00_P,1808,4,0.7659385438601791,,0.7333760977185748,0.0490900589343153,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,budget_1.00_P+ErrorMemory,1808,4,0.7577398298091271,,0.733228554326869,0.0489000493655515,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,budget_1.00_P+PublicHistory,1808,4,0.7822651613433764,,0.7517631945059912,0.0485192752242278,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert Exphormer,genetic,budget_1.00_P+PublicHistory+ErrorMemory,1808,4,0.7734491870553468,,0.7545666477645356,0.0483664087739009,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert GAT,genetic,budget_0.10_P,1808,4,0.7664419378264653,,0.7315922772194169,0.0493187421559708,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert GAT,genetic,budget_0.10_P+ErrorMemory,1808,4,0.7089845973371468,,0.7093527415112127,0.04955339409256,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert GAT,genetic,budget_0.10_P+PublicHistory,1808,4,0.7616941020049963,,0.7240875275575211,0.0493229984498375,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert GAT,genetic,budget_0.10_P+PublicHistory+ErrorMemory,1808,4,0.7514395889660864,,0.7086236162856514,0.0495365383595397,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert GAT,genetic,budget_0.25_P,1808,4,0.7686319223369436,,0.7233346209524114,0.0494984165005787,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert GAT,genetic,budget_0.25_P+ErrorMemory,1808,4,0.7495490729684061,,0.7238715298649229,0.0493015612142356,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert GAT,genetic,budget_0.25_P+PublicHistory,1808,4,0.7807186339140574,,0.7417905278913755,0.0489702237836525,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert GAT,genetic,budget_0.25_P+PublicHistory+ErrorMemory,1808,4,0.7706940856648425,,0.7388707931284121,0.0489736937202223,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert GAT,genetic,budget_0.50_P,1808,4,0.769631697392602,,0.7344679577668443,0.0491783929148268,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert GAT,genetic,budget_0.50_P+ErrorMemory,1808,4,0.7617192801898541,,0.738292493015323,0.0491503216307358,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert GAT,genetic,budget_0.50_P+PublicHistory,1808,4,0.7862378998728794,,0.7477435826389562,0.0487964158984902,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert GAT,genetic,budget_0.50_P+PublicHistory+ErrorMemory,1808,4,0.7626910956288946,,0.7517869752326248,0.0487352092025164,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert GAT,genetic,budget_0.75_P,1808,4,0.761357610584425,,0.7403917675985741,0.049042329836416,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert GAT,genetic,budget_0.75_P+ErrorMemory,1808,4,0.7633224228505662,,0.7376040288923496,0.0491622640490645,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert GAT,genetic,budget_0.75_P+PublicHistory,1808,4,0.7909802699825642,,0.7553874301580958,0.0486556217163073,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert GAT,genetic,budget_0.75_P+PublicHistory+ErrorMemory,1808,4,0.7709295963660275,,0.753711169836048,0.0487016827180576,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert GAT,genetic,budget_1.00_P,1808,4,0.7673507219043116,,0.7444741432475886,0.0489513727499036,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert GAT,genetic,budget_1.00_P+ErrorMemory,1808,4,0.7690905552093761,,0.7459905998071883,0.0489335807957611,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert GAT,genetic,budget_1.00_P+PublicHistory,1808,4,0.7863872614112555,,0.7593137358065755,0.0486093092131578,False
+DEV_feedback_source_orthogonal,TxPert four-context panel,TxPert,TxPert GAT,genetic,budget_1.00_P+PublicHistory+ErrorMemory,1808,4,0.7723263712180144,,0.7614833305743025,0.0485253072071811,False

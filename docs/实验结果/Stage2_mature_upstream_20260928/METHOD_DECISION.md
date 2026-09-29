@@ -31,3 +31,13 @@ E170 在方法冻结后一次性打开全部四面板，V2 相对 Magnitude 的 
 2. learned gate 是需要 McFaline 外部实验继续检验的条件扩展；
 3. 只有外部 v4 同时超过 Magnitude 且不明显劣于 V1，才把 evidence-aware gate 保留为主方法贡献；
 4. 若外部 V1 有效而 V2 低于 V1，则按 Route B 收口，不再为 gate 追逐正结果。
+
+## Public History 与 Error Memory 正交复核
+
+在相同 upstream、outer split 和 gene-cluster 错误标签预算下，`P / P+Public History / P+Error Memory / P+两者` 已完成比较。Public History 在 50%–100% 预算下对两种 TxPert 架构的 Spearman 增量稳定为正；Error Memory 的 Utility@20 增量没有一个预算获得正置信区间，加入 Public History 后也没有体现 U20 互补。
+
+因此最终方法优先级固定为：
+
+1. 主体：Universal Prediction Evidence + legal Historical Experimental Evidence；
+2. 外部待检：冻结 v4 evidence-aware shrinkage；
+3. 补充分析：Error Memory / PertEMA 反馈条件，不宣称 Error Memory 必然改善主指标。

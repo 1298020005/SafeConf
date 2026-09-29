@@ -12,5 +12,5 @@
 | 跨模型家族/model-agnostic | E190 GEARS 692 tasks 通过能力门；V1 点增量为正，V2 失败，且资产已开封 | 开发压力支持，未确认 | black-box interface with cross-family development evidence |
 | 胜过 PertEMA | 同任务适配中 V2 高 0.066–0.069，CI 下限 >0 | 支持限定比较 | beats official-algorithm adaptation under registered contract |
 | 独立 confirmation | E170 全四面板在方法冻结后同开；2,400 tasks；Gate A PASS | 同研究确认完成 | one-shot held-out-donor/new-perturbation confirmation, not external-study |
-| Error Memory 部署增强 | gene-disjoint 反馈预算曲线；GAT 75–100%、Exphormer 50–75% 后改善 | 开发支持 | periodic batch adaptation; not online temporal learning |
+| Error Memory 部署增强 | 旧预算曲线有高预算点增量；同预算正交实验中 Error Memory 的 U20 区间从未为正，且未与 Public History 互补 | 不作为正向核心主张 | optional feedback analysis; no independent U20 benefit demonstrated |
 | 化学通用性 | CPA 多数资产弱于简单基线 | 压力测试 | chemical stress test only |

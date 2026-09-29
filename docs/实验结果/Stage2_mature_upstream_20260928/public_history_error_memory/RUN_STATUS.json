@@ -1,0 +1,25 @@
+{
+  "status": "COMPLETE",
+  "elapsed_seconds": 853.1343386173248,
+  "data_role": "DEV_SEEN_ONLY",
+  "sealed_confirmation_opened": false,
+  "same_error_label_budget_across_methods": true,
+  "outer_gene_disjoint": true,
+  "fit_error_memory_leave_one_out": true,
+  "query_error_memory_uses_outer_train_only": true,
+  "budgets": [
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "bootstrap_replicates": 5000,
+  "methods": [
+    "P",
+    "P+PublicHistory",
+    "P+ErrorMemory",
+    "P+PublicHistory+ErrorMemory"
+  ],
+  "summary_sha256": "e181c997fc71c549976140a8ff5c7aefe4539a21ae1aa9051816c8197feae633"
+}
