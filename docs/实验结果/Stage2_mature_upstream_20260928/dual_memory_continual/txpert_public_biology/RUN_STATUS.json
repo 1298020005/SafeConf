@@ -1,0 +1,13 @@
+{
+  "bootstrap_replicates": 5000,
+  "evidence_role": "DEV_SEEN",
+  "mcfaline_test_opened": false,
+  "n_eligibility_edges": 5238,
+  "n_public_items": 2008,
+  "n_tasks": 1808,
+  "n_upstreams": 2,
+  "outer_folds": 5,
+  "public_learner_used_upstream_errors": false,
+  "same_task_all_upstreams_same_fold": true,
+  "status": "COMPLETE"
+}

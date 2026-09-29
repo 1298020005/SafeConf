@@ -1,0 +1,38 @@
+{
+  "experiment": "DualMemory_TxPert_PublicBank",
+  "status": "PASS",
+  "created_utc": "2026-09-29T11:00:31.791946+00:00",
+  "store_root": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201",
+  "n_items": 2008,
+  "n_eligibility_edges": 5238,
+  "n_tasks_with_history": 2008,
+  "n_source_contexts": 4,
+  "quality_available": false,
+  "support_available": true,
+  "item_level_effect_available": true,
+  "target_truth_opened": false,
+  "target_treatment_rows_opened": 0,
+  "manifest": {
+    "schema": "SafeConf-PublicMemory-v1",
+    "created_utc": "2026-09-29T11:00:31.636346+00:00",
+    "n_items": 2008,
+    "n_genes": 3352,
+    "table_sha256": "fcfbd3300a012e3747c9642f5076d1407c509f46f66e4412522c5d9b8661c4bd",
+    "effect_vectors_sha256": "884a3b1a0b836f25af4e6f7e0df38a8eab4dfccfec49599c7478eccd4892dd92",
+    "control_vectors_sha256": "1ad1cffb68b67c1976225a0efd747c0f5b7629a3c729c1f00d70088a6ec5ba06",
+    "gene_ids_sha256": "3a6c0ef75eef65b0f82286ee142bbb6c02a8b128cff8d3110b38661f74201c08",
+    "eligibility": {
+      "path": "eligibility.parquet",
+      "n_rows": 5238,
+      "sha256": "ef2391be1ce3d0a9ac0d613810f9bbfd314fd00d5631436edbb22bdcdb6fc497"
+    },
+    "source_manifest": {
+      "support_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/E201_txpert_multitarget_retraining_20260802/tables/E201_SOURCE_CONTEXT_SUPPORT.csv",
+      "support_sha256": "6e1df0403f74ad01c53cc0d3d2364afda5dcaae8c413afde64a290404f3fd5d7",
+      "task_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/E201_txpert_multitarget_retraining_20260802/tables/E201_PRETRUTH_TASK_BASE.csv",
+      "task_sha256": "1d5f068fea76138ee9ba42d1e1a4f9674850fab923e36732d24aae73f8fcdab0",
+      "target_truth_opened": false,
+      "target_treatment_rows_opened": 0
+    }
+  }
+}

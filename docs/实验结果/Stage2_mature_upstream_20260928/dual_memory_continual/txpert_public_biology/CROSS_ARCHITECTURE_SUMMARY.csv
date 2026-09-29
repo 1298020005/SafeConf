@@ -1,0 +1,3 @@
+train_upstream,test_upstream,n_strata,utility20,spearman,aurc
+TxPert_Exphormer,TxPert_GAT,4,0.782097248525543,0.7590824882849856,0.048510892355806884
+TxPert_GAT,TxPert_Exphormer,4,0.7808836769188053,0.7490215833142891,0.04853080257282727

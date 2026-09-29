@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "schema": "SafeConf-McFaline-Quality-v1",
+  "h5ad_sha256": "e9c6a010ce6e44eb72d32449e7d7ad2bd45d336855083fa901d52d0bf263fa87",
+  "split_sha256": "08a6558a68599b3703f626c8da72a1603486edd94a3f34dfc9fa7c9b6181b091",
+  "n_trainval_cells": 809201,
+  "n_test_cells_aggregated": 0,
+  "n_quality_tasks": 7173,
+  "n_quality_genes": 512,
+  "guide_quality_coverage": 1.0,
+  "plate_quality_coverage": 1.0,
+  "split_half_quality_coverage": 1.0,
+  "support_is_not_quality": true,
+  "test_truth_opened": false,
+  "result_sha256": "88f4a0a5b210c040dd0842a40a653fb5595362b54f49fc277b4c95c604e282b5"
+}
