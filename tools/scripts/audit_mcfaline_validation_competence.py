@@ -204,13 +204,17 @@ def aggregate_predictions(directory: Path, gene_names: list[str]) -> tuple[pd.Da
                 raise CompetenceFailure("prediction gene axis does not align")
             selected = axis.loc[gene_names].to_numpy(int)
         obs = item.obs.reset_index(drop=True)
+        # Each prediction chunk is a dense 5,000 x 15,009 matrix. Reading 512
+        # scattered HDF5 columns directly triggers thousands of tiny random
+        # reads; load the single chunk sequentially, then subset in memory.
+        matrix = np.asarray(item.X, dtype=np.float32)[:, selected]
         for condition_index, positions in obs.groupby("_condition_idx").groups.items():
             condition_index = int(condition_index)
             if condition_index in seen:
                 continue
             seen.add(condition_index)
             pos = np.asarray(list(positions), dtype=int)
-            values = np.asarray(item[pos, selected].X, dtype=float)
+            values = matrix[pos]
             first = obs.iloc[pos[0]]
             rows.append({
                 "condition_index": condition_index,
@@ -218,6 +222,7 @@ def aggregate_predictions(directory: Path, gene_names: list[str]) -> tuple[pd.Da
             })
             vectors.append(values.mean(axis=0))
         item.file.close()
+        del matrix
         if number % 20 == 0:
             print(f"[CompetencePredictions] files {number}/{len(files)}", flush=True)
     return pd.DataFrame(rows), np.asarray(vectors)
@@ -240,7 +245,8 @@ def main() -> None:
     if args.output.exists():
         raise FileExistsError(f"refusing to overwrite {args.output}")
     args.output.mkdir(parents=True)
-    genes = json.loads(args.genes.read_text())
+    gene_payload = json.loads(args.genes.read_text())
+    genes = gene_payload["gene_ids"] if isinstance(gene_payload, dict) else gene_payload
     meta, truth, no_change, state_mean, validation_controls = aggregate_truth_and_baselines(
         args.h5ad, args.split, genes, args.chunk_rows
     )

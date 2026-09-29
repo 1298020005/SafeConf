@@ -1,0 +1,10 @@
+{
+  "status": "COMPLETE",
+  "candidate": "PerturBench_LatentAdditive",
+  "partition": "validation",
+  "test_expression_opened": false,
+  "prediction_dir": "/home/yyf/runtime_artifacts/safeconf_mcfaline23/validation_supervisor_budget15_20260929T1930Z/latent_validation/evaluation/predicted_anndata",
+  "split_sha256": "08a6558a68599b3703f626c8da72a1603486edd94a3f34dfc9fa7c9b6181b091",
+  "gene_contract_sha256": "13383ca8ae524bcfb4412341e72847e5d3bd53e8d19109e9d719b787ac3ba298",
+  "bootstrap_replicates": 5000
+}

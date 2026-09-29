@@ -1,0 +1,2 @@
+candidate,n_tasks,n_perturbation_clusters,n_strata,candidate_macro_rmse,strongest_simple_baseline,baseline_macro_rmse,relative_gap,bootstrap_ci95_lower,bootstrap_ci95_upper,noninferior_strata_fraction,passes_competence,test_expression_opened
+PerturBench_LatentAdditive,542,377,3,0.02468933713606877,train_state_mean_effect,0.022033085363914164,0.12055741301238823,0.11342177904528458,0.12794781217605544,0.0,False,False
