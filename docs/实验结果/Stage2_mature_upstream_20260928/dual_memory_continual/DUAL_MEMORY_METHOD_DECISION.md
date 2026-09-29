@@ -47,11 +47,13 @@ PertEMA-style HGB proxy. The official PertEMA package is not mislabeled as a
 TxPert result; its CD4-specific 64-feature contract is recorded in
 `PERTEMA_AUDIT.md`.
 
-The current decision rule is conservative: Error Memory is a deployment
-extension and becomes a primary contribution only if its repaired feedback
-curve is non-inferior across both architectures and budgets. A small
-Spearman improvement without stable U20 is reported as partial
-personalisation, not as a primary gain.
+The repaired run does **not** meet that primary-gain rule: Residual HGB U20 is
+below the Shared Core at most budgets for both architectures, while the
+model-error proxy is consistently weaker. Error Memory therefore remains a
+valid, version-isolated deployment extension and a negative boundary result,
+not a primary performance contribution. It is retained because the system can
+ingest real feedback, shrink its influence at low sample counts, and apply
+release/rollback gates without contaminating the shared public bank.
 
 ## Chosen system structure
 

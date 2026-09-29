@@ -34,3 +34,14 @@ in `error_adaptation_repaired/FEEDBACK_CURVE_AUC.csv`.
 The table distinguishes the official PertEMA audit from the
 `PertEMA_style_HGB_P_proxy`; the proxy is not presented as the official
 implementation.
+
+
+Current repaired Shared Core feedback AUC:
+
+| upstream | Shared Core U20 AUC | Residual HGB U20 AUC | decision |
+|---|---:|---:|---|
+| Exphormer | 0.803162 | 0.790206 | no stable U20 gain |
+| GAT | 0.797582 | 0.792046 | no stable U20 gain |
+
+This is retained as a boundary result. The adapter is not promoted to the
+main performance claim.

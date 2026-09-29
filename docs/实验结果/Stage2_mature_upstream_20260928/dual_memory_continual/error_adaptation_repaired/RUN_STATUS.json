@@ -1,0 +1,37 @@
+{
+  "bootstrap_replicates": 5000,
+  "completed_utc": "2026-09-29T12:25:06.813852+00:00",
+  "error_memory_manifests": [
+    {
+      "model_version": "E205_Exphormer_registered_family",
+      "n_items": 1808,
+      "schema": "SafeConf-ErrorMemory-v1",
+      "table_sha256": "62b7d4fea20dabd9394c85494aaa1f25ab2a69cd38cacab71c23e7f325c8068f",
+      "updated_utc": "2026-09-29T12:10:15.735709+00:00",
+      "upstream_model_id": "TxPert_Exphormer"
+    },
+    {
+      "model_version": "E201_STRING_GAT_registered_family",
+      "n_items": 1808,
+      "schema": "SafeConf-ErrorMemory-v1",
+      "table_sha256": "c65c65c5d555df440410d165c1a4fdb371abf211b31bcf3f23fb6275d42457fc",
+      "updated_utc": "2026-09-29T12:10:15.858728+00:00",
+      "upstream_model_id": "TxPert_GAT"
+    }
+  ],
+  "evidence_role": "DEV_SEEN",
+  "feedback_budgets": [
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "mcfaline_test_opened": false,
+  "n_tasks_per_upstream": 1808,
+  "n_upstreams": 2,
+  "same_model_error_memory_only": true,
+  "same_task_all_upstreams_same_fold": true,
+  "shared_core_method": "SharedHGB_Regularized",
+  "status": "COMPLETE"
+}
