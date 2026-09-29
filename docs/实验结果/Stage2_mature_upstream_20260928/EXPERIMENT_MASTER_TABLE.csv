@@ -41,3 +41,26 @@ SEEN_small_transfer,Adamson+Dixit+Norman formal subset,GEARS,GEARS formal releas
 SEEN_small_transfer,Adamson+Dixit+Norman formal subset,GEARS,GEARS formal released,genetic,MLP_P+Q,54,3,0.8998033955763984,-0.0018401283336435537,0.5338288545835714,,False
 SEEN_small_transfer,Adamson+Dixit+Norman formal subset,GEARS,GEARS formal released,genetic,Magnitude_raw,54,3,0.901643523910042,0.0,0.6244711263579188,,False
 SEEN_small_transfer,Adamson+Dixit+Norman formal subset,GEARS,GEARS formal released,genetic,Ridge_P+Q,54,3,0.9123966359575696,0.010753112047527602,0.5182771107299409,,False
+SEALED_CONFIRMATION_ONE_SHOT,E170 primary CD4 four-panel held-out donor,scGPT+GEARS ensemble,Frozen 6-member scGPT+GEARS ensemble,genetic,Ridge_USRCH,2400,12,0.215895446353543,0.050386856424903204,0.189081727043176,0.1139301771864538,True
+SEALED_CONFIRMATION_ONE_SHOT,E170 primary CD4 four-panel held-out donor,scGPT+GEARS ensemble,Frozen 6-member scGPT+GEARS ensemble,genetic,V2_nested,2400,12,0.215895446353543,0.050386856424903204,0.1889865996649916,0.1139581913820496,True
+SEALED_CONFIRMATION_ONE_SHOT,E170 primary CD4 four-panel held-out donor,scGPT+GEARS ensemble,Frozen 6-member scGPT+GEARS ensemble,genetic,Ridge_USR,2400,12,0.2010322119738459,0.03552362204520612,0.1897221180529513,0.1137223795947434,True
+SEALED_CONFIRMATION_ONE_SHOT,E170 primary CD4 four-panel held-out donor,scGPT+GEARS ensemble,Frozen 6-member scGPT+GEARS ensemble,genetic,Ridge_U,2400,12,0.183584081982284,0.0180754920536442,0.1650055001375034,0.1163757110985967,True
+SEALED_CONFIRMATION_ONE_SHOT,E170 primary CD4 four-panel held-out donor,scGPT+GEARS ensemble,Frozen 6-member scGPT+GEARS ensemble,genetic,Ridge_US,2400,12,0.183584081982284,0.0180754920536442,0.1650055001375034,0.1163757110985967,True
+SEALED_CONFIRMATION_ONE_SHOT,E170 primary CD4 four-panel held-out donor,scGPT+GEARS ensemble,Frozen 6-member scGPT+GEARS ensemble,genetic,Magnitude_raw,2400,12,0.1655085899286398,0.0,0.1733600840021001,0.1161116190226148,True
+DEV_feedback_budget,TxPert four-context panel,TxPert,TxPert_Exphormer,genetic,ErrorMemory_budget_0.00,1808,20,0.7514445761548886,,0.7286355973009345,,False
+DEV_feedback_budget,TxPert four-context panel,TxPert,TxPert_Exphormer,genetic,ErrorMemory_budget_0.10,1808,20,0.7240979995658087,,0.6828268249656657,,False
+DEV_feedback_budget,TxPert four-context panel,TxPert,TxPert_Exphormer,genetic,ErrorMemory_budget_0.25,1808,20,0.761898885737549,,0.7251208264973322,,False
+DEV_feedback_budget,TxPert four-context panel,TxPert,TxPert_Exphormer,genetic,ErrorMemory_budget_0.50,1808,20,0.7688103298978084,,0.7365550247209243,,False
+DEV_feedback_budget,TxPert four-context panel,TxPert,TxPert_Exphormer,genetic,ErrorMemory_budget_0.75,1808,20,0.768053540315909,,0.748425252089415,,False
+DEV_feedback_budget,TxPert four-context panel,TxPert,TxPert_Exphormer,genetic,ErrorMemory_budget_1.00,1808,20,0.7643108948534192,,0.7479537953819394,,False
+DEV_feedback_budget,TxPert four-context panel,TxPert,TxPert_GAT,genetic,ErrorMemory_budget_0.00,1808,20,0.761536688035285,,0.7437639656443691,,False
+DEV_feedback_budget,TxPert four-context panel,TxPert,TxPert_GAT,genetic,ErrorMemory_budget_0.10,1808,20,0.7431685614114238,,0.7354480751014182,,False
+DEV_feedback_budget,TxPert four-context panel,TxPert,TxPert_GAT,genetic,ErrorMemory_budget_0.25,1808,20,0.7599889696397228,,0.7567206768234175,,False
+DEV_feedback_budget,TxPert four-context panel,TxPert,TxPert_GAT,genetic,ErrorMemory_budget_0.50,1808,20,0.7568598557057472,,0.7606055343903583,,False
+DEV_feedback_budget,TxPert four-context panel,TxPert,TxPert_GAT,genetic,ErrorMemory_budget_0.75,1808,20,0.7699438322685419,,0.7618416695994923,,False
+DEV_feedback_budget,TxPert four-context panel,TxPert,TxPert_GAT,genetic,ErrorMemory_budget_1.00,1808,20,0.7758807543488013,,0.761963416173473,,False
+SEEN_chemical_stress,sciPlex3 eight fixed splits,CPA,CPA 0.8.8 RDKIT log-dose,chemical,Magnitude_raw,629,8,0.5816188089268347,0.0,0.5905836008177722,,False
+SEEN_chemical_stress,sciPlex3 eight fixed splits,CPA,CPA 0.8.8 RDKIT log-dose,chemical,Ridge_M,629,8,0.5132384429795968,-0.06838036594723795,0.5065570842206295,,False
+SEEN_chemical_stress,sciPlex3 eight fixed splits,CPA,CPA 0.8.8 RDKIT log-dose,chemical,Ridge_P,629,8,0.5253809875086072,-0.05623782141822753,0.5036142805712764,,False
+SEEN_chemical_stress,sciPlex3 eight fixed splits,CPA,CPA 0.8.8 RDKIT log-dose,chemical,Ridge_PQ,629,8,0.5395836235369249,-0.0420351853899098,0.5567623766003582,,False
+SEEN_chemical_stress,sciPlex3 eight fixed splits,CPA,CPA 0.8.8 RDKIT log-dose,chemical,Ridge_PQH,629,8,0.6068827992313242,0.025263990304489448,0.612202251897614,,False

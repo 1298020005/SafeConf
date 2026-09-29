@@ -10,3 +10,5 @@
 | V4 risk learner | 复杂模型可能过拟合 1,808 tasks | 同 split 比 Ridge/HGB/small MLP | Ridge 稳定最好，MLP 明显落后 | 不扩大型网络 |
 | Quality evidence | 无合法 replicate/split-half 字段 | 不用 conflict proxy 冒充 Quality | eligible coverage 0 | 收缩主张为 Support/Relevance-aware |
 | E190 GEARS V2 | 独立 family 仅 47 个 gene clusters，gate 在一折退回 prediction-only | 核验输入哈希、同尺度校准、inner/outer 隔离与 fold gate；未发现执行错误 | V1 点增量为正但区间宽；V2−V1 为负 | 保留为跨家族失败边界，不修改冻结候选 |
+| E170 truth builder | 旧 E168 Git ancestry 在当前快照分支不可证明，构建器在读取 test X 前 fail-closed | 在揭盲前登记一次代码合同修复：改为核验冻结 RUN_STATUS、wrapper/helper 与 F2 manifest 的精确字节哈希 | 42GB 源哈希一致，四面板同开，未在修复时读取 truth | 合法修复；授权与修复均先提交远端 |
+| E170 confirmation | 冻结 V2 需要一次性确认 | 所有 2,400 tasks、12 strata 完整运行，不删无历史列 | Gate A PASS；ΔU20=+0.0504，10/12 strata 非负；bootstrap CI 跨 0 | Route A 成立，同时保留统计不精确和 no-history 边界 |

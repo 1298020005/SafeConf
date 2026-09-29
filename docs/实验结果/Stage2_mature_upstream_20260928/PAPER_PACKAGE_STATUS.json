@@ -2,10 +2,13 @@
   "status": "COMPLETE",
   "sealed_test_truth_opened_by_this_script": false,
   "final_candidate": "V2_nested_evidence_shrinkage",
-  "gate_a": "PENDING_ELIGIBLE_CONFIRMATION",
-  "gate_b": "PENDING_ELIGIBLE_CONFIRMATION",
+  "gate_a": "PASS_E170_ONE_SHOT_HELDOUT_DONOR_NEW_PERTURBATIONS",
+  "gate_b": "NOT_EVALUABLE_NO_FROZEN_QUALITY_FIELDS",
   "gate_c": "NOT_YET_INVOKED",
-  "n_master_rows": 42,
-  "n_confirmation_candidates_audited": 4,
-  "main_figure_sha256": "79f02c3184e44ff05d8a9c808a428d47c74e2864684f3215f29a5db0d41d1ee1"
+  "paper_route": "A_SAFECONF_MAIN_METHOD",
+  "n_master_rows": 65,
+  "n_confirmation_candidates_audited": 5,
+  "main_figure_sha256": "79f02c3184e44ff05d8a9c808a428d47c74e2864684f3215f29a5db0d41d1ee1",
+  "confirmation_figure_sha256": "804a7e3cd66a8251bbf7e9eb01431db3f3768df3c3b55d00ac107f7d75fd58cc",
+  "confirmation_result_sha256": "70359a27e3e3f22f5df40c0707b0a86434da069d20e20a507cba7086799f298c"
 }

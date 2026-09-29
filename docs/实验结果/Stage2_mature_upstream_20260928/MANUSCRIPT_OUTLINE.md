@@ -28,17 +28,18 @@
 4. 历史 shuffle、within-context 与 matched-support 排除明显 shortcut。
 5. E190 GEARS 跨 study 压力线：V1 信号与 V2 gate 失效边界。
 6. 同合同 PertEMA 适配比较。
-7. E208/E216/E247/E258 展示能力门和适用边界。
+7. E170 一次性确认：Gate A、风险护栏、history-available/no-history 边界。
+8. E208/E216/E247/E258 展示能力门和适用边界。
 
 ## 4. Discussion
 
-- 当前证据限于基因扰动与 TxPert family。
+- 主确认限于基因扰动与同研究 held-out donor；跨 family 只有开发压力证据。
 - Quality/external history/chemical 仍是扩展，不包装为已完成。
 - 上游 competence 是风险审计的前置条件。
 - 部署流程：冻结上游→生成 PredictionRecord→冷启动风险→积累合法反馈→周期重训。
 
-## 5. 必须在投稿前补齐
+## 5. 投稿增强项
 
-- 一个能力合格且此前未用于设计的 sealed family/context confirmation；E190 只能作为已开封开发证据。
-- 对应 confirmation 的一次性 Gate A/B 表。
-- 若无法取得，则把稿件转为 Gate C，并在独立 split/context 复现至少两条边界规律。
+- 外部研究或独立 family 的 sealed confirmation；E190 只能作为已开封开发证据。
+- 合法 Quality 字段与化学成熟上游属于扩展，不阻塞当前 Route A 稿件。
+- 继续保留无历史任务和 E190 gate 失败，不以子集筛选删除负结果。

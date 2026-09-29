@@ -1,0 +1,12 @@
+{
+  "delta_u20_macro": 0.050386856424903176,
+  "nonnegative_strata_fraction": 0.8333333333333334,
+  "risk10_relative_degradation": 0.0,
+  "risk20_relative_degradation": 0.0,
+  "risk50_relative_degradation": 0.005971664876681203,
+  "high_risk_miss_rate_degradation": 0.0,
+  "aurc_relative_degradation": 0.0,
+  "valid_strata_fraction": 1.0,
+  "n_planned_strata": 12,
+  "gate_a_pass": true
+}

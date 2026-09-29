@@ -4,7 +4,7 @@
 
 - Final Candidate：`V2_nested_evidence_shrinkage`。
 - 冻结依据：合并开发 `ΔUtility@20(V2−V1)=0.009711`，非负 strata 比例 87.5%，有效 strata 100%。
-- 证据等级：**开发候选**。Gate A/B 均等待合法 confirmation。
+- 证据等级：**同研究 held-out-donor/new-perturbation confirmation**。E170 一次性 Gate A 通过；Gate B 因无合法 Quality 字段不可评价。
 - V1 保留为预指定 secondary benchmark，confirmation 失败后不得用同一结果把 V1 事后改封为主方法。
 
 ## 方法结构
@@ -19,4 +19,4 @@
 
 当前真正成立的是 Support/Relevance-aware shrinkage；Quality 未进入正式实证。V2 的价值来自在历史模块整体不稳时学习收缩，而不是因为更大的网络。小 MLP 明显落后，因此不扩 Transformer 或 set encoder。
 
-E190 表明 V1 的 Support/Relevance 点增量可延伸到独立 GEARS family，但冻结 V2 没有复现。正式投稿主张暂定为 `black-box interface with cross-family development stress evidence`；取得 sealed family/context 正结果后才升级为跨模型家族确认。E190 的 Adamson→Replogle history 可称 cross-study history，但不扩写为广泛 public-history 泛化。
+E170 在方法冻结后一次性打开全部四面板，V2 相对 Magnitude 的 ΔU20 为 +0.0504，10/12 strata 非负并通过所有安全护栏，因此 V2 升格为最终主方法。其 target-cluster bootstrap CI 跨 0，证据属于同研究新扰动/留出供体确认，不扩写为 external-study confirmation。E190 表明 V1 的 Support/Relevance 点增量可延伸到独立 GEARS family，但冻结 V2 没有复现，因此跨 family 仍按开发压力证据表述。

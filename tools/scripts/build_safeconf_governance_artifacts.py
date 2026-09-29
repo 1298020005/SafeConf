@@ -148,6 +148,9 @@ def build_role_registry() -> None:
     # predictions are SEEN, while all four test panels remain outcome-sealed.
     # The v4 candidate was frozen before this endpoint was admitted.
     e170_public = PUB / "E170_primary_cd4_multipanel_precision_20260718"
+    e170_truth = Path("/home/yyf/data/safeconf_v4_e170_confirmation_truth/MANIFEST.sha256")
+    e170_result = STAGE / "confirmation/e170_primary_cd4_four_panel/RUN_STATUS.json"
+    e170_opened = e170_truth.exists() and e170_result.exists()
     rows.append({
         "dataset": "E170_primary_CD4_development",
         "context": "2 train donors + 1 validation donor;3 states;4 panels",
@@ -169,14 +172,18 @@ def build_role_registry() -> None:
         "task_range": "2400 test tasks;800 target clusters",
         "upstream_model": "scGPT_GEARS_6member_ensemble",
         "past_experiment_ids": "E170 pretruth;SafeConf-v4 confirmation",
-        "result_seen": "false",
+        "result_seen": str(e170_opened).lower(),
         "method_design_influenced": "false",
         "role": "SEALED_CONFIRMATION",
         "data_hash": sha256(e170_public / "manifests/E170_ALL_TASKS.csv"),
         "prediction_version": None,
-        "truth_version": None,
+        "truth_version": sha256(e170_truth) if e170_opened else None,
         "metadata_only_until_freeze": "true",
-        "notes": "Late-discovered pre-existing sealed endpoint. All four panels must be opened together; old legacy gate outcomes cannot select one panel.",
+        "notes": (
+            "Opened once after frozen V2 and remote authorization; all four panels were evaluated together and Gate A passed."
+            if e170_opened else
+            "Late-discovered pre-existing sealed endpoint. All four panels must be opened together; old legacy gate outcomes cannot select one panel."
+        ),
     })
 
     # E216 was already formally evaluated on 2026-09-20.  Its result existed

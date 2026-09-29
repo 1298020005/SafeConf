@@ -1,0 +1,27 @@
+{
+  "status": "COMPLETE",
+  "one_shot_confirmation": true,
+  "all_four_panels_opened_together": true,
+  "n_fit_validation_tasks": 1920,
+  "n_confirmation_tasks": 2400,
+  "n_target_clusters": 800,
+  "n_evaluation_strata": 12,
+  "final_candidate": "V2_nested_evidence_shrinkage",
+  "final_candidate_changed": false,
+  "gate_a": {
+    "delta_u20_macro": 0.050386856424903176,
+    "nonnegative_strata_fraction": 0.8333333333333334,
+    "risk10_relative_degradation": 0.0,
+    "risk20_relative_degradation": 0.0,
+    "risk50_relative_degradation": 0.005971664876681203,
+    "high_risk_miss_rate_degradation": 0.0,
+    "aurc_relative_degradation": 0.0,
+    "valid_strata_fraction": 1.0,
+    "n_planned_strata": 12,
+    "gate_a_pass": true
+  },
+  "gate_b": "NOT_EVALUABLE_NO_FROZEN_QUALITY_FIELDS",
+  "authorization_sha256": "a31a4b79a3b1c8c7e9e1da7ce902c9e19a283149fe7539e9d8c3130455533755",
+  "truth_manifest_sha256": "a05abadf8acddb4f389370dee16a0866189536f852040e846e76d666ce0a89b3",
+  "elapsed_seconds": 249.22780537605286
+}
