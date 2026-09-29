@@ -1,0 +1,70 @@
+{
+  "contract_version": "safeconf-external-confirmation-v1",
+  "registered_before_upstream_validation_predictions": true,
+  "selected_dataset": "McFalineFigueroa23",
+  "selection_is_conditional_on": [
+    "metadata_schema",
+    "history_eligibility",
+    "upstream_competence"
+  ],
+  "dataset_version": {
+    "perturbench_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+    "remote_data_lfs_sha256": "34db710ad850b5b5fd478d123f1c10ae3d5aaa013fce6061be8216ea27aed215",
+    "remote_split_lfs_sha256": "4d5e674afeedbf0395c6b6a5c68b5b2f9d49fb031edc4a2949123d984cd5393f",
+    "full_split_sha256": "08a6558a68599b3703f626c8da72a1603486edd94a3f34dfc9fa7c9b6181b091"
+  },
+  "data_roles": {
+    "train": "EXTERNAL_FIT",
+    "validation": "UPSTREAM_COMPETENCE_AND_RISK_FIT",
+    "test": "SEALED_EXTERNAL_CONFIRMATION"
+  },
+  "frozen_v4_definition": {
+    "frozen": [
+      "method_structure",
+      "feature_definitions",
+      "hyperparameters",
+      "cross_fitting",
+      "calibration_procedure",
+      "history_eligibility",
+      "missingness",
+      "evaluation"
+    ],
+    "refit_allowed": "external train/validation only",
+    "test_truth_allowed": "once, after fitted parameters and hashes are committed",
+    "final_method_config_sha256": "4dfdcea23d126f497a7b30d875187976bbef7cc63a1986d0f0fdf5371b0c48e1",
+    "implementation_sha256": "4e7c78837e27b3d478d6b0f72fc698f2086d858888a0d6a5e60aec38142337c8"
+  },
+  "upstream_slots": [
+    "PerturBench LatentAdditive",
+    "PerturBench DecoderOnly"
+  ],
+  "maximum_new_upstream_attempts": 2,
+  "attempt_begins": "formal validation prediction generation",
+  "formal_upstream_test_enabled": false,
+  "competence_gate": {
+    "primary": "task-level RMSE on aligned effect vector",
+    "simple_baselines": [
+      "no_change",
+      "train_state_mean_effect"
+    ],
+    "comparison_baseline": "strongest simple baseline on validation",
+    "relative_noninferiority_margin": 0.02,
+    "minimum_noninferior_strata_fraction": 0.6,
+    "bootstrap_replicates": 5000,
+    "safeconf_used_for_upstream_selection": false
+  },
+  "external_v4_gate": {
+    "minimum_delta_u20_v2_vs_magnitude": 0.005,
+    "minimum_ci95_lower_v2_vs_magnitude": -0.005,
+    "minimum_delta_u20_v2_vs_v1": -0.005,
+    "minimum_ci95_lower_v2_vs_v1": -0.005,
+    "minimum_nonnegative_strata_fraction": 0.6,
+    "maximum_coverage_relative_degradation": 0.05,
+    "maximum_miss_rate_degradation": 0.02,
+    "maximum_aurc_relative_degradation": 0.05,
+    "minimum_valid_strata_fraction": 0.8,
+    "bootstrap_replicates": 5000,
+    "bootstrap_unit": "biological perturbation cluster"
+  },
+  "test_truth_opened": false
+}

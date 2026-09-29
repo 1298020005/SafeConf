@@ -1,0 +1,6 @@
+candidate,modality,independent_study,project_result_references,method_design_seen,official_scale,local_data_status,official_split,test_truth_can_be_sealed,history_contract_possible,main_confirmation_eligible,decision
+McFalineFigueroa23,genetic,True,0,False,~200 perturbations; 6 cell lines; 5 treatments; 30 states,DOWNLOADING,True,True,True,True,SELECT_PENDING_METADATA_AND_UPSTREAM_GATE
+Frangieh21,genetic,True,262,True,248 perturbations; 3 melanoma models,AVAILABLE_ELSEWHERE,True,False,True,False,REJECT_SEEN
+Norman19,genetic,True,133,True,287 perturbations; K562,AVAILABLE_REMOTE,True,False,True,False,REJECT_SEEN_AND_ONE_CONTEXT
+Jiang24,genetic,True,50,True,525 perturbations; 3 cell lines; 5 treatments; 15 states,AVAILABLE,True,True,True,False,REJECT_UPSTREAM_GATE_ALREADY_FAILED
+OP3,chemical,True,0,False,144 compounds; >=4 PBMC cell types,REMOTE_ONLY,True,True,True,False,KEEP_CHEMICAL_ENHANCEMENT_ONLY

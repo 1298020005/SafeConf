@@ -1,0 +1,12 @@
+{
+  "status": "AUDIT_COMPLETE_DOWNLOAD_IN_PROGRESS",
+  "selected_external_asset": "McFalineFigueroa23",
+  "selected_upstreams": [
+    "PerturBench LatentAdditive",
+    "PerturBench DecoderOnly"
+  ],
+  "expression_truth_opened": false,
+  "test_truth_opened": false,
+  "data_download_complete": false,
+  "next_action": "finish official data download"
+}

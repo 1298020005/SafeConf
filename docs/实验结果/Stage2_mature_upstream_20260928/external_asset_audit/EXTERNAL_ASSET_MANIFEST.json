@@ -1,0 +1,70 @@
+{
+  "audit_time_utc": "2026-09-29T07:51:40.567210+00:00",
+  "metadata_only": true,
+  "expression_truth_opened": false,
+  "perturbench_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+  "perturbench_commit_time": "2026-08-10T16:01:41+01:00",
+  "hf_tree_url": "https://huggingface.co/api/datasets/altoslabs/perturbench/tree/main?recursive=true&expand=false",
+  "hf_croissant_url": "https://huggingface.co/datasets/altoslabs/perturbench/resolve/main/croissant.json",
+  "license_in_current_croissant": "https://creativecommons.org/licenses/by-nc/4.0/deed.en",
+  "remote_data": {
+    "size": 5549946093,
+    "lfs_sha256": "34db710ad850b5b5fd478d123f1c10ae3d5aaa013fce6061be8216ea27aed215",
+    "croissant_sha256": "f6639e1ee8f24d2f2d0eea0011446fad370cfba96009ffc257b85fa604aa36f8",
+    "croissant_is_stale": true,
+    "downloaded_bytes": 1301818138,
+    "complete": false,
+    "local_sha256": null
+  },
+  "remote_split_tar": {
+    "size": 11245963,
+    "lfs_sha256": "4d5e674afeedbf0395c6b6a5c68b5b2f9d49fb031edc4a2949123d984cd5393f",
+    "croissant_sha256": "a383a9e8e38e63756e5dd9e1a4df7844a97669ef0d553c70de8f1441e40f0aa7",
+    "croissant_is_stale": true,
+    "local_sha256": "4d5e674afeedbf0395c6b6a5c68b5b2f9d49fb031edc4a2949123d984cd5393f"
+  },
+  "split_files": [
+    {
+      "path": "/home/yyf/data/perturbench_mcfaline23_official/splits/mcfaline23_gxe_splits/full_covariate_split.csv",
+      "sha256": "08a6558a68599b3703f626c8da72a1603486edd94a3f34dfc9fa7c9b6181b091",
+      "rows": 878229,
+      "unique_ids": 878229,
+      "split_counts": {
+        "test": 69028,
+        "train": 738901,
+        "val": 70300
+      }
+    },
+    {
+      "path": "/home/yyf/data/perturbench_mcfaline23_official/splits/mcfaline23_gxe_splits/medium_covariate_split.csv",
+      "sha256": "fef1e405d4dab2db37e67dff28cdcda2fd87c3e543afc316e7d78f1fbcc7cc92",
+      "rows": 878229,
+      "unique_ids": 878229,
+      "split_counts": {
+        "__unassigned__": 250200,
+        "test": 69028,
+        "train": 488701,
+        "val": 70300
+      }
+    },
+    {
+      "path": "/home/yyf/data/perturbench_mcfaline23_official/splits/mcfaline23_gxe_splits/small_covariate_split.csv",
+      "sha256": "96aa52f9283940cc7de383e99b7421b009811d32c22b37808dbc8a594fc675d7",
+      "rows": 878229,
+      "unique_ids": 878229,
+      "split_counts": {
+        "__unassigned__": 470760,
+        "test": 69028,
+        "train": 268141,
+        "val": 70300
+      }
+    }
+  ],
+  "config": {
+    "mcfaline_yaml_sha256": "12de71480c03999313dbf496360b53a91f22c795ea5342c0e7de3bb7093d2812",
+    "splitter_yaml_sha256": "44085b6333c13de13eac60f3ffa5ae27ecc2209c08781f9dd17772090684d233",
+    "base_config_points_to_jiang24": true,
+    "official_experiment_override_is_correct": true,
+    "execution_rule": "always pass explicit McFaline split path; never rely on the erroneous base override"
+  }
+}
