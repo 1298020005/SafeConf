@@ -1,0 +1,12 @@
+{
+  "status": "COMPLETE",
+  "data_role": "SEEN",
+  "frozen_v4_changed": false,
+  "n_folds": 5,
+  "calibration_abnormality_folds": 1,
+  "history_branch_underperformance_folds": 1,
+  "gate_misrouting_folds": 2,
+  "run_cluster_downsampling": false,
+  "cross_fold_calibration_abnormality": true,
+  "elapsed_seconds": 8.184159755706787
+}
