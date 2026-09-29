@@ -45,3 +45,10 @@ Current repaired Shared Core feedback AUC:
 
 This is retained as a boundary result. The adapter is not promoted to the
 main performance claim.
+
+## Figure 1 — public memory and feedback boundary
+
+`figures/DUAL_MEMORY_PUBLIC_ERROR_RESULTS.svg` contains the publication draft:
+the left panel is the repaired Public Memory comparison and the right panel is
+the model-error feedback curve. The right panel is deliberately shown as a
+boundary result rather than a claimed continual-learning gain.

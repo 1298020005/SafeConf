@@ -35,6 +35,10 @@ truth, and improve as public experiments and model-specific feedback arrive.
 5. McFaline upstream competence, then sealed cold-start and continual
    adaptation confirmation.
 
+The current figure draft is
+`figures/DUAL_MEMORY_PUBLIC_ERROR_RESULTS.svg`: it keeps the public-memory
+gain and the error-memory boundary in one paired view.
+
 ## 4. Results claims permitted by current evidence
 
 - Public biological memory provides a positive cross-architecture signal on
