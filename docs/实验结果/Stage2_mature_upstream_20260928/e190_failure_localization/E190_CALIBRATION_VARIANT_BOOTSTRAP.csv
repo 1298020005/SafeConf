@@ -1,0 +1,6 @@
+comparison,method_a,method_b,delta_utility20,utility_ci95_lower,utility_ci95_upper,bootstrap_replicates,bootstrap_unit
+identity_vs_frozen,identity,frozen_linear,0.32264438886661856,-0.053303192328853416,0.5542852158645705,5000,gene_cluster
+isotonic_vs_frozen,isotonic,frozen_linear,0.34012327679834486,-0.08914848752469436,0.6008317102947189,5000,gene_cluster
+positive_affine_vs_frozen,positive_affine,frozen_linear,0.0,0.0,0.0,5000,gene_cluster
+identity_vs_V1,identity,V1,0.007777605521559927,-0.280326710162574,0.23762151415378524,5000,gene_cluster
+isotonic_vs_V1,isotonic,V1,0.025256493453286233,-0.2709967528476057,0.27668186718447674,5000,gene_cluster
