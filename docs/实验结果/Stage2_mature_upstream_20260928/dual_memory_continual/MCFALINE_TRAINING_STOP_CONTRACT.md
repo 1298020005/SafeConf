@@ -1,7 +1,9 @@
-# McFaline upstream training stop contract
+# McFaline upstream registered validation-only compute-budget amendment
 
-Registered before the stopping epoch and before any McFaline test outcome was
-opened.
+Registered after observing training throughput and the partial validation-loss
+trajectory, but before the stopping epoch and before any McFaline test outcome
+was opened. It is therefore an engineering compute-budget amendment, not a
+claim that the epoch budget was preregistered before training.
 
 ## Problem
 
@@ -25,9 +27,14 @@ checkpoints and spend additional GPU hours.
 - At epoch 15 completion, stop the training processes, record validation-loss
   histories and checkpoint hashes, and let the existing supervisor perform
   validation-only competence evaluation.
-- Both candidates use exactly the same epoch budget. Selection between them is
-  based on the preregistered validation competence rule, provenance and cost,
-  before any SafeConf result is computed.
+- Both candidates use exactly the same epoch budget. Each must first pass the
+  registered validation competence gate. If both pass, select the candidate
+  with lower official validation macro RMSE. If their relative macro-RMSE
+  difference is below 1%, select the lower measured training cost; if the cost
+  measurement is tied or unavailable, select DecoderOnly because its registered
+  architecture has fewer trainable parameters. This rule is fixed before any
+  SafeConf result is computed.
+- If neither candidate passes competence, do not open McFaline test truth.
 - The McFaline test partition remains sealed.
 
 This changes the compute budget only. It does not change architecture,

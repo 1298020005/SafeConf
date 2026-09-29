@@ -1,0 +1,11 @@
+{
+  "status": "COMPLETE",
+  "evidence_role": "DEV_SEEN",
+  "n_tasks_per_target_upstream": 1808,
+  "n_directions": 2,
+  "outer_folds": 5,
+  "bootstrap_replicates": 5000,
+  "target_upstream_error_labels_used_for_fit": false,
+  "source_same_biological_fold_excluded": true,
+  "mcfaline_test_opened": false
+}

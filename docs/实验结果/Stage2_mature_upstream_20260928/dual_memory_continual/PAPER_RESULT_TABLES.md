@@ -22,8 +22,16 @@ selected after inspecting a sealed test outcome.
 
 ## Table 3 — cross-architecture transfer
 
-The corresponding cross-architecture output is in
-`txpert_public_biology_repaired/CROSS_ARCHITECTURE_SUMMARY.csv`.
+The stricter comparison uses no target-predictor error labels and excludes
+source rows from the queried biological fold.
+
+| risk-label source | unseen target predictor | target magnitude | transferred repaired-public HGB | delta U20 | 95% cluster CI |
+|---|---|---:|---:|---:|---:|
+| Exphormer | GAT | 0.768216 | 0.794104 | +0.027936 | [-0.008901, 0.072414] |
+| GAT | Exphormer | 0.758726 | 0.795157 | +0.037366 | [0.002665, 0.082318] |
+
+All predictions and bootstrap draws are in
+`cross_predictor_zero_label_transfer/`.
 
 ## Table 4 — model feedback
 

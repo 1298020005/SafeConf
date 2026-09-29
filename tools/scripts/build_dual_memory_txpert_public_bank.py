@@ -263,9 +263,14 @@ def main() -> None:
         "status": "PASS",
         "created_utc": datetime.now(timezone.utc).isoformat(),
         "store_root": str(args.store_root),
-        "n_items": len(canonical_items),
+        "n_public_memory_items": len(canonical_items),
         "n_eligibility_edges": len(eligibility),
-        "n_tasks_with_history": int(built[["target", "condition"]].drop_duplicates().shape[0]),
+        "n_prediction_tasks_with_eligible_history_all_strata": int(
+            built[["target", "condition"]].drop_duplicates().shape[0]
+        ),
+        "n_primary_prediction_tasks": int(
+            pd.read_csv(TASKS).analysis_stratum.eq("primary_ge30").sum()
+        ),
         "n_source_contexts": int(built.context.nunique()),
         "quality_available": False,
         "support_available": True,

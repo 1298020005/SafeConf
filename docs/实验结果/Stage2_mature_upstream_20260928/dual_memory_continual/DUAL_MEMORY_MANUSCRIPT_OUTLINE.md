@@ -2,8 +2,8 @@
 
 ## Working title
 
-**SafeConf: Continual Public-Experiment and Model-Error Memory for Post-hoc
-Reliability Auditing of Single-Cell Perturbation Predictions**
+**SafeConf: Public-Experiment Memory for Cross-Predictor Reliability Auditing
+of Single-Cell Perturbation Predictions**
 
 ## 1. Problem
 
@@ -30,6 +30,8 @@ truth, and improve as public experiments and model-specific feedback arrive.
 2. Shared cold-start risk: magnitude, prediction-only, manual public prior and
    repaired learned public prior on TxPert GAT/Exphormer.
 3. Cross-architecture transfer with the same biological task in one fold.
+   The primary version is zero-target-label transfer in both directions; it
+   excludes the queried biological fold from source-upstream training.
 4. Error Memory learning curves at 10/25/50/75/100% cluster feedback,
    including shuffled and wrong-upstream controls.
 5. McFaline upstream competence, then sealed cold-start and continual
@@ -45,6 +47,9 @@ gain and the error-memory boundary in one paired view.
   TxPert DEV/SEEN.
 - A fixed support regularisation repair prevents learned retrieval collapse and
   improves both effect reconstruction and downstream risk point estimates.
+- A source-upstream risk learner transfers without target-predictor error
+  labels in both directions; GAT-to-Exphormer has a positive paired-bootstrap
+  lower bound and the reverse direction remains positive but uncertain.
 - Error Memory is a valid model-version-isolated update path; its U20 benefit
   is not yet stable enough to be the primary contribution.
 - McFaline has a real quality-labelled train/validation public bank, while its

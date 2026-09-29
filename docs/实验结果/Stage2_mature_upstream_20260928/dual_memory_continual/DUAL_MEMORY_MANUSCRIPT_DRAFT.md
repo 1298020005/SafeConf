@@ -1,4 +1,4 @@
-# SafeConf: Continual Public-Experiment and Model-Error Memory for Post-hoc Reliability Auditing
+# SafeConf: Public-Experiment Memory for Cross-Predictor Reliability Auditing
 
 ## Abstract (provisional)
 
@@ -16,10 +16,17 @@ memory improves the cold-start Utility@20 point estimate for both TxPert
 Exphormer (0.7705 to 0.8032) and GAT (0.7742 to 0.7976). A 5,000-draw
 cluster bootstrap is reported for every comparison. The same feedback adapter
 does not produce a stable Utility@20 gain over the shared core, which defines a
-useful negative boundary rather than being hidden. An independent McFaline
+useful negative boundary rather than being hidden. Model-specific feedback is
+therefore treated as an optional deployment extension rather than a co-primary
+contribution. An independent McFaline
 study and two published upstream candidates are being evaluated under a
 sealed-test contract; those results will determine the external confirmation
 route.
+
+In a stricter zero-target-label experiment, a risk learner trained on GAT
+transfers to Exphormer (0.7587 to 0.7952; paired cluster CI for the increment
+[0.0027, 0.0823]); the reverse transfer is also positive (0.7682 to 0.7941)
+but its CI crosses zero.
 
 ## 1. Introduction
 
@@ -184,6 +191,16 @@ include zero at individual budgets, but the point estimates do not support a
 primary universal gain claim. The result is retained as a model-specific
 feedback boundary and as evidence that public biological memory and model-error
 memory should not be conflated.
+
+### 5.3 Zero-target-label cross-predictor transfer
+
+The transferred repaired-public HGB uses only the source predictor's errors.
+For Exphormer-to-GAT transfer it improves Utility@20 from 0.768216 to 0.794104
+(delta 0.027936, 95% cluster CI [−0.008901, 0.072414]). For GAT-to-Exphormer
+transfer it improves Utility@20 from 0.758726 to 0.795157 (delta 0.037366,
+95% CI [0.002665, 0.082318]). Both point estimates are positive, while only
+one direction currently has a positive interval lower bound. The experiment
+therefore supports predictor transfer without claiming symmetric significance.
 
 ## 6. Discussion and current decision
 

@@ -23,7 +23,7 @@ fold. The public learner never receives an upstream error label.
 The repaired learner uses a preregistered fixed 50:50 blend of learned
 transfer weights and cell-count support weights. It improved biological
 effect reconstruction to RMSE `0.062113`, cosine `0.529424`, and effective
-source count `2.118`. The unrepaired learner had lower RMSE (`0.062924`) but
+source count `2.118`. The unrepaired learner had higher, worse RMSE (`0.062924`) and
 over-concentrated retrieval (effective sources `1.667`) and lower cosine
 (`0.509135`). No second retrieval repair is allowed.
 
@@ -31,6 +31,22 @@ The paired bootstrap intervals for the repaired-vs-manual downstream U20
 comparison still include zero. The correct claim is therefore a positive,
 cross-architecture direction with limited statistical precision, not a claim
 of universal significance.
+
+### Zero-target-label cross-predictor transfer
+
+A dedicated transfer experiment now fits every preprocessing statistic, error
+CDF and risk learner on one source upstream only. The target upstream provides
+zero error labels, and source records from the target biological fold are
+excluded. Repaired-public HGB improves over target magnitude in both directions:
+
+| risk-label source | unseen target predictor | magnitude U20 | transferred U20 | delta | 95% cluster CI |
+|---|---|---:|---:|---:|---:|
+| Exphormer | GAT | 0.768216 | 0.794104 | +0.027936 | [-0.008901, 0.072414] |
+| GAT | Exphormer | 0.758726 | 0.795157 | +0.037366 | [0.002665, 0.082318] |
+
+This supports cross-predictor risk transfer, with statistically precise support
+in one direction and a positive but uncertain reverse direction. It does not
+yet establish transfer across an independent model family or study.
 
 ### Error Memory and Error Adapter
 
