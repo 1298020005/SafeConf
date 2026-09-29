@@ -1,0 +1,219 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "cr": "http://mlcommons.org/schema/",
+    "sc": "https://schema.org/"
+  },
+  "@type": "sc:Dataset",
+  "name": "PerturBench",
+  "description": "A dataset containing single-cell RNA-seq data with genetic and chemical perturbations.",
+  "url": "https://huggingface.co/datasets/altoslabs/perturbench",
+  "license": "https://creativecommons.org/licenses/by-nc/4.0/deed.en",
+  "citation": "Yan Wu, Esther Wershof, Sebastian M Schmon, Marcel Nassar, B\u0142a\u017cej Osi\u0144ski, Ridvan Eksi, Zichao Yan, Rory Stark, Kun Zhang, and Thore Graepel (2025). PerturBench: Benchmarking Machine Learning Models for Cellular Perturbation Analysis. Proceedings of the 39th Conference on Neural Information Processing Systems (NeurIPS 2025).",
+  "datePublished": "2025-05-15",
+  "version": "1.0",
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+  "distribution": [
+    {
+      "@type": "sc:FileObject",
+      "@id": "srivatsan20-h5ad",
+      "name": "srivatsan20_h5ad_file",
+      "description": "Gzipped HDF5 file for the Srivatsan20 dataset.",
+      "contentUrl": "https://huggingface.co/datasets/altoslabs/perturbench/resolve/main/srivatsan20_highest_dose_processed.h5ad.gz",
+      "encodingFormat": "application/gzip",
+      "sha256": "ddd46251ea3942c0e3799f64cada9718b455ffdeabb1a8fe8b3333ebec4946f0"
+    },
+    {
+      "@type": "sc:FileObject",
+      "@id": "norman19-h5ad",
+      "name": "norman19_h5ad_file",
+      "description": "Gzipped HDF5 file for the Norman19 dataset.",
+      "contentUrl": "https://huggingface.co/datasets/altoslabs/perturbench/resolve/main/norman19_processed.h5ad.gz",
+      "encodingFormat": "application/gzip",
+      "sha256": "8f880e3d85bb68a73a6d044cae13f62a86b8132b0302c6e1bc4b4e5564e6530f"
+    },
+    {
+      "@type": "sc:FileObject",
+      "@id": "norman19-cpa-h5ad",
+      "name": "norman19_cpa_h5ad_file",
+      "description": "CPA publication version of the norman19 dataset, subset to highly variable genes only.",
+      "contentUrl": "https://huggingface.co/datasets/altoslabs/perturbench/resolve/main/norman19_cpa_hvg_normalized_curated.h5ad.gz",
+      "encodingFormat": "application/gzip",
+      "sha256": "f04b53e1e2390d4e8b59029fc6e482f160a77b73c6965d6b487975954b76ad49"
+    },
+    {
+      "@type": "sc:FileObject",
+      "@id": "norman19-cpa-splits",
+      "name": "norman19_cpa_splits_file",
+      "description": "CPA publication splits for their version of the norman19 dataset",
+      "contentUrl": "https://huggingface.co/datasets/altoslabs/perturbench/resolve/main/norman19_cpa_hvg_normalized_splits.tar.gz",
+      "encodingFormat": "application/gzip",
+      "sha256": "d4369b3ca4864e6348ca8a43f77feae20b36fede7f3d9dfa8e6e31abd1156962"
+    },
+    {
+      "@type": "sc:FileObject",
+      "@id": "frangieh21-h5ad",
+      "name": "frangieh21_h5ad_file",
+      "description": "The gzipped HDF5 file containing the processed perturbation data.",
+      "contentUrl": "https://huggingface.co/datasets/altoslabs/perturbench/resolve/main/frangieh21_processed.h5ad.gz",
+      "encodingFormat": "application/gzip",
+      "sha256": "d8e93131e33c02b9fce9d1a1ba8e4924ae6cc4907341b45138ef82cb4a162c79"
+    },
+    {
+      "@type": "sc:FileObject",
+      "@id": "frangieh21-csv",
+      "name": "frangieh21_csv_file",
+      "description": "CSV file containing the data splits for the dataset.",
+      "contentUrl": "https://huggingface.co/datasets/altoslabs/perturbench/resolve/main/frangieh21_split.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "ac2e8361a44239eb07aa813ca9025985b399aecce4851ef879a534bb1a72b711"
+    },
+    {
+      "@type": "sc:FileObject",
+      "@id": "mcfalinefigueroa23-h5ad",
+      "name": "mcfalinefigueroa23_h5ad_file",
+      "description": "Gzipped HDF5 file for the McFalineFigueroa23 dataset.",
+      "contentUrl": "https://huggingface.co/datasets/altoslabs/perturbench/resolve/main/mcfaline23_gxe_processed.h5ad.gz",
+      "encodingFormat": "application/gzip",
+      "sha256": "f6639e1ee8f24d2f2d0eea0011446fad370cfba96009ffc257b85fa604aa36f8"
+    },
+    {
+      "@type": "sc:FileObject",
+      "@id": "mcfalinefigueroa23-splits",
+      "name": "mcfalinefigueroa23_splits_file",
+      "description": "Gzipped tar archive containing the data splits for the McFalineFigueroa23 dataset. Each split corresponds to a different data scale (small, medium, full).",
+      "contentUrl": "https://huggingface.co/datasets/altoslabs/perturbench/resolve/main/mcfaline23_gxe_splits.tar.gz",
+      "encodingFormat": "application/gzip",
+      "sha256": "a383a9e8e38e63756e5dd9e1a4df7844a97669ef0d553c70de8f1441e40f0aa7"
+    },
+    {
+      "@type": "sc:FileObject",
+      "@id": "jiang24-h5ad",
+      "name": "jiang24_h5ad_file",
+      "description": "Gzipped HDF5 file for the Jiang24 dataset.",
+      "contentUrl": "https://huggingface.co/datasets/altoslabs/perturbench/resolve/main/jiang24_processed.h5ad.gz",
+      "encodingFormat": "application/gzip",
+      "sha256": "e92dec6610e261f31eb15d50aff0c12e19e99d992452e1f14d560477e741ccfe"
+    },
+    {
+      "@type": "sc:FileObject",
+      "@id": "jiang24-csv",
+      "name": "jiang24_csv_file",
+      "description": "CSV file containing the data split for the Jiang24 dataset.",
+      "contentUrl": "https://huggingface.co/datasets/altoslabs/perturbench/resolve/main/jiang24_split.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "f1822ab1252b363727f30bbe8889384c2b306369889364390ecccb80e75f87d7"
+    },
+    {
+      "@type": "sc:FileObject",
+      "@id": "op3-h5ad",
+      "name": "op3_h5ad_file",
+      "description": "Gzipped HDF5 file for the OP3 dataset.",
+      "contentUrl": "https://huggingface.co/datasets/altoslabs/perturbench/resolve/main/op3_processed.h5ad.gz",
+      "encodingFormat": "application/gzip",
+      "sha256": "a95d7b3717128f89d34abdc5031e38bd04ed616296b9344f720f9e1e9d265b99"
+    },
+    {
+      "@type": "sc:FileObject",
+      "@id": "op3-csv",
+      "name": "op3_csv_file",
+      "description": "CSV file containing the data split for the OP3 dataset.",
+      "contentUrl": "https://huggingface.co/datasets/altoslabs/perturbench/resolve/main/op3_split.csv",
+      "encodingFormat": "text/csv",
+      "sha256": "433e23e944ba7865185520a41510323186f755f7bc5a5a413d11704e2db60e90"
+    },
+    {
+      "@type": "sc:FileSet",
+      "@id": "srivatsan20",
+      "name": "Srivatsan20",
+      "description": "This dataset is a modified version of the Srivatsan20 dataset published by Srivatsan et al. via GEO:GSE139944. It contains 188 chemical perturbations subset to the highest dose only applied across 3 cell types. The full data preprocessing notebook can be found at: https://github.com/altoslabs/perturbench/blob/main/notebooks/neurips2025/data_curation/curate_Srivatsan20.ipynb.",
+      "encodingFormat": "application/gzip",
+      "cr:includes": [
+        "srivatsan20-h5ad"
+      ]
+    },
+    {
+      "@type": "sc:FileSet",
+      "@id": "norman19",
+      "name": "Norman19",
+      "description": "This dataset is a modified version of the Norman19 dataset published by Norman et al. via GEO:GSE133344. It contains 287 genetic perturbations (131 duals) applied to k562 cells. The full data preprocessing notebook can be found at: https://github.com/altoslabs/perturbench/blob/main/notebooks/neurips2025/data_curation/curate_Norman19.ipynb.",
+      "encodingFormat": "application/gzip",
+      "cr:includes": [
+        "norman19-h5ad",
+        "norman19-cpa-h5ad",
+        "norman19-cpa-splits"
+      ]
+    },
+    {
+      "@type": "sc:FileSet",
+      "@id": "frangieh21",
+      "name": "Frangieh21",
+      "description": "This dataset is a modified version of the Frangieh21 dataset published by Frangieh et al. via https://singlecell.broadinstitute.org/single_cell/study/SCP1064/multi-modal-pooled-perturb-cite-seq-screens-in-patient-models-define-novel-mechanisms-of-cancer-immune-evasion. It contains 248 genetic perturbations applied to 3 melanoma cell models. The full data preprocessing notebook can be found at: https://github.com/altoslabs/perturbench/blob/main/notebooks/neurips2025/data_curation/curate_Frangieh21.ipynb.",
+      "encodingFormat": "application/gzip",
+      "cr:includes": [
+        "frangieh21-h5ad",
+        "frangieh21-csv"
+      ]
+    },
+    {
+      "@type": "sc:FileSet",
+      "@id": "mcfalinefigueroa23",
+      "name": "McFalineFigueroa23",
+      "description": "This dataset is a modified version of the McFalineFigueroa23 dataset published by McFaline-Figueroa et al. via GEO:GSE225775. It contains ~200 perturbations applied across 6 cell lines and 5 cytokine treatments (30 unique biological states). The data preprocessing occured in two steps and both files can be found at: https://github.com/altoslabs/perturbench/blob/main/notebooks/neurips2025/data_curation/ with the curate_McFalineFigueroa_2023 prefix.",
+      "encodingFormat": "application/gzip",
+      "cr:includes": [
+        "mcfalinefigueroa23-h5ad",
+        "mcfalinefigueroa23-splits"
+      ]
+    },
+    {
+      "@type": "sc:FileSet",
+      "@id": "jiang24",
+      "name": "Jiang24",
+      "description": "This dataset is a modified version of the Jiang24 dataset published by Jiang et al. via https://zenodo.org/records/14518762. It contains 525 genetic perturbations applied across 3 cell lines and 5 chemical treatments (15 unique biological states). The data preprocessing occured in two steps and both files can be found at: https://github.com/altoslabs/perturbench/blob/main/notebooks/neurips2025/data_curation/ with the curate_Jiang_2024 prefix.",
+      "encodingFormat": "application/gzip",
+      "cr:includes": [
+        "jiang24-h5ad",
+        "jiang24-csv"
+      ]
+    },
+    {
+      "@type": "sc:FileSet",
+      "@id": "op3",
+      "name": "OP3",
+      "description": "This dataset is a modified version of the OpenProblems perturbation prediction challenge dataset that a Kaggle competition part of the NeurIPS 2023 competition track by Burkhardt et al. via https://openproblems.bio/benchmarks/perturbation_prediction?version=v1.0.0. It contains 144 chemical perturbations applied to PBMCs with at least 4 mature cell types. The data preprocessing can be found at: https://github.com/altoslabs/perturbench/blob/main/notebooks/neurips2025/data_curation/curate_op3.ipynb.",
+      "encodingFormat": "application/gzip",
+      "cr:includes": [
+        "op3-h5ad",
+        "op3-csv"
+      ]
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "name": "treatment_classification",
+      "description": "Records for the perturbation response prediction task using scRNA-seq datasets stored in h5ad files. Records are sourced from six manifest files found in the distribution list, with one file per dataset, and stored in the `.obs` slot of each h5ad file. The perturbation identity is the 'condition' column, with the `control` value reserved for the DMSO or non-targeting CRISPR controls. The cell type is stored in the `cell_type` column. Additional cytokine or chemical treatments are stored in the `treatment` column. Splits are defined dynamically by the PerturBench library.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "name": "condition",
+          "description": "Chemical or genetic perturbation applied to cells. This is the key conditioning label for the perturbation response prediction task.",
+          "dataType": "sc:Text"
+        },
+        {
+          "@type": "cr:Field",
+          "name": "cell_type",
+          "description": "Cell line or cell type of the sample.",
+          "dataType": "sc:Text"
+        },
+        {
+          "@type": "cr:Field",
+          "name": "treatment",
+          "description": "Additional cytokine or chemical treatments applied to cells, used together with `cell_type` to define the biological state of a sample.",
+          "dataType": "sc:Text"
+        }
+      ]
+    }
+  ]
+}

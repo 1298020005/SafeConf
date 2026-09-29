@@ -12,6 +12,7 @@ import csv
 import hashlib
 import json
 import subprocess
+import time
 import urllib.request
 from collections import Counter
 from datetime import datetime, timezone
@@ -35,10 +36,22 @@ def sha256(path: Path) -> str:
     return h.hexdigest()
 
 
-def remote_json(url: str) -> object:
-    req = urllib.request.Request(url, headers={"User-Agent": "SafeConf-asset-audit/1"})
-    with urllib.request.urlopen(req, timeout=60) as response:
-        return json.load(response)
+def remote_json_cached(url: str, cache: Path) -> object:
+    error: Exception | None = None
+    for attempt in range(3):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "SafeConf-asset-audit/1"})
+            with urllib.request.urlopen(req, timeout=60) as response:
+                value = json.load(response)
+            cache.parent.mkdir(parents=True, exist_ok=True)
+            cache.write_text(json.dumps(value, indent=2) + "\n")
+            return value
+        except Exception as exc:  # remote metadata can transiently disconnect
+            error = exc
+            time.sleep(1 + attempt)
+    if cache.exists():
+        return json.loads(cache.read_text())
+    raise RuntimeError(f"remote metadata unavailable and no cache exists: {url}") from error
 
 
 def git(*args: str, cwd: Path) -> str:
@@ -93,8 +106,8 @@ def write_csv(path: Path, rows: list[dict[str, object]]) -> None:
 
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
-    tree = remote_json(HF_TREE)
-    croissant = remote_json(HF_CROISSANT)
+    tree = remote_json_cached(HF_TREE, OUT / "HF_TREE_SNAPSHOT.json")
+    croissant = remote_json_cached(HF_CROISSANT, OUT / "HF_CROISSANT_SNAPSHOT.json")
     assert isinstance(tree, list) and isinstance(croissant, dict)
     files = {item["path"]: item for item in tree if item.get("type") == "file"}
     remote_data = files["mcfaline23_gxe_processed.h5ad.gz"]
@@ -197,6 +210,8 @@ def main() -> None:
     ]
     write_csv(OUT / "EXTERNAL_ASSET_REGISTRY.csv", registry)
 
+    resolved_latent = OUT / "UPSTREAM_RESOLVED_LATENT.yaml"
+    resolved_decoder = OUT / "UPSTREAM_RESOLVED_DECODER.yaml"
     upstream = [
         {
             "rank": 1,
@@ -205,6 +220,7 @@ def main() -> None:
             "published_config": True,
             "official_checkpoint_found": False,
             "official_config": "latent_additive_best_params_mcfaline23_full.yaml",
+            "resolved_config_sha256": sha256(resolved_latent) if resolved_latent.exists() else "PENDING",
             "selection_basis": "official McFaline config; simple benchmark family; reproducible; independent of TxPert",
             "safeconf_result_seen": False,
             "attempt_status": "NOT_STARTED",
@@ -218,6 +234,7 @@ def main() -> None:
             "published_config": True,
             "official_checkpoint_found": False,
             "official_config": "decoder_only_best_params_mcfaline23_full.yaml",
+            "resolved_config_sha256": sha256(resolved_decoder) if resolved_decoder.exists() else "PENDING",
             "selection_basis": "official McFaline config; distinct architecture; reproducible; independent of TxPert",
             "safeconf_result_seen": False,
             "attempt_status": "NOT_STARTED",

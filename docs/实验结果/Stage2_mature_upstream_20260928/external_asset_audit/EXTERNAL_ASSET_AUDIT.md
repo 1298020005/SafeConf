@@ -16,7 +16,7 @@ The two upstream slots are provisionally assigned to **PerturBench LatentAdditiv
 - The current Croissant SHA fields are stale for both McFaline artifacts; file-tree LFS OIDs and downloaded bytes are the integrity authority.
 - Full split has `878229` rows / `878229` unique cell IDs: train `738901`, val `70300`, test `69028`.
 - The checked-in base `mcfaline23.yaml` incorrectly overrides the split with `jiang24_split.csv`; official experiment YAMLs override it back to the correct McFaline split. Formal runs must provide the explicit split path and record its SHA.
-- Current data download: `1301818138/5549946093` bytes (`in progress`).
+- Current data download: `5191499776/5549946093` bytes (`in progress`).
 - Current Croissant license field: `https://creativecommons.org/licenses/by-nc/4.0/deed.en`.
 
 ## Candidate disposition
