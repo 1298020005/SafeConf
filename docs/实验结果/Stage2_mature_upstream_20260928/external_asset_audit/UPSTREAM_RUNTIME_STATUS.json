@@ -1,0 +1,34 @@
+{
+  "updated_utc": "2026-09-29T08:33:25.647652+00:00",
+  "attempts_used": 2,
+  "maximum_attempts": 2,
+  "test_truth_opened": false,
+  "runs": [
+    {
+      "candidate": "PerturBench LatentAdditive",
+      "gpu": 0,
+      "preflight": "PASS",
+      "parameters": 193000000,
+      "preflight_dir": "/home/yyf/runtime_artifacts/safeconf_mcfaline23/latent_preflight_20260929T082415Z",
+      "preflight_console_sha256": "5451d62a39cdddbe237640889ee8d53ce54178c4d141fd503dc1d927d31cfad3",
+      "registered_repair": "data.loader.num_workers=0",
+      "formal_status": "RUNNING",
+      "formal_dir": "/home/yyf/runtime_artifacts/safeconf_mcfaline23/latent_formal_20260929T083049Z",
+      "formal_started_utc": "20260929T083049Z",
+      "test_truth_opened": false
+    },
+    {
+      "candidate": "PerturBench DecoderOnly",
+      "gpu": 1,
+      "preflight": "PASS",
+      "parameters": 62800000,
+      "preflight_dir": "/home/yyf/runtime_artifacts/safeconf_mcfaline23/decoder_preflight_20260929T082415Z",
+      "preflight_console_sha256": "b1a0ba51b16eefc84d3e672ca804c41d4e995a2206237d4c5d9101d997e72a0b",
+      "registered_repair": "data.loader.num_workers=0",
+      "formal_status": "RUNNING",
+      "formal_dir": "/home/yyf/runtime_artifacts/safeconf_mcfaline23/decoder_formal_20260929T083049Z",
+      "formal_started_utc": "20260929T083049Z",
+      "test_truth_opened": false
+    }
+  ]
+}
