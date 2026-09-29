@@ -1,0 +1,86 @@
+{
+  "audit_time_utc": "2026-09-29T08:04:59.437829+00:00",
+  "metadata_only": true,
+  "expression_matrix_read": false,
+  "test_truth_read": false,
+  "data_path": "/home/yyf/data/perturbench_mcfaline23_official/mcfaline23_gxe_processed.h5ad",
+  "data_sha256": "e9c6a010ce6e44eb72d32449e7d7ad2bd45d336855083fa901d52d0bf263fa87",
+  "split_path": "/home/yyf/data/perturbench_mcfaline23_official/splits/mcfaline23_gxe_splits/full_covariate_split.csv",
+  "split_sha256": "08a6558a68599b3703f626c8da72a1603486edd94a3f34dfc9fa7c9b6181b091",
+  "shape": {
+    "cells": 878229,
+    "genes": 15009
+  },
+  "obs_columns": [
+    "orig.ident",
+    "ncounts",
+    "ngenes",
+    "cell",
+    "sample",
+    "Size_Factor",
+    "n.umi",
+    "PCR_plate",
+    "new_cell",
+    "dose",
+    "treatment",
+    "gRNA_id",
+    "gene_id",
+    "guide_number",
+    "cell_type",
+    "drug_dose",
+    "perturbation_type",
+    "dataset",
+    "gene_dose",
+    "perturbation",
+    "pert_cl_tr",
+    "condition",
+    "condition_plus_treatment",
+    "cov_merged",
+    "n_genes_by_counts",
+    "log1p_n_genes_by_counts",
+    "total_counts",
+    "log1p_total_counts",
+    "pct_counts_in_top_50_genes",
+    "pct_counts_in_top_100_genes",
+    "pct_counts_in_top_200_genes",
+    "pct_counts_in_top_500_genes",
+    "control",
+    "dose_val",
+    "cov_drug_dose_name"
+  ],
+  "gene_id_count": 15009,
+  "gene_id_unique": true,
+  "split_summary": [
+    {
+      "split": "test",
+      "n_cells": 69028,
+      "n_states": 3,
+      "n_perturbation_clusters": 380,
+      "n_treated_tasks": 543,
+      "n_control_tasks": 3
+    },
+    {
+      "split": "train",
+      "n_cells": 738901,
+      "n_states": 15,
+      "n_perturbation_clusters": 528,
+      "n_treated_tasks": 6631,
+      "n_control_tasks": 15
+    },
+    {
+      "split": "val",
+      "n_cells": 70300,
+      "n_states": 3,
+      "n_perturbation_clusters": 377,
+      "n_treated_tasks": 542,
+      "n_control_tasks": 3
+    }
+  ],
+  "test_history": {
+    "n_test_tasks": 543,
+    "n_with_internal_history": 543,
+    "coverage": 1.0,
+    "median_train_history_cells": 998.0,
+    "median_train_history_states": 13.0
+  }
+}

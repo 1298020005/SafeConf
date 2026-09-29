@@ -5,7 +5,7 @@
 | 输出接口统一 | Prediction/Error Contract；direct-effect 与 treated-state 两路径 | 支持 | common black-box adapter contract |
 | 幅度是强风险基线 | TxPert 两架构 U20 0.759–0.768，Spearman 0.728–0.742 | 支持 | strong mandatory baseline |
 | Support/Relevance 有额外信息 | TxPert 开发增量；E170 history-available 组 U20 0.2383→0.2718/0.2857 | 同研究确认支持 | confirmed on new perturbations/held-out donor; external confirmation pending |
-| V2 可安全收缩历史 | 开发门通过；E170 Gate A PASS，10/12 strata 非负，risk guards 通过 | 支持，带边界 | confirmed under registered same-study contract; no-history remains weak |
+| V2 可安全收缩历史 | 开发门与 E170 Gate A 通过；但 learned gate 未稳定胜过固定混合，E190 跨家族失败 | 结果有效，机制贡献未独立成立 | same-study confirmation; learned gating remains a conditional extension pending external validation |
 | Quality-aware | TxPert legal Quality coverage 0 | 不支持 | 不使用该主张 |
 | External cross-study history | E190 使用 target-truth 前冻结的 Adamson history；V1 点增量为正但 CI 宽 | 初步支持 | cross-study historical evidence; not confirmed broadly |
 | 跨结构 | TxPert GAT 与 Exphormer 同方向 | 支持 | cross-architecture within one family |

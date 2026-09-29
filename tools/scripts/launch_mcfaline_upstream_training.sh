@@ -55,6 +55,11 @@ common=(
   "hydra.run.dir=$run_dir"
   "data.splitter.split_path=$split"
   "data.evaluation.split_value_to_evaluate=val"
+  # Registered engineering repair after the first dual preflight: official
+  # num_workers=12 caused worker processes to be OOM-killed before a GPU batch
+  # was produced. Keep the official batch size/model/optimizer unchanged and
+  # read batches in the main process so workers do not duplicate HDF5 state.
+  "data.loader.num_workers=0"
   "test=false"
 )
 

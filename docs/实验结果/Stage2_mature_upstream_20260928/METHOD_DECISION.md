@@ -20,3 +20,14 @@
 当前真正成立的是 Support/Relevance-aware shrinkage；Quality 未进入正式实证。V2 的价值来自在历史模块整体不稳时学习收缩，而不是因为更大的网络。小 MLP 明显落后，因此不扩 Transformer 或 set encoder。
 
 E170 在方法冻结后一次性打开全部四面板，V2 相对 Magnitude 的 ΔU20 为 +0.0504，10/12 strata 非负并通过所有安全护栏，因此 V2 升格为最终主方法。其 target-cluster bootstrap CI 跨 0，证据属于同研究新扰动/留出供体确认，不扩写为 external-study confirmation。E190 表明 V1 的 Support/Relevance 点增量可延伸到独立 GEARS family，但冻结 V2 没有复现，因此跨 family 仍按开发压力证据表述。
+
+## Gate 机制复核后的负责人判断
+
+在完全复用 frozen `rP/rPQ` 的条件下，learned gate 相对开发集最佳固定混合的 ΔU20 为：GAT `+0.0015`、Exphormer `-0.0035`、GEARS `-0.0390`，三者的 gene-cluster bootstrap 区间均跨 0；逐 fold 选择更优分支的正确率仅为 55%–60%。因此，**现有证据没有证明 learned gate 比简单固定混合更有价值**。
+
+这项机制复核不修改已经冻结并完成 E170 确认的 v4，也不使用它调整外部数据或上游。投稿定位暂时调整为：
+
+1. `Universal Prediction Evidence + legal Historical Experimental Evidence` 是主方法信号；
+2. learned gate 是需要 McFaline 外部实验继续检验的条件扩展；
+3. 只有外部 v4 同时超过 Magnitude 且不明显劣于 V1，才把 evidence-aware gate 保留为主方法贡献；
+4. 若外部 V1 有效而 V2 低于 V1，则按 Route B 收口，不再为 gate 追逐正结果。

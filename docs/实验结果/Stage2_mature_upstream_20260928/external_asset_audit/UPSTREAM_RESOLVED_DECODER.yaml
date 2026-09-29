@@ -69,7 +69,7 @@ data:
   mode: batch
   loader:
     batch_size: 8000
-    num_workers: 12
+    num_workers: 0
 model:
   _target_: perturbench.modelcore.models.DecoderOnly
   n_genes: null

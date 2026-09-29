@@ -1,0 +1,7 @@
+upstream,comparison,method_a,method_b,delta_u20,ci95_lower,ci95_upper,bootstrap_replicates,bootstrap_unit
+e190_gears,learned_vs_best_fixed,learned_gate,fixed_w_1.00,-0.03901511149411327,-0.25084762506501684,0.10214668675360292,5000,gene_cluster
+e190_gears,learned_vs_V1,learned_gate,V1,-0.31486678334505863,-0.6657215209123554,0.15821666649126664,5000,gene_cluster
+txpert_exphormer,learned_vs_best_fixed,learned_gate,fixed_w_0.50,-0.003530211443278919,-0.024524444040136546,0.02110920955755504,5000,gene_cluster
+txpert_exphormer,learned_vs_V1,learned_gate,V1,0.009516186592864906,-0.018688391393645924,0.03127019587466304,5000,gene_cluster
+txpert_gat,learned_vs_best_fixed,learned_gate,fixed_w_0.50,0.001474667225634052,-0.015419420804375094,0.021078704149893882,5000,gene_cluster
+txpert_gat,learned_vs_V1,learned_gate,V1,0.009906266582347056,-0.012958890443299214,0.03326888405074458,5000,gene_cluster

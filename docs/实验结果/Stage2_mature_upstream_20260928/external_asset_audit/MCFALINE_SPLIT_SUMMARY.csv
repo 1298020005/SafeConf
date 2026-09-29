@@ -1,0 +1,4 @@
+split,n_cells,n_states,n_perturbation_clusters,n_treated_tasks,n_control_tasks
+test,69028,3,380,543,3
+train,738901,15,528,6631,15
+val,70300,3,377,542,3

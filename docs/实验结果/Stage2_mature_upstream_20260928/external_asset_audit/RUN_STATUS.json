@@ -1,5 +1,5 @@
 {
-  "status": "AUDIT_COMPLETE_DOWNLOAD_IN_PROGRESS",
+  "status": "COMPLETE",
   "selected_external_asset": "McFalineFigueroa23",
   "selected_upstreams": [
     "PerturBench LatentAdditive",
@@ -7,6 +7,6 @@
   ],
   "expression_truth_opened": false,
   "test_truth_opened": false,
-  "data_download_complete": false,
-  "next_action": "finish official data download"
+  "data_download_complete": true,
+  "next_action": "validation-only upstream preflight"
 }
