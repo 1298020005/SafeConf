@@ -8,11 +8,13 @@ import numpy as np
 
 from tools.safeconf_continual import (
     ContinualUpdateManager,
+    ErrorResidualAdapter,
     ErrorMemoryItem,
     ErrorMemoryRegistry,
     FrozenErrorCDF,
     PublicMemoryItem,
     PublicMemoryStore,
+    PublicBiologyLearner,
     RiskOutput,
     ReleaseMetrics,
     biological_task_key,
@@ -74,6 +76,19 @@ class SafeConfContinualTest(unittest.TestCase):
             nonnegative_strata_fraction=0.75,
         ))
         self.assertTrue(release.trigger)
+
+    def test_low_capacity_learners_keep_contract_scales(self) -> None:
+        x = np.asarray([[0.0, 1.0], [1.0, 0.0], [2.0, 1.0], [3.0, 0.0], [4.0, 1.0], [5.0, 0.0]])
+        transfer = np.asarray([0.2, 0.1, 0.3, 0.15, 0.4, 0.25])
+        public = PublicBiologyLearner("ridge").fit(x, transfer)
+        weights = public.retrieval_weights(x, np.ones(len(x)), regularization=0.5)
+        self.assertAlmostEqual(float(weights.sum()), 1.0, places=6)
+        adapter = ErrorResidualAdapter("m", "v", "ridge", kappa=10).fit(
+            x, np.full(len(x), 0.5), np.asarray([0.1, 0.2, 0.7, 0.4, 0.8, 0.6]), 5
+        )
+        correction, final = adapter.predict(x, np.full(len(x), 0.5))
+        self.assertEqual(len(correction), len(final))
+        self.assertTrue(np.all((final >= 0) & (final <= 1)))
 
 
 if __name__ == "__main__":

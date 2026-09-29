@@ -10,6 +10,10 @@
 - **Stopping rule:** if the repaired prior does not improve both effect reconstruction stability and downstream risk consistently, stop modifying public retrieval. Retain the strongest simple/manual prior and report that learned retrieval was not supported.
 - **Evidence role:** DEV/SEEN only. No McFaline test truth may be accessed.
 
+### Repair result (completed)
+
+`LearnedHGBRegularized` achieved biological transfer RMSE `0.062113`, cosine `0.529424`, and effective sources `2.118`. It improved the downstream Shared HGB U20 over the manual prior by `+0.010540` (Exphormer) and `+0.009741` (GAT). The paired intervals for the manual comparison include zero, so this is retained as the preregistered repaired candidate and described as a positive but not definitive increment. No second retrieval repair is permitted.
+
 ## Execution-only incidents
 
 - The first public-biology report write failed because optional `tabulate` was absent after all calculations completed. Replaced `DataFrame.to_markdown()` with a dependency-free Markdown formatter; no data, split, feature, model, or metric changed.

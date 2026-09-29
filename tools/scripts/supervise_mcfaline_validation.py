@@ -80,7 +80,7 @@ def main() -> None:
                 continue
             if record["status"] in {"VALIDATION_COMPLETE", "VALIDATION_FAILED", "TRAINING_FAILED"}:
                 continue
-            if (run / "COMPLETED").exists():
+            if (run / "COMPLETED").exists() or (run / "STOPPED_BY_REGISTERED_VALIDATION_BUDGET").exists():
                 checkpoint = best_checkpoint(run)
                 output = args.runtime_root / f"{name}_validation"
                 command = [
