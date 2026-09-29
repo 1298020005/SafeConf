@@ -23,6 +23,12 @@ mkdir -p "$output"
 echo '34db710ad850b5b5fd478d123f1c10ae3d5aaa013fce6061be8216ea27aed215  '"$data_root/mcfaline23_gxe_processed.h5ad.gz" | sha256sum -c -
 echo '08a6558a68599b3703f626c8da72a1603486edd94a3f34dfc9fa7c9b6181b091  '"$split" | sha256sum -c -
 checkpoint_sha="$(sha256sum "$checkpoint" | cut -d' ' -f1)"
+# Hydra parses '=' inside an override value even when the shell has already
+# kept the value as one argument.  Lightning's checkpoint filenames contain
+# strings such as epoch=14-step=1395.ckpt, so expose the immutable checkpoint
+# through a stable local symlink whose filename has no override delimiters.
+checkpoint_link="$output/model.ckpt"
+ln -sfn "$checkpoint" "$checkpoint_link"
 
 cat >"$output/EVALUATION_CONTRACT.txt" <<EOF
 candidate=$candidate
@@ -30,6 +36,7 @@ gpu=$gpu
 partition=validation
 test_partition_opened=false
 checkpoint=$checkpoint
+checkpoint_link=$checkpoint_link
 checkpoint_sha256=$checkpoint_sha
 split_sha256=08a6558a68599b3703f626c8da72a1603486edd94a3f34dfc9fa7c9b6181b091
 EOF
@@ -44,7 +51,7 @@ common=(
   "data.loader.num_workers=0"
   "train=false"
   "test=true"
-  "ckpt_path=$checkpoint"
+  "ckpt_path=$checkpoint_link"
 )
 
 cd "$repo"

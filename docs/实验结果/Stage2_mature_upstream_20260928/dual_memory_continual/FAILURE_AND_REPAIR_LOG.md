@@ -17,4 +17,6 @@
 ## Execution-only incidents
 
 - The first public-biology report write failed because optional `tabulate` was absent after all calculations completed. Replaced `DataFrame.to_markdown()` with a dependency-free Markdown formatter; no data, split, feature, model, or metric changed.
+- The Public Memory growth run completed all 25 registered order-by-fraction evaluations, then its Markdown serialization hit the same absent optional `tabulate` dependency. `REPORT.md` was regenerated from the already written CSV artifacts with the dependency-free formatter; no numerical experiment was rerun or changed.
+- The first McFaline LatentAdditive validation-only invocation failed before loading data because Hydra parsed the `=` characters in Lightning's checkpoint filename as override grammar. The immutable checkpoint is now exposed through a hash-recorded `model.ckpt` symlink. This changes only command serialization; candidate, checkpoint bytes, validation partition, model configuration, and sealed test status remain unchanged.
 - The initial TxPert source table contained 5,238 target-to-source eligibility rows but only 2,008 physically distinct public experiments. The persistent bank now stores 2,008 experiment entities and a separate 5,238-edge eligibility relation. This corrected entity duplication before any reported Dual-Memory experiment.

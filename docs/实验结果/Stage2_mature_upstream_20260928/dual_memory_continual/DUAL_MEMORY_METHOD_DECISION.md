@@ -32,6 +32,17 @@ comparison still include zero. The correct claim is therefore a positive,
 cross-architecture direction with limited statistical precision, not a claim
 of universal significance.
 
+### Public Memory growth decision
+
+Five fixed identity-hash reveal orders were evaluated at 10/25/50/75/100%
+memory. Biological reconstruction improved consistently with bank size, but
+risk gains were neutral or negative at sparse coverage and became positive on
+average from 50% onward. At full coverage, the independent growth rerun
+improved U20 over prediction-only by `+0.029741` for Exphormer and `+0.029440`
+for GAT. The main systems claim is therefore **coverage-dependent continual
+Public Memory**, coupled to release/rollback gates. We do not claim that every
+incremental update improves risk.
+
 ### Zero-target-label cross-predictor transfer
 
 A dedicated transfer experiment now fits every preprocessing statistic, error

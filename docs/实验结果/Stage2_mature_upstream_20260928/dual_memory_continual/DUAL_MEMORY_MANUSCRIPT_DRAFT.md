@@ -28,6 +28,13 @@ transfers to Exphormer (0.7587 to 0.7952; paired cluster CI for the increment
 [0.0027, 0.0823]); the reverse transfer is also positive (0.7682 to 0.7941)
 but its CI crosses zero.
 
+Across five outcome-independent memory reveal orders, biological reconstruction
+improves as the Public Memory grows from 10% to 100%. Risk gains are not
+monotonic at low coverage; they become positive on average around 50% coverage
+and reach approximately +0.030 Utility@20 over prediction-only at full coverage
+for both architectures. This coverage threshold motivates SafeConf's
+release/rollback gate instead of assuming that every update must help.
+
 ## 1. Introduction
 
 Perturbation prediction is usually evaluated by vector reconstruction error.
@@ -182,7 +189,23 @@ The repaired-minus-manual paired cluster bootstrap intervals include zero
 claim is therefore a positive, cross-architecture point-estimate direction
 with limited precision, not universal significance.
 
-### 5.2 Error-memory boundary
+### 5.2 Public Memory growth and update boundary
+
+We revealed 10%, 25%, 50%, 75% and 100% of the 2,008-item bank under five
+nested identity-hash orders fixed without outcomes. The biological transfer
+learner and Shared Risk Core were refit inside every fraction and outer fold.
+Mean biological-effect RMSE decreased from 0.074699 at 10% to 0.062113 at
+100%, while eligible task coverage increased from 24.1% to 100%.
+
+Risk improvement has a clear coverage boundary. At 10% and 25%, the mean
+Utility@20 increment over prediction-only ranges from -0.008943 to +0.001001;
+at 50%, it becomes positive for both architectures, and at 100% it reaches
++0.029741 for Exphormer and +0.029440 for GAT. The result supports continual
+memory accumulation, but not a promise of monotonic benefit after every small
+update. Public items are therefore retained in the bank while a newly trained
+risk model is published only after its anchor-task release gates pass.
+
+### 5.3 Error-memory boundary
 
 Across all five feedback budgets, residual HGB has lower feedback-curve U20
 area than the frozen Shared Core for both architectures (Exphormer 0.790206
@@ -192,7 +215,7 @@ primary universal gain claim. The result is retained as a model-specific
 feedback boundary and as evidence that public biological memory and model-error
 memory should not be conflated.
 
-### 5.3 Zero-target-label cross-predictor transfer
+### 5.4 Zero-target-label cross-predictor transfer
 
 The transferred repaired-public HGB uses only the source predictor's errors.
 For Exphormer-to-GAT transfer it improves Utility@20 from 0.768216 to 0.794104

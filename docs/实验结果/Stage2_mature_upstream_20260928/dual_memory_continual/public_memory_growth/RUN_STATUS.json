@@ -1,0 +1,19 @@
+{
+  "status": "COMPLETE",
+  "evidence_role": "DEV_SEEN",
+  "fractions": [
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "hash_orders": 5,
+  "n_public_memory_items": 2008,
+  "outer_folds": 5,
+  "transfer_learner_refit_each_fraction": true,
+  "shared_core_refit_each_fraction": true,
+  "outcome_selected_order": false,
+  "mcfaline_test_opened": false,
+  "source_memory_sha256": "884a3b1a0b836f25af4e6f7e0df38a8eab4dfccfec49599c7478eccd4892dd92"
+}

@@ -54,9 +54,31 @@ Current repaired Shared Core feedback AUC:
 This is retained as a boundary result. The adapter is not promoted to the
 main performance claim.
 
+## Table 5 — Public Memory growth
+
+Five nested reveal orders were fixed by memory identity hashes. The table
+reports the mean increment over prediction-only across all five orders.
+
+| memory revealed | task coverage | Exphormer ΔU20 | GAT ΔU20 | biological-effect RMSE |
+|---:|---:|---:|---:|---:|
+| 10% | 0.2413 | +0.0010 | -0.0089 | 0.074699 |
+| 25% | 0.5158 | -0.0002 | -0.0066 | 0.074003 |
+| 50% | 0.8135 | +0.0027 | +0.0038 | 0.070342 |
+| 75% | 0.9525 | +0.0031 | +0.0092 | 0.066048 |
+| 100% | 1.0000 | +0.0297 | +0.0294 | 0.062113 |
+
+This is a coverage-threshold result. It supports memory accumulation together
+with release/rollback checks; it does not support a claim that each update is
+monotonically beneficial.
+
 ## Figure 1 — public memory and feedback boundary
 
 `figures/DUAL_MEMORY_PUBLIC_ERROR_RESULTS.svg` contains the publication draft:
 the left panel is the repaired Public Memory comparison and the right panel is
 the model-error feedback curve. The right panel is deliberately shown as a
 boundary result rather than a claimed continual-learning gain.
+
+## Figure 2 — Public Memory growth
+
+`figures/PUBLIC_MEMORY_GROWTH.svg` shows the U20 increment, biological-effect
+reconstruction and eligible-history coverage across the five reveal fractions.
