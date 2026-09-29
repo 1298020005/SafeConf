@@ -164,12 +164,16 @@ its CD4-specific feature contract is audited separately.
 ### 4.3 External confirmation
 
 McFaline train/validation contains 7,173 quality-labelled experiment units, with
-100% guide, plate and deterministic split-half coverage. Two published
-PerturBench candidates are trained under a registered validation-only budget.
-The candidate is selected from validation competence and provenance before any
-SafeConf test result is read. Cold-start and continual-adaptation confirmation
-are reported separately. For continual adaptation, all feedback-budget
-predictions are generated before the permanent holdout truth is opened.
+100% guide, plate and deterministic split-half coverage. LatentAdditive failed
+the preregistered upstream competence gate. Raw DecoderOnly missed the 2%
+non-inferiority point margin by 0.0145 percentage points; its one registered
+validation-only repair uses perturbation-cluster OOF convex shrinkage toward
+the train-state effect. The repaired upstream improves validation RMSE over the
+simple baseline by 0.8734% (cluster CI 0.6601% to 1.0882%) and retains at least
+25% Decoder weight in every fold. It is selected before any SafeConf test result
+is read. Cold-start and continual-adaptation confirmation are reported
+separately. For continual adaptation, all feedback-budget predictions are
+generated before the permanent holdout truth is opened.
 
 ## 5. Results available before external confirmation
 

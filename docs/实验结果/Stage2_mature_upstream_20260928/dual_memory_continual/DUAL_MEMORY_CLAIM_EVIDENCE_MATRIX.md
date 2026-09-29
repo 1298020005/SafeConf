@@ -10,4 +10,5 @@
 | Error Memory is model-specific | separate exact-version banks, wrong-upstream and shuffled controls | pipeline supported; repaired run measured | model-version-specific feedback adapter |
 | Error feedback always improves | repaired residual HGB is below Shared Core at most budgets on both architectures | not supported | optional feedback adaptation and explicit negative boundary; no universal gain claim |
 | Official PertEMA is directly comparable | official model is CD4-specific with a different 64-feature contract | false for current TxPert setup | PertEMA-style proxy only until same-contract refit |
-| External generalisation | McFaline test remains sealed; two candidates in validation competence | pending | external confirmation pending |
+| External upstream competence | LatentAdditive failed; raw DecoderOnly narrowly failed; one preregistered validation-only OOF shrinkage repair beat the strongest baseline by 0.8734% with all 3 strata non-inferior | supported before SafeConf/test access | validation-calibrated DecoderOnly is the sole frozen external upstream |
+| External SafeConf generalisation | McFaline test remains sealed; no SafeConf result was used to select the external upstream | pending | external cold-start confirmation pending |

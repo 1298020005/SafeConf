@@ -104,10 +104,13 @@ pre-registered update triggers and release/rollback gates.
 
 McFaline train/validation contains 7,173 quality-labelled experiment units.
 Guide, plate and deterministic split-half quality coverage is 100%; test
-expression has not been aggregated. Two published PerturBench candidates are
-being trained under a registered validation-only epoch budget, with the test
-partition still sealed. The final external route is selected by upstream
-competence before any SafeConf test result is read.
+expression has not been aggregated. LatentAdditive failed the upstream gate by
+12.06%. Raw DecoderOnly narrowly missed the strict 2% point margin at 2.0145%.
+Its single pre-registered validation-only repair, cluster-OOF convex effect
+shrinkage, then improved over the strongest simple baseline by 0.8734% (95%
+cluster interval 0.6601% to 1.0882% improvement) with all three strata
+non-inferior. Validation-calibrated DecoderOnly is therefore frozen as the
+external upstream before any McFaline SafeConf or test result is read.
 
 Until that step completes, the paper claim is:
 

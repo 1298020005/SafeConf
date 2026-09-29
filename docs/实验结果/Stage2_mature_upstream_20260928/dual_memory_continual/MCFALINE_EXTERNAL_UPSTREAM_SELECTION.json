@@ -1,0 +1,54 @@
+{
+  "schema": "SafeConf-McFaline-External-Upstream-Selection-v1",
+  "selection_status": "FROZEN_BEFORE_SAFECONF_AND_TEST",
+  "selected_upstream": "PerturBench_DecoderOnly_validation_calibrated",
+  "base_model": {
+    "family": "PerturBench_DecoderOnly",
+    "checkpoint_path": "/home/yyf/runtime_artifacts/safeconf_mcfaline23/decoder_formal_20260929T083049Z/checkpoints/epoch=14-step=1395.ckpt",
+    "checkpoint_sha256": "2f21404fecf0123c93ab63c7a65a7bd727e4448f4c7ecddeafa2625b7df6cfa6",
+    "training_partition": "train",
+    "selection_partition": "validation",
+    "test_partition_opened": false
+  },
+  "validation_calibration": {
+    "method": "convex_effect_shrinkage_to_train_state_mean",
+    "formula": "effect = alpha * decoder_effect + (1 - alpha) * train_state_mean_effect",
+    "alpha_grid": [0.25, 0.5, 0.75, 1.0],
+    "cluster_oof_folds": 5,
+    "selected_final_alpha": 0.25,
+    "minimum_allowed_alpha": 0.25,
+    "selection_rule_registered_before_repaired_score": true
+  },
+  "competence_evidence": {
+    "n_validation_tasks": 542,
+    "n_perturbation_clusters": 377,
+    "n_strata": 3,
+    "oof_repaired_macro_rmse": 0.021840639029184684,
+    "strongest_simple_baseline_macro_rmse": 0.022033085363914164,
+    "relative_gap": -0.008734425140687204,
+    "cluster_bootstrap_ci95": [-0.010882118570706117, -0.006601391777997253],
+    "noninferior_strata_fraction": 1.0,
+    "passes_registered_competence_gate": true
+  },
+  "rejected_candidate": {
+    "name": "PerturBench_LatentAdditive",
+    "reason": "validation macro RMSE was 12.0557% worse than the strongest simple baseline",
+    "eligible_for_external_confirmation": false
+  },
+  "data_contract": {
+    "dataset": "McFalineFigueroa23_GxE",
+    "h5ad_sha256": "e9c6a010ce6e44eb72d32449e7d7ad2bd45d336855083fa901d52d0bf263fa87",
+    "split_sha256": "08a6558a68599b3703f626c8da72a1603486edd94a3f34dfc9fa7c9b6181b091",
+    "gene_contract_sha256": "13383ca8ae524bcfb4412341e72847e5d3bd53e8d19109e9d719b787ac3ba298",
+    "n_contract_genes": 512,
+    "effect_contract": "predicted_treated_state minus matched observed control",
+    "missing_gene_policy": "no zero fill"
+  },
+  "selection_independence": {
+    "safeconf_score_seen": false,
+    "test_treated_expression_opened": false,
+    "selection_basis": "registered validation upstream competence only",
+    "may_not_be_replaced_using_external_safeconf_result": true
+  },
+  "source_commit_before_selection_artifacts": "ebfd6d6719ca8c4781a968bcb38b223ca92ffdbb"
+}

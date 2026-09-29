@@ -82,3 +82,13 @@ boundary result rather than a claimed continual-learning gain.
 
 `figures/PUBLIC_MEMORY_GROWTH.svg` shows the U20 increment, biological-effect
 reconstruction and eligible-history coverage across the five reveal fractions.
+
+## Table 6 — McFaline validation-only upstream competence
+
+| upstream | effect RMSE | simple baseline RMSE | relative gap | cluster CI | non-inferior strata | decision |
+|---|---:|---:|---:|---:|---:|---|
+| LatentAdditive | 0.024689 | 0.022033 | +12.0557% | [+11.3422%, +12.7948%] | 0/3 | reject |
+| DecoderOnly | 0.022477 | 0.022033 | +2.0145% | [+1.3771%, +2.6443%] | 2/3 | raw reject |
+| DecoderOnly + one OOF shrinkage repair | **0.021841** | 0.022033 | **-0.8734%** | **[-1.0882%, -0.6601%]** | **3/3** | select |
+
+This selection was completed without any SafeConf score or McFaline test truth.

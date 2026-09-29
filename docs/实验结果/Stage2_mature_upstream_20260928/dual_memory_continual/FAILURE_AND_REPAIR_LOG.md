@@ -22,3 +22,10 @@
 - LatentAdditive generated all 109 official validation prediction chunks, after which PerturBench's `on_test_end` attempted to merge roughly 32 GB of dense chunks plus the reference object in memory and was terminated before metric serialization. The already complete predictions were evaluated by the precommitted bounded-memory 512-gene competence audit; no prediction was regenerated and test remained sealed.
 - The first competence-audit invocation treated the versioned `gene_ids.json` object as a bare list and failed before scanning expression. The parser was corrected to read its `gene_ids` member. A second execution was interrupted after 20 prediction chunks when scattered HDF5 column reads proved needlessly slow; the implementation now reads each dense chunk sequentially and subsets in memory. Neither incident produced or exposed a metric.
 - The initial TxPert source table contained 5,238 target-to-source eligibility rows but only 2,008 physically distinct public experiments. The persistent bank now stores 2,008 experiment entities and a separate 5,238-edge eligibility relation. This corrected entity duplication before any reported Dual-Memory experiment.
+
+## McFaline upstream competence decision
+
+- **LatentAdditive:** failed without repair. Validation effect RMSE was `0.024689` versus `0.022033` for the strongest simple baseline (relative gap `+12.0557%`, cluster CI `[+11.3422%, +12.7948%]`, 0/3 non-inferior strata).
+- **Raw DecoderOnly:** narrowly failed the strict point rule. RMSE was `0.022477`, relative gap `+2.0145%`, cluster CI `[+1.3771%, +2.6443%]`, and 2/3 strata were non-inferior.
+- **Single registered Decoder repair:** perturbation-cluster OOF convex shrinkage achieved RMSE `0.021841`, improving on the baseline by `0.8734%` with cluster CI `[0.6601%, 1.0882%]` in the favorable direction and 3/3 non-inferior strata. Fold Decoder weights were `0.50/0.25/0.25/0.25/0.25`; the all-validation test-time weight is `0.25`.
+- **Decision:** select validation-calibrated DecoderOnly as the sole external upstream. Selection used upstream competence only; no SafeConf score or test truth was available.

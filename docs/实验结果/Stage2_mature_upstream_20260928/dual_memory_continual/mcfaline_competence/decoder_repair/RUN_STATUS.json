@@ -1,0 +1,13 @@
+{
+  "status": "COMPLETE",
+  "repair": "validation-only convex effect shrinkage",
+  "alphas": [
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "outer_folds": 5,
+  "bootstrap_replicates": 5000,
+  "test_expression_opened": false
+}
