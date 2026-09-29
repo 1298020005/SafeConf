@@ -117,6 +117,11 @@ class PublicMemoryStore:
         return manifest
 
     def load(self) -> tuple[pd.DataFrame, np.ndarray, np.ndarray, dict]:
+        current_path = self.root / "CURRENT.json"
+        if current_path.exists():
+            pointer = json.loads(current_path.read_text())
+            version_root = self.root / pointer["path"]
+            return PublicMemoryStore(version_root).load()
         manifest = json.loads(self.manifest_path.read_text())
         for path, field in (
             (self.table_path, "table_sha256"),
@@ -131,6 +136,55 @@ class PublicMemoryStore:
         if len(frame) != len(effects) or effects.shape != controls.shape:
             raise RuntimeError("public memory alignment changed")
         return frame, effects, controls, manifest
+
+    def append(
+        self,
+        items: Iterable[PublicMemoryItem],
+        effect_vectors: np.ndarray,
+        control_vectors: np.ndarray,
+        source_manifest: dict,
+        eligibility_frame: pd.DataFrame | None = None,
+    ) -> dict:
+        """Publish an immutable version containing the old bank plus new items.
+
+        The existing version is never rewritten. A CURRENT pointer is updated
+        atomically only after the complete new version has passed integrity
+        checks. Callers can retain the previous version directory for rollback.
+        """
+        old, old_effects, old_controls, old_manifest = self.load()
+        additions = pd.DataFrame([item.as_record() for item in items])
+        if additions.empty or additions.experiment_id.duplicated().any():
+            raise ValueError("public-memory update must contain unique items")
+        if set(additions.experiment_id) & set(old.experiment_id):
+            raise ValueError("public-memory update contains an existing experiment")
+        new_effects = np.asarray(effect_vectors, dtype=np.float32)
+        new_controls = np.asarray(control_vectors, dtype=np.float32)
+        if new_effects.shape != new_controls.shape or new_effects.shape[0] != len(additions):
+            raise ValueError("public-memory update vector alignment failed")
+        if new_effects.shape[1] != old_effects.shape[1] or not np.isfinite(new_effects).all():
+            raise ValueError("public-memory update gene axis failed")
+        additions = additions.copy()
+        additions["effect_vector_row"] = np.arange(len(old), len(old) + len(additions))
+        combined = pd.concat([old, additions], ignore_index=True)
+        version = int(old_manifest.get("version", 1)) + 1
+        version_root = self.root / "versions" / f"v{version:04d}"
+        version_root.parent.mkdir(parents=True, exist_ok=True)
+        manifest = PublicMemoryStore(version_root).create(
+            [PublicMemoryItem(**row) for row in combined.to_dict(orient="records")],
+            np.concatenate([old_effects, new_effects]),
+            np.concatenate([old_controls, new_controls]),
+            json.loads((self.root / "gene_ids.json").read_text())["gene_ids"],
+            {**source_manifest, "parent_manifest": old_manifest},
+            eligibility_frame=eligibility_frame,
+        )
+        manifest["version"] = version
+        _atomic_json(version_root / "manifest.json", manifest)
+        _atomic_json(self.root / "CURRENT.json", {
+            "version": version,
+            "path": str(Path("versions") / f"v{version:04d}"),
+            "manifest_sha256": _sha(version_root / "manifest.json"),
+        })
+        return manifest
 
 
 class ErrorMemoryRegistry:
@@ -212,3 +266,29 @@ class ModelRegistry:
         if not self.path.exists():
             return []
         return [json.loads(line) for line in self.path.read_text().splitlines() if line.strip()]
+
+    def latest(self, component: str) -> dict | None:
+        entries = [entry for entry in self.entries() if entry["component"] == component]
+        return entries[-1] if entries else None
+
+    def rollback(self, component: str, to_version: str) -> None:
+        target = [
+            entry for entry in self.entries()
+            if entry["component"] == component and entry["version"] == to_version
+        ]
+        if not target:
+            raise ValueError(f"unknown immutable version for rollback: {component}/{to_version}")
+        latest = self.latest(component)
+        if latest is not None and latest["version"] == to_version and latest["status"] == "RELEASED":
+            raise ValueError("rollback target is already the current released version")
+        entry = target[-1]
+        self.register(RegistryEntry(
+            component=component,
+            version=f"rollback-to-{to_version}-{len(self.entries())}",
+            status="ROLLED_BACK",
+            artifact_sha256=entry["artifact_sha256"],
+            split_hash=entry["split_hash"],
+            feature_schema_hash=entry["feature_schema_hash"],
+            parent_version=latest["version"] if latest else None,
+            created_utc=_now(),
+        ))

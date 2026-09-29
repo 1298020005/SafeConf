@@ -46,6 +46,27 @@ class SafeConfContinualTest(unittest.TestCase):
             self.assertEqual(len(frame), manifest["n_items"])
             self.assertEqual(effects.shape, controls.shape)
 
+    def test_public_memory_append_publishes_version_without_mutating_parent(self) -> None:
+        item = PublicMemoryItem(
+            "e1", "s1", "K562", "knockout", "TP53", "24h", 0,
+            "delta-v1", "matched", "genes-v1", 10, 2, 2, 1,
+            0.8, 0.7, 0.9, 0.6, "unit-test", True, "2026-01-01",
+        )
+        item2 = PublicMemoryItem(
+            "e2", "s1", "RPE1", "knockout", "TP53", "24h", 1,
+            "delta-v1", "matched", "genes-v1", 12, 2, 2, 1,
+            0.7, 0.8, 0.8, 0.7, "unit-test", True, "2026-01-01",
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory) / "public"
+            store = PublicMemoryStore(root)
+            store.create([item], np.ones((1, 3)), np.zeros((1, 3)), ["a", "b", "c"], {})
+            store.append([item2], np.full((1, 3), 2.0), np.zeros((1, 3)), {})
+            frame, effects, _, manifest = store.load()
+            self.assertEqual(len(frame), 2)
+            self.assertEqual(manifest["version"], 2)
+            self.assertTrue((root / "versions/v0002/manifest.json").exists())
+
     def test_error_memory_is_model_version_specific(self) -> None:
         item = ErrorMemoryItem(
             "GEARS", "checkpoint-a", "p1", "task", "cluster",
