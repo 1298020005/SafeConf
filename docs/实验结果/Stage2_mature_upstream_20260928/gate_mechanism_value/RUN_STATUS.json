@@ -1,0 +1,15 @@
+{
+  "status": "COMPLETE",
+  "data_role": "DEV_SEEN_ONLY",
+  "external_test_truth_opened": false,
+  "frozen_v4_changed": false,
+  "fixed_weights": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "bootstrap_replicates": 5000,
+  "elapsed_seconds": 95.2031090259552
+}
