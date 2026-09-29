@@ -64,7 +64,7 @@ def main():
     for name in ['Heading 1', 'Heading 2', 'Heading 3']:
         doc.styles[name].font.color.rgb = RGBColor.from_string('174861')
     header = section.header.paragraphs[0]
-    header.text = 'SafeConf｜证据驱动的方法研究与开题进展｜2026-09-28'
+    header.text = 'SafeConf｜证据感知后置风险审计与开题进展｜2026-09-30'
     header.style = doc.styles['Normal']
     for run in header.runs:
         run.font.size = Pt(8)

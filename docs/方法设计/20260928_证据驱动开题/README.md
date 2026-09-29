@@ -1,61 +1,72 @@
 # SafeConf：9 月 30 日开题与进展汇报入口
 
-## 最新模型实证补充
+更新日期：2026-09-29。交付对象：导师/学校的完整研究进展和开题报告。
 
-2026-09-28 首批模型比较已经完成并停止，见 [模型决策](../../../SAFECONF_MODEL_DECISION.md) 与 [完整结果](../../实验结果/ModelDecision_light_batch_20260928/REPORT.md)。本目录早先提出的显式幅度残差结构仍是待验证假设；新结果没有支持它对三种算法一致优于直接模型。9 月 30 日汇报请同时使用这份结果与原开题材料，不能只讲此前的预期。
+## 当前论文判断
 
-日期：2026-09-28。交付对象：导师/学校的完整研究进展和开题报告；论文初稿与正式投稿后续推进。
+SafeConf v4 已完成开发、冻结、PertEMA 公平比较和 E170 一次性确认，当前进入：
 
-**直接阅读/编辑**：[Word 底稿](SafeConf_开题报告与进展_20260928.docx)｜[6 页 PDF](SafeConf_开题报告与进展_20260928.pdf)。两份文件及 Markdown 阅读版已放桌面；尚未套用学校指定模板。
+> **Route A：SafeConf 计算方法论文。**
 
-## 当前建议
+主方法是 nested evidence-aware shrinkage：先从 Universal Prediction Evidence 建立 prediction-only risk，再根据历史 Support、Relevance、Conflict 和 Missingness 决定历史修正的使用强度。Quality 因合法字段不足没有进入最终确认模型。
 
-课题题目：**面向单细胞扰动预测的幅度锚定与证据增量风险评估方法研究**。
+E170 四面板包含 2,400 个任务、800 个新 perturbation cluster、一个 held-out donor 和 12 个预注册 strata。冻结 V2 相对 Magnitude 的 ΔUtility@20 为 +0.0504，10/12 strata 非负，风险退化护栏全部通过，Gate A PASS。该证据属于同研究新扰动/留出供体确认，不称 external-study confirmation。
 
-一句话：先估计预测幅度对应的基础误差，再检验测量质量、公共实验历史与模型反馈分别还能解释多少剩余误差；只保留能在独立评价中带来增量的修正。
+## 汇报文件
 
-推荐模型的工作名称为 **SafeConf 幅度锚定条件风险模型**。公共历史和错误记忆都是待验证的证据来源，最终保留几个分支由实验决定。
+1. 开题报告确认版：[Markdown](开题报告与进展.md)｜[Word](SafeConf_开题报告与进展_20260930.docx)｜[PDF](SafeConf_开题报告与进展_20260930.pdf)
+2. [12 页汇报提纲与答辩问答](汇报提纲.md)
+3. [从实验到方法的数学推导](方法推导.md)
+4. [实验与投稿路线](实验与投稿路线.md)
+5. [导师汇报结果总表](../../实验结果/Stage2_mature_upstream_20260928/SAFEConf_导师汇报结果_20260930.md)
+6. [论文结果包](../../实验结果/Stage2_mature_upstream_20260928/PAPER_RESULT_TABLES.md)
+7. [一次性确认报告](../../实验结果/Stage2_mature_upstream_20260928/confirmation/e170_primary_cd4_four_panel/REPORT.md)
 
-## 阅读顺序
+## 明天优先讲的四个结论
 
-1. [开题报告与进展正文](开题报告与进展.md)：可直接作为学校模板的内容底稿。
-2. [从实验到方法的数学推导](方法推导.md)：误差几何、条件风险分解、反馈收缩、训练算法与理论边界。
-3. [最小决定性实验和投稿路线](实验与投稿路线.md)：先补什么、比较什么、怎样才构成方法贡献。
-4. [12 页汇报提纲与答辩问答](汇报提纲.md)：讲给导师听的顺序。
-5. [本轮复算结果](复算结果/ADJACENT_INCREMENT_SUMMARY.csv)：来自已有 E273 逐折表的配对汇总。
+1. Magnitude 是强基线，不能用弱基线制造提升。
+2. TxPert 两结构中 V2 的 U20 为 0.7963/0.7918，均高于 Magnitude 和同合同 PertEMA 适配。
+3. 方法冻结后，E170 一次性 confirmation 的 U20 为 0.2159，对比 Magnitude 0.1655，并通过预注册 Gate A。
+4. 有合法历史时收益明确；无历史任务接近无信息，跨 family 小样本 gate 和弱化学上游作为失败边界完整保留。
 
-![开发证据与公共历史条件增量](复算结果/EVIDENCE_INCREMENT.png)
+## 论文主张边界
 
-图中结果是既有开发数据的重新汇总。Q 尚不完整；没有新增训练、没有解封任何最终测试。
+可以写：
 
-## 这次形成的实质判断
+- 统一黑盒 post-hoc risk auditing 接口；
+- Support/Relevance-aware historical evidence；
+- nested evidence shrinkage；
+- 同研究 held-out donor/new-perturbation confirmation；
+- PertEMA 同合同比较；
+- Error Memory 周期重训扩展。
 
-- E201：幅度是优先锚点，旧 SafeConf 还有幅度之外的关联，但旧排序弱于幅度。
-- E230/E234：存在历史修正的开发线索，复杂历史结构尚未超过简单方法。
-- E258/E259：公共历史要拆为测量质量 Q 与效应内容 H；H 的独立增量尚未建立。
-- E273：Q、H、E 的增量不同；H 在已有 E 后只在 3/7 数据集组正向，提示冗余和异质性。
-- E274：记忆特征可用率曲线有开发信号，但每个预算都用全部 fit 标签重训风险器，不能解释为零反馈冷启动或仅更新 memory 的效果。
+当前不写：
 
-**开题可行性判断：已有结果足够支持一个明确、可证伪的研究方案；正式方法论文还需要证明结构相对同信息、同标签预算简单模型的额外价值。**
+- Quality-aware 已验证；
+- 广泛 model-agnostic；
+- external-study confirmation；
+- 化学扰动主确认；
+- 完全零历史泛化；
+- 在线逐样本自学习。
 
-## 与旧版本的关系
+## 复现与版本
 
-本目录是根据用户 2026-09-28 的纠正形成的开题主线，替代根目录 9 月 27–28 日广综述文档作为本次汇报入口。已有证书路线及所有旧实验结论原样保留。单模型的风险估计与注册家族的误差下界使用不同误差对象，不能相互充当性能证明。
+论文包状态、代码、结果表、主图、确认图、失败修复日志和文件哈希均位于：
 
-本轮也纠正了旧设计中的三个口径：E273 的七个数据集组包含化学数据；其 Q 是支持/相似度代理；其学习目标是误差秩而非原始 expected error。新模型在本文中标记为“拟研究”，不能把 E273 的成绩直接贴到新模型上。
-
-## 复现本轮复算
-
-```bash
-python tools/scripts/summarize_e273_evidence_for_proposal.py --output /tmp/safeconf_proposal_reaudit
+```text
+docs/实验结果/Stage2_mature_upstream_20260928/
 ```
 
-使用新的空目录。脚本只读取已归档的 E273 CPU 评价表；配对结果、图及源文件哈希见 [AUDIT.json](复算结果/AUDIT.json)。
-
-Word 从正文 Markdown 生成：
+核心测试：
 
 ```bash
-python tools/scripts/build_safeconf_proposal_docx.py --source docs/方法设计/20260928_证据驱动开题/开题报告与进展.md --output /tmp/SafeConf_proposal.docx
+python tests/test_safeconf_v4_evidence_contract.py
 ```
 
-验收：配对均值与原 E273 宏表一致；代码编译、内部链接、CSV 与 DOCX 结构检查通过；Word 经 LibreOffice 导出 6 页 PDF，检查了首页、正文、表格和图形的显示。新模型尚未运行。
+开题 Word 生成：
+
+```bash
+python tools/scripts/build_safeconf_proposal_docx.py \
+  --source docs/方法设计/20260928_证据驱动开题/开题报告与进展.md \
+  --output /tmp/SafeConf_开题报告与进展_20260930.docx
+```
