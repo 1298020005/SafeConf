@@ -92,3 +92,23 @@ reconstruction and eligible-history coverage across the five reveal fractions.
 | DecoderOnly + one OOF shrinkage repair | **0.021841** | 0.022033 | **-0.8734%** | **[-1.0882%, -0.6601%]** | **3/3** | select |
 
 This selection was completed without any SafeConf score or McFaline test truth.
+
+## Table 7 — McFaline external cold-start confirmation
+
+All risk predictions were committed at `ddbf427` before test treated truth was
+aggregated. The primary zero-label method uses TxPert error labels and McFaline
+public biological validation effects, but no McFaline upstream-error label.
+
+| method | U20 | Spearman | AURC | high-risk miss rate |
+|---|---:|---:|---:|---:|
+| Magnitude | -0.141916 | -0.118309 | 0.023005 | 0.890351 |
+| **Zero-label Shared HGB** | **0.590130** | 0.420956 | 0.020836 | 0.464425 |
+| Validation-adapted learned Public HGB | 0.613336 | 0.669527 | 0.019701 | 0.455166 |
+| Validation-adapted manual Public HGB | 0.670083 | **0.679207** | **0.019677** | 0.427388 |
+| Validation-adapted learned Public Ridge | **0.686724** | 0.667145 | 0.019693 | **0.392788** |
+
+The primary zero-label U20 increment over magnitude is `+0.732046`, with a
+paired perturbation-cluster 95% interval `[+0.555438,+0.878654]`. All three
+external strata improve and the preregistered safety endpoints pass. The table
+reports every frozen method; it does not replace the primary method with the
+best post-unseal row.

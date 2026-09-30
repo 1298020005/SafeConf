@@ -175,7 +175,7 @@ is read. Cold-start and continual-adaptation confirmation are reported
 separately. For continual adaptation, all feedback-budget predictions are
 generated before the permanent holdout truth is opened.
 
-## 5. Results available before external confirmation
+## 5. Results
 
 ### 5.1 Public biology and cold-start risk
 
@@ -229,17 +229,30 @@ transfer it improves Utility@20 from 0.758726 to 0.795157 (delta 0.037366,
 one direction currently has a positive interval lower bound. The experiment
 therefore supports predictor transfer without claiming symmetric significance.
 
+### 5.5 Independent external cold-start confirmation
+
+All 543 McFaline test-task risk predictions were hashed and committed before
+test treated expression was aggregated. The primary risk core uses TxPert
+upstream-error labels and McFaline public biological validation effects, but no
+McFaline upstream-error label. It improves macro Utility@20 from `-0.141916`
+for prediction magnitude to `0.590130` (delta `0.732046`, paired
+perturbation-cluster 95% interval `[0.555438,0.878654]`). All three
+context/treatment strata improve. Spearman rises from `-0.118309` to
+`0.420956`, AURC falls from `0.023005` to `0.020836`, and high-risk miss rate
+falls from `0.890351` to `0.464425`.
+
+The validation-adapted learned-public HGB reaches Utility@20 `0.613336`. Manual
+support weighting and Ridge are slightly stronger on this external study, while
+the repaired learned HGB was stronger on TxPert. We therefore attribute the
+main contribution to shared Public Memory and risk transfer, rather than a
+universal advantage of one retrieval learner.
+
 ## 6. Discussion and current decision
 
-The current evidence favors Public Memory + Shared Risk Core as the main method
-candidate. The Error Adapter is implemented, isolated, and auditable, but is
-not promoted to the main performance contribution until an external feedback
-curve is non-inferior. If the McFaline cold-start confirmation supports the
-shared core, the paper follows the continual Public-Memory route and presents
-Error Memory as an optional deployment adaptation with its negative boundary.
-If external confirmation fails, the failure is reported together with the
-registered diagnosis and the paper is narrowed to the reliability boundary
-that is reproducible across the available architectures.
+The independent confirmation supports Public Memory + Shared Risk Core as the
+main method. The paper follows the continual Public-Memory route. The Error
+Adapter is implemented, version isolated and auditable, but remains an optional
+deployment adaptation with a reported negative performance boundary.
 
 ## 7. Reproducibility
 

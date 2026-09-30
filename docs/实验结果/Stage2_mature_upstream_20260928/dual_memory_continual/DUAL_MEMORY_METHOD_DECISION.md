@@ -112,10 +112,22 @@ cluster interval 0.6601% to 1.0882% improvement) with all three strata
 non-inferior. Validation-calibrated DecoderOnly is therefore frozen as the
 external upstream before any McFaline SafeConf or test result is read.
 
-Until that step completes, the paper claim is:
+The pre-truth risk seal was committed at `ddbf427`, after which McFaline test
+truth was opened once. On 543 tasks, 380 perturbation clusters and three
+strata, the zero-target-error-label Shared HGB improves U20 over magnitude from
+`-0.141916` to `0.590130` (delta `+0.732046`, 95% cluster interval
+`[+0.555438,+0.878654]`). A McFaline-validation-adapted learned-public HGB
+reaches `0.613336`. Both registered external gates pass, including coverage,
+AURC and high-risk miss-rate safeguards.
 
-> A cross-architecture post-hoc reliability system can combine a shared,
-> quality-audited public experimental memory with model-version-specific OOF
-> error memory; the public-memory contribution is supported on TxPert DEV/SEEN,
-> while external generalisation and continual adaptation remain confirmation
-> tests.
+The paper route is therefore frozen as **Continual Public-Memory SafeConf**.
+Error Memory remains an optional version-specific deployment component and a
+negative boundary; it is not required for the main performance claim. The
+paper claim is:
+
+> A post-hoc reliability system can share a quality-audited public experimental
+> memory across frozen perturbation predictors and transfer its risk core to an
+> independent study/model without target-predictor error labels. Public-memory
+> growth is coverage dependent, so updates are protected by release/rollback
+> gates. Model-specific error adaptation is supported as an auditable optional
+> lifecycle component, with no universal performance-gain claim.

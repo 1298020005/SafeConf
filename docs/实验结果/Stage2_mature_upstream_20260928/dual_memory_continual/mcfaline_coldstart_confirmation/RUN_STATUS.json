@@ -1,0 +1,12 @@
+{
+  "status": "COMPLETE",
+  "test_truth_opened_once": true,
+  "n_tasks": 543,
+  "n_clusters": 380,
+  "n_strata": 3,
+  "bootstrap_replicates": 5000,
+  "primary_method": "ZeroLabelSharedHGB",
+  "primary_gate_passed": true,
+  "secondary_method": "ValidationAdapted_LearnedPublic_HGB",
+  "secondary_gate_passed": true
+}

@@ -29,3 +29,28 @@
 - **Raw DecoderOnly:** narrowly failed the strict point rule. RMSE was `0.022477`, relative gap `+2.0145%`, cluster CI `[+1.3771%, +2.6443%]`, and 2/3 strata were non-inferior.
 - **Single registered Decoder repair:** perturbation-cluster OOF convex shrinkage achieved RMSE `0.021841`, improving on the baseline by `0.8734%` with cluster CI `[0.6601%, 1.0882%]` in the favorable direction and 3/3 non-inferior strata. Fold Decoder weights were `0.50/0.25/0.25/0.25/0.25`; the all-validation test-time weight is `0.25`.
 - **Decision:** select validation-calibrated DecoderOnly as the sole external upstream. Selection used upstream competence only; no SafeConf score or test truth was available.
+
+## McFaline cold-start confirmation
+
+- **Pre-truth seal:** upstream, task manifest, public learner, risk learners and
+  543 test risk predictions were hashed and committed at `ddbf427`.
+- **Primary result:** zero-target-error-label Shared HGB improves macro U20 over
+  magnitude by `+0.732046`, with 5,000-draw perturbation-cluster interval
+  `[+0.555438,+0.878654]`; all three external strata improve.
+- **Secondary result:** validation-adapted learned-public HGB improves macro U20
+  by `+0.755252`, interval `[+0.603968,+0.910664]`.
+- **Decision:** both registered gates pass. Freeze the continual Public-Memory
+  paper route; do not repair the method or switch the primary row after test.
+
+## Sealing terminology correction
+
+The bounded validation competence audit aggregated only train/validation
+targets and never emitted, summarized or used a test-derived value. Its CSR
+reader nevertheless materialized full 1,000-row HDF5 blocks before masking,
+which means some test-expression bytes were transiently loaded by the process.
+No test statistic was computed or visible and all method choices remained
+outcome blinded, but `physically unread` is too strong a description for that
+stage. The external evidence is therefore described as **outcome-blinded and
+pre-truth-hash sealed**. The later pre-truth test pipeline was stricter: it read
+only metadata and exact control-row expression until the one-shot evaluator was
+authorized after commit `ddbf427`.
