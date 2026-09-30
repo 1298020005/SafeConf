@@ -1,0 +1,9 @@
+{
+  "status": "COMPLETE",
+  "evidence_role": "post_confirmation_protocol_specified_ablation",
+  "sealed_primary_reproduction_max_abs_difference": 9.71445146547012e-17,
+  "bootstrap_replicates": 5000,
+  "shuffle_replicates": 500,
+  "test_truth_was_already_opened_by_confirmation": true,
+  "primary_method_changed": false
+}

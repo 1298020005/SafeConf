@@ -41,6 +41,14 @@
   by `+0.755252`, interval `[+0.603968,+0.910664]`.
 - **Decision:** both registered gates pass. Freeze the continual Public-Memory
   paper route; do not repair the method or switch the primary row after test.
+- **Protocol-specified ablation:** zero-label Universal-P reaches U20 `0.039254`
+  versus `0.590130` for learned Public Memory; delta CI
+  `[+0.372000,+0.724736]`. Manual Public Memory is higher on U20 (`0.638174`)
+  but lower on global Spearman/AURC, and the learned-minus-manual U20 interval
+  crosses zero. This does not trigger a method switch.
+- **Shortcut controls:** within-stratum history shuffle reduces mean U20 to
+  `0.001409`; matched-support content shuffle reduces it to `0.480038` with
+  empirical p `0.003992` against the actual learned-public score.
 
 ## Sealing terminology correction
 

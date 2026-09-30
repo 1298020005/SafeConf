@@ -247,6 +247,23 @@ the repaired learned HGB was stronger on TxPert. We therefore attribute the
 main contribution to shared Public Memory and risk transfer, rather than a
 universal advantage of one retrieval learner.
 
+### 5.6 Public-memory ablation and shortcut rejection
+
+Under the same zero-target-error-label contract, a source-trained Universal-P
+core obtains Utility@20 `0.039254`; adding learned Public Memory raises this to
+`0.590130` (delta `0.550876`, 95% cluster interval
+`[0.372000,0.724736]`). Manual Public Memory obtains `0.638174`, while learned
+Public Memory has stronger global Spearman and AURC. The learned-minus-manual
+U20 interval crosses zero, so we do not claim a universally superior retrieval
+learner.
+
+Shuffling public-history features within each external stratum reduces mean
+U20 to `0.001409`. Shuffling task-specific history content among tasks with
+matched support reduces it to `0.480038`, below the actual `0.590130`; only
+`0.4%` of matched-support shuffles equal or exceed the actual score. These
+controls show that Public Memory contributes task-specific content beyond
+context identity and history volume.
+
 ## 6. Discussion and current decision
 
 The independent confirmation supports Public Memory + Shared Risk Core as the

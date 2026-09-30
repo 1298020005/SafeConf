@@ -112,3 +112,25 @@ paired perturbation-cluster 95% interval `[+0.555438,+0.878654]`. All three
 external strata improve and the preregistered safety endpoints pass. The table
 reports every frozen method; it does not replace the primary method with the
 best post-unseal row.
+
+## Table 8 — External zero-label ablation and shortcut tests
+
+| zero-label method | U20 | Spearman | AURC |
+|---|---:|---:|---:|
+| Universal prediction evidence | 0.039254 | -0.071457 | 0.022349 |
+| Manual Public Memory | **0.638174** | 0.230513 | 0.021388 |
+| Learned Public Memory | 0.590130 | **0.420956** | **0.020836** |
+
+Learned Public Memory improves U20 over Universal-P by `+0.550876`, with
+cluster CI `[+0.372000,+0.724736]`. Its U20 difference from manual aggregation
+is `-0.048044`, CI `[-0.088364,+0.048446]`; learned retrieval is not claimed to
+dominate simple support weighting.
+
+| negative control | mean U20 | 95% shuffle range | empirical p against actual 0.590130 |
+|---|---:|---:|---:|
+| within-stratum history shuffle | 0.001409 | [-0.101949, 0.123557] | 0.001996 |
+| matched-support content shuffle | 0.480038 | [0.389257, 0.567568] | 0.003992 |
+
+The matched-support control shows that task-specific historical content adds
+information beyond history volume. The within-stratum control rules out a
+pure dataset/context-identity explanation.
