@@ -1,0 +1,15 @@
+{
+  "schema": "SafeConf-McFaline-Pretruth-Predictions-v1",
+  "status": "COMPLETE",
+  "n_tasks": 543,
+  "n_perturbation_clusters": 380,
+  "n_strata": 3,
+  "n_genes": 512,
+  "decoder_validation_alpha": 0.25,
+  "effect_contract": "predicted treated state minus observed test control; convex validation calibration",
+  "test_control_expression_accessed": true,
+  "test_treated_expression_accessed": false,
+  "task_manifest_sha256": "fa75426427a4e9c0e7494bdfaa2b47768a8f90be8cdacfc588f7eaffb9e3c200",
+  "split_sha256": "08a6558a68599b3703f626c8da72a1603486edd94a3f34dfc9fa7c9b6181b091",
+  "calibrated_effects_sha256": "1cd6efeef34d58d7187656cb3eefd32cb5c333522d151cf0441b971a6c8182c8"
+}

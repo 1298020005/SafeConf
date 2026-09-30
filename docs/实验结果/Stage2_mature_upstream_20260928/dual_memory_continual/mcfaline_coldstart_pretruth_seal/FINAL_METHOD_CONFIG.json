@@ -1,0 +1,26 @@
+{
+  "schema": "SafeConf-McFaline-ColdStart-Risk-Seal-v1",
+  "status": "SEALED_BEFORE_TEST_TRUTH",
+  "primary_external_method": "ZeroLabelSharedHGB",
+  "secondary_external_method": "ValidationAdapted_LearnedPublic_HGB",
+  "primary_definition": "Shared HGB fit with TxPert error labels only; McFaline public biology learner uses validation biological effects but no McFaline upstream errors",
+  "secondary_definition": "Shared HGB fit with McFaline validation upstream errors; held-out test comparison",
+  "public_learner": "HGB transfer RMSE; fixed 50:50 learned/support weights",
+  "risk_learner": {
+    "type": "HistGradientBoostingRegressor",
+    "max_iter": 200,
+    "learning_rate": 0.05,
+    "max_depth": 3,
+    "min_samples_leaf": 20,
+    "l2_regularization": 10.0,
+    "random_state": 20260930
+  },
+  "test_treated_expression_opened": false,
+  "n_test_tasks": 543,
+  "n_test_clusters": 380,
+  "n_test_strata": 3,
+  "risk_predictions_sha256": "501d7ec4a7377136c59fd46454036aaccf6fc89c17b600c7cf67fcbae5a12e48",
+  "risk_models_sha256": "00a3979527cf9f772744a8599ab0d005e600eb6af350b0265b5e59b67690c1cb",
+  "test_features_sha256": "43ad45a96e75c425c1966acc94d4feca2023dad2f20e6430e084144e3882c958",
+  "source_txpert_features_sha256": "fe93b1b492258cc39bb70fe50b31135dcbe4bdf051aa6b4028aa8c16af86609c"
+}

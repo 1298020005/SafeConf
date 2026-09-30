@@ -1,0 +1,20 @@
+{
+  "schema": "SafeConf-McFaline-Test-Prediction-Manifest-v1",
+  "n_test_cells_metadata": 69028,
+  "n_test_treated_cells_metadata": 55935,
+  "n_test_tasks": 543,
+  "n_perturbation_clusters": 380,
+  "n_strata": 3,
+  "h5ad_expression_accessed": false,
+  "test_treated_expression_accessed": false,
+  "metadata_columns_read": [
+    "condition",
+    "cell_type",
+    "treatment",
+    "perturbation",
+    "control"
+  ],
+  "split_sha256": "08a6558a68599b3703f626c8da72a1603486edd94a3f34dfc9fa7c9b6181b091",
+  "task_manifest_sha256": "fa75426427a4e9c0e7494bdfaa2b47768a8f90be8cdacfc588f7eaffb9e3c200",
+  "prediction_input_sha256": "5fb905318c95babf7774516c355ae6be584603608a271370053018685d98158d"
+}
