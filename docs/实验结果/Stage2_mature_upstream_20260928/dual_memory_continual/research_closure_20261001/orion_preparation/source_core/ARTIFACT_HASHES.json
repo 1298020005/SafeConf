@@ -1,0 +1,507 @@
+[
+  {
+    "path": "GENE_IDS.json",
+    "bytes": 37116,
+    "sha256": "b7f80db0c0e46dd7667cb83f39153c4add31948ca00e5391c210b9c6a18d7c68"
+  },
+  {
+    "path": "GENE_MANIFEST.csv",
+    "bytes": 122617,
+    "sha256": "c1c9c8041458275248514d960c6c263a72f43a12a8d48c16f77759d2342fa08f"
+  },
+  {
+    "path": "MODEL_MANIFEST.json",
+    "bytes": 8934,
+    "sha256": "c8d9d5003860d8a5e117398a7d44b5c67cfb700c6fb56f37bcf04a5d549909a6"
+  },
+  {
+    "path": "NESTED_ISOLATION_AUDIT.csv",
+    "bytes": 4134,
+    "sha256": "3638430c8a8688f059b70a141cacbe433ea921b943b3f2276dad043c81081f93"
+  },
+  {
+    "path": "PUBLIC_BIOLOGY_SOURCE_OOF.csv.gz",
+    "bytes": 127218,
+    "sha256": "af346de62776bd5e3cd52db47f25cf09ea8ea760def001d10a1f10dce14dd4bf"
+  },
+  {
+    "path": "SOURCE_CONTROLS.npy",
+    "bytes": 47514368,
+    "sha256": "deabc91e301e3cefe455723a6abc1b08970c091b7d107dc5c467ebe39dc3e230"
+  },
+  {
+    "path": "SOURCE_ERROR_CDF.json",
+    "bytes": 108918,
+    "sha256": "ebd7390593cfc0bf71fbcab2c9c992d62990b57d729f59a6867ad98265a2bc01"
+  },
+  {
+    "path": "SOURCE_ERROR_CDF_ARRAYS.npz",
+    "bytes": 28831,
+    "sha256": "559720603661cf923e312f6053b7d35ec82a82209b192709f69241d7dd3b4d61"
+  },
+  {
+    "path": "SOURCE_ERROR_CDF_AUDIT.csv",
+    "bytes": 3227,
+    "sha256": "b70a24234b51e3cba8bf2125ff52657ac4d0aa0426b844d312c86b0162906540"
+  },
+  {
+    "path": "SOURCE_FEATURE_MANIFEST.json",
+    "bytes": 16172,
+    "sha256": "b74b9dfbc64f5acc82b7b0d34023aa6a523bd11d1904ced7fd638c5bec4ef2d1"
+  },
+  {
+    "path": "SOURCE_FINAL_RISK_FIT_PREDICTIONS.parquet",
+    "bytes": 253030,
+    "sha256": "10b341a870a365c25d178a8da31a4c0536abb6a8424e1489348df3b22a02ab85"
+  },
+  {
+    "path": "SOURCE_INPUT_HASHES.json",
+    "bytes": 3436,
+    "sha256": "12e058d3725fa989b3da543c136c169efd90dbcba28a8a8c2cce4c4033769715"
+  },
+  {
+    "path": "SOURCE_Learned_RISK_FEATURES.npy",
+    "bytes": 376192,
+    "sha256": "356aa0114ff54708aa0d381e2bb26152f33e5ad448d19f065fde98d2256e3bcb"
+  },
+  {
+    "path": "SOURCE_Manual_RISK_FEATURES.npy",
+    "bytes": 376192,
+    "sha256": "1f5e660ee827bdf3a53057f0251325564dea7eb1f71e8494e515cc8111d67e80"
+  },
+  {
+    "path": "SOURCE_OOF_Learned_PRIOR_EFFECTS.npy",
+    "bytes": 47514368,
+    "sha256": "7359ef9dae8d39aad9fd7c70fcec002a9bdaaed4d62bffa7e64df51d55fc1678"
+  },
+  {
+    "path": "SOURCE_OOF_Manual_PRIOR_EFFECTS.npy",
+    "bytes": 47514368,
+    "sha256": "b3b0d3c49ba82eea8e596c04f7404bb0d15b467d1a5dd2698dfb4e3e84dbb211"
+  },
+  {
+    "path": "SOURCE_OOF_PRIOR_SUMMARY.parquet",
+    "bytes": 137598,
+    "sha256": "1e286903c021029f2ef174cfd629d72e8767b71912227e679a1def8580303621"
+  },
+  {
+    "path": "SOURCE_OOF_Uniform_PRIOR_EFFECTS.npy",
+    "bytes": 47514368,
+    "sha256": "ed40956acfaafeebb1777783c68b4f7f937b4db74cb93483370d2c99735fb4d9"
+  },
+  {
+    "path": "SOURCE_ORIGINAL_STUDY_SIDECAR.csv",
+    "bytes": 77957,
+    "sha256": "7eeff222ffef10cb34938d553313f63ae6da0629cd5557a426a7f064baa03403"
+  },
+  {
+    "path": "SOURCE_PUBLIC_BIOLOGY_FULL_HGB.joblib",
+    "bytes": 66883,
+    "sha256": "3a6f05d9b8060eb9802a6e5a0e6adf067253e57edd3aedd04b600a2f93578f5a"
+  },
+  {
+    "path": "SOURCE_PUBLIC_CONTROLS.npy",
+    "bytes": 52770368,
+    "sha256": "b045d003f1bca1d570cc75d3a03928ea77a18ce206411a932f3afc501e4c73d3"
+  },
+  {
+    "path": "SOURCE_PUBLIC_EFFECTS.npy",
+    "bytes": 52770368,
+    "sha256": "ea946b2c9a9a7ee1605af1f9b72e9cc250596ce6eb0dc08b7ab4aeed3d80c4aa"
+  },
+  {
+    "path": "SOURCE_PUBLIC_ELIGIBILITY.parquet",
+    "bytes": 33289,
+    "sha256": "ef2391be1ce3d0a9ac0d613810f9bbfd314fd00d5631436edbb22bdcdb6fc497"
+  },
+  {
+    "path": "SOURCE_PUBLIC_FULLFIT_TRANSFER_PREDICTIONS.npy",
+    "bytes": 38024,
+    "sha256": "b4e39004f000e8b321be6c8a5b2d264033dd529b8a1ac8d999c5670f21a4986f"
+  },
+  {
+    "path": "SOURCE_PUBLIC_MEMORY_METADATA.parquet",
+    "bytes": 58150,
+    "sha256": "fcfbd3300a012e3747c9642f5076d1407c509f46f66e4412522c5d9b8661c4bd"
+  },
+  {
+    "path": "SOURCE_PUBLIC_NESTED_TRANSFER_SCORES.npy",
+    "bytes": 189608,
+    "sha256": "47957651eca851ce505a8b9e5b5bd7de6cfda267077c05921fc32b6a2b10a110"
+  },
+  {
+    "path": "SOURCE_PUBLIC_NUMERIC_FEATURES.npy",
+    "bytes": 341192,
+    "sha256": "46748615b70db7c038115101ba1b692d070be6bcddcf92230dea129db523b5f8"
+  },
+  {
+    "path": "SOURCE_PUBLIC_OOF_TRANSFER_SCORES.npy",
+    "bytes": 38024,
+    "sha256": "bd6a956717b7aae02462d60dad19dcad90f2b5918c4336fcac387d9fdcf3b787"
+  },
+  {
+    "path": "SOURCE_PUBLIC_OUTER_TRAIN_PAIR_MASKS.npy",
+    "bytes": 23813,
+    "sha256": "4bcc36b176cf0a5881e25f0b428ad25a1f0448e556d607a1717695dc715b9bf4"
+  },
+  {
+    "path": "SOURCE_PUBLIC_PAIR_FEATURES.parquet",
+    "bytes": 402148,
+    "sha256": "55b03dcfc7de06bf10e3983f5bca995f8f84196f03336559e4b54f35637bd958"
+  },
+  {
+    "path": "SOURCE_PUBLIC_TRANSFER_RMSE_LABELS.npy",
+    "bytes": 38024,
+    "sha256": "86ecc9ec8ff547e91a5524fa64d2acfd5cd86ef75e0b658600dd57c6ed938a62"
+  },
+  {
+    "path": "SOURCE_P_only_RISK_FEATURES.npy",
+    "bytes": 173696,
+    "sha256": "1220e958330da81163a2e1c877e67ba94f6cada3e5122e1c87fdf6435866db3b"
+  },
+  {
+    "path": "SOURCE_RISK_Learned_hgb.joblib",
+    "bytes": 78050,
+    "sha256": "a605d30c12eee46fe4b2b1af64d5eed5edfcf042cdb781fdb75883a6f9454f7d"
+  },
+  {
+    "path": "SOURCE_RISK_Learned_ridge.joblib",
+    "bytes": 1205,
+    "sha256": "f4d332b16c79b410fb71fe461f18777c7bd9899a1b6971312142fe56177fae0e"
+  },
+  {
+    "path": "SOURCE_RISK_MIDRANK_LABELS.npy",
+    "bytes": 29056,
+    "sha256": "5d0b267cc66830f17c869521d5ff4f3b7186ab380a9692490782d929d7f3b24d"
+  },
+  {
+    "path": "SOURCE_RISK_Manual_hgb.joblib",
+    "bytes": 79239,
+    "sha256": "1c0a78127b4aaf4349761b569c63fb4f6f74925ddc303221d8393c5b5e3eed42"
+  },
+  {
+    "path": "SOURCE_RISK_Manual_ridge.joblib",
+    "bytes": 1203,
+    "sha256": "de485ad5899827618416a8d73f9f7137da7a4b26aefc395a67304ad9e8b3c955"
+  },
+  {
+    "path": "SOURCE_RISK_P_only_hgb.joblib",
+    "bytes": 61512,
+    "sha256": "4b3206c9183e5c38e62c2b1ce0e2185f711102e23ac8ff3fc52d930eed150cc7"
+  },
+  {
+    "path": "SOURCE_RISK_P_only_ridge.joblib",
+    "bytes": 881,
+    "sha256": "68019b2ea0c6a332049089da100e18515e05cabebbd1fa6f4fcf24d4d112d42d"
+  },
+  {
+    "path": "SOURCE_TASKS.parquet",
+    "bytes": 95447,
+    "sha256": "6bd02a0cff8f41ea48ad9566622bbebe923db56db64a8d20a4597fce53725013"
+  },
+  {
+    "path": "SOURCE_TRUE_EFFECTS.npy",
+    "bytes": 47514368,
+    "sha256": "793574054c0724b17394449b2442a8c77b03524552135b649afce63b05b670c9"
+  },
+  {
+    "path": "SOURCE_TxPert_Exphormer_CONTROLS.npy",
+    "bytes": 47514368,
+    "sha256": "deabc91e301e3cefe455723a6abc1b08970c091b7d107dc5c467ebe39dc3e230"
+  },
+  {
+    "path": "SOURCE_TxPert_Exphormer_PREDICTED_EFFECTS.npy",
+    "bytes": 47514368,
+    "sha256": "09ab060655dd5c8f45916e07b905666e38ca7edd89dff7d21edd6095f1397cd3"
+  },
+  {
+    "path": "SOURCE_TxPert_Exphormer_P_BASE.parquet",
+    "bytes": 619717,
+    "sha256": "cbe27ab4f0ea6d4323a5602e7d054b0cb651ea89c76f9a2ba563f0989399edfb"
+  },
+  {
+    "path": "SOURCE_TxPert_GAT_CONTROLS.npy",
+    "bytes": 47514368,
+    "sha256": "deabc91e301e3cefe455723a6abc1b08970c091b7d107dc5c467ebe39dc3e230"
+  },
+  {
+    "path": "SOURCE_TxPert_GAT_PREDICTED_EFFECTS.npy",
+    "bytes": 47514368,
+    "sha256": "89c65ee852ae3bf8473e4f4bfc5f1821970b735923052c5d3c87f6aa8e431c24"
+  },
+  {
+    "path": "SOURCE_TxPert_GAT_P_BASE.parquet",
+    "bytes": 421804,
+    "sha256": "23ee4a6673349dad3891d20a97230444e36fac8aed4a754197e6d6e873f82a48"
+  },
+  {
+    "path": "SPLIT_MANIFEST.csv",
+    "bytes": 56917,
+    "sha256": "350e53a18f54108eef56062b96875f5ca0ad3d1095eb155aa2303eb35422aa71"
+  },
+  {
+    "path": "nested_0_Learned_PRIOR_EFFECTS.npy",
+    "bytes": 47514368,
+    "sha256": "d3349550c135cf3c3192c33dafbf21fab444875b806233ba267162836e4e9a22"
+  },
+  {
+    "path": "nested_0_Manual_PRIOR_EFFECTS.npy",
+    "bytes": 47514368,
+    "sha256": "b3b0d3c49ba82eea8e596c04f7404bb0d15b467d1a5dd2698dfb4e3e84dbb211"
+  },
+  {
+    "path": "nested_0_PRIOR_SUMMARY.parquet",
+    "bytes": 137574,
+    "sha256": "f86e732f5fb765c48b7acd6dc72cb09aa785c70cc651a0989cb9c4e29055dbd5"
+  },
+  {
+    "path": "nested_0_TxPert_Exphormer_Learned.parquet",
+    "bytes": 730051,
+    "sha256": "4cbcf696fdc2df8907e7c1810f633693753b335ee826ff6feb5c45221a1923b9"
+  },
+  {
+    "path": "nested_0_TxPert_Exphormer_Manual.parquet",
+    "bytes": 729827,
+    "sha256": "73e8359e19c7f830ef0fa9d394ad03df68b2bb8c609da64fff3777911a66efd3"
+  },
+  {
+    "path": "nested_0_TxPert_Exphormer_Uniform.parquet",
+    "bytes": 714774,
+    "sha256": "84ecf47fe301d6475967b1d248f3cbac141d81e0cb01863198e0f42cd03394ec"
+  },
+  {
+    "path": "nested_0_TxPert_GAT_Learned.parquet",
+    "bytes": 532140,
+    "sha256": "173471dc8238d32b76f631f579ea667228d455fc3f1bd75b07af19761d270b4f"
+  },
+  {
+    "path": "nested_0_TxPert_GAT_Manual.parquet",
+    "bytes": 531916,
+    "sha256": "7bcdedde5db8bc0fa214a016750eb365be547c4b336d5e0ec89c652f49c5bc0a"
+  },
+  {
+    "path": "nested_0_TxPert_GAT_Uniform.parquet",
+    "bytes": 516863,
+    "sha256": "00f04f1cb6bd0be77e038804fc97e43877e17f303e356c9feec7cddd2cc1bd98"
+  },
+  {
+    "path": "nested_0_Uniform_PRIOR_EFFECTS.npy",
+    "bytes": 47514368,
+    "sha256": "ed40956acfaafeebb1777783c68b4f7f937b4db74cb93483370d2c99735fb4d9"
+  },
+  {
+    "path": "nested_1_Learned_PRIOR_EFFECTS.npy",
+    "bytes": 47514368,
+    "sha256": "ed7226b315399c62094d7a9b49b09477e7dcf6fc71f096b12a0719db610fa581"
+  },
+  {
+    "path": "nested_1_Manual_PRIOR_EFFECTS.npy",
+    "bytes": 47514368,
+    "sha256": "b3b0d3c49ba82eea8e596c04f7404bb0d15b467d1a5dd2698dfb4e3e84dbb211"
+  },
+  {
+    "path": "nested_1_PRIOR_SUMMARY.parquet",
+    "bytes": 137598,
+    "sha256": "c753eb38f3a2b71ab744e6f36765e24f3b1b3a69b0034b68af9ec622d8c283ee"
+  },
+  {
+    "path": "nested_1_TxPert_Exphormer_Learned.parquet",
+    "bytes": 730083,
+    "sha256": "08f7c1228834446e967a378ab5077418d20ba3371ceb741619a916d9d276b69b"
+  },
+  {
+    "path": "nested_1_TxPert_Exphormer_Manual.parquet",
+    "bytes": 729827,
+    "sha256": "73e8359e19c7f830ef0fa9d394ad03df68b2bb8c609da64fff3777911a66efd3"
+  },
+  {
+    "path": "nested_1_TxPert_Exphormer_Uniform.parquet",
+    "bytes": 714774,
+    "sha256": "84ecf47fe301d6475967b1d248f3cbac141d81e0cb01863198e0f42cd03394ec"
+  },
+  {
+    "path": "nested_1_TxPert_GAT_Learned.parquet",
+    "bytes": 532172,
+    "sha256": "ea58f7033afe9e8e506b6c0d25671b81715cc1105104a0a37ca9f0702df72e7b"
+  },
+  {
+    "path": "nested_1_TxPert_GAT_Manual.parquet",
+    "bytes": 531916,
+    "sha256": "7bcdedde5db8bc0fa214a016750eb365be547c4b336d5e0ec89c652f49c5bc0a"
+  },
+  {
+    "path": "nested_1_TxPert_GAT_Uniform.parquet",
+    "bytes": 516863,
+    "sha256": "00f04f1cb6bd0be77e038804fc97e43877e17f303e356c9feec7cddd2cc1bd98"
+  },
+  {
+    "path": "nested_1_Uniform_PRIOR_EFFECTS.npy",
+    "bytes": 47514368,
+    "sha256": "ed40956acfaafeebb1777783c68b4f7f937b4db74cb93483370d2c99735fb4d9"
+  },
+  {
+    "path": "nested_2_Learned_PRIOR_EFFECTS.npy",
+    "bytes": 47514368,
+    "sha256": "1b70c3058ac2880ef3d36b648a67fd3ef3b923d728458b7b351bbc06e5207ba6"
+  },
+  {
+    "path": "nested_2_Manual_PRIOR_EFFECTS.npy",
+    "bytes": 47514368,
+    "sha256": "b3b0d3c49ba82eea8e596c04f7404bb0d15b467d1a5dd2698dfb4e3e84dbb211"
+  },
+  {
+    "path": "nested_2_PRIOR_SUMMARY.parquet",
+    "bytes": 137590,
+    "sha256": "9720b55d8aaca78a2afbb9b4f20f30787a66d588a5a350939493698b190d0d30"
+  },
+  {
+    "path": "nested_2_TxPert_Exphormer_Learned.parquet",
+    "bytes": 730075,
+    "sha256": "a3931b9d0513171b6cb7600e16b1924fb004b85f79a49af9f9d4b5df002ee9af"
+  },
+  {
+    "path": "nested_2_TxPert_Exphormer_Manual.parquet",
+    "bytes": 729827,
+    "sha256": "73e8359e19c7f830ef0fa9d394ad03df68b2bb8c609da64fff3777911a66efd3"
+  },
+  {
+    "path": "nested_2_TxPert_Exphormer_Uniform.parquet",
+    "bytes": 714774,
+    "sha256": "84ecf47fe301d6475967b1d248f3cbac141d81e0cb01863198e0f42cd03394ec"
+  },
+  {
+    "path": "nested_2_TxPert_GAT_Learned.parquet",
+    "bytes": 532164,
+    "sha256": "0713684ee290e3e055dac12a306b1d6b301299ef6eda5217023826d0835b4818"
+  },
+  {
+    "path": "nested_2_TxPert_GAT_Manual.parquet",
+    "bytes": 531916,
+    "sha256": "7bcdedde5db8bc0fa214a016750eb365be547c4b336d5e0ec89c652f49c5bc0a"
+  },
+  {
+    "path": "nested_2_TxPert_GAT_Uniform.parquet",
+    "bytes": 516863,
+    "sha256": "00f04f1cb6bd0be77e038804fc97e43877e17f303e356c9feec7cddd2cc1bd98"
+  },
+  {
+    "path": "nested_2_Uniform_PRIOR_EFFECTS.npy",
+    "bytes": 47514368,
+    "sha256": "ed40956acfaafeebb1777783c68b4f7f937b4db74cb93483370d2c99735fb4d9"
+  },
+  {
+    "path": "nested_3_Learned_PRIOR_EFFECTS.npy",
+    "bytes": 47514368,
+    "sha256": "a51efd17b9f192bf42be64372d36360e67a9cac2bbb2d5c027a9729842e1ea3e"
+  },
+  {
+    "path": "nested_3_Manual_PRIOR_EFFECTS.npy",
+    "bytes": 47514368,
+    "sha256": "b3b0d3c49ba82eea8e596c04f7404bb0d15b467d1a5dd2698dfb4e3e84dbb211"
+  },
+  {
+    "path": "nested_3_PRIOR_SUMMARY.parquet",
+    "bytes": 137595,
+    "sha256": "486ccbfe2c65d86df64ca6575595f42a372cf116b12909e5f2536446702a98fe"
+  },
+  {
+    "path": "nested_3_TxPert_Exphormer_Learned.parquet",
+    "bytes": 730075,
+    "sha256": "92e63ed26dda12163887f30763e7f9e2974534376e6304631f23a3e0155509fd"
+  },
+  {
+    "path": "nested_3_TxPert_Exphormer_Manual.parquet",
+    "bytes": 729827,
+    "sha256": "73e8359e19c7f830ef0fa9d394ad03df68b2bb8c609da64fff3777911a66efd3"
+  },
+  {
+    "path": "nested_3_TxPert_Exphormer_Uniform.parquet",
+    "bytes": 714774,
+    "sha256": "84ecf47fe301d6475967b1d248f3cbac141d81e0cb01863198e0f42cd03394ec"
+  },
+  {
+    "path": "nested_3_TxPert_GAT_Learned.parquet",
+    "bytes": 532164,
+    "sha256": "6f9c209e290b97e9392d1c93d87f7447360d8280f2b373c5a994ba3de10fc23c"
+  },
+  {
+    "path": "nested_3_TxPert_GAT_Manual.parquet",
+    "bytes": 531916,
+    "sha256": "7bcdedde5db8bc0fa214a016750eb365be547c4b336d5e0ec89c652f49c5bc0a"
+  },
+  {
+    "path": "nested_3_TxPert_GAT_Uniform.parquet",
+    "bytes": 516863,
+    "sha256": "00f04f1cb6bd0be77e038804fc97e43877e17f303e356c9feec7cddd2cc1bd98"
+  },
+  {
+    "path": "nested_3_Uniform_PRIOR_EFFECTS.npy",
+    "bytes": 47514368,
+    "sha256": "ed40956acfaafeebb1777783c68b4f7f937b4db74cb93483370d2c99735fb4d9"
+  },
+  {
+    "path": "nested_4_Learned_PRIOR_EFFECTS.npy",
+    "bytes": 47514368,
+    "sha256": "df7308e5734ddda59aaa3b75f10ef9be9c1a6e3a0cfb2e5ad7a80b642747e37e"
+  },
+  {
+    "path": "nested_4_Manual_PRIOR_EFFECTS.npy",
+    "bytes": 47514368,
+    "sha256": "b3b0d3c49ba82eea8e596c04f7404bb0d15b467d1a5dd2698dfb4e3e84dbb211"
+  },
+  {
+    "path": "nested_4_PRIOR_SUMMARY.parquet",
+    "bytes": 137590,
+    "sha256": "49a367cba7c51e51673ade3c7b7f5cf00595d98f78f46b3b41f4fc9a64968aa0"
+  },
+  {
+    "path": "nested_4_TxPert_Exphormer_Learned.parquet",
+    "bytes": 730059,
+    "sha256": "58862011233f1602b0f7055252c95d6cd0e1e666885e49df5e641cc8c561f08e"
+  },
+  {
+    "path": "nested_4_TxPert_Exphormer_Manual.parquet",
+    "bytes": 729827,
+    "sha256": "73e8359e19c7f830ef0fa9d394ad03df68b2bb8c609da64fff3777911a66efd3"
+  },
+  {
+    "path": "nested_4_TxPert_Exphormer_Uniform.parquet",
+    "bytes": 714774,
+    "sha256": "84ecf47fe301d6475967b1d248f3cbac141d81e0cb01863198e0f42cd03394ec"
+  },
+  {
+    "path": "nested_4_TxPert_GAT_Learned.parquet",
+    "bytes": 532148,
+    "sha256": "dfa6ef3d1c8f653111a83f524e12691a9817594844922eadf26e4d003876f98c"
+  },
+  {
+    "path": "nested_4_TxPert_GAT_Manual.parquet",
+    "bytes": 531916,
+    "sha256": "7bcdedde5db8bc0fa214a016750eb365be547c4b336d5e0ec89c652f49c5bc0a"
+  },
+  {
+    "path": "nested_4_TxPert_GAT_Uniform.parquet",
+    "bytes": 516863,
+    "sha256": "00f04f1cb6bd0be77e038804fc97e43877e17f303e356c9feec7cddd2cc1bd98"
+  },
+  {
+    "path": "nested_4_Uniform_PRIOR_EFFECTS.npy",
+    "bytes": 47514368,
+    "sha256": "ed40956acfaafeebb1777783c68b4f7f937b4db74cb93483370d2c99735fb4d9"
+  },
+  {
+    "path": "source_Learned.parquet",
+    "bytes": 1044409,
+    "sha256": "94cc84b25f8a87a6e302fb46e4a57849ef0cdba4a2c078532364012baa1fb5a6"
+  },
+  {
+    "path": "source_Manual.parquet",
+    "bytes": 1044152,
+    "sha256": "7402852b7b7676259e5a21584def1bf3525e25c4968fa4d6373b54e3fe3d6a6f"
+  },
+  {
+    "path": "source_Uniform.parquet",
+    "bytes": 1029033,
+    "sha256": "e90a0409bf15fd089744292dd20fb367aaf6a75ad2007af198b35e95c1e10c7f"
+  }
+]

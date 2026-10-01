@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "read_existing_macro_summary_only": true,
+  "new_test_truth_opened": false,
+  "same_weighted_hgb_primary_scores": [
+    {
+      "line": "Exphormer_to_GAT",
+      "reference": "Learned",
+      "canonical_hgb_utility20": 0.7831344174038858,
+      "probe_hgb_utility20": 0.7831344174038858,
+      "absolute_difference": 0.0
+    },
+    {
+      "line": "GAT_to_Exphormer",
+      "reference": "Learned",
+      "canonical_hgb_utility20": 0.7837434058355868,
+      "probe_hgb_utility20": 0.7837434058355868,
+      "absolute_difference": 0.0
+    },
+    {
+      "line": "Exphormer_to_GAT",
+      "reference": "Manual",
+      "canonical_hgb_utility20": 0.7805483551377033,
+      "probe_hgb_utility20": 0.7805483551377033,
+      "absolute_difference": 0.0
+    },
+    {
+      "line": "GAT_to_Exphormer",
+      "reference": "Manual",
+      "canonical_hgb_utility20": 0.7860076364544146,
+      "probe_hgb_utility20": 0.7860076364544146,
+      "absolute_difference": 0.0
+    }
+  ]
+}

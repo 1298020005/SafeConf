@@ -1,0 +1,9 @@
+target,source_original_study,same_original_study,n_edges,n_query_tasks,n_unique_memory
+K562,Nadig_2025,False,942,539,942
+K562,Replogle_2022,True,457,457,457
+RPE1,Nadig_2025,False,704,391,704
+RPE1,Replogle_2022,True,416,416,416
+hepg2,Nadig_2025,True,350,350,350
+hepg2,Replogle_2022,False,750,405,750
+jurkat,Nadig_2025,True,362,362,362
+jurkat,Replogle_2022,False,756,421,756

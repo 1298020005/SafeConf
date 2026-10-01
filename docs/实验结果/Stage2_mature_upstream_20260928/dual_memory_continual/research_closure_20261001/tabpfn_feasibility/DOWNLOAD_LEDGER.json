@@ -1,0 +1,247 @@
+{
+  "entries": [
+    {
+      "file": "LICENSE.txt",
+      "public_url": "https://huggingface.co/Prior-Labs/TabPFN-v2-reg/resolve/4972a65a1b30806315c6f92499959ffbfc69a673/LICENSE.txt",
+      "bytes": 11483,
+      "sha256": "08b1851b4b6136b5fb0cb124d3258e0d91e3e1623f1be5904b77e4d270d112d8",
+      "download_seconds": 1.9399838109966367,
+      "authentication_used": false
+    },
+    {
+      "file": "tabpfn-v2-regressor.ckpt",
+      "public_url": "https://huggingface.co/Prior-Labs/TabPFN-v2-reg/resolve/4972a65a1b30806315c6f92499959ffbfc69a673/tabpfn-v2-regressor.ckpt",
+      "bytes": 44390977,
+      "sha256": "2ab5a07d5c41dfe6db9aa7ae106fc6de898326c2765be66505a07e2868c10736",
+      "download_seconds": 10.749510150868446,
+      "authentication_used": false
+    }
+  ],
+  "total_new_download_bytes": 44402460,
+  "counts_toward_user_100GB_limit": true,
+  "repo_revision": "4972a65a1b30806315c6f92499959ffbfc69a673",
+  "gated": false,
+  "private": false,
+  "package_wheels": [
+    {
+      "name": "tabpfn",
+      "version": "9.0.0",
+      "public_url": "https://files.pythonhosted.org/packages/1f/38/e68d06cf83a30c19a044ee1a9b6260b7f2d9cc37c8575efa86fd8ae6a0b6/tabpfn-9.0.0-py3-none-any.whl",
+      "bytes": 827545,
+      "sha256": "0adb0e69be839051c7f9e92caadec93324cccc0256321bf967fda91e5c493f98",
+      "authentication_used": false,
+      "accounting": "conservative full wheel bytes including pre-existing pip cache"
+    },
+    {
+      "name": "einops",
+      "version": "0.8.2",
+      "public_url": "https://files.pythonhosted.org/packages/2a/09/f8d8f8f31e4483c10a906437b4ce31bdf3d6d417b73fe33f1a8b59e34228/einops-0.8.2-py3-none-any.whl",
+      "bytes": 65638,
+      "sha256": "54058201ac7087911181bfec4af6091bb59380360f069276601256a76af08193",
+      "authentication_used": false,
+      "accounting": "conservative full wheel bytes including pre-existing pip cache"
+    },
+    {
+      "name": "huggingface_hub",
+      "version": "2.1.1",
+      "public_url": "https://files.pythonhosted.org/packages/33/23/885b3a3b510c305f1d84421913935e19b6a48b93d173a0541674c1e88c2a/huggingface_hub-2.1.1-py3-none-any.whl",
+      "bytes": 838033,
+      "sha256": "d76fa1d8e6a59e01f012b1d88da604c099c7a0f2e26b1cc7d708f0a4283bd2a2",
+      "authentication_used": false,
+      "accounting": "conservative full wheel bytes including pre-existing pip cache"
+    },
+    {
+      "name": "lightgbm",
+      "version": "4.7.0",
+      "public_url": "https://files.pythonhosted.org/packages/15/eb/837ea3b40cc36e22eeebb9785c01e42b2c255d033eea1d2d9ee8e2540e55/lightgbm-4.7.0-py3-none-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "bytes": 3476028,
+      "sha256": "d23e922acd891e77212e4d0fbcee9ba973c96dee479491341d05ba595357ebb7",
+      "authentication_used": false,
+      "accounting": "conservative full wheel bytes including pre-existing pip cache"
+    },
+    {
+      "name": "pydantic",
+      "version": "2.13.5",
+      "public_url": "https://files.pythonhosted.org/packages/eb/47/c95ffc2009878c7aac0c5e08528022dcb885933252a88b5f170058014464/pydantic-2.13.5-py3-none-any.whl",
+      "bytes": 472589,
+      "sha256": "346a034f080da3755d8e9cb5e00e8b07de1d39e4f6e2c87d8ab7cafa0b269a73",
+      "authentication_used": false,
+      "accounting": "conservative full wheel bytes including pre-existing pip cache"
+    },
+    {
+      "name": "pydantic_core",
+      "version": "2.46.5",
+      "public_url": "https://files.pythonhosted.org/packages/c0/a4/eb9409ec0736e50aa70a412f16c204ed149516846912f7e6724d4c73ee53/pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "bytes": 2066284,
+      "sha256": "0fc5be0abd4a407e200d844b404e33639a554e7bd0d448e7b9ae181be4789ac2",
+      "authentication_used": false,
+      "accounting": "conservative full wheel bytes including pre-existing pip cache"
+    },
+    {
+      "name": "pydantic-settings",
+      "version": "2.15.0",
+      "public_url": "https://files.pythonhosted.org/packages/30/a4/2bffa9f8e804325a09867f0e9d30795c80ea9f8d62560bd1b6ad6220eb2f/pydantic_settings-2.15.0-py3-none-any.whl",
+      "bytes": 69413,
+      "sha256": "0ba092c291c94baceb5eff768aa0d56400a457585bc0175925a5a5510303da42",
+      "authentication_used": false,
+      "accounting": "conservative full wheel bytes including pre-existing pip cache"
+    },
+    {
+      "name": "safetensors",
+      "version": "0.8.0",
+      "public_url": "https://files.pythonhosted.org/packages/28/50/f203ff3a3ddfe19308efc83c5a3a29ed02bf786732ec35e68bf9162f3365/safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "bytes": 516040,
+      "sha256": "fd6f3f93c9a0a7cc2788ee63fb763353d4bd2e89b0751bc78fcf7dda00bea774",
+      "authentication_used": false,
+      "accounting": "conservative full wheel bytes including pre-existing pip cache"
+    },
+    {
+      "name": "skrub",
+      "version": "0.10.1",
+      "public_url": "https://files.pythonhosted.org/packages/0e/2d/492a8b0d0d8b344918312a6416c537e54081ca5d0aaf19d085a188905e41/skrub-0.10.1-py3-none-any.whl",
+      "bytes": 595919,
+      "sha256": "553c6f9b19a2cb97bba776a28255e7e024e77d4f50d7c6c70b4805f4e668a3cc",
+      "authentication_used": false,
+      "accounting": "conservative full wheel bytes including pre-existing pip cache"
+    },
+    {
+      "name": "annotated-types",
+      "version": "0.8.0",
+      "public_url": "https://files.pythonhosted.org/packages/99/91/8acff4f5e50511b911bbccb72b8628a49c68ce14148cd9f6431094859a90/annotated_types-0.8.0-py3-none-any.whl",
+      "bytes": 13427,
+      "sha256": "f072f4d804ea359e4eaf198b1af7a8b0943881a87f31bb764f8bf219bb9419e0",
+      "authentication_used": false,
+      "accounting": "conservative full wheel bytes including pre-existing pip cache"
+    },
+    {
+      "name": "click",
+      "version": "8.5.0",
+      "public_url": "https://files.pythonhosted.org/packages/58/50/6c0d534c5f134586a8e1ba4e330569e32f057e33372ae556463212fb4cd3/click-8.5.0-py3-none-any.whl",
+      "bytes": 125251,
+      "sha256": "255bc9599cf7748b4b1a446ccc735421bd08a2ae529a8b88597d3de5664ee360",
+      "authentication_used": false,
+      "accounting": "conservative full wheel bytes including pre-existing pip cache"
+    },
+    {
+      "name": "cloudpickle",
+      "version": "3.1.2",
+      "public_url": "https://files.pythonhosted.org/packages/88/39/799be3f2f0f38cc727ee3b4f1445fe6d5e4133064ec2e4115069418a5bb6/cloudpickle-3.1.2-py3-none-any.whl",
+      "bytes": 22228,
+      "sha256": "9acb47f6afd73f60dc1df93bb801b472f05ff42fa6c84167d25cb206be1fbf4a",
+      "authentication_used": false,
+      "accounting": "conservative full wheel bytes including pre-existing pip cache"
+    },
+    {
+      "name": "hf-xet",
+      "version": "1.6.0",
+      "public_url": "https://files.pythonhosted.org/packages/67/4e/a28359bf1c1ecf11eba22123168c138698f7cb576ac678f5a2e16cd5da08/hf_xet-1.6.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "bytes": 4464663,
+      "sha256": "d62671bb130879cef0ee4c9ebe47a14af6c66ec53e6d84dc15936e5ffdfac82f",
+      "authentication_used": false,
+      "accounting": "conservative full wheel bytes including pre-existing pip cache"
+    },
+    {
+      "name": "httpx2",
+      "version": "2.13.1",
+      "public_url": "https://files.pythonhosted.org/packages/d8/9c/6fe8931fd9f381042a9e4c7d5a7b4cbf7016b252bec0c99a49fce42c3326/httpx2-2.13.1-py3-none-any.whl",
+      "bytes": 95597,
+      "sha256": "6dff50fabc270ee5fd25d845d0b078ed20564579744d6d962850975996d2f9a4",
+      "authentication_used": false,
+      "accounting": "conservative full wheel bytes including pre-existing pip cache"
+    },
+    {
+      "name": "httpcore2",
+      "version": "2.13.1",
+      "public_url": "https://files.pythonhosted.org/packages/09/ba/a4568248771ce81957bfb7cc600264a40fbcda092391ee1c415c50be4bea/httpcore2-2.13.1-py3-none-any.whl",
+      "bytes": 83423,
+      "sha256": "e1e05d4f25f7d7d496bfb96748f6f4b67657b03da069b3a68c36069f3db73d0a",
+      "authentication_used": false,
+      "accounting": "conservative full wheel bytes including pre-existing pip cache"
+    },
+    {
+      "name": "narwhals",
+      "version": "2.26.0",
+      "public_url": "https://files.pythonhosted.org/packages/40/b5/1b84b2c784db76d69442334bc8b8748c840f13ca53be086f4f250ad4a0bc/narwhals-2.26.0-py3-none-any.whl",
+      "bytes": 474034,
+      "sha256": "29326d74f107c347fd1009bd58e38d9f7c7c5b51e6de97bc93dbc325d9038b54",
+      "authentication_used": false,
+      "accounting": "conservative full wheel bytes including pre-existing pip cache"
+    },
+    {
+      "name": "python-dotenv",
+      "version": "1.2.4",
+      "public_url": "https://files.pythonhosted.org/packages/60/d1/38f3a3405989a89ac18390803e70c6ad7c7760da4f9b83cbeca0c44a0c72/python_dotenv-1.2.4-py3-none-any.whl",
+      "bytes": 23266,
+      "sha256": "42269a8a5b3fd54ffa6f3d84b18abed50064717576b4ecf03dc4a55d8aa04fdc",
+      "authentication_used": false,
+      "accounting": "conservative full wheel bytes including pre-existing pip cache"
+    },
+    {
+      "name": "typing-inspection",
+      "version": "0.4.4",
+      "public_url": "https://files.pythonhosted.org/packages/67/81/4add07e5172b7ac40d8ed5ff580409a7801a4fe26d529bdd915401dabfbe/typing_inspection-0.4.4-py3-none-any.whl",
+      "bytes": 14750,
+      "sha256": "65b8397ba37ccbce054456aaccddfc91e6e3083c92824df348d96ca832f3f147",
+      "authentication_used": false,
+      "accounting": "conservative full wheel bytes including pre-existing pip cache"
+    },
+    {
+      "name": "pydot",
+      "version": "4.0.1",
+      "public_url": "https://files.pythonhosted.org/packages/7e/32/a7125fb28c4261a627f999d5fb4afff25b523800faed2c30979949d6facd/pydot-4.0.1-py3-none-any.whl",
+      "bytes": 37087,
+      "sha256": "869c0efadd2708c0be1f916eb669f3d664ca684bc57ffb7ecc08e70d5e93fee6",
+      "authentication_used": false,
+      "accounting": "conservative full wheel bytes including pre-existing pip cache"
+    },
+    {
+      "name": "anyio",
+      "version": "4.15.1",
+      "public_url": "https://files.pythonhosted.org/packages/12/b8/4bd346e22b28902df4d651910f5242c28d84e4a5c2435ca5c3f797ed7e2e/anyio-4.15.1-py3-none-any.whl",
+      "bytes": 132079,
+      "sha256": "6152fdbbf9a77fdec97731721bebf7c4c44f7c29b424b0065826173efc7ed101",
+      "authentication_used": false,
+      "accounting": "conservative full wheel bytes including pre-existing pip cache"
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0",
+      "public_url": "https://files.pythonhosted.org/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl",
+      "bytes": 45571,
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+      "authentication_used": false,
+      "accounting": "conservative full wheel bytes including pre-existing pip cache"
+    },
+    {
+      "name": "idna",
+      "version": "3.20",
+      "public_url": "https://files.pythonhosted.org/packages/58/a2/bb081bab032533a855d44de1d56f8e8426114ff1ba5d1f07a438a0a654f8/idna-3.20-py3-none-any.whl",
+      "bytes": 69583,
+      "sha256": "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c",
+      "authentication_used": false,
+      "accounting": "conservative full wheel bytes including pre-existing pip cache"
+    },
+    {
+      "name": "truststore",
+      "version": "0.10.4",
+      "public_url": "https://files.pythonhosted.org/packages/19/97/56608b2249fe206a67cd573bc93cd9896e1efb9e98bce9c163bcdc704b88/truststore-0.10.4-py3-none-any.whl",
+      "bytes": 18660,
+      "sha256": "adaeaecf1cbb5f4de3b1959b42d41f6fab57b2b1666adb59e89cb0b53361d981",
+      "authentication_used": false,
+      "accounting": "conservative full wheel bytes including pre-existing pip cache"
+    },
+    {
+      "name": "h11",
+      "version": "0.16.0",
+      "public_url": "https://files.pythonhosted.org/packages/04/4b/29cac41a4d98d144bf5f6d33995617b185d14b22401f75ca86f384e87ff1/h11-0.16.0-py3-none-any.whl",
+      "bytes": 37515,
+      "sha256": "63cf8bbe7522de3bf65932fda1d9c2772064ffb3dae62d55932da54b31cb6c86",
+      "authentication_used": false,
+      "accounting": "conservative full wheel bytes including pre-existing pip cache"
+    }
+  ],
+  "conservative_package_wheel_bytes": 14584623,
+  "conservative_total_new_download_bytes": 58987083,
+  "reused_torch_new_download_bytes": 0,
+  "checked_utc": "2026-10-01T15:58:51.093044+00:00"
+}

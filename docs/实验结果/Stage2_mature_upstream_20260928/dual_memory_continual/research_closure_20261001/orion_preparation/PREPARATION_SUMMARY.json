@@ -1,0 +1,68 @@
+{
+  "schema": "orion_metadata_preparation_summary_v1",
+  "metadata_complete": true,
+  "n_files": 40,
+  "expected_files": 40,
+  "runtime": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1",
+  "final_manifest_sha256": "d16cea664ca508659b97dfedbe165ec285609102a0fcb429349335c093a014f4",
+  "amendment": {
+    "kind": "NON_OPERATIONAL_TEXT_AMENDMENT",
+    "registered_manifest_sha256": "997bdbf33c079746457646cd5fe433e3812063ebc1aefcb6f590376086f15900",
+    "final_manifest_sha256": "d16cea664ca508659b97dfedbe165ec285609102a0fcb429349335c093a014f4",
+    "operational_tuple_sha256": "f6134ea76ed658bd1f07e6e565291cf05d9f3896ff501e31cc5d29ba9597fd59",
+    "exact_old_snapshot_reconstructed_hash_matches_registration": true,
+    "forty_paths_sizes_LFS_and_download_urls_unchanged": true,
+    "active_download_registration_modified": false,
+    "difference": "Selection-timing wording only; prior Batch1 labels/preview explicitly disclosed"
+  },
+  "fixed_policy_sha256": "594a5aef77684dc99666022c76666100a5c9791082532d00b7c70ddfe1fac3b7",
+  "source_common_axis": 3285,
+  "original_cell_rows": 1104270,
+  "distinct_nonNTC_gene_labels": 18285,
+  "gene_role_counts": {
+    "TRAIN": 10926,
+    "VALIDATION": 3614,
+    "TEST": 3745
+  },
+  "row_role_counts": {
+    "DEV_EXPOSED_CELL": 10,
+    "VALIDATION": 205652,
+    "TRAIN": 629838,
+    "TRAIN_CONTROL_SOURCE_SCOPE": 53507,
+    "TEST": 215133,
+    "EXCLUDED_MISSING_OR_AMBIGUOUS_TARGET_ID": 130
+  },
+  "context_row_role_counts": {
+    "HCT116": {
+      "DEV_EXPOSED_CELL": 10,
+      "VALIDATION": 99645,
+      "TRAIN": 304690,
+      "TRAIN_CONTROL_SOURCE_SCOPE": 26173,
+      "TEST": 104149,
+      "EXCLUDED_MISSING_OR_AMBIGUOUS_TARGET_ID": 78
+    },
+    "HEK293T": {
+      "VALIDATION": 106007,
+      "TRAIN_CONTROL_SOURCE_SCOPE": 27334,
+      "TRAIN": 325148,
+      "TEST": 110984,
+      "EXCLUDED_MISSING_OR_AMBIGUOUS_TARGET_ID": 52
+    }
+  },
+  "seen_cells_DEV_matches": 10,
+  "metadata_envelope_bytes": 42800596,
+  "expression_columns_read": [],
+  "expression_rows_exposed": 0,
+  "new_upstream_attempt_started": false,
+  "Quality": "proxy/biological_replicate_unknown",
+  "whole_study_pristine": false,
+  "strict_private_rows_never_parsed_ready": false,
+  "errors": [],
+  "gene_split_sha256": "3bda5a9e0674cd7379b01e798d1c1b8c337efec86f44aceb41d4d74c73df52be",
+  "both_contexts_retained_ge30_gene_clusters": 5948,
+  "eligible_ge30_gene_role_counts": {
+    "TRAIN": 3576,
+    "VALIDATION": 1129,
+    "TEST": 1243
+  }
+}

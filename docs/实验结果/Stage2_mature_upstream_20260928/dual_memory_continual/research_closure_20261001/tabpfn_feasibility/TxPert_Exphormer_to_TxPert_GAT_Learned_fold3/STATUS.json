@@ -1,0 +1,13 @@
+{
+  "status": "COMPLETE",
+  "role": "DEV_SEEN_NESTED_ALGORITHM_ROBUSTNESS_DIAGNOSTIC",
+  "external_matrix_run": false,
+  "new_test_truth_opened": false,
+  "server_predictions": "/home/yyf/runtime_artifacts/safeconf_research_20261001/tabpfn_v2_probe/TxPert_Exphormer_to_TxPert_GAT_Learned_fold3/DEV_TASK_PREDICTIONS.csv.gz",
+  "gpu_hours": 0.00022158923358397766,
+  "resolved_tabpfn": {
+    "n_estimators_fitted": 8,
+    "inference_precision": "auto",
+    "inference_config": "InferenceConfig(PREPROCESS_TRANSFORMS=[PreprocessorConfig(name='quantile_uni', categorical_name='ordinal_very_common_categories_shuffled', append_original=True, max_features_per_estimator=500, global_transformer_name='svd', max_onehot_cardinality=None, differentiable=False), PreprocessorConfig(name='safepower', categorical_name='onehot', append_original=False, max_features_per_estimator=500, global_transformer_name=None, max_onehot_cardinality=None, differentiable=False)], MAX_UNIQUE_FOR_CATEGORICAL_FEATURES=30, MIN_UNIQUE_FOR_NUMERICAL_FEATURES=4, MIN_NUMBER_SAMPLES_FOR_CATEGORICAL_INFERENCE=100, MIN_CARDINALITY_FOR_TEXT=30, SOFTMAX_TEMPERATURE=0.9, N_ESTIMATORS='auto', TRANSFORM_DATES=False, TRANSFORM_TEXT=False, TEXT_N_COMPONENTS=30, OUTLIER_REMOVAL_STD='auto', FEATURE_SHIFT_METHOD='shuffle', CLASS_SHIFT_METHOD='shuffle', FINGERPRINT_FEATURE=True, POLYNOMIAL_FEATURES='no', SUBSAMPLE_SAMPLES=None, SAMPLE_SUBSAMPLING_METHOD='auto', ENABLE_GPU_PREPROCESSING=False, FEATURE_SUBSAMPLING_METHOD='random', FEATURE_SUBSAMPLING_CONSTANT_FEATURE_COUNT=50, FEATURE_SUBSAMPLING_IMPORTANCE_TOP_K_COUNT='auto', REGRESSION_Y_PREPROCESS_TRANSFORMS=(None, 'safepower'), USE_SKLEARN_16_DECIMAL_PRECISION=False, MAX_NUMBER_OF_CLASSES=10, MAX_NUMBER_OF_FEATURES=500, MAX_NUMBER_OF_SAMPLES=10000, MAX_CPU_SAMPLES=1000, FIX_NAN_BORDERS_AFTER_TARGET_TRANSFORM=True, PASSTHROUGH_INF=False, _REGRESSION_DEFAULT_OUTLIER_REMOVAL_STD=None, _CLASSIFICATION_DEFAULT_OUTLIER_REMOVAL_STD=12.0)"
+  }
+}

@@ -1,0 +1,653 @@
+{
+  "schema": "safeconf_orion_source_core_20261002_v1",
+  "output_contract_id": "Source3285_CP4000_log1p_matched_batch_delta_v1",
+  "source_native_genes": 3352,
+  "prepared_genes": 3285,
+  "source_gene_fraction": 0.9800119331742243,
+  "n_biological_tasks": 1808,
+  "n_upstream_task_records": 3616,
+  "upstreams": [
+    "TxPert_Exphormer",
+    "TxPert_GAT"
+  ],
+  "risk_P_columns": [
+    "predicted_magnitude",
+    "prediction_abs_mean",
+    "prediction_signed_mean",
+    "prediction_std",
+    "prediction_abs_q95",
+    "prediction_sparsity"
+  ],
+  "risk_public_columns": [
+    "prior_magnitude",
+    "prediction_prior_rmse",
+    "prediction_prior_cosine",
+    "prior_uncertainty",
+    "log_history_support",
+    "effective_sources",
+    "history_conflict"
+  ],
+  "public_pair_columns": [
+    "log_source_cells",
+    "log_source_batches",
+    "control_rmse",
+    "control_cosine",
+    "source_effect_magnitude",
+    "source_effect_abs_mean",
+    "source_conflict",
+    "support_fraction",
+    "quality_missing"
+  ],
+  "metadata_never_used_as_numeric_features": [
+    "OriginalStudy",
+    "gene",
+    "target",
+    "upstream",
+    "task_id",
+    "fold"
+  ],
+  "OriginalStudy_sidecar": {
+    "K562": "Replogle2022",
+    "RPE1": "Replogle2022",
+    "hepg2": "Nadig2025",
+    "jurkat": "Nadig2025"
+  },
+  "normalization": {
+    "native": "official CP4000 then log1p; TxPert Methods 4.2.2",
+    "native_arrays_already_normalized": true,
+    "delta_rescaled": false,
+    "axis_operation": "column projection only; no library renormalization"
+  },
+  "public_history_policy": "frozen upstream Source TRAIN eligibility; actual known history for each query",
+  "public_history_is_restricted_to_risk_outer_train": false,
+  "split_policy": "five same-gene outer folds; all contexts and upstream models share gene folds; four inner Public folds",
+  "public_supervision_nested_fits": 25,
+  "public_fullfit_target": "transfer_rmse",
+  "public_fullfit_inference": "joblib.load(...).predict(pair_frame, clip=False)",
+  "risk_training": "all Source Public OOF feature rows; Source only per upstream/context midrank labels",
+  "risk_cluster_weighting": "inverse records per gene, normalized to mean 1",
+  "models": [
+    {
+      "role": "Source_risk",
+      "reference": "P_only",
+      "learner": "ridge",
+      "path": "SOURCE_RISK_P_only_ridge.joblib",
+      "sha256": "68019b2ea0c6a332049089da100e18515e05cabebbd1fa6f4fcf24d4d112d42d",
+      "columns": [
+        "predicted_magnitude",
+        "prediction_abs_mean",
+        "prediction_signed_mean",
+        "prediction_std",
+        "prediction_abs_q95",
+        "prediction_sparsity"
+      ],
+      "n_rows": 3616,
+      "target": "Source_per_upstream_per_context_midrank_CDF",
+      "seed": 20260930,
+      "preprocessor_persisted": true,
+      "numeric_model_width_with_missing_flags": 12,
+      "model_params": {
+        "alpha": 10,
+        "copy_X": true,
+        "fit_intercept": true,
+        "max_iter": null,
+        "positive": false,
+        "random_state": null,
+        "solver": "auto",
+        "tol": 0.0001
+      }
+    },
+    {
+      "role": "Source_risk",
+      "reference": "P_only",
+      "learner": "hgb",
+      "path": "SOURCE_RISK_P_only_hgb.joblib",
+      "sha256": "4b3206c9183e5c38e62c2b1ce0e2185f711102e23ac8ff3fc52d930eed150cc7",
+      "columns": [
+        "predicted_magnitude",
+        "prediction_abs_mean",
+        "prediction_signed_mean",
+        "prediction_std",
+        "prediction_abs_q95",
+        "prediction_sparsity"
+      ],
+      "n_rows": 3616,
+      "target": "Source_per_upstream_per_context_midrank_CDF",
+      "seed": 20260930,
+      "preprocessor_persisted": true,
+      "numeric_model_width_with_missing_flags": 12,
+      "model_params": {
+        "categorical_features": "from_dtype",
+        "early_stopping": "auto",
+        "interaction_cst": null,
+        "l2_regularization": 10.0,
+        "learning_rate": 0.05,
+        "loss": "squared_error",
+        "max_bins": 255,
+        "max_depth": 3,
+        "max_features": 1.0,
+        "max_iter": 200,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 20,
+        "monotonic_cst": null,
+        "n_iter_no_change": 10,
+        "quantile": null,
+        "random_state": 20260930,
+        "scoring": "loss",
+        "tol": 1e-07,
+        "validation_fraction": 0.1,
+        "verbose": 0,
+        "warm_start": false
+      }
+    },
+    {
+      "role": "Source_risk",
+      "reference": "Manual",
+      "learner": "ridge",
+      "path": "SOURCE_RISK_Manual_ridge.joblib",
+      "sha256": "de485ad5899827618416a8d73f9f7137da7a4b26aefc395a67304ad9e8b3c955",
+      "columns": [
+        "predicted_magnitude",
+        "prediction_abs_mean",
+        "prediction_signed_mean",
+        "prediction_std",
+        "prediction_abs_q95",
+        "prediction_sparsity",
+        "prior_magnitude",
+        "prediction_prior_rmse",
+        "prediction_prior_cosine",
+        "prior_uncertainty",
+        "log_history_support",
+        "effective_sources",
+        "history_conflict"
+      ],
+      "n_rows": 3616,
+      "target": "Source_per_upstream_per_context_midrank_CDF",
+      "seed": 20260930,
+      "preprocessor_persisted": true,
+      "numeric_model_width_with_missing_flags": 26,
+      "model_params": {
+        "alpha": 10,
+        "copy_X": true,
+        "fit_intercept": true,
+        "max_iter": null,
+        "positive": false,
+        "random_state": null,
+        "solver": "auto",
+        "tol": 0.0001
+      }
+    },
+    {
+      "role": "Source_risk",
+      "reference": "Manual",
+      "learner": "hgb",
+      "path": "SOURCE_RISK_Manual_hgb.joblib",
+      "sha256": "1c0a78127b4aaf4349761b569c63fb4f6f74925ddc303221d8393c5b5e3eed42",
+      "columns": [
+        "predicted_magnitude",
+        "prediction_abs_mean",
+        "prediction_signed_mean",
+        "prediction_std",
+        "prediction_abs_q95",
+        "prediction_sparsity",
+        "prior_magnitude",
+        "prediction_prior_rmse",
+        "prediction_prior_cosine",
+        "prior_uncertainty",
+        "log_history_support",
+        "effective_sources",
+        "history_conflict"
+      ],
+      "n_rows": 3616,
+      "target": "Source_per_upstream_per_context_midrank_CDF",
+      "seed": 20260930,
+      "preprocessor_persisted": true,
+      "numeric_model_width_with_missing_flags": 26,
+      "model_params": {
+        "categorical_features": "from_dtype",
+        "early_stopping": "auto",
+        "interaction_cst": null,
+        "l2_regularization": 10.0,
+        "learning_rate": 0.05,
+        "loss": "squared_error",
+        "max_bins": 255,
+        "max_depth": 3,
+        "max_features": 1.0,
+        "max_iter": 200,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 20,
+        "monotonic_cst": null,
+        "n_iter_no_change": 10,
+        "quantile": null,
+        "random_state": 20260930,
+        "scoring": "loss",
+        "tol": 1e-07,
+        "validation_fraction": 0.1,
+        "verbose": 0,
+        "warm_start": false
+      }
+    },
+    {
+      "role": "Source_risk",
+      "reference": "Learned",
+      "learner": "ridge",
+      "path": "SOURCE_RISK_Learned_ridge.joblib",
+      "sha256": "f4d332b16c79b410fb71fe461f18777c7bd9899a1b6971312142fe56177fae0e",
+      "columns": [
+        "predicted_magnitude",
+        "prediction_abs_mean",
+        "prediction_signed_mean",
+        "prediction_std",
+        "prediction_abs_q95",
+        "prediction_sparsity",
+        "prior_magnitude",
+        "prediction_prior_rmse",
+        "prediction_prior_cosine",
+        "prior_uncertainty",
+        "log_history_support",
+        "effective_sources",
+        "history_conflict"
+      ],
+      "n_rows": 3616,
+      "target": "Source_per_upstream_per_context_midrank_CDF",
+      "seed": 20260930,
+      "preprocessor_persisted": true,
+      "numeric_model_width_with_missing_flags": 26,
+      "model_params": {
+        "alpha": 10,
+        "copy_X": true,
+        "fit_intercept": true,
+        "max_iter": null,
+        "positive": false,
+        "random_state": null,
+        "solver": "auto",
+        "tol": 0.0001
+      }
+    },
+    {
+      "role": "Source_risk",
+      "reference": "Learned",
+      "learner": "hgb",
+      "path": "SOURCE_RISK_Learned_hgb.joblib",
+      "sha256": "a605d30c12eee46fe4b2b1af64d5eed5edfcf042cdb781fdb75883a6f9454f7d",
+      "columns": [
+        "predicted_magnitude",
+        "prediction_abs_mean",
+        "prediction_signed_mean",
+        "prediction_std",
+        "prediction_abs_q95",
+        "prediction_sparsity",
+        "prior_magnitude",
+        "prediction_prior_rmse",
+        "prediction_prior_cosine",
+        "prior_uncertainty",
+        "log_history_support",
+        "effective_sources",
+        "history_conflict"
+      ],
+      "n_rows": 3616,
+      "target": "Source_per_upstream_per_context_midrank_CDF",
+      "seed": 20260930,
+      "preprocessor_persisted": true,
+      "numeric_model_width_with_missing_flags": 26,
+      "model_params": {
+        "categorical_features": "from_dtype",
+        "early_stopping": "auto",
+        "interaction_cst": null,
+        "l2_regularization": 10.0,
+        "learning_rate": 0.05,
+        "loss": "squared_error",
+        "max_bins": 255,
+        "max_depth": 3,
+        "max_features": 1.0,
+        "max_iter": 200,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 20,
+        "monotonic_cst": null,
+        "n_iter_no_change": 10,
+        "quantile": null,
+        "random_state": 20260930,
+        "scoring": "loss",
+        "tol": 1e-07,
+        "validation_fraction": 0.1,
+        "verbose": 0,
+        "warm_start": false
+      }
+    },
+    {
+      "role": "Public_biology_retrieval",
+      "reference": "Learned_regularized_fixed_blend_0.5",
+      "learner": "hgb",
+      "path": "SOURCE_PUBLIC_BIOLOGY_FULL_HGB.joblib",
+      "sha256": "3a6f05d9b8060eb9802a6e5a0e6adf067253e57edd3aedd04b600a2f93578f5a",
+      "columns": [
+        "log_source_cells",
+        "log_source_batches",
+        "control_rmse",
+        "control_cosine",
+        "source_effect_magnitude",
+        "source_effect_abs_mean",
+        "source_conflict",
+        "support_fraction",
+        "quality_missing"
+      ],
+      "n_rows": 4737,
+      "target": "biological_transfer_rmse",
+      "predict_clip": false,
+      "seed": 20260929,
+      "sample_weight": null,
+      "preprocessor_persisted": true,
+      "numeric_model_width_with_missing_flags": 18,
+      "model_params": {
+        "categorical_features": "from_dtype",
+        "early_stopping": "auto",
+        "interaction_cst": null,
+        "l2_regularization": 10.0,
+        "learning_rate": 0.05,
+        "loss": "squared_error",
+        "max_bins": 255,
+        "max_depth": 3,
+        "max_features": 1.0,
+        "max_iter": 200,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 20,
+        "monotonic_cst": null,
+        "n_iter_no_change": 10,
+        "quantile": null,
+        "random_state": 20260929,
+        "scoring": "loss",
+        "tol": 1e-07,
+        "validation_fraction": 0.1,
+        "verbose": 0,
+        "warm_start": false
+      }
+    }
+  ],
+  "sklearn_version": "1.8.0",
+  "arrays": [
+    {
+      "path": "SOURCE_CONTROLS.npy",
+      "shape": [
+        1808,
+        3285
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "SOURCE_Learned_RISK_FEATURES.npy",
+      "shape": [
+        3616,
+        13
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "SOURCE_Manual_RISK_FEATURES.npy",
+      "shape": [
+        3616,
+        13
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "SOURCE_OOF_Learned_PRIOR_EFFECTS.npy",
+      "shape": [
+        1808,
+        3285
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "SOURCE_OOF_Manual_PRIOR_EFFECTS.npy",
+      "shape": [
+        1808,
+        3285
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "SOURCE_OOF_Uniform_PRIOR_EFFECTS.npy",
+      "shape": [
+        1808,
+        3285
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "SOURCE_PUBLIC_CONTROLS.npy",
+      "shape": [
+        2008,
+        3285
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "SOURCE_PUBLIC_EFFECTS.npy",
+      "shape": [
+        2008,
+        3285
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "SOURCE_PUBLIC_FULLFIT_TRANSFER_PREDICTIONS.npy",
+      "shape": [
+        4737
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "SOURCE_PUBLIC_NESTED_TRANSFER_SCORES.npy",
+      "shape": [
+        5,
+        4737
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "SOURCE_PUBLIC_NUMERIC_FEATURES.npy",
+      "shape": [
+        4737,
+        9
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "SOURCE_PUBLIC_OOF_TRANSFER_SCORES.npy",
+      "shape": [
+        4737
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "SOURCE_PUBLIC_OUTER_TRAIN_PAIR_MASKS.npy",
+      "shape": [
+        5,
+        4737
+      ],
+      "dtype": "bool"
+    },
+    {
+      "path": "SOURCE_PUBLIC_TRANSFER_RMSE_LABELS.npy",
+      "shape": [
+        4737
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "SOURCE_P_only_RISK_FEATURES.npy",
+      "shape": [
+        3616,
+        6
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "SOURCE_RISK_MIDRANK_LABELS.npy",
+      "shape": [
+        3616
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "SOURCE_TRUE_EFFECTS.npy",
+      "shape": [
+        1808,
+        3285
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "SOURCE_TxPert_Exphormer_CONTROLS.npy",
+      "shape": [
+        1808,
+        3285
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "SOURCE_TxPert_Exphormer_PREDICTED_EFFECTS.npy",
+      "shape": [
+        1808,
+        3285
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "SOURCE_TxPert_GAT_CONTROLS.npy",
+      "shape": [
+        1808,
+        3285
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "SOURCE_TxPert_GAT_PREDICTED_EFFECTS.npy",
+      "shape": [
+        1808,
+        3285
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "nested_0_Learned_PRIOR_EFFECTS.npy",
+      "shape": [
+        1808,
+        3285
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "nested_0_Manual_PRIOR_EFFECTS.npy",
+      "shape": [
+        1808,
+        3285
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "nested_0_Uniform_PRIOR_EFFECTS.npy",
+      "shape": [
+        1808,
+        3285
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "nested_1_Learned_PRIOR_EFFECTS.npy",
+      "shape": [
+        1808,
+        3285
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "nested_1_Manual_PRIOR_EFFECTS.npy",
+      "shape": [
+        1808,
+        3285
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "nested_1_Uniform_PRIOR_EFFECTS.npy",
+      "shape": [
+        1808,
+        3285
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "nested_2_Learned_PRIOR_EFFECTS.npy",
+      "shape": [
+        1808,
+        3285
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "nested_2_Manual_PRIOR_EFFECTS.npy",
+      "shape": [
+        1808,
+        3285
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "nested_2_Uniform_PRIOR_EFFECTS.npy",
+      "shape": [
+        1808,
+        3285
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "nested_3_Learned_PRIOR_EFFECTS.npy",
+      "shape": [
+        1808,
+        3285
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "nested_3_Manual_PRIOR_EFFECTS.npy",
+      "shape": [
+        1808,
+        3285
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "nested_3_Uniform_PRIOR_EFFECTS.npy",
+      "shape": [
+        1808,
+        3285
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "nested_4_Learned_PRIOR_EFFECTS.npy",
+      "shape": [
+        1808,
+        3285
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "nested_4_Manual_PRIOR_EFFECTS.npy",
+      "shape": [
+        1808,
+        3285
+      ],
+      "dtype": "float64"
+    },
+    {
+      "path": "nested_4_Uniform_PRIOR_EFFECTS.npy",
+      "shape": [
+        1808,
+        3285
+      ],
+      "dtype": "float64"
+    }
+  ]
+}

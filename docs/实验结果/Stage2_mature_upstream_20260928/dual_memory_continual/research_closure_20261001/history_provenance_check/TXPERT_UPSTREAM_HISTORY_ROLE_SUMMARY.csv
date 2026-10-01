@@ -1,0 +1,5 @@
+target,condition_in_train,condition_in_val,condition_in_test,n_history_edges,source_context_non_target
+K562,True,False,True,1399,True
+RPE1,True,False,True,1120,True
+hepg2,True,False,True,1100,True
+jurkat,True,False,True,1118,True

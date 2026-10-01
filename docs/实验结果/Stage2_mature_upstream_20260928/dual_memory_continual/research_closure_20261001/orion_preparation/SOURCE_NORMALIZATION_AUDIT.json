@@ -1,0 +1,361 @@
+{
+  "status": "SOURCE_DOCUMENTED_LOG_CP4K; DIRECT_LOG_CP10K_RAW_RMSE_SCALE_GATE_FAIL",
+  "role": "DEV_SEEN_READ_ONLY_NORMALIZATION_AUDIT",
+  "created_at": "2026-10-02T00:47:03.059394+08:00",
+  "txpert_commit": "08d82eea86746b044cf7531f4ec8c5f60e1cb73f",
+  "txpert_checkout_clean": true,
+  "source_declared_normalize_total_target_sum": 4000,
+  "source_declared_log": "natural log1p",
+  "source_declared_formula": "x_ig=log(1+4000*c_ig/sum_h c_ih), before HVG restriction",
+  "source_effect_formula": "mean_i x_ig - sum_b n_condition_b/n_condition * mean_control_b x_cg",
+  "source_prediction_target_coordinate": "same cached X coordinate; direct normalized-expression decoder outputs; no CP10k conversion in read paths",
+  "source_units_are_documented_not_recovered_from_raw_counts_in_this_audit": true,
+  "source_is_logCP10k": false,
+  "new_test_X_values_read": 0,
+  "new_released_vector_values_read": 0,
+  "new_source_X_values_read": 0,
+  "new_sampling_runs": 0,
+  "new_scalers_built": 0,
+  "original_primary_assets_changed": false,
+  "official_feature_axis_uses_held_context_HVG": true,
+  "official_feature_axis_dimension": 3352,
+  "Orion_common_axis_reported_dimension": 3285,
+  "reported_common_axis_coverage": 0.9800119331742243,
+  "Orion_common_axis_verified_here": false,
+  "cache_schema": {
+    "path": "/home/yyf/data/txpert_official_20260802/cache/K562_cross_cell_lines/de_adata_test.h5ad",
+    "bytes": 7767053064,
+    "X_shape": [
+      632488,
+      3352
+    ],
+    "X_encoding": "csr_matrix",
+    "obs_fields": [
+      "_index",
+      "batch",
+      "cell_line",
+      "condition",
+      "condition_name",
+      "control",
+      "dose",
+      "gene_name"
+    ],
+    "var_fields": [
+      "_index"
+    ],
+    "uns_fields": [
+      "log1p",
+      "non_dropout_gene_idx",
+      "non_zeros_gene_idx",
+      "rank_genes_groups_cov_all",
+      "top_non_dropout_de_20",
+      "top_non_zero_de_20"
+    ],
+    "layers_fields": [],
+    "raw_present": false,
+    "expression_values_read": 0,
+    "uns_log1p_fields": []
+  },
+  "local_raw_counterpart_candidate_schemas": [
+    {
+      "path": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/ReplogleWeissman2022_K562_essential.h5ad",
+      "bytes": 1546729675,
+      "X_shape": [
+        310385,
+        8563
+      ],
+      "X_encoding": "array",
+      "obs_fields": [
+        "UMI_count",
+        "age",
+        "batch",
+        "cancer",
+        "cell_barcode",
+        "cell_line",
+        "core_adjusted_UMI_count",
+        "core_scale_factor",
+        "disease",
+        "gene",
+        "gene_id",
+        "gene_transcript",
+        "guide_id",
+        "ncounts",
+        "ngenes",
+        "nperts",
+        "organism",
+        "percent_mito",
+        "percent_ribo",
+        "perturbation",
+        "perturbation_type",
+        "sex",
+        "tissue_type",
+        "transcript",
+        "z_gemgroup_UMI"
+      ],
+      "var_fields": [
+        "chr",
+        "class",
+        "cv",
+        "end",
+        "ensembl_id",
+        "fano",
+        "gene_name",
+        "in_matrix",
+        "length",
+        "mean",
+        "ncells",
+        "ncounts",
+        "start",
+        "std",
+        "strand"
+      ],
+      "uns_fields": [],
+      "layers_fields": [],
+      "raw_present": false,
+      "expression_values_read": 0
+    },
+    {
+      "path": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/ReplogleWeissman2022_rpe1.h5ad",
+      "bytes": 1236886900,
+      "X_shape": [
+        247914,
+        8749
+      ],
+      "X_encoding": "array",
+      "obs_fields": [
+        "UMI_count",
+        "age",
+        "batch",
+        "cancer",
+        "cell_barcode",
+        "cell_line",
+        "celltype",
+        "core_adjusted_UMI_count",
+        "core_scale_factor",
+        "disease",
+        "gene",
+        "gene_id",
+        "gene_transcript",
+        "guide_id",
+        "ncounts",
+        "ngenes",
+        "nperts",
+        "organism",
+        "percent_mito",
+        "percent_ribo",
+        "perturbation",
+        "perturbation_type",
+        "sex",
+        "tissue_type",
+        "transcript",
+        "z_gemgroup_UMI"
+      ],
+      "var_fields": [
+        "chr",
+        "class",
+        "cv",
+        "end",
+        "ensembl_id",
+        "fano",
+        "gene_name",
+        "in_matrix",
+        "length",
+        "mean",
+        "ncells",
+        "ncounts",
+        "start",
+        "std",
+        "strand"
+      ],
+      "uns_fields": [],
+      "layers_fields": [],
+      "raw_present": false,
+      "expression_values_read": 0
+    },
+    {
+      "path": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/NadigOConner2024_hepg2.h5ad",
+      "bytes": 850590740,
+      "X_shape": [
+        145473,
+        9624
+      ],
+      "X_encoding": "array",
+      "obs_fields": [
+        "UMI_count",
+        "batch",
+        "cancer",
+        "cell_barcode",
+        "cell_line",
+        "disease",
+        "gene",
+        "gene_id",
+        "gene_transcript",
+        "guide_id",
+        "ncounts",
+        "ngenes",
+        "nperts",
+        "organism",
+        "percent_mito",
+        "percent_ribo",
+        "perturbation",
+        "perturbation_type",
+        "tissue_type",
+        "transcript",
+        "z_gemgroup_UMI"
+      ],
+      "var_fields": [
+        "chr",
+        "class",
+        "cv",
+        "end",
+        "ensembl_id",
+        "fano",
+        "gene_name",
+        "in_matrix",
+        "length",
+        "mean",
+        "ncells",
+        "ncounts",
+        "start",
+        "std",
+        "strand"
+      ],
+      "uns_fields": [],
+      "layers_fields": [],
+      "raw_present": false,
+      "expression_values_read": 0
+    },
+    {
+      "path": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/NadigOConner2024_jurkat.h5ad",
+      "bytes": 1293665804,
+      "X_shape": [
+        262956,
+        8882
+      ],
+      "X_encoding": "array",
+      "obs_fields": [
+        "UMI_count",
+        "batch",
+        "cancer",
+        "cell_barcode",
+        "cell_line",
+        "disease",
+        "gene",
+        "gene_id",
+        "gene_transcript",
+        "guide_id",
+        "ncounts",
+        "ngenes",
+        "nperts",
+        "organism",
+        "percent_mito",
+        "percent_ribo",
+        "perturbation",
+        "perturbation_type",
+        "tissue_type",
+        "transcript",
+        "z_gemgroup_UMI"
+      ],
+      "var_fields": [
+        "chr",
+        "class",
+        "cv",
+        "end",
+        "ensembl_id",
+        "fano",
+        "gene_name",
+        "in_matrix",
+        "length",
+        "mean",
+        "ncells",
+        "ncounts",
+        "start",
+        "std",
+        "strand"
+      ],
+      "uns_fields": [],
+      "layers_fields": [],
+      "raw_present": false,
+      "expression_values_read": 0
+    }
+  ],
+  "raw_counterpart_counts_and_exact_denominator_not_numerically_verified_here": true,
+  "within_study_source_prediction_truth_scale_compatible": true,
+  "cross_study_scale_and_biological_comparability_not_established_by_gene_overlap": true,
+  "canonical_Source_Orion_direct_effect_RawRMSE_conditions": [
+    "Explicit shared output coordinate, preferably documented Source log1p CP4k unless a new Source transformation contract is frozen.",
+    "Normalize per-cell raw counts before projecting to the frozen common gene axis; document pre-HVG library denominator and gene universe.",
+    "Orion truth and predictor output must both target that shared coordinate; Input.raw or native logCP10k inputs alone do not prove output compatibility.",
+    "Compute arithmetic mean of per-cell log profiles and compatible batch/context control centering; retain signed effects.",
+    "Resolve gene IDs and order without zero fill, freeze gene axis and all learned processing using TRAIN-only data, and freeze predictions before new held-out truth release.",
+    "Keep official Source target-context HVG dependence disclosed; this audit does not convert that asset into a TRAIN-only feature-selection design."
+  ],
+  "unsupported_shortcuts": [
+    "Multiplying effect deltas by2.5 or adding/subtracting log(2.5).",
+    "Applying nonlinear CP4k-to-CP10k conversion to an effect vector or already averaged centroid as if this were a cell-level reconstruction.",
+    "Normalizing the selected3285/3352-gene cache again to a target library sum.",
+    "Inferring the original source target_sum from nonzero/log-like values, empty uns.log1p, or McFaline normalization defaults.",
+    "Using control-RMS scaling, label CDF normalization, or zero-filled missing genes to assert physical scale compatibility."
+  ],
+  "cell_state_conversion_if_same_library_denominator": "f(x)=log1p(2.5*expm1(x)); mean(f(x)) generally differs from f(mean(x)); predicted states may be outside a valid inverse-count domain, requiring a new explicitly frozen output contract.",
+  "confirmation_evidence_needed": [
+    "Exact official pre-HVG raw count matrices or verified raw counterpart counts, retained gene IDs, per-cell library denominators, cell/guide/batch mapping, and filtering provenance.",
+    "Approved TRAIN/control-only matched raw-to-cache reconstruction checks distinguishing CP4k and CP10k, followed by a newly frozen canonical Orion output contract.",
+    "Additional official cache-generation provenance if the pre-HVG gene-denominator convention cannot be recovered from raw counterparts."
+  ],
+  "code_evidence": [
+    {
+      "path": "/home/yyf/archive/external/TxPert/README.md",
+      "sha256": "0f79f4f5aa34ec3d2c797b66a3f9cbaa1fa0d65eee1cbe21ed1905e1bf9b0962"
+    },
+    {
+      "path": "/home/yyf/archive/external/TxPert/data/onboard_dataset.ipynb",
+      "sha256": "4398519840567d9151d3dc20381fa75fd92e7b78b697cdb122b2b3ef7de973bf"
+    },
+    {
+      "path": "/home/yyf/archive/external/TxPert/gspp/data/datamodule.py",
+      "sha256": "dfb9c73992984630c1f8c52ea5b25c29d1a02a98a259ab10a8eaa4091fe850ae"
+    },
+    {
+      "path": "/home/yyf/archive/external/TxPert/gspp/models/txpert.py",
+      "sha256": "0caefad613d2608cf221a4f5e27516da91d931bc6139dda05db1719d97731d34"
+    },
+    {
+      "path": "/home/yyf/archive/external/TxPert/gspp/predictor.py",
+      "sha256": "54cb47bdf4172a5d822c3b64b35907462b4c55fb1934fee2e8562eb64ead3285"
+    },
+    {
+      "path": "/home/yyf/archive/external/TxPert/gspp/utils.py",
+      "sha256": "74e7d9e13026649158e20d1dbd879507a3626505f84b24321c8bdca2cf49e211"
+    },
+    {
+      "path": "/home/yyf/archive/external/TxPert/main.py",
+      "sha256": "3d5517f795ad3572742e51ec42d19ee528437e62308ecc0f556e0f7d6803c38e"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_e201_txpert_sealed_prediction.py",
+      "sha256": "4dd077d40e6e560851890a546b4772f0f96355b951acd30fab8c5ac1631b573c"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/release_e201_target_truth.py",
+      "sha256": "147e9e910d61ca5c0d6b2278e5425a8d2699295404d571bbb0a932e993fbf3d8"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_research_closure.py",
+      "sha256": "b66bf85611a1e9fa4b7403be171bce3c41de684531615a935411ab714687e5b6"
+    }
+  ],
+  "primary_web_sources": {
+    "pinned_readme": "https://github.com/valence-labs/TxPert/blob/08d82eea86746b044cf7531f4ec8c5f60e1cb73f/README.md",
+    "pinned_onboarding": "https://github.com/valence-labs/TxPert/blob/08d82eea86746b044cf7531f4ec8c5f60e1cb73f/data/onboard_dataset.ipynb",
+    "txpert_methods_pdf": "https://www.valencelabs.com/wp-content/uploads/2025/05/TxPert.pdf",
+    "txpert_official_zenodo": "https://zenodo.org/records/15420279",
+    "replogle_raw_and_gemgroup_z_normalized_release": "https://plus.figshare.com/articles/dataset/_Mapping_information-rich_genotype-phenotype_landscapes_with_genome-scale_Perturb-seq_Replogle_et_al_2022_processed_Perturb-seq_datasets/20029387",
+    "nadig_raw_count_processing_geo": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM8225184",
+    "nadig_series": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE264667"
+  },
+  "web_access_limits": [
+    "Zenodo record metadata failed via web tool; cache origin independently traced in pinned main.py/utils.py and sealed E200 prepare records.",
+    "Nadig main article/PMC and full GEO series hit access challenges; accessible official GEO sample confirms raw Cell Ranger count processing."
+  ]
+}

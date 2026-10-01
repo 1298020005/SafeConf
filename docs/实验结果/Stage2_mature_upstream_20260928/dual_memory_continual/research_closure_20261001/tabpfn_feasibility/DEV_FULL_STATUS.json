@@ -1,0 +1,27 @@
+{
+  "status": "COMPLETE",
+  "n_checks": 20,
+  "fitted_models": 60,
+  "n_tabpfn_fits": 20,
+  "n_weighted_hgb_fits": 20,
+  "n_row_equal_hgb_fits": 20,
+  "role": "DEV_SEEN_NESTED_ALGORITHM_ROBUSTNESS_DIAGNOSTIC",
+  "parameters_searched": 0,
+  "seeds": [
+    20260930
+  ],
+  "checkpoint_sha256": "2ab5a07d5c41dfe6db9aa7ae106fc6de898326c2765be66505a07e2868c10736",
+  "gpu_hours": 0.006374576921741999,
+  "peak_gpu_allocated_bytes": 218678272,
+  "peak_gpu_reserved_bytes": 316669952,
+  "full_paired_query_tasks_per_line_reference": 1808,
+  "bootstrap_replicates": 5000,
+  "bootstrap_cluster": "gene",
+  "external_matrix_run": false,
+  "new_test_truth_opened": false,
+  "source_inputs_unchanged_verified_sha256": true,
+  "manual_learned_source_rank_labels_identical_verified": true,
+  "model_identity_as_feature": false,
+  "new_upstream_calls": 0,
+  "server_predictions": "/home/yyf/runtime_artifacts/safeconf_research_20261001/tabpfn_v2_probe/DEV_FULL_TASK_PREDICTIONS.csv.gz"
+}

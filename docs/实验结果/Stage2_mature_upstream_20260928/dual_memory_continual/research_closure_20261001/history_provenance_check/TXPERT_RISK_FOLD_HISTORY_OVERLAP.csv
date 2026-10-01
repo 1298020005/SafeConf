@@ -1,0 +1,6 @@
+outer_fold,n_query_tasks,n_query_gene_clusters,n_history_edges,n_unique_history_items,history_edges_with_source_also_a_primary_task,history_edges_source_in_same_outer_test_fold,history_edges_source_in_other_risk_fold,history_edges_source_not_a_primary_risk_task,same_context_edges,gene_identity_mismatch_edges
+0,362,115,942,393,866,866,0,76,0,0
+1,362,115,956,396,866,866,0,90,0,0
+2,362,115,944,393,866,866,0,78,0,0
+3,361,115,944,391,862,862,0,82,0,0
+4,361,115,951,396,860,860,0,91,0,0

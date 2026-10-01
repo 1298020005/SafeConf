@@ -1,0 +1,77 @@
+[
+  {
+    "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/control_vectors.npy",
+    "bytes": 26923392,
+    "sha256": "1ad1cffb68b67c1976225a0efd747c0f5b7629a3c729c1f00d70088a6ec5ba06"
+  },
+  {
+    "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/effect_vectors.npy",
+    "bytes": 26923392,
+    "sha256": "884a3b1a0b836f25af4e6f7e0df38a8eab4dfccfec49599c7478eccd4892dd92"
+  },
+  {
+    "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/eligibility.parquet",
+    "bytes": 33289,
+    "sha256": "ef2391be1ce3d0a9ac0d613810f9bbfd314fd00d5631436edbb22bdcdb6fc497"
+  },
+  {
+    "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/gene_ids.json",
+    "bytes": 44656,
+    "sha256": "3a6c0ef75eef65b0f82286ee142bbb6c02a8b128cff8d3110b38661f74201c08"
+  },
+  {
+    "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/manifest.json",
+    "bytes": 1320,
+    "sha256": "b56abbb63d5343244f00a6abe851acc28f9bc764c5ac1ff5c28ffe146075ed07"
+  },
+  {
+    "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/public_memory.parquet",
+    "bytes": 58150,
+    "sha256": "fcfbd3300a012e3747c9642f5076d1407c509f46f66e4412522c5d9b8661c4bd"
+  },
+  {
+    "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/GENE_MANIFEST.csv",
+    "bytes": 125903,
+    "sha256": "eb377ecb5ed1f99e259e6e8154f0edae68065ba36e3eae59ce50c2f72d8b72d4"
+  },
+  {
+    "path": "/home/yyf/data/txpert_official_20260802/e201/evaluation_vectors/E201_TARGET_TRUTH_CENTROIDS.npy",
+    "bytes": 26923392,
+    "sha256": "9b9a4ee9b654056ec34557dfefffe2708cc2aefa5138f8b6ce85a5f30e19ab3d"
+  },
+  {
+    "path": "/home/yyf/data/txpert_official_20260802/e201/pretruth_vectors/E201_CONTROL_CENTROIDS.npy",
+    "bytes": 26923392,
+    "sha256": "c2d6f56bec576b5154d574d91f37b5fdbb036d869573cdbaf9fda0e544454d3e"
+  },
+  {
+    "path": "/home/yyf/data/txpert_official_20260802/e201/pretruth_vectors/E201_FAMILY_CENTROIDS.npy",
+    "bytes": 26923392,
+    "sha256": "e0c1bc8725988cf61c1c497d39ef95ab02354498c0b00aa5922d51b23d451a2c"
+  },
+  {
+    "path": "/home/yyf/data/txpert_official_20260802/e205/pretruth_vectors/E205_CONTROL_CENTROIDS.npy",
+    "bytes": 26923392,
+    "sha256": "c2d6f56bec576b5154d574d91f37b5fdbb036d869573cdbaf9fda0e544454d3e"
+  },
+  {
+    "path": "/home/yyf/data/txpert_official_20260802/e205/pretruth_vectors/E205_FAMILY_CENTROIDS.npy",
+    "bytes": 26923392,
+    "sha256": "de23a582fc5a9094f1208baa881ea76b317616afc6e81983658ad96500586d33"
+  },
+  {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/E201_txpert_multitarget_retraining_20260802/tables/E201_PRETRUTH_TASK_BASE.csv",
+    "bytes": 316004,
+    "sha256": "1d5f068fea76138ee9ba42d1e1a4f9674850fab923e36732d24aae73f8fcdab0"
+  },
+  {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/safeconf_v4_development/txpert_exphormer/FEATURE_TABLE.csv.gz",
+    "bytes": 517566,
+    "sha256": "b998464dc27839e4ceea512197e7583501cac88e4c955d6252695e5febd769e6"
+  },
+  {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/safeconf_v4_development/txpert_gat/FEATURE_TABLE.csv.gz",
+    "bytes": 374259,
+    "sha256": "f229bae6b256501b2a83490304d887788bdfea9203bf4ca2e450031c089de059"
+  }
+]

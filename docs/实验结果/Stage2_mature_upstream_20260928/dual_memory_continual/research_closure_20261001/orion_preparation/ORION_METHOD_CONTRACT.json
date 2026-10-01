@@ -1,0 +1,131 @@
+{
+  "schema": "safeconf_orion_prospective_method_v1",
+  "created_utc": "2026-10-01T17:32:46.077087+00:00",
+  "stage": "METHOD_RULES_FROZEN_BEFORE_REAL_TRAIN_VALIDATION_EXPRESSION; final_fitted_target_parameters_not_yet_frozen",
+  "immutable_dependencies": [
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/PREPARATION_POLICY.json",
+      "sha256": "594a5aef77684dc99666022c76666100a5c9791082532d00b7c70ddfe1fac3b7"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/GENE_MANIFEST.csv",
+      "sha256": "eb377ecb5ed1f99e259e6e8154f0edae68065ba36e3eae59ce50c2f72d8b72d4"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/GENE_SPLIT.csv",
+      "sha256": "3bda5a9e0674cd7379b01e798d1c1b8c337efec86f44aceb41d4d74c73df52be"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/FILE_METADATA_IDENTITY.json",
+      "sha256": "89901ca8afbb6fe86664c54c5f6c2bab27b21d77f75563395e25c3dd0d9659f6"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/CONTROLS_SCOPE.json",
+      "sha256": "1630ee35e8de9bee6fa26052b90e08d69d41410db208e2a560923776ddc84021"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/gene_metadata.parquet",
+      "sha256": "33900a0dbaeafb84601c7c8ba7c6642c440774fc3f49613dab11cf1f2bf0fdbf"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_FEATURE_MANIFEST.json",
+      "sha256": "b74b9dfbc64f5acc82b7b0d34023aa6a523bd11d1904ced7fd638c5bec4ef2d1"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/MODEL_MANIFEST.json",
+      "sha256": "c8d9d5003860d8a5e117398a7d44b5c67cfb700c6fb56f37bcf04a5d549909a6"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_INPUT_HASHES.json",
+      "sha256": "12e058d3725fa989b3da543c136c169efd90dbcba28a8a8c2cce4c4033769715"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/orion_linear.R",
+      "sha256": "6f4f9dbdbe5d147019806b60a4aa6c2fe82d888d1e4d87d71b99807552129b25"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/INSTALLED_RUNTIME_PACKAGES.json",
+      "sha256": "0813a8cd7b6e15372e818b1fe9200d4975f6b2affe209488afaf228dc886b939"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/probe_safeconf_private_parquet_agent.py",
+      "sha256": "9fd3c565a3dc333dd24e287dfb69573277fa5b6bbcec64b084dbeac82636af12"
+    }
+  ],
+  "data_release": "53a5bc98d49247bcf967500292575c3d3602de31",
+  "dataset_subset": "HCT116_Batch1-20 plus HEK293T_Batch1-20; no replacement",
+  "prospective_status": "new independent-study replication, not automatic confirmation of old v4 or whole-study pristine",
+  "normalization": {
+    "formula": "mean_cell(log1p(4000 * raw_gene_UMI / official_full_library_total_counts))",
+    "cell_weight": "equal per retained cell",
+    "control": "own-context authorized TRAIN NTC cells excluding already previewed cells",
+    "gene_axis": "all38606 uniqueEnsembl for published upstream PCA; fixedSource3285 uniqueEnsembl/symbol endpoint",
+    "unknown_token_policy": "fail_closed",
+    "ambiguous_target_mapping": "omit task before expression using metadata ambiguity; no arbitrary first matching gene"
+  },
+  "upstream": {
+    "name": "Ahlmann-Eltze2025_published_linear_PCA_adaptation",
+    "official_commit": "bfa6eeea2bd145a1af2ec0127a2e808cc38456a9",
+    "fit_split": "TRAIN only, separate context models",
+    "pca_dim": 10,
+    "ridge_penalty": 0.1,
+    "seed": 1,
+    "validation_model_selection": "none; competence-only; no validation-fitted prediction scaling",
+    "original_loader": "not executed; numerical core exact function verified",
+    "runtime_environment_reproduction": "partial mathematical-core reproduction, Matrix1.7.6 vs original1.7.0 disclosed"
+  },
+  "competence": {
+    "endpoint": "task-level RMSE on Source3285 aligned CP4000 effect vectors",
+    "valid_tasks": "retained QC count>=30; unique target mapping; finite model prediction",
+    "strata": "actual HCT116 and HEK293T contexts, no artificial claim of three independent backgrounds",
+    "baseline_candidates": [
+      "zero effect (matched TRAIN control)",
+      "unweighted TRAIN perturbation-task mean effect, owncontext"
+    ],
+    "strongest_simple_baseline_selection": "per context TRAIN grouped leave-cluster-out macro RMSE only; rules fixed before validation errors/SafeConf results",
+    "relative_macro_error_gap_max": 0.02,
+    "minimum_noninferior_strata_fraction": 0.6,
+    "bootstrap_replicates": 5000,
+    "bootstrap_unit": "gene cluster jointly across contexts",
+    "bootstrap_seed": 20260929,
+    "stable_disadvantage": "paired context-macro relative gap lower95CI > +0.02",
+    "context_count_limitation": "two contexts only; does not satisfy older three-background asset condition. This is bounded replication under latest72h contract, never re-labeled as three states."
+  },
+  "risk": {
+    "trained_on": "Source DEV GAT/Exphormer only, all biological-task predictions same outergene fold",
+    "parameters": "six saved Source3285 fitted Ridge/HGB models and one Public Biology HGB, locked by MODEL_MANIFEST hashes",
+    "target_error_training": false,
+    "target_CDF": false,
+    "calibrated_target_probability_claim": false,
+    "publication_scope": "six predetermined candidates reported; do not use final test results to silently select a new winner"
+  },
+  "history": {
+    "legal_banks": "historical Source experiments and authorized Orion TRAIN/VALIDATION public biology only; exact task/experimentalunit exclusion",
+    "source_supervision": "historical Source errors enter risk parameters; no targettesterrors",
+    "new_feedback": "not authorized by this contract; separate feedback/holdout and fittedprediction freeze required"
+  },
+  "privacy": {
+    "current_permitted_roles": [
+      "TRAIN",
+      "VALIDATION",
+      "TRAIN_CONTROL_SOURCE_SCOPE"
+    ],
+    "forbidden_roles": [
+      "TEST",
+      "DEV_EXPOSED_CELL"
+    ],
+    "private_numeric_materialization": false,
+    "opaque_compressed_or_decompressed_bytes": "may exist for mixed Parquet pages; private int64/double values or rowvectors not materialized",
+    "mask_source": "immutable external metadata with exact filehash and originalrowindex, never expression values",
+    "production_permit": "separate exact frozen reader/aggregator/sourcecode SHA permit required; synthetic proof alone is not permission",
+    "test_open_condition": "all upstream/core/prior/risk predictions, configs and fittedparameter hashes saved first; explicit final test access contract, not this TRAINVAL permit"
+  },
+  "new_large_upstream_training": false,
+  "cost": {
+    "download_limit_bytes": 100000000000,
+    "GPU_limit_hours": 96,
+    "candidate_raw_bytes": 18137568035,
+    "upstream_training": "bounded CPU published linear adaptation; record new attempt when formal validation predictions generated"
+  },
+  "no_test_result_optimization": true
+}

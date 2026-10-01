@@ -104,6 +104,21 @@ def accumulate(
     counts[unique] += np.diff(np.r_[starts, len(sorted_codes)])
 
 
+def allowed_row_spans(mask: np.ndarray, chunk_rows: int):
+    """Yield bounded contiguous allowed spans before reading expression.
+
+    HDF5 may decompress shared storage chunks internally; no disallowed row
+    values are returned or converted into the biological aggregation arrays.
+    """
+    mask = np.asarray(mask, dtype=bool)
+    if mask.ndim != 1 or chunk_rows < 1:
+        raise ValueError("row mask must be one-dimensional and chunk size positive")
+    boundaries = np.flatnonzero(np.diff(np.r_[False, mask, False]))
+    for first, stop in zip(boundaries[::2], boundaries[1::2]):
+        for start in range(int(first), int(stop), chunk_rows):
+            yield start, min(start + chunk_rows, int(stop))
+
+
 def pairwise_cosine(vectors: np.ndarray) -> float:
     if len(vectors) < 2:
         return float("nan")
@@ -192,8 +207,10 @@ def main() -> None:
         x = handle["X"]
         indptr = x["indptr"]
         n_rows, n_cols = len(frame), len(genes)
-        for start in range(0, n_rows, args.chunk_rows):
-            end = min(start + args.chunk_rows, n_rows)
+        expression_rows_materialized = 0
+        for start, end in allowed_row_spans(dev, args.chunk_rows):
+            if not dev[start:end].all():
+                raise QualityFailure("disallowed expression row entered read span")
             p0, p1 = int(indptr[start]), int(indptr[end])
             block = sparse.csr_matrix(
                 (
@@ -203,10 +220,13 @@ def main() -> None:
                 ),
                 shape=(end - start, n_cols),
             )[:, selected].toarray()
+            expression_rows_materialized += end - start
             for codes, _, name in specifications:
                 accumulate(aggregates[name][0], aggregates[name][1], codes[start:end], block)
             if start % 50000 == 0:
                 print(f"[McFalineQuality] rows {start}:{end}/{n_rows}", flush=True)
+        if expression_rows_materialized != int(dev.sum()):
+            raise QualityFailure("allowed expression rows incomplete or duplicated")
         means = {}
         for _, keys, name in specifications:
             sums, counts = aggregates[name]
@@ -320,6 +340,8 @@ def main() -> None:
             "split_sha256": sha256_file(args.split),
             "allowed_roles": ["train", "val"],
             "test_expression_opened": False,
+            "test_expression_rows_materialized": 0,
+            "expression_access_policy": "trainval_contiguous_spans_before_CSR_read_v2",
             "quality_definition": "held-out guide/plate/split-half reproducibility",
         },
     )
@@ -330,6 +352,8 @@ def main() -> None:
         "split_sha256": sha256_file(args.split),
         "n_trainval_cells": int(dev.sum()),
         "n_test_cells_aggregated": 0,
+        "n_test_expression_rows_materialized": 0,
+        "n_allowed_expression_rows_materialized": expression_rows_materialized,
         "n_quality_tasks": len(result),
         "n_quality_genes": len(selected_genes),
         "guide_quality_coverage": float(result.guide_reproducibility.notna().mean()),

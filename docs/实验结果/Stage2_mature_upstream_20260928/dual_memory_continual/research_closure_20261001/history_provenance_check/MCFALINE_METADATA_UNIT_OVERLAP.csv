@@ -1,0 +1,7 @@
+metadata_unit,trainval_unique_units,test_unique_units,shared_trainval_test_units,new_expression_read
+gRNA_id,2932,2148,2148,False
+PCR_plate,98,4,4,False
+cell_type::PCR_plate,106,12,12,False
+perturbation::gRNA_id,2932,2148,2148,False
+perturbation::cell_type::treatment::PCR_plate,29343,2184,12,False
+perturbation::cell_type::treatment,7188,546,3,False
