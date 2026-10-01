@@ -1,0 +1,17 @@
+{
+  "schema": "safeconf_orion_root_risk_followthrough_runtime_registration_v1",
+  "authorization": "Root explicitly authorized one bounded8h waiter after existing once-only reader554948; ONLY19ea evaluate-risk on exact complete truth receipt. No reader/claim/fit/reopen.",
+  "controller": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/WAIT_COMPLETE_TRUTH_THEN_RISK.py",
+    "bytes": 6641,
+    "sha256": "4517e40959503de2d3f11f2879da56e22b22a7d998c72a0c8b019b943bdc900b"
+  },
+  "existing_operation": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/IMMUTABLE_POSTSEAL_TEST_ACCESS.json",
+    "bytes": 14701,
+    "sha256": "c94bc298c95bbe4a4d6f92dac8263b9aa93be18c48297f5181232bf73d44881d"
+  },
+  "existing_reader_pid": 554948,
+  "new_truth_reader_started": false,
+  "new_fits": 0
+}

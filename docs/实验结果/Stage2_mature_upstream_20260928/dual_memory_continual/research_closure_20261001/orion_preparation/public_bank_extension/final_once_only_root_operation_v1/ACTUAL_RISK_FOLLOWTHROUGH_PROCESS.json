@@ -1,0 +1,14 @@
+{
+  "pid": 556790,
+  "controller": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/WAIT_COMPLETE_TRUTH_THEN_RISK.py",
+    "bytes": 6641,
+    "sha256": "4517e40959503de2d3f11f2879da56e22b22a7d998c72a0c8b019b943bdc900b"
+  },
+  "registration": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/RISK_FOLLOWTHROUGH_REGISTRATION.json",
+    "bytes": 919,
+    "sha256": "feea2038dfc0820b50daa0013c9907c36106ac645c6ec100e03ea90867276457"
+  },
+  "log_path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/RISK_FOLLOWTHROUGH_CONTROLLER.log"
+}

@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-01T23:56:03.005853+00:00",
+  "updated_utc": "2026-10-01T23:57:43.824258+00:00",
   "complete": [
     "five-fold nested public biology with four inner folds",
     "three-line sixteen-method matrix with three registered seeds",
@@ -80,7 +80,7 @@
   "new_upstream_formal_validation_prediction_attempts": 1,
   "orion_verified_files": 41,
   "orion_registered_files": 41,
-  "orion_test_expression_opened": false,
+  "orion_test_expression_opened": null,
   "background_jobs": [
     {
       "name": "registered_blind_CPU_pipeline_v2",
@@ -149,6 +149,16 @@
       "log": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/EVALUATE_TEST.log",
       "status": "RUNNING_AFTER_ALL_PARAMETERS_AND_SCORES_FROZEN",
       "TESTtruth_reader": true
+    },
+    {
+      "name": "fixed_risk_evaluation_after_original_reader_complete",
+      "pid": 556790,
+      "status_file": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/RISK_FOLLOWTHROUGH_STATUS.json",
+      "status": "WAITING_EXISTING_READER_COMPLETE_RECEIPT",
+      "new_truth_reader_started": false,
+      "TEST_reopened": false,
+      "new_fits": 0,
+      "maximum_wait_seconds": 28800
     }
   ],
   "orion_training_expression_read": true,
@@ -198,7 +208,7 @@
   },
   "orion_aggregation_completed_files": 40,
   "orion_last_aggregated_file": "data/HEK293T_Batch9.parquet",
-  "orion_registered_evaluation_status": "ACTUAL_ONCE_ONLY_EVALUATE_TEST_PROCESS_RUNNING",
+  "orion_registered_evaluation_status": "REGISTERED_ONCE_ONLY_SCOPE_RESERVED_CPU_TRUTH_READER_RUNNING",
   "orion_same_gene_history_metadata_upper_bound": {
     "tasks": 52,
     "gene_clusters": 32,
@@ -360,6 +370,10 @@
     "authorized_chain_sha256": "19ea756bd8fd2d9be3cc81392abb1952c648a1654401d8748a6af400de8a377d",
     "global_claim_required_before_numeric_read": true,
     "no_method_refitting_or_TESTselection": true,
-    "no_scientific_effect_yet_reported": true
-  }
+    "no_scientific_effect_yet_reported": true,
+    "global_claim_created_utc": "2026-10-01T23:55:34.155239+00:00",
+    "reader_PID_live_verified": 554948,
+    "status": "ONCE_ONLY_SCOPE_RESERVED_READER_RUNNING_NO_SCIENTIFIC_RESULT_YET"
+  },
+  "orion_test_materialization_status": "AUTHORIZED_ONCE_ONLY_READER_RUNNING_FINAL_CELL_TRACE_NOT_YET_AVAILABLE"
 }
