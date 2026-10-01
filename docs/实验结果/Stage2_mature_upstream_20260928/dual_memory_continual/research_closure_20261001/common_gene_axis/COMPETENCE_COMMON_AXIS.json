@@ -1,0 +1,17 @@
+{
+  "aggregation": "equal-context macro RMSE",
+  "ci95_lower": -0.008974395720219287,
+  "ci95_upper": -0.007793715139725655,
+  "fixed_alpha": 0.25,
+  "gene_count": 2840,
+  "n_clusters": 377,
+  "n_tasks": 542,
+  "new_model_training": 0,
+  "noninferior_strata_fraction": 1.0,
+  "passes_fixed_competence_rule": true,
+  "relative_macro_error_gap": -0.00838688250354458,
+  "role": "SEEN_VALIDATION_COMMON_AXIS",
+  "rule": "point gap<=2%,>=60% strata within 2%,CI lower<=2%",
+  "strongest_simple_baseline": "registered train_state_mean",
+  "test_truth_used": false
+}

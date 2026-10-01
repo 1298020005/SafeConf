@@ -1,0 +1,10 @@
+{
+  "equal20_is_new_primary_endpoint": false,
+  "feedback_primary_seed": 20260930,
+  "feedback_tasks": 212,
+  "no_model_selection_from_figures": true,
+  "pertEMA_native_is_adaptation": true,
+  "role": "SEEN_POST_CONFIRMATION",
+  "sampling_error_bars": "minimum/maximum over all five fixed hash orders; not confidence intervals",
+  "sampling_tasks": 543
+}

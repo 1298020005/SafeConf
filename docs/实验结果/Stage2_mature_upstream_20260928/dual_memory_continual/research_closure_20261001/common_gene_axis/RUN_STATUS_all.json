@@ -1,0 +1,10 @@
+{
+  "code_sha256": "70c1f7d625c761796eb9ad8fe9539a24468dfe74d0934c7c07104889ba5bd085",
+  "n_genes": 2840,
+  "new_model_calls": 0,
+  "new_upstream_training": 0,
+  "phase": "all",
+  "role": "SEEN_POST_CONFIRMATION",
+  "status": "COMPLETE",
+  "test_prediction_control_rule": "observed TEST control; TRAIN cell-mean state baseline; fixed alpha025"
+}

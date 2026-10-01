@@ -1,0 +1,287 @@
+line,outer_fold,method,source_error_rows,source_error_clusters,source_predictors,source_error_uses,source_error_records_hash,public_evidence_used,public_biology_transfer_learner,c_risk_error_labels,c_feedback_error_labels,c_error_CDF_labels,c_validation_biology_tasks,c_validation_upstream_calibration_tasks,target_evaluation_role
+Exphormer_to_GAT,0,Learned_DirectRMSE,0,0,0,NONE,,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,0,Learned_ShuffledHGB_0,1446,460,1,risk target and training-only CDF,5ec445743472f645ea45806bf72a66ff1391dd414365f8e6f8bcfbec2b8f1d04,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,0,Learned_ShuffledHGB_1,1446,460,1,risk target and training-only CDF,5ec445743472f645ea45806bf72a66ff1391dd414365f8e6f8bcfbec2b8f1d04,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,0,Learned_ShuffledHGB_2,1446,460,1,risk target and training-only CDF,5ec445743472f645ea45806bf72a66ff1391dd414365f8e6f8bcfbec2b8f1d04,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,0,Learned_ShuffledHGB_3,1446,460,1,risk target and training-only CDF,5ec445743472f645ea45806bf72a66ff1391dd414365f8e6f8bcfbec2b8f1d04,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,0,Learned_ShuffledHGB_4,1446,460,1,risk target and training-only CDF,5ec445743472f645ea45806bf72a66ff1391dd414365f8e6f8bcfbec2b8f1d04,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,0,Learned_WeightedHistoryDistance,0,0,0,NONE,,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,0,Learned_hgb,1446,460,1,risk target and training-only CDF,5ec445743472f645ea45806bf72a66ff1391dd414365f8e6f8bcfbec2b8f1d04,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,0,Learned_ridge,1446,460,1,risk target and training-only CDF,5ec445743472f645ea45806bf72a66ff1391dd414365f8e6f8bcfbec2b8f1d04,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,0,Magnitude,0,0,0,NONE,,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,0,ManualPriorDispersion,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,0,ManualPriorMagnitude,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,0,Manual_DirectRMSE,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,0,Manual_ShuffledHGB_0,1446,460,1,risk target and training-only CDF,5ec445743472f645ea45806bf72a66ff1391dd414365f8e6f8bcfbec2b8f1d04,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,0,Manual_ShuffledHGB_1,1446,460,1,risk target and training-only CDF,5ec445743472f645ea45806bf72a66ff1391dd414365f8e6f8bcfbec2b8f1d04,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,0,Manual_ShuffledHGB_2,1446,460,1,risk target and training-only CDF,5ec445743472f645ea45806bf72a66ff1391dd414365f8e6f8bcfbec2b8f1d04,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,0,Manual_ShuffledHGB_3,1446,460,1,risk target and training-only CDF,5ec445743472f645ea45806bf72a66ff1391dd414365f8e6f8bcfbec2b8f1d04,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,0,Manual_ShuffledHGB_4,1446,460,1,risk target and training-only CDF,5ec445743472f645ea45806bf72a66ff1391dd414365f8e6f8bcfbec2b8f1d04,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,0,Manual_WeightedHistoryDistance,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,0,Manual_hgb,1446,460,1,risk target and training-only CDF,5ec445743472f645ea45806bf72a66ff1391dd414365f8e6f8bcfbec2b8f1d04,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,0,Manual_ridge,1446,460,1,risk target and training-only CDF,5ec445743472f645ea45806bf72a66ff1391dd414365f8e6f8bcfbec2b8f1d04,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,0,Prediction_hgb,1446,460,1,risk target and training-only CDF,5ec445743472f645ea45806bf72a66ff1391dd414365f8e6f8bcfbec2b8f1d04,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,0,Prediction_ridge,1446,460,1,risk target and training-only CDF,5ec445743472f645ea45806bf72a66ff1391dd414365f8e6f8bcfbec2b8f1d04,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,0,Uniform_DirectRMSE,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,0,Uniform_hgb,1446,460,1,risk target and training-only CDF,5ec445743472f645ea45806bf72a66ff1391dd414365f8e6f8bcfbec2b8f1d04,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,0,Uniform_ridge,1446,460,1,risk target and training-only CDF,5ec445743472f645ea45806bf72a66ff1391dd414365f8e6f8bcfbec2b8f1d04,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,1,Learned_DirectRMSE,0,0,0,NONE,,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,1,Learned_ShuffledHGB_0,1446,460,1,risk target and training-only CDF,de00c1ba7e4509d477cb00ec749076c9c36e91c4d9392a349a84542f4347ab72,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,1,Learned_ShuffledHGB_1,1446,460,1,risk target and training-only CDF,de00c1ba7e4509d477cb00ec749076c9c36e91c4d9392a349a84542f4347ab72,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,1,Learned_ShuffledHGB_2,1446,460,1,risk target and training-only CDF,de00c1ba7e4509d477cb00ec749076c9c36e91c4d9392a349a84542f4347ab72,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,1,Learned_ShuffledHGB_3,1446,460,1,risk target and training-only CDF,de00c1ba7e4509d477cb00ec749076c9c36e91c4d9392a349a84542f4347ab72,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,1,Learned_ShuffledHGB_4,1446,460,1,risk target and training-only CDF,de00c1ba7e4509d477cb00ec749076c9c36e91c4d9392a349a84542f4347ab72,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,1,Learned_WeightedHistoryDistance,0,0,0,NONE,,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,1,Learned_hgb,1446,460,1,risk target and training-only CDF,de00c1ba7e4509d477cb00ec749076c9c36e91c4d9392a349a84542f4347ab72,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,1,Learned_ridge,1446,460,1,risk target and training-only CDF,de00c1ba7e4509d477cb00ec749076c9c36e91c4d9392a349a84542f4347ab72,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,1,Magnitude,0,0,0,NONE,,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,1,ManualPriorDispersion,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,1,ManualPriorMagnitude,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,1,Manual_DirectRMSE,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,1,Manual_ShuffledHGB_0,1446,460,1,risk target and training-only CDF,de00c1ba7e4509d477cb00ec749076c9c36e91c4d9392a349a84542f4347ab72,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,1,Manual_ShuffledHGB_1,1446,460,1,risk target and training-only CDF,de00c1ba7e4509d477cb00ec749076c9c36e91c4d9392a349a84542f4347ab72,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,1,Manual_ShuffledHGB_2,1446,460,1,risk target and training-only CDF,de00c1ba7e4509d477cb00ec749076c9c36e91c4d9392a349a84542f4347ab72,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,1,Manual_ShuffledHGB_3,1446,460,1,risk target and training-only CDF,de00c1ba7e4509d477cb00ec749076c9c36e91c4d9392a349a84542f4347ab72,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,1,Manual_ShuffledHGB_4,1446,460,1,risk target and training-only CDF,de00c1ba7e4509d477cb00ec749076c9c36e91c4d9392a349a84542f4347ab72,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,1,Manual_WeightedHistoryDistance,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,1,Manual_hgb,1446,460,1,risk target and training-only CDF,de00c1ba7e4509d477cb00ec749076c9c36e91c4d9392a349a84542f4347ab72,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,1,Manual_ridge,1446,460,1,risk target and training-only CDF,de00c1ba7e4509d477cb00ec749076c9c36e91c4d9392a349a84542f4347ab72,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,1,Prediction_hgb,1446,460,1,risk target and training-only CDF,de00c1ba7e4509d477cb00ec749076c9c36e91c4d9392a349a84542f4347ab72,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,1,Prediction_ridge,1446,460,1,risk target and training-only CDF,de00c1ba7e4509d477cb00ec749076c9c36e91c4d9392a349a84542f4347ab72,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,1,Uniform_DirectRMSE,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,1,Uniform_hgb,1446,460,1,risk target and training-only CDF,de00c1ba7e4509d477cb00ec749076c9c36e91c4d9392a349a84542f4347ab72,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,1,Uniform_ridge,1446,460,1,risk target and training-only CDF,de00c1ba7e4509d477cb00ec749076c9c36e91c4d9392a349a84542f4347ab72,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,2,Learned_DirectRMSE,0,0,0,NONE,,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,2,Learned_ShuffledHGB_0,1446,460,1,risk target and training-only CDF,29f69e6e207a80fb4558f70596751a43afc3ac5f9b84a10e6e8422cd8b562f69,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,2,Learned_ShuffledHGB_1,1446,460,1,risk target and training-only CDF,29f69e6e207a80fb4558f70596751a43afc3ac5f9b84a10e6e8422cd8b562f69,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,2,Learned_ShuffledHGB_2,1446,460,1,risk target and training-only CDF,29f69e6e207a80fb4558f70596751a43afc3ac5f9b84a10e6e8422cd8b562f69,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,2,Learned_ShuffledHGB_3,1446,460,1,risk target and training-only CDF,29f69e6e207a80fb4558f70596751a43afc3ac5f9b84a10e6e8422cd8b562f69,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,2,Learned_ShuffledHGB_4,1446,460,1,risk target and training-only CDF,29f69e6e207a80fb4558f70596751a43afc3ac5f9b84a10e6e8422cd8b562f69,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,2,Learned_WeightedHistoryDistance,0,0,0,NONE,,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,2,Learned_hgb,1446,460,1,risk target and training-only CDF,29f69e6e207a80fb4558f70596751a43afc3ac5f9b84a10e6e8422cd8b562f69,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,2,Learned_ridge,1446,460,1,risk target and training-only CDF,29f69e6e207a80fb4558f70596751a43afc3ac5f9b84a10e6e8422cd8b562f69,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,2,Magnitude,0,0,0,NONE,,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,2,ManualPriorDispersion,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,2,ManualPriorMagnitude,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,2,Manual_DirectRMSE,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,2,Manual_ShuffledHGB_0,1446,460,1,risk target and training-only CDF,29f69e6e207a80fb4558f70596751a43afc3ac5f9b84a10e6e8422cd8b562f69,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,2,Manual_ShuffledHGB_1,1446,460,1,risk target and training-only CDF,29f69e6e207a80fb4558f70596751a43afc3ac5f9b84a10e6e8422cd8b562f69,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,2,Manual_ShuffledHGB_2,1446,460,1,risk target and training-only CDF,29f69e6e207a80fb4558f70596751a43afc3ac5f9b84a10e6e8422cd8b562f69,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,2,Manual_ShuffledHGB_3,1446,460,1,risk target and training-only CDF,29f69e6e207a80fb4558f70596751a43afc3ac5f9b84a10e6e8422cd8b562f69,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,2,Manual_ShuffledHGB_4,1446,460,1,risk target and training-only CDF,29f69e6e207a80fb4558f70596751a43afc3ac5f9b84a10e6e8422cd8b562f69,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,2,Manual_WeightedHistoryDistance,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,2,Manual_hgb,1446,460,1,risk target and training-only CDF,29f69e6e207a80fb4558f70596751a43afc3ac5f9b84a10e6e8422cd8b562f69,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,2,Manual_ridge,1446,460,1,risk target and training-only CDF,29f69e6e207a80fb4558f70596751a43afc3ac5f9b84a10e6e8422cd8b562f69,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,2,Prediction_hgb,1446,460,1,risk target and training-only CDF,29f69e6e207a80fb4558f70596751a43afc3ac5f9b84a10e6e8422cd8b562f69,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,2,Prediction_ridge,1446,460,1,risk target and training-only CDF,29f69e6e207a80fb4558f70596751a43afc3ac5f9b84a10e6e8422cd8b562f69,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,2,Uniform_DirectRMSE,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,2,Uniform_hgb,1446,460,1,risk target and training-only CDF,29f69e6e207a80fb4558f70596751a43afc3ac5f9b84a10e6e8422cd8b562f69,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,2,Uniform_ridge,1446,460,1,risk target and training-only CDF,29f69e6e207a80fb4558f70596751a43afc3ac5f9b84a10e6e8422cd8b562f69,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,3,Learned_DirectRMSE,0,0,0,NONE,,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,3,Learned_ShuffledHGB_0,1447,460,1,risk target and training-only CDF,868202630eb14aedf19a4e45eb784327372799763b948fa9df317d97af9ed89f,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,3,Learned_ShuffledHGB_1,1447,460,1,risk target and training-only CDF,868202630eb14aedf19a4e45eb784327372799763b948fa9df317d97af9ed89f,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,3,Learned_ShuffledHGB_2,1447,460,1,risk target and training-only CDF,868202630eb14aedf19a4e45eb784327372799763b948fa9df317d97af9ed89f,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,3,Learned_ShuffledHGB_3,1447,460,1,risk target and training-only CDF,868202630eb14aedf19a4e45eb784327372799763b948fa9df317d97af9ed89f,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,3,Learned_ShuffledHGB_4,1447,460,1,risk target and training-only CDF,868202630eb14aedf19a4e45eb784327372799763b948fa9df317d97af9ed89f,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,3,Learned_WeightedHistoryDistance,0,0,0,NONE,,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,3,Learned_hgb,1447,460,1,risk target and training-only CDF,868202630eb14aedf19a4e45eb784327372799763b948fa9df317d97af9ed89f,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,3,Learned_ridge,1447,460,1,risk target and training-only CDF,868202630eb14aedf19a4e45eb784327372799763b948fa9df317d97af9ed89f,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,3,Magnitude,0,0,0,NONE,,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,3,ManualPriorDispersion,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,3,ManualPriorMagnitude,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,3,Manual_DirectRMSE,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,3,Manual_ShuffledHGB_0,1447,460,1,risk target and training-only CDF,868202630eb14aedf19a4e45eb784327372799763b948fa9df317d97af9ed89f,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,3,Manual_ShuffledHGB_1,1447,460,1,risk target and training-only CDF,868202630eb14aedf19a4e45eb784327372799763b948fa9df317d97af9ed89f,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,3,Manual_ShuffledHGB_2,1447,460,1,risk target and training-only CDF,868202630eb14aedf19a4e45eb784327372799763b948fa9df317d97af9ed89f,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,3,Manual_ShuffledHGB_3,1447,460,1,risk target and training-only CDF,868202630eb14aedf19a4e45eb784327372799763b948fa9df317d97af9ed89f,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,3,Manual_ShuffledHGB_4,1447,460,1,risk target and training-only CDF,868202630eb14aedf19a4e45eb784327372799763b948fa9df317d97af9ed89f,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,3,Manual_WeightedHistoryDistance,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,3,Manual_hgb,1447,460,1,risk target and training-only CDF,868202630eb14aedf19a4e45eb784327372799763b948fa9df317d97af9ed89f,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,3,Manual_ridge,1447,460,1,risk target and training-only CDF,868202630eb14aedf19a4e45eb784327372799763b948fa9df317d97af9ed89f,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,3,Prediction_hgb,1447,460,1,risk target and training-only CDF,868202630eb14aedf19a4e45eb784327372799763b948fa9df317d97af9ed89f,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,3,Prediction_ridge,1447,460,1,risk target and training-only CDF,868202630eb14aedf19a4e45eb784327372799763b948fa9df317d97af9ed89f,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,3,Uniform_DirectRMSE,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,3,Uniform_hgb,1447,460,1,risk target and training-only CDF,868202630eb14aedf19a4e45eb784327372799763b948fa9df317d97af9ed89f,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,3,Uniform_ridge,1447,460,1,risk target and training-only CDF,868202630eb14aedf19a4e45eb784327372799763b948fa9df317d97af9ed89f,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,4,Learned_DirectRMSE,0,0,0,NONE,,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,4,Learned_ShuffledHGB_0,1447,460,1,risk target and training-only CDF,dc9bc3e40a701bd43f748f9f8d38376f45a532f98277107f52c4b8f5e8412b4d,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,4,Learned_ShuffledHGB_1,1447,460,1,risk target and training-only CDF,dc9bc3e40a701bd43f748f9f8d38376f45a532f98277107f52c4b8f5e8412b4d,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,4,Learned_ShuffledHGB_2,1447,460,1,risk target and training-only CDF,dc9bc3e40a701bd43f748f9f8d38376f45a532f98277107f52c4b8f5e8412b4d,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,4,Learned_ShuffledHGB_3,1447,460,1,risk target and training-only CDF,dc9bc3e40a701bd43f748f9f8d38376f45a532f98277107f52c4b8f5e8412b4d,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,4,Learned_ShuffledHGB_4,1447,460,1,risk target and training-only CDF,dc9bc3e40a701bd43f748f9f8d38376f45a532f98277107f52c4b8f5e8412b4d,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,4,Learned_WeightedHistoryDistance,0,0,0,NONE,,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,4,Learned_hgb,1447,460,1,risk target and training-only CDF,dc9bc3e40a701bd43f748f9f8d38376f45a532f98277107f52c4b8f5e8412b4d,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,4,Learned_ridge,1447,460,1,risk target and training-only CDF,dc9bc3e40a701bd43f748f9f8d38376f45a532f98277107f52c4b8f5e8412b4d,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,4,Magnitude,0,0,0,NONE,,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,4,ManualPriorDispersion,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,4,ManualPriorMagnitude,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,4,Manual_DirectRMSE,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,4,Manual_ShuffledHGB_0,1447,460,1,risk target and training-only CDF,dc9bc3e40a701bd43f748f9f8d38376f45a532f98277107f52c4b8f5e8412b4d,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,4,Manual_ShuffledHGB_1,1447,460,1,risk target and training-only CDF,dc9bc3e40a701bd43f748f9f8d38376f45a532f98277107f52c4b8f5e8412b4d,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,4,Manual_ShuffledHGB_2,1447,460,1,risk target and training-only CDF,dc9bc3e40a701bd43f748f9f8d38376f45a532f98277107f52c4b8f5e8412b4d,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,4,Manual_ShuffledHGB_3,1447,460,1,risk target and training-only CDF,dc9bc3e40a701bd43f748f9f8d38376f45a532f98277107f52c4b8f5e8412b4d,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,4,Manual_ShuffledHGB_4,1447,460,1,risk target and training-only CDF,dc9bc3e40a701bd43f748f9f8d38376f45a532f98277107f52c4b8f5e8412b4d,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,4,Manual_WeightedHistoryDistance,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,4,Manual_hgb,1447,460,1,risk target and training-only CDF,dc9bc3e40a701bd43f748f9f8d38376f45a532f98277107f52c4b8f5e8412b4d,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,4,Manual_ridge,1447,460,1,risk target and training-only CDF,dc9bc3e40a701bd43f748f9f8d38376f45a532f98277107f52c4b8f5e8412b4d,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,4,Prediction_hgb,1447,460,1,risk target and training-only CDF,dc9bc3e40a701bd43f748f9f8d38376f45a532f98277107f52c4b8f5e8412b4d,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,4,Prediction_ridge,1447,460,1,risk target and training-only CDF,dc9bc3e40a701bd43f748f9f8d38376f45a532f98277107f52c4b8f5e8412b4d,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,4,Uniform_DirectRMSE,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,4,Uniform_hgb,1447,460,1,risk target and training-only CDF,dc9bc3e40a701bd43f748f9f8d38376f45a532f98277107f52c4b8f5e8412b4d,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+Exphormer_to_GAT,4,Uniform_ridge,1447,460,1,risk target and training-only CDF,dc9bc3e40a701bd43f748f9f8d38376f45a532f98277107f52c4b8f5e8412b4d,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,0,Learned_DirectRMSE,0,0,0,NONE,,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,0,Learned_ShuffledHGB_0,1446,460,1,risk target and training-only CDF,df4c55cfa67526c2b5569b32e10aa5bef665e38df0ddb68f15745cf1b79c37e6,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,0,Learned_ShuffledHGB_1,1446,460,1,risk target and training-only CDF,df4c55cfa67526c2b5569b32e10aa5bef665e38df0ddb68f15745cf1b79c37e6,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,0,Learned_ShuffledHGB_2,1446,460,1,risk target and training-only CDF,df4c55cfa67526c2b5569b32e10aa5bef665e38df0ddb68f15745cf1b79c37e6,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,0,Learned_ShuffledHGB_3,1446,460,1,risk target and training-only CDF,df4c55cfa67526c2b5569b32e10aa5bef665e38df0ddb68f15745cf1b79c37e6,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,0,Learned_ShuffledHGB_4,1446,460,1,risk target and training-only CDF,df4c55cfa67526c2b5569b32e10aa5bef665e38df0ddb68f15745cf1b79c37e6,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,0,Learned_WeightedHistoryDistance,0,0,0,NONE,,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,0,Learned_hgb,1446,460,1,risk target and training-only CDF,df4c55cfa67526c2b5569b32e10aa5bef665e38df0ddb68f15745cf1b79c37e6,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,0,Learned_ridge,1446,460,1,risk target and training-only CDF,df4c55cfa67526c2b5569b32e10aa5bef665e38df0ddb68f15745cf1b79c37e6,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,0,Magnitude,0,0,0,NONE,,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,0,ManualPriorDispersion,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,0,ManualPriorMagnitude,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,0,Manual_DirectRMSE,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,0,Manual_ShuffledHGB_0,1446,460,1,risk target and training-only CDF,df4c55cfa67526c2b5569b32e10aa5bef665e38df0ddb68f15745cf1b79c37e6,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,0,Manual_ShuffledHGB_1,1446,460,1,risk target and training-only CDF,df4c55cfa67526c2b5569b32e10aa5bef665e38df0ddb68f15745cf1b79c37e6,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,0,Manual_ShuffledHGB_2,1446,460,1,risk target and training-only CDF,df4c55cfa67526c2b5569b32e10aa5bef665e38df0ddb68f15745cf1b79c37e6,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,0,Manual_ShuffledHGB_3,1446,460,1,risk target and training-only CDF,df4c55cfa67526c2b5569b32e10aa5bef665e38df0ddb68f15745cf1b79c37e6,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,0,Manual_ShuffledHGB_4,1446,460,1,risk target and training-only CDF,df4c55cfa67526c2b5569b32e10aa5bef665e38df0ddb68f15745cf1b79c37e6,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,0,Manual_WeightedHistoryDistance,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,0,Manual_hgb,1446,460,1,risk target and training-only CDF,df4c55cfa67526c2b5569b32e10aa5bef665e38df0ddb68f15745cf1b79c37e6,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,0,Manual_ridge,1446,460,1,risk target and training-only CDF,df4c55cfa67526c2b5569b32e10aa5bef665e38df0ddb68f15745cf1b79c37e6,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,0,Prediction_hgb,1446,460,1,risk target and training-only CDF,df4c55cfa67526c2b5569b32e10aa5bef665e38df0ddb68f15745cf1b79c37e6,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,0,Prediction_ridge,1446,460,1,risk target and training-only CDF,df4c55cfa67526c2b5569b32e10aa5bef665e38df0ddb68f15745cf1b79c37e6,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,0,Uniform_DirectRMSE,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,0,Uniform_hgb,1446,460,1,risk target and training-only CDF,df4c55cfa67526c2b5569b32e10aa5bef665e38df0ddb68f15745cf1b79c37e6,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,0,Uniform_ridge,1446,460,1,risk target and training-only CDF,df4c55cfa67526c2b5569b32e10aa5bef665e38df0ddb68f15745cf1b79c37e6,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,1,Learned_DirectRMSE,0,0,0,NONE,,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,1,Learned_ShuffledHGB_0,1446,460,1,risk target and training-only CDF,3333f7eab8a58ed42c2c46134492320e2cb0a4f2b1975012cae012f96691e1c2,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,1,Learned_ShuffledHGB_1,1446,460,1,risk target and training-only CDF,3333f7eab8a58ed42c2c46134492320e2cb0a4f2b1975012cae012f96691e1c2,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,1,Learned_ShuffledHGB_2,1446,460,1,risk target and training-only CDF,3333f7eab8a58ed42c2c46134492320e2cb0a4f2b1975012cae012f96691e1c2,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,1,Learned_ShuffledHGB_3,1446,460,1,risk target and training-only CDF,3333f7eab8a58ed42c2c46134492320e2cb0a4f2b1975012cae012f96691e1c2,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,1,Learned_ShuffledHGB_4,1446,460,1,risk target and training-only CDF,3333f7eab8a58ed42c2c46134492320e2cb0a4f2b1975012cae012f96691e1c2,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,1,Learned_WeightedHistoryDistance,0,0,0,NONE,,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,1,Learned_hgb,1446,460,1,risk target and training-only CDF,3333f7eab8a58ed42c2c46134492320e2cb0a4f2b1975012cae012f96691e1c2,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,1,Learned_ridge,1446,460,1,risk target and training-only CDF,3333f7eab8a58ed42c2c46134492320e2cb0a4f2b1975012cae012f96691e1c2,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,1,Magnitude,0,0,0,NONE,,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,1,ManualPriorDispersion,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,1,ManualPriorMagnitude,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,1,Manual_DirectRMSE,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,1,Manual_ShuffledHGB_0,1446,460,1,risk target and training-only CDF,3333f7eab8a58ed42c2c46134492320e2cb0a4f2b1975012cae012f96691e1c2,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,1,Manual_ShuffledHGB_1,1446,460,1,risk target and training-only CDF,3333f7eab8a58ed42c2c46134492320e2cb0a4f2b1975012cae012f96691e1c2,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,1,Manual_ShuffledHGB_2,1446,460,1,risk target and training-only CDF,3333f7eab8a58ed42c2c46134492320e2cb0a4f2b1975012cae012f96691e1c2,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,1,Manual_ShuffledHGB_3,1446,460,1,risk target and training-only CDF,3333f7eab8a58ed42c2c46134492320e2cb0a4f2b1975012cae012f96691e1c2,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,1,Manual_ShuffledHGB_4,1446,460,1,risk target and training-only CDF,3333f7eab8a58ed42c2c46134492320e2cb0a4f2b1975012cae012f96691e1c2,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,1,Manual_WeightedHistoryDistance,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,1,Manual_hgb,1446,460,1,risk target and training-only CDF,3333f7eab8a58ed42c2c46134492320e2cb0a4f2b1975012cae012f96691e1c2,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,1,Manual_ridge,1446,460,1,risk target and training-only CDF,3333f7eab8a58ed42c2c46134492320e2cb0a4f2b1975012cae012f96691e1c2,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,1,Prediction_hgb,1446,460,1,risk target and training-only CDF,3333f7eab8a58ed42c2c46134492320e2cb0a4f2b1975012cae012f96691e1c2,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,1,Prediction_ridge,1446,460,1,risk target and training-only CDF,3333f7eab8a58ed42c2c46134492320e2cb0a4f2b1975012cae012f96691e1c2,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,1,Uniform_DirectRMSE,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,1,Uniform_hgb,1446,460,1,risk target and training-only CDF,3333f7eab8a58ed42c2c46134492320e2cb0a4f2b1975012cae012f96691e1c2,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,1,Uniform_ridge,1446,460,1,risk target and training-only CDF,3333f7eab8a58ed42c2c46134492320e2cb0a4f2b1975012cae012f96691e1c2,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,2,Learned_DirectRMSE,0,0,0,NONE,,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,2,Learned_ShuffledHGB_0,1446,460,1,risk target and training-only CDF,17e15660518e4474cb0892268d2582711d2012bd63ace31619c6d7c96e6bad99,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,2,Learned_ShuffledHGB_1,1446,460,1,risk target and training-only CDF,17e15660518e4474cb0892268d2582711d2012bd63ace31619c6d7c96e6bad99,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,2,Learned_ShuffledHGB_2,1446,460,1,risk target and training-only CDF,17e15660518e4474cb0892268d2582711d2012bd63ace31619c6d7c96e6bad99,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,2,Learned_ShuffledHGB_3,1446,460,1,risk target and training-only CDF,17e15660518e4474cb0892268d2582711d2012bd63ace31619c6d7c96e6bad99,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,2,Learned_ShuffledHGB_4,1446,460,1,risk target and training-only CDF,17e15660518e4474cb0892268d2582711d2012bd63ace31619c6d7c96e6bad99,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,2,Learned_WeightedHistoryDistance,0,0,0,NONE,,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,2,Learned_hgb,1446,460,1,risk target and training-only CDF,17e15660518e4474cb0892268d2582711d2012bd63ace31619c6d7c96e6bad99,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,2,Learned_ridge,1446,460,1,risk target and training-only CDF,17e15660518e4474cb0892268d2582711d2012bd63ace31619c6d7c96e6bad99,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,2,Magnitude,0,0,0,NONE,,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,2,ManualPriorDispersion,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,2,ManualPriorMagnitude,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,2,Manual_DirectRMSE,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,2,Manual_ShuffledHGB_0,1446,460,1,risk target and training-only CDF,17e15660518e4474cb0892268d2582711d2012bd63ace31619c6d7c96e6bad99,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,2,Manual_ShuffledHGB_1,1446,460,1,risk target and training-only CDF,17e15660518e4474cb0892268d2582711d2012bd63ace31619c6d7c96e6bad99,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,2,Manual_ShuffledHGB_2,1446,460,1,risk target and training-only CDF,17e15660518e4474cb0892268d2582711d2012bd63ace31619c6d7c96e6bad99,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,2,Manual_ShuffledHGB_3,1446,460,1,risk target and training-only CDF,17e15660518e4474cb0892268d2582711d2012bd63ace31619c6d7c96e6bad99,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,2,Manual_ShuffledHGB_4,1446,460,1,risk target and training-only CDF,17e15660518e4474cb0892268d2582711d2012bd63ace31619c6d7c96e6bad99,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,2,Manual_WeightedHistoryDistance,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,2,Manual_hgb,1446,460,1,risk target and training-only CDF,17e15660518e4474cb0892268d2582711d2012bd63ace31619c6d7c96e6bad99,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,2,Manual_ridge,1446,460,1,risk target and training-only CDF,17e15660518e4474cb0892268d2582711d2012bd63ace31619c6d7c96e6bad99,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,2,Prediction_hgb,1446,460,1,risk target and training-only CDF,17e15660518e4474cb0892268d2582711d2012bd63ace31619c6d7c96e6bad99,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,2,Prediction_ridge,1446,460,1,risk target and training-only CDF,17e15660518e4474cb0892268d2582711d2012bd63ace31619c6d7c96e6bad99,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,2,Uniform_DirectRMSE,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,2,Uniform_hgb,1446,460,1,risk target and training-only CDF,17e15660518e4474cb0892268d2582711d2012bd63ace31619c6d7c96e6bad99,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,2,Uniform_ridge,1446,460,1,risk target and training-only CDF,17e15660518e4474cb0892268d2582711d2012bd63ace31619c6d7c96e6bad99,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,3,Learned_DirectRMSE,0,0,0,NONE,,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,3,Learned_ShuffledHGB_0,1447,460,1,risk target and training-only CDF,349ebd63a2eab8597d7db70fec07d7cdb4b586cec68c44437a9c70ab4938aaf9,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,3,Learned_ShuffledHGB_1,1447,460,1,risk target and training-only CDF,349ebd63a2eab8597d7db70fec07d7cdb4b586cec68c44437a9c70ab4938aaf9,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,3,Learned_ShuffledHGB_2,1447,460,1,risk target and training-only CDF,349ebd63a2eab8597d7db70fec07d7cdb4b586cec68c44437a9c70ab4938aaf9,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,3,Learned_ShuffledHGB_3,1447,460,1,risk target and training-only CDF,349ebd63a2eab8597d7db70fec07d7cdb4b586cec68c44437a9c70ab4938aaf9,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,3,Learned_ShuffledHGB_4,1447,460,1,risk target and training-only CDF,349ebd63a2eab8597d7db70fec07d7cdb4b586cec68c44437a9c70ab4938aaf9,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,3,Learned_WeightedHistoryDistance,0,0,0,NONE,,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,3,Learned_hgb,1447,460,1,risk target and training-only CDF,349ebd63a2eab8597d7db70fec07d7cdb4b586cec68c44437a9c70ab4938aaf9,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,3,Learned_ridge,1447,460,1,risk target and training-only CDF,349ebd63a2eab8597d7db70fec07d7cdb4b586cec68c44437a9c70ab4938aaf9,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,3,Magnitude,0,0,0,NONE,,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,3,ManualPriorDispersion,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,3,ManualPriorMagnitude,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,3,Manual_DirectRMSE,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,3,Manual_ShuffledHGB_0,1447,460,1,risk target and training-only CDF,349ebd63a2eab8597d7db70fec07d7cdb4b586cec68c44437a9c70ab4938aaf9,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,3,Manual_ShuffledHGB_1,1447,460,1,risk target and training-only CDF,349ebd63a2eab8597d7db70fec07d7cdb4b586cec68c44437a9c70ab4938aaf9,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,3,Manual_ShuffledHGB_2,1447,460,1,risk target and training-only CDF,349ebd63a2eab8597d7db70fec07d7cdb4b586cec68c44437a9c70ab4938aaf9,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,3,Manual_ShuffledHGB_3,1447,460,1,risk target and training-only CDF,349ebd63a2eab8597d7db70fec07d7cdb4b586cec68c44437a9c70ab4938aaf9,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,3,Manual_ShuffledHGB_4,1447,460,1,risk target and training-only CDF,349ebd63a2eab8597d7db70fec07d7cdb4b586cec68c44437a9c70ab4938aaf9,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,3,Manual_WeightedHistoryDistance,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,3,Manual_hgb,1447,460,1,risk target and training-only CDF,349ebd63a2eab8597d7db70fec07d7cdb4b586cec68c44437a9c70ab4938aaf9,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,3,Manual_ridge,1447,460,1,risk target and training-only CDF,349ebd63a2eab8597d7db70fec07d7cdb4b586cec68c44437a9c70ab4938aaf9,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,3,Prediction_hgb,1447,460,1,risk target and training-only CDF,349ebd63a2eab8597d7db70fec07d7cdb4b586cec68c44437a9c70ab4938aaf9,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,3,Prediction_ridge,1447,460,1,risk target and training-only CDF,349ebd63a2eab8597d7db70fec07d7cdb4b586cec68c44437a9c70ab4938aaf9,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,3,Uniform_DirectRMSE,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,3,Uniform_hgb,1447,460,1,risk target and training-only CDF,349ebd63a2eab8597d7db70fec07d7cdb4b586cec68c44437a9c70ab4938aaf9,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,3,Uniform_ridge,1447,460,1,risk target and training-only CDF,349ebd63a2eab8597d7db70fec07d7cdb4b586cec68c44437a9c70ab4938aaf9,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,4,Learned_DirectRMSE,0,0,0,NONE,,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,4,Learned_ShuffledHGB_0,1447,460,1,risk target and training-only CDF,73abcc01e5a7526db7e985010d1cb9e22c6984b5f56a62853c11f413e270d68d,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,4,Learned_ShuffledHGB_1,1447,460,1,risk target and training-only CDF,73abcc01e5a7526db7e985010d1cb9e22c6984b5f56a62853c11f413e270d68d,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,4,Learned_ShuffledHGB_2,1447,460,1,risk target and training-only CDF,73abcc01e5a7526db7e985010d1cb9e22c6984b5f56a62853c11f413e270d68d,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,4,Learned_ShuffledHGB_3,1447,460,1,risk target and training-only CDF,73abcc01e5a7526db7e985010d1cb9e22c6984b5f56a62853c11f413e270d68d,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,4,Learned_ShuffledHGB_4,1447,460,1,risk target and training-only CDF,73abcc01e5a7526db7e985010d1cb9e22c6984b5f56a62853c11f413e270d68d,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,4,Learned_WeightedHistoryDistance,0,0,0,NONE,,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,4,Learned_hgb,1447,460,1,risk target and training-only CDF,73abcc01e5a7526db7e985010d1cb9e22c6984b5f56a62853c11f413e270d68d,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,4,Learned_ridge,1447,460,1,risk target and training-only CDF,73abcc01e5a7526db7e985010d1cb9e22c6984b5f56a62853c11f413e270d68d,True,True,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,4,Magnitude,0,0,0,NONE,,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,4,ManualPriorDispersion,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,4,ManualPriorMagnitude,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,4,Manual_DirectRMSE,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,4,Manual_ShuffledHGB_0,1447,460,1,risk target and training-only CDF,73abcc01e5a7526db7e985010d1cb9e22c6984b5f56a62853c11f413e270d68d,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,4,Manual_ShuffledHGB_1,1447,460,1,risk target and training-only CDF,73abcc01e5a7526db7e985010d1cb9e22c6984b5f56a62853c11f413e270d68d,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,4,Manual_ShuffledHGB_2,1447,460,1,risk target and training-only CDF,73abcc01e5a7526db7e985010d1cb9e22c6984b5f56a62853c11f413e270d68d,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,4,Manual_ShuffledHGB_3,1447,460,1,risk target and training-only CDF,73abcc01e5a7526db7e985010d1cb9e22c6984b5f56a62853c11f413e270d68d,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,4,Manual_ShuffledHGB_4,1447,460,1,risk target and training-only CDF,73abcc01e5a7526db7e985010d1cb9e22c6984b5f56a62853c11f413e270d68d,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,4,Manual_WeightedHistoryDistance,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,4,Manual_hgb,1447,460,1,risk target and training-only CDF,73abcc01e5a7526db7e985010d1cb9e22c6984b5f56a62853c11f413e270d68d,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,4,Manual_ridge,1447,460,1,risk target and training-only CDF,73abcc01e5a7526db7e985010d1cb9e22c6984b5f56a62853c11f413e270d68d,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,4,Prediction_hgb,1447,460,1,risk target and training-only CDF,73abcc01e5a7526db7e985010d1cb9e22c6984b5f56a62853c11f413e270d68d,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,4,Prediction_ridge,1447,460,1,risk target and training-only CDF,73abcc01e5a7526db7e985010d1cb9e22c6984b5f56a62853c11f413e270d68d,False,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,4,Uniform_DirectRMSE,0,0,0,NONE,,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,4,Uniform_hgb,1447,460,1,risk target and training-only CDF,73abcc01e5a7526db7e985010d1cb9e22c6984b5f56a62853c11f413e270d68d,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+GAT_to_Exphormer,4,Uniform_ridge,1447,460,1,risk target and training-only CDF,73abcc01e5a7526db7e985010d1cb9e22c6984b5f56a62853c11f413e270d68d,True,False,0,0,0,0,0,DEV_SEEN_NESTED
+TxPert_to_McFaline,-1,Learned_DirectRMSE,0,0,0,NONE,,True,True,0,0,0,542,542,POST_CONFIRMATION_SEEN
+TxPert_to_McFaline,-1,Learned_ShuffledHGB_0,3616,575,2,risk target and training-only CDF,4bc634e5232fb652d4c3569cbd63d24bd07d3cb92b4c315f94fff70ccf60b26c,True,True,0,0,0,542,542,POST_CONFIRMATION_SEEN
+TxPert_to_McFaline,-1,Learned_ShuffledHGB_1,3616,575,2,risk target and training-only CDF,4bc634e5232fb652d4c3569cbd63d24bd07d3cb92b4c315f94fff70ccf60b26c,True,True,0,0,0,542,542,POST_CONFIRMATION_SEEN
+TxPert_to_McFaline,-1,Learned_ShuffledHGB_2,3616,575,2,risk target and training-only CDF,4bc634e5232fb652d4c3569cbd63d24bd07d3cb92b4c315f94fff70ccf60b26c,True,True,0,0,0,542,542,POST_CONFIRMATION_SEEN
+TxPert_to_McFaline,-1,Learned_ShuffledHGB_3,3616,575,2,risk target and training-only CDF,4bc634e5232fb652d4c3569cbd63d24bd07d3cb92b4c315f94fff70ccf60b26c,True,True,0,0,0,542,542,POST_CONFIRMATION_SEEN
+TxPert_to_McFaline,-1,Learned_ShuffledHGB_4,3616,575,2,risk target and training-only CDF,4bc634e5232fb652d4c3569cbd63d24bd07d3cb92b4c315f94fff70ccf60b26c,True,True,0,0,0,542,542,POST_CONFIRMATION_SEEN
+TxPert_to_McFaline,-1,Learned_WeightedHistoryDistance,0,0,0,NONE,,True,True,0,0,0,542,542,POST_CONFIRMATION_SEEN
+TxPert_to_McFaline,-1,Learned_hgb,3616,575,2,risk target and training-only CDF,4bc634e5232fb652d4c3569cbd63d24bd07d3cb92b4c315f94fff70ccf60b26c,True,True,0,0,0,542,542,POST_CONFIRMATION_SEEN
+TxPert_to_McFaline,-1,Learned_ridge,3616,575,2,risk target and training-only CDF,4bc634e5232fb652d4c3569cbd63d24bd07d3cb92b4c315f94fff70ccf60b26c,True,True,0,0,0,542,542,POST_CONFIRMATION_SEEN
+TxPert_to_McFaline,-1,Magnitude,0,0,0,NONE,,False,False,0,0,0,0,542,POST_CONFIRMATION_SEEN
+TxPert_to_McFaline,-1,ManualPriorDispersion,0,0,0,NONE,,True,False,0,0,0,0,542,POST_CONFIRMATION_SEEN
+TxPert_to_McFaline,-1,ManualPriorMagnitude,0,0,0,NONE,,True,False,0,0,0,0,542,POST_CONFIRMATION_SEEN
+TxPert_to_McFaline,-1,Manual_DirectRMSE,0,0,0,NONE,,True,False,0,0,0,0,542,POST_CONFIRMATION_SEEN
+TxPert_to_McFaline,-1,Manual_ShuffledHGB_0,3616,575,2,risk target and training-only CDF,4bc634e5232fb652d4c3569cbd63d24bd07d3cb92b4c315f94fff70ccf60b26c,True,False,0,0,0,0,542,POST_CONFIRMATION_SEEN
+TxPert_to_McFaline,-1,Manual_ShuffledHGB_1,3616,575,2,risk target and training-only CDF,4bc634e5232fb652d4c3569cbd63d24bd07d3cb92b4c315f94fff70ccf60b26c,True,False,0,0,0,0,542,POST_CONFIRMATION_SEEN
+TxPert_to_McFaline,-1,Manual_ShuffledHGB_2,3616,575,2,risk target and training-only CDF,4bc634e5232fb652d4c3569cbd63d24bd07d3cb92b4c315f94fff70ccf60b26c,True,False,0,0,0,0,542,POST_CONFIRMATION_SEEN
+TxPert_to_McFaline,-1,Manual_ShuffledHGB_3,3616,575,2,risk target and training-only CDF,4bc634e5232fb652d4c3569cbd63d24bd07d3cb92b4c315f94fff70ccf60b26c,True,False,0,0,0,0,542,POST_CONFIRMATION_SEEN
+TxPert_to_McFaline,-1,Manual_ShuffledHGB_4,3616,575,2,risk target and training-only CDF,4bc634e5232fb652d4c3569cbd63d24bd07d3cb92b4c315f94fff70ccf60b26c,True,False,0,0,0,0,542,POST_CONFIRMATION_SEEN
+TxPert_to_McFaline,-1,Manual_WeightedHistoryDistance,0,0,0,NONE,,True,False,0,0,0,0,542,POST_CONFIRMATION_SEEN
+TxPert_to_McFaline,-1,Manual_hgb,3616,575,2,risk target and training-only CDF,4bc634e5232fb652d4c3569cbd63d24bd07d3cb92b4c315f94fff70ccf60b26c,True,False,0,0,0,0,542,POST_CONFIRMATION_SEEN
+TxPert_to_McFaline,-1,Manual_ridge,3616,575,2,risk target and training-only CDF,4bc634e5232fb652d4c3569cbd63d24bd07d3cb92b4c315f94fff70ccf60b26c,True,False,0,0,0,0,542,POST_CONFIRMATION_SEEN
+TxPert_to_McFaline,-1,Prediction_hgb,3616,575,2,risk target and training-only CDF,4bc634e5232fb652d4c3569cbd63d24bd07d3cb92b4c315f94fff70ccf60b26c,False,False,0,0,0,0,542,POST_CONFIRMATION_SEEN
+TxPert_to_McFaline,-1,Prediction_ridge,3616,575,2,risk target and training-only CDF,4bc634e5232fb652d4c3569cbd63d24bd07d3cb92b4c315f94fff70ccf60b26c,False,False,0,0,0,0,542,POST_CONFIRMATION_SEEN
+TxPert_to_McFaline,-1,Uniform_DirectRMSE,0,0,0,NONE,,True,False,0,0,0,0,542,POST_CONFIRMATION_SEEN
+TxPert_to_McFaline,-1,Uniform_hgb,3616,575,2,risk target and training-only CDF,4bc634e5232fb652d4c3569cbd63d24bd07d3cb92b4c315f94fff70ccf60b26c,True,False,0,0,0,0,542,POST_CONFIRMATION_SEEN
+TxPert_to_McFaline,-1,Uniform_ridge,3616,575,2,risk target and training-only CDF,4bc634e5232fb652d4c3569cbd63d24bd07d3cb92b4c315f94fff70ccf60b26c,True,False,0,0,0,0,542,POST_CONFIRMATION_SEEN

@@ -1,0 +1,11 @@
+{
+  "alpha": 0.25,
+  "code_sha256": "14317660b122684db8c26e56989a486573bb738701b8defa6ad9bfee3bae8ead",
+  "model_effect": "frozen generated treated mean minus observed same-partition control",
+  "n_genes": 2840,
+  "n_validation_tasks": 542,
+  "role": "SEEN_POST_CONFIRMATION",
+  "state_baseline": "unweighted average of cell-weighted TRAIN task effects; TRAIN controls",
+  "status": "COMPLETE",
+  "test_treated_expression_used": false
+}

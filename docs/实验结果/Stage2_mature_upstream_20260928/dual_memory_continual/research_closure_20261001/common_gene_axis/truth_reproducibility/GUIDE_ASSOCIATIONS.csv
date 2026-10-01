@@ -1,0 +1,16 @@
+context,x,y,spearman,n_tasks
+a172,guide_half_a_error,guide_half_b_error,0.27681437636644807,189
+a172,log_history_support,true_error_rmse,-0.8517013888987305,189
+a172,log_history_support,guide_split_effect_rmse,-0.810330714802462,189
+a172,guide_disagreement,true_error_rmse,0.7222879894772392,189
+a172,n_test_cells,true_error_rmse,-0.9632229657717439,189
+t98g,guide_half_a_error,guide_half_b_error,0.13961626356884405,177
+t98g,log_history_support,true_error_rmse,-0.8422474677492192,177
+t98g,log_history_support,guide_split_effect_rmse,-0.78236556303094,177
+t98g,guide_disagreement,true_error_rmse,0.6287546960752065,177
+t98g,n_test_cells,true_error_rmse,-0.9642188198613144,177
+u87mg,guide_half_a_error,guide_half_b_error,0.10936445006146017,177
+u87mg,log_history_support,true_error_rmse,-0.7917653144481771,177
+u87mg,log_history_support,guide_split_effect_rmse,-0.7682402691079205,177
+u87mg,guide_disagreement,true_error_rmse,0.7201139176953307,177
+u87mg,n_test_cells,true_error_rmse,-0.9757494565585182,177

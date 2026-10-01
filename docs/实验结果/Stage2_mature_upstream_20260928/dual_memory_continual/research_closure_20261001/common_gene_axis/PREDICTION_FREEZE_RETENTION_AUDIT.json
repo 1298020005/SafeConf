@@ -1,0 +1,11 @@
+{
+  "role": "SEEN_POST_CONFIRMATION",
+  "original_pretruth_full_csv_sha_retained_in": "COMMON_AXIS_PREDICTION_FREEZE.json",
+  "original_pretruth_full_csv_bytes_retained": false,
+  "cause": "truth column was subsequently filled into the same result file",
+  "risk_scores_available_unchanged": true,
+  "retrospective_risk_only_file": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/COMMON_AXIS_RISK_ONLY_RETROSPECTIVE.csv.gz",
+  "retrospective_sha256": "ca62dc1265c3c51a3b6b72b4038e908d73395227a586966f3d734ccc1ea6c38b",
+  "retrospective_snapshot_is_prospective_proof": false,
+  "future_run_repair": "separate immutable risk-only freeze file; completed runs guarded; explicit fresh reproduction roots"
+}

@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "schema": "SafeConf-McFaline-Quality-v1",
+  "h5ad_sha256": "e9c6a010ce6e44eb72d32449e7d7ad2bd45d336855083fa901d52d0bf263fa87",
+  "split_sha256": "08a6558a68599b3703f626c8da72a1603486edd94a3f34dfc9fa7c9b6181b091",
+  "n_trainval_cells": 809201,
+  "n_test_cells_aggregated": 0,
+  "n_quality_tasks": 7173,
+  "n_quality_genes": 2840,
+  "guide_quality_coverage": 1.0,
+  "plate_quality_coverage": 1.0,
+  "split_half_quality_coverage": 1.0,
+  "support_is_not_quality": true,
+  "test_truth_opened": false,
+  "result_sha256": "d23ed43216f9aa3aaa17b410f54acf1b2587d0a53749d80ccd24f77b096e453d",
+  "public_memory_manifest": {
+    "schema": "SafeConf-PublicMemory-v1",
+    "created_utc": "2026-10-01T06:08:26.337164+00:00",
+    "n_items": 7173,
+    "n_genes": 2840,
+    "table_sha256": "a17798b8e3aaf0a5f26d1fcb18de871980a8e119640daebf4d411f0f77fff067",
+    "effect_vectors_sha256": "36212d51411fbe01234bbe82e1fb938a84b6f569ab540b64a30cab9a26cc67b8",
+    "control_vectors_sha256": "8593d30615e063ba4bf9711a62eccbff85748899ff4e254820a94b34d23ca4a2",
+    "gene_ids_sha256": "124117bad50b0111a3f68e4fca87662d62e25ef29d79fe8c6d63c72c9e665360",
+    "eligibility": null,
+    "source_manifest": {
+      "h5ad_sha256": "e9c6a010ce6e44eb72d32449e7d7ad2bd45d336855083fa901d52d0bf263fa87",
+      "split_sha256": "08a6558a68599b3703f626c8da72a1603486edd94a3f34dfc9fa7c9b6181b091",
+      "allowed_roles": [
+        "train",
+        "val"
+      ],
+      "test_expression_opened": false,
+      "quality_definition": "held-out guide/plate/split-half reproducibility"
+    }
+  },
+  "created_utc": "2026-10-01T06:09:37.693979+00:00"
+}

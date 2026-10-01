@@ -1,0 +1,3 @@
+field,formula,uses_effect_vectors
+log_history_support,log1p(sum(eligible source cell counts)),False
+effective_sources,1/sum(cell_count_normalized_weights^2),False

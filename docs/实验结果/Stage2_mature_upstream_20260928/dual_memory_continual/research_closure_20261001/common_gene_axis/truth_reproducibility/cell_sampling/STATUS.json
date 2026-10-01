@@ -1,0 +1,11 @@
+{
+  "all_five_hash_orders_reported": true,
+  "equal_cell_count": 20,
+  "interpretation": "sampling-size sensitivity; cross-half diagnostic assumes independent within-guide cell sampling and treats observed controls as fixed; not a new primary endpoint",
+  "n_negative_cross_half_squared_errors": 169,
+  "n_tasks": 543,
+  "no_model_refit_or_selection": true,
+  "primary_error_unchanged": true,
+  "role": "SEEN_DIAGNOSTIC",
+  "status": "COMPLETE"
+}

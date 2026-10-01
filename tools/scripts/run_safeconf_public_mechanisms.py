@@ -25,6 +25,7 @@ from tools.safeconf_continual.research import P, PUBLIC, SEEDS, fit_risk, ids_ha
 from tools.scripts import run_safeconf_research_closure as closure
 
 OUT = closure.OUT / 'public_mechanisms'
+COMMON_AXIS = None
 
 
 def manual_frames(bases, predictions, pairs, effects):
@@ -61,6 +62,14 @@ def manual_frames(bases, predictions, pairs, effects):
 
 
 def external_inputs():
+    if COMMON_AXIS is not None:
+        memory, effects, controls, _ = closure.PublicMemoryStore(
+            COMMON_AXIS / 'public_mcfaline_trainval').load()
+        base = pd.read_parquet(closure.RUNTIME / 'external_Manual.parquet')
+        prediction = np.load(COMMON_AXIS / 'TEST_CALIBRATED_EFFECTS.npy')
+        pairs = closure.mc.build_pairs(base, np.load(COMMON_AXIS / 'TEST_CONTROLS.npy'),
+                                       memory, effects, controls, None)
+        return memory, effects, pairs, base, prediction
     root = Path('/home/yyf/data/safeconf_dual_memory_20260929/public_mcfaline_trainval')
     memory = pd.read_parquet(root / 'public_memory.parquet')
     effects = np.load(root / 'effect_vectors.npy', mmap_mode='r')
@@ -137,10 +146,22 @@ def permutation(memory, seed, domain):
 
 
 def main():
+    global OUT, COMMON_AXIS
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--phase', choices=['growth', 'content', 'amplitude', 'all'], default='all')
+    parser.add_argument('--common-axis', action='store_true',
+                        help='Use fixed canonical 2840-gene derived arrays; keep native runs separate')
     args = parser.parse_args()
+    if args.common_axis:
+        from tools.scripts import run_safeconf_common_axis_closure as canonical
+        COMMON_AXIS = canonical.COMMON
+        closure.RUNTIME = COMMON_AXIS / 'risk_cache'
+        closure.OUT = canonical.DOC / 'results'
+        closure.read_tx = canonical.source_inputs
+        OUT = closure.OUT / 'public_mechanisms'
     OUT.mkdir(parents=True, exist_ok=True)
+    if (OUT / f'RUN_STATUS_{args.phase}.json').exists():
+        raise FileExistsError('completed public mechanism runs are immutable')
     closure.tx.atomic_json(OUT / f'EXECUTION_CONFIG_{args.phase}.json', {
         'role': 'SEEN_POST_CONFIRMATION', 'orders': list(range(5)), 'budgets': [.1, .25, .5, .75, 1.],
         'source_error_budget': 'fixed 100%; no source labels added with public coverage',
@@ -150,6 +171,10 @@ def main():
         'code_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest()})
     tasks, pairs, effects, bases, predictions, truth = closure.read_tx()
     tx_memory, _, _, _ = closure.PublicMemoryStore(closure.tx.STORE_ROOT).load()
+    if COMMON_AXIS is not None:
+        tx_memory = tx_memory.copy()
+        tx_memory['effect_contract_id'] = 'E201_common2840gene_log1p_delta_v1'
+        tx_memory['gene_space_id'] = 'SafeConf_common2840_v1'
     mc_memory, mc_effects, mc_pairs, mc_base, mc_prediction = external_inputs()
     if args.phase in ('growth', 'all'):
         records, coverage, banks = [], [], []

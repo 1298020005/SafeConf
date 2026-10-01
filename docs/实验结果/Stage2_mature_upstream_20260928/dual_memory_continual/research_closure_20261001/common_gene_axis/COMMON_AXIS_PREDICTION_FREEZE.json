@@ -1,0 +1,18 @@
+{
+  "alpha": 0.25,
+  "core_parameters": {
+    "depth": 3,
+    "hgb_iter": 200,
+    "l2": 10,
+    "learning_rate": 0.05,
+    "min_leaf": 20
+  },
+  "gene_ids_sha256": "be612f9c4638146b41eee26f607ab12fbed53b524cda7a76eee36ca554c28f97",
+  "new_pristine_confirmation_claim": false,
+  "risk_predictions_sha256": "fd0b46bd7a94e2fa2da603f695a6fe6a31df78c9d8d958e4619f10903d9432d2",
+  "role": "SEEN_POST_CONFIRMATION",
+  "source_error_labels_only": true,
+  "target_error_labels_for_risk_training": 0,
+  "test_biology_opened_after_this_freeze": true,
+  "upstream_effect_sha256": "385d62b8cbd2d535b1b31be504bbd55dd1032f0e09710a3b33c14f69e7bca89e"
+}

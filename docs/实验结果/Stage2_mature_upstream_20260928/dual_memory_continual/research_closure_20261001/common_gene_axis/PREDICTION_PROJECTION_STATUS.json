@@ -1,0 +1,37 @@
+{
+  "contract": {
+    "checkpoint_or_prediction_generation_changes": false,
+    "code_sha256": "4224e1dcd06cd5db50a2f620dcd5724392ea709388dde2065f59d8f62ddfe809",
+    "current_stage_reads_target_treated_expression": false,
+    "frozen_decoder_state_mean_mix_alpha": 0.25,
+    "future_scope": "same 16 methods and strict label budgets after canonical biological reference preparation",
+    "gene_ids_hash": "b791fd3aeb9d3860700228faf05f6a959085ff42d8836f384b903702180f36cd",
+    "missing_gene_zero_fill": false,
+    "n_genes": 2840,
+    "native_target_prediction_genes": 15009,
+    "new_model_calls": 0,
+    "new_upstream_training": 0,
+    "original_512gene_confirmation_replaced": false,
+    "role": "POST_CONFIRMATION_SEEN_CONTRACT_AUDIT",
+    "selection": "source output gene IDs intersect raw target prediction gene IDs; metadata only",
+    "source_axis_coverage": 0.847255369928401
+  },
+  "new_model_calls": 0,
+  "new_upstream_training": 0,
+  "status": "COMPLETE",
+  "target_treated_expression_read": false,
+  "test": {
+    "n_clusters": 380,
+    "n_prediction_files": 543,
+    "n_tasks": 543,
+    "prediction_sha256": "d8419f8df1469e8b54e3425241c713eb28b2ec0e4a672d4ce6c5a6ae01282aea",
+    "task_order_hash": "4e6599b1ba2de053f8030a97af871e31a2359fd2cc25b38f4093979e68e060d7"
+  },
+  "validation": {
+    "n_clusters": 377,
+    "n_prediction_files": 109,
+    "n_tasks": 542,
+    "prediction_sha256": "0d6d7eff3d2f5c446862cf16f54bd105c3e8e2101c1c07cc618e2c91afa2e4c2",
+    "task_order_hash": "801489b0971422f9281ee11d3975bf44e20ddf611f95aae652551a86965b86a8"
+  }
+}

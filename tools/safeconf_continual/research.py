@@ -30,6 +30,27 @@ def ids_hash(values) -> str:
     return hashlib.sha256("\n".join(sorted(map(str, values))).encode()).hexdigest()
 
 
+def paired_prediction_wide(predictions: pd.DataFrame) -> pd.DataFrame:
+    """Pair by biological identity, validating truth instead of joining on floats.
+
+    CSV/Parquet round trips can change the last bit of a floating error. An
+    error value is measured data, not part of a task's identity. Materially
+    different truths or duplicate method predictions remain hard failures.
+    The caller must select one line, seed and budget before calling.
+    """
+    keys = [c for c in ['task_id', 'target', 'gene', 'fold', 'upstream'] if c in predictions]
+    if predictions.duplicated(keys + ['method']).any():
+        raise ValueError('duplicate predictions within a paired task/method')
+    groups = predictions.groupby(keys, dropna=False, sort=True)
+    low = groups.true_error_rmse.min()
+    high = groups.true_error_rmse.max()
+    if not np.allclose(low, high, rtol=1e-12, atol=1e-14, equal_nan=True):
+        raise ValueError('paired methods have materially different task truths')
+    truth = groups.true_error_rmse.first().rename('true_error_rmse')
+    wide = predictions.pivot(index=keys, columns='method', values='risk')
+    return wide.join(truth).reset_index()
+
+
 def budget_subset(frame: pd.DataFrame, budget: float, order: int = 0) -> pd.DataFrame:
     if not 0 < budget <= 1:
         raise ValueError("source supervision budget must be in (0,1]")

@@ -1,0 +1,46 @@
+{
+  "bootstrap_replicates": 5000,
+  "budgets": [
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "methods": [
+    "NativeControl_HGB",
+    "NativeControl_HGB_isotonic",
+    "PertEMA_Native_Public_adapted",
+    "PertEMA_Native_Public_adapted_isotonic",
+    "PertEMA_Native_Shared_adapted",
+    "PertEMA_Native_Shared_adapted_isotonic",
+    "PertEMA_Native_adapted",
+    "PertEMA_Native_adapted_isotonic",
+    "PertEMA_P_adapted",
+    "PertEMA_P_adapted_isotonic",
+    "PertEMA_Public_adapted",
+    "PertEMA_Public_adapted_isotonic",
+    "PertEMA_Shared_adapted",
+    "PertEMA_Shared_adapted_isotonic",
+    "PublicTarget_HGB",
+    "ResidualHGB",
+    "Shared",
+    "SharedTarget_HGB",
+    "TargetOnly_HGB",
+    "TargetOnly_Ridge"
+  ],
+  "metric_names": [
+    "utility20",
+    "spearman",
+    "aurc",
+    "high_risk_miss_rate",
+    "error_at_10",
+    "error_at_20",
+    "error_at_50"
+  ],
+  "role": "SEEN_POST_CONFIRMATION",
+  "same_cluster_draw_across_budgets": true,
+  "scalar_metric_reproduction_passed": true,
+  "status": "COMPLETE",
+  "target_zero_feedback_imputation": false
+}

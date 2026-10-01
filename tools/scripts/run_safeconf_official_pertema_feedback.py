@@ -28,6 +28,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from tools.safeconf_continual.research import (
     P, PUBLIC, SEEDS, bootstrap_u20, cluster_weights, ids_hash, rank_labels, summarize,
+    paired_prediction_wide,
 )
 from tools.scripts import run_safeconf_research_closure as closure
 from tools.safeconf_continual.learners import NumericPreprocessor
@@ -101,12 +102,54 @@ def train(gbt, fit, labels, columns, seed, kind='xgb'):
     return model
 
 
+def comparison_statistics(base, predictions, replicates, native, out, output_name):
+    combined = pd.concat([base, predictions], ignore_index=True)
+    comparisons = [('PertEMA_P_adapted', 'TargetOnly_HGB'),
+                   ('PertEMA_Public_adapted', 'PublicTarget_HGB'),
+                   ('PertEMA_Shared_adapted', 'SharedTarget_HGB'),
+                   ('ResidualHGB', 'PertEMA_Public_adapted'),
+                   ('PertEMA_Public_adapted', 'Shared'),
+                   ('PertEMA_Public_adapted', 'PertEMA_P_adapted')]
+    if native:
+        comparisons = [('PertEMA_Native_adapted', 'NativeControl_HGB'),
+                       ('PertEMA_Native_Public_adapted', 'PertEMA_Native_adapted'),
+                       ('PertEMA_Native_Shared_adapted', 'PertEMA_Native_Public_adapted'),
+                       ('ResidualHGB', 'PertEMA_Native_Public_adapted'),
+                       ('PertEMA_Native_Public_adapted', 'Shared'),
+                       ('PertEMA_Native_adapted', 'TargetOnly_HGB')]
+    intervals = []
+    for budget, part in combined[combined.seed.eq(SEEDS[0]) & combined.budget.gt(0)].groupby('budget'):
+        wide = paired_prediction_wide(part)
+        required = sorted({m for pair in comparisons for m in pair})
+        if wide[required].isna().any().any():
+            raise RuntimeError('paired feedback comparison lost task coverage')
+        for a, b in comparisons:
+            result = bootstrap_u20(wide, wide[a].to_numpy(), wide[b].to_numpy(), replicates)
+            if result['n_tasks'] != len(wide):
+                raise RuntimeError('bootstrap discarded paired feedback tasks')
+            intervals.append({'budget': budget, 'method_a': a, 'method_b': b, **result})
+        closure.tx.atomic_csv(out / output_name, pd.DataFrame(intervals))
+        print(json.dumps({'phase': 'official_pertema_bootstrap', 'budget': budget,
+                          'completed_comparisons': len(intervals), 'paired_tasks': len(wide)}), flush=True)
+
+
 def main():
     global OUT
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--bootstrap', type=int, default=5000)
     parser.add_argument('--native-controls', action='store_true')
+    parser.add_argument('--statistics-only', action='store_true',
+                        help='Repair pairing statistics from immutable saved predictions; never refit')
+    parser.add_argument('--runtime-root', type=Path,
+                        help='Explicit derived-cache version; leaves prior analyses unchanged')
+    parser.add_argument('--result-root', type=Path,
+                        help='Explicit versioned result directory; no overwrite of completed runs')
     args = parser.parse_args()
+    if args.runtime_root is not None:
+        closure.RUNTIME = args.runtime_root.resolve()
+    if args.result_root is not None:
+        closure.OUT = args.result_root.resolve()
+    OUT = closure.OUT / 'official_pertema_adaptation'
     feature_sets, kinds = FEATURE_SETS, {}
     native_audit = None
     if args.native_controls:
@@ -120,6 +163,21 @@ def main():
                         'PertEMA_Native_Shared_adapted': native_columns + PUBLIC + ['shared_risk']}
         kinds = {'NativeControl_HGB': 'hgb'}
     OUT.mkdir(parents=True, exist_ok=True)
+    if args.statistics_only:
+        base = pd.read_csv(closure.OUT / 'STRICT_FEEDBACK_TASK_PREDICTIONS.csv.gz')
+        prediction_file = OUT / 'TASK_PREDICTIONS.csv.gz'
+        predictions = pd.read_csv(prediction_file)
+        original = OUT / 'PAIRED_BOOTSTRAP.csv'
+        comparison_statistics(base, predictions, args.bootstrap, args.native_controls,
+                              OUT, 'PAIRED_BOOTSTRAP_REPAIRED.csv')
+        closure.tx.atomic_json(OUT / 'STATISTICAL_REPAIR_AUDIT.json', {
+            'status': 'COMPLETE', 'cause': 'floating truth incorrectly included in task join key',
+            'repair': 'pair by biological metadata; assert equivalent measured truths and full coverage',
+            'original_statistics_sha256': hashlib.sha256(original.read_bytes()).hexdigest(),
+            'risk_predictions_sha256_unchanged': hashlib.sha256(prediction_file.read_bytes()).hexdigest(),
+            'no_model_refit': True, 'bootstrap_replicates': args.bootstrap,
+            'authoritative_statistics_file': 'PAIRED_BOOTSTRAP_REPAIRED.csv'})
+        return
     if (OUT / 'RUN_STATUS.json').exists():
         raise FileExistsError('completed official adaptation is immutable; create a new run ID')
     gbt, official_hash = factory()
@@ -138,6 +196,7 @@ def main():
         'no_split_conformal_claim': 'no separate conformal set is allocated; no coverage guarantee claimed',
         'bootstrap_replicates': args.bootstrap,
         'own_code_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        'runtime_root': str(closure.RUNTIME), 'result_root': str(closure.OUT),
         'native_control_audit': native_audit,
     }
     closure.tx.atomic_json(OUT / 'EXECUTION_CONFIG.json', config)
@@ -223,30 +282,8 @@ def main():
                        ('INFORMATION_LEDGER.csv', pd.DataFrame(ledger)), ('COSTS.csv', pd.DataFrame(costs)),
                        ('CALIBRATION_AUDIT.csv', pd.DataFrame(calibrations))]:
         closure.tx.atomic_csv(OUT / name, data)
-    combined = pd.concat([base, predictions], ignore_index=True)
-    intervals = []
-    comparisons = [('PertEMA_P_adapted', 'TargetOnly_HGB'),
-                   ('PertEMA_Public_adapted', 'PublicTarget_HGB'),
-                   ('PertEMA_Shared_adapted', 'SharedTarget_HGB'),
-                   ('ResidualHGB', 'PertEMA_Public_adapted'),
-                   ('PertEMA_Public_adapted', 'Shared'),
-                   ('PertEMA_Public_adapted', 'PertEMA_P_adapted')]
-    if args.native_controls:
-        comparisons = [('PertEMA_Native_adapted', 'NativeControl_HGB'),
-                       ('PertEMA_Native_Public_adapted', 'PertEMA_Native_adapted'),
-                       ('PertEMA_Native_Shared_adapted', 'PertEMA_Native_Public_adapted'),
-                       ('ResidualHGB', 'PertEMA_Native_Public_adapted'),
-                       ('PertEMA_Native_Public_adapted', 'Shared'),
-                       ('PertEMA_Native_adapted', 'TargetOnly_HGB')]
-    for budget, part in combined[combined.seed.eq(SEEDS[0]) & combined.budget.gt(0)].groupby('budget'):
-        meta = ['task_id', 'target', 'gene', 'fold', 'upstream', 'true_error_rmse']
-        wide = part.pivot(index=meta, columns='method', values='risk').reset_index()
-        for a, b in comparisons:
-            intervals.append({'budget': budget, 'method_a': a, 'method_b': b,
-                **bootstrap_u20(wide, wide[a].to_numpy(), wide[b].to_numpy(), args.bootstrap)})
-        closure.tx.atomic_csv(OUT / 'PAIRED_BOOTSTRAP.csv', pd.DataFrame(intervals))
-        print(json.dumps({'phase': 'official_pertema_bootstrap', 'budget': budget,
-                          'completed_comparisons': len(intervals)}), flush=True)
+    comparison_statistics(base, predictions, args.bootstrap, args.native_controls,
+                          OUT, 'PAIRED_BOOTSTRAP.csv')
     closure.tx.atomic_json(OUT / 'RUN_STATUS.json', {'status': 'COMPLETE', 'official_commit': COMMIT,
         'role': 'SEEN_POST_CONFIRMATION', 'n_fits': len(costs), 'n_error_records_by_budget': ledger,
         'n_holdout_tasks': len(query), 'n_holdout_clusters': query.gene.nunique(),

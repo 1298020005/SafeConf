@@ -1,0 +1,12 @@
+{
+  "contract": "SafeConf-McFaline-feedback-v1",
+  "feedback_cluster_order_hash": "5847b41081dc503b647c86355733d92da91d8b1044799f4ee736b7bee8c6df7d",
+  "holdout_clusters_hash": "deff34fd35a2b6e8c0159e55d7f28833739ebd4b3b20219065e74a2b761c9224",
+  "n_feedback_clusters": 228,
+  "n_feedback_tasks": 331,
+  "n_holdout_clusters": 152,
+  "n_holdout_tasks": 212,
+  "role": "retrospective post-confirmation SEEN analysis",
+  "shared_score": "October nested source supervision; original September shared score separately preserved",
+  "target_CDF_uses_validation_errors": false
+}

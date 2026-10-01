@@ -1,0 +1,13 @@
+{
+  "code_sha256": "07cf962d523c51b79a2503e93b42e9815c334f7a32ded9d35420468e4eaaef32",
+  "guide_disagreement_is_unbiased_noise_estimate": false,
+  "n_genes": 2840,
+  "n_task_guide_groups": 2941,
+  "n_tasks": 543,
+  "n_test_treated_cells": 55935,
+  "no_primary_error_redefinition": true,
+  "no_risk_model_fit": true,
+  "registered_full_truth_reproduced": true,
+  "role": "SEEN_POST_CONFIRMATION_DIAGNOSTIC",
+  "status": "COMPLETE"
+}

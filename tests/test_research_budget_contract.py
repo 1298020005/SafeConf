@@ -5,6 +5,7 @@ import pandas as pd
 
 from tools.safeconf_continual.research import (
     budget_subset, historical_distance, rank_labels, shuffled_labels, metrics,
+    paired_prediction_wide,
 )
 
 
@@ -21,6 +22,25 @@ def fixture():
 
 
 class BudgetContractTests(unittest.TestCase):
+    def test_pairing_survives_csv_precision_without_dropping_tasks(self):
+        frame = pd.DataFrame({'task_id': ['a', 'b'], 'target': 'c', 'gene': ['g1', 'g2'],
+                              'upstream': 'C', 'true_error_rmse': [.027122223334444455, .031234567891234567],
+                              'method': 'A', 'risk': [.2, .8]})
+        other = frame.copy(); other['method'] = 'B'
+        other['true_error_rmse'] = np.nextafter(other.true_error_rmse, np.inf)
+        got = paired_prediction_wide(pd.concat([frame, other], ignore_index=True))
+        self.assertEqual(len(got), 2)
+        self.assertFalse(got[['A', 'B']].isna().any().any())
+
+    def test_pairing_rejects_different_truth_or_duplicate_prediction(self):
+        a = pd.DataFrame({'task_id': ['a'], 'gene': ['g'], 'true_error_rmse': [.02],
+                          'method': ['A'], 'risk': [.4]})
+        b = a.copy(); b['method'] = 'B'; b['true_error_rmse'] = .03
+        with self.assertRaisesRegex(ValueError, 'different task truths'):
+            paired_prediction_wide(pd.concat([a, b]))
+        with self.assertRaisesRegex(ValueError, 'duplicate'):
+            paired_prediction_wide(pd.concat([a, a]))
+
     def test_small_budget_cdf_cannot_read_excluded_errors(self):
         frame=fixture();small=budget_subset(frame,.1)
         labels,audit=rank_labels(small,'small',.1)

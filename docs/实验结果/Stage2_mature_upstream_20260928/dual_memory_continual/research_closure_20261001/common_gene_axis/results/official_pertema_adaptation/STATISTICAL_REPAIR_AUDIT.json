@@ -1,0 +1,10 @@
+{
+  "authoritative_statistics_file": "PAIRED_BOOTSTRAP_REPAIRED.csv",
+  "bootstrap_replicates": 5000,
+  "cause": "floating truth incorrectly included in task join key",
+  "no_model_refit": true,
+  "original_statistics_sha256": "3b9f645334137348b0c7a263360a87af7a1f52658de2433de83d657b05b7ad98",
+  "repair": "pair by biological metadata; assert equivalent measured truths and full coverage",
+  "risk_predictions_sha256_unchanged": "9cf2b2df0f9143fe26dc09e7870e98840cd746786d68dbe770f3fb557264dacd",
+  "status": "COMPLETE"
+}

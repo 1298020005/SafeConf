@@ -1,0 +1,13 @@
+{
+  "n_legal_validation_risk_clusters": 123,
+  "n_legal_validation_risk_rows": 230,
+  "n_test_clusters": 380,
+  "n_test_tasks": 543,
+  "n_validation_tasks_before_filter": 542,
+  "new_upstream_calls": 0,
+  "no_gene_cluster_overlap": true,
+  "no_target_validation_cdf_budget_hidden": true,
+  "role": "SEEN_POST_CONFIRMATION",
+  "status": "COMPLETE",
+  "validation_errors_not_strict_oof_upstream": "frozen checkpoint and alpha used validation for selection; declared held-out-gradient errors, not pristine OOF errors"
+}
