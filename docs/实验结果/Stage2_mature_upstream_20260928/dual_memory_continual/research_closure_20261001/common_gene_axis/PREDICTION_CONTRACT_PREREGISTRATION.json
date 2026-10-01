@@ -1,0 +1,17 @@
+{
+  "checkpoint_or_prediction_generation_changes": false,
+  "code_sha256": "4224e1dcd06cd5db50a2f620dcd5724392ea709388dde2065f59d8f62ddfe809",
+  "current_stage_reads_target_treated_expression": false,
+  "frozen_decoder_state_mean_mix_alpha": 0.25,
+  "future_scope": "same 16 methods and strict label budgets after canonical biological reference preparation",
+  "gene_ids_hash": "b791fd3aeb9d3860700228faf05f6a959085ff42d8836f384b903702180f36cd",
+  "missing_gene_zero_fill": false,
+  "n_genes": 2840,
+  "native_target_prediction_genes": 15009,
+  "new_model_calls": 0,
+  "new_upstream_training": 0,
+  "original_512gene_confirmation_replaced": false,
+  "role": "POST_CONFIRMATION_SEEN_CONTRACT_AUDIT",
+  "selection": "source output gene IDs intersect raw target prediction gene IDs; metadata only",
+  "source_axis_coverage": 0.847255369928401
+}

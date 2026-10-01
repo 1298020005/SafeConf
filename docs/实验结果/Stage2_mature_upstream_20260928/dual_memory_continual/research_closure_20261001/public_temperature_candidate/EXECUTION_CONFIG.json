@@ -1,0 +1,26 @@
+{
+  "code_sha256": "93a221024fda257eea2a5b3b08ea9dd6340dde834c12e13f9ff0ec5c3ae84e6f",
+  "external_test_reads": 0,
+  "fixed_support_mix": 0.5,
+  "formula": "max(median(abs(public group-OOF prediction - true transfer error)),1e-8)",
+  "inner_tau_cv": 3,
+  "max_runtime_seconds": 21600,
+  "risk_features": [
+    "predicted_magnitude",
+    "prediction_abs_mean",
+    "prediction_signed_mean",
+    "prediction_std",
+    "prediction_abs_q95",
+    "prediction_sparsity",
+    "prior_magnitude",
+    "prediction_prior_rmse",
+    "prediction_prior_cosine",
+    "prior_uncertainty",
+    "log_history_support",
+    "effective_sources",
+    "history_conflict"
+  ],
+  "role": "DEV_SEEN_ONLY",
+  "seed": 20260930,
+  "temperature_variants": 1
+}

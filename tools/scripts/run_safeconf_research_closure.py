@@ -16,6 +16,7 @@ import time
 
 import numpy as np
 import pandas as pd
+from scipy.stats import spearmanr
 from sklearn.model_selection import GroupKFold
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -297,6 +298,176 @@ def run_bootstrap(replicates):
         print(json.dumps({'phase':'bootstrap','line':line,'comparisons':len(rows)}),flush=True)
 
 
+def run_feedback_statistics(replicates):
+    """Paired intervals for the existing strict, post-confirmation curves."""
+    predictions = pd.read_csv(OUT / 'STRICT_FEEDBACK_TASK_PREDICTIONS.csv.gz')
+    primary = predictions[predictions.seed.eq(SEEDS[0])]
+    comparisons = [
+        ('TargetOnly_HGB', 'Shared'),
+        ('PublicTarget_HGB', 'TargetOnly_HGB'),
+        ('PublicTarget_HGB', 'Shared'),
+        ('SharedTarget_HGB', 'PublicTarget_HGB'),
+        ('ResidualHGB', 'Shared'),
+    ]
+    rows = []
+    for budget, part in primary[primary.budget.gt(0)].groupby('budget', sort=True):
+        meta = ['task_id', 'target', 'gene', 'fold', 'upstream', 'true_error_rmse']
+        wide = part.pivot(index=meta, columns='method', values='risk').reset_index()
+        if wide[[m for pair in comparisons for m in pair]].isna().any().any():
+            raise RuntimeError('feedback comparisons have different task coverage')
+        for a, b in comparisons:
+            result = bootstrap_u20(wide, wide[a].to_numpy(), wide[b].to_numpy(), replicates)
+            rows.append({'budget': budget, 'seed': SEEDS[0], 'method_a': a,
+                         'method_b': b, 'role': 'SEEN_POST_CONFIRMATION', **result})
+        save_csv('STRICT_FEEDBACK_PAIRED_BOOTSTRAP.csv', pd.DataFrame(rows))
+        print(json.dumps({'phase': 'feedback_statistics', 'budget': budget,
+                          'comparisons_complete': len(rows), 'replicates': replicates}), flush=True)
+
+
+def run_shared_difficulty(replicates):
+    """Describe shared errors with strictly outer-OOF public conditioning."""
+    from scipy.stats import rankdata
+    records, audit = [], []
+    columns = P + ['weighted_history_distance', 'prior_uncertainty', 'log_history_support']
+    for upstream in ('TxPert_GAT', 'TxPert_Exphormer'):
+        for fold in range(5):
+            frame = pd.read_parquet(RUNTIME / f'nested_{fold}_{upstream}_Manual.parquet')
+            frame['weighted_history_distance'] = np.sqrt(
+                frame.prediction_prior_rmse ** 2 + frame.prior_uncertainty ** 2)
+            fit = frame[frame.fold.ne(fold)].reset_index(drop=True)
+            query = frame[frame.fold.eq(fold)].reset_index(drop=True)
+            if set(fit.gene) & set(query.gene):
+                raise RuntimeError('difficulty conditioning crossed biological clusters')
+            labels, rows = rank_labels(fit, f'difficulty/{upstream}/outer{fold}')
+            audit.extend(rows)
+            predicted = fit_risk(fit, labels, columns, 'ridge').predict(query, clip=False)
+            actual_rank = mapped_query_labels(fit, query)
+            result = query[['task_id', 'target', 'gene', 'fold', 'upstream', 'true_error_rmse']].copy()
+            result['train_CDF_error_rank'] = actual_rank
+            result['public_conditioned_prediction'] = predicted
+            result['oof_residual'] = actual_rank - predicted
+            records.append(result)
+        print(json.dumps({'phase': 'difficulty_oof', 'upstream': upstream}), flush=True)
+    predictions = pd.concat(records, ignore_index=True)
+    save_csv('SHARED_DIFFICULTY_OOF.csv.gz', predictions)
+    save_csv('SHARED_DIFFICULTY_CDF_AUDIT.csv', pd.DataFrame(audit))
+    meta = ['task_id', 'target', 'gene', 'fold']
+    wide = predictions.pivot(index=meta, columns='upstream',
+                             values=['true_error_rmse', 'oof_residual']).reset_index()
+    wide.columns = [a if not b else f'{a}::{b}' for a, b in wide.columns]
+    if len(wide) != 1808 or wide.isna().any().any():
+        raise RuntimeError('difficulty diagnostics need the identical complete shared task cohort')
+    outputs = []
+    def association(x, y):
+        if len(x) < 3 or np.ptp(x) == 0 or np.ptp(y) == 0:
+            return np.nan
+        return float(spearmanr(x, y).statistic)
+    for context, part in wide.groupby('target', sort=True):
+        part = part.reset_index(drop=True)
+        groups = [g.index.to_numpy() for _, g in part.groupby('gene', sort=True)]
+        ids = part.task_id.to_numpy(str)
+        errors_a = part['true_error_rmse::TxPert_GAT'].to_numpy()
+        errors_b = part['true_error_rmse::TxPert_Exphormer'].to_numpy()
+        k = int(np.ceil(.2 * len(part)))
+        top_a = set(ids[np.lexsort((ids, -errors_a))[:k]])
+        top_b = set(ids[np.lexsort((ids, -errors_b))[:k]])
+        for kind, prefix in [('raw_error', 'true_error_rmse'), ('public_conditioned_residual', 'oof_residual')]:
+            a = part[f'{prefix}::TxPert_GAT'].to_numpy()
+            b = part[f'{prefix}::TxPert_Exphormer'].to_numpy()
+            rng = np.random.default_rng(SEEDS[0])
+            draws = []
+            for _ in range(replicates):
+                idx = np.concatenate([groups[j] for j in rng.integers(0, len(groups), len(groups))])
+                draws.append(association(a[idx], b[idx]))
+            outputs.append({'context': context, 'kind': kind, 'n_tasks': len(part),
+                'n_clusters': len(groups), 'spearman': association(a, b),
+                'ci95_lower': float(np.nanquantile(draws, .025)),
+                'ci95_upper': float(np.nanquantile(draws, .975)),
+                'bootstrap_replicates': replicates,
+                'top20_overlap_fraction': len(top_a & top_b) / k if kind == 'raw_error' else np.nan,
+                'top20_jaccard': len(top_a & top_b) / len(top_a | top_b) if kind == 'raw_error' else np.nan,
+                'role': 'SEEN_DIAGNOSTIC_NOT_TRANSFER_CONFIRMATION'})
+        save_csv('SHARED_DIFFICULTY_ASSOCIATIONS.csv', pd.DataFrame(outputs))
+        print(json.dumps({'phase': 'difficulty_association', 'context': context,
+                          'replicates': replicates}), flush=True)
+    # The two-model random intercept is descriptive, never a model-selection gate.
+    import warnings
+    import statsmodels.formula.api as smf
+    variance = {'role': 'DESCRIPTIVE_TWO_MODEL_PAIR', 'response': 'training-CDF error rank',
+                'n_exact_tasks': predictions.task_id.nunique(), 'n_prediction_rows': len(predictions)}
+    try:
+        with warnings.catch_warnings(record=True) as warning_records:
+            fitted = smf.mixedlm('train_CDF_error_rank ~ C(upstream) + C(target)', predictions,
+                                 groups=predictions.task_id).fit(method='lbfgs', maxiter=200, disp=False)
+        shared = float(fitted.cov_re.iloc[0, 0])
+        residual = float(fitted.scale)
+        variance.update({'status': 'CONVERGED' if fitted.converged else 'NOT_CONVERGED',
+            'shared_task_variance': shared, 'residual_variance': residual,
+            'shared_variance_fraction': shared / (shared + residual),
+            'warnings': [str(w.message) for w in warning_records]})
+    except Exception as error:
+        variance.update({'status': 'FIT_UNAVAILABLE', 'reason': f'{type(error).__name__}: {error}'})
+    tx.atomic_json(OUT / 'SHARED_DIFFICULTY_VARIANCE.json', variance)
+    print(json.dumps({'phase': 'difficulty_variance', **variance}), flush=True)
+
+
+def run_support_controls():
+    """Separate historical support metadata from measured-effect content."""
+    records = []
+    for line, source, target in [('GAT_to_Exphormer', 'TxPert_GAT', 'TxPert_Exphormer'),
+                                  ('Exphormer_to_GAT', 'TxPert_Exphormer', 'TxPert_GAT'),
+                                  ('TxPert_to_McFaline', None, 'DecoderOnly')]:
+        for fold in (range(5) if source else [-1]):
+            if source:
+                fit = pd.read_parquet(RUNTIME / f'nested_{fold}_{source}_Manual.parquet')
+                fit = fit[fit.fold.ne(fold)].reset_index(drop=True)
+                query = pd.read_parquet(RUNTIME / f'nested_{fold}_{target}_Manual.parquet')
+                query = query[query.fold.eq(fold)].reset_index(drop=True)
+            else:
+                fit = pd.read_parquet(RUNTIME / 'source_Manual.parquet')
+                query = pd.read_parquet(RUNTIME / 'external_Manual.parquet')
+            labels, _ = rank_labels(fit, f'support-control/{line}/outer{fold}')
+            columns = P + ['log_history_support', 'effective_sources']
+            for seed in SEEDS:
+                model = fit_risk(fit, labels, columns, 'hgb', seed)
+                add_predictions(records, query, model.predict(query), line, 'PredictionSupport_HGB', seed)
+                add_predictions(records, query, -query.log_history_support, line, 'NegativeHistorySupport', seed)
+                add_predictions(records, query, -query.effective_sources, line, 'NegativeEffectiveSources', seed)
+        print(json.dumps({'phase': 'support_controls', 'line': line}), flush=True)
+    data = pd.concat(records, ignore_index=True)
+    strata, macro = summarize(data)
+    save_csv('SUPPORT_CONTROL_TASK_PREDICTIONS.csv.gz', data)
+    save_csv('SUPPORT_CONTROL_MACRO.csv', macro); save_csv('SUPPORT_CONTROL_STRATA.csv', strata)
+    save_csv('SUPPORT_CONTROL_FEATURE_CONTRACT.csv', pd.DataFrame([
+        {'field': 'log_history_support', 'formula': 'log1p(sum(eligible source cell counts))', 'uses_effect_vectors': False},
+        {'field': 'effective_sources', 'formula': '1/sum(cell_count_normalized_weights^2)', 'uses_effect_vectors': False}]))
+
+
+def run_within_state_diagnostic():
+    """Report state strata as a diagnostic, retaining original primary macro."""
+    external = pd.read_parquet(RUNTIME / 'external_Manual.parquet')
+    mapping = external[['task_id', 'context', 'treatment']].copy()
+    mapping['biological_state'] = mapping.context.astype(str) + '::' + mapping.treatment.astype(str)
+    groups = [pd.read_csv(OUT / 'MATRIX_TASK_PREDICTIONS.csv.gz')]
+    for relative in ['SUPPORT_CONTROL_TASK_PREDICTIONS.csv.gz',
+                     'state_reference_controls/TASK_PREDICTIONS.csv.gz']:
+        if (OUT / relative).exists(): groups.append(pd.read_csv(OUT / relative))
+    data = pd.concat(groups, ignore_index=True)
+    data = data[data.line.eq('TxPert_to_McFaline') & data.seed.eq(SEEDS[0])]
+    data = data.merge(mapping[['task_id', 'biological_state']], on='task_id', validate='many_to_one')
+    rows = []
+    for (method, state), part in data.groupby(['method', 'biological_state'], sort=True):
+        value = metrics(part, part.risk.to_numpy())
+        rows.append({'method': method, 'biological_state': state, **value,
+                     'primary_metric_redefined': False, 'role': 'SEEN_SHORTCUT_DIAGNOSTIC'})
+    strata = pd.DataFrame(rows)
+    macro = strata.groupby('method', as_index=False).agg(utility20=('utility20', 'mean'),
+        spearman=('spearman', 'mean'), aurc=('aurc', 'mean'),
+        valid_strata=('utility20', lambda x: int(np.isfinite(x).sum())), planned_strata=('biological_state', 'size'))
+    save_csv('WITHIN_STATE_DIAGNOSTIC_STRATA.csv', strata); save_csv('WITHIN_STATE_DIAGNOSTIC_MACRO.csv', macro)
+    print(macro.to_string(index=False), flush=True)
+
+
 def write_method_budget_ledger():
     predictions=pd.read_csv(OUT/'MATRIX_TASK_PREDICTIONS.csv.gz')
     cdf=pd.read_csv(OUT/'CDF_AUDIT.csv')
@@ -513,7 +684,7 @@ def render_figures():
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--phase',choices=['nested','matrix','statistics','scaling','feedback','ledger','figures','all'],default='all')
+    parser.add_argument('--phase',choices=['nested','matrix','statistics','feedback_statistics','difficulty','support_controls','within_state','scaling','feedback','ledger','figures','all'],default='all')
     parser.add_argument('--bootstrap',type=int,default=5000)
     args=parser.parse_args()
     RUNTIME.mkdir(parents=True,exist_ok=True); OUT.mkdir(parents=True,exist_ok=True)
@@ -532,6 +703,10 @@ def main():
     if args.phase in ('scaling','all'):run_source_scaling()
     if args.phase in ('feedback','all'):run_feedback()
     if args.phase in ('statistics','all'):run_bootstrap(args.bootstrap)
+    if args.phase in ('feedback_statistics','all'):run_feedback_statistics(args.bootstrap)
+    if args.phase in ('difficulty','all'):run_shared_difficulty(args.bootstrap)
+    if args.phase in ('support_controls','all'):run_support_controls()
+    if args.phase in ('within_state','all'):run_within_state_diagnostic()
     if args.phase in ('figures','all'):render_figures()
 
 

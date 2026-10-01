@@ -1,0 +1,18 @@
+{
+  "source_output_genes": 3352,
+  "current_target_output_genes": 512,
+  "current_common_genes": 88,
+  "source_coverage_current_intersection": 0.026252983293556086,
+  "target_coverage_current_intersection": 0.171875,
+  "raw_target_available_genes": 15009,
+  "possible_canonical_common_genes": 2840,
+  "source_coverage_possible_common": 0.847255369928401,
+  "current_direct_cross_study_vector_comparison_eligible": false,
+  "note": "The frozen model actually predicts all 15009 genes; 512 was an evaluation subset. Reaggregate the existing full predictions on the 2840 predeclared common genes. This is a post-confirmation SEEN analysis, not a new sealed confirmation. Existing within-study Public distances remain valid; prior scalar transfer confounds gene sampling and study/model shift.",
+  "native_target_model_output_genes": 15009,
+  "evaluated_subset_genes": 512,
+  "frozen_full_prediction_tasks_available": 543,
+  "frozen_validation_prediction_chunks_available": 109,
+  "common_gene_reaggregation_requires_new_training": false,
+  "evidence_full_prediction_example": "/home/yyf/runtime_artifacts/safeconf_mcfaline23/test_pretruth_20260930/full_predictions/prediction_rank0_chunk_0.h5ad"
+}

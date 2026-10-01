@@ -1,0 +1,16 @@
+{
+  "action": "STOP; keep original Public method",
+  "aurc_relative_change": 0.0012691084395040075,
+  "candidate": "OOF_residual_temperature_fixed_50_50",
+  "delta_utility20_macro": -0.008245564802569438,
+  "elapsed_seconds": 27.123347132932395,
+  "external_selection_used": false,
+  "fraction_nonnegative_valid_strata": 0.525,
+  "new_biology_rmse": 0.0625208972850039,
+  "old_biology_rmse": 0.06269187355149075,
+  "original_confirmation_certifies_candidate": false,
+  "passed_development_gate": false,
+  "planned_strata": 40,
+  "temperature_attempts": 1,
+  "valid_strata": 40
+}

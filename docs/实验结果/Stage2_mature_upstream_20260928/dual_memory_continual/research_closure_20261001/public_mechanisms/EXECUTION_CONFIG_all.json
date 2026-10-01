@@ -1,0 +1,22 @@
+{
+  "budgets": [
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "code_sha256": "82b9903c4ae940e719574d2b15870b01fc6e43d60b1dd28a633129cc0c909bd0",
+  "content_null": "quartile-matched support; preserve study/axis/context/condition; rebuild all content features",
+  "growth_reference": "support weighted; no full-bank learned scorer reused",
+  "growth_scope": "offline bank snapshots; not prospective or monotonic improvement guarantee",
+  "orders": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "role": "SEEN_POST_CONFIRMATION",
+  "source_error_budget": "fixed 100%; no source labels added with public coverage"
+}
