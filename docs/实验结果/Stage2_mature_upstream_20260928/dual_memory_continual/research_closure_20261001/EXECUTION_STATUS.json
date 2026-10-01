@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-01T20:44:01.561648+00:00",
+  "updated_utc": "2026-10-01T21:41:11.460038+00:00",
   "complete": [
     "five-fold nested public biology with four inner folds",
     "three-line sixteen-method matrix with three registered seeds",
@@ -54,19 +54,21 @@
     "Fixedmetric originaln19context/macro no invalidfinitebootstrapCI; exactreadonlyoperation/code/schema guard verified",
     "Source training-copy/total-loss-weight attribution:12fixedfits,6originalscore reproductions,5000pairedgene draws; no sourcefrozenparameterchange",
     "All fixed source scaling/diversity uncertainty:5000jointgene draws,543tasks380genes,all7metrics,150+30oldpoints reproduced; no refits",
-    "Real isolated Source DEV continual replay: Public1047→2008,Error1372→2038; fixed candidate rejected; actual serving-v1 retention, immutable reload and administrative rollback independently verified"
+    "Real isolated Source DEV continual replay: Public1047→2008,Error1372→2038; fixed candidate rejected; actual serving-v1 retention, immutable reload and administrative rollback independently verified",
+    "Actual Source DEV fixed2x2 memory diagnosis: exactly2crossfits,5000shared227gene draws; allU20CIs includezero; no candidate or formal serving change"
   ],
   "pending": [
     "Actual authorized Orion TRAIN/VALIDATION aggregation final artifacts and hashes",
     "Actual published CPU linear TRAIN fit and prospective validation competence gate",
     "All target pretruth prediction, configuration and parameter hashes sealed before Orion TEST expression",
     "Prospective independent-study replication and information increment closure; metadata-exposed TEST cannot be called pristine SEALED",
-    "Final budget/provenance/claim evidence closure; manuscript remains deferred by user"
+    "Final budget/provenance/claim evidence closure; manuscript remains deferred by user",
+    "Legitimate append-only Public-bank expansion, old-source-feature invariance, registered extension and independent binding-chain review before TEST resume"
   ],
   "new_large_upstream_training": 0,
   "new_download_gb": 0.04440246,
   "completion_claim": "goal active; meaningful diagnostics and registered matrices continue; manuscript prose deferred",
-  "current_work": "Orion authorized aggregation and pretruth gates are live; real Source DEV operational lifecycle completed with candidate rejection. Independent external scientific increment remains pending; manuscript deferred.",
+  "current_work": "Orion TRAIN/VALIDATION pipeline continues; automatic TEST opening stopped before first-open claim. Verified full existing Source history can repair coverage to about144TESTgeneclusters; append-only new-gene bank and explicit pretruth bank adapter/receipt chain are being constructed. No model refits or TESTtruth reads.",
   "deferred_by_user": [
     "manuscript and supplement prose generation"
   ],
@@ -102,7 +104,15 @@
       "name": "registered_evaluation_postseal_waiter",
       "pid": 271820,
       "status_file": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_evaluation_20261002_v1/STATUS.json",
-      "opens_registered_TEST_only_after_actual_frozen_hash_gates": true
+      "opens_registered_TEST_only_after_actual_frozen_hash_gates": true,
+      "status": "STOPPED_ROOT_PRETRUTH_COVERAGE_HOLD",
+      "verified_terminal_reason": "rootSIGTERMwhileWAITING_ACTUAL_FINAL_PRETRUTH_SEALandTESTclosed"
+    },
+    {
+      "name": "Source_historical_append_only_public_bank",
+      "pid": 394320,
+      "scope": "onlypublishedhistoricalSourceX;noOrionexpr;no fits",
+      "output_root": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v1"
     }
   ],
   "orion_training_expression_read": true,
@@ -151,5 +161,27 @@
     "result_master_macro_rows": 4
   },
   "orion_aggregation_completed_files": 18,
-  "orion_last_aggregated_file": "data/HCT116_Batch8.parquet"
+  "orion_last_aggregated_file": "data/HCT116_Batch8.parquet",
+  "orion_registered_evaluation_status": "ROOT_STOPPED_AUTOMATIC_TEST_BEFORE_OPEN_FOR_VERIFIED_HISTORY_COVERAGE_GAP",
+  "orion_same_gene_history_metadata_upper_bound": {
+    "tasks": 52,
+    "gene_clusters": 32,
+    "HCT116": 22,
+    "HEK293T": 30,
+    "union": 32,
+    "intersection": 20,
+    "general_test_cohort_not_same_as_history_cohort": true
+  },
+  "public_history_coverage_repair": {
+    "status": "ACTUAL_HISTORICAL_SOURCE_BUILD_RUNNING_AFTER_CODE_CONTRACT_REVIEW",
+    "builder_pid": 394320,
+    "metadata_expected_added_units": 3357,
+    "metadata_expected_added_genes": 1490,
+    "metadata_expected_total_bank_records": 5365,
+    "metadata_primary_gene_union_upper_bound": 144,
+    "frozen_source_models_refitted": false,
+    "Orion_test_opened": false,
+    "source_read_contract_sha256": "2085519a4b80e2116f4aa4f77420f744508f5a8e8f3e6f0827f551b40fd8787b",
+    "extension_contract_sha256": "747f1dd643d4613e1b156d663d429f10630c2b87d7b9f4b49bcfdcc5f8540211"
+  }
 }

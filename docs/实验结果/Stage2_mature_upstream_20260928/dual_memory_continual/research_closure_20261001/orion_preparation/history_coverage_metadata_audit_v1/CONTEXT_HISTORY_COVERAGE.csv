@@ -1,0 +1,3 @@
+context,all_frozen_TEST_query_identities,known_Source_history_query_identities,mapped_TEST_tasks_fixed_QC_ge30,known_Source_TEST_tasks_fixed_QC_ge30,known_history_fraction_of_mapped_ge30,metadata_only_original_n20_gate_available,maximum_additional_task_losses_before_n20_failure
+HCT116,3745,108,1420,22,0.015492957746478873,True,2
+HEK293T,3745,108,1573,30,0.019071837253655435,True,10

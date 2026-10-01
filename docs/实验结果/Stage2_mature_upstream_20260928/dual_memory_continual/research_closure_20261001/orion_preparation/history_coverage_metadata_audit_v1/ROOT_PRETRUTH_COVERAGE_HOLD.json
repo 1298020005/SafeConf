@@ -1,0 +1,17 @@
+{
+  "schema": "safeconf_orion_pretruth_coverage_hold_v1",
+  "registered_utc": "2026-10-01T21:04:06.621560+00:00",
+  "stopped_only_auto_TEST_coordinator_pid": 271820,
+  "verified_command": "/home/miniconda/bin/python -u /home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_orion_registered_evaluation_followthrough.py --output-root /home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_evaluation_20261002_v1 ",
+  "TEST_truth_opened": false,
+  "global_first_open_scope_absent": true,
+  "upstream_training_validation_continue_pids": [
+    208030,
+    208033,
+    208031
+  ],
+  "reason": "Frozen same-gene Source bank gives a metadata upper bound of only32 TEST gene clusters with n>=30:22HCT116,30HEK293T,20in both, versus>=100 independent clusters sought for formal primary external evidence. Independent metadata verification and legitimate Public coverage audit required before spending untouched TEST.",
+  "counts_are_metadata_only": true,
+  "original_scores_parameters_split_method_unchanged": true,
+  "goal_paused": false
+}

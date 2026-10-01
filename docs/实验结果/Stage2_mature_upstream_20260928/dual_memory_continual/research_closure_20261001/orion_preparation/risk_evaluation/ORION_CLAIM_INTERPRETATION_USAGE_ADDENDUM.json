@@ -1,0 +1,13 @@
+{
+  "schema": "safeconf_orion_pretruth_claim_interpretation_usage_v1",
+  "registered_utc": "2026-10-01T20:57:50.982558+00:00",
+  "parent_registry_sha256": "d227bf92e1cc4396a332b82f0ae5a3ffd90a03ce21dadac50ed8d1e0c9382bea",
+  "TEST_truth_opened": false,
+  "purpose": "clarify signed contrast extraction and NA handling; no changes to thresholds, methods or evaluator",
+  "paired_difference_orientation": "For requested A-minus-B use row A,B as recorded; if only row B,A exists, negate difference and reverse/negate interval endpoints: lower=-old_upper,upper=-old_lower.",
+  "Public_contrast_example": "Stored P_only_hgb-minus-Learned_hgb must be reversed for Learned_hgb-minus-P_only_hgb.",
+  "finite_requirement": "Both original context metrics, macro point and both paired CI endpoints must be finite; NA/nonfinite means NOT_ESTABLISHED, not a passing guard. Do not omit invalid original contexts.",
+  "minimum_original_tasks_not_sufficient": "n>=20 is necessary; it cannot rescue U20 denominator<=1e-12, missing historical coverage or invalid intervals.",
+  "registry_status": "New dated pretruth interpretation, not original McFaline preregistration and not an executable evaluator PASS gate.",
+  "frozen_method_code_or_comparator_changes": false
+}

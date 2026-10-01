@@ -1,0 +1,45 @@
+{
+  "status": "COMPLETE_FIXED_TWO_FIT_DEV_COMPONENT_DIAGNOSTIC",
+  "elapsed_seconds": 6.969907139893621,
+  "actual_additional_fits": 2,
+  "bootstrap_replicates": 5000,
+  "joint_evaluation_gene_clusters": 227,
+  "all_conditions_all_planned_strata_retained": true,
+  "strata_rows": 80,
+  "macro_rows": 10,
+  "contrast_rows": 112,
+  "all_formal_artifacts_and_code_unchanged": true,
+  "all_bootstrap_draws_valid": true,
+  "Public_Biology_Learner_or_residual_adapter_fits": 0,
+  "published_candidates": 0,
+  "Orion_access": false,
+  "McFaline_access": false,
+  "runtime_root": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_component_diagnostic_20261002_v1",
+  "server_artifacts": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_component_diagnostic_20261002_v1/FROZEN_DIAGNOSTIC_SCORES.parquet",
+      "sha256": "5d7d2a1a794caa8173c0939358b6441c38135e26e3fbab409755cdcbf321edec",
+      "bytes": 178480
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_component_diagnostic_20261002_v1/JOINT_GENE_BOOTSTRAP_COUNTS.npz",
+      "sha256": "c8225a012a313761eb251ef1cb64a661642c7c14c6ebad3cf558c695a1a23b84",
+      "bytes": 402398
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_component_diagnostic_20261002_v1/JOINT_GENE_METRIC_DRAWS.npz",
+      "sha256": "1f602dade926cab96602d593e2fc7f20f4a85d2af9af49249603a20750ed1122",
+      "bytes": 2522148
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_component_diagnostic_20261002_v1/P1E2.joblib",
+      "sha256": "1e0c24c6d3129f05b32b714251aa196649bbc21bbd1fccfc88fabfb09b55834b",
+      "bytes": 226916
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_component_diagnostic_20261002_v1/P2E1.joblib",
+      "sha256": "5679b565ee63a77f4691abe96e8ac12dcda9ba83bfaa9ad7cc367094a28537da",
+      "bytes": 228682
+    }
+  ]
+}

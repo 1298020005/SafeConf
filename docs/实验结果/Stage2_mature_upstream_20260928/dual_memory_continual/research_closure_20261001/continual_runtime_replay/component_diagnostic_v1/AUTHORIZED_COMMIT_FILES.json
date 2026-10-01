@@ -1,0 +1,71 @@
+{
+  "scope": "new diagnostic script and component_diagnostic_v1 plaintext evidence only; all models/vectors/draws stay isolatedruntime",
+  "files": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/component_diagnostic_v1/CDF_ALLOWED_BUDGET_AUDIT.csv",
+      "sha256": "6dfd82d405583478d1396b44cb1e9aa967301d48c3fa5617bc5209ddc1728ded",
+      "bytes": 6107
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/component_diagnostic_v1/DIAGNOSIS_SUMMARY.json",
+      "sha256": "d76ae94c56e0bf4fd32c62a70e36376f577edc2495c6bfcf5f46bd191e7cb071",
+      "bytes": 4660
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/component_diagnostic_v1/FIT_COSTS.csv",
+      "sha256": "103429d502491c50b2b96a2ac76787c7215a376009f9da3ce429eb3ae0e9c46c",
+      "bytes": 286
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/component_diagnostic_v1/INDEPENDENT_REVIEW.json",
+      "sha256": "bb3f6260c3a2835a8c69efd6c1c2d7d9162f650cc29b08ea4a8c558f767153fc",
+      "bytes": 5527
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/component_diagnostic_v1/INFORMATION_BUDGET.csv",
+      "sha256": "26b125571e3f70e077148e373b23f95fd6e24675cee21f18ef2a30443434ae4f",
+      "bytes": 218
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/component_diagnostic_v1/MACRO.csv",
+      "sha256": "59751d974eea741861bf9069b715ae9c8f001ed3583c08de55b7091a5805070c",
+      "bytes": 1823
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/component_diagnostic_v1/PAIRED_CONTRASTS.csv",
+      "sha256": "3344115ed2a5982a080e3b99491645fe7da9590af163fea09b6b5ad8dfbb23e7",
+      "bytes": 26049
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/component_diagnostic_v1/PREDICTION_FREEZE.json",
+      "sha256": "d2102b5d7f0df99560d3131f2fc3012e671b6bde0ef12035a5c6b23106c2847a",
+      "bytes": 443
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/component_diagnostic_v1/README.md",
+      "sha256": "8722b92a1c667469e3af114353810d540bc1fced9c2096d4ca1e31d5a2163caa",
+      "bytes": 4935
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/component_diagnostic_v1/REGISTRATION.json",
+      "sha256": "5ff5beea5ff9fcfa1b3f60196cdb67c198488ff50172ed55c2164df47c03304b",
+      "bytes": 14628
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/component_diagnostic_v1/STATUS.json",
+      "sha256": "3e6631b78fc80c60b13ef3b5259864f92af2944d3f81e1a478f69b30b33b552a",
+      "bytes": 1990
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/component_diagnostic_v1/STRATA.csv",
+      "sha256": "e28a1315bca1a42a8de269a2e7b1e76869687cabbbf7f8c5a8a60a7506456d6f",
+      "bytes": 20069
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/diagnose_safeconf_continual_components_agent.py",
+      "sha256": "21a57d4dc71d8b245a35c7bb5ad26e258659df5dd5978639b8318d62931df87d",
+      "bytes": 19617
+    }
+  ],
+  "formal_replay_or_frozen_Orion_files_in_scope": false
+}

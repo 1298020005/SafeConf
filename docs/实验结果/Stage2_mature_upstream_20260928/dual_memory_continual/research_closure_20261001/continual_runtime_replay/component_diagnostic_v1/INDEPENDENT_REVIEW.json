@@ -1,0 +1,105 @@
+{
+  "status": "ACTUAL_TWO_FIT_COMPONENT_DIAGNOSTIC_INDEPENDENT_REVIEW_PASS",
+  "script_sha256": "21a57d4dc71d8b245a35c7bb5ad26e258659df5dd5978639b8318d62931df87d",
+  "review": "read-only code and completed SourceDEV artifact/reload/interval verification; zero reviewer fits",
+  "original_formal_and_current_diagnostic_pin_bindings_verified": 48,
+  "query_predictor_task_records": 3398,
+  "physical_tasks": 1699,
+  "evaluation_roles": [
+    "OLD_ANCHOR",
+    "NEW_TASK_GATE"
+  ],
+  "evaluation_union_gene_clusters": 227,
+  "conditions": [
+    "P1E1",
+    "P1E2",
+    "P2E1",
+    "P2E2",
+    "V1_ON_P2_ZERO_FIT_DRIFT"
+  ],
+  "exact_additional_fits": 2,
+  "permitted_fit_scopes": {
+    "P1E2": {
+      "Public_version": 1,
+      "Error_revision": 2,
+      "folds": [
+        2,
+        3,
+        4
+      ],
+      "error_records": 2038,
+      "physical_tasks": 1019,
+      "gene_clusters": 336
+    },
+    "P2E1": {
+      "Public_version": 2,
+      "Error_revision": 1,
+      "folds": [
+        2,
+        3
+      ],
+      "error_records": 1372,
+      "physical_tasks": 686,
+      "gene_clusters": 225
+    }
+  },
+  "anchor_gate_folds0_1_in_crossfit_or_CDF": 0,
+  "budget_specific_CDF_training_record_and_gene_hash_rows_verified": 16,
+  "immutable_error_revisions_not_live_updated_registry_used": true,
+  "genuine_version_Public_features_all7_and_constant_P_features_verified": true,
+  "fixed_HGB_params_cluster_weights_seed_and_13columns": true,
+  "crossfit_joblib_reload_predictions_byte_identical": true,
+  "original_diagonal_predictions_byte_identical": true,
+  "v1_on_newPublic_zero_fit_scores_reproduced_byte_identical": true,
+  "shared5000_gene_multiplicities_regenerated_exactly_from_seed20260930": true,
+  "all80strata10macro112pairedintervalrecords_verified": true,
+  "original_all16strata_n20_gate_passed": true,
+  "all_U20_contrast_intervals_include_zero": true,
+  "formal_serving_pointer_and_models_unchanged": true,
+  "published_candidates": 0,
+  "interpretation_limits": [
+    "Retrospective already-SEEN SourceDEV diagnosis; no independent-study confirmation",
+    "Public factor changes deterministic Manual priors/support features, not a learned Public biology updater",
+    "Error factor changes record budget, budget-specific rank CDF resolution and total loss weight together; not pure causal label-information effect",
+    "Model-specific finite comparisons conditional on this fixed cohort/parameters; no universal component efficacy claim",
+    "All reported U20 component and interaction intervals include zero; point differences cannot select a new winner",
+    "Zero-fit interface drift is scored without retraining; neither residual adapter nor external C feedback evaluated"
+  ],
+  "no_Orion_or_McFaline_access": true,
+  "new_fits_by_reviewer": 0,
+  "old_artifact_mutations": false,
+  "evidence": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/component_diagnostic_v1/REGISTRATION.json",
+      "sha256": "5ff5beea5ff9fcfa1b3f60196cdb67c198488ff50172ed55c2164df47c03304b"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/component_diagnostic_v1/STATUS.json",
+      "sha256": "3e6631b78fc80c60b13ef3b5259864f92af2944d3f81e1a478f69b30b33b552a"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/component_diagnostic_v1/CDF_ALLOWED_BUDGET_AUDIT.csv",
+      "sha256": "6dfd82d405583478d1396b44cb1e9aa967301d48c3fa5617bc5209ddc1728ded"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/component_diagnostic_v1/INFORMATION_BUDGET.csv",
+      "sha256": "26b125571e3f70e077148e373b23f95fd6e24675cee21f18ef2a30443434ae4f"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/component_diagnostic_v1/STRATA.csv",
+      "sha256": "e28a1315bca1a42a8de269a2e7b1e76869687cabbbf7f8c5a8a60a7506456d6f"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/component_diagnostic_v1/MACRO.csv",
+      "sha256": "59751d974eea741861bf9069b715ae9c8f001ed3583c08de55b7091a5805070c"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/component_diagnostic_v1/PAIRED_CONTRASTS.csv",
+      "sha256": "3344115ed2a5982a080e3b99491645fe7da9590af163fea09b6b5ad8dfbb23e7"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/component_diagnostic_v1/PREDICTION_FREEZE.json",
+      "sha256": "d2102b5d7f0df99560d3131f2fc3012e671b6bde0ef12035a5c6b23106c2847a"
+    }
+  ]
+}

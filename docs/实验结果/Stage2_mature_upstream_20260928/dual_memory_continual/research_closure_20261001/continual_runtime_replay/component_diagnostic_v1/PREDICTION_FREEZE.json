@@ -1,0 +1,11 @@
+{
+  "scores": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_component_diagnostic_20261002_v1/FROZEN_DIAGNOSTIC_SCORES.parquet",
+    "sha256": "5d7d2a1a794caa8173c0939358b6441c38135e26e3fbab409755cdcbf321edec",
+    "bytes": 178480
+  },
+  "all_conditions_frozen_before_DEV_scoring": true,
+  "actual_additional_fits": 2,
+  "existing_diagonal_predictions_byte_identical": true,
+  "no_gate_or_publication": true
+}

@@ -1,0 +1,91 @@
+{
+  "schema": "safeconf_orion_pretruth_claim_interpretation_v1",
+  "registered_utc": "2026-10-01T20:54:45.025135+00:00",
+  "scope": "interpretation of fixed contrasts; no method, score, cohort, comparator or evaluator changes",
+  "actual_TEST_truth_opened": false,
+  "pretruth_watcher_pid_verified_live": 271820,
+  "aggregation_pid_verified_live": 208033,
+  "global_first_open_scope_absent_at_registration": true,
+  "bindings": [
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_METHOD_CONTRACT.json",
+      "sha256": "6b8a26939c8c6134dbf2e8294ee7905fccc2122b570b046f3183a3d2f5caba97"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_DATA_ROLE_REGISTRY.csv",
+      "sha256": "df2ea48a35a7940bf74e3b6a37e216a856dd2c80eee0287946f69a381e9a21f7"
+    },
+    {
+      "path": "tools/scripts/evaluate_safeconf_orion_frozen_risk_agent.py",
+      "sha256": "dec8f056918ac5626eb12732eec3cc07041eb3680cc6addd6d9f18b32d1f486c"
+    },
+    {
+      "path": "tools/scripts/run_safeconf_orion_registered_evaluation_followthrough.py",
+      "sha256": "f08f27279d8a0f45f67ba97d539bfbe27ed9351a75fd57c1eaab57a91c5ece85"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/external_asset_audit/EXTERNAL_CONFIRMATION_CONTRACT.json",
+      "sha256": "a2da1858639d23f867728830acf8c8426446ff76fd1bfc34fb2ce888a6986d9b"
+    }
+  ],
+  "old_v4_contract_mapping": "Old McFaline V2-vs-Magnitude/V1 rules are not confirmation of the different Orion Source3285 method. The .005 practical point margin and -.005 noninferiority interpretation are reported separately from positive CI evidence.",
+  "fixed_primary_contrast": [
+    "Learned_hgb",
+    "Learned_WeightedHistoryDistance"
+  ],
+  "fixed_manual_secondary_contrast": [
+    "Manual_hgb",
+    "Manual_WeightedHistoryDistance"
+  ],
+  "strong_metadata_rule": "NegativeSourceHistorySupport",
+  "matched_prediction_risk_baseline": "P_only_hgb",
+  "planned_contexts": [
+    "HCT116",
+    "HEK293T"
+  ],
+  "planned_strata": 2,
+  "primary_cohort": "primary_common fixed by evaluator: known-history and all registered methods finite, after legal n>=30 TEST cell QC; both original contexts n>=20 before bootstrap",
+  "uncertainty": {
+    "draws": 5000,
+    "seed": 20260929,
+    "unit": "joint biological gene cluster across contexts and methods",
+    "interval": "nominal paired percentile 95%",
+    "training_models_fixed": true
+  },
+  "practical_margin_U20": 0.005,
+  "CI_negative_effect_tolerance": -0.005,
+  "interpretation_levels": {
+    "practical_point_improvement": "macro delta_U20>=.005; alone does not establish statistically supported superiority",
+    "noninferiority_style_guard": "paired95CI lower>=-.005; can include zero and is not superiority",
+    "supported_positive_increment": "macro delta_U20>=.005 AND paired95CI lower>0; describe nominal statistical support conditional on fixed fits"
+  },
+  "source_transfer_primary_support": {
+    "require_supported_positive_increment_vs": "Learned_WeightedHistoryDistance",
+    "minimum_nonnegative_context_fraction": 0.6,
+    "minimum_valid_planned_strata_fraction": 0.8,
+    "relative_AURC_worsening_max": 0.05,
+    "relative_error_at_10_20_50_worsening_max": 0.05,
+    "absolute_high_risk_miss_rate_worsening_max": 0.02,
+    "comparisons_use_same_primary_common_tasks": true
+  },
+  "source_increment_beyond_strong_history_rules": {
+    "requires_primary_support": true,
+    "additionally_require_supported_positive_increment_vs": "NegativeSourceHistorySupport",
+    "apply_same_safety_guards": true,
+    "cannot_substitute_winning_against_Magnitude": true
+  },
+  "Public_increment_with_source_budget_fixed": {
+    "contrast": [
+      "Learned_hgb",
+      "P_only_hgb"
+    ],
+    "require_supported_positive_increment_for_positive_claim": true,
+    "interpretation": "Public information package; not isolated effect-content or Quality gain"
+  },
+  "primary_no_support_action": "Preserve all fixed results, mark primary source-transfer increment not established; no champion selection, refit, test-driven parameter update or promotion of another method.",
+  "manual_secondary_scope": "Report fixed Manual pair with nominal intervals; if primary fails do not relabel Manual as preselected primary or claim primary success.",
+  "no_history_scope": "separate unsupported-history cohort; no universal fallback claim",
+  "pristine_confirmation_claim": false,
+  "old_E170_confirmation_not_inherited": true,
+  "trial_method_completion_is_not_scientific_success": true
+}

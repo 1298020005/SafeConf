@@ -1,0 +1,878 @@
+{
+  "schema": "safeconf_orion_metadata_history_coverage_audit_v1",
+  "created_utc": "2026-10-01T21:08:04.034757+00:00",
+  "status": "METADATA_ONLY_UPPER_BOUND_NOT_FINAL_TEST_COHORT",
+  "expression_values_read": false,
+  "real_model_predictions_read": false,
+  "TEST_truth_or_errors_read": false,
+  "new_fits": 0,
+  "contracts_code_splits_scores_modified": false,
+  "audit_counts_not_risk_features": true,
+  "read_columns": {
+    "frozen_row_metadata": [
+      "cluster_gene",
+      "row_role",
+      "fixed_metadata_QC_pass"
+    ],
+    "Source_public_bank_metadata": [
+      "perturbation_target",
+      "perturbation_type",
+      "eligibility"
+    ],
+    "Orion_full_gene_metadata": [
+      "ensembl_id",
+      "gene_name",
+      "gene_token_id"
+    ],
+    "Source_task_identity_metadata": [
+      "task_id",
+      "gene",
+      "target",
+      "fold"
+    ]
+  },
+  "calculation": {
+    "TEST_row_rule": "row_role == TEST AND fixed_metadata_QC_pass == True; count all40files by registered context and exact cluster_gene",
+    "query_mapping": "full38606 nonempty unique symbol -> Ensembl; verify exact existing frozen TEST query target_gene_symbol/target_gene_id; no endpoint-target restriction",
+    "Source_history_rule": "eligibility == True AND perturbation_type == genetic_single_gene AND exact perturbation_target == target_gene_symbol",
+    "treated_cell_threshold": 30,
+    "original_context_task_threshold": 20,
+    "same_gene_joint_cluster_unit": "target_gene_id"
+  },
+  "metadata_rows_counted": 1104270,
+  "eligible_Source_records": 2008,
+  "eligible_Source_symbols": 580,
+  "Source_symbols_registered_TEST_before_unique_mapping": 108,
+  "Source_symbols_registered_TEST_after_unique_mapping": 108,
+  "known_history_TASK_upper_bound": 52,
+  "known_history_gene_cluster_union": 32,
+  "known_history_gene_cluster_intersection": 20,
+  "context_summary": [
+    {
+      "context": "HCT116",
+      "all_frozen_TEST_query_identities": 3745,
+      "known_Source_history_query_identities": 108,
+      "mapped_TEST_tasks_fixed_QC_ge30": 1420,
+      "known_Source_TEST_tasks_fixed_QC_ge30": 22,
+      "known_history_fraction_of_mapped_ge30": 0.015492957746478873,
+      "metadata_only_original_n20_gate_available": true,
+      "maximum_additional_task_losses_before_n20_failure": 2
+    },
+    {
+      "context": "HEK293T",
+      "all_frozen_TEST_query_identities": 3745,
+      "known_Source_history_query_identities": 108,
+      "mapped_TEST_tasks_fixed_QC_ge30": 1573,
+      "known_Source_TEST_tasks_fixed_QC_ge30": 30,
+      "known_history_fraction_of_mapped_ge30": 0.019071837253655435,
+      "metadata_only_original_n20_gate_available": true,
+      "maximum_additional_task_losses_before_n20_failure": 10
+    }
+  ],
+  "known_history_tasks": [
+    {
+      "query_id": "Huang2025_XAtlasOrion|LSG1|HCT116",
+      "target_gene_id": "ENSG00000041802",
+      "target_gene_symbol": "LSG1",
+      "context_id": "HCT116",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 76,
+      "source_history_records": 4
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|PRMT5|HCT116",
+      "target_gene_id": "ENSG00000100462",
+      "target_gene_symbol": "PRMT5",
+      "context_id": "HCT116",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 43,
+      "source_history_records": 4
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|SNW1|HCT116",
+      "target_gene_id": "ENSG00000100603",
+      "target_gene_symbol": "SNW1",
+      "context_id": "HCT116",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 44,
+      "source_history_records": 2
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|ERCC2|HCT116",
+      "target_gene_id": "ENSG00000104884",
+      "target_gene_symbol": "ERCC2",
+      "context_id": "HCT116",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 31,
+      "source_history_records": 4
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|ZNF574|HCT116",
+      "target_gene_id": "ENSG00000105732",
+      "target_gene_symbol": "ZNF574",
+      "context_id": "HCT116",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 46,
+      "source_history_records": 3
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|IK|HCT116",
+      "target_gene_id": "ENSG00000113141",
+      "target_gene_symbol": "IK",
+      "context_id": "HCT116",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 64,
+      "source_history_records": 2
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|CSNK1A1|HCT116",
+      "target_gene_id": "ENSG00000113712",
+      "target_gene_symbol": "CSNK1A1",
+      "context_id": "HCT116",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 43,
+      "source_history_records": 3
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|SFPQ|HCT116",
+      "target_gene_id": "ENSG00000116560",
+      "target_gene_symbol": "SFPQ",
+      "context_id": "HCT116",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 35,
+      "source_history_records": 3
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|ZBTB17|HCT116",
+      "target_gene_id": "ENSG00000116809",
+      "target_gene_symbol": "ZBTB17",
+      "context_id": "HCT116",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 45,
+      "source_history_records": 4
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|DDX59|HCT116",
+      "target_gene_id": "ENSG00000118197",
+      "target_gene_symbol": "DDX59",
+      "context_id": "HCT116",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 44,
+      "source_history_records": 3
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|POLR1B|HCT116",
+      "target_gene_id": "ENSG00000125630",
+      "target_gene_symbol": "POLR1B",
+      "context_id": "HCT116",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 53,
+      "source_history_records": 2
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|NCBP1|HCT116",
+      "target_gene_id": "ENSG00000136937",
+      "target_gene_symbol": "NCBP1",
+      "context_id": "HCT116",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 36,
+      "source_history_records": 3
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|CHCHD4|HCT116",
+      "target_gene_id": "ENSG00000163528",
+      "target_gene_symbol": "CHCHD4",
+      "context_id": "HCT116",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 33,
+      "source_history_records": 4
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|UQCRQ|HCT116",
+      "target_gene_id": "ENSG00000164405",
+      "target_gene_symbol": "UQCRQ",
+      "context_id": "HCT116",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 38,
+      "source_history_records": 3
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|PRPF18|HCT116",
+      "target_gene_id": "ENSG00000165630",
+      "target_gene_symbol": "PRPF18",
+      "context_id": "HCT116",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 68,
+      "source_history_records": 4
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|NAA20|HCT116",
+      "target_gene_id": "ENSG00000173418",
+      "target_gene_symbol": "NAA20",
+      "context_id": "HCT116",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 38,
+      "source_history_records": 4
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|GRB2|HCT116",
+      "target_gene_id": "ENSG00000177885",
+      "target_gene_symbol": "GRB2",
+      "context_id": "HCT116",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 36,
+      "source_history_records": 2
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|RMI1|HCT116",
+      "target_gene_id": "ENSG00000178966",
+      "target_gene_symbol": "RMI1",
+      "context_id": "HCT116",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 34,
+      "source_history_records": 2
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|MRPL14|HCT116",
+      "target_gene_id": "ENSG00000180992",
+      "target_gene_symbol": "MRPL14",
+      "context_id": "HCT116",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 31,
+      "source_history_records": 3
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|MRPS23|HCT116",
+      "target_gene_id": "ENSG00000181610",
+      "target_gene_symbol": "MRPS23",
+      "context_id": "HCT116",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 35,
+      "source_history_records": 3
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|DDX41|HCT116",
+      "target_gene_id": "ENSG00000183258",
+      "target_gene_symbol": "DDX41",
+      "context_id": "HCT116",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 46,
+      "source_history_records": 3
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|RPS29|HCT116",
+      "target_gene_id": "ENSG00000213741",
+      "target_gene_symbol": "RPS29",
+      "context_id": "HCT116",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 43,
+      "source_history_records": 4
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|LSG1|HEK293T",
+      "target_gene_id": "ENSG00000041802",
+      "target_gene_symbol": "LSG1",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 62,
+      "source_history_records": 4
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|EXOSC7|HEK293T",
+      "target_gene_id": "ENSG00000075914",
+      "target_gene_symbol": "EXOSC7",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 30,
+      "source_history_records": 4
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|PRMT5|HEK293T",
+      "target_gene_id": "ENSG00000100462",
+      "target_gene_symbol": "PRMT5",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 56,
+      "source_history_records": 4
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|SNW1|HEK293T",
+      "target_gene_id": "ENSG00000100603",
+      "target_gene_symbol": "SNW1",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 32,
+      "source_history_records": 2
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|TTI1|HEK293T",
+      "target_gene_id": "ENSG00000101407",
+      "target_gene_symbol": "TTI1",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 30,
+      "source_history_records": 4
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|ERCC2|HEK293T",
+      "target_gene_id": "ENSG00000104884",
+      "target_gene_symbol": "ERCC2",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 35,
+      "source_history_records": 4
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|ZNF574|HEK293T",
+      "target_gene_id": "ENSG00000105732",
+      "target_gene_symbol": "ZNF574",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 49,
+      "source_history_records": 3
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|RFC5|HEK293T",
+      "target_gene_id": "ENSG00000111445",
+      "target_gene_symbol": "RFC5",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 30,
+      "source_history_records": 3
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|IK|HEK293T",
+      "target_gene_id": "ENSG00000113141",
+      "target_gene_symbol": "IK",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 79,
+      "source_history_records": 2
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|SFPQ|HEK293T",
+      "target_gene_id": "ENSG00000116560",
+      "target_gene_symbol": "SFPQ",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 32,
+      "source_history_records": 3
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|ZBTB17|HEK293T",
+      "target_gene_id": "ENSG00000116809",
+      "target_gene_symbol": "ZBTB17",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 31,
+      "source_history_records": 4
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|DDX59|HEK293T",
+      "target_gene_id": "ENSG00000118197",
+      "target_gene_symbol": "DDX59",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 34,
+      "source_history_records": 3
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|POLR1B|HEK293T",
+      "target_gene_id": "ENSG00000125630",
+      "target_gene_symbol": "POLR1B",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 65,
+      "source_history_records": 2
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|CCDC59|HEK293T",
+      "target_gene_id": "ENSG00000133773",
+      "target_gene_symbol": "CCDC59",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 34,
+      "source_history_records": 4
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|MRPS9|HEK293T",
+      "target_gene_id": "ENSG00000135972",
+      "target_gene_symbol": "MRPS9",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 30,
+      "source_history_records": 3
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|NCBP1|HEK293T",
+      "target_gene_id": "ENSG00000136937",
+      "target_gene_symbol": "NCBP1",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 32,
+      "source_history_records": 3
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|UQCC2|HEK293T",
+      "target_gene_id": "ENSG00000137288",
+      "target_gene_symbol": "UQCC2",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 36,
+      "source_history_records": 2
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|CDC123|HEK293T",
+      "target_gene_id": "ENSG00000151465",
+      "target_gene_symbol": "CDC123",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 34,
+      "source_history_records": 4
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|CHCHD4|HEK293T",
+      "target_gene_id": "ENSG00000163528",
+      "target_gene_symbol": "CHCHD4",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 41,
+      "source_history_records": 4
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|UQCRQ|HEK293T",
+      "target_gene_id": "ENSG00000164405",
+      "target_gene_symbol": "UQCRQ",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 36,
+      "source_history_records": 3
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|PRPF18|HEK293T",
+      "target_gene_id": "ENSG00000165630",
+      "target_gene_symbol": "PRPF18",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 57,
+      "source_history_records": 4
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|NAA20|HEK293T",
+      "target_gene_id": "ENSG00000173418",
+      "target_gene_symbol": "NAA20",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 53,
+      "source_history_records": 4
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|DHX36|HEK293T",
+      "target_gene_id": "ENSG00000174953",
+      "target_gene_symbol": "DHX36",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 31,
+      "source_history_records": 4
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|GRB2|HEK293T",
+      "target_gene_id": "ENSG00000177885",
+      "target_gene_symbol": "GRB2",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 44,
+      "source_history_records": 2
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|RMI1|HEK293T",
+      "target_gene_id": "ENSG00000178966",
+      "target_gene_symbol": "RMI1",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 36,
+      "source_history_records": 2
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|MRPS23|HEK293T",
+      "target_gene_id": "ENSG00000181610",
+      "target_gene_symbol": "MRPS23",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 39,
+      "source_history_records": 3
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|DDX41|HEK293T",
+      "target_gene_id": "ENSG00000183258",
+      "target_gene_symbol": "DDX41",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 38,
+      "source_history_records": 3
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|WDHD1|HEK293T",
+      "target_gene_id": "ENSG00000198554",
+      "target_gene_symbol": "WDHD1",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 31,
+      "source_history_records": 4
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|RPS29|HEK293T",
+      "target_gene_id": "ENSG00000213741",
+      "target_gene_symbol": "RPS29",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 38,
+      "source_history_records": 4
+    },
+    {
+      "query_id": "Huang2025_XAtlasOrion|NOL12|HEK293T",
+      "target_gene_id": "ENSG00000273899",
+      "target_gene_symbol": "NOL12",
+      "context_id": "HEK293T",
+      "role": "TEST",
+      "n_fixed_QC_TEST_cells_metadata": 48,
+      "source_history_records": 4
+    }
+  ],
+  "Source_whole_model_scope": {
+    "source_native_readout_genes": 3352,
+    "frozen_common_readout_genes": 3285,
+    "Source_biological_tasks": 1808,
+    "Source_risk_gene_clusters": 575,
+    "Source_upstream_task_records": 3616,
+    "Source_upstream_architectures": [
+      "TxPert_Exphormer",
+      "TxPert_GAT"
+    ],
+    "Source_upstream_families": 1,
+    "Source_contexts": [
+      "K562",
+      "RPE1",
+      "hepg2",
+      "jurkat"
+    ],
+    "Source_outer_gene_folds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "frozen_Source_risk_models": 6,
+    "risk_training_scope": "all3616Source OOF-feature records; no refit to the52-task upperbound",
+    "Source_Public_biology_transfer_training_pairs": 4737,
+    "metadata_primary_genes_also_in_Source_risk_training_gene_scope": 32,
+    "metadata_primary_genes_outside_Source_risk_training_gene_scope": []
+  },
+  "qualification_implications": [
+    "52tasks/32clusters is an upper bound; all fixed method scores must also be finite and legal final measured counts must verify the fixed>=30 requirement.",
+    "HCT11622 has two-task headroom; three absent/nonfinite primary tasks would invalidate its original n20 gate and the two-context macro. HEK293T30 has ten-task headroom.",
+    "Frozen semantic numeric QC failures abort the entire output; no expression-driven survivor selection is authorized.",
+    "The1243 general both-context TEST eligibility genes are not the known-Source-history primary cohort.",
+    "Passing n20 is evaluability only; it does not establish adequate power, finite U20 intervals, scientific increment, or publication readiness.",
+    "All32potential primary genes have Source risk-training supervision; this is independent-study/context transfer on shared perturbations, not Source-gene-unseen transfer.",
+    "All six whole Source models and every comparator remain frozen; the metadata audit changes no formula, fit, split, score, threshold, or scientific cohort."
+  ],
+  "exact_input_bindings": [
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/FILE_METADATA_IDENTITY.json",
+      "bytes": 119286,
+      "sha256": "89901ca8afbb6fe86664c54c5f6c2bab27b21d77f75563395e25c3dd0d9659f6"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/GENE_SPLIT.csv",
+      "bytes": 1557427,
+      "sha256": "3bda5a9e0674cd7379b01e798d1c1b8c337efec86f44aceb41d4d74c73df52be"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/gene_metadata.parquet",
+      "bytes": 881915,
+      "sha256": "33900a0dbaeafb84601c7c8ba7c6642c440774fc3f49613dab11cf1f2bf0fdbf"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/GENE_MANIFEST.csv",
+      "bytes": 125903,
+      "sha256": "eb377ecb5ed1f99e259e6e8154f0edae68065ba36e3eae59ce50c2f72d8b72d4"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_lm_bridge_20261002_v1/query_scope_metadata_only/QUERY_SCOPE_MANIFEST.json",
+      "bytes": 10545,
+      "sha256": "e9f4b22ca4fa30dea2b27580936d212b1cec9898e76d439cf673b5232e8b8334"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_lm_bridge_20261002_v1/query_scope_metadata_only/METADATA_ONLY_QUERY_SCOPE.tsv",
+      "bytes": 1084979,
+      "sha256": "0fbdc6c431538da8f4c3a8247ce227fe292d709e05d8e032218f99674e32620e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_lm_bridge_20261002_v1/query_scope_metadata_only/STATIC_MAPPING_OMISSIONS.json",
+      "bytes": 120,
+      "sha256": "87c69f3d27cb6e59d7c362269367735cdd9e9c21f7bae76b932d09c3ec3d8896"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_MEMORY_METADATA.parquet",
+      "bytes": 58150,
+      "sha256": "fcfbd3300a012e3747c9642f5076d1407c509f46f66e4412522c5d9b8661c4bd"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_TASKS.parquet",
+      "bytes": 95447,
+      "sha256": "6bd02a0cff8f41ea48ad9566622bbebe923db56db64a8d20a4597fce53725013"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_FEATURE_MANIFEST.json",
+      "bytes": 16172,
+      "sha256": "b74b9dfbc64f5acc82b7b0d34023aa6a523bd11d1904ced7fd638c5bec4ef2d1"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/MODEL_MANIFEST.json",
+      "bytes": 8934,
+      "sha256": "c8d9d5003860d8a5e117398a7d44b5c67cfb700c6fb56f37bcf04a5d549909a6"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_METHOD_CONTRACT.json",
+      "bytes": 7500,
+      "sha256": "6b8a26939c8c6134dbf2e8294ee7905fccc2122b570b046f3183a3d2f5caba97"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_DATA_ROLE_REGISTRY.csv",
+      "bytes": 3776,
+      "sha256": "df2ea48a35a7940bf74e3b6a37e216a856dd2c80eee0287946f69a381e9a21f7"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_seal/SOURCE_COMPARISON_TEMPLATE_FINAL.json",
+      "bytes": 4785,
+      "sha256": "e2e83eb6c6ee0654fe54b973370e14573c7a72f669940dbb24a2f3e2be39372a"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_evaluation/ORION_CLAIM_INTERPRETATION_REGISTRY.json",
+      "bytes": 4659,
+      "sha256": "d227bf92e1cc4396a332b82f0ae5a3ffd90a03ce21dadac50ed8d1e0c9382bea"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/seal_safeconf_orion_source_risk_agent.py",
+      "bytes": 28837,
+      "sha256": "8b69e6ce29dc92aa34150b3b08aac62ce8333a10f84ec432a39d0e81ffc64482"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/bridge_safeconf_orion_lm_inputs_agent.py",
+      "bytes": 23316,
+      "sha256": "dcc7d6afcd812d89ddb372e511cb9607e216da8c1f57e484317db4b3eda52a38"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/evaluate_safeconf_orion_frozen_risk_agent.py",
+      "bytes": 22944,
+      "sha256": "dec8f056918ac5626eb12732eec3cc07041eb3680cc6addd6d9f18b32d1f486c"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch1.parquet",
+      "bytes": 823695,
+      "sha256": "d96f18575dc6b450934acf7879ac9547737d083e15af4c32c9f6ab2eb21c5895"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch10.parquet",
+      "bytes": 1269949,
+      "sha256": "fb0f4a58e907d9e2dc578acf196b3a662c9221118dfbb143740fbe6f6eb405b3"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch11.parquet",
+      "bytes": 1213786,
+      "sha256": "583e26815c610689b18ba58310c7f89f1e5201d3dc3df7f02ec70fe492d7fa0a"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch12.parquet",
+      "bytes": 1278791,
+      "sha256": "5648d6560be5440b081b4bf0ce14563923b6ecd73a8a00ea60465fa23e53a225"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch13.parquet",
+      "bytes": 1275223,
+      "sha256": "dfc58b9487e6bf8dce8a606097cc2ade0488c07ba27ce5fa3b687ce287467094"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch14.parquet",
+      "bytes": 1264810,
+      "sha256": "e510d3a35b5d072c118e4e4d8c64cb2f315866b08802a61ef0dd041382150d74"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch15.parquet",
+      "bytes": 1282111,
+      "sha256": "325790abd5943220ae7a2c328857c1abdd897722640cf965a626804b6450d157"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch16.parquet",
+      "bytes": 1274077,
+      "sha256": "1c2f0a3524d331b60f058df48957846b2cf2b4b23db5d85617c4f631a4ca616c"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch17.parquet",
+      "bytes": 1278569,
+      "sha256": "68bce698244f47a27cd2fd6bc511a7fed2ffcb7f0f1e9cafa432075a05c9c848"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch18.parquet",
+      "bytes": 853973,
+      "sha256": "19a2a9e76cb2d92a905b0d6d711f0a31af18b7da203a6332c7b129b660e0c77e"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch19.parquet",
+      "bytes": 1327173,
+      "sha256": "6226dfe40e662814ab0c63924fda69ecaca1d7fac3c4f92d9af7440753aa12ca"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch2.parquet",
+      "bytes": 826190,
+      "sha256": "bdc7c30775efd1ed2cae5402a636dd52944cbc55ac28ee775df705841bf438a9"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch20.parquet",
+      "bytes": 1420460,
+      "sha256": "3ae5735318e4a5e7028d645ab037145587c34b6eff9879b726aaaa90fa4e10c5"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch3.parquet",
+      "bytes": 851165,
+      "sha256": "cec17e88f57fc9d5e0be4f5dd88c2e5b27602df0d274e319081b480e1bfa8f57"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch4.parquet",
+      "bytes": 822220,
+      "sha256": "403883073f691ffe3309982b394dc6080c6b3a9f33c6d1070f0f2868ec52e049"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch5.parquet",
+      "bytes": 859632,
+      "sha256": "0be1b43ac080f9854f40d38efe3d119a5c4373dfcc27888ea47408be30bc8e10"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch6.parquet",
+      "bytes": 846324,
+      "sha256": "f65a1642f1b7611372fec11d021179bb7709e934fccd802c8ef090e30e9a6821"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch7.parquet",
+      "bytes": 885689,
+      "sha256": "2447687e905209de3dd279d97150ac7899b0b292bc787d4075ef09134801ae02"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch8.parquet",
+      "bytes": 866919,
+      "sha256": "c441f34d1cc1927ecdf0f8d82905fb773c2846ae23e300455f63250bd9ef62d4"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch9.parquet",
+      "bytes": 1269916,
+      "sha256": "51b76b929f3c2a9b68295831fb6b00538902e0e34291295937104558e19ea503"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch1.parquet",
+      "bytes": 956543,
+      "sha256": "03b2a2beab103d80f0ccfbc3884931ded66b63c6bf838ab9b19153d3fb61c220"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch10.parquet",
+      "bytes": 1184938,
+      "sha256": "6c4a064067bab5a9fd275e9e88be417d43121183edcc5d81e76a076438058ea4"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch11.parquet",
+      "bytes": 1234659,
+      "sha256": "a7765e0a6a066df2246e02f88b2e656186e1a95d9283fce3d5161103b6cccd55"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch12.parquet",
+      "bytes": 1177869,
+      "sha256": "d34bac6243f0fdc1d5ef516b075a0aed6e40c34920556eda71a0fe429491d5d0"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch13.parquet",
+      "bytes": 1210333,
+      "sha256": "e84ded8236f0473aa0d20c36a70380cfc19f4edf530380c0f78f1093b3d02f1f"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch14.parquet",
+      "bytes": 1216508,
+      "sha256": "847c7e96dfefa3406045076908a20ac4004dd734ee14ef0c441d73dbc988910a"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch15.parquet",
+      "bytes": 1024240,
+      "sha256": "8854e6397614412392f17d3e806028a17371f02c752ec7ab20225364c76499e3"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch16.parquet",
+      "bytes": 1023447,
+      "sha256": "1f9e35c0c1d491ec0a7a454c8cb2075da84708b1c10dae3074e74f418e22a317"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch17.parquet",
+      "bytes": 1027354,
+      "sha256": "84b4b92e25c64310a3b2097804c9db1c26522f7b411209831be9ab1f6cf88f2b"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch18.parquet",
+      "bytes": 1040120,
+      "sha256": "326a3db655d2d27ebf316c5ccb4c2adc6910c76a65b3e2ac6702debd47120bea"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch19.parquet",
+      "bytes": 1044615,
+      "sha256": "543fefad444a16d51b280b004bd4499a560a185aea7fec3c1b0896f149b145dd"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch2.parquet",
+      "bytes": 1165570,
+      "sha256": "a5f7562588372d26e2cb67c0f9a8f018a318b8bcca5da83fc7169a8db1f8d9c9"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch20.parquet",
+      "bytes": 1053293,
+      "sha256": "0ddedf7a9872d98cbc5755f63e7d4dbcc7bcea153903c6eb7db5d3f78bc542a6"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch3.parquet",
+      "bytes": 1255430,
+      "sha256": "81a633bf316d7861f4e851bd1799b3f5a047a6d48eb3bef3a7c9b52e290c365b"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch4.parquet",
+      "bytes": 1228253,
+      "sha256": "8453ce3ecebde4cf7b6217e9aa8a714b948180b2c55b654e8d4ebeb83bb5f0f2"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch5.parquet",
+      "bytes": 1212168,
+      "sha256": "dc3d66185ff91406ba122df4d9cb0266a15320e67e2136a44fcb6d40b9266987"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch6.parquet",
+      "bytes": 1217750,
+      "sha256": "8f67b6665aed52de2fbfb0d6ffcaf162111ddb75a9d0356bc2d04874ea2d697a"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch7.parquet",
+      "bytes": 1216028,
+      "sha256": "26700208ad5012f9b86f38e4d434cec815fbf9a635a55c3e667048846241b431"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch8.parquet",
+      "bytes": 1175035,
+      "sha256": "e03e09539961bef2729dbdfe9ccbf1cc8296518735d04e517547e1310cf547b1"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch9.parquet",
+      "bytes": 1243318,
+      "sha256": "098d65bd7944d0e8136b7745cbfe63f7d693452df92081724963f0c6bbee7c07"
+    }
+  ],
+  "output_csv_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/history_coverage_metadata_audit_v1/CONTEXT_HISTORY_COVERAGE.csv",
+    "bytes": 388,
+    "sha256": "13c75a0be592e4947c7a210471ccd94cfcc07c6b211eee6cd81a508245df6209"
+  }
+}

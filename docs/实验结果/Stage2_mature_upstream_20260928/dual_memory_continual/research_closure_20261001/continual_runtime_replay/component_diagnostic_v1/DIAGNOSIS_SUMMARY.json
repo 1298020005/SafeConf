@@ -1,0 +1,147 @@
+{
+  "status": "COMPLETE_FIXED_DIAGNOSTIC_NO_PUBLICATION",
+  "conditions": [
+    {
+      "role": "OLD_ANCHOR",
+      "condition": "P1E1",
+      "utility20": 0.7371965621463823,
+      "spearman": 0.7534565171816405,
+      "aurc": 0.0454983226940618,
+      "high_risk_miss_rate": 0.3820465686274509
+    },
+    {
+      "role": "OLD_ANCHOR",
+      "condition": "P1E2",
+      "utility20": 0.7419884471031676,
+      "spearman": 0.7532557830018514,
+      "aurc": 0.0455127978485609,
+      "high_risk_miss_rate": 0.3742851307189542
+    },
+    {
+      "role": "OLD_ANCHOR",
+      "condition": "P2E1",
+      "utility20": 0.7452552371560494,
+      "spearman": 0.7788286210464882,
+      "aurc": 0.0448579394195168,
+      "high_risk_miss_rate": 0.3738255718954248
+    },
+    {
+      "role": "OLD_ANCHOR",
+      "condition": "P2E2",
+      "utility20": 0.748278713069578,
+      "spearman": 0.7739904484735108,
+      "aurc": 0.0449186978437019,
+      "high_risk_miss_rate": 0.3591196895424836
+    },
+    {
+      "role": "OLD_ANCHOR",
+      "condition": "V1_ON_P2_ZERO_FIT_DRIFT",
+      "utility20": 0.7330935082810125,
+      "spearman": 0.7492384178908529,
+      "aurc": 0.0450891589127003,
+      "high_risk_miss_rate": 0.3816380718954248
+    },
+    {
+      "role": "NEW_TASK_GATE",
+      "condition": "P1E1",
+      "utility20": 0.7522730054741864,
+      "spearman": 0.7044690553342103,
+      "aurc": 0.0515292383207864,
+      "high_risk_miss_rate": 0.4084558823529411
+    },
+    {
+      "role": "NEW_TASK_GATE",
+      "condition": "P1E2",
+      "utility20": 0.7292494876284633,
+      "spearman": 0.7084937633732467,
+      "aurc": 0.0513249014637248,
+      "high_risk_miss_rate": 0.4294117647058823
+    },
+    {
+      "role": "NEW_TASK_GATE",
+      "condition": "P2E1",
+      "utility20": 0.7063625491470756,
+      "spearman": 0.6814022197962838,
+      "aurc": 0.0523743140209188,
+      "high_risk_miss_rate": 0.4383272058823529
+    },
+    {
+      "role": "NEW_TASK_GATE",
+      "condition": "P2E2",
+      "utility20": 0.7342778859748325,
+      "spearman": 0.7032336087683805,
+      "aurc": 0.0513991202676356,
+      "high_risk_miss_rate": 0.425
+    },
+    {
+      "role": "NEW_TASK_GATE",
+      "condition": "V1_ON_P2_ZERO_FIT_DRIFT",
+      "utility20": 0.7477904845211742,
+      "spearman": 0.6942725872748794,
+      "aurc": 0.0516246424418631,
+      "high_risk_miss_rate": 0.4209558823529412
+    }
+  ],
+  "new_task_U20_fixed_contrasts": [
+    {
+      "contrast": "Error_change_at_P1",
+      "point_difference": -0.023023517845723,
+      "ci95_lower": -0.0413605064203774,
+      "ci95_upper": 0.0490412617630912
+    },
+    {
+      "contrast": "Public_change_at_E1",
+      "point_difference": -0.0459104563271107,
+      "ci95_lower": -0.1209586308291608,
+      "ci95_upper": 0.0192957318754323
+    },
+    {
+      "contrast": "Public_change_at_E2",
+      "point_difference": 0.0050283983463691,
+      "ci95_lower": -0.064707548223006,
+      "ci95_upper": 0.0503726692052569
+    },
+    {
+      "contrast": "Error_change_at_P2",
+      "point_difference": 0.0279153368277568,
+      "ci95_lower": -0.0118594735549183,
+      "ci95_upper": 0.1043109530838007
+    },
+    {
+      "contrast": "Coupled_total_change",
+      "point_difference": -0.0179951194993539,
+      "ci95_lower": -0.0620290524776326,
+      "ci95_upper": 0.0513234588771087
+    },
+    {
+      "contrast": "Interaction",
+      "point_difference": 0.0509388546734799,
+      "ci95_lower": -0.0272138956708061,
+      "ci95_upper": 0.1147692576223471
+    },
+    {
+      "contrast": "Zero_fit_interface_drift",
+      "point_difference": -0.0044825209530121,
+      "ci95_lower": -0.0562711856253868,
+      "ci95_upper": 0.0401800757064812
+    },
+    {
+      "contrast": "E1_refit_on_P2_vs_zero_fit_drift",
+      "point_difference": -0.0414279353740986,
+      "ci95_lower": -0.1084971026877233,
+      "ci95_upper": 0.0159477393007381
+    }
+  ],
+  "all_U20_paired_intervals_include_zero": true,
+  "interpretation": "Fixed new-task point loss is larger for Public feature rebuilding plus shared-core refit at E1 than Error-budget growth at P1, with positive interaction offset; frozen interface drift is smaller. Conditional paired U20 intervals include zero, so no unique mechanism or robust disadvantage is established.",
+  "Public_factor_is_not_Public_Biology_Learner_retraining": true,
+  "Error_factor_combines_rows_CDF_preprocessing_and_weight_sum": true,
+  "formal_serving_version_remains": "risk-v1",
+  "additional_table_fits": 2,
+  "GPU_hours": 0,
+  "elapsed_seconds": 6.969907139893621,
+  "formal_code_and_artifacts_unchanged": true,
+  "published_candidates": 0,
+  "Orion_access": false,
+  "McFaline_access": false
+}
