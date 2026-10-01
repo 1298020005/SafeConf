@@ -1,0 +1,93 @@
+{
+  "status": "COMPLETE_ACTUAL_REAL_DEV_OPERATIONAL_REPLAY",
+  "completed_utc": "2026-10-01T20:33:44.183665+00:00",
+  "role": "RETROSPECTIVE_REAL_SOURCE_DEV_OPERATIONAL_REPLAY",
+  "runtime_root": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2",
+  "elapsed_seconds": 43.48569507198408,
+  "table_fits": 4,
+  "initial_error_shared_risk_OOF_fits": 2,
+  "actual_versioned_risk_fits": 2,
+  "actual_Public_append_current_v2": true,
+  "actual_Error_sequential_appends": true,
+  "actual_serving_resolver_publish_or_retain": true,
+  "actual_rollback_reload_proof": true,
+  "candidate_release_gate_passes": false,
+  "candidate_status": "REJECTED",
+  "old_task_degradation_reported": true,
+  "Public_growth_performance_reported": true,
+  "Public_biological_learner_fitted": false,
+  "Public_self_learning_claim": false,
+  "Source_shared_risk_version_update_fit": true,
+  "new_external_C_feedback_benefit_claim": false,
+  "new_upstream_calls": 0,
+  "Orion_access": false,
+  "McFaline_access": false,
+  "original_input_and_frozen_code_hashes_preserved": true,
+  "reports": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/actual_v2/ACCESS_AND_SCOPE_RECEIPT.json",
+      "sha256": "328f468f77b26a1ab6397feb814302271f95e86d86a6303b27bfd2538dc63d1c",
+      "bytes": 1086
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/actual_v2/ACTUAL_RELEASE_OR_RETAIN_DECISION.json",
+      "sha256": "1747053f2bc3893474bbee6af33ecd980ca12f411ac2fae8ca6f5c3693731e9d",
+      "bytes": 965
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/actual_v2/ACTUAL_ROLLBACK_RELOAD_PROOF.json",
+      "sha256": "16d8cb459ed9cff1d0b4e3db42833964cec90a484a4b83f1986e92d8c5699765",
+      "bytes": 1175
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/actual_v2/FINITE_GATE_PROOF.json",
+      "sha256": "99ec05c9870876af371d9e327b847f8e68fcc45d7a00dc9d145383c5782af05e",
+      "bytes": 173
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/actual_v2/FROZEN_TASK_ROLE_SCOPE.csv",
+      "sha256": "136918a3e6d8ce0f991bca68094952b29e0f714294be2deed2c728c6675ba563",
+      "bytes": 109581
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/actual_v2/INPUT_IDENTITY_LEDGER.json",
+      "sha256": "978436db62a7f2af6b32dae05868e33cfdfe606fa98efd6548d9157c106e9ac7",
+      "bytes": 1116
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/actual_v2/PRE_GATE_MODEL_PREDICTION_FREEZE.json",
+      "sha256": "f6da64a50be55738ad77952a74f8db85fd41a7f535c09b96a52fb2c798cf009f",
+      "bytes": 2121
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/actual_v2/REAL_DEV_ANCHOR_NEW_TASK_METRICS.csv",
+      "sha256": "4fd9b7002cc83002eade125da498905689b89a69804ae41576c1c7c4ac8a028a",
+      "bytes": 7268
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/actual_v2/REAL_DEV_PUBLIC_PRIOR_GROWTH_METRICS.csv",
+      "sha256": "e90a5d3c1efbceb96b88042d7f0aeda466c7d10be1b038243886ff6d43ef72bf",
+      "bytes": 842
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/actual_v2/REAL_INGESTION_TRIGGER_RECEIPT.json",
+      "sha256": "2f66d7226660e88e23fad6d391fd1317256a23c04be11d72d3b41a478cda7781",
+      "bytes": 8494
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/actual_v2/REGISTRATION.json",
+      "sha256": "3ea30e824a98c6bb6600c11ade442488848fc6fd87b5fe1e954d4d7d90bbc378",
+      "bytes": 7993
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/actual_v2/SOURCE_CDF_TRAINING_AUDIT.csv",
+      "sha256": "04cf231e65949d19b213777d5f363ab0da164a2df9c2d1dd3e407cb7d8cc6dbf",
+      "bytes": 11667
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/actual_v2/SOURCE_INFORMATION_BUDGET_LEDGER.csv",
+      "sha256": "10707b39097a8a2c100bd558d8a198a6a77818e889386216fb259a4ad08337e9",
+      "bytes": 751
+    }
+  ]
+}

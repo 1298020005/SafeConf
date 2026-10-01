@@ -1,0 +1,185 @@
+{
+  "schema": "safeconf_real_dev_continual_replay_registration_v1",
+  "registered_utc": "2026-10-01T20:33:00.698048+00:00",
+  "role": "RETROSPECTIVE_REAL_SOURCE_DEV_OPERATIONAL_REPLAY",
+  "output_contract_id": "E201_common2840gene_log1p_delta_v1",
+  "gene_axis": 2840,
+  "seed": 20260930,
+  "features": [
+    "predicted_magnitude",
+    "prediction_abs_mean",
+    "prediction_signed_mean",
+    "prediction_std",
+    "prediction_abs_q95",
+    "prediction_sparsity",
+    "prior_magnitude",
+    "prediction_prior_rmse",
+    "prediction_prior_cosine",
+    "prior_uncertainty",
+    "log_history_support",
+    "effective_sources",
+    "history_conflict"
+  ],
+  "hgb": {
+    "max_iter": 200,
+    "learning_rate": 0.05,
+    "max_depth": 3,
+    "min_samples_leaf": 20,
+    "l2_regularization": 10
+  },
+  "risk_initial_train_folds": [
+    2,
+    3
+  ],
+  "risk_added_train_fold": 4,
+  "old_anchor_fold": 0,
+  "new_task_gate_fold": 1,
+  "Public_initial_study": "Replogle_2022",
+  "Public_added_study": "Nadig_2025",
+  "Public_inference": "existing Manual cell-count-weighted prior; version-specific recomputation",
+  "Public_biological_learner_fitted": false,
+  "error_update_component": "shared Source risk core; no target C adapter or new external result",
+  "history_contract": "query-upstream source-train same-perturbation other-context history, not risk-label outer-train-only history",
+  "current_task_and_all_current_context_replicates_excluded": true,
+  "finer_guide_or_plate_disjoint_claim": false,
+  "cohort_rule": "identity-only common known-history under initial Public version; freeze before fits",
+  "gate": {
+    "new_task_macro_delta_U20_min": -0.005,
+    "old_anchor_AURC_relative_max": 0.05,
+    "max_anchor_newtask_macro_miss_delta_max": 0.02,
+    "newtask_nonnegative_strata_fraction_min": 0.6,
+    "strata": "four contexts by two existing upstream families",
+    "all_strata_min_tasks": 20,
+    "nonfinite": "REJECT_FAIL_CLOSED"
+  },
+  "rollback_drill": "deterministic administrative restoration; not an observed quality failure",
+  "anchor_truth_used_for_fit_or_CDF": false,
+  "new_gate_truth_used_for_fit_or_CDF": false,
+  "Orion_access": false,
+  "McFaline_access": false,
+  "parameter_search": false,
+  "input_bindings": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_scaling_recheck/cache/source_Manual.parquet",
+      "sha256": "7f8e9bba115d76557d41027fe84d149521d82422c94adcfcc84315d761771273",
+      "bytes": 961735
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/GENE_IDS.json",
+      "sha256": "be612f9c4638146b41eee26f607ab12fbed53b524cda7a76eee36ca554c28f97",
+      "bytes": 26427
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/TX_TASK_SPLIT.csv",
+      "sha256": "350e53a18f54108eef56062b96875f5ca0ad3d1095eb155aa2303eb35422aa71",
+      "bytes": 56917
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/history_provenance_check/TXPERT_CONTEXT_STUDY_PROVENANCE.csv",
+      "sha256": "4e8b6734b0374da58c47e9abd6ab003d1e4a2eb31afdf26f9e159e6bb83846df",
+      "bytes": 286
+    },
+    {
+      "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/public_memory.parquet",
+      "sha256": "fcfbd3300a012e3747c9642f5076d1407c509f46f66e4412522c5d9b8661c4bd",
+      "bytes": 58150
+    },
+    {
+      "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/eligibility.parquet",
+      "sha256": "ef2391be1ce3d0a9ac0d613810f9bbfd314fd00d5631436edbb22bdcdb6fc497",
+      "bytes": 33289
+    },
+    {
+      "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/manifest.json",
+      "sha256": "b56abbb63d5343244f00a6abe851acc28f9bc764c5ac1ff5c28ffe146075ed07",
+      "bytes": 1320
+    },
+    {
+      "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/gene_ids.json",
+      "sha256": "3a6c0ef75eef65b0f82286ee142bbb6c02a8b128cff8d3110b38661f74201c08",
+      "bytes": 44656
+    },
+    {
+      "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/effect_vectors.npy",
+      "sha256": "884a3b1a0b836f25af4e6f7e0df38a8eab4dfccfec49599c7478eccd4892dd92",
+      "bytes": 26923392
+    },
+    {
+      "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/control_vectors.npy",
+      "sha256": "1ad1cffb68b67c1976225a0efd747c0f5b7629a3c729c1f00d70088a6ec5ba06",
+      "bytes": 26923392
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_PUBLIC_EFFECTS.npy",
+      "sha256": "579b95ac834a36f1c6c3d12d25c3d607c9083a53c53b469e24d3c0be81d1e74e",
+      "bytes": 22811008
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_PUBLIC_CONTROLS.npy",
+      "sha256": "a59e8ed27adf1cb58090c2eb106a33136a07d5e6da1dc5a9f15180ef59628c24",
+      "bytes": 22811008
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TRUE_EFFECTS.npy",
+      "sha256": "c2da8655e555ed55320d79c8d197fddf4365d57ae974c2dfd529c009af3d164c",
+      "bytes": 20539008
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TxPert_GAT_PREDICTED_EFFECTS.npy",
+      "sha256": "88fba0ba25493bcebaf5c702c5200f70d55433968ba532cd83dbb0ed77947a90",
+      "bytes": 20539008
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TxPert_Exphormer_PREDICTED_EFFECTS.npy",
+      "sha256": "97b24e3bb14c5e26bd36e71168a9c95f5ec04160d1799d5bba58e470286b5939",
+      "bytes": 20539008
+    }
+  ],
+  "code_bindings": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_continual_runtime_replay_agent.py",
+      "sha256": "c78badc41b9a910ade57ecf0bcadc36e792b17c9f30c6563858c004d9aa9e36c",
+      "bytes": 52250
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/versioned_runtime.py",
+      "sha256": "70c5cd8ce1a0dfd66deda2834e2806de71b16d58f2cad92c9a9dea9284affc0e",
+      "bytes": 34971
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/memory.py",
+      "sha256": "9196ffca88372568e02ab959456da8d61dfda1c985188c0a00ac86b583df701a",
+      "bytes": 13125
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/update.py",
+      "sha256": "53e83199a40878b44452a2543c03abf46922f63f37b75ce538da88eb3a65fe60",
+      "bytes": 2269
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/research.py",
+      "sha256": "22a02a79d59f1d852870efb9dc1afe229f150c5db75e5de735f7bfcc1f613887",
+      "bytes": 11094
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/learners.py",
+      "sha256": "33e3eba65e31cc8372a89ad6356c353d972ca03b105307c916addbebce98ee63",
+      "bytes": 6160
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/contracts.py",
+      "sha256": "e7c4b329ec8a333dbbb7741707b229aa8e8df0290d15e8a2c0290c665daf4e06",
+      "bytes": 4021
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_dual_memory_txpert_public_biology.py",
+      "sha256": "fc2db4a07b6e360676c54b09c5bd5d893dc58aaef2c9426ac3da8df673cfaf63",
+      "bytes": 29386
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/orion_linear.R",
+      "sha256": "6f4f9dbdbe5d147019806b60a4aa6c2fe82d888d1e4d87d71b99807552129b25",
+      "bytes": 7251
+    }
+  ]
+}

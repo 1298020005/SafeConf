@@ -1,0 +1,35 @@
+{
+  "status": "PRESERVED_TECHNICAL_FAILURE",
+  "actual_runtime_status": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v1/STATUS.json",
+    "sha256": "74e135f0df9c00c55ff79d90bbbd443ccfe671bbc0510968a6e5d12f5aaea616",
+    "bytes": 485
+  },
+  "initial_model": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v1/MODEL_v1.joblib",
+    "sha256": "2b412045fdb8d952d3d650c0fe46c680a56e08eef9e5c2f3e3cf419aa1932e90",
+    "bytes": 219415
+  },
+  "failed_before_updated_Error_append_updated_riskfit_or_qualitygate": true,
+  "actual_table_fits": 3,
+  "terminal_state": {
+    "status": "FAILED_PRESERVED_ISOLATED_REPLAY",
+    "pid": 307265,
+    "started_utc": "2026-10-01T20:28:11.025043+00:00",
+    "role": "RETROSPECTIVE_REAL_SOURCE_DEV_OPERATIONAL_REPLAY",
+    "Orion_access": false,
+    "McFaline_access": false,
+    "new_upstream_calls": 0,
+    "updated_utc": "2026-10-01T20:28:43.813235+00:00",
+    "public_items_v1": 1047,
+    "error_rows_initial": 1372,
+    "error_type": "RuntimeError",
+    "error": "Full-bank Manual features do not reproduce original fixed formula"
+  },
+  "diagnosis": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/failure_diagnosis_v1/DIAGNOSIS.json",
+    "sha256": "70af9530a1ea76fd058c08477c69fe21ddb3756444d9503d3bbd27226d065a01",
+    "bytes": 1672
+  },
+  "v1_overwritten": false
+}

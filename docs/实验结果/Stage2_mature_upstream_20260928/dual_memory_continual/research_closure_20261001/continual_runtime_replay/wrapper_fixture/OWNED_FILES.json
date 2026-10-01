@@ -1,0 +1,36 @@
+{
+  "owner": "source_uncertainty_review",
+  "files": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/versioned_runtime.py",
+      "sha256": "70c5cd8ce1a0dfd66deda2834e2806de71b16d58f2cad92c9a9dea9284affc0e",
+      "bytes": 34971
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/wrapper_fixture/VERIFY_SYNTHETIC_WRAPPER.py",
+      "sha256": "b745678d1a60136836f1a9906bbc217bf318510155c8a4c74bfb17d4d03bbe81",
+      "bytes": 11825
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/wrapper_fixture/SYNTHETIC_WRAPPER_PROOF.json",
+      "sha256": "ac138820c8699559bd3d8812bedc12a0c402f276322a2bf2bd8d066bf374ade8",
+      "bytes": 2677
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/wrapper_fixture/INTERFACE.json",
+      "sha256": "93a24617525981da9bd756a180bd927bf871d06556e40e00ac1b340b16f3ed1e",
+      "bytes": 2891
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/wrapper_fixture/REPLAY_SCRIPT_REVIEW.json",
+      "sha256": "9cf9dc0a288c18d87126c82cc0007ea51991c4d467c6f34795f6f5e3b1d83f09",
+      "bytes": 2518
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/wrapper_fixture/FINAL_REPLAY_SCRIPT_REVIEW.json",
+      "sha256": "afae23ef45902fcbd864acddb3d440cdffb7605f43fcd5e0e5024fee01b30ceb",
+      "bytes": 2168
+    }
+  ],
+  "verification_complete": true
+}

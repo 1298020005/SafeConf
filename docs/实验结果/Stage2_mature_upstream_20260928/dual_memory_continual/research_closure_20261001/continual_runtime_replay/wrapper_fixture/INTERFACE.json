@@ -1,0 +1,45 @@
+{
+  "schema": "safeconf_versioned_runtime_interface_v1",
+  "code_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/versioned_runtime.py",
+  "code_sha256": "70c5cd8ce1a0dfd66deda2834e2806de71b16d58f2cad92c9a9dea9284affc0e",
+  "Public": {
+    "constructor": "VersionedPublicRuntime(root,gene_ids)",
+    "create": "create(items,effects,controls,source_manifest,eligibility=None) -> manifest with version=1",
+    "append": "append(items,effects,controls,source_manifest,full_eligibility=None) -> manifest with next monotonic version",
+    "load": "load() -> (table,effects,controls,manifest); verifies CURRENT/event/snapshot/all declared hashes/axis/finite values",
+    "activate": "activate(version:int,reason:str) -> CURRENT pointer",
+    "rollback": "rollback_to(version:int,reason:str) -> CURRENT pointer; earlier version only",
+    "immutable_path": "root/versions/v0001,root/versions/v0002",
+    "pointer": "root/CURRENT.json",
+    "event_log": "root/runtime_events.jsonl"
+  },
+  "Error": {
+    "constructor": "VersionedErrorRuntime(root,output_contract_id)",
+    "append": "append(items,batch_id) -> actual core manifest plus runtime_revision/runtime_revision_path/runtime_revision_sha256/batch_id/output_contract_id",
+    "load": "load(upstream_model_id,model_version) -> verified exact-version table",
+    "manifest": "manifest(upstream_model_id,model_version) -> verified manifest plus runtime revision fields",
+    "immutable_path": "root/<core-hashed-key>/revisions/r0001,r0002; each revision is a core ErrorMemoryRegistry root",
+    "pointer": "root/<core-hashed-key>/CURRENT.json",
+    "output_contract": "root/OUTPUT_CONTRACT.json"
+  },
+  "Serving": {
+    "constructor": "ServingModelRegistry(root)",
+    "register": "register(component,version,artifact_path,split_hash,feature_schema_hash,parent_version=None,status=RELEASED|REJECTED) -> entry plus immutable artifact/binding paths",
+    "publish": "publish(component,version,reason) -> serving pointer; RELEASED versions only",
+    "current": "current(component) -> verified immutable artifact copy Path",
+    "rollback": "rollback(component,to_version,reason) -> serving pointer; invokes actual ModelRegistry.rollback",
+    "pointer": "root/SERVING_CURRENT.json",
+    "actual_ledger": "root/model_registry.jsonl"
+  },
+  "scientific_boundary": "No fitting, gate selection or evaluation reads; caller decides RELEASED/REJECTED from its frozen scientific gates",
+  "actual_existing_core_methods": [
+    "PublicMemoryStore.create",
+    "PublicMemoryStore.append",
+    "ErrorMemoryRegistry.append",
+    "ModelRegistry.register",
+    "ModelRegistry.rollback"
+  ],
+  "staging": "Actual Public/Error calls run in isolated stages before immutable snapshots and active pointers are installed",
+  "synthetic_proof_checks": 43,
+  "no_actual_source_or_Orion_access_by_wrapper_verification": true
+}

@@ -1,0 +1,34 @@
+{
+  "status": "CONCRETE_PRECISION_LAYOUT_CAUSE_PROVEN",
+  "failed_runtime": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v1",
+  "failed_status_sha256": "74e135f0df9c00c55ff79d90bbbd443ccfe671bbc0510968a6e5d12f5aaea616",
+  "cause": "row selection copies F-order float32 prediction vectors into C-order; float32 norm reduction order changes cosine. Original full-array reduction then slice restores cached formula.",
+  "formula_changed": false,
+  "tolerance_changed": false,
+  "technical_correction": "cosine_rows(original full Source prediction array, full version-specific prior array), then select frozen known-history rows",
+  "proof": [
+    {
+      "upstream": "TxPert_GAT",
+      "original_prediction_dtype": "float32",
+      "original_prediction_C_contiguous": false,
+      "original_prediction_F_contiguous": true,
+      "subset_prediction_C_contiguous": true,
+      "subset_prediction_F_contiguous": false,
+      "full_array_original_reduction_then_slice_max_abs_difference": 4.440892098500626e-16,
+      "subset_reduction_max_abs_difference": 1.4780342222353582e-06
+    },
+    {
+      "upstream": "TxPert_Exphormer",
+      "original_prediction_dtype": "float32",
+      "original_prediction_C_contiguous": false,
+      "original_prediction_F_contiguous": true,
+      "subset_prediction_C_contiguous": true,
+      "subset_prediction_F_contiguous": false,
+      "full_array_original_reduction_then_slice_max_abs_difference": 4.440892098500626e-16,
+      "subset_reduction_max_abs_difference": 1.5545834668451164e-06
+    }
+  ],
+  "original_outputs_overwritten": false,
+  "Orion_access": false,
+  "McFaline_access": false
+}

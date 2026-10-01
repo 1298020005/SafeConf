@@ -1,0 +1,118 @@
+{
+  "status": "COMPLETE_ACTUAL_SOURCE_DEV_CONTINUAL_CAPABILITY_CANDIDATE_REJECTED",
+  "actual_counts": {
+    "Public_initial": 1047,
+    "Public_added": 961,
+    "Public_final": 2008,
+    "Error_initial_predictor_task_records": 1372,
+    "Error_added_predictor_task_records": 666,
+    "Error_final_predictor_task_records": 2038,
+    "Source_initial_biological_tasks": 686,
+    "Source_updated_biological_tasks": 1019,
+    "Source_initial_gene_clusters": 225,
+    "Source_updated_gene_clusters": 336
+  },
+  "gate": {
+    "passes": false,
+    "reasons": [
+      "new_task_u20_noninferiority_failed",
+      "strata_consistency_failed"
+    ],
+    "all_planned_strata_finite": true,
+    "release_metrics": {
+      "delta_u20_new_tasks": -0.017995119499353923,
+      "relative_aurc_degradation_anchor": -0.01273947732661299,
+      "miss_rate_degradation": 0.016544117647058834,
+      "nonnegative_strata_fraction": 0.375
+    },
+    "old_anchor_miss_rate_delta": -0.022926879084967322,
+    "new_task_miss_rate_delta": 0.016544117647058834,
+    "old_anchor_strata": 8,
+    "new_task_strata": 8,
+    "macro_unit": "equal upstream-by-context strata",
+    "gate_used_only_DEV_anchors": true,
+    "nonfinite_fail_closed": true,
+    "candidate_status": "REJECTED",
+    "serving_version": "risk-v1",
+    "serving_Public_version": 1,
+    "ingestion_Public_CURRENT_version": 2,
+    "failed_candidate_published": false,
+    "no_second_candidate_or_parameter_search": true,
+    "added_data_preserved_if_rejected": true,
+    "new_fits_after_gate": 0
+  },
+  "actual_public_retrieval_feature_rebuild": true,
+  "actual_shared_Source_core_refit": true,
+  "Public_Biology_Learner_retrained": false,
+  "model_specific_residual_adapter_retrained": false,
+  "new_external_C_feedback_benefit_claim": false,
+  "both_Public_and_Error_changed_no_causal_attribution": true,
+  "rollback_drill_identical_approved_v1_artifact_marker_not_quality_v2_rollback": true,
+  "artifacts": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/MODEL_v1.joblib",
+      "sha256": "39b06d7ee7d71c17eedf89d5b70fcb8bb2e230df1ed38859daa13555c3daf9bf",
+      "bytes": 219415
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/MODEL_v2.joblib",
+      "sha256": "0023eb0547e28c6b8426320f34b1091b5b3909eaf0819bae9742394ecba3fa81",
+      "bytes": 242286
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/PRE_GATE_RISK_v1.npy",
+      "sha256": "bd42b57adc511b34a890ce782d0424b0cd26203af1df1e362030fb6fb90c7c7f",
+      "bytes": 27312
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/PRE_GATE_RISK_v2.npy",
+      "sha256": "1b643d07eda8113ab77af9989d88ab5a12c35ff30a21765ed3deb86a5b65c621",
+      "bytes": 27312
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/public_memory/CURRENT.json",
+      "sha256": "37aa759d6eb5f5519a3f2f0dee023a1465d974ebcfc6cdafc3007a4d211206a5",
+      "bytes": 360
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/serving_models/SERVING_CURRENT.json",
+      "sha256": "d4540921217dce0934ed6edeb8646f87001160f19c7287287a1b38aa0efafe5d",
+      "bytes": 673
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/serving_models/model_registry.jsonl",
+      "sha256": "59c93d90e6587b0f6efd58b16d8bd9ca07e5805e912ee7f79bdb501722cd8a83",
+      "bytes": 1780
+    }
+  ],
+  "codes": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/versioned_runtime.py",
+      "sha256": "70c5cd8ce1a0dfd66deda2834e2806de71b16d58f2cad92c9a9dea9284affc0e",
+      "bytes": 34971
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_continual_runtime_replay_agent.py",
+      "sha256": "c78badc41b9a910ade57ecf0bcadc36e792b17c9f30c6563858c004d9aa9e36c",
+      "bytes": 52250
+    }
+  ],
+  "cost_total_table_fits": 7,
+  "failed_v1_fits": 3,
+  "complete_v2_fits": 4,
+  "cost_wall_sum_seconds": 76.27388707198409,
+  "cost_CPU_time_not_measured": true,
+  "GPU_hours": 0,
+  "Orion_access": false,
+  "McFaline_access": false,
+  "frozen_Source_Orion_files_changed": false,
+  "original_failed_v1_preserved": true,
+  "upstream_predictors": 2,
+  "upstream_architectures": 2,
+  "upstream_families": 1,
+  "Public_ingestion_is_not_chronological_Source_error_transfer": true,
+  "accounting_correction": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/SOURCE_INFORMATION_ACCOUNTING_CORRECTION.json",
+    "sha256": "b61316962edc81d0a474978e9ad3713641518356626593ed80e7820eeece2180"
+  }
+}

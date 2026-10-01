@@ -1,0 +1,27 @@
+{
+  "schema": "safeconf_source_continual_accounting_label_correction_v1",
+  "original_immutable_ledger": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/actual_v2/SOURCE_INFORMATION_BUDGET_LEDGER.csv",
+    "sha256": "10707b39097a8a2c100bd558d8a198a6a77818e889386216fb259a4ad08337e9"
+  },
+  "derived_correction": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/SOURCE_INFORMATION_ACCOUNTING_CORRECTION.csv",
+    "sha256": "2aece411911110d323d9ea7482dd60a13a50859bcbd32a5dadf11ea5233e54d9"
+  },
+  "legacy_column": "upstream_families",
+  "legacy_value": 2,
+  "correct_upstream_predictors": 2,
+  "correct_upstream_architectures": 2,
+  "correct_upstream_families": 1,
+  "upstream_family": "TxPert",
+  "architectures": [
+    "GAT",
+    "Exphormer"
+  ],
+  "gate_strata_interpretation": "4 contexts by2predictors,not2independentfamilies",
+  "initial_Source_errors_cover_both_Replogle_and_Nadig_studies": true,
+  "Public_ingestion_stage_is_not_chronological_error_transfer": true,
+  "original_ledger_and_code_unchanged": true,
+  "new_fits": 0,
+  "new_candidate": false
+}

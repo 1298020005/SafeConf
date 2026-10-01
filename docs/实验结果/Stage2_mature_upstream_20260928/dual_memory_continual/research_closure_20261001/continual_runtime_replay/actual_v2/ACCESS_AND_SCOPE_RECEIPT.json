@@ -1,0 +1,22 @@
+{
+  "actual_expression_cell_arrays_opened": false,
+  "only_existing_Source_DEV_aggregates_and_outcomes_used": true,
+  "Source_outcome_parquet_column_read_scope": "existing full DEV/SEEN column; only fixed train-role rows passed to fits/CDFs",
+  "current_task_Source_BIOtarget_vector_access": "post-freeze DEV prior-performance evaluation only",
+  "historical_source_biology": "query-relative legal other-context source-train; may share risk gene fold, disclosed",
+  "exact_current_task_and_all_current_context_replicates_in_history": 0,
+  "finer_replicate_identity_unavailable_no_disjoint_claim": true,
+  "Public_learner_update_claim": false,
+  "actual_Manual_prior_feature_update": true,
+  "actual_shared_Source_risk_update_fit": true,
+  "actual_external_C_adapter_update_claim": false,
+  "Source_prediction_truth_alignment_max_abs_error_difference": {
+    "TxPert_GAT": 0.0,
+    "TxPert_Exphormer": 0.0
+  },
+  "Orion_paths_opened": [],
+  "McFaline_paths_opened": [],
+  "permanent_test_used_for_fit_gate_or_publication": false,
+  "parameter_search": false,
+  "new_upper_training": 0
+}

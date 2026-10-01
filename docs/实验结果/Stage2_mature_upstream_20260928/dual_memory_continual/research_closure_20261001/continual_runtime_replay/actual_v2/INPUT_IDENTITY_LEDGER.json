@@ -1,0 +1,43 @@
+{
+  "source_original_predictor_task_records": 3616,
+  "source_original_tasks": 1808,
+  "known_history_tasks": 1699,
+  "known_history_predictor_task_records": 3398,
+  "known_history_gene_clusters": 563,
+  "metadata_only_excluded_no_initial_history_tasks": 109,
+  "source_models": [
+    {
+      "upstream": "TxPert_GAT",
+      "cache_model_version": "e201_official_frozen",
+      "scope": "existing composite official-family OOF outputs; not individual checkpoints"
+    },
+    {
+      "upstream": "TxPert_Exphormer",
+      "cache_model_version": "e205_official_frozen",
+      "scope": "existing composite official-family OOF outputs; not individual checkpoints"
+    }
+  ],
+  "biological_contexts": [
+    "K562",
+    "RPE1",
+    "hepg2",
+    "jurkat"
+  ],
+  "biological_studies": [
+    "Nadig_2025",
+    "Replogle_2022"
+  ],
+  "role_record_counts": {
+    "NEW_TASK_GATE": 690,
+    "OLD_ANCHOR": 670,
+    "TRAIN_ADDED": 666,
+    "TRAIN_INITIAL": 1372
+  },
+  "role_gene_counts": {
+    "NEW_TASK_GATE": 115,
+    "OLD_ANCHOR": 112,
+    "TRAIN_ADDED": 111,
+    "TRAIN_INITIAL": 225
+  },
+  "new_upstream_models_or_data": 0
+}

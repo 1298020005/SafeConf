@@ -1,0 +1,8 @@
+run,fit,kind,fit_label_folds,seed,model,max_iter,learning_rate,max_depth,min_samples_leaf,l2_regularization,fit_executed,fit_seconds,timing_status,new_upstream_fit,GPU_hours,evidence_role
+actual_v1,initial_OOF_holdout2,annotation OOF,3,20260930,existing_HGB,200,0.05,3,20,10,True,,not individually measured,False,0,RETROSPECTIVE_REAL_SOURCE_DEV_OPERATIONAL_REPLAY
+actual_v1,initial_OOF_holdout3,annotation OOF,2,20260930,existing_HGB,200,0.05,3,20,10,True,,not individually measured,False,0,RETROSPECTIVE_REAL_SOURCE_DEV_OPERATIONAL_REPLAY
+actual_v1,risk_v1,versioned Source core,2|3,20260930,existing_HGB,200,0.05,3,20,10,True,,not individually measured,False,0,RETROSPECTIVE_REAL_SOURCE_DEV_OPERATIONAL_REPLAY
+actual_v2,initial_OOF_holdout2,annotation OOF,3,20260930,existing_HGB,200,0.05,3,20,10,True,,not individually measured,False,0,RETROSPECTIVE_REAL_SOURCE_DEV_OPERATIONAL_REPLAY
+actual_v2,initial_OOF_holdout3,annotation OOF,2,20260930,existing_HGB,200,0.05,3,20,10,True,,not individually measured,False,0,RETROSPECTIVE_REAL_SOURCE_DEV_OPERATIONAL_REPLAY
+actual_v2,risk_v1,versioned Source core,2|3,20260930,existing_HGB,200,0.05,3,20,10,True,,not individually measured,False,0,RETROSPECTIVE_REAL_SOURCE_DEV_OPERATIONAL_REPLAY
+actual_v2,risk_v2,versioned Source core,2|3|4,20260930,existing_HGB,200,0.05,3,20,10,True,,not individually measured,False,0,RETROSPECTIVE_REAL_SOURCE_DEV_OPERATIONAL_REPLAY

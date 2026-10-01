@@ -55,3 +55,19 @@ Completed-source scaling summaries and all448budgetCDFidentitychecks are under `
 ## Registered prospective evaluation continuation
 
 The final guarded reader852fcd764b567a63f04c4a5539a118c8a715f664bf534184018010ac269087b2 and evaluator dec8f056918ac5626eb12732eec3cc07041eb3680cc6addd6d9f18b32d1f486c have compatible generated-fixture evidence. Coordinator f08f27279d8a0f45f67ba97d539bfbe27ed9351a75fd57c1eaab57a91c5ece85 waits for the actual v2 competence and all-candidate prediction/parameter hashes. It creates the immutable final access receipt, validates every guard, then reserves a global once-only scope before actual reading; failed gates never authorize TEST. Current watcher PID271820 is waiting, not a completed external experiment. Whole-study metadata was exposed, so this remains truth-blind prospective replication, not pristine SEALED confirmation. Source copy/weight diagnostics are separate SEEN analyses and do not alter these frozen predictions.
+
+## Actual real DEV memory lifecycle replay
+
+The isolated replay in `continual_runtime_replay/actual_v2` completed in43.485695seconds with4fixed HGB fits, after a preserved32.788192second failed run containing3fits. Total76.273887seconds sums wall durations, not measured CPU time. No GPU, upstream predictions, external TEST access or method search was added. Both final code files and24original input/code bindings are hashed; an independent reviewer reloaded both model artifacts, verified all32CDF fit scopes and reproduced the retained serving predictions byte-identically.
+
+The failure was a float32 F-order versus C-order cosine reduction discrepancy. Restoring the original full-array numerical path corrected the feature mismatch without changing the cosine formula, tolerance, training masks or gate. Original failed state remains preserved. Synthetic43wrapper/33replay checks and actual operational evidence are separately labeled.
+
+For reproduction, use fresh runtime/report directories; completed or partial roots are rejected:
+
+```bash
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 /home/miniconda/bin/python -u tools/scripts/run_safeconf_continual_runtime_replay_agent.py --runtime-root /home/yyf/runtime_artifacts/safeconf_reproduction_new/continual_source_DEV_v1 --report-root docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/reproduction_source_DEV_v1
+```
+
+The existing Source2840 prediction/effect arrays, public bank and study-provenance table must already exist. Manual priors update and shared risks refit; this command does not retrain the biological learner or a model-specific residual adapter. Anchor/gate gene folds0/1 never enter risk/CDF fitting. Same-gene other-context Source history is disclosed as permitted query-relative information, not strictly risk-training-fold-only history.
+
+The real candidate failed new-task U20 and stratum consistency; it was never published. An administrative rollback drill restores an identical approved model artifact and old Public features, while appended data is retained. This proves operation, not a beneficial candidate update. The original immutable budget ledger mislabeled two predictors as two families; `SOURCE_INFORMATION_ACCOUNTING_CORRECTION.json` binds its SHA and records two architectures within one TxPert family. Original bytes/code are preserved. No claim of study-chronological Error transfer is made.

@@ -1,0 +1,23 @@
+{
+  "kind": "DETERMINISTIC_ADMINISTRATIVE_DRILL_NOT_OBSERVED_QUALITY_FAILURE",
+  "before_drill_serving_artifact": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/serving_models/models/250fee62578f612d339b/e505b25aa7c77b1f8e6c/artifact.joblib",
+    "sha256": "39b06d7ee7d71c17eedf89d5b70fcb8bb2e230df1ed38859daa13555c3daf9bf",
+    "bytes": 219415
+  },
+  "rolled_back_artifact": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/MODEL_v1.joblib",
+    "sha256": "39b06d7ee7d71c17eedf89d5b70fcb8bb2e230df1ed38859daa13555c3daf9bf",
+    "bytes": 219415
+  },
+  "rollback_uses_actual_registry_and_CURRENT_pointers": true,
+  "restored_model_bytes_sha_match": true,
+  "restored_predictions_byte_identical": true,
+  "Public_v1_reconstructed_priors_byte_identical": true,
+  "Public_v1_reconstructed_risk_predictions_byte_identical": true,
+  "final_ingestion_Public_version": 2,
+  "final_serving_Public_version": 1,
+  "final_gate_selected_predictions_byte_identical": true,
+  "rejected_candidate_ever_published": false,
+  "added_Public_Error_data_still_persisted": true
+}

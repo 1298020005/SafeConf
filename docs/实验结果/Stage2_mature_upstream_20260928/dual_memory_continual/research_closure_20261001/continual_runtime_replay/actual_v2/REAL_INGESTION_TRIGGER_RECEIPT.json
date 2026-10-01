@@ -1,0 +1,177 @@
+{
+  "actual_Public_create_then_append": true,
+  "Public_current_version": 2,
+  "actual_Source_Error_append_batches_per_upstream": 2,
+  "immutable_Error_revision_snapshots": true,
+  "Public_trigger": {
+    "trigger": true,
+    "reasons": [
+      "new_independent_study"
+    ],
+    "previous_clusters": 580,
+    "new_clusters": 0,
+    "new_studies": 1
+  },
+  "Error_trigger": {
+    "trigger": true,
+    "reasons": [
+      "additional_50_feedback_clusters"
+    ],
+    "previous_clusters": 225,
+    "current_clusters": 336
+  },
+  "Error_initial_manifests": [
+    {
+      "schema": "SafeConf-ErrorMemory-v1",
+      "updated_utc": "2026-10-01T20:33:10.931164+00:00",
+      "upstream_model_id": "TxPert_GAT",
+      "model_version": "e201_official_frozen",
+      "n_items": 686,
+      "table_sha256": "6c4fecd05bd9be618b34560d9f41befff26b3a5f51cc256f2145a948d57ecf0a",
+      "runtime_revision": 1,
+      "runtime_revision_path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/error_memory/afcb438ec8094841dfcb/revisions/r0001",
+      "runtime_revision_sha256": "ea6116d60aab871a35e2d4ce5e05b623e15c6316c5c3c5546719984c3d27fbda",
+      "batch_id": "initial/TxPert_GAT",
+      "output_contract_id": "E201_common2840gene_log1p_delta_v1"
+    },
+    {
+      "schema": "SafeConf-ErrorMemory-v1",
+      "updated_utc": "2026-10-01T20:33:11.110999+00:00",
+      "upstream_model_id": "TxPert_Exphormer",
+      "model_version": "e205_official_frozen",
+      "n_items": 686,
+      "table_sha256": "97b3b4006274b75eba050f27cfbfe89365b452a30a394d3c4f4f2102de490b77",
+      "runtime_revision": 1,
+      "runtime_revision_path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/error_memory/e92940a46414c56c086d/revisions/r0001",
+      "runtime_revision_sha256": "b84b6d363b5db8e9329ab36ae2e1d37efa5982217362aaca2cd37af0c102b8b6",
+      "batch_id": "initial/TxPert_Exphormer",
+      "output_contract_id": "E201_common2840gene_log1p_delta_v1"
+    }
+  ],
+  "Error_updated_manifests": [
+    {
+      "schema": "SafeConf-ErrorMemory-v1",
+      "updated_utc": "2026-10-01T20:33:25.961048+00:00",
+      "upstream_model_id": "TxPert_GAT",
+      "model_version": "e201_official_frozen",
+      "n_items": 1019,
+      "table_sha256": "cbbc4e3487b72aa3da63dbeafba0085516b36c199680e1c554a6338fd52b8a76",
+      "runtime_revision": 2,
+      "runtime_revision_path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/error_memory/afcb438ec8094841dfcb/revisions/r0002",
+      "runtime_revision_sha256": "de2d08b2bd75acd0d812da7a48c36ad5a77e7c9a9699b373dcbff837e6b5dd24",
+      "batch_id": "added/TxPert_GAT",
+      "output_contract_id": "E201_common2840gene_log1p_delta_v1"
+    },
+    {
+      "schema": "SafeConf-ErrorMemory-v1",
+      "updated_utc": "2026-10-01T20:33:26.112451+00:00",
+      "upstream_model_id": "TxPert_Exphormer",
+      "model_version": "e205_official_frozen",
+      "n_items": 1019,
+      "table_sha256": "b6d962bab4a040bb40a7d0d0fd243655b990fa749b1dd3815df6542604e49d83",
+      "runtime_revision": 2,
+      "runtime_revision_path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/error_memory/e92940a46414c56c086d/revisions/r0002",
+      "runtime_revision_sha256": "c5a07125c59ba0de6711b85ac177a88adfa6cf832beeb9b846d48b5fda579bae",
+      "batch_id": "added/TxPert_Exphormer",
+      "output_contract_id": "E201_common2840gene_log1p_delta_v1"
+    }
+  ],
+  "Public_v1_manifest": {
+    "control_vectors_sha256": "2ad1b3f4383a7b53faf90ca08eddcf44168d9ec823d74279787aefc3d9525162",
+    "created_utc": "2026-10-01T20:33:02.328908+00:00",
+    "effect_vectors_sha256": "a0b7220cd6063b497f1cd20fe34563a1bc8c643fd4a3f7ffea3b28a5445c2c42",
+    "eligibility": {
+      "n_rows": 2677,
+      "path": "eligibility.parquet",
+      "sha256": "765abb5bc5d0b89df887094cdaa94892f9126f12f84b49141c6fb66dd6743139"
+    },
+    "gene_ids_sha256": "124117bad50b0111a3f68e4fca87662d62e25ef29d79fe8c6d63c72c9e665360",
+    "n_genes": 2840,
+    "n_items": 1047,
+    "schema": "SafeConf-PublicMemory-v1",
+    "source_manifest": {
+      "phase": "Replogle_2022_initial",
+      "projection_gene_ids": {
+        "bytes": 26427,
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/GENE_IDS.json",
+        "sha256": "be612f9c4638146b41eee26f607ab12fbed53b524cda7a76eee36ca554c28f97"
+      },
+      "source_bank": {
+        "bytes": 1320,
+        "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/manifest.json",
+        "sha256": "b56abbb63d5343244f00a6abe851acc28f9bc764c5ac1ff5c28ffe146075ed07"
+      },
+      "study_provenance": {
+        "bytes": 286,
+        "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/history_provenance_check/TXPERT_CONTEXT_STUDY_PROVENANCE.csv",
+        "sha256": "4e8b6734b0374da58c47e9abd6ab003d1e4a2eb31afdf26f9e159e6bb83846df"
+      }
+    },
+    "table_sha256": "48459d50b7711a88cfbf7366dc4c12b58f472df65f902c25ecf046a33f40340c",
+    "version": 1
+  },
+  "Public_v2_manifest": {
+    "control_vectors_sha256": "e89854646800594f826d85c4dc86a31d48197e5baa2f9a6d3a16f137dab09d25",
+    "created_utc": "2026-10-01T20:33:17.503191+00:00",
+    "effect_vectors_sha256": "9aa32e8172b7884f33c2c6b3f106015f1639b93b41c8be90f535f2f007cf41fa",
+    "eligibility": {
+      "n_rows": 5238,
+      "path": "eligibility.parquet",
+      "sha256": "ef2391be1ce3d0a9ac0d613810f9bbfd314fd00d5631436edbb22bdcdb6fc497"
+    },
+    "gene_ids_sha256": "124117bad50b0111a3f68e4fca87662d62e25ef29d79fe8c6d63c72c9e665360",
+    "n_genes": 2840,
+    "n_items": 2008,
+    "schema": "SafeConf-PublicMemory-v1",
+    "source_manifest": {
+      "new_studies": 1,
+      "parent_manifest": {
+        "control_vectors_sha256": "2ad1b3f4383a7b53faf90ca08eddcf44168d9ec823d74279787aefc3d9525162",
+        "created_utc": "2026-10-01T20:33:02.328908+00:00",
+        "effect_vectors_sha256": "a0b7220cd6063b497f1cd20fe34563a1bc8c643fd4a3f7ffea3b28a5445c2c42",
+        "eligibility": {
+          "n_rows": 2677,
+          "path": "eligibility.parquet",
+          "sha256": "765abb5bc5d0b89df887094cdaa94892f9126f12f84b49141c6fb66dd6743139"
+        },
+        "gene_ids_sha256": "124117bad50b0111a3f68e4fca87662d62e25ef29d79fe8c6d63c72c9e665360",
+        "n_genes": 2840,
+        "n_items": 1047,
+        "schema": "SafeConf-PublicMemory-v1",
+        "source_manifest": {
+          "phase": "Replogle_2022_initial",
+          "projection_gene_ids": {
+            "bytes": 26427,
+            "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/GENE_IDS.json",
+            "sha256": "be612f9c4638146b41eee26f607ab12fbed53b524cda7a76eee36ca554c28f97"
+          },
+          "source_bank": {
+            "bytes": 1320,
+            "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/manifest.json",
+            "sha256": "b56abbb63d5343244f00a6abe851acc28f9bc764c5ac1ff5c28ffe146075ed07"
+          },
+          "study_provenance": {
+            "bytes": 286,
+            "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/history_provenance_check/TXPERT_CONTEXT_STUDY_PROVENANCE.csv",
+            "sha256": "4e8b6734b0374da58c47e9abd6ab003d1e4a2eb31afdf26f9e159e6bb83846df"
+          }
+        },
+        "table_sha256": "48459d50b7711a88cfbf7366dc4c12b58f472df65f902c25ecf046a33f40340c",
+        "version": 1
+      },
+      "phase": "append_Nadig_2025_actual_existing_records",
+      "source_bank": {
+        "bytes": 1320,
+        "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/manifest.json",
+        "sha256": "b56abbb63d5343244f00a6abe851acc28f9bc764c5ac1ff5c28ffe146075ed07"
+      },
+      "study_provenance": {
+        "bytes": 286,
+        "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/history_provenance_check/TXPERT_CONTEXT_STUDY_PROVENANCE.csv",
+        "sha256": "4e8b6734b0374da58c47e9abd6ab003d1e4a2eb31afdf26f9e159e6bb83846df"
+      }
+    },
+    "table_sha256": "c99b5f3d418d0cbcf471eb8a3f9c0491c74ca0562838c90ac4c76149d4ed68ee",
+    "version": 2
+  }
+}

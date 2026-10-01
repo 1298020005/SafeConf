@@ -1,0 +1,29 @@
+{
+  "passes": false,
+  "reasons": [
+    "new_task_u20_noninferiority_failed",
+    "strata_consistency_failed"
+  ],
+  "all_planned_strata_finite": true,
+  "release_metrics": {
+    "delta_u20_new_tasks": -0.017995119499353923,
+    "relative_aurc_degradation_anchor": -0.01273947732661299,
+    "miss_rate_degradation": 0.016544117647058834,
+    "nonnegative_strata_fraction": 0.375
+  },
+  "old_anchor_miss_rate_delta": -0.022926879084967322,
+  "new_task_miss_rate_delta": 0.016544117647058834,
+  "old_anchor_strata": 8,
+  "new_task_strata": 8,
+  "macro_unit": "equal upstream-by-context strata",
+  "gate_used_only_DEV_anchors": true,
+  "nonfinite_fail_closed": true,
+  "candidate_status": "REJECTED",
+  "serving_version": "risk-v1",
+  "serving_Public_version": 1,
+  "ingestion_Public_CURRENT_version": 2,
+  "failed_candidate_published": false,
+  "no_second_candidate_or_parameter_search": true,
+  "added_data_preserved_if_rejected": true,
+  "new_fits_after_gate": 0
+}

@@ -1,0 +1,48 @@
+{
+  "frozen_utc": "2026-10-01T20:33:26.601588+00:00",
+  "models": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/MODEL_v1.joblib",
+      "sha256": "39b06d7ee7d71c17eedf89d5b70fcb8bb2e230df1ed38859daa13555c3daf9bf",
+      "bytes": 219415
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/MODEL_v2.joblib",
+      "sha256": "0023eb0547e28c6b8426320f34b1091b5b3909eaf0819bae9742394ecba3fa81",
+      "bytes": 242286
+    }
+  ],
+  "predictions": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/ALL_PRE_GATE_RISK_PREDICTIONS.csv",
+    "sha256": "8401af20f2f54ef508fc6453480e98344083837a2a38f4557f18719c091a1cb7",
+    "bytes": 400827
+  },
+  "all_model_params_and_predictions_fixed_before_DEV_gate_evaluation": true,
+  "old_anchor_and_new_gate_labels_in_CDF_or_fit": 0,
+  "public_version_specific_features": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/FEATURES_PUBLIC_v1.parquet",
+      "sha256": "bf295f1faeab977bf62a1c73a717efcef8d24f5b33ce18b7bcfeefe616ba043c",
+      "bytes": 240041
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/FEATURES_PUBLIC_v2.parquet",
+      "sha256": "2d15ac475e597ac37494ced3d4fa27a7a8989f8b6c1c1841a09325b86cab6a99",
+      "bytes": 283504
+    }
+  ],
+  "full_bank_original_Manual_feature_max_abs_difference": {
+    "prior_magnitude": 2.7755575615628914e-17,
+    "prediction_prior_rmse": 1.3877787807814457e-17,
+    "prediction_prior_cosine": 4.440892098500626e-16,
+    "prior_uncertainty": 2.0816681711721685e-17,
+    "log_history_support": 8.881784197001252e-16,
+    "effective_sources": 2.220446049250313e-15,
+    "history_conflict": 0.0
+  },
+  "Public_feature_changes_due_to_real_append": 3066,
+  "risk_train_initial_records": 1372,
+  "risk_train_updated_records": 2038,
+  "risk_train_initial_gene_clusters": 225,
+  "risk_train_updated_gene_clusters": 336
+}

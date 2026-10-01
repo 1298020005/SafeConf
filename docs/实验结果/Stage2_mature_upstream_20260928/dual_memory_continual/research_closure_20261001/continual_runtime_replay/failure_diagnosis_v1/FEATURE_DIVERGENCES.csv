@@ -1,0 +1,8 @@
+feature,max_abs_difference,n_over_unchanged_tolerance,first_divergent_task,first_divergent_upstream,tolerance
+prior_magnitude,2.7755575615628914e-17,0,,,1e-08
+prediction_prior_rmse,1.3877787807814457e-17,0,,,1e-08
+prediction_prior_cosine,1.5545834668451164e-06,3103,K562::AARS+ctrl,TxPert_GAT,1e-08
+prior_uncertainty,2.0816681711721685e-17,0,,,1e-08
+log_history_support,8.881784197001252e-16,0,,,1e-08
+effective_sources,2.220446049250313e-15,0,,,1e-08
+history_conflict,0.0,0,,,1e-08

@@ -1,0 +1,114 @@
+{
+  "status": "INDEPENDENT_COMPLETED_ACTUAL_v2_READONLY_REVIEW_PASS",
+  "wrapper_sha256": "70c5cd8ce1a0dfd66deda2834e2806de71b16d58f2cad92c9a9dea9284affc0e",
+  "replay_script_sha256": "c78badc41b9a910ade57ecf0bcadc36e792b17c9f30c6563858c004d9aa9e36c",
+  "review_scope": "Read-only code, metadata, snapshots, artifact reload/predict and existing DEV metrics; no new fits",
+  "original_input_and_code_bindings_verified": 24,
+  "known_history_tasks": 1699,
+  "known_history_gene_clusters": 563,
+  "metadata_only_no_initial_history_tasks_excluded": 109,
+  "Public_initial_Replogle_items": 1047,
+  "Public_appended_Nadig_items": 961,
+  "Public_updated_items": 2008,
+  "public_version_specific_feature_rows_changed": 3066,
+  "source_predictor_task_query_rows": 3398,
+  "fit_v1": {
+    "folds": [
+      2,
+      3
+    ],
+    "predictor_task_error_records": 1372,
+    "biological_tasks": 686,
+    "gene_clusters": 225
+  },
+  "fit_v2": {
+    "folds": [
+      2,
+      3,
+      4
+    ],
+    "predictor_task_error_records": 2038,
+    "biological_tasks": 1019,
+    "gene_clusters": 336
+  },
+  "CDF_partition_training_record_and_gene_hashes_independently_verified": 32,
+  "anchor_fold0_and_new_gate_fold1_labels_in_any_risk_CDF_OOF_fit": 0,
+  "initial_shared_risk_OOF": "two gene-disjoint folds2-to3 and3-to2; addedfold4 scored by frozenmodelv1 before updated fit",
+  "hgb_parameters_verified": {
+    "max_iter": 200,
+    "learning_rate": 0.05,
+    "max_depth": 3,
+    "min_samples_leaf": 20,
+    "l2_regularization": 10,
+    "seed": 20260930
+  },
+  "both_joblib_model_reload_predictions_finite_and_byte_identical": true,
+  "serving_CURRENT_version": "risk-v1",
+  "serving_model_sha256_matches_frozen_model1": true,
+  "rejected_riskv2_never_published": true,
+  "added_Public_Error_data_retained_after_rejection": true,
+  "immutable_error_revisions_exact_model_version_and_common2840_contract_verified": true,
+  "rollback_Public_v1_priors_and_features_byte_identical": true,
+  "rollback_serving_predictions_byte_identical": true,
+  "rollback_kind": "deterministic administrative marker on same prior model bytes; not observed quality failure",
+  "actual_gate": {
+    "candidate": "REJECTED",
+    "new_task_delta_U20": -0.017995119499353923,
+    "anchor_AURC_relative_degradation": -0.01273947732661299,
+    "max_miss_rate_delta": 0.016544117647058834,
+    "nonnegative_strata_fraction": 0.375
+  },
+  "concrete_guard_issues_fixed": [
+    "eligibility relation requires supported nonconflicting experimentID columns",
+    "publish checks existing servingCURRENT schema/components before mutation",
+    "source cache matches actual gene/context/condition/fold and unique model version",
+    "finite aligned predictions and exact8planned strata checked before release"
+  ],
+  "scientific_limits": [
+    "Retrospective already-SEEN Source DEV operational replay; no new independent biological observations or external confirmation",
+    "Manual cell-weighted Public features recomputed; no learned Public biological update",
+    "Public and Error changes coupled in riskv2 comparison; no separate causal attribution of their gains",
+    "Initial Error trainfolds include both original studies; Public study-slice append is not study-chronological Error transfer",
+    "GAT/Exphormer are two architectures within TxPert; ledger upstream_families=2 denotes variants, not two independent families",
+    "CDF/error records bound to disclosed composite official-family OOF source outputs and common2840 axis, not individual checkpoints",
+    "Quality gate correctly rejects v2; no universally improving self-learning or safe zero-history fallback demonstrated"
+  ],
+  "no_new_fits_by_reviewer": true,
+  "Orion_access": false,
+  "McFaline_access": false,
+  "original_banks_models_or_artifacts_mutated": false,
+  "evidence": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/actual_v2/STATUS.json",
+      "sha256": "1a3600e9f69e4504255cb05e11a0f56c84fff4a712bd9e2712ab91eb2bdddf0c"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/actual_v2/REGISTRATION.json",
+      "sha256": "3ea30e824a98c6bb6600c11ade442488848fc6fd87b5fe1e954d4d7d90bbc378"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/actual_v2/SOURCE_CDF_TRAINING_AUDIT.csv",
+      "sha256": "04cf231e65949d19b213777d5f363ab0da164a2df9c2d1dd3e407cb7d8cc6dbf"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/actual_v2/SOURCE_INFORMATION_BUDGET_LEDGER.csv",
+      "sha256": "10707b39097a8a2c100bd558d8a198a6a77818e889386216fb259a4ad08337e9"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/actual_v2/ACTUAL_RELEASE_OR_RETAIN_DECISION.json",
+      "sha256": "1747053f2bc3893474bbee6af33ecd980ca12f411ac2fae8ca6f5c3693731e9d"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/actual_v2/ACTUAL_ROLLBACK_RELOAD_PROOF.json",
+      "sha256": "16d8cb459ed9cff1d0b4e3db42833964cec90a484a4b83f1986e92d8c5699765"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/wrapper_fixture/FINAL_REPLAY_SCRIPT_REVIEW.json",
+      "sha256": "afae23ef45902fcbd864acddb3d440cdffb7605f43fcd5e0e5024fee01b30ceb"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/wrapper_fixture/SYNTHETIC_WRAPPER_PROOF.json",
+      "sha256": "ac138820c8699559bd3d8812bedc12a0c402f276322a2bf2bd8d066bf374ade8"
+    }
+  ]
+}
