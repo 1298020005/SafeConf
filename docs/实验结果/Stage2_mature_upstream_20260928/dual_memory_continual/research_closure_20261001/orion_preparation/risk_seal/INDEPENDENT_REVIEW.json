@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "risk_code_sha256": "8b69e6ce29dc92aa34150b3b08aac62ce8333a10f84ec432a39d0e81ffc64482",
+  "real_Orion_expression_or_prediction_read": false,
+  "new_fits": 0,
+  "independent_checks": [
+    "Public continuous transfer-RMSE predictions exceed1 and preserve clipFalse",
+    "Exact9Sourcepairfeatures",
+    "Exact6Pfeatures matchMChelper",
+    "13P_publiccolumns only; six risk candidates",
+    "Manual and learned history distance equals weighted expected squared Source discrepancy",
+    "UniformManualLearned match originalSourcepriororacle",
+    "No-history priors/publicfeatures/fourpublicrisks NaN; twoP-only remain finite",
+    "Query and memory ID renaming leaves scores unchanged",
+    "Extra querytruth/error columns refused",
+    "Nonfinite predictions refused"
+  ],
+  "actual_Source_model_synthetic_proof": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/risk_seal_synthetic_independent_v1/SYNTHETIC_RISK_PROOF.json",
+  "actual_Source_model_synthetic_proof_sha256": "b6806cc7848456d800f6623258a72f299cf57bc81b06fb48b8314ed875d4c7d5",
+  "source_and_LM_bindings_verified_before_infer_by_code_review": true,
+  "target_truth_error_or_CDF_input_API": false,
+  "missing_history_zero_effect_imputation": false,
+  "blockers": []
+}

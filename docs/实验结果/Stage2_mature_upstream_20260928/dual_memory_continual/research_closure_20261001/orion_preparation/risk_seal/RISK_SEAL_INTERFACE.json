@@ -1,0 +1,128 @@
+{
+  "schema": "safeconf_orion_pretruth_source_risk_seal_v1",
+  "status": "READY_SYNTHETIC_AND_INDEPENDENT_REVIEW_PASS",
+  "risk_code_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/seal_safeconf_orion_source_risk_agent.py",
+  "risk_code_sha256": "8b69e6ce29dc92aa34150b3b08aac62ce8333a10f84ec432a39d0e81ffc64482",
+  "independent_review_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_seal/INDEPENDENT_REVIEW.json",
+  "independent_review_sha256": "1ba57cd77c8b6d5a3f341f9b71b541fe13e46491a913ddac487015f5899239b3",
+  "synthetic_proof_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_seal/synthetic_v4/SYNTHETIC_RISK_PROOF.json",
+  "scientific_contract_sha256": "6b8a26939c8c6134dbf2e8294ee7905fccc2122b570b046f3183a3d2f5caba97",
+  "api": {
+    "context_bindings": "context_bindings(predictions_root,control_root,context_id,model_root=None) returns exact published files and SHA; hashes only",
+    "infer": "infer(queries,delta,train_controls,source_core()) uses no query truth/errors/CDF and performs zero fits"
+  },
+  "future_CLI": [
+    "bind-contexts --predictions-root PUBLISHED_LM_OUTPUT --control-root AUTHORIZED_R_BRIDGE_OUTPUT --model-root PUBLISHED_LM_MODELS --output NEW_COMPARISON_DRAFT.json",
+    "Root sets pretruth_inference_authorized=true on separate immutable reviewed comparison manifest; source/LM/control/data-role hashes fixed before TEST truth",
+    "seal --comparison-manifest IMMUTABLE_REVIEWED_COMPARISON.json --output NEW_RISK_SEAL_RUNTIME"
+  ],
+  "context_bindings_required": [
+    "context_id",
+    "prediction_estimand=DELTA_CP4000_log1p_own_TRAIN_NTC",
+    "delta_path",
+    "delta_sha256",
+    "queries_path",
+    "queries_sha256",
+    "axis_path",
+    "axis_sha256",
+    "train_control_path",
+    "train_control_sha256",
+    "upstream_model_path",
+    "upstream_model_sha256",
+    "upstream_prediction_manifest_path",
+    "upstream_prediction_manifest_sha256",
+    "upstream_status_path",
+    "upstream_status_sha256"
+  ],
+  "published_relative_files": [
+    "CONTEXT/PREDICTIONS_DELTA.tsv.gz",
+    "CONTEXT/QUERY_IDENTITIES.tsv",
+    "CONTEXT/OUTPUT_GENE_AXIS.tsv",
+    "CONTEXT/STATUS.tsv",
+    "MODEL_ROOT/CONTEXT/MODEL.rds",
+    "RUN_MANIFEST.tsv",
+    "CONTROL_ROOT/CONTEXT/OWN_CONTEXT_NTC_MEAN.tsv"
+  ],
+  "feature_contract": {
+    "Public_pair_width": 9,
+    "Public_pair_columns": [
+      "log_source_cells",
+      "log_source_batches",
+      "control_rmse",
+      "control_cosine",
+      "source_effect_magnitude",
+      "source_effect_abs_mean",
+      "source_conflict",
+      "support_fraction",
+      "quality_missing"
+    ],
+    "P_width": 6,
+    "P_columns": [
+      "predicted_magnitude",
+      "prediction_abs_mean",
+      "prediction_signed_mean",
+      "prediction_std",
+      "prediction_abs_q95",
+      "prediction_sparsity"
+    ],
+    "P_Public_width": 13,
+    "P_Public_columns": [
+      "predicted_magnitude",
+      "prediction_abs_mean",
+      "prediction_signed_mean",
+      "prediction_std",
+      "prediction_abs_q95",
+      "prediction_sparsity",
+      "prior_magnitude",
+      "prediction_prior_rmse",
+      "prediction_prior_cosine",
+      "prior_uncertainty",
+      "log_history_support",
+      "effective_sources",
+      "history_conflict"
+    ],
+    "model_internal_widths_with_missing_flags": {
+      "P": 12,
+      "P_Public": 26,
+      "Public_biology": 18
+    }
+  },
+  "outputs": [
+    "PRETRUTH_RISKS.tsv",
+    "P_ONLY_FEATURES.parquet",
+    "SOURCE_HISTORY_PAIR_FEATURES.parquet",
+    "SOURCE_PRIOR_WEIGHTS.tsv",
+    "Uniform_P_PUBLIC_FEATURES.parquet",
+    "Manual_P_PUBLIC_FEATURES.parquet",
+    "Learned_P_PUBLIC_FEATURES.parquet",
+    "Uniform_PRIOR_EFFECTS.npy",
+    "Manual_PRIOR_EFFECTS.npy",
+    "Learned_PRIOR_EFFECTS.npy",
+    "RISK_SEAL_MANIFEST.json",
+    "ARTIFACT_HASHES.json"
+  ],
+  "six_risk_candidates": [
+    "P_only_ridge",
+    "P_only_hgb",
+    "Manual_ridge",
+    "Manual_hgb",
+    "Learned_ridge",
+    "Learned_hgb"
+  ],
+  "baselines": [
+    "Magnitude",
+    "Manual_WeightedHistoryDistance",
+    "Learned_WeightedHistoryDistance",
+    "Uniform_DirectRMSE",
+    "Manual_DirectRMSE",
+    "Learned_DirectRMSE"
+  ],
+  "no_history_policy": "source_history_n=0 metadata; threepriorvectors+sevenPublicfeatures NaN, fourPublicscores NaN/NO_HISTORY_PUBLIC_RISK_UNSUPPORTED; twoP-onlyscores finite/separate; no automatic universal fallback or fallback efficacy claim",
+  "no_querytruth_placeholder": true,
+  "Source_history_retrieval": "eligible historical Source genetic_single_gene records with EXACT perturbation_target==query target_gene_symbol only; no othergene search",
+  "public_score_semantics": "Source fullfit biological transfer RMSE predict(clip=False), never rank/CDF",
+  "prior_rule": "fixed Uniform/cell-weight Manual/fixed0.5learned+0.5cell, learned temperature max(score.std,1e-8)",
+  "field_role_exposure": "TEST metadata SEEN; TEST truth CLOSED at risk seal; prospective truth-blind external-study replication, no whole-method pristine or automatic confirmation claim",
+  "actual_Orion_expression_or_prediction_read": false,
+  "new_fits": 0
+}

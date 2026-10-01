@@ -1,0 +1,20 @@
+{
+  "schema": "safeconf_orion_pretruth_source_risk_seal_v1",
+  "status": "READY_SYNTHETIC_AND_INDEPENDENT_REVIEW_PASS",
+  "risk_code_sha256": "8b69e6ce29dc92aa34150b3b08aac62ce8333a10f84ec432a39d0e81ffc64482",
+  "source_core_model_count": 7,
+  "source_risk_candidates": 6,
+  "public_pair_width": 9,
+  "P_width": 6,
+  "P_Public_width": 13,
+  "synthetic_proof": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_seal/synthetic_v4/SYNTHETIC_RISK_PROOF.json",
+  "independent_review": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_seal/INDEPENDENT_REVIEW.json",
+  "actual_Orion_expression_or_predictions_read": false,
+  "target_error_or_CDF_fit": false,
+  "new_fits": 0,
+  "no_history_public_NaN_explicit_unsupported": true,
+  "P_only_no_history_separate": true,
+  "TEST_metadata_status": "SEEN_METADATA_ONLY",
+  "TEST_truth_status": "CLOSED",
+  "whole_method_pristine_claim": false
+}

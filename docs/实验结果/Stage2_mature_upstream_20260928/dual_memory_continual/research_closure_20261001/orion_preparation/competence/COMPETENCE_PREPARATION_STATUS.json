@@ -1,0 +1,78 @@
+{
+  "status": "PREPARED_SYNTHETIC_VERIFIED_ACTUAL_VALIDATION_NOT_EXECUTED",
+  "updated_utc": "2026-10-01T18:14:35Z",
+  "evaluator_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/evaluate_safeconf_orion_competence_agent.py",
+  "evaluator_sha256": "da06a174c69339b4afb1cfc7ab33015e34c8d27f2d7264a045c799e7f75b942c",
+  "baseline_helper_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/competence/EXTRACT_FROZEN_BASELINE.R",
+  "baseline_helper_sha256": "d89ab0f92d8ef971a4476d7e13f17ce19e332e7075508db1ed057be81e52f5fe",
+  "paired_statistics_function_sha256": "50c932712aaefcab5f3f013718bbf9d976188ec540c530aced7d60f3c685df1a",
+  "scientific_contract_sha256": "6b8a26939c8c6134dbf2e8294ee7905fccc2122b570b046f3183a3d2f5caba97",
+  "permit_sha256": "82a57a5c5ebd7937325d4b84c0659e291405f114869dd41540e29bef67eae25a",
+  "expected_validation_eligibility_sha256": "274bc9f946d09229334cda7b78e4c39d94f2e6f4dc18888a8e58da7f27d16e6c",
+  "bootstrap_replicates": 5000,
+  "bootstrap_seed": 20260929,
+  "bootstrap_percentiles": [
+    0.025,
+    0.975
+  ],
+  "bootstrap_quantile_method": "linear",
+  "contexts": [
+    "HCT116",
+    "HEK293T"
+  ],
+  "family_attempt_count": 1,
+  "context_model_count": 2,
+  "older_three_background_requirement_fulfilled": false,
+  "synthetic_statistics_scenarios": 16,
+  "synthetic_known_task_RMSE_checks": 4,
+  "synthetic_frozen_baseline_receipt_guards": 2,
+  "actual_execution_hash_guards": 2,
+  "validation_errors_use": "C_VALIDATION_COMPETENCE_ONLY",
+  "actual_validation_evaluated": false,
+  "TEST_truth_read": false,
+  "SafeConf_scores_computed": false,
+  "new_actual_model_parameters_fitted": false,
+  "gpu_hours": 0,
+  "extra_download_bytes": 0,
+  "input_flags": [
+    "fit-root",
+    "biology-root",
+    "bridge-root",
+    "permit",
+    "contract",
+    "validation-eligibility",
+    "output"
+  ],
+  "required_actual_hash_flags": [
+    "expected-evaluator-sha256",
+    "expected-baseline-helper-sha256",
+    "expected-validation-eligibility-sha256"
+  ],
+  "output_artifacts": [
+    "COMPETENCE_RESULT.json",
+    "VALIDATION_TASK_ERRORS.csv",
+    "CONTEXT_COMPETENCE.csv",
+    "PAIRED_GENE_BOOTSTRAP.csv",
+    "INPUT_IDENTITIES.json",
+    "C_VALIDATION_ACCESS_LEDGER.json",
+    "ARTIFACT_HASHES.json"
+  ],
+  "evidence": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_competence_statistics_synthetic_20261002_v2/VERIFY_COMPETENCE_STATISTICS.json",
+      "sha256": "dbda90b0079df30692943a241efe036ca8e7371f22308a51369ed6a37effd1c4"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_competence_pipeline_synthetic_20261002_v1/VERIFY_COMPETENCE_PIPELINE.json",
+      "sha256": "82b593eb0771ac5f0db96c4a0d185444695918df9bd395b97f5b9da08e8e2239"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_competence_pipeline_synthetic_20261002_v1/actual_execution_hash_guards/EXECUTION_HASH_GUARDS.json",
+      "sha256": "a06e2244f4104aa4c24725805dd224eb9f86696ed03c57ec357e73ece1063c0d"
+    }
+  ],
+  "statistical_verifier_source_sha256": "a418d90abce0c3b57ec4e77f37625c81c67c83229fe52545b56d935a32f25edf",
+  "bridge_sha256_unchanged": "5147611b3bdcc9eb895a175e168122b5e10f0c8a791c7aa88c022d66ff5c0d46",
+  "lm_cli_sha256_unchanged": "086fb5489bc88520b1854d0101db117f66f913d7ce94064a6df18772633aaee1",
+  "core_sha256_unchanged": "6f4f9dbdbe5d147019806b60a4aa6c2fe82d888d1e4d87d71b99807552129b25"
+}
