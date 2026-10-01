@@ -1,0 +1,901 @@
+{
+  "cli_sha256": "267ac7f804e8c269afeb5264d894f55ba0c7aa5d5769cb68770d5083b9ce9669",
+  "core_sha256": "6f4f9dbdbe5d147019806b60a4aa6c2fe82d888d1e4d87d71b99807552129b25",
+  "artifacts": [
+    {
+      "path": "FIT.log",
+      "bytes": 38,
+      "sha256": "5b7258b7eb886f4c63f6751309239c80b09fb45ddb9d098ed029b7ff80ad1675"
+    },
+    {
+      "path": "FULL_WORKFLOW.log",
+      "bytes": 63,
+      "sha256": "29272d5826a10b756a3987459ec1fc5152316ddb0a3f17b14d5d074c678952ac"
+    },
+    {
+      "path": "GENERATE_AND_VERIFY_WORKFLOW.R",
+      "bytes": 12530,
+      "sha256": "78b1eeba2c1001214f493b4f4d949da0771bb5f5559af68a2d99a6b33acfa04d"
+    },
+    {
+      "path": "INPUT_GUARDS.log",
+      "bytes": 33,
+      "sha256": "8f604b37ede267a1029b17d3457f6ed59f0b28d52678ace3f0aa7d4d9da3345c"
+    },
+    {
+      "path": "INPUT_GUARD_COMPARISON.tsv",
+      "bytes": 192,
+      "sha256": "efe1e3e948d39819cf0ac5f706969c7b77fe7f66429313a0141674f10806781c"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7243,
+      "sha256": "7c9ded47d1be6611422ec3406c8bd5beb9f7fc4a8100bee9f43f09e94010c0f1"
+    },
+    {
+      "path": "RELOAD.log",
+      "bytes": 42,
+      "sha256": "a7df28d9762c6e496ccaa77180417208665c79d01332426dce15a4edc7009ab0"
+    },
+    {
+      "path": "RUN_PROGRESS.json",
+      "bytes": 220,
+      "sha256": "11aaa368e5b4543279c7b9afba8f4114228d32655705450a047151e3f5838ff7"
+    },
+    {
+      "path": "STATUS.tsv",
+      "bytes": 644,
+      "sha256": "b6cece32a5cbc65f03f97b669c294db17d832c37b8fd4cc00bd894c7f5716c88"
+    },
+    {
+      "path": "VERIFY_INPUT_GUARDS.R",
+      "bytes": 2414,
+      "sha256": "def069707194c167d3127d6672635215a9d7db492030c0400d7fd94efeadf935"
+    },
+    {
+      "path": "WORKFLOW_COMPARISON.tsv",
+      "bytes": 2279,
+      "sha256": "6bb8af9437026de6c4aede158f112d654ef59a7d783f23a51b8b07239020bfe1"
+    },
+    {
+      "path": "WORKFLOW_REPORT.json",
+      "bytes": 5816,
+      "sha256": "7e80eee0fcebaeada4287d28968139794fd1d25c5f848e24808dcaf9ab616477"
+    },
+    {
+      "path": "ambiguous_target_rejection/BAD_QUERY_METADATA.tsv",
+      "bytes": 350,
+      "sha256": "6b893d5bbd21cafba87f04d1357ae236e708de4e6b011498b156494ea2d74de8"
+    },
+    {
+      "path": "ambiguous_target_rejection/INPUT_RECEIPT.tsv",
+      "bytes": 845,
+      "sha256": "c8ffd6bd938a58a25c2df1a7ad3afdfbe83eaf8ba96660e5d45f088bfc264912"
+    },
+    {
+      "path": "ambiguous_target_rejection/MANIFEST.tsv",
+      "bytes": 1793,
+      "sha256": "63aaa0011267cc66e2f1e0b34e1b776f55a891e8d9f7a4e02e8a068645aafae9"
+    },
+    {
+      "path": "ambiguous_target_rejection/POISON_TRAIN_X.rds",
+      "bytes": 47,
+      "sha256": "eca4df614c203cca51e98f2f28ed730cee9aa6ce0abe7184fce105043bc9fa8c"
+    },
+    {
+      "path": "ambiguous_target_rejection/REJECTION.log",
+      "bytes": 73,
+      "sha256": "fcb10ae347b781802905a9a4f3b3aed1ef205f056ce9169880c4cf7f0f4c5eec"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/FIT.log",
+      "bytes": 38,
+      "sha256": "5b7258b7eb886f4c63f6751309239c80b09fb45ddb9d098ed029b7ff80ad1675"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/FULL_WORKFLOW.log",
+      "bytes": 63,
+      "sha256": "5961e657e259a21a59e0c5a59365d6213a8dc0326f8b7c1255565fa476a6c72f"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/RELOAD.log",
+      "bytes": 42,
+      "sha256": "a7df28d9762c6e496ccaa77180417208665c79d01332426dce15a4edc7009ab0"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/STATUS.tsv",
+      "bytes": 644,
+      "sha256": "f6c710db8956ba58710d41275bae8f51fd6e0d177021c302f75f00f6173b1212"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/WORKFLOW_COMPARISON.tsv",
+      "bytes": 1875,
+      "sha256": "c0b97a513833f9dbb5dfc4a9a299270762140893f1eda866354f799b5e616572"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/ambiguous_target_rejection/BAD_QUERY_METADATA.tsv",
+      "bytes": 350,
+      "sha256": "6b893d5bbd21cafba87f04d1357ae236e708de4e6b011498b156494ea2d74de8"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/ambiguous_target_rejection/INPUT_RECEIPT.tsv",
+      "bytes": 845,
+      "sha256": "c8ffd6bd938a58a25c2df1a7ad3afdfbe83eaf8ba96660e5d45f088bfc264912"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/ambiguous_target_rejection/MANIFEST.tsv",
+      "bytes": 1793,
+      "sha256": "63aaa0011267cc66e2f1e0b34e1b776f55a891e8d9f7a4e02e8a068645aafae9"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/ambiguous_target_rejection/POISON_TRAIN_X.rds",
+      "bytes": 47,
+      "sha256": "eca4df614c203cca51e98f2f28ed730cee9aa6ce0abe7184fce105043bc9fa8c"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/ambiguous_target_rejection/REJECTION.log",
+      "bytes": 73,
+      "sha256": "fcb10ae347b781802905a9a4f3b3aed1ef205f056ce9169880c4cf7f0f4c5eec"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/RUN_MANIFEST.tsv",
+      "bytes": 545,
+      "sha256": "bcc705e90c4a4a5e350c9182f51f5a9906f2259d43bd4b08f83bebc7a3fabed9"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/R_SESSION_INFO.txt",
+      "bytes": 819,
+      "sha256": "5cf60732594ac1fb6af70b30c33dbca5ddb2237d553804315cbdb3ddaf13c953"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HCT116/ARTIFACT_HASHES.tsv",
+      "bytes": 1330,
+      "sha256": "db4bb6dcd272b1535dbda76d2a4ce24b0694a3fdd571bf52f5564d634d664af5"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HCT116/FULL_GENE_AXIS.tsv",
+      "bytes": 1147104,
+      "sha256": "f86e510a3dc0f81196a64a06895c7a0be247d4d274ce5d293b63398f79eaaad0"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HCT116/GENE_EMBEDDING.rds",
+      "bytes": 4015253,
+      "sha256": "d16b33ae9d9a90749745425b1eb16b318fe304daefb652854bd001eeb76173ab"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HCT116/INTERCEPT_AND_BASELINE.tsv.gz",
+      "bytes": 553191,
+      "sha256": "2c77aa6ff2a7ba18846707b986af4e8cd6cbc9cabb936e740735301d959fe8cd"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HCT116/MODEL.rds",
+      "bytes": 12463179,
+      "sha256": "19966bf3cad8c43e8b056d741c1c8031c936f04a113d5ead9cd7b0c8feac2f4a"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HCT116/OUTPUT_GENE_AXIS.tsv",
+      "bytes": 94188,
+      "sha256": "3489cb3881e2f1fe215e87273c96a3c61bd2032b3f1519f8025ab866560deff3"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HCT116/PERTURBATION_EMBEDDING.rds",
+      "bytes": 4015345,
+      "sha256": "e50bc1efe4e2eb54c1e087268281605ed49606f4a3dcd392248bfafbe73a02d3"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HCT116/PREDICTIONS_DELTA.rds",
+      "bytes": 184202,
+      "sha256": "d7e55ffd4725f2e1ed13b68e1c6414957aff0568779fa3637e0dafdca6f431a7"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HCT116/PREDICTIONS_DELTA.tsv.gz",
+      "bytes": 124708,
+      "sha256": "bdfd0ffe038a79ea4e3e327c6138ed36c02b8e6bf395d2f97ac014557b1f4458"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HCT116/PREDICTIONS_TREATED.rds",
+      "bytes": 184202,
+      "sha256": "a8c67863d4a834eee2052514b008ec778de7bd3b0305427657e064c6068407ab"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HCT116/PREDICTIONS_TREATED.tsv.gz",
+      "bytes": 118295,
+      "sha256": "308133aa86c7d3f32c3b71c45a3a69de461cddbe4256e41993339d8ea4e69f1d"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HCT116/QUERY_IDENTITIES.tsv",
+      "bytes": 351,
+      "sha256": "c1ec707129f7186603339d238f8596bcfb3240b93e97b6c44cd2904501fbf630"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HCT116/RIDGE_COEFFICIENTS.rds",
+      "bytes": 1140,
+      "sha256": "0dd1cd039589ddb5638a4f81123a8c3a045339c7682ed3187fdd1d5d3d9f825e"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HCT116/STATUS.tsv",
+      "bytes": 396,
+      "sha256": "8171c3082cf516a73860b4ad932fa540de0c4acc8c4ef498c88875c7390a1fde"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HCT116/TRAIN_CONDITION_IDENTITIES.tsv",
+      "bytes": 1248,
+      "sha256": "39f692b1d29c95bde959361ab43ddf2e85a8bead28486451ccf45cb392d232f3"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HEK293T/ARTIFACT_HASHES.tsv",
+      "bytes": 1330,
+      "sha256": "22e1691630d12c6f69ea3ec4884bdfd687e175dfe3f1b2b02a9503610f37fc31"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HEK293T/FULL_GENE_AXIS.tsv",
+      "bytes": 1147104,
+      "sha256": "f86e510a3dc0f81196a64a06895c7a0be247d4d274ce5d293b63398f79eaaad0"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HEK293T/GENE_EMBEDDING.rds",
+      "bytes": 4015253,
+      "sha256": "835f462733b3d8825dae89d5f5b44accabe43c573f2fcea545e1d08484feae60"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HEK293T/INTERCEPT_AND_BASELINE.tsv.gz",
+      "bytes": 554251,
+      "sha256": "f59fd9a32673b38a6d182051198be8138a83013a2f47ace49cd9b930111c700d"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HEK293T/MODEL.rds",
+      "bytes": 12463181,
+      "sha256": "4cd668ff784aaa6429a1aedd69c89171fe6fbe493990faaa5c5ab34ab257bd6c"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HEK293T/OUTPUT_GENE_AXIS.tsv",
+      "bytes": 94188,
+      "sha256": "3489cb3881e2f1fe215e87273c96a3c61bd2032b3f1519f8025ab866560deff3"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HEK293T/PERTURBATION_EMBEDDING.rds",
+      "bytes": 4015345,
+      "sha256": "d110d6a24752e02b9007e21f7ff2b98484e8852c33bacd08107bccb9f2b51da3"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HEK293T/PREDICTIONS_DELTA.rds",
+      "bytes": 184206,
+      "sha256": "a231751ffdeb9d51eeea078795e8f017e247b2aba3c4992ea8a36ab5a2dde81d"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HEK293T/PREDICTIONS_DELTA.tsv.gz",
+      "bytes": 124871,
+      "sha256": "9d47529df9b2890185e930ac568933273b7a645aaf64f38c1d379df99821f3d7"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HEK293T/PREDICTIONS_TREATED.rds",
+      "bytes": 184206,
+      "sha256": "d2fa85d730d45bfcd524763a4db24872f9a1d4d44e06b6bb9d3f8823fcf1a670"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HEK293T/PREDICTIONS_TREATED.tsv.gz",
+      "bytes": 118582,
+      "sha256": "4cf5c831e6e0aa8caa25b18adda35896a0fce57177d4d9df33d81f1584d31624"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HEK293T/QUERY_IDENTITIES.tsv",
+      "bytes": 359,
+      "sha256": "e3fa60eab58f9237a44a68e0dace222f59786704a36a2d3f1b0a9e1f130a41ee"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HEK293T/RIDGE_COEFFICIENTS.rds",
+      "bytes": 1140,
+      "sha256": "8181d0206dd3ad9b95d9770c496b3078faa4efae3041ffc930e9325a2928743d"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HEK293T/STATUS.tsv",
+      "bytes": 397,
+      "sha256": "5548be57ad88bc5282c15ea1f546084eebc4664312267f4e21238f15452c0d89"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/fit/SYNTHETIC_HEK293T/TRAIN_CONDITION_IDENTITIES.tsv",
+      "bytes": 1272,
+      "sha256": "d2a7f76a23f6d5014f9dd178370af45c6a1a0aeec1e6ece9b18f1eb0b7c1b20c"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/inputs/FIT_MANIFEST.tsv",
+      "bytes": 3465,
+      "sha256": "b04660771218db53e86cf4f167f86da3a640f10398370cbdd8c03c724c8b0afd"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/inputs/FULL_GENE_AXIS.tsv",
+      "bytes": 1147104,
+      "sha256": "f86e510a3dc0f81196a64a06895c7a0be247d4d274ce5d293b63398f79eaaad0"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/inputs/OUTPUT_GENE_AXIS.tsv",
+      "bytes": 94188,
+      "sha256": "3489cb3881e2f1fe215e87273c96a3c61bd2032b3f1519f8025ab866560deff3"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/inputs/PREDICT_MANIFEST.tsv",
+      "bytes": 1932,
+      "sha256": "d10de6bd8c89574b98e30cd7eef4ca1b01b8a820c04b6cb593d0aa94ff32948d"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/inputs/SYNTHETIC_HCT116/CELL_ESTIMAND_CHECK.tsv",
+      "bytes": 176,
+      "sha256": "1a6d077287b0251d8a6163781fe24eba2849e5171bad3c2fc550fff7610ea45a"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/inputs/SYNTHETIC_HCT116/INPUT_RECEIPT.tsv",
+      "bytes": 845,
+      "sha256": "3457f194da110c75c101af05f62e122552248c321a12705dbb9e369859eece45"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/inputs/SYNTHETIC_HCT116/OWN_CONTEXT_NTC_MEAN.rds",
+      "bytes": 1235456,
+      "sha256": "cd89d50e4d842dcb77f190c183a586e2164c3f4c815c0fd6905e1f1089e2f964"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/inputs/SYNTHETIC_HCT116/QUERY_METADATA.tsv",
+      "bytes": 351,
+      "sha256": "c1ec707129f7186603339d238f8596bcfb3240b93e97b6c44cd2904501fbf630"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/inputs/SYNTHETIC_HCT116/TRAIN_CONDITIONS.tsv",
+      "bytes": 1248,
+      "sha256": "39f692b1d29c95bde959361ab43ddf2e85a8bead28486451ccf45cb392d232f3"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/inputs/SYNTHETIC_HCT116/TRAIN_X.rds",
+      "bytes": 8339578,
+      "sha256": "e55e91f30c20048bd640893b953f881101d2d17dee9b876529be0a4ed98d3645"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/inputs/SYNTHETIC_HEK293T/CELL_ESTIMAND_CHECK.tsv",
+      "bytes": 176,
+      "sha256": "1a6d077287b0251d8a6163781fe24eba2849e5171bad3c2fc550fff7610ea45a"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/inputs/SYNTHETIC_HEK293T/INPUT_RECEIPT.tsv",
+      "bytes": 846,
+      "sha256": "fbe585bdd62bbeb68a3959539ba154be0d5f3906bedcb8d82abb9a286a69c9a5"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/inputs/SYNTHETIC_HEK293T/OWN_CONTEXT_NTC_MEAN.rds",
+      "bytes": 1235456,
+      "sha256": "a906e411a1023eb5b70aa059609a56313aeb9219828689380a6fd7c0793592eb"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/inputs/SYNTHETIC_HEK293T/QUERY_METADATA.tsv",
+      "bytes": 359,
+      "sha256": "e3fa60eab58f9237a44a68e0dace222f59786704a36a2d3f1b0a9e1f130a41ee"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/inputs/SYNTHETIC_HEK293T/TRAIN_CONDITIONS.tsv",
+      "bytes": 1272,
+      "sha256": "d2a7f76a23f6d5014f9dd178370af45c6a1a0aeec1e6ece9b18f1eb0b7c1b20c"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/inputs/SYNTHETIC_HEK293T/TRAIN_X.rds",
+      "bytes": 8339578,
+      "sha256": "091d3dff7ba202c87f56b73445cfd7d181e46fe6be64e44fb3a8f57560e5219d"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/reload/RUN_MANIFEST.tsv",
+      "bytes": 553,
+      "sha256": "259030b1cacc5fb7dbe6775d27d148188caded7a512e0f062fb4c3df6bc4a092"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/reload/R_SESSION_INFO.txt",
+      "bytes": 759,
+      "sha256": "88972b4045d0292ec44ed416c81b0ca03fc25649d977c3deb749a351437af20a"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/reload/SYNTHETIC_HCT116/ARTIFACT_HASHES.tsv",
+      "bytes": 666,
+      "sha256": "305edce39e67ae7008c034184cbe4298e1d5e247643904e3f6d51d1e3274ce1d"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/reload/SYNTHETIC_HCT116/OUTPUT_GENE_AXIS.tsv",
+      "bytes": 94188,
+      "sha256": "3489cb3881e2f1fe215e87273c96a3c61bd2032b3f1519f8025ab866560deff3"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/reload/SYNTHETIC_HCT116/PREDICTIONS_DELTA.rds",
+      "bytes": 184202,
+      "sha256": "d7e55ffd4725f2e1ed13b68e1c6414957aff0568779fa3637e0dafdca6f431a7"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/reload/SYNTHETIC_HCT116/PREDICTIONS_DELTA.tsv.gz",
+      "bytes": 124708,
+      "sha256": "bdfd0ffe038a79ea4e3e327c6138ed36c02b8e6bf395d2f97ac014557b1f4458"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/reload/SYNTHETIC_HCT116/PREDICTIONS_TREATED.rds",
+      "bytes": 184202,
+      "sha256": "a8c67863d4a834eee2052514b008ec778de7bd3b0305427657e064c6068407ab"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/reload/SYNTHETIC_HCT116/PREDICTIONS_TREATED.tsv.gz",
+      "bytes": 118295,
+      "sha256": "308133aa86c7d3f32c3b71c45a3a69de461cddbe4256e41993339d8ea4e69f1d"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/reload/SYNTHETIC_HCT116/QUERY_IDENTITIES.tsv",
+      "bytes": 351,
+      "sha256": "c1ec707129f7186603339d238f8596bcfb3240b93e97b6c44cd2904501fbf630"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/reload/SYNTHETIC_HCT116/STATUS.tsv",
+      "bytes": 400,
+      "sha256": "0d090511e7820f52a55a47fdd1b2684d04ed7b66e891483ffbd7fb6ef427702d"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/reload/SYNTHETIC_HEK293T/ARTIFACT_HASHES.tsv",
+      "bytes": 666,
+      "sha256": "f0c11e4676cf0fec011e9cc5c957d0c68a13d36510baceb6f4b416c9f0c1e329"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/reload/SYNTHETIC_HEK293T/OUTPUT_GENE_AXIS.tsv",
+      "bytes": 94188,
+      "sha256": "3489cb3881e2f1fe215e87273c96a3c61bd2032b3f1519f8025ab866560deff3"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/reload/SYNTHETIC_HEK293T/PREDICTIONS_DELTA.rds",
+      "bytes": 184206,
+      "sha256": "a231751ffdeb9d51eeea078795e8f017e247b2aba3c4992ea8a36ab5a2dde81d"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/reload/SYNTHETIC_HEK293T/PREDICTIONS_DELTA.tsv.gz",
+      "bytes": 124871,
+      "sha256": "9d47529df9b2890185e930ac568933273b7a645aaf64f38c1d379df99821f3d7"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/reload/SYNTHETIC_HEK293T/PREDICTIONS_TREATED.rds",
+      "bytes": 184206,
+      "sha256": "d2fa85d730d45bfcd524763a4db24872f9a1d4d44e06b6bb9d3f8823fcf1a670"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/reload/SYNTHETIC_HEK293T/PREDICTIONS_TREATED.tsv.gz",
+      "bytes": 118582,
+      "sha256": "4cf5c831e6e0aa8caa25b18adda35896a0fce57177d4d9df33d81f1584d31624"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/reload/SYNTHETIC_HEK293T/QUERY_IDENTITIES.tsv",
+      "bytes": 359,
+      "sha256": "e3fa60eab58f9237a44a68e0dace222f59786704a36a2d3f1b0a9e1f130a41ee"
+    },
+    {
+      "path": "first_pass_before_baseline_persistence/reload/SYNTHETIC_HEK293T/STATUS.tsv",
+      "bytes": 401,
+      "sha256": "4ed2c4d830e7daf4f164a8779060ea01a8edd82053102b1ba58d52c45fa5fe05"
+    },
+    {
+      "path": "fit/RUN_MANIFEST.tsv",
+      "bytes": 545,
+      "sha256": "9ff8de2fdabf7919d309f551429ebbd762053e7ba51c496f47e7a8372c7b2642"
+    },
+    {
+      "path": "fit/R_SESSION_INFO.txt",
+      "bytes": 819,
+      "sha256": "5cf60732594ac1fb6af70b30c33dbca5ddb2237d553804315cbdb3ddaf13c953"
+    },
+    {
+      "path": "fit/SYNTHETIC_HCT116/ARTIFACT_HASHES.tsv",
+      "bytes": 1623,
+      "sha256": "118ecef1b082db5edce9e7a8b5d7a5fd97cfe025e789935cddba216afbd57668"
+    },
+    {
+      "path": "fit/SYNTHETIC_HCT116/BASELINE_SELECTION.tsv",
+      "bytes": 129,
+      "sha256": "65fb9f1f9b5556153a8f2359d923136d8d289dbbd70025e4172ff2f005361e75"
+    },
+    {
+      "path": "fit/SYNTHETIC_HCT116/BASELINE_TRAIN_GROUPED_OOF_ERRORS.tsv",
+      "bytes": 1325,
+      "sha256": "47a876d15097b47048f8201de047d6f722dcdca9e412bab80ae42a5b5f9031d2"
+    },
+    {
+      "path": "fit/SYNTHETIC_HCT116/FULL_GENE_AXIS.tsv",
+      "bytes": 1147104,
+      "sha256": "f86e510a3dc0f81196a64a06895c7a0be247d4d274ce5d293b63398f79eaaad0"
+    },
+    {
+      "path": "fit/SYNTHETIC_HCT116/GENE_EMBEDDING.rds",
+      "bytes": 4015253,
+      "sha256": "d16b33ae9d9a90749745425b1eb16b318fe304daefb652854bd001eeb76173ab"
+    },
+    {
+      "path": "fit/SYNTHETIC_HCT116/INTERCEPT_AND_BASELINE.tsv.gz",
+      "bytes": 553191,
+      "sha256": "2c77aa6ff2a7ba18846707b986af4e8cd6cbc9cabb936e740735301d959fe8cd"
+    },
+    {
+      "path": "fit/SYNTHETIC_HCT116/MODEL.rds",
+      "bytes": 12673910,
+      "sha256": "423f080acf3ea5ba9211d43a273f225b851fe409c31a71eca12d9d241d379050"
+    },
+    {
+      "path": "fit/SYNTHETIC_HCT116/OUTPUT_GENE_AXIS.tsv",
+      "bytes": 94188,
+      "sha256": "3489cb3881e2f1fe215e87273c96a3c61bd2032b3f1519f8025ab866560deff3"
+    },
+    {
+      "path": "fit/SYNTHETIC_HCT116/PERTURBATION_EMBEDDING.rds",
+      "bytes": 4015345,
+      "sha256": "e50bc1efe4e2eb54c1e087268281605ed49606f4a3dcd392248bfafbe73a02d3"
+    },
+    {
+      "path": "fit/SYNTHETIC_HCT116/PREDICTIONS_DELTA.rds",
+      "bytes": 184202,
+      "sha256": "d7e55ffd4725f2e1ed13b68e1c6414957aff0568779fa3637e0dafdca6f431a7"
+    },
+    {
+      "path": "fit/SYNTHETIC_HCT116/PREDICTIONS_DELTA.tsv.gz",
+      "bytes": 124708,
+      "sha256": "bdfd0ffe038a79ea4e3e327c6138ed36c02b8e6bf395d2f97ac014557b1f4458"
+    },
+    {
+      "path": "fit/SYNTHETIC_HCT116/PREDICTIONS_TREATED.rds",
+      "bytes": 184202,
+      "sha256": "a8c67863d4a834eee2052514b008ec778de7bd3b0305427657e064c6068407ab"
+    },
+    {
+      "path": "fit/SYNTHETIC_HCT116/PREDICTIONS_TREATED.tsv.gz",
+      "bytes": 118295,
+      "sha256": "308133aa86c7d3f32c3b71c45a3a69de461cddbe4256e41993339d8ea4e69f1d"
+    },
+    {
+      "path": "fit/SYNTHETIC_HCT116/QUERY_IDENTITIES.tsv",
+      "bytes": 351,
+      "sha256": "c1ec707129f7186603339d238f8596bcfb3240b93e97b6c44cd2904501fbf630"
+    },
+    {
+      "path": "fit/SYNTHETIC_HCT116/RIDGE_COEFFICIENTS.rds",
+      "bytes": 1140,
+      "sha256": "0dd1cd039589ddb5638a4f81123a8c3a045339c7682ed3187fdd1d5d3d9f825e"
+    },
+    {
+      "path": "fit/SYNTHETIC_HCT116/SIMPLE_BASELINES.rds",
+      "bytes": 210743,
+      "sha256": "09b2f17e749c16cee995b36d87eee7cea8bfd9fabdfbcda5deceab2aa9630e23"
+    },
+    {
+      "path": "fit/SYNTHETIC_HCT116/STATUS.tsv",
+      "bytes": 396,
+      "sha256": "8171c3082cf516a73860b4ad932fa540de0c4acc8c4ef498c88875c7390a1fde"
+    },
+    {
+      "path": "fit/SYNTHETIC_HCT116/TRAIN_CONDITION_IDENTITIES.tsv",
+      "bytes": 1248,
+      "sha256": "39f692b1d29c95bde959361ab43ddf2e85a8bead28486451ccf45cb392d232f3"
+    },
+    {
+      "path": "fit/SYNTHETIC_HEK293T/ARTIFACT_HASHES.tsv",
+      "bytes": 1623,
+      "sha256": "c3ed6c4af2f820b629a10147ec7bf107f4bb8bcd01a44f4d44cab51f754de8f5"
+    },
+    {
+      "path": "fit/SYNTHETIC_HEK293T/BASELINE_SELECTION.tsv",
+      "bytes": 131,
+      "sha256": "e6567a3aac999ffdba563ae3c48c2b834b2343713eaea5fdefe557bbbbb19b3d"
+    },
+    {
+      "path": "fit/SYNTHETIC_HEK293T/BASELINE_TRAIN_GROUPED_OOF_ERRORS.tsv",
+      "bytes": 1326,
+      "sha256": "cbd70165be850f67a9db272fafb7ddd0e1661906dfdab9d6c6a4c333d31e51e3"
+    },
+    {
+      "path": "fit/SYNTHETIC_HEK293T/FULL_GENE_AXIS.tsv",
+      "bytes": 1147104,
+      "sha256": "f86e510a3dc0f81196a64a06895c7a0be247d4d274ce5d293b63398f79eaaad0"
+    },
+    {
+      "path": "fit/SYNTHETIC_HEK293T/GENE_EMBEDDING.rds",
+      "bytes": 4015253,
+      "sha256": "835f462733b3d8825dae89d5f5b44accabe43c573f2fcea545e1d08484feae60"
+    },
+    {
+      "path": "fit/SYNTHETIC_HEK293T/INTERCEPT_AND_BASELINE.tsv.gz",
+      "bytes": 554251,
+      "sha256": "f59fd9a32673b38a6d182051198be8138a83013a2f47ace49cd9b930111c700d"
+    },
+    {
+      "path": "fit/SYNTHETIC_HEK293T/MODEL.rds",
+      "bytes": 12673912,
+      "sha256": "a46f12ac15472d320fcc43abae0eda3c3697985c313a2f5fb914f44c7e5b2f6e"
+    },
+    {
+      "path": "fit/SYNTHETIC_HEK293T/OUTPUT_GENE_AXIS.tsv",
+      "bytes": 94188,
+      "sha256": "3489cb3881e2f1fe215e87273c96a3c61bd2032b3f1519f8025ab866560deff3"
+    },
+    {
+      "path": "fit/SYNTHETIC_HEK293T/PERTURBATION_EMBEDDING.rds",
+      "bytes": 4015345,
+      "sha256": "d110d6a24752e02b9007e21f7ff2b98484e8852c33bacd08107bccb9f2b51da3"
+    },
+    {
+      "path": "fit/SYNTHETIC_HEK293T/PREDICTIONS_DELTA.rds",
+      "bytes": 184206,
+      "sha256": "a231751ffdeb9d51eeea078795e8f017e247b2aba3c4992ea8a36ab5a2dde81d"
+    },
+    {
+      "path": "fit/SYNTHETIC_HEK293T/PREDICTIONS_DELTA.tsv.gz",
+      "bytes": 124871,
+      "sha256": "9d47529df9b2890185e930ac568933273b7a645aaf64f38c1d379df99821f3d7"
+    },
+    {
+      "path": "fit/SYNTHETIC_HEK293T/PREDICTIONS_TREATED.rds",
+      "bytes": 184206,
+      "sha256": "d2fa85d730d45bfcd524763a4db24872f9a1d4d44e06b6bb9d3f8823fcf1a670"
+    },
+    {
+      "path": "fit/SYNTHETIC_HEK293T/PREDICTIONS_TREATED.tsv.gz",
+      "bytes": 118582,
+      "sha256": "4cf5c831e6e0aa8caa25b18adda35896a0fce57177d4d9df33d81f1584d31624"
+    },
+    {
+      "path": "fit/SYNTHETIC_HEK293T/QUERY_IDENTITIES.tsv",
+      "bytes": 359,
+      "sha256": "e3fa60eab58f9237a44a68e0dace222f59786704a36a2d3f1b0a9e1f130a41ee"
+    },
+    {
+      "path": "fit/SYNTHETIC_HEK293T/RIDGE_COEFFICIENTS.rds",
+      "bytes": 1140,
+      "sha256": "8181d0206dd3ad9b95d9770c496b3078faa4efae3041ffc930e9325a2928743d"
+    },
+    {
+      "path": "fit/SYNTHETIC_HEK293T/SIMPLE_BASELINES.rds",
+      "bytes": 210743,
+      "sha256": "d5867fe34435d8ecb286f7e742a030d9210704f420560874b8a5b3084a7ff6e4"
+    },
+    {
+      "path": "fit/SYNTHETIC_HEK293T/STATUS.tsv",
+      "bytes": 397,
+      "sha256": "5548be57ad88bc5282c15ea1f546084eebc4664312267f4e21238f15452c0d89"
+    },
+    {
+      "path": "fit/SYNTHETIC_HEK293T/TRAIN_CONDITION_IDENTITIES.tsv",
+      "bytes": 1272,
+      "sha256": "d2a7f76a23f6d5014f9dd178370af45c6a1a0aeec1e6ece9b18f1eb0b7c1b20c"
+    },
+    {
+      "path": "guard_missing_actual_permit/INPUT_RECEIPT.tsv",
+      "bytes": 852,
+      "sha256": "3092b4794912e8cec0beb265d5135f505b2e0411a1ba80edfc41ffe283499b4b"
+    },
+    {
+      "path": "guard_missing_actual_permit/MANIFEST.tsv",
+      "bytes": 1788,
+      "sha256": "7c11d92b5c72cb83ff68bc5059dfece5132a493eddb6d8434a5ce79888077e23"
+    },
+    {
+      "path": "guard_missing_actual_permit/POISON_TRAIN_X.rds",
+      "bytes": 56,
+      "sha256": "3e062be921c6dd9a662f968c958e80ad65c79012603ac2a0bfec143c06ed136a"
+    },
+    {
+      "path": "guard_missing_actual_permit/REJECTION.log",
+      "bytes": 78,
+      "sha256": "f4dd450fee0ab476f9ebcc2a199ff3e70aada3b3874942ec293779daa0d6c450"
+    },
+    {
+      "path": "guard_query_truth_column/INPUT_RECEIPT.tsv",
+      "bytes": 845,
+      "sha256": "525e2921278f92693d71fab3bef7d5bd9f02a0cdf63782794cc1afa5401849be"
+    },
+    {
+      "path": "guard_query_truth_column/MANIFEST.tsv",
+      "bytes": 1796,
+      "sha256": "f932aee5ad57512814501856c5f5d3670380e022093240e32a615498275f65e7"
+    },
+    {
+      "path": "guard_query_truth_column/POISON_TRAIN_X.rds",
+      "bytes": 56,
+      "sha256": "3e062be921c6dd9a662f968c958e80ad65c79012603ac2a0bfec143c06ed136a"
+    },
+    {
+      "path": "guard_query_truth_column/QUERY_WITH_FORBIDDEN_COLUMN.tsv",
+      "bytes": 482,
+      "sha256": "27e4705f71a42aa174eccb28e97bbb744bc5cc9188c73e91f9ac2c67b9cd7029"
+    },
+    {
+      "path": "guard_query_truth_column/REJECTION.log",
+      "bytes": 68,
+      "sha256": "93d91e483c4967859c750f75897b4baf2ee1e209ff886419774a0813e916f80c"
+    },
+    {
+      "path": "guard_validation_in_TRAIN/ILLEGAL_CONDITIONS.tsv",
+      "bytes": 1253,
+      "sha256": "69bffcd156da9f3c7b43c426f904dd2b844f6e20b227415b05bb3fcbe4a1ee30"
+    },
+    {
+      "path": "guard_validation_in_TRAIN/INPUT_RECEIPT.tsv",
+      "bytes": 845,
+      "sha256": "d5ee3d46dac53d6223ce96355a299e53dbcfe80c43c13f6412d5255db264391a"
+    },
+    {
+      "path": "guard_validation_in_TRAIN/MANIFEST.tsv",
+      "bytes": 1788,
+      "sha256": "5028b280c6d6127b2a19bb025e877c6a5259ee243ccfe760d4f1ae5b1f5a38c8"
+    },
+    {
+      "path": "guard_validation_in_TRAIN/POISON_TRAIN_X.rds",
+      "bytes": 56,
+      "sha256": "3e062be921c6dd9a662f968c958e80ad65c79012603ac2a0bfec143c06ed136a"
+    },
+    {
+      "path": "guard_validation_in_TRAIN/REJECTION.log",
+      "bytes": 72,
+      "sha256": "4b2ccd7ef931ce5bc1148dea5599d8cb09c63f139a0d313de5eaec613056c964"
+    },
+    {
+      "path": "inputs/FIT_MANIFEST.tsv",
+      "bytes": 3465,
+      "sha256": "b04660771218db53e86cf4f167f86da3a640f10398370cbdd8c03c724c8b0afd"
+    },
+    {
+      "path": "inputs/FULL_GENE_AXIS.tsv",
+      "bytes": 1147104,
+      "sha256": "f86e510a3dc0f81196a64a06895c7a0be247d4d274ce5d293b63398f79eaaad0"
+    },
+    {
+      "path": "inputs/OUTPUT_GENE_AXIS.tsv",
+      "bytes": 94188,
+      "sha256": "3489cb3881e2f1fe215e87273c96a3c61bd2032b3f1519f8025ab866560deff3"
+    },
+    {
+      "path": "inputs/PREDICT_MANIFEST.tsv",
+      "bytes": 1932,
+      "sha256": "86e8e12bd9ab0dbc12459993db79a9357f2d84af27a84c840f1b7c6f27dfeeca"
+    },
+    {
+      "path": "inputs/SYNTHETIC_HCT116/CELL_ESTIMAND_CHECK.tsv",
+      "bytes": 176,
+      "sha256": "1a6d077287b0251d8a6163781fe24eba2849e5171bad3c2fc550fff7610ea45a"
+    },
+    {
+      "path": "inputs/SYNTHETIC_HCT116/INPUT_RECEIPT.tsv",
+      "bytes": 845,
+      "sha256": "3457f194da110c75c101af05f62e122552248c321a12705dbb9e369859eece45"
+    },
+    {
+      "path": "inputs/SYNTHETIC_HCT116/OWN_CONTEXT_NTC_MEAN.rds",
+      "bytes": 1235456,
+      "sha256": "cd89d50e4d842dcb77f190c183a586e2164c3f4c815c0fd6905e1f1089e2f964"
+    },
+    {
+      "path": "inputs/SYNTHETIC_HCT116/QUERY_METADATA.tsv",
+      "bytes": 351,
+      "sha256": "c1ec707129f7186603339d238f8596bcfb3240b93e97b6c44cd2904501fbf630"
+    },
+    {
+      "path": "inputs/SYNTHETIC_HCT116/TRAIN_CONDITIONS.tsv",
+      "bytes": 1248,
+      "sha256": "39f692b1d29c95bde959361ab43ddf2e85a8bead28486451ccf45cb392d232f3"
+    },
+    {
+      "path": "inputs/SYNTHETIC_HCT116/TRAIN_X.rds",
+      "bytes": 8339578,
+      "sha256": "e55e91f30c20048bd640893b953f881101d2d17dee9b876529be0a4ed98d3645"
+    },
+    {
+      "path": "inputs/SYNTHETIC_HEK293T/CELL_ESTIMAND_CHECK.tsv",
+      "bytes": 176,
+      "sha256": "1a6d077287b0251d8a6163781fe24eba2849e5171bad3c2fc550fff7610ea45a"
+    },
+    {
+      "path": "inputs/SYNTHETIC_HEK293T/INPUT_RECEIPT.tsv",
+      "bytes": 846,
+      "sha256": "fbe585bdd62bbeb68a3959539ba154be0d5f3906bedcb8d82abb9a286a69c9a5"
+    },
+    {
+      "path": "inputs/SYNTHETIC_HEK293T/OWN_CONTEXT_NTC_MEAN.rds",
+      "bytes": 1235456,
+      "sha256": "a906e411a1023eb5b70aa059609a56313aeb9219828689380a6fd7c0793592eb"
+    },
+    {
+      "path": "inputs/SYNTHETIC_HEK293T/QUERY_METADATA.tsv",
+      "bytes": 359,
+      "sha256": "e3fa60eab58f9237a44a68e0dace222f59786704a36a2d3f1b0a9e1f130a41ee"
+    },
+    {
+      "path": "inputs/SYNTHETIC_HEK293T/TRAIN_CONDITIONS.tsv",
+      "bytes": 1272,
+      "sha256": "d2a7f76a23f6d5014f9dd178370af45c6a1a0aeec1e6ece9b18f1eb0b7c1b20c"
+    },
+    {
+      "path": "inputs/SYNTHETIC_HEK293T/TRAIN_X.rds",
+      "bytes": 8339578,
+      "sha256": "091d3dff7ba202c87f56b73445cfd7d181e46fe6be64e44fb3a8f57560e5219d"
+    },
+    {
+      "path": "reload/RUN_MANIFEST.tsv",
+      "bytes": 553,
+      "sha256": "f8182f89154898427c3ec291f699bb0b6673e69f119ec71bbb05c049c2de2211"
+    },
+    {
+      "path": "reload/R_SESSION_INFO.txt",
+      "bytes": 759,
+      "sha256": "88972b4045d0292ec44ed416c81b0ca03fc25649d977c3deb749a351437af20a"
+    },
+    {
+      "path": "reload/SYNTHETIC_HCT116/ARTIFACT_HASHES.tsv",
+      "bytes": 666,
+      "sha256": "305edce39e67ae7008c034184cbe4298e1d5e247643904e3f6d51d1e3274ce1d"
+    },
+    {
+      "path": "reload/SYNTHETIC_HCT116/OUTPUT_GENE_AXIS.tsv",
+      "bytes": 94188,
+      "sha256": "3489cb3881e2f1fe215e87273c96a3c61bd2032b3f1519f8025ab866560deff3"
+    },
+    {
+      "path": "reload/SYNTHETIC_HCT116/PREDICTIONS_DELTA.rds",
+      "bytes": 184202,
+      "sha256": "d7e55ffd4725f2e1ed13b68e1c6414957aff0568779fa3637e0dafdca6f431a7"
+    },
+    {
+      "path": "reload/SYNTHETIC_HCT116/PREDICTIONS_DELTA.tsv.gz",
+      "bytes": 124708,
+      "sha256": "bdfd0ffe038a79ea4e3e327c6138ed36c02b8e6bf395d2f97ac014557b1f4458"
+    },
+    {
+      "path": "reload/SYNTHETIC_HCT116/PREDICTIONS_TREATED.rds",
+      "bytes": 184202,
+      "sha256": "a8c67863d4a834eee2052514b008ec778de7bd3b0305427657e064c6068407ab"
+    },
+    {
+      "path": "reload/SYNTHETIC_HCT116/PREDICTIONS_TREATED.tsv.gz",
+      "bytes": 118295,
+      "sha256": "308133aa86c7d3f32c3b71c45a3a69de461cddbe4256e41993339d8ea4e69f1d"
+    },
+    {
+      "path": "reload/SYNTHETIC_HCT116/QUERY_IDENTITIES.tsv",
+      "bytes": 351,
+      "sha256": "c1ec707129f7186603339d238f8596bcfb3240b93e97b6c44cd2904501fbf630"
+    },
+    {
+      "path": "reload/SYNTHETIC_HCT116/STATUS.tsv",
+      "bytes": 400,
+      "sha256": "0d090511e7820f52a55a47fdd1b2684d04ed7b66e891483ffbd7fb6ef427702d"
+    },
+    {
+      "path": "reload/SYNTHETIC_HEK293T/ARTIFACT_HASHES.tsv",
+      "bytes": 666,
+      "sha256": "f0c11e4676cf0fec011e9cc5c957d0c68a13d36510baceb6f4b416c9f0c1e329"
+    },
+    {
+      "path": "reload/SYNTHETIC_HEK293T/OUTPUT_GENE_AXIS.tsv",
+      "bytes": 94188,
+      "sha256": "3489cb3881e2f1fe215e87273c96a3c61bd2032b3f1519f8025ab866560deff3"
+    },
+    {
+      "path": "reload/SYNTHETIC_HEK293T/PREDICTIONS_DELTA.rds",
+      "bytes": 184206,
+      "sha256": "a231751ffdeb9d51eeea078795e8f017e247b2aba3c4992ea8a36ab5a2dde81d"
+    },
+    {
+      "path": "reload/SYNTHETIC_HEK293T/PREDICTIONS_DELTA.tsv.gz",
+      "bytes": 124871,
+      "sha256": "9d47529df9b2890185e930ac568933273b7a645aaf64f38c1d379df99821f3d7"
+    },
+    {
+      "path": "reload/SYNTHETIC_HEK293T/PREDICTIONS_TREATED.rds",
+      "bytes": 184206,
+      "sha256": "d2fa85d730d45bfcd524763a4db24872f9a1d4d44e06b6bb9d3f8823fcf1a670"
+    },
+    {
+      "path": "reload/SYNTHETIC_HEK293T/PREDICTIONS_TREATED.tsv.gz",
+      "bytes": 118582,
+      "sha256": "4cf5c831e6e0aa8caa25b18adda35896a0fce57177d4d9df33d81f1584d31624"
+    },
+    {
+      "path": "reload/SYNTHETIC_HEK293T/QUERY_IDENTITIES.tsv",
+      "bytes": 359,
+      "sha256": "e3fa60eab58f9237a44a68e0dace222f59786704a36a2d3f1b0a9e1f130a41ee"
+    },
+    {
+      "path": "reload/SYNTHETIC_HEK293T/STATUS.tsv",
+      "bytes": 401,
+      "sha256": "4ed2c4d830e7daf4f164a8779060ea01a8edd82053102b1ba58d52c45fa5fe05"
+    }
+  ]
+}

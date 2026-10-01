@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "pilot_sha256": "8d6dbe17f1a98097968e408deae209bb168de7e4292a73da7e1287122cb1cf19",
+  "loader_sha256": "cdf261ffcae854f49d469437492a12b7f835aae7b720bbe565044d8a89369e8b",
+  "reader_sha256": "3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312",
+  "real_expression_accessed": false,
+  "cases": [
+    {
+      "case": "exact128_private_and_unselected_same_role_sentinels_excluded_full_EOF_no_vectors_sanitized_trace",
+      "passed": true
+    },
+    {
+      "case": "pilot_code_sha_binding",
+      "passed": true,
+      "rejected_before_raw_SHA_and_numeric_reader": true
+    },
+    {
+      "case": "exact_role_scope",
+      "passed": true,
+      "rejected_before_raw_SHA_and_numeric_reader": true
+    },
+    {
+      "case": "exact_first64_scope",
+      "passed": true,
+      "rejected_before_raw_SHA_and_numeric_reader": true
+    },
+    {
+      "case": "existing_permit_SHA_binding",
+      "passed": true,
+      "rejected_before_raw_SHA_and_numeric_reader": true
+    },
+    {
+      "case": "whole_raw_SHA_before_numeric_reader",
+      "passed": true
+    },
+    {
+      "case": "late_error_reports_explicit_partial_sanitized_failure",
+      "passed": true
+    }
+  ],
+  "synthetic_fixture_root": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/pilot_independent_7961d704ec2a48739960ace3106d4f3e",
+  "approved_scope": "Pinned HCT116_Batch1; exact first64TRAIN and first64TRAIN_CONTROL_SOURCE_SCOPE in frozen physical row order; no VALIDATION/TEST/DEV or unselected same-role conversion; no model/prediction/vector persistence.",
+  "production_permission_created_by_review": false
+}

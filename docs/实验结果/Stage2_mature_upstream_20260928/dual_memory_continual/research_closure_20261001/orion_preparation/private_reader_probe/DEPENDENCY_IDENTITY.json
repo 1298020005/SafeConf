@@ -1,0 +1,37 @@
+{
+  "runtime_dependencies": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/python_deps",
+  "pinned_versions": {
+    "cramjam": "2.13.0",
+    "fastparquet": "2026.9.0"
+  },
+  "dependency_files_manifest": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/DEPENDENCY_FILES.json",
+  "dependency_files_manifest_sha256": "07176baee17c00f7fc0331d29fb56f186459f128d4d0d4ca7ed770f4df479bb4",
+  "critical_decoder_files": [
+    {
+      "path": "cramjam/cramjam.cpython-312-x86_64-linux-gnu.so",
+      "bytes": 4430392,
+      "sha256": "5365a140fd9b3f32698198f1b8a60b2cdb22ea1cdfb21767dd05cc0adcb3367e"
+    },
+    {
+      "path": "fastparquet/cencoding.cpython-312-x86_64-linux-gnu.so",
+      "bytes": 3198088,
+      "sha256": "7d96bfea13471738300b5ed5491500dc8101c4c615d05bf40f87c0cb6f230d3d"
+    },
+    {
+      "path": "fastparquet/compression.py",
+      "bytes": 3753,
+      "sha256": "9683773a755c102996287c2612393b419eb4512cbe0077f2ecfc48e3932fb658"
+    },
+    {
+      "path": "fastparquet/core.py",
+      "bytes": 33651,
+      "sha256": "9ae1923c3f0db6a55cdbe5018c669fd43a43f422fceba5d4c784bbc0319eabd4"
+    },
+    {
+      "path": "fastparquet/encoding.py",
+      "bytes": 2783,
+      "sha256": "dd230fe037d53b38c31cd8b5e1963d6838a4279c0391259feb544dedcab1598b"
+    }
+  ],
+  "probe_script_sha256": "9fd3c565a3dc333dd24e287dfb69573277fa5b6bbcec64b084dbeac82636af12"
+}

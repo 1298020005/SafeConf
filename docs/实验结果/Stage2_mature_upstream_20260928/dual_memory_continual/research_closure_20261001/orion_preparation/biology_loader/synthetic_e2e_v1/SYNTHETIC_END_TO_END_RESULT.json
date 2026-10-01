@@ -1,0 +1,59 @@
+{
+  "schema": "safeconf_orion_allowed_biology_loader_v1",
+  "status": "SYNTHETIC_END_TO_END_PASS_REAL_EXPRESSION_UNOPENED",
+  "real_expression_accessed": false,
+  "loader_sha256": "0a7f0a69fef63b6bb0ba9653de8051ebfcd565965780933e15fc3a7e23386b66",
+  "reader_sha256": "3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312",
+  "successes": [
+    {
+      "case": "v1.0_dictionary0",
+      "complete": true,
+      "units": 5,
+      "full_genes": 3,
+      "endpoint_genes": 2,
+      "private_sentinels_never_converted": true,
+      "cell_equal_mean_correct": true,
+      "own_context_controls_correct": true,
+      "literal_known_gene_zero_correct": true,
+      "reader_iterators_exhausted": true,
+      "manifest_sha256": "6ecf46832fbdddbdfe56799c4e54a5a9b5a927f49d056607ece4823f50daa421"
+    },
+    {
+      "case": "v2.0_dictionary1",
+      "complete": true,
+      "units": 5,
+      "full_genes": 3,
+      "endpoint_genes": 2,
+      "private_sentinels_never_converted": true,
+      "cell_equal_mean_correct": true,
+      "own_context_controls_correct": true,
+      "literal_known_gene_zero_correct": true,
+      "reader_iterators_exhausted": true,
+      "manifest_sha256": "93ff3d3a4a918abaa124cfec8a1fdc9b8db0abd842711932a95ccc12f4966d6f"
+    }
+  ],
+  "negative_cases": [
+    {
+      "case": "TEST_role_rejected_before_raw_access",
+      "passed": true
+    },
+    {
+      "case": "TEST_role_rejected_before_raw_access",
+      "passed": true
+    },
+    {
+      "case": "unknown_authorized_token_fails_without_zero_imputation",
+      "passed": true
+    }
+  ],
+  "budgets": {
+    "max_compressed_chunk_bytes": 1073741824,
+    "max_page_uncompressed_bytes": 134217728,
+    "max_page_level_entries": 16777216,
+    "max_resident_bytes": 6442450944,
+    "max_token_spool_bytes_per_file": 4294967296,
+    "max_group_matrix_bytes": 17179869184,
+    "max_seconds_per_file": 600,
+    "max_cells_per_file": 50000
+  }
+}

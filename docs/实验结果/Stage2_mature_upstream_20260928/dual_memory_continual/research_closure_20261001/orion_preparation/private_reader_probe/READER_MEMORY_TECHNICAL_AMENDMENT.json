@@ -1,0 +1,17 @@
+{
+  "kind": "PRE_EXPRESSION_TECHNICAL_MEMORY_ADMISSION_AMENDMENT",
+  "old_reader_sha256": "9fd3c565a3dc333dd24e287dfb69573277fa5b6bbcec64b084dbeac82636af12",
+  "new_reader_sha256": "3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312",
+  "old_implementation_snapshot": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/implementation_snapshots/9fd3c565a3dc333dd24e287dfb69573277fa5b6bbcec64b084dbeac82636af12.py",
+  "new_implementation_snapshot": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/implementation_snapshots/3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312.py",
+  "scientific_logic_changed": false,
+  "real_expression_or_token_pages_accessed": false,
+  "changes": [
+    "Default1GiB compressed chunk admission before physical read",
+    "Default128MiB page admission before decompression",
+    "Default16Mi structural entry admission before decoding",
+    "Reject negative/out-of-chunk page sizes and incomplete chunks",
+    "All-false metadata mask reads zero numeric chunks"
+  ],
+  "authorization": "Technical implementation only; root must bind exact new reader hash in final access permit before real expression operation"
+}

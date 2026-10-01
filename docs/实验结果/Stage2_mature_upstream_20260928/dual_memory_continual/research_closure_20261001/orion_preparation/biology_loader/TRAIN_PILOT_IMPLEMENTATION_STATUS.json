@@ -1,0 +1,28 @@
+{
+  "schema": "safeconf_orion_train_semantic_pilot_v1",
+  "status": "IMPLEMENTATION_READY_SELF_AND_INDEPENDENT_REVIEW_PASS_ROOT_PILOT_RUNNING",
+  "pilot_code_sha256": "8d6dbe17f1a98097968e408deae209bb168de7e4292a73da7e1287122cb1cf19",
+  "loader_code_sha256": "cdf261ffcae854f49d469437492a12b7f835aae7b720bbe565044d8a89369e8b",
+  "reader_code_sha256": "3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312",
+  "independent_review_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/private_reader_probe/PILOT_REVIEW.json",
+  "independent_review_sha256": "2c437e62fb39f852e9bb4312d894daf66fc0ca620e522feb2d9c336f9718ba47",
+  "independent_review_cases": 7,
+  "self_synthetic_result": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/train_pilot_synthetic_v2/TRAIN_PILOT_SYNTHETIC_RESULT.json",
+  "real_pilot_launched_by": "root",
+  "root_reported_pilot_pid": 119704,
+  "exact_selected_cells": 128,
+  "selected_roles": [
+    "TRAIN",
+    "TRAIN_CONTROL_SOURCE_SCOPE"
+  ],
+  "existing_access_permit_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_TRAIN_VALIDATION_ACCESS_PERMIT.json",
+  "operation_receipt_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_TRAIN_PILOT_OPERATION.json",
+  "operation_receipt_sha256": "97ffa99a54be363256c855a3f0218e9b1ae47be59bf70e5c1b3f00104c6eca10",
+  "model_fits": 0,
+  "prediction_calls": 0,
+  "cell_vectors_saved": false,
+  "hard_wall_deadline_seconds": 600,
+  "hard_address_space_bytes": 6442450944,
+  "future_full_aggregate_permit": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_FULL_PIPELINE_ACCESS_PERMIT.json",
+  "future_full_aggregate_must_use_new_full_pipeline_permit": true
+}

@@ -1,0 +1,14 @@
+{
+  "caused_by": "ChunkedEncodingError(ProtocolError('Connection broken: IncompleteRead(9571968 bytes read, 48793274 more expected)', IncompleteRead(9571968 bytes read, 48793274 more expected)))",
+  "elapsed_time": "-",
+  "error": "CondaHTTPError: HTTP 000 CONNECTION FAILED for url <https://conda.anaconda.org/conda-forge/linux-64/repodata.json>\nElapsed: -\n\nAn HTTP error occurred when trying to retrieve this URL.\nHTTP errors are often intermittent, and a simple retry will get you on your way.\n'https//conda.anaconda.org/conda-forge/linux-64'\n",
+  "exception_name": "CondaHTTPError",
+  "exception_type": "<class 'conda.exceptions.CondaHTTPError'>",
+  "json": {},
+  "message": "HTTP 000 CONNECTION FAILED for url <https://conda.anaconda.org/conda-forge/linux-64/repodata.json>\nElapsed: -\n\nAn HTTP error occurred when trying to retrieve this URL.\nHTTP errors are often intermittent, and a simple retry will get you on your way.\n'https//conda.anaconda.org/conda-forge/linux-64'\n",
+  "reason": "CONNECTION FAILED",
+  "response_details": "",
+  "status_code": "000",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/repodata.json"
+}
+

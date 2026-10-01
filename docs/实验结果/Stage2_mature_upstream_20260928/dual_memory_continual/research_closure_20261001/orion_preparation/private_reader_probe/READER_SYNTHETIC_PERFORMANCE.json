@@ -1,0 +1,83 @@
+{
+  "scope": "SYNTHETIC_READER_BENCHMARK_ONLY",
+  "real_numeric_pages_or_num_values_inspected": false,
+  "extrapolation": "Fixed synthetic2000/5000 values per cell times frozen metadata row counts; not an actual private feature distribution estimate.",
+  "cases": [
+    {
+      "synthetic_cells": 1000,
+      "synthetic_values_per_cell_per_column": 2000,
+      "dictionary": true,
+      "codec": "SNAPPY",
+      "authorized_fraction": 0.8,
+      "both_columns_seconds": 6.166983630973846,
+      "metadata_cells": 1104270,
+      "projected_40_shard_hours_fixed_width_scenario": 1.891670837270969,
+      "trace": {
+        "physical_numeric_chunk_bytes_read": 287189,
+        "opaque_numeric_bytes_decompressed": 3434290,
+        "data_pages": 5,
+        "numeric_materialization_rows": null,
+        "private_numeric_values_skipped": 800000,
+        "numeric_materialization_count": 3200000,
+        "authorized_dictionary_lookups": 3200000
+      }
+    },
+    {
+      "synthetic_cells": 1000,
+      "synthetic_values_per_cell_per_column": 2000,
+      "dictionary": false,
+      "codec": "SNAPPY",
+      "authorized_fraction": 0.8,
+      "both_columns_seconds": 5.5646290448494256,
+      "metadata_cells": 1104270,
+      "projected_40_shard_hours_fixed_width_scenario": 1.706903587598854,
+      "trace": {
+        "physical_numeric_chunk_bytes_read": 3424339,
+        "opaque_numeric_bytes_decompressed": 32010384,
+        "data_pages": 32,
+        "numeric_materialization_rows": null,
+        "private_numeric_values_skipped": 800000,
+        "numeric_materialization_count": 3200000,
+        "authorized_dictionary_lookups": 0
+      }
+    },
+    {
+      "synthetic_cells": 1000,
+      "synthetic_values_per_cell_per_column": 5000,
+      "dictionary": true,
+      "codec": "SNAPPY",
+      "authorized_fraction": 0.8,
+      "both_columns_seconds": 15.407355305971578,
+      "metadata_cells": 1104270,
+      "projected_40_shard_hours_fixed_width_scenario": 4.726077845479232,
+      "trace": {
+        "physical_numeric_chunk_bytes_read": 3146230,
+        "opaque_numeric_bytes_decompressed": 9568010,
+        "data_pages": 14,
+        "numeric_materialization_rows": null,
+        "private_numeric_values_skipped": 2000000,
+        "numeric_materialization_count": 8000000,
+        "authorized_dictionary_lookups": 8000000
+      }
+    },
+    {
+      "synthetic_cells": 1000,
+      "synthetic_values_per_cell_per_column": 5000,
+      "dictionary": false,
+      "codec": "SNAPPY",
+      "authorized_fraction": 0.8,
+      "both_columns_seconds": 13.906311593949795,
+      "metadata_cells": 1104270,
+      "projected_40_shard_hours_fixed_width_scenario": 4.26564519551415,
+      "trace": {
+        "physical_numeric_chunk_bytes_read": 14397653,
+        "opaque_numeric_bytes_decompressed": 80010910,
+        "data_pages": 76,
+        "numeric_materialization_rows": null,
+        "private_numeric_values_skipped": 2000000,
+        "numeric_materialization_count": 8000000,
+        "authorized_dictionary_lookups": 0
+      }
+    }
+  ]
+}

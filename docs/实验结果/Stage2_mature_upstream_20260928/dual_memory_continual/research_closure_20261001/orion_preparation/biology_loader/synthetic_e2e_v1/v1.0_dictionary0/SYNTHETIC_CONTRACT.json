@@ -1,0 +1,36 @@
+{
+  "schema": "synthetic_scientific_contract",
+  "synthetic_only": true,
+  "immutable_dependencies": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v1/v1.0_dictionary0/metadata/FILE_METADATA_IDENTITY.json",
+      "sha256": "0c298328ab8792ef5c49c8229a6a312c6333e37310fe0457c2248cb1e3711255"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v1/v1.0_dictionary0/metadata/GENE_MANIFEST.csv",
+      "sha256": "72db93e496ea233dd046053be4d002327ab052eeed25575a85e2ab8d54a6d62a"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v1/v1.0_dictionary0/metadata/gene_metadata.parquet",
+      "sha256": "2e50450cd222cbf5fb37061d4657b27ccfd9981e6a1e2b573cc986386dca53e4"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v1/v1.0_dictionary0/metadata/PREPARATION_POLICY.json",
+      "sha256": "fc77cb8f865e5672234ce4f1be30a657c51357a956c5b8ebd94a2ee48585a1de"
+    }
+  ],
+  "privacy": {
+    "current_permitted_roles": [
+      "TRAIN",
+      "TRAIN_CONTROL_SOURCE_SCOPE",
+      "VALIDATION"
+    ],
+    "private_numeric_materialization": false
+  },
+  "normalization": {
+    "formula": "mean_cell(log1p(4000 * raw_gene_UMI / official_full_library_total_counts))",
+    "unknown_token_policy": "fail_closed",
+    "cell_weight": "equal per retained cell",
+    "control": "own-context TRAIN NTC excluding preview cells"
+  }
+}

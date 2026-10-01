@@ -1,0 +1,28 @@
+{
+  "schema": "safeconf_orion_allowed_biology_loader_v1",
+  "status": "READY_SYNTHETIC_AND_INDEPENDENT_REVIEW_PASSED_REAL_EXPRESSION_UNOPENED",
+  "loader_sha256": "cdf261ffcae854f49d469437492a12b7f835aae7b720bbe565044d8a89369e8b",
+  "reader_sha256": "3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312",
+  "real_expression_accessed": false,
+  "private_test_numeric_materialization": false,
+  "synthetic_end_to_end": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v4/SYNTHETIC_END_TO_END_RESULT.json",
+  "independent_review": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/private_reader_probe/INTEGRATION_REVIEW.json",
+  "independent_review_cases": 20,
+  "allowed_metadata_units": 28947,
+  "frozen_full_genes": 38606,
+  "frozen_endpoint_genes": 3285,
+  "permit_template_authorizes_expression": false,
+  "source_core_modified": false,
+  "original_frozen_assets_modified": false,
+  "future_runtime": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_allowed_biology_20261002_v1",
+  "resource_budgets": {
+    "max_compressed_chunk_bytes": 1073741824,
+    "max_page_uncompressed_bytes": 134217728,
+    "max_page_level_entries": 16777216,
+    "max_resident_bytes": 6442450944,
+    "max_token_spool_bytes_per_file": 4294967296,
+    "max_group_matrix_bytes": 17179869184,
+    "max_seconds_per_file": 600,
+    "max_cells_per_file": 50000
+  }
+}

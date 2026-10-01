@@ -1,0 +1,4 @@
+check	pass
+query_truth_column_rejected_before_numeric_TRAIN_load	TRUE
+validation_in_TRAIN_rejected_before_numeric_TRAIN_load	TRUE
+missing_actual_permit_rejected_before_numeric_TRAIN_load	TRUE

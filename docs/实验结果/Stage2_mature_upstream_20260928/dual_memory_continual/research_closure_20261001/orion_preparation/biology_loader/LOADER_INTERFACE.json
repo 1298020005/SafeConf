@@ -1,0 +1,66 @@
+{
+  "schema": "safeconf_orion_allowed_biology_loader_v1",
+  "status": "READY_SYNTHETIC_AND_INDEPENDENT_REVIEW_PASSED_REAL_EXPRESSION_UNOPENED",
+  "real_expression_accessed": false,
+  "loader_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/build_safeconf_orion_allowed_biology_agent.py",
+  "loader_sha256": "cdf261ffcae854f49d469437492a12b7f835aae7b720bbe565044d8a89369e8b",
+  "reader_sha256": "3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312",
+  "scientific_contract_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_METHOD_CONTRACT.json",
+  "scientific_contract_sha256": "6b8a26939c8c6134dbf2e8294ee7905fccc2122b570b046f3183a3d2f5caba97",
+  "synthetic_result_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v4/SYNTHETIC_END_TO_END_RESULT.json",
+  "synthetic_result_sha256": "5712b136680f52310d7d8448e35b65909db83b8af3a5cefca226ddcfb0f242b1",
+  "permit_template_is_authorization": false,
+  "cli": [
+    "plan --metadata-root FROZEN_METADATA --output NEW_METADATA_PLAN",
+    "synthetic-test --output NEW_SYNTHETIC_DIRECTORY",
+    "aggregate --metadata-root FROZEN_METADATA --raw-root VERIFIED_RAW --contract IMMUTABLE_METHOD_CONTRACT --permit IMMUTABLE_EXPLICIT_ROLE_PERMIT --output NEW_RUNTIME --roles TRAIN VALIDATION TRAIN_CONTROL_SOURCE_SCOPE --contexts HCT116 HEK293T"
+  ],
+  "outputs": {
+    "FULL_SUMS.npy": "float64 condition-by-full-Ensembl, memmap; raw log-normalized cell sums",
+    "CELL_COUNTS.npy": "uint64 per matrix row, equal retained cell denominator",
+    "FULL_MEANS.npy": "float64 condition-by-full-Ensembl CP4000log1p cell equal mean",
+    "FULL_EFFECTS.npy": "float64 FULL_MEANS minus matching own-context TRAIN NTC mean",
+    "ENDPOINT3285_MEANS.npy": "float64 fixed Source3285 projection of full means",
+    "ENDPOINT3285_EFFECTS.npy": "float64 fixed Source3285 projection of full effects",
+    "FULL_GENE_AXIS.csv": "ordered contiguous gene_token_id, unique Ensembl; duplicated symbols remain on full axis",
+    "ENDPOINT_GENE_MANIFEST.csv": "unchanged fixed exact Source3285 symbol/Ensembl/token mapping",
+    "QUERY_METADATA_ONLY.csv": "context,gene,role,biological_unit,n_cells_metadata,target_ensembl_id,target_token_id,matrix_row,competence_n_ge30",
+    "TRAIN_MATRIX_ROWS.npy": "int64 indexes for separate-context TRAIN fitting",
+    "VALIDATION_MATRIX_ROWS.npy": "int64 authorized validation rows; never a PCA fitting role",
+    "TRAIN_CONTROL_SOURCE_SCOPE_MATRIX_ROWS.npy": "own-context control indexes; excludes exposed preview cells",
+    "BIOLOGY_MANIFEST.json": "exact scientific contract/permit/code SHA, role mask/raw/md SHA perfile, decodertrace, resource use, semantic gates",
+    "ARTIFACT_HASHES.json": "SHA256 and bytes for saved arrays, metadata, manifests"
+  },
+  "privacy": "Numeric conversion only for exact allowed physical rows; TEST and DEV payloads stay opaque bytes. No complete cell dataframe or cell dense matrix.",
+  "row_order_binding": "original_row_index sequential and original_row_group zero; row metadata SHA and publisher fullraw SHA checked before numeric decoder",
+  "staging_commit": "Output path appears only after both numeric iterators fully exhaust all files and measured counts match metadata; failure keeps incomplete staging without COMPLETE manifest",
+  "library_sum_verification_roles": [
+    "TRAIN",
+    "TRAIN_CONTROL_SOURCE_SCOPE"
+  ],
+  "validation_sum_distribution_analysis": false,
+  "raw_UMI_format": "allallowed finite, nonnegative, nonempty and integer within absolute1e-6; TRAIN/NTC rawsum vs official total_counts atol/rtol1e-6; no count rounding or denominator change",
+  "resource_budgets": {
+    "max_compressed_chunk_bytes": 1073741824,
+    "max_page_uncompressed_bytes": 134217728,
+    "max_page_level_entries": 16777216,
+    "max_resident_bytes": 6442450944,
+    "max_token_spool_bytes_per_file": 4294967296,
+    "max_group_matrix_bytes": 17179869184,
+    "max_seconds_per_file": 600,
+    "max_cells_per_file": 50000
+  },
+  "resident_memory_plan": {
+    "zero_initialize_group_rows_per_batch": 32,
+    "finish_means_effects_endpoint_group_rows_per_batch": 32,
+    "flush_madvise_every_allowed_cells": 512,
+    "simultaneous_numeric_column_buffers": 1,
+    "token_spool": "bounded uint32 ragged disk spool removed after complete expression stream",
+    "matrix_disk_limit_scope": "16GiB per fullcondition-by-gene float64matrix; threefullmatrices plus endpoints/counts on disk, memmaps do not imply full resident copies"
+  },
+  "independent_review_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/private_reader_probe/INTEGRATION_REVIEW.json",
+  "independent_review_sha256": "4f92c8dc187a933baf1257a3ea9cb5f27e8abbeb5b230d7391bcf1412d531b81",
+  "metadata_plan_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/metadata_plan_v1/METADATA_PLAN.json",
+  "metadata_plan_sha256": "1c95d8a40935a2fce12faaa961518cd909aeddb92c6b96e3e3121a250a3006cb",
+  "allowed_train_validation_control_units": 28947
+}

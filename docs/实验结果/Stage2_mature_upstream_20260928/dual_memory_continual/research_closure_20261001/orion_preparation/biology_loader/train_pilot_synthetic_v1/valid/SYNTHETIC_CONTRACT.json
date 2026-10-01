@@ -1,0 +1,32 @@
+{
+  "synthetic_only": true,
+  "immutable_dependencies": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/train_pilot_synthetic_v1/valid/metadata/FILE_METADATA_IDENTITY.json",
+      "sha256": "d50bcbf8fa44027a005323e7cda125df0398856f360aef112421a78753fefdd4"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/train_pilot_synthetic_v1/valid/metadata/GENE_MANIFEST.csv",
+      "sha256": "72db93e496ea233dd046053be4d002327ab052eeed25575a85e2ab8d54a6d62a"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/train_pilot_synthetic_v1/valid/metadata/gene_metadata.parquet",
+      "sha256": "2e50450cd222cbf5fb37061d4657b27ccfd9981e6a1e2b573cc986386dca53e4"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/train_pilot_synthetic_v1/valid/metadata/PREPARATION_POLICY.json",
+      "sha256": "3562638da66d9f7a29cd9836c382ae7ab7a4885a28176723b2a50b30559eed84"
+    }
+  ],
+  "privacy": {
+    "current_permitted_roles": [
+      "TRAIN",
+      "TRAIN_CONTROL_SOURCE_SCOPE"
+    ],
+    "private_numeric_materialization": false
+  },
+  "normalization": {
+    "formula": "mean_cell(log1p(4000 * raw_gene_UMI / official_full_library_total_counts))",
+    "unknown_token_policy": "fail_closed"
+  }
+}

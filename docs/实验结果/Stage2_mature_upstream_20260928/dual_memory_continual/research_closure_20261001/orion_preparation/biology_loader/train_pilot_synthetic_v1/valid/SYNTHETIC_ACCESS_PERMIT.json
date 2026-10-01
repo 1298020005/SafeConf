@@ -1,0 +1,47 @@
+{
+  "synthetic_only": true,
+  "expression_row_materialization_permitted": true,
+  "test_numeric_materialization_permitted": false,
+  "authorized_roles": [
+    "TRAIN",
+    "TRAIN_CONTROL_SOURCE_SCOPE"
+  ],
+  "authorized_contexts": [
+    "HCT116"
+  ],
+  "reader_guarantee": "PRIVATE_NUMERIC_ROWS_NEVER_MATERIALIZED",
+  "frozen_method_contract_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/train_pilot_synthetic_v1/valid/SYNTHETIC_CONTRACT.json",
+  "frozen_method_contract_sha256": "02fbf48e4aa4c5d353f7539dc5da4423d52afae22cb604f43d1916121f320679",
+  "metadata_root": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/train_pilot_synthetic_v1/valid/metadata",
+  "raw_root": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/train_pilot_synthetic_v1/valid/raw",
+  "metadata_bindings": {
+    "FILE_METADATA_IDENTITY.json": "d50bcbf8fa44027a005323e7cda125df0398856f360aef112421a78753fefdd4",
+    "GENE_MANIFEST.csv": "72db93e496ea233dd046053be4d002327ab052eeed25575a85e2ab8d54a6d62a",
+    "gene_metadata.parquet": "2e50450cd222cbf5fb37061d4657b27ccfd9981e6a1e2b573cc986386dca53e4",
+    "PREPARATION_POLICY.json": "3562638da66d9f7a29cd9836c382ae7ab7a4885a28176723b2a50b30559eed84"
+  },
+  "implementation_bindings": {
+    "loader": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/build_safeconf_orion_allowed_biology_agent.py",
+      "sha256": "cdf261ffcae854f49d469437492a12b7f835aae7b720bbe565044d8a89369e8b"
+    },
+    "reader": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/probe_safeconf_private_parquet_agent.py",
+      "sha256": "3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312"
+    }
+  },
+  "resource_budgets": {
+    "max_compressed_chunk_bytes": 1073741824,
+    "max_page_uncompressed_bytes": 134217728,
+    "max_page_level_entries": 16777216,
+    "max_resident_bytes": 6442450944,
+    "max_token_spool_bytes_per_file": 4294967296,
+    "max_group_matrix_bytes": 17179869184,
+    "max_seconds_per_file": 600,
+    "max_cells_per_file": 50000
+  },
+  "library_sum_check_roles": [
+    "TRAIN",
+    "TRAIN_CONTROL_SOURCE_SCOPE"
+  ]
+}

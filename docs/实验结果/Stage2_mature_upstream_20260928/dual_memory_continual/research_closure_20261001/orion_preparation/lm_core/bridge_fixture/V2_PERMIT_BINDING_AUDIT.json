@@ -1,0 +1,210 @@
+{
+  "status": "PASS",
+  "scope": "READ_ONLY_FILE_HASH_BINDING_AUDIT_NO_EXPRESSION",
+  "updated_utc": "2026-10-01T17:55:52Z",
+  "permit_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_FULL_PIPELINE_ACCESS_PERMIT.json",
+  "permit_sha256": "82a57a5c5ebd7937325d4b84c0659e291405f114869dd41540e29bef67eae25a",
+  "binding_checks": 24,
+  "checks": [
+    {
+      "category": "scientific_contract",
+      "name": "frozen_method_contract",
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_METHOD_CONTRACT.json",
+      "expected_sha256": "6b8a26939c8c6134dbf2e8294ee7905fccc2122b570b046f3183a3d2f5caba97",
+      "actual_sha256": "6b8a26939c8c6134dbf2e8294ee7905fccc2122b570b046f3183a3d2f5caba97",
+      "pass": true
+    },
+    {
+      "category": "implementation",
+      "name": "loader",
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/build_safeconf_orion_allowed_biology_agent.py",
+      "expected_sha256": "cdf261ffcae854f49d469437492a12b7f835aae7b720bbe565044d8a89369e8b",
+      "actual_sha256": "cdf261ffcae854f49d469437492a12b7f835aae7b720bbe565044d8a89369e8b",
+      "pass": true
+    },
+    {
+      "category": "implementation",
+      "name": "reader",
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/probe_safeconf_private_parquet_agent.py",
+      "expected_sha256": "3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312",
+      "actual_sha256": "3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312",
+      "pass": true
+    },
+    {
+      "category": "implementation",
+      "name": "bridge",
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/bridge_safeconf_orion_lm_inputs_agent.py",
+      "expected_sha256": "5147611b3bdcc9eb895a175e168122b5e10f0c8a791c7aa88c022d66ff5c0d46",
+      "actual_sha256": "5147611b3bdcc9eb895a175e168122b5e10f0c8a791c7aa88c022d66ff5c0d46",
+      "pass": true
+    },
+    {
+      "category": "implementation",
+      "name": "lm_cli",
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_orion_lm_blind.R",
+      "expected_sha256": "086fb5489bc88520b1854d0101db117f66f913d7ce94064a6df18772633aaee1",
+      "actual_sha256": "086fb5489bc88520b1854d0101db117f66f913d7ce94064a6df18772633aaee1",
+      "pass": true
+    },
+    {
+      "category": "metadata",
+      "name": "FILE_METADATA_IDENTITY.json",
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/FILE_METADATA_IDENTITY.json",
+      "expected_sha256": "89901ca8afbb6fe86664c54c5f6c2bab27b21d77f75563395e25c3dd0d9659f6",
+      "actual_sha256": "89901ca8afbb6fe86664c54c5f6c2bab27b21d77f75563395e25c3dd0d9659f6",
+      "pass": true
+    },
+    {
+      "category": "metadata",
+      "name": "GENE_MANIFEST.csv",
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/GENE_MANIFEST.csv",
+      "expected_sha256": "eb377ecb5ed1f99e259e6e8154f0edae68065ba36e3eae59ce50c2f72d8b72d4",
+      "actual_sha256": "eb377ecb5ed1f99e259e6e8154f0edae68065ba36e3eae59ce50c2f72d8b72d4",
+      "pass": true
+    },
+    {
+      "category": "metadata",
+      "name": "gene_metadata.parquet",
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/gene_metadata.parquet",
+      "expected_sha256": "33900a0dbaeafb84601c7c8ba7c6642c440774fc3f49613dab11cf1f2bf0fdbf",
+      "actual_sha256": "33900a0dbaeafb84601c7c8ba7c6642c440774fc3f49613dab11cf1f2bf0fdbf",
+      "pass": true
+    },
+    {
+      "category": "metadata",
+      "name": "PREPARATION_POLICY.json",
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/PREPARATION_POLICY.json",
+      "expected_sha256": "594a5aef77684dc99666022c76666100a5c9791082532d00b7c70ddfe1fac3b7",
+      "actual_sha256": "594a5aef77684dc99666022c76666100a5c9791082532d00b7c70ddfe1fac3b7",
+      "pass": true
+    },
+    {
+      "category": "permit_resource",
+      "name": "independent_review",
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/private_reader_probe/INTEGRATION_REVIEW.json",
+      "expected_sha256": "3b8a21b02ba697d3b3d57a8b1de2ff2480f208e8ad214ba08ce6a3f0a0a9ef44",
+      "actual_sha256": "3b8a21b02ba697d3b3d57a8b1de2ff2480f208e8ad214ba08ce6a3f0a0a9ef44",
+      "pass": true
+    },
+    {
+      "category": "permit_resource",
+      "name": "lm_query_scope",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_lm_bridge_20261002_v1/query_scope_metadata_only/METADATA_ONLY_QUERY_SCOPE.tsv",
+      "expected_sha256": "0fbdc6c431538da8f4c3a8247ce227fe292d709e05d8e032218f99674e32620e",
+      "actual_sha256": "0fbdc6c431538da8f4c3a8247ce227fe292d709e05d8e032218f99674e32620e",
+      "pass": true
+    },
+    {
+      "category": "permit_resource",
+      "name": "supersedes_for_future_full_aggregation_only",
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_TRAIN_VALIDATION_ACCESS_PERMIT.json",
+      "expected_sha256": "e3a897cb1e6a4f2aabdcd4fff33c121be6e8de57d89842e4aa8fa2cf375ad293",
+      "actual_sha256": "e3a897cb1e6a4f2aabdcd4fff33c121be6e8de57d89842e4aa8fa2cf375ad293",
+      "pass": true
+    },
+    {
+      "category": "method_immutable_dependency",
+      "name": "PREPARATION_POLICY.json",
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/PREPARATION_POLICY.json",
+      "expected_sha256": "594a5aef77684dc99666022c76666100a5c9791082532d00b7c70ddfe1fac3b7",
+      "actual_sha256": "594a5aef77684dc99666022c76666100a5c9791082532d00b7c70ddfe1fac3b7",
+      "pass": true
+    },
+    {
+      "category": "method_immutable_dependency",
+      "name": "GENE_MANIFEST.csv",
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/GENE_MANIFEST.csv",
+      "expected_sha256": "eb377ecb5ed1f99e259e6e8154f0edae68065ba36e3eae59ce50c2f72d8b72d4",
+      "actual_sha256": "eb377ecb5ed1f99e259e6e8154f0edae68065ba36e3eae59ce50c2f72d8b72d4",
+      "pass": true
+    },
+    {
+      "category": "method_immutable_dependency",
+      "name": "GENE_SPLIT.csv",
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/GENE_SPLIT.csv",
+      "expected_sha256": "3bda5a9e0674cd7379b01e798d1c1b8c337efec86f44aceb41d4d74c73df52be",
+      "actual_sha256": "3bda5a9e0674cd7379b01e798d1c1b8c337efec86f44aceb41d4d74c73df52be",
+      "pass": true
+    },
+    {
+      "category": "method_immutable_dependency",
+      "name": "FILE_METADATA_IDENTITY.json",
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/FILE_METADATA_IDENTITY.json",
+      "expected_sha256": "89901ca8afbb6fe86664c54c5f6c2bab27b21d77f75563395e25c3dd0d9659f6",
+      "actual_sha256": "89901ca8afbb6fe86664c54c5f6c2bab27b21d77f75563395e25c3dd0d9659f6",
+      "pass": true
+    },
+    {
+      "category": "method_immutable_dependency",
+      "name": "CONTROLS_SCOPE.json",
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/CONTROLS_SCOPE.json",
+      "expected_sha256": "1630ee35e8de9bee6fa26052b90e08d69d41410db208e2a560923776ddc84021",
+      "actual_sha256": "1630ee35e8de9bee6fa26052b90e08d69d41410db208e2a560923776ddc84021",
+      "pass": true
+    },
+    {
+      "category": "method_immutable_dependency",
+      "name": "gene_metadata.parquet",
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/gene_metadata.parquet",
+      "expected_sha256": "33900a0dbaeafb84601c7c8ba7c6642c440774fc3f49613dab11cf1f2bf0fdbf",
+      "actual_sha256": "33900a0dbaeafb84601c7c8ba7c6642c440774fc3f49613dab11cf1f2bf0fdbf",
+      "pass": true
+    },
+    {
+      "category": "method_immutable_dependency",
+      "name": "SOURCE_FEATURE_MANIFEST.json",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_FEATURE_MANIFEST.json",
+      "expected_sha256": "b74b9dfbc64f5acc82b7b0d34023aa6a523bd11d1904ced7fd638c5bec4ef2d1",
+      "actual_sha256": "b74b9dfbc64f5acc82b7b0d34023aa6a523bd11d1904ced7fd638c5bec4ef2d1",
+      "pass": true
+    },
+    {
+      "category": "method_immutable_dependency",
+      "name": "MODEL_MANIFEST.json",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/MODEL_MANIFEST.json",
+      "expected_sha256": "c8d9d5003860d8a5e117398a7d44b5c67cfb700c6fb56f37bcf04a5d549909a6",
+      "actual_sha256": "c8d9d5003860d8a5e117398a7d44b5c67cfb700c6fb56f37bcf04a5d549909a6",
+      "pass": true
+    },
+    {
+      "category": "method_immutable_dependency",
+      "name": "SOURCE_INPUT_HASHES.json",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_INPUT_HASHES.json",
+      "expected_sha256": "12e058d3725fa989b3da543c136c169efd90dbcba28a8a8c2cce4c4033769715",
+      "actual_sha256": "12e058d3725fa989b3da543c136c169efd90dbcba28a8a8c2cce4c4033769715",
+      "pass": true
+    },
+    {
+      "category": "method_immutable_dependency",
+      "name": "orion_linear.R",
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/orion_linear.R",
+      "expected_sha256": "6f4f9dbdbe5d147019806b60a4aa6c2fe82d888d1e4d87d71b99807552129b25",
+      "actual_sha256": "6f4f9dbdbe5d147019806b60a4aa6c2fe82d888d1e4d87d71b99807552129b25",
+      "pass": true
+    },
+    {
+      "category": "method_immutable_dependency",
+      "name": "INSTALLED_RUNTIME_PACKAGES.json",
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/INSTALLED_RUNTIME_PACKAGES.json",
+      "expected_sha256": "0813a8cd7b6e15372e818b1fe9200d4975f6b2affe209488afaf228dc886b939",
+      "actual_sha256": "0813a8cd7b6e15372e818b1fe9200d4975f6b2affe209488afaf228dc886b939",
+      "pass": true
+    },
+    {
+      "category": "method_immutable_dependency",
+      "name": "probe_safeconf_private_parquet_agent.py",
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/probe_safeconf_private_parquet_agent.py",
+      "expected_sha256": "3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312",
+      "actual_sha256": "3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312",
+      "pass": true
+    }
+  ],
+  "scientific_contract_sha256": "6b8a26939c8c6134dbf2e8294ee7905fccc2122b570b046f3183a3d2f5caba97",
+  "reader_technical_override_only": true,
+  "scientific_dependencies_unchanged": true,
+  "for_future_full_aggregate_then_bridge_only": true,
+  "existing_v1_pilot_receipts_relabelled": false,
+  "test_numeric_access_authorized": false,
+  "raw_expression_opened_by_audit": false,
+  "new_upstream_attempt_started_by_audit": false
+}

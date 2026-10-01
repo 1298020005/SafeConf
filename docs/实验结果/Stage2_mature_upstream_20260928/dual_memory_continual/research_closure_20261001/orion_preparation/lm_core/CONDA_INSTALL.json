@@ -1,0 +1,47 @@
+{
+  "error": "Multiple Errors Encountered.",
+  "errors": [
+    {
+      "caused_by": "ConnectionError(ReadTimeoutError(\"HTTPSConnectionPool(host='conda.anaconda.org', port=443): Read timed out.\"))",
+      "elapsed_time": "-",
+      "error": "CondaHTTPError: HTTP 000 CONNECTION FAILED for url <https://conda.anaconda.org/conda-forge/noarch/sysroot_linux-64-2.34-h087de78_3.conda>\nElapsed: -\n\nAn HTTP error occurred when trying to retrieve this URL.\nHTTP errors are often intermittent, and a simple retry will get you on your way.\n",
+      "exception_name": "CondaHTTPError",
+      "exception_type": "<class 'conda.exceptions.CondaHTTPError'>",
+      "json": {},
+      "message": "HTTP 000 CONNECTION FAILED for url <https://conda.anaconda.org/conda-forge/noarch/sysroot_linux-64-2.34-h087de78_3.conda>\nElapsed: -\n\nAn HTTP error occurred when trying to retrieve this URL.\nHTTP errors are often intermittent, and a simple retry will get you on your way.\n",
+      "reason": "CONNECTION FAILED",
+      "response_details": "",
+      "status_code": "000",
+      "url": "https://conda.anaconda.org/conda-forge/noarch/sysroot_linux-64-2.34-h087de78_3.conda"
+    },
+    {
+      "caused_by": "ConnectionError(ReadTimeoutError(\"HTTPSConnectionPool(host='conda.anaconda.org', port=443): Read timed out.\"))",
+      "elapsed_time": "-",
+      "error": "CondaHTTPError: HTTP 000 CONNECTION FAILED for url <https://conda.anaconda.org/conda-forge/noarch/sysroot_linux-64-2.34-h087de78_3.conda>\nElapsed: -\n\nAn HTTP error occurred when trying to retrieve this URL.\nHTTP errors are often intermittent, and a simple retry will get you on your way.\n",
+      "exception_name": "CondaHTTPError",
+      "exception_type": "<class 'conda.exceptions.CondaHTTPError'>",
+      "json": {},
+      "message": "HTTP 000 CONNECTION FAILED for url <https://conda.anaconda.org/conda-forge/noarch/sysroot_linux-64-2.34-h087de78_3.conda>\nElapsed: -\n\nAn HTTP error occurred when trying to retrieve this URL.\nHTTP errors are often intermittent, and a simple retry will get you on your way.\n",
+      "reason": "CONNECTION FAILED",
+      "response_details": "",
+      "status_code": "000",
+      "url": "https://conda.anaconda.org/conda-forge/noarch/sysroot_linux-64-2.34-h087de78_3.conda"
+    },
+    {
+      "caused_by": "ConnectionError(ReadTimeoutError(\"HTTPSConnectionPool(host='conda.anaconda.org', port=443): Read timed out.\"))",
+      "elapsed_time": "-",
+      "error": "CondaHTTPError: HTTP 000 CONNECTION FAILED for url <https://conda.anaconda.org/conda-forge/noarch/libstdcxx-devel_linux-64-16.2.0-h86e191b_107.conda>\nElapsed: -\n\nAn HTTP error occurred when trying to retrieve this URL.\nHTTP errors are often intermittent, and a simple retry will get you on your way.\n",
+      "exception_name": "CondaHTTPError",
+      "exception_type": "<class 'conda.exceptions.CondaHTTPError'>",
+      "json": {},
+      "message": "HTTP 000 CONNECTION FAILED for url <https://conda.anaconda.org/conda-forge/noarch/libstdcxx-devel_linux-64-16.2.0-h86e191b_107.conda>\nElapsed: -\n\nAn HTTP error occurred when trying to retrieve this URL.\nHTTP errors are often intermittent, and a simple retry will get you on your way.\n",
+      "reason": "CONNECTION FAILED",
+      "response_details": "",
+      "status_code": "000",
+      "url": "https://conda.anaconda.org/conda-forge/noarch/libstdcxx-devel_linux-64-16.2.0-h86e191b_107.conda"
+    }
+  ],
+  "exception_name": "CondaMultiError",
+  "exception_type": "<class 'conda.CondaMultiError'>"
+}
+

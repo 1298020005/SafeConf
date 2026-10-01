@@ -1,0 +1,51 @@
+[
+  {
+    "budget": "max_compressed_chunk_bytes",
+    "limit": 1,
+    "rejected": "Compressed numeric chunk exceeds memory budget before read",
+    "trace": {
+      "physical_numeric_chunk_bytes_read": 0,
+      "opaque_numeric_bytes_decompressed": 0,
+      "data_pages": 0,
+      "numeric_materialization_rows": null,
+      "private_numeric_values_skipped": 0,
+      "max_compressed_chunk_bytes": 1
+    }
+  },
+  {
+    "budget": "max_page_uncompressed_bytes",
+    "limit": 1,
+    "rejected": "Numeric page size exceeds budget or chunk boundary before decompression",
+    "trace": {
+      "physical_numeric_chunk_bytes_read": 10294,
+      "opaque_numeric_bytes_decompressed": 0,
+      "data_pages": 0,
+      "numeric_materialization_rows": null,
+      "private_numeric_values_skipped": 0,
+      "max_page_uncompressed_bytes": 1
+    }
+  },
+  {
+    "budget": "max_page_level_entries",
+    "limit": 1,
+    "rejected": "Structural page entries exceed budget or footer count before decoding",
+    "trace": {
+      "physical_numeric_chunk_bytes_read": 10294,
+      "opaque_numeric_bytes_decompressed": 0,
+      "data_pages": 0,
+      "numeric_materialization_rows": null,
+      "private_numeric_values_skipped": 0,
+      "max_page_level_entries": 1
+    }
+  },
+  {
+    "all_false_mask_zero_numeric_access": true,
+    "trace": {
+      "physical_numeric_chunk_bytes_read": 0,
+      "opaque_numeric_bytes_decompressed": 0,
+      "data_pages": 0,
+      "numeric_materialization_rows": null,
+      "private_numeric_values_skipped": 0
+    }
+  }
+]

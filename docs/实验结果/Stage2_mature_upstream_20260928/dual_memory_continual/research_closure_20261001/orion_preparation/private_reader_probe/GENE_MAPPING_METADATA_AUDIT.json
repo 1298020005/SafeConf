@@ -1,0 +1,224 @@
+{
+  "scope": "OFFICIAL_GENE_MAPPING_METADATA_ONLY_NO_CELL_EXPRESSION",
+  "rows": 38606,
+  "unique_ensembl": 38606,
+  "unique_token": 38606,
+  "unique_symbol": 38584,
+  "duplicate_symbol_surplus": 22,
+  "duplicate_symbols": {
+    "LSP1P5": [
+      {
+        "gene_token_id": 1918,
+        "ensembl_id": "ENSG00000288905"
+      },
+      {
+        "gene_token_id": 4708,
+        "ensembl_id": "ENSG00000291150"
+      }
+    ],
+    "LINC01115": [
+      {
+        "gene_token_id": 3610,
+        "ensembl_id": "ENSG00000272342"
+      },
+      {
+        "gene_token_id": 3613,
+        "ensembl_id": "ENSG00000237667"
+      }
+    ],
+    "LINC01238": [
+      {
+        "gene_token_id": 6275,
+        "ensembl_id": "ENSG00000237940"
+      },
+      {
+        "gene_token_id": 6280,
+        "ensembl_id": "ENSG00000261186"
+      }
+    ],
+    "PRICKLE2-AS1": [
+      {
+        "gene_token_id": 7028,
+        "ensembl_id": "ENSG00000241111"
+      },
+      {
+        "gene_token_id": 7031,
+        "ensembl_id": "ENSG00000241572"
+      }
+    ],
+    "RAET1E-AS1": [
+      {
+        "gene_token_id": 13469,
+        "ensembl_id": "ENSG00000268592"
+      },
+      {
+        "gene_token_id": 13471,
+        "ensembl_id": "ENSG00000223701"
+      }
+    ],
+    "LINC03021": [
+      {
+        "gene_token_id": 15596,
+        "ensembl_id": "ENSG00000277526"
+      },
+      {
+        "gene_token_id": 15597,
+        "ensembl_id": "ENSG00000254319"
+      }
+    ],
+    "LINC03023": [
+      {
+        "gene_token_id": 15830,
+        "ensembl_id": "ENSG00000253147"
+      },
+      {
+        "gene_token_id": 15831,
+        "ensembl_id": "ENSG00000254026"
+      }
+    ],
+    "TNFRSF10A-DT": [
+      {
+        "gene_token_id": 15884,
+        "ensembl_id": "ENSG00000246582"
+      },
+      {
+        "gene_token_id": 15885,
+        "ensembl_id": "ENSG00000250714"
+      }
+    ],
+    "LINC01605": [
+      {
+        "gene_token_id": 16038,
+        "ensembl_id": "ENSG00000253161"
+      },
+      {
+        "gene_token_id": 16040,
+        "ensembl_id": "ENSG00000253414"
+      }
+    ],
+    "LINC03025": [
+      {
+        "gene_token_id": 17526,
+        "ensembl_id": "ENSG00000276462"
+      },
+      {
+        "gene_token_id": 17601,
+        "ensembl_id": "ENSG00000234394"
+      }
+    ],
+    "LINC00484": [
+      {
+        "gene_token_id": 17791,
+        "ensembl_id": "ENSG00000229694"
+      },
+      {
+        "gene_token_id": 17792,
+        "ensembl_id": "ENSG00000235641"
+      }
+    ],
+    "DNAJC9-AS1": [
+      {
+        "gene_token_id": 19261,
+        "ensembl_id": "ENSG00000236756"
+      },
+      {
+        "gene_token_id": 19263,
+        "ensembl_id": "ENSG00000227540"
+      }
+    ],
+    "GPR84-AS1": [
+      {
+        "gene_token_id": 23091,
+        "ensembl_id": "ENSG00000258137"
+      },
+      {
+        "gene_token_id": 23092,
+        "ensembl_id": "ENSG00000258086"
+      }
+    ],
+    "SPATA13": [
+      {
+        "gene_token_id": 24269,
+        "ensembl_id": "ENSG00000182957"
+      },
+      {
+        "gene_token_id": 24270,
+        "ensembl_id": "ENSG00000228741"
+      }
+    ],
+    "GOLGA8M": [
+      {
+        "gene_token_id": 26696,
+        "ensembl_id": "ENSG00000188626"
+      },
+      {
+        "gene_token_id": 26697,
+        "ensembl_id": "ENSG00000261480"
+      }
+    ],
+    "LINC02256": [
+      {
+        "gene_token_id": 26727,
+        "ensembl_id": "ENSG00000289083"
+      },
+      {
+        "gene_token_id": 26751,
+        "ensembl_id": "ENSG00000261064"
+      }
+    ],
+    "DDX11L16": [
+      {
+        "gene_token_id": 27933,
+        "ensembl_id": "ENSG00000290824"
+      },
+      {
+        "gene_token_id": 27934,
+        "ensembl_id": "ENSG00000290355"
+      }
+    ],
+    "NPIPA9": [
+      {
+        "gene_token_id": 28400,
+        "ensembl_id": "ENSG00000183889"
+      },
+      {
+        "gene_token_id": 28415,
+        "ensembl_id": "ENSG00000233024"
+      }
+    ],
+    "MKKS": [
+      {
+        "gene_token_id": 34855,
+        "ensembl_id": "ENSG00000125863"
+      },
+      {
+        "gene_token_id": 34856,
+        "ensembl_id": "ENSG00000285508"
+      },
+      {
+        "gene_token_id": 34857,
+        "ensembl_id": "ENSG00000285723"
+      }
+    ],
+    "ELFN2": [
+      {
+        "gene_token_id": 36883,
+        "ensembl_id": "ENSG00000243902"
+      },
+      {
+        "gene_token_id": 36884,
+        "ensembl_id": "ENSG00000166897"
+      }
+    ],
+    "ARMCX5-GPRASP2": [
+      {
+        "gene_token_id": 37932,
+        "ensembl_id": "ENSG00000271147"
+      },
+      {
+        "gene_token_id": 37937,
+        "ensembl_id": "ENSG00000286237"
+      }
+    ]
+  }
+}

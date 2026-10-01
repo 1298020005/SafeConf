@@ -1,0 +1,32 @@
+{
+  "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/data/HCT116_Batch1.parquet",
+  "access": "FOOTER_ONLY",
+  "footer_bytes_read": 7096,
+  "rows": 18549,
+  "row_groups": 1,
+  "schema": "<pyarrow._parquet.ParquetSchema object at 0x73e548f83780>\nrequired group field_id=-1 schema {\n  optional group field_id=-1 gene_token_id (List) {\n    repeated group field_id=-1 list {\n      optional int64 field_id=-1 element;\n    }\n  }\n  optional group field_id=-1 gene_expression (List) {\n    repeated group field_id=-1 list {\n      optional double field_id=-1 element;\n    }\n  }\n  optional binary field_id=-1 cell_barcode (String);\n  optional binary field_id=-1 sample (String);\n  optional int64 field_id=-1 num_features;\n  optional binary field_id=-1 guide_target (String);\n  optional binary field_id=-1 gene_target (String);\n  optional int64 field_id=-1 n_genes_by_counts;\n  optional double field_id=-1 total_counts;\n  optional double field_id=-1 total_counts_mt;\n  optional double field_id=-1 pct_counts_mt;\n  optional int64 field_id=-1 pass_guide_filter;\n}\n",
+  "columns": [
+    {
+      "path": "gene_token_id.list.element",
+      "physical_type": "INT64",
+      "compression": "SNAPPY",
+      "encodings": [
+        "PLAIN",
+        "RLE",
+        "RLE_DICTIONARY"
+      ],
+      "chunk_bytes": 223406149
+    },
+    {
+      "path": "gene_expression.list.element",
+      "physical_type": "DOUBLE",
+      "compression": "SNAPPY",
+      "encodings": [
+        "PLAIN",
+        "RLE",
+        "RLE_DICTIONARY"
+      ],
+      "chunk_bytes": 103415472
+    }
+  ]
+}

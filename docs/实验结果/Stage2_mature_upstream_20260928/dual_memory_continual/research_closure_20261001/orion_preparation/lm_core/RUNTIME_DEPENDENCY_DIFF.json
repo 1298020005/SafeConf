@@ -1,0 +1,24 @@
+{
+  "scope": "numerical_core_dependencies_only",
+  "installed": {
+    "R": "4.4.1",
+    "Matrix": "1.7.6",
+    "irlba": "2.3.5.1"
+  },
+  "expected_core_versions_from_preparation": {
+    "R": "4.4.1",
+    "Matrix": "1.7.0",
+    "irlba": "2.3.5.1"
+  },
+  "differences": [
+    {
+      "package": "Matrix",
+      "expected": "1.7.0",
+      "installed": "1.7.6"
+    }
+  ],
+  "complete_paper_environment": false,
+  "matrix_1_7_0_source_available_but_not_installed": true,
+  "matrix_1_7_0_source_record": "MATRIX_SOURCE.json",
+  "additional_runtime_details": "R_SESSION_INFO.txt"
+}

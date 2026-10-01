@@ -1,0 +1,24 @@
+[
+  {
+    "path": "HCT116_Batch1.parquet",
+    "context": "HCT116",
+    "sample": "HCT116_Batch1",
+    "rows": 6,
+    "row_groups": 1,
+    "publisher_whole_file_bytes": 1101,
+    "publisher_LFS_sha256": "cd72b7a9359aef8f9b1d8e3dc8c9def99d61bb5aa545bac3e8201e2e4954e357",
+    "metadata_parquet_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v1/v1.0_dictionary0/metadata/HCT116_Batch1.parquet",
+    "metadata_parquet_sha256": "8678960f1313c6003f0865190a280ef990246196527b7b4d852042943a84d715"
+  },
+  {
+    "path": "HEK293T_Batch1.parquet",
+    "context": "HEK293T",
+    "sample": "HEK293T_Batch1",
+    "rows": 3,
+    "row_groups": 1,
+    "publisher_whole_file_bytes": 1062,
+    "publisher_LFS_sha256": "ce8248f01ec6248b85bccc4ab724c0f4c8c6f4caed10597efd635a8a1196f698",
+    "metadata_parquet_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v1/v1.0_dictionary0/metadata/HEK293T_Batch1.parquet",
+    "metadata_parquet_sha256": "2fef99e17d7cef4af6de86016af510db7f2dbad061bd27abc885ad6055c57448"
+  }
+]

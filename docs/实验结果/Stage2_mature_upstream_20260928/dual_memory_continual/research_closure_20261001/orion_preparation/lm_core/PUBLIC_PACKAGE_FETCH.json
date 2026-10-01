@@ -1,0 +1,861 @@
+{
+  "status": "FAIL",
+  "packages": [
+    {
+      "name": "gfortran_impl_linux-64",
+      "version": "16.2.0",
+      "file": "gfortran_impl_linux-64-16.2.0-hf930d89_7.conda",
+      "sha256": "263277d04b6d7cc8cb02f73977ff6ae77bbb0b14f8b355667bc337f3fa454ef3",
+      "bytes": 21139940,
+      "already_cached": true,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/gfortran_impl_linux-64-16.2.0-hf930d89_7.conda"
+    },
+    {
+      "name": "libgcc-ng",
+      "version": "16.2.0",
+      "file": "libgcc-ng-16.2.0-h69a702a_7.conda",
+      "sha256": "03b54d7008de080a17cc2174b0e4acd6d06e1c981b2eb19846f46d8f59966034",
+      "bytes": 28616,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libgcc-ng-16.2.0-h69a702a_7.conda"
+    },
+    {
+      "name": "xorg-libice",
+      "version": "1.1.2",
+      "file": "xorg-libice-1.1.2-h280c20c_0.conda",
+      "sha256": "49b532d1df875c6749d9078b56a76f3f5db49a5abe0ca620b593ed474ef0ebf1",
+      "bytes": 62517,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/xorg-libice-1.1.2-h280c20c_0.conda"
+    },
+    {
+      "name": "liblzma-devel",
+      "version": "5.8.3",
+      "file": "liblzma-devel-5.8.3-hb03c661_1.conda",
+      "sha256": "adef6e8b60afb684110b06b5310977c6836e1c923ce3ec199f45c0f000b42f20",
+      "bytes": 491970,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/liblzma-devel-5.8.3-hb03c661_1.conda"
+    },
+    {
+      "name": "fribidi",
+      "version": "1.0.17",
+      "file": "fribidi-1.0.17-h7cc23a3_0.conda",
+      "sha256": "3ba79ebfbd14ca5db4affaf10ee8001064e907de5baabc2dbe5bcd9aec856c9f",
+      "bytes": 64102,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/fribidi-1.0.17-h7cc23a3_0.conda"
+    },
+    {
+      "name": "xorg-libxt",
+      "version": "1.3.1",
+      "file": "xorg-libxt-1.3.1-h7cc23a3_1.conda",
+      "sha256": "dff31677674be86f98ee929a796edf2cf7c78bf38610b122a63af9af752d5bf7",
+      "bytes": 384261,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/xorg-libxt-1.3.1-h7cc23a3_1.conda"
+    },
+    {
+      "name": "readline",
+      "version": "8.3",
+      "file": "readline-8.3-hd6e31c0_1.conda",
+      "sha256": "01b3fe073a66e321970d09e04b388708f8cbdca5cdfbfcb7c9eeb470ad10383d",
+      "bytes": 348899,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/readline-8.3-hd6e31c0_1.conda"
+    },
+    {
+      "name": "libzlib",
+      "version": "1.3.2",
+      "file": "libzlib-1.3.2-h25fd6f3_3.conda",
+      "sha256": "eb8a0db0aa570124f7d2a93d7c7f596e3390df5e047818d873baad32985fc736",
+      "bytes": 63713,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libzlib-1.3.2-h25fd6f3_3.conda"
+    },
+    {
+      "name": "xz-gpl-tools",
+      "version": "5.8.3",
+      "file": "xz-gpl-tools-5.8.3-ha02ee65_1.conda",
+      "sha256": "ed6dbec5e4f0f71e7ac629b90dc4c9fba38d194cc88eab891c29e461b408977a",
+      "bytes": 40118,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/xz-gpl-tools-5.8.3-ha02ee65_1.conda"
+    },
+    {
+      "name": "zstd",
+      "version": "1.5.7",
+      "file": "zstd-1.5.7-hb78ec9c_7.conda",
+      "sha256": "47d682b9f6d6ec9eb1a6e6c3e75ea6273e899e78fb7fc59f81d39745009fbc60",
+      "bytes": 601301,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/zstd-1.5.7-hb78ec9c_7.conda"
+    },
+    {
+      "name": "libfreetype",
+      "version": "2.14.3",
+      "file": "libfreetype-2.14.3-ha770c72_2.conda",
+      "sha256": "fb12ecb46c30d18d928c0e8fc346ab13b5f6fc8a9cacae4f2f4bb188782586f5",
+      "bytes": 8407,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libfreetype-2.14.3-ha770c72_2.conda"
+    },
+    {
+      "name": "libpng",
+      "version": "1.6.59",
+      "file": "libpng-1.6.59-h922cc85_0.conda",
+      "sha256": "c7381be8ef713501f6cd2f5ad473e401f2edeaec3c46788296b8dbf0de165e15",
+      "bytes": 316872,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libpng-1.6.59-h922cc85_0.conda"
+    },
+    {
+      "name": "libstdcxx-ng",
+      "version": "16.2.0",
+      "file": "libstdcxx-ng-16.2.0-hdf11a46_7.conda",
+      "sha256": "337f481db36cc357884f05f404ccd1b3a7e0fc1ee48ec5c884e4281d213bc863",
+      "bytes": 28665,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libstdcxx-ng-16.2.0-hdf11a46_7.conda"
+    },
+    {
+      "name": "libfreetype6",
+      "version": "2.14.3",
+      "file": "libfreetype6-2.14.3-h5e6c136_2.conda",
+      "sha256": "ec607dd5445dd17ff6bf8b7fe6832e5504c226dd91d3aaea7ba83569808b0ce4",
+      "bytes": 387671,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libfreetype6-2.14.3-h5e6c136_2.conda"
+    },
+    {
+      "name": "freetype",
+      "version": "2.14.3",
+      "file": "freetype-2.14.3-ha770c72_2.conda",
+      "sha256": "612a8e0c1a6ecae23da54d81ef395f6ebb5c8e4468ec2611593ebce75876a4e0",
+      "bytes": 175239,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/freetype-2.14.3-ha770c72_2.conda"
+    },
+    {
+      "name": "c-ares",
+      "version": "1.34.8",
+      "file": "c-ares-1.34.8-hebe6cf0_2.conda",
+      "sha256": "9c37cc233238adf366ea75b0e845662a5be07ceadf62e458183516369340274b",
+      "bytes": 228700,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/c-ares-1.34.8-hebe6cf0_2.conda"
+    },
+    {
+      "name": "fonts-conda-forge",
+      "version": "1",
+      "file": "fonts-conda-forge-1-hc364b38_1.conda",
+      "sha256": "54eea8469786bc2291cc40bca5f46438d3e062a399e8f53f013b6a9f50e98333",
+      "bytes": 4059,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/noarch/fonts-conda-forge-1-hc364b38_1.conda"
+    },
+    {
+      "name": "_r-mutex",
+      "version": "1.0.1",
+      "file": "_r-mutex-1.0.1-anacondar_1.tar.bz2",
+      "sha256": "e58f9eeb416b92b550e824bcb1b9fb1958dee69abfe3089dfd1a9173e3a0528a",
+      "bytes": 3566,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/noarch/_r-mutex-1.0.1-anacondar_1.tar.bz2"
+    },
+    {
+      "name": "ld_impl_linux-64",
+      "version": "2.46.1",
+      "file": "ld_impl_linux-64-2.46.1-default_hbd61a6d_102.conda",
+      "sha256": "27d83f1188cd19bcb7754a078b3fa7f4cfb8527f8eb2fde54dd01fc529d1adec",
+      "bytes": 745303,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/ld_impl_linux-64-2.46.1-default_hbd61a6d_102.conda"
+    },
+    {
+      "name": "sed",
+      "version": "4.10",
+      "file": "sed-4.10-h19d0853_0.conda",
+      "sha256": "b013d2085ce4ac01daec7b30472e9f3b6c2d69eb3a3a85a6cee3e01a3cb4f61a",
+      "bytes": 268482,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/sed-4.10-h19d0853_0.conda"
+    },
+    {
+      "name": "libgcc",
+      "version": "16.2.0",
+      "file": "libgcc-16.2.0-ha9f2e26_7.conda",
+      "sha256": "e031634c3a928f9594eba868bc46ef5230d6571a364a0c63215b06c4563bfcea",
+      "bytes": 1058444,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libgcc-16.2.0-ha9f2e26_7.conda"
+    },
+    {
+      "name": "bwidget",
+      "version": "1.10.1",
+      "file": "bwidget-1.10.1-hfc2019e_3.conda",
+      "sha256": "5451e5d9abe192438f9efe8c0737c6ac0ddd6cfb932cb88e2ef2f88e97fc3c3a",
+      "bytes": 134624,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/bwidget-1.10.1-hfc2019e_3.conda"
+    },
+    {
+      "name": "tzdata",
+      "version": "2026c",
+      "file": "tzdata-2026c-h151e31d_0.conda",
+      "sha256": "b928c30ddcb0e3f544c6eade8352737e6e610e263276b90232db6a578ef899d8",
+      "bytes": 118849,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/noarch/tzdata-2026c-h151e31d_0.conda"
+    },
+    {
+      "name": "liblapack",
+      "version": "3.11.0",
+      "file": "liblapack-3.11.0-11_h47877c9_openblas.conda",
+      "sha256": "1ad3f43c9319ef398a8ef45989f4903a06e3965b51e77fc669a4c894168a8411",
+      "bytes": 18227,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/liblapack-3.11.0-11_h47877c9_openblas.conda"
+    },
+    {
+      "name": "libglib",
+      "version": "2.84.1",
+      "file": "libglib-2.84.1-h2ff4ddf_0.conda",
+      "sha256": "18e354d30a60441b0bf5fcbb125b6b22fd0df179620ae834e2533d44d1598211",
+      "bytes": 3947789,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libglib-2.84.1-h2ff4ddf_0.conda"
+    },
+    {
+      "name": "harfbuzz",
+      "version": "11.2.1",
+      "file": "harfbuzz-11.2.1-h3beb420_0.conda",
+      "sha256": "5bd0f3674808862838d6e2efc0b3075e561c34309c5c2f4c976f7f1f57c91112",
+      "bytes": 1730226,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/harfbuzz-11.2.1-h3beb420_0.conda"
+    },
+    {
+      "name": "libopenblas",
+      "version": "0.3.34",
+      "file": "libopenblas-0.3.34-pthreads_hf13c14d_2.conda",
+      "sha256": "69a722751e14eab2eb3bfdcb9acb1187afbd962b0c49b48d829341e0f6787f60",
+      "bytes": 6845411,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libopenblas-0.3.34-pthreads_hf13c14d_2.conda"
+    },
+    {
+      "name": "pango",
+      "version": "1.56.3",
+      "file": "pango-1.56.3-h9ac818e_1.conda",
+      "sha256": "9c00bbc8871b9ce00d1a1f0c1a64f76c032cf16a56a28984b9bb59e46af3932d",
+      "bytes": 453100,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/pango-1.56.3-h9ac818e_1.conda"
+    },
+    {
+      "name": "curl",
+      "version": "8.21.0",
+      "file": "curl-8.21.0-hcf29cc6_1.conda",
+      "sha256": "8eb4ebeae7230110569da734e2420aee84f6977850bae4af94dc7f0b382f9d89",
+      "bytes": 194657,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/curl-8.21.0-hcf29cc6_1.conda"
+    },
+    {
+      "name": "pthread-stubs",
+      "version": "0.4",
+      "file": "pthread-stubs-0.4-h7cc23a3_1004.conda",
+      "sha256": "4a44fd00ea73b79ca2c89b0727b9ccf61c506ead71e67a9abfa4c590042b5a4a",
+      "bytes": 9630,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/pthread-stubs-0.4-h7cc23a3_1004.conda"
+    },
+    {
+      "name": "krb5",
+      "version": "1.22.2",
+      "file": "krb5-1.22.2-hbc21106_2.conda",
+      "sha256": "2a5c38c85e63df84c4e69ee71439841ce570d259ae3060627bb9a49a938d66f4",
+      "bytes": 1394333,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/krb5-1.22.2-hbc21106_2.conda"
+    },
+    {
+      "name": "tktable",
+      "version": "2.10",
+      "file": "tktable-2.10-h0eb2ad0_11.conda",
+      "sha256": "14096a4de75555f72db8e2b9a76e202623169de1a81330684dedb3be70010537",
+      "bytes": 103903,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/tktable-2.10-h0eb2ad0_11.conda"
+    },
+    {
+      "name": "font-ttf-source-code-pro",
+      "version": "2.038",
+      "file": "font-ttf-source-code-pro-2.038-h77eed37_0.tar.bz2",
+      "sha256": "00925c8c055a2275614b4d983e1df637245e19058d79fc7dd1a93b8d9fb4b139",
+      "bytes": 700814,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/noarch/font-ttf-source-code-pro-2.038-h77eed37_0.tar.bz2"
+    },
+    {
+      "name": "_openmp_mutex",
+      "version": "4.5",
+      "file": "_openmp_mutex-4.5-20_gnu.conda",
+      "sha256": "1dd3fffd892081df9726d7eb7e0dea6198962ba775bd88842135a4ddb4deb3c9",
+      "bytes": 28948,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/_openmp_mutex-4.5-20_gnu.conda"
+    },
+    {
+      "name": "keyutils",
+      "version": "1.6.3",
+      "file": "keyutils-1.6.3-h7cc23a3_1.conda",
+      "sha256": "dd053c96dcb0dcfd59422aefea9d2fe937a190167f34fba7893ec1e10a7e8963",
+      "bytes": 135295,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/keyutils-1.6.3-h7cc23a3_1.conda"
+    },
+    {
+      "name": "libgfortran-ng",
+      "version": "16.2.0",
+      "file": "libgfortran-ng-16.2.0-h69a702a_7.conda",
+      "sha256": "d5c80029e15b2e4c404a9a7189b607be566c7ea6142d43291c81648958ffe1f0",
+      "bytes": 28630,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libgfortran-ng-16.2.0-h69a702a_7.conda"
+    },
+    {
+      "name": "xz",
+      "version": "5.8.3",
+      "file": "xz-5.8.3-ha02ee65_1.conda",
+      "sha256": "547b2392d8f7b76efd4a0970946f6da2a1136ad5fe3dc936af81e02eb7181076",
+      "bytes": 23610,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/xz-5.8.3-ha02ee65_1.conda"
+    },
+    {
+      "name": "gsl",
+      "version": "2.7",
+      "file": "gsl-2.7-he838d99_0.tar.bz2",
+      "sha256": "132a918b676dd1f533d7c6f95e567abf7081a6ea3251c3280de35ef600e0da87",
+      "bytes": 3376423,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/gsl-2.7-he838d99_0.tar.bz2"
+    },
+    {
+      "name": "font-ttf-ubuntu",
+      "version": "0.83",
+      "file": "font-ttf-ubuntu-0.83-h77eed37_3.conda",
+      "sha256": "2821ec1dc454bd8b9a31d0ed22a7ce22422c0aef163c59f49dfdf915d0f0ca14",
+      "bytes": 1620504,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/noarch/font-ttf-ubuntu-0.83-h77eed37_3.conda"
+    },
+    {
+      "name": "libgfortran",
+      "version": "16.2.0",
+      "file": "libgfortran-16.2.0-h69a702a_7.conda",
+      "sha256": "9682ae4dd11487e10b904b3cb3ab6379cad25233d45fdfdf90d54349df244494",
+      "bytes": 28571,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libgfortran-16.2.0-h69a702a_7.conda"
+    },
+    {
+      "name": "libgcc-devel_linux-64",
+      "version": "16.2.0",
+      "file": "libgcc-devel_linux-64-16.2.0-he3ce08f_107.conda",
+      "sha256": "f1e7465f6b53f89b325e441c30ad7b19407b051eca556b6d0386ec05513b8e76",
+      "bytes": 3099665,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/noarch/libgcc-devel_linux-64-16.2.0-he3ce08f_107.conda"
+    },
+    {
+      "name": "libgfortran5",
+      "version": "16.2.0",
+      "file": "libgfortran5-16.2.0-h6b99dfc_7.conda",
+      "sha256": "04dbab12c925b92977bb835dd2f5eda413607afa79f95a554e5a04b07a380322",
+      "bytes": 2528180,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libgfortran5-16.2.0-h6b99dfc_7.conda"
+    },
+    {
+      "name": "libwebp-base",
+      "version": "1.6.0",
+      "file": "libwebp-base-1.6.0-hd42ef1d_1.conda",
+      "sha256": "8415001414f488c85b72b9d8cc2071dfb3981a47bc3c8eb56ef91a57d12eae7f",
+      "bytes": 428430,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libwebp-base-1.6.0-hd42ef1d_1.conda"
+    },
+    {
+      "name": "fontconfig",
+      "version": "2.18.3",
+      "file": "fontconfig-2.18.3-h4db4eae_1.conda",
+      "sha256": "5a3eb10b18a97223ab06b3a7f0d7f56658db2f2800e2f2af95836fe3bf55ba63",
+      "bytes": 296288,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/fontconfig-2.18.3-h4db4eae_1.conda"
+    },
+    {
+      "name": "libtiff",
+      "version": "4.7.2",
+      "file": "libtiff-4.7.2-hcc2c06a_1.conda",
+      "sha256": "10e125da82ca93e09191e66e5a94d566b2cf8d4024e2a0db3a9114297447e0d9",
+      "bytes": 459753,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libtiff-4.7.2-hcc2c06a_1.conda"
+    },
+    {
+      "name": "binutils_impl_linux-64",
+      "version": "2.46.1",
+      "file": "binutils_impl_linux-64-2.46.1-default_hfdba357_102.conda",
+      "sha256": "fb7bf36984a37ce7e4714d1d1da0bd0e3bfc679520f5cdc184afc676fd4b5da2",
+      "bytes": 3713752,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/binutils_impl_linux-64-2.46.1-default_hfdba357_102.conda"
+    },
+    {
+      "name": "font-ttf-dejavu-sans-mono",
+      "version": "2.37",
+      "file": "font-ttf-dejavu-sans-mono-2.37-hab24e00_0.tar.bz2",
+      "sha256": "58d7f40d2940dd0a8aa28651239adbf5613254df0f75789919c4e6762054403b",
+      "bytes": 397370,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/noarch/font-ttf-dejavu-sans-mono-2.37-hab24e00_0.tar.bz2"
+    },
+    {
+      "name": "r-base",
+      "version": "4.4.1",
+      "file": "r-base-4.4.1-h64c9cd0_16.conda",
+      "sha256": "41759845292822795e3a30ab5fbd49bf5197e422d7a27880838110324f22255b",
+      "bytes": 27136871,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/r-base-4.4.1-h64c9cd0_16.conda"
+    },
+    {
+      "name": "kernel-headers_linux-64",
+      "version": "5.14.0",
+      "file": "kernel-headers_linux-64-5.14.0-he073ed8_3.conda",
+      "sha256": "c4d973dd80ab10028b3e4c58c1c6d8f437bfeaf6069dafb1130dabc550e9caf4",
+      "bytes": 1410267,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/noarch/kernel-headers_linux-64-5.14.0-he073ed8_3.conda"
+    },
+    {
+      "name": "lerc",
+      "version": "4.2.0",
+      "file": "lerc-4.2.0-hdb68285_0.conda",
+      "sha256": "bf9fdebf55d8bc99d83531cdffda00703f4dc5f93a1a956768c147362c72feda",
+      "bytes": 271158,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/lerc-4.2.0-hdb68285_0.conda"
+    },
+    {
+      "name": "xz-tools",
+      "version": "5.8.3",
+      "file": "xz-tools-5.8.3-hb03c661_1.conda",
+      "sha256": "c74fa3eddd3ea648456517948f85068d8a07acad7752fd83c7e95b6cebb7114a",
+      "bytes": 96459,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/xz-tools-5.8.3-hb03c661_1.conda"
+    },
+    {
+      "name": "font-ttf-inconsolata",
+      "version": "3.000",
+      "file": "font-ttf-inconsolata-3.000-h77eed37_0.tar.bz2",
+      "sha256": "c52a29fdac682c20d252facc50f01e7c2e7ceac52aa9817aaf0bb83f7559ec5c",
+      "bytes": 96530,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/noarch/font-ttf-inconsolata-3.000-h77eed37_0.tar.bz2"
+    },
+    {
+      "name": "icu",
+      "version": "75.1",
+      "file": "icu-75.1-he02047a_0.conda",
+      "sha256": "71e750d509f5fa3421087ba88ef9a7b9be11c53174af3aa4d06aff4c18b38e8e",
+      "bytes": 12129203,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/icu-75.1-he02047a_0.conda"
+    },
+    {
+      "name": "r-lattice",
+      "version": "0.23_1",
+      "file": "r-lattice-0.23_1-r44hddc5280_0.conda",
+      "sha256": "2590f5c6b4a6e8474cf5562346a995e91549e2bc122b45959b3a6305cd2352b5",
+      "bytes": 1426409,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/r-lattice-0.23_1-r44hddc5280_0.conda"
+    },
+    {
+      "name": "fonts-conda-ecosystem",
+      "version": "1",
+      "file": "fonts-conda-ecosystem-1-0.tar.bz2",
+      "sha256": "a997f2f1921bb9c9d76e6fa2f6b408b7fa549edd349a77639c9fe7a23ea93e61",
+      "bytes": 3667,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/noarch/fonts-conda-ecosystem-1-0.tar.bz2"
+    },
+    {
+      "name": "libuuid",
+      "version": "2.42.4",
+      "file": "libuuid-2.42.4-hcfc3c73_0.conda",
+      "sha256": "f34b8d1de9a2bf62476d8608057d9b8a918d97444236dc53a47128f2fae79041",
+      "bytes": 34442,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libuuid-2.42.4-hcfc3c73_0.conda"
+    },
+    {
+      "name": "bzip2",
+      "version": "1.0.8",
+      "file": "bzip2-1.0.8-hda65f42_10.conda",
+      "sha256": "1a0d382c515ebf55f8ee1f38c8b81bc95af5c2acc42ad53b66bc5df932032f96",
+      "bytes": 257808,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/bzip2-1.0.8-hda65f42_10.conda"
+    },
+    {
+      "name": "libdeflate",
+      "version": "1.25",
+      "file": "libdeflate-1.25-hd45a770_1.conda",
+      "sha256": "82e134c8a08b1eed9a2ed8ab578b89aa1730dcde3dea8dd87645ed0637878e54",
+      "bytes": 73710,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libdeflate-1.25-hd45a770_1.conda"
+    },
+    {
+      "name": "libcurl",
+      "version": "8.21.0",
+      "file": "libcurl-8.21.0-hcf29cc6_1.conda",
+      "sha256": "7d243f45a48f62cb8e3b871dd336137fe0fb90094a191756fb553508837f6338",
+      "bytes": 478914,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libcurl-8.21.0-hcf29cc6_1.conda"
+    },
+    {
+      "name": "libcblas",
+      "version": "3.11.0",
+      "file": "libcblas-3.11.0-11_h0358290_openblas.conda",
+      "sha256": "f7d1bbdea61cf94ba219d17b2cb571a29830f8025385af799bff5a7ad1ef45e6",
+      "bytes": 18196,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libcblas-3.11.0-11_h0358290_openblas.conda"
+    },
+    {
+      "name": "ca-certificates",
+      "version": "2026.7.22",
+      "file": "ca-certificates-2026.7.22-hbd8a1cb_0.conda",
+      "sha256": "0a0544cf95f64394fe4959286f5c71f5444ad58feb0602e53becb27448d24da6",
+      "bytes": 131780,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/noarch/ca-certificates-2026.7.22-hbd8a1cb_0.conda"
+    },
+    {
+      "name": "gxx_impl_linux-64",
+      "version": "16.2.0",
+      "file": "gxx_impl_linux-64-16.2.0-h0d273dc_7.conda",
+      "sha256": "f873532a86ce9073a7255dec909472c2a271a57db938f383b630a3caa0b47709",
+      "bytes": 16987505,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/gxx_impl_linux-64-16.2.0-h0d273dc_7.conda"
+    },
+    {
+      "name": "libgomp",
+      "version": "16.2.0",
+      "file": "libgomp-16.2.0-he0feb66_7.conda",
+      "sha256": "92a0bb350c7be6a4eedcb4e111c60aefd176018e6b1c009a6e025dbe9bbcd758",
+      "bytes": 640566,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libgomp-16.2.0-he0feb66_7.conda"
+    },
+    {
+      "name": "pcre2",
+      "version": "10.44",
+      "file": "pcre2-10.44-hc749103_2.conda",
+      "sha256": "09717569649d89caafbf32f6cda1e65aef86e5a86c053d30e4ce77fca8d27b68",
+      "bytes": 956207,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/pcre2-10.44-hc749103_2.conda"
+    },
+    {
+      "name": "cairo",
+      "version": "1.18.4",
+      "file": "cairo-1.18.4-h3394656_0.conda",
+      "sha256": "3bd6a391ad60e471de76c0e9db34986c4b5058587fbf2efa5a7f54645e28c2c7",
+      "bytes": 978114,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/cairo-1.18.4-h3394656_0.conda"
+    },
+    {
+      "name": "tk",
+      "version": "8.6.13",
+      "file": "tk-8.6.13-noxft_h1df4ec4_4.conda",
+      "sha256": "a1a241d172c1ccab067ba245206dd048bc3c2d1b84504b53c9468e99adfc16a1",
+      "bytes": 3566806,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/tk-8.6.13-noxft_h1df4ec4_4.conda"
+    },
+    {
+      "name": "ncurses",
+      "version": "6.6",
+      "file": "ncurses-6.6-hdb14827_1.conda",
+      "sha256": "5d46557214ed184381dafe835b7c94a474a1c3b307a08a250b1ea4779b44ffb3",
+      "bytes": 911196,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/ncurses-6.6-hdb14827_1.conda"
+    },
+    {
+      "name": "liblzma",
+      "version": "5.8.3",
+      "file": "liblzma-5.8.3-hb03c661_1.conda",
+      "sha256": "9787df8c22a59c9a70d3e5a10db9ad663485e75e9ccc3f09bd092cb7b95e0dab",
+      "bytes": 112995,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/liblzma-5.8.3-hb03c661_1.conda"
+    },
+    {
+      "name": "libsanitizer",
+      "version": "16.2.0",
+      "file": "libsanitizer-16.2.0-h3048135_7.conda",
+      "sha256": "e383569c331239308a8663facb76208fc0e141131ff3d17c1c2e50f34716a5a9",
+      "bytes": 8115383,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libsanitizer-16.2.0-h3048135_7.conda"
+    },
+    {
+      "name": "xorg-libxrender",
+      "version": "0.9.12",
+      "file": "xorg-libxrender-0.9.12-hb03c661_1.conda",
+      "sha256": "6901f91d398811e4ec89d7e20a69abac02a7bfebfaf073338b7ea3d1a99685b7",
+      "bytes": 34645,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/xorg-libxrender-0.9.12-hb03c661_1.conda"
+    },
+    {
+      "name": "xorg-libsm",
+      "version": "1.2.6",
+      "file": "xorg-libsm-1.2.6-h0d788c3_1.conda",
+      "sha256": "ef907caee0665cf3b0f775602cc50e388e3bade8ce22ecade0873ff26604b2fd",
+      "bytes": 30739,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/xorg-libsm-1.2.6-h0d788c3_1.conda"
+    },
+    {
+      "name": "libexpat",
+      "version": "2.8.5",
+      "file": "libexpat-2.8.5-hd2095e1_0.conda",
+      "sha256": "6de73033a7c5f712c9c5a54124e4581e025691029835e5bceaf10a333a7e7bc0",
+      "bytes": 77893,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libexpat-2.8.5-hd2095e1_0.conda"
+    },
+    {
+      "name": "xorg-libxext",
+      "version": "1.3.7",
+      "file": "xorg-libxext-1.3.7-h7cc23a3_1.conda",
+      "sha256": "aa9bbe8b278aacc194e280ff5037f9f9a1f2c5b33ed97de8e7f01cfbe90dda43",
+      "bytes": 53124,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/xorg-libxext-1.3.7-h7cc23a3_1.conda"
+    },
+    {
+      "name": "libedit",
+      "version": "3.1.20250104",
+      "file": "libedit-3.1.20250104-pl5321h373387f_1.conda",
+      "sha256": "6473eb8caf2aae830f37caa93db9b26dddf7ac84b63229e8bf7fc0e5c3ab95b0",
+      "bytes": 135098,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libedit-3.1.20250104-pl5321h373387f_1.conda"
+    },
+    {
+      "name": "r-matrix",
+      "version": "1.7_6",
+      "file": "r-matrix-1.7_6-r44h0e4624f_0.conda",
+      "sha256": "7c4865fac87d54bf07dad26759694710beee5abacdc66b24bef5d79b4503fb96",
+      "bytes": 4316599,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/r-matrix-1.7_6-r44h0e4624f_0.conda"
+    },
+    {
+      "name": "libssh2",
+      "version": "1.11.1",
+      "file": "libssh2-1.11.1-h6154650_1.conda",
+      "sha256": "7e463000fa1cba3f3a6597b776f6ab301d425a96e3bc20d0d9d76a3b9f237aa3",
+      "bytes": 306045,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libssh2-1.11.1-h6154650_1.conda"
+    },
+    {
+      "name": "libnghttp2",
+      "version": "1.68.1",
+      "file": "libnghttp2-1.68.1-h74cf4be_1.conda",
+      "sha256": "11a2f54a6f391e25738bce0023e6ef499600147bbcf21c1fa69d2e251b03cc6a",
+      "bytes": 649974,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libnghttp2-1.68.1-h74cf4be_1.conda"
+    },
+    {
+      "name": "libblas",
+      "version": "3.11.0",
+      "file": "libblas-3.11.0-11_h4a7cf45_openblas.conda",
+      "sha256": "d942e0c820d60a613a6f786d074f0820fb6343e3f1ccfb110b1d98b44fb75968",
+      "bytes": 18246,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libblas-3.11.0-11_h4a7cf45_openblas.conda"
+    },
+    {
+      "name": "sysroot_linux-64",
+      "version": "2.34",
+      "file": "sysroot_linux-64-2.34-h087de78_3.conda",
+      "sha256": "08c50c314b331730eeb8f87c39a45e5426a5463e078392ab283e2552d753443e",
+      "bytes": 40779381,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/noarch/sysroot_linux-64-2.34-h087de78_3.conda"
+    },
+    {
+      "name": "libxcb",
+      "version": "1.17.0",
+      "file": "libxcb-1.17.0-hb83e432_2.conda",
+      "sha256": "7b49e6fd2a584b7f072943e6adf4149677af5121246975278804782d37752837",
+      "bytes": 395120,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libxcb-1.17.0-hb83e432_2.conda"
+    },
+    {
+      "name": "graphite2",
+      "version": "1.3.15",
+      "file": "graphite2-1.3.15-h54a6638_1.conda",
+      "sha256": "7fa3b6a9c081fa3e545573152a788d061a0a0ba57df7251cc0f4f75225fc93e7",
+      "bytes": 102835,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/graphite2-1.3.15-h54a6638_1.conda"
+    },
+    {
+      "name": "make",
+      "version": "4.4.1",
+      "file": "make-4.4.1-hb03c661_3.conda",
+      "sha256": "4c65d2769847778a6d84db6984ac81bcec6f8958d349f1fe57ae040ccc56a801",
+      "bytes": 510695,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/make-4.4.1-hb03c661_3.conda"
+    },
+    {
+      "name": "libev",
+      "version": "4.33",
+      "file": "libev-4.33-h280c20c_3.conda",
+      "sha256": "e4418f68d01a6307c4431b585c71b584f40189877364e542ee87deb777f5e85b",
+      "bytes": 43220,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libev-4.33-h280c20c_3.conda"
+    },
+    {
+      "name": "r-irlba",
+      "version": "2.3.5.1",
+      "file": "r-irlba-2.3.5.1-r44h0e4624f_4.conda",
+      "sha256": "1440c34d5932f368112b21b4afc47dfc0f72a03214494ac185180c25a5ac2b39",
+      "bytes": 307776,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/r-irlba-2.3.5.1-r44h0e4624f_4.conda"
+    },
+    {
+      "name": "libstdcxx",
+      "version": "16.2.0",
+      "file": "libstdcxx-16.2.0-h934c35e_7.conda",
+      "sha256": "fa7018298629fc429971fffd6ecba3d27a7b02e4e890d6a93ea01ffebe8cb745",
+      "bytes": 6615436,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libstdcxx-16.2.0-h934c35e_7.conda"
+    },
+    {
+      "name": "pixman",
+      "version": "0.46.4",
+      "file": "pixman-0.46.4-h54a6638_3.conda",
+      "sha256": "829d8288764282de5a9f7b9169acb75cc7dc0b6c3fe2535cfe87dea3436bbc5d",
+      "bytes": 376704,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/pixman-0.46.4-h54a6638_3.conda"
+    },
+    {
+      "name": "libffi",
+      "version": "3.4.6",
+      "file": "libffi-3.4.6-h2dba641_1.conda",
+      "sha256": "764432d32db45466e87f10621db5b74363a9f847d2b8b1f9743746cd160f06ab",
+      "bytes": 57433,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libffi-3.4.6-h2dba641_1.conda"
+    },
+    {
+      "name": "xorg-libxau",
+      "version": "1.0.12",
+      "file": "xorg-libxau-1.0.12-h7cc23a3_2.conda",
+      "sha256": "3ec065b94554dc48a4ca582a960a5484bc166b26e83ce0954653e08d17e8bd53",
+      "bytes": 18793,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/xorg-libxau-1.0.12-h7cc23a3_2.conda"
+    },
+    {
+      "name": "libiconv",
+      "version": "1.18",
+      "file": "libiconv-1.18-h0cb94f2_3.conda",
+      "sha256": "f943117edb9cd4d9c61cc972eee5a34291dc55ea7a6e9e38da104995841cbcb6",
+      "bytes": 789471,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libiconv-1.18-h0cb94f2_3.conda"
+    },
+    {
+      "name": "xorg-libxdmcp",
+      "version": "1.1.5",
+      "file": "xorg-libxdmcp-1.1.5-h7cc23a3_2.conda",
+      "sha256": "8a095df9bc1d2e50f2504ce8858a047ae29ea634aad6cc0b43298c63361da6d9",
+      "bytes": 22606,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/xorg-libxdmcp-1.1.5-h7cc23a3_2.conda"
+    },
+    {
+      "name": "xorg-libx11",
+      "version": "1.8.13",
+      "file": "xorg-libx11-1.8.13-he1eb515_1.conda",
+      "sha256": "68053eebfa9f0d91666786c8fb5839d989aa9b869add92cb8815228bb2d7302c",
+      "bytes": 839578,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/xorg-libx11-1.8.13-he1eb515_1.conda"
+    },
+    {
+      "name": "libstdcxx-devel_linux-64",
+      "version": "16.2.0",
+      "file": "libstdcxx-devel_linux-64-16.2.0-h86e191b_107.conda",
+      "sha256": "ebbad84bdebd8a9964020d74dcce0f211f1431878c66326f6115dcb59e4c3469",
+      "bytes": 23329491,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/noarch/libstdcxx-devel_linux-64-16.2.0-h86e191b_107.conda"
+    },
+    {
+      "name": "libjpeg-turbo",
+      "version": "3.2.0",
+      "file": "libjpeg-turbo-3.2.0-hb03c661_1.conda",
+      "sha256": "bba8538e6538ed58a8479b332337b96986561f975d06cfa2039a016c2d246ee4",
+      "bytes": 650434,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/libjpeg-turbo-3.2.0-hb03c661_1.conda"
+    },
+    {
+      "name": "openssl",
+      "version": "3.6.4",
+      "file": "openssl-3.6.4-h781a0a9_0.conda",
+      "sha256": "4747b2d6a8336f52343bceb8a1ebf41a9e6e665b9d2e3f989972de53a310599e",
+      "bytes": 3202955,
+      "already_cached": false,
+      "public_url": "https://conda.anaconda.org/conda-forge/linux-64/openssl-3.6.4-h781a0a9_0.conda"
+    }
+  ],
+  "failures": [
+    {
+      "name": "gcc_impl_linux-64",
+      "error_class": "RuntimeError",
+      "detail": "gcc_impl_linux-64: URLError"
+    }
+  ],
+  "new_received_bytes": 209774268,
+  "elapsed_seconds": 389.5531562520191,
+  "authentication_used": false
+}

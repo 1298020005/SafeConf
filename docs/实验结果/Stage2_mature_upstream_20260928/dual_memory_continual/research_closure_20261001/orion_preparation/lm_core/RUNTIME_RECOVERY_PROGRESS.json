@@ -1,0 +1,21 @@
+{
+  "started_at_utc": "2026-10-01T17:24:10Z",
+  "controller_pid": 82039,
+  "status": "PASS",
+  "scope": "isolated_runtime_and_synthetic_fixture_only",
+  "updated_at_utc": "2026-10-01T17:26:47Z",
+  "new_received_bytes": 28356492,
+  "prefix": "/home/yyf/.conda/envs/safeconf-orion-lm-20261002",
+  "install_pid": 83169,
+  "install_tool_session": 51865,
+  "fetch_pid": 82526,
+  "fetch_tool_session": 24269,
+  "fetch_status": "PASS",
+  "cached_archives_verified": 94,
+  "missing_archive_verified": true,
+  "offline_install_exit_code": 0,
+  "synthetic_fixture_exit_code": 0,
+  "synthetic_fixture_session": 1871,
+  "fixture_checks": 20,
+  "fixture_max_absolute_difference": 4.44089209850063e-16
+}

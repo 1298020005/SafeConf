@@ -1,0 +1,575 @@
+{
+  "checked": [
+    {
+      "name": "readline",
+      "bytes": 348899,
+      "sha256": "01b3fe073a66e321970d09e04b388708f8cbdca5cdfbfcb7c9eeb470ad10383d",
+      "pass": true
+    },
+    {
+      "name": "zstd",
+      "bytes": 601301,
+      "sha256": "47d682b9f6d6ec9eb1a6e6c3e75ea6273e899e78fb7fc59f81d39745009fbc60",
+      "pass": true
+    },
+    {
+      "name": "libzlib",
+      "bytes": 63713,
+      "sha256": "eb8a0db0aa570124f7d2a93d7c7f596e3390df5e047818d873baad32985fc736",
+      "pass": true
+    },
+    {
+      "name": "fribidi",
+      "bytes": 64102,
+      "sha256": "3ba79ebfbd14ca5db4affaf10ee8001064e907de5baabc2dbe5bcd9aec856c9f",
+      "pass": true
+    },
+    {
+      "name": "xorg-libxt",
+      "bytes": 384261,
+      "sha256": "dff31677674be86f98ee929a796edf2cf7c78bf38610b122a63af9af752d5bf7",
+      "pass": true
+    },
+    {
+      "name": "xorg-libice",
+      "bytes": 62517,
+      "sha256": "49b532d1df875c6749d9078b56a76f3f5db49a5abe0ca620b593ed474ef0ebf1",
+      "pass": true
+    },
+    {
+      "name": "gfortran_impl_linux-64",
+      "bytes": 21139940,
+      "sha256": "263277d04b6d7cc8cb02f73977ff6ae77bbb0b14f8b355667bc337f3fa454ef3",
+      "pass": true
+    },
+    {
+      "name": "libgcc-ng",
+      "bytes": 28616,
+      "sha256": "03b54d7008de080a17cc2174b0e4acd6d06e1c981b2eb19846f46d8f59966034",
+      "pass": true
+    },
+    {
+      "name": "liblzma-devel",
+      "bytes": 491970,
+      "sha256": "adef6e8b60afb684110b06b5310977c6836e1c923ce3ec199f45c0f000b42f20",
+      "pass": true
+    },
+    {
+      "name": "gxx_impl_linux-64",
+      "bytes": 16987505,
+      "sha256": "f873532a86ce9073a7255dec909472c2a271a57db938f383b630a3caa0b47709",
+      "pass": true
+    },
+    {
+      "name": "xz-gpl-tools",
+      "bytes": 40118,
+      "sha256": "ed6dbec5e4f0f71e7ac629b90dc4c9fba38d194cc88eab891c29e461b408977a",
+      "pass": true
+    },
+    {
+      "name": "libpng",
+      "bytes": 316872,
+      "sha256": "c7381be8ef713501f6cd2f5ad473e401f2edeaec3c46788296b8dbf0de165e15",
+      "pass": true
+    },
+    {
+      "name": "libfreetype6",
+      "bytes": 387671,
+      "sha256": "ec607dd5445dd17ff6bf8b7fe6832e5504c226dd91d3aaea7ba83569808b0ce4",
+      "pass": true
+    },
+    {
+      "name": "libstdcxx-ng",
+      "bytes": 28665,
+      "sha256": "337f481db36cc357884f05f404ccd1b3a7e0fc1ee48ec5c884e4281d213bc863",
+      "pass": true
+    },
+    {
+      "name": "freetype",
+      "bytes": 175239,
+      "sha256": "612a8e0c1a6ecae23da54d81ef395f6ebb5c8e4468ec2611593ebce75876a4e0",
+      "pass": true
+    },
+    {
+      "name": "libfreetype",
+      "bytes": 8407,
+      "sha256": "fb12ecb46c30d18d928c0e8fc346ab13b5f6fc8a9cacae4f2f4bb188782586f5",
+      "pass": true
+    },
+    {
+      "name": "c-ares",
+      "bytes": 228700,
+      "sha256": "9c37cc233238adf366ea75b0e845662a5be07ceadf62e458183516369340274b",
+      "pass": true
+    },
+    {
+      "name": "ld_impl_linux-64",
+      "bytes": 745303,
+      "sha256": "27d83f1188cd19bcb7754a078b3fa7f4cfb8527f8eb2fde54dd01fc529d1adec",
+      "pass": true
+    },
+    {
+      "name": "sed",
+      "bytes": 268482,
+      "sha256": "b013d2085ce4ac01daec7b30472e9f3b6c2d69eb3a3a85a6cee3e01a3cb4f61a",
+      "pass": true
+    },
+    {
+      "name": "libopenblas",
+      "bytes": 6845411,
+      "sha256": "69a722751e14eab2eb3bfdcb9acb1187afbd962b0c49b48d829341e0f6787f60",
+      "pass": true
+    },
+    {
+      "name": "gsl",
+      "bytes": 3376423,
+      "sha256": "132a918b676dd1f533d7c6f95e567abf7081a6ea3251c3280de35ef600e0da87",
+      "pass": true
+    },
+    {
+      "name": "_r-mutex",
+      "bytes": 3566,
+      "sha256": "e58f9eeb416b92b550e824bcb1b9fb1958dee69abfe3089dfd1a9173e3a0528a",
+      "pass": true
+    },
+    {
+      "name": "fonts-conda-forge",
+      "bytes": 4059,
+      "sha256": "54eea8469786bc2291cc40bca5f46438d3e062a399e8f53f013b6a9f50e98333",
+      "pass": true
+    },
+    {
+      "name": "krb5",
+      "bytes": 1394333,
+      "sha256": "2a5c38c85e63df84c4e69ee71439841ce570d259ae3060627bb9a49a938d66f4",
+      "pass": true
+    },
+    {
+      "name": "font-ttf-source-code-pro",
+      "bytes": 700814,
+      "sha256": "00925c8c055a2275614b4d983e1df637245e19058d79fc7dd1a93b8d9fb4b139",
+      "pass": true
+    },
+    {
+      "name": "bwidget",
+      "bytes": 134624,
+      "sha256": "5451e5d9abe192438f9efe8c0737c6ac0ddd6cfb932cb88e2ef2f88e97fc3c3a",
+      "pass": true
+    },
+    {
+      "name": "libglib",
+      "bytes": 3947789,
+      "sha256": "18e354d30a60441b0bf5fcbb125b6b22fd0df179620ae834e2533d44d1598211",
+      "pass": true
+    },
+    {
+      "name": "libgcc",
+      "bytes": 1058444,
+      "sha256": "e031634c3a928f9594eba868bc46ef5230d6571a364a0c63215b06c4563bfcea",
+      "pass": true
+    },
+    {
+      "name": "tzdata",
+      "bytes": 118849,
+      "sha256": "b928c30ddcb0e3f544c6eade8352737e6e610e263276b90232db6a578ef899d8",
+      "pass": true
+    },
+    {
+      "name": "icu",
+      "bytes": 12129203,
+      "sha256": "71e750d509f5fa3421087ba88ef9a7b9be11c53174af3aa4d06aff4c18b38e8e",
+      "pass": true
+    },
+    {
+      "name": "liblapack",
+      "bytes": 18227,
+      "sha256": "1ad3f43c9319ef398a8ef45989f4903a06e3965b51e77fc669a4c894168a8411",
+      "pass": true
+    },
+    {
+      "name": "harfbuzz",
+      "bytes": 1730226,
+      "sha256": "5bd0f3674808862838d6e2efc0b3075e561c34309c5c2f4c976f7f1f57c91112",
+      "pass": true
+    },
+    {
+      "name": "pango",
+      "bytes": 453100,
+      "sha256": "9c00bbc8871b9ce00d1a1f0c1a64f76c032cf16a56a28984b9bb59e46af3932d",
+      "pass": true
+    },
+    {
+      "name": "libgcc-devel_linux-64",
+      "bytes": 3099665,
+      "sha256": "f1e7465f6b53f89b325e441c30ad7b19407b051eca556b6d0386ec05513b8e76",
+      "pass": true
+    },
+    {
+      "name": "libtiff",
+      "bytes": 459753,
+      "sha256": "10e125da82ca93e09191e66e5a94d566b2cf8d4024e2a0db3a9114297447e0d9",
+      "pass": true
+    },
+    {
+      "name": "curl",
+      "bytes": 194657,
+      "sha256": "8eb4ebeae7230110569da734e2420aee84f6977850bae4af94dc7f0b382f9d89",
+      "pass": true
+    },
+    {
+      "name": "pthread-stubs",
+      "bytes": 9630,
+      "sha256": "4a44fd00ea73b79ca2c89b0727b9ccf61c506ead71e67a9abfa4c590042b5a4a",
+      "pass": true
+    },
+    {
+      "name": "_openmp_mutex",
+      "bytes": 28948,
+      "sha256": "1dd3fffd892081df9726d7eb7e0dea6198962ba775bd88842135a4ddb4deb3c9",
+      "pass": true
+    },
+    {
+      "name": "tktable",
+      "bytes": 103903,
+      "sha256": "14096a4de75555f72db8e2b9a76e202623169de1a81330684dedb3be70010537",
+      "pass": true
+    },
+    {
+      "name": "keyutils",
+      "bytes": 135295,
+      "sha256": "dd053c96dcb0dcfd59422aefea9d2fe937a190167f34fba7893ec1e10a7e8963",
+      "pass": true
+    },
+    {
+      "name": "pcre2",
+      "bytes": 956207,
+      "sha256": "09717569649d89caafbf32f6cda1e65aef86e5a86c053d30e4ce77fca8d27b68",
+      "pass": true
+    },
+    {
+      "name": "libgfortran5",
+      "bytes": 2528180,
+      "sha256": "04dbab12c925b92977bb835dd2f5eda413607afa79f95a554e5a04b07a380322",
+      "pass": true
+    },
+    {
+      "name": "libgfortran-ng",
+      "bytes": 28630,
+      "sha256": "d5c80029e15b2e4c404a9a7189b607be566c7ea6142d43291c81648958ffe1f0",
+      "pass": true
+    },
+    {
+      "name": "xz",
+      "bytes": 23610,
+      "sha256": "547b2392d8f7b76efd4a0970946f6da2a1136ad5fe3dc936af81e02eb7181076",
+      "pass": true
+    },
+    {
+      "name": "font-ttf-dejavu-sans-mono",
+      "bytes": 397370,
+      "sha256": "58d7f40d2940dd0a8aa28651239adbf5613254df0f75789919c4e6762054403b",
+      "pass": true
+    },
+    {
+      "name": "font-ttf-ubuntu",
+      "bytes": 1620504,
+      "sha256": "2821ec1dc454bd8b9a31d0ed22a7ce22422c0aef163c59f49dfdf915d0f0ca14",
+      "pass": true
+    },
+    {
+      "name": "libgfortran",
+      "bytes": 28571,
+      "sha256": "9682ae4dd11487e10b904b3cb3ab6379cad25233d45fdfdf90d54349df244494",
+      "pass": true
+    },
+    {
+      "name": "fontconfig",
+      "bytes": 296288,
+      "sha256": "5a3eb10b18a97223ab06b3a7f0d7f56658db2f2800e2f2af95836fe3bf55ba63",
+      "pass": true
+    },
+    {
+      "name": "libwebp-base",
+      "bytes": 428430,
+      "sha256": "8415001414f488c85b72b9d8cc2071dfb3981a47bc3c8eb56ef91a57d12eae7f",
+      "pass": true
+    },
+    {
+      "name": "binutils_impl_linux-64",
+      "bytes": 3713752,
+      "sha256": "fb7bf36984a37ce7e4714d1d1da0bd0e3bfc679520f5cdc184afc676fd4b5da2",
+      "pass": true
+    },
+    {
+      "name": "r-lattice",
+      "bytes": 1426409,
+      "sha256": "2590f5c6b4a6e8474cf5562346a995e91549e2bc122b45959b3a6305cd2352b5",
+      "pass": true
+    },
+    {
+      "name": "r-base",
+      "bytes": 27136871,
+      "sha256": "41759845292822795e3a30ab5fbd49bf5197e422d7a27880838110324f22255b",
+      "pass": true
+    },
+    {
+      "name": "tk",
+      "bytes": 3566806,
+      "sha256": "a1a241d172c1ccab067ba245206dd048bc3c2d1b84504b53c9468e99adfc16a1",
+      "pass": true
+    },
+    {
+      "name": "libgomp",
+      "bytes": 640566,
+      "sha256": "92a0bb350c7be6a4eedcb4e111c60aefd176018e6b1c009a6e025dbe9bbcd758",
+      "pass": true
+    },
+    {
+      "name": "kernel-headers_linux-64",
+      "bytes": 1410267,
+      "sha256": "c4d973dd80ab10028b3e4c58c1c6d8f437bfeaf6069dafb1130dabc550e9caf4",
+      "pass": true
+    },
+    {
+      "name": "libstdcxx-devel_linux-64",
+      "bytes": 23329491,
+      "sha256": "ebbad84bdebd8a9964020d74dcce0f211f1431878c66326f6115dcb59e4c3469",
+      "pass": true
+    },
+    {
+      "name": "lerc",
+      "bytes": 271158,
+      "sha256": "bf9fdebf55d8bc99d83531cdffda00703f4dc5f93a1a956768c147362c72feda",
+      "pass": true
+    },
+    {
+      "name": "xz-tools",
+      "bytes": 96459,
+      "sha256": "c74fa3eddd3ea648456517948f85068d8a07acad7752fd83c7e95b6cebb7114a",
+      "pass": true
+    },
+    {
+      "name": "font-ttf-inconsolata",
+      "bytes": 96530,
+      "sha256": "c52a29fdac682c20d252facc50f01e7c2e7ceac52aa9817aaf0bb83f7559ec5c",
+      "pass": true
+    },
+    {
+      "name": "libsanitizer",
+      "bytes": 8115383,
+      "sha256": "e383569c331239308a8663facb76208fc0e141131ff3d17c1c2e50f34716a5a9",
+      "pass": true
+    },
+    {
+      "name": "fonts-conda-ecosystem",
+      "bytes": 3667,
+      "sha256": "a997f2f1921bb9c9d76e6fa2f6b408b7fa549edd349a77639c9fe7a23ea93e61",
+      "pass": true
+    },
+    {
+      "name": "bzip2",
+      "bytes": 257808,
+      "sha256": "1a0d382c515ebf55f8ee1f38c8b81bc95af5c2acc42ad53b66bc5df932032f96",
+      "pass": true
+    },
+    {
+      "name": "libuuid",
+      "bytes": 34442,
+      "sha256": "f34b8d1de9a2bf62476d8608057d9b8a918d97444236dc53a47128f2fae79041",
+      "pass": true
+    },
+    {
+      "name": "libcurl",
+      "bytes": 478914,
+      "sha256": "7d243f45a48f62cb8e3b871dd336137fe0fb90094a191756fb553508837f6338",
+      "pass": true
+    },
+    {
+      "name": "libdeflate",
+      "bytes": 73710,
+      "sha256": "82e134c8a08b1eed9a2ed8ab578b89aa1730dcde3dea8dd87645ed0637878e54",
+      "pass": true
+    },
+    {
+      "name": "libcblas",
+      "bytes": 18196,
+      "sha256": "f7d1bbdea61cf94ba219d17b2cb571a29830f8025385af799bff5a7ad1ef45e6",
+      "pass": true
+    },
+    {
+      "name": "ca-certificates",
+      "bytes": 131780,
+      "sha256": "0a0544cf95f64394fe4959286f5c71f5444ad58feb0602e53becb27448d24da6",
+      "pass": true
+    },
+    {
+      "name": "cairo",
+      "bytes": 978114,
+      "sha256": "3bd6a391ad60e471de76c0e9db34986c4b5058587fbf2efa5a7f54645e28c2c7",
+      "pass": true
+    },
+    {
+      "name": "r-matrix",
+      "bytes": 4316599,
+      "sha256": "7c4865fac87d54bf07dad26759694710beee5abacdc66b24bef5d79b4503fb96",
+      "pass": true
+    },
+    {
+      "name": "sysroot_linux-64",
+      "bytes": 40779381,
+      "sha256": "08c50c314b331730eeb8f87c39a45e5426a5463e078392ab283e2552d753443e",
+      "pass": true
+    },
+    {
+      "name": "pixman",
+      "bytes": 376704,
+      "sha256": "829d8288764282de5a9f7b9169acb75cc7dc0b6c3fe2535cfe87dea3436bbc5d",
+      "pass": true
+    },
+    {
+      "name": "libjpeg-turbo",
+      "bytes": 650434,
+      "sha256": "bba8538e6538ed58a8479b332337b96986561f975d06cfa2039a016c2d246ee4",
+      "pass": true
+    },
+    {
+      "name": "ncurses",
+      "bytes": 911196,
+      "sha256": "5d46557214ed184381dafe835b7c94a474a1c3b307a08a250b1ea4779b44ffb3",
+      "pass": true
+    },
+    {
+      "name": "liblzma",
+      "bytes": 112995,
+      "sha256": "9787df8c22a59c9a70d3e5a10db9ad663485e75e9ccc3f09bd092cb7b95e0dab",
+      "pass": true
+    },
+    {
+      "name": "libstdcxx",
+      "bytes": 6615436,
+      "sha256": "fa7018298629fc429971fffd6ecba3d27a7b02e4e890d6a93ea01ffebe8cb745",
+      "pass": true
+    },
+    {
+      "name": "xorg-libxrender",
+      "bytes": 34645,
+      "sha256": "6901f91d398811e4ec89d7e20a69abac02a7bfebfaf073338b7ea3d1a99685b7",
+      "pass": true
+    },
+    {
+      "name": "xorg-libsm",
+      "bytes": 30739,
+      "sha256": "ef907caee0665cf3b0f775602cc50e388e3bade8ce22ecade0873ff26604b2fd",
+      "pass": true
+    },
+    {
+      "name": "libexpat",
+      "bytes": 77893,
+      "sha256": "6de73033a7c5f712c9c5a54124e4581e025691029835e5bceaf10a333a7e7bc0",
+      "pass": true
+    },
+    {
+      "name": "xorg-libxext",
+      "bytes": 53124,
+      "sha256": "aa9bbe8b278aacc194e280ff5037f9f9a1f2c5b33ed97de8e7f01cfbe90dda43",
+      "pass": true
+    },
+    {
+      "name": "libedit",
+      "bytes": 135098,
+      "sha256": "6473eb8caf2aae830f37caa93db9b26dddf7ac84b63229e8bf7fc0e5c3ab95b0",
+      "pass": true
+    },
+    {
+      "name": "libiconv",
+      "bytes": 789471,
+      "sha256": "f943117edb9cd4d9c61cc972eee5a34291dc55ea7a6e9e38da104995841cbcb6",
+      "pass": true
+    },
+    {
+      "name": "libssh2",
+      "bytes": 306045,
+      "sha256": "7e463000fa1cba3f3a6597b776f6ab301d425a96e3bc20d0d9d76a3b9f237aa3",
+      "pass": true
+    },
+    {
+      "name": "libnghttp2",
+      "bytes": 649974,
+      "sha256": "11a2f54a6f391e25738bce0023e6ef499600147bbcf21c1fa69d2e251b03cc6a",
+      "pass": true
+    },
+    {
+      "name": "libblas",
+      "bytes": 18246,
+      "sha256": "d942e0c820d60a613a6f786d074f0820fb6343e3f1ccfb110b1d98b44fb75968",
+      "pass": true
+    },
+    {
+      "name": "xorg-libx11",
+      "bytes": 839578,
+      "sha256": "68053eebfa9f0d91666786c8fb5839d989aa9b869add92cb8815228bb2d7302c",
+      "pass": true
+    },
+    {
+      "name": "libxcb",
+      "bytes": 395120,
+      "sha256": "7b49e6fd2a584b7f072943e6adf4149677af5121246975278804782d37752837",
+      "pass": true
+    },
+    {
+      "name": "graphite2",
+      "bytes": 102835,
+      "sha256": "7fa3b6a9c081fa3e545573152a788d061a0a0ba57df7251cc0f4f75225fc93e7",
+      "pass": true
+    },
+    {
+      "name": "make",
+      "bytes": 510695,
+      "sha256": "4c65d2769847778a6d84db6984ac81bcec6f8958d349f1fe57ae040ccc56a801",
+      "pass": true
+    },
+    {
+      "name": "libev",
+      "bytes": 43220,
+      "sha256": "e4418f68d01a6307c4431b585c71b584f40189877364e542ee87deb777f5e85b",
+      "pass": true
+    },
+    {
+      "name": "r-irlba",
+      "bytes": 307776,
+      "sha256": "1440c34d5932f368112b21b4afc47dfc0f72a03214494ac185180c25a5ac2b39",
+      "pass": true
+    },
+    {
+      "name": "openssl",
+      "bytes": 3202955,
+      "sha256": "4747b2d6a8336f52343bceb8a1ebf41a9e6e665b9d2e3f989972de53a310599e",
+      "pass": true
+    },
+    {
+      "name": "xorg-libxau",
+      "bytes": 18793,
+      "sha256": "3ec065b94554dc48a4ca582a960a5484bc166b26e83ce0954653e08d17e8bd53",
+      "pass": true
+    },
+    {
+      "name": "libffi",
+      "bytes": 57433,
+      "sha256": "764432d32db45466e87f10621db5b74363a9f847d2b8b1f9743746cd160f06ab",
+      "pass": true
+    },
+    {
+      "name": "xorg-libxdmcp",
+      "bytes": 22606,
+      "sha256": "8a095df9bc1d2e50f2504ce8858a047ae29ea634aad6cc0b43298c63361da6d9",
+      "pass": true
+    },
+    {
+      "name": "gcc_impl_linux-64",
+      "bytes": 86085260,
+      "sha256": "14acaa661e4c4ef6c65606612b8b08f8f079c6a9e6da3ffcb77056685c675651",
+      "pass": true
+    }
+  ],
+  "missing": []
+}

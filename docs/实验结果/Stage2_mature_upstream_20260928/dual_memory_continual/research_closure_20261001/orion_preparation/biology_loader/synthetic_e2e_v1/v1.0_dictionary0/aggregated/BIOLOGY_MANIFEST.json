@@ -1,0 +1,131 @@
+{
+  "schema": "safeconf_orion_allowed_biology_loader_v1",
+  "status": "COMPLETE",
+  "synthetic_only": true,
+  "scientific_contract_sha256": "a6ab7fcd4137bf58bb762646cc784aafe6ac7539da9132a4e2686161efd856b0",
+  "permit_sha256": "c85e1ce5e341706fc51531d9d8397be13f41dd168d57cb41c98de22d8e68ba74",
+  "loader_sha256": "0a7f0a69fef63b6bb0ba9653de8051ebfcd565965780933e15fc3a7e23386b66",
+  "reader_sha256": "3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312",
+  "roles": [
+    "TRAIN",
+    "TRAIN_CONTROL_SOURCE_SCOPE",
+    "VALIDATION"
+  ],
+  "contexts": [
+    "HCT116",
+    "HEK293T"
+  ],
+  "full_unique_ensembl_genes": 3,
+  "endpoint_genes": 2,
+  "aggregate_units": 5,
+  "control_matrix_rows": {
+    "HCT116": 2,
+    "HEK293T": 4
+  },
+  "matrix_shape": [
+    5,
+    3
+  ],
+  "normalization": {
+    "formula": "mean_cell(log1p(4000 * raw_gene_UMI / official_full_library_total_counts))",
+    "unknown_token_policy": "fail_closed",
+    "cell_weight": "equal per retained cell",
+    "control": "own-context TRAIN NTC excluding preview cells"
+  },
+  "missing_unknown_gene_imputation": false,
+  "sparse_absent_known_gene_policy": "measured literal zero on complete publisher full axis",
+  "private_test_numeric_materialization": false,
+  "test_query_metadata_analysis": false,
+  "expression_decoder": "iter_selected_numeric_lists; byte buffers remain opaque until exact permitted row mask",
+  "complete_cell_dataframe_created": false,
+  "dense_cell_by_gene_created": false,
+  "ambiguous_or_unmapped_allowed_target_omissions_metadata_only": [],
+  "full_PCA_fit_policy": "TRAIN matrix rows only; separate context; this loader does not fit PCA",
+  "file_audits": [
+    {
+      "raw_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v1/v1.0_dictionary0/raw/HCT116_Batch1.parquet",
+      "raw_sha256": "cd72b7a9359aef8f9b1d8e3dc8c9def99d61bb5aa545bac3e8201e2e4954e357",
+      "metadata_parquet_sha256": "8678960f1313c6003f0865190a280ef990246196527b7b4d852042943a84d715",
+      "authorized_physical_row_mask_sha256": "691e02a09744f1284347b4acfb5f179ad2f629b96936e7dc4b57d08da0d6d716",
+      "authorized_row_count": 4,
+      "context": "HCT116",
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 122,
+        "opaque_numeric_bytes_decompressed": 76,
+        "data_pages": 1,
+        "numeric_materialization_rows": null,
+        "private_numeric_values_skipped": 2,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "numeric_materialization_count": 6,
+        "authorized_dictionary_lookups": 0
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 129,
+        "opaque_numeric_bytes_decompressed": 76,
+        "data_pages": 1,
+        "numeric_materialization_rows": null,
+        "private_numeric_values_skipped": 2,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "numeric_materialization_count": 6,
+        "authorized_dictionary_lookups": 0
+      },
+      "iterators_fully_exhausted": true,
+      "token_spool_bytes": 24,
+      "elapsed_seconds": 0.028,
+      "peak_resident_bytes": 339894272
+    },
+    {
+      "raw_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v1/v1.0_dictionary0/raw/HEK293T_Batch1.parquet",
+      "raw_sha256": "ce8248f01ec6248b85bccc4ab724c0f4c8c6f4caed10597efd635a8a1196f698",
+      "metadata_parquet_sha256": "2fef99e17d7cef4af6de86016af510db7f2dbad061bd27abc885ad6055c57448",
+      "authorized_physical_row_mask_sha256": "9f44ac6acb8a37b00b615dc89259d306035be82dee7db2b472e4c48326195440",
+      "authorized_row_count": 2,
+      "context": "HEK293T",
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 104,
+        "opaque_numeric_bytes_decompressed": 44,
+        "data_pages": 1,
+        "numeric_materialization_rows": null,
+        "private_numeric_values_skipped": 1,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "numeric_materialization_count": 3,
+        "authorized_dictionary_lookups": 0
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 108,
+        "opaque_numeric_bytes_decompressed": 44,
+        "data_pages": 1,
+        "numeric_materialization_rows": null,
+        "private_numeric_values_skipped": 1,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "numeric_materialization_count": 3,
+        "authorized_dictionary_lookups": 0
+      },
+      "iterators_fully_exhausted": true,
+      "token_spool_bytes": 12,
+      "elapsed_seconds": 0.008,
+      "peak_resident_bytes": 339894272
+    }
+  ],
+  "resource_budgets": {
+    "max_compressed_chunk_bytes": 1073741824,
+    "max_page_uncompressed_bytes": 134217728,
+    "max_page_level_entries": 16777216,
+    "max_resident_bytes": 6442450944,
+    "max_token_spool_bytes_per_file": 4294967296,
+    "max_group_matrix_bytes": 17179869184,
+    "max_seconds_per_file": 600,
+    "max_cells_per_file": 50000
+  },
+  "peak_resident_bytes": 339894272,
+  "elapsed_seconds": 0.066,
+  "finished_utc": "2026-10-01T17:38:51.682986+00:00"
+}

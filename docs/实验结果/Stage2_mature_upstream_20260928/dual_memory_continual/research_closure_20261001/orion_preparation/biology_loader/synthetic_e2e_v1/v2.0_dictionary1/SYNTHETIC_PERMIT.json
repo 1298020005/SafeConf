@@ -1,0 +1,46 @@
+{
+  "schema": "explicit_role_permit",
+  "synthetic_only": true,
+  "expression_row_materialization_permitted": true,
+  "test_numeric_materialization_permitted": false,
+  "authorized_roles": [
+    "TRAIN",
+    "TRAIN_CONTROL_SOURCE_SCOPE",
+    "VALIDATION"
+  ],
+  "authorized_contexts": [
+    "HCT116",
+    "HEK293T"
+  ],
+  "reader_guarantee": "PRIVATE_NUMERIC_ROWS_NEVER_MATERIALIZED",
+  "frozen_method_contract_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v1/v2.0_dictionary1/SYNTHETIC_CONTRACT.json",
+  "frozen_method_contract_sha256": "c7f04b424ff0a63c6ab1374d5f2456f07b7cee71290651c0ad337e5ea920a92b",
+  "metadata_root": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v1/v2.0_dictionary1/metadata",
+  "raw_root": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v1/v2.0_dictionary1/raw",
+  "metadata_bindings": {
+    "FILE_METADATA_IDENTITY.json": "988909c0c93e57ccccbe220a44dc921131791946b9372e832383fb27072d6bb1",
+    "GENE_MANIFEST.csv": "72db93e496ea233dd046053be4d002327ab052eeed25575a85e2ab8d54a6d62a",
+    "gene_metadata.parquet": "2e50450cd222cbf5fb37061d4657b27ccfd9981e6a1e2b573cc986386dca53e4",
+    "PREPARATION_POLICY.json": "fc77cb8f865e5672234ce4f1be30a657c51357a956c5b8ebd94a2ee48585a1de"
+  },
+  "implementation_bindings": {
+    "loader": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/build_safeconf_orion_allowed_biology_agent.py",
+      "sha256": "0a7f0a69fef63b6bb0ba9653de8051ebfcd565965780933e15fc3a7e23386b66"
+    },
+    "reader": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/probe_safeconf_private_parquet_agent.py",
+      "sha256": "3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312"
+    }
+  },
+  "resource_budgets": {
+    "max_compressed_chunk_bytes": 1073741824,
+    "max_page_uncompressed_bytes": 134217728,
+    "max_page_level_entries": 16777216,
+    "max_resident_bytes": 6442450944,
+    "max_token_spool_bytes_per_file": 4294967296,
+    "max_group_matrix_bytes": 17179869184,
+    "max_seconds_per_file": 600,
+    "max_cells_per_file": 50000
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "schema": "safeconf_orion_allowed_biology_loader_v1",
+  "expression_read": false,
+  "full_genes": 38606,
+  "endpoint_genes": 3285,
+  "allowed_units": 28947,
+  "contexts": [
+    "HCT116",
+    "HEK293T"
+  ],
+  "roles": [
+    "TRAIN",
+    "VALIDATION",
+    "TRAIN_CONTROL_SOURCE_SCOPE"
+  ],
+  "files": 40,
+  "omissions": [],
+  "test_metadata_coverage_or_distributions_examined": false,
+  "resource_budgets": {
+    "max_compressed_chunk_bytes": 1073741824,
+    "max_page_uncompressed_bytes": 134217728,
+    "max_page_level_entries": 16777216,
+    "max_resident_bytes": 6442450944,
+    "max_token_spool_bytes_per_file": 4294967296,
+    "max_group_matrix_bytes": 17179869184,
+    "max_seconds_per_file": 600,
+    "max_cells_per_file": 50000
+  }
+}

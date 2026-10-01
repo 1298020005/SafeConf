@@ -1,0 +1,73 @@
+{
+  "schema": "safeconf_orion_explicit_implementation_role_permit_v1",
+  "synthetic_only": false,
+  "expression_row_materialization_permitted": true,
+  "audited_production_integration_approved": true,
+  "test_numeric_materialization_permitted": false,
+  "authorized_roles": [
+    "TRAIN",
+    "TRAIN_CONTROL_SOURCE_SCOPE",
+    "VALIDATION"
+  ],
+  "authorized_contexts": [
+    "HCT116",
+    "HEK293T"
+  ],
+  "reader_guarantee": "PRIVATE_NUMERIC_ROWS_NEVER_MATERIALIZED",
+  "frozen_method_contract_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_METHOD_CONTRACT.json",
+  "frozen_method_contract_sha256": "6b8a26939c8c6134dbf2e8294ee7905fccc2122b570b046f3183a3d2f5caba97",
+  "metadata_root": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1",
+  "raw_root": "/home/yyf/data/safeconf_orion_frozen40_20261002",
+  "metadata_bindings": {
+    "FILE_METADATA_IDENTITY.json": "89901ca8afbb6fe86664c54c5f6c2bab27b21d77f75563395e25c3dd0d9659f6",
+    "GENE_MANIFEST.csv": "eb377ecb5ed1f99e259e6e8154f0edae68065ba36e3eae59ce50c2f72d8b72d4",
+    "gene_metadata.parquet": "33900a0dbaeafb84601c7c8ba7c6642c440774fc3f49613dab11cf1f2bf0fdbf",
+    "PREPARATION_POLICY.json": "594a5aef77684dc99666022c76666100a5c9791082532d00b7c70ddfe1fac3b7"
+  },
+  "implementation_bindings": {
+    "loader": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/build_safeconf_orion_allowed_biology_agent.py",
+      "sha256": "cdf261ffcae854f49d469437492a12b7f835aae7b720bbe565044d8a89369e8b"
+    },
+    "reader": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/probe_safeconf_private_parquet_agent.py",
+      "sha256": "3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312"
+    }
+  },
+  "library_sum_check_roles": [
+    "TRAIN",
+    "TRAIN_CONTROL_SOURCE_SCOPE"
+  ],
+  "resource_budgets": {
+    "max_compressed_chunk_bytes": 1073741824,
+    "max_page_uncompressed_bytes": 134217728,
+    "max_page_level_entries": 16777216,
+    "max_resident_bytes": 6442450944,
+    "max_token_spool_bytes_per_file": 4294967296,
+    "max_group_matrix_bytes": 17179869184,
+    "max_seconds_per_file": 600,
+    "max_cells_per_file": 50000
+  },
+  "technical_dependency_overrides": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/probe_safeconf_private_parquet_agent.py",
+      "original_sha256": "9fd3c565a3dc333dd24e287dfb69573277fa5b6bbcec64b084dbeac82636af12",
+      "sha256": "3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312",
+      "reason": "bounded streaming and pre-decompression memory guards; scientific rules unchanged"
+    }
+  ],
+  "issued_utc": "2026-10-01T17:46:08.209210+00:00",
+  "authorization_source": "User approved72h execution:train/validation publicbiology and boundedupstream training; testtruth remains unauthorized by this permit",
+  "independent_review": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/private_reader_probe/INTEGRATION_REVIEW.json",
+    "sha256": "3b8a21b02ba697d3b3d57a8b1de2ff2480f208e8ad214ba08ce6a3f0a0a9ef44",
+    "cases": 20
+  },
+  "approved_operations": [
+    "semantic_train128cellpilot on registeredHCT116_Batch1, no model fit",
+    "fixed40shard TRAIN/VALIDATION/control cellmean aggregation after full verified acquisition"
+  ],
+  "private_numeric_values_or_rowvectors_created": false,
+  "validation_library_sum_diagnostics": false,
+  "permanent_test_open_authorized": false
+}

@@ -1,0 +1,67 @@
+[
+  {
+    "path": "BIOLOGY_MANIFEST.json",
+    "bytes": 5651,
+    "sha256": "6ecf46832fbdddbdfe56799c4e54a5a9b5a927f49d056607ece4823f50daa421"
+  },
+  {
+    "path": "CELL_COUNTS.npy",
+    "bytes": 168,
+    "sha256": "33ae04d41e8e4a43fd7abae74f79f468d86cb2fc2eb9df756786b15e561880fc"
+  },
+  {
+    "path": "ENDPOINT3285_EFFECTS.npy",
+    "bytes": 208,
+    "sha256": "767453c2f719805cf2c38a139e18723e7409216afa55caaebbf81e053b54b882"
+  },
+  {
+    "path": "ENDPOINT3285_MEANS.npy",
+    "bytes": 208,
+    "sha256": "56b1630712b38f06bc81da918bd685d04972a602866348250b2da14da6dc2cc4"
+  },
+  {
+    "path": "ENDPOINT_GENE_MANIFEST.csv",
+    "bytes": 95,
+    "sha256": "72db93e496ea233dd046053be4d002327ab052eeed25575a85e2ab8d54a6d62a"
+  },
+  {
+    "path": "FULL_EFFECTS.npy",
+    "bytes": 248,
+    "sha256": "3084e9acd2fe5bdc3034f250cb2c411dc6022fb55ca252bf5378c892c474601d"
+  },
+  {
+    "path": "FULL_GENE_AXIS.csv",
+    "bytes": 59,
+    "sha256": "c316333ddeeb5af6a8edee6c81d8b2a2a41919b0cb01585eb801c9a2116de136"
+  },
+  {
+    "path": "FULL_MEANS.npy",
+    "bytes": 248,
+    "sha256": "bf63025cf9aea50c5316d7787d43b0535658a48d1cab37ef6a13f72f0ea94deb"
+  },
+  {
+    "path": "FULL_SUMS.npy",
+    "bytes": 248,
+    "sha256": "1b7bbf287d21ed852a13fcd15f5ec5e916231f6756e5a8e2e4f707bd84672cf5"
+  },
+  {
+    "path": "QUERY_METADATA_ONLY.csv",
+    "bytes": 489,
+    "sha256": "ca2aeb5d7a4c5a2f8a6b36837c233bd3f6e74a7be61c1ce2cfc7fd3eaed23cc0"
+  },
+  {
+    "path": "TRAIN_CONTROL_SOURCE_SCOPE_MATRIX_ROWS.npy",
+    "bytes": 144,
+    "sha256": "330c67b35ccfcfd842979c1b5ed1d90337667ab21d4abb3a9bb214f98e30ddf1"
+  },
+  {
+    "path": "TRAIN_MATRIX_ROWS.npy",
+    "bytes": 144,
+    "sha256": "412c9d95f0f0aa5c5eb319837a217125e3ae4438320123ce3b22421a105d6d04"
+  },
+  {
+    "path": "VALIDATION_MATRIX_ROWS.npy",
+    "bytes": 136,
+    "sha256": "fc44e6cab97678b988677b1e24dc073c80b029ccf6566c7bc1bd9ec1061a6106"
+  }
+]

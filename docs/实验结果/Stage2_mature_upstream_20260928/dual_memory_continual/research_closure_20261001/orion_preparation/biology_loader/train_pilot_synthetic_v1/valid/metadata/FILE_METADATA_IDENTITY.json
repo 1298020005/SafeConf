@@ -1,0 +1,13 @@
+[
+  {
+    "path": "data/HCT116_Batch1.parquet",
+    "context": "HCT116",
+    "sample": "HCT116_Batch1",
+    "rows": 350,
+    "row_groups": 1,
+    "publisher_whole_file_bytes": 32540,
+    "publisher_LFS_sha256": "e9937ddb0cc67a5868977b58b1a0891cf4ebe867c5e8457f98a8e39565b2ed44",
+    "metadata_parquet_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/train_pilot_synthetic_v1/valid/metadata/row_metadata.parquet",
+    "metadata_parquet_sha256": "b86fe94e686e11181d3c3e77f87f46d7c19ade9e3d954b21f908393050e6fed5"
+  }
+]

@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-01T17:35:14.853472+00:00",
+  "updated_utc": "2026-10-01T18:04:31.297350+00:00",
   "complete": [
     "five-fold nested public biology with four inner folds",
     "three-line sixteen-method matrix with three registered seeds",
@@ -46,7 +46,8 @@
     "Published2025linear predictor exactnumericalcore:20syntheticchecks PASS,maxdiff4.44e-16; Rruntime recovered, Matrixversiondifference disclosed",
     "Strict Parquet reader synthetic12encoding/page/codec cases and failclosed rejection tests; realexpressionnotopened",
     "Future common-biology reader allowedrowspans before CSR extraction;3unittestchecks pass; old frozenstoresnotrewritten",
-    "Publicprovenance study reconstruction:Replogle2022/Nadig2025; known-geneother-contextinformationcondition disclosed"
+    "Publicprovenance study reconstruction:Replogle2022/Nadig2025; known-geneother-contextinformationcondition disclosed",
+    "Actual128TRAIN/controlcells semanticpilot PASS:819072integerexpressionvalues,librarysumgaps0,84.581sec,520MBpeak; fulliteratorproof and noTEST/VALnumerics"
   ],
   "pending": [
     "Strict authorizedOrion TRAIN/VALIDATION biology integration and independent syntheticreview",
@@ -57,18 +58,34 @@
   "new_large_upstream_training": 0,
   "new_download_gb": 0.04440246,
   "completion_claim": "goal active; meaningful diagnostics and registered matrices continue; manuscript prose deferred",
-  "current_work": "Independent strict-loader integration and publishedCPUmodel blindworkflow fixtures; fixed18.138GBOrionacquisition; no manuscript prose",
+  "current_work": "Fixed40Orion download and queued authorizedTRAINVALaggregation→TRAINbinarybridge→publishedCPUlinear pretruthprediction; competence and riskseal preparation; no manuscript",
   "deferred_by_user": [
     "manuscript and supplement prose generation"
   ],
   "new_download_bytes_verified": 44402460,
   "new_dataset_download_gb": 0,
-  "resource_accounting_note": "Raw verifiedobjectbytes, registered objectbytes and retrywirebytes are distinct; package/cache traffic in percomponent ledgers; no test expression or third large upstream training.",
+  "resource_accounting_note": "TRAINsemanticpilot actual84.581seconds CPU, no fits or GPU; datasetacquisition registered18.138GB. Retry13samepublisherSHA recovered228436131newbytes; no data replacement. Fullnewupstreamattempt remains0 until formalvalidationprediction.",
   "new_dataset_download_gb_verified": 3.922378619,
   "new_dataset_download_registered_bytes": 18137568035,
   "new_gpu_hours_tabular_insurance": 0.006375,
   "new_upstream_formal_validation_prediction_attempts": 0,
   "orion_verified_files": 11,
   "orion_registered_files": 41,
-  "orion_test_expression_opened": false
+  "orion_test_expression_opened": false,
+  "background_jobs": [
+    {
+      "name": "registered_download",
+      "pid": 77969,
+      "manifest": "997bdbf33c079746457646cd5fe433e3812063ebc1aefcb6f590376086f15900"
+    },
+    {
+      "name": "registered_blind_CPU_pipeline",
+      "pid": 130370,
+      "status_file": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_full_pipeline_20261002_v1/STATUS.json",
+      "TESTtruth_reader": false
+    }
+  ],
+  "orion_training_expression_read": true,
+  "orion_training_numeric_cells_pilot": 128,
+  "orion_validation_expression_read": false
 }

@@ -1,0 +1,12 @@
+{
+  "complete": 94,
+  "failures": [
+    {
+      "name": "gcc_impl_linux-64",
+      "error_class": "RuntimeError",
+      "detail": "gcc_impl_linux-64: URLError"
+    }
+  ],
+  "new_received_bytes": 209774268,
+  "elapsed_seconds": 389.55076009919867
+}

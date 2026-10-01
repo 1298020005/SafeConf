@@ -1,0 +1,223 @@
+{
+  "status": "SYNTHETIC_SPECIALIZED_ADAPTER_PASSED_NOT_PRODUCTION_AUTHORIZED",
+  "real_orion_expression_or_tokens_accessed": false,
+  "fastparquet": "2026.9.0",
+  "pyarrow": "24.0.0",
+  "private_numeric_row_materialization": false,
+  "physical_private_bytes_read_and_decompressed": true,
+  "cases": [
+    {
+      "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/synthetic_v1.0_dict0_NONE.parquet",
+      "sha256": "4ee2267c8d58d90ee18a02d4534e576301d9e3e30dbd3e81849bd7e5ed610d86",
+      "rows": 600,
+      "authorized_rows": 300,
+      "trace": {
+        "physical_numeric_chunk_bytes_read": 20588,
+        "opaque_numeric_bytes_decompressed": 19160,
+        "data_pages": 68,
+        "private_numeric_values_skipped": 1200,
+        "numeric_materialization_count": 936,
+        "authorized_dictionary_lookups": 0
+      },
+      "passed": true
+    },
+    {
+      "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/synthetic_v1.0_dict0_ZSTD.parquet",
+      "sha256": "776175da71456ebbb37a3ef01dd7f0efcaf97354014ac2b75456316f1e94a299",
+      "rows": 600,
+      "authorized_rows": 300,
+      "trace": {
+        "physical_numeric_chunk_bytes_read": 8395,
+        "opaque_numeric_bytes_decompressed": 19160,
+        "data_pages": 68,
+        "private_numeric_values_skipped": 1200,
+        "numeric_materialization_count": 936,
+        "authorized_dictionary_lookups": 0
+      },
+      "passed": true
+    },
+    {
+      "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/synthetic_v1.0_dict0_SNAPPY.parquet",
+      "sha256": "3335b9512b056e1fde386a2b8153449f474e9c03bfaed63cdad75739e25ed766",
+      "rows": 600,
+      "authorized_rows": 300,
+      "trace": {
+        "physical_numeric_chunk_bytes_read": 9028,
+        "opaque_numeric_bytes_decompressed": 19160,
+        "data_pages": 68,
+        "private_numeric_values_skipped": 1200,
+        "numeric_materialization_count": 936,
+        "authorized_dictionary_lookups": 0
+      },
+      "passed": true
+    },
+    {
+      "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/synthetic_v1.0_dict1_NONE.parquet",
+      "sha256": "3c0177ea03e46611cf4d7899e07abfc83f1240e7a5f7d481b9684aadd6060c32",
+      "rows": 600,
+      "authorized_rows": 300,
+      "trace": {
+        "physical_numeric_chunk_bytes_read": 2832,
+        "opaque_numeric_bytes_decompressed": 2408,
+        "data_pages": 18,
+        "private_numeric_values_skipped": 1200,
+        "numeric_materialization_count": 936,
+        "authorized_dictionary_lookups": 936
+      },
+      "passed": true
+    },
+    {
+      "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/synthetic_v1.0_dict1_ZSTD.parquet",
+      "sha256": "e1695196b15a0b2cb89cdf61c0ba03efcfd91ba1d88932c9d3f5fd103c8347d1",
+      "rows": 600,
+      "authorized_rows": 300,
+      "trace": {
+        "physical_numeric_chunk_bytes_read": 2666,
+        "opaque_numeric_bytes_decompressed": 2408,
+        "data_pages": 18,
+        "private_numeric_values_skipped": 1200,
+        "numeric_materialization_count": 936,
+        "authorized_dictionary_lookups": 936
+      },
+      "passed": true
+    },
+    {
+      "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/synthetic_v1.0_dict1_SNAPPY.parquet",
+      "sha256": "8246f6db393d7576b10e4a3175bfd359b03ca63dc1256597bdfc8aaf3e27298b",
+      "rows": 600,
+      "authorized_rows": 300,
+      "trace": {
+        "physical_numeric_chunk_bytes_read": 2545,
+        "opaque_numeric_bytes_decompressed": 2408,
+        "data_pages": 18,
+        "private_numeric_values_skipped": 1200,
+        "numeric_materialization_count": 936,
+        "authorized_dictionary_lookups": 936
+      },
+      "passed": true
+    },
+    {
+      "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/synthetic_v2.0_dict0_NONE.parquet",
+      "sha256": "4d70c2c62e952b170644843b58e37119a3ef6bbd653484eccf2a3a92df7a2810",
+      "rows": 600,
+      "authorized_rows": 300,
+      "trace": {
+        "physical_numeric_chunk_bytes_read": 20384,
+        "opaque_numeric_bytes_decompressed": 18616,
+        "data_pages": 68,
+        "private_numeric_values_skipped": 1200,
+        "numeric_materialization_count": 936,
+        "authorized_dictionary_lookups": 0
+      },
+      "passed": true
+    },
+    {
+      "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/synthetic_v2.0_dict0_ZSTD.parquet",
+      "sha256": "7e8ae9c4e33c73c07b68ca54a0b2eff9d5b736a1911602148b2d262edcd426c5",
+      "rows": 600,
+      "authorized_rows": 300,
+      "trace": {
+        "physical_numeric_chunk_bytes_read": 8219,
+        "opaque_numeric_bytes_decompressed": 18616,
+        "data_pages": 68,
+        "private_numeric_values_skipped": 1200,
+        "numeric_materialization_count": 936,
+        "authorized_dictionary_lookups": 0
+      },
+      "passed": true
+    },
+    {
+      "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/synthetic_v2.0_dict0_SNAPPY.parquet",
+      "sha256": "0159769ee0c1eba16c26d9a08b176a866b7f75db3c2785e4ddba0888144a95da",
+      "rows": 600,
+      "authorized_rows": 300,
+      "trace": {
+        "physical_numeric_chunk_bytes_read": 8904,
+        "opaque_numeric_bytes_decompressed": 18616,
+        "data_pages": 68,
+        "private_numeric_values_skipped": 1200,
+        "numeric_materialization_count": 936,
+        "authorized_dictionary_lookups": 0
+      },
+      "passed": true
+    },
+    {
+      "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/synthetic_v2.0_dict1_NONE.parquet",
+      "sha256": "b5254f226cf1363c6aa325338ccdcae16aad58f2dae5b20460fbe831ee21af01",
+      "rows": 600,
+      "authorized_rows": 300,
+      "trace": {
+        "physical_numeric_chunk_bytes_read": 2810,
+        "opaque_numeric_bytes_decompressed": 2264,
+        "data_pages": 18,
+        "private_numeric_values_skipped": 1200,
+        "numeric_materialization_count": 936,
+        "authorized_dictionary_lookups": 936
+      },
+      "passed": true
+    },
+    {
+      "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/synthetic_v2.0_dict1_ZSTD.parquet",
+      "sha256": "9e05d5bc640e20059da16244f2394112e2e48ae424488c582e0c7d0aa8c7caac",
+      "rows": 600,
+      "authorized_rows": 300,
+      "trace": {
+        "physical_numeric_chunk_bytes_read": 2770,
+        "opaque_numeric_bytes_decompressed": 2264,
+        "data_pages": 18,
+        "private_numeric_values_skipped": 1200,
+        "numeric_materialization_count": 936,
+        "authorized_dictionary_lookups": 936
+      },
+      "passed": true
+    },
+    {
+      "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/synthetic_v2.0_dict1_SNAPPY.parquet",
+      "sha256": "12d7f82d662c5b93e82cd576d8c389851220b0a2babbf26cd5884845ba241178",
+      "rows": 600,
+      "authorized_rows": 300,
+      "trace": {
+        "physical_numeric_chunk_bytes_read": 2707,
+        "opaque_numeric_bytes_decompressed": 2264,
+        "data_pages": 18,
+        "private_numeric_values_skipped": 1200,
+        "numeric_materialization_count": 936,
+        "authorized_dictionary_lookups": 936
+      },
+      "passed": true
+    }
+  ],
+  "fastparquet_row_filter_negative_proof": [
+    {
+      "dictionary": false,
+      "full_page_numeric_conversion_intercepted": true,
+      "message": "Private sentinel offered to full-page numeric conversion before mask"
+    },
+    {
+      "dictionary": true,
+      "full_page_numeric_conversion_intercepted": true,
+      "message": "Private sentinel offered to full-page numeric conversion before mask"
+    }
+  ],
+  "fail_closed_rejection_proof": [
+    {
+      "case": "unsupported_FLOAT_leaf",
+      "rejected_before_numeric_chunk_read": true
+    },
+    {
+      "case": "unsupported_GZIP_codec",
+      "rejected_before_numeric_chunk_read": true
+    },
+    {
+      "case": "malformed_first_PLAIN_payload_length",
+      "rejected_before_numeric_conversion": true
+    }
+  ],
+  "limitations": [
+    "No production expression permit is created by this test.",
+    "One LIST leaf and one rowgroup only; unknown encoding/schema/codec is rejected.",
+    "Full numeric buffers and dictionaries remain opaque uint8/byte views.",
+    "Structural def/repetition levels and dictionary routing IDs are parsed for all rows.",
+    "Audited production integration, immutable role-mask binding and streaming budgets remain required."
+  ]
+}

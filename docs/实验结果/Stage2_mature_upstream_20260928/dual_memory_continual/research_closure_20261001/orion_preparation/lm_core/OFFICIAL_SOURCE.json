@@ -1,0 +1,17 @@
+{
+  "repo": "const-ae/linear_perturbation_prediction-Paper",
+  "commit": "bfa6eeea2bd145a1af2ec0127a2e808cc38456a9",
+  "original_path": "benchmark/src/run_linear_pretrained_model.R",
+  "bytes": 7850,
+  "sha256": "49bda2a46b92c2b0b5bf263b957a3890dbdeff2d4837a94e6b0a397e0e38a6f8",
+  "source_url": "https://raw.githubusercontent.com/const-ae/linear_perturbation_prediction-Paper/bfa6eeea2bd145a1af2ec0127a2e808cc38456a9/benchmark/src/run_linear_pretrained_model.R",
+  "authentication_used": false,
+  "original_loader_executed": false,
+  "extracted_function_sha256": "db306a7d0aca79996c9c9ee71f79c8a9a5f7f26ee81068080dca1122a6ec88ed",
+  "extracted_function_original_lines": [
+    33,
+    57
+  ],
+  "core_file": "tools/safeconf_continual/orion_linear.R",
+  "core_file_sha256": "6f4f9dbdbe5d147019806b60a4aa6c2fe82d888d1e4d87d71b99807552129b25"
+}

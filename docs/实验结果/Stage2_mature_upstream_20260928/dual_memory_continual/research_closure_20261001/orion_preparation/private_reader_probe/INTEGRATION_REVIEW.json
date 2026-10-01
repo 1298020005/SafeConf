@@ -1,0 +1,199 @@
+{
+  "status": "PASS",
+  "loader_sha256": "cdf261ffcae854f49d469437492a12b7f835aae7b720bbe565044d8a89369e8b",
+  "reader_sha256": "3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312",
+  "real_expression_accessed": false,
+  "fixture_root": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/integration_audit_465bd6370a034f70ab74ff71dd55491d",
+  "cases": [
+    {
+      "case": "independent_Arrow_synthetic_expected_per_cell_normalization_sparse_zero_context_controls_endpoint",
+      "passed": true
+    },
+    {
+      "case": "unknown_token",
+      "passed": true,
+      "error": "Unknown/duplicate token cannot be imputed or remapped",
+      "final_output_absent": true,
+      "reader_calls": [
+        "gene_token_id"
+      ],
+      "retained_staging_directories": 1
+    },
+    {
+      "case": "duplicate_tokens",
+      "passed": true,
+      "error": "Unknown/duplicate token cannot be imputed or remapped",
+      "final_output_absent": true,
+      "reader_calls": [
+        "gene_token_id"
+      ],
+      "retained_staging_directories": 1
+    },
+    {
+      "case": "negative_count",
+      "passed": true,
+      "error": "Raw expression must be finite nonnegative measurements",
+      "final_output_absent": true,
+      "reader_calls": [
+        "gene_token_id",
+        "gene_expression"
+      ],
+      "retained_staging_directories": 1
+    },
+    {
+      "case": "nonfinite_count",
+      "passed": true,
+      "error": "Raw expression must be finite nonnegative measurements",
+      "final_output_absent": true,
+      "reader_calls": [
+        "gene_token_id",
+        "gene_expression"
+      ],
+      "retained_staging_directories": 1
+    },
+    {
+      "case": "length_mismatch",
+      "passed": true,
+      "error": "Expression/token lengths/nulls differ; missing measurements cannot become zero",
+      "final_output_absent": true,
+      "reader_calls": [
+        "gene_token_id",
+        "gene_expression"
+      ],
+      "retained_staging_directories": 1
+    },
+    {
+      "case": "missing_list",
+      "passed": true,
+      "error": "Expression/token lengths/nulls differ; missing measurements cannot become zero",
+      "final_output_absent": true,
+      "reader_calls": [
+        "gene_token_id",
+        "gene_expression"
+      ],
+      "retained_staging_directories": 1
+    },
+    {
+      "case": "missing_item",
+      "passed": true,
+      "error": "Expression/token lengths/nulls differ; missing measurements cannot become zero",
+      "final_output_absent": true,
+      "reader_calls": [
+        "gene_token_id",
+        "gene_expression"
+      ],
+      "retained_staging_directories": 1
+    },
+    {
+      "case": "fractional_raw_UMI",
+      "passed": true,
+      "error": "Positive library requires nonempty raw UMI counts integer within tolerance",
+      "final_output_absent": true,
+      "reader_calls": [
+        "gene_token_id",
+        "gene_expression"
+      ],
+      "retained_staging_directories": 1
+    },
+    {
+      "case": "TRAIN_missing_full_library_counts",
+      "passed": true,
+      "error": "Authorized TRAIN raw UMI sum differs from official full library; denominator remains unchanged",
+      "final_output_absent": true,
+      "reader_calls": [
+        "gene_token_id",
+        "gene_expression"
+      ],
+      "retained_staging_directories": 1
+    },
+    {
+      "case": "positive_total_empty_measurements",
+      "passed": true,
+      "error": "Positive library requires nonempty raw UMI counts integer within tolerance",
+      "final_output_absent": true,
+      "reader_calls": [
+        "gene_token_id",
+        "gene_expression"
+      ],
+      "retained_staging_directories": 1
+    },
+    {
+      "case": "VALIDATION_sum_scope_frozen_exclusion",
+      "passed": true,
+      "no_validation_library_sum_diagnostics": true,
+      "official_denominator_preserved": true,
+      "limitation": "A deliberately truncated validation sparse list does not trigger the TRAIN-only sum gate."
+    },
+    {
+      "case": "physical_row_order_permuted",
+      "passed": true,
+      "error": "Exact frozen physical row order required",
+      "final_output_absent": true,
+      "reader_calls": [],
+      "retained_staging_directories": 0
+    },
+    {
+      "case": "metadata_hash_tampered",
+      "passed": true,
+      "error": "Frozen row metadata differs",
+      "final_output_absent": true,
+      "reader_calls": [],
+      "retained_staging_directories": 0
+    },
+    {
+      "case": "reader_SHA_tampered",
+      "passed": true,
+      "error": "Exact reader implementation binding missing or changed",
+      "final_output_absent": true,
+      "reader_calls": [],
+      "retained_staging_directories": 0
+    },
+    {
+      "case": "requested_roles_exceed_permit",
+      "passed": true,
+      "error": "Requested roles/contexts exceed explicit permit",
+      "final_output_absent": true,
+      "reader_calls": [],
+      "retained_staging_directories": 0
+    },
+    {
+      "case": "TEST_numeric_authorization_refused",
+      "passed": true,
+      "error": "This loader cannot accept TEST numeric authorization",
+      "final_output_absent": true,
+      "reader_calls": [],
+      "retained_staging_directories": 0
+    },
+    {
+      "case": "raw_identity_tampered",
+      "passed": true,
+      "error": "Raw file is incomplete or size differs",
+      "final_output_absent": true,
+      "reader_calls": [],
+      "retained_staging_directories": 1
+    },
+    {
+      "case": "ambiguous_symbols_remain_full_axis_private_target_omitted",
+      "passed": true,
+      "sentinel_in_omitted_ambiguous_row_never_converted": true
+    },
+    {
+      "case": "late_iterator_failure_atomic_rollback",
+      "passed": true,
+      "partial_staging_exists": true,
+      "final_output_absent": true
+    }
+  ],
+  "failed_cases": [],
+  "independent_test_runner_path": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/integration_independent_tests.py",
+  "independent_test_runner_sha256": "0f3b81b870723b4d4b1a40c3324149e79cdebaaa61ee39f702e220d0d4fa15c7",
+  "library_sum_policy": {
+    "checks_and_diagnostics": [
+      "TRAIN",
+      "TRAIN_CONTROL_SOURCE_SCOPE"
+    ],
+    "VALIDATION_library_sum_computed": false,
+    "official_denominator_changed": false
+  },
+  "production_permission_created_by_review": false
+}

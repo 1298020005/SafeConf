@@ -1,0 +1,6 @@
+context,gene,role,biological_unit,n_cells_metadata,target_ensembl_id,target_token_id,matrix_row,competence_n_ge30
+HCT116,G1,TRAIN,SyntheticStudy|G1|HCT116,1,E0,0.0,0,False
+HCT116,G2,VALIDATION,SyntheticStudy|G2|HCT116,1,E1,1.0,1,False
+HCT116,Non-Targeting,TRAIN_CONTROL_SOURCE_SCOPE,SyntheticStudy|Non-Targeting|HCT116,2,,,2,False
+HEK293T,G1,TRAIN,SyntheticStudy|G1|HEK293T,1,E0,0.0,3,False
+HEK293T,Non-Targeting,TRAIN_CONTROL_SOURCE_SCOPE,SyntheticStudy|Non-Targeting|HEK293T,1,,,4,False

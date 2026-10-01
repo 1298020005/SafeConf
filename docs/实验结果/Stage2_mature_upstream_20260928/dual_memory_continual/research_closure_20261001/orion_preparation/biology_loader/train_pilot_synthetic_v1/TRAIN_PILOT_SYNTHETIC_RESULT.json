@@ -1,0 +1,15 @@
+{
+  "schema": "safeconf_orion_train_semantic_pilot_v1",
+  "status": "SYNTHETIC_PILOT_PASS_REAL_EXPRESSION_UNOPENED",
+  "pilot_code_sha256": "edd4ca65236c550a1687e526401ea4c43d42af0db94e10aa984c57dcc0e941ef",
+  "loader_code_sha256": "cdf261ffcae854f49d469437492a12b7f835aae7b720bbe565044d8a89369e8b",
+  "reader_code_sha256": "3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312",
+  "real_expression_accessed": false,
+  "exact128cell_selection_passed": true,
+  "private_and_unselected_same_role_sentinels_not_converted": true,
+  "full_iterator_exhaustion_passed": true,
+  "fractional_UMI_rejected_with_explicit_partial_proof": true,
+  "vectors_saved": false,
+  "model_fits": 0,
+  "prediction_calls": 0
+}
