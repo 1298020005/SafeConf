@@ -1,0 +1,56 @@
+{
+  "status": "SHARED_PRETRUTH_GUARD_EVALUATOR_SYNTHETIC_PASS",
+  "evaluator_sha256": "dec8f056918ac5626eb12732eec3cc07041eb3680cc6addd6d9f18b32d1f486c",
+  "test_reader_sha256": "852fcd764b567a63f04c4a5539a118c8a715f664bf534184018010ac269087b2",
+  "numeric_backend_sha256": "636455cb30fc0e8c8ce6ac92db82756eff7508322e92862cf23ffad861d2e435",
+  "fixture_api_sha256": "e8cf363db691eae363dce689e4706948553a5e316c307436672fb8979d5a6563",
+  "generated_fixture_root": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/test_open/synthetic/shared_interface_f902eeee89714022a7d84379e90095b8",
+  "six_row_P_PUBLIC_frames_exact_contract": true,
+  "all_fixed_candidates_before_truth": [
+    "Magnitude",
+    "P_only_ridge",
+    "P_only_hgb",
+    "Manual_ridge",
+    "Manual_hgb",
+    "Learned_ridge",
+    "Learned_hgb",
+    "Manual_WeightedHistoryDistance",
+    "Learned_WeightedHistoryDistance",
+    "Uniform_DirectRMSE",
+    "Manual_DirectRMSE",
+    "Learned_DirectRMSE",
+    "NegativeSourceHistorySupport"
+  ],
+  "comparison_spec": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/test_open/synthetic/shared_interface_f902eeee89714022a7d84379e90095b8/shared_pretruth_comparison/COMPARISON_SPEC.json",
+    "sha256": "9c68ab3aaac13c2444701329f58f0245b6ef520ddf4c53a091b12835b21627af",
+    "bytes": 21692
+  },
+  "comparison_scores": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/test_open/synthetic/shared_interface_f902eeee89714022a7d84379e90095b8/shared_pretruth_comparison/PRETRUTH_COMPARISON_SCORES.parquet",
+    "sha256": "ef91d2649eff7c82e78445dc41a1776d9081e742226bd7c76ce0f8937aa61292",
+    "bytes": 14014
+  },
+  "operation": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/test_open/synthetic/shared_interface_f902eeee89714022a7d84379e90095b8/TEST_ACCESS.json",
+    "sha256": "3bc7681728c42ca758c755a1c1ece857f9221cd0725ccc53b3f1d4a2848685c5",
+    "bytes": 9153
+  },
+  "truth_reader_receipt": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/test_open/synthetic/shared_interface_f902eeee89714022a7d84379e90095b8/evaluated/TRUTH_READER_RECEIPT.json",
+    "sha256": "d05794d8369bbfe872cde0f0ad78d24ded3706497b36ce9ab5e8b0324dc17c2b",
+    "bytes": 18018
+  },
+  "evaluation_manifest": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/test_open/synthetic/shared_interface_f902eeee89714022a7d84379e90095b8/shared_evaluation/EVALUATION_MANIFEST.json",
+    "sha256": "ce25f7f4622d40413c8f5a9dd9979f6ed082d3d6f361cdd9cb6cebee8a5984b9",
+    "bytes": 1051
+  },
+  "eligible_tasks": 2,
+  "eligible_tasks_per_context": 1,
+  "all_metrics_and_CIs_NA_because_original_contexts_below20": true,
+  "private_NON_TEST_sentinels_not_materialized": true,
+  "actual_Orion_TEST_expression_or_truth_access": false,
+  "new_fits": 0,
+  "target_CDF_fit": false
+}

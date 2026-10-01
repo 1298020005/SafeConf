@@ -1,0 +1,7 @@
+reference,scenario,query_tasks,max_abs_score_difference,tolerance
+Manual,GAT_unique,543,8.326672684688674e-17,1e-14
+Manual,Exphormer_unique,543,8.326672684688674e-17,1e-14
+Manual,Full_pool_standard,543,8.326672684688674e-17,1e-14
+Learned,GAT_unique,543,9.71445146547012e-17,1e-14
+Learned,Exphormer_unique,543,9.71445146547012e-17,1e-14
+Learned,Full_pool_standard,543,9.71445146547012e-17,1e-14

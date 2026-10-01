@@ -1,0 +1,69 @@
+{
+  "status": "FINAL_REVIEWED_SCOPE",
+  "owned_files": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/evaluate_safeconf_orion_frozen_risk_agent.py",
+      "sha256": "dec8f056918ac5626eb12732eec3cc07041eb3680cc6addd6d9f18b32d1f486c",
+      "bytes": 22944
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_evaluation/INTERFACE.json",
+      "sha256": "4ab0db68c9852182fa64a870e371ca6818fb092eac77b70dc6d981b24b4f60c2",
+      "bytes": 4463
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_evaluation/STATUS.json",
+      "sha256": "b8d58f95349897121959dc0c3de30ec68c7b71dbff38a10b7e06d6b057a75c2f",
+      "bytes": 2135
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_evaluation/SYNTHETIC_EVALUATION_PROOF.json",
+      "sha256": "1281c8ae2fb2b2c14ffa62d1f931017990d987fbf68d4fb7c78085e0c2fba47d",
+      "bytes": 675
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_evaluation/FIXED_METRIC_PROOF.json",
+      "sha256": "7c4d79159ea70282ba8c6ea9b727a2157b7caa01fa190fe6eb3b158928e2a7f5",
+      "bytes": 880
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_evaluation/ORIGINAL_N19_N30_INTERVALS.csv",
+      "sha256": "d0e77de5f2c836defc48331ea6f4c5d629e32c8880c9d48e33938267bb0b9ae5",
+      "bytes": 1909
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_evaluation/ORIGINAL_N19_N30_PAIRED.csv",
+      "sha256": "0747825eb3e790c90cc9bae098b159ba0e56f421bd5894b093a1b2a68b8051d1",
+      "bytes": 1521
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_evaluation/SHARED_INTERFACE_PROOF.json",
+      "sha256": "09bc207f1c798d463d034e2473c2cd77beaaa81411f2feca52d1c721e68c1e28",
+      "bytes": 3637
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_evaluation/VERIFY_FIXED_METRICS.py",
+      "sha256": "48304990e5a465175d086a70009abcc88c793ba7e190b6936098082ebe82bfca",
+      "bytes": 3248
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_evaluation/VERIFY_SHARED_INTERFACE.py",
+      "sha256": "606781bcd89990c66cfbf4c41a5aa3924f9c5ddf27e66548947a20dfb17c6fce",
+      "bytes": 5331
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_evaluation/COORDINATOR_REVIEW.json",
+      "sha256": "742006a30425cbe46c9d2d67f5df86a01a0da22bf92485a20f43fa34d96c940a",
+      "bytes": 2756
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_evaluation/VERIFY_COORDINATOR_BOUNDARIES.py",
+      "sha256": "2804c5ce689d6d2ddb80340c6bcc2a3cb47dc91131d38fd2c1938add26bd2acb",
+      "bytes": 7145
+    }
+  ],
+  "no_binary_files": true,
+  "superseded_subdirectory_synthetic_iterations_not_in_final_filelist": true,
+  "external_generated_shared_fixture_root": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/test_open/synthetic/shared_interface_f902eeee89714022a7d84379e90095b8",
+  "actual_Orion_TEST_expression_or_truth_access": false
+}

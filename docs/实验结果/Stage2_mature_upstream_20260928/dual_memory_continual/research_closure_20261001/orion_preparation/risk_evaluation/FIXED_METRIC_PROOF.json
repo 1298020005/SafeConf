@@ -1,0 +1,24 @@
+{
+  "status": "FIXED_HAND_METRICS_AND_ORIGINAL_CONTEXT_VALIDITY_PASS",
+  "evaluator_sha256": "dec8f056918ac5626eb12732eec3cc07041eb3680cc6addd6d9f18b32d1f486c",
+  "synthetic_tasks_per_context": 40,
+  "perfect_macro_U20": 1,
+  "perfect_macro_Spearman": 1,
+  "reverse_macro_Spearman": -1,
+  "perfect_macro_AURC": 10.75,
+  "perfect_macro_error_at20": 4.5,
+  "perfect_high_risk_miss_rate": 0,
+  "reverse_high_risk_miss_rate": 1,
+  "original_context_sizes": {
+    "HCT116": 19,
+    "HEK293T": 30
+  },
+  "bootstrap_duplicate_draw_reaches20_for_original_invalid_context": true,
+  "original_invalid_context_and_macro_points_CIs_remain_NA": true,
+  "original_invalid_context_and_macro_valid_draws": 0,
+  "fixture_bootstrap_draws": 40,
+  "production_bootstrap_draws_fixed": 5000,
+  "actual_Orion_expression_truth_or_error_artifact_read": false,
+  "new_fits": 0,
+  "target_CDF_fit": false
+}

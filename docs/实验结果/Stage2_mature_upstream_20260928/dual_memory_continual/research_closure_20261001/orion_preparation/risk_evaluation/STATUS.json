@@ -1,0 +1,18 @@
+{
+  "status": "SYNTHETIC_PROOFS_PASS_READY_FOR_PRETRUTH_COMPARISON_FREEZE",
+  "implementation_sha256": "dec8f056918ac5626eb12732eec3cc07041eb3680cc6addd6d9f18b32d1f486c",
+  "interface": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_evaluation/INTERFACE.json",
+  "hand_metric_bootstrap_and_receipt_negative_proof": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_evaluation/SYNTHETIC_EVALUATION_PROOF.json",
+  "shared_prepare_guard_evaluate_proof": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_evaluation/SHARED_INTERFACE_PROOF.json",
+  "shared_proof_covers_exact_six_row_P_PUBLIC_frames_and_all13_fixed_candidates": true,
+  "invalid_original_context_remains_NA_in_all_bootstrap_replicates": true,
+  "independent_metric_review": "lm_runtime_recovery_v1 independently verified original n19/n30 validity fix and final guarded receipt science binding at current evaluator dec8f; shared prepare/guard/evaluate proof PASS",
+  "actual_Orion_TEST_expression_or_truth_access": false,
+  "new_fits": 0,
+  "target_CDF_fit": false,
+  "whole_method_pristine_claim": false,
+  "reviewable_40_task_per_context_hand_metric_proof": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_evaluation/FIXED_METRIC_PROOF.json",
+  "tests_complete_no_actual_TEST_open": true,
+  "guarded_test_reader_sha256": "852fcd764b567a63f04c4a5539a118c8a715f664bf534184018010ac269087b2",
+  "registered_coordinator_review": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_evaluation/COORDINATOR_REVIEW.json"
+}

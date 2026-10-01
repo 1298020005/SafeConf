@@ -1,0 +1,80 @@
+{
+  "status": "COMPLETE",
+  "role": "SEEN_POST_CONFIRMATION_ALGORITHMIC_TRAINING_COPY_DIAGNOSTIC",
+  "fitted_table_models": 12,
+  "original_reproduction_cases": 6,
+  "maximum_original_score_difference": 9.71445146547012e-17,
+  "paired_comparisons": 14,
+  "bootstrap_replicates_per_reference": 5000,
+  "all_saved_models_reload_predictions_byte_identical": true,
+  "elapsed_seconds": 12.53002582793124,
+  "new_upstream_calls": 0,
+  "Orion_access": false,
+  "parameter_search": false,
+  "target_winner_selected": false,
+  "original_models_and_outputs_preserved": true,
+  "server_output": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_row_weight_diagnostic",
+  "script_sha256": "7f48a89919a17eb26e21d1038eabda83c191f533395307d5a3679abecf7073ad",
+  "output_bindings": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_row_weight_diagnostic/Learned_JOINT_GENE_BOOTSTRAP.npz",
+      "sha256": "8dcabb97f7fd920b964cc3be32e85a32d89b14c6ab921c6170935f8d52e21609"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_row_weight_diagnostic/Manual_JOINT_GENE_BOOTSTRAP.npz",
+      "sha256": "cfc63031a8a3805ec411fa4cc0ba73404106026e474b29744e603b322aaedf65"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_row_weight_diagnostic/TASK_PREDICTIONS.csv.gz",
+      "sha256": "20329f1cc58ca24b61805b11f4b0e925711f9bacd3126e6b2416f768fe92f704"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_row_weight_diagnostic/models/Learned_Exphormer_duplicate2.joblib",
+      "sha256": "168dc0e14cf403f1db3143cea1d16a02eac909f02d37f9c72a9640cbdfd333e8"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_row_weight_diagnostic/models/Learned_Exphormer_unique.joblib",
+      "sha256": "5cff4e2996ae273f0920ce42af54dfb71927f5ba841c544e33d0525d7b7b1b27"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_row_weight_diagnostic/models/Learned_Full_pool_single_source_weight.joblib",
+      "sha256": "aa5a8a7a8ac447257d543abb5f3dbf2061a03ac996d90bd4c800209331413489"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_row_weight_diagnostic/models/Learned_Full_pool_standard.joblib",
+      "sha256": "e8aeb78d85a63e571139519abfa1b0537532d8626f8f49258b922629ba107f96"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_row_weight_diagnostic/models/Learned_GAT_duplicate2.joblib",
+      "sha256": "e76e6aea78163f49c61ae10695295464dcb9b119f6f8f7300a0bfab29a7969fb"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_row_weight_diagnostic/models/Learned_GAT_unique.joblib",
+      "sha256": "ce7143e4b95f43b58f67c83fcf8bb19ad860a893e8eb42c32df8b9761fa4b43e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_row_weight_diagnostic/models/Manual_Exphormer_duplicate2.joblib",
+      "sha256": "1b710c72118d1dc2b4c412a4008bbf551fdcd03c6565b0b3285f3444caeeb087"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_row_weight_diagnostic/models/Manual_Exphormer_unique.joblib",
+      "sha256": "94bb23dbe1bc1b566431548af54a8df529bf21296d7c3bbb9d500eccb31b9c8f"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_row_weight_diagnostic/models/Manual_Full_pool_single_source_weight.joblib",
+      "sha256": "fbda3a218d4ab89311e10fb209cc8ca5699e7a7b573fe83c6ba40da0495c50f7"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_row_weight_diagnostic/models/Manual_Full_pool_standard.joblib",
+      "sha256": "208184e904041e19625da074a7ebe7819a764174fb882064529b25088f78ad56"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_row_weight_diagnostic/models/Manual_GAT_duplicate2.joblib",
+      "sha256": "7ff35c37039e8513b3ff4ae284690b3adb00188e31253f8973922a4cdd185452"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_row_weight_diagnostic/models/Manual_GAT_unique.joblib",
+      "sha256": "ca655e1afdaf1a14e1c6091da0f42cca705b6060190230bb8f43d0ba2f59f857"
+    }
+  ]
+}

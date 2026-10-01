@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-01T19:29:47.831814+00:00",
+  "updated_utc": "2026-10-01T20:02:39.493635+00:00",
   "complete": [
     "five-fold nested public biology with four inner folds",
     "three-line sixteen-method matrix with three registered seeds",
@@ -49,7 +49,10 @@
     "Publicprovenance study reconstruction:Replogle2022/Nadig2025; known-geneother-contextinformationcondition disclosed",
     "Actual128TRAIN/controlcells semanticpilot PASS:819072integerexpressionvalues,librarysumgaps0,84.581sec,520MBpeak; fulliteratorproof and noTEST/VALnumerics",
     "Reviewed technicalbyte-selectionvectorization:12privacy+20integration+12crosspageproofs; actual128cellpilot6.005sec vs84.581sec andsame countsumgaps0",
-    "Registered source-diversity three-seed completion:24fits,30macro rows,originalseed scores exactwithin9.72e-17,max acrossseed variation0; no new independent observations"
+    "Registered source-diversity three-seed completion:24fits,30macro rows,originalseed scores exactwithin9.72e-17,max acrossseed variation0; no new independent observations",
+    "Guarded future TEST reader16syntheticcases and fullsharedprepare→guard→evaluate proof; no actualTESTread",
+    "Fixedmetric originaln19context/macro no invalidfinitebootstrapCI; exactreadonlyoperation/code/schema guard verified",
+    "Source training-copy/total-loss-weight attribution:12fixedfits,6originalscore reproductions,5000pairedgene draws; no sourcefrozenparameterchange"
   ],
   "pending": [
     "Actual authorized Orion TRAIN/VALIDATION aggregation final artifacts and hashes",
@@ -61,7 +64,7 @@
   "new_large_upstream_training": 0,
   "new_download_gb": 0.04440246,
   "completion_claim": "goal active; meaningful diagnostics and registered matrices continue; manuscript prose deferred",
-  "current_work": "Actual authorized Orion v2 aggregation continuing; guarded future TEST opener and fixed evaluator being implemented in parallel, no actual TEST numeric access.",
+  "current_work": "Actual v2 TRAIN/VALIDATION aggregation live; upperfit/competence/riskseal then once-only registered TEST evaluation queued, all presets reviewed. Actual TEST remains closed now.",
   "deferred_by_user": [
     "manuscript and supplement prose generation"
   ],
@@ -92,6 +95,12 @@
       "pid": 208031,
       "status_file": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v2/STATUS.json",
       "TESTtruth_reader": false
+    },
+    {
+      "name": "registered_evaluation_postseal_waiter",
+      "pid": 271820,
+      "status_file": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_evaluation_20261002_v1/STATUS.json",
+      "opens_registered_TEST_only_after_actual_frozen_hash_gates": true
     }
   ],
   "orion_training_expression_read": true,
@@ -122,8 +131,8 @@
   ],
   "orion_verified_acquisition_bytes": 18138449950,
   "orion_runtime_progress_note": "Initial 8.94GB sum-map write completed; actual authorized token spool observed growing. No resource limit change needed.",
-  "orion_current_aggregate_completed_files": 3,
-  "orion_current_aggregate_last_completed_file": "data/HCT116_Batch11.parquet",
+  "orion_current_aggregate_completed_files": 9,
+  "orion_current_aggregate_last_completed_file": "data/HCT116_Batch17.parquet",
   "orion_current_aggregate_file_goal": 40,
   "completion_audit_path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/REQUIREMENT_COMPLETION_AUDIT.csv"
 }

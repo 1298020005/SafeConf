@@ -1,0 +1,124 @@
+{
+  "role": "SEEN_POST_CONFIRMATION_ALGORITHMIC_TRAINING_COPY_DIAGNOSTIC",
+  "purpose": "Separate additional predictor information from training-row and absolute-weight effects",
+  "seed": 20260930,
+  "bootstrap_seed": 20260930,
+  "bootstrap_replicates": 5000,
+  "common_gene_axis": 2840,
+  "features": [
+    "predicted_magnitude",
+    "prediction_abs_mean",
+    "prediction_signed_mean",
+    "prediction_std",
+    "prediction_abs_q95",
+    "prediction_sparsity",
+    "prior_magnitude",
+    "prediction_prior_rmse",
+    "prediction_prior_cosine",
+    "prior_uncertainty",
+    "log_history_support",
+    "effective_sources",
+    "history_conflict"
+  ],
+  "hgb_parameters": {
+    "max_iter": 200,
+    "learning_rate": 0.05,
+    "max_depth": 3,
+    "min_samples_leaf": 20,
+    "l2_regularization": 10.0,
+    "random_state": 20260930
+  },
+  "scenarios": [
+    "GAT_unique",
+    "Exphormer_unique",
+    "Full_pool_standard",
+    "GAT_duplicate2",
+    "Exphormer_duplicate2",
+    "Full_pool_single_source_weight"
+  ],
+  "paired_comparisons": [
+    [
+      "GAT_duplicate2",
+      "GAT_unique"
+    ],
+    [
+      "Exphormer_duplicate2",
+      "Exphormer_unique"
+    ],
+    [
+      "GAT_duplicate2",
+      "Full_pool_standard"
+    ],
+    [
+      "Exphormer_duplicate2",
+      "Full_pool_standard"
+    ],
+    [
+      "Full_pool_single_source_weight",
+      "Full_pool_standard"
+    ],
+    [
+      "Full_pool_standard",
+      "GAT_unique"
+    ],
+    [
+      "Full_pool_standard",
+      "Exphormer_unique"
+    ]
+  ],
+  "CDF_policy": "Fit original unique allowed Source records only; copy original labels for repeated training rows",
+  "duplicate_policy": "Two identical training copies add zero independent records or predictor information",
+  "matched_weight_policy": "Full pool gene-cluster weights scaled to original single-source total weight",
+  "query_truth_use": "Already released McFaline evaluation only, never training/CDF/model selection",
+  "new_upstream_calls": 0,
+  "new_upstream_predictors": 0,
+  "parameter_search": false,
+  "Orion_access": false,
+  "frozen_method_or_existing_model_change": false,
+  "input_bindings": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_scaling_recheck/SOURCE_DIVERSITY_PREDICTIONS.csv.gz",
+      "sha256": "2e65fdc2efa0510388f541d47dc109a7e405a4194c0c9cd925eb6089e66c3d00"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_scaling_recheck/cache/source_Manual.parquet",
+      "sha256": "7f8e9bba115d76557d41027fe84d149521d82422c94adcfcc84315d761771273"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_scaling_recheck/cache/external_Manual.parquet",
+      "sha256": "90fd47a81f235d8eccea8c1d4d2af7a664cb9cca0975c25648a363d2652e8a0a"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_scaling_recheck/cache/source_Learned.parquet",
+      "sha256": "581891b9f3571a5a89a01e943a00034aa8194aedff000db645d368c3713d726a"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_scaling_recheck/cache/external_Learned.parquet",
+      "sha256": "5f1f20ebd3a5d645189e83037107b7f73d5321b1daebe508dadb00d7a89f6b6c"
+    }
+  ],
+  "code_bindings": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_source_row_weight_diagnostic_agent.py",
+      "sha256": "7f48a89919a17eb26e21d1038eabda83c191f533395307d5a3679abecf7073ad"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/research.py",
+      "sha256": "22a02a79d59f1d852870efb9dc1afe229f150c5db75e5de735f7bfcc1f613887"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/learners.py",
+      "sha256": "33e3eba65e31cc8372a89ad6356c353d972ca03b105307c916addbebce98ee63"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/contracts.py",
+      "sha256": "e7c4b329ec8a333dbbb7741707b229aa8e8df0290d15e8a2c0290c665daf4e06"
+    }
+  ],
+  "software": {
+    "numpy": "2.4.4",
+    "pandas": "2.3.3",
+    "sklearn": "1.8.0"
+  },
+  "leaf_count_caveat": "min_samples_leaf=20 counts training rows. Exact duplication can admit leaves with fewer original records; matching absolute sample-weight sum does not match row counts or histogram construction."
+}

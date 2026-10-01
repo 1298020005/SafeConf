@@ -1,0 +1,69 @@
+{
+  "schema": "safeconf_orion_guarded_test_reader_interface_v1",
+  "script": "tools/scripts/evaluate_safeconf_orion_guarded_test_agent.py",
+  "API": {
+    "authorize_test": "authorize_test(receipt_path) validates all immutable postseal prerequisites; no raw object hash/footer/page access",
+    "evaluate_test": "evaluate_test(receipt_path, output) performs endpoint-only TEST aggregation and frozen LM DELTA RMSE after authorization"
+  },
+  "receipt_schema": "safeconf_orion_explicit_postseal_test_access_v1",
+  "required_receipt_fields": [
+    "postseal_TEST_operation_authorized=true",
+    "test_numeric_materialization_permitted=true",
+    "authorized_numeric_roles=[TEST]",
+    "authorized_contexts=[HCT116,HEK293T]",
+    "TEST_metadata_before_open=SEEN",
+    "TEST_truth_before_open=CLOSED",
+    "scientific_contract={path,sha256}",
+    "forty_object_manifest={path,sha256}",
+    "metadata_root",
+    "raw_root",
+    "metadata_bindings={FILE_METADATA_IDENTITY.json,GENE_MANIFEST.csv,gene_metadata.parquet,PREPARATION_POLICY.json,GENE_SPLIT.csv}",
+    "data_role_registry={path,sha256}",
+    "final_competence={path,sha256}",
+    "lm_fit_root",
+    "lm_fit_run_manifest={path,sha256}",
+    "lm_fit_artifact_registries={HCT116:{path,sha256},HEK293T:{path,sha256}}",
+    "risk_seal_root",
+    "risk_seal_manifest={path,sha256}",
+    "risk_seal_artifacts={path,sha256}",
+    "risk_comparison_manifest={path,sha256}",
+    "pretruth_comparison={spec:{path,sha256},scores:{path,sha256}}",
+    "implementation_bindings={test_reader:{path,sha256},numeric_backend:{path,sha256},structural_reader:{path,sha256},scientific_loader:{path,sha256},risk_sealer:{path,sha256}}",
+    "test_semantic_QC={raw_integer_atol:0.000001,library_sum_rtol:0,library_sum_atol:0,failure:ABORT_ENTIRE_OUTPUT_NO_SURVIVOR_SELECTION}",
+    "task_min_cells=30",
+    "normalization_scale=4000",
+    "output_path",
+    "technical_dependency_overrides: previously authorized structural9fd-to-3e7 amendment only; no scientific metadata/model override"
+  ],
+  "pretruth_comparison_spec_minimum": {
+    "scientific_contract_sha256": "same as operation",
+    "risk_seal_manifest_sha256": "same as operation",
+    "scores_sha256": "comparison scores binding",
+    "candidate_score_columns": "must contain all six Source-risk columns; extra fixed comparator columns allowed only as already frozen",
+    "test_truth_or_errors_used": false,
+    "new_fits": 0,
+    "evaluator_code_sha256": "SHA256 of the actual frozen evaluator implementation before TEST opening"
+  },
+  "outputs": {
+    "TEST_TASK_ERRORS.parquet": [
+      "query_id",
+      "target_gene_id",
+      "target_gene_symbol",
+      "context_id",
+      "role",
+      "n_cells",
+      "true_error_rmse"
+    ],
+    "TRUTH_READER_RECEIPT.json": "status COMPLETE; binds exact generated error SHA, operation SHA, all prediction/model/risk/comparison/metadata/endpoint/scientific pins",
+    "TEST_TASK_QC.tsv": "post-open cell counts and n>=30 eligibility for every frozen TEST query",
+    "TEST_ENDPOINT_EFFECTS.npy": "Source3285 effect vectors for eligible TEST queries, if persisted by exact operation; no full38606 aggregate"
+  },
+  "scope": "No actual TEST numeric execution by implementation agent; root creates legal immutable operation only after final actual competence, all full LM and all-candidate risk/config/parameter seals exist.",
+  "no_new_methods_targetCDF_or_holdout_partitions": true,
+  "test_reader_sha256": "852fcd764b567a63f04c4a5539a118c8a715f664bf534184018010ac269087b2",
+  "pretruth_comparison_filenames": [
+    "COMPARISON_SPEC.json",
+    "PRETRUTH_COMPARISON_SCORES.parquet"
+  ],
+  "output_receipt_required_schema": "safeconf_orion_postseal_test_truth_reader_v1"
+}

@@ -76,3 +76,11 @@ At 10% budget, the feedback cohort is too small for two leaves of at least 20 re
 ### Registered source-diversity seed completion
 
 The earlier diversity summaries used only seed20260930. The fixed common2840 comparison was replayed with all three registered seeds in a separate output, without touching frozen source models or Orion.24 fits took5.873s; first-seed scores match the released scores within9.72e-17; maximum score range across seeds is0. This completes the seed reporting requirement and supplies no new independent observations or positive method claim.
+
+### Before-test evaluation contract correction
+
+Independent review found that bootstrap duplicates could yield finite intervals for an original context with fewerthan20 tasks. Fixed original cohort validity now propagates through every draw and macro. The evaluator also rejects generic completion receipts, checks the exact guarded TEST operation/reader/backend and source/model hashes, and the TEST reader checks the frozen evaluator code before raw access. Sixteen generated reader cases, hand metrics and a joint prepare→guard→evaluate fixture passed. No actual TEST labels were read. The coordinator additionally reserves the registered test scope exclusively across output directories after all actual hash gates and before raw reading.
+
+### Source rows versus new source information
+
+Mean-normalized cluster weights change total weighted loss when record count doubles. A fixed, information-free copied-record and matched-total-weight diagnostic was executed without changing any original model or Orion parameter. Twelve fits, six original reproductions,5000 paired gene draws and an independent review completed. No uniform gain from copies was found; the best copied Exphormer contrast remains uncertain. No parameter sweep or method promotion follows this diagnostic.

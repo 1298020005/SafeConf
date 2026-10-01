@@ -1,0 +1,15 @@
+{
+  "status": "PASS_NO_CONCRETE_BUGS",
+  "reviewer": "/root/lm_runtime_recovery_v1/source_row_weight_review",
+  "script_sha256": "7f48a89919a17eb26e21d1038eabda83c191f533395307d5a3679abecf7073ad",
+  "verified": [
+    "six original cases reproduce before control fits",
+    "duplicate rows reuse original CDF labels",
+    "weight totals 1808 singles/matched and 3616 duplicates/standard pool",
+    "5000 finite complete-gene paired draws jointly across three contexts and six methods",
+    "equal-context macro U20 and original metric ordering",
+    "5 input, 4 code and 15 server output hashes match"
+  ],
+  "actual_Orion_access": false,
+  "code_changes_by_reviewer": false
+}

@@ -1,0 +1,45 @@
+{
+  "role": "SEEN_POST_CONFIRMATION_ALGORITHMIC_TRAINING_COPY_DIAGNOSTIC",
+  "requested_fixed_pairs": [
+    [
+      "Full_pool_standard",
+      "GAT_duplicate2"
+    ],
+    [
+      "Full_pool_standard",
+      "Exphormer_duplicate2"
+    ],
+    [
+      "Full_pool_single_source_weight",
+      "GAT_unique"
+    ],
+    [
+      "Full_pool_single_source_weight",
+      "Exphormer_unique"
+    ]
+  ],
+  "new_fits": 0,
+  "new_CDFs": 0,
+  "new_bootstrap_draws": 0,
+  "Orion_access": false,
+  "frozen_base_script_sha256": "7f48a89919a17eb26e21d1038eabda83c191f533395307d5a3679abecf7073ad",
+  "code_sha256": "c2b2c8d667b23cff258a543881da812d1979d11c970b91633ebdd174a622c5bb",
+  "input_bindings": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_row_weight_diagnostic/STATUS.json",
+      "sha256": "37842e2a7fd2ebd9240283034c2057e5f253e237f5e9bea4d8856eda451264df"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_row_weight_diagnostic/MACRO.csv",
+      "sha256": "baa1923c65fc40084a921a6b09a76f3d424ee63c97b46c9c400de3a9798e459f"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_row_weight_diagnostic/Manual_JOINT_GENE_BOOTSTRAP.npz",
+      "sha256": "cfc63031a8a3805ec411fa4cc0ba73404106026e474b29744e603b322aaedf65"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_row_weight_diagnostic/Learned_JOINT_GENE_BOOTSTRAP.npz",
+      "sha256": "8dcabb97f7fd920b964cc3be32e85a32d89b14c6ab921c6170935f8d52e21609"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "schema": "safeconf_source_row_weight_diagnostic_owned_files_v1",
+  "status": "COMPLETE",
+  "files": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_source_row_weight_diagnostic_agent.py",
+      "sha256": "7f48a89919a17eb26e21d1038eabda83c191f533395307d5a3679abecf7073ad",
+      "bytes": 18683
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_row_weight_diagnostic/CDF_ORIGINAL_RECORDS_AUDIT.csv",
+      "sha256": "b728bf22e4792527240351ee483f9e6b8c0730e246ab77cdb54fb31c45441138",
+      "bytes": 12237
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_row_weight_diagnostic/DUPLICATE_PREPROCESSOR_DIFFERENCES.csv",
+      "sha256": "2dc5147f3fe7dd266dc4c30d52d709e14f9bc3d4859ecc20bb6a6cb884b61eb9",
+      "bytes": 312
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_row_weight_diagnostic/FIT_COSTS.csv",
+      "sha256": "3b4054b2751e3cf30c4bfb758167e0d0e6b923bf4bc08e6981225e9b1d05897d",
+      "bytes": 594
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_row_weight_diagnostic/INDEPENDENT_REVIEW.json",
+      "sha256": "e6b1d397626adb0a89219592697bf678757ae1c277f3e7e5c787ccc35f81f360",
+      "bytes": 676
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_row_weight_diagnostic/INFORMATION_WEIGHT_LEDGER.csv",
+      "sha256": "3b5b34f0f687afaa910767e5f0d177f120264aff7bb5621837f96d45fe792182",
+      "bytes": 7234
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_row_weight_diagnostic/MACRO.csv",
+      "sha256": "baa1923c65fc40084a921a6b09a76f3d424ee63c97b46c9c400de3a9798e459f",
+      "bytes": 2238
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_row_weight_diagnostic/ORIGINAL_REPRODUCTION.csv",
+      "sha256": "dc7b37ccce360f875c2e7e408ba68807d7a8698830fd086128eaf2a83402db1a",
+      "bytes": 394
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_row_weight_diagnostic/PAIRED_GENE_U20.csv",
+      "sha256": "9527f30384d6e57a57fd90d146cdff4537d045b59140885d4396be40f1ee5c62",
+      "bytes": 2999
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_row_weight_diagnostic/README.md",
+      "sha256": "8621b331887bc3276de09bc4c701e31089645c34a52780e748d3118b224647c9",
+      "bytes": 5559
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_row_weight_diagnostic/REGISTRATION.json",
+      "sha256": "56064e1eff8b6dfd0aacfb6483879f578dfe0ed73fe61b784e5c8b53e4fb3cb6",
+      "bytes": 4525
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_row_weight_diagnostic/STATUS.json",
+      "sha256": "37842e2a7fd2ebd9240283034c2057e5f253e237f5e9bea4d8856eda451264df",
+      "bytes": 4589
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_row_weight_diagnostic/STRATA.csv",
+      "sha256": "df3c17b1585720945cd817bb70cb39e69f67f6936f697938d4e14b62386c0f1a",
+      "bytes": 6485
+    }
+  ],
+  "runtime_output": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_row_weight_diagnostic",
+  "existing_models_or_outputs_overwritten": false,
+  "Orion_access": false,
+  "git_operation": false
+}

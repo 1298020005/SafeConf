@@ -1,0 +1,17 @@
+{
+  "schema": "safeconf_orion_frozen_risk_evaluation_v1",
+  "status": "SYNTHETIC_METRICS_AND_GENE_BLOCK_BOOTSTRAP_PASS",
+  "code_sha256": "dec8f056918ac5626eb12732eec3cc07041eb3680cc6addd6d9f18b32d1f486c",
+  "hand_perfect_U20": 1,
+  "hand_perfect_AURC": 8.25,
+  "hand_error_at20": 3.5,
+  "full_two_context_gene_blocks_resampled": true,
+  "minimum20_context_gate_pass": true,
+  "original19task_context_and_macro_CIs_remain_NA_despite_bootstrap_duplicates": true,
+  "generic_COMPLETE_receipt_rejected_before_truth_open": true,
+  "fixture_draws": 40,
+  "production_draws_fixed": 5000,
+  "actual_TEST_expression_or_truth_read": false,
+  "newfits": 0,
+  "target_CDF_fit": false
+}

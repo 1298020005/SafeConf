@@ -39,3 +39,7 @@
 ## 反馈池上的无错误标签强规则
 
 在完全相同的 212 个 holdout 任务上，历史数量规则 U20 为 0.795264，学习历史距离为 0.689213，Shared 为 0.571055。Feedback 的增量必须同时相对这些无需错误反馈的规则报告，不能只相对较弱 Shared 得分。全部 5000 次簇抽样、七个指标的配对差在 `common_gene_axis/results/feedback_strong_baselines/` 中，原目标学习器的分数不变。
+
+## Source training-copy and objective-weight diagnosis
+
+Fixed common2840 features/CDF/parameters were replayed in12 table fits; all six original score arrays reproduced within9.72e-17. Copying existing GAT or Exphormer training rows adds no new errors or independent tasks. Learned standard pooled U20 exceeds copied GAT by0.1069 (95%CI0.0113–0.1681), while its0.0650 gap over copied Exphormer remains uncertain (CI−0.0182–0.1341). Matching total loss weight to a single-source budget retains a pooled point advantage, but weight scaling, quantile binning, leaf-count effects and two nearly identical same-family predictors remain attribution limits. These are SEEN diagnostics; no new model is promoted and frozen Orion source parameters remain unchanged. Full fixed results and5000 joint gene draws are in common_gene_axis/results/source_row_weight_diagnostic/.

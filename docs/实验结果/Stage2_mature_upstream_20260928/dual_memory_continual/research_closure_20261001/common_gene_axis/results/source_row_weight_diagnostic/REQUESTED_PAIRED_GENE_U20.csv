@@ -1,0 +1,9 @@
+reference,method_a,method_b,delta_utility20_a_minus_b,bootstrap_mean_delta,ci95_lower,ci95_upper,bootstrap_replicates,valid_draws,bootstrap_seed,n_tasks,n_gene_clusters,n_contexts,macro,direction,new_fits,new_draws
+Manual,Full_pool_standard,GAT_duplicate2,0.03925600443110677,0.027427713075990356,-0.06997775199464422,0.1308792731731232,5000,5000,20260930,543,380,3,equal context mean,positive favors method_a,0,0
+Manual,Full_pool_standard,Exphormer_duplicate2,0.18578049114233208,0.15273218655547294,0.039899738005791746,0.26503232320725423,5000,5000,20260930,543,380,3,equal context mean,positive favors method_a,0,0
+Manual,Full_pool_single_source_weight,GAT_unique,-0.12825545564464647,-0.0926985120840626,-0.20088896637614354,0.014588115026121505,5000,5000,20260930,543,380,3,equal context mean,positive favors method_a,0,0
+Manual,Full_pool_single_source_weight,Exphormer_unique,-0.1032325037906483,-0.07819164449933924,-0.1803425722268968,0.031209090478678606,5000,5000,20260930,543,380,3,equal context mean,positive favors method_a,0,0
+Learned,Full_pool_standard,GAT_duplicate2,0.10691424742634825,0.08520891544361625,0.011332561957753852,0.1681301895761624,5000,5000,20260930,543,380,3,equal context mean,positive favors method_a,0,0
+Learned,Full_pool_standard,Exphormer_duplicate2,0.06504692843385296,0.04752632543202366,-0.018201841658508362,0.1341465912193029,5000,5000,20260930,543,380,3,equal context mean,positive favors method_a,0,0
+Learned,Full_pool_single_source_weight,GAT_unique,0.10048240544501152,0.08573581925076716,0.022040213726326797,0.16093121396728516,5000,5000,20260930,543,380,3,equal context mean,positive favors method_a,0,0
+Learned,Full_pool_single_source_weight,Exphormer_unique,0.1392989876185009,0.12856933733067644,0.04547393482515646,0.2204532094175268,5000,5000,20260930,543,380,3,equal context mean,positive favors method_a,0,0

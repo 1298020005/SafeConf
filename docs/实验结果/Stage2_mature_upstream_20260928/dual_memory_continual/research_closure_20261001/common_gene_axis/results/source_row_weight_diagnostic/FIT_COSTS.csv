@@ -1,0 +1,13 @@
+reference,scenario,fit_and_reload_seconds
+Manual,GAT_unique,0.6394466450437903
+Manual,Exphormer_unique,0.22657555690966547
+Manual,Full_pool_standard,0.2833361260127276
+Learned,GAT_unique,0.22375744115561247
+Learned,Exphormer_unique,0.22692745411768556
+Learned,Full_pool_standard,0.2752128050196916
+Manual,GAT_duplicate2,0.2833030379842967
+Manual,Exphormer_duplicate2,0.27552424604073167
+Manual,Full_pool_single_source_weight,0.27504474110901356
+Learned,GAT_duplicate2,0.2799362379591912
+Learned,Exphormer_duplicate2,0.27886911504901946
+Learned,Full_pool_single_source_weight,0.2716657358687371

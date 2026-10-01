@@ -1,0 +1,85 @@
+{
+  "status": "SYNTHETIC_GUARDED_TEST_READER_PASS_REAL_TEST_UNOPENED",
+  "test_reader_sha256": "852fcd764b567a63f04c4a5539a118c8a715f664bf534184018010ac269087b2",
+  "actual_TEST_numeric_access": false,
+  "cases": [
+    {
+      "case": "complete_exact_TEST_mask_private_sentinels_CP4000_endpoint_TRAINcontrols_postopen30_QC",
+      "passed": true
+    },
+    {
+      "case": "absent_authorization",
+      "passed": true,
+      "rejected_before_numeric_reader": true
+    },
+    {
+      "case": "wrong_reader_SHA",
+      "passed": true,
+      "rejected_before_numeric_reader": true
+    },
+    {
+      "case": "missing_candidate_seal",
+      "passed": true,
+      "rejected_before_numeric_reader": true
+    },
+    {
+      "case": "unfrozen_comparison",
+      "passed": true,
+      "rejected_before_numeric_reader": true
+    },
+    {
+      "case": "altered_semantic_QC",
+      "passed": true,
+      "rejected_before_numeric_reader": true
+    },
+    {
+      "case": "failed_competence",
+      "passed": true,
+      "rejected_before_numeric_reader": true
+    },
+    {
+      "case": "faulty_competence_numeric_evidence",
+      "passed": true,
+      "rejected_before_numeric_reader": true
+    },
+    {
+      "case": "TEST_truth_already_seen",
+      "passed": true,
+      "rejected_before_numeric_reader": true
+    },
+    {
+      "case": "exact_competence_margin_preserves_original_ratio_comparison_no_epsilon",
+      "passed": true
+    },
+    {
+      "case": "missing_final_competence",
+      "passed": true,
+      "rejected_before_raw_checksum_and_numeric_reader": true
+    },
+    {
+      "case": "changed_full_LM_parameters",
+      "passed": true,
+      "rejected_before_raw_checksum_and_numeric_reader": true
+    },
+    {
+      "case": "missing_candidate_prior_artifact",
+      "passed": true,
+      "rejected_before_raw_checksum_and_numeric_reader": true
+    },
+    {
+      "case": "sum_aborts_entire_output_after_legal_open",
+      "passed": true
+    },
+    {
+      "case": "unknown_aborts_entire_output_after_legal_open",
+      "passed": true
+    },
+    {
+      "case": "fractional_aborts_entire_output_after_legal_open",
+      "passed": true
+    }
+  ],
+  "generated_fixture_root": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/test_open/synthetic/b2190daf6e0c4ebc9faf8efc4d2bc046",
+  "new_fits": 0,
+  "target_CDF_fit": false
+}

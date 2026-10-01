@@ -1,0 +1,15 @@
+reference,method_a,method_b,delta_utility20_a_minus_b,bootstrap_mean_delta,ci95_lower,ci95_upper,bootstrap_replicates,valid_draws,bootstrap_seed,n_tasks,n_gene_clusters,n_contexts,macro,direction
+Manual,GAT_duplicate2,GAT_unique,-0.0938824063804704,-0.08254215486371813,-0.18314052901394143,0.006201249908761305,5000,5000,20260930,543,380,3,equal context mean,positive favors method_a
+Manual,Exphormer_duplicate2,Exphormer_unique,-0.21538394123769755,-0.19333976075847736,-0.3086345069263472,-0.07401726343065221,5000,5000,20260930,543,380,3,equal context mean,positive favors method_a
+Manual,GAT_duplicate2,Full_pool_standard,-0.03925600443110677,-0.027427713075990356,-0.13087927317312337,0.06997775199464419,5000,5000,20260930,543,380,3,equal context mean,positive favors method_a
+Manual,Exphormer_duplicate2,Full_pool_standard,-0.18578049114233208,-0.15273218655547294,-0.26503232320725434,-0.039899738005791795,5000,5000,20260930,543,380,3,equal context mean,positive favors method_a
+Manual,Full_pool_single_source_weight,Full_pool_standard,-0.07362905369528283,-0.037584070296334815,-0.124894438253781,0.04136727885007763,5000,5000,20260930,543,380,3,equal context mean,positive favors method_a
+Manual,Full_pool_standard,GAT_unique,-0.054626401949363634,-0.055114441787727786,-0.14240037232179312,0.030063130440108998,5000,5000,20260930,543,380,3,equal context mean,positive favors method_a
+Manual,Full_pool_standard,Exphormer_unique,-0.02960345009536547,-0.040607574203004426,-0.1287636366791453,0.04848034785981148,5000,5000,20260930,543,380,3,equal context mean,positive favors method_a
+Learned,GAT_duplicate2,GAT_unique,-0.02088548042780647,-0.007076620691968071,-0.06536977263894707,0.045762387905710813,5000,5000,20260930,543,380,3,equal context mean,positive favors method_a
+Learned,Exphormer_duplicate2,Exphormer_unique,0.059798420738178204,0.07343948739953378,-0.013692859442092063,0.16813541165360754,5000,5000,20260930,543,380,3,equal context mean,positive favors method_a
+Learned,GAT_duplicate2,Full_pool_standard,-0.10691424742634825,-0.08520891544361625,-0.16813018957616246,-0.011332561957753997,5000,5000,20260930,543,380,3,equal context mean,positive favors method_a
+Learned,Exphormer_duplicate2,Full_pool_standard,-0.06504692843385296,-0.04752632543202366,-0.13414659121930292,0.018201841658508362,5000,5000,20260930,543,380,3,equal context mean,positive favors method_a
+Learned,Full_pool_single_source_weight,Full_pool_standard,0.014453638446469741,0.007603524499118998,-0.047354744018892204,0.053954902278362575,5000,5000,20260930,543,380,3,equal context mean,positive favors method_a
+Learned,Full_pool_standard,GAT_unique,0.08602876699854178,0.07813229475164817,0.011476135418123276,0.1575174950009743,5000,5000,20260930,543,380,3,equal context mean,positive favors method_a
+Learned,Full_pool_standard,Exphormer_unique,0.12484534917203116,0.12096581283155743,0.03808734338378846,0.21268670937199355,5000,5000,20260930,543,380,3,equal context mean,positive favors method_a

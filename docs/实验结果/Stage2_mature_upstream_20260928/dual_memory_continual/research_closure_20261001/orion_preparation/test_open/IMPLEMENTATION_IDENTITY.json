@@ -1,0 +1,39 @@
+{
+  "status": "IMPLEMENTED_SYNTHETIC_PASS_REAL_TEST_UNOPENED",
+  "implementations": {
+    "test_reader": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/evaluate_safeconf_orion_guarded_test_agent.py",
+      "sha256": "852fcd764b567a63f04c4a5539a118c8a715f664bf534184018010ac269087b2"
+    },
+    "numeric_backend": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/probe_safeconf_private_parquet_vectorized_agent.py",
+      "sha256": "636455cb30fc0e8c8ce6ac92db82756eff7508322e92862cf23ffad861d2e435"
+    },
+    "structural_reader": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/probe_safeconf_private_parquet_agent.py",
+      "sha256": "3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312"
+    },
+    "scientific_loader": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/build_safeconf_orion_allowed_biology_agent.py",
+      "sha256": "cdf261ffcae854f49d469437492a12b7f835aae7b720bbe565044d8a89369e8b"
+    },
+    "risk_sealer": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/seal_safeconf_orion_source_risk_agent.py",
+      "sha256": "8b69e6ce29dc92aa34150b3b08aac62ce8333a10f84ec432a39d0e81ffc64482"
+    }
+  },
+  "synthetic_proof_sha256": "bf559d00488ce5a5d8b21fe5460bfcd223fb0b9d59310300d7e349b1dcbfbc04",
+  "scientific_contract_sha256": "6b8a26939c8c6134dbf2e8294ee7905fccc2122b570b046f3183a3d2f5caba97",
+  "new_TEST_authorization_separate_from_original_TRAINVAL": true,
+  "actual_TEST_numeric_access": false,
+  "future_comparison_evaluator": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/evaluate_safeconf_orion_frozen_risk_agent.py",
+    "sha256": "dec8f056918ac5626eb12732eec3cc07041eb3680cc6addd6d9f18b32d1f486c"
+  },
+  "shared_comparison_guard_evaluation_proof": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_evaluation/SHARED_INTERFACE_PROOF.json",
+    "sha256": "09bc207f1c798d463d034e2473c2cd77beaaa81411f2feca52d1c721e68c1e28",
+    "status": "SHARED_PRETRUTH_GUARD_EVALUATOR_SYNTHETIC_PASS",
+    "actual_TEST_access": false
+  }
+}

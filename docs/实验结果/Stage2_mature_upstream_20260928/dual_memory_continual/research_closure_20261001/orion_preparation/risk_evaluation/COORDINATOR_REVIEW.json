@@ -1,0 +1,47 @@
+{
+  "status": "COORDINATOR_READONLY_AND_SAFE_BOUNDARY_REVIEW_PASS",
+  "coordinator_sha256": "f08f27279d8a0f45f67ba97d539bfbe27ed9351a75fd57c1eaab57a91c5ece85",
+  "reviewed_code_pins": {
+    "evaluate_safeconf_orion_guarded_test_agent.py": "852fcd764b567a63f04c4a5539a118c8a715f664bf534184018010ac269087b2",
+    "evaluate_safeconf_orion_frozen_risk_agent.py": "dec8f056918ac5626eb12732eec3cc07041eb3680cc6addd6d9f18b32d1f486c",
+    "seal_safeconf_orion_source_risk_agent.py": "8b69e6ce29dc92aa34150b3b08aac62ce8333a10f84ec432a39d0e81ffc64482",
+    "probe_safeconf_private_parquet_vectorized_agent.py": "636455cb30fc0e8c8ce6ac92db82756eff7508322e92862cf23ffad861d2e435",
+    "probe_safeconf_private_parquet_agent.py": "3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312",
+    "build_safeconf_orion_allowed_biology_agent.py": "cdf261ffcae854f49d469437492a12b7f835aae7b720bbe565044d8a89369e8b"
+  },
+  "cases": [
+    {
+      "case": "current_actual_WAITING_status",
+      "rejected_before_comparator_or_TEST_authorization_or_numeric_reader": true
+    },
+    {
+      "case": "mocked_guarded_reader_code_pin_change",
+      "rejected_before_comparator_or_TEST_authorization_or_numeric_reader": true
+    },
+    {
+      "case": "missing_actual_upstream_STATUS",
+      "rejected_before_comparator_or_TEST_authorization_or_numeric_reader": true
+    },
+    {
+      "case": "ready_status_string_but_missing_actual_candidate_seal",
+      "rejected_without_output_before_TEST_authorization_or_numeric_reader": true
+    },
+    {
+      "case": "generated_first_claim_then_second_distinct_output_operation",
+      "first_claim_success": true,
+      "second_claim_FileExistsError": true,
+      "first_claim_sha256_preserved": "deab28a71e1640ed7e4107edd171ea5f67043d871b7fbe2cf6b77ec7f56a253b",
+      "first_claim_readonly_and_bound_to_original_operation": true,
+      "temporary_claim_path_only": true
+    }
+  ],
+  "current_upstream_status": "WAITING_UPSTREAM_PRETRUTH_FIT",
+  "once_only_scope_enforcement": "Exclusive fixed BASE/ORION_REGISTERED_TEST_FIRST_OPEN_SCOPE.json across all output roots; never auto-released",
+  "scope_claim_sequence_review": "make_operation ends with reader.authorize_test; run then reserves scope and saves claim before raw reader subprocess starts",
+  "actual_TEST_expression_or_truth_access": false,
+  "coordinator_launched": false,
+  "production_registration_created_or_changed": false,
+  "fake_valid_production_scientific_contract_created": false,
+  "source_or_frozen_method_changes": false,
+  "artifact_interface_review": "Exact reader operation keys, comparator direct aliases, LM/risk/Source parameter registries, old9fd-to3e7 primitive override and immutable40object snapshot997 match guardedreader/evaluator interfaces."
+}

@@ -1,0 +1,20 @@
+{
+  "status": "COMPLETE",
+  "fixed_comparisons": 8,
+  "new_fits": 0,
+  "new_CDFs": 0,
+  "new_bootstrap_draws": 0,
+  "original_outputs_preserved": true,
+  "Orion_access": false,
+  "parameter_or_winner_selection": false,
+  "output_bindings": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_row_weight_diagnostic/SUPPLEMENT_REGISTRATION.json",
+      "sha256": "7fb1591bcc2309d7c8391dbde805cc9db619c6c0346fef78ae75f7842df97633"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_row_weight_diagnostic/REQUESTED_PAIRED_GENE_U20.csv",
+      "sha256": "ae61c49759e7a476e8faf974c6b5a7d265dbcf84290bcc82ff930872b1a0c28f"
+    }
+  ]
+}
