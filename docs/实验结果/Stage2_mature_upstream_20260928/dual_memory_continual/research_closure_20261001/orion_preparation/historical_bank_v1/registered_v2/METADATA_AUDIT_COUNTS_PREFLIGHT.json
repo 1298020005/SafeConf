@@ -1,0 +1,22 @@
+{
+  "n_legacy_items": 2008,
+  "n_old_eligible_genes": 580,
+  "n_append_units": 3357,
+  "n_appended_unique_genes": 1490,
+  "append_context_counts": {
+    "K562": 502,
+    "RPE1": 985,
+    "hepg2": 937,
+    "jurkat": 933
+  },
+  "n_historical_X_rows_authorized": 571090,
+  "n_control_cells": 39165,
+  "n_control_batches": 215,
+  "duplicate_context_cell_ids": 0,
+  "all_3285_endpoint_genes_measured": true,
+  "Source_training_gene_count": 575,
+  "Source575_subset_old580": true,
+  "Source575_training_gene_history_unchanged": true,
+  "expression_values_read": 0,
+  "target_orion_truth_expression_read": 0
+}

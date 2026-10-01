@@ -1,0 +1,375 @@
+{
+  "schema": "safeconf_source_public_bank_independent_actual_review_v1",
+  "status": "PASS",
+  "created_utc": "2026-10-01T21:51:50.079219+00:00",
+  "reviewer": "external_scientific_gate_review",
+  "bank_manifest": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v2/PUBLIC_BANK_MANIFEST.json",
+    "bytes": 12959,
+    "sha256": "8053a6118bc2e3cace841e1498cee3c1366ce5b49e9c79328e7cd34a180b6607"
+  },
+  "checks": {
+    "exact_root_requested_manifest": true,
+    "COMPLETE_manifest": true,
+    "all16_completed_bank_artifact_hashes": true,
+    "parent_and_extended_bindings": true,
+    "original_Source_core_parameter_bindings": true,
+    "extension_contract_exact": true,
+    "source_read_contract_binding_exact": true,
+    "builder_code_binding_exact": true,
+    "base_scientific_contract_exact": true,
+    "source_training_tasks_binding_exact": true,
+    "new9114_d7f8_0b6b_and_old6b8a_identity": true,
+    "read_expansion_mutual_binding": true,
+    "counts5365_2008_3357_580_1490_2070": true,
+    "serialized_metadata_old2008_exact": true,
+    "append_absent_all_old580": true,
+    "unique_experiment_ids_and_vector_rows": true,
+    "all_records_Source_single_gene_eligible": true,
+    "append_at_least30cells": true,
+    "canonical3285_axis_order": true,
+    "aggregate_shape_and_dtype": true,
+    "old_effect_control_values_prefix_byte_exact": true,
+    "all_aggregate_vectors_finite": true,
+    "all_measured_controls_nonnegative": true,
+    "Source575_subset_old580": true,
+    "old580_and_Source575_same_gene_retrieval_unchanged": true,
+    "all7_original_models_hash_preserved": true,
+    "original_Source_CDF_bytes_preserved": true,
+    "canonical_physical_units_unique": true,
+    "correct4contexts_2originalstudies": true,
+    "physical_unit_SHA_context_condition_identity": true,
+    "old_effect_control_contract_and_new_contract_metadata": true,
+    "no_fabricated_guide_plate_quality": true,
+    "unit_support_counts_match_bank_metadata": true,
+    "legacy_numerical_compatibility_report_inside_frozen1e5": true,
+    "actual_read_receipt_counts_and_bounds": true,
+    "selected_treated_plus_controls_metadata_count": true,
+    "independent_frozen_Orion_metadata_coverage144_107_125_88": true,
+    "qualified_asset_UNION100_context20_only": true
+  },
+  "count_summary": {
+    "total_units": 5365,
+    "total_eligible_genes": 2070,
+    "legacy_units": 2008,
+    "legacy_eligible_genes": 580,
+    "appended_units": 3357,
+    "appended_eligible_genes": 1490,
+    "unchanged_Source_risk_gene_clusters": 575,
+    "original_fitted_models_preserved": 7,
+    "canonical_readout_genes": 3285,
+    "Source_contexts": 4,
+    "independent_original_Source_studies": 2,
+    "metadata_qualified_TASKS": 232,
+    "metadata_qualified_gene_clusters_union": 144,
+    "metadata_qualified_gene_clusters_both_contexts": 88,
+    "metadata_qualified_tasks_by_context": {
+      "HCT116": 107,
+      "HEK293T": 125
+    },
+    "historical_selected_treated_cells": 531925,
+    "historical_selected_control_cells": 39165
+  },
+  "prefix_value_hashes": {
+    "effects": {
+      "expanded_first2008_values_sha256": "0439d88b7908d03bb5f58fa2d10cc9ed847d1f7285dc26779c47f66e6cb01df2",
+      "original2008_values_sha256": "0439d88b7908d03bb5f58fa2d10cc9ed847d1f7285dc26779c47f66e6cb01df2"
+    },
+    "controls": {
+      "expanded_first2008_values_sha256": "f529eea011d5bfb22bb523b1a9e437da8a97ca2879390d0c7f58df13ceda53d2",
+      "original2008_values_sha256": "f529eea011d5bfb22bb523b1a9e437da8a97ca2879390d0c7f58df13ceda53d2"
+    }
+  },
+  "numeric_aggregate_summary": {
+    "effects_min": -3.357611238767228,
+    "effects_max": 2.682546615600586,
+    "controls_min": 0.011474701921777892,
+    "controls_max": 4.309332039026678,
+    "reconstructed_treated_mean_min_legacy": 0.0,
+    "reconstructed_treated_mean_min_appended": 0.0
+  },
+  "reported_recomputed_legacy_compatibility_max_abs_gaps": {
+    "effect": 4.16491165911026e-06,
+    "control": 9.058569023778772e-07
+  },
+  "actual_Source_read_receipt": {
+    "all_exact_selected_Source_rows_completed": true,
+    "selected_cells": 571090,
+    "selected_CSR_values": 850904175,
+    "chunks": 551,
+    "bounded_chunks_sorted_without_changing_paired_values": 551,
+    "elapsed_seconds": 20.245133713819087,
+    "cpu_seconds": 75.296467,
+    "peak_rss_bytes": 752832512,
+    "excluded_context_rows_decoded": 0,
+    "Orion_expression_truth_values_read": 0,
+    "contract_sha256": "d7f8f9d6464db0aa4adee4348f5cb9ccbb97cdbc19d3bec1826743da5a92cab8",
+    "builder_code_sha256": "9114a69e04cf25eacbb608ff6f8b91b175a8e856293696471c18761a57b20819",
+    "source_sha256": "1b557390148eba358304e43e0b239538d9ae0691b26ec843f41cf544960307a8",
+    "normalization_altered": false,
+    "new_fits": 0
+  },
+  "review_scope": {
+    "authorized_Source_aggregate_vectors_read": true,
+    "raw_Source_X_read": false,
+    "Orion_expression_or_prediction_or_TEST_truth_read": false,
+    "Orion_previously_SEEN_frozen_metadata_only": true,
+    "new_fits_or_fixture_tests": 0
+  },
+  "effect_control_identity_evidence": "Previously reviewed builder computes effects = cell-equal treated means minus batch-matched controls. Actual arrays are finite and prefix-exact; new treated means are not independently archived, so raw-X recomputation of each appended effect/control identity was not performed. No tautological reconstruction is presented as independent proof.",
+  "limitations": [
+    "This PASS verifies the completed Source bank, not the pending adapter, pretruth risk seal, finite-score cohort, TEST access chain, or efficacy.",
+    "144 clusters is metadata coverage; the all-fixed-method finite primary intersection must still meet UNION>=100 and each context>=20 before formal TEST.",
+    "Guide, plate and biological replicate quality remain unknown. Four contexts originate from two canonical studies.",
+    "Original Source held-context HVG axis provenance remains disclosed."
+  ],
+  "verified_input_bindings": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v2/ARTIFACT_HASHES.json",
+      "bytes": 4032,
+      "sha256": "19ffb2d705973f9bb0efac888bc107a33d5f95968f0c93c89260b1c65961100f"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/build_safeconf_source_historical_bank_sorted_csr_agent.py",
+      "bytes": 35865,
+      "sha256": "9114a69e04cf25eacbb608ff6f8b91b175a8e856293696471c18761a57b20819"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v3_sorted_csr/SOURCE_PUBLIC_HISTORICAL_READ_CONTRACT.json",
+      "bytes": 9081,
+      "sha256": "d7f8f9d6464db0aa4adee4348f5cb9ccbb97cdbc19d3bec1826743da5a92cab8"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v3_sorted_csr/PUBLIC_BANK_EXPANSION_CONTRACT.json",
+      "bytes": 6752,
+      "sha256": "0b6b9b86ad18da6f748ff4fc7cca4e20253c6b43a2d9533bb2b585664c79487f"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_METHOD_CONTRACT.json",
+      "bytes": 7500,
+      "sha256": "6b8a26939c8c6134dbf2e8294ee7905fccc2122b570b046f3183a3d2f5caba97"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_TASKS.parquet",
+      "bytes": 95447,
+      "sha256": "6bd02a0cff8f41ea48ad9566622bbebe923db56db64a8d20a4597fce53725013"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_ERROR_CDF.json",
+      "bytes": 108918,
+      "sha256": "ebd7390593cfc0bf71fbcab2c9c992d62990b57d729f59a6867ad98265a2bc01"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_lm_bridge_20261002_v1/query_scope_metadata_only/METADATA_ONLY_QUERY_SCOPE.tsv",
+      "bytes": 1084979,
+      "sha256": "0fbdc6c431538da8f4c3a8247ce227fe292d709e05d8e032218f99674e32620e"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/FILE_METADATA_IDENTITY.json",
+      "bytes": 119286,
+      "sha256": "89901ca8afbb6fe86664c54c5f6c2bab27b21d77f75563395e25c3dd0d9659f6"
+    }
+  ],
+  "frozen_Orion_metadata_input_bindings": [
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch1.parquet",
+      "bytes": 823695,
+      "sha256": "d96f18575dc6b450934acf7879ac9547737d083e15af4c32c9f6ab2eb21c5895"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch10.parquet",
+      "bytes": 1269949,
+      "sha256": "fb0f4a58e907d9e2dc578acf196b3a662c9221118dfbb143740fbe6f6eb405b3"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch11.parquet",
+      "bytes": 1213786,
+      "sha256": "583e26815c610689b18ba58310c7f89f1e5201d3dc3df7f02ec70fe492d7fa0a"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch12.parquet",
+      "bytes": 1278791,
+      "sha256": "5648d6560be5440b081b4bf0ce14563923b6ecd73a8a00ea60465fa23e53a225"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch13.parquet",
+      "bytes": 1275223,
+      "sha256": "dfc58b9487e6bf8dce8a606097cc2ade0488c07ba27ce5fa3b687ce287467094"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch14.parquet",
+      "bytes": 1264810,
+      "sha256": "e510d3a35b5d072c118e4e4d8c64cb2f315866b08802a61ef0dd041382150d74"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch15.parquet",
+      "bytes": 1282111,
+      "sha256": "325790abd5943220ae7a2c328857c1abdd897722640cf965a626804b6450d157"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch16.parquet",
+      "bytes": 1274077,
+      "sha256": "1c2f0a3524d331b60f058df48957846b2cf2b4b23db5d85617c4f631a4ca616c"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch17.parquet",
+      "bytes": 1278569,
+      "sha256": "68bce698244f47a27cd2fd6bc511a7fed2ffcb7f0f1e9cafa432075a05c9c848"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch18.parquet",
+      "bytes": 853973,
+      "sha256": "19a2a9e76cb2d92a905b0d6d711f0a31af18b7da203a6332c7b129b660e0c77e"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch19.parquet",
+      "bytes": 1327173,
+      "sha256": "6226dfe40e662814ab0c63924fda69ecaca1d7fac3c4f92d9af7440753aa12ca"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch2.parquet",
+      "bytes": 826190,
+      "sha256": "bdc7c30775efd1ed2cae5402a636dd52944cbc55ac28ee775df705841bf438a9"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch20.parquet",
+      "bytes": 1420460,
+      "sha256": "3ae5735318e4a5e7028d645ab037145587c34b6eff9879b726aaaa90fa4e10c5"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch3.parquet",
+      "bytes": 851165,
+      "sha256": "cec17e88f57fc9d5e0be4f5dd88c2e5b27602df0d274e319081b480e1bfa8f57"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch4.parquet",
+      "bytes": 822220,
+      "sha256": "403883073f691ffe3309982b394dc6080c6b3a9f33c6d1070f0f2868ec52e049"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch5.parquet",
+      "bytes": 859632,
+      "sha256": "0be1b43ac080f9854f40d38efe3d119a5c4373dfcc27888ea47408be30bc8e10"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch6.parquet",
+      "bytes": 846324,
+      "sha256": "f65a1642f1b7611372fec11d021179bb7709e934fccd802c8ef090e30e9a6821"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch7.parquet",
+      "bytes": 885689,
+      "sha256": "2447687e905209de3dd279d97150ac7899b0b292bc787d4075ef09134801ae02"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch8.parquet",
+      "bytes": 866919,
+      "sha256": "c441f34d1cc1927ecdf0f8d82905fb773c2846ae23e300455f63250bd9ef62d4"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HCT116_Batch9.parquet",
+      "bytes": 1269916,
+      "sha256": "51b76b929f3c2a9b68295831fb6b00538902e0e34291295937104558e19ea503"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch1.parquet",
+      "bytes": 956543,
+      "sha256": "03b2a2beab103d80f0ccfbc3884931ded66b63c6bf838ab9b19153d3fb61c220"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch10.parquet",
+      "bytes": 1184938,
+      "sha256": "6c4a064067bab5a9fd275e9e88be417d43121183edcc5d81e76a076438058ea4"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch11.parquet",
+      "bytes": 1234659,
+      "sha256": "a7765e0a6a066df2246e02f88b2e656186e1a95d9283fce3d5161103b6cccd55"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch12.parquet",
+      "bytes": 1177869,
+      "sha256": "d34bac6243f0fdc1d5ef516b075a0aed6e40c34920556eda71a0fe429491d5d0"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch13.parquet",
+      "bytes": 1210333,
+      "sha256": "e84ded8236f0473aa0d20c36a70380cfc19f4edf530380c0f78f1093b3d02f1f"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch14.parquet",
+      "bytes": 1216508,
+      "sha256": "847c7e96dfefa3406045076908a20ac4004dd734ee14ef0c441d73dbc988910a"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch15.parquet",
+      "bytes": 1024240,
+      "sha256": "8854e6397614412392f17d3e806028a17371f02c752ec7ab20225364c76499e3"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch16.parquet",
+      "bytes": 1023447,
+      "sha256": "1f9e35c0c1d491ec0a7a454c8cb2075da84708b1c10dae3074e74f418e22a317"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch17.parquet",
+      "bytes": 1027354,
+      "sha256": "84b4b92e25c64310a3b2097804c9db1c26522f7b411209831be9ab1f6cf88f2b"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch18.parquet",
+      "bytes": 1040120,
+      "sha256": "326a3db655d2d27ebf316c5ccb4c2adc6910c76a65b3e2ac6702debd47120bea"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch19.parquet",
+      "bytes": 1044615,
+      "sha256": "543fefad444a16d51b280b004bd4499a560a185aea7fec3c1b0896f149b145dd"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch2.parquet",
+      "bytes": 1165570,
+      "sha256": "a5f7562588372d26e2cb67c0f9a8f018a318b8bcca5da83fc7169a8db1f8d9c9"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch20.parquet",
+      "bytes": 1053293,
+      "sha256": "0ddedf7a9872d98cbc5755f63e7d4dbcc7bcea153903c6eb7db5d3f78bc542a6"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch3.parquet",
+      "bytes": 1255430,
+      "sha256": "81a633bf316d7861f4e851bd1799b3f5a047a6d48eb3bef3a7c9b52e290c365b"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch4.parquet",
+      "bytes": 1228253,
+      "sha256": "8453ce3ecebde4cf7b6217e9aa8a714b948180b2c55b654e8d4ebeb83bb5f0f2"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch5.parquet",
+      "bytes": 1212168,
+      "sha256": "dc3d66185ff91406ba122df4d9cb0266a15320e67e2136a44fcb6d40b9266987"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch6.parquet",
+      "bytes": 1217750,
+      "sha256": "8f67b6665aed52de2fbfb0d6ffcaf162111ddb75a9d0356bc2d04874ea2d697a"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch7.parquet",
+      "bytes": 1216028,
+      "sha256": "26700208ad5012f9b86f38e4d434cec815fbf9a635a55c3e667048846241b431"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch8.parquet",
+      "bytes": 1175035,
+      "sha256": "e03e09539961bef2729dbdfe9ccbf1cc8296518735d04e517547e1310cf547b1"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/row_metadata/HEK293T_Batch9.parquet",
+      "bytes": 1243318,
+      "sha256": "098d65bd7944d0e8136b7745cbfe63f7d693452df92081724963f0c6bbee7c07"
+    }
+  ]
+}

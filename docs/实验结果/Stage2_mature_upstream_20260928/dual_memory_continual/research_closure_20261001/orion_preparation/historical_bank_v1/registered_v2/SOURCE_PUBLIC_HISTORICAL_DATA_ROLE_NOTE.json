@@ -1,0 +1,22 @@
+{
+  "role": "SOURCE_PUBLIC_HISTORICAL_DEV",
+  "original_source_predictors_role": "DEV",
+  "source_filename_test_is_not_Orion_TEST": true,
+  "source_is_published_historical_Replogle2022_Nadig2025": true,
+  "source_has_no_SEALED_role": true,
+  "source_new_targets_are_newly_authorized_public_history": true,
+  "independent_Orion_truth_confirmation": false,
+  "Orion_TEST_metadata_role": "SEEN",
+  "Orion_TEST_truth_status": "CLOSED",
+  "Orion_expression_truth_reads_authorized": false,
+  "role_registry": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/DATA_ROLE_REGISTRY.csv",
+    "bytes": 13078,
+    "sha256": "ac604e659a15bae46c0daedff1d7f47f98f92916872cfcdc9b7e18cc9e52e241"
+  },
+  "source_context_study_provenance": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/history_provenance_check/TXPERT_CONTEXT_STUDY_PROVENANCE.csv",
+    "bytes": 286,
+    "sha256": "4e8b6734b0374da58c47e9abd6ab003d1e4a2eb31afdf26f9e159e6bb83846df"
+  }
+}

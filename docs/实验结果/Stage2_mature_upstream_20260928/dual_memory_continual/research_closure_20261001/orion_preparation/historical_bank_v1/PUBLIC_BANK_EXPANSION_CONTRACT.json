@@ -1,0 +1,126 @@
+{
+  "schema": "safeconf_source_public_historical_expansion_contract_v1",
+  "status": "PROSPECTIVE_TRUTH_BLIND_SOURCE_HISTORY_EXTENSION",
+  "source_read_contract_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/SOURCE_PUBLIC_HISTORICAL_READ_CONTRACT.json",
+    "bytes": 8565,
+    "sha256": "04097168b5601d9df36b9f6ade0653b2ac580ea530eb5538490e83e24af3bc67"
+  },
+  "base_scientific_contract": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_METHOD_CONTRACT.json",
+    "bytes": 7500,
+    "sha256": "6b8a26939c8c6134dbf2e8294ee7905fccc2122b570b046f3183a3d2f5caba97"
+  },
+  "builder_code_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/build_safeconf_source_historical_bank_agent.py",
+    "bytes": 33955,
+    "sha256": "fe3e50b5f5e07f1c91042c6f4051d74c61a145df671f32a7323bda84a1b89d1d"
+  },
+  "parent_bank": {
+    "metadata": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_MEMORY_METADATA.parquet",
+      "bytes": 58150,
+      "sha256": "fcfbd3300a012e3747c9642f5076d1407c509f46f66e4412522c5d9b8661c4bd"
+    },
+    "effects": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_EFFECTS.npy",
+      "bytes": 52770368,
+      "sha256": "ea946b2c9a9a7ee1605af1f9b72e9cc250596ce6eb0dc08b7ab4aeed3d80c4aa"
+    },
+    "controls": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_CONTROLS.npy",
+      "bytes": 52770368,
+      "sha256": "b045d003f1bca1d570cc75d3a03928ea77a18ce206411a932f3afc501e4c73d3"
+    },
+    "axis": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/GENE_MANIFEST.csv",
+      "bytes": 122617,
+      "sha256": "c1c9c8041458275248514d960c6c263a72f43a12a8d48c16f77759d2342fa08f"
+    },
+    "gene_ids": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/GENE_IDS.json",
+      "bytes": 37116,
+      "sha256": "b7f80db0c0e46dd7667cb83f39153c4add31948ca00e5391c210b9c6a18d7c68"
+    }
+  },
+  "parent_source_core_bindings": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_FEATURE_MANIFEST.json",
+      "bytes": 16172,
+      "sha256": "b74b9dfbc64f5acc82b7b0d34023aa6a523bd11d1904ced7fd638c5bec4ef2d1"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/MODEL_MANIFEST.json",
+      "bytes": 8934,
+      "sha256": "c8d9d5003860d8a5e117398a7d44b5c67cfb700c6fb56f37bcf04a5d549909a6"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/ARTIFACT_HASHES.json",
+      "bytes": 16183,
+      "sha256": "58de3cc87c8a889a0604b0da23318ea415ce6d6482e4941851ee0015aaf50084"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_TASKS.parquet",
+      "bytes": 95447,
+      "sha256": "6bd02a0cff8f41ea48ad9566622bbebe923db56db64a8d20a4597fce53725013"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_P_only_ridge.joblib",
+      "bytes": 881,
+      "sha256": "68019b2ea0c6a332049089da100e18515e05cabebbd1fa6f4fcf24d4d112d42d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_P_only_hgb.joblib",
+      "bytes": 61512,
+      "sha256": "4b3206c9183e5c38e62c2b1ce0e2185f711102e23ac8ff3fc52d930eed150cc7"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_Manual_ridge.joblib",
+      "bytes": 1203,
+      "sha256": "de485ad5899827618416a8d73f9f7137da7a4b26aefc395a67304ad9e8b3c955"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_Manual_hgb.joblib",
+      "bytes": 79239,
+      "sha256": "1c0a78127b4aaf4349761b569c63fb4f6f74925ddc303221d8393c5b5e3eed42"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_Learned_ridge.joblib",
+      "bytes": 1205,
+      "sha256": "f4d332b16c79b410fb71fe461f18777c7bd9899a1b6971312142fe56177fae0e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_Learned_hgb.joblib",
+      "bytes": 78050,
+      "sha256": "a605d30c12eee46fe4b2b1af64d5eed5edfcf042cdb781fdb75883a6f9454f7d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_BIOLOGY_FULL_HGB.joblib",
+      "bytes": 66883,
+      "sha256": "3a6f05d9b8060eb9802a6e5a0e6adf067253e57edd3aedd04b600a2f93578f5a"
+    }
+  ],
+  "append_policy_id": "ONLY_GENES_ABSENT_FROM_ORIGINAL_ELIGIBLE_SOURCE_BANK",
+  "append_policy": {
+    "minimum_historical_cells": 30,
+    "target_absent_old_eligible_gene_set": true,
+    "old_eligible_gene_count": 580
+  },
+  "canonical_axis_binding": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/GENE_MANIFEST.csv",
+    "bytes": 122617,
+    "sha256": "c1c9c8041458275248514d960c6c263a72f43a12a8d48c16f77759d2342fa08f"
+  },
+  "old_legacy_prefix_n_items": 2008,
+  "Source575_subset_old580": true,
+  "minimum_primary_gene_clusters_union": 100,
+  "minimum_context_tasks": 20,
+  "pretruth_metadata_coverage_used": true,
+  "SafeConf_outcomes_used_for_asset_selection": false,
+  "Orion_TEST_metadata": "SEEN",
+  "Orion_TEST_truth": "CLOSED",
+  "new_bank_is_not_original_confirmation": true,
+  "new_model_fits": 0,
+  "old_Source_model_parameters_or_features_changed": false,
+  "no_Orion_expression_truth_read": true
+}

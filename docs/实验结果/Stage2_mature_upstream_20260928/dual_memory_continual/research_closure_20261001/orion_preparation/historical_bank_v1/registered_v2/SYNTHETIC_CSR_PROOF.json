@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "builder_sha256": "f3a1b41bea0d4cebfd1e6f83dd7749764e09330d7bd0c98cb5819acde4656a36",
+  "fixture_runtime": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_historical_csr_registered__v5urfhb",
+  "cases": [
+    {
+      "case": "cell_equal_measured_zero_mean_fixed_axis_excluded_sentinel",
+      "status": "PASS"
+    },
+    {
+      "case": "nonfinite",
+      "status": "PASS"
+    },
+    {
+      "case": "negative",
+      "status": "PASS"
+    },
+    {
+      "case": "duplicate_measured_gene",
+      "status": "PASS"
+    },
+    {
+      "case": "exact_authorized_contiguous_bounded_runs",
+      "status": "PASS"
+    }
+  ],
+  "Source_historical_X_read": false,
+  "Orion_expression_truth_read": false
+}

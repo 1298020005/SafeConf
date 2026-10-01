@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-01T21:41:11.460038+00:00",
+  "updated_utc": "2026-10-01T21:55:39.784665+00:00",
   "complete": [
     "five-fold nested public biology with four inner folds",
     "three-line sixteen-method matrix with three registered seeds",
@@ -55,7 +55,8 @@
     "Source training-copy/total-loss-weight attribution:12fixedfits,6originalscore reproductions,5000pairedgene draws; no sourcefrozenparameterchange",
     "All fixed source scaling/diversity uncertainty:5000jointgene draws,543tasks380genes,all7metrics,150+30oldpoints reproduced; no refits",
     "Real isolated Source DEV continual replay: Public1047→2008,Error1372→2038; fixed candidate rejected; actual serving-v1 retention, immutable reload and administrative rollback independently verified",
-    "Actual Source DEV fixed2x2 memory diagnosis: exactly2crossfits,5000shared227gene draws; allU20CIs includezero; no candidate or formal serving change"
+    "Actual Source DEV fixed2x2 memory diagnosis: exactly2crossfits,5000shared227gene draws; allU20CIs includezero; no candidate or formal serving change",
+    "Actual append-only expanded Source Publicbank:5365units2070genes,3357newunits1490newgenes;old2008records/effect/controlprefixexact,Source575historyandsevenmodelhashesunchanged;independent38checksPASS"
   ],
   "pending": [
     "Actual authorized Orion TRAIN/VALIDATION aggregation final artifacts and hashes",
@@ -68,7 +69,7 @@
   "new_large_upstream_training": 0,
   "new_download_gb": 0.04440246,
   "completion_claim": "goal active; meaningful diagnostics and registered matrices continue; manuscript prose deferred",
-  "current_work": "Orion TRAIN/VALIDATION pipeline continues; automatic TEST opening stopped before first-open claim. Verified full existing Source history can repair coverage to about144TESTgeneclusters; append-only new-gene bank and explicit pretruth bank adapter/receipt chain are being constructed. No model refits or TESTtruth reads.",
+  "current_work": "Expanded Publicbankbuiltandindependentlyverified;newexplicitadapterandTESTreceiptbindingchainundergeneratedendtoendreview. OrionTRAIN/VALIDATIONcontinues;TESTautoheldbeforefirstopen;nofitsorTargettruthforPublicexpansion.",
   "deferred_by_user": [
     "manuscript and supplement prose generation"
   ],
@@ -110,9 +111,10 @@
     },
     {
       "name": "Source_historical_append_only_public_bank",
-      "pid": 394320,
+      "pid": 398994,
       "scope": "onlypublishedhistoricalSourceX;noOrionexpr;no fits",
-      "output_root": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v1"
+      "output_root": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v1",
+      "status": "COMPLETE_V2_AFTER_PRESERVED_V1_SORTED_CSR_TECHNICAL_REPAIR"
     }
   ],
   "orion_training_expression_read": true,
@@ -173,15 +175,21 @@
     "general_test_cohort_not_same_as_history_cohort": true
   },
   "public_history_coverage_repair": {
-    "status": "ACTUAL_HISTORICAL_SOURCE_BUILD_RUNNING_AFTER_CODE_CONTRACT_REVIEW",
-    "builder_pid": 394320,
+    "status": "HISTORICAL_BANK_COMPLETE_AND_INDEPENDENTLY_VERIFIED_ADAPTER_CHAIN_PENDING",
+    "builder_pid": null,
     "metadata_expected_added_units": 3357,
     "metadata_expected_added_genes": 1490,
     "metadata_expected_total_bank_records": 5365,
     "metadata_primary_gene_union_upper_bound": 144,
     "frozen_source_models_refitted": false,
     "Orion_test_opened": false,
-    "source_read_contract_sha256": "2085519a4b80e2116f4aa4f77420f744508f5a8e8f3e6f0827f551b40fd8787b",
-    "extension_contract_sha256": "747f1dd643d4613e1b156d663d429f10630c2b87d7b9f4b49bcfdcc5f8540211"
+    "source_read_contract_sha256": "d7f8f9d6464db0aa4adee4348f5cb9ccbb97cdbc19d3bec1826743da5a92cab8",
+    "extension_contract_sha256": "0b6b9b86ad18da6f748ff4fc7cca4e20253c6b43a2d9533bb2b585664c79487f",
+    "bank_manifest_sha256": "8053a6118bc2e3cace841e1498cee3c1366ce5b49e9c79328e7cd34a180b6607",
+    "actual_bank_records": 5365,
+    "actual_bank_genes": 2070,
+    "source_selected_cells": 571090,
+    "source_selected_CSR_values": 850904175,
+    "independent_actual_bank_review": "PASS38checks"
   }
 }

@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "schema": "safeconf_source_historical_bank_postbuild_validation_v1",
+  "bank_manifest_sha256": "8053a6118bc2e3cace841e1498cee3c1366ce5b49e9c79328e7cd34a180b6607",
+  "verified_artifact_registry_entries": 16,
+  "verified_original_source_bindings": 15,
+  "exact_metadata_effects_controls_legacy_prefix": true,
+  "old580_group_invariance": true,
+  "Source575_subset_old580_and_no_new_records": true,
+  "exact3285_axis_and_gene_ids": true,
+  "unique5365_physical_units_with_correct2studies4contexts": true,
+  "all3357newunits_ge30cells": true,
+  "all2008_control_effect_gaps_under_fixed1e-5": true,
+  "validation_model_calls": 0,
+  "validation_Source_raw_X_reads": 0,
+  "validation_Orion_expression_truth_reads": 0,
+  "elapsed_seconds": 1.2813698090612888,
+  "validation_scope": "artifact identity/prefix/metadata; no predictions/fits"
+}

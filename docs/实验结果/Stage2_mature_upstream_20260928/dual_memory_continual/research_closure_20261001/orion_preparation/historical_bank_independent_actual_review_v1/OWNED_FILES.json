@@ -1,0 +1,13 @@
+{
+  "schema": "safeconf_owned_review_files_v1",
+  "owner": "external_scientific_gate_review",
+  "created_utc": "2026-10-01T21:51:50.084055+00:00",
+  "owned_files": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_independent_actual_review_v1/ACTUAL_BANK_REVIEW.json",
+      "bytes": 18841,
+      "sha256": "fd3340eae6533d6ef4925047d50b4061b706ea3151446612d31b650c4ff1a69f"
+    }
+  ],
+  "scope": "Only this reviewer output is owned; Source bank, contracts and scientific code are read-only inputs."
+}

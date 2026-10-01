@@ -1,0 +1,107 @@
+{
+  "schema": "safeconf_source_historical_bank_build_receipt_v2",
+  "status": "COMPLETE",
+  "bank_manifest": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v2/PUBLIC_BANK_MANIFEST.json",
+    "sha256": "8053a6118bc2e3cace841e1498cee3c1366ce5b49e9c79328e7cd34a180b6607",
+    "bytes": 12959
+  },
+  "artifact_registry": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v2/ARTIFACT_HASHES.json",
+    "sha256": "19ffb2d705973f9bb0efac888bc107a33d5f95968f0c93c89260b1c65961100f",
+    "bytes": 4032
+  },
+  "actual_builder": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/build_safeconf_source_historical_bank_sorted_csr_agent.py",
+    "bytes": 35865,
+    "sha256": "9114a69e04cf25eacbb608ff6f8b91b175a8e856293696471c18761a57b20819"
+  },
+  "read_contract": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v3_sorted_csr/SOURCE_PUBLIC_HISTORICAL_READ_CONTRACT.json",
+    "bytes": 9081,
+    "sha256": "d7f8f9d6464db0aa4adee4348f5cb9ccbb97cdbc19d3bec1826743da5a92cab8"
+  },
+  "expansion_contract": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v3_sorted_csr/PUBLIC_BANK_EXPANSION_CONTRACT.json",
+    "bytes": 6752,
+    "sha256": "0b6b9b86ad18da6f748ff4fc7cca4e20253c6b43a2d9533bb2b585664c79487f"
+  },
+  "counts": {
+    "schema": "safeconf_source_public_history_expansion_v1",
+    "n_legacy_items": 2008,
+    "n_append_items": 3357,
+    "n_total_items": 5365,
+    "n_old_eligible_genes": 580,
+    "n_new_eligible_genes": 1490,
+    "n_total_eligible_genes": 2070,
+    "append_context_counts": {
+      "K562": 502,
+      "RPE1": 985,
+      "hepg2": 937,
+      "jurkat": 933
+    },
+    "metadata_prefix_exact": true,
+    "legacy_effects_bitwise_equal": true,
+    "legacy_controls_bitwise_equal": true,
+    "old580_retrieval_group_identity_exact": true,
+    "Source575_risk_training_gene_history_unchanged": true,
+    "physical_units_unique": true,
+    "all_endpoint_genes_measured": true,
+    "old_compatibility_effect_max_abs_gap": 4.16491165911026e-06,
+    "old_compatibility_control_max_abs_gap": 9.058569023778773e-07,
+    "new_fits": 0,
+    "Orion_expression_truth_read": false
+  },
+  "coverage_metadata_only": {
+    "supported_context_counts": {
+      "HCT116": 107,
+      "HEK293T": 125
+    },
+    "supported_unique_gene_clusters": 144,
+    "supported_both_context_gene_clusters": 88
+  },
+  "actual_all_method_finite_coverage_not_yet_claimed": true,
+  "Source_X_read_audit": {
+    "all_exact_selected_Source_rows_completed": true,
+    "selected_cells": 571090,
+    "selected_CSR_values": 850904175,
+    "chunks": 551,
+    "bounded_chunks_sorted_without_changing_paired_values": 551,
+    "elapsed_seconds": 20.245133713819087,
+    "cpu_seconds": 75.296467,
+    "peak_rss_bytes": 752832512,
+    "excluded_context_rows_decoded": 0,
+    "Orion_expression_truth_values_read": 0,
+    "contract_sha256": "d7f8f9d6464db0aa4adee4348f5cb9ccbb97cdbc19d3bec1826743da5a92cab8",
+    "builder_code_sha256": "9114a69e04cf25eacbb608ff6f8b91b175a8e856293696471c18761a57b20819",
+    "source_sha256": "1b557390148eba358304e43e0b239538d9ae0691b26ec843f41cf544960307a8",
+    "normalization_altered": false,
+    "new_fits": 0
+  },
+  "cost": {
+    "successful_v2_wall_seconds": 204.65267034294084,
+    "successful_v2_cpu_seconds_last_observed": 204.61,
+    "successful_v2_peak_RSS_bytes_observed": 1127251968,
+    "failed_v1_wall_log_birth_to_failure_seconds": 56.094636056,
+    "failed_v1_CPU_seconds_observed_lower_bound": 47.0,
+    "failed_v1_RSS_snapshot_KiB": 332348,
+    "failed_v1_partial_Source_X_read": true,
+    "failed_v1_no_bank_commit": true,
+    "both_runs_wall_sum_seconds": 260.74730639894085,
+    "fits": 0,
+    "GPU_calls": 0,
+    "downloads": 0,
+    "Orion_expression_truth_reads": 0
+  },
+  "scientific_limits": [
+    "Expansion chosen before Orion truth using already seen metadata coverage, not original confirmation",
+    "Same two Source studies/four contexts; no additional study or model families",
+    "Guide/plate and replicate-quality fields remain missing; Source batches are not claimed independent replicates",
+    "All-method finite coverage and full registered prediction invariance are separate post-bank adapter gates"
+  ],
+  "preserved_failure": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/FAILED_V1_RECEIPT.json",
+    "sha256": "ddf13bcdb6d04f345c6322489299ed94bbe666bf9884165577d86c7ec5a46225",
+    "bytes": 852
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "status": "FAILED_CLOSED_NO_BANK_COMMIT",
+  "executed_builder_sha256": "f3a1b41bea0d4cebfd1e6f83dd7749764e09330d7bd0c98cb5819acde4656a36",
+  "PID": 394320,
+  "failure": "First bounded CSR block rejected noncanonical Source column order; no aggregation output committed",
+  "partial_Source_X_read_authorized": true,
+  "complete_Source_reader_exhaustion": false,
+  "Orion_expression_truth_values_read": 0,
+  "model_fits": 0,
+  "GPU_calls": 0,
+  "downloads": 0,
+  "failed_runtime_staging": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v1.incomplete.394320",
+  "failure_log": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_historical_bank_build_20261002_v1.log",
+  "old_builder_contracts_staging_preserved": true,
+  "failed_v1_resource_cost_not_included_in_successful_v2_cost": true
+}

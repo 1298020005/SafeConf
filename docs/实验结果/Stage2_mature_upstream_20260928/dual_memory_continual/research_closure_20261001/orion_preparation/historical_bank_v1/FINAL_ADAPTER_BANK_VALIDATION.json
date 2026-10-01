@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "helper_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/orion_public_bank_extension.py",
+    "sha256": "aa000e9710aed69cd0176c97d33e23e8aded8ee0e602ad3312cbce176b233195",
+    "bytes": 22851
+  },
+  "bank_manifest": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v2/PUBLIC_BANK_MANIFEST.json",
+    "sha256": "8053a6118bc2e3cace841e1498cee3c1366ce5b49e9c79328e7cd34a180b6607",
+    "bytes": 12959
+  },
+  "extension_contract": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v3_sorted_csr/PUBLIC_BANK_EXPANSION_CONTRACT.json",
+    "sha256": "0b6b9b86ad18da6f748ff4fc7cca4e20253c6b43a2d9533bb2b585664c79487f",
+    "bytes": 6752
+  },
+  "Source_frozen_seven_models_validation": true,
+  "actual_bank_prefix_575_scope_provenance_read_audit_validation": true,
+  "no_inference_or_model_fit": true,
+  "no_Source_raw_X_or_Orion_expression_truth_access": true,
+  "rows": 5365,
+  "old_eligible_gene_count": 580,
+  "elapsed_seconds": 2.3151022840756923
+}

@@ -1,0 +1,63 @@
+{
+  "schema": "safeconf_source_bank_independent_pre_X_code_review_v1",
+  "reviewer": "external_scientific_gate_review",
+  "receipt_created_utc": "2026-10-01T21:44:37.484018+00:00",
+  "review_status": "PASS_TARGETED_CODE_AND_CONTRACT_REVIEW",
+  "reviewer_Source_X_values_read": 0,
+  "reviewer_Orion_expression_or_truth_values_read": 0,
+  "reviewer_prediction_arrays_read": 0,
+  "new_fits_or_tests_by_reviewer": 0,
+  "actual_bank_prefix_and_compatibility_proof_verified": false,
+  "actual_bank_complete_or_efficacy_claim": false,
+  "qualification_policy": {
+    "minimum_unique_primary_gene_clusters_union": 100,
+    "minimum_original_context_tasks_each": 20,
+    "actual_all_fixed_method_finite_coverage_required_before_TEST": true
+  },
+  "execution_prerequisites": [
+    "Actual historical read completes within frozen bounds.",
+    "Frozen1e-5legacymeans/control compatibility checks pass.",
+    "Serialized old2008metadata/effect/controlprefix and old580retrievalgroups remain exact.",
+    "Completed bank and allfinitepretruthcomparison/accesswrapperchain are independently verified before any TEST."
+  ],
+  "reviewed_version": "initial_v1",
+  "bindings": {
+    "builder": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/build_safeconf_source_historical_bank_agent.py",
+      "bytes": 35227,
+      "sha256": "f3a1b41bea0d4cebfd1e6f83dd7749764e09330d7bd0c98cb5819acde4656a36"
+    },
+    "read_contract": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v2/SOURCE_PUBLIC_HISTORICAL_READ_CONTRACT.json",
+      "bytes": 8616,
+      "sha256": "2085519a4b80e2116f4aa4f77420f744508f5a8e8f3e6f0827f551b40fd8787b"
+    },
+    "expansion_contract": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v2/PUBLIC_BANK_EXPANSION_CONTRACT.json",
+      "bytes": 6719,
+      "sha256": "747f1dd643d4613e1b156d663d429f10630c2b87d7b9f4b49bcfdcc5f8540211"
+    },
+    "authored_synthetic_proof": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v2/SYNTHETIC_CSR_PROOF.json",
+      "bytes": 734,
+      "sha256": "e3a0b04f15be7972bb1b29c825bde4320def1dd9d49f922ab4a5d435332c355e"
+    },
+    "metadata_coverage": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v2/METADATA_COVERAGE_PREFLIGHT.json",
+      "bytes": 63620,
+      "sha256": "e93cc09238d88404c0fe31bc7c2d50b7618c29f0ed0f706b62d4b9c15b158e3e"
+    }
+  },
+  "checked_scientific_semantics": [
+    "Processed CP4000/log1p coordinate is retained; exact3285measuredcolumnprojection, no renormalization/missing-gene imputation.",
+    "Cell-equal arithmeticmeans; own-context/batchCTRL weighted bytreatedcellbatchfrequencies.",
+    "Exactcontext/cellidentitydedup; eachphysicalSourceoriginalrowassignedonce; Adamsoncontext excluded.",
+    "Appendedgenes areabsentold580; oldSource575historyunchanged; sevenfittedSourceparameters unchanged.",
+    "BoundedexactselectedCSRruns; finite/nonnegativevalues and validgeneindices; malformedinput abortswholebuild.",
+    "Metadata-onlycertificatecontains232queries,144uniqueEnsemblclusters:107HCT116/125HEK293T/88shared."
+  ],
+  "initial_PASS_delivered_before_v1_actual_launch": true,
+  "receipt_recorded_after_reported_v1_noncanonical_CSR_failure": true,
+  "v1_failure_not_overwritten_or_relabelled": true,
+  "initial_review_limitation": "Unsorted physical CSR order was rejected by v1; the subsequent actual first-block failure was preserved. Initial PASS was scientific/code scope, not a completed execution claim."
+}

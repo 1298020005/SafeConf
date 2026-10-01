@@ -1,0 +1,172 @@
+{
+  "scope": "Source_public_historical_bank_only",
+  "files": [
+    {
+      "path": "tools/scripts/build_safeconf_source_historical_bank_agent.py",
+      "bytes": 35227,
+      "sha256": "f3a1b41bea0d4cebfd1e6f83dd7749764e09330d7bd0c98cb5819acde4656a36"
+    },
+    {
+      "path": "tools/scripts/build_safeconf_source_historical_bank_sorted_csr_agent.py",
+      "bytes": 35865,
+      "sha256": "9114a69e04cf25eacbb608ff6f8b91b175a8e856293696471c18761a57b20819"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/ACTUAL_BANK_BUILD_RECEIPT.json",
+      "bytes": 4998,
+      "sha256": "ad061b5ff223f6a0999966cbb7487dcd27652d1858c0e85b3e3c814d1f61af97"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/FAILED_V1_RECEIPT.json",
+      "bytes": 852,
+      "sha256": "ddf13bcdb6d04f345c6322489299ed94bbe666bf9884165577d86c7ec5a46225"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/FINAL_ADAPTER_BANK_VALIDATION.json",
+      "bytes": 1270,
+      "sha256": "0ee7fffca740ee920809751c58aa99fabf2ecbb5905bfdd819536035b0ac07e0"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/METADATA_AUDIT_COUNTS_PREFLIGHT.json",
+      "bytes": 603,
+      "sha256": "43b2873660f5b67a2ac632bb8389419654c409df925792f4a5d15a4cff403426"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/METADATA_COVERAGE_PREFLIGHT.json",
+      "bytes": 63100,
+      "sha256": "27ca6efdfafdaa0c9e05c36fb177bf1966cd1f197fb21139fb0d5591a6b601ed"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/PLANNED_CONTROL_BATCHES.csv",
+      "bytes": 2951,
+      "sha256": "f02a46fbed28c2ed66923bfdc4fd404831c68e40412e1a3664c1a1e82881e0b9"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/PLANNED_HISTORICAL_UNITS.csv",
+      "bytes": 308665,
+      "sha256": "e1d0048a5433ce2671452c1c0eb69c4b9ef4b2c3a20a13740e0b0b4d1899f157"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/POSTBUILD_ARTIFACT_VALIDATION.json",
+      "bytes": 857,
+      "sha256": "54f4100afdfbb3fc1834060716008cf021bf2019cb108327afd8b4fa40ab366c"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/PUBLIC_BANK_EXPANSION_CONTRACT.json",
+      "bytes": 6199,
+      "sha256": "cb19f6b27873d7acfe8ea1403beb0d1b8e9d94e07ff65cf82e3709e211deb87b"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/README.md",
+      "bytes": 3530,
+      "sha256": "b88b87a1a1cc8364db97a42d8dd0d5bedd83e9889a0ca722ced762c69a217239"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/SOURCE_PUBLIC_HISTORICAL_DATA_ROLE_NOTE.json",
+      "bytes": 1135,
+      "sha256": "109830b61758e18385929ad9aab780b210bf90b00055a0732f252107edd6aaa7"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/SOURCE_PUBLIC_HISTORICAL_READ_CONTRACT.json",
+      "bytes": 8565,
+      "sha256": "04097168b5601d9df36b9f6ade0653b2ac580ea530eb5538490e83e24af3bc67"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/SYNTHETIC_CSR_PROOF.json",
+      "bytes": 994,
+      "sha256": "8ee002ae17a367aeeff1abb89e199664619c1b920f7749c440d3119a893b9c0f"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v2/METADATA_AUDIT_COUNTS_PREFLIGHT.json",
+      "bytes": 603,
+      "sha256": "43b2873660f5b67a2ac632bb8389419654c409df925792f4a5d15a4cff403426"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v2/METADATA_COVERAGE_PREFLIGHT.json",
+      "bytes": 63620,
+      "sha256": "e93cc09238d88404c0fe31bc7c2d50b7618c29f0ed0f706b62d4b9c15b158e3e"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v2/METADATA_QUALIFIED_TEST_QUERY_IDS.tsv",
+      "bytes": 10053,
+      "sha256": "7e1a00c63be10206e666f5792e57f1c5cc7e102d99a7419273f16e779b15a040"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v2/PLANNED_CONTROL_BATCHES.csv",
+      "bytes": 2951,
+      "sha256": "f02a46fbed28c2ed66923bfdc4fd404831c68e40412e1a3664c1a1e82881e0b9"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v2/PLANNED_HISTORICAL_UNITS.csv",
+      "bytes": 308665,
+      "sha256": "e1d0048a5433ce2671452c1c0eb69c4b9ef4b2c3a20a13740e0b0b4d1899f157"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v2/PUBLIC_BANK_EXPANSION_CONTRACT.json",
+      "bytes": 6719,
+      "sha256": "747f1dd643d4613e1b156d663d429f10630c2b87d7b9f4b49bcfdcc5f8540211"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v2/SOURCE_PUBLIC_HISTORICAL_DATA_ROLE_NOTE.json",
+      "bytes": 1135,
+      "sha256": "109830b61758e18385929ad9aab780b210bf90b00055a0732f252107edd6aaa7"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v2/SOURCE_PUBLIC_HISTORICAL_READ_CONTRACT.json",
+      "bytes": 8616,
+      "sha256": "2085519a4b80e2116f4aa4f77420f744508f5a8e8f3e6f0827f551b40fd8787b"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v2/SYNTHETIC_CSR_PROOF.json",
+      "bytes": 734,
+      "sha256": "e3a0b04f15be7972bb1b29c825bde4320def1dd9d49f922ab4a5d435332c355e"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v3_sorted_csr/METADATA_AUDIT_COUNTS_PREFLIGHT.json",
+      "bytes": 603,
+      "sha256": "43b2873660f5b67a2ac632bb8389419654c409df925792f4a5d15a4cff403426"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v3_sorted_csr/METADATA_COVERAGE_PREFLIGHT.json",
+      "bytes": 63631,
+      "sha256": "e79bdf07a641eaf1417b7acf80b87e9865eeb6b5dd95ba36932e730532cf7145"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v3_sorted_csr/METADATA_QUALIFIED_TEST_QUERY_IDS.tsv",
+      "bytes": 10053,
+      "sha256": "7e1a00c63be10206e666f5792e57f1c5cc7e102d99a7419273f16e779b15a040"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v3_sorted_csr/PLANNED_CONTROL_BATCHES.csv",
+      "bytes": 2951,
+      "sha256": "f02a46fbed28c2ed66923bfdc4fd404831c68e40412e1a3664c1a1e82881e0b9"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v3_sorted_csr/PLANNED_HISTORICAL_UNITS.csv",
+      "bytes": 308665,
+      "sha256": "e1d0048a5433ce2671452c1c0eb69c4b9ef4b2c3a20a13740e0b0b4d1899f157"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v3_sorted_csr/PUBLIC_BANK_EXPANSION_CONTRACT.json",
+      "bytes": 6752,
+      "sha256": "0b6b9b86ad18da6f748ff4fc7cca4e20253c6b43a2d9533bb2b585664c79487f"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v3_sorted_csr/SOURCE_PUBLIC_HISTORICAL_DATA_ROLE_NOTE.json",
+      "bytes": 1135,
+      "sha256": "109830b61758e18385929ad9aab780b210bf90b00055a0732f252107edd6aaa7"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v3_sorted_csr/SOURCE_PUBLIC_HISTORICAL_READ_CONTRACT.json",
+      "bytes": 9081,
+      "sha256": "d7f8f9d6464db0aa4adee4348f5cb9ccbb97cdbc19d3bec1826743da5a92cab8"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v3_sorted_csr/SYNTHETIC_CSR_PROOF.json",
+      "bytes": 866,
+      "sha256": "2bc554baa40693d03bff97ef0f977a80a3adaac55e0db8a96b990247ed595d2d"
+    }
+  ],
+  "runtime_bank_not_committed_to_git": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v2",
+  "original_Source_fitted_models_banks_frozen_files_edited": false
+}

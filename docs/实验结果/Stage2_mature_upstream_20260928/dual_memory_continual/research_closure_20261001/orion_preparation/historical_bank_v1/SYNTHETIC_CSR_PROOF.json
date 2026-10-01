@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "fixture_runtime": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_historical_csr_s_puz_kj",
+  "builder_sha256": "fe3e50b5f5e07f1c91042c6f4051d74c61a145df671f32a7323bda84a1b89d1d",
+  "cases": [
+    {
+      "case": "measured_sparse_zero_cell_equal_mean_exact_projection_and_excluded_private_sentinel",
+      "status": "PASS"
+    },
+    {
+      "case": "selected_nan",
+      "status": "PASS",
+      "rejection": "Invalid measured Source normalized expression"
+    },
+    {
+      "case": "selected_negative",
+      "status": "PASS",
+      "rejection": "Invalid measured Source normalized expression"
+    },
+    {
+      "case": "duplicate_measured_gene_entries",
+      "status": "PASS",
+      "rejection": "Duplicate/unsorted measured Source CSR gene entries"
+    },
+    {
+      "case": "exact_contiguous_authorized_runs_bounded_rows_and_values",
+      "status": "PASS"
+    }
+  ],
+  "Source_historical_X_read": false,
+  "Orion_expression_truth_read": false
+}
