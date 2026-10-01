@@ -1,0 +1,95 @@
+{
+  "schema": "safeconf_orion_actual_fixed_fit_competence_receipt_v1",
+  "status": "FIT_COMPLETE_COMPETENCE_PASS_EXPANDED_SEAL_TECHNICAL_FAILURE_TEST_CLOSED",
+  "created_utc": "2026-10-01T23:28:11.418739+00:00",
+  "actual_fit_root": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens",
+  "actual_competence": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v4_decimal_tokens/competence/COMPETENCE_RESULT.json",
+    "bytes": 2429,
+    "sha256": "b89fc460acdd96127cb602d2ffdcfa46b6bfef67ca090b5fceb2cd569e51b733"
+  },
+  "completed_stages": [
+    {
+      "name": "FIXED_PUBLISHED_CPU_LINEAR_FIT_PRETRUTH",
+      "pid": 501793,
+      "exit_code": 0,
+      "elapsed_seconds": 384.51175420405343,
+      "argv": [
+        "/home/yyf/.conda/envs/safeconf-orion-lm-20261002/bin/Rscript",
+        "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_orion_lm_blind.R",
+        "--mode",
+        "fit",
+        "--manifest",
+        "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_lm_bridge_20261002_v1/actual_authorized_v3_decimal_tokens/FIT_MANIFEST.tsv",
+        "--output-dir",
+        "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens"
+      ]
+    },
+    {
+      "name": "FIXED_VALIDATION_COMPETENCE_ONLY",
+      "pid": 509391,
+      "exit_code": 0,
+      "elapsed_seconds": 37.419513915199786,
+      "argv": [
+        "/home/miniconda/bin/python",
+        "-u",
+        "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/evaluate_safeconf_orion_competence_agent.py",
+        "--fit-root",
+        "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens",
+        "--biology-root",
+        "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_allowed_biology_20261002_v2",
+        "--bridge-root",
+        "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_lm_bridge_20261002_v1/actual_authorized_v3_decimal_tokens",
+        "--permit",
+        "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_VECTORIZED_PIPELINE_ACCESS_PERMIT.json",
+        "--contract",
+        "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_METHOD_CONTRACT.json",
+        "--validation-eligibility",
+        "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_lm_bridge_20261002_v1/query_scope_metadata_only/VALIDATION_ELIGIBILITY.tsv",
+        "--output",
+        "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v4_decimal_tokens/competence",
+        "--expected-evaluator-sha256",
+        "da06a174c69339b4afb1cfc7ab33015e34c8d27f2d7264a045c799e7f75b942c",
+        "--expected-baseline-helper-sha256",
+        "d89ab0f92d8ef971a4476d7e13f17ce19e332e7075508db1ed057be81e52f5fe",
+        "--expected-validation-eligibility-sha256",
+        "274bc9f946d09229334cda7b78e4c39d94f2e6f4dc18888a8e58da7f27d16e6c"
+      ]
+    },
+    {
+      "name": "ORIGINAL2008_SOURCE_PRETRUTH_ARCHIVE",
+      "pid": 510272,
+      "exit_code": 0,
+      "elapsed_seconds": 29.234335439046845,
+      "argv": [
+        "/home/miniconda/bin/python",
+        "-u",
+        "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/seal_safeconf_orion_source_risk_agent.py",
+        "seal",
+        "--comparison-manifest",
+        "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v4_decimal_tokens/FROZEN_PRETEST_COMPARISON.json",
+        "--output",
+        "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v4_decimal_tokens/risk_seal"
+      ]
+    },
+    {
+      "name": "EXPANDED_SOURCE_PRETRUTH_SEAL",
+      "pid": 510860,
+      "exit_code": 1,
+      "elapsed_seconds": 71.72971243900247,
+      "argv": [
+        "/home/miniconda/bin/python",
+        "-u",
+        "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/seal_safeconf_orion_public_bank_extension_agent.py",
+        "--registration",
+        "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v3_decimal_tokens/SEAL_REGISTRATION.json",
+        "--output",
+        "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v3_decimal_tokens/expanded_risk_seal"
+      ]
+    }
+  ],
+  "primary_inference": "Registered operational noninferiority gate PASS; no superiority over TRAIN-mean baseline established; SafeConf TEST efficacy still unmeasured",
+  "source_risk_model_refits": 0,
+  "TEST_opened": false,
+  "numeric_invariance_failure": "one Manual_ridge legacy value differs5.551115123125783e-17; diagnostic confirms all legacy features/priors/pairs/weights unchanged; batch shape446 versus1622; repair pending independent review"
+}
