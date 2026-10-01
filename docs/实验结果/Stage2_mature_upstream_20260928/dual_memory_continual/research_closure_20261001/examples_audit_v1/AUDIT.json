@@ -1,0 +1,985 @@
+{
+  "schema": "safeconf_fixed_real_DEV_SEEN_examples_audit_v1",
+  "status": "COMPLETE_WITH_EXPLICIT_MISSING_PARAMETER_AND_WEIGHT_ARTIFACTS",
+  "same_archive_scope": "October common2840gene results and risk_cache; no 3285 Orion Source core/new historical bank substitution",
+  "selection_frozen_before_numeric_joins": true,
+  "selection_rule": "fixed identity hash perline, fixed Learned_hgb/seed20260930; no quality/result/winner selection",
+  "examples": [
+    {
+      "example_number": 1,
+      "identity": {
+        "line": "GAT_to_Exphormer",
+        "task_id": "RPE1::CSNK2B+ctrl",
+        "gene": "CSNK2B",
+        "target": "RPE1",
+        "fold": 4,
+        "upstream": "TxPert_Exphormer",
+        "selection_sha256": "0001d7ae1673003e7daf07969645a6d946f875e354eb271adf8eec7e0b091707"
+      },
+      "risk_model_fixed_recipe": {
+        "learner": "HistGradientBoostingRegressor",
+        "max_iter": 200,
+        "learning_rate": 0.05,
+        "max_depth": 3,
+        "min_samples_leaf": 20,
+        "l2_regularization": 10,
+        "random_state": 20260930,
+        "feature_columns": [
+          "predicted_magnitude",
+          "prediction_abs_mean",
+          "prediction_signed_mean",
+          "prediction_std",
+          "prediction_abs_q95",
+          "prediction_sparsity",
+          "prior_magnitude",
+          "prediction_prior_rmse",
+          "prediction_prior_cosine",
+          "prior_uncertainty",
+          "log_history_support",
+          "effective_sources",
+          "history_conflict"
+        ],
+        "preprocessor": "Source-fit median/mean/std and missing flags",
+        "sample_weights": "inverse Source gene-record frequency, normalized",
+        "target": "historical Source per-upstream/context/model-contract midrank CDF of actual Source error"
+      },
+      "exact_source_information_ledger_row": {
+        "line": "GAT_to_Exphormer",
+        "outer_fold": 4,
+        "method": "Learned_hgb",
+        "source_error_rows": 1447,
+        "source_error_clusters": 460,
+        "source_predictors": 1,
+        "source_error_uses": "risk target and training-only CDF",
+        "source_error_records_hash": "73abcc01e5a7526db7e985010d1cb9e22c6984b5f56a62853c11f413e270d68d",
+        "public_evidence_used": true,
+        "public_biology_transfer_learner": true,
+        "c_risk_error_labels": 0,
+        "c_feedback_error_labels": 0,
+        "c_error_CDF_labels": 0,
+        "c_validation_biology_tasks": 0,
+        "c_validation_upstream_calibration_tasks": 0,
+        "target_evaluation_role": "DEV_SEEN_NESTED"
+      },
+      "exact_source_CDF_audit_rows": [
+        {
+          "dataset_id": "TxPert_E201",
+          "output_contract_id": "E201_common2840gene_log1p_delta_v1",
+          "upstream": "TxPert_GAT",
+          "model_version": "e201_official_frozen",
+          "target": "K562",
+          "run_id": "GAT_to_Exphormer/outer4",
+          "budget": 1.0,
+          "n_rows": 453,
+          "n_biological_tasks": 453,
+          "n_clusters": 453,
+          "n_unique_errors": 453,
+          "tie_fraction": 0.0,
+          "nominal_resolution": 0.0022075055187637,
+          "max_ecdf_jump": 0.0022075055187637,
+          "label_min": 0.0011037527593818,
+          "label_max": 0.998896247240618,
+          "training_records_hash": "0b1f9c19c7d3aacd2e398ebe44f9b5ca6db4e00c0b5722fb0a115f714b92894f",
+          "training_clusters_hash": "cb257b3b7ea98590ccbc5d267f8e0700c47fcbd040f8b780318c77973db49c21",
+          "status": "OK",
+          "n_planned_contexts": 4.0,
+          "n_actual_contexts": 4.0,
+          "context_coverage": 1.0
+        },
+        {
+          "dataset_id": "TxPert_E201",
+          "output_contract_id": "E201_common2840gene_log1p_delta_v1",
+          "upstream": "TxPert_GAT",
+          "model_version": "e201_official_frozen",
+          "target": "RPE1",
+          "run_id": "GAT_to_Exphormer/outer4",
+          "budget": 1.0,
+          "n_rows": 335,
+          "n_biological_tasks": 335,
+          "n_clusters": 335,
+          "n_unique_errors": 335,
+          "tie_fraction": 0.0,
+          "nominal_resolution": 0.0029850746268656,
+          "max_ecdf_jump": 0.0029850746268656,
+          "label_min": 0.0014925373134328,
+          "label_max": 0.9985074626865672,
+          "training_records_hash": "d60372f32c3f35b501b1494b99d4ceafa732bc8a9f9ca088ef767897fbc85ab4",
+          "training_clusters_hash": "2e0d7e8f5bde5328c065e1aa2b10e4f9fabbf8447c36e8a9d14a0823b3522a19",
+          "status": "OK",
+          "n_planned_contexts": 4.0,
+          "n_actual_contexts": 4.0,
+          "context_coverage": 1.0
+        },
+        {
+          "dataset_id": "TxPert_E201",
+          "output_contract_id": "E201_common2840gene_log1p_delta_v1",
+          "upstream": "TxPert_GAT",
+          "model_version": "e201_official_frozen",
+          "target": "hepg2",
+          "run_id": "GAT_to_Exphormer/outer4",
+          "budget": 1.0,
+          "n_rows": 332,
+          "n_biological_tasks": 332,
+          "n_clusters": 332,
+          "n_unique_errors": 332,
+          "tie_fraction": 0.0,
+          "nominal_resolution": 0.003012048192771,
+          "max_ecdf_jump": 0.003012048192771,
+          "label_min": 0.0015060240963855,
+          "label_max": 0.9984939759036144,
+          "training_records_hash": "dc3b751b22f1eb14861cab0658e17f101ca253485f92f774598bdb196dd4141a",
+          "training_clusters_hash": "cb14ea29d291a6d83f2aeecd6107c328030f5ad423816310573488266ae142a8",
+          "status": "OK",
+          "n_planned_contexts": 4.0,
+          "n_actual_contexts": 4.0,
+          "context_coverage": 1.0
+        },
+        {
+          "dataset_id": "TxPert_E201",
+          "output_contract_id": "E201_common2840gene_log1p_delta_v1",
+          "upstream": "TxPert_GAT",
+          "model_version": "e201_official_frozen",
+          "target": "jurkat",
+          "run_id": "GAT_to_Exphormer/outer4",
+          "budget": 1.0,
+          "n_rows": 327,
+          "n_biological_tasks": 327,
+          "n_clusters": 327,
+          "n_unique_errors": 327,
+          "tie_fraction": 0.0,
+          "nominal_resolution": 0.0030581039755351,
+          "max_ecdf_jump": 0.0030581039755351,
+          "label_min": 0.0015290519877675,
+          "label_max": 0.9984709480122324,
+          "training_records_hash": "b98e5ea74c1978cfba3fa7d943f2eb5f2d68b089b7f1bce17cbb4031c6bb6498",
+          "training_clusters_hash": "82f49b56855dc4368b90b2c319c25c8fe4a945798bd5d12e04fe429c57cceadc",
+          "status": "OK",
+          "n_planned_contexts": 4.0,
+          "n_actual_contexts": 4.0,
+          "context_coverage": 1.0
+        }
+      ],
+      "source_gene_held_out_of_risk_and_nested_Public_learner": true,
+      "Source_error_use_at_query": "Historical Source errors trained the saved archived score-producing risk model; query inference used prediction/Public numeric features. No taskwise source error lookup, query true error, or C target CDF is an input. Model parameter serialization is unavailable in this archive, so this audit pairs archived outputs with the exact fit-scope/configuration rather than claiming model reload reproduction.",
+      "C_validation_uses": {
+        "upstream_alpha025_calibration_and_competence_gate": false,
+        "Learned_Public_biology_learner_transfer_RMSE_from_validation_biology": false,
+        "risk_model_fitting_or_risk_CDF": false,
+        "note": "C absent; no C calibration/biology/feedback used for this cross-upstream Source example"
+      },
+      "C_feedback_uses": {
+        "shared_archived_score_uses_feedback_errors": false,
+        "partition": "not_applicable",
+        "selected_gene_feedback_order_zero_based": null,
+        "selected_gene_first_enters_budget": null,
+        "strict_feedback_predictions_for_selected_task": [],
+        "note": "No feedback labels contribute to the archived shared Source risk."
+      },
+      "bindings": {
+        "features": {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_4_TxPert_Exphormer_Learned.parquet",
+          "bytes": 688679,
+          "sha256": "ac82209b1017ed9032cc5899cf54f36de049a0c8ed985f0538fceb91716fc6f0"
+        },
+        "source_fit_features": {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_4_TxPert_GAT_Learned.parquet",
+          "bytes": 490751,
+          "sha256": "d68cccae0f4e322576027c8f1ee41022c91c0501b268bfb91b62e0063fff2063"
+        },
+        "matrix_scores": {
+          "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/MATRIX_TASK_PREDICTIONS.csv.gz",
+          "bytes": 5606076,
+          "sha256": "73eff7366c0e64d96d57e6effe2d12061890a3db43f47d4d403204a8dff9504c"
+        },
+        "query_prediction_vectors": {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TxPert_Exphormer_PREDICTED_EFFECTS.npy",
+          "bytes": 20539008,
+          "sha256": "97b24e3bb14c5e26bd36e71168a9c95f5ec04160d1799d5bba58e470286b5939"
+        },
+        "query_seen_truth_vectors": {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TRUE_EFFECTS.npy",
+          "bytes": 20539008,
+          "sha256": "c2da8655e555ed55320d79c8d197fddf4365d57ae974c2dfd529c009af3d164c"
+        },
+        "query_control_vectors": {
+          "path": "/home/yyf/data/txpert_official_20260802/e201/pretruth_vectors/E201_CONTROL_CENTROIDS.npy",
+          "bytes": 26923392,
+          "sha256": "c2d6f56bec576b5154d574d91f37b5fdbb036d869573cdbaf9fda0e544454d3e"
+        },
+        "history_effect_vectors": {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_PUBLIC_EFFECTS.npy",
+          "bytes": 22811008,
+          "sha256": "579b95ac834a36f1c6c3d12d25c3d607c9083a53c53b469e24d3c0be81d1e74e"
+        },
+        "history_control_vectors": {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_PUBLIC_CONTROLS.npy",
+          "bytes": 22811008,
+          "sha256": "a59e8ed27adf1cb58090c2eb106a33136a07d5e6da1dc5a9f15180ef59628c24"
+        },
+        "public_metadata": {
+          "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/public_memory.parquet",
+          "bytes": 58150,
+          "sha256": "fcfbd3300a012e3747c9642f5076d1407c509f46f66e4412522c5d9b8661c4bd"
+        }
+      }
+    },
+    {
+      "example_number": 2,
+      "identity": {
+        "line": "Exphormer_to_GAT",
+        "task_id": "jurkat::MRPS23+ctrl",
+        "gene": "MRPS23",
+        "target": "jurkat",
+        "fold": 0,
+        "upstream": "TxPert_GAT",
+        "selection_sha256": "00112400655353558f2bb5703c1672f7fcf70d7375b5df64da6292cfe0dd436d"
+      },
+      "risk_model_fixed_recipe": {
+        "learner": "HistGradientBoostingRegressor",
+        "max_iter": 200,
+        "learning_rate": 0.05,
+        "max_depth": 3,
+        "min_samples_leaf": 20,
+        "l2_regularization": 10,
+        "random_state": 20260930,
+        "feature_columns": [
+          "predicted_magnitude",
+          "prediction_abs_mean",
+          "prediction_signed_mean",
+          "prediction_std",
+          "prediction_abs_q95",
+          "prediction_sparsity",
+          "prior_magnitude",
+          "prediction_prior_rmse",
+          "prediction_prior_cosine",
+          "prior_uncertainty",
+          "log_history_support",
+          "effective_sources",
+          "history_conflict"
+        ],
+        "preprocessor": "Source-fit median/mean/std and missing flags",
+        "sample_weights": "inverse Source gene-record frequency, normalized",
+        "target": "historical Source per-upstream/context/model-contract midrank CDF of actual Source error"
+      },
+      "exact_source_information_ledger_row": {
+        "line": "Exphormer_to_GAT",
+        "outer_fold": 0,
+        "method": "Learned_hgb",
+        "source_error_rows": 1446,
+        "source_error_clusters": 460,
+        "source_predictors": 1,
+        "source_error_uses": "risk target and training-only CDF",
+        "source_error_records_hash": "5ec445743472f645ea45806bf72a66ff1391dd414365f8e6f8bcfbec2b8f1d04",
+        "public_evidence_used": true,
+        "public_biology_transfer_learner": true,
+        "c_risk_error_labels": 0,
+        "c_feedback_error_labels": 0,
+        "c_error_CDF_labels": 0,
+        "c_validation_biology_tasks": 0,
+        "c_validation_upstream_calibration_tasks": 0,
+        "target_evaluation_role": "DEV_SEEN_NESTED"
+      },
+      "exact_source_CDF_audit_rows": [
+        {
+          "dataset_id": "TxPert_E201",
+          "output_contract_id": "E201_common2840gene_log1p_delta_v1",
+          "upstream": "TxPert_Exphormer",
+          "model_version": "e205_official_frozen",
+          "target": "K562",
+          "run_id": "Exphormer_to_GAT/outer0",
+          "budget": 1.0,
+          "n_rows": 452,
+          "n_biological_tasks": 452,
+          "n_clusters": 452,
+          "n_unique_errors": 452,
+          "tie_fraction": 0.0,
+          "nominal_resolution": 0.0022123893805309,
+          "max_ecdf_jump": 0.0022123893805309,
+          "label_min": 0.0011061946902654,
+          "label_max": 0.9988938053097344,
+          "training_records_hash": "b1bf04a8624ad06fbd790c9c9d84de6b2d18eac501d7d3a6de877d5a59551a7e",
+          "training_clusters_hash": "078f2ec8842821c70692931a79c4c03f22a8d4c09b252bc7b39997b39756c0e2",
+          "status": "OK",
+          "n_planned_contexts": 4.0,
+          "n_actual_contexts": 4.0,
+          "context_coverage": 1.0
+        },
+        {
+          "dataset_id": "TxPert_E201",
+          "output_contract_id": "E201_common2840gene_log1p_delta_v1",
+          "upstream": "TxPert_Exphormer",
+          "model_version": "e205_official_frozen",
+          "target": "RPE1",
+          "run_id": "Exphormer_to_GAT/outer0",
+          "budget": 1.0,
+          "n_rows": 338,
+          "n_biological_tasks": 338,
+          "n_clusters": 338,
+          "n_unique_errors": 338,
+          "tie_fraction": 0.0,
+          "nominal_resolution": 0.0029585798816568,
+          "max_ecdf_jump": 0.0029585798816568,
+          "label_min": 0.0014792899408284,
+          "label_max": 0.9985207100591716,
+          "training_records_hash": "0b3752140f93d27c16d08cf5e12dc2e31cf62a13409a11e755f035535fca1cad",
+          "training_clusters_hash": "0d28bff2a0943f063228d3fc043be08bd85f354c92cb5b4ce56d6f2944f403c3",
+          "status": "OK",
+          "n_planned_contexts": 4.0,
+          "n_actual_contexts": 4.0,
+          "context_coverage": 1.0
+        },
+        {
+          "dataset_id": "TxPert_E201",
+          "output_contract_id": "E201_common2840gene_log1p_delta_v1",
+          "upstream": "TxPert_Exphormer",
+          "model_version": "e205_official_frozen",
+          "target": "hepg2",
+          "run_id": "Exphormer_to_GAT/outer0",
+          "budget": 1.0,
+          "n_rows": 318,
+          "n_biological_tasks": 318,
+          "n_clusters": 318,
+          "n_unique_errors": 318,
+          "tie_fraction": 0.0,
+          "nominal_resolution": 0.0031446540880503,
+          "max_ecdf_jump": 0.0031446540880503,
+          "label_min": 0.0015723270440251,
+          "label_max": 0.9984276729559748,
+          "training_records_hash": "dbef8e35be2a1d706688cf5b0f2903a8b96b35f54ef33cf2d2b090e50ced7755",
+          "training_clusters_hash": "e515d4cce7d681650c54d0d6bc8b1efc80aa16d0fdcca1b4fed781472df234c3",
+          "status": "OK",
+          "n_planned_contexts": 4.0,
+          "n_actual_contexts": 4.0,
+          "context_coverage": 1.0
+        },
+        {
+          "dataset_id": "TxPert_E201",
+          "output_contract_id": "E201_common2840gene_log1p_delta_v1",
+          "upstream": "TxPert_Exphormer",
+          "model_version": "e205_official_frozen",
+          "target": "jurkat",
+          "run_id": "Exphormer_to_GAT/outer0",
+          "budget": 1.0,
+          "n_rows": 338,
+          "n_biological_tasks": 338,
+          "n_clusters": 338,
+          "n_unique_errors": 338,
+          "tie_fraction": 0.0,
+          "nominal_resolution": 0.0029585798816568,
+          "max_ecdf_jump": 0.0029585798816568,
+          "label_min": 0.0014792899408284,
+          "label_max": 0.9985207100591716,
+          "training_records_hash": "706ab058cf5237fdbe743f44574d1a68b886c3b7b49827a4b092d0cc87801ed2",
+          "training_clusters_hash": "6968be1e5856f2389047fc93d47e9cae0637c34518a02128d26cccfc173ed5ec",
+          "status": "OK",
+          "n_planned_contexts": 4.0,
+          "n_actual_contexts": 4.0,
+          "context_coverage": 1.0
+        }
+      ],
+      "source_gene_held_out_of_risk_and_nested_Public_learner": true,
+      "Source_error_use_at_query": "Historical Source errors trained the saved archived score-producing risk model; query inference used prediction/Public numeric features. No taskwise source error lookup, query true error, or C target CDF is an input. Model parameter serialization is unavailable in this archive, so this audit pairs archived outputs with the exact fit-scope/configuration rather than claiming model reload reproduction.",
+      "C_validation_uses": {
+        "upstream_alpha025_calibration_and_competence_gate": false,
+        "Learned_Public_biology_learner_transfer_RMSE_from_validation_biology": false,
+        "risk_model_fitting_or_risk_CDF": false,
+        "note": "C absent; no C calibration/biology/feedback used for this cross-upstream Source example"
+      },
+      "C_feedback_uses": {
+        "shared_archived_score_uses_feedback_errors": false,
+        "partition": "not_applicable",
+        "selected_gene_feedback_order_zero_based": null,
+        "selected_gene_first_enters_budget": null,
+        "strict_feedback_predictions_for_selected_task": [],
+        "note": "No feedback labels contribute to the archived shared Source risk."
+      },
+      "bindings": {
+        "features": {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_0_TxPert_GAT_Learned.parquet",
+          "bytes": 490751,
+          "sha256": "bab1cf25d5350a082f23531ce7f4ba12cbb99fd9e96f26e5cf845dd1551ff15c"
+        },
+        "source_fit_features": {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_0_TxPert_Exphormer_Learned.parquet",
+          "bytes": 688679,
+          "sha256": "ec43fbece78f50f994c1c4336640ea8cebaf317c1be75a80d8b3bc29a873b0f9"
+        },
+        "matrix_scores": {
+          "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/MATRIX_TASK_PREDICTIONS.csv.gz",
+          "bytes": 5606076,
+          "sha256": "73eff7366c0e64d96d57e6effe2d12061890a3db43f47d4d403204a8dff9504c"
+        },
+        "query_prediction_vectors": {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TxPert_GAT_PREDICTED_EFFECTS.npy",
+          "bytes": 20539008,
+          "sha256": "88fba0ba25493bcebaf5c702c5200f70d55433968ba532cd83dbb0ed77947a90"
+        },
+        "query_seen_truth_vectors": {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TRUE_EFFECTS.npy",
+          "bytes": 20539008,
+          "sha256": "c2da8655e555ed55320d79c8d197fddf4365d57ae974c2dfd529c009af3d164c"
+        },
+        "query_control_vectors": {
+          "path": "/home/yyf/data/txpert_official_20260802/e201/pretruth_vectors/E201_CONTROL_CENTROIDS.npy",
+          "bytes": 26923392,
+          "sha256": "c2d6f56bec576b5154d574d91f37b5fdbb036d869573cdbaf9fda0e544454d3e"
+        },
+        "history_effect_vectors": {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_PUBLIC_EFFECTS.npy",
+          "bytes": 22811008,
+          "sha256": "579b95ac834a36f1c6c3d12d25c3d607c9083a53c53b469e24d3c0be81d1e74e"
+        },
+        "history_control_vectors": {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_PUBLIC_CONTROLS.npy",
+          "bytes": 22811008,
+          "sha256": "a59e8ed27adf1cb58090c2eb106a33136a07d5e6da1dc5a9f15180ef59628c24"
+        },
+        "public_metadata": {
+          "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/public_memory.parquet",
+          "bytes": 58150,
+          "sha256": "fcfbd3300a012e3747c9642f5076d1407c509f46f66e4412522c5d9b8661c4bd"
+        }
+      }
+    },
+    {
+      "example_number": 3,
+      "identity": {
+        "line": "TxPert_to_McFaline",
+        "task_id": "ACVR2A::t98g::lapatinib",
+        "gene": "ACVR2A",
+        "target": "t98g",
+        "fold": -1,
+        "upstream": "DecoderOnly",
+        "selection_sha256": "0063ff726236b5b7a71b4c26d3e474228a50f12a63df24a472b8c73681bb1cfc"
+      },
+      "risk_model_fixed_recipe": {
+        "learner": "HistGradientBoostingRegressor",
+        "max_iter": 200,
+        "learning_rate": 0.05,
+        "max_depth": 3,
+        "min_samples_leaf": 20,
+        "l2_regularization": 10,
+        "random_state": 20260930,
+        "feature_columns": [
+          "predicted_magnitude",
+          "prediction_abs_mean",
+          "prediction_signed_mean",
+          "prediction_std",
+          "prediction_abs_q95",
+          "prediction_sparsity",
+          "prior_magnitude",
+          "prediction_prior_rmse",
+          "prediction_prior_cosine",
+          "prior_uncertainty",
+          "log_history_support",
+          "effective_sources",
+          "history_conflict"
+        ],
+        "preprocessor": "Source-fit median/mean/std and missing flags",
+        "sample_weights": "inverse Source gene-record frequency, normalized",
+        "target": "historical Source per-upstream/context/model-contract midrank CDF of actual Source error"
+      },
+      "exact_source_information_ledger_row": {
+        "line": "TxPert_to_McFaline",
+        "outer_fold": -1,
+        "method": "Learned_hgb",
+        "source_error_rows": 3616,
+        "source_error_clusters": 575,
+        "source_predictors": 2,
+        "source_error_uses": "risk target and training-only CDF",
+        "source_error_records_hash": "4bc634e5232fb652d4c3569cbd63d24bd07d3cb92b4c315f94fff70ccf60b26c",
+        "public_evidence_used": true,
+        "public_biology_transfer_learner": true,
+        "c_risk_error_labels": 0,
+        "c_feedback_error_labels": 0,
+        "c_error_CDF_labels": 0,
+        "c_validation_biology_tasks": 542,
+        "c_validation_upstream_calibration_tasks": 542,
+        "target_evaluation_role": "POST_CONFIRMATION_SEEN"
+      },
+      "exact_source_CDF_audit_rows": [
+        {
+          "dataset_id": "TxPert_E201",
+          "output_contract_id": "E201_common2840gene_log1p_delta_v1",
+          "upstream": "TxPert_Exphormer",
+          "model_version": "e205_official_frozen",
+          "target": "K562",
+          "run_id": "TxPert_to_McFaline/outer-1",
+          "budget": 1.0,
+          "n_rows": 566,
+          "n_biological_tasks": 566,
+          "n_clusters": 566,
+          "n_unique_errors": 566,
+          "tie_fraction": 0.0,
+          "nominal_resolution": 0.0017667844522968,
+          "max_ecdf_jump": 0.0017667844522968,
+          "label_min": 0.0008833922261484,
+          "label_max": 0.9991166077738516,
+          "training_records_hash": "da1f53184395b3f7391deed102d06493eb82e9fb445cbaa30738cdadb1be5f08",
+          "training_clusters_hash": "69d54cc33163aa11b0cc06bac35128ae088f96ed5e957ae440a94471f2a3968f",
+          "status": "OK",
+          "n_planned_contexts": 4.0,
+          "n_actual_contexts": 4.0,
+          "context_coverage": 1.0
+        },
+        {
+          "dataset_id": "TxPert_E201",
+          "output_contract_id": "E201_common2840gene_log1p_delta_v1",
+          "upstream": "TxPert_Exphormer",
+          "model_version": "e205_official_frozen",
+          "target": "RPE1",
+          "run_id": "TxPert_to_McFaline/outer-1",
+          "budget": 1.0,
+          "n_rows": 416,
+          "n_biological_tasks": 416,
+          "n_clusters": 416,
+          "n_unique_errors": 416,
+          "tie_fraction": 0.0,
+          "nominal_resolution": 0.0024038461538461,
+          "max_ecdf_jump": 0.0024038461538461,
+          "label_min": 0.001201923076923,
+          "label_max": 0.9987980769230768,
+          "training_records_hash": "e237f0fe57d90794d4f10abe3edfc3ac52a1aa5102b2947696fca48dd17543cf",
+          "training_clusters_hash": "1f967e0bf4cd547c44cb2337cf2ab596bfe09f3713e85231ab042ceb273b1822",
+          "status": "OK",
+          "n_planned_contexts": 4.0,
+          "n_actual_contexts": 4.0,
+          "context_coverage": 1.0
+        },
+        {
+          "dataset_id": "TxPert_E201",
+          "output_contract_id": "E201_common2840gene_log1p_delta_v1",
+          "upstream": "TxPert_Exphormer",
+          "model_version": "e205_official_frozen",
+          "target": "hepg2",
+          "run_id": "TxPert_to_McFaline/outer-1",
+          "budget": 1.0,
+          "n_rows": 405,
+          "n_biological_tasks": 405,
+          "n_clusters": 405,
+          "n_unique_errors": 405,
+          "tie_fraction": 0.0,
+          "nominal_resolution": 0.0024691358024691,
+          "max_ecdf_jump": 0.0024691358024691,
+          "label_min": 0.0012345679012345,
+          "label_max": 0.9987654320987654,
+          "training_records_hash": "472d2eb55c063e0380b1c1d685ccd919fd680cd55e6adb19dec5c4b49aaf5e75",
+          "training_clusters_hash": "5cb39d239251e7cefbec15ce98e9cd5e6093514e25fbdc8f122e1e5ea651ca1f",
+          "status": "OK",
+          "n_planned_contexts": 4.0,
+          "n_actual_contexts": 4.0,
+          "context_coverage": 1.0
+        },
+        {
+          "dataset_id": "TxPert_E201",
+          "output_contract_id": "E201_common2840gene_log1p_delta_v1",
+          "upstream": "TxPert_Exphormer",
+          "model_version": "e205_official_frozen",
+          "target": "jurkat",
+          "run_id": "TxPert_to_McFaline/outer-1",
+          "budget": 1.0,
+          "n_rows": 421,
+          "n_biological_tasks": 421,
+          "n_clusters": 421,
+          "n_unique_errors": 421,
+          "tie_fraction": 0.0,
+          "nominal_resolution": 0.002375296912114,
+          "max_ecdf_jump": 0.002375296912114,
+          "label_min": 0.001187648456057,
+          "label_max": 0.998812351543943,
+          "training_records_hash": "c89e63313cacaca49ec8968914a2b518d77e97e6fc4e3a60bdf6d35ce951e311",
+          "training_clusters_hash": "75057658f36e975231fa3b94a6970c901850cf36167a47c79ae7d522eb8576ff",
+          "status": "OK",
+          "n_planned_contexts": 4.0,
+          "n_actual_contexts": 4.0,
+          "context_coverage": 1.0
+        },
+        {
+          "dataset_id": "TxPert_E201",
+          "output_contract_id": "E201_common2840gene_log1p_delta_v1",
+          "upstream": "TxPert_GAT",
+          "model_version": "e201_official_frozen",
+          "target": "K562",
+          "run_id": "TxPert_to_McFaline/outer-1",
+          "budget": 1.0,
+          "n_rows": 566,
+          "n_biological_tasks": 566,
+          "n_clusters": 566,
+          "n_unique_errors": 566,
+          "tie_fraction": 0.0,
+          "nominal_resolution": 0.0017667844522968,
+          "max_ecdf_jump": 0.0017667844522968,
+          "label_min": 0.0008833922261484,
+          "label_max": 0.9991166077738516,
+          "training_records_hash": "4c21251cd52de34b660d09385df407d95a5d36433d7ac75117686e583e5c7873",
+          "training_clusters_hash": "69d54cc33163aa11b0cc06bac35128ae088f96ed5e957ae440a94471f2a3968f",
+          "status": "OK",
+          "n_planned_contexts": 4.0,
+          "n_actual_contexts": 4.0,
+          "context_coverage": 1.0
+        },
+        {
+          "dataset_id": "TxPert_E201",
+          "output_contract_id": "E201_common2840gene_log1p_delta_v1",
+          "upstream": "TxPert_GAT",
+          "model_version": "e201_official_frozen",
+          "target": "RPE1",
+          "run_id": "TxPert_to_McFaline/outer-1",
+          "budget": 1.0,
+          "n_rows": 416,
+          "n_biological_tasks": 416,
+          "n_clusters": 416,
+          "n_unique_errors": 416,
+          "tie_fraction": 0.0,
+          "nominal_resolution": 0.0024038461538461,
+          "max_ecdf_jump": 0.0024038461538461,
+          "label_min": 0.001201923076923,
+          "label_max": 0.9987980769230768,
+          "training_records_hash": "25c9cd809182a7d71569f808cd1f58ee7499b685b5b5988575caa01c9ddbbd73",
+          "training_clusters_hash": "1f967e0bf4cd547c44cb2337cf2ab596bfe09f3713e85231ab042ceb273b1822",
+          "status": "OK",
+          "n_planned_contexts": 4.0,
+          "n_actual_contexts": 4.0,
+          "context_coverage": 1.0
+        },
+        {
+          "dataset_id": "TxPert_E201",
+          "output_contract_id": "E201_common2840gene_log1p_delta_v1",
+          "upstream": "TxPert_GAT",
+          "model_version": "e201_official_frozen",
+          "target": "hepg2",
+          "run_id": "TxPert_to_McFaline/outer-1",
+          "budget": 1.0,
+          "n_rows": 405,
+          "n_biological_tasks": 405,
+          "n_clusters": 405,
+          "n_unique_errors": 405,
+          "tie_fraction": 0.0,
+          "nominal_resolution": 0.0024691358024691,
+          "max_ecdf_jump": 0.0024691358024691,
+          "label_min": 0.0012345679012345,
+          "label_max": 0.9987654320987654,
+          "training_records_hash": "c318956aa4b284a2c5631c1efd44206f2f9a7c0e6ae736da6428313d2d7f7001",
+          "training_clusters_hash": "5cb39d239251e7cefbec15ce98e9cd5e6093514e25fbdc8f122e1e5ea651ca1f",
+          "status": "OK",
+          "n_planned_contexts": 4.0,
+          "n_actual_contexts": 4.0,
+          "context_coverage": 1.0
+        },
+        {
+          "dataset_id": "TxPert_E201",
+          "output_contract_id": "E201_common2840gene_log1p_delta_v1",
+          "upstream": "TxPert_GAT",
+          "model_version": "e201_official_frozen",
+          "target": "jurkat",
+          "run_id": "TxPert_to_McFaline/outer-1",
+          "budget": 1.0,
+          "n_rows": 421,
+          "n_biological_tasks": 421,
+          "n_clusters": 421,
+          "n_unique_errors": 421,
+          "tie_fraction": 0.0,
+          "nominal_resolution": 0.002375296912114,
+          "max_ecdf_jump": 0.002375296912114,
+          "label_min": 0.001187648456057,
+          "label_max": 0.998812351543943,
+          "training_records_hash": "46483a40cfb407cf50bf6eecca79f6b6a2feba51248d023c06e9a058f439a833",
+          "training_clusters_hash": "75057658f36e975231fa3b94a6970c901850cf36167a47c79ae7d522eb8576ff",
+          "status": "OK",
+          "n_planned_contexts": 4.0,
+          "n_actual_contexts": 4.0,
+          "context_coverage": 1.0
+        }
+      ],
+      "source_gene_held_out_of_risk_and_nested_Public_learner": false,
+      "Source_error_use_at_query": "Historical Source errors trained the saved archived score-producing risk model; query inference used prediction/Public numeric features. No taskwise source error lookup, query true error, or C target CDF is an input. Model parameter serialization is unavailable in this archive, so this audit pairs archived outputs with the exact fit-scope/configuration rather than claiming model reload reproduction.",
+      "C_validation_uses": {
+        "upstream_alpha025_calibration_and_competence_gate": true,
+        "Learned_Public_biology_learner_transfer_RMSE_from_validation_biology": true,
+        "risk_model_fitting_or_risk_CDF": false,
+        "note": "542 validation biological tasks reused for upstream calibration/competence and local Public transfer learner; these are separate information uses, not risk-error labels"
+      },
+      "C_feedback_uses": {
+        "shared_archived_score_uses_feedback_errors": false,
+        "partition": "feedback_pool",
+        "selected_gene_feedback_order_zero_based": 149,
+        "selected_gene_first_enters_budget": 0.75,
+        "strict_feedback_predictions_for_selected_task": [],
+        "note": "This hash-selected task is in the feedback label pool, so there is no strict-feedback holdout prediction for it. Its seen error is legal only in the corresponding post-confirmation feedback budget; original Shared score has zero C feedback labels."
+      },
+      "bindings": {
+        "features": {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/external_Learned.parquet",
+          "bytes": 164106,
+          "sha256": "fa1e373edc04cb18bce0b4a993c57877643c33fe623ec1dc75973f44062c8988"
+        },
+        "source_fit_features": {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/source_Learned.parquet",
+          "bytes": 961984,
+          "sha256": "581891b9f3571a5a89a01e943a00034aa8194aedff000db645d368c3713d726a"
+        },
+        "matrix_scores": {
+          "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/MATRIX_TASK_PREDICTIONS.csv.gz",
+          "bytes": 5606076,
+          "sha256": "73eff7366c0e64d96d57e6effe2d12061890a3db43f47d4d403204a8dff9504c"
+        },
+        "query_prediction_vectors": {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/TEST_CALIBRATED_EFFECTS.npy",
+          "bytes": 6168608,
+          "sha256": "385d62b8cbd2d535b1b31be504bbd55dd1032f0e09710a3b33c14f69e7bca89e"
+        },
+        "query_seen_truth_vectors": {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/TEST_TRUE_EFFECTS.npy",
+          "bytes": 6168608,
+          "sha256": "cbf00471c62b6db5652a38b610fa612c52038d1f9f2f8c479933b3f075beb7a2"
+        },
+        "query_control_vectors": {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/TEST_CONTROLS.npy",
+          "bytes": 6168608,
+          "sha256": "8c3b6aa7eaa51394ff850aaab204968b641daa3e63335cbd3789346768be3f78"
+        },
+        "history_effect_vectors": {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/public_mcfaline_trainval/effect_vectors.npy",
+          "bytes": 81485408,
+          "sha256": "36212d51411fbe01234bbe82e1fb938a84b6f569ab540b64a30cab9a26cc67b8"
+        },
+        "history_control_vectors": {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/public_mcfaline_trainval/control_vectors.npy",
+          "bytes": 81485408,
+          "sha256": "8593d30615e063ba4bf9711a62eccbff85748899ff4e254820a94b34d23ca4a2"
+        },
+        "public_metadata": {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/public_mcfaline_trainval/public_memory.parquet",
+          "bytes": 432777,
+          "sha256": "a17798b8e3aaf0a5f26d1fcb18de871980a8e119640daebf4d411f0f77fff067"
+        }
+      }
+    }
+  ],
+  "original_commonaxis_run_code_sha256": "70c1f7d625c761796eb9ad8fe9539a24468dfe74d0934c7c07104889ba5bd085",
+  "current_commonaxis_code_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_common_axis_closure.py",
+    "bytes": 13905,
+    "sha256": "ccdab9ac97707ff909792fa44daa26310593177c3467eedb25b669b871cdffb0"
+  },
+  "original_executed_code_blob_not_independently_recovered": true,
+  "archive_freeze_retention_limit": {
+    "role": "SEEN_POST_CONFIRMATION",
+    "original_pretruth_full_csv_sha_retained_in": "COMMON_AXIS_PREDICTION_FREEZE.json",
+    "original_pretruth_full_csv_bytes_retained": false,
+    "cause": "truth column was subsequently filled into the same result file",
+    "risk_scores_available_unchanged": true,
+    "retrospective_risk_only_file": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/COMMON_AXIS_RISK_ONLY_RETROSPECTIVE.csv.gz",
+    "retrospective_sha256": "ca62dc1265c3c51a3b6b72b4038e908d73395227a586966f3d734ccc1ea6c38b",
+    "retrospective_snapshot_is_prospective_proof": false,
+    "future_run_repair": "separate immutable risk-only freeze file; completed runs guarded; explicit fresh reproduction roots"
+  },
+  "limitations": [
+    "Common2840gene alignment does not establish common normalization scale or remove existing Source/MC control-scale differences",
+    "Three deterministic examples are explanatory samples, not representative performance evidence",
+    "No source risk model parameter or learned prior weights/pair scores artifact persisted for this archived run; no reconstruction fit performed",
+    "C validation biology/upstream calibration and C feedback errors have different roles and are not relabelled as zero total information"
+  ],
+  "evidence_bindings": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/MATRIX_TASK_PREDICTIONS.csv.gz",
+      "bytes": 5606076,
+      "sha256": "73eff7366c0e64d96d57e6effe2d12061890a3db43f47d4d403204a8dff9504c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/GENE_IDS.json",
+      "bytes": 26427,
+      "sha256": "be612f9c4638146b41eee26f607ab12fbed53b524cda7a76eee36ca554c28f97"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_4_TxPert_Exphormer_Learned.parquet",
+      "bytes": 688679,
+      "sha256": "ac82209b1017ed9032cc5899cf54f36de049a0c8ed985f0538fceb91716fc6f0"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_4_TxPert_GAT_Learned.parquet",
+      "bytes": 490751,
+      "sha256": "d68cccae0f4e322576027c8f1ee41022c91c0501b268bfb91b62e0063fff2063"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TxPert_Exphormer_PREDICTED_EFFECTS.npy",
+      "bytes": 20539008,
+      "sha256": "97b24e3bb14c5e26bd36e71168a9c95f5ec04160d1799d5bba58e470286b5939"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TRUE_EFFECTS.npy",
+      "bytes": 20539008,
+      "sha256": "c2da8655e555ed55320d79c8d197fddf4365d57ae974c2dfd529c009af3d164c"
+    },
+    {
+      "path": "/home/yyf/data/txpert_official_20260802/e201/pretruth_vectors/E201_CONTROL_CENTROIDS.npy",
+      "bytes": 26923392,
+      "sha256": "c2d6f56bec576b5154d574d91f37b5fdbb036d869573cdbaf9fda0e544454d3e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_PUBLIC_EFFECTS.npy",
+      "bytes": 22811008,
+      "sha256": "579b95ac834a36f1c6c3d12d25c3d607c9083a53c53b469e24d3c0be81d1e74e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_PUBLIC_CONTROLS.npy",
+      "bytes": 22811008,
+      "sha256": "a59e8ed27adf1cb58090c2eb106a33136a07d5e6da1dc5a9f15180ef59628c24"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/public_memory.parquet",
+      "bytes": 58150,
+      "sha256": "fcfbd3300a012e3747c9642f5076d1407c509f46f66e4412522c5d9b8661c4bd"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TASKS.csv",
+      "bytes": 76894,
+      "sha256": "72c6620d797db9115e67f6c9067d54879950733827801190ea25161ee03a118d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/TEST_TASKS.csv",
+      "bytes": 27493,
+      "sha256": "0b2f5be1b4e8911157cf317d7f950185be3f88235bd9350221ce93f52dc9982e"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/eligibility.parquet",
+      "bytes": 33289,
+      "sha256": "ef2391be1ce3d0a9ac0d613810f9bbfd314fd00d5631436edbb22bdcdb6fc497"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/gene_ids.json",
+      "bytes": 44656,
+      "sha256": "3a6c0ef75eef65b0f82286ee142bbb6c02a8b128cff8d3110b38661f74201c08"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/public_mcfaline_trainval/manifest.json",
+      "bytes": 896,
+      "sha256": "cb4e416829197e3b3c91300769687602da81ba08e994877f1d4362448e54eedc"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_0_TxPert_GAT_Learned.parquet",
+      "bytes": 490751,
+      "sha256": "bab1cf25d5350a082f23531ce7f4ba12cbb99fd9e96f26e5cf845dd1551ff15c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_0_TxPert_Exphormer_Learned.parquet",
+      "bytes": 688679,
+      "sha256": "ec43fbece78f50f994c1c4336640ea8cebaf317c1be75a80d8b3bc29a873b0f9"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TxPert_GAT_PREDICTED_EFFECTS.npy",
+      "bytes": 20539008,
+      "sha256": "88fba0ba25493bcebaf5c702c5200f70d55433968ba532cd83dbb0ed77947a90"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/external_Learned.parquet",
+      "bytes": 164106,
+      "sha256": "fa1e373edc04cb18bce0b4a993c57877643c33fe623ec1dc75973f44062c8988"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/source_Learned.parquet",
+      "bytes": 961984,
+      "sha256": "581891b9f3571a5a89a01e943a00034aa8194aedff000db645d368c3713d726a"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/TEST_CALIBRATED_EFFECTS.npy",
+      "bytes": 6168608,
+      "sha256": "385d62b8cbd2d535b1b31be504bbd55dd1032f0e09710a3b33c14f69e7bca89e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/TEST_TRUE_EFFECTS.npy",
+      "bytes": 6168608,
+      "sha256": "cbf00471c62b6db5652a38b610fa612c52038d1f9f2f8c479933b3f075beb7a2"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/TEST_CONTROLS.npy",
+      "bytes": 6168608,
+      "sha256": "8c3b6aa7eaa51394ff850aaab204968b641daa3e63335cbd3789346768be3f78"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/public_mcfaline_trainval/effect_vectors.npy",
+      "bytes": 81485408,
+      "sha256": "36212d51411fbe01234bbe82e1fb938a84b6f569ab540b64a30cab9a26cc67b8"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/public_mcfaline_trainval/control_vectors.npy",
+      "bytes": 81485408,
+      "sha256": "8593d30615e063ba4bf9711a62eccbff85748899ff4e254820a94b34d23ca4a2"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/public_mcfaline_trainval/public_memory.parquet",
+      "bytes": 432777,
+      "sha256": "a17798b8e3aaf0a5f26d1fcb18de871980a8e119640daebf4d411f0f77fff067"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/INFORMATION_BUDGET_LEDGER.csv",
+      "bytes": 44892,
+      "sha256": "8876e5dbfedbf10ec4ff95206d654c0a8324350673ce6cc6befa141f1adbedee"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/CDF_AUDIT.csv",
+      "bytes": 17411,
+      "sha256": "f65fe7dcb09c588183aa40444cf2e4f45b1ef084a3ca90742b9b7c0e244aee8f"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/STRICT_FEEDBACK_TASK_PREDICTIONS.csv.gz",
+      "bytes": 136735,
+      "sha256": "a6f05dfd2e57a0794957a7ac062f606fbb43ccef5ab15ac2ea871c7beb95170d"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/STRICT_FEEDBACK_INFORMATION_LEDGER.csv",
+      "bytes": 3875,
+      "sha256": "83d60aac8d3a85dfa7ea531e2d3635bb370e5e2123f86cf14559ed2647a2c435"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/FEEDBACK_SPLIT_CONTRACT.json",
+      "bytes": 572,
+      "sha256": "7c00f5ab08969bc6537a714002735934d2424b6f0c1007009b9f6b3fec3b4e98"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/COMPETENCE_COMMON_AXIS.json",
+      "bytes": 561,
+      "sha256": "36d0f313148b780de2d73cb95c77ec705f5edbf53b989dc4b01033d9e7d4801f"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/PREDICTION_CONTRACT_PREREGISTRATION.json",
+      "bytes": 842,
+      "sha256": "a7c2e129bfa96393421194c31566d235019aac78068ba7c4e7894f8c8fa946e3"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/RUN_STATUS_all.json",
+      "bytes": 346,
+      "sha256": "a084a91935ab9184789a743c3b9d479f6f425c833fd247df3d24135a463d057b"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/PREDICTION_FREEZE_RETENTION_AUDIT.json",
+      "bytes": 738,
+      "sha256": "d7097ba36869d83f2df9f3e2440e1fa45677a268518beff154a60a9ce3493bc7"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_common_axis_closure.py",
+      "bytes": 13905,
+      "sha256": "ccdab9ac97707ff909792fa44daa26310593177c3467eedb25b669b871cdffb0"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_research_closure.py",
+      "bytes": 44318,
+      "sha256": "b66bf85611a1e9fa4b7403be171bce3c41de684531615a935411ab714687e5b6"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/seal_mcfaline_dual_memory_risk.py",
+      "bytes": 23732,
+      "sha256": "2dfd627ac5b09e8ef6ce4116cf2b938bd3379f731ca081b7127ab470e6de3d5e"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/research.py",
+      "bytes": 11094,
+      "sha256": "22a02a79d59f1d852870efb9dc1afe229f150c5db75e5de735f7bfcc1f613887"
+    }
+  ],
+  "elapsed_seconds": 1.7611436280421913,
+  "new_fits": 0,
+  "new_model_predictions": 0,
+  "unopened_expression_truth_reads": 0,
+  "Orion_numeric_reads": 0
+}

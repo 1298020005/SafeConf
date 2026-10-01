@@ -1,0 +1,49 @@
+{
+  "algorithm": "minimum SHA256(UTF8(SafeConf-real-example-audit-v1 + NUL + line + NUL + task_id)) per predefined line",
+  "selection_inputs": [
+    "line",
+    "task_id"
+  ],
+  "fixed_method": "Learned_hgb",
+  "fixed_seed": 20260930,
+  "candidates_per_line": {
+    "Exphormer_to_GAT": 1808,
+    "GAT_to_Exphormer": 1808,
+    "TxPert_to_McFaline": 543
+  },
+  "selected": [
+    {
+      "line": "GAT_to_Exphormer",
+      "task_id": "RPE1::CSNK2B+ctrl",
+      "gene": "CSNK2B",
+      "target": "RPE1",
+      "fold": 4,
+      "upstream": "TxPert_Exphormer",
+      "selection_sha256": "0001d7ae1673003e7daf07969645a6d946f875e354eb271adf8eec7e0b091707"
+    },
+    {
+      "line": "Exphormer_to_GAT",
+      "task_id": "jurkat::MRPS23+ctrl",
+      "gene": "MRPS23",
+      "target": "jurkat",
+      "fold": 0,
+      "upstream": "TxPert_GAT",
+      "selection_sha256": "00112400655353558f2bb5703c1672f7fcf70d7375b5df64da6292cfe0dd436d"
+    },
+    {
+      "line": "TxPert_to_McFaline",
+      "task_id": "ACVR2A::t98g::lapatinib",
+      "gene": "ACVR2A",
+      "target": "t98g",
+      "fold": -1,
+      "upstream": "DecoderOnly",
+      "selection_sha256": "0063ff726236b5b7a71b4c26d3e474228a50f12a63df24a472b8c73681bb1cfc"
+    }
+  ],
+  "outcomes_used_for_selection": false,
+  "source_identity_table": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/MATRIX_TASK_PREDICTIONS.csv.gz",
+    "bytes": 5606076,
+    "sha256": "73eff7366c0e64d96d57e6effe2d12061890a3db43f47d4d403204a8dff9504c"
+  }
+}

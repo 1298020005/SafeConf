@@ -1,0 +1,88 @@
+{
+  "schema": "safeconf_independent_source_gene_transfer_metadata_review_v1",
+  "status": "PASS",
+  "reviewed_utc": "2026-10-01T22:37:38.494831+00:00",
+  "scope_audit": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_gene_transfer_scope_v1/SCOPE_AUDIT.json",
+    "bytes": 2255,
+    "sha256": "929a9f1c1e7832339d21509c08f89ca13dea7f7c7d71216128025cf681c54021"
+  },
+  "scope_CSV": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_gene_transfer_scope_v1/SOURCE_GENE_TRANSFER_SCOPE.csv",
+    "bytes": 30560,
+    "sha256": "6ad469ae6cda36ca8ef37552c7b54ff7cf7ee3e39d9d3cb803e996b198443268"
+  },
+  "bank_manifest": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v2/PUBLIC_BANK_MANIFEST.json",
+    "sha256": "8053a6118bc2e3cace841e1498cee3c1366ce5b49e9c79328e7cd34a180b6607"
+  },
+  "coverage_certificate": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v2/METADATA_COVERAGE_CERTIFICATE.json",
+    "bytes": 63510,
+    "sha256": "47dfe56404e9ef81f7588a2d4364880c37377ccf8847f725cb0d17a68bae7af0"
+  },
+  "Source_training_gene_metadata": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_TASKS.parquet",
+    "bytes": 95447,
+    "sha256": "6bd02a0cff8f41ea48ad9566622bbebe923db56db64a8d20a4597fce53725013"
+  },
+  "query_identity_TSV": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v2/METADATA_QUALIFIED_TEST_QUERY_IDS.tsv",
+    "bytes": 10053,
+    "sha256": "7e1a00c63be10206e666f5792e57f1c5cc7e102d99a7419273f16e779b15a040"
+  },
+  "public_gene_metadata": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v2/SOURCE_PUBLIC_MEMORY_METADATA.parquet",
+    "bytes": 144677,
+    "sha256": "8ebb862223c2dd6da85317787c818493fbc771f8445eae5528fcae00cb9e19fd"
+  },
+  "Source_metadata_columns_read": [
+    "gene"
+  ],
+  "public_metadata_columns_read": [
+    "perturbation_target",
+    "perturbation_type",
+    "eligibility"
+  ],
+  "Source_unique_training_genes": 575,
+  "Source_task_metadata_rows": 1808,
+  "qualified_TEST_tasks": 232,
+  "qualified_unique_gene_clusters": 144,
+  "context_counts": {
+    "HCT116": 107,
+    "HEK293T": 125
+  },
+  "counts_reproduced": {
+    "Source_risk_gene_seen": {
+      "tasks": 52,
+      "gene_union": 32,
+      "symbol_union": 32,
+      "by_context": {
+        "HCT116": 22,
+        "HEK293T": 30
+      }
+    },
+    "Source_risk_gene_unseen": {
+      "tasks": 180,
+      "gene_union": 112,
+      "symbol_union": 112,
+      "by_context": {
+        "HCT116": 85,
+        "HEK293T": 95
+      }
+    }
+  },
+  "unique_query_id_and_gene_context_checked": true,
+  "identical_query_identity_set_verified_independent_of_descriptive_CSV_sort_order": true,
+  "every_query_has_real_eligible_same_gene_Public_reference_metadata": true,
+  "unknown_to_Source_risk_labels_is_not_no_biological_history": true,
+  "descriptive_only_full_primary_methods_and_gates_unchanged": true,
+  "metadata_ceiling_is_not_actual_all13_finite_cohort_claim": true,
+  "no_risk_prediction_truth_error_or_Source_X_read": true,
+  "new_tests_fits_or_model_calls": 0,
+  "limits": [
+    "Historical vector numeric identity relies on bank8053 prior audited builder/receipts; this review opens gene/query metadata only.",
+    "Actual finite primary cohort remains future pretruth seal qualification.",
+    "Source-risk-gene-seen means gene overlap with575Source risk-label genes; query study/context/upstream may still be external."
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema": "safeconf_pretruth_source_gene_transfer_scope_v1",
+  "status": "METADATA_SCOPE_FIXED_BEFORE_TEST_TRUTH",
+  "created_utc": "2026-10-01T22:34:40.561296+00:00",
+  "public_bank_manifest": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v2/PUBLIC_BANK_MANIFEST.json",
+    "sha256": "8053a6118bc2e3cace841e1498cee3c1366ce5b49e9c79328e7cd34a180b6607"
+  },
+  "source_training_tasks_binding": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_TASKS.parquet",
+    "bytes": 95447,
+    "sha256": "6bd02a0cff8f41ea48ad9566622bbebe923db56db64a8d20a4597fce53725013"
+  },
+  "source_numeric_columns_loaded": [],
+  "source_metadata_columns_loaded": [
+    "gene"
+  ],
+  "source_unique_training_genes": 575,
+  "metadata_coverage_certificate": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v2/METADATA_COVERAGE_CERTIFICATE.json",
+    "bytes": 63510,
+    "sha256": "47dfe56404e9ef81f7588a2d4364880c37377ccf8847f725cb0d17a68bae7af0"
+  },
+  "counts": {
+    "Source_risk_gene_seen": {
+      "tasks": 52,
+      "gene_union": 32,
+      "by_context": {
+        "HCT116": 22,
+        "HEK293T": 30
+      }
+    },
+    "Source_risk_gene_unseen": {
+      "tasks": 180,
+      "gene_union": 112,
+      "by_context": {
+        "HCT116": 85,
+        "HEK293T": 95
+      }
+    }
+  },
+  "all_registered_primary_method_ids_cohort_and_interpretation_rules_unchanged": true,
+  "new_method_or_selection_gate": false,
+  "use": "Describe source risk-label gene overlap when interpreting registered external outcomes; descriptive groups do not replace the full fixed primary cohort or select a winner",
+  "no_score_truth_error_or_prediction_read": true,
+  "limits": [
+    "All232metadata-qualified tasks have real public same-gene history; Source-risk-gene-unseen does not mean no biological history.",
+    "Only144metadata gene-union ceiling established; actual13-candidate finite primary cohort remains pending.",
+    "This is SEEN metadata pretruth description, not pristine SEALED evidence.",
+    "New study and upstream transfer can include Source-risk-seen genes; no all-gene-unseen claim."
+  ]
+}

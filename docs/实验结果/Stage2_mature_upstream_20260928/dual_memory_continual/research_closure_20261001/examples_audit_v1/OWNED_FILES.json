@@ -1,0 +1,27 @@
+{
+  "scope": "3 archived DEV/SEEN common2840 examples only",
+  "owned_files": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/examples_audit_v1/AUDIT.json",
+      "bytes": 47424,
+      "sha256": "7d162b63557ec94409119b6e926ca5160d1e0b14f55fc232c68c5342974221b8"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/examples_audit_v1/EXAMPLES.csv",
+      "bytes": 5952,
+      "sha256": "946e2fcd7d9c16336accdccb7e8684ec68c3dd4423843b7213a74acbe86e7a02"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/examples_audit_v1/FIXED_IDENTITY_SELECTION.json",
+      "bytes": 1641,
+      "sha256": "b4ecc611a1476135dab04c45587b7f43fb70212849e5082acb106a64f9388508"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/examples_audit_v1/LEGAL_HISTORY_ITEMS.csv",
+      "bytes": 13113,
+      "sha256": "1fc2d20234a5e0e496accb4e75912bc7cea997ed491ad012539beb76a24bcad1"
+    }
+  ],
+  "runtime_arrays_not_copied": true,
+  "old_artifacts_edited": false
+}
