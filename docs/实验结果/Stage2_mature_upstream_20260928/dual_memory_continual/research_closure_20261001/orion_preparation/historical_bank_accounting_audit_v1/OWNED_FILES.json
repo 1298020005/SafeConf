@@ -1,0 +1,30 @@
+{
+  "schema": "safeconf_owned_review_files_v1",
+  "owner": "external_scientific_gate_review",
+  "created_utc": "2026-10-01T22:22:42.628078+00:00",
+  "owned_files": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_accounting_audit_v1/COST_MASTER_APPEND_ROWS.csv",
+      "bytes": 1440,
+      "sha256": "ee564d828d0aa8ff4e8636d7f3dd4ec91280e89a8f24573d1c8d24ee892a8d5c"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_accounting_audit_v1/INFORMATION_BUDGET_APPEND_ROWS.csv",
+      "bytes": 529,
+      "sha256": "3c855afb70813d368f36c823e1dc3f13011409ab4de1ef7caef20facdd6f294a"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_accounting_audit_v1/ACCOUNTING_AUDIT_DETAILS.json",
+      "bytes": 10456,
+      "sha256": "a3caa26cd6eb1387a834c267374e87d8c9ea9f8ce871909e150c716d5ed0b483"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_accounting_audit_v1/APPEND_VERIFICATION.json",
+      "bytes": 2513,
+      "sha256": "ac2784e3153924fb8580c6b340361b2c32354d6de71bf793d2f321bc4e88feec"
+    }
+  ],
+  "main_tables_modified": false,
+  "latest_append_verification_status": "PASS",
+  "updated_utc": "2026-10-01T22:24:26.165920+00:00"
+}

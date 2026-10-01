@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-01T22:12:40.959896+00:00",
+  "updated_utc": "2026-10-01T22:25:20.095765+00:00",
   "complete": [
     "five-fold nested public biology with four inner folds",
     "three-line sixteen-method matrix with three registered seeds",
@@ -153,8 +153,8 @@
   ],
   "orion_verified_acquisition_bytes": 18138449950,
   "orion_runtime_progress_note": "Initial 8.94GB sum-map write completed; actual authorized token spool observed growing. No resource limit change needed.",
-  "orion_current_aggregate_completed_files": 35,
-  "orion_current_aggregate_last_completed_file": "data/HEK293T_Batch4.parquet",
+  "orion_current_aggregate_completed_files": 37,
+  "orion_current_aggregate_last_completed_file": "data/HEK293T_Batch6.parquet",
   "orion_current_aggregate_file_goal": 40,
   "completion_audit_path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/REQUIREMENT_COMPLETION_AUDIT.csv",
   "actual_continual_runtime_replay": {
@@ -170,8 +170,8 @@
     "report": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/README.md",
     "result_master_macro_rows": 4
   },
-  "orion_aggregation_completed_files": 35,
-  "orion_last_aggregated_file": "data/HEK293T_Batch4.parquet",
+  "orion_aggregation_completed_files": 37,
+  "orion_last_aggregated_file": "data/HEK293T_Batch6.parquet",
   "orion_registered_evaluation_status": "ROOT_STOPPED_AUTOMATIC_TEST_BEFORE_OPEN_FOR_VERIFIED_HISTORY_COVERAGE_GAP",
   "orion_same_gene_history_metadata_upper_bound": {
     "tasks": 52,
@@ -200,7 +200,18 @@
     "source_selected_CSR_values": 850904175,
     "independent_actual_bank_review": "PASS38checks",
     "adapter_chain_review": "PASS b39093a42a5afd27be491afd7c54c3fba414e28733eb5f013f0890000a66bfe9",
-    "pretruth_waiter_pid": 424742
+    "pretruth_waiter_pid": 424742,
+    "bank_cost_accounting": {
+      "status": "GLOBAL_APPEND_AND_INDEPENDENT_VERIFICATION_PASS",
+      "cost_rows_after": 327,
+      "information_rows_after": 287,
+      "failed_v1_and_successful_v2_wall_sum_seconds": 260.74730639894085,
+      "exact_final_CPU_total_known": false,
+      "new_fits": 0,
+      "new_GPU_hours": 0,
+      "new_download_bytes": 0,
+      "review_receipt": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_accounting_audit_v1/APPEND_VERIFICATION.json"
+    }
   },
   "orion_aggregation_progress_definition": "Unique completed-file events; file_number in logs is zero-based, not completed count"
 }

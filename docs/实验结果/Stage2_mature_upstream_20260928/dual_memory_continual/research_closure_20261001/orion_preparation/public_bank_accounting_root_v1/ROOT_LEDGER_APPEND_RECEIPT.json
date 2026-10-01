@@ -1,0 +1,35 @@
+{
+  "cost_before_sha256": "5608d9b04f253275fdd51275d81e731f4a2459545fed74dd4a134718c12d45d6",
+  "cost_old_rows": 325,
+  "cost_new_rows": 327,
+  "cost_append_prefix_exact": true,
+  "source_receipt_sha256": "ad061b5ff223f6a0999966cbb7487dcd27652d1858c0e85b3e3c814d1f61af97",
+  "wall_seconds_sum": 260.74730639894085,
+  "wall_sum_is_not_CPU_total": true,
+  "information_before_sha256": "8876e5dbfedbf10ec4ff95206d654c0a8324350673ce6cc6befa141f1adbedee",
+  "information_old_rows": 286,
+  "information_new_rows": 287,
+  "information_append_prefix_exact": true,
+  "information_scope": "bank ingestion only, not frozen Source-core training or future target inference",
+  "historical_truth_read_selected_cells": 571090,
+  "new_upstream_fits": 0,
+  "new_Orion_truth_reads": 0,
+  "schema": "safeconf_public_bank_global_ledger_append_v1",
+  "created_utc": "2026-10-01T22:23:32.247133+00:00",
+  "status": "ACTUAL_APPEND_COMPLETE_AWAIT_INDEPENDENT_REVIEW",
+  "COST_MASTER_TABLE.csv": {
+    "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/COST_MASTER_TABLE.csv",
+    "bytes": 117239,
+    "sha256": "94a0f6422e986a7b782ba2f3fc2cc38edf0bd1e347a8980644c6a630fff82ae2"
+  },
+  "INFORMATION_BUDGET_LEDGER.csv": {
+    "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/INFORMATION_BUDGET_LEDGER.csv",
+    "bytes": 45191,
+    "sha256": "07dd33550a6e341657262296e1e2bd174a73269d93f97affc70c5345d3b53e2a"
+  },
+  "limits": [
+    "This receipt records completed bank ingestion, not actual Orion upstream competence or expanded risk scoring.",
+    "Source historical study count remains2; no new public study or upstream family introduced by this expansion.",
+    "Observed CPU and RSS snapshots are not exact full-run CPU/peak proofs; wall timing definitions are recorded in original build receipt."
+  ]
+}

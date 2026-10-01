@@ -1,0 +1,43 @@
+{
+  "schema": "safeconf_bank_main_ledger_append_independent_verification_v1",
+  "status": "PASS",
+  "created_utc": "2026-10-01T22:24:26.165559+00:00",
+  "checks": {
+    "COST_MASTER_TABLE.csv_old_bytes_prefix_exact": true,
+    "COST_MASTER_TABLE.csv_expected_row_count": true,
+    "INFORMATION_BUDGET_LEDGER.csv_old_bytes_prefix_exact": true,
+    "INFORMATION_BUDGET_LEDGER.csv_expected_row_count": true,
+    "both_exact_receipt_wall_strings": true,
+    "CPU_observation_labels_not_exact_total": true,
+    "bank_cost_new_upstream_calls_fits_GPU_all0": true,
+    "bank_info_Source_error_and_all_target_label_budgets0": true,
+    "bank_info_true_public_biology_no_transfer_learner_fit": true,
+    "Orion_TEST_truth_remains_closed_role": true
+  },
+  "current_main_ledger_bindings": {
+    "COST_MASTER_TABLE.csv": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/COST_MASTER_TABLE.csv",
+      "bytes": 117239,
+      "sha256": "94a0f6422e986a7b782ba2f3fc2cc38edf0bd1e347a8980644c6a630fff82ae2"
+    },
+    "INFORMATION_BUDGET_LEDGER.csv": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/INFORMATION_BUDGET_LEDGER.csv",
+      "bytes": 45191,
+      "sha256": "07dd33550a6e341657262296e1e2bd174a73269d93f97affc70c5345d3b53e2a"
+    }
+  },
+  "root_append_receipt": {
+    "path": "/tmp/safeconf_bank_ledger_append_receipt.json",
+    "bytes": 769,
+    "sha256": "474dc5fb2cbd3bc1dac10d116c15de42dd248169e907a20179347e020e9a4fb0"
+  },
+  "audit_snapshot_to_current_note": "ACCOUNTING_AUDIT_DETAILS.json records the pre-append325/286row snapshot. This verification records root append to327/287 with oldbytes preserved. The proposed append CSVs are historical recommendations; do not append them a second time.",
+  "comparison_with_proposed_rows": "Root uses different descriptive row labels and leaves inapplicable per-fit fields blank. Required scientific budgets, receipt wall strings, no-fit/no-GPU fields and scope agree.",
+  "no_material_accounting_discrepancy": true,
+  "decimal_wall_sum_from_exact_row_strings": "260.74730639894084",
+  "root_receipt_float_wall_sum": 260.74730639894085,
+  "float_sum_difference_only": true,
+  "CPU_exact_final_total_still_unknown": true,
+  "main_tables_mutated_by_this_reviewer": false,
+  "SourceX_Orion_numeric_reads_or_tests": false
+}

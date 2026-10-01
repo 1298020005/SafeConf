@@ -285,3 +285,4 @@ TxPert_to_McFaline,-1,Prediction_ridge,3616,575,2,risk target and training-only 
 TxPert_to_McFaline,-1,Uniform_DirectRMSE,0,0,0,NONE,,True,False,0,0,0,0,542,POST_CONFIRMATION_SEEN
 TxPert_to_McFaline,-1,Uniform_hgb,3616,575,2,risk target and training-only CDF,4bc634e5232fb652d4c3569cbd63d24bd07d3cb92b4c315f94fff70ccf60b26c,True,False,0,0,0,0,542,POST_CONFIRMATION_SEEN
 TxPert_to_McFaline,-1,Uniform_ridge,3616,575,2,risk target and training-only CDF,4bc634e5232fb652d4c3569cbd63d24bd07d3cb92b4c315f94fff70ccf60b26c,True,False,0,0,0,0,542,POST_CONFIRMATION_SEEN
+Historical_Source_PublicBank_ingestion_5365records,NOT_APPLICABLE_NO_FIT,PublicMemoryStore_append_only_bank_ingestion,0,0,0,NONE; only historical experimental truth used by this ingestion; frozen core is a separate stage,,True,False,0,0,0,0,0,HISTORICAL_SOURCE_PUBLIC_INGEST_ORION_TEST_TRUTH_CLOSED

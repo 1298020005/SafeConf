@@ -1,0 +1,204 @@
+{
+  "schema": "safeconf_historical_bank_cost_information_audit_v1",
+  "status": "LOCAL_RECEIPTS_PRESENT_MAIN_LEDGERS_MISSING_BANK_ROWS",
+  "created_utc": "2026-10-01T22:22:42.626346+00:00",
+  "scope": "Only existing receipts, resource observation and ledger text were read. No Source X, Source aggregate vectors, Orion numeric data or tests. Main tables were not modified.",
+  "main_ledger_snapshot": {
+    "COST_MASTER_TABLE_rows": 325,
+    "INFORMATION_BUDGET_LEDGER_rows": 286,
+    "bank_related_cost_rows_found": 0,
+    "bank_related_information_rows_found": 0,
+    "EXECUTION_STATUS_records_completed_bank_but_not_full_cost_fields": true
+  },
+  "main_schema_preserved": true,
+  "recommended_appends": {
+    "cost_rows": 2,
+    "information_rows": 1,
+    "detailed_fields_kept_in_this_sidecar": true
+  },
+  "resource_accounting": {
+    "failed_v1": {
+      "status": "FAILED_CLOSED_NO_BANK_COMMIT",
+      "executed_builder_sha256": "f3a1b41bea0d4cebfd1e6f83dd7749764e09330d7bd0c98cb5819acde4656a36",
+      "wall_seconds_serialized": "56.094636056",
+      "wall_measurement": "log birth to recorded failure; not a CPU duration",
+      "CPU_seconds": "47.0",
+      "CPU_measurement": "observed lower_bound; exact final process CPU unknown",
+      "RSS_snapshot_KiB": 332348,
+      "RSS_measurement": "one process snapshot; not measured peak",
+      "historical_Source_X_partial_read": true,
+      "selected_Source_cells_and_values_exact": null,
+      "partial_read_not_zero_or_free": true,
+      "fits": 0,
+      "GPU_calls": 0,
+      "downloads": 0,
+      "Orion_numeric_reads": 0
+    },
+    "successful_v2": {
+      "status": "COMPLETE",
+      "executed_builder_sha256": "9114a69e04cf25eacbb608ff6f8b91b175a8e856293696471c18761a57b20819",
+      "wall_seconds_serialized": "204.65267034294084",
+      "wall_measurement": "builder start through manifest elapsed field; excludes any work after that timestamp",
+      "CPU_seconds": "204.61",
+      "CPU_measurement": "last observed cumulative process CPU; not an exact final total",
+      "observed_peak_RSS_bytes": 1127251968,
+      "CPU_observation_clock_tick_hz": 100,
+      "observation_poll_seconds": 0.5,
+      "reader_elapsed_seconds": "20.245133713819087",
+      "reader_cumulative_CPU_at_capture_seconds": "75.296467",
+      "reader_peak_RSS_bytes": 752832512,
+      "reader_metrics_subset_or_earlier_cumulative_not_additive_to_full_process": true,
+      "fits": 0,
+      "GPU_calls": 0,
+      "downloads": 0,
+      "Orion_numeric_reads": 0
+    },
+    "two_attempt_wall_sum_decimal_serialized_values": "260.74730639894084",
+    "receipt_float_sum_serialized": "260.74730639894085",
+    "two_attempt_CPU_combined_observed_lower_bound_seconds": "251.61",
+    "wall_sum_is_workload_sum_not_elapsed_timeline_or_CPU": true,
+    "exact_final_total_CPU_unknown": true,
+    "existing_Source_asset_reused_bytes": 7767053064,
+    "new_download_bytes_for_bank_build": 0
+  },
+  "public_biological_information_access": {
+    "role": "SOURCE_PUBLIC_HISTORICAL_DEV",
+    "filename_test_not_Orion_TEST": true,
+    "processed_coordinate": "cellwise log1p(CP4000); already normalized before native3352 restriction",
+    "native_measured_genes": 3352,
+    "fixed_endpoint_genes": 3285,
+    "Source_studies": 2,
+    "Source_contexts": 4,
+    "successful_selected_cells": 571090,
+    "treated_cells": 531925,
+    "control_cells": 39165,
+    "selected_CSR_values_materialized": 850904175,
+    "successful_complete_selected_chunks": 551,
+    "legacy_units_retained": 2008,
+    "legacy_eligible_genes": 580,
+    "new_units_appended": 3357,
+    "new_eligible_genes": 1490,
+    "total_units": 5365,
+    "total_eligible_genes": 2070,
+    "Source_risk_training_gene_history_preserved": 575,
+    "distinct_successful_Source_cell_scope_not_cumulative_retry_cell_reads": true,
+    "cumulative_retry_Source_value_reads_unknown_due_failed_partial_count_missing": true,
+    "bank_step_new_Source_error_labels": 0,
+    "bank_step_target_truth_labels_or_numeric_reads": 0,
+    "bank_step_new_risk_models_or_scalers_CDF_or_biology_predictor_fits": 0,
+    "existing_core_inference_accounted_later_separately": true,
+    "metadata_only_Orion_history_coverage": {
+      "tasks": 232,
+      "gene_clusters_union": 144,
+      "HCT116": 107,
+      "HEK293T": 125,
+      "finite_prediction_qualification_not_yet_counted": true
+    }
+  },
+  "necessary_future_accounting_only": [
+    {
+      "record": "Actual Orion aggregation and upstream/competence",
+      "required_cost_fields": [
+        "separate failure and success attempts",
+        "actual aggregation/fit/predict/competence wall and observed CPU",
+        "observed peak RSS and GPU hours",
+        "number of context models",
+        "formal validation prediction attempt ID/start",
+        "new upstream prediction calls"
+      ],
+      "required_information_fields": [
+        "TRAIN/VALIDATION/own-TRAIN-control cells materialized by role",
+        "exact validation task/gene cluster counts",
+        "validation errors used for competence only",
+        "TRAIN-only baseline selection",
+        "target risk/CDF/feedback fit labels remain0",
+        "full38606 input axis and3285 endpoint identity"
+      ],
+      "evidence": "actual aggregation access audit, fit run/status/artifact registries and competence receipt; pending"
+    },
+    {
+      "record": "Actual original-bank and expanded-bank pretruth inference plus comparison",
+      "required_cost_fields": [
+        "both inference passes and comparison wall/observed CPU",
+        "existing7predictors reused versus newfits0",
+        "actual inference calls and peak RSS",
+        "serialization reconciliation workload included once"
+      ],
+      "required_information_fields": [
+        "Source3616risk records/575clusters/2architectures/1family remain unchanged",
+        "Source CDF and7parameter hashes",
+        "bank5365units/2070genes; old2008 plus new3357 availability",
+        "zero Orion risk/CDF/feedback labels",
+        "all registered query count and old580 full-query byte invariance",
+        "13-method finite primary task counts per context and independent gene union>=100; original each-context>=20",
+        "Public access differs for Magnitude/P-only versus Manual/Learned; learned Public predictor reused without refitting"
+      ],
+      "evidence": "completed extension seal, original fixed score archive, final comparison and exact receipts; pending"
+    },
+    {
+      "record": "Once-only registered Orion TEST access and fixed external statistics",
+      "required_cost_fields": [
+        "separate truth aggregation and risk-statistics wall/observed CPU",
+        "peak RSS/storage and GPU hours",
+        "5000 paired gene-cluster draws workload",
+        "newfits0 and targetCDFfitFalse"
+      ],
+      "required_information_fields": [
+        "first-open operation/delegation/global-scope and completed reader hashes",
+        "all accessed TEST cells and evaluated error rows/independent clusters",
+        "eligible denominators and primary/all-prediction/no-history cohorts by context",
+        "evaluation-only target errors distinguished from training labels0",
+        "fixed13method IDs,7metrics and all prespecified paired nominal intervals",
+        "metadataSEEN/truth-blind external replication role, no pristine relabel"
+      ],
+      "evidence": "actual completed guarded truth receipt and EVALUATION_MANIFEST/coverage/interval/comparison artifacts; pending"
+    }
+  ],
+  "input_bindings": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/COST_MASTER_TABLE.csv",
+      "bytes": 116329,
+      "sha256": "5608d9b04f253275fdd51275d81e731f4a2459545fed74dd4a134718c12d45d6"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/INFORMATION_BUDGET_LEDGER.csv",
+      "bytes": 44892,
+      "sha256": "8876e5dbfedbf10ec4ff95206d654c0a8324350673ce6cc6befa141f1adbedee"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/ACTUAL_BANK_BUILD_RECEIPT.json",
+      "bytes": 4998,
+      "sha256": "ad061b5ff223f6a0999966cbb7487dcd27652d1858c0e85b3e3c814d1f61af97"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/FAILED_V1_RECEIPT.json",
+      "bytes": 852,
+      "sha256": "ddf13bcdb6d04f345c6322489299ed94bbe666bf9884165577d86c7ec5a46225"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_historical_bank_build_20261002_v2.PROCESS_COST.json",
+      "bytes": 206,
+      "sha256": "34f1de1be3299205406fb6f3e6691f8650f908f03b47e8ea6fc6f56b16ddda97"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v2/SOURCE_HISTORICAL_READ_AUDIT.json",
+      "bytes": 700,
+      "sha256": "79b2f00b24b3ddcd42b58e9052888e80408d6e0e4683622676f11d604cb0fe8c"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/EXECUTION_STATUS.json",
+      "bytes": 14168,
+      "sha256": "519fe03656ca0f6a6b0d1359c16e2ed3d4c57519cee781101256b334fa1aaff1"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v3_sorted_csr/SOURCE_PUBLIC_HISTORICAL_READ_CONTRACT.json",
+      "bytes": 9081,
+      "sha256": "d7f8f9d6464db0aa4adee4348f5cb9ccbb97cdbc19d3bec1826743da5a92cab8"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v3_sorted_csr/SOURCE_PUBLIC_HISTORICAL_DATA_ROLE_NOTE.json",
+      "bytes": 1135,
+      "sha256": "109830b61758e18385929ad9aab780b210bf90b00055a0732f252107edd6aaa7"
+    }
+  ]
+}
