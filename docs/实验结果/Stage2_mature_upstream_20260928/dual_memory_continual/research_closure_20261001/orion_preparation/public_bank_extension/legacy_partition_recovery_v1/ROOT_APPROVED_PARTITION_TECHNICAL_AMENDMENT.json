@@ -1,0 +1,92 @@
+{
+  "schema": "safeconf_orion_legacy_batch_partition_technical_amendment_v1",
+  "status": "ROOT_APPROVED_TECHNICAL_CONTINUATION",
+  "partition_helper": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/orion_legacy_partition.py",
+    "sha256": "780063552f2f765b762e8cf115135c52b34b85cb3dee7e3d404f7afe573e31f3",
+    "bytes": 5203
+  },
+  "executed_sealer": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/seal_safeconf_orion_public_bank_extension_partitioned_agent.py",
+    "sha256": "ded5d3440678f49042f152c495c38060dec6b0efb96371abb7c24c56e2bf6d5c",
+    "bytes": 8042
+  },
+  "executed_chain": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_orion_public_bank_extension_partitioned_chain_agent.py",
+    "sha256": "19ea756bd8fd2d9be3cc81392abb1952c648a1654401d8748a6af400de8a377d",
+    "bytes": 20395
+  },
+  "base_math": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/seal_safeconf_orion_source_risk_agent.py",
+    "sha256": "8b69e6ce29dc92aa34150b3b08aac62ce8333a10f84ec432a39d0e81ffc64482",
+    "bytes": 28837
+  },
+  "original_extension_helper": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/orion_public_bank_extension.py",
+    "sha256": "9857b96b98460346bce334313c1a212466c85dc450c07f16e5d934e1ef045454",
+    "bytes": 24582
+  },
+  "preserved_original_sealer": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/seal_safeconf_orion_public_bank_extension_agent.py",
+    "sha256": "81ca3f44f147880b19fc9b8225ac8c63572e9a44dfc78e1d6d2208b3770b0414",
+    "bytes": 7596
+  },
+  "preserved_original_chain": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_orion_public_bank_extension_chain_agent.py",
+    "sha256": "2df89381e10075ccad73c3072dba610a77159257f80c8adf5162a1bc63ef1dff",
+    "bytes": 19145
+  },
+  "actual_diagnosis": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/public_bank_extension/legacy_partition_recovery_v1/DIAGNOSIS.json",
+    "sha256": "12b513bf3927d585f14b972501c60aec5ecf388ed3159472194d0099bbf867dc",
+    "bytes": 13752
+  },
+  "generated_partition_proof": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/public_bank_extension/legacy_partition_recovery_v1/GENERATED_PARTITION_PROOF.json",
+    "sha256": "be3cdcf40c47830cc6fa18462e44ded2457677941a374957ff9ecc2a36ec6b5f",
+    "bytes": 830
+  },
+  "extension_contract": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v3_sorted_csr/PUBLIC_BANK_EXPANSION_CONTRACT.json",
+    "bytes": 6752,
+    "sha256": "0b6b9b86ad18da6f748ff4fc7cca4e20253c6b43a2d9533bb2b585664c79487f"
+  },
+  "bank_manifest": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v2/PUBLIC_BANK_MANIFEST.json",
+    "bytes": 12959,
+    "sha256": "8053a6118bc2e3cace841e1498cee3c1366ce5b49e9c79328e7cd34a180b6607"
+  },
+  "base_comparison_manifest": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v4_decimal_tokens/FROZEN_PRETEST_COMPARISON.json",
+    "bytes": 9585,
+    "sha256": "32ceafec8fea41d422961d820d942bcb1b3aaff970d662f18607819a1cba38f5"
+  },
+  "new_model_fits": 0,
+  "math_or_tolerance_changed": false,
+  "old_complete_branch_bytes_required": true,
+  "TEST_numeric_access_authorized": false,
+  "strategy": "old580 complete original full-scope branch; newly supported absent580 use same infer on partition; ALLquery bank-independent P-only/Magnitude retain full original batch",
+  "no_old_score_only_overwrite": true,
+  "preserve_all_old_features_priors_pairs_and_weights": true,
+  "actual_DIAG_one_Manual_ridge_changed_values": 1,
+  "actual_DIAG_max_abs_difference": 5.551115123125783e-17,
+  "new_family_or_validation_candidate_count": 0,
+  "R_models_competence_and_original2008_archive_reused_without_rerun": true,
+  "review_guard_additions": [
+    "actual executed_chain bound before comparison/delegation",
+    "branch P6 and each archived13-feature risk input must match original prediction feature bits"
+  ],
+  "root_approved": true,
+  "approved_utc": "2026-10-01T23:34:56.738460+00:00",
+  "root_review_scope": "Complete old inference branch retention; same numerical source infer for appended targets; exact P6/archive/codechain guards; no model/feature/math/tolerance/cohort change; TEST not authorized",
+  "proposal_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/public_bank_extension/legacy_partition_recovery_v1/TECHNICAL_PARTITION_AMENDMENT_PROPOSAL_V2.json",
+    "sha256": "dfa62a8e2c8210ded2c4bc4ab55130d27038eb5730890dd7f1142178ca20fe23",
+    "bytes": 4661
+  },
+  "independent_review_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/public_bank_extension/legacy_partition_recovery_v1/independent_review/REVIEW.json",
+    "sha256": "4a0da446a22e11d10c948d2bacfed9229fb86a245d37460da0bd6466b1dfa14f",
+    "bytes": 6741
+  }
+}

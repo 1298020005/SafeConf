@@ -1,0 +1,161 @@
+{
+  "schema": "safeconf_orion_actual_partitioned_pretruth_acceptance_v1",
+  "status": "PASS_TEST_TRUTH_CLOSED_AWAIT_ROOT_AND_INDEPENDENT_REVIEW",
+  "extension_seal_receipt": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_risk_seal/EXTENSION_SEAL_RECEIPT.json",
+    "sha256": "790daf9abd1572a9f4a7a50e90448613a98d9a46f97efd1aed5d18c09d59b388",
+    "bytes": 12730
+  },
+  "risk_seal_manifest": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_risk_seal/RISK_SEAL_MANIFEST.json",
+    "sha256": "654b661aaae711c952502651d8f145f5be40c907a87ba125f46baa67d0514db2",
+    "bytes": 16499
+  },
+  "extension_comparison_receipt": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_comparison/EXTENSION_COMPARISON_RECEIPT.json",
+    "sha256": "1262c2172975f74331e83ce4d88e696439c8dafc0d3b68d09ede3fbdb16b7aa0",
+    "bytes": 7436
+  },
+  "comparison_spec": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_comparison/COMPARISON_SPEC.json",
+    "sha256": "47c76a048159e4e6d964730507001136e59fb0185d6364887710f68f1ca0d2e4",
+    "bytes": 20238
+  },
+  "comparison_scores": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_comparison/PRETRUTH_COMPARISON_SCORES.parquet",
+    "sha256": "c6e53eb32f6a4dfec6c40c9b6817f2c87d29ff47306fa1f219d28efc7a6c7e72",
+    "bytes": 712576
+  },
+  "seal_registration": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/SEAL_REGISTRATION.json",
+    "sha256": "316a5129b4a55ec6759e3d6ddf27fbed307794823e50808e1c1af87b946cce10",
+    "bytes": 4003
+  },
+  "actual_runtime_process": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/PROCESS.json",
+    "sha256": "8a36c811ca49a1e129b18c0858edb86ba0f59d18ca0fc4291b62c2b4f0087213",
+    "bytes": 2428
+  },
+  "legacy_invariance": {
+    "status": "EXACT_LEGACY_QUERY_INVARIANCE_PASS",
+    "legacy_query_rows": 446,
+    "scope": "all registered VALIDATION and TEST query identities for original eligible genes",
+    "all_score_columns_features_priors_unchanged": true,
+    "all_pair_features_transfer_scores_weights_unchanged": true,
+    "execution_partition": "complete_original_full_scope_branch_for_old580; same_original_infer_new_absent580_branch",
+    "prediction_only_all_query_original_batch_preserved": true,
+    "original_math_sha256": "8b69e6ce29dc92aa34150b3b08aac62ce8333a10f84ec432a39d0e81ffc64482",
+    "executed_partition_helper": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/orion_legacy_partition.py",
+      "sha256": "780063552f2f765b762e8cf115135c52b34b85cb3dee7e3d404f7afe573e31f3",
+      "bytes": 5203
+    },
+    "new_parameter_fits": 0,
+    "tolerance_changed": false
+  },
+  "coverage": {
+    "status": "PRETRUTH_PRIMARY_COVERAGE_PASS",
+    "minimum_gene_clusters_union": 100,
+    "minimum_tasks_per_context": 20,
+    "primary_gene_clusters_union": 144,
+    "primary_tasks_per_context": {
+      "HCT116": 107,
+      "HEK293T": 125
+    },
+    "metadata_qualification_binding": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v2/METADATA_QUALIFIED_TEST_QUERY_IDS.tsv",
+      "bytes": 10053,
+      "sha256": "7e1a00c63be10206e666f5792e57f1c5cc7e102d99a7419273f16e779b15a040"
+    },
+    "metadata_counts_not_numeric_risk_features": true
+  },
+  "fixed_candidates": [
+    "Magnitude",
+    "P_only_ridge",
+    "P_only_hgb",
+    "Manual_ridge",
+    "Manual_hgb",
+    "Learned_ridge",
+    "Learned_hgb",
+    "Manual_WeightedHistoryDistance",
+    "Learned_WeightedHistoryDistance",
+    "Uniform_DirectRMSE",
+    "Manual_DirectRMSE",
+    "Learned_DirectRMSE",
+    "NegativeSourceHistorySupport"
+  ],
+  "all13_finite_on_metadata_qualified_primary": true,
+  "all_seal_registry_files_SHA_size_readonly_valid": true,
+  "original2008_full_score_archive_byte_identical_to_original_frozen_seal": true,
+  "original2008_archived_score_sha256": "57d708c97945499a6bbce8c3e36bb076560b84ef07901a6c3504404ea1ebec15",
+  "new_pretruth_supported_gene_clusters_absent_old580": 112,
+  "new_pretruth_supported_tasks_absent_old580": 180,
+  "new_pretruth_supported_genes_absent_old580_all_absent_Source575_risk_errors": true,
+  "qualified_gene_clusters_absent_Source575_risk_training": 112,
+  "actual_scientific_contract_sha256": "6b8a26939c8c6134dbf2e8294ee7905fccc2122b570b046f3183a3d2f5caba97",
+  "actual_bank_manifest": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v2/PUBLIC_BANK_MANIFEST.json",
+    "bytes": 12959,
+    "sha256": "8053a6118bc2e3cace841e1498cee3c1366ce5b49e9c79328e7cd34a180b6607"
+  },
+  "actual_execution_bindings": {
+    "extension_chain": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_orion_public_bank_extension_partitioned_chain_agent.py",
+      "sha256": "19ea756bd8fd2d9be3cc81392abb1952c648a1654401d8748a6af400de8a377d",
+      "bytes": 20395
+    },
+    "extension_helper": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/orion_public_bank_extension.py",
+      "sha256": "9857b96b98460346bce334313c1a212466c85dc450c07f16e5d934e1ef045454",
+      "bytes": 24582
+    },
+    "extension_sealer": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/seal_safeconf_orion_public_bank_extension_partitioned_agent.py",
+      "sha256": "ded5d3440678f49042f152c495c38060dec6b0efb96371abb7c24c56e2bf6d5c",
+      "bytes": 8042
+    },
+    "partition_helper": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/orion_legacy_partition.py",
+      "sha256": "780063552f2f765b762e8cf115135c52b34b85cb3dee7e3d404f7afe573e31f3",
+      "bytes": 5203
+    },
+    "base_risk_math": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/seal_safeconf_orion_source_risk_agent.py",
+      "sha256": "8b69e6ce29dc92aa34150b3b08aac62ce8333a10f84ec432a39d0e81ffc64482",
+      "bytes": 28837
+    },
+    "base_test_reader": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/evaluate_safeconf_orion_guarded_test_agent.py",
+      "sha256": "852fcd764b567a63f04c4a5539a118c8a715f664bf534184018010ac269087b2",
+      "bytes": 35943
+    },
+    "base_risk_evaluator": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/evaluate_safeconf_orion_frozen_risk_agent.py",
+      "sha256": "dec8f056918ac5626eb12732eec3cc07041eb3680cc6addd6d9f18b32d1f486c",
+      "bytes": 22944
+    },
+    "base_once_only_coordinator": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_orion_registered_evaluation_followthrough.py",
+      "sha256": "f08f27279d8a0f45f67ba97d539bfbe27ed9351a75fd57c1eaab57a91c5ece85",
+      "bytes": 11352
+    }
+  },
+  "token_format_root_amendment": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/decimal_token_bridge_recovery_v1/ROOT_APPROVED_TECHNICAL_AMENDMENT.json",
+    "sha256": "a7d3162aa36c3276e9cbbd0b0a5a679716dd7c640aaf2123ab412517b2781846",
+    "bytes": 4100
+  },
+  "legacy_partition_root_amendment": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/public_bank_extension/legacy_partition_recovery_v1/ROOT_APPROVED_PARTITION_TECHNICAL_AMENDMENT.json",
+    "sha256": "3662ad0e806562c60416321759cab4f409b985e993d1bdece76aec276019da22",
+    "bytes": 5781
+  },
+  "existing_COMP_used_only_for_competence_no_risk_tuning": true,
+  "new_model_fits": 0,
+  "R_or_COMP_or_original2008_seal_rerun": false,
+  "Source_X_or_TEST_expression_or_truth_labels_read": false,
+  "first_open_claim_exists": false,
+  "whole_method_original_confirmation_claim": false,
+  "metadata_qualification_only_not_observed_TEST_error_cohort": true,
+  "sealer_elapsed_seconds": 37.18312448798679
+}

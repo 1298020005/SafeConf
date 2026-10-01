@@ -1,0 +1,235 @@
+{
+  "schema": "safeconf_orion_actual_expanded_bank_pretruth_independent_review_v1",
+  "status": "BLOCKED",
+  "created_utc": "2026-10-01T23:44:35.829116+00:00",
+  "bank_manifest": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v2/PUBLIC_BANK_MANIFEST.json",
+    "bytes": 12959,
+    "sha256": "8053a6118bc2e3cace841e1498cee3c1366ce5b49e9c79328e7cd34a180b6607"
+  },
+  "extension_seal_receipt": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_risk_seal/EXTENSION_SEAL_RECEIPT.json",
+    "sha256": "790daf9abd1572a9f4a7a50e90448613a98d9a46f97efd1aed5d18c09d59b388",
+    "bytes": 12730
+  },
+  "risk_manifest": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_risk_seal/RISK_SEAL_MANIFEST.json",
+    "sha256": "654b661aaae711c952502651d8f145f5be40c907a87ba125f46baa67d0514db2",
+    "bytes": 16499
+  },
+  "comparison_receipt": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_comparison/EXTENSION_COMPARISON_RECEIPT.json",
+    "sha256": "1262c2172975f74331e83ce4d88e696439c8dafc0d3b68d09ede3fbdb16b7aa0",
+    "bytes": 7436
+  },
+  "comparison_spec": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_comparison/COMPARISON_SPEC.json",
+    "sha256": "47c76a048159e4e6d964730507001136e59fb0185d6364887710f68f1ca0d2e4",
+    "bytes": 20238
+  },
+  "scope": "Read-only actual authorized pretruth prediction/features/prior assets and Source aggregate hashes/metadata/contracts. No rawSourceX/Orionexpression/TESTtruth/queryerror reads, no models loaded or called, no fits/tests/claim. This receipt is NOT TEST-open authorization.",
+  "checks": {
+    "14716_frozen_query_order_unique": true,
+    "original2008_archive_byteexact": true,
+    "446_old580_full_scores_all_bits_invariant": true,
+    "P6_all14716_features_bits_invariant": true,
+    "Ponly_Magnitude_all14716_original_batch_scores_bits": true,
+    "Uniform_446_features_all_bits_invariant": true,
+    "Uniform_14716_archivedP6_input_bits": true,
+    "Uniform_446x3285_prior_all_bits_invariant": true,
+    "Manual_446_features_all_bits_invariant": true,
+    "Manual_14716_archivedP6_input_bits": true,
+    "Manual_446x3285_prior_all_bits_invariant": true,
+    "Learned_446_features_all_bits_invariant": true,
+    "Learned_14716_archivedP6_input_bits": true,
+    "Learned_446x3285_prior_all_bits_invariant": true,
+    "446_legacy_pair9features_transfer_scores_all_bits": true,
+    "446_legacy_weights_all_bits": true,
+    "13_frozen_method_ids_order": true,
+    "12_numeric_scores_exact_roundtrip_after_comparison_reload": false,
+    "13th_support_fixed_negative_source_history_feature": true,
+    "all13_finite_plus_history_flag_exact": true,
+    "232_registered_QC_primary_TEST_tasks13finite": true,
+    "144_UNIONclusters_107125tasks_meet100union20each": true,
+    "seal_and_comparison_coverage_identical": true,
+    "Source575_scope_32seen112unseen_absent_old580": true,
+    "fixed_primary_manual_secondary_78pairs": true,
+    "fixed7metrics5000bootstrap_seed20260929_30cells20tasks": true,
+    "Source15bindings_identical_old_seal_7models_CDF_axis_effect_control": true,
+    "LM14delta_control_axis_models_bindings_identical_old_seal": true,
+    "Source15actualpins": true,
+    "LM14actualpins": true,
+    "expandedbank15actualpins": true,
+    "comparison_spec_score_seal_archive_pins": true,
+    "8execution_code_pins": true,
+    "all7frozen_joblib_current_sha": true,
+    "Source_mask_split_registry_pins_preserved": true,
+    "all13sealed_artifact_current_sha": true,
+    "original_science6b8_and_dataRole_df2e": true,
+    "COMP2790PASS_b89f_target_risk_CDF_selectionFalse": true,
+    "actualproducer636455_biologybe411_decimal_a7d_lineage": true,
+    "ROOT3662_780_ded5_19ea_no_math_tolerance_or_fit_changes": true,
+    "no_C_error_CDF_labels_or_newfit_or_TESTtruth": true,
+    "global_once_claim_not_built": true
+  },
+  "actual_counts_and_invariance": {
+    "total_frozen_identity_queries": 14716,
+    "expanded_history_known_all_roles": 1622,
+    "legacy_queries": 446,
+    "legacy_pair_rows": 1510,
+    "legacy_weight_rows": 4530,
+    "endpoint_gene_width": 3285,
+    "13method_finite_registered_primary_tasks": 232,
+    "primary_gene_clusters_union": 144,
+    "primary_tasks_per_context": {
+      "HCT116": 107,
+      "HEK293T": 125
+    },
+    "primary_gene_clusters_both_contexts": 88,
+    "Source_training_gene_clusters": 575,
+    "Source_seen_primary_genes": 32,
+    "Source_unseen_primary_genes": 112,
+    "Source_seen_primary_tasks": 52,
+    "Source_unseen_primary_tasks": 180,
+    "Source_seen_tasks_per_context": {
+      "HCT116": 22,
+      "HEK293T": 30
+    },
+    "Source_unseen_tasks_per_context": {
+      "HCT116": 85,
+      "HEK293T": 95
+    },
+    "all_fixed_method_ids": [
+      "Magnitude",
+      "P_only_ridge",
+      "P_only_hgb",
+      "Manual_ridge",
+      "Manual_hgb",
+      "Learned_ridge",
+      "Learned_hgb",
+      "Manual_WeightedHistoryDistance",
+      "Learned_WeightedHistoryDistance",
+      "Uniform_DirectRMSE",
+      "Manual_DirectRMSE",
+      "Learned_DirectRMSE",
+      "NegativeSourceHistorySupport"
+    ],
+    "nominal_pairs": 78,
+    "reviewer_predictions": 0,
+    "reviewer_fits": 0,
+    "reviewer_tests": 0,
+    "reviewer_claim_created": false
+  },
+  "inputs": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/SEAL_REGISTRATION.json",
+      "sha256": "316a5129b4a55ec6759e3d6ddf27fbed307794823e50808e1c1af87b946cce10",
+      "bytes": 4003
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_risk_seal/EXTENSION_SEAL_RECEIPT.json",
+      "sha256": "790daf9abd1572a9f4a7a50e90448613a98d9a46f97efd1aed5d18c09d59b388",
+      "bytes": 12730
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_risk_seal/RISK_SEAL_MANIFEST.json",
+      "sha256": "654b661aaae711c952502651d8f145f5be40c907a87ba125f46baa67d0514db2",
+      "bytes": 16499
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_risk_seal/ARTIFACT_HASHES.json",
+      "sha256": "a200398307ebe102e3d169e75297c3ace46e6efc4b605b7f1672d3867eae3059",
+      "bytes": 2024
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_comparison/EXTENSION_COMPARISON_RECEIPT.json",
+      "sha256": "1262c2172975f74331e83ce4d88e696439c8dafc0d3b68d09ede3fbdb16b7aa0",
+      "bytes": 7436
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_comparison/COMPARISON_SPEC.json",
+      "sha256": "47c76a048159e4e6d964730507001136e59fb0185d6364887710f68f1ca0d2e4",
+      "bytes": 20238
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v4_decimal_tokens/risk_seal/RISK_SEAL_MANIFEST.json",
+      "sha256": "86a28572e3fd317350bc83d5c3c1295306054e0cf11255ca9319872977a402ae",
+      "bytes": 10461
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v4_decimal_tokens/risk_seal/ARTIFACT_HASHES.json",
+      "sha256": "42bcd39f07208404abd2715540e3c2ea5fe6ffc57a059809b40bca54c7016b05",
+      "bytes": 1705
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_TASKS.parquet",
+      "sha256": "6bd02a0cff8f41ea48ad9566622bbebe923db56db64a8d20a4597fce53725013",
+      "bytes": 95447
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/ARTIFACT_HASHES.json",
+      "sha256": "58de3cc87c8a889a0604b0da23318ea415ce6d6482e4941851ee0015aaf50084",
+      "bytes": 16183
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v2/METADATA_QUALIFIED_TEST_QUERY_IDS.tsv",
+      "sha256": "7e1a00c63be10206e666f5792e57f1c5cc7e102d99a7419273f16e779b15a040",
+      "bytes": 10053
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v4_decimal_tokens/competence/COMPETENCE_RESULT.json",
+      "sha256": "b89fc460acdd96127cb602d2ffdcfa46b6bfef67ca090b5fceb2cd569e51b733",
+      "bytes": 2429
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_lm_bridge_20261002_v1/actual_authorized_v3_decimal_tokens/BRIDGE_MANIFEST.json",
+      "sha256": "13c90f2feb21f841138f366fd140ff6a194bdd20d1337bd3c8d7e15500d0d478",
+      "bytes": 112874
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/decimal_token_bridge_recovery_v1/ROOT_APPROVED_TECHNICAL_AMENDMENT.json",
+      "sha256": "a7d3162aa36c3276e9cbbd0b0a5a679716dd7c640aaf2123ab412517b2781846",
+      "bytes": 4100
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/public_bank_extension/legacy_partition_recovery_v1/ROOT_APPROVED_PARTITION_TECHNICAL_AMENDMENT.json",
+      "sha256": "3662ad0e806562c60416321759cab4f409b985e993d1bdece76aec276019da22",
+      "bytes": 5781
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_METHOD_CONTRACT.json",
+      "sha256": "6b8a26939c8c6134dbf2e8294ee7905fccc2122b570b046f3183a3d2f5caba97",
+      "bytes": 7500
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_DATA_ROLE_REGISTRY.csv",
+      "sha256": "df2ea48a35a7940bf74e3b6a37e216a856dd2c80eee0287946f69a381e9a21f7",
+      "bytes": 3776
+    }
+  ],
+  "Source_mask_split_registry_entries_verified": [
+    {
+      "path": "NESTED_ISOLATION_AUDIT.csv",
+      "bytes": 4134,
+      "sha256": "3638430c8a8688f059b70a141cacbe433ea921b943b3f2276dad043c81081f93"
+    },
+    {
+      "path": "SOURCE_PUBLIC_OUTER_TRAIN_PAIR_MASKS.npy",
+      "bytes": 23813,
+      "sha256": "4bcc36b176cf0a5881e25f0b428ad25a1f0448e556d607a1717695dc715b9bf4"
+    },
+    {
+      "path": "SPLIT_MANIFEST.csv",
+      "bytes": 56917,
+      "sha256": "350e53a18f54108eef56062b96875f5ca0ad3d1095eb155aa2303eb35422aa71"
+    }
+  ],
+  "interpretation_limits": [
+    "232 tasks are context-by-gene units, clustered to144 independent union target-gene clusters; not232 independent gene clusters",
+    "112 target-gene clusters are absent original Source575 perturbation training genes and old580 historical bank, while measured3285 axis covariates/new Source experimental history remain available; do not claim biology-information-free evaluation",
+    "446 exact legacy queries cover registered VALIDATION and TEST identities; original2008 archive stays separate from expanded13method intersection",
+    "No utility/superiority/noninferiority performance claim before TEST truth; no full-task history coverage or fallback claim",
+    "2790 COMP PASS is original operational competence screen, not statistical superiority or three-family replication"
+  ],
+  "reviewer_serialization_note": "First audit calculation reached JSON write but NumPy bool serialization failed; same authorized read-only verification was repeated to persist plain-bool results. No scientific input/code or active runtime was modified."
+}

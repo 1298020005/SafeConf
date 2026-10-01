@@ -1,0 +1,18 @@
+{
+  "schema": "safeconf_orion_generated_partition_invariant_proof_v1",
+  "status": "PASS",
+  "partition_helper_sha256": "780063552f2f765b762e8cf115135c52b34b85cb3dee7e3d404f7afe573e31f3",
+  "new_fits": 0,
+  "actual_Source_or_Orion_data_or_models_read": false,
+  "TEST_truth_access": false,
+  "checks": [
+    "emulated_batch_layout_change_detected_before_fix",
+    "complete_original6scores_features_priors_pairs_weights_byte_preserved",
+    "ALLquery_P_only_Magnitude_original_fullbatch_bytes_preserved",
+    "new_supported_and_unknown_history_status_correct",
+    "original_query_row_axis_and_prior_weight_order_restored",
+    "all_legacy_only_scope_supported"
+  ],
+  "execution_formula": "complete_original_full_scope_branch_for_old580; same_original_infer_new_absent580_branch",
+  "no_numeric_tolerance_or_math_change": true
+}

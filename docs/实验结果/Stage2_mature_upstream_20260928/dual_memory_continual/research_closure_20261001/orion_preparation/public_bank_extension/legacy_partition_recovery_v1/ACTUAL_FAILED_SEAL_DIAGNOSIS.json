@@ -1,0 +1,20 @@
+{
+  "schema": "safeconf_orion_actual_legacy_batch_seal_failure_v1",
+  "status": "FAILED_CLOSED_PRESERVED",
+  "elapsed_seconds": 71.72971243900247,
+  "failure_log": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_decimal_token_recovery_20261002_v2/EXPANDED_SOURCE_PRETRUTH_SEAL.log",
+    "sha256": "977f706058c7e01725cc2aaa6945d0ceaa689f385d0696fe93f95d70f3838b8a",
+    "bytes": 1111
+  },
+  "source_pretruth_diagnosis": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/public_bank_extension/legacy_partition_recovery_v1/DIAGNOSIS.json",
+    "sha256": "12b513bf3927d585f14b972501c60aec5ecf388ed3159472194d0099bbf867dc",
+    "bytes": 13752
+  },
+  "failure": "old580 Manual_ridge ONE5.551115123125783e-17 caused446vs1622predict-batch floatbit while all inputs identical",
+  "old_helper_and_sealer_and_chain_preserved": true,
+  "no_tolerance_or_mathematical_change": true,
+  "new_fits": 0,
+  "TEST_numeric_access": false
+}

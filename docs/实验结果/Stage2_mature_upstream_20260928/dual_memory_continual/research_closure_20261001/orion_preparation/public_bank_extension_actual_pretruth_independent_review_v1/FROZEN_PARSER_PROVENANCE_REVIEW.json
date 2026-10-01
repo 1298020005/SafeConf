@@ -1,0 +1,89 @@
+{
+  "schema": "safeconf_frozen_parser_semantics_provenance_review_v1",
+  "status": "PASS",
+  "reader_implementation": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/evaluate_safeconf_orion_guarded_test_agent.py",
+    "sha256": "852fcd764b567a63f04c4a5539a118c8a715f664bf534184018010ac269087b2",
+    "bytes": 35943
+  },
+  "frozen_route": "unchanged852 reader.score_table: keep_default_na=False,float_precision=round_trip, then existing pd.to_numeric including NaN replacement; chain applies same conversion for all twelve existing candidate columns",
+  "raw_TSV_direct_parser_route": "pandas.read_csv(float_precision=round_trip, default keep_default_na=True) is a separate route; it directly decodes NaN-bearing columns as floats and is not the registered852 acceptance parser",
+  "actual_comparison": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_comparison/PRETRUTH_COMPARISON_SCORES.parquet",
+    "sha256": "c6e53eb32f6a4dfec6c40c9b6817f2c87d29ff47306fa1f219d28efc7a6c7e72",
+    "bytes": 712576
+  },
+  "sealed_TSV": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_risk_seal/PRETRUTH_RISKS.tsv",
+    "sha256": "00b1426447982d0f5685f3ba5192fbd21b6ed9812e45765413c1d6c25f3cb733",
+    "bytes": 5757389
+  },
+  "diagnostic": {
+    "Magnitude": {
+      "final_vs_frozen852_reader_then_existing_numeric_conversion_all_bits_exact": true,
+      "direct_default_NA_parser_vs_frozen852_route_finite_different_bits": 0,
+      "direct_default_NA_parser_vs_frozen852_route_max_abs_gap": 0.0
+    },
+    "P_only_ridge": {
+      "final_vs_frozen852_reader_then_existing_numeric_conversion_all_bits_exact": true,
+      "direct_default_NA_parser_vs_frozen852_route_finite_different_bits": 0,
+      "direct_default_NA_parser_vs_frozen852_route_max_abs_gap": 0.0
+    },
+    "P_only_hgb": {
+      "final_vs_frozen852_reader_then_existing_numeric_conversion_all_bits_exact": true,
+      "direct_default_NA_parser_vs_frozen852_route_finite_different_bits": 0,
+      "direct_default_NA_parser_vs_frozen852_route_max_abs_gap": 0.0
+    },
+    "Manual_ridge": {
+      "final_vs_frozen852_reader_then_existing_numeric_conversion_all_bits_exact": true,
+      "direct_default_NA_parser_vs_frozen852_route_finite_different_bits": 1063,
+      "direct_default_NA_parser_vs_frozen852_route_max_abs_gap": 1.1102230246251565e-16
+    },
+    "Manual_hgb": {
+      "final_vs_frozen852_reader_then_existing_numeric_conversion_all_bits_exact": true,
+      "direct_default_NA_parser_vs_frozen852_route_finite_different_bits": 1219,
+      "direct_default_NA_parser_vs_frozen852_route_max_abs_gap": 1.1102230246251565e-16
+    },
+    "Learned_ridge": {
+      "final_vs_frozen852_reader_then_existing_numeric_conversion_all_bits_exact": true,
+      "direct_default_NA_parser_vs_frozen852_route_finite_different_bits": 1136,
+      "direct_default_NA_parser_vs_frozen852_route_max_abs_gap": 1.1102230246251565e-16
+    },
+    "Learned_hgb": {
+      "final_vs_frozen852_reader_then_existing_numeric_conversion_all_bits_exact": true,
+      "direct_default_NA_parser_vs_frozen852_route_finite_different_bits": 1189,
+      "direct_default_NA_parser_vs_frozen852_route_max_abs_gap": 1.1102230246251565e-16
+    },
+    "Manual_WeightedHistoryDistance": {
+      "final_vs_frozen852_reader_then_existing_numeric_conversion_all_bits_exact": true,
+      "direct_default_NA_parser_vs_frozen852_route_finite_different_bits": 1539,
+      "direct_default_NA_parser_vs_frozen852_route_max_abs_gap": 1.0061396160665481e-16
+    },
+    "Learned_WeightedHistoryDistance": {
+      "final_vs_frozen852_reader_then_existing_numeric_conversion_all_bits_exact": true,
+      "direct_default_NA_parser_vs_frozen852_route_finite_different_bits": 1527,
+      "direct_default_NA_parser_vs_frozen852_route_max_abs_gap": 9.71445146547012e-17
+    },
+    "Uniform_DirectRMSE": {
+      "final_vs_frozen852_reader_then_existing_numeric_conversion_all_bits_exact": true,
+      "direct_default_NA_parser_vs_frozen852_route_finite_different_bits": 1547,
+      "direct_default_NA_parser_vs_frozen852_route_max_abs_gap": 1.0061396160665481e-16
+    },
+    "Manual_DirectRMSE": {
+      "final_vs_frozen852_reader_then_existing_numeric_conversion_all_bits_exact": true,
+      "direct_default_NA_parser_vs_frozen852_route_finite_different_bits": 1550,
+      "direct_default_NA_parser_vs_frozen852_route_max_abs_gap": 1.0061396160665481e-16
+    },
+    "Learned_DirectRMSE": {
+      "final_vs_frozen852_reader_then_existing_numeric_conversion_all_bits_exact": true,
+      "direct_default_NA_parser_vs_frozen852_route_finite_different_bits": 1551,
+      "direct_default_NA_parser_vs_frozen852_route_max_abs_gap": 1.0061396160665481e-16
+    }
+  },
+  "math_tolerances_model_parameters_changed": false,
+  "all12_registered_frozen_route_vs_actual_comparison_bits_exact": true,
+  "models_loaded_or_called": 0,
+  "fits": 0,
+  "TEST_truth_or_errors_read": false,
+  "interpretation": "Registered semantic parser exactness is verified; do not claim direct default-NA decoding produces identical underlying floats. Initial reviewer BLOCKED was based on this unregistered parser assumption and is superseded by the current receipt."
+}

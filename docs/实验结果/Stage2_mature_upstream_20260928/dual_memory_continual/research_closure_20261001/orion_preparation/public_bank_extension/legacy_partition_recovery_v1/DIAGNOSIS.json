@@ -1,0 +1,363 @@
+{
+  "schema": "safeconf_orion_actual_legacy_batch_bit_diagnosis_v1",
+  "status": "DIAGNOSIS_COMPLETE_NO_FITS_OR_TEST",
+  "registration": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v3_decimal_tokens/SEAL_REGISTRATION.json",
+    "sha256": "1b4c9d04878a05a10a6a11e077940052e7df5b057f5fb581730fb1168b93d3e8",
+    "bytes": 3298
+  },
+  "original_scientific_contract_sha256": "6b8a26939c8c6134dbf2e8294ee7905fccc2122b570b046f3183a3d2f5caba97",
+  "bank_manifest": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v2/PUBLIC_BANK_MANIFEST.json",
+    "bytes": 12959,
+    "sha256": "8053a6118bc2e3cace841e1498cee3c1366ce5b49e9c79328e7cd34a180b6607"
+  },
+  "source_core_bindings": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_FEATURE_MANIFEST.json",
+      "bytes": 16172,
+      "sha256": "b74b9dfbc64f5acc82b7b0d34023aa6a523bd11d1904ced7fd638c5bec4ef2d1"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/MODEL_MANIFEST.json",
+      "bytes": 8934,
+      "sha256": "c8d9d5003860d8a5e117398a7d44b5c67cfb700c6fb56f37bcf04a5d549909a6"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_MEMORY_METADATA.parquet",
+      "bytes": 58150,
+      "sha256": "fcfbd3300a012e3747c9642f5076d1407c509f46f66e4412522c5d9b8661c4bd"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_EFFECTS.npy",
+      "bytes": 52770368,
+      "sha256": "ea946b2c9a9a7ee1605af1f9b72e9cc250596ce6eb0dc08b7ab4aeed3d80c4aa"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_CONTROLS.npy",
+      "bytes": 52770368,
+      "sha256": "b045d003f1bca1d570cc75d3a03928ea77a18ce206411a932f3afc501e4c73d3"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/GENE_MANIFEST.csv",
+      "bytes": 122617,
+      "sha256": "c1c9c8041458275248514d960c6c263a72f43a12a8d48c16f77759d2342fa08f"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/GENE_IDS.json",
+      "bytes": 37116,
+      "sha256": "b7f80db0c0e46dd7667cb83f39153c4add31948ca00e5391c210b9c6a18d7c68"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_ERROR_CDF.json",
+      "bytes": 108918,
+      "sha256": "ebd7390593cfc0bf71fbcab2c9c992d62990b57d729f59a6867ad98265a2bc01"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_P_only_ridge.joblib",
+      "bytes": 881,
+      "sha256": "68019b2ea0c6a332049089da100e18515e05cabebbd1fa6f4fcf24d4d112d42d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_P_only_hgb.joblib",
+      "bytes": 61512,
+      "sha256": "4b3206c9183e5c38e62c2b1ce0e2185f711102e23ac8ff3fc52d930eed150cc7"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_Manual_ridge.joblib",
+      "bytes": 1203,
+      "sha256": "de485ad5899827618416a8d73f9f7137da7a4b26aefc395a67304ad9e8b3c955"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_Manual_hgb.joblib",
+      "bytes": 79239,
+      "sha256": "1c0a78127b4aaf4349761b569c63fb4f6f74925ddc303221d8393c5b5e3eed42"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_Learned_ridge.joblib",
+      "bytes": 1205,
+      "sha256": "f4d332b16c79b410fb71fe461f18777c7bd9899a1b6971312142fe56177fae0e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_Learned_hgb.joblib",
+      "bytes": 78050,
+      "sha256": "a605d30c12eee46fe4b2b1af64d5eed5edfcf042cdb781fdb75883a6f9454f7d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_BIOLOGY_FULL_HGB.joblib",
+      "bytes": 66883,
+      "sha256": "3a6f05d9b8060eb9802a6e5a0e6adf067253e57edd3aedd04b600a2f93578f5a"
+    }
+  ],
+  "LM_pretruth_bindings": [
+    {
+      "role": "delta",
+      "context": "HCT116",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HCT116/PREDICTIONS_DELTA.tsv.gz",
+      "sha256": "c54137fc466b5def82045f5f1d94f59b002d96306a3da6e2adac8a2bc5c2206f"
+    },
+    {
+      "role": "queries",
+      "context": "HCT116",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HCT116/QUERY_IDENTITIES.tsv",
+      "sha256": "3d16806c2a886cabc7ba73304b6bf6026101f7a72bf1dd1084b5906b488c10bf"
+    },
+    {
+      "role": "axis",
+      "context": "HCT116",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HCT116/OUTPUT_GENE_AXIS.tsv",
+      "sha256": "7d4fae5d2a927750253e4efa8d5a3b0fca07de888bf69767502b0c7c3a1c9c63"
+    },
+    {
+      "role": "train_control",
+      "context": "HCT116",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_lm_bridge_20261002_v1/actual_authorized_v3_decimal_tokens/HCT116/OWN_CONTEXT_NTC_MEAN.tsv",
+      "sha256": "a9d4576b3de1fc0ac435f531a37b149b7adb9a48dd6979b40c6bc5c942aaaf99"
+    },
+    {
+      "role": "upstream_model",
+      "context": "HCT116",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HCT116/MODEL.rds",
+      "sha256": "eb0442176132ef1b25e0a0db91c476e3a53903a71fa30224f23658baff7024ad"
+    },
+    {
+      "role": "upstream_prediction_manifest",
+      "context": "HCT116",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/RUN_MANIFEST.tsv",
+      "sha256": "01cf8a42df9cb0cca570c26af1759e751169a3b875e5b04d167a0f2e9bb7a09c"
+    },
+    {
+      "role": "upstream_status",
+      "context": "HCT116",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HCT116/STATUS.tsv",
+      "sha256": "3fbba9b5082d4e1f3f014967222b028e5930b424020bafe3db424b621dcc0f23"
+    },
+    {
+      "role": "delta",
+      "context": "HEK293T",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HEK293T/PREDICTIONS_DELTA.tsv.gz",
+      "sha256": "e4dc7e5446ff2654a8fcc48ef5fb3ecf11cf594b395390e253714daabf1628ba"
+    },
+    {
+      "role": "queries",
+      "context": "HEK293T",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HEK293T/QUERY_IDENTITIES.tsv",
+      "sha256": "70c5c55668f3aaae91dac9364e1341889139474e2a4c910b7efb2621cc09191d"
+    },
+    {
+      "role": "axis",
+      "context": "HEK293T",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HEK293T/OUTPUT_GENE_AXIS.tsv",
+      "sha256": "7d4fae5d2a927750253e4efa8d5a3b0fca07de888bf69767502b0c7c3a1c9c63"
+    },
+    {
+      "role": "train_control",
+      "context": "HEK293T",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_lm_bridge_20261002_v1/actual_authorized_v3_decimal_tokens/HEK293T/OWN_CONTEXT_NTC_MEAN.tsv",
+      "sha256": "31772ae9aa9b4f5eac0b057e7c5373c7698b221de330060439f3a11c030ffb1e"
+    },
+    {
+      "role": "upstream_model",
+      "context": "HEK293T",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HEK293T/MODEL.rds",
+      "sha256": "de747621a1863f193efbb2c0c856672493f2286ba479d716be5e0ddd1eecaa10"
+    },
+    {
+      "role": "upstream_prediction_manifest",
+      "context": "HEK293T",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/RUN_MANIFEST.tsv",
+      "sha256": "01cf8a42df9cb0cca570c26af1759e751169a3b875e5b04d167a0f2e9bb7a09c"
+    },
+    {
+      "role": "upstream_status",
+      "context": "HEK293T",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HEK293T/STATUS.tsv",
+      "sha256": "ae93d84abca8d95d115cb3667a6138e568e4f9f3aeca65cd015e9e2362948d70"
+    }
+  ],
+  "legacy_query_count": 446,
+  "score_checks": {
+    "source_history_n": {
+      "shape_dtype_equal": true,
+      "numeric_equal": true,
+      "bits_equal": true,
+      "different_values": 0,
+      "maximum_finite_abs_gap": 0.0
+    },
+    "Magnitude": {
+      "shape_dtype_equal": true,
+      "numeric_equal": true,
+      "bits_equal": true,
+      "different_values": 0,
+      "maximum_finite_abs_gap": 0.0
+    },
+    "P_only_ridge": {
+      "shape_dtype_equal": true,
+      "numeric_equal": true,
+      "bits_equal": true,
+      "different_values": 0,
+      "maximum_finite_abs_gap": 0.0
+    },
+    "P_only_hgb": {
+      "shape_dtype_equal": true,
+      "numeric_equal": true,
+      "bits_equal": true,
+      "different_values": 0,
+      "maximum_finite_abs_gap": 0.0
+    },
+    "Manual_ridge": {
+      "shape_dtype_equal": true,
+      "numeric_equal": false,
+      "bits_equal": false,
+      "different_values": 1,
+      "maximum_finite_abs_gap": 5.551115123125783e-17
+    },
+    "Manual_hgb": {
+      "shape_dtype_equal": true,
+      "numeric_equal": true,
+      "bits_equal": true,
+      "different_values": 0,
+      "maximum_finite_abs_gap": 0.0
+    },
+    "Learned_ridge": {
+      "shape_dtype_equal": true,
+      "numeric_equal": true,
+      "bits_equal": true,
+      "different_values": 0,
+      "maximum_finite_abs_gap": 0.0
+    },
+    "Learned_hgb": {
+      "shape_dtype_equal": true,
+      "numeric_equal": true,
+      "bits_equal": true,
+      "different_values": 0,
+      "maximum_finite_abs_gap": 0.0
+    },
+    "Manual_WeightedHistoryDistance": {
+      "shape_dtype_equal": true,
+      "numeric_equal": true,
+      "bits_equal": true,
+      "different_values": 0,
+      "maximum_finite_abs_gap": 0.0
+    },
+    "Learned_WeightedHistoryDistance": {
+      "shape_dtype_equal": true,
+      "numeric_equal": true,
+      "bits_equal": true,
+      "different_values": 0,
+      "maximum_finite_abs_gap": 0.0
+    },
+    "Uniform_DirectRMSE": {
+      "shape_dtype_equal": true,
+      "numeric_equal": true,
+      "bits_equal": true,
+      "different_values": 0,
+      "maximum_finite_abs_gap": 0.0
+    },
+    "Manual_DirectRMSE": {
+      "shape_dtype_equal": true,
+      "numeric_equal": true,
+      "bits_equal": true,
+      "different_values": 0,
+      "maximum_finite_abs_gap": 0.0
+    },
+    "Learned_DirectRMSE": {
+      "shape_dtype_equal": true,
+      "numeric_equal": true,
+      "bits_equal": true,
+      "different_values": 0,
+      "maximum_finite_abs_gap": 0.0
+    }
+  },
+  "feature_checks": {
+    "Uniform": {
+      "shape_dtype_equal": true,
+      "numeric_equal": true,
+      "bits_equal": true,
+      "different_values": 0,
+      "maximum_finite_abs_gap": 0.0
+    },
+    "Manual": {
+      "shape_dtype_equal": true,
+      "numeric_equal": true,
+      "bits_equal": true,
+      "different_values": 0,
+      "maximum_finite_abs_gap": 0.0
+    },
+    "Learned": {
+      "shape_dtype_equal": true,
+      "numeric_equal": true,
+      "bits_equal": true,
+      "different_values": 0,
+      "maximum_finite_abs_gap": 0.0
+    }
+  },
+  "prior_checks": {
+    "Uniform": {
+      "shape_dtype_equal": true,
+      "numeric_equal": true,
+      "bits_equal": true,
+      "different_values": 0,
+      "maximum_finite_abs_gap": 0.0
+    },
+    "Manual": {
+      "shape_dtype_equal": true,
+      "numeric_equal": true,
+      "bits_equal": true,
+      "different_values": 0,
+      "maximum_finite_abs_gap": 0.0
+    },
+    "Learned": {
+      "shape_dtype_equal": true,
+      "numeric_equal": true,
+      "bits_equal": true,
+      "different_values": 0,
+      "maximum_finite_abs_gap": 0.0
+    }
+  },
+  "all_legacy_pairs_numeric_bits_and_identity_equal": true,
+  "all_legacy_weights_numeric_bits_and_identity_equal": true,
+  "same_original_batch_replay": {
+    "Manual": {
+      "original_batch_rows": 446,
+      "expanded_batch_rows": 1622,
+      "same_feature_rows_at_original_batch_shape": {
+        "shape_dtype_equal": true,
+        "numeric_equal": true,
+        "bits_equal": true,
+        "different_values": 0,
+        "maximum_finite_abs_gap": 0.0
+      },
+      "preprocessor_numeric_feature_bits_equal": {
+        "shape_dtype_equal": true,
+        "numeric_equal": true,
+        "bits_equal": true,
+        "different_values": 0,
+        "maximum_finite_abs_gap": 0.0
+      }
+    },
+    "Learned": {
+      "original_batch_rows": 446,
+      "expanded_batch_rows": 1622,
+      "same_feature_rows_at_original_batch_shape": {
+        "shape_dtype_equal": true,
+        "numeric_equal": true,
+        "bits_equal": true,
+        "different_values": 0,
+        "maximum_finite_abs_gap": 0.0
+      },
+      "preprocessor_numeric_feature_bits_equal": {
+        "shape_dtype_equal": true,
+        "numeric_equal": true,
+        "bits_equal": true,
+        "different_values": 0,
+        "maximum_finite_abs_gap": 0.0
+      }
+    }
+  },
+  "new_fits": 0,
+  "Source_raw_X_read": false,
+  "target_truth_or_labels_read": false,
+  "actual_TEST_numeric_access": false,
+  "elapsed_seconds": 41.740193638019264
+}
