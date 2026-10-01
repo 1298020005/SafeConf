@@ -1,0 +1,31 @@
+{
+  "status": "COMPLETE_FIXED_SOURCE_UNCERTAINTY",
+  "n_tasks": 90,
+  "n_biological_gene_clusters": 30,
+  "contexts_task_counts": {
+    "a172": 30,
+    "t98g": 30,
+    "u87mg": 30
+  },
+  "scaling_cells": 150,
+  "diversity_cells": 30,
+  "exact_unique_saved_score_arrays": 180,
+  "bootstrap_replicates": 13,
+  "all_original_points_reproduced": true,
+  "maximum_point_absolute_difference": 6.661338147750939e-16,
+  "all5000_U20_draws_valid": true,
+  "synthetic_counter_proof": {
+    "expanded_scalar_metric_comparisons": 378,
+    "maximum_absolute_difference": 1.0547118733938987e-15,
+    "original_n19_U20_stays_invalid_when_duplicated_to38": true
+  },
+  "elapsed_seconds": 3.352699619019404,
+  "process_CPU_seconds": 12.829002000000001,
+  "peak_RSS_kib": 204068,
+  "new_fits": 0,
+  "new_upstream_calls": 0,
+  "new_error_labels": 0,
+  "Orion_access": false,
+  "original_outputs_preserved": true,
+  "interpretation": "Conditional uncertainty of existing predictions, not variation over newly trained models or independent seeds/datasets"
+}

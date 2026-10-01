@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "synthetic_only": true,
+  "no_actual_predictions_read": true,
+  "script_sha256": "46e4e48f0b767d4fc363da9884412973beee0407128377a184bc6992c0819c64",
+  "private_synthetic_bootstrap_replicates": 13,
+  "production_replicates_constant_unchanged": 5000,
+  "all_fixed_cells_retained": 180,
+  "scaling_cells": 150,
+  "diversity_cells": 30,
+  "mean_metric_point_checks": 392,
+  "scaling_pair_rows": 112,
+  "all_diversity_pair_rows": 140,
+  "worst_range_rows": 70,
+  "original_points_replayed": true,
+  "shared_expanded_scalar_contrast_CI_maximum_absolute_difference": 9.575673587391975e-16,
+  "fixed15_metric_average_and_fixed3_metric_average_verified": true
+}

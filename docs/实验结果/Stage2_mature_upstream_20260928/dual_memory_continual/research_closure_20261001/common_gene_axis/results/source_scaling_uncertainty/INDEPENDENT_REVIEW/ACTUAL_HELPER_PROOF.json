@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "script_sha256": "46e4e48f0b767d4fc363da9884412973beee0407128377a184bc6992c0819c64",
+  "synthetic_only": true,
+  "no_actual_prediction_reads": true,
+  "all7_actual_helper_vs_reference_cases": 724,
+  "maximum_absolute_difference": {
+    "utility20": 9.43689570931383e-16,
+    "spearman": 0.0,
+    "aurc": 6.661338147750939e-16,
+    "high_risk_miss_rate": 0.0,
+    "error_at_10": 4.440892098500626e-16,
+    "error_at_20": 4.440892098500626e-16,
+    "error_at_50": 3.3306690738754696e-16
+  },
+  "structural_rejections": 4,
+  "directed_cases": [
+    "partial_physical_copy_overlap",
+    "lexical_cutoff_ties",
+    "zero_count_extrema",
+    "resampled_n2"
+  ],
+  "review_scope": "weighted helper only; originalpoint/macro fullaggregate separately"
+}

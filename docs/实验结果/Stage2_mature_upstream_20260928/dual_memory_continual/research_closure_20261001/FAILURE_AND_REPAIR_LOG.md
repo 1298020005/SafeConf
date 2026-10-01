@@ -84,3 +84,7 @@ Independent review found that bootstrap duplicates could yield finite intervals 
 ### Source rows versus new source information
 
 Mean-normalized cluster weights change total weighted loss when record count doubles. A fixed, information-free copied-record and matched-total-weight diagnostic was executed without changing any original model or Orion parameter. Twelve fits, six original reproductions,5000 paired gene draws and an independent review completed. No uniform gain from copies was found; the best copied Exphormer contrast remains uncertain. No parameter sweep or method promotion follows this diagnostic.
+
+### Missing uncertainty and lifecycle evidence
+
+A completion audit found point-only Source scaling/diversity results. Existing saved predictions were reused for5000jointgenecluster draws across3contexts, all budgets/orders and7metrics;19.44s, no refits/newlabels/upstream calls. Original150scaling/30diversity points reproduced within1.67e-16. Static Public growth and error-budget fits did not execute a real publish/rollback cycle; SYS-A readiness is corrected to partial and a separate realDEV operational replay is underway. Frozen Orion methods remain unchanged.

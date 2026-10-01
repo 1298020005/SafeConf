@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "synthetic_only": true,
+  "no_actual_predictions_read": true,
+  "random_counter_expansion_checks": 1224,
+  "maximum_abs_scalar_difference": 0.0,
+  "shared_gene_counts_across_three_contexts": true,
+  "lexical_ID_ties": true,
+  "finite_truth_and_score_filtering": true,
+  "original_n19_gate_frozen": true,
+  "resampled_n19_from_original_n20_is_NA": true,
+  "constant_and_nonfinite_truth_are_NA": true,
+  "fixed_15_cell_metric_mean": 0.06666666666666667,
+  "pooled_duplicate_rows_U20": 0.0,
+  "pooling_changes_endpoint": true
+}

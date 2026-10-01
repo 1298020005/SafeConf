@@ -1,0 +1,46 @@
+{
+  "role": "SEEN_POST_CONFIRMATION_FIXED_PREDICTION_STATISTICS",
+  "common_gene_axis": 2840,
+  "bootstrap_replicates": 5000,
+  "bootstrap_seed": 20260930,
+  "bootstrap_unit": "complete biological gene cluster jointly across all3contexts",
+  "shared_draw_across_all_budgets_orders_seeds_and_diversity_methods": true,
+  "gene_draw_counts_sha256": "ba84d1e8d1ff97290299ed3c4ce7a70251985c591d3849ef5a388d93545de48b",
+  "gene_draw_counts_dtype": "uint16 little-endian C-order5000x380",
+  "curve_estimand": "mean of original context-macro metrics over fixed5orders and3seeds; not metric of averaged scores or pooled duplicate rows",
+  "diversity_estimand": "mean of original context-macro metrics over fixed3seeds",
+  "all_original_contexts_n20_checked_before_resampling": true,
+  "metric_definitions_unchanged": true,
+  "nominal_percentile_CIs": 95,
+  "no_best_order_or_source_winner_selected": true,
+  "inputs": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_scaling_recheck/SOURCE_SCALING_TASK_PREDICTIONS.csv.gz",
+      "sha256": "94a14238c5decbd1435086861a39caecb8d22bac85ccedcc9dbaa6306714242e",
+      "bytes": 1683194
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_diversity_seed_completion/TASK_PREDICTIONS.csv.gz",
+      "sha256": "2cb9bb959f2f8ded42e4045c4dece30c5c3e075e06fc8da56787c62fd2e97b78",
+      "bytes": 370545
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_recheck/SOURCE_SCALING_MACRO.csv",
+      "sha256": "bf4ebe5b301210806d62dfefbc35ec6b83775247d912162bd93d27bc462a2c74",
+      "bytes": 28004
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_diversity_seed_completion/MACRO.csv",
+      "sha256": "14073463da31b51faf38dbffcf339453399c24648921eb49d0530e0635e9892c",
+      "bytes": 5860
+    }
+  ],
+  "code_sha256": "46e4e48f0b767d4fc363da9884412973beee0407128377a184bc6992c0819c64",
+  "research_metrics_sha256": "22a02a79d59f1d852870efb9dc1afe229f150c5db75e5de735f7bfcc1f613887",
+  "new_fits": 0,
+  "new_upstream_calls": 0,
+  "new_error_labels": 0,
+  "Orion_access": false,
+  "CPU_time_limit_seconds": 1200,
+  "thread_limits": 4
+}

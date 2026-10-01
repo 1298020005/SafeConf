@@ -1,0 +1,151 @@
+{
+  "status": "COMPLETE_REVIEWED_FIXED_SOURCE_STATISTICS",
+  "script_sha256": "46e4e48f0b767d4fc363da9884412973beee0407128377a184bc6992c0819c64",
+  "owned_files": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_source_scaling_uncertainty_agent.py",
+      "sha256": "46e4e48f0b767d4fc363da9884412973beee0407128377a184bc6992c0819c64",
+      "bytes": 18872
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/ALL_FIXED_ORDER_SEED_POINTS.csv",
+      "sha256": "95c0cc009bc059ba9bbdf0d3d2f92501133d51578c28b592b06c218fc1c4a351",
+      "bytes": 32257
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/DIVERSITY_ALL_PAIRED_CONTRASTS.csv",
+      "sha256": "b7b487ef8da0bcfa8940a184e8c444f74efc07d7015b599bb2b40074f0cd41c5",
+      "bytes": 41733
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/DIVERSITY_INTERVALS.csv",
+      "sha256": "e47333b82e60afda7a4561a7a00adb30b8ec0db29d38c6adc78cda779c096404",
+      "bytes": 18113
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/GENE_CLUSTER_AXIS.csv",
+      "sha256": "60c07c571d838683f08de2c49c3f25b05ef76da43d0c0736aef9731f5ace2b22",
+      "bytes": 3648
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/HEADLINE_CI_NOTE.md",
+      "sha256": "3e37e26e9a6c361c5844aa591a7e2228b938a5e5055930ff7df2bcae5baa37f1",
+      "bytes": 3166
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/INDEPENDENT_REVIEW/ACTUAL_HELPER_PROOF.json",
+      "sha256": "154f157630b0ee36a1511db2b502e7b118d7d33da18d9ad974a0f646f00ff7da",
+      "bytes": 769
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/INDEPENDENT_REVIEW/FINAL_REVIEW.json",
+      "sha256": "f2e0b0d3f96531a7db9b588ae66687fe431ec2dd36e71e3f7055d30cb68a500f",
+      "bytes": 3440
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/INDEPENDENT_REVIEW/NUMPY_COUNTER_SYNTHETIC_PROOF.json",
+      "sha256": "c4cee74b8e4e57e2e0a446fa36ed26e66d849367fc6ee480989951796b52ae8f",
+      "bytes": 549
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/INDEPENDENT_REVIEW/SEVEN_METRIC_COUNTER_SYNTHETIC_PROOF.json",
+      "sha256": "4013be36df3cf1fae3757b686c578a25cfa8d4e3bebff7cb6dcfaad486679581",
+      "bytes": 820
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/INDEPENDENT_REVIEW/SYNTHETIC_PIPELINE/ALL_FIXED_ORDER_SEED_POINTS.csv",
+      "sha256": "dae984cc3e581268cd56f2db4e34f771f2004592ae04bc55566879b58330536d",
+      "bytes": 30761
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/INDEPENDENT_REVIEW/SYNTHETIC_PIPELINE/DIVERSITY_ALL_PAIRED_CONTRASTS.csv",
+      "sha256": "28064781b446bac32a72809f329dd849f1f250a01fde8ec59dea5d73c8207822",
+      "bytes": 40047
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/INDEPENDENT_REVIEW/SYNTHETIC_PIPELINE/DIVERSITY_INTERVALS.csv",
+      "sha256": "cf31c75300bf5e8d3a7a5a9c07b441e2d7fad87f76e1e23807cfc5bf7c0f96a3",
+      "bytes": 17477
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/INDEPENDENT_REVIEW/SYNTHETIC_PIPELINE/GENE_CLUSTER_AXIS.csv",
+      "sha256": "5508e2e14635dae6ca258834019944299cc2dd6b9f5f69941b4d1c070b9c900f",
+      "bytes": 224
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/INDEPENDENT_REVIEW/SYNTHETIC_PIPELINE/POINT_REPRODUCTION.csv",
+      "sha256": "dd1ee38a4a2bf10b3b0fc3ed78708d09fd3910f3c4030cc3ff06609eb4bd7f67",
+      "bytes": 10964
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/INDEPENDENT_REVIEW/SYNTHETIC_PIPELINE/REGISTRATION.json",
+      "sha256": "7f05879d2f11c05d0d49db8d38f25b3b9c4b67f22506e73e593adb563f47de0f",
+      "bytes": 2172
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/INDEPENDENT_REVIEW/SYNTHETIC_PIPELINE/SCALING_CURVE_INTERVALS.csv",
+      "sha256": "db814da5e5b955598faa5f4725c272040683bd830ebe16815886feb34355c336",
+      "bytes": 16648
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/INDEPENDENT_REVIEW/SYNTHETIC_PIPELINE/SCALING_FIXED_ORDER_RANGE.csv",
+      "sha256": "01f95fc21c8bdcbeb677a36bc7c8043f44899efd0afda6f29b66e71a8ea962db",
+      "bytes": 7858
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/INDEPENDENT_REVIEW/SYNTHETIC_PIPELINE/SCALING_PAIRED_BUDGET_CHANGES.csv",
+      "sha256": "1aa31352ca30034764f1bb6e16e026fd6742cb994595068dc2774df7c53801ed",
+      "bytes": 31723
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/INDEPENDENT_REVIEW/SYNTHETIC_PIPELINE/STATUS.json",
+      "sha256": "a61bae4200c80eb6b0c2fb9f13a8ce2fee61c46a303d2dd2429bcc0c90158091",
+      "bytes": 1037
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/INDEPENDENT_REVIEW/SYNTHETIC_PIPELINE_PROOF.json",
+      "sha256": "dec245aab414b3eb035000551c7bd2526411566047c6435784ff20fb5601ec74",
+      "bytes": 677
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/INDEPENDENT_REVIEW/counter_metrics_reference.py",
+      "sha256": "e24e78e3396efe673730de128d24a6dcabf19ec700de341c8cff758fc5e6df43",
+      "bytes": 2737
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/POINT_REPRODUCTION.csv",
+      "sha256": "04ccb934ce2d3b9ef8f452dbaee2680b764e483fc2ac66e19e8b9ec229b748c2",
+      "bytes": 11038
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/REGISTRATION.json",
+      "sha256": "296938069a786428e600daafa6c2a70623027142884915c5c60da27314980bb1",
+      "bytes": 2508
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/SCALING_CURVE_INTERVALS.csv",
+      "sha256": "4e9bae5a7211c3eefdc74857fad45d8e1b2822043fa17b0ebcfbb20585211e2b",
+      "bytes": 17283
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/SCALING_FIXED_ORDER_RANGE.csv",
+      "sha256": "2925a08d75be5ea4c3a366c2b7dd5281d5a6b9bc0e1e58536bfe66b0fb5bc1ce",
+      "bytes": 8161
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/SCALING_PAIRED_BUDGET_CHANGES.csv",
+      "sha256": "cbf3afe8aca646006296230b20a9ed61524e52a2b6e8e9e79fcedf719cf0f3dc",
+      "bytes": 32892
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/STATUS.json",
+      "sha256": "6c07bd2c2eca5a6c1fab833a309acdd702fe7511aed7826b12e15754340f9293",
+      "bytes": 1036
+    }
+  ],
+  "new_fits": 0,
+  "new_error_labels": 0,
+  "Orion_access": false,
+  "final_review": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/INDEPENDENT_REVIEW/FINAL_REVIEW.json",
+  "headline_note": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/HEADLINE_CI_NOTE.md"
+}

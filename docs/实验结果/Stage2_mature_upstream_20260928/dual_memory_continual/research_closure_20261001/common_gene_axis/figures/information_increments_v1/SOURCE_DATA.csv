@@ -1,0 +1,13 @@
+panel,line,method_a,method_b,delta_u20,ci95_lower,ci95_upper,bootstrap_replicates,n_tasks,n_clusters
+History distance − magnitude,Exphormer_to_GAT,Learned_WeightedHistoryDistance,Magnitude,-0.1552892816361422,-0.2295660820948674,-0.1000928630011453,5000,1808,575
+History distance − magnitude,GAT_to_Exphormer,Learned_WeightedHistoryDistance,Magnitude,-0.1539161994885379,-0.2136656274251261,-0.0831118148142772,5000,1808,575
+History distance − magnitude,TxPert_to_McFaline,Learned_WeightedHistoryDistance,Magnitude,0.9343944221302112,0.7873397632510845,1.0703402477859614,5000,543,380
+History distance − support only,Exphormer_to_GAT,Learned_WeightedHistoryDistance,NegativeHistorySupport,0.4974212034305155,0.3933235900198919,0.5895331550432149,5000,1808,575
+History distance − support only,GAT_to_Exphormer,Learned_WeightedHistoryDistance,NegativeHistorySupport,0.5023889317872551,0.4048158525545688,0.6048372055413076,5000,1808,575
+History distance − support only,TxPert_to_McFaline,Learned_WeightedHistoryDistance,NegativeHistorySupport,-0.0974566056796497,-0.1623061558837712,-0.0318802879765115,5000,543,380
+Source HGB − history distance,Exphormer_to_GAT,Learned_hgb,Learned_WeightedHistoryDistance,0.1896161253624358,0.1347619398616698,0.2473120432152428,5000,1808,575
+Source HGB − history distance,GAT_to_Exphormer,Learned_hgb,Learned_WeightedHistoryDistance,0.1914069169720295,0.1263546381405217,0.2431578857851746,5000,1808,575
+Source HGB − history distance,TxPert_to_McFaline,Learned_hgb,Learned_WeightedHistoryDistance,-0.0344193873908944,-0.1321436348744271,-0.0086435982040554,5000,543,380
+Public + source HGB − prediction HGB,Exphormer_to_GAT,Learned_hgb,Prediction_hgb,0.0241813791880864,-0.0058563957647605,0.0570306582996368,5000,1808,575
+Public + source HGB − prediction HGB,GAT_to_Exphormer,Learned_hgb,Prediction_hgb,0.0310293519714552,-0.0034386702597303,0.0582453229711092,5000,1808,575
+Public + source HGB − prediction HGB,TxPert_to_McFaline,Learned_hgb,Prediction_hgb,0.7037855566337163,0.5244518517274009,0.8473238541063794,5000,543,380

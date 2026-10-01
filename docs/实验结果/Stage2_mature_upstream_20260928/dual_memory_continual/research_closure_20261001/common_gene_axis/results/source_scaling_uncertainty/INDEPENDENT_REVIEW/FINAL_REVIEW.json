@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "code_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_source_scaling_uncertainty_agent.py",
+  "code_sha256": "46e4e48f0b767d4fc363da9884412973beee0407128377a184bc6992c0819c64",
+  "review_mode": "independent synthetic checks and read-only static inspection",
+  "no_actual_prediction_data_read": true,
+  "no_actual_source_statistics_run": true,
+  "no_Orion_access": true,
+  "no_source_fits_or_model_changes": true,
+  "review_scope": "all seven count-resampled metrics, fixed Source scaling/diversity aggregation and output contrasts",
+  "static_checks": {
+    "fixed_5000_gene_draws": true,
+    "same_draw_joint_across_three_contexts_and_all_design_cells": true,
+    "scaling_150_and_diversity_30_cells": true,
+    "original_n20_contexts_checked_before_resampling": true,
+    "original_context_metrics_must_be_valid": true,
+    "NaN_finite_point_replay_mismatch_rejected": true,
+    "score_deduplication_by_exact_arrays_keeps_design_indices": true,
+    "curve_mean_of_fixed_15_cell_metrics": true,
+    "diversity_mean_of_fixed_3_seed_metrics": true,
+    "all_original_cell_points_retained": true,
+    "worst_cell_ranges_retained_no_best_selection": true,
+    "full_minus_lower_and_adjacent_contrasts": true,
+    "all_ten_variant_pairs_per_reference": true,
+    "conditional_saved_prediction_CI_interpretation": true
+  },
+  "synthetic_proofs": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/INDEPENDENT_REVIEW/NUMPY_COUNTER_SYNTHETIC_PROOF.json",
+      "sha256": "c4cee74b8e4e57e2e0a446fa36ed26e66d849367fc6ee480989951796b52ae8f",
+      "status": "PASS"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/INDEPENDENT_REVIEW/SEVEN_METRIC_COUNTER_SYNTHETIC_PROOF.json",
+      "sha256": "4013be36df3cf1fae3757b686c578a25cfa8d4e3bebff7cb6dcfaad486679581",
+      "status": "PASS"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/INDEPENDENT_REVIEW/ACTUAL_HELPER_PROOF.json",
+      "sha256": "154f157630b0ee36a1511db2b502e7b118d7d33da18d9ad974a0f646f00ff7da",
+      "status": "PASS"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/INDEPENDENT_REVIEW/SYNTHETIC_PIPELINE_PROOF.json",
+      "sha256": "dec245aab414b3eb035000551c7bd2526411566047c6435784ff20fb5601ec74",
+      "status": "PASS"
+    }
+  ],
+  "issues_found_and_resolved": [
+    "Original point replay used nanmax and could ignore NaN-finite mismatches; explicit allclose(equal_nan=True) added.",
+    "Original summarize skips invalid context metrics; main now requires every original context metric finite before complete-three-context averaging."
+  ],
+  "remaining_blocking_findings": [],
+  "verification_complete": true
+}

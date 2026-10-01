@@ -43,3 +43,11 @@
 ## Source training-copy and objective-weight diagnosis
 
 Fixed common2840 features/CDF/parameters were replayed in12 table fits; all six original score arrays reproduced within9.72e-17. Copying existing GAT or Exphormer training rows adds no new errors or independent tasks. Learned standard pooled U20 exceeds copied GAT by0.1069 (95%CI0.0113–0.1681), while its0.0650 gap over copied Exphormer remains uncertain (CI−0.0182–0.1341). Matching total loss weight to a single-source budget retains a pooled point advantage, but weight scaling, quantile binning, leaf-count effects and two nearly identical same-family predictors remain attribution limits. These are SEEN diagnostics; no new model is promoted and frozen Orion source parameters remain unchanged. Full fixed results and5000 joint gene draws are in common_gene_axis/results/source_row_weight_diagnostic/.
+
+## Conditional Source scaling uncertainty
+
+Paired5000gene-cluster draws on543fixedMcFaline tasks/380genes now cover all source budgets and diversity comparisons. Learned100%-10% supervision ΔU20=0.339716,95%CI[0.223499,0.390742]; Manual=0.205204,CI[0.112537,0.277519]. Learned fullpool exceeds equal-record pool by0.128708,CI[0.021106,0.179955], and separate-risk average by0.102166,CI[0.018369,0.164578]. All Manual diversity pair intervals crosszero, and adjacent budget changes are not universallypositive. These are conditional fixed-prediction SEEN results, not new families or independent training seeds. Budget-specific CDF resolution and copy/weight controls remain necessary interpretation limits.
+
+## Actual continual-operation evidence remains pending
+
+Code and static growth fits are not proof of a real append/update/publication/rollback cycle. Audit found no authoritative real Public CURRENT advancement/model-serving registry; an isolated realSourceDEV lifecycle replay is now being implemented. No claim of completed lifelong self-learning is made from the current static curves.

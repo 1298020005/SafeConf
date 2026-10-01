@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "synthetic_only": true,
+  "no_actual_predictions_read": true,
+  "random_all_seven_metric_comparisons": 2424,
+  "maximum_abs_scalar_difference_by_metric": {
+    "utility20": 1.6653345369377348e-15,
+    "spearman": 2.220446049250313e-16,
+    "aurc": 1.5543122344752192e-15,
+    "high_risk_miss_rate": 0.0,
+    "error_at_10": 4.440892098500626e-16,
+    "error_at_20": 6.661338147750939e-16,
+    "error_at_50": 8.881784197001252e-16
+  },
+  "paired_same_gene_counts_three_contexts": true,
+  "lexical_ID_ties": true,
+  "finite_truth_score_filtering": true,
+  "original_n19_gate_frozen_for_U20_only": true,
+  "zero_count_and_one_or_two_row_support_edges": true,
+  "constant_score_Spearman_NA": true,
+  "exact_physical_copy_top20_intersection": true,
+  "weighted_harmonic_AURC_matches_expansion": true
+}
