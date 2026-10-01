@@ -1,0 +1,15 @@
+diagnostic_target,score,utility20,spearman
+calibrated_excess_mse,Learned_WeightedHistoryDistance,0.008905873012694963,-0.03667899840690367
+calibrated_excess_mse,Learned_hgb,0.02184391540723836,0.026400024031370563
+calibrated_excess_mse,Manual_hgb,0.017910387281450366,-0.0583550081654439
+calibrated_excess_mse,NegativeHistorySupport,-0.09192901092058141,-0.046837408717044136
+calibrated_excess_mse,Prediction_hgb,-0.0034218250498191938,-0.006814506520846637
+calibrated_excess_mse,log_history_support,0.0361954057416636,0.046837408717044136
+calibrated_excess_mse,n_test_cells,0.11341478264054723,0.08006853501143225
+raw_decoder_excess_mse,Learned_WeightedHistoryDistance,0.017845247964158793,-0.036490202135848866
+raw_decoder_excess_mse,Learned_hgb,0.030217541306834766,0.02327116704215193
+raw_decoder_excess_mse,Manual_hgb,0.029032021639673066,-0.05961640637680354
+raw_decoder_excess_mse,NegativeHistorySupport,-0.09143597429189027,-0.0535778631372588
+raw_decoder_excess_mse,Prediction_hgb,0.02763196000620077,0.040508209485793534
+raw_decoder_excess_mse,log_history_support,0.04244131901484194,0.0535778631372588
+raw_decoder_excess_mse,n_test_cells,0.11540169789702343,0.0878542879787813

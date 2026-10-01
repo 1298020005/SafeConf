@@ -26,6 +26,8 @@
 | [PertEMA 官方仓库](https://github.com/OfficialBishal/PertEMA/blob/main/README.md) | 最直接的单细胞后置风险学习对照；使用 OOF 错误，新 screen 需重新拟合；也研究噪声与共同失败 | 当前 README 全文及本地固定提交实现；不是已发表论文 |
 | [Risk Advisor](https://link.springer.com/article/10.1007/s10994-022-06248-y) | 黑盒预测器之外训练风险元模型；广义 post-hoc risk learning 的先例 | 原文方法与摘要；分类任务，不等同生物效应回归 |
 | [ConfidNet，NeurIPS 2019](https://papers.nips.cc/paper_files/paper/2019/hash/757f843a169cc678064d9530d12a1881-Abstract.html) | 学习置信度与失败预测的先例 | 官方论文摘要；依赖深度分类模型特征，非直接可比基线 |
+| [100 instances is all you need，2024](https://arxiv.org/abs/2409.03563) | 利用旧 LLM 的评估结果训练通用 assessor，再以新模型少量参考任务预测其未见任务表现；直接限制“旧预测器监督帮助新预测器”这一广义创新主张 | 原始摘要核实；需要新模型参考标签，非我们的零目标风险标签生物回归设定；KDD workshop 报告/预印本，不冒称正式 KDD 主会 |
+| [PredictaBoard，ACL Findings 2025](https://aclanthology.org/2025.findings-acl.790/) | 评估逐任务错误预测、拒绝率及不同 assessor；补充后置风险预测与信息预算比较的相关工作 | 官方论文页核实；LLM 正确性而非生物效应误差，不作为直接性能基线 |
 | [PRESCRIBE，NeurIPS 2025](https://papers.nips.cc/paper_files/paper/2025/hash/d6383e7643415842b48a5077a1b09c98-Abstract-Conference.html) | 基因相似性和实验质量对应的不确定性；与 Quality/Relevance 主张重合 | 官方摘要；不能引用为持续目标错误反馈证据 |
 | [FailureScope，2026 预印本](https://arxiv.org/html/2606.09878v1) | 用其他模型的行为构造困难任务类别，并在留出模型上预测失败 | 已读 LOMO 方法与结果；LLM 任务和簇级目标，非我们的连续效应误差 |
 | [Fail-Fast, Restart-Smart，2026 预印本](https://arxiv.org/abs/2608.03222) | 由一个策略的失败监督训练监控器，迁移到其他策略；反驳广义“首次跨模型错误监督” | 原始摘要核实；代码代理轨迹，不等同单细胞任务 |
@@ -69,6 +71,14 @@
 4. 投稿就绪仍未证明：需要明确支持至少一条真实的方法增量或不同于已有研究的可复现边界。实验数量、漂亮的 U20 和三块组件的组合本身不足以完成这个判定。
 
 论文正文暂不生成；实验负责人继续执行，不以本审计作为项目结束。
+
+## 对网页版评价的二次独立判断
+
+赞同其事实性纠错和强基线要求，但不采纳“Public 已经解决”或“没有找到完整三组件系统就是好消息”的推论。文献未检索到同一组合不构成独立贡献；现有高观测误差 U20 也不能自动证明模型特异生物错误可被预测。
+
+新版独立审阅已补充全真值 baseline loss contrast：当前 C 与冻结 TRAIN mean 的逐任务 MSE 排序在三个 context 中 rho 均超过 0.998；源 HGB 对相对 TRAIN mean 的 excess MSE 排序宏 U20 为 0.021844，历史距离为 0.008906。这个对照保留原完整真值，并抵消共同真值的平方项；仍有线性测量噪声，不是新的无噪主终点。详见 `evidence_review_agent/REVIEW.md`。
+
+还定位到一个可区分因素：历史实验内部采用 guide 等权均值，而目标预测/真值采用 cell 等权均值。仅改变这个因素、保持资格/支持权重/预测/主误差不变的零拟合对照已登记并执行。该对照只解释估计目标差别，不据此事后更换原确认方法。
 
 
 补充完成的强对照：C 已有验证预测可以在排除 test 簇后直接提供 230 条风险监督，新增模型调用为零。PublicValidation HGB U20=0.755390，Source HGB=0.695253，差值 CI 跨零；Shared 额外特征未证明优势。因此部署成本与标签需求必须按实际可用资产衡量。反馈 holdout 上还加入完全同任务的无反馈历史数量/距离规则，防止把战胜弱 Shared 当作反馈独有的信息增量。

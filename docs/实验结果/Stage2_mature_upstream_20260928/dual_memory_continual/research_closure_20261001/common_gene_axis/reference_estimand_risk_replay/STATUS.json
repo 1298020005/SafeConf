@@ -1,0 +1,14 @@
+{
+  "status": "COMPLETE",
+  "n_tasks": 543,
+  "source_training_rows": 3616,
+  "source_training_clusters": 575,
+  "source_training_predictors": 2,
+  "replayed_fits": 1,
+  "new_target_risk_training_labels": 0,
+  "new_upstream_calls": 0,
+  "original_scores_reproduced": true,
+  "fitting_seconds": 0.21851718588732183,
+  "role": "SEEN_POST_CONFIRMATION_DIAGNOSTIC",
+  "promoted_as_final_method": false
+}

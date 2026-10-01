@@ -1,0 +1,55 @@
+{
+  "role": "SEEN_POST_CONFIRMATION",
+  "n_genes": 2840,
+  "same_registered_methods_and_parameters": true,
+  "orders": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "budgets": [
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "seeds": [
+    20260930,
+    20261001,
+    20261002
+  ],
+  "only_allowed_budget_errors_enter_CDF": true,
+  "history_bank_and_source_reference_features_fixed": true,
+  "query_error_use": "evaluation only, copied from canonical primary matrix",
+  "new_upstream_calls": 0,
+  "new_large_upstream_training": 0,
+  "inputs": [
+    {
+      "input": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/source_Manual.parquet",
+      "sha256": "7f8e9bba115d76557d41027fe84d149521d82422c94adcfcc84315d761771273",
+      "rows": 3616,
+      "cluster_hash": "f6a9d3cb6e0c2e6ba3630fb3df066392324ef8f34ebc3999001154079ebdc6c3"
+    },
+    {
+      "input": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/external_Manual.parquet",
+      "sha256": "a1bed48001fcd64578060b93e0a95e7f9c3e0e15f1d024b970aa3c45d27fe11e",
+      "rows": 543,
+      "cluster_hash": "07781140739443f57b67641216684ca91c62144f0398de1cad2007d90ac14492"
+    },
+    {
+      "input": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/source_Learned.parquet",
+      "sha256": "581891b9f3571a5a89a01e943a00034aa8194aedff000db645d368c3713d726a",
+      "rows": 3616,
+      "cluster_hash": "f6a9d3cb6e0c2e6ba3630fb3df066392324ef8f34ebc3999001154079ebdc6c3"
+    },
+    {
+      "input": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/external_Learned.parquet",
+      "sha256": "fa1e373edc04cb18bce0b4a993c57877643c33fe623ec1dc75973f44062c8988",
+      "rows": 543,
+      "cluster_hash": "07781140739443f57b67641216684ca91c62144f0398de1cad2007d90ac14492"
+    }
+  ]
+}

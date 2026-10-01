@@ -1,0 +1,98 @@
+{
+  "status": "COMPLETE",
+  "role": "DEV_SEEN_SOURCE_CELL_SAMPLING_DIAGNOSTIC",
+  "primary_assets_changed": false,
+  "n_tasks": 1808,
+  "n_perturbation_genes": 575,
+  "n_expression_genes": 2840,
+  "primary_cells": 187628,
+  "release_cells_hashed_once": 354208,
+  "official_source_path": "/home/yyf/data/txpert_official_20260802/cache/K562_cross_cell_lines/de_adata_test.h5ad",
+  "official_source_full_file_rehashed": false,
+  "official_source_metadata_and_gene_order_verified": true,
+  "raw_spot_cells": 128,
+  "raw_spot_max_abs_residual": 0.0,
+  "primary_float32_rmse_vs_float64_max_abs_difference": {
+    "TxPert_GAT": 1.3551358522823076e-07,
+    "TxPert_Exphormer": 1.6243996084353007e-07
+  },
+  "guide_or_sgrna_fields_in_official_obs": [],
+  "fixed20_seeds": [
+    2026100101,
+    2026100102,
+    2026100103,
+    2026100104,
+    2026100105
+  ],
+  "fixed20_sampling": "without replacement; SHA256 task/seed -> numpy Generator choice; original frozen controls retained",
+  "cell_iid_formula": "mean_gene(sample_variance_with_ddof1) / n_cells",
+  "batch_cluster_formula": "B/(B-1) * sum_b ||sum_cells_in_b(x-cell_mean)||^2 / (n_cells^2 * n_genes)",
+  "finite_population_fixed20_formula": "(1/20 - 1/n_cells) * mean_gene(sample_variance_with_ddof1)",
+  "assumptions": [
+    "Cell iid is conditional on the observed condition and fixed control reference.",
+    "Batch cluster variance additionally assumes independent observed batch clusters.",
+    "Guide identity is absent from official obs; biological guide/replicate independence cannot be established.",
+    "MSE subtraction requires an unbiased noisy centroid independent of predictions; it is a diagnostic, not a replacement endpoint.",
+    "Uncertainty of frozen matched controls and model/predictor fitting is excluded.",
+    "Fixed20 checks finite observed cell sampling only and retain shared original controls; they cannot establish a biological noise floor."
+  ],
+  "truth_recomputation": [
+    {
+      "context": "K562",
+      "release_rows": 150472,
+      "primary_cells": 79842,
+      "primary_tasks": 566,
+      "raw_spot_cells_all3352genes": 32,
+      "raw_spot_max_abs_residual": 0.0,
+      "all_metadata_alignment": true,
+      "truth_file_sha256_verified": "729f420a48196e46917064069e828c0fbf5a7eb50e2749ad6be222a37ad9e82b",
+      "truth_stream_sha256_verified": "0da93fd4dfb4893ebb48d193f1112a10bea961f1a0ed202e790a397ab597468a",
+      "centroid_max_abs_residual_float32": 0.0,
+      "common_effect_max_abs_residual_float32": 0.0,
+      "direct_unrounded_mean_effect_max_abs_difference": 2.384185791015625e-07
+    },
+    {
+      "context": "RPE1",
+      "release_rows": 67034,
+      "primary_cells": 37261,
+      "primary_tasks": 416,
+      "raw_spot_cells_all3352genes": 32,
+      "raw_spot_max_abs_residual": 0.0,
+      "all_metadata_alignment": true,
+      "truth_file_sha256_verified": "feec82bdf30ffad8fecd9bd9e178f57d74be33c82b5589505d1259a6338b9e11",
+      "truth_stream_sha256_verified": "a8a74e06cf9b74b8dc0a5f0a719a02bfd999da9c94d2d10fca355aedc49b6f76",
+      "centroid_max_abs_residual_float32": 0.0,
+      "common_effect_max_abs_residual_float32": 0.0,
+      "direct_unrounded_mean_effect_max_abs_difference": 2.384185791015625e-07
+    },
+    {
+      "context": "hepg2",
+      "release_rows": 54911,
+      "primary_cells": 28292,
+      "primary_tasks": 405,
+      "raw_spot_cells_all3352genes": 32,
+      "raw_spot_max_abs_residual": 0.0,
+      "all_metadata_alignment": true,
+      "truth_file_sha256_verified": "4950e446124c9a16751878d654d34257b9ffc76c8b9a92fed257ea02aacf0d57",
+      "truth_stream_sha256_verified": "e83a3cffe98f9c6b1d797c74e7b950e3458994268798a03e83509e6b1515d9ec",
+      "centroid_max_abs_residual_float32": 0.0,
+      "common_effect_max_abs_residual_float32": 0.0,
+      "direct_unrounded_mean_effect_max_abs_difference": 2.384185791015625e-07
+    },
+    {
+      "context": "jurkat",
+      "release_rows": 81791,
+      "primary_cells": 42233,
+      "primary_tasks": 421,
+      "raw_spot_cells_all3352genes": 32,
+      "raw_spot_max_abs_residual": 0.0,
+      "all_metadata_alignment": true,
+      "truth_file_sha256_verified": "0c56d151380109a6a51fde142a398db5798fdf6aa39637b966a78cbc8d3ea4d2",
+      "truth_stream_sha256_verified": "fd85abef6325756949fca58523a3aed37d44fb7820e37a734447dcd89faf122a",
+      "centroid_max_abs_residual_float32": 0.0,
+      "common_effect_max_abs_residual_float32": 0.0,
+      "direct_unrounded_mean_effect_max_abs_difference": 2.384185791015625e-07
+    }
+  ],
+  "code_sha256": "da87dc3d4fadc0cfe312c2cf1c2a1a98592b578f970b4402284cad1415ce014b"
+}

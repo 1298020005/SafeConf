@@ -1,0 +1,8 @@
+{
+  "bootstrap_replicates": 5000,
+  "native_truth_and_scores_preserved": true,
+  "no_new_upstream_training_or_calls": true,
+  "one_rule_no_search": true,
+  "role": "SEEN_DIAGNOSTIC",
+  "status": "COMPLETE"
+}

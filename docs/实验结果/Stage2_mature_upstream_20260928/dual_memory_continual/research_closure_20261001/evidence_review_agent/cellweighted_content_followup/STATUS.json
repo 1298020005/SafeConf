@@ -1,0 +1,19 @@
+{
+  "status": "COMPLETE",
+  "role": "SEEN_POST_CONFIRMATION_DIAGNOSTIC",
+  "n_tasks": 543,
+  "n_gene_clusters": 380,
+  "n_public_rows": 7173,
+  "n_query_pairs": 7149,
+  "n_donor_orders": 5,
+  "bootstrap_replicates": 5000,
+  "raw_h5ad_reads": 0,
+  "new_model_fits": 0,
+  "new_upstream_calls": 0,
+  "all_frozen_inputs_unchanged": true,
+  "canonical_truth_unchanged": true,
+  "original_guide_distance_reproduced": true,
+  "true_cell_distance_reproduced": true,
+  "elapsed_seconds": 50.32541663409211,
+  "pair_identity_sha256": "61c4b873e8297bcc93b6686b96cacd231202dd63ea6f77e8f0a5517c087cec4f"
+}

@@ -1,0 +1,12 @@
+{
+  "status": "COMPLETE",
+  "role": "SEEN_POST_CONFIRMATION",
+  "fitted_models": 158,
+  "cpu_fit_seconds_sum": 27.26823490858078,
+  "elapsed_seconds": 32.22829800308682,
+  "query_tasks": 543,
+  "new_upstream_calls": 0,
+  "new_large_upstream_training": 0,
+  "original_inputs_preserved": true,
+  "server_only_predictions": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_scaling_recheck"
+}

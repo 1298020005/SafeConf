@@ -1,0 +1,90 @@
+{
+  "role": "SEEN_POST_CONFIRMATION_DIAGNOSTIC",
+  "reference": "frozen cell-weighted within-experiment effects",
+  "donor_implementation": "existing public_mechanisms.permutation(memory, seed, McFaline)",
+  "donor_seeds": [
+    20260930,
+    20260931,
+    20260932,
+    20260933,
+    20260934
+  ],
+  "all_five_orders_reported": true,
+  "support_matching": "same study/contract/gene space/context/condition and n_cells quartile",
+  "weights": "unchanged n_cells / sum(n_cells) for the original eligible historical rows",
+  "query_cohort": "543 original tasks, 380 gene clusters",
+  "truth": "exact canonical CSV error; recompute arrays only to verify it",
+  "bootstrap_replicates": 5000,
+  "bootstrap_seed": 20260930,
+  "raw_h5ad_reads": 0,
+  "new_model_fits": 0,
+  "new_upstream_calls": 0,
+  "method_selection_allowed": false,
+  "input_hashes": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/audit_safeconf_cellweighted_content_agent.py",
+      "bytes": 11502,
+      "sha256": "446318822d540808157712290bf0b3cf32938f2cb0d45644eb29820ffc01f8c9"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/public_mcfaline_trainval/public_memory.parquet",
+      "bytes": 432777,
+      "sha256": "a17798b8e3aaf0a5f26d1fcb18de871980a8e119640daebf4d411f0f77fff067"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/public_mcfaline_trainval/effect_vectors.npy",
+      "bytes": 81485408,
+      "sha256": "36212d51411fbe01234bbe82e1fb938a84b6f569ab540b64a30cab9a26cc67b8"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/public_mcfaline_trainval/control_vectors.npy",
+      "bytes": 81485408,
+      "sha256": "8593d30615e063ba4bf9711a62eccbff85748899ff4e254820a94b34d23ca4a2"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/reference_estimand_diagnostic/CELL_WEIGHTED_PUBLIC_EFFECTS.npy",
+      "bytes": 162970688,
+      "sha256": "5d197bbfbc8e2826e093ede5024cce73f14d52cfc0ba5728abefd1881eec6a46"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/external_Manual.parquet",
+      "bytes": 159990,
+      "sha256": "a1bed48001fcd64578060b93e0a95e7f9c3e0e15f1d024b970aa3c45d27fe11e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/TEST_CALIBRATED_EFFECTS.npy",
+      "bytes": 6168608,
+      "sha256": "385d62b8cbd2d535b1b31be504bbd55dd1032f0e09710a3b33c14f69e7bca89e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/TEST_CONTROLS.npy",
+      "bytes": 6168608,
+      "sha256": "8c3b6aa7eaa51394ff850aaab204968b641daa3e63335cbd3789346768be3f78"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/TEST_TRUE_EFFECTS.npy",
+      "bytes": 6168608,
+      "sha256": "cbf00471c62b6db5652a38b610fa612c52038d1f9f2f8c479933b3f075beb7a2"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/TEST_TASKS.csv",
+      "bytes": 27493,
+      "sha256": "0b2f5be1b4e8911157cf317d7f950185be3f88235bd9350221ce93f52dc9982e"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/MATRIX_TASK_PREDICTIONS.csv.gz",
+      "bytes": 5606076,
+      "sha256": "73eff7366c0e64d96d57e6effe2d12061890a3db43f47d4d403204a8dff9504c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/reference_estimand_diagnostic/TASK_PREDICTIONS.csv.gz",
+      "bytes": 29162,
+      "sha256": "ed59f4485017b68ae9ce2383cc8ea4b346348f239f2fd7d6e9c2b0af9c52d8b1"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_public_mechanisms.py",
+      "bytes": 14425,
+      "sha256": "3d8c2cbb0f4ba6834c7c561dc3447a782e7634083614d59e7e1bcd66155653f8"
+    }
+  ]
+}

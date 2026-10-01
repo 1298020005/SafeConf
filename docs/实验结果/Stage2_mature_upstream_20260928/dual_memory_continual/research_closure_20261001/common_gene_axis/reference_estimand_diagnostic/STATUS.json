@@ -1,0 +1,15 @@
+{
+  "status": "COMPLETE",
+  "n_queries": 543,
+  "n_public_experiments": 7173,
+  "n_public_cells": 615059,
+  "test_cells_aggregated": 0,
+  "query_truth_unchanged": true,
+  "frozen_guide_distance_reproduced": true,
+  "mean_guide_vs_cell_effect_rmse": 0.018225774261585576,
+  "new_model_fits": 0,
+  "new_upstream_calls": 0,
+  "elapsed_seconds": 72.73873111582361,
+  "alternate_effect_sha256": "5d197bbfbc8e2826e093ede5024cce73f14d52cfc0ba5728abefd1881eec6a46",
+  "role": "SEEN_POST_CONFIRMATION_DIAGNOSTIC"
+}

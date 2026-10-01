@@ -1,0 +1,42 @@
+{
+  "registered_utc": "2026-10-01T09:39:55.922504+00:00",
+  "role": "SEEN_POST_CONFIRMATION_DIAGNOSTIC",
+  "fixed_change": "within-experiment cell-weighted instead of guide-equal mean",
+  "allowed_expression_roles": [
+    "train",
+    "val"
+  ],
+  "query_prediction": "frozen TEST_CALIBRATED_EFFECTS.npy",
+  "query_truth": "unchanged canonical primary error",
+  "history_weights": "unchanged n_cells / sum(n_cells)",
+  "eligibility": "unchanged same-gene other-state historical records",
+  "risk_or_retrieval_fits": 0,
+  "hyperparameter_search": false,
+  "memory_manifest": {
+    "control_vectors_sha256": "8593d30615e063ba4bf9711a62eccbff85748899ff4e254820a94b34d23ca4a2",
+    "created_utc": "2026-10-01T06:08:26.337164+00:00",
+    "effect_vectors_sha256": "36212d51411fbe01234bbe82e1fb938a84b6f569ab540b64a30cab9a26cc67b8",
+    "eligibility": null,
+    "gene_ids_sha256": "124117bad50b0111a3f68e4fca87662d62e25ef29d79fe8c6d63c72c9e665360",
+    "n_genes": 2840,
+    "n_items": 7173,
+    "schema": "SafeConf-PublicMemory-v1",
+    "source_manifest": {
+      "allowed_roles": [
+        "train",
+        "val"
+      ],
+      "h5ad_sha256": "e9c6a010ce6e44eb72d32449e7d7ad2bd45d336855083fa901d52d0bf263fa87",
+      "quality_definition": "held-out guide/plate/split-half reproducibility",
+      "split_sha256": "08a6558a68599b3703f626c8da72a1603486edd94a3f34dfc9fa7c9b6181b091",
+      "test_expression_opened": false
+    },
+    "table_sha256": "a17798b8e3aaf0a5f26d1fcb18de871980a8e119640daebf4d411f0f77fff067"
+  },
+  "input_h5_path": "/home/yyf/data/perturbench_mcfaline23_official/mcfaline23_gxe_processed.h5ad",
+  "input_h5_size": 27417399306,
+  "input_h5_mtime_ns": 1790669043460240672,
+  "split_sha256": "08a6558a68599b3703f626c8da72a1603486edd94a3f34dfc9fa7c9b6181b091",
+  "bootstrap_replicates": 5000,
+  "bootstrap_seed": 20260930
+}

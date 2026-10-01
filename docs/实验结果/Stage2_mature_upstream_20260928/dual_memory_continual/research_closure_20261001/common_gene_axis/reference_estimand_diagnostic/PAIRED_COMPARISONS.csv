@@ -1,0 +1,3 @@
+method_a,method_b,delta_utility20,bootstrap_mean_delta,ci95_lower,ci95_upper,n_tasks,n_clusters,bootstrap_replicates
+CellWeightedReference,FrozenGuideEqualReference,0.12301905483278815,0.12321896004250475,0.05614979991934747,0.1986103367838422,543,380,5000
+CellWeightedReference,NegativeHistorySupport,0.007184875513715605,0.008203093204997335,-0.039087201901068326,0.05533043847477864,543,380,5000

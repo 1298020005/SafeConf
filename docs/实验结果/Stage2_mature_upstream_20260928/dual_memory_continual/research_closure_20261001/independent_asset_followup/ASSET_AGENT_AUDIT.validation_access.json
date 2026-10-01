@@ -1,0 +1,15 @@
+{
+  "expression_path": "/home/yyf/data/gears_formal_baselines_v2/norman_local_atlas/perturb_processed.h5ad",
+  "n_gene_columns": 5025,
+  "n_control_rows": 2000,
+  "n_distinct_validation_rows": 9794,
+  "test_expression_rows_materialized": 0,
+  "full_X_materialized": false,
+  "test_array_files_opened": 0,
+  "fixed_inference_control_rows": 32,
+  "device": "cuda:0",
+  "new_training_gpu_hours": 0,
+  "new_download_bytes": 0,
+  "test_used_for_model_selection": false,
+  "elapsed_seconds": 18.363207578659058
+}

@@ -1,0 +1,21 @@
+{
+  "amplitude_columns": [
+    "predicted_magnitude",
+    "prediction_abs_mean",
+    "prediction_signed_mean",
+    "prediction_std",
+    "prediction_abs_q95",
+    "prior_magnitude",
+    "prediction_prior_rmse",
+    "prior_uncertainty",
+    "history_conflict"
+  ],
+  "learner_hyperparameters_unchanged": true,
+  "native_error_target_unchanged": true,
+  "one_fixed_rule_no_scale_search": true,
+  "own_code_sha256": "fb9e5aa7fc07ea70170fb66ebfd9d0357c01e3a71981daa48f370f0fd03c8923",
+  "public_retrieval_unchanged": true,
+  "role": "DEV_SEEN_DIAGNOSTIC",
+  "rule": "amplitude / RMS(mean allowed control vector)",
+  "select_final_method_from_this_diagnostic": false
+}

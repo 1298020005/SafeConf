@@ -1,0 +1,12 @@
+{
+  "role": "SEEN_POST_CONFIRMATION_DIAGNOSTIC",
+  "hypothesis": "within-history estimand mismatch changes frozen source-risk inputs",
+  "source_train_sha256": "7f8e9bba115d76557d41027fe84d149521d82422c94adcfcc84315d761771273",
+  "frozen_query_features_sha256": "a1bed48001fcd64578060b93e0a95e7f9c3e0e15f1d024b970aa3c45d27fe11e",
+  "alternate_public_effects_sha256": "5d197bbfbc8e2826e093ede5024cce73f14d52cfc0ba5728abefd1881eec6a46",
+  "fixed_learner": "original HGB, original P+PUBLIC features, original seed",
+  "new_target_error_training_labels": 0,
+  "new_upstream_calls": 0,
+  "parameter_search": false,
+  "replay_must_reproduce_saved_scores": true
+}
