@@ -1,0 +1,26 @@
+{
+  "status": "PRESERVED_GENERATED_FAILURE_DIAGNOSIS",
+  "failed_stage": "unchanged reader.authorize_test before any synthetic TEST numeric access",
+  "exception": "RuntimeError: Frozen Source risk score changed in comparison",
+  "cause": "dec.prepare_comparison default TSV float parser versus852.score_table round_trip parser",
+  "initial_chain_sha256": "34120385c6bd037f334e9806e1be054f7f90f9350bdc2e853737b304e9f2a69d",
+  "generated_default_parser_maximum_gap": 5.551115123125783e-17,
+  "default_parser_changed_value_counts": {
+    "Magnitude": 0,
+    "P_only_ridge": 0,
+    "P_only_hgb": 0,
+    "Manual_ridge": 204,
+    "Manual_hgb": 204,
+    "Learned_ridge": 204,
+    "Learned_hgb": 204,
+    "Manual_WeightedHistoryDistance": 200,
+    "Learned_WeightedHistoryDistance": 200,
+    "Uniform_DirectRMSE": 200,
+    "Manual_DirectRMSE": 200,
+    "Learned_DirectRMSE": 200
+  },
+  "correction": "new adapter serialization only; original mathematical values recovered from sealed CSV with unchanged guarded-reader parsing; all13methods unchanged",
+  "original_math_or_tolerances_changed": false,
+  "actual_TEST_access": false,
+  "new_fits": 0
+}

@@ -1,0 +1,30 @@
+{
+  "status": "GENERATED_EXTENSION_FIXTURES_PASS",
+  "checks": [
+    "all_legacy_VAL_TEST_scores_priors_features_pairs_and_weights_invariant",
+    "new_gene_history_becomes_supported_without_a_fit",
+    "legacy_score_change_rejected",
+    "legacy_prior_change_rejected",
+    "legacy_pair_change_rejected",
+    "legacy_weight_change_rejected",
+    "coverage_counts_independent_gene_union_not_double_context_rows",
+    "coverage_n99_fails_closed",
+    "coverage_nonfinite_fails_closed",
+    "coverage_nonfinite_support_fails_closed",
+    "coverage_missinghistory_fails_closed",
+    "coverage_context19_fails_closed",
+    "unchanged_old_reader_rejects_outer_operation_schema",
+    "incomplete_extension_chain_rejected_before_base_reader",
+    "bank_RUNNING_cannot_enter_inference_or_test_chain"
+  ],
+  "check_count": 15,
+  "helper_sha256": "9857b96b98460346bce334313c1a212466c85dc450c07f16e5d934e1ef045454",
+  "chain_sha256": "12e94432a88505188b732c178cfab0e38779e7129abd35b0ae75e6fb9b46a145",
+  "sealer_sha256": "81ca3f44f147880b19fc9b8225ac8c63572e9a44dfc78e1d6d2208b3770b0414",
+  "original_risk_math_sha256": "8b69e6ce29dc92aa34150b3b08aac62ce8333a10f84ec432a39d0e81ffc64482",
+  "new_fits": 0,
+  "actual_Source_expression_read": false,
+  "actual_Orion_prediction_or_expression_read": false,
+  "actual_TEST_access": false,
+  "fixtures_temp_only": true
+}

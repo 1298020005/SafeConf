@@ -1,0 +1,115 @@
+{
+  "schema": "safeconf_orion_expanded_bank_pretruth_queue_recipe_v1",
+  "status": "PREPARED_NOT_ACTIVATED",
+  "wait_status_file": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v2/STATUS.json",
+  "ready_status": "VALIDATION_QUALIFIED_AND_RISK_PREDICTIONS_FROZEN_TEST_TRUTH_STILL_CLOSED",
+  "hard_stop_statuses": [
+    "UPSTREAM_NOT_QUALIFIED_NO_FORMAL_RISK_TEST_OR_TEST_OPEN",
+    "FAILED_OR_BOUNDED_INCOMPLETE",
+    "COMPETENCE_DONE_SCHEMA_REQUIRES_PARENT_READ"
+  ],
+  "poll_seconds": 30,
+  "maximum_wait_seconds": 57600,
+  "before_registration_freeze": [
+    "Require actual competence/COMPETENCE_RESULT.json status PASS, passes_competence true, same scientific SHA6b8 and no TESTtruth",
+    "Require actual original2008 risk_seal/ARTIFACT_HASHES.json plus FROZEN_PRETEST_COMPARISON.json immutable and hash-valid",
+    "Require exact final helper/sealer/chain review PASS before queue activation",
+    "Materialize bytes and SHA256 for every registration binding; placeholders are forbidden in executable registration",
+    "Preserve original followthrough risk_seal and its artifact hashes as a separate archive; never add its unsupported NaN scores to expanded primary"
+  ],
+  "implementation_bindings": {
+    "extension_chain": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_orion_public_bank_extension_chain_agent.py",
+      "sha256": "2df89381e10075ccad73c3072dba610a77159257f80c8adf5162a1bc63ef1dff",
+      "bytes": 19145
+    },
+    "extension_helper": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/orion_public_bank_extension.py",
+      "sha256": "9857b96b98460346bce334313c1a212466c85dc450c07f16e5d934e1ef045454",
+      "bytes": 24582
+    },
+    "extension_sealer": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/seal_safeconf_orion_public_bank_extension_agent.py",
+      "sha256": "81ca3f44f147880b19fc9b8225ac8c63572e9a44dfc78e1d6d2208b3770b0414",
+      "bytes": 7596
+    },
+    "base_risk_math": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/seal_safeconf_orion_source_risk_agent.py",
+      "sha256": "8b69e6ce29dc92aa34150b3b08aac62ce8333a10f84ec432a39d0e81ffc64482",
+      "bytes": 28837
+    },
+    "base_test_reader": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/evaluate_safeconf_orion_guarded_test_agent.py",
+      "sha256": "852fcd764b567a63f04c4a5539a118c8a715f664bf534184018010ac269087b2",
+      "bytes": 35943
+    },
+    "base_risk_evaluator": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/evaluate_safeconf_orion_frozen_risk_agent.py",
+      "sha256": "dec8f056918ac5626eb12732eec3cc07041eb3680cc6addd6d9f18b32d1f486c",
+      "bytes": 22944
+    },
+    "base_once_only_coordinator": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_orion_registered_evaluation_followthrough.py",
+      "sha256": "f08f27279d8a0f45f67ba97d539bfbe27ed9351a75fd57c1eaab57a91c5ece85",
+      "bytes": 11352
+    }
+  },
+  "new_runtime_root": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v1",
+  "seal_registration_path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v1/SEAL_REGISTRATION.json",
+  "registration_schema_template": {
+    "schema": "safeconf_orion_public_bank_extension_seal_registration_v1",
+    "implementation_bindings": {
+      "extension_sealer": {
+        "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/seal_safeconf_orion_public_bank_extension_agent.py",
+        "sha256": "81ca3f44f147880b19fc9b8225ac8c63572e9a44dfc78e1d6d2208b3770b0414",
+        "bytes": 7596
+      },
+      "extension_helper": {
+        "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/orion_public_bank_extension.py",
+        "sha256": "9857b96b98460346bce334313c1a212466c85dc450c07f16e5d934e1ef045454",
+        "bytes": 24582
+      }
+    },
+    "extension_contract": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v3_sorted_csr/PUBLIC_BANK_EXPANSION_CONTRACT.json",
+      "sha256": "0b6b9b86ad18da6f748ff4fc7cca4e20253c6b43a2d9533bb2b585664c79487f"
+    },
+    "bank_manifest": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v2/PUBLIC_BANK_MANIFEST.json",
+      "sha256": "8053a6118bc2e3cace841e1498cee3c1366ce5b49e9c79328e7cd34a180b6607"
+    },
+    "base_comparison_manifest": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v2/FROZEN_PRETEST_COMPARISON.json",
+      "sha256": "MATERIALIZE_FROM_ACTUAL_READY_FILE_BEFORE_REGISTRATION_FREEZE"
+    }
+  },
+  "pretruth_only_stages": [
+    {
+      "argv": [
+        "/home/miniconda/bin/python",
+        "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/seal_safeconf_orion_public_bank_extension_agent.py",
+        "--registration",
+        "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v1/SEAL_REGISTRATION.json",
+        "--output",
+        "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v1/expanded_risk_seal"
+      ]
+    },
+    {
+      "argv": [
+        "/home/miniconda/bin/python",
+        "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_orion_public_bank_extension_chain_agent.py",
+        "prepare-comparison",
+        "--seal",
+        "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v1/expanded_risk_seal",
+        "--output",
+        "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v1/expanded_comparison"
+      ]
+    }
+  ],
+  "then_stop_status": "EXPANDED_BANK_SCORES_COMPARISON_FROZEN_TEST_TRUTH_CLOSED_AWAIT_ACTUAL_ROOT_REVIEW",
+  "actual_TEST_open_in_this_recipe": false,
+  "new_fits": 0,
+  "postseal_root_review_schema": "safeconf_orion_public_bank_extension_final_review_v1",
+  "postseal_outer_operation_schema": "safeconf_orion_extended_bank_postseal_test_operation_v1",
+  "canonical_once_claim": "/home/yyf/runtime_artifacts/safeconf_research_20261001/ORION_REGISTERED_TEST_FIRST_OPEN_SCOPE.json"
+}

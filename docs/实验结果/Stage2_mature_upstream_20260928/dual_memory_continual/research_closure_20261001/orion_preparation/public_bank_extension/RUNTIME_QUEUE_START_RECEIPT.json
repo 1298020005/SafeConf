@@ -1,0 +1,51 @@
+{
+  "schema": "safeconf_orion_pretruth_extension_queue_started_v1",
+  "status": "ROOT_AUTHORIZED_PRETRUTH_ONLY_QUEUE_ACTIVE",
+  "process": {
+    "pid": 424742,
+    "scope": "WAIT_ACTUAL_COMPETENCE_THEN_PRETRUTH_SEAL_COMPARISON_ONLY",
+    "actual_TEST_open_authorized": false,
+    "argv": [
+      "/home/miniconda/bin/python",
+      "-u",
+      "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v1/WAIT_PRETRUTH_EXTENSION.py"
+    ],
+    "runtime_waiter_sha256": "defc67784a673eaf3fe178d1f0f7ab8275ab66d69e14a37ade9ad1d3e211b89b",
+    "registration_sha256": "21815b886e6f041bad4655da764f440d3b5208b5b1038701792b4f0cf30e4da3",
+    "log_path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v1/run.log",
+    "status_path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v1/STATUS.json"
+  },
+  "process_binding": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v1/PROCESS.json",
+    "bytes": 756,
+    "sha256": "ce8f22408afa5a717bc557c97ecb9833e712751c31272ff567d50e2dcbb082c2"
+  },
+  "wait_registration": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v1/WAIT_REGISTRATION.json",
+    "bytes": 1500,
+    "sha256": "21815b886e6f041bad4655da764f440d3b5208b5b1038701792b4f0cf30e4da3"
+  },
+  "runtime_waiter": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v1/WAIT_PRETRUTH_EXTENSION.py",
+    "bytes": 10368,
+    "sha256": "defc67784a673eaf3fe178d1f0f7ab8275ab66d69e14a37ade9ad1d3e211b89b"
+  },
+  "reviewed_doc_waiter_source": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/public_bank_extension/WAIT_PRETRUTH_EXTENSION.py",
+    "bytes": 10368,
+    "sha256": "defc67784a673eaf3fe178d1f0f7ab8275ab66d69e14a37ade9ad1d3e211b89b"
+  },
+  "initial_status": {
+    "schema": "safeconf_orion_pretruth_extension_waiter_status_v1",
+    "status": "WAITING_ACTUAL_ORIGINAL_COMPETENCE_AND_SEAL",
+    "pid": 424742,
+    "TEST_truth_opened": false,
+    "first_open_claim_created": false,
+    "new_fits": 0,
+    "stages": [],
+    "updated_utc": "2026-10-01T22:06:15.705304+00:00"
+  },
+  "actual_TEST_open_authorized": false,
+  "first_open_claim_authorized": false,
+  "new_fits": 0
+}

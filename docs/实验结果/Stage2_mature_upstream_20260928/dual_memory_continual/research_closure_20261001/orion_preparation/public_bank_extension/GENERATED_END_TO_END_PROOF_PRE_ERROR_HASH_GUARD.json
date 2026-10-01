@@ -1,0 +1,106 @@
+{
+  "status": "GENERATED_COMPLETE_EXTENSION_CHAIN_PASS",
+  "elapsed_seconds": 26.57127878908068,
+  "implementation_bindings": {
+    "extension_chain": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_orion_public_bank_extension_chain_agent.py",
+      "sha256": "12e94432a88505188b732c178cfab0e38779e7129abd35b0ae75e6fb9b46a145",
+      "bytes": 18608
+    },
+    "extension_helper": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/orion_public_bank_extension.py",
+      "sha256": "9857b96b98460346bce334313c1a212466c85dc450c07f16e5d934e1ef045454",
+      "bytes": 24582
+    },
+    "extension_sealer": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/seal_safeconf_orion_public_bank_extension_agent.py",
+      "sha256": "81ca3f44f147880b19fc9b8225ac8c63572e9a44dfc78e1d6d2208b3770b0414",
+      "bytes": 7596
+    },
+    "base_risk_math": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/seal_safeconf_orion_source_risk_agent.py",
+      "sha256": "8b69e6ce29dc92aa34150b3b08aac62ce8333a10f84ec432a39d0e81ffc64482",
+      "bytes": 28837
+    },
+    "base_test_reader": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/evaluate_safeconf_orion_guarded_test_agent.py",
+      "sha256": "852fcd764b567a63f04c4a5539a118c8a715f664bf534184018010ac269087b2",
+      "bytes": 35943
+    },
+    "base_risk_evaluator": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/evaluate_safeconf_orion_frozen_risk_agent.py",
+      "sha256": "dec8f056918ac5626eb12732eec3cc07041eb3680cc6addd6d9f18b32d1f486c",
+      "bytes": 22944
+    },
+    "base_once_only_coordinator": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_orion_registered_evaluation_followthrough.py",
+      "sha256": "f08f27279d8a0f45f67ba97d539bfbe27ed9351a75fd57c1eaab57a91c5ece85",
+      "bytes": 11352
+    }
+  },
+  "generated_bank_original_rows": 2008,
+  "generated_original_gene_count": 580,
+  "generated_Source_training_gene_count": 575,
+  "generated_endpoint_gene_count": 3285,
+  "generated_query_count": 204,
+  "generated_TEST_tasks": 202,
+  "generated_TEST_cells_read": 6060,
+  "registered_candidates": 13,
+  "checks": [
+    "real_helper_full_prefix_axis_sets_provenance_audit_validation",
+    "original_math_and_7_generated_fixed_predictors_no_fit",
+    "all_legacy_QUERY_invariance",
+    "coverage_gene_union_101_two_contexts_101_each",
+    "old_reader_outer_schema_rejection",
+    "3_faulty_extension_chains_rejected_before_base_delegation",
+    "root_review_then_exact_base_schema_delegation",
+    "authorize_removes_temporary_base_receipt_no_persistent_delegation",
+    "wrong_output_rejected_before_once_claim",
+    "wrong_once_claim_truth_receipt_rejected_before_error_evaluation",
+    "unchanged_private_reader_skips_TRAIN_VAL_DEV_sentinels",
+    "complete_wrapper_truth_to_original_evaluator",
+    "expanded_primary_keeps13_methods_original2008_NaNs_only_separate_archive",
+    "once_only_scope_second_registration_rejected",
+    "all_production_code_bytes_unchanged"
+  ],
+  "fixture_only_constant_substitutions": [
+    "synthetic_scientific_SHA",
+    "generated_Source_core_default_root",
+    "isolated_once_only_claim_root",
+    "4_bootstrap_draws"
+  ],
+  "serialization_changed_value_counts": {
+    "Magnitude": 0,
+    "P_only_ridge": 0,
+    "P_only_hgb": 0,
+    "Manual_ridge": 204,
+    "Manual_hgb": 204,
+    "Learned_ridge": 204,
+    "Learned_hgb": 204,
+    "Manual_WeightedHistoryDistance": 200,
+    "Learned_WeightedHistoryDistance": 200,
+    "Uniform_DirectRMSE": 200,
+    "Manual_DirectRMSE": 200,
+    "Learned_DirectRMSE": 200
+  },
+  "serialization_maximum_default_parser_gaps": {
+    "Magnitude": 0.0,
+    "P_only_ridge": 0.0,
+    "P_only_hgb": 0.0,
+    "Manual_ridge": 5.551115123125783e-17,
+    "Manual_hgb": 5.551115123125783e-17,
+    "Learned_ridge": 5.551115123125783e-17,
+    "Learned_hgb": 5.551115123125783e-17,
+    "Manual_WeightedHistoryDistance": 5.551115123125783e-17,
+    "Learned_WeightedHistoryDistance": 5.551115123125783e-17,
+    "Uniform_DirectRMSE": 5.551115123125783e-17,
+    "Manual_DirectRMSE": 5.551115123125783e-17,
+    "Learned_DirectRMSE": 5.551115123125783e-17
+  },
+  "production_bootstrap_draws_remain": 5000,
+  "new_fits": 0,
+  "actual_Source_expression_read": false,
+  "actual_Orion_prediction_or_expression_read": false,
+  "actual_TEST_access": false,
+  "temporary_generated_arrays_removed": true
+}

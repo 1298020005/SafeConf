@@ -1,0 +1,20 @@
+{
+  "schema": "safeconf_owned_review_files_v1",
+  "owner": "external_scientific_gate_review",
+  "created_utc": "2026-10-01T22:03:29.628181+00:00",
+  "owned_files": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/public_bank_extension_independent_review_v1/FINAL_ADAPTER_CHAIN_REVIEW.json",
+      "bytes": 9042,
+      "sha256": "b39093a42a5afd27be491afd7c54c3fba414e28733eb5f013f0890000a66bfe9"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/public_bank_extension_independent_review_v1/WAITER_SCOPE_REVIEW.json",
+      "bytes": 4195,
+      "sha256": "c388634aff6f67833f1d9b62d6f234c7100526f6dc66a7b86c5514ada136275b"
+    }
+  ],
+  "scope": "Only independent reviewer outputs are owned; code, contracts, bank, operational waiter and authored proofs are inputs.",
+  "additional_review_owner": "source_core_preparation_v1",
+  "root_authorized_addition": "Add SHA-bound operational waiter review only; original adapter review remains unchanged."
+}
