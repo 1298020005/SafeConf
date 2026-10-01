@@ -1,0 +1,112 @@
+{
+  "schema": "safeconf_original_common_axis_code_bounded_recovery_audit_v1",
+  "status": "EXACT_ORIGINAL_EXECUTED_SOURCE_NOT_RECOVERED",
+  "created_utc": "2026-10-01T22:40:50.659753+00:00",
+  "target_executed_source_sha256": "70c1f7d625c761796eb9ad8fe9539a24468dfe74d0934c7c07104889ba5bd085",
+  "original_hash_independently_corroborated_by_runtime_run_receipt": true,
+  "recorded_source_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_common_axis_closure.py",
+  "current_source_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_common_axis_closure.py",
+    "bytes": 13905,
+    "sha256": "ccdab9ac97707ff909792fa44daa26310593177c3467eedb25b669b871cdffb0"
+  },
+  "execution_hash_evidence": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/examples_audit_v1/AUDIT.json",
+      "bytes": 47424,
+      "sha256": "7d162b63557ec94409119b6e926ca5160d1e0b14f55fc232c68c5342974221b8"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_axis_closure_run.json",
+      "bytes": 650,
+      "sha256": "0fb5c1a1297ed1ebe93873b34893b23186710b5de447bf4fcc5f20af35a9c2f1"
+    }
+  ],
+  "git_history_candidate": {
+    "commit": "8fa4152ad33985fa0444823652f41d102d50dbb9",
+    "commit_time": "2026-10-01T15:05:11+08:00",
+    "commit_subject": "Audit common-axis risk attribution and literature with strong controls",
+    "path": "tools/scripts/run_safeconf_common_axis_closure.py",
+    "blob": "ebdaf4fdfb566fa43ce2dff74a6c700112147e8b",
+    "bytes": 13905,
+    "sha256": "ccdab9ac97707ff909792fa44daa26310593177c3467eedb25b669b871cdffb0",
+    "matches_original_execution_hash": false,
+    "path_absent_in_parent_commit": true,
+    "all_refs_path_history_returned_only_this_commit_and_blob": true
+  },
+  "known_worktree_path_and_index_checks": [
+    {
+      "worktree": "/home/yyf/proj",
+      "file_exists": false
+    },
+    {
+      "worktree": "/home/yyf/runtime_worktrees/cpu_evidence_20260918",
+      "file_exists": false
+    },
+    {
+      "worktree": "/home/yyf/runtime_worktrees/cpu_stability_20260918",
+      "file_exists": false
+    },
+    {
+      "worktree": "/home/yyf/runtime_worktrees/e205_postprocess_20260915",
+      "file_exists": false
+    },
+    {
+      "worktree": "/home/yyf/runtime_worktrees/e218_multi_hypothesis_20260920",
+      "file_exists": false
+    },
+    {
+      "worktree": "/home/yyf/runtime_worktrees/e219_database_expansion_20260920",
+      "file_exists": false
+    },
+    {
+      "worktree": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921",
+      "file_exists": true,
+      "bytes": 13905,
+      "working_file_sha256": "ccdab9ac97707ff909792fa44daa26310593177c3467eedb25b669b871cdffb0",
+      "index_blob": "ebdaf4fdfb566fa43ce2dff74a6c700112147e8b",
+      "index_blob_sha256": "ccdab9ac97707ff909792fa44daa26310593177c3467eedb25b669b871cdffb0"
+    },
+    {
+      "worktree": "/home/yyf/runtime_worktrees/publication_sprint_20260919",
+      "file_exists": false
+    }
+  ],
+  "bounded_backup_search": {
+    "runtime_root": "/home/yyf/runtime_artifacts/safeconf_research_20261001",
+    "patterns": [
+      "run_safeconf_common_axis_closure",
+      "common_axis_closure",
+      "70c1f7d6",
+      "*.bak*",
+      "*.snapshot*"
+    ],
+    "exact_source_copy_found": false,
+    "adjacent_script_directory_copy_found": false,
+    "known_runtime_worktrees_top_level_backup_snapshot_dirs_found": false,
+    "runtime_run_JSON_found": "common_axis_closure_run.json; contains original code SHA only, no source snapshot",
+    "runtime_log_filename_found": "common_axis_closure_20261001.log; not used to reconstruct source",
+    "compiled_pycache_found": true,
+    "pycache_decompiled_or_used_to_reconstruct_source": false
+  },
+  "search_limits": {
+    "ten_minute_cap": true,
+    "no_broad_home_or_codex_log_scan": true,
+    "no_source_reconstruction_or_candidate_parameter_guesses": true,
+    "all_object_metadata_enumeration": "Attempt timed out at45s; no completed hidden/unreachable object search claimed. Root instructed stop without expanding this scan.",
+    "stop_reason": "Root explicitly limited recovery to verified path history/current blob and known backups; resume only upon concrete new evidence."
+  },
+  "reproducibility_limits": [
+    "The exact70c original executed source bytes remain missing. The tracked8fa/currentccdab source is a different version and is not substituted.",
+    "Exact original fitted model parameters and per-pair weights are not recovered by this code lookup; no inference of those values or whole-matrix complete reproduction claim is made.",
+    "Existing archived results, recipes, known fit scopes and retained inputs remain evidence but do not fill the missing executed-source/parameter/weight artifacts."
+  ],
+  "reviewer_access": {
+    "Source_X_reads": 0,
+    "Orion_numeric_reads": 0,
+    "model_or_fit_execution": 0,
+    "tests": 0,
+    "current_script_overwritten": false
+  },
+  "original_AUDIT_unrecovered_flag_preserved": true
+}

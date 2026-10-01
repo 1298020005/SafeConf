@@ -1,0 +1,30 @@
+{
+  "scope": "two fixed SEEN archived risk-only replay fits",
+  "owned_files": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/replay_safeconf_common_axis_risk_only_agent.py",
+      "sha256": "ffe6baf6b6f75d4c46c59347b5d3c3183367e6c7f40f4745807ea5a0a865ecb5",
+      "bytes": 12036
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/risk_only_replay_v1/REPLAY_RECEIPT.json",
+      "sha256": "dddb9f9f094a883c771e28e81875c0e731aca1f9e5cf18cd31d2622599c04b44",
+      "bytes": 8210
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/risk_only_replay_v1/REPLAY_SUMMARY.csv",
+      "sha256": "42ff0ab9e98b28734eafc27d9ccf8e04dbc991ef5a0356839e3af77ef274dfa7",
+      "bytes": 453
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/risk_only_replay_v1/CSV_PARSE_PROVENANCE_DIAGNOSTIC.json",
+      "bytes": 2190,
+      "sha256": "b3069112f90355fc5a27e0302b4948e972303ff4f5363051dd5bd8ec2d7d982d"
+    }
+  ],
+  "runtime_model_preprocessor_arrays_not_in_git": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_axis_risk_only_replay_20261002_v1",
+  "old_scores_assets_changed": false,
+  "postfit_diagnostic_extra_fits": 0,
+  "raw_scores_gaps_and_receipt_unchanged": true,
+  "diagnostic_claim": "Archived CSV route matches exactly; original70c source and Public learner/pair weights remain unrecovered."
+}

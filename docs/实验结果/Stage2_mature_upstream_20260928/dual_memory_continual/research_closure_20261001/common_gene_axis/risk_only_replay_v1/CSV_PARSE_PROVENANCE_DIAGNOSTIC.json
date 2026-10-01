@@ -1,0 +1,41 @@
+{
+  "schema": "safeconf_archived_risk_CSV_parse_provenance_diagnostic_v1",
+  "status": "COMPLETE",
+  "diagnostic": "Read replayed/archived risk-only outputs, use recorded pandas default CSV write/read then exact round-trip parse. No fit or mathematical tolerance change.",
+  "results": [
+    {
+      "method": "Learned_hgb",
+      "n": 543,
+      "single_default_parser_pass_exact_archived_rows": 543,
+      "single_default_parser_pass_exact_all": true,
+      "single_default_parser_pass_max_gap": 0.0,
+      "write_default_parse_write_roundtrip_exact_archived_rows": 543,
+      "write_default_parse_write_roundtrip_exact_all": true,
+      "write_default_parse_write_roundtrip_max_gap": 0.0
+    },
+    {
+      "method": "Manual_hgb",
+      "n": 543,
+      "single_default_parser_pass_exact_archived_rows": 543,
+      "single_default_parser_pass_exact_all": true,
+      "single_default_parser_pass_max_gap": 0.0,
+      "write_default_parse_write_roundtrip_exact_archived_rows": 543,
+      "write_default_parse_write_roundtrip_exact_all": true,
+      "write_default_parse_write_roundtrip_max_gap": 0.0
+    }
+  ],
+  "replay_predictions_binding": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_axis_risk_only_replay_20261002_v1/RISK_ONLY_REPLAY_PREDICTIONS.csv.gz",
+    "bytes": 18163,
+    "sha256": "c0a666de94368f9123bd571357e214f1c718fc42307b0eab1454f2d01e5f17c8"
+  },
+  "current_commonaxis_source_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_common_axis_closure.py",
+    "bytes": 13905,
+    "sha256": "ccdab9ac97707ff909792fa44daa26310593177c3467eedb25b669b871cdffb0"
+  },
+  "source_observed_sequence": "open_seen_truth_after_prediction_freeze: pd.read_csv(MATRIX_TASK_PREDICTIONS.csv.gz) default; later save_csv writes same risk values back with filled seen truth.",
+  "inference_limit": "Matches a documented current code serialization sequence; original70c source bytes were not recovered. This diagnostic proves an exact numeric CSV route, not original source identity or Public learner reconstruction.",
+  "additional_fits": 0,
+  "upstream_SourceX_Orion_numeric_or_query_error_reads": 0
+}

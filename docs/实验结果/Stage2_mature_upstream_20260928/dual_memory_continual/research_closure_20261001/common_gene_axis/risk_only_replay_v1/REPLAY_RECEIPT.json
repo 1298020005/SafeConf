@@ -1,0 +1,162 @@
+{
+  "schema": "safeconf_common2840_archived_risk_only_replay_v1",
+  "status": "RISK_PORTION_REPLAY_COMPLETED_GAPS_REPORTED_NO_TOLERANCE_CHANGED",
+  "summary": [
+    {
+      "method": "Manual_hgb",
+      "n_Source_records": 3616,
+      "n_Source_tasks": 1808,
+      "n_Source_genes": 575,
+      "n_Source_predictors": 2,
+      "n_query_tasks": 543,
+      "exact_float_equal_rows": 234,
+      "exact_float_equal_all": false,
+      "max_absolute_gap": 8.326672684688674e-17,
+      "mean_absolute_gap": 2.990241571849524e-17,
+      "RMSE_gap": 4.093315994757544e-17,
+      "original_model_parameter_artifact_available": false,
+      "replayed_model_parameter_binding": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_axis_risk_only_replay_20261002_v1/Manual_hgb.joblib",
+        "sha256": "641bbda2b8c75ab2bc629bf4aa9369240eb6893240cfb7235cfa29da486d6511",
+        "bytes": 228396
+      },
+      "preprocessor_binding": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_axis_risk_only_replay_20261002_v1/Manual_PREPROCESSOR.json",
+        "sha256": "e3b53731957bd814b48bc2c41620a513a1adeceaea9711ccddecc95f082d2949",
+        "bytes": 1998
+      }
+    },
+    {
+      "method": "Learned_hgb",
+      "n_Source_records": 3616,
+      "n_Source_tasks": 1808,
+      "n_Source_genes": 575,
+      "n_Source_predictors": 2,
+      "n_query_tasks": 543,
+      "exact_float_equal_rows": 93,
+      "exact_float_equal_all": false,
+      "max_absolute_gap": 9.71445146547012e-17,
+      "mean_absolute_gap": 4.2802624550897354e-17,
+      "RMSE_gap": 5.1719532961655863e-17,
+      "original_model_parameter_artifact_available": false,
+      "replayed_model_parameter_binding": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_axis_risk_only_replay_20261002_v1/Learned_hgb.joblib",
+        "sha256": "6a472a2e48971f1e51f0de2a0a94658c151be07c14dbd6054741e888f9741f2a",
+        "bytes": 225372
+      },
+      "preprocessor_binding": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_axis_risk_only_replay_20261002_v1/Learned_PREPROCESSOR.json",
+        "sha256": "81c8363f68864a4096b7d01dd9dc1bcd80c7377cd39af545d9d22c4f64fea487",
+        "bytes": 1993
+      }
+    }
+  ],
+  "Source_ordered_record_sha256": "dea53be88653613b45060ae6459a8243be864e10137ccaae5d6c939776044236",
+  "Source_sorted_record_hash": "4bc634e5232fb652d4c3569cbd63d24bd07d3cb92b4c315f94fff70ccf60b26c",
+  "Source_labels_binding": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_axis_risk_only_replay_20261002_v1/SOURCE_CDF_LABELS.npy",
+    "sha256": "f6b6397ad358b3e477f4983613e065bd59c947c951e98a123d9a0234ca1a084e",
+    "bytes": 29056
+  },
+  "Source_weights_binding": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_axis_risk_only_replay_20261002_v1/SOURCE_GENE_WEIGHTS.npy",
+    "sha256": "f75c758732d873513fdc45caaa7907d32e31c354c03994c62cb30602afe4801e",
+    "bytes": 29056
+  },
+  "Source_records_errors_labels_weights_binding": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_axis_risk_only_replay_20261002_v1/SOURCE_RECORDS_LABELS_WEIGHTS.parquet",
+    "sha256": "fcb1dd8c3b825ba4390d7d63ccd65ad5dc3c28ea7c70d377548abac2f16fe30a",
+    "bytes": 66982
+  },
+  "config_binding": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_axis_risk_only_replay_20261002_v1/CONFIG.json",
+    "sha256": "0c0d2b1b58bb1f395e2635b7d74b3ef703c6689d58e9da30ed0b63042f3c7b2f",
+    "bytes": 5096
+  },
+  "CDF_budget_audit_binding": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_axis_risk_only_replay_20261002_v1/REBUILT_SOURCE_CDF_AUDIT.csv",
+    "sha256": "1bcae9ac31e3df63920cdc3c3754862de0783109776d78d6635264c40108fda7",
+    "bytes": 3071
+  },
+  "artifact_registry": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_axis_risk_only_replay_20261002_v1/ARTIFACT_HASHES.json",
+    "sha256": "a2963264421cddbd520572eeb8362fa96b4c8893b9f6500eb29a990a7baec0f9",
+    "bytes": 2460
+  },
+  "input_bindings": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/replay_safeconf_common_axis_risk_only_agent.py",
+      "sha256": "ffe6baf6b6f75d4c46c59347b5d3c3183367e6c7f40f4745807ea5a0a865ecb5",
+      "bytes": 12036
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/research.py",
+      "sha256": "22a02a79d59f1d852870efb9dc1afe229f150c5db75e5de735f7bfcc1f613887",
+      "bytes": 11094
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/contracts.py",
+      "sha256": "e7c4b329ec8a333dbbb7741707b229aa8e8df0290d15e8a2c0290c665daf4e06",
+      "bytes": 4021
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/learners.py",
+      "sha256": "33e3eba65e31cc8372a89ad6356c353d972ca03b105307c916addbebce98ee63",
+      "bytes": 6160
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/COMMON_AXIS_PREDICTION_FREEZE.json",
+      "sha256": "913b952d9397d2f93217079ecc8e016349379b77caad92a54753c5c092e5014e",
+      "bytes": 638
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/GENE_IDS.json",
+      "sha256": "be612f9c4638146b41eee26f607ab12fbed53b524cda7a76eee36ca554c28f97",
+      "bytes": 26427
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/INFORMATION_BUDGET_LEDGER.csv",
+      "sha256": "8876e5dbfedbf10ec4ff95206d654c0a8324350673ce6cc6befa141f1adbedee",
+      "bytes": 44892
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/CDF_AUDIT.csv",
+      "sha256": "f65fe7dcb09c588183aa40444cf2e4f45b1ef084a3ca90742b9b7c0e244aee8f",
+      "bytes": 17411
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/MATRIX_TASK_PREDICTIONS.csv.gz",
+      "sha256": "73eff7366c0e64d96d57e6effe2d12061890a3db43f47d4d403204a8dff9504c",
+      "bytes": 5606076
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/source_Manual.parquet",
+      "sha256": "7f8e9bba115d76557d41027fe84d149521d82422c94adcfcc84315d761771273",
+      "bytes": 961735
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/external_Manual.parquet",
+      "sha256": "a1bed48001fcd64578060b93e0a95e7f9c3e0e15f1d024b970aa3c45d27fe11e",
+      "bytes": 159990
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/source_Learned.parquet",
+      "sha256": "581891b9f3571a5a89a01e943a00034aa8194aedff000db645d368c3713d726a",
+      "bytes": 961984
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/external_Learned.parquet",
+      "sha256": "fa1e373edc04cb18bce0b4a993c57877643c33fe623ec1dc75973f44062c8988",
+      "bytes": 164106
+    }
+  ],
+  "fits_performed": 2,
+  "upstream_models_Public_biology_learner_or_priors_fitted": 0,
+  "Source_raw_X_Orion_numeric_or_query_error_reads": 0,
+  "saved_model_and_preprocessor_reload_exact": true,
+  "original70c_source_recovered": false,
+  "scope": "Only TxPert-to-McFaline risk portion from already archived common2840 features and fixed current recipe. No Public learner/pair-weight/source-code recovery claim; no original asset replacement/new-method promotion.",
+  "elapsed_seconds": 1.2055532447993755,
+  "cpu_seconds": 3.451657,
+  "peak_rss_bytes": 262823936
+}

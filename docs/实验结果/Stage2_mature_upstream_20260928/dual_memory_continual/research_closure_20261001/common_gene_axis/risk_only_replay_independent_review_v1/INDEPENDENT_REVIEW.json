@@ -1,0 +1,180 @@
+{
+  "schema": "safeconf_common2840_risk_only_replay_independent_review_v1",
+  "status": "PASS",
+  "created_utc": "2026-10-01T22:54:37.511675+00:00",
+  "scope": "Independent verification of two new archived-risk replay model artifacts and one necessary predict pass per model; no fit, raw-expression access, query-error load or wide algorithm testing.",
+  "prediction_verification": [
+    {
+      "method": "Manual_hgb",
+      "query_tasks": 543,
+      "independent_model_preprocessor_reload_and_raw_prediction_bytes_equal_saved": true,
+      "raw_vs_archived_exact_equal_rows": 234,
+      "raw_vs_archived_max_absolute_gap": 8.326672684688674e-17,
+      "documented_default_CSV_parse_vs_archived_exact_equal_rows": 543,
+      "documented_default_CSV_parse_vs_archived_max_gap": 0.0,
+      "replayed_model": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_axis_risk_only_replay_20261002_v1/Manual_hgb.joblib",
+        "sha256": "641bbda2b8c75ab2bc629bf4aa9369240eb6893240cfb7235cfa29da486d6511",
+        "bytes": 228396
+      },
+      "saved_preprocessor": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_axis_risk_only_replay_20261002_v1/Manual_PREPROCESSOR.json",
+        "sha256": "e3b53731957bd814b48bc2c41620a513a1adeceaea9711ccddecc95f082d2949",
+        "bytes": 1998
+      }
+    },
+    {
+      "method": "Learned_hgb",
+      "query_tasks": 543,
+      "independent_model_preprocessor_reload_and_raw_prediction_bytes_equal_saved": true,
+      "raw_vs_archived_exact_equal_rows": 93,
+      "raw_vs_archived_max_absolute_gap": 9.71445146547012e-17,
+      "documented_default_CSV_parse_vs_archived_exact_equal_rows": 543,
+      "documented_default_CSV_parse_vs_archived_max_gap": 0.0,
+      "replayed_model": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_axis_risk_only_replay_20261002_v1/Learned_hgb.joblib",
+        "sha256": "6a472a2e48971f1e51f0de2a0a94658c151be07c14dbd6054741e888f9741f2a",
+        "bytes": 225372
+      },
+      "saved_preprocessor": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_axis_risk_only_replay_20261002_v1/Learned_PREPROCESSOR.json",
+        "sha256": "81c8363f68864a4096b7d01dd9dc1bcd80c7377cd39af545d9d22c4f64fea487",
+        "bytes": 1993
+      }
+    }
+  ],
+  "verified_budgets_and_invariants": {
+    "author_actual_HGB_fits": 2,
+    "Source_records": 3616,
+    "Source_biological_tasks": 1808,
+    "Source_gene_clusters": 575,
+    "Source_upstream_architectures": 2,
+    "Source_upstream_families": 1,
+    "Source_only_CDF_groups": 8,
+    "Source_ordered_record_hash": "dea53be88653613b45060ae6459a8243be864e10137ccaae5d6c939776044236",
+    "Source_sorted_record_hash": "4bc634e5232fb652d4c3569cbd63d24bd07d3cb92b4c315f94fff70ccf60b26c",
+    "rederived_midrank_labels_exact_saved": true,
+    "rederived_inverse_gene_record_weights_exact_saved": true,
+    "Source_preprocessor_median_center_scale_exact_rederived_without_fit": true,
+    "13numeric_columns_and13missing_flags": true,
+    "fixed_HGB_params_and_seed20260930_exact_model_JSON": true,
+    "original_archive_query_axes_and543risk_rows_exact": true,
+    "all_author_owned_and_runtime_artifact_hashes_verified": true,
+    "all_original_input_code_and_archive_hashes_verified_unchanged": true,
+    "target_risk_CDF_feedback_fit_labels": 0
+  },
+  "CDF_metadata_parser_note": {
+    "different_dtype_only_field": "budget",
+    "replay_CSV_dtype": "int64",
+    "archive_CSV_dtype": "float64",
+    "values": "1 versus1.0, exactly equal numerically; all eight scopes/counts/identity hashes match",
+    "different_value_fields": [],
+    "no_tolerance_adjustment": true
+  },
+  "cost_observation_scope": {
+    "author_elapsed_seconds": 1.2055532447993755,
+    "author_elapsed_scope": "main function start through receipt capture; excludes imports and later receipt writes",
+    "author_CPU_seconds": 3.451657,
+    "author_CPU_scope": "cumulative process CPU at capture, includes imports; not a sum of isolated fit durations or an exact final process total",
+    "author_peak_RSS_bytes_at_capture": 262823936,
+    "new_upstream_Public_biology_prior_fits": 0,
+    "GPU_calls": 0,
+    "reviewer_new_fits": 0,
+    "reviewer_model_reloads": 2,
+    "reviewer_posthoc_predict_passes": 2,
+    "queries_per_pass": 543,
+    "reviewer_predict_timing_not_retained": true
+  },
+  "verification_execution_note": "The first verification performed both reload/predict passes and all numeric/budget/hash checks. Its final all-check assertion reported only a dataframe dtype equality failure in CDF budget metadata. A subsequent metadata-only check showed zero value differences and budget int64 versus float64. Predict was not repeated and no fit was run.",
+  "bindings": {
+    "author_owned_manifest": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/risk_only_replay_v1/OWNED_FILES.json",
+      "bytes": 1806,
+      "sha256": "42857b58074cd32167e90623509725d36dd143c0c1777d07f7e58c09f5558a5c"
+    },
+    "author_replay_receipt": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/risk_only_replay_v1/REPLAY_RECEIPT.json",
+      "bytes": 8210,
+      "sha256": "dddb9f9f094a883c771e28e81875c0e731aca1f9e5cf18cd31d2622599c04b44"
+    },
+    "replay_code": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/replay_safeconf_common_axis_risk_only_agent.py",
+      "bytes": 12036,
+      "sha256": "ffe6baf6b6f75d4c46c59347b5d3c3183367e6c7f40f4745807ea5a0a865ecb5"
+    },
+    "current_recipe": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/research.py",
+      "bytes": 11094,
+      "sha256": "22a02a79d59f1d852870efb9dc1afe229f150c5db75e5de735f7bfcc1f613887"
+    },
+    "CDF_contract_code": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/contracts.py",
+      "bytes": 4021,
+      "sha256": "e7c4b329ec8a333dbbb7741707b229aa8e8df0290d15e8a2c0290c665daf4e06"
+    },
+    "preprocessor_code": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/learners.py",
+      "bytes": 6160,
+      "sha256": "33e3eba65e31cc8372a89ad6356c353d972ca03b105307c916addbebce98ee63"
+    },
+    "config": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_axis_risk_only_replay_20261002_v1/CONFIG.json",
+      "bytes": 5096,
+      "sha256": "0c0d2b1b58bb1f395e2635b7d74b3ef703c6689d58e9da30ed0b63042f3c7b2f"
+    },
+    "labels": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_axis_risk_only_replay_20261002_v1/SOURCE_CDF_LABELS.npy",
+      "sha256": "f6b6397ad358b3e477f4983613e065bd59c947c951e98a123d9a0234ca1a084e",
+      "bytes": 29056
+    },
+    "weights": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_axis_risk_only_replay_20261002_v1/SOURCE_GENE_WEIGHTS.npy",
+      "sha256": "f75c758732d873513fdc45caaa7907d32e31c354c03994c62cb30602afe4801e",
+      "bytes": 29056
+    },
+    "records_labels_weights": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_axis_risk_only_replay_20261002_v1/SOURCE_RECORDS_LABELS_WEIGHTS.parquet",
+      "sha256": "fcb1dd8c3b825ba4390d7d63ccd65ad5dc3c28ea7c70d377548abac2f16fe30a",
+      "bytes": 66982
+    },
+    "CDF_audit": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_axis_risk_only_replay_20261002_v1/REBUILT_SOURCE_CDF_AUDIT.csv",
+      "sha256": "1bcae9ac31e3df63920cdc3c3754862de0783109776d78d6635264c40108fda7",
+      "bytes": 3071
+    },
+    "CSV_parse_provenance_diagnostic": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/risk_only_replay_v1/CSV_PARSE_PROVENANCE_DIAGNOSTIC.json",
+      "bytes": 2190,
+      "sha256": "b3069112f90355fc5a27e0302b4948e972303ff4f5363051dd5bd8ec2d7d982d"
+    },
+    "runtime_registry": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_axis_risk_only_replay_20261002_v1/ARTIFACT_HASHES.json",
+      "sha256": "a2963264421cddbd520572eeb8362fa96b4c8893b9f6500eb29a990a7baec0f9",
+      "bytes": 2460
+    },
+    "saved_replay_predictions": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_axis_risk_only_replay_20261002_v1/RISK_ONLY_REPLAY_PREDICTIONS.csv.gz",
+      "bytes": 18163,
+      "sha256": "c0a666de94368f9123bd571357e214f1c718fc42307b0eab1454f2d01e5f17c8"
+    },
+    "original_source_recovery_audit": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/original_common_axis_code_recovery_audit_v1/RECOVERY_AUDIT.json",
+      "bytes": 5171,
+      "sha256": "c10b05734a6fe1f7f343af79cdaf2c85f1c325849b391ebf4733dd2d21112fb8"
+    }
+  },
+  "access_limits": {
+    "raw_Source_X_read": false,
+    "Orion_numeric_read": false,
+    "external_query_true_errors_loaded": false,
+    "Source_training_error_columns_read_for_CDF_verification": true,
+    "original_assets_modified": false,
+    "new_fit_or_test_suite_run_by_reviewer": false
+  },
+  "scientific_limits": [
+    "Manual raw maximum gap8.326672684688674e-17 and Learned9.71445146547012e-17 remain recorded; raw replay output is not declared byte-identical to the archived parsed scores.",
+    "The default CSV parser route produces exact543-row agreement per method; this does not establish original fitted-model identity.",
+    "These persisted models and preprocessing artifacts are new risk-only replay artifacts. Original70c executed source and original parameter serialization remain unrecovered.",
+    "Public learner, biological prior construction and per-pair retrieval weights were not reconstructed or fitted. No whole original matrix reproduction, efficacy or method promotion claim follows."
+  ]
+}
