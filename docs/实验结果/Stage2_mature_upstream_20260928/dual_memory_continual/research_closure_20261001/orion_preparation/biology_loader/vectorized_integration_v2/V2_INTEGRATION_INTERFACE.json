@@ -1,0 +1,57 @@
+{
+  "schema": "safeconf_orion_vectorized_numeric_integration_v2",
+  "status": "READY_SYNTHETIC_AND_INDEPENDENT_REVIEW_PASS_REAL_V2_UNOPENED",
+  "backend_identity": {
+    "schema": "safeconf_orion_vectorized_numeric_integration_v2",
+    "original_validation_loader_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/build_safeconf_orion_allowed_biology_agent.py",
+    "original_validation_loader_sha256": "cdf261ffcae854f49d469437492a12b7f835aae7b720bbe565044d8a89369e8b",
+    "original_structural_reader_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/probe_safeconf_private_parquet_agent.py",
+    "original_structural_reader_sha256": "3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312",
+    "actual_wrapper_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/build_safeconf_orion_allowed_biology_vectorized_agent.py",
+    "actual_wrapper_sha256": "6135469b10d5e200f4654a53f2a750fc9cc4c356037ce6abdfddd95030b45d1f",
+    "actual_numeric_backend_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/probe_safeconf_private_parquet_vectorized_agent.py",
+    "actual_numeric_backend_sha256": "636455cb30fc0e8c8ce6ac92db82756eff7508322e92862cf23ffad861d2e435",
+    "actual_numeric_backend_version": "PRIVATE_NUMERIC_BYTE_SELECTION_V2",
+    "scientific_normalization_mapping_QC_or_model_rules_changed": false
+  },
+  "additional_implementation_bindings": {
+    "biology_integration_v2": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/build_safeconf_orion_allowed_biology_vectorized_agent.py",
+      "sha256": "6135469b10d5e200f4654a53f2a750fc9cc4c356037ce6abdfddd95030b45d1f"
+    },
+    "numeric_reader_backend_v2": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/probe_safeconf_private_parquet_vectorized_agent.py",
+      "sha256": "636455cb30fc0e8c8ce6ac92db82756eff7508322e92862cf23ffad861d2e435"
+    }
+  },
+  "additional_permit_field": {
+    "vectorized_backend_scope": "safeconf_orion_vectorized_numeric_integration_v2"
+  },
+  "preserve_original_permit_bindings": [
+    "loader=cdf261ff...",
+    "reader=3e7c506f...",
+    "original_scientific_reader9fd3c565_to_original_guard3e7c506f technical override"
+  ],
+  "pilot_operation_additional_fields": {
+    "actual_wrapper_sha256": "6135469b10d5e200f4654a53f2a750fc9cc4c356037ce6abdfddd95030b45d1f",
+    "actual_numeric_backend_sha256": "636455cb30fc0e8c8ce6ac92db82756eff7508322e92862cf23ffad861d2e435",
+    "actual_numeric_backend_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/probe_safeconf_private_parquet_vectorized_agent.py"
+  },
+  "CLI": [
+    "pilot --contract SCIENTIFIC_CONTRACT --permit NEW_IMMUTABLE_V2_PERMIT --operation NEW_IMMUTABLE_PILOT_RECEIPT --output NEW_V2_PILOT_JSON",
+    "aggregate --contract SCIENTIFIC_CONTRACT --permit NEW_IMMUTABLE_V2_PERMIT --output NEW_VERSIONED_V2_RUNTIME"
+  ],
+  "synthetic_proof": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/vectorized_integration_v2/synthetic_final_v3/SYNTHETIC_INTEGRATION_V2_PROOF.json",
+  "deadline_proof": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/vectorized_integration_v2/deadline_probe_v1/DEADLINE_PROOF.json",
+  "actual_parser_reporting": "BIOLOGY_MANIFEST.executed_numeric_parser_sha256/path and numeric_backend_integration; each fileaudit backendSHA; VECTOR_BACKEND_ACCESS_AUDIT.json",
+  "guard_reporting": "BIOLOGY_MANIFEST.loader_sha256/reader_sha256 remain true original validation/math/structural guard identities and are explicitly described as such",
+  "no_private_numeric_counter_reporting": true,
+  "old_runtime_preserved": true,
+  "no_actual_v2_Orion_expression_read": true,
+  "scientific_QC_normalization_source_biology_risk_models_unchanged": true,
+  "hard_file_deadline": "600seconds default via SIGALRM covering whole numeric pass including private trailingpages",
+  "resource_cap": "original declared6GiB RSS and1GiBchunk/128MiBpage guards preserved; no unstated RAMamendment",
+  "independent_review_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/private_reader_probe/vectorized_v2/V2_TECHNICAL_REVIEW.json",
+  "independent_review_sha256": "fd6a318657144b8fa59d9193c928c5646d477c2550481cb53ddb6b7edb01d030",
+  "final_bridge_sha256": "dcc7d6afcd812d89ddb372e511cb9607e216da8c1f57e484317db4b3eda52a38"
+}

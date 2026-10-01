@@ -64,3 +64,11 @@ At 10% budget, the feedback cohort is too small for two leaves of at least 20 re
 - Single-pass released vectors and metadata cover 354208 cells, including 187628 primary cells for all 1808 tasks. Full released NPY file SHA256 and cell-stream SHA256 match their registered truth seals; all primary centroids and common-axis effects reproduce exactly using the original float32 conversion rule. The large original H5AD was independently spot-checked on 128 cells, not fully rehashed.
 - Conditional iid treated-cell sampling MSE is about 12%–30% of observed mean MSE depending on context/model; the observed batch-cluster calculation is similar. Controls are fixed and their uncertainty is excluded; guide identities and independent biological replicate guarantees are absent.
 - Do not call the remainder a proved latent biological error component. Do not generalize the McFaline sampling pattern to every Source domain. All fixed-count diagnostics remain retrospective sensitivities, not replacement primary metrics.
+
+
+## Orion authorized reader execution timeout, 2026-10-02
+
+- Actualv1jobPID162145 exited1 after1497.943seconds. FullpipelineSTATUS and traceback confirm per-file600s time-bound at loader line385, not a stale polling timeout. HCT116_Batch1 finished; HCT116_Batch10 token spool is607,513,264bytes. No test numeric materialization or model fitting occurred.
+- Hypothesis: the per-value Python decoder dominates large lists. Independent fixed synthetic SNAPPY workload1000cells×5000values×2columns showed v1=15.407seconds and vectorized byte-selectionv2=0.727seconds (21.2×). This is a synthetic measured speedup, not yet wholepipeline timing.
+- One technical repair: vectorize structural row routing and copy ONLYauthorized8-byte payload/dictionary blocks before INT64/DOUBLE typing. The version1code, failedstage and Source/upper/math/evaluation/scientificcontract hashes remain preserved. No algorithm, labels, split, normalization or test boundary is tuned.
+- Newbackend/wrapper will require independentprivacy/normalization tests and a separate hash-bound permit/outputversion before restart. Model gates remainpending.

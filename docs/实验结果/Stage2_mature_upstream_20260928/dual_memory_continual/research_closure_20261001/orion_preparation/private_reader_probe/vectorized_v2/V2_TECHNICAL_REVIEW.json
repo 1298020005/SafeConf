@@ -1,0 +1,37 @@
+{
+  "status": "PASS_PRIVATE_SAFE_V2_TECHNICAL_REPAIR",
+  "actual_numeric_backend_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/probe_safeconf_private_parquet_vectorized_agent.py",
+  "actual_numeric_backend_sha256": "636455cb30fc0e8c8ce6ac92db82756eff7508322e92862cf23ffad861d2e435",
+  "actual_integration_wrapper_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/build_safeconf_orion_allowed_biology_vectorized_agent.py",
+  "actual_integration_wrapper_sha256": "6135469b10d5e200f4654a53f2a750fc9cc4c356037ce6abdfddd95030b45d1f",
+  "original_reader_and_loader_files_unchanged": true,
+  "original_20_case_review_unchanged": true,
+  "actual_Orion_expression_or_numeric_statistics_read": false,
+  "new_models_algorithms_normalization_scales_or_truth_access": false,
+  "original_privacy_cases_passed": 12,
+  "existing_integration_privacy_cases_passed": 20,
+  "valid_Arrow_verified_cross_page_boundary_cases_passed": 12,
+  "minimum_same_session_5000_value_speedup": 20.369787205827826,
+  "typed_conversion_boundary": "uint8 raw payload/dictionary -> metadata-authorized8byte advanced-index byte copy -> int64/float64 view; no numeric whole-page or dictionary view",
+  "generator_semantics": "original physical indices and allowed list/null/empty/item-null semantics, cross-page continuation and valid emptyV2pages preserved",
+  "wrapper_review": "Original guard/scientific functions unchanged; additional wrapper/backend permit binds checked before raw access; actual backend explicitly attributed before finalcommit; per-file deadline includes private trailing loops; success/failure staging versioned; committed trace excludes private skipped-value/page counts",
+  "production_condition": "Separate exact new readonly permit/operation receipt binding these code hashes required before launch; active old staging must not be overwritten.",
+  "proof_files": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/private_reader_probe/vectorized_v2/TWELVE_CASE_PROOF.json",
+      "sha256": "53c0c40b786cddc981d00475d6043978c92336d16af6c6ee9d9f1605b4c184cc"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/private_reader_probe/vectorized_v2/INTEGRATION_REVIEW.json",
+      "sha256": "e557372ca247ab5d6cd40c3dc886165e2061cbefd13239c386da33cf8bfe2d12"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/private_reader_probe/vectorized_v2/CROSS_PAGE_BOUNDARY_PROOF.json",
+      "sha256": "d5b907874f08da5ba997e3daa14477b5113d976a2266028d56b99025660d47f5"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/private_reader_probe/vectorized_v2/PAIRED_PERFORMANCE_PROOF.json",
+      "sha256": "0cee72087b9ec491a9ef9e5c9bb299276cbaa54b48e50ce4339b90df6e393c7d"
+    }
+  ]
+}

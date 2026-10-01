@@ -1,0 +1,109 @@
+{
+  "schema": "safeconf_orion_explicit_implementation_role_permit_v3",
+  "synthetic_only": false,
+  "expression_row_materialization_permitted": true,
+  "audited_production_integration_approved": true,
+  "test_numeric_materialization_permitted": false,
+  "authorized_roles": [
+    "TRAIN",
+    "TRAIN_CONTROL_SOURCE_SCOPE",
+    "VALIDATION"
+  ],
+  "authorized_contexts": [
+    "HCT116",
+    "HEK293T"
+  ],
+  "reader_guarantee": "PRIVATE_NUMERIC_ROWS_NEVER_MATERIALIZED",
+  "frozen_method_contract_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_METHOD_CONTRACT.json",
+  "frozen_method_contract_sha256": "6b8a26939c8c6134dbf2e8294ee7905fccc2122b570b046f3183a3d2f5caba97",
+  "metadata_root": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1",
+  "raw_root": "/home/yyf/data/safeconf_orion_frozen40_20261002",
+  "metadata_bindings": {
+    "FILE_METADATA_IDENTITY.json": "89901ca8afbb6fe86664c54c5f6c2bab27b21d77f75563395e25c3dd0d9659f6",
+    "GENE_MANIFEST.csv": "eb377ecb5ed1f99e259e6e8154f0edae68065ba36e3eae59ce50c2f72d8b72d4",
+    "gene_metadata.parquet": "33900a0dbaeafb84601c7c8ba7c6642c440774fc3f49613dab11cf1f2bf0fdbf",
+    "PREPARATION_POLICY.json": "594a5aef77684dc99666022c76666100a5c9791082532d00b7c70ddfe1fac3b7"
+  },
+  "implementation_bindings": {
+    "loader": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/build_safeconf_orion_allowed_biology_agent.py",
+      "sha256": "cdf261ffcae854f49d469437492a12b7f835aae7b720bbe565044d8a89369e8b"
+    },
+    "reader": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/probe_safeconf_private_parquet_agent.py",
+      "sha256": "3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312"
+    },
+    "bridge": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/bridge_safeconf_orion_lm_inputs_agent.py",
+      "sha256": "dcc7d6afcd812d89ddb372e511cb9607e216da8c1f57e484317db4b3eda52a38"
+    },
+    "lm_cli": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_orion_lm_blind.R",
+      "sha256": "086fb5489bc88520b1854d0101db117f66f913d7ce94064a6df18772633aaee1"
+    },
+    "biology_integration_v2": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/build_safeconf_orion_allowed_biology_vectorized_agent.py",
+      "sha256": "6135469b10d5e200f4654a53f2a750fc9cc4c356037ce6abdfddd95030b45d1f"
+    },
+    "numeric_reader_backend_v2": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/probe_safeconf_private_parquet_vectorized_agent.py",
+      "sha256": "636455cb30fc0e8c8ce6ac92db82756eff7508322e92862cf23ffad861d2e435"
+    }
+  },
+  "library_sum_check_roles": [
+    "TRAIN",
+    "TRAIN_CONTROL_SOURCE_SCOPE"
+  ],
+  "resource_budgets": {
+    "max_compressed_chunk_bytes": 1073741824,
+    "max_page_uncompressed_bytes": 134217728,
+    "max_page_level_entries": 16777216,
+    "max_resident_bytes": 6442450944,
+    "max_token_spool_bytes_per_file": 4294967296,
+    "max_group_matrix_bytes": 17179869184,
+    "max_seconds_per_file": 600,
+    "max_cells_per_file": 50000
+  },
+  "technical_dependency_overrides": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/probe_safeconf_private_parquet_agent.py",
+      "original_sha256": "9fd3c565a3dc333dd24e287dfb69573277fa5b6bbcec64b084dbeac82636af12",
+      "sha256": "3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312",
+      "reason": "bounded streaming and pre-decompression memory guards; scientific rules unchanged"
+    }
+  ],
+  "issued_utc": "2026-10-01T19:05:08.303883+00:00",
+  "authorization_source": "User approved72h execution:train/validation publicbiology and boundedupstream training; testtruth remains unauthorized by this permit",
+  "independent_review": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/private_reader_probe/INTEGRATION_REVIEW.json",
+    "sha256": "3b8a21b02ba697d3b3d57a8b1de2ff2480f208e8ad214ba08ce6a3f0a0a9ef44",
+    "cases": 20
+  },
+  "approved_operations": [
+    "same128TRAIN/CTRL semanticpilot with vectorizedbyte-selection backend",
+    "samefixed40shard TRAIN/VALIDATION/control aggregation with unchangedscientificmath and exactexecutedbackendidentity",
+    "TRAINonlybinarybridge and fixedpublishedCPUlinear models;validationcompetence only; Sourceonlyriskpretruthseal"
+  ],
+  "private_numeric_values_or_rowvectors_created": false,
+  "validation_library_sum_diagnostics": false,
+  "permanent_test_open_authorized": false,
+  "supersedes_for_future_full_aggregation_only": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_FULL_PIPELINE_ACCESS_PERMIT.json",
+    "sha256": "82a57a5c5ebd7937325d4b84c0659e291405f114869dd41540e29bef67eae25a",
+    "v1failed_stage_and_old_pilot_preserved": true,
+    "scientific_rules_or_data_selection_changed": false
+  },
+  "lm_query_scope": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_lm_bridge_20261002_v1/query_scope_metadata_only/METADATA_ONLY_QUERY_SCOPE.tsv",
+    "sha256": "0fbdc6c431538da8f4c3a8247ce227fe292d709e05d8e032218f99674e32620e",
+    "schema": "identity_only;alluniquelymappedVAL_TESTtargets;noTESTcount_or_coveragefilter"
+  },
+  "vectorized_backend_scope": "safeconf_orion_vectorized_numeric_integration_v2",
+  "vectorized_technical_review": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/private_reader_probe/vectorized_v2/V2_TECHNICAL_REVIEW.json",
+    "sha256": "fd6a318657144b8fa59d9193c928c5646d477c2550481cb53ddb6b7edb01d030",
+    "original_privacy_cases": 12,
+    "integration_cases": 20,
+    "cross_page_cases": 12
+  }
+}

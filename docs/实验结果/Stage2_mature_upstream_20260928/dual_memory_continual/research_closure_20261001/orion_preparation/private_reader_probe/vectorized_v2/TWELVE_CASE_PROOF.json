@@ -1,0 +1,90 @@
+{
+  "vectorized_backend_sha256": "636455cb30fc0e8c8ce6ac92db82756eff7508322e92862cf23ffad861d2e435",
+  "cases": [
+    {
+      "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/synthetic_v1.0_dict0_NONE.parquet",
+      "passed": true,
+      "authorized_count": 936,
+      "all_materialized_rows_authorized": true,
+      "private_sentinel_rejected_before_numeric_view": true
+    },
+    {
+      "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/synthetic_v1.0_dict0_SNAPPY.parquet",
+      "passed": true,
+      "authorized_count": 936,
+      "all_materialized_rows_authorized": true,
+      "private_sentinel_rejected_before_numeric_view": true
+    },
+    {
+      "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/synthetic_v1.0_dict0_ZSTD.parquet",
+      "passed": true,
+      "authorized_count": 936,
+      "all_materialized_rows_authorized": true,
+      "private_sentinel_rejected_before_numeric_view": true
+    },
+    {
+      "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/synthetic_v1.0_dict1_NONE.parquet",
+      "passed": true,
+      "authorized_count": 936,
+      "all_materialized_rows_authorized": true,
+      "private_sentinel_rejected_before_numeric_view": true
+    },
+    {
+      "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/synthetic_v1.0_dict1_SNAPPY.parquet",
+      "passed": true,
+      "authorized_count": 936,
+      "all_materialized_rows_authorized": true,
+      "private_sentinel_rejected_before_numeric_view": true
+    },
+    {
+      "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/synthetic_v1.0_dict1_ZSTD.parquet",
+      "passed": true,
+      "authorized_count": 936,
+      "all_materialized_rows_authorized": true,
+      "private_sentinel_rejected_before_numeric_view": true
+    },
+    {
+      "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/synthetic_v2.0_dict0_NONE.parquet",
+      "passed": true,
+      "authorized_count": 936,
+      "all_materialized_rows_authorized": true,
+      "private_sentinel_rejected_before_numeric_view": true
+    },
+    {
+      "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/synthetic_v2.0_dict0_SNAPPY.parquet",
+      "passed": true,
+      "authorized_count": 936,
+      "all_materialized_rows_authorized": true,
+      "private_sentinel_rejected_before_numeric_view": true
+    },
+    {
+      "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/synthetic_v2.0_dict0_ZSTD.parquet",
+      "passed": true,
+      "authorized_count": 936,
+      "all_materialized_rows_authorized": true,
+      "private_sentinel_rejected_before_numeric_view": true
+    },
+    {
+      "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/synthetic_v2.0_dict1_NONE.parquet",
+      "passed": true,
+      "authorized_count": 936,
+      "all_materialized_rows_authorized": true,
+      "private_sentinel_rejected_before_numeric_view": true
+    },
+    {
+      "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/synthetic_v2.0_dict1_SNAPPY.parquet",
+      "passed": true,
+      "authorized_count": 936,
+      "all_materialized_rows_authorized": true,
+      "private_sentinel_rejected_before_numeric_view": true
+    },
+    {
+      "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/synthetic_v2.0_dict1_ZSTD.parquet",
+      "passed": true,
+      "authorized_count": 936,
+      "all_materialized_rows_authorized": true,
+      "private_sentinel_rejected_before_numeric_view": true
+    }
+  ],
+  "status": "PASS"
+}

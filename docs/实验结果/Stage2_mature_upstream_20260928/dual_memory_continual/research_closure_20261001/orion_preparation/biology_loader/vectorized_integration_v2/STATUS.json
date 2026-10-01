@@ -1,0 +1,18 @@
+{
+  "schema": "safeconf_orion_vectorized_numeric_integration_v2",
+  "status": "READY_SYNTHETIC_AND_INDEPENDENT_REVIEW_PASS_REAL_V2_UNOPENED",
+  "actual_wrapper_sha256": "6135469b10d5e200f4654a53f2a750fc9cc4c356037ce6abdfddd95030b45d1f",
+  "actual_numeric_backend_sha256": "636455cb30fc0e8c8ce6ac92db82756eff7508322e92862cf23ffad861d2e435",
+  "original_loader_sha256": "cdf261ffcae854f49d469437492a12b7f835aae7b720bbe565044d8a89369e8b",
+  "original_reader_sha256": "3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312",
+  "six_arrays_exact_equal": true,
+  "synthetic128pilot_full_EOF": true,
+  "private_counts_sanitized": true,
+  "hard_file_deadline_probe_pass": true,
+  "actual_v2_Orion_expression_read": false,
+  "scientific_rules_changed": false,
+  "old_incomplete_runtime_modified": false,
+  "independent_review_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/private_reader_probe/vectorized_v2/V2_TECHNICAL_REVIEW.json",
+  "independent_review_sha256": "fd6a318657144b8fa59d9193c928c5646d477c2550481cb53ddb6b7edb01d030",
+  "final_bridge_sha256": "dcc7d6afcd812d89ddb372e511cb9607e216da8c1f57e484317db4b3eda52a38"
+}

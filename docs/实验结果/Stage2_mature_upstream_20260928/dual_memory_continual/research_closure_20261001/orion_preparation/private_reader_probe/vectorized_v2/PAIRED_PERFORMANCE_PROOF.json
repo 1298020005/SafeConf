@@ -1,0 +1,36 @@
+{
+  "status": "PAIRED_SPEEDUP_GE5X_PASS",
+  "vectorized_backend_sha256": "636455cb30fc0e8c8ce6ac92db82756eff7508322e92862cf23ffad861d2e435",
+  "old_reader_sha256": "3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312",
+  "real_numeric_pages_or_statistics_read": false,
+  "cases": [
+    {
+      "dictionary": true,
+      "synthetic_cells": 1000,
+      "synthetic_values_per_cell_per_column": 5000,
+      "authorized_fraction": 0.8,
+      "codec": "SNAPPY",
+      "both_columns_seconds": {
+        "v1": 15.157673983136192,
+        "v2": 0.7375006780494004
+      },
+      "speedup": 20.552759386237305,
+      "authorized_numeric_conversions": 8000000,
+      "forbidden_private_sentinels_not_converted": true
+    },
+    {
+      "dictionary": false,
+      "synthetic_cells": 1000,
+      "synthetic_values_per_cell_per_column": 5000,
+      "authorized_fraction": 0.8,
+      "codec": "SNAPPY",
+      "both_columns_seconds": {
+        "v1": 13.881371146067977,
+        "v2": 0.681468638125807
+      },
+      "speedup": 20.369787205827826,
+      "authorized_numeric_conversions": 8000000,
+      "forbidden_private_sentinels_not_converted": true
+    }
+  ]
+}

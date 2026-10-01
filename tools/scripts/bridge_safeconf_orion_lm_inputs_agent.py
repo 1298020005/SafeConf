@@ -133,6 +133,38 @@ def verify_artifacts(root):
         if name not in lookup:raise RuntimeError('Required biology artifact missing from hash manifest')
     return lookup
 
+def verify_numeric_backend_bindings(bio,permit,root,artifact_hashes):
+    """Original scientific guards and an executed v2 backend have distinct IDs."""
+    identity=bio.get('numeric_backend_integration')
+    if identity is None:
+        if 'executed_numeric_parser_sha256' in bio or 'executed_numeric_parser_path' in bio:
+            raise RuntimeError('Executed parser requires complete integration identity')
+        return None
+    schema='safeconf_orion_vectorized_numeric_integration_v2'
+    if identity.get('schema')!=schema or permit.get('vectorized_backend_scope')!=schema:
+        raise RuntimeError('V2 integration scope differs')
+    if identity.get('original_validation_loader_sha256')!=bio['loader_sha256'] or identity.get('original_structural_reader_sha256')!=bio['reader_sha256']:
+        raise RuntimeError('V2 identity must preserve actual original scientific guard hashes')
+    for binding_key,path_key,hash_key in [('biology_integration_v2','actual_wrapper_path','actual_wrapper_sha256'),
+        ('numeric_reader_backend_v2','actual_numeric_backend_path','actual_numeric_backend_sha256')]:
+        binding=permit.get('implementation_bindings',{}).get(binding_key,{})
+        path=Path(identity.get(path_key,''))
+        if Path(binding.get('path','')).resolve()!=path.resolve() or binding.get('sha256')!=identity.get(hash_key) or sha(path)!=identity.get(hash_key):
+            raise RuntimeError('Exact actual V2 wrapper/backend binding missing or changed')
+    if bio.get('executed_numeric_parser_sha256')!=identity['actual_numeric_backend_sha256'] or bio.get('executed_numeric_parser_path')!=identity['actual_numeric_backend_path']:
+        raise RuntimeError('Executed V2 numeric parser identity differs')
+    name='VECTOR_BACKEND_ACCESS_AUDIT.json'
+    if name not in artifact_hashes:raise RuntimeError('V2 backend access audit missing from artifact hashes')
+    audit=json.loads((root/name).read_text())
+    for key in ['actual_wrapper_path','actual_wrapper_sha256','actual_numeric_backend_path','actual_numeric_backend_sha256']:
+        if audit.get(key)!=identity[key]:raise RuntimeError('V2 access audit execution binding differs')
+    if audit.get('permit_sha256')!=bio['permit_sha256'] or audit.get('actual_iterators_fully_exhausted') is not True or audit.get('private_INT64_DOUBLE_materialization') is not False:
+        raise RuntimeError('V2 access audit permission/private/EOF proof differs')
+    if any(x.get('executed_numeric_parser_sha256')!=identity['actual_numeric_backend_sha256'] for x in bio.get('file_audits',[])):
+        raise RuntimeError('Per-file actual V2 numeric parser identity differs')
+    return {'executed_numeric_parser_sha256':identity['actual_numeric_backend_sha256'],
+        'numeric_backend_access_audit_sha256':artifact_hashes[name]}
+
 def bridge(biology_root,metadata_root,contract_path,permit_path,query_scope,output,attempt_id='',max_output_bytes=8*1024**3):
     started=time.monotonic();src=Path(biology_root).resolve();md=Path(metadata_root).resolve();out=Path(output).resolve()
     if out.exists():raise RuntimeError('New bridge output version required')
@@ -160,6 +192,7 @@ def bridge(biology_root,metadata_root,contract_path,permit_path,query_scope,outp
         if not bio.get('file_audits') or not all(a.get('iterators_fully_exhausted') for a in bio['file_audits']):
             raise RuntimeError('Actual reader access/exhaustion audit required')
     artifact_hashes=verify_artifacts(src)
+    backend_proof=verify_numeric_backend_bindings(bio,permit,src,artifact_hashes)
     full=read_csv(src/'FULL_GENE_AXIS.csv');endpoint=read_csv(src/'ENDPOINT_GENE_MANIFEST.csv');mapping=check_axes(full,endpoint)
     frozen_full,frozen_endpoint,_,_=biology.gene_axes(md,synthetic)
     if not full.equals(frozen_full) or not endpoint.equals(frozen_endpoint):raise RuntimeError('Biology axes differ from exact frozen metadata')
@@ -212,6 +245,7 @@ def bridge(biology_root,metadata_root,contract_path,permit_path,query_scope,outp
        'npymap_page_bytes_may_include_neighbor_rows_but_no_neighbor_numeric_values_indexed':True,
        'query_scope_path':str(Path(query_scope).resolve()),'query_scope_sha256':sha(query_scope),
        'bridge_sha256':sha(__file__),'lm_cli_sha256':sha(R_CLI),'formal_upstream_training_started':False}
+    if backend_proof:audit.update(backend_proof)
     write_json(stage/'BRIDGE_ACCESS_AUDIT.json',audit)
     manifests=[]
     for context,rows in selected.items():
@@ -252,6 +286,7 @@ def bridge(biology_root,metadata_root,contract_path,permit_path,query_scope,outp
             'method_contract_path':str(contract_path),'method_contract_sha256':sha(contract_path),
             'access_audit_path':str(out/'BRIDGE_ACCESS_AUDIT.json'),'access_audit_sha256':sha(stage/'BRIDGE_ACCESS_AUDIT.json'),
             'biology_manifest_sha256':sha(src/'BIOLOGY_MANIFEST.json'),'train_x_sidecar_sha256':sha(dest/'TRAIN_X.f64le.meta.tsv')}
+        if backend_proof:receipt.update(backend_proof)
         for name in ['train_x','baseline','conditions','queries','full_gene_axis','output_gene_axis']:
             receipt[name+'_sha256']=sha(stage/Path(row[name]).relative_to(out))
         kv(dest/'INPUT_RECEIPT.tsv',receipt);manifests.append(row)
@@ -264,6 +299,7 @@ def bridge(biology_root,metadata_root,contract_path,permit_path,query_scope,outp
        'selected_TRAIN_NTC_matrix_rows':trace,'validation_numeric_rows_read':0,'test_numeric_rows_read':0,
        'new_TEST_counts_or_distributions_computed':False,'real_upstream_attempt_started':False,
        'elapsed_seconds':time.monotonic()-started,'finished_utc':datetime.now(timezone.utc).isoformat()}
+    if backend_proof:result.update(backend_proof)
     write_json(stage/'BRIDGE_MANIFEST.json',result)
     hashes=[{'path':str(p.relative_to(stage)),'bytes':p.stat().st_size,'sha256':sha(p)} for p in sorted(stage.rglob('*')) if p.is_file()]
     write_json(stage/'ARTIFACT_HASHES.json',hashes);stage.rename(out)

@@ -1,0 +1,93 @@
+{
+  "scope": "READ_ONLY_PROCESS_LOG_STORAGE_DIAGNOSIS_NO_EXPRESSION_VALUES",
+  "checked_utc": "2026-10-01T18:59:31.085618+00:00",
+  "pid": 162145,
+  "pid_live_when_sampling_started": false,
+  "exit_code": 1,
+  "aggregate_wall_seconds": 1497.943,
+  "finished_utc": "2026-10-01T18:52:38.030845+00:00",
+  "failure": "Per-file time budget exceeded",
+  "source_line": 385,
+  "failure_stage": "expression iterator/aggregation checkpoint",
+  "failure_identity": "data/HCT116_Batch10.parquet",
+  "first_identity_completed": "data/HCT116_Batch1.parquet",
+  "storage": {
+    "filesystem": "ext4",
+    "device": "/dev/sdb1",
+    "mount": "/home",
+    "NFS": false,
+    "rotational": true,
+    "model": "LOGICAL VOLUME"
+  },
+  "sum_matrix_shape": [
+    28947,
+    38606
+  ],
+  "sum_dtype": "float64",
+  "sum_payload_bytes": 8940223056,
+  "stage_files": {
+    "FULL_SUMS.npy": {
+      "bytes": 8940223184,
+      "allocated_bytes": 8940228608,
+      "mtime_utc": "2026-10-01T18:52:33.481704+00:00"
+    },
+    "CELL_COUNTS.npy": {
+      "bytes": 231704,
+      "allocated_bytes": 233472,
+      "mtime_utc": "2026-10-01T18:52:28.397566+00:00"
+    },
+    "tokens_1.uint32": {
+      "bytes": 607513264,
+      "allocated_bytes": 607518720,
+      "mtime_utc": "2026-10-01T18:48:07.345491+00:00"
+    }
+  },
+  "postexit_iostat": {
+    "read_kB_s": [
+      0,
+      0
+    ],
+    "write_kB_s": [
+      1052,
+      4
+    ],
+    "write_await_ms": [
+      61.5,
+      11
+    ],
+    "utilization_percent": [
+      11.1,
+      1.0
+    ],
+    "attributable_to_dead_process": false
+  },
+  "postexit_vmstat": {
+    "swap_in_s": 0,
+    "swap_out_s": 0,
+    "iowait_percent": 0,
+    "idle_percent": [
+      99,
+      99
+    ]
+  },
+  "parent_prior_observations_not_live_verified": {
+    "CPU_percent": 61,
+    "state": [
+      "D",
+      "R"
+    ],
+    "RSS_under_GB": 1
+  },
+  "deadline": "600s reset perfile; cooperative checks after yield/flush; wholewall includes initialization/priorfiles",
+  "confirmed_cause": "second-file expression aggregation exceeded registered walltime",
+  "CPU_vs_IO_attribution": "unavailable retrospectively; localext4 excludes NFS",
+  "possible_small_IO_changes": [
+    "dirty-row-range flush/madvise instead of whole8.9GB map every512cells",
+    "new exclusive sparsezero file instead of eager fullzero writes, only after numerical/memory equivalence proof"
+  ],
+  "recommended_first_step": "independent vectorizeddecoder review, then measure live user/system/io/pagefault deltas",
+  "process_killed_or_modified": false,
+  "expression_values_opened": false,
+  "new_private_counts_or_distributions_computed": false,
+  "new_model_or_dataset_created": false
+}

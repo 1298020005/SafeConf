@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-01T18:04:31.297350+00:00",
+  "updated_utc": "2026-10-01T19:08:28.904359+00:00",
   "complete": [
     "five-fold nested public biology with four inner folds",
     "three-line sixteen-method matrix with three registered seeds",
@@ -47,7 +47,8 @@
     "Strict Parquet reader synthetic12encoding/page/codec cases and failclosed rejection tests; realexpressionnotopened",
     "Future common-biology reader allowedrowspans before CSR extraction;3unittestchecks pass; old frozenstoresnotrewritten",
     "Publicprovenance study reconstruction:Replogle2022/Nadig2025; known-geneother-contextinformationcondition disclosed",
-    "Actual128TRAIN/controlcells semanticpilot PASS:819072integerexpressionvalues,librarysumgaps0,84.581sec,520MBpeak; fulliteratorproof and noTEST/VALnumerics"
+    "Actual128TRAIN/controlcells semanticpilot PASS:819072integerexpressionvalues,librarysumgaps0,84.581sec,520MBpeak; fulliteratorproof and noTEST/VALnumerics",
+    "Reviewed technicalbyte-selectionvectorization:12privacy+20integration+12crosspageproofs; actual128cellpilot6.005sec vs84.581sec andsame countsumgaps0"
   ],
   "pending": [
     "Strict authorizedOrion TRAIN/VALIDATION biology integration and independent syntheticreview",
@@ -58,7 +59,7 @@
   "new_large_upstream_training": 0,
   "new_download_gb": 0.04440246,
   "completion_claim": "goal active; meaningful diagnostics and registered matrices continue; manuscript prose deferred",
-  "current_work": "Fixed40Orion download and queued authorizedTRAINVALaggregation→TRAINbinarybridge→publishedCPUlinear pretruthprediction; competence and riskseal preparation; no manuscript",
+  "current_work": "Actualv2 authorizedTRAINVALaggregate running; fixedupperfit/competence/riskseal are queued automatically; noTESTtruthreader",
   "deferred_by_user": [
     "manuscript and supplement prose generation"
   ],
@@ -87,5 +88,14 @@
   ],
   "orion_training_expression_read": true,
   "orion_training_numeric_cells_pilot": 128,
-  "orion_validation_expression_read": false
+  "orion_validation_expression_read": true,
+  "orion_registered_acquisition_status": "COMPLETE41/41fullpublisherSHA",
+  "orion_registered_download_bytes_verified": 18138449950,
+  "orion_full_pipeline_status": "v2RUNNING_ACTUALAGGREGATION",
+  "validation_expression_scope_note": "AuthorizedTRAIN/VALIDATION aggregate v1materialized allowedrows beforetimeout; no validation modelerrors evaluated, no targettestnumbers.",
+  "orion_full_pipeline_pid": 208030,
+  "orion_aggregation_pid": 208033,
+  "orion_postfit_followthrough_pid": 208031,
+  "orion_vectorized_pilot_seconds": 6.005,
+  "orion_vectorized_pilot_cells": 128
 }

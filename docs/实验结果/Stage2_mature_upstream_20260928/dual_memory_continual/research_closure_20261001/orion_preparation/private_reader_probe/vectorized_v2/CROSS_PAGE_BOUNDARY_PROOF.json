@@ -1,0 +1,86 @@
+[
+  {
+    "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/vectorized_v2_boundaries/cross_page_gene_token_id_dict0_NONE.parquet",
+    "passed": true,
+    "Arrow_synthetic_full_expected_matches": true,
+    "authorized_and_private_row_continuations": true,
+    "null_list_empty_list_null_item_correct": true
+  },
+  {
+    "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/vectorized_v2_boundaries/cross_page_gene_token_id_dict0_ZSTD.parquet",
+    "passed": true,
+    "Arrow_synthetic_full_expected_matches": true,
+    "authorized_and_private_row_continuations": true,
+    "null_list_empty_list_null_item_correct": true
+  },
+  {
+    "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/vectorized_v2_boundaries/cross_page_gene_token_id_dict0_SNAPPY.parquet",
+    "passed": true,
+    "Arrow_synthetic_full_expected_matches": true,
+    "authorized_and_private_row_continuations": true,
+    "null_list_empty_list_null_item_correct": true
+  },
+  {
+    "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/vectorized_v2_boundaries/cross_page_gene_token_id_dict1_NONE.parquet",
+    "passed": true,
+    "Arrow_synthetic_full_expected_matches": true,
+    "authorized_and_private_row_continuations": true,
+    "null_list_empty_list_null_item_correct": true
+  },
+  {
+    "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/vectorized_v2_boundaries/cross_page_gene_token_id_dict1_ZSTD.parquet",
+    "passed": true,
+    "Arrow_synthetic_full_expected_matches": true,
+    "authorized_and_private_row_continuations": true,
+    "null_list_empty_list_null_item_correct": true
+  },
+  {
+    "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/vectorized_v2_boundaries/cross_page_gene_token_id_dict1_SNAPPY.parquet",
+    "passed": true,
+    "Arrow_synthetic_full_expected_matches": true,
+    "authorized_and_private_row_continuations": true,
+    "null_list_empty_list_null_item_correct": true
+  },
+  {
+    "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/vectorized_v2_boundaries/cross_page_gene_expression_dict0_NONE.parquet",
+    "passed": true,
+    "Arrow_synthetic_full_expected_matches": true,
+    "authorized_and_private_row_continuations": true,
+    "null_list_empty_list_null_item_correct": true
+  },
+  {
+    "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/vectorized_v2_boundaries/cross_page_gene_expression_dict0_ZSTD.parquet",
+    "passed": true,
+    "Arrow_synthetic_full_expected_matches": true,
+    "authorized_and_private_row_continuations": true,
+    "null_list_empty_list_null_item_correct": true
+  },
+  {
+    "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/vectorized_v2_boundaries/cross_page_gene_expression_dict0_SNAPPY.parquet",
+    "passed": true,
+    "Arrow_synthetic_full_expected_matches": true,
+    "authorized_and_private_row_continuations": true,
+    "null_list_empty_list_null_item_correct": true
+  },
+  {
+    "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/vectorized_v2_boundaries/cross_page_gene_expression_dict1_NONE.parquet",
+    "passed": true,
+    "Arrow_synthetic_full_expected_matches": true,
+    "authorized_and_private_row_continuations": true,
+    "null_list_empty_list_null_item_correct": true
+  },
+  {
+    "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/vectorized_v2_boundaries/cross_page_gene_expression_dict1_ZSTD.parquet",
+    "passed": true,
+    "Arrow_synthetic_full_expected_matches": true,
+    "authorized_and_private_row_continuations": true,
+    "null_list_empty_list_null_item_correct": true
+  },
+  {
+    "fixture": "/home/yyf/data/safeconf_orion_frozen40_20261002/private_reader_probe_20261002_v1/vectorized_v2_boundaries/cross_page_gene_expression_dict1_SNAPPY.parquet",
+    "passed": true,
+    "Arrow_synthetic_full_expected_matches": true,
+    "authorized_and_private_row_continuations": true,
+    "null_list_empty_list_null_item_correct": true
+  }
+]

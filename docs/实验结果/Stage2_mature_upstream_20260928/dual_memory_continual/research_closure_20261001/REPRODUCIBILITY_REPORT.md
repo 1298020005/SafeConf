@@ -6,7 +6,7 @@ Run from the repository root, with the registered September prediction/public-me
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=4 python -u tools/scripts/run_safeconf_research_closure.py --phase all
 ```
 
-This rebuilds nested Public features, all sixteen primary methods, five cluster-label nulls, source coverage/diversity, strict feedback curves, 54 paired comparisons with 5000 draws each, and the three scientific figures. It does not claim to execute the pending official PertEMA or Public-temperature experiments.
+This rebuilds nested Public features, all sixteen primary methods, five cluster-label nulls, source coverage/diversity, strict feedback curves, 54 paired comparisons with 5000 draws each, and the three scientific figures. This entry runs the original main matrix only. Official PertEMA model-factory adaptations and the single Public-temperature candidate were subsequently completed through separate scripts; the temperature candidate failed its fixed DEV retention gate and was not promoted.
 
 Intermediate numerical features are under `/home/yyf/runtime_artifacts/safeconf_research_20261001`. The registered primary contexts are macro-aggregated after pooling outer OOF predictions; outer-fold context results are separately available. All three fixed risk seeds and all five growth orders are retained. They are not independent datasets.
 
@@ -16,7 +16,7 @@ The code imports the frozen September helper definitions without modifying those
 
 Verification completed: five unit tests covering budget-CDF isolation, mid-rank/ties, block-label permutation, the weighted-history identity, and U20 edge cases. Nested cluster-disjointness and prediction/truth alignment are also checked at runtime. The three numerical runs and all 54 bootstrap comparisons completed successfully.
 
-Scope: the tested tasks have historical effects for the same perturbation in other conditions/contexts. These results do not establish zero-history novel-gene risk estimation. All October evaluation data were already seen, and new comparisons do not inherit pristine confirmation status.
+Scope: the tested tasks have historical effects for the same perturbation in other conditions/contexts. These results do not establish zero-history novel-gene risk estimation. The original October TxPert/McFaline evaluation data were already seen, and those new comparisons do not inherit pristine confirmation status. The separate Orion pipeline preserves untouched TEST expression, but its candidate metadata was already reviewed: it is truth-blind external replication, not pristine covariate-blind confirmation.
 
 
 ## Completed October common-axis version and isolated reproduction
@@ -38,3 +38,16 @@ The fixed common-axis historical-content controls use `run_safeconf_public_mecha
 Seven meaningful invariants now pass, including float-safe task pairing and rejection of different truths/duplicate predictions. Five specifically registered original frozen assets pass byte-hash checks. The original common-axis pretruth CSV was filled with truth after scoring, so its pretruth bytes were not independently retained; a retrospective score-only snapshot is explicitly not prospective proof. Fresh runs now retain a separate immutable score-only file. Original September freeze artifacts remain unchanged.
 
 Cost rows record measured tabular fit/predict durations. Their sum is workload, not elapsed wall-clock time or GPU time. No new large upstream has been trained in this research closure. Per-task predictions and dense biological vectors stay in runtime storage; reviewable result/contract/statistical summaries are indexed by SHA-256 in `RESULT_INDEX.csv`.
+
+
+## Registered Orion 3285-gene preparation and truthful execution scope
+
+This is a separate canonical3285-gene contract, not a replay of the2840-gene matrix. Pinned metadata/schema define the gene axis before realTEST expression. Source preprocessing uses officialCP4000+log1p; currentOrion biological means use cell-equal mean(log1p(4000*raw/full_library_total)). Full38606 uniqueEnsembl genes enter TRAINonlypublishedPCA; endpoint3285 is predeclared. No missinggene imputation or observedTEST normalization fitting occurs.
+
+`prepare_safeconf_orion_source_core_agent.py` produced25nestedPublicfits,6riskmodels and1PublicBiologymodel. The full loader, Rbinarybridge, published numericalcore, validation-onlycompetence evaluator and Source-onlypretruthrisk sealer each have hash-bound fixtures/reviews. R4.4.1/irlba2.3.5.1 are present; Matrix1.7.6 differs from the original1.7.0. This is a numerical-core adaptation, not complete original-paper environment reproduction.
+
+ActualTRAINpilot verifies128cells and819072expressionvalues with zero integer/full-library-sum gaps. Full40rawshards plusgeneIDmetadata total18138449950bytes and all41publisherSHAs pass. The first fullv1aggregate failed the600s/filebound, withno model fits orTEST numericmaterialization. Failedstaging and originalcode remain preserved. A separate vectorized byte-selection technicalrepair is being validated; performance and privacy are reported separately from scientific results.
+
+The final risksealer has no querytruth, targeterror or targetCDF API. SixSource models are fixed and nonhistoryPublic risks are explicitlyunsupported/NaN; separatePrediction-only scores are available. Inputs/candidates are registered before test opening. MetadataSEEN/closedtruth roles are recorded in `orion_preparation/ORION_DATA_ROLE_REGISTRY.csv`; do not call this wholemethod pristine-confirmed. Fullsource/orion arrays, syntheticlargefixtures, uppermodels and perquerypredictions stay in serverruntime storage.
+
+Completed-source scaling summaries and all448budgetCDFidentitychecks are under `common_gene_axis/results/source_scaling_recheck/`. Their script refuses overwriting completed outputs; an independent rerun must choose a new versioned output/cache root. The five source orders and three risk seeds are repeated fits, not independent datasets or sources.

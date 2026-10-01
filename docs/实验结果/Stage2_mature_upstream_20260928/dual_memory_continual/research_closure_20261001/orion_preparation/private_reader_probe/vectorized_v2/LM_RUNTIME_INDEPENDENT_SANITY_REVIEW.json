@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "checks": [
+    "valid_actual_v2_backend_binding_accepted",
+    "missing_backend_binding_rejected_before_numeric_input",
+    "false_executed_parser_sha_rejected_before_numeric_input",
+    "original_v1_backend_optional_behavior_unchanged",
+    "HCT116_old_v1_matrix_and_NTC_bytes_identical",
+    "HEK293T_old_v1_matrix_and_NTC_bytes_identical"
+  ],
+  "check_count": 6,
+  "bridge_sha256": "dcc7d6afcd812d89ddb372e511cb9607e216da8c1f57e484317db4b3eda52a38",
+  "reader_v2_sha256": "636455cb30fc0e8c8ce6ac92db82756eff7508322e92862cf23ffad861d2e435",
+  "wrapper_sha256": "6135469b10d5e200f4654a53f2a750fc9cc4c356037ce6abdfddd95030b45d1f",
+  "independent_source_review": {
+    "full_payload_dictionary_views": "uint8 only",
+    "numeric_view": "only gathered advanced-index byte copy",
+    "physical_row_routing": "cumsum(repetition==0)+previous_row; valid page continuations keep row",
+    "NULL_empty_nullable_items": "definition-level mapping unchanged against pinned v1",
+    "private_typed_INT64_DOUBLE_array_created": false
+  },
+  "existing_regression_cases_reviewed": "12caseproof already PASS on stable636455 backend; no redundant rerun",
+  "actual_expression_accessed": false,
+  "new_models_fitted": 0,
+  "budget_or_algorithm_changed": false,
+  "expected_v3_extra_bindings": {
+    "vectorized_backend_scope": "safeconf_orion_vectorized_numeric_integration_v2",
+    "implementation_bindings": {
+      "biology_integration_v2": {
+        "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/build_safeconf_orion_allowed_biology_vectorized_agent.py",
+        "sha256": "6135469b10d5e200f4654a53f2a750fc9cc4c356037ce6abdfddd95030b45d1f"
+      },
+      "numeric_reader_backend_v2": {
+        "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/probe_safeconf_private_parquet_vectorized_agent.py",
+        "sha256": "636455cb30fc0e8c8ce6ac92db82756eff7508322e92862cf23ffad861d2e435"
+      }
+    }
+  }
+}
