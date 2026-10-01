@@ -1,0 +1,83 @@
+{
+  "schema": "safeconf_orion_public_bank_extension_final_review_v1",
+  "status": "APPROVED_FOR_ONCE_ONLY_REGISTERED_TEST",
+  "created_utc": "2026-10-01T23:51:44.069532+00:00",
+  "root_approved": true,
+  "independent_review_passed": true,
+  "bank_manifest": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v2/PUBLIC_BANK_MANIFEST.json",
+    "bytes": 12959,
+    "sha256": "8053a6118bc2e3cace841e1498cee3c1366ce5b49e9c79328e7cd34a180b6607"
+  },
+  "extension_contract": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/registered_v3_sorted_csr/PUBLIC_BANK_EXPANSION_CONTRACT.json",
+    "bytes": 6752,
+    "sha256": "0b6b9b86ad18da6f748ff4fc7cca4e20253c6b43a2d9533bb2b585664c79487f"
+  },
+  "comparison_receipt": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_comparison/EXTENSION_COMPARISON_RECEIPT.json",
+    "sha256": "1262c2172975f74331e83ce4d88e696439c8dafc0d3b68d09ede3fbdb16b7aa0",
+    "bytes": 7436
+  },
+  "implementation_bindings": {
+    "extension_chain": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_orion_public_bank_extension_partitioned_chain_agent.py",
+      "sha256": "19ea756bd8fd2d9be3cc81392abb1952c648a1654401d8748a6af400de8a377d",
+      "bytes": 20395
+    },
+    "extension_helper": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/orion_public_bank_extension.py",
+      "sha256": "9857b96b98460346bce334313c1a212466c85dc450c07f16e5d934e1ef045454",
+      "bytes": 24582
+    },
+    "extension_sealer": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/seal_safeconf_orion_public_bank_extension_partitioned_agent.py",
+      "sha256": "ded5d3440678f49042f152c495c38060dec6b0efb96371abb7c24c56e2bf6d5c",
+      "bytes": 8042
+    },
+    "partition_helper": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/orion_legacy_partition.py",
+      "sha256": "780063552f2f765b762e8cf115135c52b34b85cb3dee7e3d404f7afe573e31f3",
+      "bytes": 5203
+    },
+    "base_risk_math": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/seal_safeconf_orion_source_risk_agent.py",
+      "sha256": "8b69e6ce29dc92aa34150b3b08aac62ce8333a10f84ec432a39d0e81ffc64482",
+      "bytes": 28837
+    },
+    "base_test_reader": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/evaluate_safeconf_orion_guarded_test_agent.py",
+      "sha256": "852fcd764b567a63f04c4a5539a118c8a715f664bf534184018010ac269087b2",
+      "bytes": 35943
+    },
+    "base_risk_evaluator": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/evaluate_safeconf_orion_frozen_risk_agent.py",
+      "sha256": "dec8f056918ac5626eb12732eec3cc07041eb3680cc6addd6d9f18b32d1f486c",
+      "bytes": 22944
+    },
+    "base_once_only_coordinator": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_orion_registered_evaluation_followthrough.py",
+      "sha256": "f08f27279d8a0f45f67ba97d539bfbe27ed9351a75fd57c1eaab57a91c5ece85",
+      "bytes": 11352
+    }
+  },
+  "independent_review_receipt": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/public_bank_extension_actual_pretruth_independent_review_v1/FINAL_ACTUAL_PRETRUTH_SEAL_COMPARISON_REVIEW.json",
+    "sha256": "5906e72c11751b0c32ff99444ffacbaa94a699751fee827eb6515c76da47476f",
+    "bytes": 13799
+  },
+  "technical_partition_amendment": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/public_bank_extension/legacy_partition_recovery_v1/ROOT_APPROVED_PARTITION_TECHNICAL_AMENDMENT.json",
+    "sha256": "3662ad0e806562c60416321759cab4f409b985e993d1bdece76aec276019da22",
+    "bytes": 5781
+  },
+  "pretruth_safety_scope": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/public_bank_extension_actual_pretruth_independent_review_v1/PRETRUTH_SAFETY_SCOPE_ADDENDUM.json",
+    "sha256": "bc3be48f66a4f2af2f17eba20355b22e9e1df3aedbf1f7d6a100d7b735f3e85c",
+    "bytes": 3984
+  },
+  "authorization_basis": "Existing explicit user72hour plan authorizes final frozen parameters/predictions followed by once-only registered TEST evaluation. Root verified actual published fit, competencePASS, final13candidate scores,232task144gene commoncohort and43checkindependentPASS. No postTEST method selection or targetCDF/fitting.",
+  "metadata_seen_truth_before_open_closed": true,
+  "full_method_pristine_confirmation_claim": false,
+  "root_scientific_interpretation": "Upstream noninferiority only, no superiority claim. Final pretruth freeze is prerequisite, not SafeConf gain. Primary Learned_hgb vs fixed sameprior weightedhistorydistance; manual secondary cannot replace primary; report Support and bothcontexts safety; Source32seen112unseen descriptive."
+}

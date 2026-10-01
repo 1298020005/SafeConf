@@ -1,0 +1,25 @@
+{
+  "schema": "safeconf_orion_actual_authorize_only_receipt_v1",
+  "status": "PASS",
+  "created_utc": "2026-10-01T23:55:04.274239+00:00",
+  "operation": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/IMMUTABLE_POSTSEAL_TEST_ACCESS.json",
+    "sha256": "c94bc298c95bbe4a4d6f92dac8263b9aa93be18c48297f5181232bf73d44881d",
+    "bytes": 14701
+  },
+  "executed_chain": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_orion_public_bank_extension_partitioned_chain_agent.py",
+    "sha256": "19ea756bd8fd2d9be3cc81392abb1952c648a1654401d8748a6af400de8a377d",
+    "bytes": 20395
+  },
+  "subprocess_exit_code": 0,
+  "stdout_stderr_log": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/AUTHORIZE_ONLY.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "raw_TEST_numeric_materialization": false,
+  "global_once_claim_created": false,
+  "root_static_field_suspicion": "Resolved with actual receipt790daf:base_risk_seal isexpanded654b; old86a remainsseparatearchive. No code/contract repair needed or made.",
+  "source_fit_parameters_and_pretruth_scores_unchanged": true
+}

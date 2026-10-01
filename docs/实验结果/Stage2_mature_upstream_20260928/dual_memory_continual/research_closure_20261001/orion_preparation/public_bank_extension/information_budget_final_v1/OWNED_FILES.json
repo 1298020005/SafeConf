@@ -1,0 +1,21 @@
+{
+  "schema": "safeconf_owned_information_budget_append_v1",
+  "owned_files": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/public_bank_extension/information_budget_final_v1/AUDIT.json",
+      "bytes": 27116,
+      "sha256": "e99e07b2fcc2e9d5a3a0b843595aeb2941ccbecd1c432f155335c1a6ca1d17ae"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/public_bank_extension/information_budget_final_v1/INFORMATION_BUDGET_APPEND_ROWS.csv",
+      "bytes": 4938,
+      "sha256": "d32af58c04ddd6b567fc5988bef41108235dde71eaed5072ce1ad683296891f7"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/public_bank_extension/information_budget_final_v1/README.md",
+      "bytes": 1406,
+      "sha256": "f2912a2bcdd6134af23e472058d07f99205afe7be0b3b347fcd6dff1f55b2410"
+    }
+  ],
+  "scope": "fixed13method metadata-only information-role ledger proposal"
+}

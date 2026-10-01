@@ -1,0 +1,68 @@
+{
+  "schema": "safeconf_orion_pretruth_safety_scope_interpretation_v1",
+  "status": "ROOT_DIRECTED_PRETRUTH_INTERPRETATION",
+  "registered_utc": "2026-10-01T23:50:57.732633+00:00",
+  "parent_registry": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_evaluation/ORION_CLAIM_INTERPRETATION_REGISTRY.json",
+    "sha256": "d227bf92e1cc4396a332b82f0ae5a3ffd90a03ce21dadac50ed8d1e0c9382bea",
+    "bytes": 4659
+  },
+  "existing_usage_addendum": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_evaluation/ORION_CLAIM_INTERPRETATION_USAGE_ADDENDUM.json",
+    "sha256": "640f22dcd8c78e0eaf5ef34712844d6b803891b249f56b6f6abc1620ace8de62",
+    "bytes": 1252
+  },
+  "authorization_source": "Root explicit instruction before TEST open: safety guards must pass macro and every valid context; both registered contexts need n>=20; no posttruth scope selection; original thresholds unchanged; missing/nearzero denominator handled only by existing metric rules; no new epsilon.",
+  "global_first_open_scope_absent_at_registration": true,
+  "actual_TEST_truth_read_by_reviewer": false,
+  "planned_contexts": [
+    "HCT116",
+    "HEK293T"
+  ],
+  "minimum_original_tasks_each_context": 20,
+  "guard_evaluation_scope": [
+    "macro",
+    "HCT116",
+    "HEK293T"
+  ],
+  "all_scopes_required_to_pass": true,
+  "applies_to_existing_registered_safety_requirements": [
+    "source_transfer_primary_support",
+    "source_increment_beyond_strong_history_rules"
+  ],
+  "fixed_safety_thresholds": {
+    "maximum_relative_AURC_worsening": 0.05,
+    "maximum_relative_error_at_10_20_50_worsening": 0.05,
+    "maximum_absolute_high_risk_miss_rate_worsening": 0.02
+  },
+  "fixed_context_fraction_interpretation": {
+    "minimum_valid_planned_strata_fraction": 0.8,
+    "minimum_nonnegative_U20_context_fraction": 0.6,
+    "with_two_registered_contexts": "Both original contexts must be valid and both fixed-contrast U20 context point differences nonnegative. No dropping an invalid or negative context."
+  },
+  "finite_and_denominator_policy": "Use existing frozen metric/NA rules. Both context metrics, macro point and paired CI endpoints must be finite. Any missing/nonfinite or nearzero-baseline case that cannot be evaluated under those existing rules is NOT_ESTABLISHED. Do not add epsilon, impute a denominator, replace a missing metric or change the metric formula.",
+  "distinct_U20_evidence_levels": {
+    "practical_point_margin": "macro delta_U20>=0.005",
+    "noninferiority_style_guard": "paired95CI lower>=-0.005; not superiority",
+    "supported_positive_increment": "macro delta_U20>=0.005 AND paired95CI lower>0; nominal support conditional on fixed fits"
+  },
+  "fixed_primary_contrast": [
+    "Learned_hgb",
+    "Learned_WeightedHistoryDistance"
+  ],
+  "fixed_manual_secondary_contrast": [
+    "Manual_hgb",
+    "Manual_WeightedHistoryDistance"
+  ],
+  "strong_support_comparator": "NegativeSourceHistorySupport",
+  "unchanged_Public_package_contrast": [
+    "Learned_hgb",
+    "P_only_hgb"
+  ],
+  "Source_seen_unseen_subgroups": "Descriptive only; no replacing the primary cohort, choosing a subgroup winner, changing its independent gene-cluster denominator, or selecting another primary method. Source32seen112unseen pretruth counts describe coverage, not efficacy.",
+  "posttruth_scope_selection_permitted": false,
+  "new_numerical_thresholds_or_metric_rules": false,
+  "frozen_method_model_fit_code_cohort_comparator_changes": false,
+  "registry_is_original_McFaline_preregistration": false,
+  "scope_note": "This is a new dated pretruth interpretation of already registered guard values, authorized by Root. It is not an executable evaluator gate, source of new tests or authorization to open TEST."
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "safeconf_owned_accounting_package_v1",
+  "owned_files": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/public_bank_extension/pretruth_final_accounting_v1/ACCOUNTING_AUDIT.json",
+      "bytes": 7838,
+      "sha256": "68dc3d7abca6c38d617416b720d6d0cdab34d0b340c9ff40efe7d19793aa87af"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/public_bank_extension/pretruth_final_accounting_v1/COST_MASTER_APPEND_ROWS.csv",
+      "bytes": 2550,
+      "sha256": "fad76841f6ef508dd2bcecdaf901980dc4b465539c2fa2acf0290c2bdfdc0d85"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/public_bank_extension/pretruth_final_accounting_v1/EXECUTION_STATUS_APPEND.json",
+      "bytes": 2902,
+      "sha256": "890e4a9f3a2de7efdf16182b2e2bbc3c7eed29d747e00acc8d114ba924570c7f"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/public_bank_extension/pretruth_final_accounting_v1/README.md",
+      "bytes": 1503,
+      "sha256": "6c695e3971f84fd043d9bae3781837dd24979c0c7317a4303c09dae6561a3df2"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/public_bank_extension/pretruth_final_accounting_v1/RESULT_INDEX_APPEND_ROWS.csv",
+      "bytes": 2246,
+      "sha256": "027867ae6b12fec9a51f8a0ccb4684f2592c8cfe3a456e7583e89829736d5d69"
+    }
+  ],
+  "scope": "status/cost/index append proposals only; sharedtables unchanged"
+}

@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-01T23:29:24.129411+00:00",
+  "updated_utc": "2026-10-01T23:56:03.005853+00:00",
   "complete": [
     "five-fold nested public biology with four inner folds",
     "three-line sixteen-method matrix with three registered seeds",
@@ -59,17 +59,15 @@
     "Actual append-only expanded Source Publicbank:5365units2070genes,3357newunits1490newgenes;old2008records/effect/controlprefixexact,Source575historyandsevenmodelhashesunchanged;independent38checksPASS"
   ],
   "pending": [
-    "Actual authorized Orion TRAIN/VALIDATION aggregation final artifacts and hashes",
-    "Actual published CPU linear TRAIN fit and prospective validation competence gate",
-    "All target pretruth prediction, configuration and parameter hashes sealed before Orion TEST expression",
-    "Prospective independent-study replication and information increment closure; metadata-exposed TEST cannot be called pristine SEALED",
-    "Final budget/provenance/claim evidence closure; manuscript remains deferred by user",
-    "Actual expanded-bank score seal and finite/invariant cohort review after prospective competence; only then root registered TEST authorization"
+    "Root signed once-only TEST operation after actual full final pretruth review",
+    "Registered TEST expression evaluation and fixed13method5000clusterbootstrap comparison",
+    "Independent scientific increment and safety gate interpretation; metadata-exposed TEST is prospective truth-blind replication, not pristine SEALED",
+    "Final budget/provenance/claim evidence closure; manuscript remains deferred by user"
   ],
   "new_large_upstream_training": 0,
   "new_download_gb": 0.04440246,
   "completion_claim": "goal active; meaningful diagnostics and registered matrices continue; manuscript prose deferred",
-  "current_work": "Actual fixed published LM2context fits completed384.512s; validation competence2790tasks PASS versus TRAINmean under registered noninferiority rule. Original2008risk seal completed. Expanded-bank strict legacy invariant failed1Manual_ridge value5.55e-17 due batch shape; actual features/priors/pairs/weights all bits identical, fixed branch-retention technical repair underway. No TEST opened.",
+  "current_work": "Actual guard authorizationPASS. Once-only registered expanded-bank TEST evaluator process554948 launched; rawTEST boundary opened only afterglobalexclusiveclaim. AllSource/public/risk/LMfits frozen. Fixed13method5000gene bootstrap followthrough being registered.",
   "deferred_by_user": [
     "manuscript and supplement prose generation"
   ],
@@ -144,6 +142,13 @@
       "TESTtruth_reader": false,
       "stops_after_actual_expanded_seal_before_root_review": true,
       "status": "TERMINAL_AFTER_EXPANDED_ONE_LAST_BIT_INVARIANCE_FAILURE"
+    },
+    {
+      "name": "registered_extended_bank_once_only_TEST",
+      "pid": 554948,
+      "log": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/EVALUATE_TEST.log",
+      "status": "RUNNING_AFTER_ALL_PARAMETERS_AND_SCORES_FROZEN",
+      "TESTtruth_reader": true
     }
   ],
   "orion_training_expression_read": true,
@@ -151,11 +156,11 @@
   "orion_validation_expression_read": true,
   "orion_registered_acquisition_status": "COMPLETE41/41fullpublisherSHA",
   "orion_registered_download_bytes_verified": 18138449950,
-  "orion_full_pipeline_status": "ACTUAL_PUBLISHED_FIT_AND_COMPETENCE_PASS_EXPANDED_SEAL_ONE_BIT_TECHNICAL_REPAIR_IN_PROGRESS",
+  "orion_full_pipeline_status": "ACTUAL_UPSTREAM_COMPETENCE_PASS_EXPANDED_PRETRUTH_SEAL_INDEPENDENT_PASS",
   "validation_expression_scope_note": "AuthorizedTRAIN/VALIDATION aggregate v1materialized allowedrows beforetimeout; no validation modelerrors evaluated, no targettestnumbers.",
-  "orion_full_pipeline_pid": 208030,
-  "orion_aggregation_pid": 208033,
-  "orion_postfit_followthrough_pid": 208031,
+  "orion_full_pipeline_pid": null,
+  "orion_aggregation_pid": null,
+  "orion_postfit_followthrough_pid": null,
   "orion_vectorized_pilot_seconds": 6.005,
   "orion_vectorized_pilot_cells": 128,
   "download_accounting_definition": "Verified distinct registered dataset object bytes, not cumulative transferred retry traffic. Legacy new_download_* fields count earlier runtime packages and are not the total acquisition ledger.",
@@ -193,7 +198,7 @@
   },
   "orion_aggregation_completed_files": 40,
   "orion_last_aggregated_file": "data/HEK293T_Batch9.parquet",
-  "orion_registered_evaluation_status": "ROOT_STOPPED_AUTOMATIC_TEST_BEFORE_OPEN_FOR_VERIFIED_HISTORY_COVERAGE_GAP",
+  "orion_registered_evaluation_status": "ACTUAL_ONCE_ONLY_EVALUATE_TEST_PROCESS_RUNNING",
   "orion_same_gene_history_metadata_upper_bound": {
     "tasks": 52,
     "gene_clusters": 32,
@@ -221,7 +226,7 @@
     "source_selected_CSR_values": 850904175,
     "independent_actual_bank_review": "PASS38checks",
     "adapter_chain_review": "PASS b39093a42a5afd27be491afd7c54c3fba414e28733eb5f013f0890000a66bfe9",
-    "pretruth_waiter_pid": 424742,
+    "pretruth_waiter_pid": null,
     "bank_cost_accounting": {
       "status": "GLOBAL_APPEND_AND_INDEPENDENT_VERIFICATION_PASS",
       "cost_rows_after": 327,
@@ -280,7 +285,7 @@
     "TEST_read": false
   },
   "orion_bridge_integer_token_recovery": {
-    "status": "BRIDGE_COMPLETE_ACTUAL_FIXED_R_TRAINING_RUNNING",
+    "status": "COMPLETE_PUBLISHED_FIT_AND_COMPETENCE_PASS",
     "pid": null,
     "active_amendment_sha256": "a7d3162aa36c3276e9cbbd0b0a5a679716dd7c640aaf2123ab412517b2781846",
     "executed_bridge_sha256": "caa4212788e89190efa93980c41314a7892393a8d19bc809e427f23d4859c315",
@@ -290,8 +295,8 @@
     "TEST_opened": false,
     "bridge_manifest_sha256": "13c90f2feb21f841138f366fd140ff6a194bdd20d1337bd3c8d7e15500d0d478",
     "bridge_elapsed_seconds": 90.2187113580294,
-    "controller_pid": 501788,
-    "R_child_pid": 501793
+    "controller_pid": null,
+    "R_child_pid": null
   },
   "orion_actual_aggregation_information": {
     "TRAIN_cells": 629838,
@@ -301,7 +306,7 @@
     "aggregate_units": 28947,
     "eligible_validation_tasks_metadata": 2790,
     "eligible_validation_gene_union": 1661,
-    "actual_validation_error_qualification_still_pending": true,
+    "actual_validation_error_qualification_still_pending": false,
     "review": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/allowed_biology_actual_accounting_audit_v1/ACTUAL_AGGREGATION_ACCOUNTING_REVIEW.json"
   },
   "orion_upstream_formal_validation_attempt_counter_correction": {
@@ -327,5 +332,34 @@
     "formal_validation_prediction_attempts_actual": 1,
     "target_risk_CDF_or_feedback_labels_used": 0,
     "report": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_published_fit_competence_v1/COMPETENCE_RESULT.json"
+  },
+  "orion_final_partitioned_pretruth": {
+    "status": "SEALED_INDEPENDENT_REVIEW_PASS_READY_ROOT_ONCE_ONLY_OPERATION",
+    "review_sha256": "5906e72c11751b0c32ff99444ffacbaa94a699751fee827eb6515c76da47476f",
+    "review_checks": 43,
+    "seal_sha256": "790daf9abd1572a9f4a7a50e90448613a98d9a46f97efd1aed5d18c09d59b388",
+    "comparison_sha256": "1262c2172975f74331e83ce4d88e696439c8dafc0d3b68d09ede3fbdb16b7aa0",
+    "primary_tasks": 232,
+    "gene_union": 144,
+    "context_tasks": {
+      "HCT116": 107,
+      "HEK293T": 125
+    },
+    "legacy_query_exact_bit_invariance": 446,
+    "primary_Source_risk_gene_seen_tasks": 52,
+    "primary_Source_risk_gene_unseen_tasks": 180,
+    "all_primary_have_real_Public_history": true,
+    "TEST_truth_opened": false,
+    "scientific_success_not_established": true,
+    "technical_repair_commit": "1005809"
+  },
+  "orion_once_only_test_run": {
+    "pid": 554948,
+    "operation_sha256": "c94bc298c95bbe4a4d6f92dac8263b9aa93be18c48297f5181232bf73d44881d",
+    "operation_path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/IMMUTABLE_POSTSEAL_TEST_ACCESS.json",
+    "authorized_chain_sha256": "19ea756bd8fd2d9be3cc81392abb1952c648a1654401d8748a6af400de8a377d",
+    "global_claim_required_before_numeric_read": true,
+    "no_method_refitting_or_TESTselection": true,
+    "no_scientific_effect_yet_reported": true
   }
 }

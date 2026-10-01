@@ -1,0 +1,156 @@
+{
+  "schema": "safeconf_orion_completed_pretruth_cost_index_append_v1",
+  "status": "PROPOSED_SCOPED_APPEND_SHARED_TABLES_UNCHANGED",
+  "created_utc": "2026-10-01T23:51:03.936458+00:00",
+  "baseline_cost_table": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/COST_MASTER_TABLE.csv",
+    "bytes": 120277,
+    "sha256": "3dde4c718cda421d6cb3f3c3e30c80b4904283cf9ec7de1a45fdd9ed737f2cd2"
+  },
+  "baseline_cost_rows": 334,
+  "baseline_result_index": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/RESULT_INDEX.csv",
+    "bytes": 288344,
+    "sha256": "cc3c555196ceba8c8e61328808f14ebc33293c2683a0a1d51ab9e2b81ad31526"
+  },
+  "baseline_result_index_rows": 890,
+  "new_cost_rows": 4,
+  "new_known_wall_stage_rows": 3,
+  "comparison_wall_measurement": null,
+  "known_stage_wall_seconds_sum": 169.14202948403545,
+  "sum_is_not_full_pipeline_total": true,
+  "new_independently_fitted_models": 0,
+  "R_Source_Public_models_competence_reused_not_counted_again": true,
+  "large_upstream_GPU_hours_added": 0,
+  "new_upstream_calls_added": 0,
+  "exact_CPU_seconds_for_new_stages_unavailable": true,
+  "new_cost_stage_evidence": [
+    {
+      "method": "Orion_TRAIN_NTC_decimal_token_bridge_success_v3",
+      "evidence": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_lm_bridge_20261002_v1/actual_authorized_v3_decimal_tokens/BRIDGE_MANIFEST.json",
+        "bytes": 112874,
+        "sha256": "13c90f2feb21f841138f366fd140ff6a194bdd20d1337bd3c8d7e15500d0d478"
+      },
+      "wall_seconds": 90.2187113580294,
+      "wall_definition": "metadata producer elapsed_seconds",
+      "exact_CPU_seconds": null,
+      "fits": 0,
+      "GPU_hours": 0,
+      "new_upstream_calls": 0
+    },
+    {
+      "method": "Orion_legacy_fullbatch_pretruth_inference_diagnosis",
+      "evidence": {
+        "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/public_bank_extension/legacy_partition_recovery_v1/DIAGNOSIS.json",
+        "bytes": 13752,
+        "sha256": "12b513bf3927d585f14b972501c60aec5ecf388ed3159472194d0099bbf867dc"
+      },
+      "wall_seconds": 41.740193638019264,
+      "wall_definition": "metadata producer elapsed_seconds",
+      "exact_CPU_seconds": null,
+      "fits": 0,
+      "GPU_hours": 0,
+      "new_upstream_calls": 0
+    },
+    {
+      "method": "Orion_partitioned_expanded_pretruth_seal_success_v4",
+      "evidence": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_risk_seal/RISK_SEAL_MANIFEST.json",
+        "bytes": 16499,
+        "sha256": "654b661aaae711c952502651d8f145f5be40c907a87ba125f46baa67d0514db2"
+      },
+      "wall_seconds": 37.18312448798679,
+      "wall_definition": "metadata producer elapsed_seconds",
+      "exact_CPU_seconds": null,
+      "fits": 0,
+      "GPU_hours": 0,
+      "new_upstream_calls": 0
+    },
+    {
+      "method": "Orion_partitioned_expanded_pretruth_comparison_success_v4",
+      "evidence": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_comparison/EXTENSION_COMPARISON_RECEIPT.json",
+        "bytes": 7436,
+        "sha256": "1262c2172975f74331e83ce4d88e696439c8dafc0d3b68d09ede3fbdb16b7aa0"
+      },
+      "wall_seconds": null,
+      "wall_definition": "UNAVAILABLE_NO_MEASUREMENT",
+      "exact_CPU_seconds": null,
+      "fits": 0,
+      "GPU_hours": 0,
+      "new_upstream_calls": 0
+    }
+  ],
+  "existing_rows_deliberately_not_recounted": [
+    {
+      "method": "PublicMemory_bank_failed_v1_preserved",
+      "source_file": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/ACTUAL_BANK_BUILD_RECEIPT.json",
+      "elapsed_wall_seconds": "56.094636056",
+      "fitted_models": "0"
+    },
+    {
+      "method": "PublicMemory_bank_successful_v2",
+      "source_file": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/ACTUAL_BANK_BUILD_RECEIPT.json",
+      "elapsed_wall_seconds": "204.65267034294084",
+      "fitted_models": "0"
+    },
+    {
+      "method": "Orion_authorized_TRAIN_VALIDATION_biology_aggregation_v2",
+      "source_file": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_full_pipeline_20261002_v2/STATUS.json",
+      "elapsed_wall_seconds": "13724.538",
+      "fitted_models": "0"
+    },
+    {
+      "method": "Orion_TRAIN_only_R_input_bridge_failed_v2",
+      "source_file": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_full_pipeline_20261002_v2/STATUS.json",
+      "elapsed_wall_seconds": "73.945",
+      "fitted_models": "0"
+    },
+    {
+      "method": "Orion_decimal_v2_FIXED_PUBLISHED_CPU_LINEAR_FIT_PRETRUTH",
+      "source_file": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_published_fit_competence_v1/ACTUAL_FIT_COMPETENCE_RECEIPT.json",
+      "elapsed_wall_seconds": "384.51175420405343",
+      "fitted_models": "2"
+    },
+    {
+      "method": "Orion_decimal_v2_FIXED_VALIDATION_COMPETENCE_ONLY",
+      "source_file": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_published_fit_competence_v1/ACTUAL_FIT_COMPETENCE_RECEIPT.json",
+      "elapsed_wall_seconds": "37.419513915199786",
+      "fitted_models": "0"
+    },
+    {
+      "method": "Orion_decimal_v2_ORIGINAL2008_SOURCE_PRETRUTH_ARCHIVE",
+      "source_file": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_published_fit_competence_v1/ACTUAL_FIT_COMPETENCE_RECEIPT.json",
+      "elapsed_wall_seconds": "29.234335439046845",
+      "fitted_models": "0"
+    },
+    {
+      "method": "Orion_decimal_v2_EXPANDED_SOURCE_PRETRUTH_SEAL",
+      "source_file": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_published_fit_competence_v1/ACTUAL_FIT_COMPETENCE_RECEIPT.json",
+      "elapsed_wall_seconds": "71.72971243900247",
+      "fitted_models": "0"
+    }
+  ],
+  "deduplication": "Existing334rows checked by newmethodID and exactsource artifact path; historicalbank/aggregation/failedbridge/Rfit/COMP/originalseal/failedexpandedseal stay existingrows. Append4distinctstages only. comparisonwall blank, not0.",
+  "review": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/public_bank_extension_actual_pretruth_independent_review_v1/FINAL_ACTUAL_PRETRUTH_SEAL_COMPARISON_REVIEW.json",
+    "bytes": 13799,
+    "sha256": "5906e72c11751b0c32ff99444ffacbaa94a699751fee827eb6515c76da47476f"
+  },
+  "review_checks_passed": 43,
+  "primary_13methodfinite_tasks": 232,
+  "gene_clusters_union": 144,
+  "context_tasks": {
+    "HCT116": 107,
+    "HEK293T": 125
+  },
+  "Source575seen_32genes52tasks_unseen_112genes180tasks": true,
+  "no_scientific_superiority_or_SafeConf_PASS_claim": true,
+  "TEST_metadata": "SEEN",
+  "TEST_truth": "CLOSED",
+  "TEST_open_authorized_by_this_package": false,
+  "actual_global_claim_exists_at_package_time": false,
+  "old_shared_tables_or_implementation_or_scores_assets_modified": false,
+  "accounting_only_no_predictions_fits_SourceX_TEST_access": true
+}

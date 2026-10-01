@@ -1,0 +1,55 @@
+{
+  "schema": "safeconf_orion_pretruth_execution_status_append_v1",
+  "orion_registered_evaluation_status": "COMPLETED_PRETRUTH_SEAL_COMPARISON_43CHECKS_PASS_AWAIT_SEPARATE_ROOT_ONCE_ONLY_TEST_OPERATION",
+  "orion_pretruth_final_package": {
+    "status": "ACTUAL_EXECUTION_AND_LINEAGE_AND_FINITE_COVERAGE_PASS",
+    "risk_seal_manifest": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_risk_seal/RISK_SEAL_MANIFEST.json",
+      "bytes": 16499,
+      "sha256": "654b661aaae711c952502651d8f145f5be40c907a87ba125f46baa67d0514db2"
+    },
+    "extension_seal_receipt": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_risk_seal/EXTENSION_SEAL_RECEIPT.json",
+      "bytes": 12730,
+      "sha256": "790daf9abd1572a9f4a7a50e90448613a98d9a46f97efd1aed5d18c09d59b388"
+    },
+    "comparison_receipt": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_comparison/EXTENSION_COMPARISON_RECEIPT.json",
+      "bytes": 7436,
+      "sha256": "1262c2172975f74331e83ce4d88e696439c8dafc0d3b68d09ede3fbdb16b7aa0"
+    },
+    "comparison_spec": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_comparison/COMPARISON_SPEC.json",
+      "bytes": 20238,
+      "sha256": "47c76a048159e4e6d964730507001136e59fb0185d6364887710f68f1ca0d2e4"
+    },
+    "independent_review": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/public_bank_extension_actual_pretruth_independent_review_v1/FINAL_ACTUAL_PRETRUTH_SEAL_COMPARISON_REVIEW.json",
+      "bytes": 13799,
+      "sha256": "5906e72c11751b0c32ff99444ffacbaa94a699751fee827eb6515c76da47476f"
+    },
+    "review_check_count": 43,
+    "fixed_method_count": 13,
+    "primary_metadata_qualified_finite_tasks": 232,
+    "biological_gene_clusters_union": 144,
+    "HCT116": 107,
+    "HEK293T": 125,
+    "legacy_queries_allbits_invariant": 446,
+    "Source_risk_gene_seen": {
+      "tasks": 52,
+      "genes": 32
+    },
+    "Source_risk_gene_unseen_with_real_Public_history": {
+      "tasks": 180,
+      "genes": 112
+    },
+    "new_model_fits": 0,
+    "target_errors_CDF_or_tuning_used": false,
+    "old_scientific_contract_and7Source_models_unchanged": true,
+    "whole_method_pristine_or_old_confirmation_inherited": false,
+    "scientific_efficacy_result_PASS": false,
+    "TEST_truth_read": false,
+    "TEST_metadata_status": "SEEN",
+    "next_required_step": "Separate actual Root review/authorization and immutable once-only registered TEST scope; this status append does not authorize any reading."
+  }
+}
