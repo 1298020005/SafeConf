@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-01T19:08:28.904359+00:00",
+  "updated_utc": "2026-10-01T19:13:11.067818+00:00",
   "complete": [
     "five-fold nested public biology with four inner folds",
     "three-line sixteen-method matrix with three registered seeds",
@@ -51,10 +51,11 @@
     "Reviewed technicalbyte-selectionvectorization:12privacy+20integration+12crosspageproofs; actual128cellpilot6.005sec vs84.581sec andsame countsumgaps0"
   ],
   "pending": [
-    "Strict authorizedOrion TRAIN/VALIDATION biology integration and independent syntheticreview",
-    "PublishedCPUlinear fullblindworkflow fixture and prospectiveupstream validationcompetence",
-    "Targetpretruthprediction/config/parameterhashfreeze beforeanyOrionTESTexpression",
-    "Independentstudy suitability and contributedinformation closure; fullbudget/provenance ledger audit"
+    "Actual authorized Orion TRAIN/VALIDATION aggregation final artifacts and hashes",
+    "Actual published CPU linear TRAIN fit and prospective validation competence gate",
+    "All target pretruth prediction, configuration and parameter hashes sealed before Orion TEST expression",
+    "Prospective independent-study replication and information increment closure; metadata-exposed TEST cannot be called pristine SEALED",
+    "Final budget/provenance/claim evidence closure; manuscript remains deferred by user"
   ],
   "new_large_upstream_training": 0,
   "new_download_gb": 0.04440246,
@@ -64,25 +65,31 @@
     "manuscript and supplement prose generation"
   ],
   "new_download_bytes_verified": 44402460,
-  "new_dataset_download_gb": 0,
+  "new_dataset_download_gb": 18.13844995,
   "resource_accounting_note": "TRAINsemanticpilot actual84.581seconds CPU, no fits or GPU; datasetacquisition registered18.138GB. Retry13samepublisherSHA recovered228436131newbytes; no data replacement. Fullnewupstreamattempt remains0 until formalvalidationprediction.",
-  "new_dataset_download_gb_verified": 3.922378619,
+  "new_dataset_download_gb_verified": 18.13844995,
   "new_dataset_download_registered_bytes": 18137568035,
   "new_gpu_hours_tabular_insurance": 0.006375,
   "new_upstream_formal_validation_prediction_attempts": 0,
-  "orion_verified_files": 11,
+  "orion_verified_files": 41,
   "orion_registered_files": 41,
   "orion_test_expression_opened": false,
   "background_jobs": [
     {
-      "name": "registered_download",
-      "pid": 77969,
-      "manifest": "997bdbf33c079746457646cd5fe433e3812063ebc1aefcb6f590376086f15900"
+      "name": "registered_blind_CPU_pipeline_v2",
+      "pid": 208030,
+      "status_file": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_full_pipeline_20261002_v2/STATUS.json",
+      "TESTtruth_reader": false
     },
     {
-      "name": "registered_blind_CPU_pipeline",
-      "pid": 130370,
-      "status_file": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_full_pipeline_20261002_v1/STATUS.json",
+      "name": "authorized_TRAIN_VALIDATION_aggregation_v2",
+      "pid": 208033,
+      "TESTnumeric_materialization": false
+    },
+    {
+      "name": "competence_and_pretruth_risk_seal_followthrough_v2",
+      "pid": 208031,
+      "status_file": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v2/STATUS.json",
       "TESTtruth_reader": false
     }
   ],
@@ -97,5 +104,21 @@
   "orion_aggregation_pid": 208033,
   "orion_postfit_followthrough_pid": 208031,
   "orion_vectorized_pilot_seconds": 6.005,
-  "orion_vectorized_pilot_cells": 128
+  "orion_vectorized_pilot_cells": 128,
+  "download_accounting_definition": "Verified distinct registered dataset object bytes, not cumulative transferred retry traffic. Legacy new_download_* fields count earlier runtime packages and are not the total acquisition ledger.",
+  "superseded_background_jobs": [
+    {
+      "name": "registered_download",
+      "pid": 77969,
+      "manifest": "997bdbf33c079746457646cd5fe433e3812063ebc1aefcb6f590376086f15900"
+    },
+    {
+      "name": "registered_blind_CPU_pipeline",
+      "pid": 130370,
+      "status_file": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_full_pipeline_20261002_v1/STATUS.json",
+      "TESTtruth_reader": false
+    }
+  ],
+  "orion_verified_acquisition_bytes": 18138449950,
+  "orion_runtime_progress_note": "Initial 8.94GB sum-map write completed; actual authorized token spool observed growing. No resource limit change needed."
 }
