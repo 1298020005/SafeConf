@@ -1,0 +1,44 @@
+{
+  "registered_at_utc": "2026-10-01T04:03:50.632445+00:00",
+  "git_head": "31886fc90584db2adfc3681cfc74158e63c1db05",
+  "assets": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/seal_mcfaline_dual_memory_risk.py",
+      "sha256": "2dfd627ac5b09e8ef6ce4116cf2b938bd3379f731ca081b7127ab470e6de3d5e",
+      "n_bytes": 23732,
+      "role": "preserved_frozen_asset"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_dual_memory_txpert_public_biology.py",
+      "sha256": "fc2db4a07b6e360676c54b09c5bd5d893dc58aaef2c9426ac3da8df673cfaf63",
+      "n_bytes": 29386,
+      "role": "preserved_frozen_asset"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_research_closure.py",
+      "sha256": "66eda0425ccd18e729d7332a8e2865d80aa386126bc0eeee3366ad5f75f23a6c",
+      "n_bytes": 18405,
+      "role": "execution_code"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_mcfaline23/test_pretruth_20260930/risk_seal/SEALED_TEST_RISK_PREDICTIONS.csv.gz",
+      "sha256": "501d7ec4a7377136c59fd46454036aaccf6fc89c17b600c7cf67fcbae5a12e48",
+      "n_bytes": 52343,
+      "role": "preserved_frozen_asset"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_mcfaline23/test_pretruth_20260930/risk_seal/TEST_MANUAL_PUBLIC_PRIOR.npy",
+      "sha256": "31e716bc9cad71c0c7fbfcaf61ce2958726e2b66e016a4b21fc18993b14536d9",
+      "n_bytes": 1112192,
+      "role": "preserved_frozen_asset"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_mcfaline23/test_pretruth_20260930/risk_seal/TEST_LEARNED_PUBLIC_PRIOR.npy",
+      "sha256": "77d9f27dd0938c0751f25fe254eb3dd6ba58ac5c1ffd4219c78ccc8173bf8987",
+      "n_bytes": 1112192,
+      "role": "preserved_frozen_asset"
+    }
+  ],
+  "run_session": 32424,
+  "post_confirmation_status": "All evaluation truth was already seen. Additional October analyses are not pristine confirmations."
+}

@@ -1,0 +1,45 @@
+{
+  "bootstrap_replicates": 5000,
+  "cluster_training_weights": "equal total weight per biological perturbation cluster",
+  "code_sha256": "abad3872ca12192157170e3805d91c20723b7c9fcb21d4cc882feddd4ed57f42",
+  "external_role": "previously opened, post-confirmation comparison; original confirmation is unchanged",
+  "phase": "figures",
+  "primary_aggregation": "equal-context macro of pooled outer-OOF predictions; outer-fold strata also reported",
+  "public_inner_folds": 4,
+  "public_outer_folds": 5,
+  "risk_cdf_groups": [
+    "dataset_id",
+    "output_contract_id",
+    "upstream",
+    "model_version",
+    "target"
+  ],
+  "risk_features": [
+    "predicted_magnitude",
+    "prediction_abs_mean",
+    "prediction_signed_mean",
+    "prediction_std",
+    "prediction_abs_q95",
+    "prediction_sparsity",
+    "prior_magnitude",
+    "prediction_prior_rmse",
+    "prediction_prior_cosine",
+    "prior_uncertainty",
+    "log_history_support",
+    "effective_sources",
+    "history_conflict"
+  ],
+  "risk_parameters": {
+    "hgb_depth": 3,
+    "hgb_iter": 200,
+    "hgb_l2": 10,
+    "hgb_learning_rate": 0.05,
+    "hgb_min_leaf": 20,
+    "ridge_alpha": 10
+  },
+  "seeds": [
+    20260930,
+    20261001,
+    20261002
+  ]
+}
