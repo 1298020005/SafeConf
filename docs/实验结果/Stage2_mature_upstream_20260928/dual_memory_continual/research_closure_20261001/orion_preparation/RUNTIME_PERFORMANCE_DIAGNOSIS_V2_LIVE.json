@@ -1,0 +1,90 @@
+{
+  "scope": "READ_ONLY_LIVE_V2_PROGRESS_DIAGNOSIS_NO_EXPRESSION_VALUES",
+  "sample_initial_utc": "2026-10-01T19:11:41Z",
+  "sample_latest_utc": "2026-10-01T19:13:38.820372+00:00",
+  "parent_pid": 208030,
+  "aggregate_pid": 208033,
+  "followthrough_pid": 208031,
+  "latest_state": "D (disk sleep)",
+  "latest_wchan": "blk_mq_get_tag",
+  "latest_RSS": "722616 kB",
+  "peak_RSS": "731748 kB",
+  "process_swap": "0 kB",
+  "initial_phase_evidence": {
+    "only_SUMS_COUNTS_FDs": true,
+    "CPU_seconds": 22,
+    "elapsed_seconds": 311,
+    "CPU_average_percent": 7.3,
+    "write_bytes": 7979008000,
+    "read_bytes": 1101824
+  },
+  "latest_io": {
+    "rchar": 753441350,
+    "wchar": 380541610,
+    "syscr": 2048,
+    "syscw": 14868,
+    "read_bytes": 5939200,
+    "write_bytes": 10505789440,
+    "cancelled_write_bytes": 0
+  },
+  "io_deltas_since_initial": {
+    "write_bytes": 2526781440,
+    "read_bytes": 4837376
+  },
+  "latest_fd_paths": [
+    "pipe:[126274042]",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_full_pipeline_20261002_v2/AUTHORIZED_TRAIN_VALIDATION_AGGREGATION.log",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_full_pipeline_20261002_v2/AUTHORIZED_TRAIN_VALIDATION_AGGREGATION.log",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_allowed_biology_20261002_v2.vector_v2_uncommitted.208033.incomplete.208033/FULL_SUMS.npy",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_allowed_biology_20261002_v2.vector_v2_uncommitted.208033.incomplete.208033/CELL_COUNTS.npy",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_allowed_biology_20261002_v2.vector_v2_uncommitted.208033.incomplete.208033/tokens_0.uint32"
+  ],
+  "latest_stage_file_sizes": {
+    "FULL_SUMS.npy": {
+      "bytes": 8940223184,
+      "allocated_bytes": 8940232704,
+      "mtime_utc": "2026-10-01T19:13:35.664372+00:00"
+    },
+    "CELL_COUNTS.npy": {
+      "bytes": 231704,
+      "allocated_bytes": 233472,
+      "mtime_utc": "2026-10-01T19:13:35.035359+00:00"
+    },
+    "tokens_0.uint32": {
+      "bytes": 380541352,
+      "allocated_bytes": 380547072,
+      "mtime_utc": "2026-10-01T19:12:53.562491+00:00"
+    }
+  },
+  "current_phase": "sum-map initialization completed; first fixed shard token/expression decoding has begun",
+  "parent_confirmation_utc": "19:12UTC; child R with token_0 spool58,240,096bytes",
+  "disk_initialization_samples": {
+    "device": "sdb",
+    "filesystem": "ext4",
+    "rotational_logical_volume": true,
+    "write_MiB_per_second": 25.207,
+    "utilization_percent": 95.5,
+    "write_await_ms": 179.88,
+    "queue_depth": 38.34
+  },
+  "memory": {
+    "MemAvailable": "111243500 kB",
+    "MemFree": "679176 kB",
+    "Cached": "103833744 kB",
+    "Dirty": "23952 kB",
+    "Writeback": "38408 kB",
+    "SwapFree": "1496 kB"
+  },
+  "disk_free_TiB_initial": 2.4,
+  "diagnosis": "live progress; initialD wait caused by synchronous mapped-file initialization/writeback, not insufficientRAM or faileddecoder",
+  "continuation_within_registered_bounds": "initialization outside hard per-file timer; now file1 decoding under600s hard file deadline and8h pipeline bound; current progress supports continuation but full40-shard throughput not yet measured",
+  "resource_cap_change_justified": false,
+  "no_code_process_or_permit_changes": true,
+  "process_killed_restarted": false,
+  "expression_or_private_distribution_values_opened": false,
+  "limitations": [
+    "proc syscall/stack access denied; no escalation used",
+    "initial disk measurements are device-wide",
+    "remaining perfile throughput and total completion cannot be guaranteed from initialization samples"
+  ]
+}
