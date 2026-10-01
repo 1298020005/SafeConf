@@ -1,0 +1,675 @@
+{
+  "schema": "safeconf_orion_legal_TEST_open_readonly_checklist_v1",
+  "checked_utc": "2026-10-01T19:24:55.734128+00:00",
+  "ready_to_open_TEST_now": false,
+  "scientific_contract": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_METHOD_CONTRACT.json",
+    "sha256": "6b8a26939c8c6134dbf2e8294ee7905fccc2122b570b046f3183a3d2f5caba97"
+  },
+  "active_TRAIN_VALIDATION_permit": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_VECTORIZED_PIPELINE_ACCESS_PERMIT.json",
+    "sha256": "aad3ef022968bb3d5a2d9f3b4baf59a548698bd20f2996f249b7153570af1a76",
+    "TEST_numeric_authorized": false
+  },
+  "authorization_interpretation": {
+    "new_human_confirmation_required_by_audited_files": false,
+    "conditional_user_authority": "If prior user instruction authorizes freeze then once TEST open, root can persist the final access receipt using that existing authority. A separate machine TEST permit is mandatory; the TRAINVAL permit cannot be reused.",
+    "subagent_has_original_user_authorization_quote": false,
+    "instruction_applicability": "Do not infer a new human approval requirement from the scientific phrase explicit final test access contract; retain prior session authorization.",
+    "not_an_authorization_to_read_TEST_this_turn": true
+  },
+  "verified_Source_core_parameter_and_history_bindings": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_FEATURE_MANIFEST.json",
+      "bytes": 16172,
+      "sha256": "b74b9dfbc64f5acc82b7b0d34023aa6a523bd11d1904ced7fd638c5bec4ef2d1",
+      "status": "VERIFIED_CURRENT"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/MODEL_MANIFEST.json",
+      "bytes": 8934,
+      "sha256": "c8d9d5003860d8a5e117398a7d44b5c67cfb700c6fb56f37bcf04a5d549909a6",
+      "status": "VERIFIED_CURRENT"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_MEMORY_METADATA.parquet",
+      "bytes": 58150,
+      "sha256": "fcfbd3300a012e3747c9642f5076d1407c509f46f66e4412522c5d9b8661c4bd",
+      "status": "VERIFIED_CURRENT"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_EFFECTS.npy",
+      "bytes": 52770368,
+      "sha256": "ea946b2c9a9a7ee1605af1f9b72e9cc250596ce6eb0dc08b7ab4aeed3d80c4aa",
+      "status": "VERIFIED_CURRENT"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_CONTROLS.npy",
+      "bytes": 52770368,
+      "sha256": "b045d003f1bca1d570cc75d3a03928ea77a18ce206411a932f3afc501e4c73d3",
+      "status": "VERIFIED_CURRENT"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/GENE_MANIFEST.csv",
+      "bytes": 122617,
+      "sha256": "c1c9c8041458275248514d960c6c263a72f43a12a8d48c16f77759d2342fa08f",
+      "status": "VERIFIED_CURRENT"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/GENE_IDS.json",
+      "bytes": 37116,
+      "sha256": "b7f80db0c0e46dd7667cb83f39153c4add31948ca00e5391c210b9c6a18d7c68",
+      "status": "VERIFIED_CURRENT"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_ERROR_CDF.json",
+      "bytes": 108918,
+      "sha256": "ebd7390593cfc0bf71fbcab2c9c992d62990b57d729f59a6867ad98265a2bc01",
+      "status": "VERIFIED_CURRENT"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_P_only_ridge.joblib",
+      "bytes": 881,
+      "sha256": "68019b2ea0c6a332049089da100e18515e05cabebbd1fa6f4fcf24d4d112d42d",
+      "status": "VERIFIED_CURRENT"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_P_only_hgb.joblib",
+      "bytes": 61512,
+      "sha256": "4b3206c9183e5c38e62c2b1ce0e2185f711102e23ac8ff3fc52d930eed150cc7",
+      "status": "VERIFIED_CURRENT"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_Manual_ridge.joblib",
+      "bytes": 1203,
+      "sha256": "de485ad5899827618416a8d73f9f7137da7a4b26aefc395a67304ad9e8b3c955",
+      "status": "VERIFIED_CURRENT"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_Manual_hgb.joblib",
+      "bytes": 79239,
+      "sha256": "1c0a78127b4aaf4349761b569c63fb4f6f74925ddc303221d8393c5b5e3eed42",
+      "status": "VERIFIED_CURRENT"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_Learned_ridge.joblib",
+      "bytes": 1205,
+      "sha256": "f4d332b16c79b410fb71fe461f18777c7bd9899a1b6971312142fe56177fae0e",
+      "status": "VERIFIED_CURRENT"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_Learned_hgb.joblib",
+      "bytes": 78050,
+      "sha256": "a605d30c12eee46fe4b2b1af64d5eed5edfcf042cdb781fdb75883a6f9454f7d",
+      "status": "VERIFIED_CURRENT"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_BIOLOGY_FULL_HGB.joblib",
+      "bytes": 66883,
+      "sha256": "3a6f05d9b8060eb9802a6e5a0e6adf067253e57edd3aedd04b600a2f93578f5a",
+      "status": "VERIFIED_CURRENT"
+    }
+  ],
+  "current_code_hashes_to_bind": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/orion_linear.R",
+      "sha256": "6f4f9dbdbe5d147019806b60a4aa6c2fe82d888d1e4d87d71b99807552129b25"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_orion_lm_blind.R",
+      "sha256": "086fb5489bc88520b1854d0101db117f66f913d7ce94064a6df18772633aaee1"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/bridge_safeconf_orion_lm_inputs_agent.py",
+      "sha256": "dcc7d6afcd812d89ddb372e511cb9607e216da8c1f57e484317db4b3eda52a38"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/build_safeconf_orion_allowed_biology_agent.py",
+      "sha256": "cdf261ffcae854f49d469437492a12b7f835aae7b720bbe565044d8a89369e8b"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/build_safeconf_orion_allowed_biology_vectorized_agent.py",
+      "sha256": "6135469b10d5e200f4654a53f2a750fc9cc4c356037ce6abdfddd95030b45d1f"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/probe_safeconf_private_parquet_agent.py",
+      "sha256": "3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/probe_safeconf_private_parquet_vectorized_agent.py",
+      "sha256": "636455cb30fc0e8c8ce6ac92db82756eff7508322e92862cf23ffad861d2e435"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/evaluate_safeconf_orion_competence_agent.py",
+      "sha256": "da06a174c69339b4afb1cfc7ab33015e34c8d27f2d7264a045c799e7f75b942c"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/seal_safeconf_orion_source_risk_agent.py",
+      "sha256": "8b69e6ce29dc92aa34150b3b08aac62ce8333a10f84ec432a39d0e81ffc64482"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/research.py",
+      "sha256": "22a02a79d59f1d852870efb9dc1afe229f150c5db75e5de735f7bfcc1f613887"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/competence/EXTRACT_FROZEN_BASELINE.R",
+      "sha256": "d89ab0f92d8ef971a4476d7e13f17ce19e332e7075508db1ed057be81e52f5fe"
+    }
+  ],
+  "current_metadata_role_axis_hashes_to_bind": [
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/PREPARATION_POLICY.json",
+      "sha256": "594a5aef77684dc99666022c76666100a5c9791082532d00b7c70ddfe1fac3b7"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/GENE_SPLIT.csv",
+      "sha256": "3bda5a9e0674cd7379b01e798d1c1b8c337efec86f44aceb41d4d74c73df52be"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/GENE_MANIFEST.csv",
+      "sha256": "eb377ecb5ed1f99e259e6e8154f0edae68065ba36e3eae59ce50c2f72d8b72d4"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/gene_metadata.parquet",
+      "sha256": "33900a0dbaeafb84601c7c8ba7c6642c440774fc3f49613dab11cf1f2bf0fdbf"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/FILE_METADATA_IDENTITY.json",
+      "sha256": "89901ca8afbb6fe86664c54c5f6c2bab27b21d77f75563395e25c3dd0d9659f6"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/CONTROLS_SCOPE.json",
+      "sha256": "1630ee35e8de9bee6fa26052b90e08d69d41410db208e2a560923776ddc84021"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_DATA_ROLE_REGISTRY.csv",
+      "sha256": "df2ea48a35a7940bf74e3b6a37e216a856dd2c80eee0287946f69a381e9a21f7"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_lm_bridge_20261002_v1/query_scope_metadata_only/METADATA_ONLY_QUERY_SCOPE.tsv",
+      "sha256": "0fbdc6c431538da8f4c3a8247ce227fe292d709e05d8e032218f99674e32620e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_lm_bridge_20261002_v1/query_scope_metadata_only/VALIDATION_ELIGIBILITY.tsv",
+      "sha256": "274bc9f946d09229334cda7b78e4c39d94f2e6f4dc18888a8e58da7f27d16e6c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_lm_bridge_20261002_v1/query_scope_metadata_only/QUERY_SCOPE_MANIFEST.json",
+      "sha256": "e9f4b22ca4fa30dea2b27580936d212b1cec9898e76d439cf673b5232e8b8334"
+    }
+  ],
+  "absent_or_pending_actual_artifact_gates": [
+    {
+      "requirement": "final_authorized_biology",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_allowed_biology_20261002_v2/BIOLOGY_MANIFEST.json",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "final_biology_artifacts",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_allowed_biology_20261002_v2/ARTIFACT_HASHES.json",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "actual_bridge_lineage",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_lm_bridge_20261002_v1/actual_authorized_v2/BRIDGE_MANIFEST.json",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "actual_bridge_artifacts",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_lm_bridge_20261002_v1/actual_authorized_v2/ARTIFACT_HASHES.json",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "LM_fit_run_manifest",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/RUN_MANIFEST.tsv",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "actual_competence_PASS",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v2/competence/COMPETENCE_RESULT.json",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "validation_C_ledger",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v2/competence/C_VALIDATION_ACCESS_LEDGER.json",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "pretest_comparison_manifest",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v2/FROZEN_PRETEST_COMPARISON.json",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "actual_all_candidate_risk_seal",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v2/risk_seal/RISK_SEAL_MANIFEST.json",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "actual_pretruth_risk_scores",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v2/risk_seal/PRETRUTH_RISKS.tsv",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "actual_seal_artifact_registry",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v2/risk_seal/ARTIFACT_HASHES.json",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "guarded_TEST_execution_code",
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/evaluate_safeconf_orion_guarded_test_agent.py",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HCT116/MODEL.rds",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HCT116/GENE_EMBEDDING.rds",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HCT116/PERTURBATION_EMBEDDING.rds",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HCT116/RIDGE_COEFFICIENTS.rds",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HCT116/INTERCEPT_AND_BASELINE.tsv.gz",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HCT116/SIMPLE_BASELINES.rds",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HCT116/BASELINE_SELECTION.tsv",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HCT116/PREDICTIONS_TREATED.rds",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HCT116/PREDICTIONS_DELTA.rds",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HCT116/PREDICTIONS_DELTA.tsv.gz",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HCT116/QUERY_IDENTITIES.tsv",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HCT116/OUTPUT_GENE_AXIS.tsv",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HCT116/STATUS.tsv",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HCT116/ARTIFACT_HASHES.tsv",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "matched_frozen_TRAIN_NTC",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_lm_bridge_20261002_v1/actual_authorized_v2/HCT116/OWN_CONTEXT_NTC_MEAN.tsv",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "model_input_receipt",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_lm_bridge_20261002_v1/actual_authorized_v2/HCT116/INPUT_RECEIPT.tsv",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HEK293T/MODEL.rds",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HEK293T/GENE_EMBEDDING.rds",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HEK293T/PERTURBATION_EMBEDDING.rds",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HEK293T/RIDGE_COEFFICIENTS.rds",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HEK293T/INTERCEPT_AND_BASELINE.tsv.gz",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HEK293T/SIMPLE_BASELINES.rds",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HEK293T/BASELINE_SELECTION.tsv",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HEK293T/PREDICTIONS_TREATED.rds",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HEK293T/PREDICTIONS_DELTA.rds",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HEK293T/PREDICTIONS_DELTA.tsv.gz",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HEK293T/QUERY_IDENTITIES.tsv",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HEK293T/OUTPUT_GENE_AXIS.tsv",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HEK293T/STATUS.tsv",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "fitted_parameters_or_frozen_prediction",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v2/HEK293T/ARTIFACT_HASHES.tsv",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "matched_frozen_TRAIN_NTC",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_lm_bridge_20261002_v1/actual_authorized_v2/HEK293T/OWN_CONTEXT_NTC_MEAN.tsv",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "model_input_receipt",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_lm_bridge_20261002_v1/actual_authorized_v2/HEK293T/INPUT_RECEIPT.tsv",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "frozen_prior_or_public_features",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v2/risk_seal/Uniform_PRIOR_EFFECTS.npy",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "frozen_prior_or_public_features",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v2/risk_seal/Uniform_P_PUBLIC_FEATURES.parquet",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "frozen_prior_or_public_features",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v2/risk_seal/Manual_PRIOR_EFFECTS.npy",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "frozen_prior_or_public_features",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v2/risk_seal/Manual_P_PUBLIC_FEATURES.parquet",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "frozen_prior_or_public_features",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v2/risk_seal/Learned_PRIOR_EFFECTS.npy",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "frozen_prior_or_public_features",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v2/risk_seal/Learned_P_PUBLIC_FEATURES.parquet",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "frozen_prior_weights",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v2/risk_seal/SOURCE_PRIOR_WEIGHTS.tsv",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "frozen_P_features",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v2/risk_seal/P_ONLY_FEATURES.parquet",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    },
+    {
+      "requirement": "frozen_Source_pair_features",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v2/risk_seal/SOURCE_HISTORY_PAIR_FEATURES.parquet",
+      "exists_now": false,
+      "sha256_now": null,
+      "gate": "must be complete, expectedSHA-bound and validated before first TEST numeric conversion"
+    }
+  ],
+  "operational_blockers": [
+    "registered full BIOLOGY aggregate not yet promoted",
+    "two actual published LM parameter bundles and full pretruth predictions absent",
+    "actual registered competencePASS absent",
+    "all six Source-risk candidates plus priors/features/weights not yet sealed for actual query set",
+    "guarded TEST opener source+independent proof+fixed evaluation configuration and one-time access receipt must be finalized/bound after preceding hashes"
+  ],
+  "mandatory_gate_values": {
+    "competence_status": "PASS",
+    "passes_competence": true,
+    "actual_context_count": 2,
+    "noninferior_contexts": 2,
+    "relative_macro_gap_max": 0.02,
+    "minimum_noninferior_fraction": 0.6,
+    "stable_disadvantage": false,
+    "bootstrap_replicates": 5000,
+    "bootstrap_seed": 20260929,
+    "eligible_tasks_equal_evaluated_tasks": true,
+    "missing_or_nonfinite_predictions": 0,
+    "competence_test_truth_read": false,
+    "risk_seal_status": "SEALED_PRETRUTH",
+    "risk_seal_target_CDF_fit": false,
+    "risk_seal_new_learners_or_parameter_fits": 0,
+    "risk_seal_query_errors_used": false,
+    "all_six_candidates_fixed_before_TEST": true,
+    "no_history_PUBLIC_NaN_unsupported_policy_preserved": true
+  },
+  "postseal_TEST_operation_required_fields": [
+    "registered single operation ID and exclusive output/access ledger",
+    "explicit TEST numeric authorization only after actual freeze gates",
+    "scientific contract+role registry+all40 LFS object manifest and exact metadata row identity hashes",
+    "all upstream model/config/parameter/prediction hashes and actual competence result hash",
+    "all Source model/history/CDF/risk-seal/candidate/config/prior/weight hashes",
+    "exact guarded TEST script+numeric backend+original structural/scientific helper hashes",
+    "frozen own-context TRAIN NTC sidecars and Source3285 endpoint",
+    "fixed evaluation candidates/metrics/coverage/cluster bootstrap rules before TEST errors",
+    "data role TEST SEEN metadata with prior result_seen false; pristine_confirmation_claim false"
+  ],
+  "TEST_semantic_receipt": {
+    "timing": "ONLY after all frozen guards pass and one-time legal TEST opening",
+    "checks": [
+      "finite nonnegative integer UMIs",
+      "all tokens known and unique",
+      "exact full raw vector sum equals official total_counts"
+    ],
+    "violation": "abort whole output; no denominator change, survivor filtering or risk/model selection",
+    "original_TRAIN_only_library_diagnostic_policy_changed": false,
+    "normalization": "mean_cell(log1p(4000 * raw_gene_UMI / official_full_library_total_counts)); subtract frozen own-context TRAIN NTC",
+    "QC": "original frozen QC; count>=30 task eligibility only after legal TEST opening"
+  },
+  "SEEN_role_constraints": {
+    "TEST_role": "SEEN_METADATA_ONLY",
+    "TEST_truth_currently": "CLOSED",
+    "result_seen_before_open": false,
+    "whole_method_pristine_confirmation": false,
+    "old_E170_confirmation_not_transferred": true,
+    "known_preview_genes_forced_TRAIN": [
+      "APOA4",
+      "CDK5RAP2",
+      "CHKA",
+      "KCNK7",
+      "SBF2",
+      "SIGLEC5",
+      "SLC39A8",
+      "ST14",
+      "VSNL1"
+    ],
+    "seen_cell_barcode_exclusions": 10,
+    "no_new_TEST_covariate_counts_or_coverage_preselection": true
+  },
+  "published_upstream_qualification": {
+    "distinct_published_family_structure": true,
+    "family": "Ahlmann-Eltze2025_published_linear_PCA_adaptation",
+    "official_commit": "bfa6eeea2bd145a1af2ec0127a2e808cc38456a9",
+    "original_file_sha256": "49bda2a46b92c2b0b5bf263b957a3890dbdeff2d4837a94e6b0a397e0e38a6f8",
+    "official_verbatim_solver_sha256": "db306a7d0aca79996c9c9ee71f79c8a9a5f7f26ee81068080dca1122a6ec88ed",
+    "pca_dim": 10,
+    "ridge_penalty": 0.1,
+    "seed": 1,
+    "TRAIN_only_per_context_PCA_and_ridge": true,
+    "VALIDATION_tuning": false,
+    "baseline_selection": "own-context TRAIN leave-gene-cluster-out only",
+    "family_attempt_count": 1,
+    "context_models": 2,
+    "two_context_macro_requirement": "both actual contexts must pass; do not pool rows or invent a third state",
+    "actual_empirical_competence": "PENDING",
+    "full_paper_environment_reproduced": false,
+    "Matrix_environment_difference": "1.7.6 installed versus1.7.0 paper lock",
+    "older_three_background_condition_fulfilled": false
+  },
+  "claim_limits_not_fixable_by_TEST_permission": [
+    "whole method is not pristine covariate-blind confirmation because TEST metadata was alreadySEEN",
+    "two contexts do not satisfy older three-background criterion",
+    "one published family with two context models is not three independent upstream families",
+    "passing operational competence lower-bound guard does not by itself establish statistical noninferiority"
+  ],
+  "current_parent_status": "AUTHORIZED_TRAIN_VALIDATION_AGGREGATION",
+  "current_followthrough_status": "WAITING_UPSTREAM_PRETRUTH_FIT",
+  "actual_TEST_expression_values_or_private_vectors_accessed_by_audit": false,
+  "new_model_parameters_or_SafeConf_scores_computed": false,
+  "code_changed": false
+}
