@@ -1,0 +1,46 @@
+{
+  "schema": "safeconf_orion_decimal_token_actual_recovery_execution_v1",
+  "status": "ACTUAL_BRIDGE_SUCCESS_REGISTERED_R_FIT_RUNNING",
+  "actual_bridge_manifest": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_lm_bridge_20261002_v1/actual_authorized_v3_decimal_tokens/BRIDGE_MANIFEST.json",
+    "bytes": 112874,
+    "sha256": "13c90f2feb21f841138f366fd140ff6a194bdd20d1337bd3c8d7e15500d0d478"
+  },
+  "actual_bridge_pid": 497410,
+  "actual_bridge_seconds": 90.2187113580294,
+  "controller_pid": 501788,
+  "R_child_pid": 501793,
+  "controller": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_decimal_token_recovery_20261002_v2/CONTINUE_RECOVERY_PRETRUTH_V2.py",
+    "bytes": 11865,
+    "sha256": "227c732badd542b78e5dd0a70c70035bd03e73d00574685ca4a15663466c1591"
+  },
+  "controller_registration": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_decimal_token_recovery_20261002_v2/CONTINUATION_REGISTRATION.json",
+    "bytes": 2092,
+    "sha256": "f92d56f54323ea4f16e63536e2b3fd202de0a9186b103f23ad5879d718e40c5a"
+  },
+  "controller_process": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_decimal_token_recovery_20261002_v2/CONTINUATION_PROCESS.json",
+    "bytes": 587,
+    "sha256": "10c2e372ab00b6b011c3ecfaccde80177844bd9832933582c035391bf2c14b0c"
+  },
+  "active_root_amendment": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/decimal_token_bridge_recovery_v1/ROOT_APPROVED_TECHNICAL_AMENDMENT.json",
+    "bytes": 4100,
+    "sha256": "a7d3162aa36c3276e9cbbd0b0a5a679716dd7c640aaf2123ab412517b2781846"
+  },
+  "new_bridge_producer": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/bridge_safeconf_orion_lm_inputs_decimal_token_agent.py",
+    "bytes": 26732,
+    "sha256": "caa4212788e89190efa93980c41314a7892393a8d19bc809e427f23d4859c315"
+  },
+  "planned_formal_validation_prediction_attempts": 1,
+  "actual_formal_validation_prediction_attempts_at_receipt": 0,
+  "aggregation_reused": true,
+  "original_failed_bridge_seconds": 73.945,
+  "all_previous_failed_outputs_retained": true,
+  "new_scientific_candidate_or_family_count": 0,
+  "TEST_truth_opened": false,
+  "first_open_claim_created": false
+}

@@ -1,0 +1,53 @@
+{
+  "schema": "safeconf_orion_integral_token_bridge_technical_amendment_v1",
+  "status": "PROPOSED_FOR_ROOT_SIGNATURE_NOT_AUTHORIZED",
+  "new_model_fits": 0,
+  "scientific_method_changed": false,
+  "eligibility_or_axes_or_values_changed": false,
+  "TEST_numeric_access_authorized": false,
+  "base_permit": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_VECTORIZED_PIPELINE_ACCESS_PERMIT.json",
+    "bytes": 6263,
+    "sha256": "aad3ef022968bb3d5a2d9f3b4baf59a548698bd20f2996f249b7153570af1a76"
+  },
+  "scientific_contract": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_METHOD_CONTRACT.json",
+    "bytes": 7500,
+    "sha256": "6b8a26939c8c6134dbf2e8294ee7905fccc2122b570b046f3183a3d2f5caba97"
+  },
+  "original_bridge": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/bridge_safeconf_orion_lm_inputs_agent.py",
+    "bytes": 23316,
+    "sha256": "dcc7d6afcd812d89ddb372e511cb9607e216da8c1f57e484317db4b3eda52a38"
+  },
+  "executed_bridge": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/bridge_safeconf_orion_lm_inputs_decimal_token_agent.py",
+    "bytes": 26732,
+    "sha256": "caa4212788e89190efa93980c41314a7892393a8d19bc809e427f23d4859c315"
+  },
+  "biology_manifest": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_allowed_biology_20261002_v2/BIOLOGY_MANIFEST.json",
+    "bytes": 84010,
+    "sha256": "be4113822254cfb0824a464bd87300d6ff33388069500e14f3229d8acc9fba16"
+  },
+  "query_metadata": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_allowed_biology_20261002_v2/QUERY_METADATA_ONLY.csv",
+    "bytes": 2744495,
+    "sha256": "8bf0eb5a394a4c9675409410e3b60e7c4220cf689da5ae3bbe7afc21fb9ab000"
+  },
+  "query_scope": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_lm_bridge_20261002_v1/query_scope_metadata_only/METADATA_ONLY_QUERY_SCOPE.tsv",
+    "bytes": 1084979,
+    "sha256": "0fbdc6c431538da8f4c3a8247ce227fe292d709e05d8e032218f99674e32620e"
+  },
+  "lm_cli": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_orion_lm_blind.R",
+    "bytes": 18982,
+    "sha256": "086fb5489bc88520b1854d0101db117f66f913d7ce94064a6df18772633aaee1"
+  },
+  "change_scope": "strict_decimal_to_integral_TOKEN_TEXT_only; reject nonfinite/fractional/out-of-full-axis/bool; still exact canonical Ensembl/token equality",
+  "original_failed_bridge_run_seconds": 73.945,
+  "official_R_numerical_core_and_method_parameters_changed": false,
+  "aggregation_or_permanent_inputs_modified": false,
+  "base_provenance_policy": "retain original BIOLOGY+aad3 permit bytes; declare executed technical bridge separately in input/access/result receipts"
+}

@@ -1,0 +1,18 @@
+{
+  "schema": "safeconf_owned_files_v1",
+  "scope": "independent actual allowed-biology metadata/accounting audit only",
+  "files": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/allowed_biology_actual_accounting_audit_v1/ACTUAL_AGGREGATION_ACCOUNTING_REVIEW.json",
+      "sha256": "d9aa95e9ce7f6dac844ab55eb0f462171864b2e75ca3d49b7a81669e47a26736"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/allowed_biology_actual_accounting_audit_v1/ROLE_CONTEXT_METADATA_COUNTS.csv",
+      "sha256": "c44c624f50e0e0ac785a15c5f3e29d21bc6c250db0e696dfe2cc2f26b76092dc"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/allowed_biology_actual_accounting_audit_v1/PROPOSED_COST_APPEND_ROWS.csv",
+      "sha256": "a6337c9abb5200865052974abef88f78a32480ebba3acf2aa72dca024ff1853d"
+    }
+  ]
+}

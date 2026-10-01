@@ -1,0 +1,106 @@
+{
+  "schema": "safeconf_orion_decimal_token_bridge_independent_review_v1",
+  "status": "PASS_FOR_ROOT_TECHNICAL_SIGNATURE",
+  "reviewed_utc": "2026-10-01T23:05:36.920539+00:00",
+  "reviewer": "source_core_preparation_v1",
+  "proposal_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/decimal_token_bridge_recovery_v1/TECHNICAL_AMENDMENT_PROPOSAL.json",
+    "bytes": 3042,
+    "sha256": "05b2736b7bcd7f852e2058fcbc12aa7d0258b7f3cb4d7a99a847963e8588a6f1"
+  },
+  "verified_eight_amendment_input_code_bindings": {
+    "base_permit": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_VECTORIZED_PIPELINE_ACCESS_PERMIT.json",
+      "bytes": 6263,
+      "sha256": "aad3ef022968bb3d5a2d9f3b4baf59a548698bd20f2996f249b7153570af1a76"
+    },
+    "scientific_contract": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_METHOD_CONTRACT.json",
+      "bytes": 7500,
+      "sha256": "6b8a26939c8c6134dbf2e8294ee7905fccc2122b570b046f3183a3d2f5caba97"
+    },
+    "original_bridge": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/bridge_safeconf_orion_lm_inputs_agent.py",
+      "bytes": 23316,
+      "sha256": "dcc7d6afcd812d89ddb372e511cb9607e216da8c1f57e484317db4b3eda52a38"
+    },
+    "executed_bridge": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/bridge_safeconf_orion_lm_inputs_decimal_token_agent.py",
+      "bytes": 26732,
+      "sha256": "caa4212788e89190efa93980c41314a7892393a8d19bc809e427f23d4859c315"
+    },
+    "biology_manifest": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_allowed_biology_20261002_v2/BIOLOGY_MANIFEST.json",
+      "bytes": 84010,
+      "sha256": "be4113822254cfb0824a464bd87300d6ff33388069500e14f3229d8acc9fba16"
+    },
+    "query_metadata": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_allowed_biology_20261002_v2/QUERY_METADATA_ONLY.csv",
+      "bytes": 2744495,
+      "sha256": "8bf0eb5a394a4c9675409410e3b60e7c4220cf689da5ae3bbe7afc21fb9ab000"
+    },
+    "query_scope": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_lm_bridge_20261002_v1/query_scope_metadata_only/METADATA_ONLY_QUERY_SCOPE.tsv",
+      "bytes": 1084979,
+      "sha256": "0fbdc6c431538da8f4c3a8247ce227fe292d709e05d8e032218f99674e32620e"
+    },
+    "lm_cli": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_orion_lm_blind.R",
+      "bytes": 18982,
+      "sha256": "086fb5489bc88520b1854d0101db117f66f913d7ce94064a6df18772633aaee1"
+    }
+  },
+  "unchanged_downstream_code_bindings": {
+    "tools/scripts/evaluate_safeconf_orion_competence_agent.py": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/evaluate_safeconf_orion_competence_agent.py",
+      "bytes": 20208,
+      "sha256": "da06a174c69339b4afb1cfc7ab33015e34c8d27f2d7264a045c799e7f75b942c"
+    },
+    "tools/scripts/seal_safeconf_orion_source_risk_agent.py": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/seal_safeconf_orion_source_risk_agent.py",
+      "bytes": 28837,
+      "sha256": "8b69e6ce29dc92aa34150b3b08aac62ce8333a10f84ec432a39d0e81ffc64482"
+    },
+    "tools/scripts/evaluate_safeconf_orion_guarded_test_agent.py": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/evaluate_safeconf_orion_guarded_test_agent.py",
+      "bytes": 35943,
+      "sha256": "852fcd764b567a63f04c4a5539a118c8a715f664bf534184018010ac269087b2"
+    },
+    "tools/scripts/run_safeconf_orion_lm_blind.R": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_orion_lm_blind.R",
+      "bytes": 18982,
+      "sha256": "086fb5489bc88520b1854d0101db117f66f913d7ce94064a6df18772633aaee1"
+    }
+  },
+  "fixture_proof_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/decimal_token_bridge_recovery_v1/TOKEN_FIXTURE_PROOF.json",
+    "bytes": 2334,
+    "sha256": "dcc6c4303fc6628473f54ae727f2fda075d4177aeee50d6deb77339ed8873f8d"
+  },
+  "actual_TRAIN_metadata_proof_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/decimal_token_bridge_recovery_v1/ACTUAL_TRAIN_TOKEN_METADATA_PROOF.json",
+    "bytes": 893,
+    "sha256": "a5ad4abb8b013ff698e7167c9d76908e703f6531ddd47632063e040407aa8a6e"
+  },
+  "generated_fixture_cases_reviewed": 21,
+  "TRAIN_metadata_canonical_rows_reviewed": 8773,
+  "checks": {
+    "finite_exact_integral_token_range_no_round_or_truncate": "new bridge37-47: Decimal text, bool rejected, nonfinite/fractional/out-of-range rejected before int conversion",
+    "canonical_Ensembl_plus_token_plus_frozen_TRAIN_role_equality": "269-273 unchanged identity/role condition plus strict token conversion",
+    "strict_ROOT_approved_readonly_amendment_required_before_numeric_means": "50-73 and228-239, before means mmap278",
+    "old_aad3_dcc_BIO_be411_scientific_inputs_preserved": "original bridge/root permit/BIO bytes verified; oldbridge archival permission verified separately from executed bridge",
+    "TRAIN_min_cells_30_own_context_NTC_row_and_data_mean_math_unchanged": "262-277 and307-323 exactly retained",
+    "actual_producer_new_caa_not_falsely_old_dcc": "293-295,337-340,348-354 record actualbridgeSHA+amendmentSHA; aad3 remains archival permit identity",
+    "R_LM_CLI_input_receipt_compatible": "RCLI108-136 verifies permittedroles/axes/byteSHAs and stores fullreceipt; addedproducer fields are retained",
+    "competence_archive_reference_compatible": "da06evaluate115-121 retains originalpermit/dcc code audit and separately hashes actualBRIDGE/INPUT receipts; no newmatrix/formula",
+    "Source_risk_and_TEST_reader_interfaces_compatible": "8b69load_inputs and852guard require resultingmodel/pred/control/axis hashes; neither parsesTRAINtarget_token_id string"
+  },
+  "no_scientific_method_eligibility_axes_roles_values_or_parameter_changes": true,
+  "original_fitted_Source_models_and_BIO_arrays_not_modified": true,
+  "new_bridge_actual_run_authorized_by_this_review": false,
+  "ROOT_signature_still_required": true,
+  "review_code_import_or_function_execution": false,
+  "new_tests_or_fits": 0,
+  "Orion_numeric_prediction_truth_or_array_values_read": false,
+  "scope_limit": "Static original-vs-new diff, contract/code hashes and existing generated/TRAIN-metadata proof review; no bridge execution, array indexing, fit or competence claim."
+}

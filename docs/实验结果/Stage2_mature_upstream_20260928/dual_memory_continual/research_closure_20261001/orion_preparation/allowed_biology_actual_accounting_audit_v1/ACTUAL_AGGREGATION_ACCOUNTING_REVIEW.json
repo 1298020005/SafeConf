@@ -1,0 +1,223 @@
+{
+  "schema": "safeconf_orion_allowed_biology_actual_metadata_accounting_review_v1",
+  "status": "PASS",
+  "created_utc": "2026-10-01T23:15:02.026860+00:00",
+  "scope": "READ_ONLY metadata/accounting review; 0 arrays/raw-expression/prediction/TEST truth reads, 0 model calls, 0 fits, 0 tests by reviewer; only own new audit files written; primary COST/INFO tables unchanged",
+  "inputs": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_allowed_biology_20261002_v2/BIOLOGY_MANIFEST.json",
+      "sha256": "be4113822254cfb0824a464bd87300d6ff33388069500e14f3229d8acc9fba16"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_allowed_biology_20261002_v2/VECTOR_BACKEND_ACCESS_AUDIT.json",
+      "sha256": "9338f1e12ce4b08e243af3942bf4745851ace12ed30475738c8fcdf88af5ad42"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_allowed_biology_20261002_v2/QUERY_METADATA_ONLY.csv",
+      "sha256": "8bf0eb5a394a4c9675409410e3b60e7c4220cf689da5ae3bbe7afc21fb9ab000"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_full_pipeline_20261002_v2/STATUS.json",
+      "sha256": "308e58e245fedc4d96760385cb2abff9a2604c575b75b5f8be1bc5ab7079eeca"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_full_pipeline_20261002_v2/PROCESS.json",
+      "sha256": "58b8d38806763b062c9853131aaafe58d7e12dad670808b3c091c3f97214f638"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_VECTORIZED_PIPELINE_ACCESS_PERMIT.json",
+      "sha256": "aad3ef022968bb3d5a2d9f3b4baf59a548698bd20f2996f249b7153570af1a76"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_METHOD_CONTRACT.json",
+      "sha256": "6b8a26939c8c6134dbf2e8294ee7905fccc2122b570b046f3183a3d2f5caba97"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/COST_MASTER_TABLE.csv",
+      "sha256": "a716db0b2aebe1b2c63d51c8d4aff6004085ce7cb75b24b7fd3392ae34409943"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/INFORMATION_BUDGET_LEDGER.csv",
+      "sha256": "07dd33550a6e341657262296e1e2bd174a73269d93f97affc70c5345d3b53e2a"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/build_safeconf_orion_allowed_biology_agent.py",
+      "sha256": "cdf261ffcae854f49d469437492a12b7f835aae7b720bbe565044d8a89369e8b"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/probe_safeconf_private_parquet_agent.py",
+      "sha256": "3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/bridge_safeconf_orion_lm_inputs_agent.py",
+      "sha256": "dcc7d6afcd812d89ddb372e511cb9607e216da8c1f57e484317db4b3eda52a38"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_orion_lm_blind.R",
+      "sha256": "086fb5489bc88520b1854d0101db117f66f913d7ce94064a6df18772633aaee1"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/build_safeconf_orion_allowed_biology_vectorized_agent.py",
+      "sha256": "6135469b10d5e200f4654a53f2a750fc9cc4c356037ce6abdfddd95030b45d1f"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/probe_safeconf_private_parquet_vectorized_agent.py",
+      "sha256": "636455cb30fc0e8c8ce6ac92db82756eff7508322e92862cf23ffad861d2e435"
+    }
+  ],
+  "checks": {
+    "manifest_complete": true,
+    "40_distinct_files_all_EOF": true,
+    "40_file_contexts_20_each": true,
+    "actual_producer_636455_bound_all_files": true,
+    "original_science_bound": true,
+    "actual_permit_bound": true,
+    "all_six_original_permitted_implementation_hashes_preserved": true,
+    "only_permitted_roles_contexts_in_metadata": true,
+    "metadata_cells_equal_authorized_file_rows": true,
+    "metadata_units_equal_manifest": true,
+    "unique_context_gene_role_and_matrix_rows": true,
+    "metadata_n_ge30_flags_match": true,
+    "TRAIN_control_library_gap_counts_match_metadata": true,
+    "TRAIN_control_library_gaps_zero": true,
+    "no_validation_library_diagnostics": true,
+    "no_TEST_numeric_authorized_or_materialized": true,
+    "aggregation_parent_exit0_and_bridge_exit1": true,
+    "no_scientific_rule_changes_in_actual_backend": true
+  },
+  "file_count": 40,
+  "contexts": [
+    "HCT116",
+    "HEK293T"
+  ],
+  "total_allowed_cells": 888997,
+  "total_aggregate_units": 28947,
+  "per_context_role_counts_file": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/allowed_biology_actual_accounting_audit_v1/ROLE_CONTEXT_METADATA_COUNTS.csv",
+    "sha256": "c44c624f50e0e0ac785a15c5f3e29d21bc6c250db0e696dfe2cc2f26b76092dc"
+  },
+  "information_budget": {
+    "actual_access_roles": {
+      "TRAIN": {
+        "cells": 629838,
+        "aggregate_units": 21760,
+        "union_gene_labels": 10924,
+        "n_ge30_tasks": 8773
+      },
+      "TRAIN_CONTROL_SOURCE_SCOPE": {
+        "cells": 53507,
+        "aggregate_units": 2,
+        "union_gene_labels": 1,
+        "n_ge30_tasks": 2
+      },
+      "VALIDATION": {
+        "cells": 205652,
+        "aggregate_units": 7185,
+        "union_gene_labels": 3613,
+        "n_ge30_tasks": 2790
+      }
+    },
+    "validation_n_ge30_metadata_qualified_tasks": 2790,
+    "validation_n_ge30_union_gene_clusters": 1661,
+    "validation_n_ge30_both_context_gene_clusters": 1129,
+    "validation_n_ge30_per_context": {
+      "HCT116": 1348,
+      "HEK293T": 1442
+    },
+    "validation_all_metadata_tasks": 7185,
+    "validation_status": "metadata qualification only; no competence PASS, statistical gate, prediction quality, or completed LM model implied",
+    "control_unit_definition": "2 context-specific Non-Targeting aggregate units, one shared gene label; not perturbation clusters",
+    "source_error_labels_used_by_this_aggregation": 0,
+    "target_risk_error_labels_used_by_this_aggregation": 0,
+    "target_feedback_error_labels_used_by_this_aggregation": 0,
+    "target_error_CDF_labels_used_by_this_aggregation": 0,
+    "biological_truth_access": "Actual allowed Orion TRAIN, VALIDATION and TRAIN_CONTROL_SOURCE_SCOPE raw measurements were selected by producer; this reviewer read only small manifests, access receipts, QUERY metadata and code",
+    "fits_this_aggregation_or_failed_bridge": 0,
+    "new_large_upstream_training": 0,
+    "GPU_hours": 0,
+    "TEST_truth_opened": false,
+    "suggested_original_INFO_schema_semantics": {
+      "c_validation_biology_tasks": 2790,
+      "c_validation_upstream_calibration_tasks": 0,
+      "c_risk_error_labels": 0,
+      "c_feedback_error_labels": 0,
+      "c_error_CDF_labels": 0,
+      "note": "2790 denotes metadata-qualified biologically aggregated validation tasks, not completed upstream calibration or competence acceptance; downstream actual stage use must have a separate record"
+    },
+    "future_records_required_only_on_actual_execution": [
+      "Successful repaired bridge actual wall/CPU scope and TRAIN only PCA/axis/control/preprocessing receipt; fit count attributed to actual bridge code, not this failed attempt",
+      "Actual LM TRAIN and first VALIDATION competence attempt: model fit count/config/family/allowed biological task cells, prediction/competence wall and actual gate status; no TEST numeric",
+      "Expanded history pretruth source-core inference/seal: frozen-model inference cost (zero refits), actual all-13 finite cohort, >=100 union gene clusters and >=20 tasks per context",
+      "Only after reviewed first-open authorization: exclusive TEST read receipt, actual legal-QC/finite history task and gene-cluster cohort, 5000 paired-cluster statistical evaluation cost and all frozen comparisons; no aggregate cost duplication"
+    ]
+  },
+  "integer_and_library_checks": {
+    "finite_nonnegative_integer_guard": "Unchanged executed scientific loader checks every selected allowed expression row for finite nonnegative nonempty counts and abs(raw-rint(raw))<=1e-6; COMPLETE/all EOF attests no guard violation. Reviewer did not re-read counts.",
+    "integer_gap_max_observed": "NOT_RECORDED; no claim that max integer gap is exactly zero",
+    "code_reference": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/build_safeconf_orion_allowed_biology_agent.py:348-371",
+    "library_sum_checked_roles": [
+      "TRAIN",
+      "TRAIN_CONTROL_SOURCE_SCOPE"
+    ],
+    "library_sum_gap_diagnostics": {
+      "TRAIN": {
+        "n_cells": 629838,
+        "max_absolute_gap": 0.0,
+        "max_relative_gap": 0.0,
+        "sum_absolute_gap": 0.0,
+        "mismatch_cells": 0
+      },
+      "TRAIN_CONTROL_SOURCE_SCOPE": {
+        "n_cells": 53507,
+        "max_absolute_gap": 0.0,
+        "max_relative_gap": 0.0,
+        "sum_absolute_gap": 0.0,
+        "mismatch_cells": 0
+      }
+    },
+    "checked_library_cells": 683345,
+    "VALIDATION_library_gaps": "NOT_AUTHORIZED_NOT_COMPUTED; do not infer zero from TRAIN/control results",
+    "denominator": "official full-library total_counts retained; no denominator switch"
+  },
+  "actual_execution_provenance": {
+    "scientific_contract_sha256": "6b8a26939c8c6134dbf2e8294ee7905fccc2122b570b046f3183a3d2f5caba97",
+    "permit_sha256": "aad3ef022968bb3d5a2d9f3b4baf59a548698bd20f2996f249b7153570af1a76",
+    "actual_numeric_backend_sha256": "636455cb30fc0e8c8ce6ac92db82756eff7508322e92862cf23ffad861d2e435",
+    "original_scientific_loader_sha256": "cdf261ffcae854f49d469437492a12b7f835aae7b720bbe565044d8a89369e8b",
+    "original_structural_reader_sha256": "3e7c506f62d384073f2c20af383a371a2a23511c306d2ac046bd72c691f41312",
+    "actual_integration_wrapper_sha256": "6135469b10d5e200f4654a53f2a750fc9cc4c356037ce6abdfddd95030b45d1f",
+    "40_actual_file_audits_all_EOF": true,
+    "private_numeric_materialization": false,
+    "physical_read_boundary": "opaque compressed/decompressed chunks may span forbidden rows; trace zero-private numeric materialization does not assert zero physical TEST-containing bytes read"
+  },
+  "cost_observations": {
+    "parent_full_aggregation_subprocess_wall_seconds": 13724.538,
+    "narrower_BIOLOGY_manifest_wall_seconds": 13299.334,
+    "narrower_file_audit_elapsed_seconds_sum": "12528.740",
+    "failed_bridge_parent_subprocess_wall_seconds": 73.945,
+    "two_parent_stage_wall_total_seconds_decimal": "13798.483",
+    "wall_accounting": "Use 13724.538 +73.945 =13798.483 seconds; 13299.334 is nested loader timing, not an additional cost row",
+    "CPU_seconds_exact_total": "NOT_CAPTURED_IN_ALLOWED_RECEIPTS; wall seconds are not CPU seconds",
+    "peak_resident_bytes_observed_loader": 1534332928,
+    "GPU_hours": 0,
+    "new_model_fits": 0,
+    "proposed_cost_rows": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/allowed_biology_actual_accounting_audit_v1/PROPOSED_COST_APPEND_ROWS.csv",
+      "sha256": "a6337c9abb5200865052974abef88f78a32480ebba3acf2aa72dca024ff1853d"
+    },
+    "main_registry_mutated_by_reviewer": false
+  },
+  "overall_pipeline_state": {
+    "parent_status": "FAILED_OR_BOUNDED_INCOMPLETE",
+    "aggregation_status": "COMPLETE",
+    "bridge_status": "FAILED_EXIT_1",
+    "competence_status": "NOT_COMPLETED_BY_THIS_PIPELINE",
+    "TEST_truth_closed": true
+  },
+  "limitations": [
+    "No independent numerical recomputation was authorized; review binds producer EOF, semantic guard and provenance receipts to metadata counts",
+    "Integer maximum deviation has no retained measured scalar; pass is fail-closed guard within 1e-6, not exact-zero reconstruction",
+    "No final CPU rusage is present in reviewed receipts; only exact recorded stage wall scopes are proposed for COST",
+    "Metadata n>=30 qualification does not certify competence or external history-score finiteness"
+  ]
+}

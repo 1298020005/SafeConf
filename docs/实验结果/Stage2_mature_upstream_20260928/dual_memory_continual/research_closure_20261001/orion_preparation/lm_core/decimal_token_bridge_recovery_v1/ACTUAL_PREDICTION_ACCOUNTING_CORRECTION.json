@@ -1,0 +1,19 @@
+{
+  "schema": "safeconf_orion_recovery_actual_prediction_accounting_v1",
+  "status": "EXPLICIT_PROVISIONAL_CONTROLLER_LABEL_CORRECTION",
+  "runtime_controller": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_decimal_token_recovery_20261002_v2/CONTINUE_RECOVERY_PRETRUTH_V2.py",
+    "bytes": 11865,
+    "sha256": "227c732badd542b78e5dd0a70c70035bd03e73d00574685ca4a15663466c1591"
+  },
+  "explanation": "The raw controller field formal_validation_prediction_attempts=1 denotes its prospective plan. Actual attempt accounting starts only when formal frozen prediction files are generated; not at failed bridge or controller startup.",
+  "planned_formal_validation_prediction_attempts": 1,
+  "actual_formal_validation_prediction_attempts_at_this_receipt": 0,
+  "new_upstream_family_candidates": 0,
+  "scientific_family_attempt_id": "Orion_PublishedLM_family_attempt_20261002_v2",
+  "original_bridge_failure_actual_prediction_attempts": 0,
+  "failed_controller_v1_actual_prediction_attempts": 0,
+  "actual_counter_rule": "same single family attempt; actual0 before any PREDICTIONS_DELTA.tsv.gz, actual1 once generated; two-context prediction files do not count as two independent candidate attempts",
+  "no_registered_controller_code_or_healthy_R_process_modified": true,
+  "TEST_numeric_access": false
+}

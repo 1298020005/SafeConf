@@ -1,0 +1,18 @@
+{
+  "schema": "safeconf_orion_actual_bridge_failure_diagnosis_v1",
+  "status": "FAILED_CLOSED_PRESERVED",
+  "stage": "TRAIN_ONLY_R_INPUT_BRIDGE",
+  "exit_code": 1,
+  "elapsed_seconds": 73.945,
+  "failure": "ValueError: invalid literal for int() with base 10: 34664.0",
+  "cause": "CSV integral token values acquired float text because control token rows are empty; int(string) cannot parse .0",
+  "original_bridge_sha256": "dcc7d6afcd812d89ddb372e511cb9607e216da8c1f57e484317db4b3eda52a38",
+  "failure_log": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_full_pipeline_20261002_v2/TRAIN_ONLY_R_INPUT_BRIDGE.log",
+    "sha256": "04184a03a3b97de875ba379211b078acd56774173a7f49872b2bfe1a3770b815"
+  },
+  "aggregation_preserved_sha256": "be4113822254cfb0824a464bd87300d6ff33388069500e14f3229d8acc9fba16",
+  "formal_R_model_fits_before_failure": 0,
+  "TEST_truth_access": false,
+  "original_permit_preserved_sha256": "aad3ef022968bb3d5a2d9f3b4baf59a548698bd20f2996f249b7153570af1a76"
+}

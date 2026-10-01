@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-01T23:08:46.845982+00:00",
+  "updated_utc": "2026-10-01T23:17:40.628173+00:00",
   "complete": [
     "five-fold nested public biology with four inner folds",
     "three-line sixteen-method matrix with three registered seeds",
@@ -69,7 +69,7 @@
   "new_large_upstream_training": 0,
   "new_download_gb": 0.04440246,
   "completion_claim": "goal active; meaningful diagnostics and registered matrices continue; manuscript prose deferred",
-  "current_work": "Actual BIO COMPLETE40/40; original bridge failed closed on exact integral CSV token text34664.0. Root-approved independently reviewed decimal-token technical bridge PID497410 running against preserved BIO; no R fit or TEST. Risk-only archived two HGB models reproduced/persisted; original source and Public pairweights not recovered.",
+  "current_work": "Actual authorized BIO COMPLETE40/40; strict integral-token bridge COMPLETE90.218711s. Preserved operational controller-v1 readonly mismatch; corrected v2 actualR501793 training,501788 proceeds competence then original/expanded pretruth seal/comparison only. TEST remains closed.",
   "deferred_by_user": [
     "manuscript and supplement prose generation"
   ],
@@ -133,7 +133,16 @@
       "name": "strict_integral_decimal_token_bridge_recovery",
       "pid": 497410,
       "TESTtruth_reader": false,
-      "original_BIO_and_permit_unchanged": true
+      "original_BIO_and_permit_unchanged": true,
+      "status": "COMPLETE"
+    },
+    {
+      "name": "decimal_token_recovery_pretruth_controller_v2",
+      "pid": 501788,
+      "status_file": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_decimal_token_recovery_20261002_v2/STATUS.json",
+      "current_R_child": 501793,
+      "TESTtruth_reader": false,
+      "stops_after_actual_expanded_seal_before_root_review": true
     }
   ],
   "orion_training_expression_read": true,
@@ -141,7 +150,7 @@
   "orion_validation_expression_read": true,
   "orion_registered_acquisition_status": "COMPLETE41/41fullpublisherSHA",
   "orion_registered_download_bytes_verified": 18138449950,
-  "orion_full_pipeline_status": "AGGREGATION_COMPLETE_BRIDGE_V2_FAILED_INTEGER_TEXT_V3_DECIMAL_RECOVERY_RUNNING",
+  "orion_full_pipeline_status": "FIXED_PUBLISHED_CPU_LINEAR_FIT_PRETRUTH_V3_RUNNING",
   "validation_expression_scope_note": "AuthorizedTRAIN/VALIDATION aggregate v1materialized allowedrows beforetimeout; no validation modelerrors evaluated, no targettestnumbers.",
   "orion_full_pipeline_pid": 208030,
   "orion_aggregation_pid": 208033,
@@ -270,13 +279,34 @@
     "TEST_read": false
   },
   "orion_bridge_integer_token_recovery": {
-    "status": "ROOT_APPROVED_AND_ACTUAL_BRIDGE_STARTED",
-    "pid": 497410,
+    "status": "BRIDGE_COMPLETE_ACTUAL_FIXED_R_TRAINING_RUNNING",
+    "pid": null,
     "active_amendment_sha256": "a7d3162aa36c3276e9cbbd0b0a5a679716dd7c640aaf2123ab412517b2781846",
     "executed_bridge_sha256": "caa4212788e89190efa93980c41314a7892393a8d19bc809e427f23d4859c315",
     "original_bridge_failed_seconds": 73.945,
     "new_eligibility_or_math_or_model_parameters": false,
     "aggregation_repeated": false,
-    "TEST_opened": false
+    "TEST_opened": false,
+    "bridge_manifest_sha256": "13c90f2feb21f841138f366fd140ff6a194bdd20d1337bd3c8d7e15500d0d478",
+    "bridge_elapsed_seconds": 90.2187113580294,
+    "controller_pid": 501788,
+    "R_child_pid": 501793
+  },
+  "orion_actual_aggregation_information": {
+    "TRAIN_cells": 629838,
+    "VALIDATION_cells": 205652,
+    "TRAIN_NTC_cells": 53507,
+    "all_allowed_cells": 888997,
+    "aggregate_units": 28947,
+    "eligible_validation_tasks_metadata": 2790,
+    "eligible_validation_gene_union": 1661,
+    "actual_validation_error_qualification_still_pending": true,
+    "review": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/allowed_biology_actual_accounting_audit_v1/ACTUAL_AGGREGATION_ACCOUNTING_REVIEW.json"
+  },
+  "orion_upstream_formal_validation_attempt_counter_correction": {
+    "planned_attempts": 1,
+    "actual_at_runtime_receipt": 0,
+    "actual_not_inferred_from_training_start": true,
+    "correction_receipt": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/decimal_token_bridge_recovery_v1/ACTUAL_PREDICTION_ACCOUNTING_CORRECTION.json"
   }
 }

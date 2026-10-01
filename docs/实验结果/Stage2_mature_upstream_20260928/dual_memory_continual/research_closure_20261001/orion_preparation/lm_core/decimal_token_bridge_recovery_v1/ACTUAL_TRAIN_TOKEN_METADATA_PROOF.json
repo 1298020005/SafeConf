@@ -1,0 +1,20 @@
+{
+  "schema": "safeconf_orion_actual_TRAIN_token_metadata_validation_v1",
+  "status": "PASS",
+  "executed_bridge": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/bridge_safeconf_orion_lm_inputs_decimal_token_agent.py",
+    "bytes": 26732,
+    "sha256": "caa4212788e89190efa93980c41314a7892393a8d19bc809e427f23d4859c315"
+  },
+  "query_metadata": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_allowed_biology_20261002_v2/QUERY_METADATA_ONLY.csv",
+    "bytes": 2744495,
+    "sha256": "8bf0eb5a394a4c9675409410e3b60e7c4220cf689da5ae3bbe7afc21fb9ab000"
+  },
+  "all_original_eligible_TRAIN_Ensembl_and_integral_token_identities_match": true,
+  "TRAIN_rows_checked": 8773,
+  "VALIDATION_or_TEST_covariate_or_coverage_audit": false,
+  "expression_or_array_indexing": false,
+  "new_model_fits": 0,
+  "TEST_numeric_access": false
+}

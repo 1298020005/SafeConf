@@ -1,0 +1,116 @@
+{
+  "schema": "safeconf_orion_integral_token_bridge_generated_proof_v1",
+  "status": "PASS",
+  "bridge_sha256": "caa4212788e89190efa93980c41314a7892393a8d19bc809e427f23d4859c315",
+  "original_bridge_sha256": "dcc7d6afcd812d89ddb372e511cb9607e216da8c1f57e484317db4b3eda52a38",
+  "cases": [
+    {
+      "token_text": "0",
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "token_text": "0.0",
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "token_text": "34664.0",
+      "expected": 34664,
+      "status": "PASS"
+    },
+    {
+      "token_text": "34664",
+      "expected": 34664,
+      "status": "PASS"
+    },
+    {
+      "token_text": "38599.000",
+      "expected": 38599,
+      "status": "PASS"
+    },
+    {
+      "token_text": "38605.0",
+      "expected": 38605,
+      "status": "PASS"
+    },
+    {
+      "token_text": "3.4664E4",
+      "expected": 34664,
+      "status": "PASS"
+    },
+    {
+      "token_text": "34664.1",
+      "expected": "REJECT",
+      "status": "PASS"
+    },
+    {
+      "token_text": "NaN",
+      "expected": "REJECT",
+      "status": "PASS"
+    },
+    {
+      "token_text": "nan",
+      "expected": "REJECT",
+      "status": "PASS"
+    },
+    {
+      "token_text": "Infinity",
+      "expected": "REJECT",
+      "status": "PASS"
+    },
+    {
+      "token_text": "-Infinity",
+      "expected": "REJECT",
+      "status": "PASS"
+    },
+    {
+      "token_text": "",
+      "expected": "REJECT",
+      "status": "PASS"
+    },
+    {
+      "token_text": "None",
+      "expected": "REJECT",
+      "status": "PASS"
+    },
+    {
+      "token_text": "True",
+      "expected": "REJECT",
+      "status": "PASS"
+    },
+    {
+      "token_text": "False",
+      "expected": "REJECT",
+      "status": "PASS"
+    },
+    {
+      "token_text": "-1",
+      "expected": "REJECT",
+      "status": "PASS"
+    },
+    {
+      "token_text": "38606",
+      "expected": "REJECT",
+      "status": "PASS"
+    },
+    {
+      "token_text": "100000",
+      "expected": "REJECT",
+      "status": "PASS"
+    },
+    {
+      "token_text": "not-a-token",
+      "expected": "REJECT",
+      "status": "PASS"
+    },
+    {
+      "case": "missing_amendment",
+      "expected": "REJECT",
+      "status": "PASS"
+    }
+  ],
+  "new_model_fits": 0,
+  "expression_or_Orion_prediction_read": false,
+  "TEST_numeric_access": false
+}
