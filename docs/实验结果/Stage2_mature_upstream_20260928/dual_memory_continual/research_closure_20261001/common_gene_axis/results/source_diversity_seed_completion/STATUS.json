@@ -1,0 +1,15 @@
+{
+  "status": "COMPLETE",
+  "role": "SEEN_POST_CONFIRMATION_SEED_COMPLETION",
+  "fitted_models": 24,
+  "macro_rows": 30,
+  "query_tasks": 543,
+  "first_seed_score_max_abs_difference": 9.71445146547012e-17,
+  "maximum_score_range_across_seeds": 0.0,
+  "elapsed_seconds": 5.872632503975183,
+  "new_upstream_calls": 0,
+  "new_large_upstream_training": 0,
+  "Orion_access": false,
+  "original_outputs_preserved": true,
+  "server_only_predictions": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_diversity_seed_completion"
+}

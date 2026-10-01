@@ -72,3 +72,7 @@ At 10% budget, the feedback cohort is too small for two leaves of at least 20 re
 - Hypothesis: the per-value Python decoder dominates large lists. Independent fixed synthetic SNAPPY workload1000cells×5000values×2columns showed v1=15.407seconds and vectorized byte-selectionv2=0.727seconds (21.2×). This is a synthetic measured speedup, not yet wholepipeline timing.
 - One technical repair: vectorize structural row routing and copy ONLYauthorized8-byte payload/dictionary blocks before INT64/DOUBLE typing. The version1code, failedstage and Source/upper/math/evaluation/scientificcontract hashes remain preserved. No algorithm, labels, split, normalization or test boundary is tuned.
 - Newbackend/wrapper will require independentprivacy/normalization tests and a separate hash-bound permit/outputversion before restart. Model gates remainpending.
+
+### Registered source-diversity seed completion
+
+The earlier diversity summaries used only seed20260930. The fixed common2840 comparison was replayed with all three registered seeds in a separate output, without touching frozen source models or Orion.24 fits took5.873s; first-seed scores match the released scores within9.72e-17; maximum score range across seeds is0. This completes the seed reporting requirement and supplies no new independent observations or positive method claim.

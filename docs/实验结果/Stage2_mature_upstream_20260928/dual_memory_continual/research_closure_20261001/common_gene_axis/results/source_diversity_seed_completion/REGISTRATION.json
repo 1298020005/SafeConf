@@ -1,0 +1,49 @@
+{
+  "role": "SEEN_POST_CONFIRMATION_SEED_COMPLETION",
+  "methods_features_labels_selection_and_weights_unchanged": true,
+  "seeds": [
+    20260930,
+    20261001,
+    20261002
+  ],
+  "source_feature_columns": [
+    "predicted_magnitude",
+    "prediction_abs_mean",
+    "prediction_signed_mean",
+    "prediction_std",
+    "prediction_abs_q95",
+    "prediction_sparsity",
+    "prior_magnitude",
+    "prediction_prior_rmse",
+    "prediction_prior_cosine",
+    "prior_uncertainty",
+    "log_history_support",
+    "effective_sources",
+    "history_conflict"
+  ],
+  "target_errors_used": "released McFaline evaluation only; never in risk/CDF fit",
+  "new_upstream_calls": 0,
+  "Orion_access": false,
+  "input_bindings": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_scaling_recheck/SOURCE_DIVERSITY_PREDICTIONS.csv.gz",
+      "sha256": "2e65fdc2efa0510388f541d47dc109a7e405a4194c0c9cd925eb6089e66c3d00"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_scaling_recheck/cache/source_Manual.parquet",
+      "sha256": "7f8e9bba115d76557d41027fe84d149521d82422c94adcfcc84315d761771273"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_scaling_recheck/cache/external_Manual.parquet",
+      "sha256": "90fd47a81f235d8eccea8c1d4d2af7a664cb9cca0975c25648a363d2652e8a0a"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_scaling_recheck/cache/source_Learned.parquet",
+      "sha256": "581891b9f3571a5a89a01e943a00034aa8194aedff000db645d368c3713d726a"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_scaling_recheck/cache/external_Learned.parquet",
+      "sha256": "5f1f20ebd3a5d645189e83037107b7f73d5321b1daebe508dadb00d7a89f6b6c"
+    }
+  ]
+}
