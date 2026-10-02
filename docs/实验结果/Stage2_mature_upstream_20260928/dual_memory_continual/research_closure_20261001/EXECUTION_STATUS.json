@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-02T03:54:02.081970+00:00",
+  "updated_utc": "2026-10-02T04:14:12.623230+00:00",
   "complete": [
     "five-fold nested public biology with four inner folds",
     "three-line sixteen-method matrix with three registered seeds",
@@ -65,7 +65,8 @@
     "Orion existingvalidation reuse:30targetfits/10budgetCDFs/99methodmacrocontextrows/5000jointgene draws; noSource/Public/upstream changes",
     "Orion strong-simple completeness:30fixedtargetmodels vs5rules/3150pairedrows; all150macroU20CIs cross0; saved5000indices/no fits or newRNG",
     "Current2840Publicgrowth:25snapshots275fixedriskfits;75points reproduced;5000jointgene statistics,490curve/490contrastrows;coverage/confounding and allorderresults preserved",
-    "Orion fixed3rule/5physical-content-null seeds:232tasks/144genes retained,5200historyrowsmoved;378metrics/315pairs exactindependentCIreview;no fits/newdraws/primarychange"
+    "Orion fixed3rule/5physical-content-null seeds:232tasks/144genes retained,5200historyrowsmoved;378metrics/315pairs exactindependentCIreview;no fits/newdraws/primarychange",
+    "Orion fullTRAINtarget-control scalar:232tasks144genes/38606input,modelbaseline/projectionbits exact;43paircomparators903rows924metrics fixed5000draws verified;no newfit/primarychange"
   ],
   "pending": [
     "Scientific method increment/independent-study readiness remains unproven after strong baselines; no ready approved new-method/confirmation pair",
@@ -74,7 +75,7 @@
   "new_large_upstream_training": 0,
   "new_download_gb": 0.04440246,
   "completion_claim": "goal active; meaningful diagnostics and registered matrices continue; manuscript prose deferred",
-  "current_work": "Orionphysicalnull complete and reporting/accounting; fulltarget-control baseline metadatareadiness complete onlyforOrion38606TRAIN control domain; noactivefit/GPU/rawtruthreader; scientificgoal remainsunproven, manuscriptdeferred.",
+  "current_work": "Fixedtarget-control comparator complete and evidence/accounting close; no activefit/GPU/rawtruthreader. AllcurrentSource/public/feedback strongcomparators preserved; scientificmethod readiness remainsNOT_YET_PROVEN, no ready newmethod/freshconfirmation pair; manuscriptdeferred.",
   "deferred_by_user": [
     "manuscript and supplement prose generation"
   ],
@@ -575,5 +576,23 @@
     "session_terminal_exit": 0,
     "macro_positive_points": 15,
     "macro_nominal_CI_lower_above0": 4
+  },
+  "target_control_expression": {
+    "status": "COMPLETE_FIXED_SEEN_INDEPENDENTLY_VERIFIED",
+    "statistics_session": 90383,
+    "method": "TargetControlExpression_CP4000",
+    "tasks": 232,
+    "gene_clusters": 144,
+    "full_control_input_genes": 38606,
+    "new_model_calls": 0,
+    "new_fits": 0,
+    "new_bootstrap_draws": 0,
+    "new_primary": false,
+    "normalization": "original CP4000; CP10000 message corrected before any scores",
+    "statistics_session_terminal_exit": 0,
+    "metric_rows": 924,
+    "paired_rows": 903,
+    "allU20valid5000": true,
+    "degenerate_Spearman_valid4352_preserved": true
   }
 }

@@ -73,3 +73,7 @@ Fixed275HGBfits and5000paired gene draws complete the previously old-contract-on
 ## Fixed Orion historical-effect correspondence negative control
 
 Fivefixedphysical effect derangements complete on232tasks/144genes; sameSource support/weights/query links retained. All15macroU20 actual-minus-null points positive, only4nominal CIs positive (Uniform/ManualDirect seeds20261001/20261003); Weightedall5 andHEKall15 intervals crosszero. MC showedstronger content-null evidence; this is a second-study descriptive direction, not robustcontent beyondcount/measurement or SourceCore superiority. CoarseSupport/technicalbatch grouping doesnot match latentvariance. Same3originalrules reproducebits and prior5000draw metrics; original13primary/hashes preserved. Evidence:`orion_preparation/physical_content_null_actual_v1/`.
+
+## Full TRAIN target-control scalar comparator
+
+OnefixedCP4000positive-direction proxy onall232Orion tasks yieldsmacroU20 .078304CI[-.092418,.305068]. LearnedDirect-minus-control+.188762CI[-.171296,.461058],SourceLearnedHGB+.126532CI[-.216172,.416231],fullPublicTargetRidge+.200771CI[-.126186,.424130]. All43macrocomparisons lackpositiveCIlowerbounds. The full38606 controlinputisadditionalbiologybeyondP13; extraCerrortraining0doesnot eraseexisting30targetfitbudgets. No exclusion/signselection/Sourceparameterchange, no newconfirmation. Exactcontrol/modelbaseline checksandall903/924intervals independentlyverified.

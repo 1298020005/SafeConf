@@ -1,0 +1,90 @@
+{
+  "status": "COMPLETE_FIXED_SEEN_TARGET_CONTROL_COMPARISON",
+  "fixed_tasks": 232,
+  "gene_clusters": 144,
+  "methods": 44,
+  "paired_comparators": 43,
+  "metric_rows": 924,
+  "paired_rows": 903,
+  "single_control_direction": true,
+  "new_fits": 0,
+  "new_model_calls": 0,
+  "new_bootstrap_draws": 0,
+  "saved_draws": 5000,
+  "all5000Source_anchor_metric_arrays_reproduced": true,
+  "extra_input_domain_full38606_control_not_same_P13": true,
+  "no_primary_change": true,
+  "no_new_confirmation": true,
+  "elapsed_seconds": 97.38801034307107,
+  "CPU_seconds": 97.41787044499999,
+  "reported_peak_RSS_bytes": 567353344,
+  "original_input_bindings": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/evaluate_safeconf_orion_target_control_baseline.py",
+      "bytes": 10875,
+      "sha256": "3858b4c111635f648b70ab5a7c74d92ea4047529a8e5320146a5bb4131eebd94"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/target_control_expression_preparation_v1/PREPARATION_RESULT.json",
+      "bytes": 10161,
+      "sha256": "f9ec4f0910d3f2a87557ab3ade380034388263b63d80cc09400cef5e0e025441"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_target_control_expression_preparation_20261002_v1/FIXED_PRIMARY_TARGET_CONTROL_RISKS.parquet",
+      "bytes": 11240,
+      "sha256": "115dac13a4e452e495052279b445edbca3f86e83d29678ed96d3475978537fc7"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/evaluate_safeconf_orion_frozen_risk_agent.py",
+      "bytes": 22944,
+      "sha256": "dec8f056918ac5626eb12732eec3cc07041eb3680cc6addd6d9f18b32d1f486c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/registered_test_truth/TEST_TASK_ERRORS.parquet",
+      "bytes": 95565,
+      "sha256": "d6e50bf9c7f874af74f618cb7fdb820a4d31969701a2c70aaa6b87e27f12cb3e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_existing_validation_risk_control_20261002_v1/ALL_PREDICTIONS_SEAL.json",
+      "bytes": 15334,
+      "sha256": "935fc2d4054626218322494bd17b10f1875cbe5f28f3ad0696ffa2f8a0f71185"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_existing_validation_risk_control_20261002_v1/ALL_PRIMARY_PREDICTIONS.parquet",
+      "bytes": 91800,
+      "sha256": "e9a2a8ddbf5126d090cf58ebebaae2c250de9b43f5abc53d95dd5ee47ce0a17d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_existing_validation_risk_control_20261002_v1/BOOTSTRAP_GENE_INDICES.npy",
+      "bytes": 5760128,
+      "sha256": "be533a498413bf284e187faf2d8c3d103949f865ba9ef0765d71ef7925b9479c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_existing_validation_risk_control_20261002_v1/SHARED_BOOTSTRAP_METRIC_DRAWS.npy",
+      "bytes": 27720128,
+      "sha256": "25f4554c295cff15e3e4140c55ee5edd59ec361087f9d8326483ffb019ea56db"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_validation_strong_reference_completion_20261002_v1/FOUR_REFERENCE_SAVED_DRAW_METRICS.npy",
+      "bytes": 3360128,
+      "sha256": "2354b6143ccd19c6a823e7883cc22a33387e564bae750a0aa9a3700745ac428e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_comparison/PRETRUTH_COMPARISON_SCORES.parquet",
+      "bytes": 712576,
+      "sha256": "c6e53eb32f6a4dfec6c40c9b6817f2c87d29ff47306fa1f219d28efc7a6c7e72"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/target_control_expression_actual_v1/ALL_FIXED43_METHODS_MINUS_TARGET_CONTROL.csv",
+      "bytes": 230003,
+      "sha256": "1e81ce1a46f3577483197e152a6ab27e68005b1df2ff867b704043f4bc0f959c"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/target_control_expression_actual_v1/ALL_FIXED44_METHOD_METRIC_INTERVALS.csv",
+      "bytes": 100155,
+      "sha256": "d66685fe10faf31263dfe067987a65faa3dfa36f15a0a4b8b03507c8498e93bf"
+    }
+  ]
+}

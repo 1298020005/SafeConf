@@ -1,0 +1,41 @@
+{
+  "scope": "one_new_CP4000_control_only_fixed232_preparation_no_errors_or_statistics",
+  "owned_code_and_small_evidence_files": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/prepare_safeconf_orion_target_control_expression_agent.py",
+      "bytes": 13184,
+      "sha256": "b30169c4b2ff821464f0ec76c3ecb463d1a4fac57cb97e4a90d85969ca94d7fe"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/target_control_expression_preparation_v1/CONTROL_IDENTITY_AND_BITWISE_PROJECTION_CHECKS.csv",
+      "bytes": 296,
+      "sha256": "cc81fbc1c00549a274835810135eb01b5ffa9b090f871b9e1b825033aaf96ae0"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/target_control_expression_preparation_v1/EXECUTION_REGISTRATION.json",
+      "bytes": 5596,
+      "sha256": "dbe1228e9af5a1c6a2f6e1d3860bf23422edb23fc16cf0a699d496bef7ffa2cc"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/target_control_expression_preparation_v1/INFORMATION_SCOPE_LEDGER.json",
+      "bytes": 779,
+      "sha256": "3807f4545311ccda648cc32186af4b23fe61bd5c51455349b7ae7369cf5a500b"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/target_control_expression_preparation_v1/PREPARATION_RESULT.json",
+      "bytes": 10161,
+      "sha256": "f9ec4f0910d3f2a87557ab3ade380034388263b63d80cc09400cef5e0e025441"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/target_control_expression_preparation_v1/README.md",
+      "bytes": 2952,
+      "sha256": "cde832c65c19aecff032d570a7199450b8daaa23161797276dcc5962fed6f50f"
+    }
+  ],
+  "runtime_outputs_are_bound_in": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/target_control_expression_preparation_v1/PREPARATION_RESULT.json",
+    "bytes": 10161,
+    "sha256": "f9ec4f0910d3f2a87557ab3ade380034388263b63d80cc09400cef5e0e025441"
+  },
+  "existing_science_methods_inputs_models_unchanged": true
+}

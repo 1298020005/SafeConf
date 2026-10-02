@@ -107,3 +107,7 @@ Execute the existing `run_safeconf_public_mechanisms.py --common-axis --phase gr
 ## Orion physical-content null fixed diagnostic
 
 Preparationv1 executedcodeacba andABORT preserved; v2 3898 originalscorecodec replay recovers464referencebits. Rootformal9dcfe3 runs originalthree rules/fivefixedseed groupwise physicaleffect derangements, sealsall18scores/donormap before cachederrornumericparse, thenreusesCONTROL saved5000canonical144gene indices. Freshroots only; completed roots notoverwritten. No rawexpression/modelinference/fits. StreamingSHA ofcachedtruthbytes beforeseal is integrity only, not0fileaccess. Independentactualreview reproduces315paired/378marginalintervals fromexistingdraws; Rootcompares3actualrule draws topriorstrong-reference arrays. Metadata/weightedvariance matching remainspartial; supplementarySEEN only. Runtimearrays/maps/scores retained outsideGit.
+
+## Fixed TRAIN control-expression comparator
+
+Preparationb301 exports existingRDSbaseline (no fit/predict), comparesfull38606and3285projectionbitwise, freezes232CP4000scores beforecachederrornumerics. Evaluation3858 reusesControl33/StrongRef4draws andsame5000sorted144gene indices, computes6original+1control metrics, checksLearnedHGB anchor everydraw, retains924metric/903pairs. Completedfreshroots cannot overwrite. Independentreview reconstructsallintervals;648undefinedP_only_hgbHEK/macroSpearman draws keptNA. Extra full-control coordinatesandpreviousTarget budgets explicit; notSourceModel/Core change.

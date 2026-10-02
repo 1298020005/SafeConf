@@ -127,3 +127,7 @@ Oldgrowth usednative/512gene outputs; canonical2840directory hadonlycontent. Reu
 ## 2026-10-02: physical-null reference replay codec repair and fixed diagnostic
 
 Preparationv1 acba failed firstexactencodedscorebit, while geometry/prior/weights matched. Preservedfailedcode+ABORT; isolatedv2 uses original17g/object pd.to_numeric codec (noformula/tolerancechange) and464replays PASS. Formalfixed5seed derangements swapactualvectors withrecipient supportfixed; all232tasks retained,3nonmovable notdropped. 15macroU20 differencespositive,4nominalpositiveintervals, allWeightedintervalscross0. No seed/group/caliper variants, noSourcefit orprimaryreplacement. Independentactualreview reproducesall315pairs/378intervals fromsame saved5000indices.
+
+## 2026-10-02: target-control comparator unit and NA acceptance
+
+RootinitialCP10000message conflictedwithactualCP4000contract; correctedbeforeanyscores, no meanlog conversion/rawreread. 232full-control scoressealed, full38606and3285projectionbits matchoriginalbaseline. Fixedstatistics97.388s completed;Rootall-metrics5000validassertion was overstrict forconstant-scoreSpearman draws. Correctedonlyacceptance logic: HEK/macro P_only_hgbSpearman4352valid,648NA preserved, allU20still5000. Originalarrays/metrics/directions unmodified. All43macro superiorityintervals unsupported; no sign/parameter repairs follow.

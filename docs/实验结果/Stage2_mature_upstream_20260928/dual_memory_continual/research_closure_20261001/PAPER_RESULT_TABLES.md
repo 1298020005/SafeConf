@@ -103,3 +103,15 @@ Allfixedtasks HGB; sameSource labels100%, fivefixedorders. Coverage+representati
 | Manual_WeightedHistoryDistance | 0.186661 | [-0.039078, 0.179600] | 0/5 |
 
 All5seeds retained;15macro point differencespositive but4nominal CIs>0, weighted5allcrosszero. Not newconfirmation or originalgate repair.
+
+## SEEN full TRAIN target-control expression comparator
+
+| 固定方法 | U20 | 相对control点差 | 名义95%配对CI |
+|---|---:|---:|---|
+| Magnitude | 0.077116 | -0.001187 | [-0.139833, 0.136044] |
+| Learned_DirectRMSE | 0.267066 | +0.188762 | [-0.171296, 0.461058] |
+| Learned_hgb | 0.204835 | +0.126532 | [-0.216172, 0.416231] |
+| B100_PublicTarget_ridge | 0.279075 | +0.200771 | [-0.126186, 0.424130] |
+| B100_SharedTarget_ridge | 0.243019 | +0.164715 | [-0.120531, 0.423764] |
+
+ControlU20 .078304; all43macro paired superiorityintervals unsupported. Full38606controlinputbeyondP13, no newprimary.

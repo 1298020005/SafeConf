@@ -1,0 +1,3 @@
+context,full_control_genes,projection_genes,query_tasks,full38606_model_baseline_bitwise_equal,original3285_model_control_projection_bitwise_equal,target_gene_symbol_Ensembl_canonical_equal,target_outside3285_count
+HCT116,38606,3285,107,True,True,True,70
+HEK293T,38606,3285,125,True,True,True,75

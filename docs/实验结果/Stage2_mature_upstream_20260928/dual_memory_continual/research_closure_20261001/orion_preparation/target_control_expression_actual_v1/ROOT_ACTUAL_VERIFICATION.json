@@ -1,0 +1,15 @@
+{
+  "status": "PASS_ACTUAL_COMPLETENESS_NOT_SCIENTIFIC_SUPERIORITY",
+  "metric_rows": 924,
+  "paired_rows": 903,
+  "all_U20_have5000valid_draws": true,
+  "Spearman_degeneracy": {
+    "method": "P_only_hgb",
+    "HEK_and_macro_valid_draws": 4352,
+    "undefined_draws": 648,
+    "NA_propagated_not_zero_imputed": true
+  },
+  "all_point_differences_recomputed": true,
+  "new_fits": 0,
+  "new_primary": false
+}

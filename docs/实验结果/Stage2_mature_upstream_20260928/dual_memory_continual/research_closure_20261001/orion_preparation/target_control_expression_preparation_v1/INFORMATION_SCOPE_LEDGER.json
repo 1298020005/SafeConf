@@ -1,0 +1,20 @@
+{
+  "method": "TargetControlExpression_CP4000",
+  "cohort_tasks": 232,
+  "gene_clusters": 144,
+  "allowed_actual_information": "existing own-context TRAIN NTC mean vectors plus target identity",
+  "input_domain_genes": 38606,
+  "prior_P_PUBLIC_readout_domain_genes": 3285,
+  "not_same_feature_information_budget": true,
+  "no_Public_treated_truth_or_error_supervision": true,
+  "new_upstream_attempts": 0,
+  "new_fits": 0,
+  "new_model_inference_calls": 0,
+  "new_labels_revealed": 0,
+  "target_error_numeric_reads": 0,
+  "new_expression_acquisition": 0,
+  "existing_TRAIN_control_numeric_cache_read": true,
+  "control_matched_level": "own-context TRAIN NTC; not query-specific plate/batch",
+  "source_risk_core_or_original_primary_changed": false,
+  "new_confirmation": false
+}
