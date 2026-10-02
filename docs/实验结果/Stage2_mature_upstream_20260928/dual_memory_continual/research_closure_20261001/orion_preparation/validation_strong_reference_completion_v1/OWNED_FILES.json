@@ -1,0 +1,81 @@
+{
+  "scope": "Zero-fit fixed SEEN comparison completion and corresponding accounting, no prose",
+  "files": [
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/validation_strong_reference_completion_v1/README.md",
+      "bytes": 3484,
+      "sha256": "5859c3552b17bd4e641e26ccd3990b069e332902b198118c35df868d17fd722e"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/validation_strong_reference_completion_v1/ANALYSIS_REGISTRATION.json",
+      "bytes": 3156,
+      "sha256": "28f326c0443a0af47fcc2c0c175ad0dbd9eace3c81e0da012e37e1bb0739f09b"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/validation_strong_reference_completion_v1/ROOT_ACTUAL_VERIFICATION.json",
+      "bytes": 297,
+      "sha256": "afc362c3636d0d2164a7af57e12863fc49f4211285cec57e5a3af3ccf5c8e8b0"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/validation_strong_reference_completion_v1/RESULT_MANIFEST.json",
+      "bytes": 3439,
+      "sha256": "49a1292fc7563f1abe68f35ff97f309e45d9b86df86c93e3903cc96afb5186fb"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/validation_strong_reference_completion_v1/ALL_TARGET_VS_ALL_FIVE_HISTORY_RULES.csv",
+      "bytes": 589824,
+      "sha256": "a1fed8a5f84345ab176f695ac4cc3204cac0623dbaeaa6aea1b30ead7dd21ef9"
+    },
+    {
+      "path": "tools/scripts/complete_safeconf_orion_validation_strong_references.py",
+      "bytes": 9738,
+      "sha256": "8a6cab0c543a0f6af4397db635cc01a95c62e15a3beb5ccf09fbace0cc6f3fe9"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/METHOD_DECISION.md",
+      "bytes": 7961,
+      "sha256": "ea44111044b7ebba795b9ef85b369678859530ddd6d5baafdad5728b1c0364a0"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/CLAIM_EVIDENCE_MATRIX.md",
+      "bytes": 11055,
+      "sha256": "2830584534f41ea18612cf325a8f8ca6f835d916f88ae075b006dbbf0728ea00"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/FAILURE_AND_REPAIR_LOG.md",
+      "bytes": 18536,
+      "sha256": "3e7269c2dbfe87ee45fe20743208945915886e0f525301e34d71d8efe5be7020"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/REPRODUCIBILITY_REPORT.md",
+      "bytes": 18041,
+      "sha256": "c8f8283ecb731119c778f7724ef45f97cde0dac9f71bcd81b399f68f61e3d307"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/PAPER_RESULT_TABLES.md",
+      "bytes": 5791,
+      "sha256": "0620cc8541334e56371d2c1656786502c0a03a89284ebbf530e839f2dd8a98bb"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/COST_MASTER_TABLE.csv",
+      "bytes": 125171,
+      "sha256": "fb459305377ee514b6f7c7985331f52792d2224ae616cd4a68fdfe9b799f364b"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/INFORMATION_BUDGET_LEDGER.csv",
+      "bytes": 69671,
+      "sha256": "3776cac6af5a33ea9c5744392ae4d3615d68112c79996d47d23bd7137a6ee7dd"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/EXECUTION_STATUS.json",
+      "bytes": 30376,
+      "sha256": "3d1ac5a41c5b8d2765f6cf3b1bfe1f0869517abaf72ce70497999e29ebb3d548"
+    }
+  ],
+  "index_update": {
+    "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/RESULT_INDEX.csv",
+    "previous_rows": 1047,
+    "appended_rows": 10,
+    "rows_after": 1057
+  }
+}

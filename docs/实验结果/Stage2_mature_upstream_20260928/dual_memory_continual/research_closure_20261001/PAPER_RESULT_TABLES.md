@@ -70,3 +70,16 @@ Fixed primary Learned_hgb−Learned_WeightedHistoryDistance: ΔU20=−0.010052, 
 | GAT_to_Exphormer | Learned_hgb | Learned_WeightedHistoryDistance | 0.168543 | 0.117654 | 0.232377 |
 | TxPert_to_McFaline | Manual_hgb | Manual_WeightedHistoryDistance | -0.021111 | -0.149550 | 0.031432 |
 | TxPert_to_McFaline | Learned_hgb | Learned_WeightedHistoryDistance | -0.062875 | -0.124213 | 0.046060 |
+
+## SEEN Orion validation reuse versus fixed direct rule
+
+| 方法 | U20 | 相对同学习式直接距离的差值 | 名义95%配对CI |
+|---|---:|---:|---|
+| B100_TargetOnly_ridge | 0.029795 | -0.237271 | [-0.501003, 0.097587] |
+| B100_TargetOnly_hgb | 0.073119 | -0.193947 | [-0.496712, 0.109124] |
+| B100_PublicTarget_ridge | 0.279075 | +0.012009 | [-0.188223, 0.179268] |
+| B100_PublicTarget_hgb | 0.168386 | -0.098679 | [-0.356386, 0.173309] |
+| B100_SharedTarget_ridge | 0.243019 | -0.024047 | [-0.192460, 0.187497] |
+| B100_SharedTarget_hgb | 0.069851 | -0.197214 | [-0.397087, 0.121020] |
+
+All150fixed macroU20 rule comparisons have nominal95%paired CIs crossing zero; no primary promotion. See `orion_preparation/validation_strong_reference_completion_v1/`.
