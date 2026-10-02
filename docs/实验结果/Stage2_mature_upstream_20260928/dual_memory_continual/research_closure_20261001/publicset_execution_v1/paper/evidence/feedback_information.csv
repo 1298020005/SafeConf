@@ -1,0 +1,27 @@
+budget,method,c_feedback_error_rows,c_feedback_error_clusters,c_validation_risk_error_rows,target_CDF,status,allowed_feedback_records_hash,public_features,source_error_score,c_validation_upstream_calibration_rows,c_validation_biology_rows,kappa
+0.0,Shared,0,0,0,NONE,target learners not fitted,,,,,,
+0.1,TargetOnly_Ridge,37,23,0,budget-only context ECDF,,1afefb90f8b2f1a40ae31e960aecb833ee0a92477e19be4b60610f7f198e6c75,False,False,542.0,0.0,
+0.1,TargetOnly_HGB,37,23,0,budget-only context ECDF,,1afefb90f8b2f1a40ae31e960aecb833ee0a92477e19be4b60610f7f198e6c75,False,False,542.0,0.0,
+0.1,PublicTarget_HGB,37,23,0,budget-only context ECDF,,1afefb90f8b2f1a40ae31e960aecb833ee0a92477e19be4b60610f7f198e6c75,True,False,542.0,542.0,
+0.1,SharedTarget_HGB,37,23,0,budget-only context ECDF,,1afefb90f8b2f1a40ae31e960aecb833ee0a92477e19be4b60610f7f198e6c75,True,True,542.0,542.0,
+0.1,ResidualHGB,37,23,0,budget-only with inner-refitted ECDF,,1afefb90f8b2f1a40ae31e960aecb833ee0a92477e19be4b60610f7f198e6c75,,,,,10.0
+0.25,TargetOnly_Ridge,87,57,0,budget-only context ECDF,,4bd124e9f4388e4a45affe5d8963621c4c65952087263d38934badf361fcb87c,False,False,542.0,0.0,
+0.25,TargetOnly_HGB,87,57,0,budget-only context ECDF,,4bd124e9f4388e4a45affe5d8963621c4c65952087263d38934badf361fcb87c,False,False,542.0,0.0,
+0.25,PublicTarget_HGB,87,57,0,budget-only context ECDF,,4bd124e9f4388e4a45affe5d8963621c4c65952087263d38934badf361fcb87c,True,False,542.0,542.0,
+0.25,SharedTarget_HGB,87,57,0,budget-only context ECDF,,4bd124e9f4388e4a45affe5d8963621c4c65952087263d38934badf361fcb87c,True,True,542.0,542.0,
+0.25,ResidualHGB,87,57,0,budget-only with inner-refitted ECDF,,4bd124e9f4388e4a45affe5d8963621c4c65952087263d38934badf361fcb87c,,,,,10.0
+0.5,TargetOnly_Ridge,164,114,0,budget-only context ECDF,,2c3f6f28f24e21ec29ade440875d674bb9a94a50224f1c869c52afc30791cd2d,False,False,542.0,0.0,
+0.5,TargetOnly_HGB,164,114,0,budget-only context ECDF,,2c3f6f28f24e21ec29ade440875d674bb9a94a50224f1c869c52afc30791cd2d,False,False,542.0,0.0,
+0.5,PublicTarget_HGB,164,114,0,budget-only context ECDF,,2c3f6f28f24e21ec29ade440875d674bb9a94a50224f1c869c52afc30791cd2d,True,False,542.0,542.0,
+0.5,SharedTarget_HGB,164,114,0,budget-only context ECDF,,2c3f6f28f24e21ec29ade440875d674bb9a94a50224f1c869c52afc30791cd2d,True,True,542.0,542.0,
+0.5,ResidualHGB,164,114,0,budget-only with inner-refitted ECDF,,2c3f6f28f24e21ec29ade440875d674bb9a94a50224f1c869c52afc30791cd2d,,,,,10.0
+0.75,TargetOnly_Ridge,248,171,0,budget-only context ECDF,,4f6c625471787e219061659a1b2a26c81af2f692b29143650ae47d047d2d87a5,False,False,542.0,0.0,
+0.75,TargetOnly_HGB,248,171,0,budget-only context ECDF,,4f6c625471787e219061659a1b2a26c81af2f692b29143650ae47d047d2d87a5,False,False,542.0,0.0,
+0.75,PublicTarget_HGB,248,171,0,budget-only context ECDF,,4f6c625471787e219061659a1b2a26c81af2f692b29143650ae47d047d2d87a5,True,False,542.0,542.0,
+0.75,SharedTarget_HGB,248,171,0,budget-only context ECDF,,4f6c625471787e219061659a1b2a26c81af2f692b29143650ae47d047d2d87a5,True,True,542.0,542.0,
+0.75,ResidualHGB,248,171,0,budget-only with inner-refitted ECDF,,4f6c625471787e219061659a1b2a26c81af2f692b29143650ae47d047d2d87a5,,,,,10.0
+1.0,TargetOnly_Ridge,331,228,0,budget-only context ECDF,,06602e42b2ae03e5cfd6a3a00699971649b9a83cd9bed375e8e53735be15439e,False,False,542.0,0.0,
+1.0,TargetOnly_HGB,331,228,0,budget-only context ECDF,,06602e42b2ae03e5cfd6a3a00699971649b9a83cd9bed375e8e53735be15439e,False,False,542.0,0.0,
+1.0,PublicTarget_HGB,331,228,0,budget-only context ECDF,,06602e42b2ae03e5cfd6a3a00699971649b9a83cd9bed375e8e53735be15439e,True,False,542.0,542.0,
+1.0,SharedTarget_HGB,331,228,0,budget-only context ECDF,,06602e42b2ae03e5cfd6a3a00699971649b9a83cd9bed375e8e53735be15439e,True,True,542.0,542.0,
+1.0,ResidualHGB,331,228,0,budget-only with inner-refitted ECDF,,06602e42b2ae03e5cfd6a3a00699971649b9a83cd9bed375e8e53735be15439e,,,,,10.0

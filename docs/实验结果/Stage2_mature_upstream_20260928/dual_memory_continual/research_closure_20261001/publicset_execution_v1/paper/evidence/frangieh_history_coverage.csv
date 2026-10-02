@@ -1,0 +1,10 @@
+original_fold,context,n_tasks,n_genes,n_history_available,coverage,history_sizes
+frangieh_context_holdout_1_Co-culture,Co-culture,189,189,158,0.8359788359788359,"{""2"": 130, ""0"": 31, ""1"": 28}"
+frangieh_context_holdout_1_Co-culture,Control,38,38,7,0.18421052631578946,"{""0"": 31, ""1"": 7}"
+frangieh_context_holdout_1_Co-culture,IFNγ,52,52,21,0.40384615384615385,"{""0"": 31, ""1"": 21}"
+frangieh_context_holdout_2_Control,Co-culture,46,46,13,0.2826086956521739,"{""0"": 33, ""1"": 13}"
+frangieh_context_holdout_2_Control,Control,189,189,156,0.8253968253968254,"{""2"": 132, ""0"": 33, ""1"": 24}"
+frangieh_context_holdout_2_Control,IFNγ,44,44,11,0.25,"{""0"": 33, ""1"": 11}"
+frangieh_context_holdout_3_IFNγ,Co-culture,47,47,15,0.3191489361702128,"{""0"": 32, ""1"": 15}"
+frangieh_context_holdout_3_IFNγ,Control,43,43,11,0.2558139534883721,"{""0"": 32, ""1"": 11}"
+frangieh_context_holdout_3_IFNγ,IFNγ,189,189,157,0.8306878306878307,"{""2"": 131, ""0"": 32, ""1"": 26}"

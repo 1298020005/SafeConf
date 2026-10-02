@@ -1,0 +1,7 @@
+cohort,context,n_tasks,n_biological_gene_clusters,eligible_TEST_tasks,fraction_of_eligible_TEST,status
+primary_common,HCT116,107,107,1420,0.07535211267605633,OK
+primary_common,HEK293T,125,125,1573,0.07946598855689765,OK
+all_prediction_only,HCT116,1420,1420,1420,1.0,OK
+all_prediction_only,HEK293T,1573,1573,1573,1.0,OK
+no_source_history_prediction_only,HCT116,1313,1313,1420,0.9246478873239437,OK
+no_source_history_prediction_only,HEK293T,1448,1448,1573,0.9205340114431023,OK

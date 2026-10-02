@@ -1,0 +1,6 @@
+scope,fold,train_queries,train_clusters,train_edges,fit_unique_history_items,query_count,query_clusters,query_edges_before,query_edges,query_supported,min_query_K,max_query_K,forbidden_items,allowed_bank_items
+McFaline/outer0,0,427,302,5610,4028,115,75,1547,1451,115,11,14,115,7058
+McFaline/outer1,1,432,297,5722,4000,110,80,1435,1367,110,7,14,110,7063
+McFaline/outer2,2,445,309,5875,4143,97,68,1282,1216,97,11,14,97,7076
+McFaline/outer3,3,434,301,5737,4043,108,76,1420,1344,108,9,14,108,7065
+McFaline/outer4,4,430,299,5684,4018,112,78,1473,1397,112,10,14,112,7061

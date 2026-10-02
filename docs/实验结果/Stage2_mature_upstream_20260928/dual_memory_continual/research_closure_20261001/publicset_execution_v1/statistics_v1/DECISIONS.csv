@@ -1,0 +1,5 @@
+readout,builder,practical_comparisons_passed,practical_comparisons_planned,practical_all_scopes_pass,original_simple_all_scopes_pass,strong_simple_comparisons_passed,strong_simple_comparisons_planned,strong_simple_all_scopes_pass,structure_all_scopes_pass
+risk,B2_Pointwise,7,12,False,False,8,9,False,
+risk,B3_DeepSets,6,12,False,False,8,9,False,False
+direct_risk,B2_Pointwise,7,12,False,False,4,9,False,
+direct_risk,B3_DeepSets,7,12,False,False,4,9,False,False

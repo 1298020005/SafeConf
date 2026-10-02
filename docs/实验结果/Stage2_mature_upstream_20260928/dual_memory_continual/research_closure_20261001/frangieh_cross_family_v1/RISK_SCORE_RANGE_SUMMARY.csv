@@ -1,0 +1,9 @@
+direction,method,target_fraction_clipped_low,target_fraction_clipped_high,target_clipped_unique_scores
+GEARS_to_scGPT,PredictionHGB,0.0,0.0,5.0
+GEARS_to_scGPT,PredictionRidge,0.0,0.0,55.8
+GEARS_to_scGPT,PublicHGB,0.0,0.0,35.4
+GEARS_to_scGPT,PublicRidge,0.0,0.02781641134268577,55.13333333333333
+scGPT_to_GEARS,PredictionHGB,0.0,0.0,6.466666666666667
+scGPT_to_GEARS,PredictionRidge,0.6,0.4,1.0
+scGPT_to_GEARS,PublicHGB,0.0,0.0,33.93333333333333
+scGPT_to_GEARS,PublicRidge,0.6666666666666666,0.3333333333333333,1.0
