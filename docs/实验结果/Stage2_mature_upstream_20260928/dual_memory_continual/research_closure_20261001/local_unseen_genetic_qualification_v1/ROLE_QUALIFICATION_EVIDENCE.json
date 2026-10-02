@@ -1,0 +1,193 @@
+{
+  "schema": "safeconf_bounded_local_genetic_qualification_v1",
+  "status": "NO_DEMONSTRABLY_UNSEEN_QUALIFIED_HUMAN_GENETIC_CANDIDATE_IN_FIXED_SIX",
+  "aliases": [
+    "WesselsSatija2023",
+    "XuCao2023",
+    "ZhaoSims2021",
+    "ChangYe2021",
+    "LiangWang2023",
+    "TianKampmann2019_day7neuron"
+  ],
+  "document_bindings": {
+    "Wessels": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/E165_wessels_truth_unseal_evaluation_20260715/TEST_TRUTH_UNSEAL_EVENT.json",
+      "bytes": 5330,
+      "sha256": "7de6b6e7d207e5a01b296b65802f5c1d10ca8600b8254a5c2da24e7f4d915043"
+    },
+    "Xu": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/E180_xucao_fresh_guide_certificate_20260723/final_evaluation/E180_FINAL_SUMMARY.json",
+      "bytes": 1423,
+      "sha256": "c18635c9a54c8f2bc941bb37c29ee2c64c334a71bc9ed569778dff6b3dfbba75"
+    },
+    "Tian": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/E168_primary_human_cd4_fresh_confirmation_20260716/CANDIDATE_SELECTION_NOTE.md",
+      "bytes": 395,
+      "sha256": "c24d6a018a7492a3a29b1aeb4ebe056e8eb199444aee8a301ddddff6ba5b8786"
+    },
+    "LiangStatus": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/E123_liang_formal_dual_models_20260714/RUN_STATUS.json",
+      "bytes": 531,
+      "sha256": "bd3e59345b028e7c3972fd5241ef2ffcaeec3aa38fae78a134d73b6b0ac27685"
+    },
+    "LiangReport": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/E123_liang_formal_dual_models_20260714/E123_REPORT.md",
+      "bytes": 1678,
+      "sha256": "a04f580fed80b00f34c649749d41aa2b9d97d32b4d191d8552180440fdb056ac"
+    },
+    "LiangSpecies": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/E40_non_tahoe_multidim_data_acquisition_20260709/数据线总览_尽可能多但不乱.md",
+      "bytes": 18979,
+      "sha256": "ab6f3535126e5edaede58b0620510cbe537e578999238808f3372190fd8692a3"
+    },
+    "Catalogue": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/E10_external_task_validation_assets_20260707/source_metadata/scperturb_20260707/scperturb_zenodo_13350497.json",
+      "bytes": 20114,
+      "sha256": "460868fe41a6f7cf9dc3023b72b89e826e7479097d626f7d743aaf9ab2074844"
+    },
+    "PriorMetadata": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/independent_asset_followup/FRESH_DATASET_METADATA.md",
+      "bytes": 14782,
+      "sha256": "bbeeafc39b6a4bb6902b5d25b15d2d3475f7b1fde1aa14967ae3da7243384db5"
+    }
+  },
+  "search_scope": {
+    "roots": [
+      "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果",
+      "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts",
+      "/home/yyf/proj/docs/实验结果",
+      "/home/yyf/proj/tools/scripts"
+    ],
+    "selection": "exact filename aliases and bounded surname/study aliases; text/status/manifest/registry/catalogue metadata only; no new inventory beyond six",
+    "no_hit_is_not_UNSEEN": true,
+    "local_file_exists_is_not_SEEN_or_UNSEEN": true
+  },
+  "rows": [
+    {
+      "dataset": "WesselsSatija2023",
+      "exposure_role": "REJECT_SEEN",
+      "evidence_key": "Wessels",
+      "qualification": "REJECT_SEEN_AND_INCOMPLETE_FROZEN_SOURCE_SYMBOL_AXIS",
+      "Source3285_symbol_overlap": 3252,
+      "Source3285_symbol_missing": 33,
+      "qualified_genetic_clusters": null,
+      "qualified_biological_strata": null,
+      "normalization_and_released_prediction_contract": "NOT_REASSESSED_AFTER_SEEN_REJECTION"
+    },
+    {
+      "dataset": "XuCao2023",
+      "exposure_role": "REJECT_SEEN",
+      "evidence_key": "Xu",
+      "qualification": "REJECT_SEEN",
+      "Source3285_symbol_overlap": 3285,
+      "Source3285_symbol_missing": 0,
+      "qualified_genetic_clusters": null,
+      "qualified_biological_strata": null,
+      "normalization_and_released_prediction_contract": "NOT_REASSESSED_AFTER_SEEN_REJECTION"
+    },
+    {
+      "dataset": "ZhaoSims2021",
+      "exposure_role": "READ_EXPOSURE_UNKNOWN",
+      "evidence_key": "Catalogue",
+      "modality": "CHEMICAL_DRUG_PERTURBATION",
+      "qualification": "REJECT_CURRENT_GENETIC_TARGET_CONTRACT",
+      "Source3285_symbol_overlap": 3285,
+      "Source3285_symbol_missing": 0,
+      "qualified_genetic_clusters": null,
+      "qualified_biological_strata": null,
+      "official_description": "Multiplexed drugs on six GBM resections plus one additional resection; donors are not genetic target clusters",
+      "official_source": "https://pertpy.scverse.org/en/stable/_modules/pertpy/data/_datasets.html#zhao_2021",
+      "primary_study_doi": "10.1186/s13073-021-00894-y"
+    },
+    {
+      "dataset": "ChangYe2021",
+      "exposure_role": "READ_EXPOSURE_UNKNOWN",
+      "evidence_key": "Catalogue",
+      "modality": "CHEMICAL_TREATMENT_AND_LINEAGE_BARCODING",
+      "qualification": "REJECT_CURRENT_GENETIC_TARGET_CONTRACT",
+      "Source3285_symbol_overlap": 3284,
+      "Source3285_symbol_missing": 1,
+      "missing_gene_symbols": [
+        "UBE2M"
+      ],
+      "UBE2M_canonical_Ensembl_followup": {
+        "source_manifest": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/GENE_MANIFEST.csv",
+        "source_manifest_sha256": "c1c9c8041458275248514d960c6c263a72f43a12a8d48c16f77759d2342fa08f",
+        "frozen_Ensembl_id": "ENSG00000130725",
+        "var_ensembl_gene_id_matches": 0,
+        "action": "no repair/mapping/zero-fill executed"
+      },
+      "qualified_genetic_clusters": null,
+      "qualified_biological_strata": null,
+      "official_source": "https://pertpy.scverse.org/en/stable/_modules/pertpy/data/_datasets.html#chang_2021",
+      "author_dataset_table": "https://www.sanderlab.org/scPerturb/datavzrd/scPerturb_vzrd_v2/dataset_info/index_1.html",
+      "primary_study_doi": "10.1038/s41587-021-01005-3",
+      "drug_conditions_root_primary_table_report": 3,
+      "root_report_not_independent_table_row_decode": true
+    },
+    {
+      "dataset": "LiangWang2023",
+      "exposure_role": "REJECT_SEEN",
+      "evidence_keys": [
+        "LiangStatus",
+        "LiangReport",
+        "LiangSpecies"
+      ],
+      "species_scope": "existing study notes identify mouse organoid hepatocyte; exact human Source symbol overlap 0; no orthology mapping",
+      "qualification": "REJECT_SEEN_AND_HUMAN_CONTRACT",
+      "Source3285_symbol_overlap": 0,
+      "Source3285_symbol_missing": 3285,
+      "old_evaluation_records": 1224,
+      "old_evaluation_tasks": 612,
+      "counts_role": "legacy exposure evidence, not independent genetic-cluster qualification",
+      "qualified_genetic_clusters": null,
+      "qualified_biological_strata": null
+    },
+    {
+      "dataset": "TianKampmann2019_day7neuron",
+      "exposure_role": "REJECT_SEEN",
+      "evidence_key": "Tian",
+      "qualification": "REJECT_SEEN_EXPLICIT_E168_NOTE_E129_E153_SAFETRANS",
+      "Source3285_symbol_overlap": 3285,
+      "Source3285_symbol_missing": 0,
+      "qualified_genetic_clusters": null,
+      "qualified_biological_strata": null,
+      "normalization_and_released_prediction_contract": "NOT_REASSESSED_AFTER_SEEN_REJECTION"
+    }
+  ],
+  "external_primary_sources": [
+    {
+      "url": "https://pertpy.scverse.org/en/stable/_modules/pertpy/data/_datasets.html",
+      "scope": "official loader documentation zhao_2021/chang_2021 only; functions were not invoked"
+    },
+    {
+      "url": "https://www.sanderlab.org/scPerturb/datavzrd/scPerturb_vzrd_v2/dataset_info/index_1.html",
+      "bytes": 66178,
+      "sha256": "36d996e553f8aca5c4ed77a79239506ddb058a52557e155adb07be6cc1bb692f",
+      "scope": "HTML metadata; dynamic rows not decoded independently; root supplied Chang chemical/3condition recheck"
+    },
+    {
+      "url": "https://www.nature.com/articles/s41592-023-02144-y",
+      "access_result": "reader redirected to Nature identity cookie endpoint; no account/access workaround; original paper counts not inferred"
+    }
+  ],
+  "access_audit": {
+    "H5_mode": "r",
+    "H5_paths_read": "var/index/gene-symbol/gene-ID lists and categorical gene codes only; no var ncounts/ncells values",
+    "X_values_read": 0,
+    "obs_values_read": 0,
+    "prediction_effect_or_truth_vectors_opened": 0,
+    "full_numeric_H5_files_hashed": 0,
+    "new_downloaded_numeric_assets": 0,
+    "new_fits": 0,
+    "new_RNG": 0,
+    "new_upstream_calls": 0,
+    "new_formal_attempts": 0,
+    "Source_core_or_shared_files_modified": false,
+    "existing_result_metadata_and_report_text_read": "role/exposure evidence only; no scores used for candidate selection"
+  },
+  "gene_axis_evidence": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/local_unseen_genetic_qualification_v1/GENE_AXIS_EVIDENCE.json",
+    "scope": "raw measured var gene lists; does not prove prediction/control coverage or normalization"
+  }
+}

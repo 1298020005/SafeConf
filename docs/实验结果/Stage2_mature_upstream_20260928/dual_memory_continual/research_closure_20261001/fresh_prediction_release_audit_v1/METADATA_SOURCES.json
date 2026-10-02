@@ -1,0 +1,232 @@
+{
+  "schema": "safeconf_metadata_only_fresh_prediction_release_audit_v1",
+  "created_utc": "2026-10-02",
+  "status": "NO_QUALIFIED_UNTOUCHED_RELEASE_IDENTIFIED_WITHIN_SIX_AUTHOR_RELEASE_FAMILIES",
+  "primary_release_families": 6,
+  "source_axis": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/GENE_IDS.json",
+    "bytes": 37116,
+    "sha256": "b7f80db0c0e46dd7667cb83f39153c4add31948ca00e5391c210b9c6a18d7c68",
+    "n_genes": 3285,
+    "requires_all_3285": true
+  },
+  "candidates": [
+    {
+      "project": "Systema",
+      "official_url": "https://github.com/mlbio-epfl/systema",
+      "prediction_release": "NOT_IDENTIFIED",
+      "gene_axis_release": "UNKNOWN",
+      "Source3285_overlap_count": null,
+      "Source3285_missing_count": null,
+      "Source3285_missing_gene_ids": null,
+      "heldout_gene_clusters": null,
+      "biological_strata_metadata": [
+        "FrangiehControlSingle2021",
+        "FrangiehCocultureSingle2021",
+        "FrangiehIfnSingle2021"
+      ],
+      "normalization": "UNKNOWN",
+      "matched_control_vector_release": "NOT_IDENTIFIED",
+      "qualification": "NOT_READY"
+    },
+    {
+      "project": "bm2 scPerturBench",
+      "official_url": "https://github.com/bm2-lab/scPerturBench",
+      "prediction_release": "NOT_IDENTIFIED",
+      "gene_axis_release": "UNKNOWN (HVG5000 code only)",
+      "Source3285_overlap_count": null,
+      "Source3285_missing_count": null,
+      "Source3285_missing_gene_ids": null,
+      "total_perturbations_metadata": 212,
+      "eligible_heldout_gene_clusters": null,
+      "biological_strata_count": null,
+      "seed_count": 3,
+      "normalization": "code target_sum=10000 + log1p; incompatible with current CP4000 estimand",
+      "matched_control_vector_release": "NOT_IDENTIFIED",
+      "qualification": "NOT_READY"
+    },
+    {
+      "project": "PerturbArena / TianGzlab scPerturbBench",
+      "official_url": "https://github.com/TianGzlab/scPerturbBench",
+      "prediction_release": "NOT_IDENTIFIED (metrics and prediction-generation code)",
+      "gene_axis_release": "UNKNOWN",
+      "Source3285_overlap_count": null,
+      "Source3285_missing_count": null,
+      "Source3285_missing_gene_ids": null,
+      "eligible_heldout_gene_clusters": null,
+      "biological_strata_count": null,
+      "normalization": "UNKNOWN",
+      "matched_control_vector_release": "NOT_IDENTIFIED",
+      "qualification": "NOT_READY"
+    },
+    {
+      "project": "SBB",
+      "official_url": "https://github.com/michavol/sbb-perturbation-benchmark",
+      "prediction_release": "NOT_IDENTIFIED (processed input h5ad, generic scGPT assets, Docker model images)",
+      "gene_axis_release": "UNKNOWN (HVG8192 union perturbation targets)",
+      "Source3285_overlap_count": null,
+      "Source3285_missing_count": null,
+      "Source3285_missing_gene_ids": null,
+      "eligible_heldout_gene_clusters": null,
+      "biological_strata_count_for_Frangieh_pipeline": 1,
+      "normalization": "code target_sum=10000 + log1p; incompatible with current CP4000 estimand",
+      "matched_control_vector_release": "NOT_IDENTIFIED",
+      "qualification": "NOT_READY"
+    },
+    {
+      "project": "scLAMBDA",
+      "official_url": "https://github.com/gefeiwang/scLAMBDA",
+      "prediction_release": "NOT_IDENTIFIED",
+      "gene_axis_release": "UNKNOWN",
+      "Source3285_overlap_count": null,
+      "Source3285_missing_count": null,
+      "Source3285_missing_gene_ids": null,
+      "qualification": "EXCLUDED_OBSERVED_EXAMPLES_SOURCE_REPLOGLE_NADIG_OR_OLD_NORMAN"
+    },
+    {
+      "project": "CellOT",
+      "official_url": "https://github.com/bunnech/cellot",
+      "prediction_release": "NOT_IDENTIFIED",
+      "gene_axis_release": "UNKNOWN",
+      "Source3285_overlap_count": null,
+      "Source3285_missing_count": null,
+      "Source3285_missing_gene_ids": null,
+      "qualification": "EXCLUDED_OBSERVED_RELEASE_NOT_GENETIC_STUDY"
+    }
+  ],
+  "successful_exact_metadata_receipts": [
+    {
+      "url": "https://raw.githubusercontent.com/michavol/sbb-perturbation-benchmark/main/README.md",
+      "bytes": 18057,
+      "sha256": "f692098adbd6dc7f07547231176a1bd16ee4926f766ae04ad4b6f9f6e1e31438",
+      "representation": "raw UTF-8 text"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/michavol/sbb-perturbation-benchmark/main/scripts/pull_all_models.sh",
+      "bytes": 1195,
+      "sha256": "756f4d556d84fd909968559de7709764be07519642bea0381f78a5ea1e503994",
+      "representation": "raw UTF-8 text"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/gefeiwang/scLAMBDA/main/README.md",
+      "bytes": 6085,
+      "sha256": "30449a444079b41fd1273d67ec9ff9f7ffaca69b507e321acef751df8a264f44",
+      "representation": "raw UTF-8 text"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/michavol/sbb-perturbation-benchmark/main/data/frangieh21/get_data.py",
+      "bytes": 31677,
+      "sha256": "cf2206efd43ed744e3a3329c39bb1b6f0944237aa62e5924b34c08543c22396b",
+      "representation": "raw UTF-8 text"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/TianGzlab/scPerturbBench/main/README.md",
+      "bytes": 3183,
+      "sha256": "8cb3f4308851fee4b60d69ceab7829467aae8b4fb0b29f9d45a7736107f3bf56",
+      "representation": "raw UTF-8 text"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/LuyiTian/PerturbArena/main/README.md",
+      "bytes": 3850,
+      "sha256": "3435b5cd72c56e98a89a3da94a08f6e125daf17e32bef9f9d33e8c984269257a",
+      "representation": "raw UTF-8 text"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bunnech/cellot/main/README.md",
+      "bytes": 4502,
+      "sha256": "bf4f0c674cee33042d9a842d589e4639e54e2e347f42b74e20597569dd73944a",
+      "representation": "raw UTF-8 text"
+    },
+    {
+      "url": "https://brbiclab.epfl.ch/projects/systema/",
+      "bytes": 55981,
+      "sha256": "ed0b5e35610834e81bee4c4b5f709c66557886cc4b3630b1756fb03a13bb4b9d",
+      "representation": "HTML",
+      "verified_by": "delegated metadata-only auditor"
+    },
+    {
+      "url": "https://zenodo.org/api/records/15746994",
+      "bytes": 4163,
+      "sha256": "34ca3b597b29503d5ab52c3f1f3ce566f80c4de92d0cb79f43c5df935a934e48",
+      "representation": "Zenodo JSON",
+      "verified_by": "delegated metadata-only auditor"
+    },
+    {
+      "url": "https://github.com/mlbio-epfl/systema/blob/main/src/data.py",
+      "bytes": 431067,
+      "sha256": "ae28a0f42efde7a0526c2d7467a9f2ab70b3bdd5bc8b0b23bf9c10228a758774",
+      "representation": "HTML",
+      "verified_by": "delegated metadata-only auditor"
+    },
+    {
+      "url": "https://github.com/mlbio-epfl/systema/blob/main/src/run_gears.py",
+      "bytes": 292118,
+      "sha256": "d58ce56eba0c342616751713e526400258c434f65cc2d4e2ebdbee47bf5ecea9",
+      "representation": "HTML",
+      "verified_by": "delegated metadata-only auditor"
+    },
+    {
+      "url": "https://github.com/mlbio-epfl/systema/blob/main/.gitignore",
+      "bytes": 228350,
+      "sha256": "20e4b82bc1a34afd23a99f4b41e205d284457e7ee806871de5082f1897597427",
+      "representation": "HTML",
+      "verified_by": "delegated metadata-only auditor"
+    },
+    {
+      "url": "https://github.com/mlbio-epfl/systema/releases/expanded_assets/v1.0.0",
+      "bytes": 4545,
+      "sha256": "e88f5d5ee2d0ce6e5caaee9e316d39bd97aef3778c7a851bad0eeceb154340cd",
+      "representation": "HTML",
+      "verified_by": "delegated metadata-only auditor"
+    },
+    {
+      "url": "https://github.com/mlbio-epfl/systema/releases/expanded_assets/v0.0.0",
+      "bytes": 4545,
+      "sha256": "814b492011d45cdec413ff0d2b7e76cd1136d305e946354faccd7d33df11bfa8",
+      "representation": "HTML",
+      "verified_by": "delegated metadata-only auditor"
+    },
+    {
+      "url": "https://github.com/bm2-lab/scPerturBench/blob/main/Perturbation_generalization/Genetic/myGears.py",
+      "bytes": 316702,
+      "sha256": "468a10ef32a1a856a32414f453ab69c9e3df60521fff704471f581e03b6d8e49",
+      "representation": "HTML",
+      "verified_by": "delegated metadata-only auditor"
+    },
+    {
+      "url": "https://github.com/bm2-lab/scPerturBench/blob/main/Perturbation_generalization/calPerformance_genetic.py",
+      "bytes": 367555,
+      "sha256": "591baac8512bf330e124158bdfbccd6f049bbab27b9c6260ffeb97f6ff36a5ed",
+      "representation": "HTML",
+      "verified_by": "delegated metadata-only auditor"
+    }
+  ],
+  "successful_exact_http_metadata_bytes": 1773575,
+  "exact_byte_accounting_scope": "Listed direct HTTP text/JSON/HTML fetches; web text-search renderer does not expose its transport bytes. No binary/numeric data asset downloaded.",
+  "access_failures": [
+    {
+      "url": "https://raw.githubusercontent.com/michavol/sbb-perturbation-benchmark/main/scripts/pull_all_datasets.sh",
+      "error": "The read operation timed out"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/LuyiTian/PerturbArena/main/README.md",
+      "error": "The read operation timed out"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/LuyiTian/PerturbArena/main/tasks/task1.html",
+      "error": "<urlopen error _ssl.c:983: The handshake operation timed out>"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/bunnech/cellot/main/README.md",
+      "error": "<urlopen error _ssl.c:983: The handshake operation timed out>"
+    }
+  ],
+  "github_api_preflight": "403 unauthenticated rate limit on all four repository-info/tree/releases queries; no credential/account workaround",
+  "new_fits": 0,
+  "new_upstream_calls": 0,
+  "new_formal_validation_attempts": 0,
+  "new_prediction_truth_or_expression_array_downloads": 0,
+  "formal_attempt_count_retained": 2,
+  "extra_attempt_requires_explicit_cap_change": true,
+  "unknown_is_not_zero": true
+}

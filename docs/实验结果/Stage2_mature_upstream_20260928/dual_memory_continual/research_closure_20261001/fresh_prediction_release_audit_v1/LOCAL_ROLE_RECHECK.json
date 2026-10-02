@@ -1,0 +1,106 @@
+{
+  "schema": "safeconf_fresh_prediction_release_local_role_correction_v1",
+  "status": "FRANGIEH_STUDY_REJECT_SEEN",
+  "original_official_release_audit_unchanged": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/fresh_prediction_release_audit_v1/AUDIT.md",
+      "bytes": 6785,
+      "sha256": "dfef6717456ec04b2b9db6c7b1f16b2855348c05336cf73975f28b680d455e3d"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/fresh_prediction_release_audit_v1/METADATA_SOURCES.json",
+      "bytes": 9770,
+      "sha256": "da59db774e7658f5a8e98c0fc661c6a54ac8d9d70ae1d380f0cc2ee37920b4ca"
+    }
+  ],
+  "local_role_registry": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/external_asset_audit/EXTERNAL_ASSET_REGISTRY.csv",
+    "bytes": 920,
+    "sha256": "c6c26acab9f0080bb9a0798ff71fc77ced98c0364e3f9aa15f3eb16e5ce18044"
+  },
+  "local_role_row": {
+    "candidate": "Frangieh21",
+    "modality": "genetic",
+    "independent_study": "True",
+    "project_result_references": "262",
+    "method_design_seen": "True",
+    "official_scale": "248 perturbations; 3 melanoma models",
+    "local_data_status": "AVAILABLE_ELSEWHERE",
+    "official_split": "True",
+    "test_truth_can_be_sealed": "False",
+    "history_contract_possible": "True",
+    "main_confirmation_eligible": "False",
+    "decision": "REJECT_SEEN"
+  },
+  "old_asset_audit": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/independent_asset_followup/ASSET_AGENT_AUDIT.json",
+    "bytes": 7635,
+    "sha256": "aecc30e31bce60338224a523ea11706e899af66f07a9d7f05a5ed55fbf32c0d6"
+  },
+  "old_asset_audit_markdown": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/independent_asset_followup/ASSET_AGENT_AUDIT.md",
+    "bytes": 9375,
+    "sha256": "e571479014018ab3a2bad54870dc58e932fc31cc7128bf2a76c3b171f160bd30"
+  },
+  "E71_status": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/E71_frangieh_gears_fixed_panel_formal_20260711/RUN_STATUS.json",
+    "bytes": 93501,
+    "sha256": "69535023c870eb5590321302171563a707549ecf54c9067b0b64bc09b15dbbf4"
+  },
+  "E71_report": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/E71_frangieh_gears_fixed_panel_formal_20260711/reports/E60_GEARS_FIXED_PANEL_REPORT.md",
+    "bytes": 3360,
+    "sha256": "48159469bc01437966d544c11c8f6aa9c6133d6c15dbe2eb59740936114684fe"
+  },
+  "E71_fixed_panel_scope": {
+    "dataset": "frangieh",
+    "seeds": [
+      11,
+      22,
+      33
+    ],
+    "n_task_records": 72,
+    "n_unique_tasks": 24,
+    "heldout_setting": "24 fixed unseen single-gene perturbations",
+    "truth_used_in_risk": false
+  },
+  "older_gears_combined_scope": 48,
+  "files": [
+    {
+      "path": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/FrangiehIzar2021_RNA.h5ad",
+      "exists": true,
+      "bytes": 1458928348,
+      "mtime_ns": 1776408437596536800,
+      "numeric_opened_this_recheck": false,
+      "file_sha256": null,
+      "sha_policy": "existence/stat only; numeric asset not read or fully hashed"
+    },
+    {
+      "path": "/home/yyf/data/singlecell_perturbation_atlas/official_generalization/Frangieh.h5ad",
+      "exists": true,
+      "bytes": 4235593156,
+      "mtime_ns": 1776411925000925200,
+      "numeric_opened_this_recheck": false,
+      "file_sha256": null,
+      "sha_policy": "existence/stat only; numeric asset not read or fully hashed"
+    },
+    {
+      "path": "/home/yyf/data/singlecell_perturbation_atlas/official_generalization/Frangieh.h5ad.gz",
+      "exists": true,
+      "bytes": 669363848,
+      "mtime_ns": 1776407359928636200,
+      "numeric_opened_this_recheck": false,
+      "file_sha256": null,
+      "sha_policy": "existence/stat only; numeric asset not read or fully hashed"
+    }
+  ],
+  "official_new_prediction_release_identity": "UNKNOWN_NOT_IDENTIFIED",
+  "fresh_study_identity": "ALREADY_SEEN_EXPLICIT_REGISTRY_AND_OPENED_RESULTS",
+  "correction": "Closest officialstudy wording must not be read as fresh-study qualification; even a new release/model on Frangieh cannot erase prior exposedstudy outcomes. No thirdattempt/download/newconfirmation route authorized.",
+  "X_or_obs_values_read": false,
+  "new_download_bytes": 0,
+  "new_fits": 0,
+  "new_upstream_calls": 0,
+  "formal_attempts_added": 0,
+  "native_genes_old_Frangieh_GEARS": 3000
+}
