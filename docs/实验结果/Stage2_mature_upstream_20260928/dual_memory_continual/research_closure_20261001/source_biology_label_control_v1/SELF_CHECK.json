@@ -1,0 +1,11 @@
+{
+  "status": "SELF_CHECK_PASS",
+  "script_sha256": "5c10dbd21bcc4ee2965920ed5a0621a958be02b9b7dec08347f64c8d56a54b68",
+  "training_row_indexing_before_norm": true,
+  "same_original_clipping_verified": true,
+  "seven_count_metrics_match_expanded_scalar": true,
+  "max_abs_counter_difference": 4.440892098500626e-16,
+  "fresh_scope_rejection_before_data_or_fit": true,
+  "actual_fits": 0,
+  "new_RNG_draws": 0
+}

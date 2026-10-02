@@ -143,3 +143,7 @@ Source primary bootstrap lacked HGB-versus-Magnitude despite near0.75Magnitude. 
 ## Source训练目标诊断已执行并停止
 
 固定20fit（v1有效rank1复用＋v2新19）已完成，旧模型/原外部评价不改。raw-affine U20两方向0.774848/0.780253，相对原rank0.783134/0.783743下降0.008287/0.003490；Spearman也均下降，AURC/error@10小幅改善如实保留。40fold/context仅20非负。初轮无CI，不宣称显著退化/等价或外部根因。独立复算全指标/40训练组/20params/SHA通过。原CDF规则保留，停止此目标变体，不转向调尺度/损失。数学可能性未变成当前收益。用户具体委托和Source-only范围记录，0新上游/原始外部truth/GPU。
+
+## Source生物标签对照：训练/统计完成后的报告依赖异常
+
+固定10新fit与20模型/分数封存、140配对区间及完整统计已完成；pandas.to_markdown要求未安装tabulate，最终receipt记录FAILED并原样保留。只从保存CSV/npz手工渲染恢复报告，0额外fit/predict/random draws，不覆盖原script/receipt。Root已从保存draws复算140配对点/CI，最大差0。此技术报告修复不改变方法或科学取舍。

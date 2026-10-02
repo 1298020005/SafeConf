@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-02T05:38:37.910518+00:00",
+  "updated_utc": "2026-10-02T07:56:53.778548+00:00",
   "goal_completion_proven": false,
   "requirements": 21,
   "source_seed_completion": {
@@ -28,5 +28,26 @@
   "actual_orion_primary_U20_delta": -0.010052174490444349,
   "actual_orion_independent_review_sha256": "654cceb9cb3a8525adb7de3452464703226ccae971f58ec3e7e9232125e32d01",
   "source_strongest_rule_completion": "COMPLETE_6PAIRS_ALL_MACRO_CI_CROSSZERO",
-  "legacy_e170_budget": "COMPLETE_0FIT_TARGETVALIDATION1920_NOTSOURCEZERO_C"
+  "legacy_e170_budget": "COMPLETE_0FIT_TARGETVALIDATION1920_NOTSOURCEZERO_C",
+  "source_biological_label_information_control": "COMPLETE_10NEW_10REUSED_MODELS_5000SAVEDGENEDRAWS_REPORTONLY_RECOVERY",
+  "source_biological_label_macro_U20_advantage": {
+    "Exphormer_to_GAT": {
+      "difference": 0.05216147836031426,
+      "ci95": [
+        0.019170429034102984,
+        0.08659132849157047
+      ]
+    },
+    "GAT_to_Exphormer": {
+      "difference": 0.056635680770037666,
+      "ci95": [
+        0.025689080365674993,
+        0.09466809513004477
+      ]
+    }
+  },
+  "source_biological_label_scope": "DEV;1808tasks575clusters;2architectures1family;retainedSourceprediction+Public inputs;notexternalconfirmation",
+  "source_biological_label_original_receipt_preserved": true,
+  "source_biological_label_original_terminal_code": 1,
+  "source_biological_label_render_recovery_terminal_code": 0
 }

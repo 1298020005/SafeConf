@@ -1,0 +1,11 @@
+line,fold,rows,max_abs_score_difference,tolerance,error_codec
+GAT_to_Exphormer,0,362,1.1102230246251565e-16,1e-14,exact restored float32 bits; archive decimal metrics
+GAT_to_Exphormer,1,362,1.1102230246251565e-16,1e-14,exact restored float32 bits; archive decimal metrics
+GAT_to_Exphormer,2,362,1.1102230246251565e-16,1e-14,exact restored float32 bits; archive decimal metrics
+GAT_to_Exphormer,3,361,1.1102230246251565e-16,1e-14,exact restored float32 bits; archive decimal metrics
+GAT_to_Exphormer,4,361,1.1102230246251565e-16,1e-14,exact restored float32 bits; archive decimal metrics
+Exphormer_to_GAT,0,362,1.1102230246251565e-16,1e-14,exact restored float32 bits; archive decimal metrics
+Exphormer_to_GAT,1,362,1.1102230246251565e-16,1e-14,exact restored float32 bits; archive decimal metrics
+Exphormer_to_GAT,2,362,1.1102230246251565e-16,1e-14,exact restored float32 bits; archive decimal metrics
+Exphormer_to_GAT,3,361,1.1102230246251565e-16,1e-14,exact restored float32 bits; archive decimal metrics
+Exphormer_to_GAT,4,361,1.1102230246251565e-16,1e-14,exact restored float32 bits; archive decimal metrics

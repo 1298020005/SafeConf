@@ -1,0 +1,31 @@
+{
+  "status": "ALL_SCORES_MODELS_FROZEN_BEFORE_REALIZED_ERRORS",
+  "new_fits": 10,
+  "reused_old_rank_models": 10,
+  "script_sha256": "5c10dbd21bcc4ee2965920ed5a0621a958be02b9b7dec08347f64c8d56a54b68",
+  "score_only_sha256": "30f1985886921f76187a9b6283efa0406a1914a8493887d02779c8eb1d23c506",
+  "model_sha256": {
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_biology_label_control_v1/MODEL_GAT_to_Exphormer_fold0_BioNorm.joblib": "a0e22cb4325de6eaf7a29808105287b8e12d13794fe662fbdaf420c965a45947",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_biology_label_control_v1/MODEL_GAT_to_Exphormer_fold0_rank.joblib": "37e378db03fe7949a1ffc8ed400b480fb6c6f580be26bccc10f08e3b8f271097",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_biology_label_control_v1/MODEL_GAT_to_Exphormer_fold1_BioNorm.joblib": "d43cb8bb63dc03108491ddd1b04ff55014a198121974de3926bf41338cb5461d",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_biology_label_control_v1/MODEL_GAT_to_Exphormer_fold1_rank.joblib": "45b24e026f33f3f9d19d21c56603d63b131574d2c6e2ab6f78ff698cf1b0b8a6",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_biology_label_control_v1/MODEL_GAT_to_Exphormer_fold2_BioNorm.joblib": "819ea35770e6e5303615fc59eba826985bfda70d3a7548cff7b73c1d4133a5d8",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_biology_label_control_v1/MODEL_GAT_to_Exphormer_fold2_rank.joblib": "f6396d586a4cb244e09e754a0af4b18a7a3c9ded88000bb3abd7b49dd7e11fa2",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_biology_label_control_v1/MODEL_GAT_to_Exphormer_fold3_BioNorm.joblib": "f1fd716062f40a8bd3e0a7510ccca854693da6ce01b46f3cfe63873185830ffc",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_biology_label_control_v1/MODEL_GAT_to_Exphormer_fold3_rank.joblib": "2d7411bba2a5730c9de0a96fc9e73461b1745daef55d59c3711c7298bbc9eb92",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_biology_label_control_v1/MODEL_GAT_to_Exphormer_fold4_BioNorm.joblib": "cc340642ae59c5c5a021078b7e89e4404417e92716a7846197f5c439523fb6b3",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_biology_label_control_v1/MODEL_GAT_to_Exphormer_fold4_rank.joblib": "e41b335e92b7c99473971eee7291655bcbe9e6a33e9a1b7277d3d846ca19d64d",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_biology_label_control_v1/MODEL_Exphormer_to_GAT_fold0_BioNorm.joblib": "6793d60cd6e237d3ac1a09e72bd3ba4b89cd82e4d35824319d81a10f725ccbd3",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_biology_label_control_v1/MODEL_Exphormer_to_GAT_fold0_rank.joblib": "a84771208a02dca3d60e4eab598941225716eb166ce7028e8a7c073990b87c80",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_biology_label_control_v1/MODEL_Exphormer_to_GAT_fold1_BioNorm.joblib": "691da24a4ec2f5433b6fbb3ed311f70259ba011b3cec70e13e17bfbea63643e1",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_biology_label_control_v1/MODEL_Exphormer_to_GAT_fold1_rank.joblib": "da130f57069742c7891da137a0f6028cccc8ba3fc0458c27649526b51d79d1a1",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_biology_label_control_v1/MODEL_Exphormer_to_GAT_fold2_BioNorm.joblib": "8147e10444cbc6772a994f3e8c5af1822940ed485cf3282e0e04b843bdf42ae4",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_biology_label_control_v1/MODEL_Exphormer_to_GAT_fold2_rank.joblib": "4ff7a8865dc9f00cb110307d3d86321d4b581a301a445209873d05461f42f142",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_biology_label_control_v1/MODEL_Exphormer_to_GAT_fold3_BioNorm.joblib": "714b5e05947e846a88985d9808b151367fb565876088ad08d4f709857ead9667",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_biology_label_control_v1/MODEL_Exphormer_to_GAT_fold3_rank.joblib": "32bcfd9a050a2e6c5436d26d4cf3af14a5a247cd238d21105f36d29f51d4247d",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_biology_label_control_v1/MODEL_Exphormer_to_GAT_fold4_BioNorm.joblib": "4d431cad89d35f764dfa70291ddca0e74fbfd106ef52df7a8ebc9100f9b3cc4e",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_biology_label_control_v1/MODEL_Exphormer_to_GAT_fold4_rank.joblib": "935372136d5e4a25b1690624807be0b98a6e7ed12b5b577ae8f22b6128460c94"
+  },
+  "cached_realized_errors_parsed_before_freeze": 0,
+  "query_truth_norm_as_feature": false
+}

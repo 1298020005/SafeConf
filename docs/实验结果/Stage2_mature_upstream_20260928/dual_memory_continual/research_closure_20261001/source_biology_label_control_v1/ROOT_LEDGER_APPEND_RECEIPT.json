@@ -1,0 +1,39 @@
+{
+  "utc": "2026-10-02T07:56:01.994664+00:00",
+  "byte_prefix_preserved": true,
+  "changes": [
+    {
+      "path": "docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/EXPERIMENT_MASTER_TABLE.csv",
+      "before_sha256": "125402b97f26ef30261254a359fe0a906ace32f64cef7c8c6520d3ef7db8d583",
+      "appended_rows": 8,
+      "after_sha256": "e6ccd6c38cdb26b783ba8f7a58c32c03236410cf0ab0e28290b0d6f295080cc7"
+    },
+    {
+      "path": "docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/COST_MASTER_TABLE.csv",
+      "before_sha256": "bcb87f064283464e52c5b09dfd75385735abe1b10e65f3ff2c2fb46d222156f3",
+      "appended_rows": 11,
+      "after_sha256": "b1965d57ff3e16606d4f81b8e8f7ddd87facf7374e5376fdb38bea494726d3e7"
+    },
+    {
+      "path": "docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/INFORMATION_BUDGET_LEDGER.csv",
+      "before_sha256": "50f2daf48a8d6b62c82d1229d0372ccd2563a3496d135ea10d366dc73501a25c",
+      "appended_rows": 20,
+      "after_sha256": "962f8b806ce9ea2556751349bd44293bff1618780333b2dbed161f67df10e069"
+    },
+    {
+      "path": "docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/CDF_AUDIT.csv",
+      "before_sha256": "5f4a645b8fcbcf2d967d966f1713382df006790a1274aa51de7c8b270c1ee412",
+      "appended_rows": 40,
+      "after_sha256": "a9811991ffc94b234feea99caf85a1aee2eb15aa36b0367682b24747064444d6"
+    }
+  ],
+  "biological_label_training_row_uses": 14464,
+  "distinct_Source_biological_tasks": 1808,
+  "distinct_Source_perturbation_clusters": 575,
+  "architectures": 2,
+  "model_families": 1,
+  "new_fits": 10,
+  "old_models_reused": 10,
+  "no_fits_in_this_integration": true,
+  "appended_line_endings": "LF matching existing files; original byte prefixes unmodified"
+}
