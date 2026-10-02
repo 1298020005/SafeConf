@@ -57,3 +57,7 @@ Arc/H1 的现有H5AD与旧E198输入SHA完全一致。E198已打开表达，并�
 ## 强简单规则配对比较已补齐
 
 固定30目标学习器相对5个历史规则的150项宏U20对照已完成，全部名义95%区间跨零。全验证预算Public-Ridge为0.279075，同学习式直接距离0.267066，Δ+0.012009、CI[-0.188223,0.179268]。没有足够证据将目标拟合或Shared融合提升为优于简单参照的贡献；也不证明普遍等效。使用原保存的5000次同基因索引，仅补算4个缺失规则，0新拟合/抽样。原13主方法不变；参见 `orion_preparation/validation_strong_reference_completion_v1/README.md`。
+
+## 当前合同Public增长缺项已实际补齐
+
+275次原配方拟合和5000次同任务gene统计完成：MC全任务100%−10%公共覆盖ΔU20=+0.680116、CI[0.522410,0.786253]；Source两方向增长CI跨零。整gene加入全部history，所以已covered任务的直接距离逐值不变；低预算规则人群变化不算内容增益。MC full HGB仍低于同参照强距离；不得因此判Route B或普遍持续学习成熟。停止增长变体。下一项是已见Orion固定人工参照的物理内容负对照可行性/精确复算，0新增fit，不改变主方法。证据：`common_gene_axis/results/public_growth_uncertainty_v1/README.md`。

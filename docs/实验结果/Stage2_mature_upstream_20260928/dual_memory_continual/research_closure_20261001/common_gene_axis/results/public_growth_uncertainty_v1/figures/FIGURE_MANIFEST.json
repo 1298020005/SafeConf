@@ -1,0 +1,38 @@
+{
+  "scope": "SEEN fixed evidence; no method selection",
+  "recipe": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/plot_safeconf_common_public_growth.py",
+  "recipe_sha256": "d219c5ecc68fc0383fba56ceecfa71ff85abda81f6dea3264d4cd59402f5f118",
+  "coverage_lines": "Five fixed orders, not independent studies or confidence intervals",
+  "files": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_growth_uncertainty_v1/figures/FIXED_TASK_PUBLIC_COVERAGE_RISK_CURVES.pdf",
+      "bytes": 17854,
+      "sha256": "741f0feee3d16273f1f89552f3772a2514776c603813cc596d099ca9a8921108"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_growth_uncertainty_v1/figures/FIXED_TASK_PUBLIC_COVERAGE_RISK_CURVES.png",
+      "bytes": 117791,
+      "sha256": "cfc2a9e2a684a60b8394441bfe3d3ec15cea05a1fb382db9cc01db7c99ea7ab0"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_growth_uncertainty_v1/figures/FIXED_TASK_PUBLIC_COVERAGE_RISK_CURVES.svg",
+      "bytes": 37706,
+      "sha256": "b88c926c27acc4545019e2e9ee87bc219a593764a1abc52fcbab2a5f157dadee"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_growth_uncertainty_v1/figures/PUBLIC_TASK_AVAILABILITY.pdf",
+      "bytes": 16301,
+      "sha256": "241f0dbd77f90052a6e048fa1665fe02595ac7517af30bc02509adfd377f9f19"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_growth_uncertainty_v1/figures/PUBLIC_TASK_AVAILABILITY.png",
+      "bytes": 86667,
+      "sha256": "e76a7113625f560fd9ebdd09e86df4cba8772dad1a01582fd0892abfd20c51c9"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_growth_uncertainty_v1/figures/PUBLIC_TASK_AVAILABILITY.svg",
+      "bytes": 30389,
+      "sha256": "abc18043b11aad17283c9ed47cc9ab425121d0dbb62048950413491d910b85a4"
+    }
+  ]
+}

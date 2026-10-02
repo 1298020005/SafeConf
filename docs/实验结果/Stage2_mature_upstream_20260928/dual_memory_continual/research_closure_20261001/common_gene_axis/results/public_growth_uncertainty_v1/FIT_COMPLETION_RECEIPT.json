@@ -1,0 +1,49 @@
+{
+  "status": "COMPLETE_EXISTING_RECIPE_COMMON_AXIS_GROWTH",
+  "expected_completed_HGB_fits": 275,
+  "run_exit_code": 0,
+  "datasets": "Source1808tasks575genes/twoNNarchitectures;McFaline543tasks380genes",
+  "same_source_supervision_allbudgets": true,
+  "PublicBiologyLearner_retraining": false,
+  "new_upstream_calls": 0,
+  "Orion_access": false,
+  "GPU_hours": 0,
+  "outputs": {
+    "GROWTH_TASK_PREDICTIONS.csv.gz": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_mechanisms/GROWTH_TASK_PREDICTIONS.csv.gz",
+      "bytes": 5398096,
+      "sha256": "0a4909c65adb4b98e0e4ced42952d6fce81db6c82d1abdf20eb02109fe2f49a8"
+    },
+    "GROWTH_MACRO.csv": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_mechanisms/GROWTH_MACRO.csv",
+      "bytes": 28203,
+      "sha256": "8d723eea710bb65ab05b413a5e97a0dafa857c5695ef3521798aec80770bbc24"
+    },
+    "GROWTH_STRATA.csv": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_mechanisms/GROWTH_STRATA.csv",
+      "bytes": 109410,
+      "sha256": "862c3e1cae891443cb34f8800e7a3ac4d6ef4445ac42c4efea9c1deaf2396733"
+    },
+    "GROWTH_COVERAGE.csv": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_mechanisms/GROWTH_COVERAGE.csv",
+      "bytes": 7681,
+      "sha256": "da8bf9f9c54023993c5081b485c412e6193409329cbd44ed66f02f4fd1ae190c"
+    },
+    "GROWTH_BANK_AUDIT.csv": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_mechanisms/GROWTH_BANK_AUDIT.csv",
+      "bytes": 7730,
+      "sha256": "27c8adfeaa659a7fed7c92c89430bf6c5c476bafd30b66b41fb9d9d381fac410"
+    },
+    "RUN_STATUS_growth.json": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_mechanisms/RUN_STATUS_growth.json",
+      "bytes": 120,
+      "sha256": "7c18182d1dd3fe9cb413b727d5cac7a0195b59bc7744e774b2992fa0275e261d"
+    },
+    "EXECUTION_CONFIG_growth.json": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_mechanisms/EXECUTION_CONFIG_growth.json",
+      "bytes": 616,
+      "sha256": "7deb4b64cfe89c5ac70b80cc565bee3b05e49383c73025390682cab65eb24a5b"
+    }
+  },
+  "resource_measurement_limit": "Original fixed runner logs per-snapshot wall roundedto0.01s; no exact totalCPU/peakRSS captured forfitjob. Do not impute fromstatistics receipt."
+}

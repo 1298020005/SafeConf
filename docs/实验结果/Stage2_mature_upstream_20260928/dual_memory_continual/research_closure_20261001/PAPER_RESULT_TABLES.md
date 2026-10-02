@@ -83,3 +83,13 @@ Fixed primary Learned_hgb−Learned_WeightedHistoryDistance: ΔU20=−0.010052, 
 | B100_SharedTarget_hgb | 0.069851 | -0.197214 | [-0.397087, 0.121020] |
 
 All150fixed macroU20 rule comparisons have nominal95%paired CIs crossing zero; no primary promotion. See `orion_preparation/validation_strong_reference_completion_v1/`.
+
+## Current2840 Public target-coverage growth, SEEN
+
+| 迁移线 | 100%−10% U20增量 | 配对名义95%CI |
+|---|---:|---|
+| GAT_to_Exphormer | +0.033246 | [-0.001294, 0.049115] |
+| Exphormer_to_GAT | +0.021191 | [-0.013601, 0.039759] |
+| TxPert_to_McFaline | +0.680116 | [0.522410, 0.786253] |
+
+Allfixedtasks HGB; sameSource labels100%, fivefixedorders. Coverage+representation/refit, not samegene content improvement; no PublicBiology update. FullMC risk remains below strongdistance.

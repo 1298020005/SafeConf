@@ -1,0 +1,60 @@
+{
+  "role": "SEEN_common2840_fixed_PublicMemory_growth_completion;notconfirmation_or_newalgorithm",
+  "UTC": "2026-10-02T02:55:08.510667+00:00",
+  "orders": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "budgets": [
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "source_supervision": "same100percent_in_every_snapshot;CDF uses same allowederrors perouterfit",
+  "methods": [
+    "ManualHGB",
+    "ManualHistoryDistance"
+  ],
+  "transfer_lines": [
+    "GAT_to_Exphormer",
+    "Exphormer_to_GAT",
+    "TxPert_to_McFaline"
+  ],
+  "fixed_seed": 20260930,
+  "expected_tabular_fits": 275,
+  "new_upstream_calls": 0,
+  "new_downloads": 0,
+  "GPU_hours": 0,
+  "no_Orion_access": true,
+  "code_bindings": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_public_mechanisms.py",
+      "sha256": "3d8c2cbb0f4ba6834c7c561dc3447a782e7634083614d59e7e1bcd66155653f8",
+      "bytes": 14425
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/research.py",
+      "sha256": "22a02a79d59f1d852870efb9dc1afe229f150c5db75e5de735f7bfcc1f613887",
+      "bytes": 11094
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_common_axis_closure.py",
+      "sha256": "ccdab9ac97707ff909792fa44daa26310593177c3467eedb25b669b871cdffb0",
+      "bytes": 13905
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_research_closure.py",
+      "sha256": "b66bf85611a1e9fa4b7403be171bce3c41de684531615a935411ab714687e5b6",
+      "bytes": 44318
+    }
+  ],
+  "runtime_wall_cap_seconds": 1800,
+  "threads": 4,
+  "statistical_followup": "Reproduceallpoints;HGBfullfixedtaskset acrossbudgets;distancebudget-specificcoverage explicit and allbudgetcommonhistory cohort;5000pairedbiologicalgene draws, not5orders asindependentsamples",
+  "retention": "allorders/budgets;no winner or algorithm replacement"
+}

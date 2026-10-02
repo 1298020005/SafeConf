@@ -1,0 +1,100 @@
+{
+  "status": "COMPLETE_FIXED_SEEN_PUBLIC_COVERAGE_STATISTICS",
+  "new_fits": 0,
+  "replicates_per_study": 5000,
+  "biological_studies_resampled": 2,
+  "independent_Source_families": 1,
+  "original_HGB_macro_points_reproduced": 75,
+  "same_gene_direct_distance_max_difference": 0.0,
+  "new_confirmation": false,
+  "new_methods": 0,
+  "GPU_hours": 0,
+  "no_Orion_access": true,
+  "elapsed_seconds": 45.11188683286309,
+  "CPU_seconds": 45.076104437999994,
+  "peak_RSS_bytes": 567353344,
+  "original_input_bindings": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/complete_safeconf_common_public_growth_statistics.py",
+      "bytes": 13596,
+      "sha256": "053d463e3e9805ffd01a86ae036acc14bc95c97c7ee838cc81556499c7d8036d"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_source_scaling_uncertainty_agent.py",
+      "bytes": 18872,
+      "sha256": "46e4e48f0b767d4fc363da9884412973beee0407128377a184bc6992c0819c64"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/research.py",
+      "bytes": 11094,
+      "sha256": "22a02a79d59f1d852870efb9dc1afe229f150c5db75e5de735f7bfcc1f613887"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_growth_uncertainty_v1/REGISTRATION.json",
+      "bytes": 2009,
+      "sha256": "5849d5be95ea2913acb87f18c36f6a6556e1b3869c0498fd390e91ca8cff7ef0"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_growth_uncertainty_v1/FIT_COMPLETION_RECEIPT.json",
+      "bytes": 3249,
+      "sha256": "3e89c28740fde1676f7f16228d0592b2e34562f26556d5870762bc92f88a2fcd"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_mechanisms/GROWTH_TASK_PREDICTIONS.csv.gz",
+      "bytes": 5398096,
+      "sha256": "0a4909c65adb4b98e0e4ced42952d6fce81db6c82d1abdf20eb02109fe2f49a8"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_mechanisms/GROWTH_MACRO.csv",
+      "bytes": 28203,
+      "sha256": "8d723eea710bb65ab05b413a5e97a0dafa857c5695ef3521798aec80770bbc24"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_mechanisms/GROWTH_STRATA.csv",
+      "bytes": 109410,
+      "sha256": "862c3e1cae891443cb34f8800e7a3ac4d6ef4445ac42c4efea9c1deaf2396733"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_mechanisms/GROWTH_COVERAGE.csv",
+      "bytes": 7681,
+      "sha256": "da8bf9f9c54023993c5081b485c412e6193409329cbd44ed66f02f4fd1ae190c"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_mechanisms/GROWTH_BANK_AUDIT.csv",
+      "bytes": 7730,
+      "sha256": "27c8adfeaa659a7fed7c92c89430bf6c5c476bafd30b66b41fb9d9d381fac410"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_growth_uncertainty_v1/DISTANCE_COMMON_COHORT_INVARIANCE.csv",
+      "bytes": 11597,
+      "sha256": "3fa265bb59abb2c9c4868d4549dd8f2d445b41226901d2f2d9cde11ac31ac53f"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_growth_uncertainty_v1/FIXED_TASK_HGB_CURVE_INTERVALS.csv",
+      "bytes": 112908,
+      "sha256": "674358be3cd4f7ba784dc75e25e4ca9aabb95d006be092fec3b7951fc54ac75d"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_growth_uncertainty_v1/FIXED_TASK_HGB_GROWTH_CONTRASTS.csv",
+      "bytes": 106243,
+      "sha256": "8aeb930408c9618ad8bbc19950e59a96107714687f4c965a140574f903b9e42d"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_growth_uncertainty_v1/FIXED_TASK_ORDER_POINTS.csv",
+      "bytes": 58859,
+      "sha256": "674dc9abcd19ac254fa0fe40bf129a0e15a44d0fc61a21fc93fcd72472c5d9a6"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_growth_uncertainty_v1/FOLD_CONTEXT_AVAILABILITY.csv",
+      "bytes": 262175,
+      "sha256": "9bb4549c7633354416f855320808429862937510b2cc3a32cf6475c9fbec9539"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_growth_uncertainty_v1/ORIGINAL_HGB_POINT_REPRODUCTION.csv",
+      "bytes": 3121,
+      "sha256": "dd27770c69232536056959b8aa85f389929b2f1f54da3b9a1b995314eea21689"
+    }
+  ]
+}

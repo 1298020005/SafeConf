@@ -119,3 +119,7 @@ Primary Source-risk increment over the same-prior weighted distance is not estab
 ## 2026-10-02: strong-simple paired-statistics completeness
 
 The30fixed SEEN target-risk controls initially had pairings only to learnedWeightedDistance andSourceHGB. Four already-fixed historical rules were missing; their old marginal CIs could not be paired by seed because gene ordering differs. A zero-fit completion used the saved5000gene indices, reproduced all630existingWeighted point/CI rows and84original baseline points, and produced all3150target-versus-rule rows in66.421s. All150macroU20 intervals cross zero. This corrects a comparison gap, not a scientific method failure or a new method; no parameter search, new upstream, source refit or new confirmation follows.
+
+## 2026-10-02: Public growth contract gap and coverage confounding
+
+Oldgrowth usednative/512gene outputs; canonical2840directory hadonlycontent. Reusedoriginalsupport-weighted/fixedHGB growthrecipe for25snapshots/275fits, thenfixed-task5000gene statistics. MC100−10delta+.680116CIpositive, SourcegrowthCIcross0; no newalgorithm/upstream/Oriontruth. Eachgene enterswithallrecords, so same-coveredtask distanceunchanged; across25snapshots commonhistory empty. Originaldistancecurves havechanging populations and low-n NAcontexts, hence cannot be interpreted as growing content quality. No formula/parameter repair or bestorderselection followed. A receipt label counted2bootstrapdata pools asstudies; separateSHA-bound semanticcorrection preserves originalcode/receipt andnumericresults.

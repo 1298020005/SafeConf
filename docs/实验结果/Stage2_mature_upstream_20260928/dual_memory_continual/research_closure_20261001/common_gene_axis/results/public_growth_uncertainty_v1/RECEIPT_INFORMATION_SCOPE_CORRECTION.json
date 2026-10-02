@@ -1,0 +1,11 @@
+{
+  "original_receipt": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_growth_uncertainty_v1/STATISTICS_RESULT_MANIFEST.json",
+  "original_sha256": "51305456817355a14928a6d25cf18a56862a1808fe2343fbc46f7cf7d2df9a5e",
+  "unchanged_numerical_results": true,
+  "original_field": "biological_studies_resampled",
+  "original_value": 2,
+  "correct_interpretation": "Two gene-block bootstrap data pools: composite Source and McFaline. Not study-level sampling and not two independent original biological studies. Source architectures share575gene-unit draws; actual study provenance remains separately recorded.",
+  "correct_field": "biological_gene_resampling_pools",
+  "correct_value": 2,
+  "context_row_n_fixed_tasks_scope": "Whole transfer-line task count; actual per-context/fold counts are in FOLD_CONTEXT_AVAILABILITY.csv. No task subset changed."
+}

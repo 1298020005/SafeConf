@@ -1,0 +1,101 @@
+{
+  "role": "SEEN_fixed_growth_statistics_not_new_confirmation_or_method",
+  "comparison_scope": "HGB all fixed tasks; same draws across all budgets/orders and Source architectures",
+  "bootstrap_replicates_per_study": 5000,
+  "bootstrap_seed": 20261002,
+  "contrasts_a_minus_b": [
+    [
+      0.25,
+      0.1
+    ],
+    [
+      0.5,
+      0.25
+    ],
+    [
+      0.75,
+      0.5
+    ],
+    [
+      1.0,
+      0.75
+    ],
+    [
+      1.0,
+      0.1
+    ]
+  ],
+  "orders": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "budgets": [
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "macro": "equal context mean then equal five fixed order mean; preserve NA, no invalid context/order omission",
+  "distance_scope": "per-order common-history point/invariance; all25snapshot common cohort reported even if empty",
+  "new_fits": 0,
+  "GPU_hours": 0,
+  "raw_expression_reads": 0,
+  "no_Orion_access": true,
+  "input_bindings": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/complete_safeconf_common_public_growth_statistics.py",
+      "bytes": 13596,
+      "sha256": "053d463e3e9805ffd01a86ae036acc14bc95c97c7ee838cc81556499c7d8036d"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_source_scaling_uncertainty_agent.py",
+      "bytes": 18872,
+      "sha256": "46e4e48f0b767d4fc363da9884412973beee0407128377a184bc6992c0819c64"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/research.py",
+      "bytes": 11094,
+      "sha256": "22a02a79d59f1d852870efb9dc1afe229f150c5db75e5de735f7bfcc1f613887"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_growth_uncertainty_v1/REGISTRATION.json",
+      "bytes": 2009,
+      "sha256": "5849d5be95ea2913acb87f18c36f6a6556e1b3869c0498fd390e91ca8cff7ef0"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_growth_uncertainty_v1/FIT_COMPLETION_RECEIPT.json",
+      "bytes": 3249,
+      "sha256": "3e89c28740fde1676f7f16228d0592b2e34562f26556d5870762bc92f88a2fcd"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_mechanisms/GROWTH_TASK_PREDICTIONS.csv.gz",
+      "bytes": 5398096,
+      "sha256": "0a4909c65adb4b98e0e4ced42952d6fce81db6c82d1abdf20eb02109fe2f49a8"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_mechanisms/GROWTH_MACRO.csv",
+      "bytes": 28203,
+      "sha256": "8d723eea710bb65ab05b413a5e97a0dafa857c5695ef3521798aec80770bbc24"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_mechanisms/GROWTH_STRATA.csv",
+      "bytes": 109410,
+      "sha256": "862c3e1cae891443cb34f8800e7a3ac4d6ef4445ac42c4efea9c1deaf2396733"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_mechanisms/GROWTH_COVERAGE.csv",
+      "bytes": 7681,
+      "sha256": "da8bf9f9c54023993c5081b485c412e6193409329cbd44ed66f02f4fd1ae190c"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/public_mechanisms/GROWTH_BANK_AUDIT.csv",
+      "bytes": 7730,
+      "sha256": "27c8adfeaa659a7fed7c92c89430bf6c5c476bafd30b66b41fb9d9d381fac410"
+    }
+  ],
+  "selection_status": "descriptive SEEN followup; not pretruth algorithm selection"
+}
