@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "prior_sets_verified": 500,
+  "actual_risk_models_verified": 1200,
+  "mapping_scopes": 125,
+  "all_model_prior_weight_mapping_and_training_error_bindings_verified": true,
+  "same_context_source_family_real_null_training_CDF_equality": true,
+  "all_queries_registered_gene_disjoint_scope": true,
+  "paired_5000_draws_identical_across_directions": true,
+  "bootstrap_expansion_max_difference": 1.6653345369377348e-15,
+  "observed_matches_20strata_seed_order_macro": true,
+  "minimum_effective_content_shuffle_rate": 1.0,
+  "no_matched_donor_unknown_rows": 0,
+  "MC_TEST_reads": 0,
+  "elapsed_seconds": 44.10088593303226,
+  "ledger_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/FINAL_PRIOR_INTEGRITY_LEDGER.csv",
+    "sha256": "b9d8656248ac90d8ba9db08b1dc197942c692150e733b8f41589a050f511db20"
+  }
+}

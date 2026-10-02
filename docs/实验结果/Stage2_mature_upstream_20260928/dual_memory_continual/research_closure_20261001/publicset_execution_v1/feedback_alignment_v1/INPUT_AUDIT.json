@@ -1,0 +1,188 @@
+{
+  "status": "PASS",
+  "role": "SEEN_POST_CONFIRMATION_ALREADY_OPENED_CACHE",
+  "frame_tasks": 543,
+  "frame_genes": 380,
+  "feedback_tasks": 331,
+  "feedback_genes": 228,
+  "evaluation_tasks": 212,
+  "evaluation_genes": 152,
+  "feedback_budget_records": [
+    {
+      "budget": 0.1,
+      "n_error_rows": 37,
+      "n_error_genes": 23,
+      "task_hash": "1afefb90f8b2f1a40ae31e960aecb833ee0a92477e19be4b60610f7f198e6c75"
+    },
+    {
+      "budget": 0.25,
+      "n_error_rows": 87,
+      "n_error_genes": 57,
+      "task_hash": "4bd124e9f4388e4a45affe5d8963621c4c65952087263d38934badf361fcb87c"
+    },
+    {
+      "budget": 0.5,
+      "n_error_rows": 164,
+      "n_error_genes": 114,
+      "task_hash": "2c3f6f28f24e21ec29ade440875d674bb9a94a50224f1c869c52afc30791cd2d"
+    },
+    {
+      "budget": 0.75,
+      "n_error_rows": 248,
+      "n_error_genes": 171,
+      "task_hash": "4f6c625471787e219061659a1b2a26c81af2f692b29143650ae47d047d2d87a5"
+    },
+    {
+      "budget": 1.0,
+      "n_error_rows": 331,
+      "n_error_genes": 228,
+      "task_hash": "06602e42b2ae03e5cfd6a3a00699971649b9a83cd9bed375e8e53735be15439e"
+    }
+  ],
+  "evaluation_ID_hash": "0eaf3c899044966b1a1589939a550d71a184a2142a108de53dc2bcc14a66560a",
+  "shapes": {
+    "TEST_CALIBRATED_EFFECTS.npy": [
+      543,
+      2840
+    ],
+    "TEST_CONTROLS.npy": [
+      543,
+      2840
+    ],
+    "reference_estimand_diagnostic/CELL_WEIGHTED_PUBLIC_EFFECTS.npy": [
+      7173,
+      2840
+    ]
+  },
+  "gene_axis": 2840,
+  "planned_fits": {
+    "PublicTarget_HGB": 15,
+    "SharedTarget_HGB": 15,
+    "PertEMA_Public_RawAligned": 15
+  },
+  "new_upstream_fits": 0,
+  "new_raw_test_expression_reads": 0,
+  "canonical_error_source": "Existing external_Learned.parquet/STRICT_FEEDBACK_TASK_PREDICTIONS; already opened SEEN errors",
+  "quality_columns": [
+    "guide_reproducibility",
+    "plate_reproducibility",
+    "split_half_stability",
+    "batch_agreement"
+  ],
+  "fixed_contrasts": [
+    [
+      "PublicTarget_HGB",
+      "TargetOnly_HGB"
+    ],
+    [
+      "SharedTarget_HGB",
+      "PublicTarget_HGB"
+    ],
+    [
+      "SameContext_R_history",
+      "NegativeHistorySupport"
+    ],
+    [
+      "PertEMA_Public_RawAligned",
+      "PertEMA_Public_OldRaw"
+    ],
+    [
+      "PertEMA_Public_RawAligned",
+      "PertEMA_P_adapted"
+    ]
+  ],
+  "bindings": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/FEEDBACK_REBUILD_CONTRACT.json",
+      "sha256": "ef1d28b93f8c7612aa52e64968c28f0c313f849995c84b621963408a065f4d63",
+      "bytes": 3525
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/GENE_IDS.json",
+      "sha256": "be612f9c4638146b41eee26f607ab12fbed53b524cda7a76eee36ca554c28f97",
+      "bytes": 26427
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/TEST_TASKS.csv",
+      "sha256": "0b2f5be1b4e8911157cf317d7f950185be3f88235bd9350221ce93f52dc9982e",
+      "bytes": 27493
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/TEST_CALIBRATED_EFFECTS.npy",
+      "sha256": "385d62b8cbd2d535b1b31be504bbd55dd1032f0e09710a3b33c14f69e7bca89e",
+      "bytes": 6168608
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/TEST_CONTROLS.npy",
+      "sha256": "8c3b6aa7eaa51394ff850aaab204968b641daa3e63335cbd3789346768be3f78",
+      "bytes": 6168608
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/reference_estimand_diagnostic/CELL_WEIGHTED_PUBLIC_EFFECTS.npy",
+      "sha256": "5d197bbfbc8e2826e093ede5024cce73f14d52cfc0ba5728abefd1881eec6a46",
+      "bytes": 162970688
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/public_mcfaline_trainval/public_memory.parquet",
+      "sha256": "a17798b8e3aaf0a5f26d1fcb18de871980a8e119640daebf4d411f0f77fff067",
+      "bytes": 432777
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/public_mcfaline_trainval/manifest.json",
+      "sha256": "cb4e416829197e3b3c91300769687602da81ba08e994877f1d4362448e54eedc",
+      "bytes": 896
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/external_Learned.parquet",
+      "sha256": "fa1e373edc04cb18bce0b4a993c57877643c33fe623ec1dc75973f44062c8988",
+      "bytes": 164106
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/STRICT_FEEDBACK_TASK_PREDICTIONS.csv.gz",
+      "sha256": "a6f05dfd2e57a0794957a7ac062f606fbb43ccef5ab15ac2ea871c7beb95170d",
+      "bytes": 136735
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/STRICT_FEEDBACK_INFORMATION_LEDGER.csv",
+      "sha256": "83d60aac8d3a85dfa7ea531e2d3635bb370e5e2123f86cf14559ed2647a2c435",
+      "bytes": 3875
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/STRICT_FEEDBACK_CDF_AUDIT.csv",
+      "sha256": "bef217469f2eaf01aa2f204f6c824321388698f818c2be8344b6e7f3c3cfa3dc",
+      "bytes": 5817
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/FEEDBACK_SPLIT_CONTRACT.json",
+      "sha256": "7c00f5ab08969bc6537a714002735934d2424b6f0c1007009b9f6b3fec3b4e98",
+      "bytes": 572
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/MATRIX_TASK_PREDICTIONS.csv.gz",
+      "sha256": "73eff7366c0e64d96d57e6effe2d12061890a3db43f47d4d403204a8dff9504c",
+      "bytes": 5606076
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/official_pertema_adaptation/TASK_PREDICTIONS.csv.gz",
+      "sha256": "9cf2b2df0f9143fe26dc09e7870e98840cd746786d68dbe770f3fb557264dacd",
+      "bytes": 289561
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/official_pertema_adaptation/EXECUTION_CONFIG.json",
+      "sha256": "559454d4ed23254b5ceff65114542a05ea4f0eb247999215fb7d0f95fe1c9257",
+      "bytes": 3521
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/official_pertema_43c09a/src/pertema/run_estimator.py",
+      "sha256": "54aef0da2301a1d3d13c33fee231933878176941fdc5d64063a54ae09234ab06",
+      "bytes": 9064
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_aligned_public_feedback_v1.py",
+      "sha256": "059893d528136b75555499ff27625805b974bee8fb8248d67feefba0fd92e044",
+      "bytes": 29104
+    }
+  ],
+  "official_adaptation": "Pinned official factory raw estimator only; 15 full fits; no new inner-OOF isotonic or conformal calibration. Compared with the same old raw adaptation.",
+  "shared_lineage": "Exact legacy guide-effect/Learned-public source score; no new Shared confirmation"
+}

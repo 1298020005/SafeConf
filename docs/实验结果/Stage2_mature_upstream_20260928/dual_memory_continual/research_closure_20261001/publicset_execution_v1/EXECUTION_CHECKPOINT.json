@@ -1,17 +1,17 @@
 {
-  "updated_utc": "2026-10-02T15:27:43.226962+00:00",
+  "updated_utc": "2026-10-02T15:48:37.654925+00:00",
   "full_public_status": "COMPLETE",
   "full_public_unique_neural_stages": 120,
   "statistics_status": "COMPLETE",
   "goal_complete": false,
-  "pending": [
-    "physical content null complete statistics",
-    "final Public/Source serving decision",
-    "aligned Public affected feedback rerun",
-    "final experimental evidence and method settings"
-  ],
+  "pending": [],
   "user_priority": "Finish experiments and select final model first; manuscript/PDF work deferred by user",
   "paper_work": "DEFERRED_BY_USER",
   "nested_risk_status": "COMPLETE_400_FITS_5000_BOOTSTRAP",
-  "content_null_status": "RUNNING_FROZEN_B2_INFERENCE"
+  "content_null_status": "COMPLETE_1200_FITS_5000_BOOTSTRAP",
+  "feedback_status": "COMPLETE_45_FITS_5000_BOOTSTRAP",
+  "model_selection_status": "EXPERIMENTAL_CONFIGURATION_SELECTED",
+  "experimental_phase_complete": true,
+  "submission_package_status": "DEFERRED_BY_USER",
+  "completion_scope": "User-directed experiments and model-setting phase; no claim of finished submission package"
 }

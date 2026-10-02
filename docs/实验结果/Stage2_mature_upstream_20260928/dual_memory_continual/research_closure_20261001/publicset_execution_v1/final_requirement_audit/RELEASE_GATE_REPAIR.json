@@ -1,0 +1,37 @@
+{
+  "status": "COMPLETE_TECHNICAL_REPAIR",
+  "completed_utc": "2026-10-02T15:45:47.851149+00:00",
+  "cause": "NaN compares false at every original threshold, allowing unavailable validation metrics to pass release; favorable infinite values could also pass.",
+  "change": "All four release metrics must be finite; any NaN or +/-Inf rejects release with a field-specific reason. Nonnegative-strata fraction must lie in [0,1].",
+  "scientific_thresholds_unchanged": {
+    "delta_u20_new_tasks_min": -0.005,
+    "relative_aurc_degradation_anchor_max": 0.05,
+    "miss_rate_degradation_max": 0.02,
+    "nonnegative_strata_fraction_min": 0.6
+  },
+  "update_triggers_unchanged": true,
+  "original_code_sha256": "53e83199a40878b44452a2543c03abf46922f63f37b75ce538da88eb3a65fe60",
+  "updated_code": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/update.py",
+    "sha256": "105672d4eca8ea21ea1994d9e0fa6d1f5d3462b88d663ca60ffcdcb8a8bdcf61"
+  },
+  "semantic_tests": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tests/test_safeconf_continual_release.py",
+    "sha256": "0f0e6ee7ed5b9eb71d7da09242d0f650c644c1e288d2e975bf82178f6a19dbe4"
+  },
+  "validation": {
+    "command": "/home/miniconda/bin/python -m unittest discover -s tests -p test_safeconf_continual_release.py -v",
+    "exit_code": 0,
+    "test_methods_passed": 6,
+    "reported_test_seconds": 0.001,
+    "each_field_nonfinite_cases_passed": 12,
+    "cases": "Ordinary PASS and exact boundaries; original finite FAIL conditions; each metric NaN/+Inf/-Inf; all four unavailable; invalid fractions; existing public/error triggers."
+  },
+  "new_model_fits": 0,
+  "model_parameters_changed": false,
+  "new_upstream_training": 0,
+  "MC_TEST_reads": 0,
+  "GPU_hours": 0,
+  "manuscript_or_PDF_work": false,
+  "scope": "Release validation and semantic test only; no algorithm or model change, broader tests or data access."
+}

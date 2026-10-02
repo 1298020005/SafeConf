@@ -1,5 +1,5 @@
 {
-  "status": "WAITING_FOR_FIXED_INPUTS",
+  "status": "COMPLETE_REQUESTED_ARMS",
   "pid": 1636013,
   "phase": "null_cpu_risk",
   "orders": [
@@ -14,10 +14,7 @@
   ],
   "MC_TEST_reads": 0,
   "started_utc": "2026-10-02T15:03:18.952897+00:00",
-  "waiting_seconds": 1495.0286852421705,
-  "missing_paths": [
-    "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer3/inner3/B2_Pointwise/seed20260930/PRIORS.npz",
-    "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer3/outer/B2_Pointwise/seed20260930/PRIORS.npz"
-  ],
-  "active_elapsed_seconds": 89.69021334475838
+  "elapsed_seconds": 1822.9109175228514,
+  "active_elapsed_seconds": 157.8786975350231,
+  "waiting_seconds": 1665.0322214609478
 }

@@ -1,0 +1,52 @@
+{
+  "status": "COMPLETE",
+  "bootstrap_replicates": 5000,
+  "evaluation_tasks": 212,
+  "evaluation_genes": 152,
+  "same_gene_draw_across_methods_budgets_seeds": true,
+  "seed_aggregation": "metrics per seed then three-seed mean; not score mean",
+  "cluster_multiplicity": "exact repeated task copies",
+  "zero_feedback_target_learners": "NOT_FITTED_NO_SCORE_IMPUTATION",
+  "scalar_cases_checked": 144,
+  "fixed_model_training_uncertainty_included": false,
+  "no_probability_calibration_claim": true,
+  "fixed_contrasts": [
+    [
+      "PublicTarget_HGB",
+      "TargetOnly_HGB"
+    ],
+    [
+      "SharedTarget_HGB",
+      "PublicTarget_HGB"
+    ],
+    [
+      "SameContext_R_history",
+      "NegativeHistorySupport"
+    ],
+    [
+      "PertEMA_Public_RawAligned",
+      "PertEMA_Public_OldRaw"
+    ],
+    [
+      "PertEMA_Public_RawAligned",
+      "PertEMA_P_adapted"
+    ]
+  ],
+  "bindings": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/METRIC_INTERVALS.csv",
+      "sha256": "25b82348d1031a7a0f0c5e60006b8861dd3e1a1abe2b0c91285b694b0af66369",
+      "bytes": 53051
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/PAIRED_COMPARISONS.csv",
+      "sha256": "7e6b2ee2affc51bd237c5823500022f93b96cbf3957f54b19127996275c9e306",
+      "bytes": 23114
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/PREDICTION_FREEZE.json",
+      "sha256": "1048bd31a4386000e62bb0dae002e60396ae9df0c29c3a8d6050dc0177b368bc",
+      "bytes": 5524
+    }
+  ]
+}

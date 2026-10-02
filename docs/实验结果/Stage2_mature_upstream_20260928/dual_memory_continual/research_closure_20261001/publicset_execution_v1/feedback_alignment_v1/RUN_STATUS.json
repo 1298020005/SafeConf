@@ -1,0 +1,31 @@
+{
+  "status": "COMPLETE",
+  "pid": 1678644,
+  "actual_fits": 45,
+  "expected_fits": 45,
+  "fit_seconds": 6.075204977765678,
+  "elapsed_seconds": 50.864039168925956,
+  "role": "SEEN_POST_CONFIRMATION",
+  "new_upstream_fits": 0,
+  "new_raw_test_expression_reads": 0,
+  "new_isotonic_fits": 0,
+  "new_public_builder_fits": 0,
+  "unaffected_scores_reused": true,
+  "bindings": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/FIT_LEDGER.csv",
+      "sha256": "fd480122bf93fd301d680d8b29360c46cf75e29d53b25ea2492cb4932708c026",
+      "bytes": 37176
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/TASK_PREDICTIONS.csv.gz",
+      "sha256": "b9a69c0d414d0b72a32ee66334bd4b13e8e7695f7027ad3a633b322142ec2b3e",
+      "bytes": 898395
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/STATISTICS_RECEIPT.json",
+      "sha256": "0541eee123ef9e887b6382a59f5bef262ae1c8b60e1ad64ccc8621bf36e42485",
+      "bytes": 1978
+    }
+  ]
+}

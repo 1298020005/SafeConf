@@ -1,0 +1,652 @@
+{
+  "status": "PASS",
+  "audit_utc": "2026-10-02T15:56:14.595040+00:00",
+  "checked_items": 113,
+  "checked_files": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/FINAL_EXPERIMENTAL_DECISION.md",
+      "sha256": "67fd0dc0a19871c188515f69ce8d6a5fc6f2b5fa8d4b7702e24b6af72201fcfa"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/FINAL_MODEL_SETTINGS.json",
+      "sha256": "0475ef8baa589ac8b919f41474af84e49d927b38c4173f7f232f429c95321de0"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/FIXED_ADOPTION_GATES.csv",
+      "sha256": "271952a16e1b00010bf5a662fd846b9220f02409beeb7577c8010466e1ec3534"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/FIXED_ADOPTION_GATES.csv",
+      "sha256": "9500c5108e2d1475ccafc9334b9db2d187ea784692d9c9aca1fe4013d75beec0"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/SEED_MEAN_METRICS.csv",
+      "sha256": "a7e9394250db011f01d877d10c5faf61a5ba8a26b20937b067109d09ccbf1522"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/INPUT_AUDIT.json",
+      "sha256": "89e8a016f013f9f60487409a3184048c88f45488b4cba0b761ffc88e38834caa"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/final_requirement_audit/RELEASE_GATE_REPAIR.json",
+      "sha256": "1deea80a978dbb13c24c96348e1f42fbd917ba0df1ccddc035e2d8553bcaf148"
+    }
+  ],
+  "null_bootstrap_bindings": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/TxPert_Exphormer_to_TxPert_GAT_JOINT_GENE_BOOTSTRAP.npz",
+      "sha256": "70a7c770de94ceb7fbdd626c2862f3e5f3f5578b4e3f00dc6f47355a79efd64e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/TxPert_GAT_to_TxPert_Exphormer_JOINT_GENE_BOOTSTRAP.npz",
+      "sha256": "92491839b711e5d2f7d09f1f3137dce902c96cc4cdf6cd07dd9893539728ef81"
+    }
+  ],
+  "checks": [
+    {
+      "name": "settings SHA MC_DATA_ALIGNMENT_COMPARISONS.csv",
+      "passed": true,
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/statistics_v1/MC_DATA_ALIGNMENT_COMPARISONS.csv"
+    },
+    {
+      "name": "settings SHA STRONG_SIMPLE_COMPARISONS.csv",
+      "passed": true,
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/statistics_v1/STRONG_SIMPLE_COMPARISONS.csv"
+    },
+    {
+      "name": "settings SHA FIXED_ADOPTION_GATES.csv",
+      "passed": true,
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/FIXED_ADOPTION_GATES.csv"
+    },
+    {
+      "name": "settings SHA FIXED_ADOPTION_GATES.csv",
+      "passed": true,
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/FIXED_ADOPTION_GATES.csv"
+    },
+    {
+      "name": "settings SHA STATISTICS_RECEIPT.json",
+      "passed": true,
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/STATISTICS_RECEIPT.json"
+    },
+    {
+      "name": "settings SHA PREDICTION_FREEZE.json",
+      "passed": true,
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/PREDICTION_FREEZE.json"
+    },
+    {
+      "name": "settings SHA ADAPTATION_VS_SIMPLE_DIAGNOSTIC.csv",
+      "passed": true,
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/ADAPTATION_VS_SIMPLE_DIAGNOSTIC.csv"
+    },
+    {
+      "name": "settings SHA RESULT_MANIFEST.json",
+      "passed": true,
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/reference_headroom_v1/RESULT_MANIFEST.json"
+    },
+    {
+      "name": "release repair SHA",
+      "passed": true
+    },
+    {
+      "name": "main status",
+      "passed": true,
+      "actual": "COMPLETE",
+      "expected": "COMPLETE"
+    },
+    {
+      "name": "main actual_risk_fits",
+      "passed": true,
+      "actual": 400,
+      "expected": 400
+    },
+    {
+      "name": "main task_prediction_rows",
+      "passed": true,
+      "actual": 65088,
+      "expected": 65088
+    },
+    {
+      "name": "main actual ledger fits",
+      "passed": true
+    },
+    {
+      "name": "null status",
+      "passed": true,
+      "actual": "COMPLETE",
+      "expected": "COMPLETE"
+    },
+    {
+      "name": "null actual_risk_fits",
+      "passed": true,
+      "actual": 1200,
+      "expected": 1200
+    },
+    {
+      "name": "null null_task_prediction_rows",
+      "passed": true,
+      "actual": 108480,
+      "expected": 108480
+    },
+    {
+      "name": "null actual ledger fits",
+      "passed": true
+    },
+    {
+      "name": "feedback status",
+      "passed": true,
+      "actual": "COMPLETE",
+      "expected": "COMPLETE"
+    },
+    {
+      "name": "feedback actual_fits",
+      "passed": true,
+      "actual": 45,
+      "expected": 45
+    },
+    {
+      "name": "feedback actual ledger fits",
+      "passed": true
+    },
+    {
+      "name": "main5000 statistics",
+      "passed": true
+    },
+    {
+      "name": "null5000 statistics",
+      "passed": true
+    },
+    {
+      "name": "feedback5000 statistics",
+      "passed": true
+    },
+    {
+      "name": "nested neural240",
+      "passed": true
+    },
+    {
+      "name": "feedback cohort frame_tasks",
+      "passed": true,
+      "actual": 543,
+      "expected": 543
+    },
+    {
+      "name": "feedback cohort frame_genes",
+      "passed": true,
+      "actual": 380,
+      "expected": 380
+    },
+    {
+      "name": "feedback cohort feedback_tasks",
+      "passed": true,
+      "actual": 331,
+      "expected": 331
+    },
+    {
+      "name": "feedback cohort feedback_genes",
+      "passed": true,
+      "actual": 228,
+      "expected": 228
+    },
+    {
+      "name": "feedback cohort evaluation_tasks",
+      "passed": true,
+      "actual": 212,
+      "expected": 212
+    },
+    {
+      "name": "feedback cohort evaluation_genes",
+      "passed": true,
+      "actual": 152,
+      "expected": 152
+    },
+    {
+      "name": "decision aligned MC comparator_value",
+      "passed": true,
+      "displayed": 0.689895,
+      "actual": 0.6898947267222365
+    },
+    {
+      "name": "alignment number appears .689895",
+      "passed": true
+    },
+    {
+      "name": "decision aligned MC candidate_value",
+      "passed": true,
+      "displayed": 0.849059,
+      "actual": 0.8490592913233659
+    },
+    {
+      "name": "alignment number appears .849059",
+      "passed": true
+    },
+    {
+      "name": "decision aligned MC delta",
+      "passed": true,
+      "displayed": 0.159165,
+      "actual": 0.1591645646011293
+    },
+    {
+      "name": "alignment number appears .159165",
+      "passed": true
+    },
+    {
+      "name": "decision aligned MC ci95_lower",
+      "passed": true,
+      "displayed": 0.04175,
+      "actual": 0.0417499373022084
+    },
+    {
+      "name": "alignment number appears .041750",
+      "passed": true
+    },
+    {
+      "name": "decision aligned MC ci95_upper",
+      "passed": true,
+      "displayed": 0.214427,
+      "actual": 0.2144270761858069
+    },
+    {
+      "name": "alignment number appears .214427",
+      "passed": true
+    },
+    {
+      "name": "decision fixed MC SameContextSupport",
+      "passed": true,
+      "displayed": 0.872175,
+      "actual": 0.8721751331985307
+    },
+    {
+      "name": "decision fixed MC B1_HGB",
+      "passed": true,
+      "displayed": 0.827009,
+      "actual": 0.8270093767124164
+    },
+    {
+      "name": "decision fixed MC B2_Pointwise",
+      "passed": true,
+      "displayed": 0.86987,
+      "actual": 0.8698703779640958
+    },
+    {
+      "name": "decision fixed MC B3_DeepSets",
+      "passed": true,
+      "displayed": 0.864788,
+      "actual": 0.8647880700592522
+    },
+    {
+      "name": "headroom2350 zero fit GPU",
+      "passed": true
+    },
+    {
+      "name": "headroom reported seconds",
+      "passed": true
+    },
+    {
+      "name": "feedback reported times",
+      "passed": true
+    },
+    {
+      "name": "decision main GAT→Exphormer/P_only",
+      "passed": true,
+      "displayed": 0.74236,
+      "actual": 0.7423600141375304
+    },
+    {
+      "name": "decision main GAT→Exphormer/Support_only",
+      "passed": true,
+      "displayed": 0.757167,
+      "actual": 0.7571669988755599
+    },
+    {
+      "name": "decision main GAT→Exphormer/B0_SupportMean",
+      "passed": true,
+      "displayed": 0.757966,
+      "actual": 0.7579655099290349
+    },
+    {
+      "name": "decision main GAT→Exphormer/B1_HGB",
+      "passed": true,
+      "displayed": 0.784623,
+      "actual": 0.7846228516083628
+    },
+    {
+      "name": "decision main GAT→Exphormer/B2_Pointwise",
+      "passed": true,
+      "displayed": 0.77835,
+      "actual": 0.7783495549669559
+    },
+    {
+      "name": "decision main GAT→Exphormer/B3_DeepSets",
+      "passed": true,
+      "displayed": 0.783894,
+      "actual": 0.7838943275614186
+    },
+    {
+      "name": "decision main Exphormer→GAT/P_only",
+      "passed": true,
+      "displayed": 0.749955,
+      "actual": 0.7499547820861788
+    },
+    {
+      "name": "decision main Exphormer→GAT/Support_only",
+      "passed": true,
+      "displayed": 0.743933,
+      "actual": 0.7439333790476313
+    },
+    {
+      "name": "decision main Exphormer→GAT/B0_SupportMean",
+      "passed": true,
+      "displayed": 0.766981,
+      "actual": 0.7669806885761478
+    },
+    {
+      "name": "decision main Exphormer→GAT/B1_HGB",
+      "passed": true,
+      "displayed": 0.772123,
+      "actual": 0.7721225171241867
+    },
+    {
+      "name": "decision main Exphormer→GAT/B2_Pointwise",
+      "passed": true,
+      "displayed": 0.792652,
+      "actual": 0.7926518995763437
+    },
+    {
+      "name": "decision main Exphormer→GAT/B3_DeepSets",
+      "passed": true,
+      "displayed": 0.79387,
+      "actual": 0.7938704848362286
+    },
+    {
+      "name": "decision feedback 10%/TargetOnly_HGB",
+      "passed": true,
+      "displayed": 0.080694,
+      "actual": 0.0806939449943941
+    },
+    {
+      "name": "decision feedback 10%/PublicTarget_HGB",
+      "passed": true,
+      "displayed": 0.080694,
+      "actual": 0.0806939449943946
+    },
+    {
+      "name": "decision feedback 10%/SharedTarget_HGB",
+      "passed": true,
+      "displayed": 0.080694,
+      "actual": 0.0806939449943946
+    },
+    {
+      "name": "decision feedback 25%/TargetOnly_HGB",
+      "passed": true,
+      "displayed": 0.088445,
+      "actual": 0.0884446612488433
+    },
+    {
+      "name": "decision feedback 25%/PublicTarget_HGB",
+      "passed": true,
+      "displayed": 0.734153,
+      "actual": 0.7341529411937634
+    },
+    {
+      "name": "decision feedback 25%/SharedTarget_HGB",
+      "passed": true,
+      "displayed": 0.750445,
+      "actual": 0.7504448257911508
+    },
+    {
+      "name": "decision feedback 50%/TargetOnly_HGB",
+      "passed": true,
+      "displayed": 0.09836,
+      "actual": 0.098360444077272
+    },
+    {
+      "name": "decision feedback 50%/PublicTarget_HGB",
+      "passed": true,
+      "displayed": 0.741185,
+      "actual": 0.7411851137104509
+    },
+    {
+      "name": "decision feedback 50%/SharedTarget_HGB",
+      "passed": true,
+      "displayed": 0.694212,
+      "actual": 0.6942124713922334
+    },
+    {
+      "name": "decision feedback 75%/TargetOnly_HGB",
+      "passed": true,
+      "displayed": 0.151475,
+      "actual": 0.1514751107481645
+    },
+    {
+      "name": "decision feedback 75%/PublicTarget_HGB",
+      "passed": true,
+      "displayed": 0.747255,
+      "actual": 0.7472546591176981
+    },
+    {
+      "name": "decision feedback 75%/SharedTarget_HGB",
+      "passed": true,
+      "displayed": 0.704586,
+      "actual": 0.7045862000884774
+    },
+    {
+      "name": "decision feedback 100%/TargetOnly_HGB",
+      "passed": true,
+      "displayed": 0.083253,
+      "actual": 0.083252509986614
+    },
+    {
+      "name": "decision feedback 100%/PublicTarget_HGB",
+      "passed": true,
+      "displayed": 0.756103,
+      "actual": 0.7561030257511175
+    },
+    {
+      "name": "decision feedback 100%/SharedTarget_HGB",
+      "passed": true,
+      "displayed": 0.76168,
+      "actual": 0.7616802631542731
+    },
+    {
+      "name": "Pointwise相对原参照delta_utility20TxPert_GAT",
+      "passed": true,
+      "displayed": -0.006273,
+      "actual": -0.0062732966414072
+    },
+    {
+      "name": "Pointwise相对原参照ci95_lowerTxPert_GAT",
+      "passed": true,
+      "displayed": -0.0284,
+      "actual": -0.0283996033471989
+    },
+    {
+      "name": "Pointwise相对原参照ci95_upperTxPert_GAT",
+      "passed": true,
+      "displayed": 0.029345,
+      "actual": 0.029345098667139
+    },
+    {
+      "name": "Pointwise相对原参照delta_utility20TxPert_Exphormer",
+      "passed": true,
+      "displayed": 0.020529,
+      "actual": 0.0205293824521568
+    },
+    {
+      "name": "Pointwise相对原参照ci95_lowerTxPert_Exphormer",
+      "passed": true,
+      "displayed": -0.010745,
+      "actual": -0.0107451665790945
+    },
+    {
+      "name": "Pointwise相对原参照ci95_upperTxPert_Exphormer",
+      "passed": true,
+      "displayed": 0.047469,
+      "actual": 0.0474690966023662
+    },
+    {
+      "name": "Pointwise相对原参照delta_utility20TxPert_GAT",
+      "passed": true,
+      "displayed": 0.005545,
+      "actual": 0.0055447725944628
+    },
+    {
+      "name": "Pointwise相对原参照ci95_lowerTxPert_GAT",
+      "passed": true,
+      "displayed": -0.012496,
+      "actual": -0.0124963077814725
+    },
+    {
+      "name": "Pointwise相对原参照ci95_upperTxPert_GAT",
+      "passed": true,
+      "displayed": 0.021195,
+      "actual": 0.0211945082695338
+    },
+    {
+      "name": "Pointwise相对原参照delta_utility20TxPert_Exphormer",
+      "passed": true,
+      "displayed": 0.001219,
+      "actual": 0.0012185852598848
+    },
+    {
+      "name": "Pointwise相对原参照ci95_lowerTxPert_Exphormer",
+      "passed": true,
+      "displayed": -0.014924,
+      "actual": -0.014924168677686
+    },
+    {
+      "name": "Pointwise相对原参照ci95_upperTxPert_Exphormer",
+      "passed": true,
+      "displayed": 0.017265,
+      "actual": 0.0172648969743447
+    },
+    {
+      "name": "Pointwise真实内容减置乱内容delta_utility20TxPert_GAT",
+      "passed": true,
+      "displayed": 0.027005,
+      "actual": 0.027004501098393
+    },
+    {
+      "name": "Pointwise真实内容减置乱内容ci95_lowerTxPert_GAT",
+      "passed": true,
+      "displayed": 0.003967,
+      "actual": 0.0039671483815611
+    },
+    {
+      "name": "Pointwise真实内容减置乱内容ci95_upperTxPert_GAT",
+      "passed": true,
+      "displayed": 0.060348,
+      "actual": 0.0603476457598959
+    },
+    {
+      "name": "Pointwise真实内容减置乱内容delta_utility20TxPert_Exphormer",
+      "passed": true,
+      "displayed": 0.037849,
+      "actual": 0.0378491980217296
+    },
+    {
+      "name": "Pointwise真实内容减置乱内容ci95_lowerTxPert_Exphormer",
+      "passed": true,
+      "displayed": 0.005474,
+      "actual": 0.0054735171207079
+    },
+    {
+      "name": "Pointwise真实内容减置乱内容ci95_upperTxPert_Exphormer",
+      "passed": true,
+      "displayed": 0.063983,
+      "actual": 0.0639830773201515
+    },
+    {
+      "name": "feedback zero rule SameContext_R_history",
+      "passed": true,
+      "displayed": 0.837668,
+      "actual": 0.8376675521178553
+    },
+    {
+      "name": "feedback zero rule NegativeHistorySupport",
+      "passed": true,
+      "displayed": 0.795264,
+      "actual": 0.795264465432267
+    },
+    {
+      "name": "null vs support intervals include zero",
+      "passed": true
+    },
+    {
+      "name": "B2 replacement gates fail both directions",
+      "passed": true
+    },
+    {
+      "name": "B3 structure gates fail both directions",
+      "passed": true
+    },
+    {
+      "name": "P plus quantity label correct",
+      "passed": true
+    },
+    {
+      "name": "Source profile exact version",
+      "passed": true
+    },
+    {
+      "name": "neural not promoted",
+      "passed": true
+    },
+    {
+      "name": "cross study not auto enabled",
+      "passed": true
+    },
+    {
+      "name": "family remains stress",
+      "passed": true
+    },
+    {
+      "name": "Shared remains legacy control",
+      "passed": true
+    },
+    {
+      "name": "feedback trigger does not enable",
+      "passed": true
+    },
+    {
+      "name": "no untouched confirmation claim",
+      "passed": true
+    },
+    {
+      "name": "paper deferred",
+      "passed": true
+    },
+    {
+      "name": "original release thresholds",
+      "passed": true
+    },
+    {
+      "name": "tested release code still exact",
+      "passed": true
+    },
+    {
+      "name": "finite release tests passed",
+      "passed": true
+    },
+    {
+      "name": "triggers unchanged",
+      "passed": true
+    },
+    {
+      "name": "six10pct root-only diagnostics",
+      "passed": true
+    },
+    {
+      "name": "final null saved bootstrap TxPert_Exphormer",
+      "passed": true,
+      "maximum_difference": 9.71445146547012e-17
+    },
+    {
+      "name": "final null saved bootstrap TxPert_GAT",
+      "passed": true,
+      "maximum_difference": 9.020562075079397e-17
+    }
+  ],
+  "failures": [],
+  "scope": "Read-only consistency of final experimental decision/configuration and saved result statistics; no training, fresh data, MC TEST arrays, paper/PDF or Git.",
+  "conclusion": "Final settings bind completed experimental results; old Shared stays legacy, native512 stays SEEN stress, neural replacements are rejected, and update release still requires finite metrics and unchanged original gates."
+}

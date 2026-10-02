@@ -418,6 +418,7 @@ def cpu(args):
         required=[]
         for outer in args.folds:
             for builder in args.builders:
+                if builder not in ('B2_Pointwise','B3_DeepSets'):continue
                 seeds=pub.SEEDS if builder in ('B2_Pointwise','B3_DeepSets') else (0,)
                 for seed in seeds:
                     required.extend(RUNTIME/f'nested/outer{outer}/inner{i}/{builder}/seed{seed}/PRIORS.npz' for i in range(4))
@@ -518,6 +519,13 @@ def cpu(args):
 
 
 def aggregate():
+    import fcntl
+    with open(RISK_MODEL_ROOT.parent/'AGGREGATE.lock','a') as lock:
+        fcntl.flock(lock,fcntl.LOCK_EX)
+        return aggregate_locked()
+
+
+def aggregate_locked():
     from tools.safeconf_continual.research import metrics
     frames, fits, cdfs = [], [], []
     for path in sorted(RISK_MODEL_ROOT.glob('*/*/outer*/*/publicseed*/riskseed*/FIT_AUDIT.json')):

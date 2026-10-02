@@ -1,0 +1,234 @@
+{
+  "status": "PASS",
+  "reuse_checks": [
+    {
+      "old_method": "Shared",
+      "new_method": "Shared_LegacyFrozen",
+      "rows": 3816,
+      "same_ids": true,
+      "exact_score_values": true,
+      "max_serialization_delta": 0.0,
+      "score_values_within_bound": true
+    },
+    {
+      "old_method": "TargetOnly_HGB",
+      "new_method": "TargetOnly_HGB",
+      "rows": 3180,
+      "same_ids": true,
+      "exact_score_values": true,
+      "max_serialization_delta": 0.0,
+      "score_values_within_bound": true
+    },
+    {
+      "old_method": "TargetOnly_Ridge",
+      "new_method": "TargetOnly_Ridge",
+      "rows": 3180,
+      "same_ids": true,
+      "exact_score_values": true,
+      "max_serialization_delta": 0.0,
+      "score_values_within_bound": true
+    },
+    {
+      "old_method": "PertEMA_P_adapted",
+      "new_method": "PertEMA_P_adapted",
+      "rows": 3180,
+      "same_ids": true,
+      "exact_score_values": true,
+      "max_serialization_delta": 0.0,
+      "score_values_within_bound": true
+    },
+    {
+      "old_method": "PertEMA_Public_adapted",
+      "new_method": "PertEMA_Public_OldRaw",
+      "rows": 3180,
+      "same_ids": true,
+      "exact_score_values": true,
+      "max_serialization_delta": 0.0,
+      "score_values_within_bound": true
+    }
+  ],
+  "actual_model_hashes": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PublicTarget_HGB/budget0.1/seed20260930.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PublicTarget_HGB/budget0.1/seed20261001.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PublicTarget_HGB/budget0.1/seed20261002.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/SharedTarget_HGB/budget0.1/seed20260930.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/SharedTarget_HGB/budget0.1/seed20261001.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/SharedTarget_HGB/budget0.1/seed20261002.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PertEMA_Public_RawAligned/budget0.1/seed20260930.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PertEMA_Public_RawAligned/budget0.1/seed20261001.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PertEMA_Public_RawAligned/budget0.1/seed20261002.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PublicTarget_HGB/budget0.25/seed20260930.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PublicTarget_HGB/budget0.25/seed20261001.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PublicTarget_HGB/budget0.25/seed20261002.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/SharedTarget_HGB/budget0.25/seed20260930.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/SharedTarget_HGB/budget0.25/seed20261001.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/SharedTarget_HGB/budget0.25/seed20261002.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PertEMA_Public_RawAligned/budget0.25/seed20260930.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PertEMA_Public_RawAligned/budget0.25/seed20261001.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PertEMA_Public_RawAligned/budget0.25/seed20261002.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PublicTarget_HGB/budget0.5/seed20260930.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PublicTarget_HGB/budget0.5/seed20261001.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PublicTarget_HGB/budget0.5/seed20261002.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/SharedTarget_HGB/budget0.5/seed20260930.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/SharedTarget_HGB/budget0.5/seed20261001.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/SharedTarget_HGB/budget0.5/seed20261002.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PertEMA_Public_RawAligned/budget0.5/seed20260930.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PertEMA_Public_RawAligned/budget0.5/seed20261001.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PertEMA_Public_RawAligned/budget0.5/seed20261002.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PublicTarget_HGB/budget0.75/seed20260930.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PublicTarget_HGB/budget0.75/seed20261001.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PublicTarget_HGB/budget0.75/seed20261002.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/SharedTarget_HGB/budget0.75/seed20260930.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/SharedTarget_HGB/budget0.75/seed20261001.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/SharedTarget_HGB/budget0.75/seed20261002.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PertEMA_Public_RawAligned/budget0.75/seed20260930.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PertEMA_Public_RawAligned/budget0.75/seed20261001.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PertEMA_Public_RawAligned/budget0.75/seed20261002.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PublicTarget_HGB/budget1.0/seed20260930.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PublicTarget_HGB/budget1.0/seed20261001.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PublicTarget_HGB/budget1.0/seed20261002.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/SharedTarget_HGB/budget1.0/seed20260930.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/SharedTarget_HGB/budget1.0/seed20261001.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/SharedTarget_HGB/budget1.0/seed20261002.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PertEMA_Public_RawAligned/budget1.0/seed20260930.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PertEMA_Public_RawAligned/budget1.0/seed20261001.joblib",
+      "sha_pass": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/models/PertEMA_Public_RawAligned/budget1.0/seed20261002.joblib",
+      "sha_pass": true
+    }
+  ],
+  "model_count": 45,
+  "extra_fits": 0
+}

@@ -1,0 +1,71 @@
+{
+  "status": "COMPLETE",
+  "registered_risk_fits": 400,
+  "registered_task_predictions": 65088,
+  "physical_null_risk_fits": 1200,
+  "physical_null_task_predictions": 108480,
+  "paired_task_predictions": 271200,
+  "bootstrap_replicates": 5000,
+  "gene_clusters": 575,
+  "seeds": [
+    20260930,
+    20261001,
+    20261002
+  ],
+  "null_orders": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "physical_null_definition": "Frozen real biology-builder parameters; matched-support physical effect content reassigned from actual fit-only bank; risk refitted",
+  "MC_TEST_reads": 0,
+  "old_relative_sparsity_risk_fits_preserved": 160,
+  "bindings": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/REGISTRATION.json",
+      "sha256": "669a29df8909d73cfc86828047b2daf9ebee5d601e8b52496715e9972d3f2ceb"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/RESULT_MANIFEST.json",
+      "sha256": "b6bb09f3f67dccd7b2df2ce17ee2105ea2deabfa2082a69189db658aea9d2ee2"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/STATISTICS_RECEIPT.json",
+      "sha256": "f64b95348cc90a37ad78654dfc669dc95951bdb5483dc82106b70993e1417933"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/REGISTRATION.json",
+      "sha256": "611382302e8da0b641c9f8ab0aac2f151d2ed485e092fd876628ac4661cf18e2"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/RESULT_MANIFEST.json",
+      "sha256": "10b7613d6e1e4d2a01add924391aa5505a95f7a1ff8a8cdd849eb49c12b5fee4"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/STATISTICS_RECEIPT.json",
+      "sha256": "9c21c3fa1c7fb9231b87a9d6c025e0d640d6334c06ca253f63ce376d5b91dae2"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/FIXED_ADOPTION_GATES.csv",
+      "sha256": "9500c5108e2d1475ccafc9334b9db2d187ea784692d9c9aca1fe4013d75beec0"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/FINAL_INTEGRITY_AUDIT.json",
+      "sha256": "598da72e42fa430cfcf20330a19c63d5e64c1859d7f91febcbe23905d58ba165"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/RESOURCE_BUDGET_RECEIPT.json",
+      "sha256": "19be0e95f754b45e29d071abe9dcf2d713aa0399671c9c655cc1929122622745"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/STATISTICS_TECHNICAL_REPAIR_RECEIPT.json",
+      "sha256": "27e4822e51317ae5cc078f3d0386154ab08c365f33387d8403bc3caef6432201"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/OUTER_CACHE_REUSE_RECEIPT.json",
+      "sha256": "ac39c3c58ae5c49d3af52e66f0da3c1b4465cfe8b756ec3f5035b29fdb4fd6f6"
+    }
+  ]
+}

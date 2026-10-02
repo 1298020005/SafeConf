@@ -1,0 +1,15 @@
+{
+  "status": "REPAIRED_COMPLETE",
+  "error": "Concurrent summary writers shared fixed CSV temporary path; second os.replace saw missing temp",
+  "repair": "fcntl exclusive aggregation lock in both owned runners",
+  "statistics_replayed_from_saved_models_and_predictions": true,
+  "new_biology_fits": 0,
+  "new_risk_fits": 0,
+  "failed_statistics_charge_seconds": 10.729233026504517,
+  "failed_statistics_CPU_seconds": 24.332874,
+  "successful_statistics_replicates": 5000,
+  "successful_statistics_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/STATISTICS_RECEIPT.json",
+    "sha256": "9c21c3fa1c7fb9231b87a9d6c025e0d640d6334c06ca253f63ce376d5b91dae2"
+  }
+}

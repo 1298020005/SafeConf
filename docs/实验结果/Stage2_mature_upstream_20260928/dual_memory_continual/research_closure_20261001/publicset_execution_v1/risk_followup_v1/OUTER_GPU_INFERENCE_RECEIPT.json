@@ -1,0 +1,19 @@
+{
+  "status": "COMPLETE",
+  "audit_type": "CPU_READ_ONLY_EXISTING_OUTER_CACHE_REUSE_AND_INTEGRITY",
+  "pid": 1664720,
+  "reused_models": 30,
+  "audited_cached_prior_sets": 30,
+  "new_models": 0,
+  "new_inference": 0,
+  "GPU_calls": 0,
+  "MC_TEST_reads": 0,
+  "elapsed_seconds": 1.2160520530305803,
+  "all_registered_outer_fit_query_scopes_exact": true,
+  "all_model_preprocessor_prior_weight_SHA256_verified": true,
+  "cache_role": "Earlier completed outer GPU predictions reused; this invocation only audits their durable artifacts",
+  "model_reuse_ledger_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/OUTER_MODEL_REUSE_LEDGER.csv",
+    "sha256": "aedf615c3c0246d52e8c1150ebce75b3c3cda20c14c018fb6a1f1c3f09bbc834"
+  }
+}

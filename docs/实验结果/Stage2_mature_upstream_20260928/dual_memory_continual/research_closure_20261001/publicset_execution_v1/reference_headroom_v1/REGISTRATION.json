@@ -1,0 +1,39 @@
+{
+  "role": "DEV_SEEN_OUTCOME_INFORMED_RECONSTRUCTION_DIAGNOSTIC",
+  "scope": "Source1808/575 and McFaline DEV542/377; exact original2840 axis, outer query/history views",
+  "unrestricted_constraint": "w>=0,sum(w)=1; no support floor",
+  "best_single": "minimum full-effect MSE among exact legal histories; outcome-informed diagnostic only",
+  "solver": {
+    "method": "SLSQP",
+    "ftol": 1e-10,
+    "maxiter": 500,
+    "initialization": "registered support weights"
+  },
+  "CPU_seconds_cap": 300.0,
+  "threads": 4,
+  "new_model_fits": 0,
+  "GPU_hours": 0,
+  "MC_TEST_reads": 0,
+  "new_upstream_training": 0,
+  "risk_scores_generated": 0,
+  "aggregation": "equal total gene weights; macro context×fold and per-query means additionally shown",
+  "biological_truth_use": "Existing DEV truth for unattainable reconstruction explanation only; never prediction/model selection",
+  "original_constrained_oracle_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/full_v2_resume/CONSTRAINED_RECONSTRUCTION_DIAGNOSTIC.csv",
+    "sha256": "ac7597ef127047a2cc3b076c0b4f0a27cf3a124dacb822afc272f84b8d342d08"
+  },
+  "actual_biology_scores_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/full_v2_resume/TASK_PREDICTIONS.csv.gz",
+    "sha256": "5482f038764b5ee5c80764eed7d5a2b3c81982f8d354cb477a647cda0e40bfd6"
+  },
+  "public_runner_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_publicset_v1.py",
+    "sha256": "0bddc28e71b5022fbb356d32229b4850cae949a64e69127f86028412845a048c"
+  },
+  "diagnostic_code_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/diagnose_safeconf_public_reference_headroom_v1.py",
+    "sha256": "323d3625da0fb76c7d7ac11fdea7672cc4339acf5dbf807269c63f61b076cc5c"
+  },
+  "pid": 1676590,
+  "started_utc": "2026-10-02T15:34:25.057849+00:00"
+}

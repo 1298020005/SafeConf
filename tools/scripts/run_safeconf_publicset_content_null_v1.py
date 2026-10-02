@@ -312,6 +312,13 @@ def cpu(args):
 
 
 def aggregate():
+    import fcntl
+    with open(RUNTIME/'AGGREGATE.lock','a') as lock:
+        fcntl.flock(lock,fcntl.LOCK_EX)
+        return aggregate_locked()
+
+
+def aggregate_locked():
     from tools.safeconf_continual.research import metrics
     frames=[];fits=[];cdfs=[]
     for path in sorted((RUNTIME/'risk').glob('order*/*/*/outer*/*/seed*/FIT_AUDIT.json')):

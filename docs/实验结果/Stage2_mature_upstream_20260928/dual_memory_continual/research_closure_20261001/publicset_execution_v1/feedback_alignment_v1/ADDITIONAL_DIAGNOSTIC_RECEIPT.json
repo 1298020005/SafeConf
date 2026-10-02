@@ -1,0 +1,33 @@
+{
+  "status": "COMPLETE",
+  "new_fits": 0,
+  "new_bootstrap_draws": 0,
+  "primary_tables_unchanged": true,
+  "protected_hashes": {
+    "TASK_PREDICTIONS.csv.gz": "b9a69c0d414d0b72a32ee66334bd4b13e8e7695f7027ad3a633b322142ec2b3e",
+    "PAIRED_COMPARISONS.csv": "7e6b2ee2affc51bd237c5823500022f93b96cbf3957f54b19127996275c9e306",
+    "METRIC_INTERVALS.csv": "25b82348d1031a7a0f0c5e60006b8861dd3e1a1abe2b0c91285b694b0af66369",
+    "FIT_LEDGER.csv": "fd480122bf93fd301d680d8b29360c46cf75e29d53b25ea2492cb4932708c026"
+  },
+  "budget_zero_targets": "UNFIT_NO_IMPUTATION",
+  "reason": "Parent requested fixed adaptation minus zero-feedback strong simple start, and actual leaf20 tree inspection",
+  "no_holdout_threshold_or_hyperparameter_selection": true,
+  "registered_gate_changed": false,
+  "code_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_aligned_public_feedback_v1.py",
+    "sha256": "1ae8ca2f8c72dfff422685e2b6902b60efbad4166f005fa912f9a206dcd7daba",
+    "bytes": 33789
+  },
+  "bindings": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/ADAPTATION_VS_SIMPLE_DIAGNOSTIC.csv",
+      "sha256": "76fa7cab03bf93638c8975718d38d856f8ce750d0dc4c0e02418d4e9fceb0c69",
+      "bytes": 13848
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/TINY_BUDGET_TREE_DIAGNOSTIC.csv",
+      "sha256": "edcb1723b86e80d1426dcbd6d8a248ab987de63d883ec055c3f2d22c88c17daa",
+      "bytes": 2968
+    }
+  ]
+}

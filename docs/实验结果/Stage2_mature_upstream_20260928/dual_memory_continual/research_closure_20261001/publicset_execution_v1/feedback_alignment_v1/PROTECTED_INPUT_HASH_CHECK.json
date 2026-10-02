@@ -1,0 +1,78 @@
+{
+  "status": "PASS",
+  "protected_input_hash_checks": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/FEEDBACK_REBUILD_CONTRACT.json",
+      "unchanged": true
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/GENE_IDS.json",
+      "unchanged": true
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/TEST_TASKS.csv",
+      "unchanged": true
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/TEST_CALIBRATED_EFFECTS.npy",
+      "unchanged": true
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/TEST_CONTROLS.npy",
+      "unchanged": true
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/reference_estimand_diagnostic/CELL_WEIGHTED_PUBLIC_EFFECTS.npy",
+      "unchanged": true
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/public_mcfaline_trainval/public_memory.parquet",
+      "unchanged": true
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/public_mcfaline_trainval/manifest.json",
+      "unchanged": true
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/external_Learned.parquet",
+      "unchanged": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/STRICT_FEEDBACK_TASK_PREDICTIONS.csv.gz",
+      "unchanged": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/STRICT_FEEDBACK_INFORMATION_LEDGER.csv",
+      "unchanged": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/STRICT_FEEDBACK_CDF_AUDIT.csv",
+      "unchanged": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/FEEDBACK_SPLIT_CONTRACT.json",
+      "unchanged": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/MATRIX_TASK_PREDICTIONS.csv.gz",
+      "unchanged": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/official_pertema_adaptation/TASK_PREDICTIONS.csv.gz",
+      "unchanged": true
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/official_pertema_adaptation/EXECUTION_CONFIG.json",
+      "unchanged": true
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/official_pertema_43c09a/src/pertema/run_estimator.py",
+      "unchanged": true
+    }
+  ],
+  "all_evaluation_rows_identical": true,
+  "new_upstream_training": 0,
+  "new_raw_test_expression_reads": 0,
+  "compiled_paper": false,
+  "role": "SEEN_POST_CONFIRMATION"
+}

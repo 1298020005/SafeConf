@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from math import isfinite
 
 
 @dataclass(frozen=True)
@@ -49,6 +50,18 @@ class ContinualUpdateManager:
     @staticmethod
     def release(metrics: ReleaseMetrics) -> UpdateDecision:
         failed = []
+        for field in (
+            "delta_u20_new_tasks",
+            "relative_aurc_degradation_anchor",
+            "miss_rate_degradation",
+            "nonnegative_strata_fraction",
+        ):
+            if not isfinite(getattr(metrics, field)):
+                failed.append(f"nonfinite_{field}")
+        if failed:
+            return UpdateDecision(False, tuple(failed))
+        if not 0.0 <= metrics.nonnegative_strata_fraction <= 1.0:
+            failed.append("strata_fraction_out_of_range")
         if metrics.delta_u20_new_tasks < -0.005:
             failed.append("new_task_u20_noninferiority_failed")
         if metrics.relative_aurc_degradation_anchor > 0.05:

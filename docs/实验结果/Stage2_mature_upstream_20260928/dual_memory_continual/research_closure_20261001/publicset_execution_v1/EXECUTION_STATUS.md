@@ -13,12 +13,14 @@ This checkpoint contains actual experiment outputs, executable implementation, a
 
 The DeepSets context branch does not establish a gain over pointwise weighting. Pointwise weighting improves Source references relative to the original builder, while the strongest simple prediction/metadata rules remain essential comparators. The registered joint comparison has now completed: 400 context-scoped HGB fits and 5000 paired gene resamples. Neither neural builder passes replacement against B0/B1 in both directions; the DeepSets extra branch passes neither direction against pointwise. These are paired, fixed-comparison decisions, not rankings of the highest score.
 
-## Current required work
+## Completed closure
 
-- DONE: 240 nested NN fit stages, complete 120 inner plus 30 reused outer NN priors, 400 registered context-scoped risk fits, 5000 paired gene resamples; cache and bootstrap equivalence audits passed.
-- Compare quantity-only inputs, real Public content, and matched-support physically shuffled history content using the same source label/CDF budgets.
-- Freeze the actual serving configuration. `FEEDBACK_REBUILD_CONTRACT.json` fixes one previously registered same-context cell-support Public candidate for a versioned affected-feedback comparison; 45 small fits, unchanged Target-only scores reused, no new upstream.
-- Deliver the final experimental results, adopted model configuration and reproduction entry. Manuscript/PDF preparation is deferred by the user.
+- Registered nested reader: 400 risk fits, 240 nested neural stages, 5000 paired gene bootstrap.
+- Physical content control: 1200 risk fits, 500 frozen prior sets, 5000 paired gene bootstrap; model/donor/prior integrity passed.
+- Reference headroom diagnostic: 2350 DEV queries, zero new model fits.
+- Aligned-public feedback: 45 affected fits, fixed212-task/152-gene evaluation, 5000 paired bootstrap; preserved17 inputs and unaffected scores checked.
+- Experimental model selected in FINAL_MODEL_SETTINGS.json; decisions in FINAL_EXPERIMENTAL_DECISION.md.
+- Continual release finite-value repair and specific tests passed; manuscript/PDF work remains deferred.
 
 ## Reliable process tracking
 

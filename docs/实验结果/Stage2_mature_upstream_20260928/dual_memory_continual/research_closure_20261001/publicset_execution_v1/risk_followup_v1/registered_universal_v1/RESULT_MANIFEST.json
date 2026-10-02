@@ -8,7 +8,7 @@
   "supplemental_aggregation": "four context macro of pooled outer OOF",
   "target_error_training_records": 0,
   "MC_TEST_reads": 0,
-  "physical_content_shuffle": "NOT_RUN; real Public and Support first",
+  "physical_content_shuffle": "COMPLETE: fixedB1/B2 × three seeds × five orders; frozen real biology-builder parameters",
   "bindings": [
     {
       "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/TASK_PREDICTIONS.csv.gz",
@@ -34,5 +34,13 @@
       "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/CDF_LEDGER.csv",
       "sha256": "77834ebafcf32be7f074c42cc3127c21d86ae36d78819c271130ffeb23ff190b"
     }
-  ]
+  ],
+  "physical_content_shuffle_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/RESULT_MANIFEST.json",
+    "sha256": "10b7613d6e1e4d2a01add924391aa5505a95f7a1ff8a8cdd849eb49c12b5fee4"
+  },
+  "physical_content_shuffle_statistics_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/STATISTICS_RECEIPT.json",
+    "sha256": "9c21c3fa1c7fb9231b87a9d6c025e0d640d6334c06ca253f63ce376d5b91dae2"
+  }
 }

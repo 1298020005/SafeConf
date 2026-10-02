@@ -1,0 +1,132 @@
+{
+  "status": "COMPLETE",
+  "accounting": "Compute phase wall time; prerequisite-cache waiting excluded and separately recorded",
+  "CPU_compute_phase_seconds": 1226.3676076863612,
+  "CPU_budget_seconds": 1800,
+  "CPU_within_budget": true,
+  "GPU_frozen_inference_phase_seconds": 796.3708615191281,
+  "GPU_budget_seconds": 1800,
+  "GPU_within_budget": true,
+  "charged_interrupted_B1_prior_attempt_seconds": 123.936409,
+  "outer_real_B1_reconstruction_fits": 5,
+  "outer_real_B1_reconstruction_cost": "Included in B1 frozen inference phase, never null biology training",
+  "actual_null_risk_fits": 1200,
+  "new_null_biology_models": 0,
+  "frozen_neural_models_reused": 75,
+  "MC_TEST_reads": 0,
+  "phase_receipts": {
+    "B1_FROZEN_INFERENCE_STATUS": {
+      "status": "COMPLETE",
+      "pid": 1619524,
+      "phase": "b1_frozen_inference",
+      "started_utc": "2026-10-02T14:53:20.786812+00:00",
+      "fixed_orders": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "fixed_seeds": [
+        20260930,
+        20261001,
+        20261002
+      ],
+      "MC_TEST_reads": 0,
+      "elapsed_seconds": 661.1255977218971,
+      "new_null_biology_models": 0,
+      "actual_inference_priors": 125
+    },
+    "B2_FROZEN_INFERENCE_STATUS": {
+      "status": "COMPLETE",
+      "pid": 1658050,
+      "phase": "b2_frozen_inference",
+      "started_utc": "2026-10-02T15:20:10.556133+00:00",
+      "fixed_orders": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "fixed_seeds": [
+        20260930,
+        20261001,
+        20261002
+      ],
+      "MC_TEST_reads": 0,
+      "elapsed_seconds": 796.3708615191281,
+      "new_null_biology_models": 0,
+      "actual_inference_priors": 375
+    },
+    "CPU_B1_HGB_STATUS": {
+      "status": "COMPLETE_REQUESTED_ARMS",
+      "pid": 1617115,
+      "phase": "null_cpu_risk",
+      "orders": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "builders": [
+        "B1_HGB"
+      ],
+      "MC_TEST_reads": 0,
+      "started_utc": "2026-10-02T14:51:53.069850+00:00",
+      "elapsed_seconds": 764.8295372489374,
+      "active_elapsed_seconds": 174.8176935738884,
+      "waiting_seconds": 590.0118444960099
+    },
+    "CPU_B2_Pointwise_STATUS": {
+      "status": "COMPLETE_REQUESTED_ARMS",
+      "pid": 1636013,
+      "phase": "null_cpu_risk",
+      "orders": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "builders": [
+        "B2_Pointwise"
+      ],
+      "MC_TEST_reads": 0,
+      "started_utc": "2026-10-02T15:03:18.952897+00:00",
+      "elapsed_seconds": 1822.9109175228514,
+      "active_elapsed_seconds": 157.8786975350231,
+      "waiting_seconds": 1665.0322214609478
+    },
+    "STATISTICS_STATUS": {
+      "status": "COMPLETE",
+      "pid": 1680332,
+      "active_elapsed_seconds": 53.77909089601599,
+      "MC_TEST_reads": 0
+    }
+  },
+  "implementation_bindings": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_publicset_content_null_v1.py",
+      "sha256": "a524ed3fbf453c730c6b4c24172e14985b4ab1d0edbf108c105ee3f21f6305f8"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_publicset_risk_followup_v1.py",
+      "sha256": "f819ebcc7c66e77cf6ff1879e326ebf9eb1457a3a86be0b15fe52e96d5881b17"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_publicset_v1.py",
+      "sha256": "0bddc28e71b5022fbb356d32229b4850cae949a64e69127f86028412845a048c"
+    }
+  ],
+  "failed_statistics_attempt_CPU_seconds": 24.332874,
+  "charged_failed_statistics_compute_phase_seconds": 10.729233026504517,
+  "failed_statistics_cost_accounting": "Conservative wall interval from last1200th fit audit completion through failed statistics service exit; no model refit",
+  "statistics_repair": "Serialize aggregation with fcntl; replay only already saved1200 risk predictions/models",
+  "postfit_integrity_audit_seconds": 44.10088593303226,
+  "postfit_integrity_audit_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/FINAL_INTEGRITY_AUDIT.json",
+    "sha256": "598da72e42fa430cfcf20330a19c63d5e64c1859d7f91febcbe23905d58ba165"
+  }
+}

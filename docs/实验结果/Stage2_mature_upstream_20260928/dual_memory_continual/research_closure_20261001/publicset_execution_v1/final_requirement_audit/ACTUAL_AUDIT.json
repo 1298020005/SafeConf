@@ -1,5 +1,5 @@
 {
-  "audit_time_utc": "2026-10-02T14:49:26.313723+00:00",
+  "audit_time_utc": "2026-10-02T15:10:16.508164+00:00",
   "scope": "Existing registered summaries, saved score tables and code; no model invocation or new truth access",
   "overall_status": "PENDING_FINAL_REQUIREMENTS",
   "neural_stage_runs": [
@@ -664,12 +664,878 @@
     }
   },
   "nested_registered_result": {
-    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/RESULT_MANIFEST.json",
-    "status": "PENDING_FILE_ABSENT"
+    "binding": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/RESULT_MANIFEST.json",
+      "sha256": "6f0076cc2886aec7067335ebbad7cb8b3e3762756caef1d78ddbb5f785afb373",
+      "bytes": 2668
+    },
+    "value": {
+      "status": "PARTIAL",
+      "task_prediction_rows": 43392,
+      "expected_full_rows": 65088,
+      "actual_risk_fits": 160,
+      "scope": "Source1808/575/2840, two architecture directions, four context teachers",
+      "primary_aggregation": "equal macro of 20 context by outer-fold strata, then mean of three seed metrics",
+      "supplemental_aggregation": "four context macro of pooled outer OOF",
+      "target_error_training_records": 0,
+      "MC_TEST_reads": 0,
+      "physical_content_shuffle": "NOT_RUN; real Public and Support first",
+      "bindings": [
+        {
+          "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/TASK_PREDICTIONS.csv.gz",
+          "sha256": "4595d98916febe2e348178fb4014aca112c8a4f75e3a333a0ae463f84d9349e6"
+        },
+        {
+          "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/CONTEXT_FOLD_RESULTS.csv",
+          "sha256": "9927c96c3335a3c0e1ec566869de2d28604151b57d0e93114d0a118b3d1eada6"
+        },
+        {
+          "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/POOLED_CONTEXT_RESULTS.csv",
+          "sha256": "0d2ddfd6df61f2ee436537242ccb858560a24133c2fdb6dab4a82f5ea6d61290"
+        },
+        {
+          "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/MACRO_RESULTS.csv",
+          "sha256": "a947fb0994ec0c4438459ea6a3de0541c5f09f9363223fb7a971a7eda688bddc"
+        },
+        {
+          "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/RISK_FIT_LEDGER.csv",
+          "sha256": "a1aaa104a8d065dd6e74f644624478702a68101b439fcb04eba00f0d7f53d0f0"
+        },
+        {
+          "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/CDF_LEDGER.csv",
+          "sha256": "5e81409caf2c68e6d892d04998dbc1bd5a12751c3c6940ae749d054c03195651"
+        }
+      ]
+    }
   },
   "nested_registered_statistics": {
     "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/STATISTICS_RECEIPT.json",
     "status": "PENDING_FILE_ABSENT"
+  },
+  "nested_physical_content_null": {
+    "binding": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/RESULT_MANIFEST.json",
+      "sha256": "e42f19254fa720464645c1fb3d8f14c5ccaf3351265d4852c99286c250593bee",
+      "bytes": 2507
+    },
+    "value": {
+      "status": "PARTIAL",
+      "actual_risk_fits": 600,
+      "expected_risk_fits": 1200,
+      "null_task_prediction_rows": 54240,
+      "expected_null_rows": 108480,
+      "fixed_builders": [
+        "B1_HGB",
+        "B2_Pointwise"
+      ],
+      "fixed_seeds": [
+        20260930,
+        20261001,
+        20261002
+      ],
+      "fixed_null_orders": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "readiness": "All five arms required for registered paired statistics",
+      "MC_TEST_reads": 0,
+      "biology_models": "Frozen real parameters; B1 outer exported fits reproduced once; no null biology refitting",
+      "primary": "20 context by outer-fold macro, metric mean across3seeds and5orders",
+      "bindings": [
+        {
+          "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/TASK_PREDICTIONS.csv.gz",
+          "sha256": "d8f8ae76c988eba00231bf411102c5098ced6373c54ef3a1049a227e3195128e"
+        },
+        {
+          "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/CONTEXT_FOLD_RESULTS.csv",
+          "sha256": "675de6c61821b610bfc62cad54dc03bf2f999564db44c9cbb34dc22567f377c8"
+        },
+        {
+          "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/MACRO_RESULTS.csv",
+          "sha256": "f2da4cd1c0b7bf19111cf91b6edb0fa8a9bead8cac0dab5f186941501261df79"
+        },
+        {
+          "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/RISK_FIT_LEDGER.csv",
+          "sha256": "f7d63fd3db93cc0161bb8eb0844895de684542f3b8a880cc71d031d3caaa220f"
+        },
+        {
+          "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/CDF_LEDGER.csv",
+          "sha256": "f6d53a8ae3ad4e7d89769e38d1821dcf404ca613febada7d2e697fc3bee60cef"
+        }
+      ]
+    }
+  },
+  "nested_physical_content_null_statistics": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/STATISTICS_RECEIPT.json",
+    "status": "PENDING_FILE_ABSENT"
+  },
+  "nested_B1_donor_legality": {
+    "binding": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/ALL_B1_DONOR_LEGALITY_AUDIT.json",
+      "sha256": "28a59022514939efade6587ac885f1c11402c8539d47281a47c8f48146eb0ab7",
+      "bytes": 37198
+    },
+    "value": {
+      "status": "PASS",
+      "scopes": 125,
+      "bad_scopes": [],
+      "rows": [
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order2/outer4/inner2/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order2/outer4/outer/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 460,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order2/outer4/inner1/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order2/outer4/inner3/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order2/outer4/inner0/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order2/outer0/inner2/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order2/outer0/outer/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 460,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order2/outer0/inner1/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order2/outer0/inner3/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order2/outer0/inner0/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order2/outer1/inner2/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order2/outer1/outer/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 460,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order2/outer1/inner1/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order2/outer1/inner3/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order2/outer1/inner0/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order2/outer3/inner2/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order2/outer3/outer/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 460,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order2/outer3/inner1/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order2/outer3/inner3/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order2/outer3/inner0/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order2/outer2/inner2/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order2/outer2/outer/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 460,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order2/outer2/inner1/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order2/outer2/inner3/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order2/outer2/inner0/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order3/outer4/inner2/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order3/outer4/outer/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 460,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order3/outer4/inner1/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order3/outer4/inner3/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order3/outer4/inner0/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order3/outer0/inner2/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order3/outer0/outer/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 460,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order3/outer0/inner1/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order3/outer0/inner3/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order3/outer0/inner0/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order3/outer1/inner2/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order3/outer1/outer/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 460,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order3/outer1/inner1/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order3/outer1/inner3/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order3/outer1/inner0/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order3/outer3/inner2/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order3/outer3/outer/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 460,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order3/outer3/inner1/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order3/outer3/inner3/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order3/outer3/inner0/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order3/outer2/inner2/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order3/outer2/outer/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 460,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order3/outer2/inner1/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order3/outer2/inner3/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order3/outer2/inner0/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order1/outer4/inner2/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order1/outer4/outer/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 460,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order1/outer4/inner1/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order1/outer4/inner3/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order1/outer4/inner0/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order1/outer0/inner2/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order1/outer0/outer/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 460,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order1/outer0/inner1/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order1/outer0/inner3/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order1/outer0/inner0/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order1/outer1/inner2/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order1/outer1/outer/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 460,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order1/outer1/inner1/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order1/outer1/inner3/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order1/outer1/inner0/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order1/outer3/inner2/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order1/outer3/outer/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 460,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order1/outer3/inner1/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order1/outer3/inner3/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order1/outer3/inner0/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order1/outer2/inner2/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order1/outer2/outer/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 460,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order1/outer2/inner1/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order1/outer2/inner3/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order1/outer2/inner0/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order4/outer4/inner2/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order4/outer4/outer/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 460,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order4/outer4/inner1/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order4/outer4/inner3/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order4/outer4/inner0/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order4/outer0/inner2/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order4/outer0/outer/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 460,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order4/outer0/inner1/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order4/outer0/inner3/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order4/outer0/inner0/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order4/outer1/inner2/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order4/outer1/outer/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 460,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order4/outer1/inner1/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order4/outer1/inner3/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order4/outer1/inner0/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order4/outer3/inner2/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order4/outer3/outer/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 460,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order4/outer3/inner1/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order4/outer3/inner3/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order4/outer3/inner0/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order4/outer2/inner2/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order4/outer2/outer/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 460,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order4/outer2/inner1/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order4/outer2/inner3/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order4/outer2/inner0/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer4/inner2/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer4/outer/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 460,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer4/inner1/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer4/inner3/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer4/inner0/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer0/inner2/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer0/outer/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 460,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer0/inner1/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer0/inner3/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer0/inner0/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer1/inner2/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer1/outer/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 460,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer1/inner1/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer1/inner3/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer1/inner0/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer3/inner2/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer3/outer/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 460,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer3/inner1/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer3/inner3/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer3/inner0/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer2/inner2/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer2/outer/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 460,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer2/inner1/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer2/inner3/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer2/inner0/DONOR_MAPPING.csv.gz",
+          "n_fit_genes": 345,
+          "donor_fit_only": true,
+          "query_gene_donor_count": 0
+        }
+      ],
+      "MC_TEST_reads": 0
+    }
   },
   "native512_total_small_risk_fits": 120,
   "native512_fits_by_method": {
@@ -792,6 +1658,34 @@
     },
     {
       "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/reference_estimand_risk_replay/PAIRED_COMPARISONS.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/SUPPORT_CONTENT_ATTRIBUTION_COMPARISONS.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/SUPPORT_CONTENT_ATTRIBUTION_INTERVALS.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/SOURCE_SAMPLING_ASSOCIATIONS.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/TRUTH_PRECISION_ALIGNMENT_AUDIT.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/CDF_AUDIT.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/NESTED_ISOLATION_AUDIT.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/SHUFFLE_AUDIT.csv",
       "match": true
     },
     {
@@ -1340,16 +2234,18 @@
   "paper_build_status": {
     "binding": {
       "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/build/BUILD_STATUS.json",
-      "sha256": "b0ba123376db2d3f0856c465b06710fd3ed6a8fd486eb715fa4fc9657531a97c",
-      "bytes": 1891
+      "sha256": "fcde63062645971d08eb4244123314e3cf1eb283d453e0c73db7e93f0cbef047",
+      "bytes": 2688
     },
     "value": {
-      "manuscript_words": 7134,
+      "manuscript_words": 6587,
       "citation_keys": [
         "cheng2025prescribe",
         "cui2024scgpt",
+        "frangieh2021perturb",
         "lahoti2023risk",
         "lee2019settransformer",
+        "mcfaline2024chemical",
         "nicol2026spurious",
         "roohani2024gears",
         "shrestha2026pertema",
@@ -1364,14 +2260,26 @@
       "latex_engine": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/build/toolchain/tectonic",
       "new_model_fits": 0,
       "new_test_truth_reads": 0,
-      "paper_sha256": "baf972cce15ea896d13af49d0195d4c13d5ac340ece2b5cd2f8f02360f672415",
-      "supplement_sha256": "fe7304c25a8cd8c48b46647f14f86220217f3291da13784b2e96fae670e8f2dc",
+      "paper_sha256": "dcec6ef9c064efd7f1359e74eb2695a81445520c11c993ebc29e13e0502ad597",
+      "supplement_sha256": "390facd11c50ba85f787e361b68cd60337a5d91b17d88c44f541d73b73521794",
       "tectonic_bundle": "https://data1.fullyjustified.net/tlextras-2021.3r1.tar",
-      "compile_status": "FAILED",
-      "pdf_bytes": 190195,
-      "pdf_sha256": "8ad29200a2377606409f1f07e7e953cf6a6ec6893a6780a1d5d9a7c6c98094bc",
-      "compile_error": "Supplement compilation failed (exit 1)",
-      "compile_seconds": 12.44983720779419,
+      "compile_status": "COMPILED",
+      "pdf_bytes": 145382,
+      "pdf_sha256": "7457b07046c979246bb91617ca0f3b757f8421ede10d5ea0cc103fb272333ce5",
+      "supplement_compiled": true,
+      "supplement_pdf_bytes": 77275,
+      "supplement_pdf_sha256": "05ece1c3af3cdb3226142bb53704c88f3de4a890ee7199b2ada75e61afdc881d",
+      "supplement_compile_command": [
+        "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/build/toolchain/tectonic",
+        "--keep-logs",
+        "--keep-intermediates",
+        "--outdir",
+        "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/build",
+        "--bundle",
+        "https://data1.fullyjustified.net/tlextras-2021.3r1.tar",
+        "supplement.tex"
+      ],
+      "compile_seconds": 5.639810800552368,
       "compile_commands": [
         [
           "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/build/toolchain/tectonic",

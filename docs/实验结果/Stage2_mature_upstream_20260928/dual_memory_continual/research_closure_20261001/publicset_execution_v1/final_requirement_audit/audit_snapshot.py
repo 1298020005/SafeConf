@@ -12,7 +12,6 @@ import pandas as pd
 AUDIT = Path(__file__).resolve().parent
 PUBLIC = AUDIT.parent
 CLOSURE = PUBLIC.parent
-REPO = PUBLIC.parents[5]
 
 def file_binding(path):
     path = Path(path)
@@ -79,6 +78,9 @@ def main():
         'nested_registration':record(PUBLIC/'risk_followup_v1/registered_universal_v1/REGISTRATION.json'),
         'nested_registered_result':record(PUBLIC/'risk_followup_v1/registered_universal_v1/RESULT_MANIFEST.json'),
         'nested_registered_statistics':record(PUBLIC/'risk_followup_v1/registered_universal_v1/STATISTICS_RECEIPT.json'),
+        'nested_physical_content_null':record(PUBLIC/'risk_followup_v1/registered_universal_v1/content_null_v1/RESULT_MANIFEST.json'),
+        'nested_physical_content_null_statistics':record(PUBLIC/'risk_followup_v1/registered_universal_v1/content_null_v1/STATISTICS_RECEIPT.json'),
+        'nested_B1_donor_legality':record(PUBLIC/'risk_followup_v1/registered_universal_v1/content_null_v1/ALL_B1_DONOR_LEGALITY_AUDIT.json'),
         'native512_total_small_risk_fits':len(b),
         'native512_fits_by_method':counts,
         'native512_HGB_fits':sum(n for method,n in counts.items() if method.endswith('HGB')),
