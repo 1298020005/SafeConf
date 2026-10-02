@@ -1,0 +1,43 @@
+{
+  "schema": "safeconf_orion_validation_reuse_code_author_independent_root_review",
+  "status": "PASS",
+  "reviewer": "/root",
+  "code_implementer": "/root/lm_runtime_recovery_v1",
+  "review_independence": "Root did not implement runner; independently read all code, frozen metric function, rank_labels/fit_risk helpers and metadata model-version mappings. Same Root later authorizes; this is not two-person authorization.",
+  "scientific_scope_review": "/root/research_turn_decision_20261002 reviewed separate SEEN supplemental scope before implementation; that agent did not review this code. Its followup code-review call failed agent-thread-limit; no subagent code PASS claimed.",
+  "proposal": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/existing_validation_risk_control_v1/PROPOSED_CONTROL_SCOPE.json",
+    "bytes": 46938,
+    "sha256": "b01890efc8b1f79b7d1053483a372b3a2aa0ce67b4cad23f962e59613a498eac"
+  },
+  "code": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_orion_existing_validation_risk_control_agent.py",
+    "bytes": 34343,
+    "sha256": "6760a76384560035286f43aed60410bcc0e8ea9261a2932213de5669cca7a9a4"
+  },
+  "checked_utc": "2026-10-02T02:15:57.738108+00:00",
+  "scope": "SEEN_POSTCONFIRMATION_EXISTING_VALIDATION_REUSE; primary13 and oldonce-onlyoperation unchanged",
+  "checks": {
+    "all_bound_code_and_inputs_stream_SHA_exact": true,
+    "explicit_source_model_versions_for_both_contexts": true,
+    "all3arms_same_validation_gene_budget_and_all_context_rows": true,
+    "CDF_and_preprocessing_training_budget_only": true,
+    "whitelisted6_13_14features_excludeIDs_andtruth": true,
+    "unsupported_Public7_and_Shared_mask_in_copy_only": true,
+    "all30models_and232x33scores_seal_before_cached_TEST_error_read": true,
+    "all_TEST_gene_disjointness_runtime_guard": true,
+    "fixed80contrasts_one_shared5000_gene_draws": true,
+    "original_dec8_metric_preserves_undefined_macro_and_original_task_validity": true,
+    "zero_Source_Public_upstream_refits_and_raw_expression_reads": true,
+    "isolated_outputs_existing_artifact_hashes_before_after": true,
+    "no_method_budget_or_reference_winner_selection": true
+  },
+  "limitations": [
+    "2790 validation errors previously used for competence; fractions describe downstream uses, not labels newly acquired or pure0label information.",
+    "Only224 validation records have Public/shared support; missing pattern is reported, not fake shared score.",
+    "No extra OOF needed for shared score because frozen Source models never trained Cvalidation errors; target test genes are separately disjoint.",
+    "Input SHA coverage is registered artifacts/models; no unsupported assertion that all unrelated Source raw files were inspected.",
+    "Retrospective TEST already known; this cannot replace original primary or count as newconfirmation.",
+    "CIs condition on fixed fitted models and one predefined risk seed; no training resampling uncertainty."
+  ]
+}

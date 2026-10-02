@@ -42,6 +42,14 @@ Source 均值预测幅度中位数为 K562 0.0241、RPE1 0.0713、hepg2 0.0428�
 
 ## 已核实的后续资产边界
 
+### 已完成既有 Orion validation 信息强对照
+
+原计划中的实际替代方案已扩展到 Orion：无需额外模型调用，重用已用于能力检查的2790验证误差；三组同预算、同训练行比较 Target-only、Public+Target、Shared+Target，Ridge/HGB共30固定拟合，5000次共同基因簇重采样。补充预测全部冻结后才解析已有 TEST 误差；原13主比较和 Source 参数不变。这是 SEEN 补充分析，不是新的确认。
+
+100%验证使用预算下，Ridge 的 Target-only/Public+Target/Shared+Target U20分别为0.029795/0.279075/0.243019；Public增量CI[-0.067474,0.476093]，Shared额外增量CI[-0.040850,0.056696]，均未明确成立。HGB三者为0.073119/0.168386/0.069851，同样不能证明额外Shared收益。PublicRidge高于历史加权距离的点估计，不等于其配对优势成立，更不能据此选新冠军。既有简单直接距离还有0.267066的强点对照。
+
+只有224/2790验证记录具有公共支持，10%预算仅18条，固定HGB20叶节点最低记录数使其没有使用公共/Shared分裂。充分预算有使用Shared字段，也未建立增量。停止为这组结果扫描叶大小或选择最佳预算；全曲线、信息账本和成本保留。这里按目标研究的两个冻结背景模型合并拟合，不宣称单checkpoint错误记忆隔离的验证。详见 `orion_preparation/existing_validation_risk_control_v1/ACTUAL_RESULTS_REVIEW.md`。
+
 既有 E195 GEARS 六个 checkpoint 的 Norman 原生5025基因轴，只覆盖冻结Source3285中的1364个，缺1921个。validation 只验证了相对零效应控制的能力，没有最强TRAIN-mean能力门证据；CP4000与控制合同也未闭合。因此停止直接接入不变Source3285核心的路径，保留其旧native-UQ辅助结果，不补零、不挑seed、不重新训练。
 
 Arc/H1 的现有H5AD与旧E198输入SHA完全一致。E198已打开表达，并在全部150扰动上完成1800协议记录和终点评价，故它不是新的未触碰确认资产；停止为原Arc提案继续调划分。上述判定不读取新的表达数值、不改变任何模型，也不消耗第三次尝试。证据分别见 `existing_gears_source_transfer_readiness_v1/` 和 `arc_metadata_qualification_v1/`。当前没有一个已资格通过、可以直接认证新修复的资产组合；不将这一事实改写成科学目标已完成。

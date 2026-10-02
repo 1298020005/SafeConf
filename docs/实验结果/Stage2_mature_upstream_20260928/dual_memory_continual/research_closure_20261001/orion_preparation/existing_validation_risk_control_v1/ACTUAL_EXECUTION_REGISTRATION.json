@@ -1,0 +1,22 @@
+{
+  "schema": "safeconf_orion_existing_validation_risk_control_v1",
+  "pid": 719921,
+  "approval": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/existing_validation_risk_control_v1/CONTROL_ROOT_APPROVAL.json",
+    "bytes": 1643,
+    "sha256": "dfe242c8e8b25540a90b535fd2d5dce63d770f76cbb1e094c3c270bdd53242ea"
+  },
+  "proposal": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/existing_validation_risk_control_v1/PROPOSED_CONTROL_SCOPE.json",
+    "bytes": 46938,
+    "sha256": "b01890efc8b1f79b7d1053483a372b3a2aa0ce67b4cad23f962e59613a498eac"
+  },
+  "script": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_orion_existing_validation_risk_control_agent.py",
+    "bytes": 34343,
+    "sha256": "6760a76384560035286f43aed60410bcc0e8ea9261a2932213de5669cca7a9a4"
+  },
+  "start_UTC": "2026-10-02T02:15:59Z",
+  "cached_TEST_errors_opened": false,
+  "label_role": "already_seen_C_validation_downstream_reuse"
+}

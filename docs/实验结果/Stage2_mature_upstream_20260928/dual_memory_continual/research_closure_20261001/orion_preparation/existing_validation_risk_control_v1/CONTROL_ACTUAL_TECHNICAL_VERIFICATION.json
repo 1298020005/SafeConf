@@ -1,0 +1,23 @@
+{
+  "status": "PASS_TECHNICAL_NOT_SCIENTIFIC_PROMOTION",
+  "reviewer": "/root",
+  "method": "Readonly oldinput hashes and saved jointdraw/point arithmetic recomputation; no extra fits or sampling",
+  "original_registered_input_code_and_sealed_new_artifact_hashes_exact": true,
+  "saved_draw_shape": [
+    5000,
+    3,
+    33,
+    7
+  ],
+  "all80_macroU20_point_and_CI_pairs_reproduced": 80,
+  "method_metric_rows": 693,
+  "paired_rows": 1680,
+  "anchors_actual": {
+    "FrozenLearnedSourceHGB": 0.2048352470614185,
+    "LearnedWeightedDistance": 0.2148874215518628,
+    "NegativeSourceSupport": -0.1562836418403223
+  },
+  "original_main_two_anchor_points_exact_within1e-15": true,
+  "new_fits_draws_upcalls": 0,
+  "CIs_conditional_fixed_models": true
+}

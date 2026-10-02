@@ -1,0 +1,57 @@
+{
+  "schema": "safeconf_orion_existing_validation_reuse_actual_accounting",
+  "status": "COMPLETE_SEEN_SUPPLEMENT_NO_PROMOTION",
+  "created_utc": "2026-10-02T02:32:29.726281+00:00",
+  "actual_result": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/existing_validation_risk_control_v1/CONTROL_RESULT_MANIFEST.json",
+    "bytes": 17239,
+    "sha256": "7c8106931e88c86afcf3d6073fa6ee62f824ecf3d0f2b1167177612b4d8709e3"
+  },
+  "prediction_seal": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_existing_validation_risk_control_20261002_v1/ALL_PREDICTIONS_SEAL.json",
+    "bytes": 15334,
+    "sha256": "935fc2d4054626218322494bd17b10f1875cbe5f28f3ad0696ffa2f8a0f71185"
+  },
+  "master_counts_before_after": {
+    "cost": [
+      342,
+      343
+    ],
+    "information": [
+      303,
+      333
+    ],
+    "experiment": [
+      1487,
+      1586
+    ],
+    "CDF": [
+      48,
+      58
+    ]
+  },
+  "target_risk_fits": 30,
+  "target_learner_scope": "pooled target-study across2 frozencontext-specific checkpoints; not single-checkpoint memoryisolation",
+  "validation_error_pool_already_seen": 2790,
+  "validation_genes": 1661,
+  "supported_validation_rows": 224,
+  "supported_validation_genes": 141,
+  "eval_tasks": 232,
+  "eval_genes": 144,
+  "Cdf_groups": 10,
+  "joint_bootstrap_draws": 5000,
+  "fixed_comparison_pairs": 80,
+  "metric_interval_rows": 693,
+  "paired_interval_rows": 1680,
+  "new_labels_revealed": 0,
+  "new_upstream_calls_attempts_Source_Publicfits_rawreads": 0,
+  "CPU_seconds": 403.091722985,
+  "elapsed_seconds": 396.00637542200275,
+  "peak_RSS_bytes": 567353344,
+  "elapsed_before_all_prediction_seal": 3.8395292090717703,
+  "per_fit_seconds_not_measured": true,
+  "GPU_hours": 0,
+  "download_bytes": 0,
+  "budget_interpretation": "downstream uses of previously knownvalidation pool;not labelacquisition efficiency orzeroClabel info",
+  "scientific_comparison_to_original_primary": "No newprimary/winner/independentconfirmation;fixed13 remainsunchanged"
+}

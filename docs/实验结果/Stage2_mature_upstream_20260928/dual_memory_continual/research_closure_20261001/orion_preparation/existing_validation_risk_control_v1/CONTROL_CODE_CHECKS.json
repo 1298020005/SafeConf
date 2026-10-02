@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "script": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_orion_existing_validation_risk_control_agent.py",
+    "bytes": 34343,
+    "sha256": "6760a76384560035286f43aed60410bcc0e8ea9261a2932213de5669cca7a9a4"
+  },
+  "generated_only": true,
+  "budget_nested_isolation_and_all_contexts": true,
+  "toy_budget_gene_counts": [
+    2,
+    5,
+    10,
+    15,
+    20
+  ],
+  "unsupported_mask_all7Public_and_shared_only_no_source_mutation": true,
+  "all30models_and80prespecified_pairs_coverage": true,
+  "actual_feature_or_error_values_read": 0,
+  "fits": 0
+}

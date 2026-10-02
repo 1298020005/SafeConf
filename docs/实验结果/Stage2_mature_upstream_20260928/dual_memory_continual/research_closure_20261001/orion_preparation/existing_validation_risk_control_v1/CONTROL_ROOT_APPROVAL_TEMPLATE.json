@@ -1,0 +1,16 @@
+{
+  "schema": "safeconf_orion_existing_validation_risk_control_v1_root_approval",
+  "status": "DRAFT_NOT_AUTHORIZED",
+  "authorize_existing_SEEN_validation_risk_control_reuse": false,
+  "authorize_cached_SEEN_TEST_evaluation_after_prediction_seal": false,
+  "proposal": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/existing_validation_risk_control_v1/PROPOSED_CONTROL_SCOPE.json",
+    "bytes": 46938,
+    "sha256": "b01890efc8b1f79b7d1053483a372b3a2aa0ce67b4cad23f962e59613a498eac"
+  },
+  "independent_review": {
+    "path": "ROOT_TO_BIND_ACTUAL_PASS",
+    "bytes": null,
+    "sha256": null
+  }
+}

@@ -20,6 +20,8 @@ A separately registered SourceDEV task-mean diagnostic generated1808heldout pred
 
 ## Existing original main-matrix entry
 
+The separate `orion_preparation/existing_validation_risk_control_v1/ACTUAL_RESULTS_REVIEW.md` records30completed target-side Ridge/HGB fits, five fixed uses of existing validation labels,693metric intervals and1680fixed paired intervals. This job is a SEEN supplement, not the original13method confirmation. All new models/CDFs/predictions are persisted in `/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_existing_validation_risk_control_20261002_v1`; all models/predictions sealed before cachedTEST error parsing. No rawexpression/upstream/Source/Public model refitting occurred. One-scoped execution and hash-reload checks passed; do not overwrite or relabel it as prospective evidence.
+
 Before that historical entry, note the later completed Source-only scale stress: `orion_preparation/source_counterfactual_scale_stress_v2/README.md` records the exact one-shot run, three fixed scales, full baseline byte reproduction, source/input protections and independent interpretation. It used existing full-fit risk models on their own Source rows, so it is not held-out transfer. The unrun v1 reporting bug, rejected code snapshot and fixed v2 are preserved. No variants or reruns are scheduled; new upstream attempt count remains2.
 
 Run from the repository root, with the registered September prediction/public-memory assets present:

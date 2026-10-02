@@ -1,5 +1,11 @@
 # Implementation and scientific observations
 
+## 2026-10-02: Orion existing-validation alternative completed
+
+Executed separate SEEN supplement,30fixedtarget-risk fits/10budget-onlyCDFs/5000sharedgene draws;396.006seconds,0upstream/Source/Public refits. Original13primary/c94 and models remain unchanged. All2790validation errors were already seen for competence; budget uses are not newlabel acquisition. Public support covers224validation rows and primary evaluation is232supported tasks.
+
+At10%budget only18fit rows have Public support; actual HGB structures show0Public/Shared split nodes and identical three-arm predictions. At higher budgets additional features are used, but no macro paired Public/Shared increment CI excludeszero across either learner. Fullbudget Ridge Public−Targetonly point+.249280 has CI[−.067474,.476093]; addingShared has point−.036056,CI[−.040850,.056696]. Stop leaf/strength/budget variants; no winner or newSource method promoted. Tree inspection's initial cwd import error was fixed without changing models or fitting again.
+
 ## 2026-10-02: fixed Source scale stress and reporting repair
 
 Independent static review rejected the first unrun implementation: a macro mean skipped undefined Spearman/U20 while labelling all4contexts. Preserve original code f342, proposal e7ae and FAIL receipt c663. The sole technical correction requires all4contexts for each macro metric and explicitly reports finite-context counts. Freshv2 proposal4049/code37f61 passed independent static review31ec before Root approval3a1e; no original Source model or metric changed.
