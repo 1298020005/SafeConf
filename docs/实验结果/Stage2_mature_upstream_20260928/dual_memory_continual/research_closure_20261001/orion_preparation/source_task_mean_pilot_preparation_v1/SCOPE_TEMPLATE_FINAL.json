@@ -1,0 +1,49 @@
+{
+  "schema": "safeconf_source_mean_treated_state_pilot_scope_v1",
+  "root_authorized": false,
+  "Source_role": "DEV_SEEN",
+  "formal_upstream_attempt_index": 2,
+  "maximum_new_formal_upstream_attempts": 2,
+  "new_shared_risk_fits": 0,
+  "new_Source_CDF_fits": 0,
+  "Orion_numeric_access": false,
+  "Orion_outcome_use": false,
+  "Source_raw_X_access": false,
+  "Source_mean_convention": "MEAN_TREATED_STATE_MINUS_QUERY_MATCHED_NC",
+  "CPU_threads": 4,
+  "max_elapsed_seconds": 300,
+  "max_RSS_bytes": 1073741824,
+  "GPU_hours": 0,
+  "new_download_bytes": 0,
+  "prediction_seal_before_heldout_error_evaluation": true,
+  "source_root": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1",
+  "output_root": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_task_mean_regime_pilot_20261002_v1",
+  "report_root": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_regime_pilot_v1",
+  "executed_pilot": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_source_task_mean_regime_pilot_agent.py",
+    "bytes": 15594,
+    "sha256": "a0338923181271a9816413893bf1cc1d25f880bc5a46019d1af4356b405c6c1f"
+  },
+  "preparation": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_pilot_preparation_v1/PREPARATION.json",
+    "bytes": 15249,
+    "sha256": "0f9f5ac9963817e213096f9de1f82be85124c51dfd5196b323d2428bde169c55"
+  },
+  "mean_recipe": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_pilot_preparation_v1/CODE_PROPOSAL.py",
+    "bytes": 3343,
+    "sha256": "74698d54f19d1358f6df57074576af76001996dd317c0d4751038874db1a380c"
+  },
+  "P6_helper": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/seal_safeconf_orion_source_risk_agent.py",
+    "bytes": 28837,
+    "sha256": "8b69e6ce29dc92aa34150b3b08aac62ce8333a10f84ec432a39d0e81ffc64482"
+  },
+  "source_artifact_registry": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/ARTIFACT_HASHES.json",
+    "bytes": 16183,
+    "sha256": "58de3cc87c8a889a0604b0da23318ea415ce6d6482e4941851ee0015aaf50084"
+  },
+  "scope_note": "Template only; Root must write fresh immutable true-authorized contract. One SourceDEV baseline attempt2,20 analytic context/fold means, no optimized/shared risk model or SourceCDF fits. No Orion inputs or target outcomes.",
+  "once_only_registration": "Fresh incomplete stage and immutable ATTEMPT_REGISTRATION before array materialization/mean estimation; failure retains stage and forbids rerun under this version."
+}

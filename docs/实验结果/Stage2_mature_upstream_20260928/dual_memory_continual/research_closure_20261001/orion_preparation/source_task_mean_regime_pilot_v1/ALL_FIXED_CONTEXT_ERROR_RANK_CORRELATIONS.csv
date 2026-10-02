@@ -1,0 +1,9 @@
+context,old_upstream,n_matched_tasks,SourceMean_vs_old_error_spearman,Source_mean_unique_errors,old_unique_errors,SourceMean_below_old_min_fraction,SourceMean_within_old_min_max_fraction,SourceMean_below_old_q05_fraction
+K562,TxPert_GAT,566,0.6820018295736736,566,566,0.0,1.0,0.0
+RPE1,TxPert_GAT,416,0.45194424627119434,416,416,0.0,1.0,0.0
+hepg2,TxPert_GAT,405,0.7518128331716587,405,405,0.0,1.0,0.0
+jurkat,TxPert_GAT,421,0.7786956612636836,421,421,0.0,1.0,0.0
+K562,TxPert_Exphormer,566,0.7041175996615504,566,566,0.0,1.0,0.0
+RPE1,TxPert_Exphormer,416,0.4550418052953374,416,416,0.0,1.0,0.0
+hepg2,TxPert_Exphormer,405,0.7577962393940545,405,405,0.0,1.0,0.0
+jurkat,TxPert_Exphormer,421,0.7891188243486428,421,421,0.0,1.0,0.0

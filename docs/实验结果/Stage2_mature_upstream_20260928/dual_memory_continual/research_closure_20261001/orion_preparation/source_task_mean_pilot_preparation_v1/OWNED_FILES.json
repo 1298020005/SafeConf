@@ -1,0 +1,17 @@
+{
+  "schema": "safeconf_owned_files_v1",
+  "scope": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_pilot_preparation_v1",
+  "execution_authorized": false,
+  "files": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_pilot_preparation_v1/PREPARATION.json",
+      "bytes": 15249,
+      "sha256": "0f9f5ac9963817e213096f9de1f82be85124c51dfd5196b323d2428bde169c55"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_pilot_preparation_v1/CODE_PROPOSAL.py",
+      "bytes": 3343,
+      "sha256": "74698d54f19d1358f6df57074576af76001996dd317c0d4751038874db1a380c"
+    }
+  ]
+}

@@ -1,0 +1,364 @@
+{
+  "schema": "safeconf_source_task_mean_regime_pilot_preparation_v1",
+  "status": "PREPARED_METADATA_ONLY_NOT_AUTHORIZED_OR_EXECUTED",
+  "created_utc": "2026-10-02T00:39:28.659926+00:00",
+  "hypothesis": "A fixed near-mean Source baseline can distinguish lack of Source output-regime coverage from interpreting the frozen shared-risk failure as universal transfer failure. This is posttruth-inspired SourceDEV hypothesis work, not Orion repair or confirmation.",
+  "assets_available": true,
+  "source_shape": [
+    1808,
+    3285
+  ],
+  "source_gene_clusters": 575,
+  "source_context_task_counts": {
+    "K562": 566,
+    "RPE1": 416,
+    "hepg2": 405,
+    "jurkat": 421
+  },
+  "same_gene_fold_across_contexts_and_old_predictors": true,
+  "gene_count_per_fold": {
+    "0": 115,
+    "1": 115,
+    "4": 115,
+    "3": 115,
+    "2": 115
+  },
+  "all20_context_fold_means_trainable_without_heldout_gene_truth": true,
+  "fold_context_metadata_counts": [
+    {
+      "heldout_fold": 0,
+      "context": "K562",
+      "train_tasks": 452,
+      "query_tasks": 114,
+      "gene_disjoint": true
+    },
+    {
+      "heldout_fold": 0,
+      "context": "RPE1",
+      "train_tasks": 338,
+      "query_tasks": 78,
+      "gene_disjoint": true
+    },
+    {
+      "heldout_fold": 0,
+      "context": "hepg2",
+      "train_tasks": 318,
+      "query_tasks": 87,
+      "gene_disjoint": true
+    },
+    {
+      "heldout_fold": 0,
+      "context": "jurkat",
+      "train_tasks": 338,
+      "query_tasks": 83,
+      "gene_disjoint": true
+    },
+    {
+      "heldout_fold": 1,
+      "context": "K562",
+      "train_tasks": 452,
+      "query_tasks": 114,
+      "gene_disjoint": true
+    },
+    {
+      "heldout_fold": 1,
+      "context": "RPE1",
+      "train_tasks": 331,
+      "query_tasks": 85,
+      "gene_disjoint": true
+    },
+    {
+      "heldout_fold": 1,
+      "context": "hepg2",
+      "train_tasks": 325,
+      "query_tasks": 80,
+      "gene_disjoint": true
+    },
+    {
+      "heldout_fold": 1,
+      "context": "jurkat",
+      "train_tasks": 338,
+      "query_tasks": 83,
+      "gene_disjoint": true
+    },
+    {
+      "heldout_fold": 2,
+      "context": "K562",
+      "train_tasks": 454,
+      "query_tasks": 112,
+      "gene_disjoint": true
+    },
+    {
+      "heldout_fold": 2,
+      "context": "RPE1",
+      "train_tasks": 332,
+      "query_tasks": 84,
+      "gene_disjoint": true
+    },
+    {
+      "heldout_fold": 2,
+      "context": "hepg2",
+      "train_tasks": 322,
+      "query_tasks": 83,
+      "gene_disjoint": true
+    },
+    {
+      "heldout_fold": 2,
+      "context": "jurkat",
+      "train_tasks": 338,
+      "query_tasks": 83,
+      "gene_disjoint": true
+    },
+    {
+      "heldout_fold": 3,
+      "context": "K562",
+      "train_tasks": 453,
+      "query_tasks": 113,
+      "gene_disjoint": true
+    },
+    {
+      "heldout_fold": 3,
+      "context": "RPE1",
+      "train_tasks": 328,
+      "query_tasks": 88,
+      "gene_disjoint": true
+    },
+    {
+      "heldout_fold": 3,
+      "context": "hepg2",
+      "train_tasks": 323,
+      "query_tasks": 82,
+      "gene_disjoint": true
+    },
+    {
+      "heldout_fold": 3,
+      "context": "jurkat",
+      "train_tasks": 343,
+      "query_tasks": 78,
+      "gene_disjoint": true
+    },
+    {
+      "heldout_fold": 4,
+      "context": "K562",
+      "train_tasks": 453,
+      "query_tasks": 113,
+      "gene_disjoint": true
+    },
+    {
+      "heldout_fold": 4,
+      "context": "RPE1",
+      "train_tasks": 335,
+      "query_tasks": 81,
+      "gene_disjoint": true
+    },
+    {
+      "heldout_fold": 4,
+      "context": "hepg2",
+      "train_tasks": 332,
+      "query_tasks": 73,
+      "gene_disjoint": true
+    },
+    {
+      "heldout_fold": 4,
+      "context": "jurkat",
+      "train_tasks": 327,
+      "query_tasks": 94,
+      "gene_disjoint": true
+    }
+  ],
+  "bindings": {
+    "Source_feature_manifest": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_FEATURE_MANIFEST.json",
+      "bytes": 16172,
+      "sha256": "b74b9dfbc64f5acc82b7b0d34023aa6a523bd11d1904ced7fd638c5bec4ef2d1"
+    },
+    "Source_model_manifest": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/MODEL_MANIFEST.json",
+      "bytes": 8934,
+      "sha256": "c8d9d5003860d8a5e117398a7d44b5c67cfb700c6fb56f37bcf04a5d549909a6"
+    },
+    "Source_artifact_registry": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/ARTIFACT_HASHES.json",
+      "bytes": 16183,
+      "sha256": "58de3cc87c8a889a0604b0da23318ea415ce6d6482e4941851ee0015aaf50084"
+    },
+    "Source_input_provenance": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_INPUT_HASHES.json",
+      "bytes": 3436,
+      "sha256": "12e058d3725fa989b3da543c136c169efd90dbcba28a8a8c2cce4c4033769715"
+    },
+    "source_preparation_code": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/prepare_safeconf_orion_source_core_agent.py",
+      "bytes": 21700,
+      "sha256": "e51a10aa7e55cf3395bb64244256551340577843079d552bc155459706d4484d"
+    },
+    "ordered_split_manifest": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SPLIT_MANIFEST.csv",
+      "bytes": 56917,
+      "sha256": "350e53a18f54108eef56062b96875f5ca0ad3d1095eb155aa2303eb35422aa71"
+    }
+  },
+  "available_vectors_and_metadata": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_TRUE_EFFECTS.npy",
+      "bytes": 47514368,
+      "frozen_sha256": "793574054c0724b17394449b2442a8c77b03524552135b649afce63b05b670c9",
+      "verification_scope": "file existence/stat and frozen registry; array/parquet numerical payload not read"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_CONTROLS.npy",
+      "bytes": 47514368,
+      "frozen_sha256": "deabc91e301e3cefe455723a6abc1b08970c091b7d107dc5c467ebe39dc3e230",
+      "verification_scope": "file existence/stat and frozen registry; array/parquet numerical payload not read"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_TxPert_GAT_PREDICTED_EFFECTS.npy",
+      "bytes": 47514368,
+      "frozen_sha256": "89c65ee852ae3bf8473e4f4bfc5f1821970b735923052c5d3c87f6aa8e431c24",
+      "verification_scope": "file existence/stat and frozen registry; array/parquet numerical payload not read"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_TxPert_Exphormer_PREDICTED_EFFECTS.npy",
+      "bytes": 47514368,
+      "frozen_sha256": "09ab060655dd5c8f45916e07b905666e38ca7edd89dff7d21edd6095f1397cd3",
+      "verification_scope": "file existence/stat and frozen registry; array/parquet numerical payload not read"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_TxPert_GAT_P_BASE.parquet",
+      "bytes": 421804,
+      "frozen_sha256": "23ee4a6673349dad3891d20a97230444e36fac8aed4a754197e6d6e873f82a48",
+      "verification_scope": "file existence/stat and frozen registry; array/parquet numerical payload not read"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_TxPert_Exphormer_P_BASE.parquet",
+      "bytes": 619717,
+      "frozen_sha256": "cbe27ab4f0ea6d4323a5602e7d054b0cb651ea89c76f9a2ba563f0989399edfb",
+      "verification_scope": "file existence/stat and frozen registry; array/parquet numerical payload not read"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_TASKS.parquet",
+      "bytes": 95447,
+      "frozen_sha256": "6bd02a0cff8f41ea48ad9566622bbebe923db56db64a8d20a4597fce53725013",
+      "verification_scope": "file existence/stat and frozen registry; array/parquet numerical payload not read"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SPLIT_MANIFEST.csv",
+      "bytes": 56917,
+      "frozen_sha256": "350e53a18f54108eef56062b96875f5ca0ad3d1095eb155aa2303eb35422aa71",
+      "verification_scope": "file existence/stat and frozen registry; array/parquet numerical payload not read"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/GENE_MANIFEST.csv",
+      "bytes": 122617,
+      "frozen_sha256": "c1c9c8041458275248514d960c6c263a72f43a12a8d48c16f77759d2342fa08f",
+      "verification_scope": "file existence/stat and frozen registry; array/parquet numerical payload not read"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/GENE_IDS.json",
+      "bytes": 37116,
+      "frozen_sha256": "b7f80db0c0e46dd7667cb83f39153c4add31948ca00e5391c210b9c6a18d7c68",
+      "verification_scope": "file existence/stat and frozen registry; array/parquet numerical payload not read"
+    }
+  ],
+  "cached_old_errors_and_magnitude_available": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_TxPert_GAT_P_BASE.parquet",
+      "rows": 1808,
+      "allowed_later_columns": [
+        "task_id",
+        "gene",
+        "target",
+        "fold",
+        "upstream",
+        "model_version",
+        "predicted_magnitude",
+        "true_error_rmse"
+      ],
+      "numerical_payload_read_now": false,
+      "cache_axis": "3285; exact producer code recomputes RMSE from reprojected Source prediction/truth before saving P_BASE"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_TxPert_Exphormer_P_BASE.parquet",
+      "rows": 1808,
+      "allowed_later_columns": [
+        "task_id",
+        "gene",
+        "target",
+        "fold",
+        "upstream",
+        "model_version",
+        "predicted_magnitude",
+        "true_error_rmse"
+      ],
+      "numerical_payload_read_now": false,
+      "cache_axis": "3285; exact producer code recomputes RMSE from reprojected Source prediction/truth before saving P_BASE"
+    }
+  ],
+  "fixed_proposed_baseline": {
+    "name": "SourceTaskMean_5GeneFold",
+    "normalization_contract": "Source3285_CP4000_log1p_matched_batch_delta_v1",
+    "normalization": {
+      "native": "official CP4000 then log1p; TxPert Methods 4.2.2",
+      "native_arrays_already_normalized": true,
+      "delta_rescaled": false,
+      "axis_operation": "column projection only; no library renormalization"
+    },
+    "centroid_target": "Absolute perturbation centroid reconstructed as frozen true_delta + matched_control",
+    "fit_formula": "mu[fold,context] = mean_task(true_delta[fold!=heldout,context] + control[fold!=heldout,context])",
+    "query_formula": "predicted_delta[q] = mu[heldout_fold,query_context] - frozen_matched_control[q]",
+    "unit_weights": "one equal weight per original biological task; never double rows for GAT/Exph",
+    "strict_exclusion": "All genes of the heldout fold excluded across every context/predictor from every centroid fit; query perturbation truth accessed for evaluation only after prediction seal. Query control is a legal prediction-time reference.",
+    "folds": "Use exact original SPLIT_MANIFEST; no new seed/split or selection",
+    "not_interchangeable_with_mean_delta": "Directly averaging true_delta defines a different baseline when task-matched controls vary. Proposal freezes expression-mean then query-control subtraction to retain absolute prediction/delta endpoint convention. Root must confirm this exact scope before any computation.",
+    "new_analytic_mean_parameter_vectors": 20,
+    "new_optimized_or_shared_risk_model_fits": 0,
+    "new_Source_CDF_fits": 0,
+    "new_Public_prior_learner_fits": 0,
+    "new_Orion_models_or_predictions": 0
+  },
+  "fixed_later_diagnostics_after_authorization": {
+    "cohort": "All original1808 tasks, four contexts; no task/context winner selection",
+    "magnitude": "RMS(predicted_delta) on3285 genes; all-task and every-context min/median/fixed quantiles and fractions below old Source GAT/Exph minimum and fixed Source range bounds. No Orion feature/outcome-dependent thresholds or numerical reads.",
+    "error_rank": "After SourceMean prediction/parameter seal, compute SourceMean RMSE vs cached Source truth. Report per-context Spearman correlation to cached old GAT and Exph RMSE using identical task IDs; include finite/tie counts and do not replace with a different metric on failure.",
+    "old_errors": "Read already Source3285-recomputed P_BASE true_error_rmse; no old upstream inference, rawX read or new error-CDF fit.",
+    "no_shared_risk_training": "No C8 refit/feature augmentation/test-driven repairs or candidate promotion.",
+    "limits": "One simple task-mean predictor, not a third large published family, no cross-family superiority, no shared-risk efficacy or external replication claim."
+  },
+  "proposed_budget": {
+    "new_formal_upstream_attempts_before_execution": 0,
+    "requested_additional_formal_attempts_if_authorized": 1,
+    "planned_total_new_small_formal_attempts_with_existing_Orion": 2,
+    "one_baseline_attempt_contains20_fold_context_centroids_not20_families": true,
+    "CPU_elapsed_ceiling_seconds": 300,
+    "CPU_threads": 4,
+    "RAM_ceiling_bytes": 1073741824,
+    "GPU_hours": 0,
+    "download_bytes": 0,
+    "raw_Source_X_bytes": 0,
+    "Orion_numeric_bytes": 0,
+    "output_root_proposed": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_task_mean_regime_pilot_20261002_v1",
+    "original_C8_and_all_frozen_assets_preserved": true
+  },
+  "execution_prerequisites": [
+    "New immutable Root-approved Source-only scope contract pins code, exact formula, Source arrays/metadata/axis and formal-attempt counter before any new prediction or validation.",
+    "At execution, rehash actual allowed Source arrays and caches before numeric materialization, verify shapes/dtypes and exact source task/row alignment; preparation only checks declared registry/stat/footer.",
+    "Fresh isolated outputs and staged prediction/parameter seal before heldout-error diagnostics; no original Source or Orion model/bank/result modifications."
+  ],
+  "preparation_activity": {
+    "Source_metadata_split_rows_read": 1808,
+    "parquet_footer_only": true,
+    "Source_array_or_cached_numeric_error_payload_read": false,
+    "Source_raw_X_read": false,
+    "Orion_numeric_or_outcome_read": false,
+    "new_predictions": 0,
+    "new_analytic_mean_vectors_computed": 0,
+    "new_fits": 0,
+    "fixtures_or_numerical_validation_run": 0,
+    "shared_table_or_model_mutations": false
+  },
+  "code_proposal_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_pilot_preparation_v1/CODE_PROPOSAL.py",
+    "bytes": 3343,
+    "sha256": "74698d54f19d1358f6df57074576af76001996dd317c0d4751038874db1a380c"
+  }
+}

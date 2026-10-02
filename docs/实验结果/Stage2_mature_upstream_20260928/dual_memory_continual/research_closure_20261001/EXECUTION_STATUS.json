@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-02T00:36:58.013550+00:00",
+  "updated_utc": "2026-10-02T00:54:10.662049+00:00",
   "complete": [
     "five-fold nested public biology with four inner folds",
     "three-line sixteen-method matrix with three registered seeds",
@@ -67,7 +67,7 @@
   "new_large_upstream_training": 0,
   "new_download_gb": 0.04440246,
   "completion_claim": "goal active; meaningful diagnostics and registered matrices continue; manuscript prose deferred",
-  "current_work": "Completed actual once-only Orion reading/fixed13statistics/independent gate review/alltables/plots. PrimarySourceincrementNOT_ESTABLISHED. Actualfrozen-feature range/tie diagnostic complete0.326s0fits. SourceDEV simplebaseline predictor-regime pilot preparation under read-only contract; no activeOrionTEST refit or selection. Scientificpublication readiness remains unproven.",
+  "current_work": "ActualOrion fixed13/paired5000 comparison primaryNOT_ESTABLISHED, alltables/plots/diagnostics preserved. SourceDEV TRAIN-taskmean counterfactual completed10.006s, newsmallupstreamattempt2; it doesnotfilllow-magnitude Source gap, so stopthisrepairdirection. Researchgoal scientificreadiness stillunproven; no currentTEST methodtuning or newAlgorithm promotion.",
   "deferred_by_user": [
     "manuscript and supplement prose generation"
   ],
@@ -77,7 +77,7 @@
   "new_dataset_download_gb_verified": 18.13844995,
   "new_dataset_download_registered_bytes": 18137568035,
   "new_gpu_hours_tabular_insurance": 0.006375,
-  "new_upstream_formal_validation_prediction_attempts": 1,
+  "new_upstream_formal_validation_prediction_attempts": 2,
   "orion_verified_files": 41,
   "orion_registered_files": 41,
   "orion_test_expression_opened": true,
@@ -417,5 +417,21 @@
       114
     ],
     "Source_simple_baseline_pilot_status": "PREPARATION_ONLY_NO_NEW_PREDICTIONS_YET"
+  },
+  "Source_mean_regime_pilot": {
+    "status": "COMPLETE_SOURCE_DEV_ONLY_HYPOTHESIS_NOT_SUPPORTED",
+    "formal_upstream_attempts_actual": 2,
+    "Source_tasks": 1808,
+    "gene_clusters": 575,
+    "analytic_means": 20,
+    "elapsed_seconds_at_receipt_capture": 10.006460402859375,
+    "CPU_delta_seconds": 8.808310285,
+    "peak_RSS_bytes": 567353344,
+    "new_SourceRisk_CDF_Public_fits": 0,
+    "Orion_inputs_or_outcomes_used_in_pilot": false,
+    "fills_low_magnitude_Source_range_gap": false,
+    "SourceMean_all_within_old_context_minmax": true,
+    "old_Source101_hashes_before_after_exact": true,
+    "no_new_family_or_external_gain_claim": true
   }
 }

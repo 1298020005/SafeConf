@@ -1,0 +1,72 @@
+{
+  "schema": "safeconf_Source_mean_actual_accounting_v1",
+  "created_utc": "2026-10-02T00:53:30.514091+00:00",
+  "status": "COMPLETE_SOURCE_DEV_ONLY",
+  "receipt": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_task_mean_regime_pilot_20261002_v1/RECEIPT.json",
+    "bytes": 28429,
+    "sha256": "270e3053cca10848bcb39ded1c8db092ea672b1e6fa6dc2972f57e3111ce1568"
+  },
+  "prediction_seal": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_task_mean_regime_pilot_20261002_v1/PREDICTION_SEAL.json",
+    "bytes": 10071,
+    "sha256": "8f111652ce2450c5f227a04daba45433e48224ee55e22eea11fe0ea4e0b2e868"
+  },
+  "artifact_registry": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_task_mean_regime_pilot_20261002_v1/ARTIFACT_HASHES.json",
+    "bytes": 1584,
+    "sha256": "d6f5dc769e75d0e1dccafbc29fa8aea91bd6d9ceae1945fc68ee404094435964"
+  },
+  "formal_upstream_attempts": {
+    "actual_index": 2,
+    "maximum_registered_new_small_attempts": 2,
+    "new_logical_baseline_procedure_runs": 1,
+    "analytic_context_fold_mean_estimates": 20,
+    "optimized_or_shared_risk_fits": 0,
+    "not20families": true
+  },
+  "Source_biology_supervision": {
+    "existing_physical_tasks_reused": 1808,
+    "existing_gene_clusters": 575,
+    "per_query_gene_excluded_from_its_own_training_fold": true,
+    "train_task_count_per_heldout_fold": [
+      1446,
+      1446,
+      1446,
+      1447,
+      1447
+    ],
+    "not1808newbiologicalobservations": true,
+    "prediction_error_labels_used_for_mean_training": 0,
+    "SourceMean_evaluation_error_rows": 1808,
+    "SourceMean_evaluation_error_gene_clusters": 575,
+    "SourceMean_shared_risk_or_CDF_fit_labels": 0
+  },
+  "cost": {
+    "elapsed_at_receipt_capture_seconds": 10.006460402859375,
+    "CPU_delta_at_receipt_capture_seconds": 8.808310285,
+    "peak_RSS_at_receipt_capture_bytes": 567353344,
+    "analytic_mean_and_query_assignment_seconds": 0.6210090259555727,
+    "imports_and_final_writes_excluded": true,
+    "full_final_process_CPU_unmeasured": true,
+    "GPU_hours": 0,
+    "download_bytes": 0,
+    "old_predictor_inference_calls": 0,
+    "new_formal_baseline_prediction_procedure_calls": 1
+  },
+  "all101_original_source_file_hashes_exact_before_after": true,
+  "Original_C8_models_Source_CDF_and_banks_unchanged": true,
+  "all1808_predictions_P6_and20means_sealed_before_heldout_errors": true,
+  "median_SourceMean_magnitude": {
+    "K562": 0.024064326511154484,
+    "RPE1": 0.07134117033815433,
+    "hepg2": 0.04282394694744905,
+    "jurkat": 0.03425327817879158
+  },
+  "all_eight_old_predictor_ranges_contain_all_SourceMean_magnitudes": true,
+  "all_eight_below_old_min_and_q05_fractions_zero": true,
+  "only_generated_small_Source_summaries_read_for_reporting": true,
+  "Orion_data_predictions_scores_or_errors_read": false,
+  "new_model_selection_or_test_repair": false,
+  "scientific_confirmation_or_family_superiority_claim": false
+}

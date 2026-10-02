@@ -1,0 +1,54 @@
+{
+  "schema": "safeconf_Source_mean_pilot_preexecution_static_review_v1",
+  "status": "PASS",
+  "reviewed_utc": "2026-10-02T00:49:06.395967+00:00",
+  "authorized_scope": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_pilot_preparation_v1/ROOT_AUTHORIZED_SOURCE_ONLY_MEAN_PILOT.json",
+    "sha256": "85ecb75c4f04477f5e9a21caf07d147f236710abac7f5a525e06f76b66b38d67",
+    "bytes": 3283
+  },
+  "pilot_code": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_source_task_mean_regime_pilot_agent.py",
+    "sha256": "a0338923181271a9816413893bf1cc1d25f880bc5a46019d1af4356b405c6c1f",
+    "bytes": 15594
+  },
+  "mean_recipe": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_pilot_preparation_v1/CODE_PROPOSAL.py",
+    "sha256": "74698d54f19d1358f6df57074576af76001996dd317c0d4751038874db1a380c",
+    "bytes": 3343
+  },
+  "preparation": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_pilot_preparation_v1/PREPARATION.json",
+    "sha256": "0f9f5ac9963817e213096f9de1f82be85124c51dfd5196b323d2428bde169c55",
+    "bytes": 15249
+  },
+  "scope_template_final": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_pilot_preparation_v1/SCOPE_TEMPLATE_FINAL.json",
+    "sha256": "712cfead19b2a3266e6d78bc3df34002272c853dfc07147258bac966b87a0af5",
+    "bytes": 3023
+  },
+  "checks": {
+    "control_convention": "PASS: Source preparation defines true_delta=E201 absolute treated centroid minus its matched_control; recipe reconstructs training absolute=true_delta+control and predicts its equal-task mean minus each query matched-control. Averaging true_delta directly would differ and is not used. Native CP4000/log1p Source3285 convention remains fixed.",
+    "global_gene_exclusion": "PASS: original575 genes share one global fold across all contexts; each of5folds×4contexts fits only tasks with fold!=heldout, same context. No heldout gene in its own fitted mean;1808 physical tasks predicted once, not3616 duplicated predictor-task records.",
+    "array_task_order": "PASS: exact Source registry verified by producer before materialization; SPLIT_MANIFEST META columns equal SOURCE_TASKS META in row order; recipe enforces1808×3285 float64 Source shapes and four original contexts. Reviewer did not read any arrays or numerical parquet values.",
+    "registration_before_numeric": "PASS: immutable Root85ec scope pins executeda033/proposal746/helper8b69/prep0f9/whole Source registry. Fresh incomplete stage+immutable attempt registration precede np.load/materialization; prior failed/success outputs prevent same-version automatic retry.",
+    "seal_before_error_values": "PASS: prediction1808,20means,identities,P6 saved and hashes reverified/chmod0444; prediction seal then chmod0444. Only after this are heldout RMSE and cached GAT/Exph error/magnitude value columns accessed. Earlier original-file byte hashing checks integrity without parsing old error values.",
+    "Source_only_and_unchanged_core": "PASS: no Orion input path/data/model/error use, rawSourceX access, model loading/inference, shared-risk/CDF/Public fits, new normalization or parameter promotion; full originalSource archive before/after hashes and code/scope pins checked.",
+    "resources_and_attempts": "PASS for registered CPU-only elapsed300s/4threads, observed peakRSS≤1GiB,0GPU/downloads; costs disclose imports/final writes excluded and finaltotalCPU unmeasured. One formal smallupstream attempt2/max2 contains20 analytic mean vectors, not20 model families or a third mature family."
+  },
+  "scientific_limits": [
+    "Posttruth-inspired SourceDEV output-regime diagnostic only; no reconfirmation, repair or comparison on opened Orion TEST.",
+    "An OOF Source-only mean predictor trained on Source treated biological truth; not a zero-biological-label learner.20analytic mean estimates must be recorded despite zero optimized/shared-risk fits.",
+    "Task-unweighted means use matched legal query NTC; no claim this baseline equals old upstream predictors or biological response model.",
+    "Error/magnitude range and Spearman comparisons do not by themselves establish shared-risk efficacy, universal causation or candidate promotion."
+  ],
+  "reviewer_activity": {
+    "code_json_only": true,
+    "Source_numeric_or_arrays_read": false,
+    "Orion_numeric_or_results_read": false,
+    "tests_or_fixtures_executed": 0,
+    "fits_or_model_calls": 0,
+    "active_code_edits": false,
+    "pilot_launched_by_reviewer": false
+  }
+}

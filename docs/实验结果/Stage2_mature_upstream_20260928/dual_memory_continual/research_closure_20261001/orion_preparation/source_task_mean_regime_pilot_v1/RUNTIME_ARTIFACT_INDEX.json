@@ -1,0 +1,61 @@
+{
+  "runtime_root": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_task_mean_regime_pilot_20261002_v1",
+  "artifact_registry": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_task_mean_regime_pilot_20261002_v1/ARTIFACT_HASHES.json",
+    "bytes": 1584,
+    "sha256": "d6f5dc769e75d0e1dccafbc29fa8aea91bd6d9ceae1945fc68ee404094435964"
+  },
+  "artifacts": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_task_mean_regime_pilot_20261002_v1/ALL_FIXED_CONTEXT_ERROR_RANK_CORRELATIONS.csv",
+      "sha256": "a13eaee6713857c0312ee18b7d31b2aa42c20ae069ebc77e94e5d842f3471162",
+      "bytes": 724
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_task_mean_regime_pilot_20261002_v1/ALL_FIXED_CONTEXT_MAGNITUDE_RANGES.csv",
+      "sha256": "d983eb8bb834085897f4c8bdd7de9b7a38cd35afe9d8c9123a72a88f3d2df8a8",
+      "bytes": 2705
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_task_mean_regime_pilot_20261002_v1/ATTEMPT_REGISTRATION.json",
+      "sha256": "e6fe9a9d4588e065b84a5723ad35c4b2b414ba82aede043ed46f6b686421b3a9",
+      "bytes": 903
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_task_mean_regime_pilot_20261002_v1/PREDICTION_IDENTITIES.csv",
+      "sha256": "af859ca88d35d243351c7499d75c3eefbb83d867c6a4f22f21f7fd67bc04c83b",
+      "bytes": 129260
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_task_mean_regime_pilot_20261002_v1/PREDICTION_SEAL.json",
+      "sha256": "8f111652ce2450c5f227a04daba45433e48224ee55e22eea11fe0ea4e0b2e868",
+      "bytes": 10071
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_task_mean_regime_pilot_20261002_v1/RECEIPT.json",
+      "sha256": "270e3053cca10848bcb39ded1c8db092ea672b1e6fa6dc2972f57e3111ce1568",
+      "bytes": 28429
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_task_mean_regime_pilot_20261002_v1/SOURCE_DEV_ERROR_AND_MAGNITUDE_DIAGNOSTIC.csv",
+      "sha256": "ab93f6fbdab1063b88671ef74cbd0aa17d4b9e68b0a3fd133290e4bb435975dd",
+      "bytes": 348361
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_task_mean_regime_pilot_20261002_v1/SOURCE_MEAN_FOLD_CONTEXT_ABSOLUTE_CENTROIDS.npy",
+      "sha256": "219b1c2baac9be17f6d9ccc06d9d682802f05b0beb2c753f6a91f884321da7b0",
+      "bytes": 525728
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_task_mean_regime_pilot_20261002_v1/SOURCE_MEAN_P6_FEATURES.parquet",
+      "sha256": "866b078bbdfc9b49489da8e788f6acbcf2f4b440c4897b2468faf0ca74295b67",
+      "bytes": 112764
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_task_mean_regime_pilot_20261002_v1/SOURCE_MEAN_PREDICTED_DELTA.npy",
+      "sha256": "d6f62e10af4f3a16ef551b81d4a589931a4f0d6f3197aad7ffb18382a8668cc3",
+      "bytes": 47514368
+    }
+  ],
+  "numeric_arrays_or_per_task_error_values_not_copied_to_git": true
+}

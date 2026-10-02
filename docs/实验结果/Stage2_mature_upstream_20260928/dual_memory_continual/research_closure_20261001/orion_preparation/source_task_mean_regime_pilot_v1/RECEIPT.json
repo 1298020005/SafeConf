@@ -1,0 +1,561 @@
+{
+  "schema": "safeconf_Source_task_mean_regime_pilot_v1",
+  "status": "COMPLETE_SOURCE_DEV_SEEN_DIAGNOSTIC",
+  "scope": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_pilot_preparation_v1/ROOT_AUTHORIZED_SOURCE_ONLY_MEAN_PILOT.json",
+    "sha256": "85ecb75c4f04477f5e9a21caf07d147f236710abac7f5a525e06f76b66b38d67",
+    "bytes": 3283
+  },
+  "pilot_code": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_source_task_mean_regime_pilot_agent.py",
+    "sha256": "a0338923181271a9816413893bf1cc1d25f880bc5a46019d1af4356b405c6c1f",
+    "bytes": 15594
+  },
+  "model_id": "SourceTaskMean_CP4000_3285_5GeneFold",
+  "model_version": "v1",
+  "formal_upstream_attempt_index": 2,
+  "n_tasks": 1808,
+  "n_gene_clusters": 575,
+  "contexts": [
+    "K562",
+    "RPE1",
+    "hepg2",
+    "jurkat"
+  ],
+  "n_P_fields": 6,
+  "analytic_mean_parameter_vectors": 20,
+  "new_shared_risk_CDF_Public_or_optimized_fits": 0,
+  "new_SourceMean_evaluation_error_rows": 1808,
+  "new_SourceMean_risk_training_labels": 0,
+  "prediction_seal": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_task_mean_regime_pilot_20261002_v1/PREDICTION_SEAL.json",
+    "sha256": "8f111652ce2450c5f227a04daba45433e48224ee55e22eea11fe0ea4e0b2e868",
+    "bytes": 10071
+  },
+  "heldout_error_evaluation_only_after_all_prediction_hashes_frozen": true,
+  "before_after_original_Source_bindings_exact": true,
+  "original_Source_file_bindings": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/GENE_IDS.json",
+      "sha256": "b7f80db0c0e46dd7667cb83f39153c4add31948ca00e5391c210b9c6a18d7c68",
+      "bytes": 37116
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/GENE_MANIFEST.csv",
+      "sha256": "c1c9c8041458275248514d960c6c263a72f43a12a8d48c16f77759d2342fa08f",
+      "bytes": 122617
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/MODEL_MANIFEST.json",
+      "sha256": "c8d9d5003860d8a5e117398a7d44b5c67cfb700c6fb56f37bcf04a5d549909a6",
+      "bytes": 8934
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/NESTED_ISOLATION_AUDIT.csv",
+      "sha256": "3638430c8a8688f059b70a141cacbe433ea921b943b3f2276dad043c81081f93",
+      "bytes": 4134
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/PUBLIC_BIOLOGY_SOURCE_OOF.csv.gz",
+      "sha256": "af346de62776bd5e3cd52db47f25cf09ea8ea760def001d10a1f10dce14dd4bf",
+      "bytes": 127218
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_CONTROLS.npy",
+      "sha256": "deabc91e301e3cefe455723a6abc1b08970c091b7d107dc5c467ebe39dc3e230",
+      "bytes": 47514368
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_ERROR_CDF.json",
+      "sha256": "ebd7390593cfc0bf71fbcab2c9c992d62990b57d729f59a6867ad98265a2bc01",
+      "bytes": 108918
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_ERROR_CDF_ARRAYS.npz",
+      "sha256": "559720603661cf923e312f6053b7d35ec82a82209b192709f69241d7dd3b4d61",
+      "bytes": 28831
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_ERROR_CDF_AUDIT.csv",
+      "sha256": "b70a24234b51e3cba8bf2125ff52657ac4d0aa0426b844d312c86b0162906540",
+      "bytes": 3227
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_FEATURE_MANIFEST.json",
+      "sha256": "b74b9dfbc64f5acc82b7b0d34023aa6a523bd11d1904ced7fd638c5bec4ef2d1",
+      "bytes": 16172
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_FINAL_RISK_FIT_PREDICTIONS.parquet",
+      "sha256": "10b341a870a365c25d178a8da31a4c0536abb6a8424e1489348df3b22a02ab85",
+      "bytes": 253030
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_INPUT_HASHES.json",
+      "sha256": "12e058d3725fa989b3da543c136c169efd90dbcba28a8a8c2cce4c4033769715",
+      "bytes": 3436
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_Learned_RISK_FEATURES.npy",
+      "sha256": "356aa0114ff54708aa0d381e2bb26152f33e5ad448d19f065fde98d2256e3bcb",
+      "bytes": 376192
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_Manual_RISK_FEATURES.npy",
+      "sha256": "1f5e660ee827bdf3a53057f0251325564dea7eb1f71e8494e515cc8111d67e80",
+      "bytes": 376192
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_OOF_Learned_PRIOR_EFFECTS.npy",
+      "sha256": "7359ef9dae8d39aad9fd7c70fcec002a9bdaaed4d62bffa7e64df51d55fc1678",
+      "bytes": 47514368
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_OOF_Manual_PRIOR_EFFECTS.npy",
+      "sha256": "b3b0d3c49ba82eea8e596c04f7404bb0d15b467d1a5dd2698dfb4e3e84dbb211",
+      "bytes": 47514368
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_OOF_PRIOR_SUMMARY.parquet",
+      "sha256": "1e286903c021029f2ef174cfd629d72e8767b71912227e679a1def8580303621",
+      "bytes": 137598
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_OOF_Uniform_PRIOR_EFFECTS.npy",
+      "sha256": "ed40956acfaafeebb1777783c68b4f7f937b4db74cb93483370d2c99735fb4d9",
+      "bytes": 47514368
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_ORIGINAL_STUDY_SIDECAR.csv",
+      "sha256": "7eeff222ffef10cb34938d553313f63ae6da0629cd5557a426a7f064baa03403",
+      "bytes": 77957
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_BIOLOGY_FULL_HGB.joblib",
+      "sha256": "3a6f05d9b8060eb9802a6e5a0e6adf067253e57edd3aedd04b600a2f93578f5a",
+      "bytes": 66883
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_CONTROLS.npy",
+      "sha256": "b045d003f1bca1d570cc75d3a03928ea77a18ce206411a932f3afc501e4c73d3",
+      "bytes": 52770368
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_EFFECTS.npy",
+      "sha256": "ea946b2c9a9a7ee1605af1f9b72e9cc250596ce6eb0dc08b7ab4aeed3d80c4aa",
+      "bytes": 52770368
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_ELIGIBILITY.parquet",
+      "sha256": "ef2391be1ce3d0a9ac0d613810f9bbfd314fd00d5631436edbb22bdcdb6fc497",
+      "bytes": 33289
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_FULLFIT_TRANSFER_PREDICTIONS.npy",
+      "sha256": "b4e39004f000e8b321be6c8a5b2d264033dd529b8a1ac8d999c5670f21a4986f",
+      "bytes": 38024
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_MEMORY_METADATA.parquet",
+      "sha256": "fcfbd3300a012e3747c9642f5076d1407c509f46f66e4412522c5d9b8661c4bd",
+      "bytes": 58150
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_NESTED_TRANSFER_SCORES.npy",
+      "sha256": "47957651eca851ce505a8b9e5b5bd7de6cfda267077c05921fc32b6a2b10a110",
+      "bytes": 189608
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_NUMERIC_FEATURES.npy",
+      "sha256": "46748615b70db7c038115101ba1b692d070be6bcddcf92230dea129db523b5f8",
+      "bytes": 341192
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_OOF_TRANSFER_SCORES.npy",
+      "sha256": "bd6a956717b7aae02462d60dad19dcad90f2b5918c4336fcac387d9fdcf3b787",
+      "bytes": 38024
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_OUTER_TRAIN_PAIR_MASKS.npy",
+      "sha256": "4bcc36b176cf0a5881e25f0b428ad25a1f0448e556d607a1717695dc715b9bf4",
+      "bytes": 23813
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_PAIR_FEATURES.parquet",
+      "sha256": "55b03dcfc7de06bf10e3983f5bca995f8f84196f03336559e4b54f35637bd958",
+      "bytes": 402148
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_TRANSFER_RMSE_LABELS.npy",
+      "sha256": "86ecc9ec8ff547e91a5524fa64d2acfd5cd86ef75e0b658600dd57c6ed938a62",
+      "bytes": 38024
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_P_only_RISK_FEATURES.npy",
+      "sha256": "1220e958330da81163a2e1c877e67ba94f6cada3e5122e1c87fdf6435866db3b",
+      "bytes": 173696
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_Learned_hgb.joblib",
+      "sha256": "a605d30c12eee46fe4b2b1af64d5eed5edfcf042cdb781fdb75883a6f9454f7d",
+      "bytes": 78050
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_Learned_ridge.joblib",
+      "sha256": "f4d332b16c79b410fb71fe461f18777c7bd9899a1b6971312142fe56177fae0e",
+      "bytes": 1205
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_MIDRANK_LABELS.npy",
+      "sha256": "5d0b267cc66830f17c869521d5ff4f3b7186ab380a9692490782d929d7f3b24d",
+      "bytes": 29056
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_Manual_hgb.joblib",
+      "sha256": "1c0a78127b4aaf4349761b569c63fb4f6f74925ddc303221d8393c5b5e3eed42",
+      "bytes": 79239
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_Manual_ridge.joblib",
+      "sha256": "de485ad5899827618416a8d73f9f7137da7a4b26aefc395a67304ad9e8b3c955",
+      "bytes": 1203
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_P_only_hgb.joblib",
+      "sha256": "4b3206c9183e5c38e62c2b1ce0e2185f711102e23ac8ff3fc52d930eed150cc7",
+      "bytes": 61512
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_P_only_ridge.joblib",
+      "sha256": "68019b2ea0c6a332049089da100e18515e05cabebbd1fa6f4fcf24d4d112d42d",
+      "bytes": 881
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_TASKS.parquet",
+      "sha256": "6bd02a0cff8f41ea48ad9566622bbebe923db56db64a8d20a4597fce53725013",
+      "bytes": 95447
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_TRUE_EFFECTS.npy",
+      "sha256": "793574054c0724b17394449b2442a8c77b03524552135b649afce63b05b670c9",
+      "bytes": 47514368
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_TxPert_Exphormer_CONTROLS.npy",
+      "sha256": "deabc91e301e3cefe455723a6abc1b08970c091b7d107dc5c467ebe39dc3e230",
+      "bytes": 47514368
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_TxPert_Exphormer_PREDICTED_EFFECTS.npy",
+      "sha256": "09ab060655dd5c8f45916e07b905666e38ca7edd89dff7d21edd6095f1397cd3",
+      "bytes": 47514368
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_TxPert_Exphormer_P_BASE.parquet",
+      "sha256": "cbe27ab4f0ea6d4323a5602e7d054b0cb651ea89c76f9a2ba563f0989399edfb",
+      "bytes": 619717
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_TxPert_GAT_CONTROLS.npy",
+      "sha256": "deabc91e301e3cefe455723a6abc1b08970c091b7d107dc5c467ebe39dc3e230",
+      "bytes": 47514368
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_TxPert_GAT_PREDICTED_EFFECTS.npy",
+      "sha256": "89c65ee852ae3bf8473e4f4bfc5f1821970b735923052c5d3c87f6aa8e431c24",
+      "bytes": 47514368
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_TxPert_GAT_P_BASE.parquet",
+      "sha256": "23ee4a6673349dad3891d20a97230444e36fac8aed4a754197e6d6e873f82a48",
+      "bytes": 421804
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SPLIT_MANIFEST.csv",
+      "sha256": "350e53a18f54108eef56062b96875f5ca0ad3d1095eb155aa2303eb35422aa71",
+      "bytes": 56917
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_0_Learned_PRIOR_EFFECTS.npy",
+      "sha256": "d3349550c135cf3c3192c33dafbf21fab444875b806233ba267162836e4e9a22",
+      "bytes": 47514368
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_0_Manual_PRIOR_EFFECTS.npy",
+      "sha256": "b3b0d3c49ba82eea8e596c04f7404bb0d15b467d1a5dd2698dfb4e3e84dbb211",
+      "bytes": 47514368
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_0_PRIOR_SUMMARY.parquet",
+      "sha256": "f86e732f5fb765c48b7acd6dc72cb09aa785c70cc651a0989cb9c4e29055dbd5",
+      "bytes": 137574
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_0_TxPert_Exphormer_Learned.parquet",
+      "sha256": "4cbcf696fdc2df8907e7c1810f633693753b335ee826ff6feb5c45221a1923b9",
+      "bytes": 730051
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_0_TxPert_Exphormer_Manual.parquet",
+      "sha256": "73e8359e19c7f830ef0fa9d394ad03df68b2bb8c609da64fff3777911a66efd3",
+      "bytes": 729827
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_0_TxPert_Exphormer_Uniform.parquet",
+      "sha256": "84ecf47fe301d6475967b1d248f3cbac141d81e0cb01863198e0f42cd03394ec",
+      "bytes": 714774
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_0_TxPert_GAT_Learned.parquet",
+      "sha256": "173471dc8238d32b76f631f579ea667228d455fc3f1bd75b07af19761d270b4f",
+      "bytes": 532140
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_0_TxPert_GAT_Manual.parquet",
+      "sha256": "7bcdedde5db8bc0fa214a016750eb365be547c4b336d5e0ec89c652f49c5bc0a",
+      "bytes": 531916
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_0_TxPert_GAT_Uniform.parquet",
+      "sha256": "00f04f1cb6bd0be77e038804fc97e43877e17f303e356c9feec7cddd2cc1bd98",
+      "bytes": 516863
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_0_Uniform_PRIOR_EFFECTS.npy",
+      "sha256": "ed40956acfaafeebb1777783c68b4f7f937b4db74cb93483370d2c99735fb4d9",
+      "bytes": 47514368
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_1_Learned_PRIOR_EFFECTS.npy",
+      "sha256": "ed7226b315399c62094d7a9b49b09477e7dcf6fc71f096b12a0719db610fa581",
+      "bytes": 47514368
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_1_Manual_PRIOR_EFFECTS.npy",
+      "sha256": "b3b0d3c49ba82eea8e596c04f7404bb0d15b467d1a5dd2698dfb4e3e84dbb211",
+      "bytes": 47514368
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_1_PRIOR_SUMMARY.parquet",
+      "sha256": "c753eb38f3a2b71ab744e6f36765e24f3b1b3a69b0034b68af9ec622d8c283ee",
+      "bytes": 137598
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_1_TxPert_Exphormer_Learned.parquet",
+      "sha256": "08f7c1228834446e967a378ab5077418d20ba3371ceb741619a916d9d276b69b",
+      "bytes": 730083
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_1_TxPert_Exphormer_Manual.parquet",
+      "sha256": "73e8359e19c7f830ef0fa9d394ad03df68b2bb8c609da64fff3777911a66efd3",
+      "bytes": 729827
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_1_TxPert_Exphormer_Uniform.parquet",
+      "sha256": "84ecf47fe301d6475967b1d248f3cbac141d81e0cb01863198e0f42cd03394ec",
+      "bytes": 714774
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_1_TxPert_GAT_Learned.parquet",
+      "sha256": "ea58f7033afe9e8e506b6c0d25671b81715cc1105104a0a37ca9f0702df72e7b",
+      "bytes": 532172
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_1_TxPert_GAT_Manual.parquet",
+      "sha256": "7bcdedde5db8bc0fa214a016750eb365be547c4b336d5e0ec89c652f49c5bc0a",
+      "bytes": 531916
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_1_TxPert_GAT_Uniform.parquet",
+      "sha256": "00f04f1cb6bd0be77e038804fc97e43877e17f303e356c9feec7cddd2cc1bd98",
+      "bytes": 516863
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_1_Uniform_PRIOR_EFFECTS.npy",
+      "sha256": "ed40956acfaafeebb1777783c68b4f7f937b4db74cb93483370d2c99735fb4d9",
+      "bytes": 47514368
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_2_Learned_PRIOR_EFFECTS.npy",
+      "sha256": "1b70c3058ac2880ef3d36b648a67fd3ef3b923d728458b7b351bbc06e5207ba6",
+      "bytes": 47514368
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_2_Manual_PRIOR_EFFECTS.npy",
+      "sha256": "b3b0d3c49ba82eea8e596c04f7404bb0d15b467d1a5dd2698dfb4e3e84dbb211",
+      "bytes": 47514368
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_2_PRIOR_SUMMARY.parquet",
+      "sha256": "9720b55d8aaca78a2afbb9b4f20f30787a66d588a5a350939493698b190d0d30",
+      "bytes": 137590
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_2_TxPert_Exphormer_Learned.parquet",
+      "sha256": "a3931b9d0513171b6cb7600e16b1924fb004b85f79a49af9f9d4b5df002ee9af",
+      "bytes": 730075
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_2_TxPert_Exphormer_Manual.parquet",
+      "sha256": "73e8359e19c7f830ef0fa9d394ad03df68b2bb8c609da64fff3777911a66efd3",
+      "bytes": 729827
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_2_TxPert_Exphormer_Uniform.parquet",
+      "sha256": "84ecf47fe301d6475967b1d248f3cbac141d81e0cb01863198e0f42cd03394ec",
+      "bytes": 714774
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_2_TxPert_GAT_Learned.parquet",
+      "sha256": "0713684ee290e3e055dac12a306b1d6b301299ef6eda5217023826d0835b4818",
+      "bytes": 532164
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_2_TxPert_GAT_Manual.parquet",
+      "sha256": "7bcdedde5db8bc0fa214a016750eb365be547c4b336d5e0ec89c652f49c5bc0a",
+      "bytes": 531916
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_2_TxPert_GAT_Uniform.parquet",
+      "sha256": "00f04f1cb6bd0be77e038804fc97e43877e17f303e356c9feec7cddd2cc1bd98",
+      "bytes": 516863
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_2_Uniform_PRIOR_EFFECTS.npy",
+      "sha256": "ed40956acfaafeebb1777783c68b4f7f937b4db74cb93483370d2c99735fb4d9",
+      "bytes": 47514368
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_3_Learned_PRIOR_EFFECTS.npy",
+      "sha256": "a51efd17b9f192bf42be64372d36360e67a9cac2bbb2d5c027a9729842e1ea3e",
+      "bytes": 47514368
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_3_Manual_PRIOR_EFFECTS.npy",
+      "sha256": "b3b0d3c49ba82eea8e596c04f7404bb0d15b467d1a5dd2698dfb4e3e84dbb211",
+      "bytes": 47514368
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_3_PRIOR_SUMMARY.parquet",
+      "sha256": "486ccbfe2c65d86df64ca6575595f42a372cf116b12909e5f2536446702a98fe",
+      "bytes": 137595
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_3_TxPert_Exphormer_Learned.parquet",
+      "sha256": "92e63ed26dda12163887f30763e7f9e2974534376e6304631f23a3e0155509fd",
+      "bytes": 730075
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_3_TxPert_Exphormer_Manual.parquet",
+      "sha256": "73e8359e19c7f830ef0fa9d394ad03df68b2bb8c609da64fff3777911a66efd3",
+      "bytes": 729827
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_3_TxPert_Exphormer_Uniform.parquet",
+      "sha256": "84ecf47fe301d6475967b1d248f3cbac141d81e0cb01863198e0f42cd03394ec",
+      "bytes": 714774
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_3_TxPert_GAT_Learned.parquet",
+      "sha256": "6f9c209e290b97e9392d1c93d87f7447360d8280f2b373c5a994ba3de10fc23c",
+      "bytes": 532164
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_3_TxPert_GAT_Manual.parquet",
+      "sha256": "7bcdedde5db8bc0fa214a016750eb365be547c4b336d5e0ec89c652f49c5bc0a",
+      "bytes": 531916
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_3_TxPert_GAT_Uniform.parquet",
+      "sha256": "00f04f1cb6bd0be77e038804fc97e43877e17f303e356c9feec7cddd2cc1bd98",
+      "bytes": 516863
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_3_Uniform_PRIOR_EFFECTS.npy",
+      "sha256": "ed40956acfaafeebb1777783c68b4f7f937b4db74cb93483370d2c99735fb4d9",
+      "bytes": 47514368
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_4_Learned_PRIOR_EFFECTS.npy",
+      "sha256": "df7308e5734ddda59aaa3b75f10ef9be9c1a6e3a0cfb2e5ad7a80b642747e37e",
+      "bytes": 47514368
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_4_Manual_PRIOR_EFFECTS.npy",
+      "sha256": "b3b0d3c49ba82eea8e596c04f7404bb0d15b467d1a5dd2698dfb4e3e84dbb211",
+      "bytes": 47514368
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_4_PRIOR_SUMMARY.parquet",
+      "sha256": "49a367cba7c51e51673ade3c7b7f5cf00595d98f78f46b3b41f4fc9a64968aa0",
+      "bytes": 137590
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_4_TxPert_Exphormer_Learned.parquet",
+      "sha256": "58862011233f1602b0f7055252c95d6cd0e1e666885e49df5e641cc8c561f08e",
+      "bytes": 730059
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_4_TxPert_Exphormer_Manual.parquet",
+      "sha256": "73e8359e19c7f830ef0fa9d394ad03df68b2bb8c609da64fff3777911a66efd3",
+      "bytes": 729827
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_4_TxPert_Exphormer_Uniform.parquet",
+      "sha256": "84ecf47fe301d6475967b1d248f3cbac141d81e0cb01863198e0f42cd03394ec",
+      "bytes": 714774
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_4_TxPert_GAT_Learned.parquet",
+      "sha256": "dfa6ef3d1c8f653111a83f524e12691a9817594844922eadf26e4d003876f98c",
+      "bytes": 532148
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_4_TxPert_GAT_Manual.parquet",
+      "sha256": "7bcdedde5db8bc0fa214a016750eb365be547c4b336d5e0ec89c652f49c5bc0a",
+      "bytes": 531916
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_4_TxPert_GAT_Uniform.parquet",
+      "sha256": "00f04f1cb6bd0be77e038804fc97e43877e17f303e356c9feec7cddd2cc1bd98",
+      "bytes": 516863
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/nested_4_Uniform_PRIOR_EFFECTS.npy",
+      "sha256": "ed40956acfaafeebb1777783c68b4f7f937b4db74cb93483370d2c99735fb4d9",
+      "bytes": 47514368
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/source_Learned.parquet",
+      "sha256": "94cc84b25f8a87a6e302fb46e4a57849ef0cdba4a2c078532364012baa1fb5a6",
+      "bytes": 1044409
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/source_Manual.parquet",
+      "sha256": "7402852b7b7676259e5a21584def1bf3525e25c4968fa4d6373b54e3fe3d6a6f",
+      "bytes": 1044152
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/source_Uniform.parquet",
+      "sha256": "e90a0409bf15fd089744292dd20fb367aaf6a75ad2007af198b35e95c1e10c7f",
+      "bytes": 1029033
+    }
+  ],
+  "mean_estimation_elapsed_seconds": 0.6210090259555727,
+  "elapsed_seconds_at_receipt_capture": 10.006460402859375,
+  "process_CPU_delta_seconds_at_receipt_capture": 8.808310285,
+  "peak_RSS_bytes_at_receipt_capture": 567353344,
+  "GPU_hours": 0,
+  "new_download_bytes": 0,
+  "Orion_numeric_or_outcome_access": false,
+  "old_upstream_model_inference": false,
+  "shared_risk_or_Source_CDF_changed": false,
+  "Original_Source_C8_models_untouched": true,
+  "limits": [
+    "Posttruth-inspired but SourceDEV-only hypothesis diagnostic; not Orion repair or new confirmation.",
+    "One fixed simple mean predictor, not a third large/mature published model family.",
+    "No shared-risk retraining, target evaluation, model selection, new CDF or efficacy/promotion claim.",
+    "Equal-task means conditional on four original Source contexts and frozen matched controls; all fivefolds/contexts retained.",
+    "Cost excludes Python imports and final receipt/registry/report writes; full final process CPU unmeasured."
+  ]
+}
