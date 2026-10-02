@@ -49,5 +49,8 @@
   "source_biological_label_scope": "DEV;1808tasks575clusters;2architectures1family;retainedSourceprediction+Public inputs;notexternalconfirmation",
   "source_biological_label_original_receipt_preserved": true,
   "source_biological_label_original_terminal_code": 1,
-  "source_biological_label_render_recovery_terminal_code": 0
+  "source_biological_label_render_recovery_terminal_code": 0,
+  "actual_public_biology_update": "COMPLETE_7BIOLOGY_3RISK_FITS_REJECTED_BY_ORIGINAL_GATE_SERVING_OLD_RETAINED",
+  "actual_error_residual_adapter_lifecycle": "NOT_YET_VERIFIED_STATIC_CURVE_NOT_MODEL_PUBLICATION",
+  "source_release_identity_scope": "composite OOF release version;not singleton checkpoint"
 }

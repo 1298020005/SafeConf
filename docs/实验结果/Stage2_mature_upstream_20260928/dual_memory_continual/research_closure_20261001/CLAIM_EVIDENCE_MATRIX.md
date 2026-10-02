@@ -93,3 +93,7 @@ Source两方向LearnedHGB−Magnitude +0.034327[-0.009285,0.069899]、+0.037491[
 ## Source训练目标诊断已执行并停止
 
 固定20fit（v1有效rank1复用＋v2新19）已完成，旧模型/原外部评价不改。raw-affine U20两方向0.774848/0.780253，相对原rank0.783134/0.783743下降0.008287/0.003490；Spearman也均下降，AURC/error@10小幅改善如实保留。40fold/context仅20非负。初轮无CI，不宣称显著退化/等价或外部根因。独立复算全指标/40训练组/20params/SHA通过。原CDF规则保留，停止此目标变体，不转向调尺度/损失。数学可能性未变成当前收益。用户具体委托和Source-only范围记录，0新上游/原始外部truth/GPU。
+
+## Source错误标签相对生物强弱监督的实际对照（292ec6b）
+
+同13特征、HGB、训练行/权重、gene外折、训练区CDF与原裁剪，旧错误标签相对Source真效应RMS标签的U20增量分别+0.052161[0.019170,0.086591]、+0.056636[0.025689,0.094668]。独立实际核验通过；范围1808任务/575簇、2架构1family。保留源预测输入和公共/生物真值，不能称无监督、所有生物难度代理均排除、独立家族/研究确认或全面优于Magnitude。Source HGB−Magnitude的CI仍跨零；外部主增量和总体投稿就绪不升级。次指标error@10的BioNorm优势保留。见`source_biology_label_control_v1/INDEPENDENT_ACTUAL_REVIEW.md`。

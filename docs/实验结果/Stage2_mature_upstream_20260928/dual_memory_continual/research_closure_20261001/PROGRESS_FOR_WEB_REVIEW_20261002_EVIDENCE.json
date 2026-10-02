@@ -1,0 +1,77 @@
+{
+  "created_utc": "2026-10-02T08:18:05.263794+00:00",
+  "science_ready": false,
+  "previous_verified_commit": "292ec6b096ca76ff045fdcbc059c4a561f615aeb",
+  "evidence_files": [
+    {
+      "relative_to_research_root": "common_gene_axis/results/MATRIX_MACRO_RESULTS.csv",
+      "sha256": "c0c8aa77ed847e00c119fbb8ff2e77787f2386e7f290f38f3e3786b6f850e1fc",
+      "bytes": 32151
+    },
+    {
+      "relative_to_research_root": "common_gene_axis/results/PAIRED_CLUSTER_BOOTSTRAP.csv",
+      "sha256": "ae3ea8afde2da5f074f0bd3435111a2944013205cc94d82e5afc73c0a1733866",
+      "bytes": 7867
+    },
+    {
+      "relative_to_research_root": "source_biology_label_control_v1/LINE_MACRO_METRICS.csv",
+      "sha256": "02d7b7637b04ebea1fb0c72434c67863a540c89a5c0ae449c0643b4363c696f8",
+      "bytes": 1541
+    },
+    {
+      "relative_to_research_root": "source_biology_label_control_v1/PAIRED_METRICS.csv",
+      "sha256": "b93c7152214b79c10363cb8843de2163fcb4f9eef57bfa8a3a6fa6f46092fc72",
+      "bytes": 20332
+    },
+    {
+      "relative_to_research_root": "source_biology_label_control_v1/INDEPENDENT_ACTUAL_REVIEW.md",
+      "sha256": "c0d32558a859b4015ef8fc3da919d109ae081e81aa3d475569647373ce2428da",
+      "bytes": 6455
+    },
+    {
+      "relative_to_research_root": "source_magnitude_comparator_completion_v1/ALL6_FIXED_PAIRED_COMPARATORS.csv",
+      "sha256": "d3153b529cb3d0bd1a43dcb9654708250123e9629deff6cc8427ec30a818466e",
+      "bytes": 36527
+    },
+    {
+      "relative_to_research_root": "common_gene_axis/results/STRICT_FEEDBACK_MACRO.csv",
+      "sha256": "1f68562700aecf2d702622b24b4e2e54be7de4477d579e200b11ef418db71f57",
+      "bytes": 17213
+    },
+    {
+      "relative_to_research_root": "orion_preparation/actual_fixed_result_tables_v1/METHOD_METRIC_INTERVALS.csv",
+      "sha256": "64fe43165ce83149e60104856159b74fd8e07842dcd8fa4082319fb1ac402418",
+      "bytes": 48874
+    },
+    {
+      "relative_to_research_root": "orion_preparation/actual_fixed_result_tables_v1/ALL_PRESPECIFIED_PAIRED_COMPARISONS.csv",
+      "sha256": "77fc4acd321a1abe95af9973e2b5b6f5649231445b5a9323ee50d9eefc739f50",
+      "bytes": 272440
+    },
+    {
+      "relative_to_research_root": "continual_runtime_replay/public_biology_refit_v2/README.md",
+      "sha256": "7f5173d4188cb48d3a92f0015e4cb1029d90b562026a568664fd7b574fe1e7c6",
+      "bytes": 6671
+    },
+    {
+      "relative_to_research_root": "fresh_prediction_release_audit_v1/LOCAL_ROLE_RECHECK.md",
+      "sha256": "60f613a037177baedefca3607f78c4ebda17d46e001239f96da4b35573e3d17b",
+      "bytes": 2004
+    },
+    {
+      "relative_to_research_root": "local_unseen_genetic_qualification_v1/AUDIT.md",
+      "sha256": "7f7d19a083df2bd5a67949ef6d554efde25aaf5081bb24626f6ba709b9aa6f29",
+      "bytes": 6157
+    },
+    {
+      "relative_to_research_root": "REQUIREMENT_COMPLETION_AUDIT.csv",
+      "sha256": "e5bf619da65e79bdf39294724c90b27094f36a7792fde9eb6847050016e60cee",
+      "bytes": 13057
+    }
+  ],
+  "report_sha256": "ea8b019375599990f6802b0d89c99756662ac8b12c141e1b193a610e039fa98e",
+  "new_fits_in_report_generation": 0,
+  "new_test_truth_access": 0,
+  "confirmed_system_remaining_gap": "Persistent ErrorResidualAdapter update/publish/retain/reload operation, not just static budget curves; current Source caches are composite OOF release versions",
+  "status_audit_correction": "SYS-A now links actual PublicBiology refit and separately records unclosed ErrorResidualAdapter lifecycle"
+}
