@@ -86,3 +86,9 @@
 
 
 补充完成的强对照：C 已有验证预测可以在排除 test 簇后直接提供 230 条风险监督，新增模型调用为零。PublicValidation HGB U20=0.755390，Source HGB=0.695253，差值 CI 跨零；Shared 额外特征未证明优势。因此部署成本与标签需求必须按实际可用资产衡量。反馈 holdout 上还加入完全同任务的无反馈历史数量/距离规则，防止把战胜弱 Shared 当作反馈独有的信息增量。
+
+## 2026-10-02：报告与信息合同的最终收紧
+
+原Source-only风险臂的零目标风险训练标签描述，不适用于上游能力筛查或新SEEN validation复用；后者已使用2790条目标validation错误。两个checkpoint合并的目标研究风险学习，不等同版本隔离的单checkpoint残差ErrorAdapter。Public与Source的性能结论必须绑定研究、参照、预算和配对区间，不由广义概念或同家族内正结果推导普遍跨研究成功。
+
+强参照补算已实际完成：150项目标学习器−固定历史规则宏U20对照区间均跨零，没有建立方法优越或标签效率。参见 `DEEP_RESEARCH_INFORMATION_BOUNDARY_APPENDIX.md`、`orion_preparation/validation_strong_reference_completion_v1/README.md`。这些统计没有改原方法或重新产生确认资格；原报告可作资料目录，仍不构成创新认证。
