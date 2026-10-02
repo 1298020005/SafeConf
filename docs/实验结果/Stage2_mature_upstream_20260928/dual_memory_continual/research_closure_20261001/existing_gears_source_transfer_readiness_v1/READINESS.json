@@ -1,0 +1,540 @@
+{
+  "schema": "safeconf_existing_gears_source_transfer_readiness_v1",
+  "status": "STOP_NOT_READY_UNCHANGED_SOURCE_CONTRACT",
+  "date_UTC": "2026-10-02T01:38:41Z",
+  "decision": "Do not run unchanged Source-risk inference on E195; no retry/model/axis repair proposed",
+  "scope": "Existing asset metadata/code and previously saved small validation tables only",
+  "gene_axis": {
+    "source_required_genes": 3285,
+    "source_unique_genes": 3285,
+    "var_index_field": "gene_name",
+    "native_gene_count": 5025,
+    "native_unique_gene_count": 5025,
+    "gene_order_hash": "sha256:9059bd6e8ff28482b90f1dd4dd423df7e1990b35f9a8ad5b4b6aee9ef0eb7ed0",
+    "expression_shape_attributes_only": [
+      96994,
+      5025
+    ],
+    "uns_log1p_group_present": true,
+    "uns_log1p_group_fields": [],
+    "normalization_target_sum_field_present": false,
+    "cell_type_categories_only": [
+      "cell"
+    ],
+    "exact_symbol_intersection_genes": 1364,
+    "missing_required_Source_genes": 1921,
+    "full_3285_axis_compatibility": false,
+    "at_least_2300_overlap": false,
+    "intersection_source_order_sha256": "ddc70a4f22816ffe57b663da3889f008a073d7bc7290e2e32c68c9be117adff1",
+    "missing_source_order_sha256": "5b81e81afa928f289bb88a15a9dee60fa529579aad34145fadc5f37cbe79200a",
+    "missing_gene_examples": [
+      "SDF4",
+      "ACAP3",
+      "CCNL2",
+      "MRPL20",
+      "ATAD3A",
+      "SSU72",
+      "CDK11A",
+      "SKI",
+      "C1orf174",
+      "KLHL21",
+      "PHF13",
+      "THAP3",
+      "CAMTA1",
+      "VAMP3",
+      "CLSTN1",
+      "CTNNBIP1",
+      "UBE4B",
+      "KIF1B",
+      "MAD2L2",
+      "AGTRAP"
+    ],
+    "no_aliasing_or_imputation_applied": true,
+    "finding": "Native5025 dimension alone does not imply Source3285 coverage; subset features would have a different axis contract",
+    "processed_cache_metadata_only": {
+      "path": "/home/yyf/data/gears_formal_baselines_v2/norman_local_atlas/perturb_processed.h5ad",
+      "current_bytes": 2263732970,
+      "historically_pinned_sha256": "039c3bc41e30a4575b7857a570c5db89d3a11e7503c1c51c36c8f17d80da1761",
+      "full_file_content_hash_rechecked_this_audit": false
+    }
+  },
+  "normalization_controls": {
+    "frozen_Source_contract": "Source3285_CP4000_log1p_matched_batch_delta_v1",
+    "E195_saved_normalization_id": "gears_mean_expression_minus_ctrl_v1",
+    "E195_export_formula": "mean(prediction_res[pred],axis=0)-global_processed_ctrl_mean; float32 predicted effects",
+    "old_validation_formula": "fixed32 TRAIN control input; prediction minus same32control mean; validation truth minus all2000 TRAIN control mean",
+    "cp4000_full_library_then_log1p_equivalence_demonstrated": false,
+    "finding": "log1p metadata is present but no target_sum4000 provenance/control-match equivalence is established by inspected contract. No numerical rescaling or tolerance change attempted"
+  },
+  "validation_competence": {
+    "status": "NOT_ESTABLISHED_AGAINST_STRONGEST_TRAIN_BASELINE",
+    "saved_axis_genes": 5025,
+    "validation_conditions_per_panel": 20,
+    "distinct_validation_conditions_union": 24,
+    "existing_baseline": "zero-effect control only",
+    "TRAIN_task_unweighted_mean_baseline_present": false,
+    "TRAIN_grouped_OOF_selection_between_zero_and_mean_present": false,
+    "Source3285_endpoint_validation_result_present": false,
+    "all_six_seed_summary": [
+      {
+        "panel": "P1",
+        "seed": 11,
+        "n_validation_conditions": 20,
+        "mean_model_rmse": 0.0668729417026043,
+        "mean_control_rmse": 0.0605324591509997,
+        "mean_relative_rmse_gain": -0.3753586950578351,
+        "win_rate_vs_control": 0.3,
+        "mean_effect_pearson": 0.430726752950833,
+        "median_effect_pearson": 0.5111920314379748
+      },
+      {
+        "panel": "P1",
+        "seed": 22,
+        "n_validation_conditions": 20,
+        "mean_model_rmse": 0.0698776520788669,
+        "mean_control_rmse": 0.0605324591509997,
+        "mean_relative_rmse_gain": -0.5454171817359386,
+        "win_rate_vs_control": 0.4,
+        "mean_effect_pearson": 0.4247389379550144,
+        "median_effect_pearson": 0.4968194575948391
+      },
+      {
+        "panel": "P1",
+        "seed": 33,
+        "n_validation_conditions": 20,
+        "mean_model_rmse": 0.0560577297583222,
+        "mean_control_rmse": 0.0605324591509997,
+        "mean_relative_rmse_gain": -0.0730123123949552,
+        "win_rate_vs_control": 0.7,
+        "mean_effect_pearson": 0.4116387264000034,
+        "median_effect_pearson": 0.4832725238385675
+      },
+      {
+        "panel": "P2",
+        "seed": 11,
+        "n_validation_conditions": 20,
+        "mean_model_rmse": 0.0624075497500598,
+        "mean_control_rmse": 0.0626172236166894,
+        "mean_relative_rmse_gain": -0.3050174026909553,
+        "win_rate_vs_control": 0.55,
+        "mean_effect_pearson": 0.4816992352975946,
+        "median_effect_pearson": 0.5423152270622907
+      },
+      {
+        "panel": "P2",
+        "seed": 22,
+        "n_validation_conditions": 20,
+        "mean_model_rmse": 0.0636162732727825,
+        "mean_control_rmse": 0.0626172236166894,
+        "mean_relative_rmse_gain": -0.4551834705533352,
+        "win_rate_vs_control": 0.6,
+        "mean_effect_pearson": 0.4588622111991619,
+        "median_effect_pearson": 0.5404593981714239
+      },
+      {
+        "panel": "P2",
+        "seed": 33,
+        "n_validation_conditions": 20,
+        "mean_model_rmse": 0.0563951860181987,
+        "mean_control_rmse": 0.0626172236166894,
+        "mean_relative_rmse_gain": -0.1167795465736749,
+        "win_rate_vs_control": 0.7,
+        "mean_effect_pearson": 0.464053662337372,
+        "median_effect_pearson": 0.5773558457497945
+      }
+    ],
+    "all_two_fixed_centroid_summary": [
+      {
+        "panel": "P1",
+        "n_conditions": 20,
+        "family_rmse": 0.059368101041764,
+        "control_rmse": 0.0605324591509997,
+        "effect_pearson": 0.4692707860421284,
+        "win_rate_vs_control": 0.6
+      },
+      {
+        "panel": "P2",
+        "n_conditions": 20,
+        "family_rmse": 0.0571696488186717,
+        "control_rmse": 0.0626172236166894,
+        "effect_pearson": 0.5040514351013337,
+        "win_rate_vs_control": 0.65
+      }
+    ],
+    "finding": "Existing control-relative gains do not establish competence versus the strongest TRAIN-selected simple baseline; not recorded as an observed failure against an unavailable mean baseline"
+  },
+  "split_provenance": {
+    "actual_unique_SEEN_test_gene_conditions": 48,
+    "test_single_condition_holdout": true,
+    "perturbation_gene_holdout": false,
+    "panels_are_condition_splits_not_biological_contexts": true,
+    "metadata_cell_type_category": "cell",
+    "no_new_biological_contexts_invented": true,
+    "role_status": "SEEN_POSTTRUTH_HISTORICAL_AUXILIARY",
+    "exact_current_single_task_conditions_excluded_from_TRAIN_and_VALIDATION": true,
+    "allowed_gene_history_double_perturbations_exists": true,
+    "six_seed_metadata": [
+      {
+        "panel": "P1",
+        "seed": 11,
+        "status_binding": {
+          "path": "/home/yyf/proj/docs/实验结果/E195_native_gears_uq_norman_p1p2_20260730/panels/P1/raw_gears/seed_11/E195_SEED_STATUS.json",
+          "bytes": 36401,
+          "sha256": "0e94ac184c922329eeaa2985062c91ab265b8ce8c61565229859f80683744965"
+        },
+        "child_status": "ok",
+        "n_genes": 5025,
+        "gene_order_hash": "sha256:9059bd6e8ff28482b90f1dd4dd423df7e1990b35f9a8ad5b4b6aee9ef0eb7ed0",
+        "gene_axis_matches_current_metadata": true,
+        "split_sha256": "sha256:8e6c0c97546d6c9f2beac5d02ec441d20b5555bac3df3074266a1ddad8a8b300",
+        "train_conditions": 183,
+        "validation_conditions": 20,
+        "test_conditions": 24,
+        "all_role_conditions_disjoint": true,
+        "controls_in_TRAIN_only": true,
+        "test_target_genes_with_train_or_validation_double_history": 20,
+        "model_and_config_metadata": [
+          {
+            "path": "/home/yyf/proj/docs/实验结果/E195_native_gears_uq_norman_p1p2_20260730/panels/P1/raw_gears/seed_11/norman/seed_11/model/model.pt",
+            "exists": true,
+            "current_bytes": 6037152,
+            "recorded_bytes": 6037152,
+            "recorded_sha256": "e35d32fab95c9afff58570b45d606a77acfecd97d29123d72bf1a5be13ce3477",
+            "current_content_opened_or_loaded": false,
+            "historical_validation_hash_verified": true
+          },
+          {
+            "path": "/home/yyf/proj/docs/实验结果/E195_native_gears_uq_norman_p1p2_20260730/panels/P1/raw_gears/seed_11/norman/seed_11/model/config.pkl",
+            "exists": true,
+            "current_bytes": 1169379,
+            "recorded_bytes": 1169379,
+            "recorded_sha256": "ecf26e34419f4fc1ab04cf67db5b09ca557d6bbb59b1d335d96346470a154deb",
+            "current_content_opened_or_loaded": false,
+            "historical_validation_hash_verified": true
+          }
+        ]
+      },
+      {
+        "panel": "P1",
+        "seed": 22,
+        "status_binding": {
+          "path": "/home/yyf/proj/docs/实验结果/E195_native_gears_uq_norman_p1p2_20260730/panels/P1/raw_gears/seed_22/E195_SEED_STATUS.json",
+          "bytes": 36400,
+          "sha256": "db9097e9f6c8fc0ce3087a245493e1d61e3d3207bf106973fadaecd7b1e9b319"
+        },
+        "child_status": "ok",
+        "n_genes": 5025,
+        "gene_order_hash": "sha256:9059bd6e8ff28482b90f1dd4dd423df7e1990b35f9a8ad5b4b6aee9ef0eb7ed0",
+        "gene_axis_matches_current_metadata": true,
+        "split_sha256": "sha256:8e6c0c97546d6c9f2beac5d02ec441d20b5555bac3df3074266a1ddad8a8b300",
+        "train_conditions": 183,
+        "validation_conditions": 20,
+        "test_conditions": 24,
+        "all_role_conditions_disjoint": true,
+        "controls_in_TRAIN_only": true,
+        "test_target_genes_with_train_or_validation_double_history": 20,
+        "model_and_config_metadata": [
+          {
+            "path": "/home/yyf/proj/docs/实验结果/E195_native_gears_uq_norman_p1p2_20260730/panels/P1/raw_gears/seed_22/norman/seed_22/model/model.pt",
+            "exists": true,
+            "current_bytes": 6037152,
+            "recorded_bytes": 6037152,
+            "recorded_sha256": "8658a5bc85768c34755a408e18d0f17344030d3a73c46c8b4ad80504e911d372",
+            "current_content_opened_or_loaded": false,
+            "historical_validation_hash_verified": true
+          },
+          {
+            "path": "/home/yyf/proj/docs/实验结果/E195_native_gears_uq_norman_p1p2_20260730/panels/P1/raw_gears/seed_22/norman/seed_22/model/config.pkl",
+            "exists": true,
+            "current_bytes": 1169377,
+            "recorded_bytes": 1169377,
+            "recorded_sha256": "2459232eae50e7af4b8a12588c80a6b175094cdedf1cf122f6a136409d4e35bb",
+            "current_content_opened_or_loaded": false,
+            "historical_validation_hash_verified": true
+          }
+        ]
+      },
+      {
+        "panel": "P1",
+        "seed": 33,
+        "status_binding": {
+          "path": "/home/yyf/proj/docs/实验结果/E195_native_gears_uq_norman_p1p2_20260730/panels/P1/raw_gears/seed_33/E195_SEED_STATUS.json",
+          "bytes": 36396,
+          "sha256": "6c2ede5d6d2e33d30d3988e51db42d2ab7dfde238d5dda09a3bd8483b367ddbf"
+        },
+        "child_status": "ok",
+        "n_genes": 5025,
+        "gene_order_hash": "sha256:9059bd6e8ff28482b90f1dd4dd423df7e1990b35f9a8ad5b4b6aee9ef0eb7ed0",
+        "gene_axis_matches_current_metadata": true,
+        "split_sha256": "sha256:8e6c0c97546d6c9f2beac5d02ec441d20b5555bac3df3074266a1ddad8a8b300",
+        "train_conditions": 183,
+        "validation_conditions": 20,
+        "test_conditions": 24,
+        "all_role_conditions_disjoint": true,
+        "controls_in_TRAIN_only": true,
+        "test_target_genes_with_train_or_validation_double_history": 20,
+        "model_and_config_metadata": [
+          {
+            "path": "/home/yyf/proj/docs/实验结果/E195_native_gears_uq_norman_p1p2_20260730/panels/P1/raw_gears/seed_33/norman/seed_33/model/model.pt",
+            "exists": true,
+            "current_bytes": 6037152,
+            "recorded_bytes": 6037152,
+            "recorded_sha256": "a319f6a837e2f116c2b837f3dee90ea24701b64d9bed2473d7e6d7c4865fabdc",
+            "current_content_opened_or_loaded": false,
+            "historical_validation_hash_verified": true
+          },
+          {
+            "path": "/home/yyf/proj/docs/实验结果/E195_native_gears_uq_norman_p1p2_20260730/panels/P1/raw_gears/seed_33/norman/seed_33/model/config.pkl",
+            "exists": true,
+            "current_bytes": 1169377,
+            "recorded_bytes": 1169377,
+            "recorded_sha256": "b5e0e58f98a1499ee8210debd8ce510fb72c5ebc071eb6cae81032a7e607d094",
+            "current_content_opened_or_loaded": false,
+            "historical_validation_hash_verified": true
+          }
+        ]
+      },
+      {
+        "panel": "P2",
+        "seed": 11,
+        "status_binding": {
+          "path": "/home/yyf/proj/docs/实验结果/E195_native_gears_uq_norman_p1p2_20260730/panels/P2/raw_gears/seed_11/E195_SEED_STATUS.json",
+          "bytes": 36408,
+          "sha256": "f2ef197dfde5cd9287aca1765446b45b701fad63aa4582518ccd671aa6ae4e27"
+        },
+        "child_status": "ok",
+        "n_genes": 5025,
+        "gene_order_hash": "sha256:9059bd6e8ff28482b90f1dd4dd423df7e1990b35f9a8ad5b4b6aee9ef0eb7ed0",
+        "gene_axis_matches_current_metadata": true,
+        "split_sha256": "sha256:6184669302bae3706f3e459542976cdf4cc77bfe37d008ce0c333da79099834a",
+        "train_conditions": 183,
+        "validation_conditions": 20,
+        "test_conditions": 24,
+        "all_role_conditions_disjoint": true,
+        "controls_in_TRAIN_only": true,
+        "test_target_genes_with_train_or_validation_double_history": 12,
+        "model_and_config_metadata": [
+          {
+            "path": "/home/yyf/proj/docs/实验结果/E195_native_gears_uq_norman_p1p2_20260730/panels/P2/raw_gears/seed_11/norman/seed_11/model/model.pt",
+            "exists": true,
+            "current_bytes": 6037152,
+            "recorded_bytes": 6037152,
+            "recorded_sha256": "4a85309bc85fb982ac39bfacd532f8935f0a6fcdb24277115f8050435938ffa7",
+            "current_content_opened_or_loaded": false,
+            "historical_validation_hash_verified": true
+          },
+          {
+            "path": "/home/yyf/proj/docs/实验结果/E195_native_gears_uq_norman_p1p2_20260730/panels/P2/raw_gears/seed_11/norman/seed_11/model/config.pkl",
+            "exists": true,
+            "current_bytes": 1166917,
+            "recorded_bytes": 1166917,
+            "recorded_sha256": "407620aaebaa8994b818a4fe3ee25c9930feffbe219f65ccf2f842c3ac39cb00",
+            "current_content_opened_or_loaded": false,
+            "historical_validation_hash_verified": true
+          }
+        ]
+      },
+      {
+        "panel": "P2",
+        "seed": 22,
+        "status_binding": {
+          "path": "/home/yyf/proj/docs/实验结果/E195_native_gears_uq_norman_p1p2_20260730/panels/P2/raw_gears/seed_22/E195_SEED_STATUS.json",
+          "bytes": 36409,
+          "sha256": "7fd3a4a29f5c0e7915b4e93051b61f35d98d99106be4aee72aa9923149fe3511"
+        },
+        "child_status": "ok",
+        "n_genes": 5025,
+        "gene_order_hash": "sha256:9059bd6e8ff28482b90f1dd4dd423df7e1990b35f9a8ad5b4b6aee9ef0eb7ed0",
+        "gene_axis_matches_current_metadata": true,
+        "split_sha256": "sha256:6184669302bae3706f3e459542976cdf4cc77bfe37d008ce0c333da79099834a",
+        "train_conditions": 183,
+        "validation_conditions": 20,
+        "test_conditions": 24,
+        "all_role_conditions_disjoint": true,
+        "controls_in_TRAIN_only": true,
+        "test_target_genes_with_train_or_validation_double_history": 12,
+        "model_and_config_metadata": [
+          {
+            "path": "/home/yyf/proj/docs/实验结果/E195_native_gears_uq_norman_p1p2_20260730/panels/P2/raw_gears/seed_22/norman/seed_22/model/model.pt",
+            "exists": true,
+            "current_bytes": 6037152,
+            "recorded_bytes": 6037152,
+            "recorded_sha256": "76af5a8087d8cfaa7648b78d04034006f76b34a6a36df678ca33633ee256b7e6",
+            "current_content_opened_or_loaded": false,
+            "historical_validation_hash_verified": true
+          },
+          {
+            "path": "/home/yyf/proj/docs/实验结果/E195_native_gears_uq_norman_p1p2_20260730/panels/P2/raw_gears/seed_22/norman/seed_22/model/config.pkl",
+            "exists": true,
+            "current_bytes": 1166905,
+            "recorded_bytes": 1166905,
+            "recorded_sha256": "0e0d090ce323a6e5dc53740b0b2c1499f0c5ec7f15c9b2464f1c879435db2ecd",
+            "current_content_opened_or_loaded": false,
+            "historical_validation_hash_verified": true
+          }
+        ]
+      },
+      {
+        "panel": "P2",
+        "seed": 33,
+        "status_binding": {
+          "path": "/home/yyf/proj/docs/实验结果/E195_native_gears_uq_norman_p1p2_20260730/panels/P2/raw_gears/seed_33/E195_SEED_STATUS.json",
+          "bytes": 36408,
+          "sha256": "181a15f3e18dc7e2e8acb9abb9329ba8a61faa1050fd4489f0cf58b5b4623971"
+        },
+        "child_status": "ok",
+        "n_genes": 5025,
+        "gene_order_hash": "sha256:9059bd6e8ff28482b90f1dd4dd423df7e1990b35f9a8ad5b4b6aee9ef0eb7ed0",
+        "gene_axis_matches_current_metadata": true,
+        "split_sha256": "sha256:6184669302bae3706f3e459542976cdf4cc77bfe37d008ce0c333da79099834a",
+        "train_conditions": 183,
+        "validation_conditions": 20,
+        "test_conditions": 24,
+        "all_role_conditions_disjoint": true,
+        "controls_in_TRAIN_only": true,
+        "test_target_genes_with_train_or_validation_double_history": 12,
+        "model_and_config_metadata": [
+          {
+            "path": "/home/yyf/proj/docs/实验结果/E195_native_gears_uq_norman_p1p2_20260730/panels/P2/raw_gears/seed_33/norman/seed_33/model/model.pt",
+            "exists": true,
+            "current_bytes": 6037152,
+            "recorded_bytes": 6037152,
+            "recorded_sha256": "cb9a5475eac4f5beb80bac99adb4f9d16a0b52e2f97870cdd91a9436f7c404d7",
+            "current_content_opened_or_loaded": false,
+            "historical_validation_hash_verified": true
+          },
+          {
+            "path": "/home/yyf/proj/docs/实验结果/E195_native_gears_uq_norman_p1p2_20260730/panels/P2/raw_gears/seed_33/norman/seed_33/model/config.pkl",
+            "exists": true,
+            "current_bytes": 1166927,
+            "recorded_bytes": 1166927,
+            "recorded_sha256": "5a8dd58e7ec6e4e02eb94ff843ecd4b1f69d8ebe9cb2247da75124b8686a6e61",
+            "current_content_opened_or_loaded": false,
+            "historical_validation_hash_verified": true
+          }
+        ]
+      }
+    ]
+  },
+  "model_selection_accounting": {
+    "existing_checkpoint_count": 6,
+    "panels": 2,
+    "seeds_per_panel": [
+      11,
+      22,
+      33
+    ],
+    "upstream_architecture_families": 1,
+    "six_seeds_not_six_independent_families": true,
+    "original_family_rule": "all3seed arithmetic mean centroid; original primary error family_RMS=sqrt(mean(member_RMSE**2))",
+    "original_family_endpoint_is_not_centroid_RMSE": true,
+    "would_need_explicit_endpoint_identity_before_any_transfer": "single-seed RMSE or predefined3seed-centroid RMSE cannot silently replace oldfamily_RMS",
+    "best_seed_selection_or_retry_allowed": false,
+    "new_training_or_upstream_prediction_attempts_this_audit": 0
+  },
+  "remaining_value": [
+    "Existing GEARS-UQ is an independent architecture family relative to TxPert and Orion LM; saved historical native-UQ evidence remains usable with SEEN labeling",
+    "An unchanged existing-asset evaluation would not itself require a new upstream fit, but the present gene-axis and competence prerequisites fail readiness",
+    "Freshness/48gene size limits primary confirmation; these facts alone do not invalidate historical auxiliary evidence"
+  ],
+  "blocking_prerequisites": [
+    "1921 required Source-axis genes absent from frozen GEARS output; exact3285 contract cannot be satisfied by existing arrays",
+    "No saved strongest TRAIN-selected zero-versus-task-mean validation competence receipt on the exact Source endpoint",
+    "No demonstrated identical CP4000/full-library log1p and matched-control contract"
+  ],
+  "outside_scope_not_started": [
+    "subset-axis Source risk refit/new contract",
+    "new full-axis upstream model",
+    "normalization or mean rescue",
+    "new validation inference",
+    "any test evaluation"
+  ],
+  "access_audit": {
+    "Source_gene_names_read": 3285,
+    "Norman_gene_names_read": 5025,
+    "HDF5_numeric_expression_values_read": 0,
+    "HDF5_X_data_indices_indptr_read": false,
+    "X_shape_attributes_only": true,
+    "prediction_or_truth_array_files_opened": 0,
+    "checkpoint_or_config_deserialized": 0,
+    "new_inference_calls": 0,
+    "new_fits": 0,
+    "Target_test_truth_reads": 0,
+    "new_bootstrap_draws": 0,
+    "new_download_bytes": 0,
+    "GPU_hours": 0,
+    "old_SEEN_role_metadata_and_prior_validation_summary_only": true
+  },
+  "evidence_bindings": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/GENE_IDS.json",
+      "bytes": 37116,
+      "sha256": "b7f80db0c0e46dd7667cb83f39153c4add31948ca00e5391c210b9c6a18d7c68"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/GENE_MANIFEST.csv",
+      "bytes": 122617,
+      "sha256": "c1c9c8041458275248514d960c6c263a72f43a12a8d48c16f77759d2342fa08f"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_FEATURE_MANIFEST.json",
+      "bytes": 16172,
+      "sha256": "b74b9dfbc64f5acc82b7b0d34023aa6a523bd11d1904ced7fd638c5bec4ef2d1"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/MODEL_MANIFEST.json",
+      "bytes": 8934,
+      "sha256": "c8d9d5003860d8a5e117398a7d44b5c67cfb700c6fb56f37bcf04a5d549909a6"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_e195_native_gears_uq_norman_p1p2.py",
+      "bytes": 90297,
+      "sha256": "e273ad5b49ff251ebf0703f2b25e968a1f916b5eb65d25d559acede08f901efc"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/code/20260426_154505_perturb_transport_final_push/safetrans_confidence/cli/run_gears_prediction_records.py",
+      "bytes": 44510,
+      "sha256": "b2262f6080300ddd55008f4617b8d410dcd1b35333b08f5a0121ff442bdfc3ef"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/E195_native_gears_uq_norman_p1p2_20260730/ANALYSIS_FREEZE.md",
+      "bytes": 13649,
+      "sha256": "384d072fefbe49f3f962c27281e7257cc9d462c59a3edee8611ca0aa4d23c55f"
+    },
+    {
+      "path": "/home/yyf/proj/docs/实验结果/E195_native_gears_uq_norman_p1p2_20260730/E195_STATUS.json",
+      "bytes": 1613,
+      "sha256": "616e13e6bd11a895b3df5dc8e6f85576dca40c579acbbe720021855b20bba999"
+    },
+    {
+      "path": "/home/yyf/proj/docs/实验结果/E195_native_gears_uq_norman_p1p2_20260730/tables/E195_RAW_ARTIFACT_HASHES.csv",
+      "bytes": 18150,
+      "sha256": "7c45a8e63477a4f3974d013dec28a84ab1769ad75a4b6f3f5cc2944ed90a43ab"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/independent_asset_followup/ASSET_AGENT_AUDIT.py",
+      "bytes": 7854,
+      "sha256": "10a9bd08cb4772a863fea0f9cf5332594494e83d053d10eabf5b16078d361614"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/independent_asset_followup/ASSET_AGENT_AUDIT.validation_summary.csv",
+      "bytes": 828,
+      "sha256": "e6c9f343c10102ae7075575ed6146ad2fc40e24a48d7d3e455da0700a372b8e3"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/independent_asset_followup/ASSET_AGENT_AUDIT.validation_family_summary.csv",
+      "bytes": 218,
+      "sha256": "3efd1ae9c09e7df34d9cb9d71ac85c263809728bc1528c57762499917a1b8537"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/independent_asset_followup/ASSET_AGENT_AUDIT.validation_checkpoint_hashes.csv",
+      "bytes": 2679,
+      "sha256": "67951f3f339ef637f221fede9249132f15b82449e1a66e382da024d334d4f9b7"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/independent_asset_followup/ASSET_AGENT_AUDIT.validation_access.json",
+      "bytes": 506,
+      "sha256": "4f1cf810b0ed3c789e9d98c63692c2c4cf64a34e53b545cab45db4974d83c664"
+    }
+  ]
+}

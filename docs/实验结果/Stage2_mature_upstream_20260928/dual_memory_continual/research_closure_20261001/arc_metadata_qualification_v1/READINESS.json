@@ -1,0 +1,157 @@
+{
+  "schema": "safeconf_arc_metadata_qualification_v1",
+  "created_utc": "2026-10-02T01:42:37.856348+00:00",
+  "status": "STOP_PREVIOUSLY_OPENED_EXPRESSION",
+  "reviewer_identity": "/root/research_turn_decision_20261002",
+  "fresh_confirmation_eligible": false,
+  "dataset_identity": {
+    "path": "/home/yyf/data/scperteval_official_20260730/arch1_processed_complete.h5ad",
+    "resolved_path": "/home/yyf/data/scperteval_official_20260730/arch1_processed_complete.h5ad",
+    "is_symlink": false,
+    "bytes": 4377281643,
+    "current_streamed_sha256": "f85862ecc9d9c34c1765b395105c74af08480471ade27ce8466d742d73c1449e",
+    "matches_E198_input_hash_exactly": true,
+    "inode": 266212472,
+    "mtime_ns": 1785385606474937256,
+    "file_stat_unchanged_across_hash": true,
+    "streamed_hash_elapsed_seconds": 14.06193990004249,
+    "hash_access": "Opaque bytes only; no numeric deserialization"
+  },
+  "decisive_exposure": {
+    "experiment": "E198_arch1_protocol_calibration_20260801",
+    "status": "COMPLETE_EXTERNAL_PROTOCOL_CALIBRATION",
+    "generated_at": "2026-08-02T00:07:33+08:00",
+    "dataset_opened_as_anndata": true,
+    "n_perturbations_reported_by_E198": 150,
+    "n_expression_derived_protocol_rows_reported_by_E198": 1800,
+    "selected_endpoints": [
+      "mse",
+      "pearson_pert",
+      "rank",
+      "energy_distance_pca_k=50",
+      "de_auprc"
+    ],
+    "model_predictions_used": false,
+    "safeconf_validated": false,
+    "independent_audit": "PASS;11formaloutputhasheschecked;1800rows",
+    "exposure_semantics": "Expression-derived protocol controls and endpoint selection already used all150perturbations. No model predictions were used, but this is sufficient to reject a never-outcome-viewed independent-study claim. A new gene-hash split cannot undo that prior exposure."
+  },
+  "requested_qualification_checks": {
+    "canonical_readout_gene_intersection_to_Source3285": "NOT_COMPUTED_STOPPED_AFTER_DECISIVE_EXPOSURE",
+    "coverage_of_existing2070public_target_genes": "NOT_COMPUTED_STOPPED_AFTER_DECISIVE_EXPOSURE",
+    "single_target_genes_with_atleast30cells": "NOT_COMPUTED_STOPPED_AFTER_DECISIVE_EXPOSURE",
+    "100test30train20validation_feasibility": "NOT_CERTIFIED; fresh-study gate already fails; no split created",
+    "actual_biological_contexts": "E198 records H1hESC only; no extra contexts inferred"
+  },
+  "prior_metadata_numbers_not_recomputed": {
+    "nominal_perturbations": 150,
+    "cells": 221273,
+    "control_cells": 38176,
+    "source": "Existing ASSET_AGENT_AUDIT and E198 metadata; no new eligible-cell count calculation"
+  },
+  "actual_access_log": {
+    "bounded_registry_and_history_search": "Current Stage2 explicit role/candidate/asset registries; existing independent_asset_followup; filename/content search limited to /home/yyf/proj/docs/实验结果 markdown/json/manifest/registry records. Found E198; then exact linked E198 small metadata and runner constant.",
+    "H5AD_open_count": 1,
+    "H5AD_metadata_nodes_read": [
+      "root member names only",
+      "/obs attributes and child node schemas",
+      "/var attributes and child node schemas",
+      "/obs/perturbation/categories values:151 labels including control",
+      "/obs/perturbation/codes shape/dtype only",
+      "/obs/_index shape/dtype only",
+      "/var/_index shape/dtype only"
+    ],
+    "schema_shapes_observed": {
+      "obs_index": [
+        221273
+      ],
+      "perturbation_categories": [
+        151
+      ],
+      "perturbation_codes": [
+        221273
+      ],
+      "var_index": [
+        18020
+      ]
+    },
+    "H5AD_numeric_values_read": [],
+    "obs_codes_values_read": false,
+    "cell_ID_values_read": false,
+    "var_gene_ID_values_read": false,
+    "X_layers_raw_values_read": false,
+    "other_metadata_read": [
+      "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/GENE_IDS.json firstfive symbols and fullJSONparsed",
+      "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/GENE_MANIFEST.csv headeronly",
+      "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v2/PUBLIC_BANK_MANIFEST.json",
+      "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v2/SOURCE_PUBLIC_MEMORY_METADATA.parquet schemaonly; no row values",
+      "Expanded-bank paths obtained from existing SEAL_REGISTRATION.json"
+    ],
+    "no_effects_or_controls_or_model_array_opened": true,
+    "whole_H5AD_hash_read_bytes": 4377281643,
+    "whole_hash_is_not_numeric_expression_access": true,
+    "after_root_stop": "No further obs/var values, codes, counts, overlap or split computation; only opaque SHA identity confirmation and report writes"
+  },
+  "decision": {
+    "stop_Arc_fresh_confirmation_proposal": true,
+    "do_not_relabel_official_train_or_new_split_as_fresh": true,
+    "new_upstream_attempt_spent": 0,
+    "formal_attempt_count_unchanged": 2,
+    "new_Source_core_authority_granted": false,
+    "new_predictor_or_source_fit_authorized": false,
+    "Source_scale_or_mean_repair_not_activated": true,
+    "Source_stress_branch_closed": "Completed once; broadsignpattern does not establish finalHGBcollapse or Orioncause; no further scale/meanvariants. ECDFanchordraft remainsUNREADY.",
+    "scientific_goal_complete": false,
+    "independence_claim": "CurrentArcproposal ruled out as freshconfirmation; retrospective use would be a distinct SEEN role and is not executed or proposed here."
+  },
+  "costs": {
+    "new_download_bytes": 0,
+    "GPU_hours": 0,
+    "model_inference_calls": 0,
+    "fits": 0,
+    "bootstrap_draws": 0,
+    "new_test_unseal": 0
+  },
+  "evidence_files": [
+    {
+      "path": "/home/yyf/proj/docs/实验结果/E198_arch1_protocol_calibration_20260801/E198_STATUS.json",
+      "bytes": 1213,
+      "sha256": "8ad5c87d9995b01d6abe6e6efe044f479b2676015c229e6f77f60bf8107405d2"
+    },
+    {
+      "path": "/home/yyf/proj/docs/实验结果/E198_arch1_protocol_calibration_20260801/E198_AUDIT_STATUS.json",
+      "bytes": 348,
+      "sha256": "341afa7467675e4fe99337f14a4b868ac4e7e46e4caaaa084d570869860c857a"
+    },
+    {
+      "path": "/home/yyf/proj/docs/实验结果/E198_arch1_protocol_calibration_20260801/ANALYSIS_FREEZE.md",
+      "bytes": 3474,
+      "sha256": "5be936c80330195b93779bcfaf4f1a2e928e067a2af35574a2b792a6f0942e2c"
+    },
+    {
+      "path": "/home/yyf/proj/docs/实验结果/E198_arch1_protocol_calibration_20260801/tables/E198_INPUT_HASHES.csv",
+      "bytes": 1575,
+      "sha256": "c6bda8319ee655e743c104719f49940e50baba48fc29dd708d75b80fb2b607ef"
+    },
+    {
+      "path": "/home/yyf/proj/docs/实验结果/E198_arch1_protocol_calibration_20260801/reports/E198_PREPARE_REPORT.md",
+      "bytes": 453,
+      "sha256": "c098981caa01125de41062b2040c8b39bea699a2084ca6c506f38f3d16d17a66"
+    },
+    {
+      "path": "/home/yyf/proj/docs/实验结果/E198_arch1_protocol_calibration_20260801/reports/E198_INTERPRETATION.md",
+      "bytes": 784,
+      "sha256": "6a684a8da9e8be64544d5b7064fcdd5600b2855c952b6aa83333ac9416b2c59c"
+    },
+    {
+      "path": "/home/yyf/proj/docs/实验结果/E198_arch1_protocol_calibration_20260801/reports/E198_INDEPENDENT_AUDIT.md",
+      "bytes": 294,
+      "sha256": "1dbaca43c21da6183b2f8f139ac58b4942774aa2bf0749f26841670c5c298211"
+    },
+    {
+      "path": "/home/yyf/proj/tools/scripts/run_e198_arch1_protocol_calibration.py",
+      "bytes": 50548,
+      "sha256": "fb25c4415caa708b8d9122893e18aed5c5d8b7d6aec212ce0988808c6907fdc9"
+    }
+  ]
+}

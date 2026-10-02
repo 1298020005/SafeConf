@@ -1,0 +1,16 @@
+{
+  "schema": "safeconf_source_counterfactual_scale_stress_v1_root_approval",
+  "status": "DRAFT_NOT_AUTHORIZED",
+  "authorized_to_run_source_only_counterfactual_stress": false,
+  "proposal": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/PROPOSED_SCOPE.json",
+    "bytes": 32567,
+    "sha256": "4049c7b9754479d1fc42f9271dff875815d7f22a61e4e12aeb0a396f037fad88"
+  },
+  "independent_review": {
+    "path": "ROOT_TO_BIND_ACTUAL_PASS_RECEIPT",
+    "bytes": null,
+    "sha256": null
+  },
+  "conditions": "Exact proposed code/input/scales/resource/scope only; no Target access or new models"
+}

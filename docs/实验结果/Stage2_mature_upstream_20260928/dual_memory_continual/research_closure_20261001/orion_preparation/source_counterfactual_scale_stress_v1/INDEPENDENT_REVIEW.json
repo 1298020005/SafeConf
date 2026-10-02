@@ -1,0 +1,60 @@
+{
+  "schema": "safeconf_source_counterfactual_scale_stress_independent_review_v1",
+  "status": "FAIL",
+  "created_utc": "2026-10-02T01:28:51.975559+00:00",
+  "reviewer_identity": "/root/research_turn_decision_20261002",
+  "proposal": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v1/PROPOSED_SCOPE.json",
+    "bytes": 32567,
+    "sha256": "e7ae0be655d9fa91a578e603e6211eb03a78da28cc1d02c9caebc308ad3d13f5"
+  },
+  "reviewed_code": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_source_counterfactual_scale_stress_agent.py",
+    "bytes": 32743,
+    "sha256": "f342fd3489eb8538784bb2fec6705a713841c133d0e9e264f7b96ca82fc98d94"
+  },
+  "reviewed_code_binding_note": "Verified actual bytes before review; Root began the requested repair before this receipt was persisted. This receipt applies only to the original f342 code and e7ae proposal, not edited code.",
+  "review_type": "Static implementation/registration and streamed SHA checks; no experiment execution",
+  "scientific_PASS_claim": false,
+  "execution_authorized_by_review": false,
+  "findings": [
+    {
+      "priority": "P2",
+      "file": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_source_counterfactual_scale_stress_agent.py",
+      "reviewed_line": 459,
+      "title": "Undefined context metrics dropped from claimed four-context macro",
+      "evidence": "research.metrics returns NaN Spearman for constant scores and NaN U20 for degenerate truth contrast. groupby()[macro_columns].mean() skips NaNs while actual_contexts=4 remains unconditional. Saturation is an intended diagnostic possibility.",
+      "required_fix": "Retain all strata/methods; require all four contexts finite per metric or propagate undefined; record valid-context counts and actual group count; rebind code/proposal and re-review."
+    }
+  ],
+  "checks_passed": [
+    "Supplied script/proposal SHA matched at review start; proposal0444; AST parses",
+    "All9 code bindings and102 Source bindings streamed SHA verified; Source bytes1273014777",
+    "Runtime output absent; canonical Source input paths; fresh diagnostic output namespace",
+    "Only saved3616row Source HGBs; fixed scales1/.1/.05,2predictors,4contexts",
+    "Preseal parquet reads explicitly select identity/features/cached scores, excluding errors",
+    "All12 conditions written readonly and hashsealed before first numeric Source truth load",
+    "s1 feature/score/error bit equality assertions present; exact cachedManual prior and5fixedPublic fields",
+    "P6 and prediction-prior distance/cosine recomputed; no fit/CDF/retrieval/bootstrap/network/GPU calls",
+    "No target/Orion numeric input path; writes confined to diagnostic runtime/report",
+    "Postexecution original input/code hashes rechecked; all120 strata/30macros/24error-order rows retained",
+    "Explicit in-sample/no-cause/no-confirmation labels; wall alarm/RSS polling/threadpool limits",
+    "Exact Root approval and readonly independent review required"
+  ],
+  "limitations": [
+    "No numeric arrays deserialized or model loaded/predicted during this review; raw artifact bytes including truth streamed only for SHA integrity.",
+    "s1 numerical reproduction is an actual-run gate, not proven by static review.",
+    "Resource limits use in-process alarm/RSS polling; transient overshoot/native-call signal delay possible; import startup precedes run timer.",
+    "OOF priors do not make all-Source-trained risk inference held out."
+  ],
+  "review_execution_counts": {
+    "numeric_runs": 0,
+    "fits": 0,
+    "predictions": 0,
+    "truth_numeric_loads": 0,
+    "Target_access": 0,
+    "bootstrap": 0,
+    "downloads": 0,
+    "code_mutations": 0
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "status": "STOP_PREVIOUSLY_OPENED_EXPRESSION",
+  "files": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/arc_metadata_qualification_v1/DATA_ROLE_REGISTRY_ADDENDUM.csv",
+      "bytes": 844,
+      "sha256": "411b0e745440320ab98547b7051d2443c5dfccba3be452e36d082b35b991659c"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/arc_metadata_qualification_v1/OWNED_FILES.json",
+      "bytes": 750,
+      "sha256": "d381628e15ed82caa54f7f8cba3b76941853276bf85884b0088424ad9638df53"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/arc_metadata_qualification_v1/OWNED_FILES_WITH_ROLE_ADDENDUM.json",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/arc_metadata_qualification_v1/READINESS.json",
+      "bytes": 7540,
+      "sha256": "cafcafdda3b2cd98ea4846c161d6df10bfa0ffad5ef16bddff22177f1fcf65ec"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/arc_metadata_qualification_v1/READINESS.md",
+      "bytes": 2593,
+      "sha256": "6328ea63f30e78c0dca20144de2918b43d4dee8dce28eeb09d123f7e986b15ec"
+    }
+  ]
+}

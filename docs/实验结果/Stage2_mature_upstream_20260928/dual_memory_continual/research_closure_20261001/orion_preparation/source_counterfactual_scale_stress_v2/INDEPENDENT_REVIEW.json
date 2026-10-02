@@ -1,0 +1,78 @@
+{
+  "schema": "safeconf_source_counterfactual_scale_stress_independent_review_v2",
+  "status": "PASS",
+  "created_utc": "2026-10-02T01:29:48.499591+00:00",
+  "reviewer_identity": "/root/research_turn_decision_20261002",
+  "proposal": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/PROPOSED_SCOPE.json",
+    "bytes": 32567,
+    "sha256": "4049c7b9754479d1fc42f9271dff875815d7f22a61e4e12aeb0a396f037fad88"
+  },
+  "reviewed_code": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_source_counterfactual_scale_stress_agent.py",
+    "bytes": 33609,
+    "sha256": "37f61c643d9ec92bc9931db397336839a93f97e6e6a2e0e47cc4ea1ef5b7acca"
+  },
+  "review_type": "Independent static scope/code/hash review plus four-row synthetic aggregation fixture; no Source numeric execution",
+  "supersedes_failure_for_new_version_only": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v1/INDEPENDENT_REVIEW.json",
+    "bytes": 3909,
+    "sha256": "c66375f09058ebcbfe3093f04c9492253c9864c099280d929f979ee03e4cfe61"
+  },
+  "rejected_code_snapshot": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v1/REJECTED_CODE_SNAPSHOT.py",
+    "bytes": 32743,
+    "sha256": "f342fd3489eb8538784bb2fec6705a713841c133d0e9e264f7b96ca82fc98d94"
+  },
+  "scientific_PASS_claim": false,
+  "root_approval_still_required": true,
+  "review_scope": "Safety, fixed diagnostic scope and implementation correctness only; no new user permission is required for the already authorized bounded Source diagnostic.",
+  "findings": [],
+  "resolved_findings": [
+    {
+      "prior_review_line": 459,
+      "resolution": "All macro metrics now use mean(skipna=False), explicit actual-context count and per-metric finite-context count; require all4contexts; retain undefined constant-risk outcomes.",
+      "proof": "Exact diff contains only this reporting repair; four fabricated context rows prove undefined Spearman is propagated, valid counts3/4 and actual count4 retained."
+    }
+  ],
+  "checks_passed": [
+    "Supplied script/proposal SHA matched at review start; proposal0444; AST parses",
+    "All9 code bindings and102 Source bindings streamed SHA verified; Source bytes1273014777",
+    "Runtime output absent; canonical Source input paths; fresh diagnostic output namespace",
+    "Only saved3616row Source HGBs; fixed scales1/.1/.05,2predictors,4contexts",
+    "Preseal parquet reads explicitly select identity/features/cached scores, excluding errors",
+    "All12 conditions written readonly and hashsealed before first numeric Source truth load",
+    "s1 feature/score/error bit equality assertions present; exact cachedManual prior and5fixedPublic fields",
+    "P6 and prediction-prior distance/cosine recomputed; no fit/CDF/retrieval/bootstrap/network/GPU calls",
+    "No target/Orion numeric input path; writes confined to diagnostic runtime/report",
+    "Postexecution original input/code hashes rechecked; all120 strata/30macros/24error-order rows retained",
+    "Explicit in-sample/no-cause/no-confirmation labels; wall alarm/RSS polling/threadpool limits",
+    "Exact Root approval and readonly independent review required",
+    "v2 proposal4049 and executing code37f61 exactSHA/bytes independently verified",
+    "v1 rejected snapshot exactly reproduces reviewed f342 bytes",
+    "v2 proposal differs only in runtime/report paths and executing script binding",
+    "All9 current dependency code bindings reverified; AST parses",
+    "v2 Source102bindings identical to independently streamed1273014777byte v1 verification; run authorization and terminal checks rehash them again",
+    "Fresh v2 runtime absent before authorization; repaired macro synthetic fixture passed"
+  ],
+  "source_hash_verification_scope": "All102sourcefiles streamed before v1 decision in this same review episode; exact same bindings inherited by v2. No new source numeric values parsed.",
+  "limitations": [
+    "No numeric arrays deserialized or model loaded/predicted during this review; raw artifact bytes including truth streamed only for SHA integrity.",
+    "s1 numerical reproduction is an actual-run gate, not proven by static review.",
+    "Resource limits use in-process alarm/RSS polling; transient overshoot/native-call signal delay possible; import startup precedes run timer.",
+    "OOF priors do not make all-Source-trained risk inference held out.",
+    "Static PASS does not establish actual resource completion or s1 bit equality; actual run must fail closed if these gates fail.",
+    "No empirical cause, repaired method, winner/scale selection, heldout transfer or target improvement is authorized or established."
+  ],
+  "review_execution_counts": {
+    "real_numeric_experiment_runs": 0,
+    "synthetic_aggregation_fixture_rows": 4,
+    "fits": 0,
+    "predictions": 0,
+    "Source_truth_numeric_loads": 0,
+    "Target_access": 0,
+    "bootstrap_draws": 0,
+    "downloads": 0,
+    "code_mutations": 0
+  }
+}

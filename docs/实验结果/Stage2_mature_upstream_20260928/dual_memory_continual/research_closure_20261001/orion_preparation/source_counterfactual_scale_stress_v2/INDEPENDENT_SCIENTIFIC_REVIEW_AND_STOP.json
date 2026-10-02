@@ -1,0 +1,250 @@
+{
+  "schema": "safeconf_source_scale_stress_independent_scientific_review_v1",
+  "created_utc": "2026-10-02T01:32:56.961288+00:00",
+  "reviewer_identity": "/root/research_turn_decision_20261002",
+  "status": "DIAGNOSTIC_COMPLETE_STOP_NO_REPAIR_ACTIVATION",
+  "execution_receipt": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/RESULT_MANIFEST.json",
+    "bytes": 8044,
+    "sha256": "f5675b600327a42bf5b67a7855322c191635cccd1526562f6a851b85ca984979"
+  },
+  "evidence_files": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/ALL_CONTEXT_MACRO_METRICS.csv",
+      "bytes": 6769,
+      "sha256": "0a688d6124a5c798740a3f41c98957bf78083ee15930f10ac8cf4b0b80c4fd73"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/ALL_STRATUM_METRICS_RANKS_TIES.csv",
+      "bytes": 31181,
+      "sha256": "ffea76b6ad2883932baae30a53c0a81e03277551fed25abc1c04cd4c6bbbc0d4"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/SOURCE_ERROR_ORDERING.csv",
+      "bytes": 3872,
+      "sha256": "94a2297ee292c670c8d1a10f4b18e3526b349d520f54fc1ca0b7c775f8481bd0"
+    }
+  ],
+  "review_scope": "Read only the completed small manifest and all macro/stratum/error-order summaries; no numeric arrays, model calls, new experiment, fit, bootstrap or Target access.",
+  "fixed_macro_contrasts": [
+    {
+      "upstream": "TxPert_GAT",
+      "scale": 1.0,
+      "Manual_HGB_U20": 0.8272820579906313,
+      "weighted_distance_U20": 0.5892961671523542,
+      "HGB_minus_distance_U20": 0.23798589083827704,
+      "P_only_HGB_U20": 0.7985333263071612,
+      "HGB_U20_change_vs_s1": 0.0,
+      "distance_U20_change_vs_s1": 0.0,
+      "Manual_HGB_error_at_10": 0.0340873008518427,
+      "distance_error_at_10": 0.0470162135113595,
+      "HGB_error_at_10_relative_gap": -0.2749883857914901
+    },
+    {
+      "upstream": "TxPert_GAT",
+      "scale": 0.1,
+      "Manual_HGB_U20": 0.7220501645873987,
+      "weighted_distance_U20": 0.747305431809217,
+      "HGB_minus_distance_U20": -0.025255267221818367,
+      "P_only_HGB_U20": 0.4266073873813117,
+      "HGB_U20_change_vs_s1": -0.10523189340323258,
+      "distance_U20_change_vs_s1": 0.15800926465686282,
+      "Manual_HGB_error_at_10": 0.03739649108891,
+      "distance_error_at_10": 0.0396750118456091,
+      "HGB_error_at_10_relative_gap": -0.05742961755287457
+    },
+    {
+      "upstream": "TxPert_GAT",
+      "scale": 0.05,
+      "Manual_HGB_U20": 0.7332084814306173,
+      "weighted_distance_U20": 0.7620129392039395,
+      "HGB_minus_distance_U20": -0.02880445777332219,
+      "P_only_HGB_U20": 0.0083818368081105,
+      "HGB_U20_change_vs_s1": -0.09407357656001392,
+      "distance_U20_change_vs_s1": 0.1727167720515853,
+      "Manual_HGB_error_at_10": 0.0377129298484368,
+      "distance_error_at_10": 0.040026016720258,
+      "HGB_error_at_10_relative_gap": -0.057789584409244865
+    },
+    {
+      "upstream": "TxPert_Exphormer",
+      "scale": 1.0,
+      "Manual_HGB_U20": 0.8208102520342208,
+      "weighted_distance_U20": 0.588347020332489,
+      "HGB_minus_distance_U20": 0.23246323170173178,
+      "P_only_HGB_U20": 0.7996342149415507,
+      "HGB_U20_change_vs_s1": 0.0,
+      "distance_U20_change_vs_s1": 0.0,
+      "Manual_HGB_error_at_10": 0.0344308160481758,
+      "distance_error_at_10": 0.0460375246413593,
+      "HGB_error_at_10_relative_gap": -0.2521140891827238
+    },
+    {
+      "upstream": "TxPert_Exphormer",
+      "scale": 0.1,
+      "Manual_HGB_U20": 0.7284364199176341,
+      "weighted_distance_U20": 0.7455110876700397,
+      "HGB_minus_distance_U20": -0.017074667752405626,
+      "P_only_HGB_U20": 0.3688396205802725,
+      "HGB_U20_change_vs_s1": -0.09237383211658667,
+      "distance_U20_change_vs_s1": 0.15716406733755073,
+      "Manual_HGB_error_at_10": 0.0376999515542164,
+      "distance_error_at_10": 0.0396843069533833,
+      "HGB_error_at_10_relative_gap": -0.050003529140571934
+    },
+    {
+      "upstream": "TxPert_Exphormer",
+      "scale": 0.05,
+      "Manual_HGB_U20": 0.7418023325911385,
+      "weighted_distance_U20": 0.7621120772249105,
+      "HGB_minus_distance_U20": -0.020309744633771998,
+      "P_only_HGB_U20": -0.0008945911814326,
+      "HGB_U20_change_vs_s1": -0.07900791944308228,
+      "distance_U20_change_vs_s1": 0.1737650568924215,
+      "Manual_HGB_error_at_10": 0.0377634564023958,
+      "distance_error_at_10": 0.0400557557322156,
+      "HGB_error_at_10_relative_gap": -0.05722771391818171
+    }
+  ],
+  "all_scaled_context_contrasts": [
+    {
+      "scale": 0.05,
+      "upstream": "TxPert_Exphormer",
+      "context_delta_U20": {
+        "K562": -0.09886721009147303,
+        "RPE1": -0.0032194590420419056,
+        "hepg2": -0.01588163979608681,
+        "jurkat": 0.03672933039451365
+      },
+      "negative_contexts": [
+        "K562",
+        "RPE1",
+        "hepg2"
+      ],
+      "positive_contexts": [
+        "jurkat"
+      ]
+    },
+    {
+      "scale": 0.05,
+      "upstream": "TxPert_GAT",
+      "context_delta_U20": {
+        "K562": -0.10142573804220334,
+        "RPE1": -0.005737882102362479,
+        "hepg2": -0.04538472560999762,
+        "jurkat": 0.037330514661274905
+      },
+      "negative_contexts": [
+        "K562",
+        "RPE1",
+        "hepg2"
+      ],
+      "positive_contexts": [
+        "jurkat"
+      ]
+    },
+    {
+      "scale": 0.1,
+      "upstream": "TxPert_Exphormer",
+      "context_delta_U20": {
+        "K562": -0.06785206004918354,
+        "RPE1": -0.003839168135211457,
+        "hepg2": -0.02036437158896498,
+        "jurkat": 0.023756928763737584
+      },
+      "negative_contexts": [
+        "K562",
+        "RPE1",
+        "hepg2"
+      ],
+      "positive_contexts": [
+        "jurkat"
+      ]
+    },
+    {
+      "scale": 0.1,
+      "upstream": "TxPert_GAT",
+      "context_delta_U20": {
+        "K562": -0.08967222906891559,
+        "RPE1": -0.003984727594178783,
+        "hepg2": -0.02956228746985523,
+        "jurkat": 0.022198175245676577
+      },
+      "negative_contexts": [
+        "K562",
+        "RPE1",
+        "hepg2"
+      ],
+      "positive_contexts": [
+        "jurkat"
+      ]
+    }
+  ],
+  "diagnostic_findings": {
+    "final_Manual_HGB_collapse_supported": false,
+    "Manual_HGB_risk_rank_rho_vs_s1_range": [
+      0.8897044645872848,
+      0.9227397816920312
+    ],
+    "Manual_HGB_unique_scores_range": [
+      403,
+      550
+    ],
+    "Manual_HGB_largest_tie_range": [
+      2,
+      5
+    ],
+    "P_only_s005_unique_scores_range": [
+      5,
+      8
+    ],
+    "P_only_s005_largest_tie_range": [
+      309,
+      406
+    ],
+    "realized_error_rank_rho_vs_s1_range": [
+      0.7459979937230633,
+      0.9600262699941994
+    ],
+    "all_four_scaled_macro_HGB_error_at10_better_than_distance": true
+  },
+  "mechanism_gate": {
+    "coarse_directional_condition": "MET: both predictors, both reduced scales, negative HGB-distance U20 in K562/RPE1/hepg2 and positive in jurkat. This is a descriptive sign pattern, not independent replication or proof of one cause.",
+    "claim_final_risk_model_stops_distinguishing_tasks": "NOT_SUPPORTED: final ManualHGB retains403–550 unique scores, small ties and approximately0.91 rank correlation with its original scores.",
+    "strong_P_only_score_compression": "SUPPORTED_WITHIN_THIS_FIXED_SOURCE_INTERVENTION: at0.05 only5–8 distinct scores and near-zero macroU20.",
+    "repair_activation": "NO: coarse condition alone does not justify a particular new method. The proposed ECDF anchor has an unresolved tail-ordering defect, and no fresh eligible confirmation pair is ready. Do not retroactively equate the sign gate with evidence of a final-model saturation mechanism."
+  },
+  "scientific_interpretation": [
+    "Multiplying Source predicted deltas by a fixed small scalar, with measured truth/prior fixed and dependent features recomputed, is sufficient to reverse the observed in-sample U20 advantage over weighted distance in this artificial intervention.",
+    "This is not evidence that prediction scale uniquely or primarily caused the original Orion transfer failure. Source studies/predictors remain different; final risk models trained these Source records; no independent external or fresh-label replication was run.",
+    "The reversal combines a final-HGB U20 decline of0.079–0.105 with a larger distance U20 rise of0.157–0.174. Scaling also changes realized error ordering (rho0.746–0.960) and U20 oracle normalization; these changes are not separate causal percentages.",
+    "As s tends to0, squared prediction-prior discrepancy tends to prior mean-square magnitude, while squared realized error tends to truth mean-square magnitude. This algebra changes the risk problem and can favor distance; the experiment does not establish that this limiting explanation accounts quantitatively for its result.",
+    "Final ManualHGB still improves error@10 over distance in all four scaled macros. PrimaryU20 reversal does not establish uniform inferiority on all decision endpoints.",
+    "P-only brittleness and retained ManualHGB discrimination distinguish prediction-only extrapolation from collapse of the final Public-assisted model. This experiment does not isolate all Public components or establish transferable biological content.",
+    "Two Source architectures share the same575genes/1808tasks and one family; categorical agreement is not two independent laws or a publication-readiness result."
+  ],
+  "decision": {
+    "stop_rolling_scale_diagnosis": true,
+    "additional_scale_or_variant_authorized": false,
+    "additional_Source_mean_or_upstream_authorized": false,
+    "new_method_or_CDF_or_feature_fit_authorized": false,
+    "new_target_or_Orion_access_authorized": false,
+    "ECDF_anchor_draft_status": "UNREADY_NOT_APPROVED; training-onlyECDF saturates outside support and can erase direct-distance order",
+    "Arc_asset_status": "UNREADY; freshness/exactaxis/atleast100eligiblehistory-supportedTESTgenes not proven;150nominalgenes has no30train20val100test attrition slack; onecontextscope unresolved",
+    "next_phase_execution_request_ready": false,
+    "project_scientific_goal_complete": false,
+    "required_before_any_later_phase_request": "A fully specified justified single candidate with the tail-ordering defect resolved without target tuning, plus a concrete metadata-qualified untouched confirmation asset; current results authorize neither."
+  },
+  "completed_costs_from_bound_receipt": {
+    "elapsed_seconds": 9.998462071176618,
+    "CPU_seconds": 10.335635022,
+    "peak_RSS_bytes": 567353344,
+    "new_fits": 0,
+    "CDF_fits": 0,
+    "bootstrap_draws": 0,
+    "new_upstream_candidates": 0,
+    "Target_access": 0,
+    "Orion_access": 0
+  },
+  "verification_limits": "Actuals1exactness and original input preservation are verified by the bound completed receipt, not independently recomputed by this summary-only scientific review."
+}

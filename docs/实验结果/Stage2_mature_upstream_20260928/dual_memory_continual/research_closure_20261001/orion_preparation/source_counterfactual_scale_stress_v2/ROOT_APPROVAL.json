@@ -1,0 +1,18 @@
+{
+  "schema": "safeconf_source_counterfactual_scale_stress_v1_root_approval",
+  "status": "APPROVED",
+  "authorized_to_run_source_only_counterfactual_stress": true,
+  "proposal": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/PROPOSED_SCOPE.json",
+    "bytes": 32567,
+    "sha256": "4049c7b9754479d1fc42f9271dff875815d7f22a61e4e12aeb0a396f037fad88"
+  },
+  "independent_review": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/INDEPENDENT_REVIEW.json",
+    "bytes": 5448,
+    "sha256": "31ecedff249ef3c61c2743b60ecbaeb8bc8a3dfdd881dbc00405df717cb30f28"
+  },
+  "approved_utc": "2026-10-02T01:30:16.649685+00:00",
+  "approver": "/root",
+  "conditions": "Exactly one fixed Source DEV in-sample counterfactual diagnostic, all3scales/all8strata, no fits/CDF/Target/Orion/model changes; preserve v1 static FAIL and runtime failures. Not a new scientific confirmation or new formal upstream attempt."
+}

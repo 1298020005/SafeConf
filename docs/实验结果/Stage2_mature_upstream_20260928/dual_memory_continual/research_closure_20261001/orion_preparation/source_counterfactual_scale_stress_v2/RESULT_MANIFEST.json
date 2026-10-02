@@ -1,0 +1,154 @@
+{
+  "schema": "safeconf_source_counterfactual_scale_stress_v1",
+  "status": "COMPLETE",
+  "approval": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/ROOT_APPROVAL.json",
+    "bytes": 1256,
+    "sha256": "3a1ef5ddeeaca2c90c3a80060013b3de0ab508940eac0c5d345c548143a5766a"
+  },
+  "proposal": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/PROPOSED_SCOPE.json",
+    "bytes": 32567,
+    "sha256": "4049c7b9754479d1fc42f9271dff875815d7f22a61e4e12aeb0a396f037fad88"
+  },
+  "pretruth_seal": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_counterfactual_scale_stress_20261002_v2/PRETRUTH_STRESS_SEAL.json",
+    "bytes": 2839,
+    "sha256": "e47fa0a3a9c4f8ffe805c1d12267bc06e2e727cf075030b5536339fd9bfd3a5b"
+  },
+  "n_tasks": 1808,
+  "n_Source_genes": 575,
+  "n_records_per_scale": 3616,
+  "actual_contexts": [
+    "K562",
+    "RPE1",
+    "hepg2",
+    "jurkat"
+  ],
+  "upstreams": [
+    "TxPert_GAT",
+    "TxPert_Exphormer"
+  ],
+  "scales": [
+    1.0,
+    0.1,
+    0.05
+  ],
+  "n_model_scale_upstream_conditions": 12,
+  "stratum_metric_rows": 120,
+  "macro_metric_rows": 30,
+  "all_original_Source_artifacts_and_code_before_after_SHA_equal": true,
+  "s1_feature_and_fitted_risk_prediction_and_Source_error_bytes_exact": true,
+  "truth_numeric_access_only_after_pretruth_seal": true,
+  "new_fits": 0,
+  "CDF_fits": 0,
+  "bootstrap_draws": 0,
+  "new_upstream_candidates": 0,
+  "Target_access": 0,
+  "Orion_access": 0,
+  "source_mean_variant": false,
+  "winner_or_scale_selection": false,
+  "in_sample_training_overlap": true,
+  "not_heldout_transfer": true,
+  "causal_Orion_failure_explanation_established": false,
+  "elapsed_seconds": 9.998462071176618,
+  "CPU_seconds": 10.335635022,
+  "peak_RSS_bytes": 567353344,
+  "max_CPU_threads": 4,
+  "GPU_hours": 0,
+  "new_download_bytes": 0,
+  "output_bindings": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_counterfactual_scale_stress_20261002_v2/EXECUTION_REGISTRATION.json",
+      "bytes": 1177,
+      "sha256": "405bd4df8760a2c1d5cace88aa0384a98e8f1f20003b3e61c1d4b1954ef3bd6e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_counterfactual_scale_stress_20261002_v2/POSTSEAL_SOURCE_ERRORS.npy",
+      "bytes": 86912,
+      "sha256": "5d314eff8ef6dd5bf050809e10db557bbad72d2f2ee5bf40e71593fd13b02fe4"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_counterfactual_scale_stress_20261002_v2/PRETRUTH_STRESS_SEAL.json",
+      "bytes": 2839,
+      "sha256": "e47fa0a3a9c4f8ffe805c1d12267bc06e2e727cf075030b5536339fd9bfd3a5b"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_counterfactual_scale_stress_20261002_v2/RECORD_IDENTITIES.csv",
+      "bytes": 450307,
+      "sha256": "05bc532dc4db321dcf386b9b34d98a41c39770db12a78d212d5f20577ed5327b"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_counterfactual_scale_stress_20261002_v2/SCALED_FEATURE_RISK_RECORDS.parquet",
+      "bytes": 1253317,
+      "sha256": "51e645b0052a4905ed1eaaf7c96f3c89c471585392c89521750a82fd106faa15"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_counterfactual_scale_stress_20261002_v2/SCALED_MANUAL_FEATURES.npy",
+      "bytes": 1128320,
+      "sha256": "27e839b59b08112f0cb9ceab1f921f55b5ff9aa07dcb99116711e4ade1426288"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_counterfactual_scale_stress_20261002_v2/SCALED_RISK_COMPARATOR_SCORES.npy",
+      "bytes": 434048,
+      "sha256": "8adaa9eb80bd31faf8588c26915df71fb46459e0b09b5f786bdb7ed61e77e95b"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_counterfactual_scale_stress_20261002_v2/SOURCE_TRUTH_ACCESS_STARTED.json",
+      "bytes": 565,
+      "sha256": "9ba2bc5521e1ace795afc3678ad8def647d55982706e2792c943320792595ef6"
+    }
+  ],
+  "report_bindings": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/ALL_CONTEXT_MACRO_METRICS.csv",
+      "bytes": 6769,
+      "sha256": "0a688d6124a5c798740a3f41c98957bf78083ee15930f10ac8cf4b0b80c4fd73"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/ALL_FEATURE_SUMMARIES.csv",
+      "bytes": 39804,
+      "sha256": "ff1a67c7fd0b590dab2fa71e759b222538c4015c437bbf61dee8c4f4b8e76234"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/ALL_STRATUM_METRICS_RANKS_TIES.csv",
+      "bytes": 31181,
+      "sha256": "ffea76b6ad2883932baae30a53c0a81e03277551fed25abc1c04cd4c6bbbc0d4"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/INDEPENDENT_REVIEW.json",
+      "bytes": 5448,
+      "sha256": "31ecedff249ef3c61c2743b60ecbaeb8bc8a3dfdd881dbc00405df717cb30f28"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/PREDICTION_CONDITIONS.csv",
+      "bytes": 2162,
+      "sha256": "9e68a9d3551ad9a2f0c5556301c1108c820e3c5870d1d5fe1c12e04aacc96ee2"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/PROPOSED_SCOPE.json",
+      "bytes": 32567,
+      "sha256": "4049c7b9754479d1fc42f9271dff875815d7f22a61e4e12aeb0a396f037fad88"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/ROOT_APPROVAL.json",
+      "bytes": 1256,
+      "sha256": "3a1ef5ddeeaca2c90c3a80060013b3de0ab508940eac0c5d345c548143a5766a"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/ROOT_APPROVAL_TEMPLATE.json",
+      "bytes": 770,
+      "sha256": "e36039ff534d8bdc45f6f85948dc6cc44eb449192bfcf75ce5fea20ac08aa8bd"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/SOURCE_ERROR_ORDERING.csv",
+      "bytes": 3872,
+      "sha256": "94a2297ee292c670c8d1a10f4b18e3526b349d520f54fc1ca0b7c775f8481bd0"
+    }
+  ],
+  "limitations": [
+    "Final risk cores trained these same Source records; OOF priors do not make final risk inference held out",
+    "Input scale is an artificial counterfactual; no Source mean variant or new upstream model",
+    "No confidence intervals, scale selection, serving publication, or new scientific confirmation"
+  ]
+}

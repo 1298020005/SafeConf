@@ -1,0 +1,212 @@
+{
+  "schema": "safeconf_new_phase_asset_metadata_readiness_v1",
+  "created_utc": "2026-10-02T01:07:18.678795+00:00",
+  "status": "METADATA_AUDIT_COMPLETE_NO_VERIFIED_READY_UNUSED_STUDY_PREDICTOR_PAIR",
+  "selection_rule": "Unused provenance, study independence, exact gene/control/context compatibility, qualified existing predictor reuse, and cost. No SafeConf result/gain used to choose candidate.",
+  "scope": "Local records and specifically referenced metadata/code only; a bounded audit, not exhaustive proof that no compatible public model exists anywhere.",
+  "upstream_accounting": {
+    "actual_new_formal_attempts": 2,
+    "attempt1": "Orion published linear two-context procedure",
+    "attempt2": "Source fixed task-mean pilot",
+    "additional_training_adaptation_or_mean_variant_authorized": false,
+    "new_attempts_this_audit": 0
+  },
+  "axis_rule": {
+    "current_orion_source_axis": 3285,
+    "absolute_common_min": 2000,
+    "source_coverage_min": 0.7,
+    "effective_min_on_3285": 2300,
+    "older_audit_source_axis": 3352,
+    "older_effective_min": 2347,
+    "note": "Prior candidate intersections explicitly retain their3352 denominator; no numerical expression or output-axis repair performed. Low prior intersections bound current-subset overlap above and already fail."
+  },
+  "ready_pairs": [],
+  "orion_reuse": {
+    "published_code_check": "sf_orion_lm_predict rejects context_id != model$context_id; each model stores a separate baseline, training conditions, full-axis gene_emb and pert_emb.",
+    "checkpoint_presence_stat_only": {
+      "HCT116": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HCT116/MODEL.rds",
+        "bytes": 12693901
+      },
+      "HEK293T": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HEK293T/MODEL.rds",
+        "bytes": 12703080
+      }
+    },
+    "inference_inputs": "Immutable query identity plus fitted context and existing gene embeddings; no new study conditioning occurs automatically.",
+    "fresh_same_context_study": "No eligible unused independent HCT116 or HEK293T study with verified identifiers, processing and controls was found in reviewed records.",
+    "new_orion_batches": "May be numerically unopened but remain same study and not proven independent biological units; freshness and access not certified; not chosen."
+  },
+  "decoder_reuse": {
+    "config": "PerturBench DecoderOnly; use_covariates=True; use_perturbations=True; covariate_keys=[cell_type,treatment]; embedding_key=null",
+    "h5ad_metadata_only": {
+      "path": "/home/yyf/data/perturbench_mcfaline23_official/mcfaline23_gxe_processed.h5ad",
+      "read_nodes": [
+        "/X attributes only",
+        "/obs/cell_type/categories",
+        "/obs/treatment/categories",
+        "/obs/condition/categories"
+      ],
+      "shape_from_X_attributes": [
+        878229,
+        15009
+      ],
+      "cell_types": [
+        "a172",
+        "t98g",
+        "u87mg"
+      ],
+      "treatments": [
+        "lapatinib",
+        "nintedanib",
+        "none",
+        "trametinib",
+        "zstk474"
+      ],
+      "condition_category_count": 529,
+      "expression_values_read": 0
+    },
+    "boundary": "Metadata does not establish unseen-category support. Existing validation qualification plus fixed shrinkage depends on registered McFaline contexts and train-state means; no transferable H1 baseline/embedding is evidenced."
+  },
+  "arc_H1": {
+    "retained_role": "Potential independent data candidate, not ready for confirmation",
+    "official_train_label_not_rejection": true,
+    "custom_gene_hash_split": "Scientifically possible if full outcome-exposure provenance and absence of model/evaluator leakage are verified and split/predictions frozen prospectively. Official TRAIN naming does not prohibit investigator-defined holdout.",
+    "known_prior_metadata": {
+      "nominal_perturbations": 150,
+      "cells": 221273,
+      "control_cells": 38176,
+      "processed_h5ad_bytes": 4377281643
+    },
+    "blockers": [
+      "No verified compatible already-qualified H1 perturbation predictor checkpoint/output",
+      "Raw/source gene intersection and exact processing/control contract not yet verified",
+      "Whole-study outcome-exposure audit and model training-data provenance incomplete",
+      "Single H1 context requires explicitly scoped claim; does not create multiple biological contexts"
+    ],
+    "obsolete_blockers_removed": [
+      "Old10MB audit limit is not the user100GB resource cap",
+      "Absence of official public/private test does not itself invalidate a prospective custom split"
+    ],
+    "no_claim": "No assertion that all official channels lack models currently; local prior audit only, no fresh network search."
+  },
+  "precise_next_boundary": {
+    "within_current_scope": "Use this completed metadata decision; do not open new expression, perform inference, fit, or rebrand current TEST.",
+    "possible_no_new_fit_route": "A compatible frozen published predictor could be considered only after its release, training provenance, context/target vocabulary, common genes, controls, checkpoint availability and competence evidence are concretely verified. No such pair is ready here.",
+    "if_arc_requires_new_model": "Requires explicit exception for one additional formal upstream fitting/adaptation attempt beyond2; prior100GB/96GPUh availability alone does not authorize that attempt. A H1-specific published linear fit is a new attempt even if CPU-only.",
+    "risk_method_repair": "Requires separate new-version scope for Source-risk fitting/representation changes under current freeze; preserve current failed method and fixed Orion result.",
+    "resource_boundary": "No general budget increase justified by this audit. Arc reported4.377GB could fit remaining total download budget, but this metadata-only task authorizes zero fresh downloads. Cost feasibility is not model eligibility.",
+    "confirmation_boundary": "Freeze new candidate, target cohort and information roles before any new outcomes; keep any later-study experiment distinct from original Orion confirmation."
+  },
+  "access_and_cost": {
+    "network_calls": 0,
+    "download_bytes": 0,
+    "expression_values_read": 0,
+    "prediction_or_truth_arrays_opened": 0,
+    "checkpoint_deserializations": 0,
+    "checkpoint_inference_calls": 0,
+    "fits": 0,
+    "GPU_hours": 0,
+    "new_test_unseals": 0,
+    "local_h5ad_metadata_only_open_count": 1
+  },
+  "evidence_files": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/independent_asset_followup/ASSET_AGENT_AUDIT.md",
+      "bytes": 9375,
+      "sha256": "e571479014018ab3a2bad54870dc58e932fc31cc7128bf2a76c3b171f160bd30"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/independent_asset_followup/ASSET_AGENT_AUDIT.json",
+      "bytes": 7635,
+      "sha256": "aecc30e31bce60338224a523ea11706e899af66f07a9d7f05a5ed55fbf32c0d6"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/independent_asset_followup/ASSET_AGENT_AUDIT.candidates.csv",
+      "bytes": 3218,
+      "sha256": "e626c39d2f93f816dfc3fb9b20071398658b7091200379eca8d9e1eeef2309a6"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/independent_asset_followup/EXTENDED_ASSET_METADATA.md",
+      "bytes": 10455,
+      "sha256": "8708eda55b8f4ac79d406007a327d008c298e7a75a60b28780e700bd358d2488"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/independent_asset_followup/FRESH_DATASET_METADATA.md",
+      "bytes": 14782,
+      "sha256": "bbeeafc39b6a4bb6902b5d25b15d2d3475f7b1fde1aa14967ae3da7243384db5"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/METHOD_DECISION.md",
+      "bytes": 3721,
+      "sha256": "e3c20b1a1cb0f769586633bc9f6304ced1bd880b18adb36f3f116301691e0886"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/REPRODUCIBILITY_REPORT.md",
+      "bytes": 15947,
+      "sha256": "a93c07de1f0815bfddf3c1cdfde85724b7a2f5cf929046f978e00c4e75ce9092"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_METHOD_CONTRACT.json",
+      "bytes": 7500,
+      "sha256": "6b8a26939c8c6134dbf2e8294ee7905fccc2122b570b046f3183a3d2f5caba97"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_published_fit_competence_v1/ACTUAL_FIT_COMPETENCE_RECEIPT.json",
+      "bytes": 5161,
+      "sha256": "1eb48b33da4e835d5cb13dec55437842c05b7d5fa9718d201862bf82bb2ef971"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_regime_pilot_v1/ACTUAL_FORMAL_ATTEMPT_COUNTER_AND_STOP.json",
+      "bytes": 2487,
+      "sha256": "24eb7dfbce63f051cedd974a1c7cb0ca489fc0438a16abb2e1406e91b7a5f569"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/COMPETENCE_COMMON_AXIS.json",
+      "bytes": 561,
+      "sha256": "36d0f313148b780de2d73cb95c77ec705f5edbf53b989dc4b01033d9e7d4801f"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/orion_linear.R",
+      "bytes": 7251,
+      "sha256": "6f4f9dbdbe5d147019806b60a4aa6c2fe82d888d1e4d87d71b99807552129b25"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/DATA_ROLE_REGISTRY.csv",
+      "bytes": 13078,
+      "sha256": "ac604e659a15bae46c0daedff1d7f47f98f92916872cfcdc9b7e18cc9e52e241"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/MATURE_ASSETS.csv",
+      "bytes": 11267,
+      "sha256": "55cad38cfb89c111c650e7770db503411c1da5e520e495ed99d0c5bdc5f3d594"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/MCFALINE_EXTERNAL_UPSTREAM_SELECTION.json",
+      "bytes": 2479,
+      "sha256": "e1123a6e62bd51fd50063443441cf3eb00fd85f7802192971dd8ef0494ce0e9c"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/MCFALINE_DECODER_SINGLE_REPAIR_CONTRACT.md",
+      "bytes": 2400,
+      "sha256": "35fda0a65c5f59c923444032ed302d308203198e5735cfec4518e8100cf2eb99"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_mcfaline23/test_pretruth_20260930/full_prediction_run/.hydra/config.yaml",
+      "bytes": 3845,
+      "sha256": "6f6a1bff9d0237e62eb2da7b5ddb7b9097c2285baabdc29c35eaff07ff3318c2"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HCT116/STATUS.tsv",
+      "bytes": 396,
+      "sha256": "3fbba9b5082d4e1f3f014967222b028e5930b424020bafe3db424b621dcc0f23"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HEK293T/STATUS.tsv",
+      "bytes": 397,
+      "sha256": "ae93d84abca8d95d115cb3667a6138e568e4f9f3aeca65cd015e9e2362948d70"
+    }
+  ],
+  "table": "ASSET_READINESS.csv",
+  "scientific_readiness": "Not established by asset availability or this audit; no method gain or replicated boundary law claimed."
+}

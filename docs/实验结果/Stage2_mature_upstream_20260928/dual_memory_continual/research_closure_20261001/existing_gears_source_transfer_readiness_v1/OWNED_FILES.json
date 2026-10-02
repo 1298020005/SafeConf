@@ -1,0 +1,17 @@
+{
+  "schema": "safeconf_existing_gears_source_transfer_readiness_owned_v1",
+  "files": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/existing_gears_source_transfer_readiness_v1/READINESS.json",
+      "bytes": 25199,
+      "sha256": "7aac413a2d0bc6d5d998a061f377c372ba92d1b1c0c1dcfdcedd7071ab077300"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/existing_gears_source_transfer_readiness_v1/READINESS.md",
+      "bytes": 4178,
+      "sha256": "4b09f3bd13a04efddc95cce1166ceb978747e95a1a14057380972d1795a95117"
+    }
+  ],
+  "only_new_audit_outputs": true,
+  "existing_files_modified": 0
+}

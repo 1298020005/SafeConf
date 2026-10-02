@@ -1,5 +1,13 @@
 # Implementation and scientific observations
 
+## 2026-10-02: fixed Source scale stress and reporting repair
+
+Independent static review rejected the first unrun implementation: a macro mean skipped undefined Spearman/U20 while labelling all4contexts. Preserve original code f342, proposal e7ae and FAIL receipt c663. The sole technical correction requires all4contexts for each macro metric and explicitly reports finite-context counts. Freshv2 proposal4049/code37f61 passed independent static review31ec before Root approval3a1e; no original Source model or metric changed.
+
+Actualv2 completed once in9.998462seconds,CPU10.335635seconds,peakRSS567353344bytes. All3scales×2architectures×4contexts are reported; baseline feature/risk/error bytes reproduce exactly, all original102registry bindings and9executing-code bindings retain SHA. No new fits/CDF/upstream/Target/Orion calls or bootstraps occurred. Original full-fit risk models overlap these Source rows; the diagnostic is in-sample.
+
+P-only risk compresses strongly at5%scale, but Public HGB retains many unique scores and strong changed-error correlation. Three-context U20 reversals coexist with improved distance performance, changed error ranking/denominator and better Public-HGB error@10 than distance in all scaled macro comparisons. Independent scientific review rejects a causal Orion explanation and repair activation. Stop variants; preserve all150stratum/macro rows with diagnostic roles. Evidence: `orion_preparation/source_counterfactual_scale_stress_v2/INDEPENDENT_SCIENTIFIC_REVIEW_AND_STOP.json`.
+
 ## Nested isolation repair
 
 The previous public-OOF feature cohort could carry outer-query biology into risk-training reference learning. Reconstructed the five outer cohorts with four inner public folds each. September frozen code and confirmation were preserved. The new results are explicitly DEV/SEEN.

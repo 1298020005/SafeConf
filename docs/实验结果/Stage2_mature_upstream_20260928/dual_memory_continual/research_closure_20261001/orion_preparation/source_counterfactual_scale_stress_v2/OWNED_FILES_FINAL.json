@@ -1,0 +1,132 @@
+{
+  "schema": "safeconf_source_scale_stress_v2_final_owned_package",
+  "created_utc": "2026-10-02T01:39:59.352703+00:00",
+  "status": "COMPLETE_DIAGNOSTIC_NO_REPAIR_PROMOTION",
+  "files": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_source_counterfactual_scale_stress_agent.py",
+      "bytes": 33609,
+      "sha256": "37f61c643d9ec92bc9931db397336839a93f97e6e6a2e0e47cc4ea1ef5b7acca"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v1/INDEPENDENT_REVIEW.json",
+      "bytes": 3909,
+      "sha256": "c66375f09058ebcbfe3093f04c9492253c9864c099280d929f979ee03e4cfe61"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v1/OWNED_FILES.json",
+      "bytes": 1490,
+      "sha256": "f78fec2937229c471363bf67084c49b23a4c77e6d3893b1716618d5bf1aeedc3"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v1/PROPOSED_SCOPE.json",
+      "bytes": 32567,
+      "sha256": "e7ae0be655d9fa91a578e603e6211eb03a78da28cc1d02c9caebc308ad3d13f5"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v1/README.md",
+      "bytes": 2138,
+      "sha256": "0dc2edde28588c0e23a568c1a07179f3fbd68c3ab48000a4fbf97976cd73bd0d"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v1/REJECTED_CODE_SNAPSHOT.py",
+      "bytes": 32743,
+      "sha256": "f342fd3489eb8538784bb2fec6705a713841c133d0e9e264f7b96ca82fc98d94"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v1/ROOT_APPROVAL_TEMPLATE.json",
+      "bytes": 770,
+      "sha256": "0bb24c45212198b4ce23e406ef4332aefd1ccd539ca7f88a4b6e016d99781e39"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/ACTUAL_ACCOUNTING.json",
+      "bytes": 1831,
+      "sha256": "6481cb4af75fad3b8efeec002bb91dc2cb053f3ba73cbbdc0a0817d1184f9cd6"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/ALL_CONTEXT_MACRO_METRICS.csv",
+      "bytes": 6769,
+      "sha256": "0a688d6124a5c798740a3f41c98957bf78083ee15930f10ac8cf4b0b80c4fd73"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/ALL_FEATURE_SUMMARIES.csv",
+      "bytes": 39804,
+      "sha256": "ff1a67c7fd0b590dab2fa71e759b222538c4015c437bbf61dee8c4f4b8e76234"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/ALL_STRATUM_METRICS_RANKS_TIES.csv",
+      "bytes": 31181,
+      "sha256": "ffea76b6ad2883932baae30a53c0a81e03277551fed25abc1c04cd4c6bbbc0d4"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/COST_APPEND_ROW.csv",
+      "bytes": 969,
+      "sha256": "d9289172272a2c33151e856708a09a9e80652f09d1cd8535bb2dc3b2479a7749"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/EXPERIMENT_APPEND_ROWS.csv",
+      "bytes": 90095,
+      "sha256": "75a47063d0d45fadbb548840e965772c67bd72752795c0d3e2ac31a649793537"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/INDEPENDENT_REVIEW.json",
+      "bytes": 5448,
+      "sha256": "31ecedff249ef3c61c2743b60ecbaeb8bc8a3dfdd881dbc00405df717cb30f28"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/INDEPENDENT_SCIENTIFIC_REVIEW_AND_STOP.json",
+      "bytes": 11525,
+      "sha256": "be08dda35dac9dd9306adcf8e2c4b68e36eb7728bcefde290df8a94396ffec6e"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/INFORMATION_APPEND_ROW.csv",
+      "bytes": 970,
+      "sha256": "f677f60ca32a697119612cd52b57d81f7f01501ddb3babbe626bcff37c443a31"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/PREDICTION_CONDITIONS.csv",
+      "bytes": 2162,
+      "sha256": "9e68a9d3551ad9a2f0c5556301c1108c820e3c5870d1d5fe1c12e04aacc96ee2"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/PROPOSED_SCOPE.json",
+      "bytes": 32567,
+      "sha256": "4049c7b9754479d1fc42f9271dff875815d7f22a61e4e12aeb0a396f037fad88"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/README.md",
+      "bytes": 3714,
+      "sha256": "26c7cc210178fb94583eb2d5c3c1b8d3e63de7e92d38d3aacd605dfffc117f7c"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/RESULT_MANIFEST.json",
+      "bytes": 8044,
+      "sha256": "f5675b600327a42bf5b67a7855322c191635cccd1526562f6a851b85ca984979"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/ROOT_APPROVAL.json",
+      "bytes": 1256,
+      "sha256": "3a1ef5ddeeaca2c90c3a80060013b3de0ab508940eac0c5d345c548143a5766a"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/ROOT_APPROVAL_TEMPLATE.json",
+      "bytes": 770,
+      "sha256": "e36039ff534d8bdc45f6f85948dc6cc44eb449192bfcf75ce5fea20ac08aa8bd"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/SCIENTIFIC_REVIEW_OWNED_FILES.json",
+      "bytes": 487,
+      "sha256": "2bdd3c9a001f95a1c32a14b9ac1d8a8508b1b53faba6a2366937baa65fbb8388"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/SOURCE_ERROR_ORDERING.csv",
+      "bytes": 3872,
+      "sha256": "94a2297ee292c670c8d1a10f4b18e3526b349d520f54fc1ca0b7c775f8481bd0"
+    }
+  ],
+  "large_runtime_arrays_not_in_git": true,
+  "original_v1_owned_manifest_is_historical_preexecution_registration": true,
+  "rejected_v1_code_exact_copy": "source_counterfactual_scale_stress_v1/REJECTED_CODE_SNAPSHOT.py",
+  "new_fits": 0,
+  "upstream_attempt_total": 2
+}

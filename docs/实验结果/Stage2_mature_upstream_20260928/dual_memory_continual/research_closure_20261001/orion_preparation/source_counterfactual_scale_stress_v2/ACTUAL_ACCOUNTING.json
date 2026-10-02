@@ -1,0 +1,49 @@
+{
+  "schema": "safeconf_source_scale_stress_v2_actual_accounting",
+  "created_utc": "2026-10-02T01:35:35.733837+00:00",
+  "status": "COMPLETE",
+  "actual_receipt": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/RESULT_MANIFEST.json",
+    "bytes": 8044,
+    "sha256": "f5675b600327a42bf5b67a7855322c191635cccd1526562f6a851b85ca984979"
+  },
+  "scientific_review": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_counterfactual_scale_stress_v2/INDEPENDENT_SCIENTIFIC_REVIEW_AND_STOP.json",
+    "bytes": 11525,
+    "sha256": "be08dda35dac9dd9306adcf8e2c4b68e36eb7728bcefde290df8a94396ffec6e"
+  },
+  "master_row_counts_before_after": {
+    "cost": [
+      341,
+      342
+    ],
+    "information": [
+      302,
+      303
+    ],
+    "experiment": [
+      1337,
+      1487
+    ]
+  },
+  "biological_tasks": 1808,
+  "independent_gene_clusters": 575,
+  "original_upstreams": 2,
+  "independent_families": 1,
+  "scaled_prediction_record_rows": 10848,
+  "frozen_HGB_predict_batch_calls": 6,
+  "new_upstream_calls": 0,
+  "new_formal_upstream_attempts": 0,
+  "formal_attempt_total_unchanged": 2,
+  "new_fits": 0,
+  "new_CDF_fits": 0,
+  "bootstrap_draws": 0,
+  "Source_errors_used_for_new_supervision": 0,
+  "Target_Orion_accesses": 0,
+  "CPU_seconds": 10.335635022,
+  "wall_seconds": 9.998462071176618,
+  "peak_RSS_bytes": 567353344,
+  "GPU_hours": 0,
+  "download_bytes": 0,
+  "scope": "In-sample artificial intervention; not independent validation, parameter selection, repair activation or publication readiness"
+}

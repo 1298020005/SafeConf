@@ -20,6 +20,8 @@ A separately registered SourceDEV task-mean diagnostic generated1808heldout pred
 
 ## Existing original main-matrix entry
 
+Before that historical entry, note the later completed Source-only scale stress: `orion_preparation/source_counterfactual_scale_stress_v2/README.md` records the exact one-shot run, three fixed scales, full baseline byte reproduction, source/input protections and independent interpretation. It used existing full-fit risk models on their own Source rows, so it is not held-out transfer. The unrun v1 reporting bug, rejected code snapshot and fixed v2 are preserved. No variants or reruns are scheduled; new upstream attempt count remains2.
+
 Run from the repository root, with the registered September prediction/public-memory assets present:
 
 ```bash
