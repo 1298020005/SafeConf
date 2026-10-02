@@ -1,12 +1,21 @@
 {
   "owner": "source_objective_probe_preparation",
-  "status": "PREPARED_NOT_RUN",
+  "status": "TECHNICAL_REPAIR_V2_PREPARED_NOT_RUN",
   "files": [
     "tools/scripts/probe_safeconf_source_label_objective.py",
     "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/README.md",
-    "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/OWNED_FILES.json"
+    "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/OWNED_FILES.json",
+    "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/TECHNICAL_REPAIR_v2.md",
+    "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/failed_preparation_v1/probe_safeconf_source_label_objective.py",
+    "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/failed_preparation_v1/README.md",
+    "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/failed_preparation_v1/OWNED_FILES.json"
   ],
-  "script_sha256": "f77968fb5537c850b9812e58cd8d69eda904255babcec1a210eeddd3185be496",
+  "script_sha256": "6b6863f375bdf997f55fe320ae80ef11eeb6af907dd326b4089c042d14a95dc9",
+  "preserved_v1_script_sha256": "f77968fb5537c850b9812e58cd8d69eda904255babcec1a210eeddd3185be496",
+  "previous_root_run_fits": 1,
+  "v2_new_fit_upper_bound": 19,
+  "v2_model_evaluations": 20,
+  "v2_reused_models": 1,
   "actual_source_reads": 0,
   "actual_fits": 0,
   "self_check": "PASS",

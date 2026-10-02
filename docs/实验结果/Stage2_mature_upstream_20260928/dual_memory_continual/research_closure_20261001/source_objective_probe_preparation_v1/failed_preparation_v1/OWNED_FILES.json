@@ -1,0 +1,15 @@
+{
+  "owner": "source_objective_probe_preparation",
+  "status": "PREPARED_NOT_RUN",
+  "files": [
+    "tools/scripts/probe_safeconf_source_label_objective.py",
+    "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/README.md",
+    "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/OWNED_FILES.json"
+  ],
+  "script_sha256": "f77968fb5537c850b9812e58cd8d69eda904255babcec1a210eeddd3185be496",
+  "actual_source_reads": 0,
+  "actual_fits": 0,
+  "self_check": "PASS",
+  "requires_explicit_user_label_rule_exception": true,
+  "root_owned_research_lead_decision_edited": false
+}

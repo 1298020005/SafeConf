@@ -1,0 +1,30 @@
+{
+  "scope": "oneSourceDEV codec technicalrepair;originalcode/model retained",
+  "files": [
+    {
+      "current_path": "tools/scripts/probe_safeconf_source_label_objective.py",
+      "preserved_original_path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/failed_preparation_v1/probe_safeconf_source_label_objective.py",
+      "original_sha256": "f77968fb5537c850b9812e58cd8d69eda904255babcec1a210eeddd3185be496",
+      "current_sha256": "6b6863f375bdf997f55fe320ae80ef11eeb6af907dd326b4089c042d14a95dc9",
+      "meaning": "prior result-index bindings are immutable version snapshots;oldcode recovered from preservedpath or git190b82e"
+    },
+    {
+      "current_path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/README.md",
+      "preserved_original_path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/failed_preparation_v1/README.md",
+      "original_sha256": "5ab40bdef50016230b1ee02a5b230f1eb66a2b1750443c8f7229bc7d6cd7035b",
+      "current_sha256": "5ab40bdef50016230b1ee02a5b230f1eb66a2b1750443c8f7229bc7d6cd7035b",
+      "meaning": "prior result-index bindings are immutable version snapshots;oldcode recovered from preservedpath or git190b82e"
+    },
+    {
+      "current_path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/OWNED_FILES.json",
+      "preserved_original_path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/failed_preparation_v1/OWNED_FILES.json",
+      "original_sha256": "234bc8472a79d55ac007e4801622f733456c385d9aa278bc601b7158cef2cfd0",
+      "current_sha256": "2e2ff248c74f5c40ec81c8f6e5f488142a6c865167494d7d6fcf9fdbbfff80f5",
+      "meaning": "prior result-index bindings are immutable version snapshots;oldcode recovered from preservedpath or git190b82e"
+    }
+  ],
+  "cumulative_fits": 20,
+  "new_fits_v2": 19,
+  "original_rank_model_reused": 1,
+  "actual_scope_stop": "No primarygain;no furtherobjectivevariants"
+}

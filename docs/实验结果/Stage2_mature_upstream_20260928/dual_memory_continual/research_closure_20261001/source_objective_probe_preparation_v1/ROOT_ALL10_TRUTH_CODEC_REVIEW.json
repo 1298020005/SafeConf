@@ -1,0 +1,79 @@
+{
+  "status": "PASS_ROOT_ALL10_SOURCE_QUERY_ERROR_CODEC_IDENTITY",
+  "source_rows": 3616,
+  "checks": [
+    {
+      "line": "GAT_to_Exphormer",
+      "fold": 0,
+      "tasks": 362,
+      "float32_bits_exact": true,
+      "maximum_cached64_vs_archive_decimal_gap": 3.7037467953693337e-09
+    },
+    {
+      "line": "GAT_to_Exphormer",
+      "fold": 1,
+      "tasks": 362,
+      "float32_bits_exact": true,
+      "maximum_cached64_vs_archive_decimal_gap": 4.3396758964142634e-09
+    },
+    {
+      "line": "GAT_to_Exphormer",
+      "fold": 2,
+      "tasks": 362,
+      "float32_bits_exact": true,
+      "maximum_cached64_vs_archive_decimal_gap": 4.9108886679416486e-09
+    },
+    {
+      "line": "GAT_to_Exphormer",
+      "fold": 3,
+      "tasks": 361,
+      "float32_bits_exact": true,
+      "maximum_cached64_vs_archive_decimal_gap": 4.871177683440919e-09
+    },
+    {
+      "line": "GAT_to_Exphormer",
+      "fold": 4,
+      "tasks": 361,
+      "float32_bits_exact": true,
+      "maximum_cached64_vs_archive_decimal_gap": 4.241218570788519e-09
+    },
+    {
+      "line": "Exphormer_to_GAT",
+      "fold": 0,
+      "tasks": 362,
+      "float32_bits_exact": true,
+      "maximum_cached64_vs_archive_decimal_gap": 3.6743354747681423e-09
+    },
+    {
+      "line": "Exphormer_to_GAT",
+      "fold": 1,
+      "tasks": 362,
+      "float32_bits_exact": true,
+      "maximum_cached64_vs_archive_decimal_gap": 3.7132835417619248e-09
+    },
+    {
+      "line": "Exphormer_to_GAT",
+      "fold": 2,
+      "tasks": 362,
+      "float32_bits_exact": true,
+      "maximum_cached64_vs_archive_decimal_gap": 3.723526001420119e-09
+    },
+    {
+      "line": "Exphormer_to_GAT",
+      "fold": 3,
+      "tasks": 361,
+      "float32_bits_exact": true,
+      "maximum_cached64_vs_archive_decimal_gap": 4.24983978564164e-09
+    },
+    {
+      "line": "Exphormer_to_GAT",
+      "fold": 4,
+      "tasks": 361,
+      "float32_bits_exact": true,
+      "maximum_cached64_vs_archive_decimal_gap": 3.796615605233811e-09
+    }
+  ],
+  "new_fits": 0,
+  "external_numeric_rows_parsed": 0,
+  "mathematical_targets_changed": false
+}

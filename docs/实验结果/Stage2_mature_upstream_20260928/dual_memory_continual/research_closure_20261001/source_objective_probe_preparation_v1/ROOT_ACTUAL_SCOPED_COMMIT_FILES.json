@@ -1,0 +1,201 @@
+{
+  "scope": "ActualSourceDEV20fit_objective_stop_and_preserved_codec_repair",
+  "scientific_success_or_external_claim": false,
+  "files": [
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/CDF_AUDIT.csv",
+      "bytes": 37296,
+      "sha256": "5f4a645b8fcbcf2d967d966f1713382df006790a1274aa51de7c8b270c1ee412"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/CLAIM_EVIDENCE_MATRIX.md",
+      "bytes": 15378,
+      "sha256": "dca684e613a74d0a98df7e22a2708437180d5f17f3d2d721dce55cc01a5e39d4"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/COST_MASTER_TABLE.csv",
+      "bytes": 131015,
+      "sha256": "bcb87f064283464e52c5b09dfd75385735abe1b10e65f3ff2c2fb46d222156f3"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/EXECUTION_STATUS.json",
+      "bytes": 34879,
+      "sha256": "9fa89c654a38fd899ead88ac34727e2873589b256e2e854c9178b2b9f1ea4e8b"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/EXPERIMENT_MASTER_TABLE.csv",
+      "bytes": 889343,
+      "sha256": "125402b97f26ef30261254a359fe0a906ace32f64cef7c8c6520d3ef7db8d583"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/FAILURE_AND_REPAIR_LOG.md",
+      "bytes": 22302,
+      "sha256": "f258e1d31fa51bb944b2c4c461057e9b6239e7eb33baeafe26fa6f0bdb6674b2"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/INFORMATION_BUDGET_LEDGER.csv",
+      "bytes": 96154,
+      "sha256": "50f2daf48a8d6b62c82d1229d0372ccd2563a3496d135ea10d366dc73501a25c"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/METHOD_DECISION.md",
+      "bytes": 12223,
+      "sha256": "3d5f7a5c18a9e19c4703ab1f98d247a97a7bc6dfa2cee06ad1d250411b3ffe62"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/PAPER_RESULT_TABLES.md",
+      "bytes": 11163,
+      "sha256": "5e60b23bf1bad5b7cab1bde2375d8aaa5778de6ebd31b0e2227b8dcf3ac91056"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/REPRODUCIBILITY_REPORT.md",
+      "bytes": 22395,
+      "sha256": "dad9eb8aa40fc2b460452fc7439c6d4b799d0e7b58da08204901c95585728f4f"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/RESULT_INDEX.csv",
+      "bytes": 431445,
+      "sha256": "61510aacf49a304fba4b4710e0841e02ce53987168191dcfa940631003f040ad"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/ACTUAL_FAILED_V1_REGISTRATION.json",
+      "bytes": 11960,
+      "sha256": "7959e8ff1d0123dd4c51cbeac0e39b8b0d6eb90082863dac2f48b89e4d03ca50"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/ACTUAL_FAILED_V1_STATUS.json",
+      "bytes": 5331,
+      "sha256": "5fea8cc4c8fd32cb3034068f1ec7b18bf8a24ba6b3406d0bcc92ed6969e13119"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/ACTUAL_METHOD_DECISION.md",
+      "bytes": 1560,
+      "sha256": "b94b0430533aeb31620167d1a5733ff6faa81c2c34abd9a7971298b7e878246a"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/ACTUAL_V2_AFFINE_TRAINING_AUDIT.csv",
+      "bytes": 12978,
+      "sha256": "e8596248ed4ac6956ae628769265f1fa57c4ba0ec19364066c7e15ed64db3120"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/ACTUAL_V2_CDF_AUDIT.csv",
+      "bytes": 15051,
+      "sha256": "daeccb1a0b2f7581904a42330afd15dd263f3979e58a688641c4e6fac1908b26"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/ACTUAL_V2_CONTEXT_METRICS.csv",
+      "bytes": 9540,
+      "sha256": "edd4e7d67d67fca38880cbe6f185200ae1827b6072384a5418b2f2a4a0a3c8f6"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/ACTUAL_V2_CURRENT_SCORE_REPLAY.csv",
+      "bytes": 1896,
+      "sha256": "ce043a33d19dddae325f0691b87f0712a6eb45a46182b9c4e73ba35d1e8b647d"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/ACTUAL_V2_FIT_COSTS.csv",
+      "bytes": 2720,
+      "sha256": "b6e5a4654e424211e3d09c76bf565f384700186513900e15955cbcb3ee44ef41"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/ACTUAL_V2_FOLD_CONTEXT_METRICS.csv",
+      "bytes": 46748,
+      "sha256": "04ab25e8c2245ec39ae4aee8cada4ef334e1e7f21f97a3cc765041995cd90365"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/ACTUAL_V2_LINE_MACRO_METRICS.csv",
+      "bytes": 2327,
+      "sha256": "235268bfcdb65fc05c534ddcb582abb607e4166d8b940abf75545688eac9eaa2"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/ACTUAL_V2_REGISTRATION.json",
+      "bytes": 15546,
+      "sha256": "929fea471afd514c1b69bb95ad1d9991b75dcc262537fa59fae1026164f16757"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/ACTUAL_V2_SCORE_FREEZE.json",
+      "bytes": 4947,
+      "sha256": "17514b553c28d56030677d2d9cfd60127adebfb73cab41fb37440f9d96f6769c"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/ACTUAL_V2_STATUS.json",
+      "bytes": 6332,
+      "sha256": "be2f23c848c97c65ac8ed94fe15ca8aff1733f619ebcca0ce88cc241165bc520"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/ACTUAL_V2_TAIL_CLIPPING_AUDIT.csv",
+      "bytes": 11173,
+      "sha256": "7c8d83ed70350f40742c0990e2e19e06752b8856ab4321309ddeb1e569478c61"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/APPROVAL_REQUEST.json",
+      "bytes": 4504,
+      "sha256": "512374a7fd0885bd6bbc63db22ebd4e544be72bc090ba6874ac0e8df1746810e"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/INDEPENDENT_ACTUAL_REVIEW.md",
+      "bytes": 7425,
+      "sha256": "75190da76ac5dd5da320cd3f254d57ca1554ef14fc6ce0ff0983f0f365b85a18"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/OWNED_FILES.json",
+      "bytes": 1710,
+      "sha256": "2e2ff248c74f5c40ec81c8f6e5f488142a6c865167494d7d6fcf9fdbbfff80f5"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/README.md",
+      "bytes": 7291,
+      "sha256": "5ab40bdef50016230b1ee02a5b230f1eb66a2b1750443c8f7229bc7d6cd7035b"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/RESEARCH_LEAD_DECISION.md",
+      "bytes": 3349,
+      "sha256": "ac4a682d47bddab82fc9f5a01d26dec9cf386f8a44ff0f3e85fa71b719a4729a"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/ROOT_ALL10_TRUTH_CODEC_REVIEW.json",
+      "bytes": 2098,
+      "sha256": "cb1d1b1eee61ee96fd18b6714124d39eeb5df8f265710c0b68b25c2f01cfc236"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/ROOT_PREPARATION_REVIEW.json",
+      "bytes": 941,
+      "sha256": "8d3e825cb5598ce4b4fe63e144b04329e5ab8a98c4b579d5e9f52bda08d29d52"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/ROOT_SCOPED_COMMIT_FILES.json",
+      "bytes": 2597,
+      "sha256": "0b6d25fd8ecb14003379f5b333ed1267e4bf700b90e3ffffb7cfaf03b87b994e"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/ROOT_VERSION_LINEAGE.json",
+      "bytes": 2310,
+      "sha256": "695b9b5309be7ba773e7c839f8c08afa3f479f7618a9bfa4f8448e7de9eace85"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/TECHNICAL_REPAIR_v2.md",
+      "bytes": 3688,
+      "sha256": "a1bb96b8877d1b331d9a3fe5be70f37ce64e3866d6a4337206ba7c9317e2bc6f"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/failed_preparation_v1/OWNED_FILES.json",
+      "bytes": 743,
+      "sha256": "234bc8472a79d55ac007e4801622f733456c385d9aa278bc601b7158cef2cfd0"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/failed_preparation_v1/README.md",
+      "bytes": 7291,
+      "sha256": "5ab40bdef50016230b1ee02a5b230f1eb66a2b1750443c8f7229bc7d6cd7035b"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/failed_preparation_v1/probe_safeconf_source_label_objective.py",
+      "bytes": 20644,
+      "sha256": "f77968fb5537c850b9812e58cd8d69eda904255babcec1a210eeddd3185be496"
+    },
+    {
+      "path": "tools/scripts/probe_safeconf_source_label_objective.py",
+      "bytes": 26763,
+      "sha256": "6b6863f375bdf997f55fe320ae80ef11eeb6af907dd326b4089c042d14a95dc9"
+    }
+  ]
+}

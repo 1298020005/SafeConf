@@ -1,0 +1,39 @@
+{
+  "status": "FROZEN_BEFORE_METRICS",
+  "script_sha256": "6b6863f375bdf997f55fe320ae80ef11eeb6af907dd326b4089c042d14a95dc9",
+  "task_predictions_sha256": "9455199d03d832b390d86c33f86eebb340f1ff24e4d573fa91edea1402d66eaf",
+  "models_saved": 20,
+  "model_sha256": {
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_objective_probe_v1/approved_20261002_v2/MODEL_GAT_to_Exphormer_fold0_rank.joblib": "37e378db03fe7949a1ffc8ed400b480fb6c6f580be26bccc10f08e3b8f271097",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_objective_probe_v1/approved_20261002_v2/MODEL_GAT_to_Exphormer_fold0_raw_affine.joblib": "5666b42b6805c53c8f9123b16c55c51cd34907efef4e34841d352a7d76b5ed15",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_objective_probe_v1/approved_20261002_v2/MODEL_GAT_to_Exphormer_fold1_rank.joblib": "45b24e026f33f3f9d19d21c56603d63b131574d2c6e2ab6f78ff698cf1b0b8a6",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_objective_probe_v1/approved_20261002_v2/MODEL_GAT_to_Exphormer_fold1_raw_affine.joblib": "cf2d39ca3a365e469b13efadb2f0c00f67b135327bbf7e059ec456ae354f2065",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_objective_probe_v1/approved_20261002_v2/MODEL_GAT_to_Exphormer_fold2_rank.joblib": "f6396d586a4cb244e09e754a0af4b18a7a3c9ded88000bb3abd7b49dd7e11fa2",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_objective_probe_v1/approved_20261002_v2/MODEL_GAT_to_Exphormer_fold2_raw_affine.joblib": "bda84dce9d3b9078b02abf16442737f9ff0dd33646aeb67ea2519555aaccde93",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_objective_probe_v1/approved_20261002_v2/MODEL_GAT_to_Exphormer_fold3_rank.joblib": "2d7411bba2a5730c9de0a96fc9e73461b1745daef55d59c3711c7298bbc9eb92",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_objective_probe_v1/approved_20261002_v2/MODEL_GAT_to_Exphormer_fold3_raw_affine.joblib": "c633833cacf709632196a57c5264e8e08d05bd023037340acbd3bd21e5995fef",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_objective_probe_v1/approved_20261002_v2/MODEL_GAT_to_Exphormer_fold4_rank.joblib": "e41b335e92b7c99473971eee7291655bcbe9e6a33e9a1b7277d3d846ca19d64d",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_objective_probe_v1/approved_20261002_v2/MODEL_GAT_to_Exphormer_fold4_raw_affine.joblib": "62cf01fc6d9d9a71c2d7e1fec3dc00199a9d109ab029fb95b4c22498f3af4940",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_objective_probe_v1/approved_20261002_v2/MODEL_Exphormer_to_GAT_fold0_rank.joblib": "a84771208a02dca3d60e4eab598941225716eb166ce7028e8a7c073990b87c80",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_objective_probe_v1/approved_20261002_v2/MODEL_Exphormer_to_GAT_fold0_raw_affine.joblib": "644bd0e4b2b1afffafd447b08478ac32e5a06375850174f456e6491a13dfe0ae",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_objective_probe_v1/approved_20261002_v2/MODEL_Exphormer_to_GAT_fold1_rank.joblib": "da130f57069742c7891da137a0f6028cccc8ba3fc0458c27649526b51d79d1a1",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_objective_probe_v1/approved_20261002_v2/MODEL_Exphormer_to_GAT_fold1_raw_affine.joblib": "60c95266174be64bd0ed7994fc98454ece7856c51f3b33cc24999dc306972192",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_objective_probe_v1/approved_20261002_v2/MODEL_Exphormer_to_GAT_fold2_rank.joblib": "4ff7a8865dc9f00cb110307d3d86321d4b581a301a445209873d05461f42f142",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_objective_probe_v1/approved_20261002_v2/MODEL_Exphormer_to_GAT_fold2_raw_affine.joblib": "612b862b1be6fa24e9bec23130962e1e921800774f75a8b01a4e11e58a454c32",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_objective_probe_v1/approved_20261002_v2/MODEL_Exphormer_to_GAT_fold3_rank.joblib": "32bcfd9a050a2e6c5436d26d4cf3af14a5a247cd238d21105f36d29f51d4247d",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_objective_probe_v1/approved_20261002_v2/MODEL_Exphormer_to_GAT_fold3_raw_affine.joblib": "3ae19a0bfc56160f04e9cacb8e9c6294f5c17e2e1d43dbeec4a05620d68bfb67",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_objective_probe_v1/approved_20261002_v2/MODEL_Exphormer_to_GAT_fold4_rank.joblib": "935372136d5e4a25b1690624807be0b98a6e7ed12b5b577ae8f22b6128460c94",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_objective_probe_v1/approved_20261002_v2/MODEL_Exphormer_to_GAT_fold4_raw_affine.joblib": "a3a42ad0cabc1451dc22dedd65213df2a95a86713e1c0bba2327a5cf63d77afa"
+  },
+  "model_evaluations": 20,
+  "new_fits": 19,
+  "previous_fits": 1,
+  "reused_models": 1,
+  "cumulative_fits": 20,
+  "zero_fit_rules": [
+    "Magnitude",
+    "Learned_DirectRMSE",
+    "Learned_WeightedHistoryDistance"
+  ],
+  "formal_score_promotion": false
+}

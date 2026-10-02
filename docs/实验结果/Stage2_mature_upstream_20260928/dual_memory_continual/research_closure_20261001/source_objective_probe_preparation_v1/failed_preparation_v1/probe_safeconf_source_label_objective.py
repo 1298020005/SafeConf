@@ -11,7 +11,6 @@ import math
 import os
 from pathlib import Path
 import signal
-import shutil
 import sys
 import time
 from unittest.mock import patch
@@ -45,19 +44,8 @@ IDENTITY = list(dict.fromkeys(["task_id", "gene", "fold"] + CDF_KEYS))
 SOURCE_COLUMNS = IDENTITY + ["true_error_rmse"]
 SEED = SEEDS[0]
 MAX_FITS = 20
-MAX_NEW_FITS = 19
-PREVIOUS_FITS = 1
 WALL_SECONDS = 1200
 SCORE_TOLERANCE = 1e-14
-V1 = RUNTIME / "approved_20261002_v1"
-REUSE_MODEL = V1 / "MODEL_GAT_to_Exphormer_fold0_rank.joblib"
-V1_CODE = ROOT / "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/failed_preparation_v1/probe_safeconf_source_label_objective.py"
-REUSE_PINS = {
-    str(REUSE_MODEL): "37e378db03fe7949a1ffc8ed400b480fb6c6f580be26bccc10f08e3b8f271097",
-    str(V1 / "STATUS.json"): "5fea8cc4c8fd32cb3034068f1ec7b18bf8a24ba6b3406d0bcc92ed6969e13119",
-    str(V1 / "REGISTRATION.json"): "7959e8ff1d0123dd4c51cbeac0e39b8b0d6eb90082863dac2f48b89e4d03ca50",
-    str(V1_CODE): "f77968fb5537c850b9812e58cd8d69eda904255babcec1a210eeddd3185be496",
-}
 SCOPE = {
     "role": "SOURCE_DEV_LABEL_OBJECTIVE_DIAGNOSTIC",
     "directions": [p[0] for p in PAIRS], "outer_folds": list(range(5)),
@@ -69,9 +57,6 @@ SCOPE = {
     "zero_fit_rules": ["Magnitude", "Learned_DirectRMSE", "Learned_WeightedHistoryDistance"],
     "save_fit_models": True, "freeze_scores_before_metrics": True,
     "max_fits": MAX_FITS, "bootstrap_replicates": 0, "parameter_search": False,
-    "technical_repair": "restore_original_float32_error_bits_and_evaluate_archive_decimal_codec",
-    "model_evaluations": 20, "max_new_fits": MAX_NEW_FITS,
-    "previous_fits": PREVIOUS_FITS, "reused_models": 1, "reuse_input_sha256": REUSE_PINS,
 }
 CORE_PATHS = tuple(ROOT / p for p in (
     "tools/safeconf_continual/research.py", "tools/safeconf_continual/learners.py",
@@ -98,7 +83,6 @@ def require_approval(path, output):
     if document.get("status") != "USER_APPROVED_SOURCE_DEV_OBJECTIVE_PROBE":
         raise PermissionError("Approval status does not authorize this Source DEV exception")
     required = {"scope": SCOPE, "max_fits": MAX_FITS, "core_unchanged": True,
-                "max_new_fits": MAX_NEW_FITS,
                 "no_external": True, "output_dir": str(output),
                 "source_input_paths": [str(p) for p in SOURCE_PATHS],
                 "source_reference_csv": str(ARCHIVE)}
@@ -139,34 +123,6 @@ def read_archive():
     if not np.isfinite(frame[["risk", "true_error_rmse"]].to_numpy(float)).all():
         raise RuntimeError("Nonfinite whitelisted Source reference numeric values")
     return frame
-
-
-def verify_reuse_binding(before):
-    """Permit exactly the saved first rank model after its old input/core binding."""
-    if any(before[path] != pin for path, pin in REUSE_PINS.items()):
-        raise RuntimeError("Pinned failed-v1 model, status, registration, or original code changed")
-    registration = json.loads((V1 / "REGISTRATION.json").read_text())
-    status = json.loads((V1 / "STATUS.json").read_text())
-    original = registration["input_sha256_before"]
-    if (status["status"] != "FAILED" or status["fits_completed"] != PREVIOUS_FITS
-            or status["all_inputs_unchanged"] is not True
-            or status["input_sha256_after"] != original
-            or registration["approval"]["script_sha256"] != REUSE_PINS[str(V1_CODE)]):
-        raise RuntimeError("Failed-v1 history does not authorize the single-model reuse")
-    for path in SOURCE_PATHS + (ARCHIVE,) + CORE_PATHS:
-        if original[str(path)] != before[str(path)]:
-            raise RuntimeError("Current Source/reference/core SHA differs from the saved model's fit inputs")
-
-
-def float32_codec_identity(cached, archived):
-    """Restore the original CSV float32 codec; no tolerance relaxation."""
-    cached, archived = np.asarray(cached), np.asarray(archived, float)
-    if cached.dtype != np.dtype("float32"):
-        raise RuntimeError("Cached Source errors must retain their original float32 dtype")
-    restored = archived.astype(np.float32)
-    if not np.array_equal(cached.view(np.uint32), restored.view(np.uint32)):
-        raise RuntimeError("Archive decimal errors do not restore the exact cached float32 bits")
-    return hashlib.sha256(cached.astype("<f4", copy=False).tobytes()).hexdigest()
 
 
 def raw_affine_labels(train, ranks):
@@ -225,8 +181,6 @@ def validate_frames(frames):
             manual = frames[CACHE / f"nested_{fold}_{upstream}_Manual.parquet"]
             if not learned[SOURCE_COLUMNS].equals(manual[SOURCE_COLUMNS]):
                 raise RuntimeError("Manual/Learned task order, identity, CDF keys, or truth differs")
-            if learned.true_error_rmse.dtype != np.dtype("float32"):
-                raise RuntimeError("Cached Source errors must retain their original float32 dtype")
             if (learned.empty or learned.task_id.duplicated().any()
                     or set(learned.upstream) != {upstream}
                     or set(learned.fold) != set(range(5))
@@ -245,11 +199,10 @@ def run(args):
     approval = require_approval(args.approval, output)
     if output.parent != RUNTIME or output.resolve() != output or output.exists():
         raise RuntimeError("Output must be a fresh, non-symlink child of the isolated runtime root")
-    all_inputs = SOURCE_PATHS + (ARCHIVE,) + CORE_PATHS + (Path(__file__).resolve(),) + tuple(map(Path, REUSE_PINS))
+    all_inputs = SOURCE_PATHS + (ARCHIVE,) + CORE_PATHS + (Path(__file__).resolve(),)
     if any(p.resolve() != p for p in all_inputs):
         raise PermissionError("An input resolves outside its fixed whitelist path")
     before = {str(p): file_sha(p) for p in all_inputs}
-    verify_reuse_binding(before)
     output.mkdir(parents=True, exist_ok=False)
     write_json(output / "REGISTRATION.json", {"scope": SCOPE, "approval": approval,
         "input_sha256_before": before, "wall_budget_seconds": WALL_SECONDS,
@@ -260,7 +213,6 @@ def run(args):
     signal.setitimer(signal.ITIMER_REAL, WALL_SECONDS)
     started = time.perf_counter()
     costs, predictions, cdf_rows, affine_rows, replays, tails, model_paths = [], [], [], [], [], [], []
-    new_fits, reused_models = 0, 0
     state, failure = "FAILED", None
     try:
         frames = {p: read_source(p) for p in SOURCE_PATHS}
@@ -274,17 +226,6 @@ def run(args):
                 query = b[b.fold.eq(fold)].reset_index(drop=True)
                 if train.empty or query.empty or set(train.gene) & set(query.gene):
                     raise RuntimeError("Missing fold or biological cluster overlap")
-                archive = old[old.line.eq(line) & old.fold.eq(fold)]
-                keys = ["task_id", "target", "gene", "fold", "upstream"]
-                truth_pair = query[keys + ["true_error_rmse"]].merge(
-                    archive[keys + ["true_error_rmse"]], on=keys,
-                    suffixes=("_cache", "_archive"), validate="one_to_one")
-                if len(truth_pair) != len(query) or len(archive) != len(query):
-                    raise RuntimeError("Source reference has a different task identity")
-                truth_bits_sha = float32_codec_identity(
-                    truth_pair.true_error_rmse_cache.to_numpy(), truth_pair.true_error_rmse_archive.to_numpy())
-                evaluation_query = query.copy()
-                evaluation_query["true_error_rmse"] = truth_pair.true_error_rmse_archive.to_numpy(float)
                 ranks, audit = rank_labels(train, f"source-objective/{line}/outer{fold}")
                 cdf_rows.extend(audit)
                 affine, audit = raw_affine_labels(train, ranks)
@@ -295,40 +236,24 @@ def run(args):
                             query.prediction_prior_rmse.to_numpy(float) ** 2 + query.prior_uncertainty.to_numpy(float) ** 2))):
                     if not np.isfinite(risk).all():
                         raise RuntimeError("Nonfinite fixed zero-fit rule predictions")
-                    reference = evaluation_query[["task_id", "target", "gene", "fold", "upstream", "true_error_rmse"]].copy()
+                    reference = query[["task_id", "target", "gene", "fold", "upstream", "true_error_rmse"]].copy()
                     reference["line"], reference["seed"], reference["method"], reference["risk"] = line, SEED, method, risk
                     predictions.append(reference)
                 for arm, labels in (("rank", ranks), ("raw_affine", affine)):
                     if len(costs) >= MAX_FITS:
-                        raise RuntimeError("The fixed 20-model evaluation budget is exhausted")
+                        raise RuntimeError("The fixed 20-fit budget is exhausted")
                     tick = time.perf_counter()
-                    reused = (line, fold, arm) == ("GAT_to_Exphormer", 0, "rank")
-                    if reused:
-                        model = joblib.load(REUSE_MODEL)
-                        reused_models += 1
-                    else:
-                        if new_fits >= MAX_NEW_FITS or PREVIOUS_FITS + new_fits >= MAX_FITS:
-                            raise RuntimeError("The cumulative 20-fit budget is exhausted")
-                        new_fits += 1
-                        model = fit_risk(train, labels, P + PUBLIC, "hgb", SEED, weighted=True)
+                    model = fit_risk(train, labels, P + PUBLIC, "hgb", SEED, weighted=True)
                     risk = model.predict(query, clip=False)
                     if not np.isfinite(risk).all():
                         raise RuntimeError("Nonfinite unbounded diagnostic predictions")
                     costs.append({"line": line, "fold": fold, "arm": arm,
-                        "model_evaluations": 1, "new_fits": int(not reused),
-                        "previous_fits": int(reused), "reused_models": int(reused),
                         "fit_and_predict_seconds": time.perf_counter() - tick,
                         "n_train_rows": len(train), "n_train_clusters": train.gene.nunique(),
                         "training_records_hash": ids_hash(train.upstream + "::" + train.task_id)})
-                    model_path = output / f"MODEL_{line}_fold{fold}_{arm}.joblib"
-                    if reused:
-                        shutil.copyfile(REUSE_MODEL, model_path)
-                        if file_sha(model_path) != REUSE_PINS[str(REUSE_MODEL)]:
-                            raise RuntimeError("Copied reused model bytes differ")
-                        model_paths.append(model_path)
-                    else:
-                        model_paths.extend(Path(p) for p in joblib.dump(model, model_path, compress=3))
-                    part = evaluation_query[["task_id", "target", "gene", "fold", "upstream", "true_error_rmse"]].copy()
+                    model_paths.extend(Path(p) for p in joblib.dump(
+                        model, output / f"MODEL_{line}_fold{fold}_{arm}.joblib", compress=3))
+                    part = query[["task_id", "target", "gene", "fold", "upstream", "true_error_rmse"]].copy()
                     part["line"], part["seed"], part["method"], part["risk"] = line, SEED, arm + "_unbounded", risk
                     predictions.append(part)
                     for context, group in part.groupby("target", sort=True):
@@ -337,21 +262,19 @@ def run(args):
                     if arm == "rank":
                         clipped = part.copy()
                         clipped["method"], clipped["risk"] = "rank_clipped_old_reference", np.clip(risk, 0, 1)
+                        archive = old[old.line.eq(line) & old.fold.eq(fold)]
+                        keys = ["task_id", "target", "gene", "fold", "upstream"]
                         paired = clipped.merge(archive, on=keys, suffixes=("_new", "_old"), validate="one_to_one")
                         if len(paired) != len(query) or len(archive) != len(query):
                             raise RuntimeError("Source score replay has a different task identity")
                         difference = float(np.max(np.abs(paired.risk_new - paired.risk_old)))
-                        if difference > SCORE_TOLERANCE:
+                        if (difference > SCORE_TOLERANCE or not np.allclose(
+                                paired.true_error_rmse_new, paired.true_error_rmse_old, rtol=1e-12, atol=1e-14)):
                             raise RuntimeError("Exact current Source LearnHGB score replay failed; stop before raw arm")
                         replays.append({"line": line, "fold": fold, "n_rows": len(paired),
-                                        "error_float32_bits_sha256": truth_bits_sha,
-                                        "error_identity": "exact_restored_float32_bits",
-                                        "evaluation_error_codec": "original_archive_decimal_float64",
                                         "max_abs_score_difference": difference, "tolerance": SCORE_TOLERANCE})
                         predictions.append(clipped)
-        if (len(costs) != MAX_FITS or new_fits != MAX_NEW_FITS or reused_models != 1
-                or len(model_paths) != 20 or len(replays) != 10
-                or sum(r["n_rows"] for r in replays) != len(old)):
+        if len(costs) != MAX_FITS or len(replays) != 10 or sum(r["n_rows"] for r in replays) != len(old):
             raise RuntimeError("Fixed fit or reference replay coverage is incomplete")
         records = pd.concat(predictions, ignore_index=True)
         score_path = output / "TASK_PREDICTIONS.csv.gz"
@@ -360,9 +283,7 @@ def run(args):
             "script_sha256": before[str(Path(__file__).resolve())],
             "task_predictions_sha256": file_sha(score_path), "models_saved": len(model_paths),
             "model_sha256": {str(p): file_sha(p) for p in model_paths},
-            "model_evaluations": len(costs), "new_fits": new_fits,
-            "previous_fits": PREVIOUS_FITS, "reused_models": reused_models,
-            "cumulative_fits": PREVIOUS_FITS + new_fits, "zero_fit_rules": SCOPE["zero_fit_rules"],
+            "fits": len(costs), "zero_fit_rules": SCOPE["zero_fit_rules"],
             "formal_score_promotion": False})
         contexts, lines = summarize(records)
         contexts.to_csv(output / "CONTEXT_METRICS.csv", index=False)
@@ -384,17 +305,13 @@ def run(args):
         after = {str(p): file_sha(p) for p in all_inputs}
         unchanged = before == after
         write_json(output / "STATUS.json", {"status": state if unchanged else "FAILED_INPUT_MUTATION",
-            "failure": failure, "model_evaluations": len(costs), "new_fits": new_fits,
-            "previous_fits": PREVIOUS_FITS, "reused_models": reused_models,
-            "cumulative_fits": PREVIOUS_FITS + new_fits, "fit_upper_bound": MAX_FITS,
-            "new_fit_upper_bound": MAX_NEW_FITS,
+            "failure": failure, "fits_completed": len(costs), "fit_upper_bound": MAX_FITS,
             "elapsed_seconds": time.perf_counter() - started, "input_sha256_after": after,
             "all_inputs_unchanged": unchanged, "external_numeric_rows_parsed": 0,
             "query_errors_used_in_label_transform": False, "formal_score_promotion": False})
         if not unchanged:
             raise RuntimeError("An input or unchanged core file changed during the diagnostic")
-    print(json.dumps({"status": state, "output": str(output), "model_evaluations": len(costs),
-                      "new_fits": new_fits, "previous_fits": PREVIOUS_FITS, "reused_models": reused_models}))
+    print(json.dumps({"status": state, "output": str(output), "fits": len(costs)}))
 
 
 def self_check():
@@ -409,16 +326,6 @@ def self_check():
     rank_means = [float(ranks[:10].mean()), float(ranks[10:].mean())]
     assert raw_means[0] > raw_means[1] and rank_means[0] < rank_means[1]
     assert raw[:10].mean() > raw[10:].mean() and audit[0]["slope"] > 0
-    cache_error = np.array([.123456789, .234567891], dtype=np.float32)
-    archive_error = np.array([float(str(v)) for v in cache_error])
-    assert not np.array_equal(cache_error.astype(float), archive_error)
-    codec_sha = float32_codec_identity(cache_error, archive_error)
-    rejected_float64_cache = False
-    try:
-        float32_codec_identity(cache_error.astype(float), archive_error)
-    except RuntimeError:
-        rejected_float64_cache = True
-    assert rejected_float64_cache
     attempts = []
     def forbidden(*_args, **_kwargs):
         attempts.append("forbidden_source_or_fit_access")
@@ -435,8 +342,6 @@ def self_check():
         "synthetic_rank_mean_A_B": rank_means, "positive_affine_slope": audit[0]["slope"],
         "weighted_moments_matched": True, "permission_rejection_verified": rejected,
         "source_read_attempts": 0, "actual_fits": 0, "files_written": 0,
-        "synthetic_float32_codec_exact_bits": True, "synthetic_codec_bits_sha256": codec_sha,
-        "float64_cache_rejected": rejected_float64_cache,
         "hypothesis_is_possible_mismatch_not_established_root_cause": True}))
 
 

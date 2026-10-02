@@ -139,3 +139,7 @@ v1在TX_TASK_SPLIT缺source_mean_delta_row时0fit failclosed；源码4aee和ABOR
 ## Magnitude comparator omission and legacy information reclassification
 
 Source primary bootstrap lacked HGB-versus-Magnitude despite near0.75Magnitude. Fixed saved-draw completion:all6U20 CIs crosszero,0refit. E170 strongrules0fit retainalloriginalSHA/Gate;code establishes1920targetvalidation labels/sameknown640gene. Comparison/accounting correction,notmodel repair. Direct480undefined/constantSupport SpearmanNA preserved. No winner/subgroup/seed search follows.
+
+## Source训练目标诊断已执行并停止
+
+固定20fit（v1有效rank1复用＋v2新19）已完成，旧模型/原外部评价不改。raw-affine U20两方向0.774848/0.780253，相对原rank0.783134/0.783743下降0.008287/0.003490；Spearman也均下降，AURC/error@10小幅改善如实保留。40fold/context仅20非负。初轮无CI，不宣称显著退化/等价或外部根因。独立复算全指标/40训练组/20params/SHA通过。原CDF规则保留，停止此目标变体，不转向调尺度/损失。数学可能性未变成当前收益。用户具体委托和Source-only范围记录，0新上游/原始外部truth/GPU。

@@ -119,3 +119,7 @@ SourceDEV isolated v2保存7个原HGB Bio参数（2/3初始OOF+final，2/3/4更�
 ## Fixed Source Magnitude and E170 completions
 
 Source agent script binds actualsaved5000x575counts,40pointreplay,210pairs/280intervals,ROOT_ACTUAL_VERIFICATION PASS. Seed20261002 is notoriginalmainCIseed. E170 script freezes2400scores beforecachederrors;3cohort5000counts,23macro/276strata/161pairs,158fullyvalid/3SpearmanNA;old42points exact. INDEPENDENT_ACTUAL_REVIEW actualarrays/hashes PASS. Costs13.196s/28.047s,0fit/upstream/GPU/primarychange. RuntimeNPZ/ParquetstayoutsideGit.
+
+## Source训练目标诊断已执行并停止
+
+固定20fit（v1有效rank1复用＋v2新19）已完成，旧模型/原外部评价不改。raw-affine U20两方向0.774848/0.780253，相对原rank0.783134/0.783743下降0.008287/0.003490；Spearman也均下降，AURC/error@10小幅改善如实保留。40fold/context仅20非负。初轮无CI，不宣称显著退化/等价或外部根因。独立复算全指标/40训练组/20params/SHA通过。原CDF规则保留，停止此目标变体，不转向调尺度/损失。数学可能性未变成当前收益。用户具体委托和Source-only范围记录，0新上游/原始外部truth/GPU。

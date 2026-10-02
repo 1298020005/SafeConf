@@ -81,3 +81,7 @@ Source两方向LearnedHGB−Magnitude +0.034327[-0.009285,0.069899]、+0.037491[
 旧E170用了1920目标validation errors，known640gene与validation同gene/不同donor，不是当前SharedCore的无C错误跨家族确认。known V2−Direct +0.029478[-0.018512,0.090661]、−DistancePlusDispersion +0.024281[-0.028890,0.084104]；missing−Magnitude −0.030054[-0.180912,0.183269]。旧GateA点门通过保留，强规则/无历史稳定增量未证明。known数量panel×state常量，不能当成有排序信息的强数量对照。
 
 停止这两组winner搜索，完整保留原资产、23macro/276strata/161pairs与独立审阅。本轮是证据/预算修正，不是方法修复或投稿就绪。
+
+## Source训练目标诊断已执行并停止
+
+固定20fit（v1有效rank1复用＋v2新19）已完成，旧模型/原外部评价不改。raw-affine U20两方向0.774848/0.780253，相对原rank0.783134/0.783743下降0.008287/0.003490；Spearman也均下降，AURC/error@10小幅改善如实保留。40fold/context仅20非负。初轮无CI，不宣称显著退化/等价或外部根因。独立复算全指标/40训练组/20params/SHA通过。原CDF规则保留，停止此目标变体，不转向调尺度/损失。数学可能性未变成当前收益。用户具体委托和Source-only范围记录，0新上游/原始外部truth/GPU。

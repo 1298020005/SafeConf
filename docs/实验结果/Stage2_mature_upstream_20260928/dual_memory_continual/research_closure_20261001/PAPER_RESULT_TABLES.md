@@ -153,3 +153,12 @@ ControlU20 .078304; all43macro paired superiorityintervals unsupported. Full3860
 | KNOWN_HISTORY_1920 | NegativeLogHistorySupport | Magnitude_raw | utility20 | -0.276159 | -0.403205 | -0.161242 | 5000 | 5000 |
 
 原V2使用1920目标验证错误；旧Gate原样保留。
+
+## Source DEV唯一rank/affine目标对照（无CI，候选停止）
+
+|方向|原rank U20|raw-affine U20|差值|
+|---|---:|---:|---:|
+|Exphormer_to_GAT|0.783134|0.774848|-0.008287|
+|GAT_to_Exphormer|0.783743|0.780253|-0.003490|
+
+Secondary略有改善，不代替主指标。没有外部重评分/正式方法更换。

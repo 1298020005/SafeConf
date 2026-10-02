@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-02T06:03:35.349559+00:00",
+  "updated_utc": "2026-10-02T06:32:36.488268+00:00",
   "complete": [
     "five-fold nested public biology with four inner folds",
     "three-line sixteen-method matrix with three registered seeds",
@@ -69,7 +69,8 @@
     "Orion fullTRAINtarget-control scalar:232tasks144genes/38606input,modelbaseline/projectionbits exact;43paircomparators903rows924metrics fixed5000draws verified;no newfit/primarychange",
     "ActualSourceDEV fullPublicBiologyrefit:7Bio+3risk,3fixedarms,106hashchecks,48points42CIs,reconstructedservingA kept;smallBioDEV gains butriskgate rejects",
     "FixedSource6Magnitudecomparator completion:210pairs280intervals40pointreplay;allmacroCIcross0;ROOTactualPASS",
-    "E170legacystrongrules:23macro276strata161pairs;1920targetvalidationbudget;oldGateunchanged;independentactualPASS"
+    "E170legacystrongrules:23macro276strata161pairs;1920targetvalidationbudget;oldGateunchanged;independentactualPASS",
+    "SourceDEV objectiveprobe20cumulativefits/1codecfix/oldrankreplay/48context12macro240foldpoints;noPrimaryU20gain;variantstopped"
   ],
   "pending": [
     "Scientific method increment/independent-study readiness remains unproven after strong baselines; no ready approved new-method/confirmation pair",
@@ -78,7 +79,7 @@
   "new_large_upstream_training": 0,
   "new_download_gb": 0.04440246,
   "completion_claim": "goal active; meaningful diagnostics and registered matrices continue; manuscript prose deferred",
-  "current_work": "Source/E170 strongcomparators pushed0a0c30a; independent20fitDEVobjective hypothesis/code/selfcheck prepared, explicitlyNOT_RUN and awaitinguser exception to frozenCDF labels;0activefit/GPU/rawtruthreader.",
+  "current_work": "Source-only20fit hypothesis completed and independently reviewed; objective variant stopped. OriginalCDF/core/external predictions retained. No activefit/GPU/rawtruthreader. Evidence integration and nextpaper-level decision;scientific readiness NOT_YET_PROVEN;manuscript deferred.",
   "deferred_by_user": [
     "manuscript and supplement prose generation"
   ],
@@ -623,11 +624,17 @@
   },
   "scientific_method_readiness": "NOT_YET_PROVEN",
   "source_objective_probe": {
-    "status": "PREPARED_NOT_AUTHORIZED_NOT_RUN",
+    "status": "COMPLETE_DEV_DIAGNOSTIC_VARIANT_STOPPED",
     "max_fits": 20,
-    "script_sha256": "f77968fb5537c850b9812e58cd8d69eda904255babcec1a210eeddd3185be496",
-    "actual_fits": 0,
+    "script_sha256": "6b6863f375bdf997f55fe320ae80ef11eeb6af907dd326b4089c042d14a95dc9",
+    "actual_fits": 20,
     "external_scoring": false,
-    "permission_request_sent": true
+    "permission_request_sent": true,
+    "new_fits_v2": 19,
+    "reused_v1": 1,
+    "primary_macro_deltas": {
+      "Exphormer_to_GAT": -0.008286757181076188,
+      "GAT_to_Exphormer": -0.003490307809012494
+    }
   }
 }
