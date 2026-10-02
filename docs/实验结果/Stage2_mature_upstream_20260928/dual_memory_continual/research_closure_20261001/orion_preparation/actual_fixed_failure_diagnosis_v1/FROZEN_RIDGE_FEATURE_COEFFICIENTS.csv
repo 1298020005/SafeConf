@@ -1,0 +1,27 @@
+reference,feature,standardized_feature_coefficient,coefficient_sign,missing_flag_coefficient,Source_frozen_preprocessor_center,Source_frozen_preprocessor_scale,interpretation
+Manual,predicted_magnitude,-0.061833197609864624,-1,0.0,0.0499822357355204,0.026681034703806027,descriptive historical Source rank model coefficient; not causal or a target calibration
+Manual,prediction_abs_mean,0.12307418067424948,1,0.0,0.027307121221548093,0.014993132176204972,descriptive historical Source rank model coefficient; not causal or a target calibration
+Manual,prediction_signed_mean,0.005679082752425033,1,0.0,-0.0032924359692267325,0.0055033961202494725,descriptive historical Source rank model coefficient; not causal or a target calibration
+Manual,prediction_std,-0.08703555805865194,-1,0.0,0.04963542509061199,0.026557457984401667,descriptive historical Source rank model coefficient; not causal or a target calibration
+Manual,prediction_abs_q95,0.009005761218966662,1,0.0,0.1014835476734099,0.05589968376413074,descriptive historical Source rank model coefficient; not causal or a target calibration
+Manual,prediction_sparsity,-0.003878791430721403,-1,0.0,4.209264422623618e-07,1.1311884202307679e-05,descriptive historical Source rank model coefficient; not causal or a target calibration
+Manual,prior_magnitude,0.18056346384847494,1,0.0,0.056631445818087385,0.025016494876655478,descriptive historical Source rank model coefficient; not causal or a target calibration
+Manual,prediction_prior_rmse,-0.00877620678735441,-1,0.0,0.017072936636785625,0.007880702133355766,descriptive historical Source rank model coefficient; not causal or a target calibration
+Manual,prediction_prior_cosine,0.045936278725742775,1,0.0,0.9048025517712937,0.11663643987957856,descriptive historical Source rank model coefficient; not causal or a target calibration
+Manual,prior_uncertainty,-0.07664668395027689,-1,0.0,0.03688963412615349,0.016487908402104484,descriptive historical Source rank model coefficient; not causal or a target calibration
+Manual,log_history_support,-0.02260204933101942,-1,0.0,5.342410995195294,0.6460680633449839,descriptive historical Source rank model coefficient; not causal or a target calibration
+Manual,effective_sources,-0.012205078256395292,-1,0.0,2.2188920087068955,0.563612200326194,descriptive historical Source rank model coefficient; not causal or a target calibration
+Manual,history_conflict,0.09891639713259084,1,0.0,0.0401234759219436,0.01753980213484498,descriptive historical Source rank model coefficient; not causal or a target calibration
+Learned,predicted_magnitude,-0.033677385804396553,-1,0.0,0.0499822357355204,0.026681034703806027,descriptive historical Source rank model coefficient; not causal or a target calibration
+Learned,prediction_abs_mean,0.11467198518692956,1,0.0,0.027307121221548093,0.014993132176204972,descriptive historical Source rank model coefficient; not causal or a target calibration
+Learned,prediction_signed_mean,0.005781217217872304,1,0.0,-0.0032924359692267325,0.0055033961202494725,descriptive historical Source rank model coefficient; not causal or a target calibration
+Learned,prediction_std,-0.06836790632952358,-1,0.0,0.04963542509061199,0.026557457984401667,descriptive historical Source rank model coefficient; not causal or a target calibration
+Learned,prediction_abs_q95,0.016152073046580992,1,0.0,0.1014835476734099,0.05589968376413074,descriptive historical Source rank model coefficient; not causal or a target calibration
+Learned,prediction_sparsity,-0.004065293972818512,-1,0.0,4.209264422623618e-07,1.1311884202307679e-05,descriptive historical Source rank model coefficient; not causal or a target calibration
+Learned,prior_magnitude,0.12861365869246474,1,0.0,0.05396313494434909,0.023890716234506754,descriptive historical Source rank model coefficient; not causal or a target calibration
+Learned,prediction_prior_rmse,0.004578800977744014,1,0.0,0.020513636727841966,0.008091529828522025,descriptive historical Source rank model coefficient; not causal or a target calibration
+Learned,prediction_prior_cosine,0.04512590831275982,1,0.0,0.8768823377647095,0.12442905953963197,descriptive historical Source rank model coefficient; not causal or a target calibration
+Learned,prior_uncertainty,-0.0057572336511431165,-1,0.0,0.03539519386425881,0.01577233868667809,descriptive historical Source rank model coefficient; not causal or a target calibration
+Learned,log_history_support,-0.012494209747668225,-1,0.0,5.342410995195294,0.6460680633449839,descriptive historical Source rank model coefficient; not causal or a target calibration
+Learned,effective_sources,-0.015651913937545836,-1,0.0,2.1173710269098236,0.5228516408261261,descriptive historical Source rank model coefficient; not causal or a target calibration
+Learned,history_conflict,0.043354911571672844,1,0.0,0.0401234759219436,0.01753980213484498,descriptive historical Source rank model coefficient; not causal or a target calibration

@@ -1,0 +1,239 @@
+{
+  "schema": "safeconf_actual_fixed_posttruth_scientific_review_v1",
+  "status": "COMPLETE_REVIEW_PRIMARY_INCREMENT_NOT_ESTABLISHED",
+  "created_utc": "2026-10-02T00:21:48.057847+00:00",
+  "technical_completed_contract_status": "PASS",
+  "scientific_primary_source_transfer": "NOT_ESTABLISHED",
+  "scientific_increment_beyond_strong_history_rules": "NOT_ESTABLISHED",
+  "checker_execution_count": 1,
+  "checker_frozen_sha256": "d08a0a331a6af5e6c29858c4750082c94b9364c733bfdb89d88188cc6d275552",
+  "actual_interpretation": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/fixed_posttruth_interpretation_v1/ACTUAL_INTERPRETATION.json",
+    "sha256": "0475d61a0b88c6b3257dd0a7dab297d3d173b96de6b981857b6adc536bc0fb82",
+    "bytes": 20412
+  },
+  "evaluation_receipt": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/fixed_risk_evaluation/EXTENSION_EVALUATION_RECEIPT.json",
+    "sha256": "803a11ea87b9019b3cdac73d2cfe76dcd392747a452e57cf02a174582c51b73d",
+    "bytes": 1987
+  },
+  "manifest": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/fixed_risk_evaluation/EVALUATION_MANIFEST.json",
+    "sha256": "75c1c03b146498d88f5c0f5a4f8d3a980eab7366771d4933e16aad553039b225",
+    "bytes": 1051
+  },
+  "completed_output_registry": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/fixed_risk_evaluation/ARTIFACT_HASHES.json",
+    "sha256": "6e0f9aaf720f657de07078b6b5623286cca944d375e0116ead48038a42f1d6ff",
+    "bytes": 1093
+  },
+  "Source_prior_training_seen_unseen_counts": [
+    32,
+    112
+  ],
+  "subgroup_scope": "Only count identities from completed primary cohort against pinned pretruth575 Source gene split; no subgroup efficacy metrics/winner selection",
+  "primary_actual_scope": {
+    "tasks": 232,
+    "gene_clusters_union": 144,
+    "HCT116_tasks": 107,
+    "HEK293T_tasks": 125,
+    "coverage_rows": [
+      {
+        "cohort": "primary_common",
+        "context": "HCT116",
+        "n_tasks": "107",
+        "n_biological_gene_clusters": "107",
+        "eligible_TEST_tasks": "1420",
+        "fraction_of_eligible_TEST": "0.07535211267605633",
+        "status": "OK"
+      },
+      {
+        "cohort": "primary_common",
+        "context": "HEK293T",
+        "n_tasks": "125",
+        "n_biological_gene_clusters": "125",
+        "eligible_TEST_tasks": "1573",
+        "fraction_of_eligible_TEST": "0.07946598855689765",
+        "status": "OK"
+      }
+    ],
+    "whole_eligible_TEST_tasks": 2993,
+    "both_contexts_valid": true,
+    "nominal_bootstrap_draws": 5000
+  },
+  "fixed_decisions": {
+    "primary": {
+      "methods": [
+        "Learned_hgb",
+        "Learned_WeightedHistoryDistance"
+      ],
+      "status": "NOT_ESTABLISHED",
+      "macro_point_CI": {
+        "delta_U20": -0.010052174490444349,
+        "CI95": [
+          -0.27123591854415924,
+          0.1913390887603982
+        ],
+        "valid_draws": 5000
+      },
+      "point_practical_ge005": false,
+      "lowerCI_noninferiority_guard_ge_minus005": false,
+      "lowerCI_positive": false,
+      "both_context_nonnegative": false,
+      "all_safety_scopes_pass": false,
+      "safety_required_by_registry": true
+    },
+    "manual_secondary": {
+      "methods": [
+        "Manual_hgb",
+        "Manual_WeightedHistoryDistance"
+      ],
+      "status": "NOT_ESTABLISHED",
+      "macro_point_CI": {
+        "delta_U20": 0.050356961812769274,
+        "CI95": [
+          -0.04554658991311875,
+          0.2009767762036551
+        ],
+        "valid_draws": 5000
+      },
+      "point_practical_ge005": true,
+      "lowerCI_noninferiority_guard_ge_minus005": false,
+      "lowerCI_positive": false,
+      "both_context_nonnegative": false,
+      "all_safety_scopes_pass": false,
+      "safety_required_by_registry": false
+    },
+    "support": {
+      "methods": [
+        "Learned_hgb",
+        "NegativeSourceHistorySupport"
+      ],
+      "status": "PASS",
+      "macro_point_CI": {
+        "delta_U20": 0.3611188889017408,
+        "CI95": [
+          0.08152125461124504,
+          0.6321342713467503
+        ],
+        "valid_draws": 5000
+      },
+      "point_practical_ge005": true,
+      "lowerCI_noninferiority_guard_ge_minus005": true,
+      "lowerCI_positive": true,
+      "both_context_nonnegative": true,
+      "all_safety_scopes_pass": true,
+      "safety_required_by_registry": true
+    },
+    "Public": {
+      "methods": [
+        "Learned_hgb",
+        "P_only_hgb"
+      ],
+      "status": "NOT_ESTABLISHED",
+      "macro_point_CI": {
+        "delta_U20": 0.11421719551597695,
+        "CI95": [
+          -0.20833794400942215,
+          0.47312534347112073
+        ],
+        "valid_draws": 5000
+      },
+      "point_practical_ge005": true,
+      "lowerCI_noninferiority_guard_ge_minus005": false,
+      "lowerCI_positive": false,
+      "both_context_nonnegative": true,
+      "all_safety_scopes_pass": false,
+      "safety_required_by_registry": false
+    }
+  },
+  "independent_signed_point_CI_verification": {
+    "primary|HCT116": "EXACT_POINT_AND_SIGNED_PAIRED_INTERVAL",
+    "primary|HEK293T": "EXACT_POINT_AND_SIGNED_PAIRED_INTERVAL",
+    "primary|macro": "EXACT_POINT_AND_SIGNED_PAIRED_INTERVAL",
+    "manual_secondary|HCT116": "EXACT_POINT_AND_SIGNED_PAIRED_INTERVAL",
+    "manual_secondary|HEK293T": "EXACT_POINT_AND_SIGNED_PAIRED_INTERVAL",
+    "manual_secondary|macro": "EXACT_POINT_AND_SIGNED_PAIRED_INTERVAL",
+    "support|HCT116": "EXACT_POINT_AND_SIGNED_PAIRED_INTERVAL",
+    "support|HEK293T": "EXACT_POINT_AND_SIGNED_PAIRED_INTERVAL",
+    "support|macro": "EXACT_POINT_AND_SIGNED_PAIRED_INTERVAL",
+    "Public|HCT116": "EXACT_POINT_AND_SIGNED_PAIRED_INTERVAL",
+    "Public|HEK293T": "EXACT_POINT_AND_SIGNED_PAIRED_INTERVAL",
+    "Public|macro": "EXACT_POINT_AND_SIGNED_PAIRED_INTERVAL"
+  },
+  "all_failed_safety_evidence": [
+    {
+      "contrast": "primary",
+      "context": "HCT116",
+      "metric": "error_at_10",
+      "a": 0.031409488700431025,
+      "b": 0.02919139468784073,
+      "worsening": 0.07598451654364458,
+      "limit": 0.05,
+      "pass": false
+    },
+    {
+      "contrast": "primary",
+      "context": "HCT116",
+      "metric": "high_risk_miss_rate",
+      "a": 0.7727272727272727,
+      "b": 0.6818181818181819,
+      "worsening": 0.09090909090909083,
+      "limit": 0.02,
+      "pass": false
+    },
+    {
+      "contrast": "primary",
+      "context": "macro",
+      "metric": "high_risk_miss_rate",
+      "a": 0.7463636363636363,
+      "b": 0.7009090909090909,
+      "worsening": 0.045454545454545414,
+      "limit": 0.02,
+      "pass": false
+    },
+    {
+      "contrast": "manual_secondary",
+      "context": "HCT116",
+      "metric": "error_at_10",
+      "a": 0.03133819690102455,
+      "b": 0.02919139468784073,
+      "worsening": 0.07354229683578772,
+      "limit": 0.05,
+      "pass": false
+    },
+    {
+      "contrast": "Public",
+      "context": "HCT116",
+      "metric": "high_risk_miss_rate",
+      "a": 0.7727272727272727,
+      "b": 0.6363636363636364,
+      "worsening": 0.13636363636363635,
+      "limit": 0.02,
+      "pass": false
+    }
+  ],
+  "scientific_evidence_decision": [
+    "Prespecified Source-primary Learned_hgb-minus-Learned_WeightedHistoryDistance macro delta=-0.01005217449 and95CI[-0.27123591854,0.19133908876] fail practical.005, lowerCI-.005 and positive-CI interpretations; interval does not establish superiority or stable inferiority.",
+    "HCT116 primary U20 delta negative; only1/2 original contexts nonnegative fails registered60% fraction. HCT error@10 worsens7.59845165%, HCT miss-rate worsens.09090909, macro miss-rate worsens.04545455; these fail fixed safety guards.",
+    "Learned_hgb-minus-support macro delta+.36111888890,95CI[.08152125461,.63213427135], both context points positive and all safety guards pass. This isolated fixed contrast cannot establish the registered beyond-strong-history-rules claim because source primary fails.",
+    "Fixed Manual secondary macro delta+.05035696181,CI[-.04554658991,.20097677620] crosseszero; no relabeling as primary or champion selection.",
+    "Public-package-minus-P_only_hgb macro delta+.11421719552,CI[-.20833794401,.47312534347] crosseszero; no supported Public package superiority, isolated biological-content/Quality gain, or target-label/call-efficiency claim.",
+    "No individual/context-negative result or any of the13methods removed. All13 original primary method U20 points/intervals retained in frozen method order; no promotion of a nominally high nonprimary method.",
+    "Primary history-supported tasks cover7.535%HCT and7.947%HEK of legal>=30cell tasks; no full-task history/fallback efficacy inference.",
+    "Actual prospective trial completion and valid qualification do not satisfy the original scientific-success/submission-readiness objective. Existing2790availableC-validation errors were not compared via a target-validation-specific risk learner; label/call efficiency remains uncomputed."
+  ],
+  "permitted_data_reads": "Completed fixed aggregate metric/paired CI/coverage CSV and primary cohort identities/counts only; no test task-error file/raw expression/prediction arrays, new fits, modelcalls, bootstrap or second truth opening.",
+  "all13_U20_table": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/fixed_posttruth_interpretation_v1/ACTUAL_ALL13_PRIMARY_U20.csv",
+    "sha256": "165d3a010f80dd834d5c2cf28c9b0409b1240aba29a231a236a36e32afa1bccb",
+    "bytes": 2723
+  },
+  "fixed_signed_contrast_table": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/fixed_posttruth_interpretation_v1/ACTUAL_FIXED_SIGNED_CONTRASTS.csv",
+    "sha256": "0f99b5ae4e7965e70565a8f797541073d812acd0f68bc35f32788073c3a8cb2e",
+    "bytes": 1817
+  },
+  "negative_results_retained": true,
+  "new_models_fits_bootstrap_truthopens": 0
+}

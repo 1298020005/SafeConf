@@ -1,0 +1,26 @@
+{
+  "schema": "safeconf_orion_frozen_risk_evaluation_v1",
+  "status": "COMPLETE_FIXED_COMPARISON",
+  "comparison_spec_sha256": "47c76a048159e4e6d964730507001136e59fb0185d6364887710f68f1ca0d2e4",
+  "truth_reader_receipt_sha256": "225458d4d05cc9e1b91a44b90cc9b1e9eb22c95b76c643e20a01a380d3fbd7fe",
+  "truth_errors_sha256": "d6e50bf9c7f874af74f618cb7fdb820a4d31969701a2c70aaa6b87e27f12cb3e",
+  "candidate_selection_after_truth": false,
+  "new_fits": 0,
+  "target_CDF_fit": false,
+  "bootstrap_unit": "biological target_gene_id cluster; resample complete blocks jointly across both contexts",
+  "bootstrap_replicates": 5000,
+  "bootstrap_seed": 20260929,
+  "primary_pair": [
+    "Learned_hgb",
+    "Learned_WeightedHistoryDistance"
+  ],
+  "prespecified_manual_pair": [
+    "Manual_hgb",
+    "Manual_WeightedHistoryDistance"
+  ],
+  "all_nominal_CIs_reported": true,
+  "TEST_metadata_status": "SEEN_METADATA_ONLY",
+  "whole_method_pristine_claim": false,
+  "truth_status": "OPENED_ONLY_UNDER_SEPARATE_RECEIPT",
+  "no_history_public_fallback_claim": false
+}

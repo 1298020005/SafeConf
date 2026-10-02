@@ -1,0 +1,72 @@
+{
+  "schema": "safeconf_orion_actual_fixed_failure_descriptive_owned_files_v1",
+  "status": "COMPLETE_ZERO_FIT_DESCRIPTIVE_ONLY",
+  "files": [
+    {
+      "path": "tools/scripts/audit_safeconf_orion_fixed_feature_ranges_agent.py",
+      "bytes": 12352,
+      "sha256": "4cd28b228ad0ca6fb33e7f4487840f26990e7705e3a1bd1a4b1979388c5c02d6"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_fixed_failure_diagnosis_v1/DIAGNOSIS_MANIFEST.json",
+      "bytes": 10868,
+      "sha256": "94447d655569b77f9d9f987950b5118245ed5fd71c1b6fc4c30209b5988eebea"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_fixed_failure_diagnosis_v1/EXISTING_PRIMARY_METRIC_SUMMARIES.csv",
+      "bytes": 31924,
+      "sha256": "18833f272ac83ecef43c5c01ab5fc1c413977ae3c06e301392492e59dd2362e8"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_fixed_failure_diagnosis_v1/FEATURE_DISTRIBUTIONS.csv",
+      "bytes": 28182,
+      "sha256": "51d5e5e52a514ba7b097701e76c6b8e72ae79a5cc121c7673958b5c491618a88"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_fixed_failure_diagnosis_v1/FIXED_RISK_TIES.csv",
+      "bytes": 2840,
+      "sha256": "2f8817a72ed8ae2de372789541d8a254fc82876471e23dbc77ddbf7106f2a6d1"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_fixed_failure_diagnosis_v1/FROZEN_RIDGE_FEATURE_COEFFICIENTS.csv",
+      "bytes": 4963,
+      "sha256": "bfbc85abe808310149a55dca55ab95daf7d72fb5234b70bc026b83503151fcb3"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_fixed_failure_diagnosis_v1/INPUT_IDENTITY_SCOPES.csv",
+      "bytes": 582,
+      "sha256": "d7e3cbb1193745a5e6250eb97ce02bce8abef365e0a88de0a9ae4b95d72d8090"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_fixed_failure_diagnosis_v1/README.md",
+      "bytes": 4411,
+      "sha256": "b6d23d531f40f7680d797a5f746554160f12a5e740183a3a484b7fd8ebc55056"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_fixed_failure_diagnosis_v1/RUN.log",
+      "bytes": 404,
+      "sha256": "7d1f9d28dd53e70f460509ffcf0244c553c0998e2c46f8e3314c4ea1eb1422dd"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_fixed_failure_diagnosis_v1/TARGET_OUTSIDE_SOURCE_RANGES.csv",
+      "bytes": 8243,
+      "sha256": "cb29c6f7e2a2b9af4dba6ecb028b23c7a18c460ba9b43e3d35942b1d37022b25"
+    }
+  ],
+  "references_not_owned_or_mutated": [
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_fixed_failure_diagnosis_v1/independent_review/INDEPENDENT_REVIEW.json",
+      "bytes": 2384,
+      "sha256": "4c2bc3adbe9a4cb91d9d5cb15a65fc72f080626b9c91b2fe7b514f788d81c024"
+    }
+  ],
+  "file_count_excluding_manifest": 10,
+  "total_bytes_excluding_manifest": 104769,
+  "manifest_self_path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_fixed_failure_diagnosis_v1/OWNED_FILES_FINAL.json",
+  "Source_or_Orion_frozen_inputs_modified": false,
+  "new_fits": 0,
+  "new_model_predictions": 0,
+  "new_bootstrap_draws": 0,
+  "raw_expression_effect_label_or_error_parquet_access": false,
+  "algorithm_or_gate_or_cohort_changed": false
+}

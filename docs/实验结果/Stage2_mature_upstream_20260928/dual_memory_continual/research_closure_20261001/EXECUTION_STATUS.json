@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-02T00:02:20.387573+00:00",
+  "updated_utc": "2026-10-02T00:36:58.013550+00:00",
   "complete": [
     "five-fold nested public biology with four inner folds",
     "three-line sixteen-method matrix with three registered seeds",
@@ -67,7 +67,7 @@
   "new_large_upstream_training": 0,
   "new_download_gb": 0.04440246,
   "completion_claim": "goal active; meaningful diagnostics and registered matrices continue; manuscript prose deferred",
-  "current_work": "Actual guard authorizationPASS. Once-only registered expanded-bank TEST evaluator process554948 launched; rawTEST boundary opened only afterglobalexclusiveclaim. AllSource/public/risk/LMfits frozen. Fixed13method5000gene bootstrap followthrough being registered.",
+  "current_work": "Completed actual once-only Orion reading/fixed13statistics/independent gate review/alltables/plots. PrimarySourceincrementNOT_ESTABLISHED. Actualfrozen-feature range/tie diagnostic complete0.326s0fits. SourceDEV simplebaseline predictor-regime pilot preparation under read-only contract; no activeOrionTEST refit or selection. Scientificpublication readiness remains unproven.",
   "deferred_by_user": [
     "manuscript and supplement prose generation"
   ],
@@ -80,7 +80,7 @@
   "new_upstream_formal_validation_prediction_attempts": 1,
   "orion_verified_files": 41,
   "orion_registered_files": 41,
-  "orion_test_expression_opened": null,
+  "orion_test_expression_opened": true,
   "background_jobs": [
     {
       "name": "registered_blind_CPU_pipeline_v2",
@@ -147,14 +147,14 @@
       "name": "registered_extended_bank_once_only_TEST",
       "pid": 554948,
       "log": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/EVALUATE_TEST.log",
-      "status": "RUNNING_AFTER_ALL_PARAMETERS_AND_SCORES_FROZEN",
+      "status": "COMPLETE_NO_NEW_FITS_NO_TEST_REOPEN",
       "TESTtruth_reader": true
     },
     {
       "name": "fixed_risk_evaluation_after_original_reader_complete",
       "pid": 556790,
       "status_file": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/RISK_FOLLOWTHROUGH_STATUS.json",
-      "status": "WAITING_EXISTING_READER_COMPLETE_RECEIPT",
+      "status": "COMPLETE_NO_NEW_FITS_NO_TEST_REOPEN",
       "new_truth_reader_started": false,
       "TEST_reopened": false,
       "new_fits": 0,
@@ -208,7 +208,7 @@
   },
   "orion_aggregation_completed_files": 40,
   "orion_last_aggregated_file": "data/HEK293T_Batch9.parquet",
-  "orion_registered_evaluation_status": "REGISTERED_ONCE_ONLY_SCOPE_RESERVED_CPU_TRUTH_READER_RUNNING",
+  "orion_registered_evaluation_status": "COMPLETE_FIXED_COMPARISON_PRIMARY_SCIENCE_GATE_NOT_ESTABLISHED",
   "orion_same_gene_history_metadata_upper_bound": {
     "tasks": 52,
     "gene_clusters": 32,
@@ -372,11 +372,50 @@
     "no_method_refitting_or_TESTselection": true,
     "no_scientific_effect_yet_reported": true,
     "global_claim_created_utc": "2026-10-01T23:55:34.155239+00:00",
-    "reader_PID_live_verified": 554948,
-    "status": "ONCE_ONLY_SCOPE_RESERVED_READER_RUNNING_NO_SCIENTIFIC_RESULT_YET",
+    "reader_PID_live_verified": null,
+    "status": "COMPLETE_NO_TEST_REOPEN",
     "live_processing_file_zero_based": 16,
     "live_processing_phase_evidence": "registered reader token spool basename observed from live process open descriptors; this is current file, not final completed-file count",
-    "full_truth_receipt_completed": false
+    "full_truth_receipt_completed": true
   },
-  "orion_test_materialization_status": "AUTHORIZED_ONCE_ONLY_READER_RUNNING_FINAL_CELL_TRACE_NOT_YET_AVAILABLE"
+  "orion_test_materialization_status": "COMPLETE_ONCE_ONLY_REGISTERED_SCOPE_ALL40_EOF",
+  "orion_fixed_scientific_result": {
+    "status": "PRIMARY_NOT_ESTABLISHED",
+    "primary_tasks": 232,
+    "gene_union": 144,
+    "all_eligible_tasks": 2993,
+    "history_primary_task_coverage": 0.07751419979953224,
+    "Learned_hgb_U20_macro": 0.2048352470614185,
+    "Learned_WeightedHistoryDistance_U20_macro": 0.21488742155186286,
+    "primary_delta_U20": -0.010052174490444349,
+    "primary_CI95": [
+      -0.27123591854415924,
+      0.1913390887603982
+    ],
+    "support_comparator_delta_U20": 0.3611188889017408,
+    "support_CI95": [
+      0.08152125461124504,
+      0.6321342713467503
+    ],
+    "support_single_pair_does_not_replace_primary": true,
+    "independent_review_sha256": "654cceb9cb3a8525adb7de3452464703226ccae971f58ec3e7e9232125e32d01",
+    "scope": "prospective truthblind external replication; metadataSEEN; no pristine/fullcoverage/efficiency claim"
+  },
+  "orion_fixed_failure_diagnostic": {
+    "status": "COMPLETE_DESCRIPTIVE_NOT_CAUSAL",
+    "fits": 0,
+    "Source_pred_magnitude_median": 0.04646,
+    "Target_HCT_pred_magnitude_median": 0.002169,
+    "Target_HEK_pred_magnitude_median": 0.003108,
+    "Target_below_Source_minimum_fraction": [
+      0.7570093457943925,
+      0.528
+    ],
+    "support_uncertainty_conflict_within_training_ranges": true,
+    "Learned_HGB_unique_scores": [
+      102,
+      114
+    ],
+    "Source_simple_baseline_pilot_status": "PREPARATION_ONLY_NO_NEW_PREDICTIONS_YET"
+  }
 }

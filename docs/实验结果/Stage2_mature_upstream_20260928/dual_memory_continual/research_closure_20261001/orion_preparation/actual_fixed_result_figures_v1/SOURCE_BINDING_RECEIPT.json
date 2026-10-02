@@ -1,0 +1,96 @@
+{
+  "schema": "safeconf_actual_fixed_result_figure_source_binding_v1",
+  "status": "COMPLETE",
+  "plot_code": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_fixed_result_figures_v1/plot_fixed_results.py",
+    "sha256": "9fbab60408d460fc2b200275d311caffb4ccc1cdd3519aff421b7d04854efe2b",
+    "bytes": 9478
+  },
+  "matplotlib_version": "3.10.8",
+  "inputs": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/fixed_risk_evaluation/EXTENSION_EVALUATION_RECEIPT.json",
+      "sha256": "803a11ea87b9019b3cdac73d2cfe76dcd392747a452e57cf02a174582c51b73d",
+      "bytes": 1987
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/fixed_risk_evaluation/EVALUATION_MANIFEST.json",
+      "sha256": "75c1c03b146498d88f5c0f5a4f8d3a980eab7366771d4933e16aad553039b225",
+      "bytes": 1051
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/fixed_risk_evaluation/ARTIFACT_HASHES.json",
+      "sha256": "6e0f9aaf720f657de07078b6b5623286cca944d375e0116ead48038a42f1d6ff",
+      "bytes": 1093
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/fixed_risk_evaluation/METHOD_METRIC_INTERVALS.csv",
+      "sha256": "64fe43165ce83149e60104856159b74fd8e07842dcd8fa4082319fb1ac402418",
+      "bytes": 48874
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/fixed_risk_evaluation/ALL_PRESPECIFIED_PAIRED_COMPARISONS.csv",
+      "sha256": "77fc4acd321a1abe95af9973e2b5b6f5649231445b5a9323ee50d9eefc739f50",
+      "bytes": 272440
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/fixed_risk_evaluation/COHORT_COVERAGE.csv",
+      "sha256": "f3e4ab32edd715073d1a938f6df501b74b759d136ec2649445cf008d168530d3",
+      "bytes": 476
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/fixed_risk_evaluation/primary_common_COHORT.csv",
+      "sha256": "59385312a8a5d25ff4435678535f1495514fcb5eb8bbf43e94e6c2911e2ab1e5",
+      "bytes": 17583
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_comparison/COMPARISON_SPEC.json",
+      "sha256": "47c76a048159e4e6d964730507001136e59fb0185d6364887710f68f1ca0d2e4",
+      "bytes": 20238
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_evaluation/ORION_CLAIM_INTERPRETATION_REGISTRY.json",
+      "sha256": "d227bf92e1cc4396a332b82f0ae5a3ffd90a03ce21dadac50ed8d1e0c9382bea",
+      "bytes": 4659
+    }
+  ],
+  "cohort": "primary_common",
+  "tasks": 232,
+  "target_gene_clusters_union": 144,
+  "eligible_TEST_tasks": 2993,
+  "method_order": [
+    "Magnitude",
+    "P_only_ridge",
+    "P_only_hgb",
+    "Manual_ridge",
+    "Manual_hgb",
+    "Learned_ridge",
+    "Learned_hgb",
+    "Manual_WeightedHistoryDistance",
+    "Learned_WeightedHistoryDistance",
+    "Uniform_DirectRMSE",
+    "Manual_DirectRMSE",
+    "Learned_DirectRMSE",
+    "NegativeSourceHistorySupport"
+  ],
+  "fixed_contrasts": [
+    [
+      "Learned_hgb",
+      "Learned_WeightedHistoryDistance"
+    ],
+    [
+      "Manual_hgb",
+      "Manual_WeightedHistoryDistance"
+    ],
+    [
+      "Learned_hgb",
+      "NegativeSourceHistorySupport"
+    ],
+    [
+      "Learned_hgb",
+      "P_only_hgb"
+    ]
+  ],
+  "data_transformations": "Numeric CSV parsing, identity/count descriptions, and prespecified signed contrast reversal only; points and CI endpoints copied from completed fixed summaries. No averaging, statistical-estimate recomputation, bootstrap, model calls, fits or truth/error-label reads.",
+  "no_winner_selection": true
+}

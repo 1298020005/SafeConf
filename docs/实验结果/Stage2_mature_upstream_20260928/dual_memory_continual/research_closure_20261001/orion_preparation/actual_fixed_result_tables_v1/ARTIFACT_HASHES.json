@@ -1,0 +1,37 @@
+[
+  {
+    "path": "ALL_PRESPECIFIED_PAIRED_COMPARISONS.csv",
+    "bytes": 272440,
+    "sha256": "77fc4acd321a1abe95af9973e2b5b6f5649231445b5a9323ee50d9eefc739f50"
+  },
+  {
+    "path": "COHORT_COVERAGE.csv",
+    "bytes": 476,
+    "sha256": "f3e4ab32edd715073d1a938f6df501b74b759d136ec2649445cf008d168530d3"
+  },
+  {
+    "path": "EVALUATION_MANIFEST.json",
+    "bytes": 1051,
+    "sha256": "75c1c03b146498d88f5c0f5a4f8d3a980eab7366771d4933e16aad553039b225"
+  },
+  {
+    "path": "METHOD_METRIC_INTERVALS.csv",
+    "bytes": 48874,
+    "sha256": "64fe43165ce83149e60104856159b74fd8e07842dcd8fa4082319fb1ac402418"
+  },
+  {
+    "path": "all_prediction_only_COHORT.csv",
+    "bytes": 227288,
+    "sha256": "76f093740e1605bb55e7d666699577cd5982cb556e54a5fc33987bd25180b897"
+  },
+  {
+    "path": "no_source_history_prediction_only_COHORT.csv",
+    "bytes": 209789,
+    "sha256": "53aac2bd74bab08394c1d05b9102c2c6cfd0be135557bd2967da757ccd2bbc03"
+  },
+  {
+    "path": "primary_common_COHORT.csv",
+    "bytes": 17583,
+    "sha256": "59385312a8a5d25ff4435678535f1495514fcb5eb8bbf43e94e6c2911e2ab1e5"
+  }
+]

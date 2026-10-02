@@ -1,5 +1,46 @@
 # Core result tables
 
+## Current fixed results (2026-10-02)
+
+The historical tables below this section use the earlier 512-gene contract and must not be mixed with current common2840 results. The canonical Source/McFaline points come from `common_gene_axis/results/MATRIX_MACRO_RESULTS.csv`; three registered training seeds are repeated fits, not independent datasets. Current values below use the first registered seed20260930. Raw RMSE/AURC values across different gene contracts are not pooled.
+
+| Existing line (common2840) | Fixed method | U20 |
+|---|---|---:|
+| Exphormer_to_GAT | Learned_WeightedHistoryDistance | 0.593518 |
+| Exphormer_to_GAT | Learned_hgb | 0.783134 |
+| Exphormer_to_GAT | Prediction_hgb | 0.758953 |
+| GAT_to_Exphormer | Learned_WeightedHistoryDistance | 0.592336 |
+| GAT_to_Exphormer | Learned_hgb | 0.783743 |
+| GAT_to_Exphormer | Prediction_hgb | 0.752714 |
+| TxPert_to_McFaline | Learned_WeightedHistoryDistance | 0.729672 |
+| TxPert_to_McFaline | Learned_hgb | 0.695253 |
+| TxPert_to_McFaline | Prediction_hgb | -0.008533 |
+
+### New Orion prospective truth-blind replication (3285 genes)
+
+The primary history-supported cohort is232tasks/144geneclusters, out of2993eligibleTESTtasks/1750genes; its task coverage is7.75%. Every method uses the same232primary tasks. Models,13candidate IDs and scores were frozen before once-only TEST reading. TEST metadata was SEEN; no full-method pristine confirmation or full-task fallback is claimed.
+
+| Frozen method | HCT116 U20 | HEK293T U20 | Macro U20 |
+|---|---:|---:|---:|
+| Magnitude | 0.115290 | 0.038942 | 0.077116 |
+| P_only_ridge | 0.144158 | 0.038942 | 0.091550 |
+| P_only_hgb | 0.070719 | 0.110517 | 0.090618 |
+| Manual_ridge | 0.100288 | 0.198982 | 0.149635 |
+| Manual_hgb | 0.196304 | 0.277732 | 0.237018 |
+| Learned_ridge | 0.078153 | 0.198982 | 0.138568 |
+| Learned_hgb | 0.160524 | 0.249146 | 0.204835 |
+| Manual_WeightedHistoryDistance | 0.218687 | 0.154635 | 0.186661 |
+| Learned_WeightedHistoryDistance | 0.236258 | 0.193517 | 0.214887 |
+| Uniform_DirectRMSE | 0.274660 | 0.249581 | 0.262120 |
+| Manual_DirectRMSE | 0.286916 | 0.201145 | 0.244031 |
+| Learned_DirectRMSE | 0.252302 | 0.281829 | 0.267066 |
+| NegativeSourceHistorySupport | -0.189015 | -0.123552 | -0.156284 |
+
+Fixed primary Learned_hgb−Learned_WeightedHistoryDistance: ΔU20=−0.010052, paired nominal95%CI[−0.271236,0.191339]. HCT116 error@10 worsens7.598%, high-risk miss-rate increases0.090909; the registered primary gate is NOT_ESTABLISHED. The positive comparison with support alone (Δ0.361119,CI[0.081521,0.632134]) does not replace the primary comparison. Manual secondary and Public-versus-P-only intervals cross zero. Full399metric rows,1764paired contrasts,coverage and immutable completion receipts are retained under `orion_preparation/actual_fixed_result_tables_v1/`.
+
+## Historical earlier-contract tables
+
+
 | line | method | utility20 | spearman | aurc |
 |---|---|---|---|---|
 | Exphormer_to_GAT | Learned_WeightedHistoryDistance | 0.605786 | 0.599227 | 0.053083 |

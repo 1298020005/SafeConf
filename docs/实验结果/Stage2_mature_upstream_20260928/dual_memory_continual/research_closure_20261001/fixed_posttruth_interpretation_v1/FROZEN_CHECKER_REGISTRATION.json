@@ -1,0 +1,42 @@
+{
+  "schema": "safeconf_fixed_posttruth_interpretation_checker_registration_v1",
+  "status": "FROZEN_PRE_RESULT_INSPECTION_NOT_EXECUTED",
+  "registered_utc": "2026-10-02T00:13:40.965392+00:00",
+  "checker": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/fixed_posttruth_interpretation_v1/check_fixed_interpretation.py",
+    "sha256": "d08a0a331a6af5e6c29858c4750082c94b9364c733bfdb89d88188cc6d275552",
+    "bytes": 12917
+  },
+  "lines": 115,
+  "executed_with_any_result_data": false,
+  "AST_syntax_only": "PASS",
+  "independent_static_review": {
+    "reviewer": "/root/source_core_preparation_v1",
+    "status": "PASS",
+    "exact_checker_sha256": "d08a0a331a6af5e6c29858c4750082c94b9364c733bfdb89d88188cc6d275552",
+    "scope": "Static code/schema/orientation/gates only; no script execution/fixtures/CSV/TESTerrors"
+  },
+  "input_scope": "Only COMPLETE EXTENSION_EVALUATION_RECEIPT and receipted metadata lineage, completed fixed summary CSVs, primary cohort identity/count CSV, and pretruth Source575 split. No error parquet, predictions, raw cells, model load, bootstrap rerun or fit.",
+  "completion_and_lineage_required_before_CSV": [
+    "extension evaluation COMPLETE",
+    "corresponding extension truth COMPLETE under c94 operation and exact b120 global once-only claim",
+    "original19ea/852/dec code bindings",
+    "frozen13spec and base evaluation COMPLETE_FIXED_COMPARISON",
+    "completed output artifact CSV/manifest checksums"
+  ],
+  "fixed_contrasts": [
+    "Learned_hgb minus Learned_WeightedHistoryDistance",
+    "Manual_hgb minus Manual_WeightedHistoryDistance",
+    "Learned_hgb minus NegativeSourceHistorySupport",
+    "Learned_hgb minus P_only_hgb"
+  ],
+  "orientation": "Recorded A-minus-B or negate/reverse opposite difference and CI[-upper,-lower]",
+  "evidence_levels": "Separately report point>=.005,lowerCI>=-.005,lowerCI>0; supported practical positive increment uses point>=.005 AND lowerCI>0",
+  "registered_safety_claim_scope": "Primary and strong-history-support require macro+both contexts safety, two valid>=20 original contexts and both nonnegative U20; Manual/Public report their guards without inventing a new hardgate or replacing primary",
+  "missingness": "NA/nonfinite/undefined existing relative denominator is not a pass; no added epsilon/imputation. Unavailable completion or invalid contract produces UNCOMPUTED, never a performance PASS.",
+  "subgroups": "Source575 seen/unseen identity counts descriptive only; no subgroup metric or winning-subgroup selection",
+  "efficiency_limit": "2790 already computed C-validation errors are available but unused in risk training; original13 has no target-validation-specific risk learner; efficiency over that condition remains uncomputed regardless wins",
+  "original_frozen_science_evaluator_code_modified": false,
+  "fixture_grids_or_reruns": 0,
+  "execution_instruction": "Invoke only after Root confirms completed fixed outputs: python checker --evaluation-root COMPLETED_FIXED_EVALUATION_ROOT --output THIS_FOLDER/ACTUAL_INTERPRETATION.json; script refuses existing output or output outside this folder."
+}

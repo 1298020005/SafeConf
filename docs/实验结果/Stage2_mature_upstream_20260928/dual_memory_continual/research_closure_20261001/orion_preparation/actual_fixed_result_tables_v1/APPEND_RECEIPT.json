@@ -1,0 +1,49 @@
+{
+  "schema": "safeconf_actual_fixed_result_table_append_v1",
+  "status": "COMPLETE_FIXED_RESULTS_NOT_SCIENTIFIC_SUCCESS",
+  "copied_outputs": [
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_fixed_result_tables_v1/EVALUATION_MANIFEST.json",
+      "sha256": "75c1c03b146498d88f5c0f5a4f8d3a980eab7366771d4933e16aad553039b225",
+      "bytes": 1051
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_fixed_result_tables_v1/EXTENSION_EVALUATION_RECEIPT.json",
+      "sha256": "803a11ea87b9019b3cdac73d2cfe76dcd392747a452e57cf02a174582c51b73d",
+      "bytes": 1987
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_fixed_result_tables_v1/ARTIFACT_HASHES.json",
+      "sha256": "6e0f9aaf720f657de07078b6b5623286cca944d375e0116ead48038a42f1d6ff",
+      "bytes": 1093
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_fixed_result_tables_v1/COHORT_COVERAGE.csv",
+      "sha256": "f3e4ab32edd715073d1a938f6df501b74b759d136ec2649445cf008d168530d3",
+      "bytes": 476
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_fixed_result_tables_v1/METHOD_METRIC_INTERVALS.csv",
+      "sha256": "64fe43165ce83149e60104856159b74fd8e07842dcd8fa4082319fb1ac402418",
+      "bytes": 48874
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_fixed_result_tables_v1/ALL_PRESPECIFIED_PAIRED_COMPARISONS.csv",
+      "sha256": "77fc4acd321a1abe95af9973e2b5b6f5649231445b5a9323ee50d9eefc739f50",
+      "bytes": 272440
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_fixed_result_tables_v1/primary_common_COHORT.csv",
+      "sha256": "59385312a8a5d25ff4435678535f1495514fcb5eb8bbf43e94e6c2911e2ab1e5",
+      "bytes": 17583
+    }
+  ],
+  "new_master_rows": 57,
+  "total_master_rows": 1337,
+  "new_fits": 0,
+  "bootstrap_rerun": false,
+  "new_TEST_open": false,
+  "point_values_from_frozen_summary": true,
+  "primary_source_increment": "NOT_ESTABLISHED",
+  "no_method_or_cohort_champion_promotion": true
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "safeconf_orion_exclusive_registered_test_scope_v1",
+  "created_utc": "2026-10-01T23:55:34.155239+00:00",
+  "pid": 554948,
+  "operation": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/IMMUTABLE_POSTSEAL_TEST_ACCESS.json",
+    "sha256": "c94bc298c95bbe4a4d6f92dac8263b9aa93be18c48297f5181232bf73d44881d",
+    "bytes": 14701
+  },
+  "scientific_contract": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/ORION_METHOD_CONTRACT.json",
+    "sha256": "6b8a26939c8c6134dbf2e8294ee7905fccc2122b570b046f3183a3d2f5caba97",
+    "bytes": 7500
+  },
+  "forty_object_manifest": {
+    "path": "/home/yyf/data/safeconf_orion_frozen40_20261002/metadata_preparation_20261002_v1/snapshots/ORION_CANDIDATE_FILES.997bdbf33c079746457646cd5fe433e3812063ebc1aefcb6f590376086f15900.json",
+    "sha256": "997bdbf33c079746457646cd5fe433e3812063ebc1aefcb6f590376086f15900",
+    "bytes": 31778
+  },
+  "gene_split_sha256": "3bda5a9e0674cd7379b01e798d1c1b8c337efec86f44aceb41d4d74c73df52be",
+  "output_path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/registered_test_truth",
+  "automatic_second_registration_allowed": false,
+  "failure_does_not_release_scope": true
+}

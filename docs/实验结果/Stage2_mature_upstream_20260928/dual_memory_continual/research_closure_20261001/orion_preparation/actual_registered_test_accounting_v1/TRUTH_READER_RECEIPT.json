@@ -1,0 +1,1271 @@
+{
+  "schema": "safeconf_orion_postseal_test_truth_reader_v1",
+  "status": "COMPLETE",
+  "synthetic_only": false,
+  "TEST_access_receipt_sha256": "598908bdae75d01c6550a70a763c273d0de7207a054b99da1d08fea399492b4b",
+  "TEST_access_receipt_path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/DELEGATED_BASE_OPERATION.c94bc298c95bbe4a4d6f92dac8263b9aa93be18c48297f5181232bf73d44881d.json",
+  "test_reader_sha256": "852fcd764b567a63f04c4a5539a118c8a715f664bf534184018010ac269087b2",
+  "numeric_backend_sha256": "636455cb30fc0e8c8ce6ac92db82756eff7508322e92862cf23ffad861d2e435",
+  "scientific_contract_sha256": "6b8a26939c8c6134dbf2e8294ee7905fccc2122b570b046f3183a3d2f5caba97",
+  "forty_object_manifest_sha256": "997bdbf33c079746457646cd5fe433e3812063ebc1aefcb6f590376086f15900",
+  "endpoint_gene_manifest_sha256": "eb377ecb5ed1f99e259e6e8154f0edae68065ba36e3eae59ce50c2f72d8b72d4",
+  "metadata_role_before_open": "SEEN",
+  "truth_status_before_open": "CLOSED",
+  "truth_status_after_open": "OPEN_REGISTERED_TEST_SCOPE",
+  "role_registry_sha256": "df2ea48a35a7940bf74e3b6a37e216a856dd2c80eee0287946f69a381e9a21f7",
+  "final_competence_sha256": "b89fc460acdd96127cb602d2ffdcfa46b6bfef67ca090b5fceb2cd569e51b733",
+  "risk_seal_manifest_sha256": "654b661aaae711c952502651d8f145f5be40c907a87ba125f46baa67d0514db2",
+  "risk_seal_artifacts_sha256": "a200398307ebe102e3d169e75297c3ace46e6efc4b605b7f1672d3867eae3059",
+  "risk_seal_manifest": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_risk_seal/RISK_SEAL_MANIFEST.json",
+    "sha256": "654b661aaae711c952502651d8f145f5be40c907a87ba125f46baa67d0514db2",
+    "bytes": 16499
+  },
+  "pretruth_comparison": {
+    "spec": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_comparison/COMPARISON_SPEC.json",
+      "sha256": "47c76a048159e4e6d964730507001136e59fb0185d6364887710f68f1ca0d2e4",
+      "bytes": 20238
+    },
+    "scores": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_comparison/PRETRUTH_COMPARISON_SCORES.parquet",
+      "sha256": "c6e53eb32f6a4dfec6c40c9b6817f2c87d29ff47306fa1f219d28efc7a6c7e72",
+      "bytes": 712576
+    }
+  },
+  "PRETRUTH_COMPARISON_spec_sha256": "47c76a048159e4e6d964730507001136e59fb0185d6364887710f68f1ca0d2e4",
+  "PRETRUTH_COMPARISON_scores_sha256": "c6e53eb32f6a4dfec6c40c9b6817f2c87d29ff47306fa1f219d28efc7a6c7e72",
+  "Source_parameter_bindings": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_FEATURE_MANIFEST.json",
+      "bytes": 16172,
+      "sha256": "b74b9dfbc64f5acc82b7b0d34023aa6a523bd11d1904ced7fd638c5bec4ef2d1"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/MODEL_MANIFEST.json",
+      "bytes": 8934,
+      "sha256": "c8d9d5003860d8a5e117398a7d44b5c67cfb700c6fb56f37bcf04a5d549909a6"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_MEMORY_METADATA.parquet",
+      "bytes": 58150,
+      "sha256": "fcfbd3300a012e3747c9642f5076d1407c509f46f66e4412522c5d9b8661c4bd"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_EFFECTS.npy",
+      "bytes": 52770368,
+      "sha256": "ea946b2c9a9a7ee1605af1f9b72e9cc250596ce6eb0dc08b7ab4aeed3d80c4aa"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_CONTROLS.npy",
+      "bytes": 52770368,
+      "sha256": "b045d003f1bca1d570cc75d3a03928ea77a18ce206411a932f3afc501e4c73d3"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/GENE_MANIFEST.csv",
+      "bytes": 122617,
+      "sha256": "c1c9c8041458275248514d960c6c263a72f43a12a8d48c16f77759d2342fa08f"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/GENE_IDS.json",
+      "bytes": 37116,
+      "sha256": "b7f80db0c0e46dd7667cb83f39153c4add31948ca00e5391c210b9c6a18d7c68"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_ERROR_CDF.json",
+      "bytes": 108918,
+      "sha256": "ebd7390593cfc0bf71fbcab2c9c992d62990b57d729f59a6867ad98265a2bc01"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_P_only_ridge.joblib",
+      "bytes": 881,
+      "sha256": "68019b2ea0c6a332049089da100e18515e05cabebbd1fa6f4fcf24d4d112d42d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_P_only_hgb.joblib",
+      "bytes": 61512,
+      "sha256": "4b3206c9183e5c38e62c2b1ce0e2185f711102e23ac8ff3fc52d930eed150cc7"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_Manual_ridge.joblib",
+      "bytes": 1203,
+      "sha256": "de485ad5899827618416a8d73f9f7137da7a4b26aefc395a67304ad9e8b3c955"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_Manual_hgb.joblib",
+      "bytes": 79239,
+      "sha256": "1c0a78127b4aaf4349761b569c63fb4f6f74925ddc303221d8393c5b5e3eed42"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_Learned_ridge.joblib",
+      "bytes": 1205,
+      "sha256": "f4d332b16c79b410fb71fe461f18777c7bd9899a1b6971312142fe56177fae0e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_Learned_hgb.joblib",
+      "bytes": 78050,
+      "sha256": "a605d30c12eee46fe4b2b1af64d5eed5edfcf042cdb781fdb75883a6f9454f7d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_PUBLIC_BIOLOGY_FULL_HGB.joblib",
+      "bytes": 66883,
+      "sha256": "3a6f05d9b8060eb9802a6e5a0e6adf067253e57edd3aedd04b600a2f93578f5a"
+    }
+  ],
+  "LM_prediction_model_control_bindings": [
+    {
+      "role": "delta",
+      "context": "HCT116",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HCT116/PREDICTIONS_DELTA.tsv.gz",
+      "sha256": "c54137fc466b5def82045f5f1d94f59b002d96306a3da6e2adac8a2bc5c2206f"
+    },
+    {
+      "role": "queries",
+      "context": "HCT116",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HCT116/QUERY_IDENTITIES.tsv",
+      "sha256": "3d16806c2a886cabc7ba73304b6bf6026101f7a72bf1dd1084b5906b488c10bf"
+    },
+    {
+      "role": "axis",
+      "context": "HCT116",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HCT116/OUTPUT_GENE_AXIS.tsv",
+      "sha256": "7d4fae5d2a927750253e4efa8d5a3b0fca07de888bf69767502b0c7c3a1c9c63"
+    },
+    {
+      "role": "train_control",
+      "context": "HCT116",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_lm_bridge_20261002_v1/actual_authorized_v3_decimal_tokens/HCT116/OWN_CONTEXT_NTC_MEAN.tsv",
+      "sha256": "a9d4576b3de1fc0ac435f531a37b149b7adb9a48dd6979b40c6bc5c942aaaf99"
+    },
+    {
+      "role": "upstream_model",
+      "context": "HCT116",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HCT116/MODEL.rds",
+      "sha256": "eb0442176132ef1b25e0a0db91c476e3a53903a71fa30224f23658baff7024ad"
+    },
+    {
+      "role": "upstream_prediction_manifest",
+      "context": "HCT116",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/RUN_MANIFEST.tsv",
+      "sha256": "01cf8a42df9cb0cca570c26af1759e751169a3b875e5b04d167a0f2e9bb7a09c"
+    },
+    {
+      "role": "upstream_status",
+      "context": "HCT116",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HCT116/STATUS.tsv",
+      "sha256": "3fbba9b5082d4e1f3f014967222b028e5930b424020bafe3db424b621dcc0f23"
+    },
+    {
+      "role": "delta",
+      "context": "HEK293T",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HEK293T/PREDICTIONS_DELTA.tsv.gz",
+      "sha256": "e4dc7e5446ff2654a8fcc48ef5fb3ecf11cf594b395390e253714daabf1628ba"
+    },
+    {
+      "role": "queries",
+      "context": "HEK293T",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HEK293T/QUERY_IDENTITIES.tsv",
+      "sha256": "70c5c55668f3aaae91dac9364e1341889139474e2a4c910b7efb2621cc09191d"
+    },
+    {
+      "role": "axis",
+      "context": "HEK293T",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HEK293T/OUTPUT_GENE_AXIS.tsv",
+      "sha256": "7d4fae5d2a927750253e4efa8d5a3b0fca07de888bf69767502b0c7c3a1c9c63"
+    },
+    {
+      "role": "train_control",
+      "context": "HEK293T",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_lm_bridge_20261002_v1/actual_authorized_v3_decimal_tokens/HEK293T/OWN_CONTEXT_NTC_MEAN.tsv",
+      "sha256": "31772ae9aa9b4f5eac0b057e7c5373c7698b221de330060439f3a11c030ffb1e"
+    },
+    {
+      "role": "upstream_model",
+      "context": "HEK293T",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HEK293T/MODEL.rds",
+      "sha256": "de747621a1863f193efbb2c0c856672493f2286ba479d716be5e0ddd1eecaa10"
+    },
+    {
+      "role": "upstream_prediction_manifest",
+      "context": "HEK293T",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/RUN_MANIFEST.tsv",
+      "sha256": "01cf8a42df9cb0cca570c26af1759e751169a3b875e5b04d167a0f2e9bb7a09c"
+    },
+    {
+      "role": "upstream_status",
+      "context": "HEK293T",
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HEK293T/STATUS.tsv",
+      "sha256": "ae93d84abca8d95d115cb3667a6138e568e4f9f3aeca65cd015e9e2362948d70"
+    }
+  ],
+  "TEST_TASK_ERRORS_path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/registered_test_truth/TEST_TASK_ERRORS.parquet",
+  "TEST_TASK_ERRORS_sha256": "d6e50bf9c7f874af74f618cb7fdb820a4d31969701a2c70aaa6b87e27f12cb3e",
+  "truth_errors": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/registered_test_truth/TEST_TASK_ERRORS.parquet",
+    "sha256": "d6e50bf9c7f874af74f618cb7fdb820a4d31969701a2c70aaa6b87e27f12cb3e"
+  },
+  "endpoint_genes": 3285,
+  "TEST_numeric_cells_opened": 215133,
+  "TEST_token_rows_materialized": 215133,
+  "frozen_TEST_queries": 7490,
+  "eligible_TEST_tasks": 2993,
+  "task_QC_applied_only_after_legal_open": true,
+  "task_min_cells": 30,
+  "all_exact_TEST_iterators_exhausted": true,
+  "semantic_QC": {
+    "raw_integer_atol": 1e-06,
+    "library_sum_rtol": 0,
+    "library_sum_atol": 0,
+    "failure": "ABORT_ENTIRE_OUTPUT_NO_SURVIVOR_SELECTION"
+  },
+  "normalization": "equal-cell mean(log1p(4000*rawUMI/officialfulltotal)) minus frozen own TRAIN NTC",
+  "new_fits": 0,
+  "target_CDF_fitted": false,
+  "target_CDF_fit": false,
+  "risk_or_error_based_cell_selection": false,
+  "denominator_changed": false,
+  "file_audits": [
+    {
+      "path": "data/HCT116_Batch1.parquet",
+      "raw_sha256": "a7a6918ecda30343e3f9262bcfb654bf077170d2e99c7bcd0c8b9f963764f13b",
+      "metadata_sha256": "d96f18575dc6b450934acf7879ac9547737d083e15af4c32c9f6ab2eb21c5895",
+      "TEST_cells": 3672,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 223406149,
+        "opaque_numeric_bytes_decompressed": 223515604,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 23672124,
+        "numeric_materialization_count": 23672124
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 103415472,
+        "opaque_numeric_bytes_decompressed": 156577425,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 23672124,
+        "numeric_materialization_count": 23672124
+      }
+    },
+    {
+      "path": "data/HCT116_Batch10.parquet",
+      "raw_sha256": "c1179245d0a52e67565a7b1828a7e443c56eb164882a569de94f00e133891c58",
+      "metadata_sha256": "fb0f4a58e907d9e2dc578acf196b3a662c9221118dfbb143740fbe6f6eb405b3",
+      "TEST_cells": 6106,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 354718684,
+        "opaque_numeric_bytes_decompressed": 354838385,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 35831182,
+        "numeric_materialization_count": 35831182
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 158654030,
+        "opaque_numeric_bytes_decompressed": 247224427,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 35831182,
+        "numeric_materialization_count": 35831182
+      }
+    },
+    {
+      "path": "data/HCT116_Batch11.parquet",
+      "raw_sha256": "2210743c1ee3bef07974aa7e1550e40da29a4b0a392baee90cf0fb55cde6ae4c",
+      "metadata_sha256": "583e26815c610689b18ba58310c7f89f1e5201d3dc3df7f02ec70fe492d7fa0a",
+      "TEST_cells": 6173,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 270942724,
+        "opaque_numeric_bytes_decompressed": 271056846,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 28713713,
+        "numeric_materialization_count": 28713713
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 105629812,
+        "opaque_numeric_bytes_decompressed": 178299706,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 28713713,
+        "numeric_materialization_count": 28713713
+      }
+    },
+    {
+      "path": "data/HCT116_Batch12.parquet",
+      "raw_sha256": "4b8cf6901f60bd842d682df42e6490dbe7497223ca074c6fd2c01aeea372f8b3",
+      "metadata_sha256": "5648d6560be5440b081b4bf0ce14563923b6ecd73a8a00ea60465fa23e53a225",
+      "TEST_cells": 6403,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 343142186,
+        "opaque_numeric_bytes_decompressed": 343249329,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 35820686,
+        "numeric_materialization_count": 35820686
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 149658207,
+        "opaque_numeric_bytes_decompressed": 234748621,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 35820686,
+        "numeric_materialization_count": 35820686
+      }
+    },
+    {
+      "path": "data/HCT116_Batch13.parquet",
+      "raw_sha256": "5f04bfd4f817e82442d04f2ea4580883793a45010192c68bd6c7bfe38060b72b",
+      "metadata_sha256": "dfc58b9487e6bf8dce8a606097cc2ade0488c07ba27ce5fa3b687ce287467094",
+      "TEST_cells": 6197,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 347555453,
+        "opaque_numeric_bytes_decompressed": 347689271,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 35330899,
+        "numeric_materialization_count": 35330899
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 156470774,
+        "opaque_numeric_bytes_decompressed": 241396150,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 35330899,
+        "numeric_materialization_count": 35330899
+      }
+    },
+    {
+      "path": "data/HCT116_Batch14.parquet",
+      "raw_sha256": "fa2aba678999c782c69ab115267709b41fa540fecf7fe8690640b4a79f358e21",
+      "metadata_sha256": "e510d3a35b5d072c118e4e4d8c64cb2f315866b08802a61ef0dd041382150d74",
+      "TEST_cells": 6234,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 366889222,
+        "opaque_numeric_bytes_decompressed": 367064251,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 37746203,
+        "numeric_materialization_count": 37746203
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 165130092,
+        "opaque_numeric_bytes_decompressed": 255489084,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 37746203,
+        "numeric_materialization_count": 37746203
+      }
+    },
+    {
+      "path": "data/HCT116_Batch15.parquet",
+      "raw_sha256": "5c28685f758f119183ce46cbcee7801916271f2dde0a89d7c1ca87232e4f3c50",
+      "metadata_sha256": "325790abd5943220ae7a2c328857c1abdd897722640cf965a626804b6450d157",
+      "TEST_cells": 6325,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 366111308,
+        "opaque_numeric_bytes_decompressed": 366264126,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 37507799,
+        "numeric_materialization_count": 37507799
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 167150140,
+        "opaque_numeric_bytes_decompressed": 253806354,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 37507799,
+        "numeric_materialization_count": 37507799
+      }
+    },
+    {
+      "path": "data/HCT116_Batch16.parquet",
+      "raw_sha256": "0b0e011732ea9f9a5870676b8216fcccf7638f8d6d04ef162c4c7d51ab3204f2",
+      "metadata_sha256": "1c2f0a3524d331b60f058df48957846b2cf2b4b23db5d85617c4f631a4ca616c",
+      "TEST_cells": 6192,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 383244600,
+        "opaque_numeric_bytes_decompressed": 383432823,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 38610873,
+        "numeric_materialization_count": 38610873
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 176818230,
+        "opaque_numeric_bytes_decompressed": 269368939,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 38610873,
+        "numeric_materialization_count": 38610873
+      }
+    },
+    {
+      "path": "data/HCT116_Batch17.parquet",
+      "raw_sha256": "00812dc7799a30d82280f8278687063b33af69ebd8ca4d4fbc9b16f91d0281cb",
+      "metadata_sha256": "68bce698244f47a27cd2fd6bc511a7fed2ffcb7f0f1e9cafa432075a05c9c848",
+      "TEST_cells": 6250,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 369477343,
+        "opaque_numeric_bytes_decompressed": 369635863,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 37606928,
+        "numeric_materialization_count": 37606928
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 168554179,
+        "opaque_numeric_bytes_decompressed": 257659053,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 37606928,
+        "numeric_materialization_count": 37606928
+      }
+    },
+    {
+      "path": "data/HCT116_Batch18.parquet",
+      "raw_sha256": "680025d08da66f2b57048bf285d4da00553db664abe79be54e0477acf72c5ba7",
+      "metadata_sha256": "19a2a9e76cb2d92a905b0d6d711f0a31af18b7da203a6332c7b129b660e0c77e",
+      "TEST_cells": 3892,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 212054740,
+        "opaque_numeric_bytes_decompressed": 212164917,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 22477836,
+        "numeric_materialization_count": 22477836
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 95661616,
+        "opaque_numeric_bytes_decompressed": 150511073,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 22477836,
+        "numeric_materialization_count": 22477836
+      }
+    },
+    {
+      "path": "data/HCT116_Batch19.parquet",
+      "raw_sha256": "bca2338f3b74c75bcca965796a838b4585ee2e267879226a3b55685203ceb729",
+      "metadata_sha256": "6226dfe40e662814ab0c63924fda69ecaca1d7fac3c4f92d9af7440753aa12ca",
+      "TEST_cells": 6735,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 272146489,
+        "opaque_numeric_bytes_decompressed": 272264805,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 28168640,
+        "numeric_materialization_count": 28168640
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 101676908,
+        "opaque_numeric_bytes_decompressed": 171584753,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 28168640,
+        "numeric_materialization_count": 28168640
+      }
+    },
+    {
+      "path": "data/HCT116_Batch2.parquet",
+      "raw_sha256": "811ef0d06362caa61411a42db0fe0cdc91fe5dddcb53f5f0447a175df2df25aa",
+      "metadata_sha256": "bdc7c30775efd1ed2cae5402a636dd52944cbc55ac28ee775df705841bf438a9",
+      "TEST_cells": 3589,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 226014653,
+        "opaque_numeric_bytes_decompressed": 226123878,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 22995634,
+        "numeric_materialization_count": 22995634
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 107152765,
+        "opaque_numeric_bytes_decompressed": 158140412,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 22995634,
+        "numeric_materialization_count": 22995634
+      }
+    },
+    {
+      "path": "data/HCT116_Batch20.parquet",
+      "raw_sha256": "03715c6763793bb89a40ac35dd63d0a8a2e48c31830c142f8a0bf9b1240c33a8",
+      "metadata_sha256": "3ae5735318e4a5e7028d645ab037145587c34b6eff9879b726aaaa90fa4e10c5",
+      "TEST_cells": 7246,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 326678601,
+        "opaque_numeric_bytes_decompressed": 326793374,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 33641095,
+        "numeric_materialization_count": 33641095
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 127369822,
+        "opaque_numeric_bytes_decompressed": 209473033,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 33641095,
+        "numeric_materialization_count": 33641095
+      }
+    },
+    {
+      "path": "data/HCT116_Batch3.parquet",
+      "raw_sha256": "a1edffd0423c73f2d28f8589b87e41b68414bb6a3c7ee87ecb48485d4bb12beb",
+      "metadata_sha256": "cec17e88f57fc9d5e0be4f5dd88c2e5b27602df0d274e319081b480e1bfa8f57",
+      "TEST_cells": 3745,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 232612015,
+        "opaque_numeric_bytes_decompressed": 232720751,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 23835352,
+        "numeric_materialization_count": 23835352
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 106728661,
+        "opaque_numeric_bytes_decompressed": 161115681,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 23835352,
+        "numeric_materialization_count": 23835352
+      }
+    },
+    {
+      "path": "data/HCT116_Batch4.parquet",
+      "raw_sha256": "e46cb832a09cfb31d74f82a90e88295350a6ae2d2d17c8fdd2708924870394c7",
+      "metadata_sha256": "403883073f691ffe3309982b394dc6080c6b3a9f33c6d1070f0f2868ec52e049",
+      "TEST_cells": 3611,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 223018743,
+        "opaque_numeric_bytes_decompressed": 223128016,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 23132688,
+        "numeric_materialization_count": 23132688
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 104991413,
+        "opaque_numeric_bytes_decompressed": 154684361,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 23132688,
+        "numeric_materialization_count": 23132688
+      }
+    },
+    {
+      "path": "data/HCT116_Batch5.parquet",
+      "raw_sha256": "34f4d3fe7e0b3a856b85a8113958c6f7e7375363cfaa5eed791d553ed19afe83",
+      "metadata_sha256": "0be1b43ac080f9854f40d38efe3d119a5c4373dfcc27888ea47408be30bc8e10",
+      "TEST_cells": 3850,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 235470676,
+        "opaque_numeric_bytes_decompressed": 235579239,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 24478464,
+        "numeric_materialization_count": 24478464
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 108590132,
+        "opaque_numeric_bytes_decompressed": 163796648,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 24478464,
+        "numeric_materialization_count": 24478464
+      }
+    },
+    {
+      "path": "data/HCT116_Batch6.parquet",
+      "raw_sha256": "6dec049f9f2addd5fe2826a59b5a22951effbe4ca98715b5119aa9325a89ebf7",
+      "metadata_sha256": "f65a1642f1b7611372fec11d021179bb7709e934fccd802c8ef090e30e9a6821",
+      "TEST_cells": 3856,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 206776219,
+        "opaque_numeric_bytes_decompressed": 206886379,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 21979565,
+        "numeric_materialization_count": 21979565
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 86200165,
+        "opaque_numeric_bytes_decompressed": 136899803,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 21979565,
+        "numeric_materialization_count": 21979565
+      }
+    },
+    {
+      "path": "data/HCT116_Batch7.parquet",
+      "raw_sha256": "796583e02aba121f310e83c19328c77dfe9455470e4dc5409c8fce0608959eae",
+      "metadata_sha256": "2447687e905209de3dd279d97150ac7899b0b292bc787d4075ef09134801ae02",
+      "TEST_cells": 3989,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 197671826,
+        "opaque_numeric_bytes_decompressed": 197782720,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 20484130,
+        "numeric_materialization_count": 20484130
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 80832715,
+        "opaque_numeric_bytes_decompressed": 129625121,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 20484130,
+        "numeric_materialization_count": 20484130
+      }
+    },
+    {
+      "path": "data/HCT116_Batch8.parquet",
+      "raw_sha256": "0fc937a8481fea0f4fcd74e6e168b7183dd0ffe61db9ff6c76015c5d1a303989",
+      "metadata_sha256": "c441f34d1cc1927ecdf0f8d82905fb773c2846ae23e300455f63250bd9ef62d4",
+      "TEST_cells": 3942,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 178816499,
+        "opaque_numeric_bytes_decompressed": 178928372,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 18556755,
+        "numeric_materialization_count": 18556755
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 71484000,
+        "opaque_numeric_bytes_decompressed": 116381754,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 18556755,
+        "numeric_materialization_count": 18556755
+      }
+    },
+    {
+      "path": "data/HCT116_Batch9.parquet",
+      "raw_sha256": "c1e041e4a7b145bd54c53731abce1e88f0b00cda90ba8514903c58d689944e2b",
+      "metadata_sha256": "51b76b929f3c2a9b68295831fb6b00538902e0e34291295937104558e19ea503",
+      "TEST_cells": 6142,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 362043148,
+        "opaque_numeric_bytes_decompressed": 362182942,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 36729859,
+        "numeric_materialization_count": 36729859
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 167024225,
+        "opaque_numeric_bytes_decompressed": 253361790,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 36729859,
+        "numeric_materialization_count": 36729859
+      }
+    },
+    {
+      "path": "data/HEK293T_Batch1.parquet",
+      "raw_sha256": "bc97ddfeef8df72fbd7aa03cf8e5fd1a6293e0d467735e5e59ce907df49af8d1",
+      "metadata_sha256": "03b2a2beab103d80f0ccfbc3884931ded66b63c6bf838ab9b19153d3fb61c220",
+      "TEST_cells": 4466,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 268298257,
+        "opaque_numeric_bytes_decompressed": 268454914,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 27117317,
+        "numeric_materialization_count": 27117317
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 101043312,
+        "opaque_numeric_bytes_decompressed": 170810732,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 27117317,
+        "numeric_materialization_count": 27117317
+      }
+    },
+    {
+      "path": "data/HEK293T_Batch10.parquet",
+      "raw_sha256": "abde0e8c418540100054059da4de3c06465646b70e333a2b1b147b86b331d803",
+      "metadata_sha256": "6c4a064067bab5a9fd275e9e88be417d43121183edcc5d81e76a076438058ea4",
+      "TEST_cells": 5658,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 383593231,
+        "opaque_numeric_bytes_decompressed": 383804337,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 37744215,
+        "numeric_materialization_count": 37744215
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 160787301,
+        "opaque_numeric_bytes_decompressed": 251200422,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 37744215,
+        "numeric_materialization_count": 37744215
+      }
+    },
+    {
+      "path": "data/HEK293T_Batch11.parquet",
+      "raw_sha256": "f1efed5347ef9ab6ca0f40bd09fb3729dad2b0b87a447dfe3d58d5db27692d41",
+      "metadata_sha256": "a7765e0a6a066df2246e02f88b2e656186e1a95d9283fce3d5161103b6cccd55",
+      "TEST_cells": 5920,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 400674381,
+        "opaque_numeric_bytes_decompressed": 400898681,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 39233544,
+        "numeric_materialization_count": 39233544
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 167858103,
+        "opaque_numeric_bytes_decompressed": 263697832,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 39233544,
+        "numeric_materialization_count": 39233544
+      }
+    },
+    {
+      "path": "data/HEK293T_Batch12.parquet",
+      "raw_sha256": "b188223ce6a2d0114b5955fa2f6899573f7a485f817998104bdac313628c6a3c",
+      "metadata_sha256": "d34bac6243f0fdc1d5ef516b075a0aed6e40c34920556eda71a0fe429491d5d0",
+      "TEST_cells": 5637,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 394691971,
+        "opaque_numeric_bytes_decompressed": 394928859,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 39248085,
+        "numeric_materialization_count": 39248085
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 175025681,
+        "opaque_numeric_bytes_decompressed": 267424535,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 39248085,
+        "numeric_materialization_count": 39248085
+      }
+    },
+    {
+      "path": "data/HEK293T_Batch13.parquet",
+      "raw_sha256": "f8b6788b304296554661c4f83e757fe4ca2fd7b84bf7737d8d83e7e34fe6ca7e",
+      "metadata_sha256": "e84ded8236f0473aa0d20c36a70380cfc19f4edf530380c0f78f1093b3d02f1f",
+      "TEST_cells": 5759,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 388213525,
+        "opaque_numeric_bytes_decompressed": 388419119,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 38112654,
+        "numeric_materialization_count": 38112654
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 156916020,
+        "opaque_numeric_bytes_decompressed": 248935241,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 38112654,
+        "numeric_materialization_count": 38112654
+      }
+    },
+    {
+      "path": "data/HEK293T_Batch14.parquet",
+      "raw_sha256": "dd1032fe6fbe4133b5915b615fb9b2424c76ac7fe6f2b7887a16ca6f93c9c40b",
+      "metadata_sha256": "847c7e96dfefa3406045076908a20ac4004dd734ee14ef0c441d73dbc988910a",
+      "TEST_cells": 5803,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 479962906,
+        "opaque_numeric_bytes_decompressed": 480313466,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 47585308,
+        "numeric_materialization_count": 47585308
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 236795347,
+        "opaque_numeric_bytes_decompressed": 332661924,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 47585308,
+        "numeric_materialization_count": 47585308
+      }
+    },
+    {
+      "path": "data/HEK293T_Batch15.parquet",
+      "raw_sha256": "85701ced1d7514ae8cb60b223817125f6042cd24cff94edbc1d8c00796e3a88a",
+      "metadata_sha256": "8854e6397614412392f17d3e806028a17371f02c752ec7ab20225364c76499e3",
+      "TEST_cells": 4930,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 271362035,
+        "opaque_numeric_bytes_decompressed": 271511860,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 27619731,
+        "numeric_materialization_count": 27619731
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 100746163,
+        "opaque_numeric_bytes_decompressed": 171437568,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 27619731,
+        "numeric_materialization_count": 27619731
+      }
+    },
+    {
+      "path": "data/HEK293T_Batch16.parquet",
+      "raw_sha256": "e54a11fb656e7e85923ec555e216fbc2651d3ce10708804fcb0b6b1bbdc0afbc",
+      "metadata_sha256": "1f9e35c0c1d491ec0a7a454c8cb2075da84708b1c10dae3074e74f418e22a317",
+      "TEST_cells": 4814,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 282709281,
+        "opaque_numeric_bytes_decompressed": 282858934,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 28025963,
+        "numeric_materialization_count": 28025963
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 108191641,
+        "opaque_numeric_bytes_decompressed": 179576131,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 28025963,
+        "numeric_materialization_count": 28025963
+      }
+    },
+    {
+      "path": "data/HEK293T_Batch17.parquet",
+      "raw_sha256": "78731649b8548a0d67682431f922a46732693c0be43c665f818d2ac0f19abc45",
+      "metadata_sha256": "84b4b92e25c64310a3b2097804c9db1c26522f7b411209831be9ab1f6cf88f2b",
+      "TEST_cells": 4904,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 275638776,
+        "opaque_numeric_bytes_decompressed": 275792689,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 27728314,
+        "numeric_materialization_count": 27728314
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 102032297,
+        "opaque_numeric_bytes_decompressed": 174498578,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 27728314,
+        "numeric_materialization_count": 27728314
+      }
+    },
+    {
+      "path": "data/HEK293T_Batch18.parquet",
+      "raw_sha256": "5ede51776a7087655d555145d72347841e89400a81b39e7ca8c89f73ce6043ff",
+      "metadata_sha256": "326a3db655d2d27ebf316c5ccb4c2adc6910c76a65b3e2ac6702debd47120bea",
+      "TEST_cells": 4980,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 274132647,
+        "opaque_numeric_bytes_decompressed": 274274971,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 27732340,
+        "numeric_materialization_count": 27732340
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 102110289,
+        "opaque_numeric_bytes_decompressed": 172563340,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 27732340,
+        "numeric_materialization_count": 27732340
+      }
+    },
+    {
+      "path": "data/HEK293T_Batch19.parquet",
+      "raw_sha256": "befe47a217c9c74e686e91cd69da15a165c637cefa4e30f725badb697745a5e0",
+      "metadata_sha256": "543fefad444a16d51b280b004bd4499a560a185aea7fec3c1b0896f149b145dd",
+      "TEST_cells": 4991,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 291202468,
+        "opaque_numeric_bytes_decompressed": 291358218,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 29346668,
+        "numeric_materialization_count": 29346668
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 110306166,
+        "opaque_numeric_bytes_decompressed": 185184364,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 29346668,
+        "numeric_materialization_count": 29346668
+      }
+    },
+    {
+      "path": "data/HEK293T_Batch2.parquet",
+      "raw_sha256": "33e8cab52c207c40cb22336d576abf23d7f17f57db3dbf11d4735aac1d045900",
+      "metadata_sha256": "a5f7562588372d26e2cb67c0f9a8f018a318b8bcca5da83fc7169a8db1f8d9c9",
+      "TEST_cells": 5656,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 365953022,
+        "opaque_numeric_bytes_decompressed": 366136385,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 36441966,
+        "numeric_materialization_count": 36441966
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 140049386,
+        "opaque_numeric_bytes_decompressed": 232001282,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 36441966,
+        "numeric_materialization_count": 36441966
+      }
+    },
+    {
+      "path": "data/HEK293T_Batch20.parquet",
+      "raw_sha256": "4e4b9a6acc71225f69988f1a27099235052a617804490c0cb0cbe371a64a4155",
+      "metadata_sha256": "0ddedf7a9872d98cbc5755f63e7d4dbcc7bcea153903c6eb7db5d3f78bc542a6",
+      "TEST_cells": 5095,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 295502138,
+        "opaque_numeric_bytes_decompressed": 295653938,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 30151394,
+        "numeric_materialization_count": 30151394
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 112478328,
+        "opaque_numeric_bytes_decompressed": 187478826,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 30151394,
+        "numeric_materialization_count": 30151394
+      }
+    },
+    {
+      "path": "data/HEK293T_Batch3.parquet",
+      "raw_sha256": "0948fde4b60a92253980190fd9c1466bb4649ec559f83f020ad143d94f5079db",
+      "metadata_sha256": "81a633bf316d7861f4e851bd1799b3f5a047a6d48eb3bef3a7c9b52e290c365b",
+      "TEST_cells": 6316,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 410600856,
+        "opaque_numeric_bytes_decompressed": 410786657,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 41517368,
+        "numeric_materialization_count": 41517368
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 157316640,
+        "opaque_numeric_bytes_decompressed": 259642117,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 41517368,
+        "numeric_materialization_count": 41517368
+      }
+    },
+    {
+      "path": "data/HEK293T_Batch4.parquet",
+      "raw_sha256": "57f20b47fadfdbd38cce071d72b2fc89773d7f4b194822497003e4ac0d210117",
+      "metadata_sha256": "8453ce3ecebde4cf7b6217e9aa8a714b948180b2c55b654e8d4ebeb83bb5f0f2",
+      "TEST_cells": 6106,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 390209571,
+        "opaque_numeric_bytes_decompressed": 390406781,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 38841758,
+        "numeric_materialization_count": 38841758
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 148435317,
+        "opaque_numeric_bytes_decompressed": 246369155,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 38841758,
+        "numeric_materialization_count": 38841758
+      }
+    },
+    {
+      "path": "data/HEK293T_Batch5.parquet",
+      "raw_sha256": "a273770ad7ee13eb5f38bb6c267e91320eaa39c216ac1e8108c805ed1996679f",
+      "metadata_sha256": "dc3d66185ff91406ba122df4d9cb0266a15320e67e2136a44fcb6d40b9266987",
+      "TEST_cells": 6085,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 375246226,
+        "opaque_numeric_bytes_decompressed": 375442022,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 37620033,
+        "numeric_materialization_count": 37620033
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 141005129,
+        "opaque_numeric_bytes_decompressed": 237297542,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 37620033,
+        "numeric_materialization_count": 37620033
+      }
+    },
+    {
+      "path": "data/HEK293T_Batch6.parquet",
+      "raw_sha256": "910442539ecc08a0d9e4de1bc64274a7a551777a3c9ce21d0cf2a6a76439e5e5",
+      "metadata_sha256": "8f67b6665aed52de2fbfb0d6ffcaf162111ddb75a9d0356bc2d04874ea2d697a",
+      "TEST_cells": 5906,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 401436911,
+        "opaque_numeric_bytes_decompressed": 401632849,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 39560702,
+        "numeric_materialization_count": 39560702
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 156414943,
+        "opaque_numeric_bytes_decompressed": 254511171,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 39560702,
+        "numeric_materialization_count": 39560702
+      }
+    },
+    {
+      "path": "data/HEK293T_Batch7.parquet",
+      "raw_sha256": "536a7dbe152bb259bf27902327ef8c994ced3bb9a29bef82ad4e23a7a08dc825",
+      "metadata_sha256": "26700208ad5012f9b86f38e4d434cec815fbf9a635a55c3e667048846241b431",
+      "TEST_cells": 6024,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 424134540,
+        "opaque_numeric_bytes_decompressed": 424400458,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 42382046,
+        "numeric_materialization_count": 42382046
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 170197809,
+        "opaque_numeric_bytes_decompressed": 268763882,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 42382046,
+        "numeric_materialization_count": 42382046
+      }
+    },
+    {
+      "path": "data/HEK293T_Batch8.parquet",
+      "raw_sha256": "e8e776ec2b7c95fa07a61f514bd773217e2cfa4388d55b063f3826ae27a4e204",
+      "metadata_sha256": "e03e09539961bef2729dbdfe9ccbf1cc8296518735d04e517547e1310cf547b1",
+      "TEST_cells": 5905,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 300619382,
+        "opaque_numeric_bytes_decompressed": 300757030,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 30423893,
+        "numeric_materialization_count": 30423893
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 104777519,
+        "opaque_numeric_bytes_decompressed": 186026005,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 30423893,
+        "numeric_materialization_count": 30423893
+      }
+    },
+    {
+      "path": "data/HEK293T_Batch9.parquet",
+      "raw_sha256": "8070363ef7e98a3874dbea006f83ee6bba324ac9c01ebf6f9d02a0a1ab526fa2",
+      "metadata_sha256": "098d65bd7944d0e8136b7745cbfe63f7d693452df92081724963f0c6bbee7c07",
+      "TEST_cells": 6029,
+      "token_iterator_exhausted": true,
+      "expression_iterator_exhausted": true,
+      "token_trace": {
+        "physical_numeric_chunk_bytes_read": 398625478,
+        "opaque_numeric_bytes_decompressed": 398857098,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 39650189,
+        "numeric_materialization_count": 39650189
+      },
+      "expression_trace": {
+        "physical_numeric_chunk_bytes_read": 161203253,
+        "opaque_numeric_bytes_decompressed": 255690003,
+        "max_compressed_chunk_bytes": 1073741824,
+        "max_page_uncompressed_bytes": 134217728,
+        "max_page_level_entries": 16777216,
+        "authorized_dictionary_lookups": 39650189,
+        "numeric_materialization_count": 39650189
+      }
+    }
+  ],
+  "elapsed_seconds": 992.1736697831657,
+  "finished_utc": "2026-10-02T00:12:31.509918+00:00"
+}

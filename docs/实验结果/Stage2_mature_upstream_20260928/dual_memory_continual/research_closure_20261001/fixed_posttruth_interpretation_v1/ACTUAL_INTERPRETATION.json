@@ -1,0 +1,666 @@
+{
+  "status": "COMPLETE_FIXED_INTERPRETATION",
+  "evaluation_receipt": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/fixed_risk_evaluation/EXTENSION_EVALUATION_RECEIPT.json",
+    "sha256": "803a11ea87b9019b3cdac73d2cfe76dcd392747a452e57cf02a174582c51b73d",
+    "bytes": 1987
+  },
+  "interpretation_registry": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_evaluation/ORION_CLAIM_INTERPRETATION_REGISTRY.json",
+    "sha256": "d227bf92e1cc4396a332b82f0ae5a3ffd90a03ce21dadac50ed8d1e0c9382bea",
+    "bytes": 4659
+  },
+  "safety_scope": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/public_bank_extension_actual_pretruth_independent_review_v1/PRETRUTH_SAFETY_SCOPE_ADDENDUM.json",
+    "sha256": "bc3be48f66a4f2af2f17eba20355b22e9e1df3aedbf1f7d6a100d7b735f3e85c",
+    "bytes": 3984
+  },
+  "operation": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/IMMUTABLE_POSTSEAL_TEST_ACCESS.json",
+    "sha256": "c94bc298c95bbe4a4d6f92dac8263b9aa93be18c48297f5181232bf73d44881d",
+    "bytes": 14701
+  },
+  "claim": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/ORION_REGISTERED_TEST_FIRST_OPEN_SCOPE.json",
+    "sha256": "b12048618a0be885d2e66536c0fe3b0cc25d535b69a00c5c60f0634b2a1ef534",
+    "bytes": 1423
+  },
+  "fixed_contrasts": {
+    "primary": {
+      "methods": [
+        "Learned_hgb",
+        "Learned_WeightedHistoryDistance"
+      ],
+      "status": "NOT_ESTABLISHED",
+      "signed_U20": {
+        "HCT116": {
+          "delta_U20": -0.0757338917953691,
+          "CI95": [
+            -0.40030840169813886,
+            0.23359835308933075
+          ],
+          "valid_draws": 5000
+        },
+        "HEK293T": {
+          "delta_U20": 0.055629542814480376,
+          "CI95": [
+            -0.23436867210620127,
+            0.2156622369449289
+          ],
+          "valid_draws": 5000
+        },
+        "macro": {
+          "delta_U20": -0.010052174490444349,
+          "CI95": [
+            -0.27123591854415924,
+            0.1913390887603982
+          ],
+          "valid_draws": 5000
+        }
+      },
+      "practical_point_margin_met": false,
+      "CI_noninferiority_style_guard_met": false,
+      "positive_CI_met": false,
+      "all_required_points_intervals_finite": true,
+      "both_contexts_valid": true,
+      "both_context_deltas_nonnegative": false,
+      "safety_required_by_registry": true,
+      "macro_and_both_context_safety": {
+        "HCT116": {
+          "aurc": {
+            "a": 0.03303303404683426,
+            "b": 0.0321464807252603,
+            "worsening": 0.027578549862141477,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_10": {
+            "a": 0.031409488700431025,
+            "b": 0.02919139468784073,
+            "worsening": 0.07598451654364458,
+            "limit": 0.05,
+            "pass": false
+          },
+          "error_at_20": {
+            "a": 0.03149465573813398,
+            "b": 0.03043160364253195,
+            "worsening": 0.034932503330724396,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_50": {
+            "a": 0.03335113677243872,
+            "b": 0.03294996271281823,
+            "worsening": 0.012175250792148207,
+            "limit": 0.05,
+            "pass": true
+          },
+          "high_risk_miss_rate": {
+            "a": 0.7727272727272727,
+            "b": 0.6818181818181819,
+            "worsening": 0.09090909090909083,
+            "limit": 0.02,
+            "pass": false
+          }
+        },
+        "HEK293T": {
+          "aurc": {
+            "a": 0.03290948321824365,
+            "b": 0.03240851694927299,
+            "worsening": 0.015457858493024723,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_10": {
+            "a": 0.031839891822873986,
+            "b": 0.03253846598600066,
+            "worsening": -0.02146917938378612,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_20": {
+            "a": 0.03194681142493128,
+            "b": 0.03228724333010633,
+            "worsening": -0.010543851690726802,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_50": {
+            "a": 0.03304974777857616,
+            "b": 0.03299357307501562,
+            "worsening": 0.0017025953337281852,
+            "limit": 0.05,
+            "pass": true
+          },
+          "high_risk_miss_rate": {
+            "a": 0.72,
+            "b": 0.72,
+            "worsening": 0.0,
+            "limit": 0.02,
+            "pass": true
+          }
+        },
+        "macro": {
+          "aurc": {
+            "a": 0.032971258632538955,
+            "b": 0.03227749883726665,
+            "worsening": 0.021493604531442667,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_10": {
+            "a": 0.0316246902616525,
+            "b": 0.030864930336920695,
+            "worsening": 0.02461563711430048,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_20": {
+            "a": 0.03172073358153263,
+            "b": 0.03135942348631914,
+            "worsening": 0.011521579641638136,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_50": {
+            "a": 0.03320044227550744,
+            "b": 0.032971767893916926,
+            "worsening": 0.006935460128381532,
+            "limit": 0.05,
+            "pass": true
+          },
+          "high_risk_miss_rate": {
+            "a": 0.7463636363636363,
+            "b": 0.7009090909090909,
+            "worsening": 0.045454545454545414,
+            "limit": 0.02,
+            "pass": false
+          }
+        }
+      },
+      "safety_pass": false,
+      "secondary_never_replaces_primary": false
+    },
+    "manual_secondary": {
+      "methods": [
+        "Manual_hgb",
+        "Manual_WeightedHistoryDistance"
+      ],
+      "status": "NOT_ESTABLISHED",
+      "signed_U20": {
+        "HCT116": {
+          "delta_U20": -0.02238275849017815,
+          "CI95": [
+            -0.10122702813754318,
+            0.2647252752945335
+          ],
+          "valid_draws": 5000
+        },
+        "HEK293T": {
+          "delta_U20": 0.12309668211571673,
+          "CI95": [
+            -0.062344856956278775,
+            0.2690085272262931
+          ],
+          "valid_draws": 5000
+        },
+        "macro": {
+          "delta_U20": 0.050356961812769274,
+          "CI95": [
+            -0.04554658991311875,
+            0.2009767762036551
+          ],
+          "valid_draws": 5000
+        }
+      },
+      "practical_point_margin_met": true,
+      "CI_noninferiority_style_guard_met": false,
+      "positive_CI_met": false,
+      "all_required_points_intervals_finite": true,
+      "both_contexts_valid": true,
+      "both_context_deltas_nonnegative": false,
+      "safety_required_by_registry": false,
+      "macro_and_both_context_safety": {
+        "HCT116": {
+          "aurc": {
+            "a": 0.03240311453720704,
+            "b": 0.03218650761068645,
+            "worsening": 0.0067297430693809,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_10": {
+            "a": 0.03133819690102455,
+            "b": 0.02919139468784073,
+            "worsening": 0.07354229683578772,
+            "limit": 0.05,
+            "pass": false
+          },
+          "error_at_20": {
+            "a": 0.03143681351268515,
+            "b": 0.03077407528820413,
+            "worsening": 0.021535601582642894,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_50": {
+            "a": 0.032448976943847255,
+            "b": 0.03302660180522363,
+            "worsening": -0.01748968497524961,
+            "limit": 0.05,
+            "pass": true
+          },
+          "high_risk_miss_rate": {
+            "a": 0.6818181818181819,
+            "b": 0.6818181818181819,
+            "worsening": 0.0,
+            "limit": 0.02,
+            "pass": true
+          }
+        },
+        "HEK293T": {
+          "aurc": {
+            "a": 0.03273924698806918,
+            "b": 0.032427073455435614,
+            "worsening": 0.009626941298374936,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_10": {
+            "a": 0.03145735113409874,
+            "b": 0.032387430658716285,
+            "worsening": -0.02871729883170704,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_20": {
+            "a": 0.03175862322751948,
+            "b": 0.0324120921699346,
+            "worsening": -0.020161270028143163,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_50": {
+            "a": 0.032766563006806505,
+            "b": 0.032599746804603064,
+            "worsening": 0.005117101160426518,
+            "limit": 0.05,
+            "pass": true
+          },
+          "high_risk_miss_rate": {
+            "a": 0.6799999999999999,
+            "b": 0.72,
+            "worsening": -0.040000000000000036,
+            "limit": 0.02,
+            "pass": true
+          }
+        },
+        "macro": {
+          "aurc": {
+            "a": 0.03257118076263811,
+            "b": 0.03230679053306103,
+            "worsening": 0.008183735530971958,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_10": {
+            "a": 0.03139777401756165,
+            "b": 0.030789412673278508,
+            "worsening": 0.01975878366822914,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_20": {
+            "a": 0.03159771837010232,
+            "b": 0.03159308372906936,
+            "worsening": 0.0001466979631588039,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_50": {
+            "a": 0.032607769975326883,
+            "b": 0.032813174304913345,
+            "worsening": -0.006259812832423939,
+            "limit": 0.05,
+            "pass": true
+          },
+          "high_risk_miss_rate": {
+            "a": 0.6809090909090909,
+            "b": 0.7009090909090909,
+            "worsening": -0.020000000000000018,
+            "limit": 0.02,
+            "pass": true
+          }
+        }
+      },
+      "safety_pass": false,
+      "secondary_never_replaces_primary": true
+    },
+    "support": {
+      "methods": [
+        "Learned_hgb",
+        "NegativeSourceHistorySupport"
+      ],
+      "status": "PASS",
+      "signed_U20": {
+        "HCT116": {
+          "delta_U20": 0.3495397334421596,
+          "CI95": [
+            0.04265360342232795,
+            0.686007922032469
+          ],
+          "valid_draws": 5000
+        },
+        "HEK293T": {
+          "delta_U20": 0.3726980443613221,
+          "CI95": [
+            -0.018990390619308628,
+            0.6855160652311911
+          ],
+          "valid_draws": 5000
+        },
+        "macro": {
+          "delta_U20": 0.3611188889017408,
+          "CI95": [
+            0.08152125461124504,
+            0.6321342713467503
+          ],
+          "valid_draws": 5000
+        }
+      },
+      "practical_point_margin_met": true,
+      "CI_noninferiority_style_guard_met": true,
+      "positive_CI_met": true,
+      "all_required_points_intervals_finite": true,
+      "both_contexts_valid": true,
+      "both_context_deltas_nonnegative": true,
+      "safety_required_by_registry": true,
+      "macro_and_both_context_safety": {
+        "HCT116": {
+          "aurc": {
+            "a": 0.03303303404683426,
+            "b": 0.03463397121927469,
+            "worsening": -0.04622447602975033,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_10": {
+            "a": 0.031409488700431025,
+            "b": 0.03542684953014318,
+            "worsening": -0.1133987606291087,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_20": {
+            "a": 0.03149465573813398,
+            "b": 0.033634894006912226,
+            "worsening": -0.06363148545490915,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_50": {
+            "a": 0.03335113677243872,
+            "b": 0.035022181774814524,
+            "worsening": -0.04771390352320948,
+            "limit": 0.05,
+            "pass": true
+          },
+          "high_risk_miss_rate": {
+            "a": 0.7727272727272727,
+            "b": 0.9545454545454546,
+            "worsening": -0.18181818181818188,
+            "limit": 0.02,
+            "pass": true
+          }
+        },
+        "HEK293T": {
+          "aurc": {
+            "a": 0.03290948321824365,
+            "b": 0.03412519941963479,
+            "worsening": -0.03562517500459339,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_10": {
+            "a": 0.031839891822873986,
+            "b": 0.03519005171286305,
+            "worsening": -0.09520190300727749,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_20": {
+            "a": 0.03194681142493128,
+            "b": 0.033518394138260243,
+            "worsening": -0.04688717206577164,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_50": {
+            "a": 0.03304974777857616,
+            "b": 0.03410606889524718,
+            "worsening": -0.0309716467152924,
+            "limit": 0.05,
+            "pass": true
+          },
+          "high_risk_miss_rate": {
+            "a": 0.72,
+            "b": 0.84,
+            "worsening": -0.12,
+            "limit": 0.02,
+            "pass": true
+          }
+        },
+        "macro": {
+          "aurc": {
+            "a": 0.032971258632538955,
+            "b": 0.03437958531945474,
+            "worsening": -0.040964039380627426,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_10": {
+            "a": 0.0316246902616525,
+            "b": 0.03530845062150312,
+            "worsening": -0.10433084134275716,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_20": {
+            "a": 0.03172073358153263,
+            "b": 0.03357664407258623,
+            "worsening": -0.05527385307005317,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_50": {
+            "a": 0.03320044227550744,
+            "b": 0.03456412533503085,
+            "worsening": -0.039453712376783745,
+            "limit": 0.05,
+            "pass": true
+          },
+          "high_risk_miss_rate": {
+            "a": 0.7463636363636363,
+            "b": 0.8972727272727272,
+            "worsening": -0.15090909090909088,
+            "limit": 0.02,
+            "pass": true
+          }
+        }
+      },
+      "safety_pass": true,
+      "secondary_never_replaces_primary": false
+    },
+    "Public": {
+      "methods": [
+        "Learned_hgb",
+        "P_only_hgb"
+      ],
+      "status": "NOT_ESTABLISHED",
+      "signed_U20": {
+        "HCT116": {
+          "delta_U20": 0.08980491533273927,
+          "CI95": [
+            -0.32428370274668733,
+            0.580366329323166
+          ],
+          "valid_draws": 5000
+        },
+        "HEK293T": {
+          "delta_U20": 0.13862947569921463,
+          "CI95": [
+            -0.26708374828256076,
+            0.5151667348536154
+          ],
+          "valid_draws": 5000
+        },
+        "macro": {
+          "delta_U20": 0.11421719551597695,
+          "CI95": [
+            -0.20833794400942215,
+            0.47312534347112073
+          ],
+          "valid_draws": 5000
+        }
+      },
+      "practical_point_margin_met": true,
+      "CI_noninferiority_style_guard_met": false,
+      "positive_CI_met": false,
+      "all_required_points_intervals_finite": true,
+      "both_contexts_valid": true,
+      "both_context_deltas_nonnegative": true,
+      "safety_required_by_registry": false,
+      "macro_and_both_context_safety": {
+        "HCT116": {
+          "aurc": {
+            "a": 0.03303303404683426,
+            "b": 0.03391528761662598,
+            "worsening": -0.02601344796967664,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_10": {
+            "a": 0.031409488700431025,
+            "b": 0.033781646845368524,
+            "worsening": -0.07022032276270518,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_20": {
+            "a": 0.03149465573813398,
+            "b": 0.03405095949785917,
+            "worsening": -0.0750728848003801,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_50": {
+            "a": 0.03335113677243872,
+            "b": 0.034420012402182426,
+            "worsening": -0.031053900191968964,
+            "limit": 0.05,
+            "pass": true
+          },
+          "high_risk_miss_rate": {
+            "a": 0.7727272727272727,
+            "b": 0.6363636363636364,
+            "worsening": 0.13636363636363635,
+            "limit": 0.02,
+            "pass": false
+          }
+        },
+        "HEK293T": {
+          "aurc": {
+            "a": 0.03290948321824365,
+            "b": 0.033099770268016034,
+            "worsening": -0.005748893367887087,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_10": {
+            "a": 0.031839891822873986,
+            "b": 0.03153678425213721,
+            "worsening": 0.009611238999938099,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_20": {
+            "a": 0.03194681142493128,
+            "b": 0.0343920672499661,
+            "worsening": -0.07109941392189001,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_50": {
+            "a": 0.03304974777857616,
+            "b": 0.03381900008907972,
+            "worsening": -0.02274615773610511,
+            "limit": 0.05,
+            "pass": true
+          },
+          "high_risk_miss_rate": {
+            "a": 0.72,
+            "b": 0.84,
+            "worsening": -0.12,
+            "limit": 0.02,
+            "pass": true
+          }
+        },
+        "macro": {
+          "aurc": {
+            "a": 0.032971258632538955,
+            "b": 0.03350752894232101,
+            "worsening": -0.01600447203090305,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_10": {
+            "a": 0.0316246902616525,
+            "b": 0.03265921554875287,
+            "worsening": -0.03167636667684359,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_20": {
+            "a": 0.03172073358153263,
+            "b": 0.03422151337391263,
+            "worsening": -0.07307624782854782,
+            "limit": 0.05,
+            "pass": true
+          },
+          "error_at_50": {
+            "a": 0.03320044227550744,
+            "b": 0.03411950624563107,
+            "worsening": -0.02693661401507874,
+            "limit": 0.05,
+            "pass": true
+          },
+          "high_risk_miss_rate": {
+            "a": 0.7463636363636363,
+            "b": 0.7381818181818182,
+            "worsening": 0.008181818181818179,
+            "limit": 0.02,
+            "pass": true
+          }
+        }
+      },
+      "safety_pass": false,
+      "secondary_never_replaces_primary": false
+    }
+  },
+  "primary_source_transfer": "NOT_ESTABLISHED",
+  "beyond_strong_history_rules": "NOT_ESTABLISHED",
+  "actual_primary_gene_clusters": 144,
+  "Source_seen_unseen_gene_clusters_descriptive_only": [
+    32,
+    112
+  ],
+  "no_champion_or_subgroup_selection": true,
+  "negative_results_retained": true,
+  "uncomputed_or_invalid_guards_never_pass": true,
+  "limits": [
+    "Nominal paired CIs conditional on fixed fits; no rerun/bootstrap/refit.",
+    "Public package is not isolated effect-content/Quality benefit.",
+    "Available2790 C-validation errors were not used for risk training; no comparison establishes label/call efficiency against an affordable C-validation learner.",
+    "No full-task/no-history fallback or pristine confirmation claim."
+  ]
+}

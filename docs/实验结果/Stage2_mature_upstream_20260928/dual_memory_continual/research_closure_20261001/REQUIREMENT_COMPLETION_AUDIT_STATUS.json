@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-01T23:59:21.805439+00:00",
+  "updated_utc": "2026-10-02T00:40:42.239565+00:00",
   "goal_completion_proven": false,
   "requirements": 21,
   "source_seed_completion": {
@@ -22,6 +22,9 @@
   "actual_continual_replay_status": "COMPLETE_ACTUAL_DEV_REPLAY_INDEPENDENTLY_REVIEWED_CANDIDATE_REJECTED",
   "actual_continual_replay_candidate": "REJECTED",
   "actual_orion_pretruth_independent_review": "PASS43_FIXED13CANDIDATES_232TASKS_144GENEUNION_TESTCLOSED",
-  "orion_once_only_test_scope": "ACTIVE_EXCLUSIVE_CLAIM_C94_OPERATION_READER554948",
-  "science_success_and_goal_completion_proven": false
+  "orion_once_only_test_scope": "COMPLETE_EXCLUSIVE_C94_OPERATION_AND_FIXED13_PAIRED5000_STATISTICS",
+  "science_success_and_goal_completion_proven": false,
+  "actual_orion_primary_science_gate": "NOT_ESTABLISHED",
+  "actual_orion_primary_U20_delta": -0.010052174490444349,
+  "actual_orion_independent_review_sha256": "654cceb9cb3a8525adb7de3452464703226ccae971f58ec3e7e9232125e32d01"
 }

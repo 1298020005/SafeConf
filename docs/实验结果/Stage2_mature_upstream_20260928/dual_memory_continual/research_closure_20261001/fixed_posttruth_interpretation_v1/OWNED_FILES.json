@@ -1,0 +1,35 @@
+{
+  "schema": "safeconf_owned_files_v1",
+  "files": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/fixed_posttruth_interpretation_v1/check_fixed_interpretation.py",
+      "sha256": "d08a0a331a6af5e6c29858c4750082c94b9364c733bfdb89d88188cc6d275552",
+      "bytes": 12917
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/fixed_posttruth_interpretation_v1/FROZEN_CHECKER_REGISTRATION.json",
+      "sha256": "3d0edb830db03cfd8fd395fcafa52010ff0f6f12a2327ceef717173862d584b8",
+      "bytes": 3229
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/fixed_posttruth_interpretation_v1/ACTUAL_INTERPRETATION.json",
+      "sha256": "0475d61a0b88c6b3257dd0a7dab297d3d173b96de6b981857b6adc536bc0fb82",
+      "bytes": 20412
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/fixed_posttruth_interpretation_v1/ACTUAL_ALL13_PRIMARY_U20.csv",
+      "sha256": "165d3a010f80dd834d5c2cf28c9b0409b1240aba29a231a236a36e32afa1bccb",
+      "bytes": 2723
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/fixed_posttruth_interpretation_v1/ACTUAL_FIXED_SIGNED_CONTRASTS.csv",
+      "sha256": "0f99b5ae4e7965e70565a8f797541073d812acd0f68bc35f32788073c3a8cb2e",
+      "bytes": 1817
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/fixed_posttruth_interpretation_v1/ACTUAL_SCIENTIFIC_REVIEW.json",
+      "sha256": "654cceb9cb3a8525adb7de3452464703226ccae971f58ec3e7e9232125e32d01",
+      "bytes": 10252
+    }
+  ]
+}

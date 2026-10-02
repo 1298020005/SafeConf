@@ -10,7 +10,7 @@
 - [复现入口与已知限制](docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/REPRODUCIBILITY_REPORT.md)
 - [Deep Research 报告复核](docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/DEEP_RESEARCH_REVIEW.md)
 
-当前事实：独立 Orion 研究的已发表线性上游通过预登记 validation 非劣能力门；不支持其优于简单基线。13 项固定方法的风险分数已冻结，共同比较为 232 个任务、144 个基因簇。一次性 TEST 评价已于 2026-10-01 23:55:34 UTC 登记并启动，完成前不报告方法增益。TEST 元数据已见，因此这是前瞻性的真值盲评外部复核，不是完整 pristine confirmation。
+当前事实：独立 Orion 研究的已发表线性上游通过预登记 validation 非劣能力门；不支持其优于简单基线。一次性 TEST 读取与固定 13 方法、5000 次簇抽样已完成，共同历史比较为 232 个任务、144 个基因簇，占全部 2993 个合格 TEST 任务约 7.75%。主比较的源风险 HGB 未建立超过同参照历史距离的增量，且一背景未通过安全护栏。详见[当前方法判断](docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/METHOD_DECISION.md)。TEST 元数据已见，因此这是前瞻性的真值盲评外部复核，不是完整 pristine confirmation。
 
 现有 McFaline 共同基因空间结果尚未证明源风险学习超过强历史距离和历史数量规则；不能将已运行的实验或工程检查写成投稿质量已经达标。论文正文依用户要求暂不生成。
 

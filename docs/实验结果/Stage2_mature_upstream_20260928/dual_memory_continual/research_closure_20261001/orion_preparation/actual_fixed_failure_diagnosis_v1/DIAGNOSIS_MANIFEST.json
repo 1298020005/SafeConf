@@ -1,0 +1,258 @@
+{
+  "schema": "safeconf_orion_fixed_feature_range_diagnosis_v1",
+  "status": "COMPLETE_DESCRIPTIVE_AUDIT_NO_NEW_FIT_OR_SCORE_SELECTION",
+  "created_utc": "2026-10-02T00:27:44.298278+00:00",
+  "code": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/audit_safeconf_orion_fixed_feature_ranges_agent.py",
+    "bytes": 12352,
+    "sha256": "4cd28b228ad0ca6fb33e7f4487840f26990e7705e3a1bd1a4b1979388c5c02d6"
+  },
+  "input_bindings": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_FEATURE_MANIFEST.json",
+      "bytes": 16172,
+      "sha256": "b74b9dfbc64f5acc82b7b0d34023aa6a523bd11d1904ced7fd638c5bec4ef2d1"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/fixed_risk_evaluation/primary_common_COHORT.csv",
+      "bytes": 17583,
+      "sha256": "59385312a8a5d25ff4435678535f1495514fcb5eb8bbf43e94e6c2911e2ab1e5"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_risk_seal/PRETRUTH_RISKS.tsv",
+      "bytes": 5757389,
+      "sha256": "00b1426447982d0f5685f3ba5192fbd21b6ed9812e45765413c1d6c25f3cb733"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_TASKS.parquet",
+      "bytes": 95447,
+      "sha256": "6bd02a0cff8f41ea48ad9566622bbebe923db56db64a8d20a4597fce53725013"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/source_Manual.parquet",
+      "bytes": 1044152,
+      "sha256": "7402852b7b7676259e5a21584def1bf3525e25c4968fa4d6373b54e3fe3d6a6f"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_Manual_RISK_FEATURES.npy",
+      "bytes": 376192,
+      "sha256": "1f5e660ee827bdf3a53057f0251325564dea7eb1f71e8494e515cc8111d67e80"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_risk_seal/Manual_P_PUBLIC_FEATURES.parquet",
+      "bytes": 788420,
+      "sha256": "3af3e52b582810d0de86d23c28be9e2b0d561de5c40e843022c4bc6133dc1a51"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_Manual_ridge.joblib",
+      "bytes": 1203,
+      "sha256": "de485ad5899827618416a8d73f9f7137da7a4b26aefc395a67304ad9e8b3c955"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/source_Learned.parquet",
+      "bytes": 1044409,
+      "sha256": "94cc84b25f8a87a6e302fb46e4a57849ef0cdba4a2c078532364012baa1fb5a6"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_Learned_RISK_FEATURES.npy",
+      "bytes": 376192,
+      "sha256": "356aa0114ff54708aa0d381e2bb26152f33e5ad448d19f065fde98d2256e3bcb"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_risk_seal/Learned_P_PUBLIC_FEATURES.parquet",
+      "bytes": 800325,
+      "sha256": "88121991d2f9aefd9e282133837502278ed9dd333f70392449b157793603489f"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_Learned_ridge.joblib",
+      "bytes": 1205,
+      "sha256": "f4d332b16c79b410fb71fe461f18777c7bd9899a1b6971312142fe56177fae0e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/fixed_risk_evaluation/METHOD_METRIC_INTERVALS.csv",
+      "bytes": 48874,
+      "sha256": "64fe43165ce83149e60104856159b74fd8e07842dcd8fa4082319fb1ac402418"
+    }
+  ],
+  "column_projection_access_audit": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/fixed_risk_evaluation/primary_common_COHORT.csv",
+      "columns": [
+        "query_id",
+        "target_gene_id",
+        "target_gene_symbol",
+        "context_id",
+        "role"
+      ],
+      "purpose": "fixed completed primary identity only"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_risk_seal/PRETRUTH_RISKS.tsv",
+      "columns": [
+        "query_id",
+        "target_gene_id",
+        "target_gene_symbol",
+        "context_id",
+        "role",
+        "Magnitude",
+        "P_only_ridge",
+        "P_only_hgb",
+        "Manual_ridge",
+        "Manual_hgb",
+        "Learned_ridge",
+        "Learned_hgb",
+        "Manual_WeightedHistoryDistance",
+        "Learned_WeightedHistoryDistance",
+        "Uniform_DirectRMSE",
+        "Manual_DirectRMSE",
+        "Learned_DirectRMSE"
+      ],
+      "purpose": "already frozen prediction-time risk ties only"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_TASKS.parquet",
+      "columns": [
+        "gene"
+      ],
+      "purpose": "oldSource575 identity scope only"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/source_Manual.parquet",
+      "columns": [
+        "task_id",
+        "gene",
+        "target",
+        "upstream",
+        "model_version",
+        "output_contract_id",
+        "predicted_magnitude",
+        "prediction_abs_mean",
+        "prediction_signed_mean",
+        "prediction_std",
+        "prediction_abs_q95",
+        "prediction_sparsity",
+        "prior_magnitude",
+        "prediction_prior_rmse",
+        "prediction_prior_cosine",
+        "prior_uncertainty",
+        "log_history_support",
+        "effective_sources",
+        "history_conflict"
+      ],
+      "purpose": "exact saved risk-fit OOF feature inputs, no labels"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_Manual_RISK_FEATURES.npy",
+      "purpose": "feature-only model-input equality; no effect/label vector"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_risk_seal/Manual_P_PUBLIC_FEATURES.parquet",
+      "columns": [
+        "predicted_magnitude",
+        "prediction_abs_mean",
+        "prediction_signed_mean",
+        "prediction_std",
+        "prediction_abs_q95",
+        "prediction_sparsity",
+        "prior_magnitude",
+        "prediction_prior_rmse",
+        "prediction_prior_cosine",
+        "prior_uncertainty",
+        "log_history_support",
+        "effective_sources",
+        "history_conflict"
+      ],
+      "purpose": "frozen target features aligned to fixed primary IDs"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_Manual_ridge.joblib",
+      "purpose": "frozen model/preprocessor metadata only; predict not called"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/source_Learned.parquet",
+      "columns": [
+        "task_id",
+        "gene",
+        "target",
+        "upstream",
+        "model_version",
+        "output_contract_id",
+        "predicted_magnitude",
+        "prediction_abs_mean",
+        "prediction_signed_mean",
+        "prediction_std",
+        "prediction_abs_q95",
+        "prediction_sparsity",
+        "prior_magnitude",
+        "prediction_prior_rmse",
+        "prediction_prior_cosine",
+        "prior_uncertainty",
+        "log_history_support",
+        "effective_sources",
+        "history_conflict"
+      ],
+      "purpose": "exact saved risk-fit OOF feature inputs, no labels"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_Learned_RISK_FEATURES.npy",
+      "purpose": "feature-only model-input equality; no effect/label vector"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_risk_seal/Learned_P_PUBLIC_FEATURES.parquet",
+      "columns": [
+        "predicted_magnitude",
+        "prediction_abs_mean",
+        "prediction_signed_mean",
+        "prediction_std",
+        "prediction_abs_q95",
+        "prediction_sparsity",
+        "prior_magnitude",
+        "prediction_prior_rmse",
+        "prediction_prior_cosine",
+        "prior_uncertainty",
+        "log_history_support",
+        "effective_sources",
+        "history_conflict"
+      ],
+      "purpose": "frozen target features aligned to fixed primary IDs"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_source_core_20261002_v1/SOURCE_RISK_Learned_ridge.joblib",
+      "purpose": "frozen model/preprocessor metadata only; predict not called"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/fixed_risk_evaluation/METHOD_METRIC_INTERVALS.csv",
+      "purpose": "already completed aggregate7metric summaries only, no error vector"
+    }
+  ],
+  "Source_feature_contract_sha256": "b74b9dfbc64f5acc82b7b0d34023aa6a523bd11d1904ced7fd638c5bec4ef2d1",
+  "fixed_primary_rows": 232,
+  "fixed_primary_gene_clusters": 144,
+  "features": [
+    "predicted_magnitude",
+    "prediction_abs_mean",
+    "prediction_signed_mean",
+    "prediction_std",
+    "prediction_abs_q95",
+    "prediction_sparsity",
+    "prior_magnitude",
+    "prediction_prior_rmse",
+    "prediction_prior_cosine",
+    "prior_uncertainty",
+    "log_history_support",
+    "effective_sources",
+    "history_conflict"
+  ],
+  "Source_quantile_reference": "all3616 original risk-fit OOF records, unweighted descriptive distribution; separate2upstream summaries also provided",
+  "missing_definition": "all nonfinite values; summaries/ranges use finite rows and report missing separately",
+  "out_of_range_definition": "strict below pooled Source observed min or above max; q01/q99 tails separate; rate denominator finite target rows",
+  "risk_tie_definition": "exact float64 score equality; no rounded or error-derived ties; frozenquery_id top20 boundary",
+  "target_raw_or_expression_or_error_parquet_read": false,
+  "Source_raw_or_effect_or_transfer_error_label_read": false,
+  "model_predict_called": false,
+  "new_fits": 0,
+  "new_bootstrap_draws": 0,
+  "candidate_or_parameter_or_gate_change": false,
+  "interpretation_limit": "OOD range/tie descriptions do not prove cause of the observed failure; no automatic significant shift claim, correction, calibration or gate reinterpretation",
+  "elapsed_seconds": 0.3256877469830215
+}
