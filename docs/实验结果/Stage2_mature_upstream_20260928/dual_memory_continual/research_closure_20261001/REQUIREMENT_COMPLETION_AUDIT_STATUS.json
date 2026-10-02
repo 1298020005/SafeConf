@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-02T00:40:42.239565+00:00",
+  "updated_utc": "2026-10-02T05:38:37.910518+00:00",
   "goal_completion_proven": false,
   "requirements": 21,
   "source_seed_completion": {
@@ -26,5 +26,7 @@
   "science_success_and_goal_completion_proven": false,
   "actual_orion_primary_science_gate": "NOT_ESTABLISHED",
   "actual_orion_primary_U20_delta": -0.010052174490444349,
-  "actual_orion_independent_review_sha256": "654cceb9cb3a8525adb7de3452464703226ccae971f58ec3e7e9232125e32d01"
+  "actual_orion_independent_review_sha256": "654cceb9cb3a8525adb7de3452464703226ccae971f58ec3e7e9232125e32d01",
+  "source_strongest_rule_completion": "COMPLETE_6PAIRS_ALL_MACRO_CI_CROSSZERO",
+  "legacy_e170_budget": "COMPLETE_0FIT_TARGETVALIDATION1920_NOTSOURCEZERO_C"
 }

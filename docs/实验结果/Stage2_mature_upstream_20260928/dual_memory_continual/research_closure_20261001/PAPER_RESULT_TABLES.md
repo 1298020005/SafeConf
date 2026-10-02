@@ -124,3 +124,32 @@ ControlU20 .078304; all43macro paired superiorityintervals unsupported. Full3860
 | new task gate，345tasks/115genes |0.759756|0.753450|0.745657|[-0.031081,0.038584]|
 
 只C为候选；C−A newgate −0.014099、miss＋0.025460使原门失败，服务保留A。C−B生物重建RMSE anchor −0.000280[-0.000538,-0.000068]、newgate −0.000355[-0.000614,-0.000122]；不把微小生物重建增益写作最终risk收益。SourceDEV观察性操作，原外部主结果不变。全48/6/42行及代码/失败在continual_runtime_replay/public_biology_refit_v2/。
+
+## Source同任务强幅度对照（SEEN）
+
+| line | context | method_a | method_b | metric | point_a | point_b | difference_a_minus_b | ci95_lower | ci95_upper | valid_draws | saved_draws | new_RNG |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Exphormer_to_GAT | macro | Learned_hgb | Magnitude | utility20 | 0.783134 | 0.748808 | 0.034327 | -0.009285 | 0.069899 | 5000 | 5000 | 0 |
+| Exphormer_to_GAT | macro | Manual_hgb | Magnitude | utility20 | 0.780548 | 0.748808 | 0.031741 | -0.017315 | 0.058492 | 5000 | 5000 | 0 |
+| Exphormer_to_GAT | macro | Prediction_hgb | Magnitude | utility20 | 0.758953 | 0.748808 | 0.010145 | -0.036005 | 0.041538 | 5000 | 5000 | 0 |
+| GAT_to_Exphormer | macro | Learned_hgb | Magnitude | utility20 | 0.783743 | 0.746253 | 0.037491 | -0.002974 | 0.077648 | 5000 | 5000 | 0 |
+| GAT_to_Exphormer | macro | Manual_hgb | Magnitude | utility20 | 0.786008 | 0.746253 | 0.039755 | -0.003418 | 0.073826 | 5000 | 5000 | 0 |
+| GAT_to_Exphormer | macro | Prediction_hgb | Magnitude | utility20 | 0.752714 | 0.746253 | 0.006461 | -0.020953 | 0.047175 | 5000 | 5000 | 0 |
+
+## E170固定有历史强对照
+
+| cohort | method_a | method_b | metric | point_difference | ci95_lower | ci95_upper | valid_draws | total_draws |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| KNOWN_HISTORY_1920 | V2_nested | Magnitude_raw | utility20 | 0.052250 | -0.032127 | 0.132240 | 5000 | 5000 |
+| KNOWN_HISTORY_1920 | V2_nested | Ridge_U | utility20 | 0.036490 | -0.019743 | 0.103061 | 5000 | 5000 |
+| KNOWN_HISTORY_1920 | V2_nested | Ridge_US | utility20 | 0.036490 | -0.019743 | 0.103061 | 5000 | 5000 |
+| KNOWN_HISTORY_1920 | V2_nested | Ridge_USR | utility20 | 0.000044 | -0.029516 | 0.043188 | 5000 | 5000 |
+| KNOWN_HISTORY_1920 | V2_nested | Ridge_USRCH | utility20 | -0.000215 | -0.007619 | 0.004183 | 5000 | 5000 |
+| KNOWN_HISTORY_1920 | V2_nested | DirectHistoryDistance | utility20 | 0.029478 | -0.018512 | 0.090661 | 5000 | 5000 |
+| KNOWN_HISTORY_1920 | V2_nested | DistancePlusHistoryDispersion | utility20 | 0.024281 | -0.028890 | 0.084104 | 5000 | 5000 |
+| KNOWN_HISTORY_1920 | V2_nested | NegativeLogHistorySupport | utility20 | 0.328408 | 0.217423 | 0.447275 | 5000 | 5000 |
+| KNOWN_HISTORY_1920 | DirectHistoryDistance | Magnitude_raw | utility20 | 0.022771 | -0.070604 | 0.096167 | 5000 | 5000 |
+| KNOWN_HISTORY_1920 | DistancePlusHistoryDispersion | DirectHistoryDistance | utility20 | 0.005198 | -0.037357 | 0.056680 | 5000 | 5000 |
+| KNOWN_HISTORY_1920 | NegativeLogHistorySupport | Magnitude_raw | utility20 | -0.276159 | -0.403205 | -0.161242 | 5000 | 5000 |
+
+原V2使用1920目标验证错误；旧Gate原样保留。

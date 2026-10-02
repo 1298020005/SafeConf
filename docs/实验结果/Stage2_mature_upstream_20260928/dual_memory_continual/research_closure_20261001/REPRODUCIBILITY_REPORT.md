@@ -115,3 +115,7 @@ Preparationb301 exports existingRDSbaseline (no fit/predict), comparesfull38606a
 ## 持续PublicBiology重训的实际可复现链
 
 SourceDEV isolated v2保存7个原HGB Bio参数（2/3初始OOF+final，2/3/4更新OOF+final）及3jointRisk bundles。权重/先验/features/risk可从固定原预测/控制、版本bank及保存Bio重新生成并逐位一致。ROOT核106输入/输出/code哈希、48风险strata、42保存draw区间、B/C相同CDF/记录身份和实际服务A。ROOT_BIOLOGY_RECONSTRUCTION_RECIPE.py --output <新目录>从已保存先验及Source观测真值重放3张生物表，实际重放CSV逐字节一致；680unique tasks/227gene，macro按4context，非两个upstream重复。CSV legacy independent_biological_tasks列的335/345含义为unique task IDs，真正抽样单位112/115gene（并集227），更正记录在ROOT_BIOLOGY_DIAGNOSTIC_RECEIPT.json。原v1异常0fit留痕，原source/model/current及外部assets未变；成本55.846s、累计processCPU64.177s、peakRSS758554624B。
+
+## Fixed Source Magnitude and E170 completions
+
+Source agent script binds actualsaved5000x575counts,40pointreplay,210pairs/280intervals,ROOT_ACTUAL_VERIFICATION PASS. Seed20261002 is notoriginalmainCIseed. E170 script freezes2400scores beforecachederrors;3cohort5000counts,23macro/276strata/161pairs,158fullyvalid/3SpearmanNA;old42points exact. INDEPENDENT_ACTUAL_REVIEW actualarrays/hashes PASS. Costs13.196s/28.047s,0fit/upstream/GPU/primarychange. RuntimeNPZ/ParquetstayoutsideGit.

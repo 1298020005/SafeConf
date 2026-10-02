@@ -73,3 +73,11 @@ Orion原232任务/144gene、3固定无拟合规则、5实际效应置换、5000�
 ## PublicBiology真实重训与发布门已补齐
 
 原结构SourceDEV三臂已执行7Bio+3risk拟合：加入新bank/errors后，C重训Bio相对B旧Bio在335anchor tasks/112gene及345newgate tasks/115gene的生物重建RMSE分别降低0.000280/0.000355，名义5000gene CI均负；cosine也小幅改善。风险U20 C−B的两个区间均跨零，C−A newgate点差−0.014099、漏检率+0.025460，违反原发布门，真实isolated服务保留A。原模型/外部评价不变。此结果证明原Public学习器能够由新增监督微调生物参照，但未建立风险收益，不称自学习无效或跨域机制已定位，不继续追加refit变体。证据：continual_runtime_replay/public_biology_refit_v2/README.md。
+
+## Source强幅度基线与E170信息边界补齐（2026-10-02）
+
+Source两方向LearnedHGB−Magnitude +0.034327[-0.009285,0.069899]、+0.037491[-0.002974,0.077648]；Manual和PredictionHGB另四CI也跨零。HGB超过历史距离/真实标签优于打乱的既有证据保留，不能据此称全面胜过最强零错误标签规则。复用实际5000gene counts，0fit/新RNG，原40点复现。
+
+旧E170用了1920目标validation errors，known640gene与validation同gene/不同donor，不是当前SharedCore的无C错误跨家族确认。known V2−Direct +0.029478[-0.018512,0.090661]、−DistancePlusDispersion +0.024281[-0.028890,0.084104]；missing−Magnitude −0.030054[-0.180912,0.183269]。旧GateA点门通过保留，强规则/无历史稳定增量未证明。known数量panel×state常量，不能当成有排序信息的强数量对照。
+
+停止这两组winner搜索，完整保留原资产、23macro/276strata/161pairs与独立审阅。本轮是证据/预算修正，不是方法修复或投稿就绪。

@@ -1,0 +1,54 @@
+{
+  "status": "COMPLETE_FIXED_SEEN_E170_STRONG_RULES",
+  "new_fits": 0,
+  "new_upstream_calls": 0,
+  "original_full_points_reproduced": true,
+  "original_gate_and_predictions_unchanged": true,
+  "macro_rows": 23,
+  "strata_rows": 276,
+  "paired_rows": 161,
+  "rule_missing_tasks_retained": 480,
+  "new_risk_training_labels": 0,
+  "original_supervised_methods_target_validation_labels": 1920,
+  "elapsed_seconds": 28.04707339894958,
+  "CPU_delta_seconds": 99.872104469,
+  "peak_RSS_bytes": 343154688,
+  "GPU_hours": 0,
+  "runtime_artifacts": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/e170_legacy_strong_references_20261002_v1/ALL2400_FROZEN_SUPPLEMENTAL_SCORES.parquet",
+      "bytes": 211278,
+      "sha256": "50119bca9a046f0a29bd7004c75154a5a8b9de3fb51d9540ccb3871b79bdb0e4"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/e170_legacy_strong_references_20261002_v1/NO_HISTORY_480_BOOTSTRAP_COUNTS.npz",
+      "bytes": 284139,
+      "sha256": "e04664b85855f50ca4fa8bd09bb9afa04e331d6127c6db9f74afa1621a5bb6da"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/e170_legacy_strong_references_20261002_v1/FULL_ORIGINAL_2400_BOOTSTRAP_COUNTS.npz",
+      "bytes": 1417574,
+      "sha256": "e04ecd8e07547b9efa7a9c86d94f2c625d9a862192c7333b7068b76a2a275d77"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/e170_legacy_strong_references_20261002_v1/KNOWN_HISTORY_1920_METRIC_DRAWS.npz",
+      "bytes": 1820685,
+      "sha256": "834b22c4ab9943af2be44ac02170906156207312751caf2bfcde256466d17384"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/e170_legacy_strong_references_20261002_v1/KNOWN_HISTORY_1920_BOOTSTRAP_COUNTS.npz",
+      "bytes": 1134109,
+      "sha256": "92aab515af54b12b2d287c10c503f954a12f8fa3d28e015118c808940ee6c096"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/e170_legacy_strong_references_20261002_v1/FULL_ORIGINAL_2400_METRIC_DRAWS.npz",
+      "bytes": 1401613,
+      "sha256": "1b0d8ba32031fad0e81525772e14ec4da7b6a9c99bfd07e5fc8e32624e67b0d5"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/e170_legacy_strong_references_20261002_v1/NO_HISTORY_480_METRIC_DRAWS.npz",
+      "bytes": 1265998,
+      "sha256": "5fd5bd01e59ed4ef31d329258a46cfad7563d9eff1a76fe4220ce418d49b6fec"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "scope": "fixedSource6pairedMagnitude_completion_no_models_or_externalaccess",
+  "owned_files": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/complete_safeconf_source_magnitude_comparators_agent.py",
+      "bytes": 11508,
+      "sha256": "4d5b97b9bd700a363a16b1874c013ef6e58e025d3bbc7e117763502fa1ae3d53"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_magnitude_comparator_completion_v1/ALL6_FIXED_PAIRED_COMPARATORS.csv",
+      "bytes": 36527,
+      "sha256": "d3153b529cb3d0bd1a43dcb9654708250123e9629deff6cc8427ec30a818466e"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_magnitude_comparator_completion_v1/ALL_METHOD_INTERVALS.csv",
+      "bytes": 32301,
+      "sha256": "228186416eb0ef4aef104839abe617774142dac92bd139a3aace79dec15a993c"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_magnitude_comparator_completion_v1/COST_MASTER_APPEND_ROW.csv",
+      "bytes": 497,
+      "sha256": "518df3672415b7d10196600356e93bc0926b36fbeeb32bb01c6475c6de543650"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_magnitude_comparator_completion_v1/INVALID_DRAW_COUNTS.csv",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_magnitude_comparator_completion_v1/README.md",
+      "bytes": 3203,
+      "sha256": "a94bf0524743d2a252da2bb8201e9ac8c7eef110160c0ee03652638e7ead922c"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_magnitude_comparator_completion_v1/REGISTRATION.json",
+      "bytes": 4151,
+      "sha256": "04b041399eb29a35e68c8049a99a04603866fb9540e61fd7c4b8ae560bdad394"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_magnitude_comparator_completion_v1/RESULT_MANIFEST.json",
+      "bytes": 2492,
+      "sha256": "43f74a73fea082dcaca1889e0510e6f1ca66e0ffea3a0cb03c4be070ed0c0680"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_magnitude_comparator_completion_v1/SCALAR_MAIN_AND_COUNTER_POINT_REPRODUCTION.csv",
+      "bytes": 2269,
+      "sha256": "fdfe98ce160b5d487b4f7bf04281c5925e0f99a3150b65b30912dea4a09e9061"
+    }
+  ]
+}

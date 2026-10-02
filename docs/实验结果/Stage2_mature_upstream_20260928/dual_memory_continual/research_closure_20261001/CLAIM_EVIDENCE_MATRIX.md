@@ -81,3 +81,11 @@ OnefixedCP4000positive-direction proxy onall232Orion tasks yieldsmacroU20 .07830
 ### 真实PublicBiology重训更新（Source DEV）
 
 7个PublicBio和3个Risk拟合、存储OOF/final参数、jointBioRisk-bank重建位级一致、原开发发布门拒绝C并保留A已完成。C−B的生物重建小幅收益有DEV名义区间支持；全部6风险U20差值CI跨零。680unique biological tasks按227gene抽样，不以两模型重复行计独立样本。该操作不是新外部确认，不证明单checkpoint ErrorAdapter或普遍增量改善。
+
+## Source强幅度基线与E170信息边界补齐（2026-10-02）
+
+Source两方向LearnedHGB−Magnitude +0.034327[-0.009285,0.069899]、+0.037491[-0.002974,0.077648]；Manual和PredictionHGB另四CI也跨零。HGB超过历史距离/真实标签优于打乱的既有证据保留，不能据此称全面胜过最强零错误标签规则。复用实际5000gene counts，0fit/新RNG，原40点复现。
+
+旧E170用了1920目标validation errors，known640gene与validation同gene/不同donor，不是当前SharedCore的无C错误跨家族确认。known V2−Direct +0.029478[-0.018512,0.090661]、−DistancePlusDispersion +0.024281[-0.028890,0.084104]；missing−Magnitude −0.030054[-0.180912,0.183269]。旧GateA点门通过保留，强规则/无历史稳定增量未证明。known数量panel×state常量，不能当成有排序信息的强数量对照。
+
+停止这两组winner搜索，完整保留原资产、23macro/276strata/161pairs与独立审阅。本轮是证据/预算修正，不是方法修复或投稿就绪。

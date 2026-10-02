@@ -1,0 +1,51 @@
+{
+  "status": "COMPLETE_FIXED_SOURCE_MAGNITUDE_COMPARATOR_COMPLETION",
+  "fixed_pairs": 6,
+  "method_interval_rows": 280,
+  "paired_rows": 210,
+  "source_lines": 2,
+  "tasks_per_line": 1808,
+  "shared_gene_clusters": 575,
+  "contexts_per_line": 4,
+  "all_scalar_main_points_reproduced": true,
+  "all_counter_points_validated": true,
+  "new_fits": 0,
+  "new_CDF_fits": 0,
+  "new_RNG_draws": 0,
+  "saved_count_draws": 5000,
+  "count_generation_seed": 20261002,
+  "Orion_access": false,
+  "MC_numeric_access": false,
+  "original_assets_unchanged": true,
+  "elapsed_seconds": 13.195702419849113,
+  "CPU_seconds": 34.624175615000006,
+  "peak_RSS_bytes": 519344128,
+  "GPU_hours": 0,
+  "output_bindings": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_magnitude_comparator_completion_v1/ALL6_FIXED_PAIRED_COMPARATORS.csv",
+      "bytes": 36527,
+      "sha256": "d3153b529cb3d0bd1a43dcb9654708250123e9629deff6cc8427ec30a818466e"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_magnitude_comparator_completion_v1/ALL_METHOD_INTERVALS.csv",
+      "bytes": 32301,
+      "sha256": "228186416eb0ef4aef104839abe617774142dac92bd139a3aace79dec15a993c"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_magnitude_comparator_completion_v1/INVALID_DRAW_COUNTS.csv",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_magnitude_comparator_completion_v1/SCALAR_MAIN_AND_COUNTER_POINT_REPRODUCTION.csv",
+      "bytes": 2269,
+      "sha256": "fdfe98ce160b5d487b4f7bf04281c5925e0f99a3150b65b30912dea4a09e9061"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_magnitude_comparator_completion_20261002_v1/ALL_FIXED_SOURCE_METRIC_DRAWS.npz",
+      "bytes": 9794269,
+      "sha256": "c98a193414b3c27167c6cc5507b3508470a8fdfeb58835d6a835f9923ab1bd1c"
+    }
+  ]
+}

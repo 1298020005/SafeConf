@@ -1,0 +1,12 @@
+{
+  "status": "PASS_ROOT_INDEPENDENT_FIXED_COMPARISON_VERIFICATION",
+  "hash_bindings_checked": 14,
+  "paired_intervals_verified": 210,
+  "marginal_intervals_verified": 280,
+  "max_paired_CI_difference": 9.985502008591496e-17,
+  "four_context_macro_exact": true,
+  "all6macroU20_intervals_cross0": true,
+  "new_fits": 0,
+  "new_draws": 0,
+  "does_not_replace_source_labels_vs_shuffle_evidence": true
+}

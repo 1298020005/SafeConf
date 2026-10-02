@@ -1,0 +1,4 @@
+cohort,comparison,metric,valid_draws,reason
+KNOWN_HISTORY_1920,V2_nested-NegativeLogHistorySupport,spearman,0,undefined metric retained; not imputed
+KNOWN_HISTORY_1920,NegativeLogHistorySupport-Magnitude_raw,spearman,0,undefined metric retained; not imputed
+NO_HISTORY_480,V2_nested-NegativeLogHistorySupport,spearman,0,undefined metric retained; not imputed

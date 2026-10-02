@@ -1,0 +1,107 @@
+{
+  "schema": "fixed_Source_only_Magnitude_strong_comparator_completion_v1",
+  "pid": 924463,
+  "lines": [
+    "Exphormer_to_GAT",
+    "GAT_to_Exphormer"
+  ],
+  "methods": [
+    "Learned_hgb",
+    "Manual_hgb",
+    "Prediction_hgb",
+    "Magnitude"
+  ],
+  "fixed_pairs": [
+    [
+      "Learned_hgb",
+      "Magnitude"
+    ],
+    [
+      "Manual_hgb",
+      "Magnitude"
+    ],
+    [
+      "Prediction_hgb",
+      "Magnitude"
+    ]
+  ],
+  "risk_seed": 20260930,
+  "tasks_per_line": 1808,
+  "genes": 575,
+  "contexts": 4,
+  "metrics": [
+    "utility20",
+    "spearman",
+    "aurc",
+    "high_risk_miss_rate",
+    "error_at_10",
+    "error_at_20",
+    "error_at_50"
+  ],
+  "bootstrap": "reuse existing5000x575uint16gene counts; bothlines share counts; no RNG",
+  "existing_count_generation_seed": 20261002,
+  "not_original_main_bootstrap_seed": true,
+  "sorted_gene_order_sha256": "f6a9d3cb6e0c2e6ba3630fb3df066392324ef8f34ebc3999001154079ebdc6c3",
+  "original_main_CI_reproduction_claim": false,
+  "new_fits": 0,
+  "new_upstream_calls": 0,
+  "new_CDF_or_label_fits": 0,
+  "new_sampling": 0,
+  "Orion_access": false,
+  "MC_numeric_access": false,
+  "raw_gene_vector_access": false,
+  "CSV_access": "sharedcache byte scans/hashes; only allowedSource seed/method numeric records parsed",
+  "resources": {
+    "CPU_threads": 4,
+    "wall_cap_seconds": 600,
+    "RSS_cap_bytes": 2147483648,
+    "GPU_hours": 0
+  },
+  "input_code_bindings": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/complete_safeconf_source_magnitude_comparators_agent.py",
+      "bytes": 11508,
+      "sha256": "4d5b97b9bd700a363a16b1874c013ef6e58e025d3bbc7e117763502fa1ae3d53"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/research.py",
+      "bytes": 11094,
+      "sha256": "22a02a79d59f1d852870efb9dc1afe229f150c5db75e5de735f7bfcc1f613887"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_source_scaling_uncertainty_agent.py",
+      "bytes": 18872,
+      "sha256": "46e4e48f0b767d4fc363da9884412973beee0407128377a184bc6992c0819c64"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/MATRIX_TASK_PREDICTIONS.csv.gz",
+      "bytes": 5606076,
+      "sha256": "73eff7366c0e64d96d57e6effe2d12061890a3db43f47d4d403204a8dff9504c"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/MATRIX_CONTEXT_RESULTS.csv",
+      "bytes": 124920,
+      "sha256": "48bd1d256edf58e24844e0171b437e4b7c1da97ee48a197fd2c194dd2c367554"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/MATRIX_MACRO_RESULTS.csv",
+      "bytes": 32151,
+      "sha256": "c0c8aa77ed847e00c119fbb8ff2e77787f2386e7f290f38f3e3786b6f850e1fc"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/PAIRED_CLUSTER_BOOTSTRAP.csv",
+      "bytes": 7867,
+      "sha256": "ae3ea8afde2da5f074f0bd3435111a2944013205cc94d82e5afc73c0a1733866"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_public_growth_statistics_20261002_v1/Source_BOOTSTRAP_GENE_COUNTS.npy",
+      "bytes": 5750128,
+      "sha256": "524ac5396accdf0892196cddcd2694a1cbf159eb0b8aff57f9c99a41ebd3908e"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/complete_safeconf_common_public_growth_statistics.py",
+      "bytes": 13596,
+      "sha256": "053d463e3e9805ffd01a86ae036acc14bc95c97c7ee838cc81556499c7d8036d"
+    }
+  ]
+}

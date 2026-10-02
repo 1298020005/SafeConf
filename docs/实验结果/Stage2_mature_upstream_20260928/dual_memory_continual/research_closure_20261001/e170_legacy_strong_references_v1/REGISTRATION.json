@@ -1,0 +1,126 @@
+{
+  "role": "SEEN_after_original_confirmation_strong_comparator_completion",
+  "fixed_rules": {
+    "DirectHistoryDistance": "-negative_model_source_gap",
+    "DistancePlusHistoryDispersion": "sqrt(gap**2 + source_delta_dispersion**2)",
+    "NegativeLogHistorySupport": "-log1p(n_source_cells)"
+  },
+  "old_scores_not_refitted": [
+    "Magnitude_raw",
+    "Ridge_U",
+    "Ridge_US",
+    "Ridge_USR",
+    "Ridge_USRCH",
+    "V2_nested"
+  ],
+  "cohorts": [
+    "FULL_ORIGINAL_2400",
+    "KNOWN_HISTORY_1920",
+    "NO_HISTORY_480"
+  ],
+  "primary_old_gate_unchanged": true,
+  "undefined_direct_and_uncertainty_scores_remain_NA": true,
+  "support_full_population_extra_control": "n_source_cells=0 is observed absence of history, not a zero effect; -log1p(0) is finite. No-history score is constant, so this arm has no ranking information there.",
+  "bootstrap": {
+    "draws": 5000,
+    "unit": "whole gene across three states",
+    "panels": 4,
+    "independent_cohort_seeds": [
+      20261002,
+      20261003,
+      20261004
+    ]
+  },
+  "fixed_contrasts": "V2 minus every other available method; known-history direct minus magnitude, uncertainty minus direct, support minus magnitude",
+  "new_fits": 0,
+  "new_upstream_calls": 0,
+  "information": "old risk learners consumed 1920 target ensemble validation errors; rules and magnitude consume zero error labels",
+  "gene_generalization": "known-history640genes also have target validation errors; heldout donor within same study, not unseen-gene source-only transfer",
+  "input_code_bindings": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/confirmation/e170_primary_cd4_four_panel/SUMMARY.csv",
+      "bytes": 969,
+      "sha256": "877342a86270c02a4e194acc8d93af06952eb735970bcd40a97b24a22a6f9f5a"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/confirmation/e170_primary_cd4_four_panel/REPORT.md",
+      "bytes": 1849,
+      "sha256": "c55179f120c7dfa247cc3e3619c28afeca78854b4ff7ffee0c5a24f954f5d3be"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/confirmation/e170_primary_cd4_four_panel/PAIRED_CLUSTER_BOOTSTRAP.csv",
+      "bytes": 865,
+      "sha256": "9b689ee1f7b8eb8ded4b57f3873e8db1a2a0c03e5eed4e63c0524611006035e4"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/confirmation/e170_primary_cd4_four_panel/GATE_A_RESULT.json",
+      "bytes": 389,
+      "sha256": "c743d944407e7b6f9ba8d32cee8ee5247d1d2d4388970d1302e6ea81e2eb461b"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/confirmation/e170_primary_cd4_four_panel/STRATUM_RESULTS.csv",
+      "bytes": 10877,
+      "sha256": "cecdf6503f6abf1f963eb655f55f716cde7d613fb9d732e7c8c409a312129c10"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/confirmation/e170_primary_cd4_four_panel/RISK_COVERAGE.csv",
+      "bytes": 14216,
+      "sha256": "cbc646a392fa4c72294733381c5002ff59d9bb410308b600e4457c0ec9552011"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/confirmation/e170_primary_cd4_four_panel/CONFIRMATION_PREDICTIONS.csv.gz",
+      "bytes": 400261,
+      "sha256": "57e774d6f2e291f73e98c3cb8514206b5d0daedd6eecdcb34481bb69b45c9f2a"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/confirmation/e170_primary_cd4_four_panel/HISTORY_AVAILABILITY_RESULTS.csv",
+      "bytes": 2133,
+      "sha256": "a5aa9ddb9913c500876f89b745b72cea8a4e0425cb5f95a66167e5c21dfeea50"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/confirmation/e170_primary_cd4_four_panel/V2_GATE_FIT.csv",
+      "bytes": 251,
+      "sha256": "c3b5ad8aded56be035b725ec47c696c491b6805183f6eed1a9b0c6200114c084"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/confirmation/e170_primary_cd4_four_panel/CONFIRMATION_FEATURES.csv.gz",
+      "bytes": 233384,
+      "sha256": "d1fe5e168f3b3f71ee760c42cba2f5ce446263cbdad6143688e99205aad4ad46"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/confirmation/e170_primary_cd4_four_panel/RUN_STATUS.json",
+      "bytes": 1023,
+      "sha256": "70359a27e3e3f22f5df40c0707b0a86434da069d20e20a507cba7086799f298c"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/evaluate_safeconf_e170_fixed_strong_references.py",
+      "bytes": 13349,
+      "sha256": "2093ea2c062997a77e383b5d87da35a9bdc30d5cd7960ca658067868b1349780"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/research.py",
+      "bytes": 11094,
+      "sha256": "22a02a79d59f1d852870efb9dc1afe229f150c5db75e5de735f7bfcc1f613887"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_source_scaling_uncertainty_agent.py",
+      "bytes": 18872,
+      "sha256": "46e4e48f0b767d4fc363da9884412973beee0407128377a184bc6992c0819c64"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_e170_safeconf_v4_confirmation.py",
+      "bytes": 21243,
+      "sha256": "6e5b580824043052da8e01788a25348941d694565a6e9a7769b2c5e151773ec7"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/E170_SAFECONF_V4_CONFIRMATION_CONTRACT.md",
+      "bytes": 4823,
+      "sha256": "8ac268733ef383ecb3140ca963f0d1a79949f749e1c75c2a77f85293a287d2bd"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/E170_V4_CONFIRMATION_AUTHORIZATION.json",
+      "bytes": 4164,
+      "sha256": "a31a4b79a3b1c8c7e9e1da7ce902c9e19a283149fe7539e9d8c3130455533755"
+    }
+  ]
+}

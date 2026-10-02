@@ -1,0 +1,11 @@
+{
+  "score_binding": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/e170_legacy_strong_references_20261002_v1/ALL2400_FROZEN_SUPPLEMENTAL_SCORES.parquet",
+    "bytes": 211278,
+    "sha256": "50119bca9a046f0a29bd7004c75154a5a8b9de3fb51d9540ccb3871b79bdb0e4"
+  },
+  "frozen_before_cached_error_numeric_parse": true,
+  "original_query_tasks": 2400,
+  "all_original_methods_retained": true,
+  "each_direct_history_rule_undefined_tasks": 480
+}
