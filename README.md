@@ -1,5 +1,21 @@
 # SafeConf
 
+## 当前研究入口（2026-10-02）
+
+当前执行分支为 `exp/e220-reviewer-closure-20260921`。本轮研究分开检验公共真实实验、源预测器错误监督和目标预测器反馈的增量。下方 2026-09-06 的进度与分支说明属于历史快照。
+
+- [当前实验状态与运行记录](docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/EXECUTION_STATUS.json)
+- [实验完成要求与实际证据](docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/REQUIREMENT_COMPLETION_AUDIT.csv)
+- [论文主张与证据](docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/CLAIM_EVIDENCE_MATRIX.md)
+- [复现入口与已知限制](docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/REPRODUCIBILITY_REPORT.md)
+- [Deep Research 报告复核](docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/DEEP_RESEARCH_REVIEW.md)
+
+当前事实：独立 Orion 研究的已发表线性上游通过预登记 validation 非劣能力门；不支持其优于简单基线。13 项固定方法的风险分数已冻结，共同比较为 232 个任务、144 个基因簇。一次性 TEST 评价已于 2026-10-01 23:55:34 UTC 登记并启动，完成前不报告方法增益。TEST 元数据已见，因此这是前瞻性的真值盲评外部复核，不是完整 pristine confirmation。
+
+现有 McFaline 共同基因空间结果尚未证明源风险学习超过强历史距离和历史数量规则；不能将已运行的实验或工程检查写成投稿质量已经达标。论文正文依用户要求暂不生成。
+
+### 历史入口（事实截止 2026-09-06）
+
 SafeConf 研究单细胞扰动预测完成以后，怎样在不知道真实答案时识别高风险任务，以及能否把风险信息用于改进模型训练。
 
 当前分支：`exp/task-risk-audit-20260611`

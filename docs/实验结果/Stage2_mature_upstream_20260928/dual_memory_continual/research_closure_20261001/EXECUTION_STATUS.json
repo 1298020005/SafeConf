@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-01T23:57:43.824258+00:00",
+  "updated_utc": "2026-10-02T00:02:20.387573+00:00",
   "complete": [
     "five-fold nested public biology with four inner folds",
     "three-line sixteen-method matrix with three registered seeds",
@@ -373,7 +373,10 @@
     "no_scientific_effect_yet_reported": true,
     "global_claim_created_utc": "2026-10-01T23:55:34.155239+00:00",
     "reader_PID_live_verified": 554948,
-    "status": "ONCE_ONLY_SCOPE_RESERVED_READER_RUNNING_NO_SCIENTIFIC_RESULT_YET"
+    "status": "ONCE_ONLY_SCOPE_RESERVED_READER_RUNNING_NO_SCIENTIFIC_RESULT_YET",
+    "live_processing_file_zero_based": 16,
+    "live_processing_phase_evidence": "registered reader token spool basename observed from live process open descriptors; this is current file, not final completed-file count",
+    "full_truth_receipt_completed": false
   },
   "orion_test_materialization_status": "AUTHORIZED_ONCE_ONLY_READER_RUNNING_FINAL_CELL_TRACE_NOT_YET_AVAILABLE"
 }

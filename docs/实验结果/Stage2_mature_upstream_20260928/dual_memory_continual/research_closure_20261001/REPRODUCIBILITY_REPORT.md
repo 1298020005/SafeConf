@@ -1,5 +1,23 @@
 # Reproduction entry
 
+## Effective state at 2026-10-02
+
+This repository's active execution branch is `exp/e220-reviewer-closure-20260921`. Historical pending-stage descriptions below are retained for provenance; use `EXECUTION_STATUS.json`, the exact final receipts and the process table for current state.
+
+The actual Orion TRAIN/VALIDATION aggregation, two fixed published linear-model context fits and validation competence check are complete. The competence rule establishes noninferiority to the TRAIN mean, not superiority. The expanded Public bank contains 5365 experiment units and 2070 genes; original known-gene branches and Source model/CDF parameters are preserved. Actual final pretruth checks cover all 13 fixed candidates, 232 common tasks, 144 gene clusters and 446 bit-identical legacy query branches. The 43-check independent receipt is `orion_preparation/public_bank_extension_actual_pretruth_independent_review_v1/FINAL_ACTUAL_PRETRUTH_SEAL_COMPARISON_REVIEW.json`.
+
+Root's exact operation `c94bc298c95bbe4a4d6f92dac8263b9aa93be18c48297f5181232bf73d44881d` passed actual authorization. The global once-only TEST claim was created at `2026-10-01T23:55:34.155239+00:00`; reader PID554948 is running, followed by fixed-comparison controller PID556790. These process IDs are observations at this update, not permanent readiness evidence. The live runtime is `/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1`.
+
+The executed chain is `run_safeconf_orion_public_bank_extension_partitioned_chain_agent.py` SHA `19ea756bd8fd2d9be3cc81392abb1952c648a1654401d8748a6af400de8a377d`. The original guard/evaluator remain SHA852f/dec8. The decimal-token and fixed legacy-batch partition corrections are technical amendments with separately preserved old code, failure records and immutable approvals; they do not change feature formulas, method parameters, scores, cohorts or evaluation thresholds.
+
+Do not restart the original TEST reader or the historical automatic coordinator. The current instance's exclusive claim survives failures. Only after the original reader produces the exact completed `EXTENSION_TRUTH_RECEIPT.json` does its registered followthrough invoke `evaluate-risk` on the already frozen comparison. Different CSV parsing routes and raw floating-point gaps are explicitly retained; reproduction claims distinguish the frozen reader serialization route from numerical closeness.
+
+The older common-axis study's two risk models can be reconstructed from archived features and labels, as shown by `common_gene_axis/risk_only_replay_v1/REPLAY_RECEIPT.json`. The original executed source-code blob and Public pair weights were not recovered; this is risk-stage reproduction, not proof of original end-to-end reconstruction. The new Orion fitted model files, Source CDFs, Public weights, feature arrays and score hashes are persisted in runtime and bound by the Git receipts. Large arrays and model files are intentionally outside Git; a clean clone alone is not a complete numerical reproduction environment.
+
+No external SafeConf gain or completed-test claim is made at this update. Full-method pristine confirmation is not claimed because metadata was seen. Manuscript prose remains deferred by the user.
+
+## Existing original main-matrix entry
+
 Run from the repository root, with the registered September prediction/public-memory assets present:
 
 ```bash

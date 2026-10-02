@@ -1,0 +1,29 @@
+{
+  "schema": "safeconf_available_validation_information_claim_limit_v1",
+  "status": "FIXED_CONTRAST_LIMIT_RECORDED",
+  "created_utc": "2026-10-02T00:03:17.418671+00:00",
+  "authorization_source": "Root directed cost/information interpretation while registered once-only TEST operation already running; no new target-risk comparator or fit authorized",
+  "parent_readiness_review": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/scientific_readiness_v1/SCIENTIFIC_READINESS.json",
+    "sha256": "5dcf2affaeb65d8dfcf5ab92d5b918a1d54698dfd219a742f351735cb421df39",
+    "bytes": 18279
+  },
+  "actual_COMP_result_metadata": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v4_decimal_tokens/competence/COMPETENCE_RESULT.json",
+    "sha256": "b89fc460acdd96127cb602d2ffdcfa46b6bfef67ca090b5fceb2cd569e51b733",
+    "bytes": 2429
+  },
+  "Orion_validation_error_task_count_available": 2790,
+  "actual_validation_uses_so_far": [
+    "published-model operational competence screen"
+  ],
+  "validation_errors_used_for_Source_risk_training_or_target_CDF": false,
+  "potential_target_validation_risk_learner_extra_upstream_calls": 0,
+  "potential_target_validation_risk_learner_status": "AVAILABLE_INFORMATION_CONDITION_ONLY_NOT_FITTED_NOT_EVALUATED",
+  "registered_primary_comparator_scope": "Original13 frozen candidates include no target-validation-specific risk learner. A Source win over distance/support/P-only cannot establish label/call efficiency over an available cheap target-validation-specific learner.",
+  "no_posttruth_comparator_addition": "TEST operation has begun: preserve original13 methods/primary contrast; no adding or fitting the missing learner now, no new target CDF or outcome-driven model change.",
+  "permitted_factual_claim": "Actual Source risk models used zero target risk-training error labels. This does not assert zero target biology/competence information, zero available validation labels, or superiority to every affordable target-validation information condition.",
+  "existing_MCF_limit": "Same2840/MC543 PublicValidation_HGB U20 .755390 vs Source .695253; paired delta+.060137 interval[-.017049,.163774] includes0. Already available230 validation error tasks/123genes used0 new predictor calls.",
+  "new_Orion_TEST_results_or_errors_read": false,
+  "model_calls_fits_or_tests": 0
+}

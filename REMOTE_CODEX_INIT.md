@@ -1,5 +1,23 @@
 # SafeConf 远程电脑与新 Codex 初始化
 
+## 当前分支与研究入口（2026-10-02）
+
+当前执行分支为 `exp/e220-reviewer-closure-20260921`；本文下方 2026-09-05 的分支、镜像及阅读清单属于历史快照。
+
+已有仓库先核对工作树修改归属，再在干净工作树或新 worktree 中拉取当前分支。不要覆盖本地文件。GitHub 的当前分支已同步；本轮没有验证 Gitee 是否同步。
+
+```bash
+git fetch origin exp/e220-reviewer-closure-20260921
+git switch --track origin/exp/e220-reviewer-closure-20260921
+git log -1 --oneline
+```
+
+若本地已有该分支，使用对应已有分支；若远程名不是 `origin`，使用实际远程名。当前入口见 [README](README.md) 的“当前研究入口”；复核实验先读该入口链接的状态、完成要求、主张证据和复现报告。
+
+当前 Orion TEST 已登记一次性开封。新代理应检查现有进程、精确回执与全局 claim；不得因为旧日志无输出或观测超时重复启动 TEST。暂不生成论文正文，普通诊断和实验继续按已授权研究合同执行。
+
+## 历史初始化说明（2026-09-05）
+
 更新时间：2026-09-05
 
 当前分支：`exp/task-risk-audit-20260611`

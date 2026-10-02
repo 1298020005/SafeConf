@@ -1,0 +1,312 @@
+{
+  "schema": "safeconf_current_fixed_scientific_readiness_review_v1",
+  "status": "AUDIT_COMPLETE_ORIGINAL_SCIENTIFIC_READINESS_NOT_ESTABLISHED",
+  "created_utc": "2026-10-02T00:02:49.109285+00:00",
+  "scope": "Existing same2840 fixed McFaline543/380gene results and Source1808/575gene held-gene tasks only; read small published-in-workspace summaries/CSV/receipts. No new Orion outputs/TESTtruth, arrays/rawX/predictions/modelcalls/fits/tests/literature or paper prose. Original scientific objective retained.",
+  "original_scope_preserved": true,
+  "new_Orion_fixed_results_read": false,
+  "strongest_supported_current_computation": {
+    "contrast": "Learned_hgb minus Prediction_hgb on identical McFaline543 tasks/380 genes",
+    "point_delta_U20": 0.7037855566337163,
+    "paired_nominal95CI": [
+      0.5244518517274009,
+      0.8473238541063794
+    ],
+    "interpretation": "The historical Public feature package improves this Source-trained prediction-only risk HGB under the existing observed-centroid-error estimand with zero target risk-training error labels.",
+    "information_scope": "Zero target error labels does not mean zero target biological information: historical same-gene other-state target train/validation biological Public experiments and control information are available. Effect content, counts/support and measurement precision are not isolated by this contrast.",
+    "counterevidence_preserved": {
+      "Learned_hgb_minus_same_prior_distance": {
+        "point": -0.0344193873908944,
+        "CI": [
+          -0.1321436348744271,
+          -0.0086435982040554
+        ]
+      },
+      "Learned_hgb_minus_history_support": {
+        "point": -0.1318759930705442,
+        "CI": [
+          -0.2417815922408544,
+          -0.0791197763985363
+        ]
+      }
+    },
+    "not_established": "External Source-label increment beyond strong history distance/support or intrinsic biological model-failure prediction."
+  },
+  "Source_internal_matched_feature_review": {
+    "held_gene_tasks": 1808,
+    "independent_gene_clusters": 575,
+    "predictors": 2,
+    "predictor_family_count": 1,
+    "same_prior_distance_delta_U20": [
+      0.1896161253624358,
+      0.1914069169720295
+    ],
+    "same_prior_distance_positive_CIs": [
+      [
+        0.1347619398616698,
+        0.2473120432152428
+      ],
+      [
+        0.1263546381405217,
+        0.2431578857851746
+      ]
+    ],
+    "Learned_hgb_minus_Ponly_delta_U20": [
+      0.0241813791880864,
+      0.0310293519714552
+    ],
+    "Learned_hgb_minus_Ponly_CIs": [
+      [
+        -0.0058563957647605,
+        0.0570306582996368
+      ],
+      [
+        -0.0034386702597303,
+        0.0582453229711092
+      ]
+    ],
+    "interpretation": "Held-gene Source risk learning exceeds same-prior distance within one TxPert family; incremental Public feature benefit over the matched Source P-only HGB is not statistically established on either direction. Neither direction is a new independent study."
+  },
+  "current_estimand_alignment": {
+    "fixed_change": "Within-history cell-equal mean replaces guide-equal mean; same old eligibility, support weights, query prediction/truth and Manual rule; SEEN diagnostic, not promotion",
+    "Manual_cell_minus_guide": {
+      "point": 0.12301905483278815,
+      "CI": [
+        0.05614979991934747,
+        0.1986103367838422
+      ]
+    },
+    "Manual_cell_minus_support": {
+      "point": 0.007184875513715605,
+      "CI": [
+        -0.039087201901068326,
+        0.05533043847477864
+      ]
+    },
+    "Cell_aligned_Manual_HGB_minus_cell_distance": {
+      "point": -0.25901162369161507,
+      "CI": [
+        -0.37128125208753765,
+        -0.1278125993818765
+      ]
+    },
+    "interpretation": "Mean-estimand mismatch matters; this does not establish content beyond counts, rescue the fixed Source learner, or authorize swapping the original confirmed method."
+  },
+  "Source_quantity_diversity_evidence": {
+    "fixed_MCF_tasks": 543,
+    "fixed_MCF_gene_clusters": 380,
+    "bootstrap_replicates": 5000,
+    "Learned_full_minus10percent": {
+      "point": 0.339716,
+      "CI": [
+        0.223499,
+        0.390742
+      ]
+    },
+    "Manual_full_minus10percent": {
+      "point": 0.205204,
+      "CI": [
+        0.112537,
+        0.277519
+      ]
+    },
+    "Learned_pool_vs_equal_records": {
+      "point": 0.128708,
+      "CI": [
+        0.021106,
+        0.179955
+      ]
+    },
+    "limitations": [
+      "Conditional on saved fitted models/fixed target/orders; seeds add no independent observations",
+      "Budget-specific Source CDF resolution changes jointly with supervision; no pure quantity effect at fixed label resolution",
+      "GAT/Exphormer are two architectures in one family; no universal cross-family diversity result",
+      "Adjacent budgets not universally improving; every Manual diversity interval crosses zero",
+      "Copy/loss-weight diagnostics preserve row-count/weight effects as competing explanations; no new winner promoted"
+    ]
+  },
+  "measurement_readiness": {
+    "parallel_review": "/root/source_core_preparation_v1, small summary/receipt only, no files written",
+    "Source_reconstruction": "1808 tasks/575 genes/2840 axis; 187628 selected treated cells reproduce original float32 centroid/effect exactly; 128 full3352-axis H5AD cells spotchecked, not full H5AD equivalence",
+    "noise_estimate_scope": "Source iid treated-cell noise MSE approximately12–30% with control held fixed; batch estimates do not certify biological repeats; guide metadata absent",
+    "omitted_uncertainty": [
+      "control estimation",
+      "guide/true biological replicate variation",
+      "upstream predictor fits"
+    ],
+    "invalid_inference": "Do not assign remaining70–88% to latent biological/model error. Do not generalize McFaline cell-count sensitivity to all Source contexts.",
+    "MC_sensitive_results": "Fixed20-cell and cross-half diagnostics support sensitivity to sample count/measurement precision; fixed20-cell truth is less precise and cannot replace the original endpoint. Excess-MSE baseline contrast is descriptive and retains linear measurement noise.",
+    "boundary_contribution_guaranteed": false
+  },
+  "target_error_budget_and_cost_scope": {
+    "existing_validation_baseline": "230 legal target validation risk tasks/123 clusters with test-gene exclusion and zero new predictor calls; original checkpoint/alpha were selected using full validation, so no pristine upstream OOF claim",
+    "PublicValidation_minus_Source": {
+      "point": 0.060136937277444624,
+      "CI": [
+        -0.017048751423817222,
+        0.16377390557698224
+      ]
+    },
+    "SharedPublicValidation_minus_PublicValidation": {
+      "point": -0.01607594508820546,
+      "CI": [
+        -0.030771841029352768,
+        0.041164773048740985
+      ]
+    },
+    "inference": "No demonstrated universal Source superiority over affordable target-validation learning or Shared extra benefit; no blanket saved-call claim from this existing asset."
+  },
+  "reproduction_limit": {
+    "Source_risk_only_replay": "Two frozen-recipe HGB fits on archived features reproduced543 scores; raw gaps<=9.72e-17; documented CSV parser route exact. This verifies risk-only archived-input replay.",
+    "original_executed_script70c": "Exact70c source unrecovered; currentccda/Git8fa blob differs. Original Public learner fitting and pairweight execution not fully replayed.",
+    "do_not_claim": "Full original matrix/code reproduction or a no-failure pipeline guarantee."
+  },
+  "novelty_scope": {
+    "existing_workspace_audit_used": true,
+    "new_literature_search": false,
+    "unsupported_broad_first_claims": [
+      "post-hoc error/confidence learning",
+      "cross-predictor failure supervision",
+      "old predictor evaluations helping a new predictor",
+      "noise/common failure discovery"
+    ],
+    "potentially_distinct_information_contract": "Task-risk layer using biological Public reference and frozen Source error supervision under explicit target-error budgets; requires strong comparator efficacy and accurate biological/measurement scope, not merely three modules or unavailable exact prior combination."
+  },
+  "remaining_original_objective_gaps": [
+    "A fixed external Source learner must establish practical positive increment with valid uncertainty against the same-prior strong history distance and support-only rule; beating weak P-only/Magnitude alone is insufficient",
+    "Public effect-content/Quality increment must be separated from historical counts, precision and mean-estimand alignment; current cell-aligned comparison against support crosses zero",
+    "Independent target/model-family scope must remain explicit; two Source architectures, seeds and Source-row copies do not add independent datasets or families",
+    "Feedback/Shared value must survive matched target-error budgets and strong no-feedback history rules; existing cheap validation/call availability must be counted",
+    "Biological-model-specific risk or transferable measurement boundary is not guaranteed by absolute-error U20, partial noise estimates or fixed20 diagnostics; full uncertainty and independent-repeat scope remain limiting",
+    "Original70c full-code/Public learner/pairweight reproduction gap remains open",
+    "Prospective Orion fixed result remains separate; no result inspected here, no current claim promoted, no posttruth method/cohort/threshold/winner changes"
+  ],
+  "paper_ready_or_original_goal_complete": false,
+  "owned_fixed_evidence_rows": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/scientific_readiness_v1/EXISTING_FIXED_COMPARISON_EVIDENCE.csv",
+    "sha256": "b386fdb062e252a57179ed067452e7e5811100e697fb3ba35536430c34468611",
+    "bytes": 15167
+  },
+  "inputs": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/CLAIM_EVIDENCE_MATRIX.md",
+      "sha256": "5ca2281b869f25b7e9c25294c57f383fdc3b9c743e58dafbc70090d166a620cb",
+      "bytes": 8736
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/NOVELTY_POSITIONING.md",
+      "sha256": "c3923876fbd97b9952ce5de761b19be963e8a723810696e574cf96c82d4d9ec6",
+      "bytes": 10021
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/evidence_review_agent/REVIEW.md",
+      "sha256": "132dcfb407eaecb5a9fa3506840dc16dcd4f9da4274a015d9527a8d9bc0cfac3",
+      "bytes": 13273
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/MATRIX_MACRO_RESULTS.csv",
+      "sha256": "c0c8aa77ed847e00c119fbb8ff2e77787f2386e7f290f38f3e3786b6f850e1fc",
+      "bytes": 32151
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/PAIRED_CLUSTER_BOOTSTRAP.csv",
+      "sha256": "ae3ea8afde2da5f074f0bd3435111a2944013205cc94d82e5afc73c0a1733866",
+      "bytes": 7867
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/SUPPORT_CONTROL_MACRO.csv",
+      "sha256": "3ddd954afede9b098065a3c40badcab8a040c2c9ab1ce7c58226d29ce4412992",
+      "bytes": 5206
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/SUPPORT_CONTENT_ATTRIBUTION_COMPARISONS.csv",
+      "sha256": "5e747c55824a11bd05116241e7b73e96dc6d6b1ec8b9dce4fe067d0f4a3bbf3a",
+      "bytes": 53997
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/ATTRIBUTION_STATISTICS_STATUS.json",
+      "sha256": "553e0d308d067053713f6f869e9a1de9ddf299fa6921780bca6d6c458e12c206",
+      "bytes": 217
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/validation_reuse_baseline/PAIRED_BOOTSTRAP.csv",
+      "sha256": "6871f19c281945899acd10cd51ee48efb9f7429800e2524bfe0da62444e4396c",
+      "bytes": 807
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/HEADLINE_CI_NOTE.md",
+      "sha256": "3e37e26e9a6c361c5844aa591a7e2228b938a5e5055930ff7df2bcae5baa37f1",
+      "bytes": 3166
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/STATUS.json",
+      "sha256": "6c07bd2c2eca5a6c1fab833a309acdd702fe7511aed7826b12e15754340f9293",
+      "bytes": 1036
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/REGISTRATION.json",
+      "sha256": "296938069a786428e600daafa6c2a70623027142884915c5c60da27314980bb1",
+      "bytes": 2508
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_row_weight_diagnostic/README.md",
+      "sha256": "8621b331887bc3276de09bc4c701e31089645c34a52780e748d3118b224647c9",
+      "bytes": 5559
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_row_weight_diagnostic/SUPPLEMENT.md",
+      "sha256": "9a746e093f60eaa9c61f141110fe5dc3e254d8f5b56271fcd3270bb901667223",
+      "bytes": 1948
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/measurement_audit_agent/AUDIT_SUMMARY.md",
+      "sha256": "c3329819c677225a794ca7cb7d1825e93577a39ee16146384e77948234256638",
+      "bytes": 3004
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/measurement_audit_agent/EXECUTION_NOTES.json",
+      "sha256": "71ae9703feb0a0b5599510d7fb218276d9def352ffa489eb181fbe5cf06a3a0f",
+      "bytes": 1109
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/reference_estimand_diagnostic/REGISTERED_DIAGNOSTIC.json",
+      "sha256": "5fb8c570ffea466460206453c1b9e42af3e3a32c8a0cd03325a184b926990ef4",
+      "bytes": 1835
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/reference_estimand_diagnostic/STATUS.json",
+      "sha256": "a644a09810f5041e34534def2d7d2068908cb13405e55140c2f0b52097b8c47c",
+      "bytes": 506
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/reference_estimand_diagnostic/PAIRED_COMPARISONS.csv",
+      "sha256": "cbfb6f137f98f08a9bfb6ba053e8ba37b8fb23d384bc012c7935197667515c31",
+      "bytes": 399
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/reference_estimand_risk_replay/REGISTERED_DIAGNOSTIC.json",
+      "sha256": "7111d6d8d2ab4e6818a9db265ca7a342b6324254741b58f74444b5dbd238d6c9",
+      "bytes": 657
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/reference_estimand_risk_replay/STATUS.json",
+      "sha256": "0dfdd5592eb90b91bfb874c6fb992740fd1f15c5400980a0195a23a104195161",
+      "bytes": 400
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/reference_estimand_risk_replay/PAIRED_COMPARISONS.csv",
+      "sha256": "0371b82a36b79952701e408014eae361a7b4bb069db17377781f8c7ed37abb4e",
+      "bytes": 542
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/risk_only_replay_independent_review_v1/INDEPENDENT_REVIEW.json",
+      "sha256": "69e3239cc716576fde54556bab7d84bf38b47c40294bae2bde867996055e2cad",
+      "bytes": 10272
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/original_common_axis_code_recovery_audit_v1/RECOVERY_AUDIT.json",
+      "sha256": "c10b05734a6fe1f7f343af79cdaf2c85f1c325849b391ebf4733dd2d21112fb8",
+      "bytes": 5171
+    }
+  ]
+}

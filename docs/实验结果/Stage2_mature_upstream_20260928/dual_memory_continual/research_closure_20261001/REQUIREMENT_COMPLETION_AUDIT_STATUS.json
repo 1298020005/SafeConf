@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-01T23:51:10.829193+00:00",
+  "updated_utc": "2026-10-01T23:59:21.805439+00:00",
   "goal_completion_proven": false,
   "requirements": 21,
   "source_seed_completion": {
@@ -21,5 +21,7 @@
   "scientific_claims_not_inferred_from_green_implementation": true,
   "actual_continual_replay_status": "COMPLETE_ACTUAL_DEV_REPLAY_INDEPENDENTLY_REVIEWED_CANDIDATE_REJECTED",
   "actual_continual_replay_candidate": "REJECTED",
-  "actual_orion_pretruth_independent_review": "PASS43_FIXED13CANDIDATES_232TASKS_144GENEUNION_TESTCLOSED"
+  "actual_orion_pretruth_independent_review": "PASS43_FIXED13CANDIDATES_232TASKS_144GENEUNION_TESTCLOSED",
+  "orion_once_only_test_scope": "ACTIVE_EXCLUSIVE_CLAIM_C94_OPERATION_READER554948",
+  "science_success_and_goal_completion_proven": false
 }
