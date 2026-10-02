@@ -21,6 +21,8 @@
 
 ## 已核实的关键原始来源
 
+2026-10-02本次更新：generic assessor已直接阅读正文3.2节，旧模型监督训练通用评估器、新模型少量参考表现进入输入的合同明确。scPertEval的原始bioRxiv检索正文确认七个公开数据集，此前访问失败不再作为数量疑问；仍未宣称全文协议核验。PertEMA当前软件/无配套论文的引用状态重新核实。原始报告及网页版意见的采纳范围、最新控制表达实际结果见 `DEEP_RESEARCH_REVIEW.md` 的当前用户问题小节。创新审计不因未见完全相同组合而判定通过。
+
 | 工作 | 与 SafeConf 的关系 | 证据读取范围与边界 |
 |---|---|---|
 | [PertEMA 官方仓库](https://github.com/OfficialBishal/PertEMA/blob/main/README.md) | 最直接的单细胞后置风险学习对照；使用 OOF 错误，新 screen 需重新拟合；也研究噪声与共同失败 | 当前 README 全文及本地固定提交实现；不是已发表论文 |
