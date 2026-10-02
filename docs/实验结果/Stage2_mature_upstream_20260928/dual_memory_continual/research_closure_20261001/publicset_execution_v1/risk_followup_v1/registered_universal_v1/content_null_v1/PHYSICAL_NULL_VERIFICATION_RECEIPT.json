@@ -1,0 +1,12 @@
+{
+  "verified_scope": "outer0/inner0/order0/B1",
+  "donor_mapping_deterministic": true,
+  "physical_prior_reproduction_max_absolute_difference_float32": 7.006018920563406e-08,
+  "n_changed_priors": 370,
+  "n_queries": 370,
+  "registered_UniversalP_numeric_exact": true,
+  "metadata_control_support_preserved": true,
+  "donor_fit_only": true,
+  "effective_shuffle_rate": 1.0,
+  "MC_TEST_reads": 0
+}

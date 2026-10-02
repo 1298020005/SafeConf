@@ -1,0 +1,26 @@
+{
+  "status": "COMPLETE",
+  "bootstrap_replicates": 5000,
+  "scheme": "Identical paired 575-gene draws shared across 20 strata, all methods, three seeds and all fixed null orders",
+  "primary": "Equal macro of 20 context by outer-fold metrics; seed metrics averaged, never risk scores",
+  "supplement": "Four context macro of pooled outer OOF",
+  "safety_gate": "Macro AURC and errors at 10/20/50 <=5% increase; macro miss <=+.02; worst strata disclosed only",
+  "adoption_gate": "delta >=.005; >=60% valid strata nonnegative; >=80% strata valid; CI lower >=-.005",
+  "training_uncertainty_included": false,
+  "fixed_model_nominal_intervals": true,
+  "bootstrap_computation": "Integer gene multiplicities exactly reproduce expanded resamples; first3 draws checked in both aggregations to1e-12",
+  "bindings": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/PAIRED_GENE_BOOTSTRAP_CONTRASTS.csv",
+      "sha256": "32093cc8c0ea08abfa1d08e89e2582b9e29078b9c971c1bfe69fdf304e2cca71"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/FIXED_ADOPTION_GATES.csv",
+      "sha256": "271952a16e1b00010bf5a662fd846b9220f02409beeb7577c8010466e1ec3534"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/CONTRAST_STRATA_TRANSPARENCY.csv",
+      "sha256": "f2b3c000924aad2b151b13761a2112d7d92762c6ed151c3b307d76b9183bb123"
+    }
+  ]
+}

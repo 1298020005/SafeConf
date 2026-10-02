@@ -1,0 +1,177 @@
+source_upstream,upstream,candidate,comparator,seed,null_order,aggregation,delta_utility20,ci95_lower,ci95_upper,bootstrap_replicates,n_tasks,n_gene_clusters,fixed_fit_nominal_interval,n_orders
+TxPert_Exphormer,TxPert_GAT,B0_SupportMean,Support_only,20260930,0,20 context by outer-fold macro,0.02304730952851597,-0.021435625431082437,0.06410377934896185,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B0_SupportMean,Support_only,20261001,0,20 context by outer-fold macro,0.02304730952851597,-0.021435625431082437,0.06410377934896185,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B0_SupportMean,Support_only,20261002,0,20 context by outer-fold macro,0.02304730952851597,-0.021435625431082437,0.06410377934896185,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B0_SupportMean,Support_only,three_seed_mean,all_order_mean,20 context by outer-fold macro,0.02304730952851597,-0.021435625431082437,0.06410377934896185,5000,1808,575,True,1.0
+TxPert_Exphormer,TxPert_GAT,B0_SupportMean,Support_only,20260930,0,four pooled-context macro (supplement),0.018265268141988034,-0.022908821574801994,0.05876213112170235,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B0_SupportMean,Support_only,20261001,0,four pooled-context macro (supplement),0.018265268141988034,-0.022908821574801994,0.05876213112170235,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B0_SupportMean,Support_only,20261002,0,four pooled-context macro (supplement),0.018265268141988034,-0.022908821574801994,0.05876213112170235,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B0_SupportMean,Support_only,three_seed_mean,all_order_mean,four pooled-context macro (supplement),0.018265268141988034,-0.022908821574801994,0.05876213112170235,5000,1808,575,True,1.0
+TxPert_Exphormer,TxPert_GAT,B1_HGB,Support_only,20260930,0,20 context by outer-fold macro,0.028189138076555098,-0.012814597658782451,0.07023575553376703,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B1_HGB,Support_only,20261001,0,20 context by outer-fold macro,0.028189138076555098,-0.012814597658782451,0.07023575553376703,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B1_HGB,Support_only,20261002,0,20 context by outer-fold macro,0.028189138076555098,-0.012814597658782451,0.07023575553376703,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B1_HGB,Support_only,three_seed_mean,all_order_mean,20 context by outer-fold macro,0.028189138076555098,-0.012814597658782451,0.07023575553376703,5000,1808,575,True,1.0
+TxPert_Exphormer,TxPert_GAT,B1_HGB,Support_only,20260930,0,four pooled-context macro (supplement),0.02647362399627118,-0.016064627842179366,0.06853147391576697,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B1_HGB,Support_only,20261001,0,four pooled-context macro (supplement),0.02647362399627118,-0.016064627842179366,0.06853147391576697,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B1_HGB,Support_only,20261002,0,four pooled-context macro (supplement),0.02647362399627118,-0.016064627842179366,0.06853147391576697,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B1_HGB,Support_only,three_seed_mean,all_order_mean,four pooled-context macro (supplement),0.02647362399627118,-0.016064627842179366,0.06853147391576697,5000,1808,575,True,1.0
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,P_only,20260930,0,20 context by outer-fold macro,0.02814327432662922,-0.021382769929574906,0.06904080412851522,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,P_only,20261001,0,20 context by outer-fold macro,0.05090503120718426,0.008642655955691105,0.0979646104571296,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,P_only,20261002,0,20 context by outer-fold macro,0.04904304693668071,0.0017548510070203888,0.09109013129726992,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,P_only,three_seed_mean,all_order_mean,20 context by outer-fold macro,0.04269711749016473,0.0011657360370380687,0.08278124413322153,5000,1808,575,True,1.0
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,P_only,20260930,0,four pooled-context macro (supplement),0.018810238118387668,-0.03307304889193904,0.057695816712762985,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,P_only,20261001,0,four pooled-context macro (supplement),0.046877632250026835,-0.004744947187177309,0.08516800294861222,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,P_only,20261002,0,four pooled-context macro (supplement),0.0419051013179248,-0.005600380595239259,0.08094284189129144,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,P_only,three_seed_mean,all_order_mean,four pooled-context macro (supplement),0.035864323895446436,-0.011023130590677515,0.07075075610101654,5000,1808,575,True,1.0
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,P_only,20260930,0,20 context by outer-fold macro,0.040464277546797156,-0.011849569338740873,0.07484919763467685,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,P_only,20261001,0,20 context by outer-fold macro,0.05368935537975128,0.00850202781296253,0.0963090949858691,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,P_only,20261002,0,20 context by outer-fold macro,0.037593475323600356,0.0023852310597660465,0.08748531220846985,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,P_only,three_seed_mean,all_order_mean,20 context by outer-fold macro,0.0439157027500496,0.003974504597581045,0.0814514968071485,5000,1808,575,True,1.0
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,P_only,20260930,0,four pooled-context macro (supplement),0.03396570940205157,-0.01631810452730139,0.07413271377801181,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,P_only,20261001,0,four pooled-context macro (supplement),0.04926880117826982,-0.002711604116005794,0.08755180389000672,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,P_only,20261002,0,four pooled-context macro (supplement),0.04394499972593291,-0.0012648865701632675,0.08611506761766971,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,P_only,three_seed_mean,all_order_mean,four pooled-context macro (supplement),0.042393170102084765,-0.003019813781202939,0.0786307142911657,5000,1808,575,True,1.0
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,Support_only,20260930,0,20 context by outer-fold macro,0.03416467736517648,-0.01538790315571752,0.07322851755545656,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,Support_only,20261001,0,20 context by outer-fold macro,0.056926434245731516,0.015018308019113514,0.10249166426609871,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,Support_only,20261002,0,20 context by outer-fold macro,0.05506444997522797,0.010972617997506427,0.09382568928447488,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,Support_only,three_seed_mean,all_order_mean,20 context by outer-fold macro,0.048718520528711985,0.007996252173846856,0.08471817440315951,5000,1808,575,True,1.0
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,Support_only,20260930,0,four pooled-context macro (supplement),0.023666401470192056,-0.019641148930340937,0.06263307203761079,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,Support_only,20261001,0,four pooled-context macro (supplement),0.05173379560183122,0.0037887002138211755,0.09314835297311713,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,Support_only,20261002,0,four pooled-context macro (supplement),0.046761264669729186,0.007279069419959194,0.08644545563523282,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,Support_only,three_seed_mean,all_order_mean,four pooled-context macro (supplement),0.040720487247250824,0.001883059523057629,0.07793819014927371,5000,1808,575,True,1.0
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,Support_only,20260930,0,20 context by outer-fold macro,0.04648568058534441,-0.005177547321353581,0.07900234459162724,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,Support_only,20261001,0,20 context by outer-fold macro,0.05971075841829854,0.014557018195026125,0.09896616390230725,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,Support_only,20261002,0,20 context by outer-fold macro,0.04361487836214761,0.007473315380313525,0.09183432603243064,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,Support_only,three_seed_mean,all_order_mean,20 context by outer-fold macro,0.04993710578859686,0.009784323406895317,0.08540355657642743,5000,1808,575,True,1.0
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,Support_only,20260930,0,four pooled-context macro (supplement),0.03882187275385596,-0.002873304617601898,0.07977938073757368,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,Support_only,20261001,0,four pooled-context macro (supplement),0.054124964530074204,0.0103842238759506,0.09234599912961058,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,Support_only,20261002,0,four pooled-context macro (supplement),0.0488011630777373,0.009362844279886488,0.09371960304784757,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,Support_only,three_seed_mean,all_order_mean,four pooled-context macro (supplement),0.04724933345388915,0.009760772292747435,0.08433059752696842,5000,1808,575,True,1.0
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,B0_SupportMean,20260930,0,20 context by outer-fold macro,0.011117367836660508,-0.029257103506479178,0.044228296803879845,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,B0_SupportMean,20261001,0,20 context by outer-fold macro,0.03387912471721555,-0.0014735248038004686,0.07639526225091604,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,B0_SupportMean,20261002,0,20 context by outer-fold macro,0.032017140446712,-0.005493013658678241,0.06975477487983384,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,B0_SupportMean,three_seed_mean,all_order_mean,20 context by outer-fold macro,0.02567121100019602,-0.00781778290037132,0.05797401573427704,5000,1808,575,True,1.0
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,B0_SupportMean,20260930,0,four pooled-context macro (supplement),0.005401133328204022,-0.03254310618260678,0.038362207573928185,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,B0_SupportMean,20261001,0,four pooled-context macro (supplement),0.03346852745984319,-0.008782667446555911,0.07098022796785075,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,B0_SupportMean,20261002,0,four pooled-context macro (supplement),0.028495996527741152,-0.006240467457379805,0.06300111096262122,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,B0_SupportMean,three_seed_mean,all_order_mean,four pooled-context macro (supplement),0.022455219105262787,-0.010423382986749887,0.05246242335752239,5000,1808,575,True,1.0
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,B0_SupportMean,20260930,0,20 context by outer-fold macro,0.023438371056828444,-0.022193193253050386,0.05282286486808736,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,B0_SupportMean,20261001,0,20 context by outer-fold macro,0.03666344888978257,-0.0009890147247430573,0.07297769092435899,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,B0_SupportMean,20261002,0,20 context by outer-fold macro,0.020567568833631644,-0.010615936685466218,0.0685764461406636,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,B0_SupportMean,three_seed_mean,all_order_mean,20 context by outer-fold macro,0.026889796260080884,-0.006726772165626965,0.05944839022210073,5000,1808,575,True,1.0
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,B0_SupportMean,20260930,0,four pooled-context macro (supplement),0.020556604611867924,-0.018721154155007125,0.05792313159934161,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,B0_SupportMean,20261001,0,four pooled-context macro (supplement),0.03585969638808617,-0.0024323155439820747,0.07098942882446548,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,B0_SupportMean,20261002,0,four pooled-context macro (supplement),0.030535894935749264,-0.0024184652192036607,0.06928428095983802,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,B0_SupportMean,three_seed_mean,all_order_mean,four pooled-context macro (supplement),0.02898406531190112,-0.003658800599993184,0.061537134120773815,5000,1808,575,True,1.0
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,B1_HGB,20260930,0,20 context by outer-fold macro,0.005975539288621379,-0.032710489468492844,0.0327982876891275,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,B1_HGB,20261001,0,20 context by outer-fold macro,0.02873729616917642,-0.0041467140094944305,0.0651027519314615,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,B1_HGB,20261002,0,20 context by outer-fold macro,0.02687531189867287,-0.014210185210229704,0.06053046713384924,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,B1_HGB,three_seed_mean,all_order_mean,20 context by outer-fold macro,0.02052938245215689,-0.01074516657909453,0.047469096602366256,5000,1808,575,True,1.0
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,B1_HGB,20260930,0,four pooled-context macro (supplement),-0.002807222526079123,-0.03966857273783927,0.031350009301441405,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,B1_HGB,20261001,0,four pooled-context macro (supplement),0.025260171605560044,-0.017634067066930267,0.06440028840125901,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,B1_HGB,20261002,0,four pooled-context macro (supplement),0.020287640673458007,-0.01687130527936997,0.05836214543217755,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B2_Pointwise,B1_HGB,three_seed_mean,all_order_mean,four pooled-context macro (supplement),0.014246863250979644,-0.02048930277358784,0.04733988959434934,5000,1808,575,True,1.0
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,B1_HGB,20260930,0,20 context by outer-fold macro,0.018296542508789315,-0.02625744022398909,0.04228008726630245,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,B1_HGB,20261001,0,20 context by outer-fold macro,0.03152162034174344,-0.0035616118325453913,0.061988785614934504,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,B1_HGB,20261002,0,20 context by outer-fold macro,0.015425740285592515,-0.014861969916059918,0.05741819085070433,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,B1_HGB,three_seed_mean,all_order_mean,20 context by outer-fold macro,0.021747967712041755,-0.009405772066256294,0.04816288332154181,5000,1808,575,True,1.0
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,B1_HGB,20260930,0,four pooled-context macro (supplement),0.012348248757584779,-0.025298839477903252,0.04815441487276468,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,B1_HGB,20261001,0,four pooled-context macro (supplement),0.027651340533803026,-0.012258329385481073,0.061548306343695736,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,B1_HGB,20261002,0,four pooled-context macro (supplement),0.02232753908146612,-0.013536600853873053,0.06351668471630081,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,B1_HGB,three_seed_mean,all_order_mean,four pooled-context macro (supplement),0.020775709457617975,-0.012674427594068255,0.053196433620236176,5000,1808,575,True,1.0
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,B2_Pointwise,20260930,0,20 context by outer-fold macro,0.012321003220167936,-0.022611597744229467,0.03847290628650902,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,B2_Pointwise,20261001,0,20 context by outer-fold macro,0.002784324172567021,-0.02665260356269643,0.02418564788177097,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,B2_Pointwise,20261002,0,20 context by outer-fold macro,-0.011449571613080356,-0.030494511463229183,0.02576003764285383,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,B2_Pointwise,three_seed_mean,all_order_mean,20 context by outer-fold macro,0.0012185852598848672,-0.014924168677686063,0.017264896974344794,5000,1808,575,True,1.0
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,B2_Pointwise,20260930,0,four pooled-context macro (supplement),0.015155471283663902,-0.015452681758374536,0.049362038207660414,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,B2_Pointwise,20261001,0,four pooled-context macro (supplement),0.0023911689282429816,-0.026555610908714604,0.031557533414355424,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,B2_Pointwise,20261002,0,four pooled-context macro (supplement),0.0020398984080081117,-0.019230352010722877,0.029024493562321785,5000,1808,575,True,
+TxPert_Exphormer,TxPert_GAT,B3_DeepSets,B2_Pointwise,three_seed_mean,all_order_mean,four pooled-context macro (supplement),0.006528846206638332,-0.007460098131445415,0.023662638474848622,5000,1808,575,True,1.0
+TxPert_GAT,TxPert_Exphormer,B0_SupportMean,Support_only,20260930,0,20 context by outer-fold macro,0.0007985110534750595,-0.024643007460202697,0.054605802723024996,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B0_SupportMean,Support_only,20261001,0,20 context by outer-fold macro,0.0007985110534750595,-0.024643007460202697,0.054605802723024996,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B0_SupportMean,Support_only,20261002,0,20 context by outer-fold macro,0.0007985110534750595,-0.024643007460202697,0.054605802723024996,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B0_SupportMean,Support_only,three_seed_mean,all_order_mean,20 context by outer-fold macro,0.0007985110534750595,-0.024643007460202697,0.054605802723024996,5000,1808,575,True,1.0
+TxPert_GAT,TxPert_Exphormer,B0_SupportMean,Support_only,20260930,0,four pooled-context macro (supplement),0.00727564274871717,-0.028861858104537334,0.05045196416415152,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B0_SupportMean,Support_only,20261001,0,four pooled-context macro (supplement),0.00727564274871717,-0.028861858104537334,0.05045196416415152,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B0_SupportMean,Support_only,20261002,0,four pooled-context macro (supplement),0.00727564274871717,-0.028861858104537334,0.05045196416415152,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B0_SupportMean,Support_only,three_seed_mean,all_order_mean,four pooled-context macro (supplement),0.00727564274871717,-0.028861858104537334,0.05045196416415152,5000,1808,575,True,1.0
+TxPert_GAT,TxPert_Exphormer,B1_HGB,Support_only,20260930,0,20 context by outer-fold macro,0.027455852732803154,-0.004890339292619848,0.07644304800058935,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B1_HGB,Support_only,20261001,0,20 context by outer-fold macro,0.027455852732803154,-0.004890339292619848,0.07644304800058935,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B1_HGB,Support_only,20261002,0,20 context by outer-fold macro,0.027455852732803154,-0.004890339292619848,0.07644304800058935,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B1_HGB,Support_only,three_seed_mean,all_order_mean,20 context by outer-fold macro,0.027455852732803154,-0.004890339292619848,0.07644304800058935,5000,1808,575,True,1.0
+TxPert_GAT,TxPert_Exphormer,B1_HGB,Support_only,20260930,0,four pooled-context macro (supplement),0.025978344954969645,-0.009286545467453144,0.07031853228725526,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B1_HGB,Support_only,20261001,0,four pooled-context macro (supplement),0.025978344954969645,-0.009286545467453144,0.07031853228725526,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B1_HGB,Support_only,20261002,0,four pooled-context macro (supplement),0.025978344954969645,-0.009286545467453144,0.07031853228725526,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B1_HGB,Support_only,three_seed_mean,all_order_mean,four pooled-context macro (supplement),0.025978344954969645,-0.009286545467453144,0.07031853228725526,5000,1808,575,True,1.0
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,P_only,20260930,0,20 context by outer-fold macro,0.026419177149237694,-0.005408217173021489,0.08200573538279225,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,P_only,20261001,0,20 context by outer-fold macro,0.04753654010695474,0.009037623778130935,0.09630912274256917,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,P_only,20261002,0,20 context by outer-fold macro,0.034012905232083335,0.002195251758156433,0.08246091239127501,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,P_only,three_seed_mean,all_order_mean,20 context by outer-fold macro,0.03598954082942526,0.006762255069552118,0.08311730216949272,5000,1808,575,True,1.0
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,P_only,20260930,0,four pooled-context macro (supplement),0.016237287235970954,-0.024679601464229716,0.06704859043526974,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,P_only,20261001,0,four pooled-context macro (supplement),0.05497860202779892,0.003801703296697029,0.09222637477902146,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,P_only,20261002,0,four pooled-context macro (supplement),0.03609450541365178,-0.00316141002218185,0.07944746059153214,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,P_only,three_seed_mean,all_order_mean,four pooled-context macro (supplement),0.03577013155914055,-0.004463760069620391,0.07518574492985697,5000,1808,575,True,1.0
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,P_only,20260930,0,20 context by outer-fold macro,0.03232744737683735,-0.00252855899254468,0.08163308302515639,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,P_only,20261001,0,20 context by outer-fold macro,0.04605281391441851,0.00826595620686763,0.0976688956897318,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,P_only,20261002,0,20 context by outer-fold macro,0.04622267898040833,0.011802845554489957,0.09331092867377991,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,P_only,three_seed_mean,all_order_mean,20 context by outer-fold macro,0.04153431342388806,0.01067883218400738,0.08779802920620014,5000,1808,575,True,1.0
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,P_only,20260930,0,four pooled-context macro (supplement),0.029156577308695475,-0.016837127939443423,0.07652189801053434,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,P_only,20261001,0,four pooled-context macro (supplement),0.04991090759576722,0.004152778354384146,0.09457652548890064,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,P_only,20261002,0,four pooled-context macro (supplement),0.05058120746802297,0.001729281207845871,0.09269540818500976,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,P_only,three_seed_mean,all_order_mean,four pooled-context macro (supplement),0.04321623079082856,-0.0010576644400074314,0.08436270476234595,5000,1808,575,True,1.0
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,Support_only,20260930,0,20 context by outer-fold macro,0.011612192411208366,-0.012288862261436101,0.07236143088612418,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,Support_only,20261001,0,20 context by outer-fold macro,0.03272955536892541,0.003086081806752742,0.08512550851741126,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,Support_only,20261002,0,20 context by outer-fold macro,0.019205920494054007,-0.006435718329849743,0.07458989541557713,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,Support_only,three_seed_mean,all_order_mean,20 context by outer-fold macro,0.021182556091395927,-0.0005655580112680853,0.07329045595586313,5000,1808,575,True,1.0
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,Support_only,20260930,0,four pooled-context macro (supplement),0.019684625952363644,-0.015120222040479178,0.06293604304013038,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,Support_only,20261001,0,four pooled-context macro (supplement),0.05842594074419161,0.008916027012352511,0.0926710422327693,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,Support_only,20261002,0,four pooled-context macro (supplement),0.03954184413004447,0.0011011532861250621,0.08035870825739519,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,Support_only,three_seed_mean,all_order_mean,four pooled-context macro (supplement),0.03921747027553324,0.002581229829292821,0.07436020003028532,5000,1808,575,True,1.0
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,Support_only,20260930,0,20 context by outer-fold macro,0.01752046263880802,-0.009870559236989698,0.0739327766735269,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,Support_only,20261001,0,20 context by outer-fold macro,0.031245829176389184,0.0023067613158693112,0.08687023054980171,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,Support_only,20261002,0,20 context by outer-fold macro,0.031415694242379,0.005721687832886966,0.08373083147537341,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,Support_only,three_seed_mean,all_order_mean,20 context by outer-fold macro,0.026727328685858736,0.0033472863015313005,0.0780134395312116,5000,1808,575,True,1.0
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,Support_only,20260930,0,four pooled-context macro (supplement),0.032603916025088164,-0.00703625774976199,0.07340708724358729,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,Support_only,20261001,0,four pooled-context macro (supplement),0.05335824631215991,0.013580967603868694,0.09158185636867858,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,Support_only,20261002,0,four pooled-context macro (supplement),0.05402854618441566,0.016175202472802453,0.08652794600139595,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,Support_only,three_seed_mean,all_order_mean,four pooled-context macro (supplement),0.046663569507221246,0.010578897363687974,0.07966274896686727,5000,1808,575,True,1.0
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,B0_SupportMean,20260930,0,20 context by outer-fold macro,0.010813681357733307,-0.02174726028294164,0.052499384359113506,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,B0_SupportMean,20261001,0,20 context by outer-fold macro,0.03193104431545035,-0.006480308370329013,0.06654758113007901,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,B0_SupportMean,20261002,0,20 context by outer-fold macro,0.018407409440578948,-0.015186799407362303,0.05317701072235121,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,B0_SupportMean,three_seed_mean,all_order_mean,20 context by outer-fold macro,0.020384045037920868,-0.00906500282582664,0.053212008624800064,5000,1808,575,True,1.0
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,B0_SupportMean,20260930,0,four pooled-context macro (supplement),0.012408983203646473,-0.020855626465214137,0.046827855142012584,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,B0_SupportMean,20261001,0,four pooled-context macro (supplement),0.051150297995474436,0.005962139966354547,0.07376055415881964,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,B0_SupportMean,20261002,0,four pooled-context macro (supplement),0.0322662013813273,-0.004798564679927178,0.06449345315166538,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,B0_SupportMean,three_seed_mean,all_order_mean,four pooled-context macro (supplement),0.03194182752681607,-0.0013982429533809801,0.05666177414993189,5000,1808,575,True,1.0
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,B0_SupportMean,20260930,0,20 context by outer-fold macro,0.01672195158533296,-0.019898333873577884,0.0546800995857121,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,B0_SupportMean,20261001,0,20 context by outer-fold macro,0.030447318122914124,-0.006885493964907851,0.06769579743039145,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,B0_SupportMean,20261002,0,20 context by outer-fold macro,0.03061718318890394,-0.006837348696037947,0.06828412971512593,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,B0_SupportMean,three_seed_mean,all_order_mean,20 context by outer-fold macro,0.025928817632383677,-0.0062019058524520835,0.05897903005618736,5000,1808,575,True,1.0
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,B0_SupportMean,20260930,0,four pooled-context macro (supplement),0.025328273276370994,-0.014813934765172353,0.05885219719721456,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,B0_SupportMean,20261001,0,four pooled-context macro (supplement),0.04608260356344274,0.010118774149081276,0.07552811872992057,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,B0_SupportMean,20261002,0,four pooled-context macro (supplement),0.04675290343569849,0.001182860621524516,0.07766136009901407,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,B0_SupportMean,three_seed_mean,all_order_mean,four pooled-context macro (supplement),0.039387926758504076,0.0030501008180373905,0.06647591080789475,5000,1808,575,True,1.0
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,B1_HGB,20260930,0,20 context by outer-fold macro,-0.015843660321594788,-0.0420310482640694,0.030512194678786825,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,B1_HGB,20261001,0,20 context by outer-fold macro,0.005273702636122257,-0.024263482026845647,0.04327117979930328,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,B1_HGB,20261002,0,20 context by outer-fold macro,-0.008249932238749147,-0.03405986775564315,0.030020855141657685,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,B1_HGB,three_seed_mean,all_order_mean,20 context by outer-fold macro,-0.006273296641407226,-0.02839960334719892,0.02934509866713909,5000,1808,575,True,1.0
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,B1_HGB,20260930,0,four pooled-context macro (supplement),-0.006293719002606002,-0.04057270005527711,0.028375216530179628,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,B1_HGB,20261001,0,four pooled-context macro (supplement),0.03244759578922196,-0.013750679382433227,0.05336178375688938,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,B1_HGB,20261002,0,four pooled-context macro (supplement),0.013563499175074822,-0.020718779320150912,0.04061550332726475,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B2_Pointwise,B1_HGB,three_seed_mean,all_order_mean,four pooled-context macro (supplement),0.013239125320563594,-0.019248973705089923,0.035670939290180365,5000,1808,575,True,1.0
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,B1_HGB,20260930,0,20 context by outer-fold macro,-0.009935390093995133,-0.038371580128247235,0.029578528003221277,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,B1_HGB,20261001,0,20 context by outer-fold macro,0.0037899764435860295,-0.025187424765582705,0.04335722492596343,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,B1_HGB,20261002,0,20 context by outer-fold macro,0.0039598415095758455,-0.02453186505727792,0.04160150186889012,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,B1_HGB,three_seed_mean,all_order_mean,20 context by outer-fold macro,-0.0007285240469444195,-0.023149128929068136,0.03379428563216771,5000,1808,575,True,1.0
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,B1_HGB,20260930,0,four pooled-context macro (supplement),0.006625571070118519,-0.030565996454967187,0.033938873571946186,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,B1_HGB,20261001,0,four pooled-context macro (supplement),0.02737990135719026,-0.011368198438074845,0.05516159520595054,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,B1_HGB,20261002,0,four pooled-context macro (supplement),0.028050201229446015,-0.013880143113026483,0.054552410069622026,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,B1_HGB,three_seed_mean,all_order_mean,four pooled-context macro (supplement),0.020685224552251597,-0.014160137406374826,0.04451628379433923,5000,1808,575,True,1.0
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,B2_Pointwise,20260930,0,20 context by outer-fold macro,0.005908270227599655,-0.02563486555652796,0.030309598752186716,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,B2_Pointwise,20261001,0,20 context by outer-fold macro,-0.0014837261925362277,-0.026588973601123386,0.026677850533221956,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,B2_Pointwise,20261002,0,20 context by outer-fold macro,0.012209773748324992,-0.019485198071444047,0.04184362034090227,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,B2_Pointwise,three_seed_mean,all_order_mean,20 context by outer-fold macro,0.005544772594462806,-0.012496307781472584,0.021194508269533837,5000,1808,575,True,1.0
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,B2_Pointwise,20260930,0,four pooled-context macro (supplement),0.01291929007272452,-0.017924574165876492,0.035425217085454215,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,B2_Pointwise,20261001,0,four pooled-context macro (supplement),-0.0050676944320317,-0.02172423237142501,0.02503244535694579,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,B2_Pointwise,20261002,0,four pooled-context macro (supplement),0.014486702054371192,-0.016446366403731823,0.039165815244710536,5000,1808,575,True,
+TxPert_GAT,TxPert_Exphormer,B3_DeepSets,B2_Pointwise,three_seed_mean,all_order_mean,four pooled-context macro (supplement),0.007446099231688004,-0.008606109923747083,0.022032723389092825,5000,1808,575,True,1.0

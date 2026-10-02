@@ -413,7 +413,19 @@ def cpu(args):
               'code_sha256': pub.file_hash(__file__), 'started_utc': pd.Timestamp.now(tz='UTC').isoformat()}
     status['risk_version'] = args.risk_version
     stage_json(RISK_OUT/'CPU_STATUS.json', status); print(json.dumps(status), flush=True)
-    start = time.monotonic()
+    start = time.monotonic();waiting=0.
+    if args.wait_for_inputs:
+        required=[]
+        for outer in args.folds:
+            for builder in args.builders:
+                seeds=pub.SEEDS if builder in ('B2_Pointwise','B3_DeepSets') else (0,)
+                for seed in seeds:
+                    required.extend(RUNTIME/f'nested/outer{outer}/inner{i}/{builder}/seed{seed}/PRIORS.npz' for i in range(4))
+                    required.append(RUNTIME/f'outer/outer{outer}/{builder}/seed{seed}/PRIORS.npz')
+        while any(not path.exists() for path in required):
+            stage_json(RISK_OUT/'CPU_STATUS.json',status|{'status':'WAITING_FOR_FIXED_PUBLIC_PRIORS',
+                'missing_priors':sum(not path.exists() for path in required),'waiting_seconds':waiting})
+            waitstart=time.monotonic();time.sleep(5);waiting+=time.monotonic()-waitstart
     for outer in args.folds:
         fit, query, _ = split_rows(d, outer)
         fitgroups, querygroups = d.groups(fit, set()), d.groups(query, set())
@@ -501,7 +513,8 @@ def cpu(args):
                                 print(json.dumps({'completed_risk': run_id, 'fit_seconds': elapsed}), flush=True)
     aggregate()
     stage_json(RISK_OUT/'CPU_STATUS.json', status | {'status': 'COMPLETE_REQUESTED_BUILDERS',
-                'builders': args.builders, 'elapsed_seconds': time.monotonic()-start})
+                'builders': args.builders, 'elapsed_seconds': time.monotonic()-start,
+                'active_elapsed_seconds':time.monotonic()-start-waiting,'waiting_seconds':waiting})
 
 
 def aggregate():
@@ -593,14 +606,49 @@ def paired_statistics(frame, output, runtime, methods, contrasts, bootstrap=5000
         observed = all_utility(np.arange(len(base)))
         pooledobserved = all_utility(np.arange(len(base)), True)
         rng = np.random.default_rng(pub.SEEDS[0])
-        draws = np.empty((bootstrap, len(pub.SEEDS), len(orders), len(methods)))
-        pooleddraws = np.empty_like(draws)
-        for b in range(bootstrap):
-            use = np.concatenate([clusterrows[j] for j in rng.integers(0,len(clusters),len(clusters))])
-            draws[b] = all_utility(use); pooleddraws[b] = all_utility(use, True)
+        gene_counts = np.asarray([np.bincount(rng.integers(0,len(clusters),len(clusters)),
+            minlength=len(clusters)) for _ in range(bootstrap)],dtype=np.int32)
+        geneindex = np.searchsorted(np.asarray(clusters),gene)
+        def weighted_draws(pooled=False):
+            # Repeated copies of a task have identical scores/errors. Integer
+            # gene multiplicities exactly reproduce expanded paired draws and
+            # avoid sorting the same fixed predictions 5000 times.
+            values=[]
+            for fold in ([None] if pooled else range(5)):
+                for context in CONTEXTS:
+                    keep = contexts == context
+                    if fold is not None: keep &= folds == fold
+                    ix=np.flatnonzero(keep);ix=ix[np.argsort(taskids[ix],kind='stable')]
+                    e=error[ix]; high=np.argsort(-flat_scores[ix],axis=0,kind='stable')
+                    oracle=np.argsort(-e,kind='stable'); result=np.full((bootstrap,flat_scores.shape[1]),np.nan)
+                    for begin in range(0,bootstrap,128):
+                        counts=gene_counts[begin:begin+128, geneindex[ix]]
+                        n=counts.sum(1); k=np.ceil(.2*n).astype(int); safe_k=np.maximum(k,1)
+                        avg=np.divide(counts@e,n,out=np.zeros(len(n)),where=n>0)
+                        oc=counts[:,oracle]; prior=np.cumsum(oc,axis=1)-oc
+                        used=np.minimum(np.maximum(k[:,None]-prior,0),oc)
+                        oraclemean=(used*e[oracle]).sum(1)/safe_k
+                        denom=oraclemean-avg
+                        hc=counts[:,high]; prior=np.cumsum(hc,axis=1)-hc
+                        used=np.minimum(np.maximum(k[:,None,None]-prior,0),hc)
+                        topmean=(used*e[high][None]).sum(1)/safe_k[:,None]
+                        valid=(n>=20)&(denom>1e-12)
+                        result[begin:begin+len(n)][valid]=(topmean[valid]-avg[valid,None])/denom[valid,None]
+                    values.append(result)
+            return np.nanmean(values,axis=0).reshape(bootstrap,len(pub.SEEDS),len(orders),len(methods))
+        draws=weighted_draws();pooleddraws=weighted_draws(True)
+        max_bootstrap_difference=0.
+        for b in range(min(3,bootstrap)):
+            use=np.concatenate([np.tile(clusterrows[j],gene_counts[b,j]) for j in range(len(clusters)) if gene_counts[b,j]])
+            direct,pooleddirect=all_utility(use),all_utility(use,True)
+            max_bootstrap_difference=max(max_bootstrap_difference,float(np.nanmax(np.abs(draws[b]-direct))),
+                                          float(np.nanmax(np.abs(pooleddraws[b]-pooleddirect))))
+        if max_bootstrap_difference>1e-12:raise RuntimeError('weighted gene bootstrap differs from exact task expansion')
         np.savez(runtime/f'{source}_to_{target}_JOINT_GENE_BOOTSTRAP.npz', draws=draws,
             pooled_draws=pooleddraws, methods=np.asarray(methods), seeds=np.asarray(pub.SEEDS),
-            orders=np.asarray(orders), observed=observed, pooled_observed=pooledobserved)
+            orders=np.asarray(orders), observed=observed, pooled_observed=pooledobserved,
+            gene_multiplicities=gene_counts,genes=np.asarray(clusters),
+            expansion_equivalence_max_difference=max_bootstrap_difference)
         metricarray = np.empty((20, len(pub.SEEDS), len(orders), len(methods), len(met)))
         for fold in range(5):
             for ci, context in enumerate(CONTEXTS):
@@ -667,11 +715,20 @@ def paired_statistics(frame, output, runtime, methods, contrasts, bootstrap=5000
         'safety_gate':'Macro AURC and errors at 10/20/50 <=5% increase; macro miss <=+.02; worst strata disclosed only',
         'adoption_gate':'delta >=.005; >=60% valid strata nonnegative; >=80% strata valid; CI lower >=-.005',
         'training_uncertainty_included':False,'fixed_model_nominal_intervals':True,
+        'bootstrap_computation':'Integer gene multiplicities exactly reproduce expanded resamples; first3 draws checked in both aggregations to1e-12',
         'bindings':[binding(output/'PAIRED_GENE_BOOTSTRAP_CONTRASTS.csv'),binding(output/'FIXED_ADOPTION_GATES.csv'),
                     binding(output/'CONTRAST_STRATA_TRANSPARENCY.csv')]})
 
 
 def statistics(args):
+    while args.wait_for_inputs:
+        completed=len(list(RISK_MODEL_ROOT.glob('*/*/outer*/*/publicseed*/riskseed*/FIT_AUDIT.json')))
+        if completed==400:break
+        stage_json(RISK_OUT/'STATISTICS_STATUS.json',{'status':'WAITING_FOR_ALL_FIXED_ARMS','pid':os.getpid(),
+            'actual_risk_fits':completed,'expected_risk_fits':400,'MC_TEST_reads':0})
+        time.sleep(5)
+    start=time.monotonic()
+    aggregate()
     frame = pd.read_csv(RISK_OUT/'TASK_PREDICTIONS.csv.gz')
     methods = ['P_only','Support_only','B0_SupportMean','B1_HGB','B2_Pointwise','B3_DeepSets']
     contrasts = [('B0_SupportMean','Support_only'),('B1_HGB','Support_only'),
@@ -680,6 +737,8 @@ def statistics(args):
                  ('B2_Pointwise','B0_SupportMean'),('B3_DeepSets','B0_SupportMean'),
                  ('B2_Pointwise','B1_HGB'),('B3_DeepSets','B1_HGB'),('B3_DeepSets','B2_Pointwise')]
     paired_statistics(frame,RISK_OUT,RISK_MODEL_ROOT.parent,methods,contrasts,args.bootstrap)
+    stage_json(RISK_OUT/'STATISTICS_STATUS.json',{'status':'COMPLETE','pid':os.getpid(),
+        'active_elapsed_seconds':time.monotonic()-start,'MC_TEST_reads':0})
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
@@ -691,6 +750,7 @@ def main():
     p.add_argument('--gpu-hours-cap', type=float, default=2.)
     p.add_argument('--bootstrap', type=int, default=5000)
     p.add_argument('--risk-version', choices=['registered_universal_v1','legacy_relative_sparsity_v1'], default='registered_universal_v1')
+    p.add_argument('--wait-for-inputs',action='store_true')
     args = p.parse_args()
     global RISK_OUT, RISK_MODEL_ROOT
     if args.risk_version == 'legacy_relative_sparsity_v1':

@@ -1,6 +1,6 @@
 {
   "status": "COMPLETE_REQUESTED_BUILDERS",
-  "pid": 1613692,
+  "pid": 1653692,
   "phase": "context_scoped_cpu_risk",
   "sklearn": "1.8.0",
   "numpy": "2.4.4",
@@ -12,12 +12,14 @@
     "min_leaf": 20,
     "l2": 10
   },
-  "code_sha256": "7e137c839ad86c01ae1f154bc66571460dea7124c17fa5d0b8ef93efbbd12849",
-  "started_utc": "2026-10-02T14:49:56.068105+00:00",
+  "code_sha256": "cd112aa387f48fe9c341c760ee103374f16c124991ff44ece5217977734c9e51",
+  "started_utc": "2026-10-02T15:16:28.944870+00:00",
   "risk_version": "registered_universal_v1",
   "builders": [
-    "B0_SupportMean",
-    "B1_HGB"
+    "B2_Pointwise",
+    "B3_DeepSets"
   ],
-  "elapsed_seconds": 135.58172215893865
+  "elapsed_seconds": 134.72160621802323,
+  "active_elapsed_seconds": 74.72021603607573,
+  "waiting_seconds": 60.0013911658898
 }

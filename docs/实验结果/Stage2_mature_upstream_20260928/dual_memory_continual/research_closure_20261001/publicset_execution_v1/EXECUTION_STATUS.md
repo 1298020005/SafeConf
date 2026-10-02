@@ -1,6 +1,6 @@
 # SafeConf execution checkpoint
 
-This checkpoint contains actual experiment outputs, executable implementation, and a TCBB manuscript draft. The overall research goal remains active while the registered nested risk and physical-content controls complete.
+This checkpoint contains actual experiment outputs, executable implementation, and a TCBB manuscript draft. The experimental goal remains active while physical-content controls and the aligned-public feedback rerun complete. The user has deferred manuscript/PDF work until the model is selected; existing drafts are archived, and no further writing or compilation is scheduled.
 
 ## Completed
 
@@ -11,14 +11,14 @@ This checkpoint contains actual experiment outputs, executable implementation, a
 
 ## Scientific decision so far
 
-The DeepSets context branch does not establish a gain over pointwise weighting. Pointwise weighting improves Source references relative to the original builder, while the strongest simple prediction/metadata rules remain essential comparators. The fixed-rule stage does not decide the final joint Public-plus-HGB system: that registered comparison is still running.
+The DeepSets context branch does not establish a gain over pointwise weighting. Pointwise weighting improves Source references relative to the original builder, while the strongest simple prediction/metadata rules remain essential comparators. The registered joint comparison has now completed: 400 context-scoped HGB fits and 5000 paired gene resamples. Neither neural builder passes replacement against B0/B1 in both directions; the DeepSets extra branch passes neither direction against pointwise. These are paired, fixed-comparison decisions, not rankings of the highest score.
 
 ## Current required work
 
-- Complete nested inner Public features and context-scoped risk fits with registered Universal-P definitions.
+- DONE: 240 nested NN fit stages, complete 120 inner plus 30 reused outer NN priors, 400 registered context-scoped risk fits, 5000 paired gene resamples; cache and bootstrap equivalence audits passed.
 - Compare quantity-only inputs, real Public content, and matched-support physically shuffled history content using the same source label/CDF budgets.
-- Freeze the actual serving configuration and rerun only feedback combinations whose Public/risk inputs changed.
-- Integrate final results, synchronize numeric/PDF validation, and deliver the reproduction/submission bundle.
+- Freeze the actual serving configuration. `FEEDBACK_REBUILD_CONTRACT.json` fixes one previously registered same-context cell-support Public candidate for a versioned affected-feedback comparison; 45 small fits, unchanged Target-only scores reused, no new upstream.
+- Deliver the final experimental results, adopted model configuration and reproduction entry. Manuscript/PDF preparation is deferred by the user.
 
 ## Reliable process tracking
 

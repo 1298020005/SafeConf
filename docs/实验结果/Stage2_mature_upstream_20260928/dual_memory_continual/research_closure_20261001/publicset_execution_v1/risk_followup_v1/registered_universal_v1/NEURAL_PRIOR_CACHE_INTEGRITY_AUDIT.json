@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "inner_priors": 120,
+  "outer_priors": 30,
+  "verified_models_and_prior_sha256": true,
+  "registered_gene_disjoint_inner_and_outer_query_scope": true,
+  "all_priors_finite_on_2840_axis": true,
+  "all_weights_legal": true,
+  "elapsed_seconds": 10.107351341983303,
+  "MC_TEST_reads": 0,
+  "ledger_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/NEURAL_PRIOR_CACHE_INTEGRITY_LEDGER.csv",
+    "sha256": "3d6881348b9d28fbae3dc1707b35541e98b9219ec5f8d82c851e231f260593be"
+  }
+}

@@ -50,6 +50,8 @@ def validate_support(real, changed):
 def shuffled_domain(d, fitrows, queryrows, outer, inner, order):
     realfit, realquery = d.groups(fitrows,set()), d.groups(queryrows,set())
     bank = follow.validate_groups(d,realfit,d.tasks.iloc[queryrows].gene.unique())
+    if not set(d.memory.iloc[bank].perturbation_target)<=set(d.tasks.iloc[fitrows].gene):
+        raise RuntimeError('physical fit bank contains a non-fitting biological gene')
     needed = np.unique(np.concatenate([g['ix'] for g in realfit+realquery if len(g['ix'])]))
     memory = d.memory
     mapping = np.arange(len(memory)); deciles = np.full(len(memory),-1,int)
@@ -94,6 +96,9 @@ def shuffled_domain(d, fitrows, queryrows, outer, inner, order):
     prohibited=set(d.tasks.iloc[queryrows].gene)
     if set(memory.iloc[mapping[moved]].perturbation_target)&prohibited:
         raise RuntimeError('null query gene used as donor')
+    for g in realfit+realquery:
+        if np.any(memory.iloc[mapping[g['ix']]].context.astype(str).to_numpy()==str(d.tasks.iloc[g['q']].context)):
+            raise RuntimeError('current context treated query experiment entered null history')
     effects=d.effects.copy();effects[needed]=d.effects[mapping[needed]]
     nd=replace(d,effects=effects)
     nf,nq=nd.groups(fitrows,set()),nd.groups(queryrows,set())
@@ -112,7 +117,8 @@ def shuffled_domain(d, fitrows, queryrows, outer, inner, order):
         'fit_gene_hash':pub.fingerprint(d.tasks.iloc[fitrows].gene.unique()),
         'query_gene_hash':pub.fingerprint(prohibited),'fit_query_ids_hash':pub.fingerprint(d.tasks.iloc[fitrows].task_id),
         'query_ids_hash':pub.fingerprint(d.tasks.iloc[queryrows].task_id),
-        'all_changed_content_donors_fit_only':True,'query_gene_donors':0,
+        'all_changed_content_donors_fit_only':True,'all_fit_bank_genes_actual_fit_queries':True,'query_gene_donors':0,
+        'current_context_treated_query_experiments_used':0,
         'metadata_controls_support_exactly_preserved':True,'n_needed_rows':len(needed),
         'n_identity_changed':len(moved),'effective_identity_shuffle_rate':len(moved)/len(needed),
         'effective_content_shuffle_rate':float(table.effect_changed.mean()),
@@ -241,7 +247,8 @@ def cpu(args):
     d=follow.source_domain();start=time.monotonic();waiting=0.
     status={'status':'RUNNING','pid':os.getpid(),'phase':'null_cpu_risk','orders':args.orders,'builders':args.builders,
             'MC_TEST_reads':0,'started_utc':pd.Timestamp.now(tz='UTC').isoformat()}
-    follow.stage_json(OUT/'CPU_STATUS.json',status)
+    statuspath=OUT/('CPU_'+'_'.join(args.builders)+'_STATUS.json')
+    follow.stage_json(statuspath,status)
     for outer in args.folds:
         fit,query,_=follow.split_rows(d,outer)
         for order in args.orders:
@@ -256,7 +263,7 @@ def cpu(args):
                         for source,target in [('TxPert_GAT','TxPert_Exphormer'),('TxPert_Exphormer','TxPert_GAT')] for context in follow.CONTEXTS)
                     while any(not p.exists() for p in required):
                         if not args.wait_for_inputs:raise FileNotFoundError('Required real/null inputs incomplete; rerun with --wait-for-inputs')
-                        follow.stage_json(OUT/'CPU_STATUS.json',status|{'status':'WAITING_FOR_FIXED_INPUTS','waiting_seconds':waiting,
+                        follow.stage_json(statuspath,status|{'status':'WAITING_FOR_FIXED_INPUTS','waiting_seconds':waiting,
                             'missing_paths':[str(p) for p in required if not p.exists()],
                             'active_elapsed_seconds':time.monotonic()-start-waiting})
                         waitstart=time.monotonic();time.sleep(5);waiting+=time.monotonic()-waitstart
@@ -300,7 +307,7 @@ def cpu(args):
                                 'prediction_binding':follow.binding(path/'PREDICTIONS.csv.gz')})
                             print(json.dumps({'completed_null_risk':run_id,'fit_seconds':elapsed}),flush=True)
     aggregate()
-    follow.stage_json(OUT/'CPU_STATUS.json',status|{'status':'COMPLETE_REQUESTED_ARMS',
+    follow.stage_json(statuspath,status|{'status':'COMPLETE_REQUESTED_ARMS',
         'elapsed_seconds':time.monotonic()-start,'active_elapsed_seconds':time.monotonic()-start-waiting,'waiting_seconds':waiting})
 
 
@@ -336,12 +343,54 @@ def aggregate():
 
 
 def statistics(args):
+    while args.wait_for_inputs:
+        completed=len(list((RUNTIME/'risk').glob('order*/*/*/outer*/*/seed*/FIT_AUDIT.json')))
+        if completed==1200:break
+        follow.stage_json(OUT/'STATISTICS_STATUS.json',{'status':'WAITING_FOR_ALL_FIXED_ARMS','pid':os.getpid(),
+            'actual_risk_fits':completed,'expected_risk_fits':1200,'MC_TEST_reads':0})
+        time.sleep(5)
+    start=time.monotonic()
+    aggregate()
     frame=pd.read_csv(OUT/'TASK_PREDICTIONS.csv.gz')
     methods=['Support_only','B1_HGB','B2_Pointwise','B1_HGB_ContentNull','B2_Pointwise_ContentNull']
     contrasts=[]
     for builder in BUILDERS:
         contrasts.extend([(builder,'Support_only'),(builder,builder+'_ContentNull'),(builder+'_ContentNull','Support_only')])
     follow.paired_statistics(frame,OUT,RUNTIME,methods,contrasts,args.bootstrap,ORDERS,'null_order')
+    follow.stage_json(OUT/'STATISTICS_STATUS.json',{'status':'COMPLETE','pid':os.getpid(),
+        'active_elapsed_seconds':time.monotonic()-start,'MC_TEST_reads':0})
+    resource_receipt()
+
+
+def resource_receipt():
+    receipts={}
+    for name in ('B1_FROZEN_INFERENCE_STATUS','B2_FROZEN_INFERENCE_STATUS',
+                 'CPU_B1_HGB_STATUS','CPU_B2_Pointwise_STATUS','STATISTICS_STATUS'):
+        receipts[name]=follow.read_json(OUT/(name+'.json'))
+    # Charge the interrupted first B1 generation attempt as well as its durable
+    # resumed stage. Waiting for a prerequisite cache is not compute phase time.
+    attempts=follow.read_json(OUT/'SERVICE_LIFECYCLE_RECEIPT.json')
+    failed_seconds=0.
+    for item in attempts['units']:
+        if item['unit']=='safeconf-publicset-content-null-b1-v1.service':
+            failed_seconds=(int(item['ExecMainExitTimestampMonotonic'])-
+                            int(item['ExecMainStartTimestampMonotonic']))/1e6
+    cpu_seconds=(failed_seconds+receipts['B1_FROZEN_INFERENCE_STATUS']['elapsed_seconds']+
+        receipts['CPU_B1_HGB_STATUS']['active_elapsed_seconds']+
+        receipts['CPU_B2_Pointwise_STATUS']['active_elapsed_seconds']+
+        receipts['STATISTICS_STATUS']['active_elapsed_seconds'])
+    gpu_seconds=receipts['B2_FROZEN_INFERENCE_STATUS']['elapsed_seconds']
+    follow.stage_json(OUT/'RESOURCE_BUDGET_RECEIPT.json',{
+        'status':'COMPLETE','accounting':'Compute phase wall time; prerequisite-cache waiting excluded and separately recorded',
+        'CPU_compute_phase_seconds':cpu_seconds,'CPU_budget_seconds':1800,'CPU_within_budget':cpu_seconds<=1800,
+        'GPU_frozen_inference_phase_seconds':gpu_seconds,'GPU_budget_seconds':1800,'GPU_within_budget':gpu_seconds<=1800,
+        'charged_interrupted_B1_prior_attempt_seconds':failed_seconds,
+        'outer_real_B1_reconstruction_fits':len(list(RUNTIME.glob('frozen_real_b1/outer*/FIT_AUDIT.json'))),
+        'outer_real_B1_reconstruction_cost':'Included in B1 frozen inference phase, never null biology training',
+        'actual_null_risk_fits':len(list((RUNTIME/'risk').glob('order*/*/*/outer*/*/seed*/FIT_AUDIT.json'))),
+        'new_null_biology_models':0,'frozen_neural_models_reused':75,'MC_TEST_reads':0,
+        'phase_receipts':receipts,
+        'implementation_bindings':[follow.binding(__file__),follow.binding(follow.__file__),follow.binding(pub.__file__)]})
 
 
 def register():

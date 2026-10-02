@@ -1,8 +1,8 @@
 {
-  "status": "PARTIAL",
-  "task_prediction_rows": 43392,
+  "status": "COMPLETE",
+  "task_prediction_rows": 65088,
   "expected_full_rows": 65088,
-  "actual_risk_fits": 160,
+  "actual_risk_fits": 400,
   "scope": "Source1808/575/2840, two architecture directions, four context teachers",
   "primary_aggregation": "equal macro of 20 context by outer-fold strata, then mean of three seed metrics",
   "supplemental_aggregation": "four context macro of pooled outer OOF",
@@ -12,27 +12,27 @@
   "bindings": [
     {
       "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/TASK_PREDICTIONS.csv.gz",
-      "sha256": "4595d98916febe2e348178fb4014aca112c8a4f75e3a333a0ae463f84d9349e6"
+      "sha256": "884aa621893cda230808fa71a84b3ca3e39a5f296737cd424ddb5d28a98438ae"
     },
     {
       "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/CONTEXT_FOLD_RESULTS.csv",
-      "sha256": "9927c96c3335a3c0e1ec566869de2d28604151b57d0e93114d0a118b3d1eada6"
+      "sha256": "e62e8ad37024622c98332bdc1ca3f08e647b29b9400f2f7ce10e027f0aa6be02"
     },
     {
       "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/POOLED_CONTEXT_RESULTS.csv",
-      "sha256": "0d2ddfd6df61f2ee436537242ccb858560a24133c2fdb6dab4a82f5ea6d61290"
+      "sha256": "5f1c59fea3f9803690e754c7164230abeaa6d13d9ffedbe4d7821cbb5342156a"
     },
     {
       "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/MACRO_RESULTS.csv",
-      "sha256": "a947fb0994ec0c4438459ea6a3de0541c5f09f9363223fb7a971a7eda688bddc"
+      "sha256": "c30eeba014513d0db111af6c4014040955b80e1c3b1defc5377decc44dbe124e"
     },
     {
       "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/RISK_FIT_LEDGER.csv",
-      "sha256": "a1aaa104a8d065dd6e74f644624478702a68101b439fcb04eba00f0d7f53d0f0"
+      "sha256": "58cd5d5b3636ce094ccb43b896fda668d050f14f9a22a7d42e033a8f8b190d1c"
     },
     {
       "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/CDF_LEDGER.csv",
-      "sha256": "5e81409caf2c68e6d892d04998dbc1bd5a12751c3c6940ae749d054c03195651"
+      "sha256": "77834ebafcf32be7f074c42cc3127c21d86ae36d78819c271130ffeb23ff190b"
     }
   ]
 }

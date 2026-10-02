@@ -1,0 +1,52 @@
+{
+  "units": [
+    {
+      "MainPID": "0",
+      "ExecMainStartTimestampMonotonic": "1505862136254",
+      "ExecMainExitTimestampMonotonic": "1505986072663",
+      "ExecMainStatus": "1",
+      "CPUUsageNSec": "178087765000",
+      "ActiveState": "failed",
+      "unit": "safeconf-publicset-content-null-b1-v1.service"
+    },
+    {
+      "MainPID": "1619524",
+      "ExecMainStartTimestampMonotonic": "1506092615226",
+      "ExecMainExitTimestampMonotonic": "0",
+      "ExecMainStatus": "0",
+      "CPUUsageNSec": "403491339000",
+      "ActiveState": "active",
+      "unit": "safeconf-publicset-content-null-b1-v1-r2.service"
+    },
+    {
+      "MainPID": "1617115",
+      "ExecMainStartTimestampMonotonic": "1506004779267",
+      "ExecMainExitTimestampMonotonic": "0",
+      "ExecMainStatus": "0",
+      "CPUUsageNSec": "163180805000",
+      "ActiveState": "active",
+      "unit": "safeconf-publicset-content-null-risk-b1-v1.service"
+    },
+    {
+      "MainPID": "1624380",
+      "ExecMainStartTimestampMonotonic": "1506266365226",
+      "ExecMainExitTimestampMonotonic": "0",
+      "ExecMainStatus": "0",
+      "CPUUsageNSec": "3584332000",
+      "ActiveState": "active",
+      "unit": "safeconf-publicset-content-null-risk-b2-v1.service"
+    },
+    {
+      "MainPID": "1625940",
+      "ExecMainStartTimestampMonotonic": "1506301045269",
+      "ExecMainExitTimestampMonotonic": "0",
+      "ExecMainStatus": "0",
+      "CPUUsageNSec": "3485825000",
+      "ActiveState": "active",
+      "unit": "safeconf-publicset-content-null-statistics-v1.service"
+    }
+  ],
+  "resumes_reuse_completed_priors": true,
+  "MC_TEST_reads": 0,
+  "attempt_error": "B1 saved GPU/CPU log1p differs by one ULP; fitting ID hashes and numerical tolerance replace binary feature equality; reproduced scores still verified"
+}

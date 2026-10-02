@@ -1,13 +1,17 @@
 {
-  "updated_utc": "2026-10-02T14:53:15.130863+00:00",
+  "updated_utc": "2026-10-02T15:27:43.226962+00:00",
   "full_public_status": "COMPLETE",
   "full_public_unique_neural_stages": 120,
   "statistics_status": "COMPLETE",
   "goal_complete": false,
   "pending": [
-    "registered nested HGB",
-    "physical history content null",
-    "serving decision and impacted feedback",
-    "final manuscript bundle"
-  ]
+    "physical content null complete statistics",
+    "final Public/Source serving decision",
+    "aligned Public affected feedback rerun",
+    "final experimental evidence and method settings"
+  ],
+  "user_priority": "Finish experiments and select final model first; manuscript/PDF work deferred by user",
+  "paper_work": "DEFERRED_BY_USER",
+  "nested_risk_status": "COMPLETE_400_FITS_5000_BOOTSTRAP",
+  "content_null_status": "RUNNING_FROZEN_B2_INFERENCE"
 }

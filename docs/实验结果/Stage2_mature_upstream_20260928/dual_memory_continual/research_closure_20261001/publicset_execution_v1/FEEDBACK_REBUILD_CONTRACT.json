@@ -1,0 +1,67 @@
+{
+  "version": "aligned-public-feedback-v1",
+  "created_utc": "2026-10-02T15:27:43.226962+00:00",
+  "status": "CONFIG_FROZEN_BEFORE_RERUN",
+  "role": "retrospective SEEN post-confirmation analysis; not fresh external confirmation",
+  "paper_work": "DEFERRED_BY_USER",
+  "public_rule": "Existing registered SameContextSupport: same-context eligible historical experiments if any, otherwise all eligible histories; weights proportional to cell support",
+  "effect_estimand": "Cell-weighted treated-minus-control effect; common2840; no missing-gene zero-fill",
+  "public_quality": "True quality measurements distinct from cell support; no invented replicate quality",
+  "feedback_split": "Reuse exact immutable SafeConf-McFaline-feedback-v1 biological-gene partition, budget order and evaluation IDs",
+  "budgets": [
+    0,
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1
+  ],
+  "seeds": [
+    20260930,
+    20261001,
+    20261002
+  ],
+  "changed_methods": [
+    "PublicTarget_HGB",
+    "SharedTarget_HGB",
+    "PertEMA_Public_adapted"
+  ],
+  "unaffected_methods": "Reuse exact matched TargetOnly Ridge/HGB and PertEMA_P_adapted predictions, with input/output SHA and task alignment checks",
+  "shared_control": "Existing frozen legacy Shared score retained and labeled with its guide-public lineage; cannot certify new Public configuration",
+  "HGB": {
+    "max_iter": 200,
+    "learning_rate": 0.05,
+    "max_depth": 3,
+    "min_samples_leaf": 20,
+    "l2_regularization": 10
+  },
+  "feedback_CDF": "Only each permitted feedback budget errors; no additional target validation errors for risk labels/calibration/model choice",
+  "upstream_calibration": "Original C upstream validation calibration retained and counted, not portrayed as no C validation information",
+  "statistics": "5000 paired biological-gene bootstrap; identical task IDs and cluster draws across methods; three seed metrics averaged",
+  "holdout_selection": "No result-dependent algorithm/feature/threshold selection; all budget predictions saved before evaluation",
+  "new_upstream_training": 0,
+  "new_architectures": 0,
+  "new_test_expression_reads": 0,
+  "bindings": [
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/strong_simple_reference_v1/CONFIG.json",
+      "sha256": "41fd642538ded0d341c5af80de0dd2eb2b775c67798e9ce952b1ae48deb0c7ff"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/statistics_v1/STRONG_SIMPLE_COMPARISONS.csv",
+      "sha256": "9cf9a5cd016b0a0c74e4920e7fe52a6c2e2cc9ec08766e9993e81d58453d4d69"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/REGISTRATION.json",
+      "sha256": "669a29df8909d73cfc86828047b2daf9ebee5d601e8b52496715e9972d3f2ceb"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/STATISTICS_RECEIPT.json",
+      "sha256": "f64b95348cc90a37ad78654dfc669dc95951bdb5483dc82106b70993e1417933"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/FEEDBACK_SPLIT_CONTRACT.json",
+      "sha256": "7c00f5ab08969bc6537a714002735934d2424b6f0c1007009b9f6b3fec3b4e98"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "status": "RUNNING",
+  "status": "COMPLETE",
   "pid": 1619524,
   "phase": "b1_frozen_inference",
   "started_utc": "2026-10-02T14:53:20.786812+00:00",
@@ -15,5 +15,8 @@
     20261001,
     20261002
   ],
-  "MC_TEST_reads": 0
+  "MC_TEST_reads": 0,
+  "elapsed_seconds": 661.1255977218971,
+  "new_null_biology_models": 0,
+  "actual_inference_priors": 125
 }

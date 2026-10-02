@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "checked_draws": 3,
+  "n_genes": 575,
+  "expanded_vs_integer_multiplicity_max_difference": 9.992007221626409e-16,
+  "observed_matches_20strata_seed_mean_macro": true,
+  "probe_is_not_final_inference": true,
+  "registered_final_bootstrap_replicates": 5000,
+  "MC_TEST_reads": 0
+}
