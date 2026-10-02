@@ -1,0 +1,25 @@
+{
+  "status": "WAITING_FOR_FIXED_INPUTS",
+  "pid": 1617115,
+  "phase": "null_cpu_risk",
+  "orders": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "builders": [
+    "B1_HGB"
+  ],
+  "MC_TEST_reads": 0,
+  "started_utc": "2026-10-02T14:51:53.069850+00:00",
+  "waiting_seconds": 115.00201074080542,
+  "missing_paths": [
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer1/inner1/B1_HGB/seed0/PRIORS.npz",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer1/inner2/B1_HGB/seed0/PRIORS.npz",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer1/inner3/B1_HGB/seed0/PRIORS.npz",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/order0/outer1/outer/B1_HGB/seed0/PRIORS.npz"
+  ],
+  "active_elapsed_seconds": 35.30519919912331
+}

@@ -1,0 +1,43 @@
+{
+  "run_id": "prototype_v2_cpu_environment_repair",
+  "phase": "prototype",
+  "pid": 1553291,
+  "started_utc": "2026-10-02T14:10:38.640880+00:00",
+  "baseline_commit": "ef3efbecbea2823c19454c78ca606886f941042a",
+  "role": "DEV/SEEN_NEW_PUBLICSET",
+  "domains": [
+    "McFaline",
+    "Source"
+  ],
+  "outer_folds": [
+    0
+  ],
+  "seeds": [
+    20260930,
+    20261001,
+    20261002
+  ],
+  "code_sha256": "2070f179dc43b4ab530919689dc4840f909275a9ad03d661d55f3a4a5c4d617c",
+  "new_upstream_training": 0,
+  "new_test_truth_reads": 0,
+  "gpu_hours_cap": 4.0,
+  "torch": "2.6.0+cu124",
+  "source_history_scenario": "rotating context deployment; other-context effects known; shared fits use disjoint genes",
+  "MC_history_scenario": "all outer evaluation experiments forbidden globally; inner validation excluded likewise",
+  "MC_estimand": "cell-weighted bank; fixed registered query truth; old guide bank retained as data-alignment control",
+  "config": {
+    "pca": 32,
+    "hidden": 64,
+    "support_mix": 0.5,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "batch": 32,
+    "max_epochs": 100,
+    "patience": 10
+  },
+  "status": "COMPLETE",
+  "next_action": "full five-fold development; prototype does not select architecture",
+  "elapsed_seconds": 139.4212760028895,
+  "completed_neural_fit_stages": 24,
+  "neural_fit_seconds": 119.12100161705166
+}

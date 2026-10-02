@@ -1,0 +1,19 @@
+{
+  "role": "DEV/SEEN fixed strong-simple comparator",
+  "rules": {
+    "NearestControl": "minimum prediction-time control RMSE; ties by experiment_id",
+    "SameContextSupport": "support mean among same-context histories if any; otherwise all eligible histories",
+    "SameConditionSupport": "support mean among same-condition histories if any; otherwise all eligible histories"
+  },
+  "hyperparameters": null,
+  "new_fits": 0,
+  "new_upstream_calls": 0,
+  "MC_TEST_reads": 0,
+  "scope": "same allowed query/history tables as full PublicSet; no outcome-selected subset",
+  "registered_before_metric_computation": true,
+  "code_sha256": "de22b318be5ce23377ee939d43c82db8b0b8297990f32f15e3d3468ecf07b29a",
+  "status": "COMPLETE",
+  "elapsed_seconds": 15.591788475168869,
+  "n_prediction_rows": 12474,
+  "results_sha256": "5123a1e9202e074ba5ae231b404bb88d0ed63a22d760798769ea6a8912c7fd8d"
+}

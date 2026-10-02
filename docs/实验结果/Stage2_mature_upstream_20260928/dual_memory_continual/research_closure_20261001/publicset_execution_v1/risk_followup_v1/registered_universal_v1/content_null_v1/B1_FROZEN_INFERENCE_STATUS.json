@@ -1,0 +1,19 @@
+{
+  "status": "RUNNING",
+  "pid": 1619524,
+  "phase": "b1_frozen_inference",
+  "started_utc": "2026-10-02T14:53:20.786812+00:00",
+  "fixed_orders": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "fixed_seeds": [
+    20260930,
+    20261001,
+    20261002
+  ],
+  "MC_TEST_reads": 0
+}

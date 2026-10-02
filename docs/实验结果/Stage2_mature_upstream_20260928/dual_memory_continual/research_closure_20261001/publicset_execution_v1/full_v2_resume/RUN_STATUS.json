@@ -1,0 +1,90 @@
+{
+  "run_id": "full_v2_resume",
+  "phase": "full",
+  "pid": 1575043,
+  "started_utc": "2026-10-02T14:24:21.939467+00:00",
+  "baseline_commit": "ef3efbecbea2823c19454c78ca606886f941042a",
+  "role": "DEV/SEEN_NEW_PUBLICSET",
+  "domains": [
+    "McFaline",
+    "Source"
+  ],
+  "outer_folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "seeds": [
+    20260930,
+    20261001,
+    20261002
+  ],
+  "code_sha256": "0bddc28e71b5022fbb356d32229b4850cae949a64e69127f86028412845a048c",
+  "new_upstream_training": 0,
+  "new_test_truth_reads": 0,
+  "gpu_hours_cap": 12.0,
+  "torch": "2.6.0+cu124",
+  "source_history_scenario": "rotating context deployment; other-context effects known; shared fits use disjoint genes",
+  "MC_history_scenario": "all outer evaluation experiments forbidden globally; inner validation excluded likewise",
+  "MC_estimand": "cell-weighted bank; fixed registered query truth; old guide bank retained as data-alignment control",
+  "config": {
+    "pca": 32,
+    "hidden": 64,
+    "support_mix": 0.5,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "batch": 32,
+    "max_epochs": 100,
+    "patience": 10
+  },
+  "status": "COMPLETE",
+  "reuse_run": [
+    "full_v1",
+    "prototype_v2_cpu_environment_repair"
+  ],
+  "next_action": "paired statistics and fixed nested HGB follow-up; prototype does not select architecture",
+  "input_bindings": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/GENE_IDS.json",
+      "sha256": "be612f9c4638146b41eee26f607ab12fbed53b524cda7a76eee36ca554c28f97"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TASKS.csv",
+      "sha256": "72c6620d797db9115e67f6c9067d54879950733827801190ea25161ee03a118d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/VALIDATION_BIOLOGY_TASKS.csv",
+      "sha256": "7d8d8fa7e97ad64c483cb254c35a3eb5b43c7a3d32e7d757a94bdc95daefb9b3"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_PUBLIC_EFFECTS.npy",
+      "sha256": "579b95ac834a36f1c6c3d12d25c3d607c9083a53c53b469e24d3c0be81d1e74e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TRUE_EFFECTS.npy",
+      "sha256": "c2da8655e555ed55320d79c8d197fddf4365d57ae974c2dfd529c009af3d164c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/VALIDATION_TRUE_EFFECTS.npy",
+      "sha256": "4c22b4ddfa2235de544a01629e1608e26d87f52f87cdf9ef4414e66845c8b490"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/reference_estimand_diagnostic/CELL_WEIGHTED_PUBLIC_EFFECTS.npy",
+      "sha256": "5d197bbfbc8e2826e093ede5024cce73f14d52cfc0ba5728abefd1881eec6a46"
+    },
+    {
+      "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/manifest.json",
+      "sha256": "b56abbb63d5343244f00a6abe851acc28f9bc764c5ac1ff5c28ffe146075ed07"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/public_mcfaline_trainval/manifest.json",
+      "sha256": "cb4e416829197e3b3c91300769687602da81ba08e994877f1d4362448e54eedc"
+    }
+  ],
+  "elapsed_seconds": 599.1087375390343,
+  "completed_neural_fit_stages": 45,
+  "neural_fit_seconds": 422.89117132523097,
+  "reused_neural_models": 38
+}

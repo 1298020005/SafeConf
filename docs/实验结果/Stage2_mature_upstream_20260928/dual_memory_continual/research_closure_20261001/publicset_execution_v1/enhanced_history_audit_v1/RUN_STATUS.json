@@ -1,0 +1,22 @@
+{
+  "status": "COMPLETE",
+  "new_fits": 0,
+  "MC_TEST_reads": 0,
+  "records": 2350,
+  "inputs": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/full_v2_resume/TASK_PREDICTIONS.csv.gz",
+      "sha256": "5482f038764b5ee5c80764eed7d5a2b3c81982f8d354cb477a647cda0e40bfd6"
+    }
+  ],
+  "counts": {
+    "tasks": {
+      "McFaline": 542,
+      "Source": 1808
+    },
+    "weight_choice_queries": {
+      "McFaline": 542,
+      "Source": 1676
+    }
+  }
+}

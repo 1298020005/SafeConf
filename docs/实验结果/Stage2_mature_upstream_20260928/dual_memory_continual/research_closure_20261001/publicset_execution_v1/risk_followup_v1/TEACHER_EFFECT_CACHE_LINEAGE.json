@@ -1,0 +1,36 @@
+[
+  {
+    "upstream": "TxPert_GAT",
+    "family_centroid_binding": {
+      "path": "/home/yyf/data/txpert_official_20260802/e201/pretruth_vectors/E201_FAMILY_CENTROIDS.npy",
+      "sha256": "e0c1bc8725988cf61c1c497d39ef95ab02354498c0b00aa5922d51b23d451a2c"
+    },
+    "control_binding": {
+      "path": "/home/yyf/data/txpert_official_20260802/e201/pretruth_vectors/E201_CONTROL_CENTROIDS.npy",
+      "sha256": "c2d6f56bec576b5154d574d91f37b5fdbb036d869573cdbaf9fda0e544454d3e"
+    },
+    "cached_effect_binding": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TxPert_GAT_PREDICTED_EFFECTS.npy",
+      "sha256": "88fba0ba25493bcebaf5c702c5200f70d55433968ba532cd83dbb0ed77947a90"
+    },
+    "exact_common_axis_reproduction": true,
+    "task_row_mapping_hash": "499224d452b5a3223b5c97305c2c66152350dbf13818ed9e14642baf90c6c8f5"
+  },
+  {
+    "upstream": "TxPert_Exphormer",
+    "family_centroid_binding": {
+      "path": "/home/yyf/data/txpert_official_20260802/e205/pretruth_vectors/E205_FAMILY_CENTROIDS.npy",
+      "sha256": "de23a582fc5a9094f1208baa881ea76b317616afc6e81983658ad96500586d33"
+    },
+    "control_binding": {
+      "path": "/home/yyf/data/txpert_official_20260802/e205/pretruth_vectors/E205_CONTROL_CENTROIDS.npy",
+      "sha256": "c2d6f56bec576b5154d574d91f37b5fdbb036d869573cdbaf9fda0e544454d3e"
+    },
+    "cached_effect_binding": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TxPert_Exphormer_PREDICTED_EFFECTS.npy",
+      "sha256": "97b24e3bb14c5e26bd36e71168a9c95f5ec04160d1799d5bba58e470286b5939"
+    },
+    "exact_common_axis_reproduction": true,
+    "task_row_mapping_hash": "499224d452b5a3223b5c97305c2c66152350dbf13818ed9e14642baf90c6c8f5"
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "status": "PASS_INPUT_SCOPE_AND_SYNTHETIC_SEMANTICS",
+  "code_sha256": "2070f179dc43b4ab530919689dc4840f909275a9ad03d661d55f3a4a5c4d617c",
+  "script_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_publicset_v1.py",
+  "checked_deployment_scopes": 25,
+  "mc_TEST_values_read": 0,
+  "model_training_fits": 0,
+  "preprocessor_PCA_fits": 2,
+  "preprocessor_fits_are_audit_only_not_risk_or_biology_model_training": true,
+  "early_validation_and_outer_query_gene_exclusion": true,
+  "PCA_fit_only_unique_actual_training_history_rows": true,
+  "equal_initial_parameters_B2_B3_same_seed": true,
+  "gene_equal_training_weight_totals": true,
+  "pointwise_logratio_change": 0.0,
+  "deepsets_logratio_change": -0.0020948313176631927,
+  "Source_empty_forbidden_helper_equivalent_only_under_existing_same_gene_other_context_eligibility": true,
+  "elapsed_seconds": 43.49638817505911,
+  "remaining_runtime_checks": [
+    "completed early/refit FIT_AUDIT and MODEL artifacts",
+    "reload reproduces actual predictions",
+    "four-arm same-query output matrices",
+    "GPU cost cap checked before each stage or inner-loop deadline"
+  ],
+  "notes": [
+    "No neural model was trained by this audit.",
+    "All input arrays loaded by runner are Source or McFaline DEV; no TEST files loaded.",
+    "PCA.transform currently computes unused codes for forbidden bank rows; these do not influence fitted parameters or selected training tokens. Prefer restricting transform to actual used fit/query rows in future cache cleanup."
+  ]
+}

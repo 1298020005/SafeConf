@@ -1,0 +1,55 @@
+{
+  "manuscript_words": 7134,
+  "citation_keys": [
+    "cheng2025prescribe",
+    "cui2024scgpt",
+    "lahoti2023risk",
+    "lee2019settransformer",
+    "nicol2026spurious",
+    "roohani2024gears",
+    "shrestha2026pertema",
+    "wang2026reliable",
+    "wu2024perturbench",
+    "zaheer2017deepsets"
+  ],
+  "missing_citations": [],
+  "figures_generated": 6,
+  "latex_generated": true,
+  "latex_compiled": true,
+  "latex_engine": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/build/toolchain/tectonic",
+  "new_model_fits": 0,
+  "new_test_truth_reads": 0,
+  "paper_sha256": "baf972cce15ea896d13af49d0195d4c13d5ac340ece2b5cd2f8f02360f672415",
+  "supplement_sha256": "fe7304c25a8cd8c48b46647f14f86220217f3291da13784b2e96fae670e8f2dc",
+  "tectonic_bundle": "https://data1.fullyjustified.net/tlextras-2021.3r1.tar",
+  "compile_status": "COMPILED",
+  "pdf_bytes": 190195,
+  "pdf_sha256": "4f963df3be1e0121a42543895227f4de1052ceb543ebf35e61147bbcc04bb0e1",
+  "supplement_compiled": true,
+  "supplement_pdf_bytes": 32334,
+  "supplement_pdf_sha256": "0ea497512839f30d06008f8a45fdadeb1f88e9aab14232754973bc12f1d919ab",
+  "supplement_compile_command": [
+    "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/build/toolchain/tectonic",
+    "--keep-logs",
+    "--keep-intermediates",
+    "--outdir",
+    "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/build",
+    "--bundle",
+    "https://data1.fullyjustified.net/tlextras-2021.3r1.tar",
+    "supplement.tex"
+  ],
+  "compile_seconds": 5.68989634513855,
+  "compile_commands": [
+    [
+      "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/build/toolchain/tectonic",
+      "--keep-logs",
+      "--keep-intermediates",
+      "--outdir",
+      "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/build",
+      "--bundle",
+      "https://data1.fullyjustified.net/tlextras-2021.3r1.tar",
+      "main.tex"
+    ]
+  ],
+  "toolchain_cache_bytes": 45292352
+}

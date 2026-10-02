@@ -1,0 +1,42 @@
+{
+  "role": "NEW_DEV_SEEN_MATCHED_SUPPORT_PHYSICAL_CONTENT_NULL",
+  "scope": "Source1808tasks/575genes/2840genes; five outer and four inner folds; no MC reads",
+  "builders": [
+    "B1_HGB",
+    "B2_Pointwise"
+  ],
+  "seeds": [
+    20260930,
+    20261001,
+    20261002
+  ],
+  "null_orders": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "actual_risk_fits": 1200,
+  "CPU_minutes_cap": 30,
+  "GPU_hours_cap": 0.5,
+  "selection": "Fixed B1 and B2, all3seeds/5orders; no outcome selection",
+  "donors": "Only actual outer/inner Public fit bank; fit recipients undergo fixed hash cyclic effect permutation",
+  "query_donors": "Hash selection from same matching bin in actual fit bank, never query genes or current-context treated query experiments",
+  "matching": "Physical source context plus fit-only log1p(n_cells) decile; preserve metadata, controls, support and eligibility",
+  "sparse_matching": "Singletons and no donor bins retained and explicitly marked; effective shuffle rate reported",
+  "recomputation": "Effect features, within-set conflict, frozen model inputs/PCA codes, weights, prior, dispersion and prediction discrepancy",
+  "biology_fit": "Frozen real model parameters, no null biology fits; original outer B1 real fits reproduced from saved real arrays",
+  "risk_fit": "Identical source-family same-context rows/CDF labels, UniversalP and HGB config; each null seed/order refitted",
+  "primary": "Equal20context×outerfold macro, then seed/order metric means; same575-gene paired bootstrap5000",
+  "safety": "Macro ratio5% and miss+.02; delta.005,60%nonnegative,80%valid,CI lower>=-.005; worst strata transparent",
+  "MC_TEST_reads": 0,
+  "code_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_publicset_content_null_v1.py",
+    "sha256": "cddfbc96e8f02db8ae970b6ee5e8067ae7a182b0c8b34c28f3715f4a3d3e80a6"
+  },
+  "risk_runner_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_publicset_risk_followup_v1.py",
+    "sha256": "bdae6a71e6444bbe927734fb4387f9ec8172e0b5f3b2e91f44bf56815546ff40"
+  }
+}

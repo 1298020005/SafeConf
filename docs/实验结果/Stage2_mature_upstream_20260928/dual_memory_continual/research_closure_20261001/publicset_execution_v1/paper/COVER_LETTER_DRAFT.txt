@@ -1,0 +1,27 @@
+Draft for author completion — 2 October 2026
+
+Editor-in-Chief
+IEEE Transactions on Computational Biology and Bioinformatics
+
+Dear Editors,
+
+Please consider our manuscript, “SafeConf: Public Experimental References for Task-Level Reliability of Perturbation Predictions,” for publication in IEEE Transactions on Computational Biology and Bioinformatics.
+
+The manuscript studies a practical problem in computational biology: ranking unreliable single-cell perturbation predictions when experimental follow-up is limited and a deployed predictor has not yet accumulated its own risk-training labels. SafeConf separates real biological experiments that construct a public reference, errors of source predictors that train a shared risk function, and subsequent target feedback that supports personalization. A weighted historical-distance identity supplies an interpretable comparator, and the evaluation distinguishes the information contributed by each component from the choice of risk learner or public representation.
+
+The completed experiments show useful source-error supervision within the current architecture pair, including a controlled comparison with a biological-magnitude label proxy. They also identify clear limits: superiority over the strongest simple Source baseline remains unresolved, public support is a strong McFaline comparator, the frozen Orion evaluation fails its safety criterion, and the native512 scGPT/GEARS analysis remains retrospective stress evidence because all six upstream assets fail the registered competence gate. A fixed Ridge score repair corrects a mathematical output defect without resolving the transferred ordering deficits. These results support a modular method and a documented release rule that can reject an update even when biological reconstruction improves.
+
+We believe the paper is relevant to TCBB because it combines a computational reliability method with explicit biological evidence contracts, experiment-level provenance, controlled information budgets, and reproducible evaluation. The accompanying manuscript package supplies source-linked result tables, hashes, six figures, supplementary methods, executable entry points, source snapshots, and the actual main and supplement PDF build records. The complete five-fold four-arm comparison separates historical-effect data alignment from reference architecture: pointwise neural weighting improves specific Source comparisons, whereas collection-level interaction does not establish a consistent increment. Strong simple matching references remain visible, including same-context support in McFaline. The registered fully nested readers and source-label controls further delimit which supervision and component combinations support the reliability result.
+
+[AUTHOR CONFIRMATION: Insert the journal-required statement concerning originality and previous dissemination.]
+[AUTHOR CONFIRMATION: Insert the statement concerning exclusive submission and approval by all authors.]
+[AUTHOR CONFIRMATION: Insert competing interests, funding, ethical/data-use declarations, and related manuscripts as applicable.]
+
+Thank you for considering the manuscript.
+
+Sincerely,
+[CORRESPONDING AUTHOR NAME]
+[DEPARTMENT / INSTITUTION]
+[POSTAL ADDRESS]
+[EMAIL]
+On behalf of [AUTHOR NAMES]

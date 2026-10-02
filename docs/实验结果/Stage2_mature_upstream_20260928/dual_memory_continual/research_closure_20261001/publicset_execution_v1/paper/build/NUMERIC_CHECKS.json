@@ -1,0 +1,439 @@
+{
+  "passed": true,
+  "display_cells_checked": 57,
+  "manifest_hashes_checked": 22,
+  "latex_environments_balanced": true,
+  "latex_compilation": "FAILED",
+  "new_model_fits": 0,
+  "new_test_truth_reads": 0,
+  "checks": [
+    {
+      "name": "Table2/Exphormer_to_GAT/Magnitude",
+      "display": "0.7488",
+      "expected": 0.7488075736775921,
+      "pass": true
+    },
+    {
+      "name": "Table2/GAT_to_Exphormer/Magnitude",
+      "display": "0.7463",
+      "expected": 0.7462526883520952,
+      "pass": true
+    },
+    {
+      "name": "Table2/TxPert_to_McFaline/Magnitude",
+      "display": "-0.2047",
+      "expected": -0.2047221498808527,
+      "pass": true
+    },
+    {
+      "name": "Table2/Exphormer_to_GAT/Prediction_hgb",
+      "display": "0.7590",
+      "expected": 0.7589530382157993,
+      "pass": true
+    },
+    {
+      "name": "Table2/GAT_to_Exphormer/Prediction_hgb",
+      "display": "0.7527",
+      "expected": 0.7527140538641315,
+      "pass": true
+    },
+    {
+      "name": "Table2/TxPert_to_McFaline/Prediction_hgb",
+      "display": "-0.0085",
+      "expected": -0.0085326717752521,
+      "pass": true
+    },
+    {
+      "name": "Table2/Exphormer_to_GAT/Manual_WeightedHistoryDistance",
+      "display": "0.5698",
+      "expected": 0.5697881951477619,
+      "pass": true
+    },
+    {
+      "name": "Table2/GAT_to_Exphormer/Manual_WeightedHistoryDistance",
+      "display": "0.5686",
+      "expected": 0.5686364141425733,
+      "pass": true
+    },
+    {
+      "name": "Table2/TxPert_to_McFaline/Manual_WeightedHistoryDistance",
+      "display": "0.7113",
+      "expected": 0.7112946986099352,
+      "pass": true
+    },
+    {
+      "name": "Table2/Exphormer_to_GAT/Learned_WeightedHistoryDistance",
+      "display": "0.5935",
+      "expected": 0.5935182920414499,
+      "pass": true
+    },
+    {
+      "name": "Table2/GAT_to_Exphormer/Learned_WeightedHistoryDistance",
+      "display": "0.5923",
+      "expected": 0.5923364888635573,
+      "pass": true
+    },
+    {
+      "name": "Table2/TxPert_to_McFaline/Learned_WeightedHistoryDistance",
+      "display": "0.7297",
+      "expected": 0.7296722722493577,
+      "pass": true
+    },
+    {
+      "name": "Table2/Exphormer_to_GAT/Manual_hgb",
+      "display": "0.7805",
+      "expected": 0.7805483551377033,
+      "pass": true
+    },
+    {
+      "name": "Table2/GAT_to_Exphormer/Manual_hgb",
+      "display": "0.7860",
+      "expected": 0.7860076364544146,
+      "pass": true
+    },
+    {
+      "name": "Table2/TxPert_to_McFaline/Manual_hgb",
+      "display": "0.6488",
+      "expected": 0.6488143600367956,
+      "pass": true
+    },
+    {
+      "name": "Table2/Exphormer_to_GAT/Learned_hgb",
+      "display": "0.7831",
+      "expected": 0.7831344174038858,
+      "pass": true
+    },
+    {
+      "name": "Table2/GAT_to_Exphormer/Learned_hgb",
+      "display": "0.7837",
+      "expected": 0.7837434058355868,
+      "pass": true
+    },
+    {
+      "name": "Table2/TxPert_to_McFaline/Learned_hgb",
+      "display": "0.6953",
+      "expected": 0.6952528848584625,
+      "pass": true
+    },
+    {
+      "name": "Table5/0.1/Shared",
+      "display": "0.5711",
+      "expected": 0.5710549452558813,
+      "pass": true
+    },
+    {
+      "name": "Table5/0.1/TargetOnly_HGB",
+      "display": "0.0807",
+      "expected": 0.0806939449943946,
+      "pass": true
+    },
+    {
+      "name": "Table5/0.1/PublicTarget_HGB",
+      "display": "0.0807",
+      "expected": 0.0806939449943946,
+      "pass": true
+    },
+    {
+      "name": "Table5/0.1/SharedTarget_HGB",
+      "display": "0.0807",
+      "expected": 0.0806939449943946,
+      "pass": true
+    },
+    {
+      "name": "Table5/0.1/ResidualHGB",
+      "display": "0.5711",
+      "expected": 0.5710549452558813,
+      "pass": true
+    },
+    {
+      "name": "Table5/0.25/Shared",
+      "display": "0.5711",
+      "expected": 0.5710549452558813,
+      "pass": true
+    },
+    {
+      "name": "Table5/0.25/TargetOnly_HGB",
+      "display": "0.0884",
+      "expected": 0.088444661248843,
+      "pass": true
+    },
+    {
+      "name": "Table5/0.25/PublicTarget_HGB",
+      "display": "0.7848",
+      "expected": 0.7848162620687059,
+      "pass": true
+    },
+    {
+      "name": "Table5/0.25/SharedTarget_HGB",
+      "display": "0.7848",
+      "expected": 0.7848162620687066,
+      "pass": true
+    },
+    {
+      "name": "Table5/0.25/ResidualHGB",
+      "display": "0.7348",
+      "expected": 0.7347595114238298,
+      "pass": true
+    },
+    {
+      "name": "Table5/0.5/Shared",
+      "display": "0.5711",
+      "expected": 0.5710549452558813,
+      "pass": true
+    },
+    {
+      "name": "Table5/0.5/TargetOnly_HGB",
+      "display": "0.0984",
+      "expected": 0.0983604440772719,
+      "pass": true
+    },
+    {
+      "name": "Table5/0.5/PublicTarget_HGB",
+      "display": "0.7498",
+      "expected": 0.7497859611178509,
+      "pass": true
+    },
+    {
+      "name": "Table5/0.5/SharedTarget_HGB",
+      "display": "0.7153",
+      "expected": 0.715272399558343,
+      "pass": true
+    },
+    {
+      "name": "Table5/0.5/ResidualHGB",
+      "display": "0.7408",
+      "expected": 0.7407562955161257,
+      "pass": true
+    },
+    {
+      "name": "Table5/0.75/Shared",
+      "display": "0.5711",
+      "expected": 0.5710549452558813,
+      "pass": true
+    },
+    {
+      "name": "Table5/0.75/TargetOnly_HGB",
+      "display": "0.1515",
+      "expected": 0.151475110748164,
+      "pass": true
+    },
+    {
+      "name": "Table5/0.75/PublicTarget_HGB",
+      "display": "0.8167",
+      "expected": 0.8167288623085365,
+      "pass": true
+    },
+    {
+      "name": "Table5/0.75/SharedTarget_HGB",
+      "display": "0.7501",
+      "expected": 0.7500513279369372,
+      "pass": true
+    },
+    {
+      "name": "Table5/0.75/ResidualHGB",
+      "display": "0.8054",
+      "expected": 0.8054311220465972,
+      "pass": true
+    },
+    {
+      "name": "Table5/1.0/Shared",
+      "display": "0.5711",
+      "expected": 0.5710549452558813,
+      "pass": true
+    },
+    {
+      "name": "Table5/1.0/TargetOnly_HGB",
+      "display": "0.0833",
+      "expected": 0.0832525099866143,
+      "pass": true
+    },
+    {
+      "name": "Table5/1.0/PublicTarget_HGB",
+      "display": "0.7747",
+      "expected": 0.7747467137317625,
+      "pass": true
+    },
+    {
+      "name": "Table5/1.0/SharedTarget_HGB",
+      "display": "0.7742",
+      "expected": 0.7741767458862568,
+      "pass": true
+    },
+    {
+      "name": "Table5/1.0/ResidualHGB",
+      "display": "0.7846",
+      "expected": 0.7846316250161203,
+      "pass": true
+    },
+    {
+      "name": "Table6/GEARS_to_scGPT/PublicHGB",
+      "display": "0.7014",
+      "expected": 0.7014217424553758,
+      "pass": true
+    },
+    {
+      "name": "Table6/GEARS_to_scGPT/Magnitude",
+      "display": "0.1087",
+      "expected": 0.1087324058650845,
+      "pass": true
+    },
+    {
+      "name": "Table6/GEARS_to_scGPT/paired_delta",
+      "display": "-0.0582",
+      "expected": -0.0582463367943724,
+      "pass": true
+    },
+    {
+      "name": "Table6/GEARS_to_scGPT/interval",
+      "display": "[-0.1446, 0.0155]",
+      "pass": true
+    },
+    {
+      "name": "Table6/scGPT_to_GEARS/PublicHGB",
+      "display": "0.7401",
+      "expected": 0.740098885592736,
+      "pass": true
+    },
+    {
+      "name": "Table6/scGPT_to_GEARS/Magnitude",
+      "display": "0.3789",
+      "expected": 0.3788692886091601,
+      "pass": true
+    },
+    {
+      "name": "Table6/scGPT_to_GEARS/paired_delta",
+      "display": "-0.1239",
+      "expected": -0.1239035126832557,
+      "pass": true
+    },
+    {
+      "name": "Table6/scGPT_to_GEARS/interval",
+      "display": "[-0.2410, -0.0552]",
+      "pass": true
+    },
+    {
+      "name": "Table7/guide",
+      "display": "0.7113",
+      "expected": 0.7112946986099349,
+      "pass": true
+    },
+    {
+      "name": "Table7/cell",
+      "display": "0.8343",
+      "expected": 0.8343137534427231,
+      "pass": true
+    },
+    {
+      "name": "Table7/FrozenGuideEqualReference/delta",
+      "display": "0.1230",
+      "expected": 0.1230190548327881,
+      "pass": true
+    },
+    {
+      "name": "Table7/FrozenGuideEqualReference/interval",
+      "display": "[0.0561, 0.1986]",
+      "pass": true
+    },
+    {
+      "name": "Table7/NegativeHistorySupport/delta",
+      "display": "0.0072",
+      "expected": 0.0071848755137156,
+      "pass": true
+    },
+    {
+      "name": "Table7/NegativeHistorySupport/interval",
+      "display": "[-0.0391, 0.0553]",
+      "pass": true
+    }
+  ],
+  "hash_checks": [
+    {
+      "source": "common_gene_axis/results/MATRIX_MACRO_RESULTS.csv",
+      "pass": true
+    },
+    {
+      "source": "common_gene_axis/results/STRICT_FEEDBACK_MACRO.csv",
+      "pass": true
+    },
+    {
+      "source": "common_gene_axis/results/STRICT_FEEDBACK_INFORMATION_LEDGER.csv",
+      "pass": true
+    },
+    {
+      "source": "common_gene_axis/results/SUPPORT_CONTROL_MACRO.csv",
+      "pass": true
+    },
+    {
+      "source": "source_magnitude_comparator_completion_v1/ALL6_FIXED_PAIRED_COMPARATORS.csv",
+      "pass": true
+    },
+    {
+      "source": "source_biology_label_control_v1/PAIRED_METRICS.csv",
+      "pass": true
+    },
+    {
+      "source": "orion_preparation/actual_fixed_result_tables_v1/METHOD_METRIC_INTERVALS.csv",
+      "pass": true
+    },
+    {
+      "source": "orion_preparation/actual_fixed_result_tables_v1/ALL_PRESPECIFIED_PAIRED_COMPARISONS.csv",
+      "pass": true
+    },
+    {
+      "source": "orion_preparation/actual_fixed_result_tables_v1/COHORT_COVERAGE.csv",
+      "pass": true
+    },
+    {
+      "source": "common_gene_axis/results/official_pertema_adaptation/MACRO.csv",
+      "pass": true
+    },
+    {
+      "source": "common_gene_axis/results/native_control_pertema_adaptation/MACRO.csv",
+      "pass": true
+    },
+    {
+      "source": "frangieh_cross_family_v1/MACRO_RESULTS.csv",
+      "pass": true
+    },
+    {
+      "source": "frangieh_cross_family_v1/PAIRED_BOOTSTRAP.csv",
+      "pass": true
+    },
+    {
+      "source": "frangieh_cross_family_v1/UPSTREAM_COMPETENCE.csv",
+      "pass": true
+    },
+    {
+      "source": "frangieh_cross_family_v1/HISTORY_COVERAGE.csv",
+      "pass": true
+    },
+    {
+      "source": "frangieh_cross_family_v1/RidgeScoreRepair/MACRO_RESULTS.csv",
+      "pass": true
+    },
+    {
+      "source": "frangieh_cross_family_v1/RidgeScoreRepair/PAIRED_BOOTSTRAP.csv",
+      "pass": true
+    },
+    {
+      "source": "frangieh_cross_family_v1/RidgeScoreRepair/SCORE_REPAIR_LEDGER.csv",
+      "pass": true
+    },
+    {
+      "source": "common_gene_axis/reference_estimand_diagnostic/MACRO.csv",
+      "pass": true
+    },
+    {
+      "source": "common_gene_axis/reference_estimand_diagnostic/PAIRED_COMPARISONS.csv",
+      "pass": true
+    },
+    {
+      "source": "common_gene_axis/reference_estimand_risk_replay/MACRO.csv",
+      "pass": true
+    },
+    {
+      "source": "common_gene_axis/reference_estimand_risk_replay/PAIRED_COMPARISONS.csv",
+      "pass": true
+    }
+  ]
+}

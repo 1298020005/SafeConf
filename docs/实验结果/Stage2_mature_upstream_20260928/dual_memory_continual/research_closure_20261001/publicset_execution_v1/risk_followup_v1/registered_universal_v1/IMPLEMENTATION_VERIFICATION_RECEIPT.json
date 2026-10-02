@@ -1,0 +1,9 @@
+{
+  "old_hgb_fits_preserved": 160,
+  "new_hgb_fits_current": 160,
+  "null_hgb_fits_current": 0,
+  "old_and_new_model_roots_disjoint": true,
+  "original_registered_UniversalP_exact_numeric_check": true,
+  "MC_TEST_reads": 0,
+  "audit_error_repair": "Teacher lineage task IDs are the set_index task_id index; replace base.task_id by base.index"
+}

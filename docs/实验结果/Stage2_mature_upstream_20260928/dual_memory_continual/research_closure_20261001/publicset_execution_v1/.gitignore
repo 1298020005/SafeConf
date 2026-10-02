@@ -1,0 +1,7 @@
+paper/build/toolchain/
+paper/build/*.aux
+paper/build/*.log
+paper/build/*.blg
+paper/build/*.xdv
+**/__pycache__/
+statistics_v1/BOOTSTRAP*_DRAWS.npz

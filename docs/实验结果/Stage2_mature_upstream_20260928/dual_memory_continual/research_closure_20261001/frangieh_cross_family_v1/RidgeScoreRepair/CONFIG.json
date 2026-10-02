@@ -1,0 +1,16 @@
+{
+  "version": "frangieh_native512_RidgeScoreRepair_v1",
+  "data_role": "SEEN_post_primary_technical_output_repair",
+  "formula": "0.5 + arctan(raw_ridge_score - 0.5) / pi",
+  "parameter_search": false,
+  "new_fits": 0,
+  "upstream_competence_unchanged": true,
+  "is_calibrated_percentile": false,
+  "hypothesis": "hard clipping destroyed the ordering of extrapolated Ridge scores",
+  "model_scope": "PredictionRidge and PublicRidge; both transfer directions; all original/risk folds",
+  "evaluation": "same target tasks and errors; fixed 5000 synchronized gene draws",
+  "seed": 20261002,
+  "replicates": 5000,
+  "pid": 1553634,
+  "started_at": "2026-10-02T22:10:50.650886+08:00"
+}

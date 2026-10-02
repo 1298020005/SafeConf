@@ -1,0 +1,1331 @@
+                                                                                                                                      1
+
+
+
+
+    SafeConf: Public Experimental References for
+   Task-Level Reliability of Perturbation Predictions
+                                             Author names: [AUTHOR NAMES]
+                                        Afﬁliation: [DEPARTMENT / INSTITUTION]
+                                          Corresponding author: [NAME], [EMAIL]
+
+
+
+   Abstract—Single-cell perturbation predictors produce thou-         suitable errors from the predictor being deployed. At ﬁrst
+sands of expression proﬁles, whereas experimental follow-up           deployment, a new predictor may have produced current
+is limited. A useful reliability system should rank likely pre-       predictions but have few or no locally available risk-training
+diction errors even when a newly deployed predictor has not
+accumulated its own error labels. We introduce SafeConf, a            labels. Meanwhile, other information can already exist: public
+modular framework that separates three information sources:           perturbation experiments in related conditions and past errors
+real biological experiments used to construct a public refer-         of other predictors. These resources have different meanings.
+ence, errors of existing predictors used to learn a shared risk       Biological experiments describe what happened in the under-
+function, and subsequent feedback from the target predictor           lying system; predictor errors describe how a computational
+used for personalization. Public reference learning uses biological
+response supervision rather than predictor errors; the risk           model departed from that system. Combining them without
+layer combines prediction statistics, reference discrepancies, and    separating their roles can obscure whether a method beneﬁts
+evidence support. A weighted historical-distance rule provides an     from biological content, additional supervision, or simply
+interpretable, label-free comparator. Experiments on a common         more precise measurements.
+2,840-gene axis include 1,808 biological tasks for two TxPert            SafeConf organizes these sources into a two-stage estimator
+architectures and 543 tasks for an external McFaline predictor.
+Shared risk reaches Utility@20 of 0.7831 and 0.7837 for the two       with an optional target-feedback extension. A public module
+cross-architecture directions, compared with 0.5935 and 0.5923        constructs a biological reference from eligible historical ex-
+for the corresponding historical-distance rule. Gains over the        periments. A risk model then learns how a prediction, the
+stronger magnitude baseline remain uncertain. In McFaline,            reference, and their disagreement relate to realized error. The
+public distance is informative, but source-supervised risk does       public module is trained on biological reconstruction, whereas
+not improve on it. A separately frozen Orion evaluation further
+exposes limited public-history coverage and uncertain cross-study     the risk model is trained on errors of source predictors. At
+transfer. Target feedback improves risk ranking when combined         target inference, source errors are represented by the ﬁtted
+with public evidence, without demonstrating consistent additional     risk function; the current implementation does not retrieve
+beneﬁt from the shared score. A completed ﬁve-fold reference          individual source errors for each query. As target outcomes
+comparison ﬁnds gains from pointwise neural weighting on              arrive, a target-speciﬁc learner can use public features and,
+Source, but no consistent increment from learned set context; in
+McFaline, same-context support aggregation matches or exceeds         optionally, the shared risk score.
+the neural point estimates. These results support reference-based        This design yields three falsiﬁable questions. First, does
+reliability with separately assessed source transfer and target       public evidence improve ranking beyond features of the cur-
+adaptation.                                                           rent prediction? Second, do source errors improve the use of
+Index terms—single-cell perturbation prediction; reliability          the same public evidence beyond a direct historical-distance
+estimation; public experimental evidence; error supervision;          rule? Third, after target feedback becomes available, does the
+selective review; target adaptation.                                  shared score still add information beyond public features and
+                                                                      target errors? These are information comparisons. They differ
+                                                                      from comparing two learners with identical features and labels.
+                       I. I NTRODUCTION                                  We study these questions using cross-architecture tasks, an
+   Perturbation prediction connects an intervention, a cellu-         external predictor, a separately frozen cross-study evaluation,
+lar context, and a predicted transcriptional response. Such           and ﬁxed-budget feedback experiments. The resulting picture
+predictions are increasingly used to prioritize experiments.          is heterogeneous. Source supervision adds useful information
+Average predictive accuracy, however, does not identify the           within the current model family, while the cross-study results
+individual tasks that require additional review. A predictor may      favor a simpler public reference or remain inconclusive. Public
+perform acceptably on a benchmark while failing on speciﬁc            support is itself a strong signal in one study, requiring biolog-
+interventions or unfamiliar contexts. Conversely, a moderate          ical content to be tested against support-matched controls. We
+predictor may still provide useful predictions when its errors        therefore develop SafeConf as a reusable reliability interface
+can be ranked. This distinction makes task-level reliability a        and empirically examine the conditions under which its com-
+practical problem separate from building another perturbation         ponents contribute.
+predictor.                                                               The contributions of this manuscript are: (i) a public-
+   A common solution is to learn a post-hoc error estimator           reference formulation for task-level risk estimation with an ex-
+from past predictions and observed outcomes. This requires            plicit separation between biological supervision and predictor-
+                                                                                                                                     2
+
+
+
+error supervision; (ii) an interpretable weighted-distance com-     inﬂate correlation and cosine-based comparisons of differential
+parator and controlled tests of the incremental value of            responses [?]. Our primary outcome is task RMSE on a
+source errors; and (iii) a target-feedback and versioned-update     documented effect contract; direction and correlation remain
+protocol that measures personalization at a common error-           secondary outcomes whose control construction must be re-
+label budget. The public-reference comparison additionally          ported.
+separates data-contract alignment from representation choice,          Deep Sets provides permutation-invariant representations
+and tests a pointwise network and a set-conditioned network         for unordered collections [?], while Set Transformer adds
+against ﬁxed context, condition and support references. Neural      attention-based interactions [?]. We use these works as ar-
+set interactions are treated as an empirical component choice;      chitecture precedents. The evaluated small public set builder
+the general set-learning operator is established prior work.        is an application to biological reference selection, not a new
+                                                                    general set-learning operator. Its value must be established
+                     II. R ELATED W ORK                             against the existing per-history tree scorer and simple reference
+                                                                    aggregation.
+A. Post-hoc reliability and target-speciﬁc error learning
+   Risk Advisor learns a post-hoc meta-model to characterize                                III. S AFE C ONF
+failures of trained black-box classiﬁers and supports appli-
+                                                                    A. Problem setting and available information
+cations including abstention and shift diagnosis [?]. This
+establishes that learning reliability outside an upstream model        A biological task q identiﬁes a study, cellular context,
+is not itself a new contribution. SafeConf addresses vector-        perturbation, condition, and control/effect deﬁnition. A frozen
+valued perturbation effects and separates errors from other         upstream predictor m produces an aligned effect vector p(m,q)
+predictors from target-speciﬁc feedback.                            over G genes. The observed effect y(q), when available, deﬁnes
+   PertEMA is a public software implementation of post-hoc          realized task error:
+perturbation reliability estimation. It uses out-of-fold errors,                              √
+                                                                                                 1
+a gradient-boosted estimator, isotonic calibration, and split-                     e(m, q) =       ∥p(m, q) − y(q)∥22 .
+conformal intervals. Its documentation instructs users to reﬁt                                   G
+for a new screen, and currently speciﬁes a software citation           The risk estimator returns a scalar r(m,q), with larger values
+rather than an accompanying paper [?]. We use its ﬁxed              indicating a higher expected ranking of error. It does not
+estimator factory as an adapted target-feedback comparator.         change the upstream prediction. Its output is a ranking score,
+SafeConf’s candidate distinction is the use of reusable public      not automatically a calibrated error probability.
+biological references and source-predictor error supervision           We distinguish three information sets. Public evidence con-
+before target risk labels become available, not the invention       tains real experimental effects h(i), context and perturbation
+of target-speciﬁc error learning.                                   metadata, support, repeatability measurements when available,
+                                                                    and provenance. Source supervision contains errors of regis-
+                                                                    tered predictors on eligible historical tasks. Target feedback
+B. Biological evidence and uncertainty
+                                                                    contains outcomes that have returned for the speciﬁc deployed
+    PRESCRIBE models perturbation-response uncertainty              model and version. The latter two are separated by predictor
+through a multivariate evidential framework that combines lo-       identity for storage and budget accounting, even when the ﬁnal
+cal training evidence and response variability [?]. It is closely   risk features omit identity.
+related to the interpretation of similarity and experimental           Direct-effect outputs are used directly. Treated-state outputs
+quality, but requires a specialized predictive model rather than    are converted using a matched predicted or observed control
+a generic post-hoc interface to frozen predictions. Accordingly,    as speciﬁed by the output contract. Gene identiﬁers, ordering,
+conceptual comparison and any compatible native uncertainty         normalization, and missing-gene policy are ﬁxed before error
+experiments are distinguished from equal-information post-hoc       computation. Missing genes are not ﬁlled with artiﬁcial zero
+baselines.                                                          effects. The common-axis experiments use 2,840 genes; the
+    A recent perturbation-reliability study examines the re-        ﬁxed Orion experiment uses a distinct 3,285-gene contract.
+producibility of measured responses, separates shared from          Raw error values from these contracts are not pooled.
+perturbation-speciﬁc effects, and studies the consequences of
+quality ﬁltering [?]. This work makes experimental reliability      B. Public biological references
+a substantive competitor to purely model-based explanations.
+SafeConf preserves support and repeatability as distinct quan-         For task q, the eligibility operator returns a set H(q) of his-
+tities and evaluates biological content against support-only        torical experiments. It excludes the current task and prohibited
+rules. It does not treat quality labels or shared task difﬁculty    experimental relatives; information about independent study,
+as original concepts.                                               replicate group, batch, and prior exposure is retained. The
+                                                                    implemented Source references mainly reuse the same pertur-
+                                                                    bation in other cellular contexts. This supports related-history
+C. Evaluation and set-based reference learning                      deployment and does not by itself solve new-perturbation tasks
+  PerturBench provides datasets, prediction interfaces, and         with no suitable history.
+evaluation tools for perturbation analysis [?]. Complementary          Each eligible history has a normalized weight w(i,q). The
+evaluation work shows that reusing a control population can         reference mean and its weighted dispersion are:
+                                                                                                                                    3
+
+
+
+                                                                       The ﬁxed mixture restricts the attainable references. A
+      ∑                     ∑       ∥hi − µq ∥22       ∑            development-only     constrained oracle therefore measures how
+µq =       wiq hi ,     σq2 =   wiq              ,           wiq = 1.well the same allowed mixtures could reconstruct each bi-
+        i                       i
+                                        G                 i         ological response. This is a diagnostic for representational
+   Uniform aggregation, cell-support-weighted aggregation, headroom, not a feasible risk predictor or an upper bound
+and a learned per-history scorer are evaluated. The com- on Utility@20. If biological reconstruction improves without
+pleted learned builder predicts a biological transfer error better risk ranking, the ﬁxed history rule and the predeclared
+from features of a query-history pair. These include control- HGB reader are evaluated separately. All four builders are
+state similarity, historical effect summaries, support fractions, evaluated on the same outer query folds. The primary ﬁxed
+conﬂict, and available quality measurements. Its supervision reader is the weighted historical rule R_H; direct prediction-
+is the discrepancy between a historical effect and a held- reference RMSE is an auxiliary reader. A separate nested risk-
+out biological response, independently of upstream prediction reader comparison assesses each builder through supervised
+errors. Predicted transfer errors are converted to nonnegative risk estimation, so failure of a ﬁxed reference rule does not
+weights and mixed equally with the existing support weights. decide the builder-reader combination.
+The original conversion uses the spread of candidate scores;
+the previously tested out-of-fold residual-temperature variant D. Source-supervised risk mapping
+did not satisfy the adoption criterion and is not substituted into
+the reported results.                                                  The risk input comprises six prediction summaries and
+   Support and quality are different. Counts describe how           seven    public-reference features. Prediction summaries are
+much material supports a record; repeat consistency describes       magnitude,    mean absolute value, signed mean, standard de-
+how reproducible its effect is. Unknown quality is retained as      viation,  absolute 95th percentile, and sparsity. Public features
+missing. In particular, a weight concentrated on one histori-       are prior  magnitude,  prediction-prior RMSE, cosine similarity,
+cal record can reduce weighted dispersion without resolving         prior  dispersion,  log  support, effective number of sources,
+disagreement in the original set. The risk interface therefore      and   original history  conﬂict. Training-derived preprocessing
+retains a summary of the original eligible-history conﬂict          and   missing   indicators  follow  the frozen implementation;
+separately from the chosen weights.                                 identity  and  optional  model-native  uncertainty indicators are
+                                                                    not introduced as model identiﬁers.
+                                                                       The shared risk function is a histogram gradient-boosted
+C. Matched public-reference builders                                regressor with 200 iterations, learning rate 0.05, depth 3,
+   The four-arm comparison changes the public weight scorer minimum leaf size 20, and L2 regularization 10. Ridge with
+while preserving eligible records, the biological reconstruction alpha 10 is a simple supervised comparator. Source errors are
+target and the full-effect output contract. B0 uses the support- converted to training-distribution midrank empirical-CDF la-
+weighted mean, B1 uses the per-history HGB scorer, B2 uses bels within their documented study, predictor/version, context,
+a pointwise network, and B3 uses a set-conditioned network. and output-contract groups. Every budget uses only the labels
+The latter encodes each history and its relationship to the query permitted by that budget to construct its CDF. The CDF is
+using a small network, then conditions a nonlinear score on a training normalization device; the resulting score is not the
+the mean of all valid history encodings:                            unknown target predictor’s actual error percentile.
+                                                                       For a new predictor C, the shared function uses C’s present
+                               1 ∑                                  predictions and the public reference features. C’s realized
+ui = ϕ(xi , q),       cq =             ui ,    ai = softmaxi {g([ui , cq ])}.
+                            |H(q)| i                                risk labels are not required for this inference path. Source
+                                                                    errors have inﬂuenced model parameters, rather than being
+   The reference weights remain w(i,q)=0.5a(i,q)+0.5s(i,q),
+                                                                    directly queried at inference. Target validation outcomes used
+where s denotes the existing support distribution. A pointwise-
+                                                                    for upstream predictor calibration are reported separately from
+network comparator uses the same inputs and training protocol
+                                                                    risk-model training labels.
+with the learned set context removed. This comparison isolates
+the incremental use of learned collection-level information
+without claiming that the pointwise comparator lacks all E. A strong reference-only risk rule
+manually constructed conﬂict summaries.                                A simple comparator uses the discrepancy from the refer-
+   The two neural builders use 32 training-ﬁtted principal com- ence and its dispersion:
+ponents of the historical effect for scoring, a two-layer width-
+                                                                                   √                       √
+64 encoder, and a 128-to-64-to-1 nonlinear score head. Ag-                            ∥pq − µq ∥22            ∑       ∥pq − hi ∥22
+gregation is permutation invariant and masks padded records.            RH (q) =                   + σq2 =        wiq              .
+                                                                                           G                   i
+                                                                                                                          G
+The output mean remains a weighted combination of the full
+aligned effect vectors. Biological training minimizes recon-           The equality follows from the weighted bias-variance de-
+struction mean squared error, with equal total query weight composition on the same gene axis, mask, and weights. It does
+per biological cluster. AdamW uses learning rate 0.001, weight not require source error labels. Comparing a source-supervised
+decay 0.0001, effective batch size 32, and at most 100 epochs. learner with this rule asks whether learned error informa-
+Internal grouped validation selects the stopping epoch, fol- tion improves on the historical discrepancy already available.
+lowed by a fresh ﬁt on the permitted training partition.            Comparison with an otherwise identical learner trained on
+                                                                                                                                     4
+
+
+
+permuted source labels further isolates the correspondence           B. Splits, teacher exposure, and nesting
+between source tasks and their errors. Neither comparison               Biological-cluster splits keep all predictor outputs for the
+alone proves cross-study transfer.                                   same true task together. An outer fold assesses risk; inner
+   When H(q) is empty, a historical rule is unavailable; it does     folds generate public features used for risk training. Public
+not receive an artiﬁcial zero effect. History-conditioned com-       preprocessing, learned reference construction, CDF ﬁtting, and
+parisons use the common evaluable cohort, and prediction-only        risk ﬁtting use their permitted partitions. In the new PublicSet
+methods additionally report whole-cohort coverage. A one-            branch, public builders share an outer gene fold across Source
+record history has zero empirical dispersion but no demon-           contexts, with query genes excluded from ﬁtting queries, ﬁtting
+strated absence of biological uncertainty.                           histories and PCA. McFaline excludes every outer evaluation
+                                                                     experimental record globally, including its use as another
+                                                                     query’s history; inner validation follows the same rule. Source
+F. Target feedback and versioned updating                            inference is a separately declared rotating-context deployment:
+   Once C has legitimate held-out errors, we ﬁt target-speciﬁc       same-perturbation evidence from other contexts is available,
+learners in four information conditions: Shared, Target-only,        while the current query experiment is excluded.
+Public+Target, and Shared+Target. The latter adds the pre-              For the new Source risk follow-up, error supervision is
+viously available shared score to the public and prediction          additionally scoped to the current inference context. Each
+features. Existing residual adaptation is evaluated as an alter-     source-architecture-to-target-architecture reader trains only on
+native, not a required ﬁnal layer. A model need not beneﬁt           source errors in that context and outer training genes, and
+from both source transfer and residual correction to be useful.      evaluates target errors in that context and outer test genes. Its
+                                                                     empirical CDF is ﬁtted only to those source-training errors.
+   Public memory is append-only and shared across predictors;
+                                                                     It does not mix teacher errors across contexts. The teacher
+error memory is scoped by predictor and checkpoint/version. A
+                                                                     audit checks 32 training/prediction records across E201/E205,
+public update can change the reference even without changing
+                                                                     four contexts and four seeds: target treated training and target
+network parameters. Consequently, a released version binds
+                                                                     perturbed access must both be zero, the current context must
+the memory snapshot, eligibility rules, preprocessing, public
+                                                                     be absent from the teacher’s training context list, and the
+builder, risk model, and affected target adapters. A candidate
+                                                                     ﬁnal checkpoint hash must match. A perturbation gene may
+is trained using previously available records, checked on
+                                                                     have been observed in another context; this does not make
+registered development and anchor tasks, and published as
+                                                                     the current biological query experiment an upstream training
+a compatible version or rejected while new records remain
+                                                                     example. These checks and the per-ﬁt CDF records bind the
+stored. Permanent evaluation outcomes do not select a release.
+                                                                     interpretation of the new risk results.
+The continual claim requires performance on subsequent tasks,
+                                                                        An independent experimental unit cannot enter the training
+beyond demonstrating that a retraining operation executed.
+                                                                     history of another query merely because that query has a
+                                                                     different identiﬁer. Holding out risk labels does not erase a
+                 IV. E XPERIMENTAL D ESIGN                           teacher’s prior exposure to the evaluated biological response,
+                                                                     so upstream exposure and risk-fold membership are reported
+A. Cohorts and evidence roles                                        separately.
+                                                                        The historical common-axis matrices retain their original
+   Table 1 lists the cohorts used here. Counts refer to biological   versioned development/seen scope. The new record-level his-
+tasks and gene clusters, not replicated rows across predic-          tory audits and context-scoped Source readers do not ret-
+tors or seeds. Source and McFaline common-axis results are           rospectively certify those older mixed-context matrices. The
+completed development/seen analyses. Orion’s original ﬁxed           context-scoped reader comparison is reported as a separate
+comparison was frozen before its once-only test evaluation;          version, while the older results provide an empirical baseline.
+subsequent Orion diagnostics are seen analyses. Historical           No study-holdout experiment is implied by gene grouping or
+E170 conﬁrmation belongs to an earlier method and used               by a context-speciﬁc teacher audit.
+target validation errors, so it is not presented as independent
+conﬁrmation of the current shared model.
+   For Source public learning, tasks have one to three eligi-        C. Comparators and label budgets
+ble historical records. The McFaline biological development             The completed core matrix contains 16 speciﬁed meth-
+cohort has seven to fourteen per task from a 7,173-record            ods: magnitude, manual-prior magnitude and dispersion,
+bank. These records share genes and conditions and are not           prediction-only Ridge/HGB, three public aggregators crossed
+counted as that many independent experiments. A newly                with direct distance/Ridge/HGB, and two weighted historical-
+completed Frangieh retrospective branch uses existing scGPT          distance rules. Source-label permutation, matched-support
+and GEARS predictions on their native 512-gene output                physical history permutations, and a biological-magnitude
+axis [?] [?]. Its source errors are original upstream held-out       label control test alternative explanations. A support-only
+errors, its public history is restricted to original upstream        rule and prediction-plus-support learner are retained as strong
+training/validation experiments, and risk-training folds are         comparators.
+separated by gene. The old upstream test has become seen                Target-feedback budgets are 10%, 25%, 50%, 75%, and
+risk-development evidence, rather than a new conﬁrmation set.        100% of the registered feedback pool. The evaluation pool
+                                                                                                                                       5
+
+
+
+   Table 1. Cohort                  Tasks / gene clusters           Gene axis                       Evidence role
+   TxPert Source, four contexts     1,808 / 575                     2,840                           Cross-architecture
+                                                                                                    development/seen
+   McFaline, full risk cohort       543 / 380                       2,840                           External predictor, seen
+                                                                                                    evaluation
+   McFaline, feedback evaluation    212 / 152                       2,840                           Fixed target-feedback
+   pool                                                                                             comparison
+   Orion, all eligible test tasks   2,993 / 1,750                   3,285                           Fixed external prediction cohort
+   Orion, common                    232 / 144                       3,285                           Original frozen primary
+   historical-reference cohort                                                                      comparison
+   Frangieh, retrospective          567 / 189                       512                             Seen stress analysis; upstream
+   cross-family tasks                                                                               competence failed
+   McFaline, reference-builder      542 / 377                       2,840                           Five-fold development/seen;
+   comparison                                                                                       aligned bank
+
+
+
+is disjoint. Error labels used for CDF estimation, ﬁtting, or                                 V. R ESULTS
+calibration are counted in the budget. Shared uses no newly
+                                                                  A. Public evidence and source supervision contribute differ-
+revealed target risk labels; target-only learners are unﬁt at
+                                                                  ently across settings
+zero feedback. McFaline upstream validation calibration is
+separately recorded, including 542 validation records; thus          Table 2 presents the completed common-axis matrix. Shared
+lack of target risk-training errors is not equated with the       error learning reaches high review utility in both architecture-
+entire upstream pipeline having never used a target validation    transfer  directions. Relative to the same learned weighted
+outcome.                                                          historical   rule, point increments are 0.1896 and 0.1914.
+   The PertEMA-derived comparator uses the ofﬁcial factory at     However,    magnitude    alone is already strong in Source. The
+commit 43c09a32e23d0ee2ae5dfbab21b2deeab27f1803.                  corresponding    shared-minus-magnitude     differences are 0.0343
+The adapter changes feature sets, uses the budget-speciﬁc         (95%   paired  interval -0.0093 to 0.0699)  and 0.0375 (-0.0030 to
+task-RMSE rank target, applies biological-cluster weights         0.0776).  Thus   source  supervision is useful relative to historical
+and registered seeds, and optionally uses grouped out-of-         distance,  while  an advantage   over the strongest  simple  Source
+fold isotonic calibration. No separate conformal sample           comparator    remains   unresolved.
+is allocated, so this is an estimator adaptation rather than         McFaline has a different information regime. Prediction-
+a reproduction of all original uncertainty guarantees. An         only  HGB is nearly uninformative, while public historical
+additional native-control feature version is reported separately. distance   attains 0.7297. The source-trained risk learner at-
+                                                                  tains 0.6953, a difference of -0.0344 from learned weighted
+D. Metrics and statistical analysis                               distance, with a paired interval of -0.1321 to -0.0086. The
+   For n tasks, let k=ceil(0.2n), S be the k tasks with highest portable resource is therefore not necessarily the entire source-
+predicted risk, and O the k tasks with highest realized error. trained error relationship. A useful public reference may
+Utility@20 is:                                                    survive a study shift even when the learned risk map does
+                                                                  not improve its interpretation.
+                                eS − e                               These differences also motivate separating the public builder
+                        U20 =           .
+                                eO − e                            from its reader. Source learned direct reference distance attains
+   Ties use task identiﬁers. A stratum with fewer than 20 only 0.2507 and 0.2788, whereas adding historical dispersion
+tasks or denominator at most 1e-12 is not evaluated. Larger yields 0.5935 and 0.5923. Learning a more accurate condi-
+Utility@20 means that a ﬁxed review budget captures more tional mean and constructing an effective risk ranking are
+of the attainable error enrichment. It is not classiﬁcation ac- distinct tasks.
+curacy or a percentage of correctly identiﬁed tasks. Spearman
+correlation, area under the risk-coverage curve, retained error
+                                                                  B. Source errors contain information beyond a biological-
+at 10/20/50% coverage, and high-risk miss rate complement
+                                                                  magnitude proxy
+the primary endpoint.
+   We macro-average the registered contexts and report valid         We hold the features, HGB, folds, weights, and CDF
+versus planned strata. Primary differences use 5,000 paired procedure ﬁxed and replace source error labels with the RMS
+biological-gene-cluster bootstrap draws, sampling all outputs magnitude of the true biological response. Table 3 shows
+of a biological unit together. Point differences are computed that the original error labels outperform this proxy in both
+from the actual estimates; bootstrap means are not substituted directions. This is a controlled positive result about the content
+for them. Repeated training seeds describe ﬁtting sensitivity, of source supervision, within the current architecture pair.
+not new independent biological observations. The displayed           Both directions share biological outcomes and belong to
+primary-seed results use the ﬁrst preregistered seed, 20260930; one model family. The comparison rejects equivalence to this
+all three seeds are included in the accompanying evidence particular magnitude proxy; it does not establish that all task-
+tables. Intervals condition on the ﬁtted models and do not difﬁculty proxies are inferior or that the supervision transfers
+include a complete bootstrap reﬁtting of training data.           to an independent family. Permuted-label and source-coverage
+                                                                                                                                     6
+
+
+
+   Table 2. Utility@20, common       Exphormer to GAT                GAT to Exphormer               TxPert to McFaline
+   2,840-gene axis
+   Prediction magnitude          0.7488                              0.7463                         -0.2047
+   Prediction-only HGB           0.7590                              0.7527                         -0.0085
+   Support-weighted historical   0.5698                              0.5686                         0.7113
+   distance
+   Learned weighted historical   0.5935                              0.5923                         0.7297
+   distance
+   Manual reference + source HGB 0.7805                              0.7860                         0.6488
+   Learned reference + source    0.7831                              0.7837                         0.6953
+   HGB
+
+  Table 3. Source           Error-label HGB             Biological-magnitude-   Difference                   Paired 95% interval
+  supervision control                                   label HGB
+  Exphormer to GAT          0.7831                      0.7310                  0.0522                       [0.0192, 0.0866]
+  GAT to Exphormer          0.7837                      0.7271                  0.0566                       [0.0257, 0.0947]
+
+
+
+analyses are retained in the supplemental evidence rather than       0.1793. Across 150 registered macro comparisons to strong
+counted as additional independent datasets.                          rules, the intervals include zero. These results show that simply
+                                                                     obtaining additional target labels is not sufﬁcient when public
+C. Support is a strong alternative explanation in McFaline           support is sparse and transferable ranking information remains
+                                                                     limited.
+   The negative log-history-support rule reaches Utility@20
+0.8271 in McFaline, above both learned public distance and
+source HGB. In Source the same rule reaches only 0.0961 and          E. Target feedback beneﬁts from public features, but extra
+0.0899. Consequently, a universal claim that support explains        shared scores are not uniformly useful
+all studies would be as inaccurate as attributing every public-         The strict McFaline feedback evaluation uses 212 tasks and
+evidence gain to biological content.                                 152 genes. Table 5 compares ﬁxed HGB variants at the same
+   Public evidence bundles response content, measurement             feedback budgets. These scores must not be subtracted from
+precision, availability, and experimental support. Matched-          the full 543-task results because the evaluation cohort differs.
+support history permutations and the source prediction-plus-            The small-budget tree models can be constant, for which
+support model help separate these contributions. The strong          Spearman is undeﬁned; the deterministic tie rule still yields
+McFaline support result remains in the main comparison, since        a numerical U20. Public features create a large improvement
+omitting it would exaggerate the necessity of a learned public       once the learner can use them. At full feedback, adding the
+representation. The completed reference-builder comparison           shared score to Public+Target changes the point estimate from
+therefore retains support and ﬁxed matched-context aggrega-          0.7747 to 0.7742, providing no point improvement. Curves
+tion alongside the learned references (Section 5.9).                 are nonmonotonic, and the strongest no-feedback support rule
+                                                                     remains a required comparator. These observations support
+D. A frozen cross-study experiment reveals a coverage and            treating target adaptation as a separate component whose in-
+transfer boundary                                                    formation requirements and adoption conditions are evaluated
+                                                                     rather than assumed.
+   The original Orion evaluation uses a published ﬁxed linear           At full feedback, the same-information PertEMA-factory
+predictor and 2,993 eligible tasks spanning 1,750 genes. Only        adaptation obtains 0.0233 with prediction-only features,
+232 tasks, covering 144 genes, have the history required for         0.7560 with public features, and 0.7704 with the added shared
+the common primary comparison: 7.75% of all eligible tasks.          score. These comparisons reinforce the importance of input
+The predictor passed the registered noninferiority competence        information across two tree-learning implementations; they do
+rule while remaining close to the training-mean baseline, rather     not establish universal superiority of HGB over the original
+than demonstrating strong superiority over it.                       PertEMA pipeline. The native-control adaptation and isotonic
+   The preregistered HGB-minus-weighted-distance difference          variants are preserved in the supplement with their different
+is -0.0101, with a paired 95% interval of -0.2712 to 0.1913.         feature budgets.
+HCT116 retained error at 10% coverage worsens by 7.598%,
+and its high-risk miss rate rises by 0.0909. The original safety
+criterion is therefore not met. This ﬁxed result is retained as an   F. Updating a biological learner is not equivalent to improv-
+external boundary rather than replaced with the best secondary       ing risk
+comparison.                                                             A completed Source development replay compares an initial
+   Subsequent seen analyses reuse 2,790 existing validation          release, new memory with the old biological builder, and
+errors to train target-speciﬁc estimators. Public+Target Ridge       new memory with a reﬁtted builder. On old anchor tasks,
+reaches 0.2791 compared with 0.2671 for the ﬁxed direct              reﬁtting reduces biological reconstruction RMSE by 0.000280;
+reference rule; the paired difference interval is -0.1882 to         on new-task checks, the reduction is 0.000355. Both nominal
+                                                                                                                                     7
+
+
+
+    Table 4. Orion historical-reference cohort, 3,285-gene contract   Utility@20
+    Learned direct reference distance                                 0.2671
+    Learned weighted historical distance                              0.2149
+    Learned reference + source HGB                                    0.2048
+
+  Table 5. Feedback     Shared                 Target-only HGB        Public+Target HGB   Shared+Target HGB    Existing residual
+  budget                                                                                                       HGB
+  10%                   0.5711                 0.0807                 0.0807              0.0807               0.5711
+  25%                   0.5711                 0.0884                 0.7848              0.7848               0.7348
+  50%                   0.5711                 0.0984                 0.7498              0.7153               0.7408
+  75%                   0.5711                 0.1515                 0.8167              0.7501               0.8054
+  100%                  0.5711                 0.0833                 0.7747              0.7742               0.7846
+
+
+
+paired intervals exclude zero. The corresponding risk-utility         repair applies the ﬁxed strictly increasing map 0.5 + arctan(z
+differences do not.                                                   - 0.5)/pi to raw Ridge output, preserving raw ordering while
+   Relative to the initial release, the new-task U20 difference is    bounding the score. It performs zero new ﬁts and preserves
+-0.014099 and the high-risk miss rate increases by 0.025460.          the original models, predictions, primary results, and input
+The candidate is rejected, and the old serving version is             hashes. This is a post-primary seen diagnostic, not percentile
+retained. This is a concrete demonstration of versioned update        calibration or external conﬁrmation.
+and release behavior, with an informative distinction between            On scGPT-to-GEARS held-out contexts, repaired
+biological reconstruction and operational reliability. This com-      prediction-only Ridge reaches U20 0.0673 from -0.0562,
+pleted replay establishes an executed release decision; it does       a gain of 0.1236 [0.0085, 0.3424]; repaired Public Ridge
+not establish an improvement on future tasks or certify an            reaches 0.0999, a gain of 0.1562 [0.0284, 0.3484]. Both
+updated neural builder.                                               remain below magnitude 0.3789: their paired differences
+                                                                      are -0.3115 and -0.2789, with both intervals entirely below
+G. Native-axis cross-family stress analysis                           zero. Public Ridge AURC worsens from 0.0578 to 0.0587,
+                                                                      so the recovered top-tail ranking does not uniformly improve
+   The new Frangieh analysis reuses scGPT and GEARS
+                                                                      selective risk. GEARS-to-scGPT U20 remains 0.1278 for
+caches and ﬁts 120 ﬁxed risk estimators without new upstream
+                                                                      prediction-only Ridge and 0.7069 for Public Ridge. On the
+training or GPU computation. There are 567 distinct biological
+                                                                      identical history-covered cohort, repaired Public Ridge still
+tasks and 189 genes across three original context-holdout
+                                                                      loses to weighted historical distance in both directions: -
+folds. Those folds overlap biologically; synchronized gene
+                                                                      0.0608 [-0.1459, -0.0008] and -0.7445 [-0.8961, -0.6306].
+bootstrap preserves their dependence. Most perturbation genes
+                                                                      The branch stops after this one ﬁxed repair. Table 6 retains the
+had been seen by the upstream model in another context, so
+                                                                      original HGB results and the failed competence qualiﬁcation.
+the experiment concerns held-out tasks and risk-training genes
+rather than entirely unseen upstream genes.
+   Public HGB exceeds magnitude in both directions: paired            H. Data alignment changes the reference before changing the
+U20 differences are 0.5927 [0.4392, 0.7713] and 0.3612                algorithm
+[0.1246, 0.4973]. Only 471 of the 567 tasks have usable                  A completed McFaline diagnostic isolates one data-contract
+history, so comparisons against historical rules are recomputed       change: within each public experiment, replace the equal-
+on that identical supported cohort rather than obtained by            guide effect mean with a cell-weighted mean. The prediction,
+subtracting full-cohort point estimates. Against weighted his-        canonical query truth, eligibility, and between-history support
+torical distance, the source-supervised HGB does not show an          weights stay ﬁxed. Only registered training/validation expres-
+increment. This extends the observation that public evidence          sion is aggregated: 7,173 public experiments and 615,059
+can be valuable while a learned source-error reader remains           cells, with zero test cells aggregated. The mean discrep-
+unnecessary or harmful.                                               ancy between the two historical-effect deﬁnitions is RMSE
+   The upstream capability check selects the strongest                0.018226. This is a seen post-conﬁrmation analysis of the 543-
+zero/global-mean/context-mean baseline by training-gene out-          task, 380-gene cohort, not a new external test.
+of-fold error and evaluates it on the original validation tasks.         The positive comparison in Table 7 belongs to data align-
+All six model/fold assets have relative macro RMSE disad-             ment: it does not establish a gain from a set network or
+vantages of 8.13% to 14.10%, failing the registered compe-            from source error labels. The support-only comparison remains
+tence gate. These results therefore serve as cross-family stress      unresolved. A ﬁxed source-HGB replay, with one source
+evidence, not qualiﬁed main validation. They concern these            reﬁt and no new target error-training labels, reproduces the
+checkpoint/split assets and do not rank the general capability        original score before substituting the aligned public inputs.
+of the published model families.                                      Its Utility@20 changes from 0.6488 to 0.5753; the paired
+   A saved-score diagnosis ﬁnds that scGPT-to-GEARS Ridge             interval for the difference is [-0.1853, 0.1088]. It loses to
+predictions saturate under hard clipping in all ﬁfteen risk-fold      the aligned historical rule by -0.2590 [-0.3713, -0.1278] and
+evaluations. The completed, separately registered technical           to support-only by -0.2518 [-0.3640, -0.1130]. Aligning a
+                                                                                                                                      8
+
+
+
+  Table 6. Frangieh           Public HGB U20, 567        Magnitude U20, 567      HGB minus weighted         Paired 95% interval
+  held-out contexts,          tasks                      tasks                   history, paired 471-task
+  native512                                                                      cohort
+  GEARS to scGPT              0.7014                     0.1087                  -0.0582                    [-0.1446, 0.0155]
+  scGPT to GEARS              0.7401                     0.3789                  -0.1239                    [-0.2410, -0.0552]
+
+   Table 7. Fixed support-weighted Utility@20                        Difference from equal-guide     Paired 95% interval
+   reference, McFaline                                               bank
+   common2840
+   Original equal-guide historical     0.7113                        Reference                       Not applicable
+   effects
+   Cell-weighted historical effects    0.8343                        0.1230                          [0.0561, 0.1986]
+   Cell-weighted reference versus      0.8343 versus 0.8271          0.0072                          [-0.0391, 0.0553]
+   support-only
+
+
+
+biological reference can therefore improve a direct rule while        gains relative to the existing historical scorer in Source; it
+invalidating the relationship learned by a ﬁxed reader. The ﬁve-      does not support a new set-interaction claim.
+fold reference comparison uses the aligned bank as its common            The required adoption gate combines actual U20 gain of
+baseline, so representation increments are measured after this        at least 0.005, paired lower limit of at least -0.005, at least
+data-contract correction. On its separate 542-task/377-gene           60% nonnegative strata and at least 80% valid strata. It addi-
+evaluation, old-guide B0 has U20 0.6899 and cell-weighted             tionally limits macro AURC and error at 10/20/50% coverage
+B0 has 0.8491, a paired increase of 0.1592 [0.0418, 0.2144].          deterioration to 5%, and high-risk miss-rate increase to 0.02.
+These stratum-macro results differ from Table 7 because task          A global replacement must pass against B0, B1, magnitude,
+eligibility, folds and aggregation differ; the two estimates are      support and the three ﬁxed matching rules in all three predic-
+retained under their own contracts.                                   tor/domain views; B3 additionally requires its B3-versus-B2
+                                                                      structure gate. Neither neural candidate passes this full ﬁxed-
+                                                                      reader requirement, so B1 remains the registered reference-
+I. Reference representation improves some comparisons with-
+                                                                      only baseline. This decision is conditional on R_H and does
+out establishing a set-interaction contribution
+                                                                      not select the ﬁnal supervised builder-reader combination.
+   The complete four-arm experiment uses ﬁve outer gene                  The biological results explain why reference reconstruction
+folds, three registered neural training seeds, and the same           alone is insufﬁcient. On Source, macro reconstruction RMSE
+eligible public histories. Source contains 1,808 biological           decreases from 0.062596 for B0 to 0.061179 for B1, 0.059746
+tasks/575 genes evaluated under each of two upstream pre-             for B2 and 0.059739 for B3. On McFaline, corresponding
+dictors; McFaline contains 542 tasks/377 genes. All arms              values are 0.029723, 0.029755, 0.029640 and 0.029639. The
+cover every planned task. Within each context-by-outer-fold           virtually identical B2/B3 reconstruction values accompany in-
+stratum, metrics are calculated separately per ﬁtting seed and        consistent risk differences. Moreover, McFaline same-context
+then averaged; strata receive equal weight. Thus Table 8 is           support has worse reconstruction RMSE, 0.032065, while
+not a best-seed comparison or a ranking of seed-averaged              yielding the strongest ﬁxed-reader U20 point estimate. Align-
+scores. Source has 20 strata per predictor and McFaline has           ment, reconstruction and reliability ranking therefore remain
+15. The paired bootstrap synchronizes Source gene multiplic-          separate empirical outcomes.
+ities across predictors, folds and seeds; McFaline is sampled
+independently.
+                                                                      J. Fully nested risk readers and source-error correspondence
+   The matching rules are ﬁxed before their evaluation: nearest
+control selects the eligible record with minimum control-state           The jointly evaluated readers are reported separately from
+RMSE; same-context and same-condition rules use support               Table 8. The result table binds prediction-only, Public, and
+means within that match when available and otherwise use              UniversalP information deﬁnitions to each biological builder,
+the full eligible set. They require neither biological outcome        with inner-fold public preprocessing, context-speciﬁc teacher
+selection nor risk training. Source eligibility already restricts     errors and training-only CDFs. The source-label null analysis
+history to other contexts, so the same-context fallback is            additionally compares genuine source errors, gene-cluster per-
+exactly B0. McFaline permits same-context histories in other          mutations and a biology-only error proxy. These comparisons
+conditions, creating a stronger distinct comparator.                  determine the increment from source supervision under a
+   B2 improves on B1 by about 0.04 in both Source views and           common reader and input budget.
+satisﬁes those pairwise practical gates. However, both neural            [[REGISTERED_READER_RESULTS]]
+historical readers remain below magnitude in Source, and their
+McFaline intervals do not establish the required increment over                              VI. D ISCUSSION
+B1 or the stronger same-context reference. B3 supplies no                SafeConf makes the information available to reliability
+consistent added value over B2. Its practical structure gate fails    estimation explicit. The completed evidence suggests that
+in every view. This result supports pointwise representation          public references and source errors should be treated as distinct
+                                                                                                                                   9
+
+
+
+  Table 8. Fixed historical-reader Source GAT                      Source Exphormer               McFaline DecoderOnly
+  Utility@20
+  B0 support mean                  0.5446                          0.5589                         0.8491
+  B1 per-history HGB               0.5906                          0.5939                         0.8270
+  B2 pointwise network             0.6308                          0.6357                         0.8699
+  B3 set-conditioned network       0.6328                          0.6291                         0.8648
+  Prediction magnitude             0.7524                          0.7285                         -0.0086
+  Negative history support         0.1137                          0.1069                         0.8375
+  Nearest-control reference        0.4590                          0.4849                         0.7958
+  Same-context support reference   0.5446                          0.5589                         0.8722
+  Same-condition support           0.5446                          0.5589                         0.7064
+  reference
+
+  Table 9. Paired reference        Difference in U20               Paired 95% interval            Nonnegative strata
+  increments, ﬁxed historical
+  reader
+  Source GAT: B2 minus B1          0.0402                          [-0.0044, 0.0867]              65.0%
+  Source Exphormer: B2 minus       0.0418                          [-0.0022, 0.0892]              75.0%
+  B1
+  McFaline: B2 minus B1            0.0429                          [-0.0132, 0.0523]              80.0%
+  Source GAT: B3 minus B2          0.0020                          [-0.0149, 0.0142]              55.0%
+  Source Exphormer: B3 minus       -0.0067                         [-0.0154, 0.0153]              40.0%
+  B2
+  McFaline: B3 minus B2            -0.0051                         [-0.0099, 0.0090]              66.7%
+  McFaline: B2 minus               -0.0023                         [-0.0794, 0.0362]              60.0%
+  same-context support
+  McFaline: B3 minus               -0.0074                         [-0.0813, 0.0364]              53.3%
+  same-context support
+
+
+
+resources. In the source architecture pair, error supervision       tains measurement variation, and public support is unusually
+contains useful ranking information beyond a biological-            predictive in McFaline. Orion supplies an independent frozen
+magnitude proxy and historical distance. Across studies, a pub-     result but has low history coverage. The neural reference and
+lic reference can remain useful while the source-trained risk       registered nested-reader results retain development/seen scope;
+mapping loses its advantage. When target feedback arrives,          they do not inherit the independent evaluation status of an
+public features can remain valuable even when an additional         older component version. This restricts generalization claims
+shared score does not improve the target learner.                   even when a within-cohort comparison is positive.
+   This pattern argues for a modular implementation. A public
+builder should produce an interpretable biological reference                             VII. C ONCLUSION
+together with support and conﬂict information. The risk learner
+                                                                       SafeConf treats public biological responses, source-
+should be evaluated against an unsupervised rule that already
+                                                                    predictor errors, and target feedback as three different re-
+exploits that reference. Target learning should be allowed to
+                                                                    sources for task-level reliability. A simple historical-distance
+use public evidence directly rather than being forced through a
+                                                                    identity supplies a strong comparator, while shared error
+chain of residual corrections. A deployment can then select a
+                                                                    learning and target adaptation are evaluated at explicit infor-
+validated component combination for its information condition
+                                                                    mation budgets. Completed experiments show useful source-
+without treating each stage as a guaranteed positive correction.
+                                                                    supervision signal within a model family and substantial
+   The completed builder comparison answers a speciﬁc rep-
+                                                                    public-evidence value in an external predictor setting, together
+resentation question. Pointwise neural weighting improves the
+                                                                    with limits on cross-study transfer and additive feedback
+Source historical reader relative to its existing scorer, but
+                                                                    beneﬁts. The matched four-arm comparison further shows that
+adding learned set context does not consistently improve on
+                                                                    a data-alignment gain can exceed a representation increment,
+pointwise weighting. These observations do not identify a
+                                                                    and that learned set context need not improve reliability
+universally preferred builder. A convex combination cannot
+                                                                    beyond pointwise weighting or simple matched aggregation.
+reconstruct a response outside the representable history set,
+                                                                    The framework supports explicit component selection and
+and a highly accurate biological mean is not necessarily the
+                                                                    rejects updates that fail their risk criteria.
+best statistic for ranking prediction errors. The constrained
+reconstruction diagnostic and the ﬁxed risk readers make these
+failure modes distinguishable.                                                 VIII. DATA AND C ODE AVAILABILITY
+   Several limits determine the scope of the present evidence.        Code and result artifacts are maintained in the SafeConf
+The mature source pool contains two architectures from one          repository: https://github.com/1298020005/SafeConf, branch
+family. Public history predominantly covers previously ob-          exp/e220-reviewer-closure-20260921. The ac-
+served perturbations in other contexts. Evaluation error con-       companying evidence/RESULT_MANIFEST.json binds
+                                                                  10
+
+
+
+every table reproduced here to its original result ﬁle and SHA-
+256 hash. Large prediction arrays and model checkpoints are
+stored in the documented runtime locations and are not silently
+bundled into the manuscript source. Public dataset terms and
+upstream software licenses apply. The source snapshot and
+per-ﬁle hashes are supplied with the submission package. The
+ﬁnal public release identiﬁer and author declarations require
+author completion.
+
+      IX. ACKNOWLEDGMENTS AND D ECLARATIONS
+   Author contributions: [AUTHOR-APPROVED CONTRI-
+BUTIONS]. Funding: [FUNDER / GRANT OR AUTHOR-
+CONFIRMED NONE]. Competing interests: [AUTHOR-
+CONFIRMED DECLARATION]. Ethics and data-use decla-
+rations: [AUTHOR / INSTITUTION-CONFIRMED STATE-
+MENT]. These ﬁelds require author completion before sub-
+mission.
+
+  X. A PPENDIX A. E VIDENCE FILES FOR THE REPORTED
+                       COMPARISONS
+   The companion supplement provides full informa-
+tion ledgers, all ﬁtting seeds, ﬁxed versus auxiliary
+readers,    the    constrained   reconstruction   diagnostic,
+exposure audits and source-label null comparisons.
+evidence/RESULT_MANIFEST.json maps each copied
+result table to its original result path and SHA-256. The
+old 543-task McFaline matrix, the new 542-task fold-based
+comparison, native512 Frangieh stress experiment and frozen
+Orion3285 evaluation retain their distinct cohorts and roles.
+No unexecuted experiment supplies a reported numerical
+result.
+                                                                                                                                                                                                                                                                                      11
+
+
+
+
+                                       Real public experiments                                                Public reference builder                                                Reference + dispersion
+                                   Biological effects + provenance                                        Biological reconstruction target                                           Support + original conflict
+
+
+
+
+                                        Current prediction                                                           Risk input                                                        Shared risk learner                                      No target feedback
+                                    Magnitude + shape features                                            Prediction + public discrepancy                                            Source-error supervision                                      Risk ranking
+
+
+
+
+                                                                                                                                                                                                                                           Versioned records
+                                     Returned target outcomes                                                  Target-specific learner                                               Personalized risk
+                                                                                                                                                                                                                                           Train candidate
+                                  Held-out errors by model version                                         Public / shared inputs optional                                       Same feedback-label budget
+                                                                                                                                                                                                                                           Validate release
+
+
+
+
+Fig. 1. SafeConf separates biological supervision of the public reference, source-error supervision of the risk function, and target-feedback personalization.
+The four biological builders are assessed under common information and output contracts. Biological reconstruction and risk-reader increments are evaluated
+separately.
+
+
+
+
+                                                              Exphormer → GAT                                                                       GAT → Exphormer                                                                   TxPert → McFaline
+                                  1.0
+                                                                                                                                                                                                                                                                              0.827
+                                                             0.759                        0.783                                                                                 0.784
+                                  0.8     0.749                                                                                0.746               0.753
+ Utility@20 (higher is better)
+
+
+
+
+                                                                                                                                                                                                                                                 0.730
+                                                                                                                                                                                                                                                              0.695
+                                                                          0.594                                                                                0.592
+                                  0.6
+
+                                  0.4
+
+                                  0.2
+                                                                                                         0.096                                                                                   0.090
+
+                                  0.0
+                                                                                                                                                                                                                                 -0.009
+
+                                 −0.2
+                                                                                                                                                                                                                  -0.205
+
+                                           de             GB              ce           GB                y                      de              GB               e           GB                  y                de                B            ce            B               ly
+                                                                                                      nl                                                       nc                             nl                                 HG                          HG              on
+                                        itu              H              an            H              o
+                                                                                                                         ni
+                                                                                                                              tu               H           a                H                o
+                                                                                                                                                                                                             ni
+                                                                                                                                                                                                                tu                            an
+                                     gn              n               st          ed               rt                                       n            ist            ed               rt                                   n            ist           ed              rt
+                                                   io              di          ar
+                                                                                                o                       g                io
+                                                                                                                                                      cd             ar             po                      g              io
+                                                                                                                                                                                                                                        cd            ar
+                                                                                                                                                                                                                                                                       o
+                                   Ma           ict            lic           Sh
+                                                                                             pp                      Ma              ict             i           Sh               up                     Ma            ict             i           Sh
+                                                                                                                                                                                                                                                                    pp
+                                            ed              b                              Su                                    ed               bl                             S                                  ed              bl                            Su
+                                          Pr             Pu                                                                    Pr              Pu                                                                 Pr             Pu
+
+
+
+Fig. 2. First registered seed on the common 2,840-gene axis. The useful information source changes across cohorts; the support-only comparator remains
+visible. These are point estimates, not independent replications or conﬁdence intervals.
+                                                                                                                                                                                                                                                                                                                12
+
+
+
+
+                                                                                          Shared                               Public + Target
+                                                                                          Target only                          Shared + Target
+                                                                  0.9
+
+                                                                  0.8
+                                  Utility@20 (higher is better)
+
+
+
+
+                                                                  0.7
+
+                                                                  0.6
+
+                                                                  0.5
+
+                                                                  0.4
+
+                                                                  0.3
+
+                                                                  0.2
+
+                                                                  0.1
+
+                                                                  0.0
+                                                                                     10                          25                                            50                                                    75                                                          100
+                                                                                                                                                          Opened feedback pool (%)
+
+
+Fig. 3. Strict McFaline feedback evaluation on 212 tasks and 152 genes. The percentage refers to the feedback pool. The evaluation pool is never included
+in the denominator. Curves display the ﬁrst registered seed and do not imply monotonic improvement.
+
+
+
+
+                                                                                                   PublicSet: seed metrics averaged within context x outer fold; paired gene bootstrap 95% CI
+
+                                                                                 TxPert_GAT                                                                           TxPert_Exphormer                                                                     McFaline / DecoderOnly
+
+                        0.8
+ U20; primary R_hist
+
+
+
+
+                                                                                                                                U20; primary R_hist
+
+
+
+
+                                                                                                                                                                                                                           U20; primary R_hist
+
+
+
+
+                        0.6
+
+
+                        0.4
+
+
+                        0.2
+
+
+                        0.0
+
+
+                       −0.2
+                                                                                LP
+
+
+
+
+                                                                                                                                                                            LP
+
+
+
+
+                                                                                                                                                                                                                                                                       LP
+                              n
+
+
+
+                                                                  B
+
+
+
+
+                                                                                          s
+
+
+
+                                                                                                     de
+
+
+
+
+                                                                                                                     t
+
+
+
+
+                                                                                                                                                      n
+
+
+
+                                                                                                                                                          B
+
+
+
+
+                                                                                                                                                                                      s
+
+
+
+                                                                                                                                                                                                de
+
+
+
+
+                                                                                                                                                                                                                t
+
+
+
+
+                                                                                                                                                                                                                                                 n
+
+
+
+                                                                                                                                                                                                                                                     B
+
+
+
+
+                                                                                                                                                                                                                                                                                 s
+
+
+
+                                                                                                                                                                                                                                                                                           de
+
+
+
+
+                                                                                                                                                                                                                                                                                                           t
+                                                                                                                     or
+
+
+
+
+                                                                                                                                                                                                                or
+
+
+
+
+                                                                                                                                                                                                                                                                                                           or
+                                                                                          et
+
+
+
+
+                                                                                                                                                                                      et
+
+
+
+
+                                                                                                                                                                                                                                                                                 et
+                            ea
+
+
+
+
+                                                                                                                                             ea
+
+
+
+
+                                                                                                                                                                                                                                        ea
+                                                      G
+
+
+
+
+                                                                                                                                                          G
+
+
+
+
+                                                                                                                                                                                                                                                     G
+                                                                           M
+
+
+
+
+                                                                                                                                                                       M
+
+
+
+
+                                                                                                                                                                                                                                                                  M
+                                                                                                    tu
+
+
+
+
+                                                                                                                                                                                               tu
+
+
+
+
+                                                                                                                                                                                                                                                                                          tu
+                                                                                                                 pp
+
+
+
+
+                                                                                                                                                                                                             pp
+
+
+
+
+                                                                                                                                                                                                                                                                                                        pp
+                                              H
+
+
+
+
+                                                                                                                                                          H
+
+
+
+
+                                                                                                                                                                                                                                                     H
+                                                                                         pS
+
+
+
+
+                                                                                                                                                                                     pS
+
+
+
+
+                                                                                                                                                                                                                                                                                pS
+                        tm
+
+
+
+
+                                                                                                                               tm
+
+
+
+
+                                                                                                                                                                                                                          tm
+                                                                                                   ni
+
+
+
+
+                                                                                                                                                                                               ni
+
+
+
+
+                                                                                                                                                                                                                                                                                          ni
+                                                                            e
+
+
+
+
+                                                                                                                                                                        e
+
+
+
+
+                                                                                                                                                                                                                                                                   e
+                                                                                                                su
+
+
+
+
+                                                                                                                                                                                                           su
+
+
+
+
+                                                                                                                                                                                                                                                                                                      su
+                                                                                     ee
+
+
+
+
+                                                                                                                                                                                 ee
+
+
+
+
+                                                                                                                                                                                                                                                                            ee
+                                                                         is
+
+
+
+
+                                                                                                                                                                     is
+
+
+
+
+                                                                                                                                                                                                                                                                is
+                                                                                               ag
+
+
+
+
+                                                                                                                                                                                           ag
+
+
+
+
+                                                                                                                                                                                                                                                                                      ag
+                       or
+
+
+
+
+                                                                                                                               or
+
+
+
+
+                                                                                                                                                                                                                          or
+                                                                      w
+
+
+
+
+                                                                                                                                                                 w
+
+
+
+
+                                                                                                                                                                                                                                                            w
+                                                                                     D
+
+
+
+
+                                                                                                                                                                                 D
+
+
+
+
+                                                                                                                                                                                                                                                                            D
+                                                                                                            ry
+
+
+
+
+                                                                                                                                                                                                        ry
+
+
+
+
+                                                                                                                                                                                                                                                                                                   ry
+                                                                                               M
+
+
+
+
+                                                                                                                                                                                           M
+
+
+
+
+                                                                                                                                                                                                                                                                                      M
+                                                                      nt
+
+
+
+
+                                                                                                                                                               nt
+
+
+
+
+                                                                                                                                                                                                                                                          nt
+                 pp
+
+
+
+
+                                                                                                                           pp
+
+
+
+
+                                                                                                                                                                                                                      pp
+                                                                                                           to
+
+
+
+
+                                                                                                                                                                                                      to
+
+
+
+
+                                                                                                                                                                                                                                                                                                 to
+                                                                     i
+
+
+
+
+                                                                                                                                                                 i
+
+
+
+
+                                                                                                                                                                                                                                                            i
+   Su
+
+
+
+
+                                                                                                                          Su
+
+
+
+
+                                                                                                                                                                                                                     Su
+                                                                  Po
+
+
+
+
+                                                                                                                                                              Po
+
+
+
+
+                                                                                                                                                                                                                                                         Po
+                                                                                                         is
+
+
+
+
+                                                                                                                                                                                                    is
+
+
+
+
+                                                                                                                                                                                                                                                                                               is
+                                                                                                        H
+
+
+
+
+                                                                                                                                                                                                    H
+
+
+
+
+                                                                                                                                                                                                                                                                                               H
+
+
+
+
+Fig. 4. Complete ﬁve-fold public-reference comparison on Source and McFaline. Metrics are calculated per seed, averaged within context-by-fold, then macro-
+averaged. Bars include 5,000 paired gene-bootstrap percentile intervals. Fixed references use the same eligible records. This is development/seen evidence.
+                                                                                                                                                                                                                                                                                                                                                   13
+
+
+
+
+                                                                       TxPert_GAT                                                                                                         TxPert_Exphormer                                                                                           McFaline / DecoderOnly
+ DeepSets - MLP                                                                                                      DeepSets - MLP                                                                                                                         DeepSets - MLP
+
+
+
+
+ DeepSets - HGB                                                                                                      DeepSets - HGB                                                                                                                     DeepSets - HGB
+
+
+
+
+                                    MLP - HGB                                                                                                          MLP - HGB                                                                                                           MLP - HGB
+
+                                                               Paired delta U20: R_hist                                                                                               Paired delta U20: R_hist                                                                                           Paired delta U20: R_hist
+
+                                                                       TxPert_GAT                                                                                                         TxPert_Exphormer                                                                                           McFaline / DecoderOnly
+ DeepSets - MLP                                                                                                      DeepSets - MLP                                                                                                                         DeepSets - MLP
+
+
+
+
+ DeepSets - HGB                                                                                                      DeepSets - HGB                                                                                                                     DeepSets - HGB
+
+
+
+
+                                    MLP - HGB                                                                                                          MLP - HGB                                                                                                           MLP - HGB
+                                                         0.0       0.1         0.2        0.3                                                                                   0.0       0.1         0.2        0.3                                                                            0.0       0.1         0.2        0.3
+                                                     Paired delta U20: direct RMSE (auxiliary)                                                                              Paired delta U20: direct RMSE (auxiliary)                                                                       Paired delta U20: direct RMSE (auxiliary)
+
+
+
+Fig. 5. Paired representation increments under the primary weighted historical reader and auxiliary direct-distance reader. These ﬁxed-reader comparisons do
+not determine the jointly supervised builder-reader result. Gene draws synchronize both Source upstreams and ﬁtting seeds.
+
+
+
+
+                                                                   TxPert_GAT                                                                                                    TxPert_Exphormer                                                                                            McFaline / DecoderOnly
+                                   0.064                                                                                                              0.064
+  Biological reconstruction RMSE
+
+
+
+
+                                                                                                                     Biological reconstruction RMSE
+
+
+
+
+                                                                                                                                                                                                                                       Biological reconstruction RMSE
+
+
+
+
+                                                                                                                                                                                                                                                                        0.0302
+                                   0.063                                                                                                              0.063
+                                                                                                                                                                                                                                                                        0.0300
+
+                                   0.062                                                                                                              0.062
+                                                                                                                                                                                                                                                                        0.0298
+
+                                   0.061                                                                                                              0.061
+                                                                                                                                                                                                                                                                        0.0296
+
+                                   0.060                                                                                                              0.060
+                                                                                                                                                                                                                                                                        0.0294
+
+                                   0.059                                                                                                              0.059
+                                                                                                                                                                                                                                                                        0.0292
+
+
+                                           an                  B
+                                                                                    ML
+                                                                                       P                     ts                                                   an                  B                  LP                 ets                                                   an                 B                  LP                   ts
+                                        me                HG                                              Se                                                 me                  HG                   eM                   S                                                   me               HG                  eM                    Se
+                                    ort                                       ise                       ep                                             ort                                         wis                  ep                                               ort                                     wis                   ep
+   pp                                                                  n    tw                     De                                        pp                                                nt                     De                           pp                                                         nt                     De
+ Su                                                                 Poi                                              Su                                                                    Poi                                                   Su                                                       Poi
+
+                                        Stratum delta U20: DeepSets - MLP                                                                                    Stratum delta U20: DeepSets - MLP                                                                                  Stratum delta U20: DeepSets - MLP
+
+                                   K562     0.000      0.017       0.008         0.014     -0.008                                                     K562         0.008     -0.010       0.000     0.000     -0.010                                                                                                                        0.06
+                                                                                                             0.10                                                                                                                                                        a172      -0.063   0.000        0.027     0.000     0.019
+                                                                                                                                                                                                                               0.10
+                                                                                                                                                                                                                                                                                                                                            0.04
+                                                                                                             0.05                                                                                                              0.05
+                                   RPE1     0.000     -0.010       0.039         0.011     0.039                                                      RPE1         -0.002    0.000        0.039     0.000     0.008                                                                                                                         0.02
+
+                                                                                                             0.00                                                                                                              0.00                                       t98g     0.000    -0.015       0.000     0.000     0.000          0.00
+
+                                   hepg2    0.000     -0.014       -0.095        0.115     -0.009                                                     hepg2        -0.009    -0.014       -0.125    0.092     -0.003                                                                                                                        −0.02
+                                                                                                             −0.05                                                                                                             −0.05
+                                                                                                                                                                                                                                                                                                                                            −0.04
+                                                                                                                                                                                                                               −0.10                                    u87mg      -0.010   0.000        0.000     -0.029    -0.006
+                                   jurkat   -0.005    -0.022       -0.040        -0.006    0.005             −0.10                                    jurkat       -0.042    -0.007       -0.008    -0.005    -0.046                                                                                                                        −0.06
+
+
+                                                0       1      2      3                      4                                                                         0       1      2      3                  4                                                                      0      1      2      3                  4
+                                                        Outer gene fold                                                                                                        Outer gene fold                                                                                                Outer gene fold
+
+
+
+Fig. 6. Biological reconstruction and its stratum variation in the completed four-arm experiment. Reconstruction is assessed independently from risk ranking;
+the constrained reconstruction diagnostic is not a risk oracle.
+

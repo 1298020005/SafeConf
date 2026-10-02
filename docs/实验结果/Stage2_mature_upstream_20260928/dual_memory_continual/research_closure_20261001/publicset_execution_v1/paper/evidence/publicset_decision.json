@@ -1,0 +1,9 @@
+{
+  "primary_readout": "R_hist",
+  "decision": "STOP_PUBLICSET_ARCHITECTURE_RETAIN_B1",
+  "selected_builder": "B1_HGB",
+  "readout_dependent": false,
+  "direct_only_candidates": [],
+  "claim_scope": "DEV/SEEN; no independent confirmation or upstream retraining",
+  "interpretation": "Practical gate must hold against the original four and all three fixed matching references in all three upstream/domain views; B3 additionally needs the B3-B2 structure gate."
+}

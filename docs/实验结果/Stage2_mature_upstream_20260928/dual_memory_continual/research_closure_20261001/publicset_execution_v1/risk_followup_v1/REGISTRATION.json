@@ -1,0 +1,50 @@
+{
+  "role": "NEW_DEV_SEEN_PUBLICSET_CONTEXT_SCOPED",
+  "scope": "Source1808 tasks / 575 genes / common2840 output genes",
+  "MC_TEST_reads": 0,
+  "new_upstream_training": 0,
+  "outer_gene_folds": 5,
+  "inner_gene_folds_for_public_OOF": 4,
+  "public_seeds": [20260930, 20261001, 20261002],
+  "neural_public_fit_stages": 240,
+  "nested_cpu_public_HGB_fits": 20,
+  "actual_context_scoped_risk_HGB_fits": 400,
+  "reused_outer_public_models": 30,
+  "GPU": 1,
+  "additional_gpu_hours_cap": 2,
+  "first_timing_probe": "outer0 / seed20260930 / B2 and B3 / four inner folds / early plus refit = 16 neural stages",
+  "public_configuration": {
+    "pca_components": 32,
+    "PCA_fit": "Unique physical history rows used by actual fitting query groups only",
+    "token_encoder_width": 64,
+    "scoring_head": "128 to 64 to 1",
+    "support_mix": 0.5,
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 32,
+    "max_epochs": 100,
+    "patience": 10,
+    "gradient_clip": 1.0,
+    "loss": "Full2840 biology effect MSE with equal total gene weights"
+  },
+  "risk_configuration": {
+    "features_P": "tools.safeconf_continual.research.P",
+    "features_PUBLIC": "tools.safeconf_continual.research.PUBLIC",
+    "HGB": {"max_iter": 200, "learning_rate": 0.05, "max_depth": 3, "min_samples_leaf": 20, "l2_regularization": 10},
+    "training_weight": "Equal total biological gene-cluster weight",
+    "risk_CDF": "Only source family outer-train errors in current evaluation context",
+    "teacher_scope": "Source family same-context checkpoint excludes that context treated expression; never pool other-context teacher errors",
+    "target_errors": "Evaluation only",
+    "methods": ["P_only", "Support_only", "B0_SupportMean", "B1_HGB", "B2_Pointwise", "B3_DeepSets"],
+    "Support_only": "P plus log1p legal total history cell support and log1p raw history count; no biology content, prior, discrepancy or fabricated quality",
+    "seed_reuse": "P/Support/B0/B1 each40 scopes at original seed20260930 and broadcast identical predictions; B2/B3 each120 scopes with matched Public/risk seed"
+  },
+  "statistics": {
+    "primary": "Four-context macro of pooled outer OOF, then mean of three seed metrics; all single seeds retained",
+    "bootstrap": "5000 paired gene-cluster draws shared across all methods, contexts and seeds",
+    "intervals": "Nominal conditional on fixed fitted models; no training resampling",
+    "fixed_comparisons": ["B3 vs B2", "B2/B3 vs B1", "B2/B3 vs B0", "B2/B3 vs pure Support", "B2/B3 vs P-only"]
+  },
+  "physical_content_shuffle": "Separate pending control; legal fit-bank donors, current query parent forbidden, actual effect content and dependent pair/conflict/weights/prior/discrepancy recomputation required"
+}

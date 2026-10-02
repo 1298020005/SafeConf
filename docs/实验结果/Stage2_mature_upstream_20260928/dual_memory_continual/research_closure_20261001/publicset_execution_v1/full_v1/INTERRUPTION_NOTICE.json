@@ -1,0 +1,12 @@
+{
+  "status": "INTERRUPTED_PROCESS_MISSING",
+  "observed_utc": "2026-10-02T14:24:17.621526+00:00",
+  "recorded_pid": 1560317,
+  "os_process_exists": false,
+  "tool_handle": "45219 missing",
+  "completed_refit_models": 25,
+  "completed_early_audits": 26,
+  "original_manifests_preserved": true,
+  "resume_run": "full_v2_resume",
+  "resume_policy": "reuse each saved MODEL.pt/selection audit and preserve original attempt"
+}

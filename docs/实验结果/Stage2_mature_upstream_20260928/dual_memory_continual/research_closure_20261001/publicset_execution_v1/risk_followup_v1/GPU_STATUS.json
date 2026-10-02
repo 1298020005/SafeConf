@@ -1,0 +1,15 @@
+{
+  "status": "RUNNING",
+  "pid": 1615659,
+  "phase": "nested_gpu",
+  "started_utc": "2026-10-02T14:51:05.280147+00:00",
+  "gpu": 1,
+  "planned_stages": 240,
+  "budget_gpu_hours": 2.0,
+  "prior_stage_seconds": 433.8237129494082,
+  "MC_TEST_reads": 0,
+  "code_sha256": "7e137c839ad86c01ae1f154bc66571460dea7124c17fa5d0b8ef93efbbd12849",
+  "completed_stages": 74,
+  "neural_stage_seconds": 545.4690525250044,
+  "current": "outer1/inner2/B2_Pointwise/seed20261001"
+}

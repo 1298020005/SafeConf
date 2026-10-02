@@ -1,0 +1,8 @@
+{
+  "prediction_sparsity": "mean(abs(prediction)<=1e-8)",
+  "prediction_abs_q95": "raw quantile(abs(prediction),.95), without floor",
+  "old_results": "Preserved in original risk_followup_v1 and runtime/risk; 160 old relative-sparsity HGB fits are historical only",
+  "selection": "Technical repair applied to every fixed arm; no architecture or threshold selection",
+  "neural_retraining": 0,
+  "reuse": "Original outer and nested Public models and priors"
+}

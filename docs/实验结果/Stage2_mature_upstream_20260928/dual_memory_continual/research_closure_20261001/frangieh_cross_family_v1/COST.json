@@ -1,0 +1,21 @@
+{
+  "status": "complete",
+  "pid": 1541881,
+  "report_only_recovery": false,
+  "new_fits_this_invocation": 120,
+  "total_risk_fits": 120,
+  "n_prediction_rows": 13392,
+  "unique_biological_tasks": 567,
+  "unique_gene_clusters": 189,
+  "native_genes": 512,
+  "wall_seconds": 23.07818914600648,
+  "cpu_seconds": 43.021046822,
+  "max_rss_kib": 274000,
+  "new_upstream_training": 0,
+  "gpu_hours": 0,
+  "download_bytes": 0,
+  "result_path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/frangieh_cross_family_v1/TASK_PREDICTIONS.parquet",
+  "result_sha256": "102bc145062c2928c3e335e4fd307c5b469074b67c662922ee416bd38d77b6f6",
+  "finished_at": "2026-10-02T22:02:44.465408+08:00",
+  "evidence_role": "retrospective SEEN native-axis cross-family risk transfer; not new confirmation"
+}

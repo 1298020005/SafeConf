@@ -1,0 +1,21 @@
+{
+  "status": "COMPLETE_REQUESTED_BUILDERS",
+  "pid": 1585557,
+  "phase": "context_scoped_cpu_risk",
+  "sklearn": "1.8.0",
+  "numpy": "2.4.4",
+  "MC_TEST_reads": 0,
+  "risk_parameters": {
+    "iterations": 200,
+    "learning_rate": 0.05,
+    "depth": 3,
+    "min_leaf": 20,
+    "l2": 10
+  },
+  "code_sha256": "8b96be88c48c28ac433832907bf1c13378d884a864afaa14271b49ad1944a8ce",
+  "started_utc": "2026-10-02T14:31:27.970113+00:00",
+  "builders": [
+    "B1_HGB"
+  ],
+  "elapsed_seconds": 98.73356581502594
+}

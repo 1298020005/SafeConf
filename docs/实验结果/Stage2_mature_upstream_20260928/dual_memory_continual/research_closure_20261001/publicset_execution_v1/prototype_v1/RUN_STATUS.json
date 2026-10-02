@@ -1,0 +1,42 @@
+{
+  "run_id": "prototype_v1",
+  "phase": "prototype",
+  "pid": 1551806,
+  "started_utc": "2026-10-02T14:09:25.191147+00:00",
+  "baseline_commit": "ef3efbecbea2823c19454c78ca606886f941042a",
+  "role": "DEV/SEEN_NEW_PUBLICSET",
+  "domains": [
+    "McFaline",
+    "Source"
+  ],
+  "outer_folds": [
+    0
+  ],
+  "seeds": [
+    20260930,
+    20261001,
+    20261002
+  ],
+  "code_sha256": "7d4033fe2a0c5212b7ca77735e02bdbbb896c8e3f280786dfa16d9ce2cce5173",
+  "new_upstream_training": 0,
+  "new_test_truth_reads": 0,
+  "gpu_hours_cap": 4.0,
+  "torch": "2.6.0+cu124",
+  "source_history_scenario": "rotating context deployment; other-context effects known; shared fits use disjoint genes",
+  "MC_history_scenario": "all outer evaluation experiments forbidden globally; inner validation excluded likewise",
+  "MC_estimand": "cell-weighted bank; fixed registered query truth; old guide bank retained as data-alignment control",
+  "config": {
+    "pca": 32,
+    "hidden": 64,
+    "support_mix": 0.5,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "batch": 32,
+    "max_epochs": 100,
+    "patience": 10
+  },
+  "status": "FAILED",
+  "next_action": "diagnose and recover affected stage without overwriting original attempt",
+  "error": "CalledProcessError(1, ['/home/miniconda/bin/python', '/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_publicset_v1.py', '--phase', 'cpu-baseline', '--input', '/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/prototype_v1/McFaline/outer0/B1_HGB/HGB_INPUT.npz', '--output', '/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/prototype_v1/McFaline/outer0/B1_HGB/SCORES.npy'])",
+  "elapsed_seconds": 2.8630239160265774
+}

@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "literal_repeat_cases": 60,
+  "ties": true,
+  "partial_topk_blocks": true,
+  "checks": [
+    "utility20",
+    "aurc",
+    "high_risk_miss_rate",
+    "error_at_10",
+    "error_at_20",
+    "error_at_50",
+    "bio_rmse",
+    "bio_cosine"
+  ],
+  "maximum_tolerance": 2e-12
+}

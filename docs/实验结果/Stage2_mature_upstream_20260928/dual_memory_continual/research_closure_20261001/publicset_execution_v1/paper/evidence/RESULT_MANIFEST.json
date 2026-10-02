@@ -1,0 +1,336 @@
+{
+  "scope": "Publication draft evidence snapshot; no new truth access or model fit.",
+  "primary_display_seed": 20260930,
+  "axes": {
+    "Source_McFaline": 2840,
+    "Orion_fixed_confirmation": 3285,
+    "Frangieh_retrospective_stress": 512
+  },
+  "completed_publicset_training": "full_v2_resume",
+  "completed_publicset_statistics": "statistics_v1",
+  "registered_reader_imported": false,
+  "source_files": [
+    {
+      "paper_artifact": "evidence/core_all_seeds.csv",
+      "source_relative_to_closure": "common_gene_axis/results/MATRIX_MACRO_RESULTS.csv",
+      "sha256": "c0c8aa77ed847e00c119fbb8ff2e77787f2386e7f290f38f3e3786b6f850e1fc",
+      "rows": 174,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/feedback_all_seeds.csv",
+      "source_relative_to_closure": "common_gene_axis/results/STRICT_FEEDBACK_MACRO.csv",
+      "sha256": "1f68562700aecf2d702622b24b4e2e54be7de4477d579e200b11ef418db71f57",
+      "rows": 93,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/feedback_information.csv",
+      "source_relative_to_closure": "common_gene_axis/results/STRICT_FEEDBACK_INFORMATION_LEDGER.csv",
+      "sha256": "83d60aac8d3a85dfa7ea531e2d3635bb370e5e2123f86cf14559ed2647a2c435",
+      "rows": 26,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/support_controls.csv",
+      "source_relative_to_closure": "common_gene_axis/results/SUPPORT_CONTROL_MACRO.csv",
+      "sha256": "3ddd954afede9b098065a3c40badcab8a040c2c9ab1ce7c58226d29ce4412992",
+      "rows": 27,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/source_magnitude_pairs.csv",
+      "source_relative_to_closure": "source_magnitude_comparator_completion_v1/ALL6_FIXED_PAIRED_COMPARATORS.csv",
+      "sha256": "d3153b529cb3d0bd1a43dcb9654708250123e9629deff6cc8427ec30a818466e",
+      "rows": 210,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/biology_label_pairs.csv",
+      "source_relative_to_closure": "source_biology_label_control_v1/PAIRED_METRICS.csv",
+      "sha256": "b93c7152214b79c10363cb8843de2163fcb4f9eef57bfa8a3a6fa6f46092fc72",
+      "rows": 140,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/orion_methods.csv",
+      "source_relative_to_closure": "orion_preparation/actual_fixed_result_tables_v1/METHOD_METRIC_INTERVALS.csv",
+      "sha256": "64fe43165ce83149e60104856159b74fd8e07842dcd8fa4082319fb1ac402418",
+      "rows": 399,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/orion_pairs.csv",
+      "source_relative_to_closure": "orion_preparation/actual_fixed_result_tables_v1/ALL_PRESPECIFIED_PAIRED_COMPARISONS.csv",
+      "sha256": "77fc4acd321a1abe95af9973e2b5b6f5649231445b5a9323ee50d9eefc739f50",
+      "rows": 1764,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/orion_coverage.csv",
+      "source_relative_to_closure": "orion_preparation/actual_fixed_result_tables_v1/COHORT_COVERAGE.csv",
+      "sha256": "f3e4ab32edd715073d1a938f6df501b74b759d136ec2649445cf008d168530d3",
+      "rows": 6,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/pertema_same_information.csv",
+      "source_relative_to_closure": "common_gene_axis/results/official_pertema_adaptation/MACRO.csv",
+      "sha256": "5ec59216c596c7bf5370c07ffe72b045f91b2aaffe30dff760ab354576d73439",
+      "rows": 90,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/pertema_native_information.csv",
+      "source_relative_to_closure": "common_gene_axis/results/native_control_pertema_adaptation/MACRO.csv",
+      "sha256": "6759d6b9540bd0c88592d98b3a20080a863f08e41cc9c40c5af1be9a12f41ccf",
+      "rows": 120,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/frangieh_methods.csv",
+      "source_relative_to_closure": "frangieh_cross_family_v1/MACRO_RESULTS.csv",
+      "sha256": "4c8fdc578e564b67189bdde1731b84bdf3af922f785e70a1a3b7d6149adc29b3",
+      "rows": 176,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/frangieh_pairs.csv",
+      "source_relative_to_closure": "frangieh_cross_family_v1/PAIRED_BOOTSTRAP.csv",
+      "sha256": "fc5a4a725246c58829149875f508845d625d95eb9fc9a4214613a0cea4e4d6c4",
+      "rows": 24,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/frangieh_competence.csv",
+      "source_relative_to_closure": "frangieh_cross_family_v1/UPSTREAM_COMPETENCE.csv",
+      "sha256": "eed7c5f900ae132960175c518c461e20ec36a005a992380ddc98e4a00547daa8",
+      "rows": 6,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/frangieh_history_coverage.csv",
+      "source_relative_to_closure": "frangieh_cross_family_v1/HISTORY_COVERAGE.csv",
+      "sha256": "f7e1837c99c08e4a7fcac3f0d3cbbf8fbe5ef50062f192343a67941c51243b1c",
+      "rows": 9,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/frangieh_ridge_repair_methods.csv",
+      "source_relative_to_closure": "frangieh_cross_family_v1/RidgeScoreRepair/MACRO_RESULTS.csv",
+      "sha256": "e1e502f69477281037cf340f7de55c535afbba5c3b6eb4945017df12b8c08726",
+      "rows": 220,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/frangieh_ridge_repair_pairs.csv",
+      "source_relative_to_closure": "frangieh_cross_family_v1/RidgeScoreRepair/PAIRED_BOOTSTRAP.csv",
+      "sha256": "23d5693e04fff165bedda28c8257e5886b66bc08852bc31a522fcd1ee5914d5a",
+      "rows": 24,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/frangieh_ridge_repair_ledger.csv",
+      "source_relative_to_closure": "frangieh_cross_family_v1/RidgeScoreRepair/SCORE_REPAIR_LEDGER.csv",
+      "sha256": "3810207bd1412a1a95e85d29d95dc3e964f67e22382ea882032ba848d28f43bb",
+      "rows": 60,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/alignment_reference_methods.csv",
+      "source_relative_to_closure": "common_gene_axis/reference_estimand_diagnostic/MACRO.csv",
+      "sha256": "5d474996221e2b31ca276044471284d7d88b6e79874b34e6827ca8248bbe1179",
+      "rows": 2,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/alignment_reference_pairs.csv",
+      "source_relative_to_closure": "common_gene_axis/reference_estimand_diagnostic/PAIRED_COMPARISONS.csv",
+      "sha256": "cbfb6f137f98f08a9bfb6ba053e8ba37b8fb23d384bc012c7935197667515c31",
+      "rows": 2,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/alignment_risk_replay_methods.csv",
+      "source_relative_to_closure": "common_gene_axis/reference_estimand_risk_replay/MACRO.csv",
+      "sha256": "e34c6ffd50acc59100475a57840a5f00f4ca0e6e546e73d2bbd61b36b0c73015",
+      "rows": 4,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/alignment_risk_replay_pairs.csv",
+      "source_relative_to_closure": "common_gene_axis/reference_estimand_risk_replay/PAIRED_COMPARISONS.csv",
+      "sha256": "0371b82a36b79952701e408014eae361a7b4bb069db17377781f8c7ed37abb4e",
+      "rows": 3,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/publicset_macro_metric_intervals.csv",
+      "source_relative_to_closure": "publicset_execution_v1/statistics_v1/MACRO_METRIC_INTERVALS.csv",
+      "sha256": "68fa74ef313cde61c1fd8a39c6929208acd1584c5e2a9d742bb6ace8b4e84c6a",
+      "rows": 736,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/publicset_paired_comparisons.csv",
+      "source_relative_to_closure": "publicset_execution_v1/statistics_v1/PAIRED_COMPARISONS.csv",
+      "sha256": "175dc4f5ea3f788dff08a9e82ab14fea8b2c438ccda0e571fac213578c5708a2",
+      "rows": 720,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/publicset_strong_simple_comparisons.csv",
+      "source_relative_to_closure": "publicset_execution_v1/statistics_v1/STRONG_SIMPLE_COMPARISONS.csv",
+      "sha256": "9cf9a5cd016b0a0c74e4920e7fe52a6c2e2cc9ec08766e9993e81d58453d4d69",
+      "rows": 480,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/publicset_mc_data_alignment_comparisons.csv",
+      "source_relative_to_closure": "publicset_execution_v1/statistics_v1/MC_DATA_ALIGNMENT_COMPARISONS.csv",
+      "sha256": "683dcfc46b4f0ccfeae394854b56faaa0b148e9a71c2f825ec5bf5d6454e2ee6",
+      "rows": 16,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/publicset_common_task_coverage.csv",
+      "source_relative_to_closure": "publicset_execution_v1/statistics_v1/COMMON_TASK_COVERAGE.csv",
+      "sha256": "3bf7c99d1434f05bcc95181faf6ce2601f156061bac5e78574acd28d75fc64f9",
+      "rows": 40,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/publicset_stratum_metrics.csv",
+      "source_relative_to_closure": "publicset_execution_v1/statistics_v1/STRATUM_METRICS.csv",
+      "sha256": "fb4b8221600f73bef480ae821f0e4a6ae638676543c57cb4aa1a5fef437090a5",
+      "rows": 1020,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/publicset_seed_metrics.csv",
+      "source_relative_to_closure": "publicset_execution_v1/statistics_v1/SEED_METRICS.csv",
+      "sha256": "0fe353efac8ae98fd1229f5c940141f7c540b1e46b2a620be5c8f1896510d0cc",
+      "rows": 1540,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/publicset_paired_stratum_deltas.csv",
+      "source_relative_to_closure": "publicset_execution_v1/statistics_v1/PAIRED_STRATUM_DELTAS.csv",
+      "sha256": "a86211b27fe1fdd7885aca01ca455b01ff56449f77281dbd449090eb7da25972",
+      "rows": 2700,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/publicset_strong_simple_stratum_deltas.csv",
+      "source_relative_to_closure": "publicset_execution_v1/statistics_v1/STRONG_SIMPLE_STRATUM_DELTAS.csv",
+      "sha256": "7029735e8b4fe98045f560a061eb9bb4a43ce4ad9f8cb31b19fd69a706a2749a",
+      "rows": 1800,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/publicset_mc_data_alignment_stratum_deltas.csv",
+      "source_relative_to_closure": "publicset_execution_v1/statistics_v1/MC_DATA_ALIGNMENT_STRATUM_DELTAS.csv",
+      "sha256": "86ba043ba14864c76c8649e8a1890ae025174c242bf2d75e0e36aea59ebf69c2",
+      "rows": 30,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/publicset_decisions.csv",
+      "source_relative_to_closure": "publicset_execution_v1/statistics_v1/DECISIONS.csv",
+      "sha256": "7bb825688e1b17a4ee6d5c6d3691ca1f8fcf6c39c231c9b146f19a0d82c9621e",
+      "rows": 4,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/publicset_decision.json",
+      "source_relative_to_closure": "publicset_execution_v1/statistics_v1/DECISION.json",
+      "sha256": "e536f7abda23dd8436db42d3eb2a22ebfa1b2fdfd562590a9f68e58e2f621908",
+      "rows": null,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/publicset_run_manifest.json",
+      "source_relative_to_closure": "publicset_execution_v1/statistics_v1/RUN_MANIFEST.json",
+      "sha256": "33c1f3ab882a4f8482cb6bf9a9c934935be6961a69d6d320cc87617e7c110d09",
+      "rows": null,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/publicset_semantic_check.json",
+      "source_relative_to_closure": "publicset_execution_v1/statistics_v1/SEMANTIC_CHECK.json",
+      "sha256": "85c5d85959bafd54394a751a4c425fb52c5c70f2d5478253679729b5cf469c9d",
+      "rows": null,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/strong_simple_config.json",
+      "source_relative_to_closure": "publicset_execution_v1/strong_simple_reference_v1/CONFIG.json",
+      "sha256": "41fd642538ded0d341c5af80de0dd2eb2b775c67798e9ce952b1ae48deb0c7ff",
+      "rows": null,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/strong_simple_run_status.json",
+      "source_relative_to_closure": "publicset_execution_v1/strong_simple_reference_v1/RUN_STATUS.json",
+      "sha256": "d0c481b2f37e3fb2cbcceba5417b904c359faa12f6c731c855d5254d0ecbb9b4",
+      "rows": null,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/publicset_training_run_manifest.json",
+      "source_relative_to_closure": "publicset_execution_v1/full_v2_resume/RUN_MANIFEST.json",
+      "sha256": "83bbe515630e9e1b986553f9f1ac5b714506ebc24772ed9f07b000deee404e84",
+      "rows": null,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/publicset_training_fit_ledger.csv",
+      "source_relative_to_closure": "publicset_execution_v1/full_v2_resume/FIT_LEDGER.csv",
+      "sha256": "218267d8b19413e96266347094d32e58ee9e97e38356d0ab6a754583587dd7c1",
+      "rows": 45,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/publicset_training_model_reuse_ledger.csv",
+      "source_relative_to_closure": "publicset_execution_v1/full_v2_resume/MODEL_REUSE_LEDGER.csv",
+      "sha256": "71aaa4ae5fa0b71f966d24967086d4522efd733c720372f780f9334eb5cf4509",
+      "rows": 38,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/publicset_training_history_set_audit.csv",
+      "source_relative_to_closure": "publicset_execution_v1/full_v2_resume/HISTORY_SET_AUDIT.csv",
+      "sha256": "9fd8efee23f7187831fbeedbe087ac427056d4ce11203d075d991da0d3975292",
+      "rows": 2350,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/publicset_training_constrained_reconstruction_diagnostic.csv",
+      "source_relative_to_closure": "publicset_execution_v1/full_v2_resume/CONSTRAINED_RECONSTRUCTION_DIAGNOSTIC.csv",
+      "sha256": "ac7597ef127047a2cc3b076c0b4f0a27cf3a124dacb822afc272f84b8d342d08",
+      "rows": 2350,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/reader_base_teacher_context_provenance.csv",
+      "source_relative_to_closure": "publicset_execution_v1/risk_followup_v1/TEACHER_CONTEXT_PROVENANCE.csv",
+      "sha256": "a0cd9fa1c7668dd190e1bb3598e1225c1837a8af7197d4b0d443cff804d1b2f5",
+      "rows": 32,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/reader_base_input_audit.json",
+      "source_relative_to_closure": "publicset_execution_v1/risk_followup_v1/INPUT_AUDIT.json",
+      "sha256": "3dae23c3f90d7e93c9d6fd5de1dab00779ec0e77edacdb22fb0f70471e9e8c40",
+      "rows": null,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    },
+    {
+      "paper_artifact": "evidence/reader_base_registration.json",
+      "source_relative_to_closure": "publicset_execution_v1/risk_followup_v1/REGISTRATION.json",
+      "sha256": "b6f4ccda480d3a9c2aa0795f4ff6dad9dd99d27f6d0836c05d99eed5875f2cf9",
+      "rows": null,
+      "result_status": "EXISTING_COMPLETED_RESULT_NOT_NEW_EXPERIMENT"
+    }
+  ]
+}

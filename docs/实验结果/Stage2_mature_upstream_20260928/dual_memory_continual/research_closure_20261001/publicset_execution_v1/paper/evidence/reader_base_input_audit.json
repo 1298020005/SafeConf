@@ -1,0 +1,51 @@
+{
+  "role": "NEW_DEV_SEEN_PUBLICSET_CONTEXT_SCOPED",
+  "n_tasks": 1808,
+  "n_genes": 575,
+  "gene_axis": 2840,
+  "teacher_models_checked": 32,
+  "all_context_target_treated_training_rows": 0,
+  "source_supervision": "Other architecture, same context, outer-train genes only",
+  "target_errors": "Evaluation only; never fit labels or CDF",
+  "new_upstream_training": 0,
+  "MC_TEST_reads": 0,
+  "MC_validation_reads": 0,
+  "input_bindings": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/GENE_IDS.json",
+      "sha256": "be612f9c4638146b41eee26f607ab12fbed53b524cda7a76eee36ca554c28f97"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TASKS.csv",
+      "sha256": "72c6620d797db9115e67f6c9067d54879950733827801190ea25161ee03a118d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_PUBLIC_EFFECTS.npy",
+      "sha256": "579b95ac834a36f1c6c3d12d25c3d607c9083a53c53b469e24d3c0be81d1e74e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_PUBLIC_CONTROLS.npy",
+      "sha256": "a59e8ed27adf1cb58090c2eb106a33136a07d5e6da1dc5a9f15180ef59628c24"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TRUE_EFFECTS.npy",
+      "sha256": "c2da8655e555ed55320d79c8d197fddf4365d57ae974c2dfd529c009af3d164c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TxPert_GAT_PREDICTED_EFFECTS.npy",
+      "sha256": "88fba0ba25493bcebaf5c702c5200f70d55433968ba532cd83dbb0ed77947a90"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TxPert_Exphormer_PREDICTED_EFFECTS.npy",
+      "sha256": "97b24e3bb14c5e26bd36e71168a9c95f5ec04160d1799d5bba58e470286b5939"
+    }
+  ],
+  "code_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_publicset_risk_followup_v1.py",
+    "sha256": "8b96be88c48c28ac433832907bf1c13378d884a864afaa14271b49ad1944a8ce"
+  },
+  "public_runner_binding": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_publicset_v1.py",
+    "sha256": "0bddc28e71b5022fbb356d32229b4850cae949a64e69127f86028412845a048c"
+  }
+}

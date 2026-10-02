@@ -1,0 +1,74 @@
+\begin{thebibliography}{10}
+
+\bibitem{cheng2025prescribe}
+Jiabei Cheng, Changxi Chi, Jingbo Zhou, Hongyi Xin, and Jun Xia.
+\newblock {PRESCRIBE}: Predicting single-cell responses with bayesian
+  estimation.
+\newblock In {\em Advances in Neural Information Processing Systems}, 2025.
+
+\bibitem{cui2024scgpt}
+Haotian Cui, Chloe Wang, Hassaan Maan, Kuan Pang, Fengning Luo, Nan Duan, and
+  Bo~Wang.
+\newblock {scGPT}: toward building a foundation model for single-cell
+  multi-omics using generative {AI}.
+\newblock {\em Nature Methods}, 21:1470--1480, 2024.
+
+\bibitem{lahoti2023risk}
+Preethi Lahoti, Krishna~P. Gummadi, and Gerhard Weikum.
+\newblock Responsible model deployment via model-agnostic uncertainty learning.
+\newblock {\em Machine Learning}, 112(3):939--970, 2023.
+
+\bibitem{lee2019settransformer}
+Juho Lee, Yoonho Lee, Jungtaek Kim, Adam Kosiorek, Seungjin Choi, and Yee~Whye
+  Teh.
+\newblock Set transformer: A framework for attention-based
+  permutation-invariant neural networks.
+\newblock In {\em Proceedings of the 36th International Conference on Machine
+  Learning}, volume~97 of {\em Proceedings of Machine Learning Research}, pages
+  3744--3753, 2019.
+
+\bibitem{nicol2026spurious}
+Phillip~B. Nicol, Shriya Shivakumar, and Rafael~A. Irizarry.
+\newblock Spurious correlation inflates performance in single-cell perturbation
+  prediction.
+\newblock bioRxiv preprint, 2026.
+\newblock Version 1, posted May 12, 2026; not peer reviewed.
+
+\bibitem{roohani2024gears}
+Yusuf Roohani, Kexin Huang, and Jure Leskovec.
+\newblock Predicting transcriptional outcomes of novel multigene perturbations
+  with {GEARS}.
+\newblock {\em Nature Biotechnology}, 42:927--935, 2024.
+\newblock Published online August 17, 2023.
+
+\bibitem{shrestha2026pertema}
+Bishal Shrestha.
+\newblock {PertEMA}: Perturbation error meta-assessment.
+\newblock Computer software, version 0.1.0, 2026.
+\newblock Estimator adaptation pins commit
+  43c09a32e23d0ee2ae5dfbab21b2deeab27f1803; the repository states that there is
+  no accompanying paper.
+
+\bibitem{wang2026reliable}
+Xi~Wang, Jack Kuipers, Florian Hugi, Randall~Jeffrey Platt, and Niko
+  Beerenwinkel.
+\newblock Reliable single-cell perturbations explain and improve model
+  performance.
+\newblock bioRxiv preprint, 2026.
+\newblock Version 1, posted August 12, 2026; not peer reviewed.
+
+\bibitem{wu2024perturbench}
+Yan Wu, Esther Wershof, Sebastian~M. Schmon, Marcel Nassar, Blazej Osinski,
+  Ridvan Eksi, Zichao Yan, Rory Stark, Kun Zhang, and Thore Graepel.
+\newblock {PerturBench}: Benchmarking machine learning models for cellular
+  perturbation analysis, 2024.
+\newblock Version 4 revised October 24, 2025.
+
+\bibitem{zaheer2017deepsets}
+Manzil Zaheer, Satwik Kottur, Siamak Ravanbakhsh, Barnabas Poczos, Ruslan
+  Salakhutdinov, and Alexander~J. Smola.
+\newblock Deep sets.
+\newblock In {\em Advances in Neural Information Processing Systems},
+  volume~30, 2017.
+
+\end{thebibliography}

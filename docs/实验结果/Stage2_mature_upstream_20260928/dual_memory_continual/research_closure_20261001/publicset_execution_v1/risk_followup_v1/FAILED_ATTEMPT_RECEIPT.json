@@ -1,0 +1,10 @@
+{
+  "pid": 1582035,
+  "started_utc": "2026-10-02T14:29:31.683164+00:00",
+  "status": "FAILED_BEFORE_FIRST_OPTIMIZER_STEP",
+  "elapsed_seconds": 5.726882382994518,
+  "charged_gpu_seconds": 5.726882382994518,
+  "completed_stages": 0,
+  "cause": "Torch deterministic CUDA requested CUBLAS_WORKSPACE_CONFIG before initialization",
+  "repair": "Set CUBLAS_WORKSPACE_CONFIG=:4096:8 before Torch import; fixed model and numerical parameters unchanged"
+}

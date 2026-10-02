@@ -1,0 +1,63 @@
+{
+  "run_id": "frangieh_cross_family_v1",
+  "data_role": "SEEN_RETROSPECTIVE_RISK_DEVELOPMENT",
+  "original_test_role_change": "old upstream test reused as retrospective risk CV; never new confirmation",
+  "native_gene_count": 512,
+  "output_contract_id": "Frangieh_E106_E107_native512_context_control_delta_v1",
+  "public_history": "same-gene other-context original upstream TRAIN or VAL only; no TEST truths",
+  "source_labels": "source-model own RMSE on risk-train only; per-context midrank ECDF",
+  "no_ensemble_scores": true,
+  "no_target_error_for_source_fit": true,
+  "split": {
+    "hash_prefix": "frangieh-native-risk-v1|",
+    "input": "original perturbation string including +ctrl",
+    "sort": "SHA256 hex ascending",
+    "assignment": "position modulo 5",
+    "seed": null
+  },
+  "risk_features": [
+    "predicted_magnitude",
+    "prediction_abs_mean",
+    "prediction_signed_mean",
+    "prediction_std",
+    "prediction_abs_q95",
+    "prediction_sparsity",
+    "prior_magnitude",
+    "prediction_prior_rmse",
+    "prediction_prior_cosine",
+    "prior_uncertainty",
+    "log_history_support",
+    "effective_sources",
+    "history_conflict"
+  ],
+  "prediction_features": [
+    "predicted_magnitude",
+    "prediction_abs_mean",
+    "prediction_signed_mean",
+    "prediction_std",
+    "prediction_abs_q95",
+    "prediction_sparsity"
+  ],
+  "fit_seed": 20261002,
+  "ridge_alpha": 10,
+  "hgb": {
+    "max_iter": 200,
+    "learning_rate": 0.05,
+    "max_depth": 3,
+    "min_samples_leaf": 20,
+    "l2_regularization": 10
+  },
+  "source_row_weighting": "equal total weight per perturbation gene",
+  "primary_strata": "direction x original upstream fold x risk fold; all-test and heldout-context separate",
+  "bootstrap": {
+    "replicates": 5000,
+    "seed": 20261002,
+    "unit": "gene"
+  },
+  "expected_fits": 120,
+  "upstream_training": 0,
+  "download_bytes": 0,
+  "threads": 4,
+  "pid": 1541881,
+  "started_at": "2026-10-02T22:02:21.412001+08:00"
+}

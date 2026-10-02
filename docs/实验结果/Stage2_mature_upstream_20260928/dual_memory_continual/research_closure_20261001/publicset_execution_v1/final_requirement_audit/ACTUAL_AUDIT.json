@@ -1,0 +1,1393 @@
+{
+  "audit_time_utc": "2026-10-02T14:49:26.313723+00:00",
+  "scope": "Existing registered summaries, saved score tables and code; no model invocation or new truth access",
+  "overall_status": "PENDING_FINAL_REQUIREMENTS",
+  "neural_stage_runs": [
+    {
+      "run_id": "prototype_v2_cpu_environment_repair",
+      "neural_stages": 24,
+      "stage_seconds": 119.12100161705166,
+      "ledger": {
+        "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/prototype_v2_cpu_environment_repair/FIT_LEDGER.csv",
+        "sha256": "0a14f6a5137e08eb2b5cadf6383c177a9b228b67b08f7ed34b06fd57084a7ecc",
+        "bytes": 5559
+      }
+    },
+    {
+      "run_id": "full_v1",
+      "neural_stages": 51,
+      "stage_seconds": 143.01175527716987,
+      "ledger": {
+        "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/full_v1/FIT_LEDGER.csv",
+        "sha256": "b38090cacd04441b7c22a88266525518795d7a1b402f4d8696aa39eaf371df78",
+        "bytes": 11909
+      }
+    },
+    {
+      "run_id": "full_v2_resume",
+      "neural_stages": 45,
+      "stage_seconds": 422.89117132523097,
+      "ledger": {
+        "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/full_v2_resume/FIT_LEDGER.csv",
+        "sha256": "218267d8b19413e96266347094d32e58ee9e97e38356d0ab6a754583587dd7c1",
+        "bytes": 10482
+      }
+    }
+  ],
+  "unique_main_neural_stages": 120,
+  "actual_main_neural_stages": 120,
+  "prototype_is_subset_of_full": true,
+  "main_neural_stages_by_type": {
+    "early": 60,
+    "refit": 60
+  },
+  "actual_main_neural_stage_seconds": 685.0239282194525,
+  "actual_main_B1_CPU_saved_fit_audits": 19,
+  "main_B1_CPU_unique_fold_scopes": 10,
+  "main_B1_CPU_audits": [
+    {
+      "run_id": "prototype_v2_cpu_environment_repair",
+      "binding": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/prototype_v2_cpu_environment_repair/McFaline/outer0/B1_HGB/FIT_AUDIT.json",
+        "sha256": "cb4b1fccb54bc0b67544fe64b3c814aee40c53aede5ca121f03d3b5e71f3f4b0",
+        "bytes": 384
+      }
+    },
+    {
+      "run_id": "prototype_v2_cpu_environment_repair",
+      "binding": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/prototype_v2_cpu_environment_repair/Source/outer0/B1_HGB/FIT_AUDIT.json",
+        "sha256": "2ab729c350063e5cc2d40c4fdb1fd89c452fe1df3c1ff51782800182f570df3a",
+        "bytes": 385
+      }
+    },
+    {
+      "run_id": "full_v1",
+      "binding": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/full_v1/McFaline/outer0/B1_HGB/FIT_AUDIT.json",
+        "sha256": "cb4b1fccb54bc0b67544fe64b3c814aee40c53aede5ca121f03d3b5e71f3f4b0",
+        "bytes": 384
+      }
+    },
+    {
+      "run_id": "full_v1",
+      "binding": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/full_v1/McFaline/outer1/B1_HGB/FIT_AUDIT.json",
+        "sha256": "ff4f1c6531548a212bb59b32baad9cb9026662835caa6ba29fde96ce95cca3b9",
+        "bytes": 384
+      }
+    },
+    {
+      "run_id": "full_v1",
+      "binding": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/full_v1/McFaline/outer2/B1_HGB/FIT_AUDIT.json",
+        "sha256": "32532236a496866ec2025018d4d5ea58263211f010758c02a97760dc4046059b",
+        "bytes": 384
+      }
+    },
+    {
+      "run_id": "full_v1",
+      "binding": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/full_v1/McFaline/outer3/B1_HGB/FIT_AUDIT.json",
+        "sha256": "64e026b311269ad6b5f1fc69cd46b2f23741d14a2cbdc6019fa4482767b3bb79",
+        "bytes": 384
+      }
+    },
+    {
+      "run_id": "full_v1",
+      "binding": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/full_v1/McFaline/outer4/B1_HGB/FIT_AUDIT.json",
+        "sha256": "7b806a645d2779730fbadc7b4bc4ea8d3c984a5bfe2ac638ca73e6f7c949449f",
+        "bytes": 384
+      }
+    },
+    {
+      "run_id": "full_v1",
+      "binding": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/full_v1/Source/outer0/B1_HGB/FIT_AUDIT.json",
+        "sha256": "2ab729c350063e5cc2d40c4fdb1fd89c452fe1df3c1ff51782800182f570df3a",
+        "bytes": 385
+      }
+    },
+    {
+      "run_id": "full_v1",
+      "binding": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/full_v1/Source/outer1/B1_HGB/FIT_AUDIT.json",
+        "sha256": "8278b845bf942107f98b137442e72e900d5da77525237e0990dfd89ab7702678",
+        "bytes": 385
+      }
+    },
+    {
+      "run_id": "full_v2_resume",
+      "binding": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/full_v2_resume/McFaline/outer0/B1_HGB/FIT_AUDIT.json",
+        "sha256": "cb4b1fccb54bc0b67544fe64b3c814aee40c53aede5ca121f03d3b5e71f3f4b0",
+        "bytes": 384
+      }
+    },
+    {
+      "run_id": "full_v2_resume",
+      "binding": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/full_v2_resume/McFaline/outer1/B1_HGB/FIT_AUDIT.json",
+        "sha256": "ff4f1c6531548a212bb59b32baad9cb9026662835caa6ba29fde96ce95cca3b9",
+        "bytes": 384
+      }
+    },
+    {
+      "run_id": "full_v2_resume",
+      "binding": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/full_v2_resume/McFaline/outer2/B1_HGB/FIT_AUDIT.json",
+        "sha256": "32532236a496866ec2025018d4d5ea58263211f010758c02a97760dc4046059b",
+        "bytes": 384
+      }
+    },
+    {
+      "run_id": "full_v2_resume",
+      "binding": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/full_v2_resume/McFaline/outer3/B1_HGB/FIT_AUDIT.json",
+        "sha256": "64e026b311269ad6b5f1fc69cd46b2f23741d14a2cbdc6019fa4482767b3bb79",
+        "bytes": 384
+      }
+    },
+    {
+      "run_id": "full_v2_resume",
+      "binding": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/full_v2_resume/McFaline/outer4/B1_HGB/FIT_AUDIT.json",
+        "sha256": "7b806a645d2779730fbadc7b4bc4ea8d3c984a5bfe2ac638ca73e6f7c949449f",
+        "bytes": 384
+      }
+    },
+    {
+      "run_id": "full_v2_resume",
+      "binding": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/full_v2_resume/Source/outer0/B1_HGB/FIT_AUDIT.json",
+        "sha256": "2ab729c350063e5cc2d40c4fdb1fd89c452fe1df3c1ff51782800182f570df3a",
+        "bytes": 385
+      }
+    },
+    {
+      "run_id": "full_v2_resume",
+      "binding": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/full_v2_resume/Source/outer1/B1_HGB/FIT_AUDIT.json",
+        "sha256": "8278b845bf942107f98b137442e72e900d5da77525237e0990dfd89ab7702678",
+        "bytes": 385
+      }
+    },
+    {
+      "run_id": "full_v2_resume",
+      "binding": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/full_v2_resume/Source/outer2/B1_HGB/FIT_AUDIT.json",
+        "sha256": "787b2be7b55e6637a9368315b1882efb503a76073d5c1ecfee95cb8a6cce1102",
+        "bytes": 385
+      }
+    },
+    {
+      "run_id": "full_v2_resume",
+      "binding": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/full_v2_resume/Source/outer3/B1_HGB/FIT_AUDIT.json",
+        "sha256": "a64dd1134f3dce344153ec74345c0efe8364de97605279dfe80a23b80d5af36a",
+        "bytes": 385
+      }
+    },
+    {
+      "run_id": "full_v2_resume",
+      "binding": {
+        "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/full_v2_resume/Source/outer4/B1_HGB/FIT_AUDIT.json",
+        "sha256": "dc511aa166f1d0f93a6f565c3b099a13f2070db25e227e9578656ec7631239ce",
+        "bytes": 385
+      }
+    }
+  ],
+  "B0_and_strong_simple_reference_new_fits": 0,
+  "full_arm_counts": [
+    {
+      "domain": "McFaline",
+      "upstream": "DecoderOnly",
+      "builder": "AlignmentControl_OldGuideMean",
+      "seed": 0,
+      "n_tasks": 542,
+      "n_genes": 377,
+      "n_unique_tasks": 542
+    },
+    {
+      "domain": "McFaline",
+      "upstream": "DecoderOnly",
+      "builder": "B0_SupportMean",
+      "seed": 0,
+      "n_tasks": 542,
+      "n_genes": 377,
+      "n_unique_tasks": 542
+    },
+    {
+      "domain": "McFaline",
+      "upstream": "DecoderOnly",
+      "builder": "B1_HGB",
+      "seed": 0,
+      "n_tasks": 542,
+      "n_genes": 377,
+      "n_unique_tasks": 542
+    },
+    {
+      "domain": "McFaline",
+      "upstream": "DecoderOnly",
+      "builder": "B2_Pointwise",
+      "seed": 20260930,
+      "n_tasks": 542,
+      "n_genes": 377,
+      "n_unique_tasks": 542
+    },
+    {
+      "domain": "McFaline",
+      "upstream": "DecoderOnly",
+      "builder": "B2_Pointwise",
+      "seed": 20261001,
+      "n_tasks": 542,
+      "n_genes": 377,
+      "n_unique_tasks": 542
+    },
+    {
+      "domain": "McFaline",
+      "upstream": "DecoderOnly",
+      "builder": "B2_Pointwise",
+      "seed": 20261002,
+      "n_tasks": 542,
+      "n_genes": 377,
+      "n_unique_tasks": 542
+    },
+    {
+      "domain": "McFaline",
+      "upstream": "DecoderOnly",
+      "builder": "B3_DeepSets",
+      "seed": 20260930,
+      "n_tasks": 542,
+      "n_genes": 377,
+      "n_unique_tasks": 542
+    },
+    {
+      "domain": "McFaline",
+      "upstream": "DecoderOnly",
+      "builder": "B3_DeepSets",
+      "seed": 20261001,
+      "n_tasks": 542,
+      "n_genes": 377,
+      "n_unique_tasks": 542
+    },
+    {
+      "domain": "McFaline",
+      "upstream": "DecoderOnly",
+      "builder": "B3_DeepSets",
+      "seed": 20261002,
+      "n_tasks": 542,
+      "n_genes": 377,
+      "n_unique_tasks": 542
+    },
+    {
+      "domain": "McFaline",
+      "upstream": "DecoderOnly",
+      "builder": "Magnitude",
+      "seed": 0,
+      "n_tasks": 542,
+      "n_genes": 377,
+      "n_unique_tasks": 542
+    },
+    {
+      "domain": "McFaline",
+      "upstream": "DecoderOnly",
+      "builder": "NegativeHistorySupport",
+      "seed": 0,
+      "n_tasks": 542,
+      "n_genes": 377,
+      "n_unique_tasks": 542
+    },
+    {
+      "domain": "Source",
+      "upstream": "TxPert_Exphormer",
+      "builder": "B0_SupportMean",
+      "seed": 0,
+      "n_tasks": 1808,
+      "n_genes": 575,
+      "n_unique_tasks": 1808
+    },
+    {
+      "domain": "Source",
+      "upstream": "TxPert_Exphormer",
+      "builder": "B1_HGB",
+      "seed": 0,
+      "n_tasks": 1808,
+      "n_genes": 575,
+      "n_unique_tasks": 1808
+    },
+    {
+      "domain": "Source",
+      "upstream": "TxPert_Exphormer",
+      "builder": "B2_Pointwise",
+      "seed": 20260930,
+      "n_tasks": 1808,
+      "n_genes": 575,
+      "n_unique_tasks": 1808
+    },
+    {
+      "domain": "Source",
+      "upstream": "TxPert_Exphormer",
+      "builder": "B2_Pointwise",
+      "seed": 20261001,
+      "n_tasks": 1808,
+      "n_genes": 575,
+      "n_unique_tasks": 1808
+    },
+    {
+      "domain": "Source",
+      "upstream": "TxPert_Exphormer",
+      "builder": "B2_Pointwise",
+      "seed": 20261002,
+      "n_tasks": 1808,
+      "n_genes": 575,
+      "n_unique_tasks": 1808
+    },
+    {
+      "domain": "Source",
+      "upstream": "TxPert_Exphormer",
+      "builder": "B3_DeepSets",
+      "seed": 20260930,
+      "n_tasks": 1808,
+      "n_genes": 575,
+      "n_unique_tasks": 1808
+    },
+    {
+      "domain": "Source",
+      "upstream": "TxPert_Exphormer",
+      "builder": "B3_DeepSets",
+      "seed": 20261001,
+      "n_tasks": 1808,
+      "n_genes": 575,
+      "n_unique_tasks": 1808
+    },
+    {
+      "domain": "Source",
+      "upstream": "TxPert_Exphormer",
+      "builder": "B3_DeepSets",
+      "seed": 20261002,
+      "n_tasks": 1808,
+      "n_genes": 575,
+      "n_unique_tasks": 1808
+    },
+    {
+      "domain": "Source",
+      "upstream": "TxPert_Exphormer",
+      "builder": "Magnitude",
+      "seed": 0,
+      "n_tasks": 1808,
+      "n_genes": 575,
+      "n_unique_tasks": 1808
+    },
+    {
+      "domain": "Source",
+      "upstream": "TxPert_Exphormer",
+      "builder": "NegativeHistorySupport",
+      "seed": 0,
+      "n_tasks": 1808,
+      "n_genes": 575,
+      "n_unique_tasks": 1808
+    },
+    {
+      "domain": "Source",
+      "upstream": "TxPert_GAT",
+      "builder": "B0_SupportMean",
+      "seed": 0,
+      "n_tasks": 1808,
+      "n_genes": 575,
+      "n_unique_tasks": 1808
+    },
+    {
+      "domain": "Source",
+      "upstream": "TxPert_GAT",
+      "builder": "B1_HGB",
+      "seed": 0,
+      "n_tasks": 1808,
+      "n_genes": 575,
+      "n_unique_tasks": 1808
+    },
+    {
+      "domain": "Source",
+      "upstream": "TxPert_GAT",
+      "builder": "B2_Pointwise",
+      "seed": 20260930,
+      "n_tasks": 1808,
+      "n_genes": 575,
+      "n_unique_tasks": 1808
+    },
+    {
+      "domain": "Source",
+      "upstream": "TxPert_GAT",
+      "builder": "B2_Pointwise",
+      "seed": 20261001,
+      "n_tasks": 1808,
+      "n_genes": 575,
+      "n_unique_tasks": 1808
+    },
+    {
+      "domain": "Source",
+      "upstream": "TxPert_GAT",
+      "builder": "B2_Pointwise",
+      "seed": 20261002,
+      "n_tasks": 1808,
+      "n_genes": 575,
+      "n_unique_tasks": 1808
+    },
+    {
+      "domain": "Source",
+      "upstream": "TxPert_GAT",
+      "builder": "B3_DeepSets",
+      "seed": 20260930,
+      "n_tasks": 1808,
+      "n_genes": 575,
+      "n_unique_tasks": 1808
+    },
+    {
+      "domain": "Source",
+      "upstream": "TxPert_GAT",
+      "builder": "B3_DeepSets",
+      "seed": 20261001,
+      "n_tasks": 1808,
+      "n_genes": 575,
+      "n_unique_tasks": 1808
+    },
+    {
+      "domain": "Source",
+      "upstream": "TxPert_GAT",
+      "builder": "B3_DeepSets",
+      "seed": 20261002,
+      "n_tasks": 1808,
+      "n_genes": 575,
+      "n_unique_tasks": 1808
+    },
+    {
+      "domain": "Source",
+      "upstream": "TxPert_GAT",
+      "builder": "Magnitude",
+      "seed": 0,
+      "n_tasks": 1808,
+      "n_genes": 575,
+      "n_unique_tasks": 1808
+    },
+    {
+      "domain": "Source",
+      "upstream": "TxPert_GAT",
+      "builder": "NegativeHistorySupport",
+      "seed": 0,
+      "n_tasks": 1808,
+      "n_genes": 575,
+      "n_unique_tasks": 1808
+    }
+  ],
+  "first_stage_statistics": {
+    "binding": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/statistics_v1/RUN_STATUS.json",
+      "sha256": "33c1f3ab882a4f8482cb6bf9a9c934935be6961a69d6d320cc87617e7c110d09",
+      "bytes": 3192
+    },
+    "value": {
+      "status": "COMPLETE",
+      "pid": 1591704,
+      "started_utc": "2026-10-02T14:34:55.880365+00:00",
+      "training_run": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/full_v2_resume",
+      "training_pid": 1575043,
+      "training_status": "COMPLETE",
+      "bootstrap_replicates": 5000,
+      "bootstrap_seed": 20261002,
+      "cpu_threads": 4,
+      "wall_seconds_cap": 600.0,
+      "new_upstream_training": 0,
+      "new_truth_reads": 0,
+      "role": "DEV_SEEN_NEW_PUBLICSET",
+      "code_sha256": "a9bba9db0f1426d2bff142a917646cca1e3deff3937122011f130a8e25911692",
+      "numpy_version": "2.4.4",
+      "pandas_version": "2.3.3",
+      "input_sha256": "5482f038764b5ee5c80764eed7d5a2b3c81982f8d354cb477a647cda0e40bfd6",
+      "strong_simple_run": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/strong_simple_reference_v1",
+      "strong_simple_input_sha256": "5123a1e9202e074ba5ae231b404bb88d0ed63a22d760798769ea6a8912c7fd8d",
+      "seed_aggregation": "metrics per seed; average seeds within context x outer-fold; then equal-stratum macro",
+      "cluster_resampling": "Source 575 shared genes synchronously; McFaline 377 genes independently; integer multiplicity exact repeats",
+      "safety_gate_scope": "macro; per-stratum violations separately reported",
+      "elapsed_seconds": 72.26419649389572,
+      "cpu_user_seconds": 74.119072,
+      "cpu_system_seconds": 0.784789,
+      "maximum_rss_kib": 813892,
+      "completed_utc": "2026-10-02T14:36:08.144324+00:00",
+      "semantic_check": {
+        "status": "PASS",
+        "literal_repeat_cases": 60,
+        "ties": true,
+        "partial_topk_blocks": true,
+        "checks": [
+          "utility20",
+          "aurc",
+          "high_risk_miss_rate",
+          "error_at_10",
+          "error_at_20",
+          "error_at_50",
+          "bio_rmse",
+          "bio_cosine"
+        ],
+        "maximum_tolerance": 2e-12
+      },
+      "decision": {
+        "primary_readout": "R_hist",
+        "decision": "STOP_PUBLICSET_ARCHITECTURE_RETAIN_B1",
+        "selected_builder": "B1_HGB",
+        "readout_dependent": false,
+        "direct_only_candidates": [],
+        "claim_scope": "DEV/SEEN; no independent confirmation or upstream retraining",
+        "interpretation": "Practical gate must hold against the original four and all three fixed matching references in all three upstream/domain views; B3 additionally needs the B3-B2 structure gate."
+      },
+      "output_files": [
+        "BOOTSTRAP_GENE_MULTIPLICITIES.npz",
+        "BOOTSTRAP_MACRO_DRAWS.npz",
+        "BOOTSTRAP_SEED_MACRO_DRAWS.npz",
+        "COMMON_TASK_COVERAGE.csv",
+        "DECISION.json",
+        "DECISIONS.csv",
+        "FIG01_PRIMARY_UTILITY.pdf",
+        "FIG01_PRIMARY_UTILITY.png",
+        "FIG02_PAIRED_MAIN_AUXILIARY.pdf",
+        "FIG02_PAIRED_MAIN_AUXILIARY.png",
+        "FIG03_BIOLOGY_STRATA.pdf",
+        "FIG03_BIOLOGY_STRATA.png",
+        "MACRO_METRIC_INTERVALS.csv",
+        "MC_DATA_ALIGNMENT_COMPARISONS.csv",
+        "MC_DATA_ALIGNMENT_STRATUM_DELTAS.csv",
+        "PAIRED_COMPARISONS.csv",
+        "PAIRED_STRATUM_DELTAS.csv",
+        "README.md",
+        "RUN_MANIFEST.json",
+        "RUN_STATUS.json",
+        "SEED_METRICS.csv",
+        "SEMANTIC_CHECK.json",
+        "STRATUM_METRICS.csv",
+        "STRONG_SIMPLE_COMPARISONS.csv",
+        "STRONG_SIMPLE_STRATUM_DELTAS.csv"
+      ]
+    }
+  },
+  "first_stage_scope": "Biology reconstruction plus fixed R_hist/direct readouts only; final joint-reader decision remains pending",
+  "nested_registration": {
+    "binding": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/REGISTRATION.json",
+      "sha256": "669a29df8909d73cfc86828047b2daf9ebee5d601e8b52496715e9972d3f2ceb",
+      "bytes": 3885
+    },
+    "value": {
+      "role": "NEW_DEV_SEEN_PUBLICSET_CONTEXT_SCOPED",
+      "scope": "Source1808 tasks / 575 genes / common2840 output genes",
+      "MC_TEST_reads": 0,
+      "new_upstream_training": 0,
+      "outer_gene_folds": 5,
+      "inner_gene_folds_for_public_OOF": 4,
+      "public_seeds": [
+        20260930,
+        20261001,
+        20261002
+      ],
+      "neural_public_fit_stages": 240,
+      "nested_cpu_public_HGB_fits": 20,
+      "actual_context_scoped_risk_HGB_fits": 400,
+      "reused_outer_public_models": 30,
+      "GPU": 1,
+      "additional_gpu_hours_cap": 2,
+      "first_timing_probe": "outer0 / seed20260930 / B2 and B3 / four inner folds / early plus refit = 16 neural stages",
+      "public_configuration": {
+        "pca_components": 32,
+        "PCA_fit": "Unique physical history rows used by actual fitting query groups only",
+        "token_encoder_width": 64,
+        "scoring_head": "128 to 64 to 1",
+        "support_mix": 0.5,
+        "optimizer": "AdamW",
+        "learning_rate": 0.001,
+        "weight_decay": 0.0001,
+        "batch_size": 32,
+        "max_epochs": 100,
+        "patience": 10,
+        "gradient_clip": 1.0,
+        "loss": "Full2840 biology effect MSE with equal total gene weights"
+      },
+      "risk_configuration": {
+        "features_P": "tools.safeconf_continual.research.P",
+        "features_PUBLIC": "tools.safeconf_continual.research.PUBLIC",
+        "HGB": {
+          "max_iter": 200,
+          "learning_rate": 0.05,
+          "max_depth": 3,
+          "min_samples_leaf": 20,
+          "l2_regularization": 10
+        },
+        "training_weight": "Equal total biological gene-cluster weight",
+        "risk_CDF": "Only source family outer-train errors in current evaluation context",
+        "teacher_scope": "Source family same-context checkpoint excludes that context treated expression; never pool other-context teacher errors",
+        "target_errors": "Evaluation only",
+        "methods": [
+          "P_only",
+          "Support_only",
+          "B0_SupportMean",
+          "B1_HGB",
+          "B2_Pointwise",
+          "B3_DeepSets"
+        ],
+        "Support_only": "P plus log1p legal total history cell support and log1p raw history count; no biology content, prior, discrepancy or fabricated quality",
+        "seed_reuse": "P/Support/B0/B1 each40 scopes at original seed20260930 and broadcast identical predictions; B2/B3 each120 scopes with matched Public/risk seed"
+      },
+      "statistics": {
+        "primary": "Equal macro of 20 context by outer-fold strata, then mean of three seed metrics. Never average risk scores before computing metrics.",
+        "bootstrap": "5000 paired gene-cluster draws shared across all methods, contexts and seeds",
+        "intervals": "Nominal conditional on fixed fitted models; no training resampling",
+        "fixed_comparisons": [
+          "B3 vs B2",
+          "B2/B3 vs B1",
+          "B2/B3 vs B0",
+          "B2/B3 vs pure Support",
+          "B2/B3 vs P-only"
+        ],
+        "supplement": "Four context macro of pooled outer OOF",
+        "safety_gate": "macro AURC/error10/error20/error50 ratio increase <=.05; macro high-risk miss increase <=.02",
+        "adoption_gate": "delta utility20 >=.005; at least60% valid strata nonnegative; at least80% of20 strata valid; paired CI lower >=-.005",
+        "worst_strata": "Transparent supplemental evidence; no added hard adoption gate"
+      },
+      "physical_content_shuffle": "Separate pending control; legal fit-bank donors, current query parent forbidden, actual effect content and dependent pair/conflict/weights/prior/discrepancy recomputation required",
+      "risk_version": "registered_universal_v1",
+      "technical_repair": {
+        "prediction_sparsity": "mean(abs(prediction)<=1e-8)",
+        "prediction_abs_q95": "raw quantile(abs(prediction),.95), without floor",
+        "old_results": "Preserved in original risk_followup_v1 and runtime/risk; 160 old relative-sparsity HGB fits are historical only",
+        "selection": "Technical repair applied to every fixed arm; no architecture or threshold selection",
+        "neural_retraining": 0,
+        "reuse": "Original outer and nested Public models and priors"
+      }
+    }
+  },
+  "nested_registered_result": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/RESULT_MANIFEST.json",
+    "status": "PENDING_FILE_ABSENT"
+  },
+  "nested_registered_statistics": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/STATISTICS_RECEIPT.json",
+    "status": "PENDING_FILE_ABSENT"
+  },
+  "native512_total_small_risk_fits": 120,
+  "native512_fits_by_method": {
+    "PredictionHGB": 30,
+    "PredictionRidge": 30,
+    "PublicHGB": 30,
+    "PublicRidge": 30
+  },
+  "native512_HGB_fits": 60,
+  "native512_Ridge_fits": 60,
+  "native512_competence_passes": 0,
+  "native512_competence_models": 6,
+  "native512_scope": "Completed SEEN retrospective stress experiment; failed competence prevents primary-model qualification",
+  "native512_score_repair": {
+    "binding": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/frangieh_cross_family_v1/RidgeScoreRepair/RUN_STATUS.json",
+      "sha256": "c9241fb6d2397c1f9b0b13bd9fda92810acc938b7ddb7935580836072db565c3",
+      "bytes": 425
+    },
+    "value": {
+      "status": "complete",
+      "pid": 1553634,
+      "new_fits": 0,
+      "saved_ridge_models_read": 60,
+      "new_prediction_rows": 3348,
+      "primary_120_models_and_tables_unchanged": true,
+      "wall_seconds": 7.306541928090155,
+      "cpu_seconds": 7.348312216,
+      "gpu_hours": 0,
+      "download_bytes": 0,
+      "result_sha256": "4bc947842b990ede169d499e91c95845cd2b1c3e7e4e8842361238c7409d7055",
+      "finished_at": "2026-10-02T22:10:57.914913+08:00"
+    }
+  },
+  "paper_source_bindings_all_match": true,
+  "paper_source_bindings": [
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/MATRIX_MACRO_RESULTS.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/STRICT_FEEDBACK_MACRO.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/STRICT_FEEDBACK_INFORMATION_LEDGER.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/SUPPORT_CONTROL_MACRO.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_magnitude_comparator_completion_v1/ALL6_FIXED_PAIRED_COMPARATORS.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_biology_label_control_v1/PAIRED_METRICS.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_fixed_result_tables_v1/METHOD_METRIC_INTERVALS.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_fixed_result_tables_v1/ALL_PRESPECIFIED_PAIRED_COMPARISONS.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_fixed_result_tables_v1/COHORT_COVERAGE.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/official_pertema_adaptation/MACRO.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/native_control_pertema_adaptation/MACRO.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/frangieh_cross_family_v1/MACRO_RESULTS.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/frangieh_cross_family_v1/PAIRED_BOOTSTRAP.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/frangieh_cross_family_v1/UPSTREAM_COMPETENCE.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/frangieh_cross_family_v1/HISTORY_COVERAGE.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/frangieh_cross_family_v1/RidgeScoreRepair/MACRO_RESULTS.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/frangieh_cross_family_v1/RidgeScoreRepair/PAIRED_BOOTSTRAP.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/frangieh_cross_family_v1/RidgeScoreRepair/SCORE_REPAIR_LEDGER.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/reference_estimand_diagnostic/MACRO.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/reference_estimand_diagnostic/PAIRED_COMPARISONS.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/reference_estimand_risk_replay/MACRO.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/reference_estimand_risk_replay/PAIRED_COMPARISONS.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/statistics_v1/MACRO_METRIC_INTERVALS.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/statistics_v1/PAIRED_COMPARISONS.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/statistics_v1/STRONG_SIMPLE_COMPARISONS.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/statistics_v1/MC_DATA_ALIGNMENT_COMPARISONS.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/statistics_v1/COMMON_TASK_COVERAGE.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/statistics_v1/STRATUM_METRICS.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/statistics_v1/SEED_METRICS.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/statistics_v1/PAIRED_STRATUM_DELTAS.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/statistics_v1/STRONG_SIMPLE_STRATUM_DELTAS.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/statistics_v1/MC_DATA_ALIGNMENT_STRATUM_DELTAS.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/statistics_v1/DECISIONS.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/statistics_v1/DECISION.json",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/statistics_v1/RUN_MANIFEST.json",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/statistics_v1/SEMANTIC_CHECK.json",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/strong_simple_reference_v1/CONFIG.json",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/strong_simple_reference_v1/RUN_STATUS.json",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/full_v2_resume/RUN_MANIFEST.json",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/full_v2_resume/FIT_LEDGER.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/full_v2_resume/MODEL_REUSE_LEDGER.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/full_v2_resume/HISTORY_SET_AUDIT.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/full_v2_resume/CONSTRAINED_RECONSTRUCTION_DIAGNOSTIC.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/TEACHER_CONTEXT_PROVENANCE.csv",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/INPUT_AUDIT.json",
+      "match": true
+    },
+    {
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/REGISTRATION.json",
+      "match": true
+    }
+  ],
+  "paper_numeric_status": {
+    "binding": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/build/NUMERIC_CHECKS.json",
+      "sha256": "b328cbe1a9da95f21ebd19fabc08e3da83f9e67339d59b7551d007fcdd0eaf0c",
+      "bytes": 10945
+    },
+    "value": {
+      "passed": true,
+      "display_cells_checked": 57,
+      "manifest_hashes_checked": 22,
+      "latex_environments_balanced": true,
+      "latex_compilation": "FAILED",
+      "new_model_fits": 0,
+      "new_test_truth_reads": 0,
+      "checks": [
+        {
+          "name": "Table2/Exphormer_to_GAT/Magnitude",
+          "display": "0.7488",
+          "expected": 0.7488075736775921,
+          "pass": true
+        },
+        {
+          "name": "Table2/GAT_to_Exphormer/Magnitude",
+          "display": "0.7463",
+          "expected": 0.7462526883520952,
+          "pass": true
+        },
+        {
+          "name": "Table2/TxPert_to_McFaline/Magnitude",
+          "display": "-0.2047",
+          "expected": -0.2047221498808527,
+          "pass": true
+        },
+        {
+          "name": "Table2/Exphormer_to_GAT/Prediction_hgb",
+          "display": "0.7590",
+          "expected": 0.7589530382157993,
+          "pass": true
+        },
+        {
+          "name": "Table2/GAT_to_Exphormer/Prediction_hgb",
+          "display": "0.7527",
+          "expected": 0.7527140538641315,
+          "pass": true
+        },
+        {
+          "name": "Table2/TxPert_to_McFaline/Prediction_hgb",
+          "display": "-0.0085",
+          "expected": -0.0085326717752521,
+          "pass": true
+        },
+        {
+          "name": "Table2/Exphormer_to_GAT/Manual_WeightedHistoryDistance",
+          "display": "0.5698",
+          "expected": 0.5697881951477619,
+          "pass": true
+        },
+        {
+          "name": "Table2/GAT_to_Exphormer/Manual_WeightedHistoryDistance",
+          "display": "0.5686",
+          "expected": 0.5686364141425733,
+          "pass": true
+        },
+        {
+          "name": "Table2/TxPert_to_McFaline/Manual_WeightedHistoryDistance",
+          "display": "0.7113",
+          "expected": 0.7112946986099352,
+          "pass": true
+        },
+        {
+          "name": "Table2/Exphormer_to_GAT/Learned_WeightedHistoryDistance",
+          "display": "0.5935",
+          "expected": 0.5935182920414499,
+          "pass": true
+        },
+        {
+          "name": "Table2/GAT_to_Exphormer/Learned_WeightedHistoryDistance",
+          "display": "0.5923",
+          "expected": 0.5923364888635573,
+          "pass": true
+        },
+        {
+          "name": "Table2/TxPert_to_McFaline/Learned_WeightedHistoryDistance",
+          "display": "0.7297",
+          "expected": 0.7296722722493577,
+          "pass": true
+        },
+        {
+          "name": "Table2/Exphormer_to_GAT/Manual_hgb",
+          "display": "0.7805",
+          "expected": 0.7805483551377033,
+          "pass": true
+        },
+        {
+          "name": "Table2/GAT_to_Exphormer/Manual_hgb",
+          "display": "0.7860",
+          "expected": 0.7860076364544146,
+          "pass": true
+        },
+        {
+          "name": "Table2/TxPert_to_McFaline/Manual_hgb",
+          "display": "0.6488",
+          "expected": 0.6488143600367956,
+          "pass": true
+        },
+        {
+          "name": "Table2/Exphormer_to_GAT/Learned_hgb",
+          "display": "0.7831",
+          "expected": 0.7831344174038858,
+          "pass": true
+        },
+        {
+          "name": "Table2/GAT_to_Exphormer/Learned_hgb",
+          "display": "0.7837",
+          "expected": 0.7837434058355868,
+          "pass": true
+        },
+        {
+          "name": "Table2/TxPert_to_McFaline/Learned_hgb",
+          "display": "0.6953",
+          "expected": 0.6952528848584625,
+          "pass": true
+        },
+        {
+          "name": "Table5/0.1/Shared",
+          "display": "0.5711",
+          "expected": 0.5710549452558813,
+          "pass": true
+        },
+        {
+          "name": "Table5/0.1/TargetOnly_HGB",
+          "display": "0.0807",
+          "expected": 0.0806939449943946,
+          "pass": true
+        },
+        {
+          "name": "Table5/0.1/PublicTarget_HGB",
+          "display": "0.0807",
+          "expected": 0.0806939449943946,
+          "pass": true
+        },
+        {
+          "name": "Table5/0.1/SharedTarget_HGB",
+          "display": "0.0807",
+          "expected": 0.0806939449943946,
+          "pass": true
+        },
+        {
+          "name": "Table5/0.1/ResidualHGB",
+          "display": "0.5711",
+          "expected": 0.5710549452558813,
+          "pass": true
+        },
+        {
+          "name": "Table5/0.25/Shared",
+          "display": "0.5711",
+          "expected": 0.5710549452558813,
+          "pass": true
+        },
+        {
+          "name": "Table5/0.25/TargetOnly_HGB",
+          "display": "0.0884",
+          "expected": 0.088444661248843,
+          "pass": true
+        },
+        {
+          "name": "Table5/0.25/PublicTarget_HGB",
+          "display": "0.7848",
+          "expected": 0.7848162620687059,
+          "pass": true
+        },
+        {
+          "name": "Table5/0.25/SharedTarget_HGB",
+          "display": "0.7848",
+          "expected": 0.7848162620687066,
+          "pass": true
+        },
+        {
+          "name": "Table5/0.25/ResidualHGB",
+          "display": "0.7348",
+          "expected": 0.7347595114238298,
+          "pass": true
+        },
+        {
+          "name": "Table5/0.5/Shared",
+          "display": "0.5711",
+          "expected": 0.5710549452558813,
+          "pass": true
+        },
+        {
+          "name": "Table5/0.5/TargetOnly_HGB",
+          "display": "0.0984",
+          "expected": 0.0983604440772719,
+          "pass": true
+        },
+        {
+          "name": "Table5/0.5/PublicTarget_HGB",
+          "display": "0.7498",
+          "expected": 0.7497859611178509,
+          "pass": true
+        },
+        {
+          "name": "Table5/0.5/SharedTarget_HGB",
+          "display": "0.7153",
+          "expected": 0.715272399558343,
+          "pass": true
+        },
+        {
+          "name": "Table5/0.5/ResidualHGB",
+          "display": "0.7408",
+          "expected": 0.7407562955161257,
+          "pass": true
+        },
+        {
+          "name": "Table5/0.75/Shared",
+          "display": "0.5711",
+          "expected": 0.5710549452558813,
+          "pass": true
+        },
+        {
+          "name": "Table5/0.75/TargetOnly_HGB",
+          "display": "0.1515",
+          "expected": 0.151475110748164,
+          "pass": true
+        },
+        {
+          "name": "Table5/0.75/PublicTarget_HGB",
+          "display": "0.8167",
+          "expected": 0.8167288623085365,
+          "pass": true
+        },
+        {
+          "name": "Table5/0.75/SharedTarget_HGB",
+          "display": "0.7501",
+          "expected": 0.7500513279369372,
+          "pass": true
+        },
+        {
+          "name": "Table5/0.75/ResidualHGB",
+          "display": "0.8054",
+          "expected": 0.8054311220465972,
+          "pass": true
+        },
+        {
+          "name": "Table5/1.0/Shared",
+          "display": "0.5711",
+          "expected": 0.5710549452558813,
+          "pass": true
+        },
+        {
+          "name": "Table5/1.0/TargetOnly_HGB",
+          "display": "0.0833",
+          "expected": 0.0832525099866143,
+          "pass": true
+        },
+        {
+          "name": "Table5/1.0/PublicTarget_HGB",
+          "display": "0.7747",
+          "expected": 0.7747467137317625,
+          "pass": true
+        },
+        {
+          "name": "Table5/1.0/SharedTarget_HGB",
+          "display": "0.7742",
+          "expected": 0.7741767458862568,
+          "pass": true
+        },
+        {
+          "name": "Table5/1.0/ResidualHGB",
+          "display": "0.7846",
+          "expected": 0.7846316250161203,
+          "pass": true
+        },
+        {
+          "name": "Table6/GEARS_to_scGPT/PublicHGB",
+          "display": "0.7014",
+          "expected": 0.7014217424553758,
+          "pass": true
+        },
+        {
+          "name": "Table6/GEARS_to_scGPT/Magnitude",
+          "display": "0.1087",
+          "expected": 0.1087324058650845,
+          "pass": true
+        },
+        {
+          "name": "Table6/GEARS_to_scGPT/paired_delta",
+          "display": "-0.0582",
+          "expected": -0.0582463367943724,
+          "pass": true
+        },
+        {
+          "name": "Table6/GEARS_to_scGPT/interval",
+          "display": "[-0.1446, 0.0155]",
+          "pass": true
+        },
+        {
+          "name": "Table6/scGPT_to_GEARS/PublicHGB",
+          "display": "0.7401",
+          "expected": 0.740098885592736,
+          "pass": true
+        },
+        {
+          "name": "Table6/scGPT_to_GEARS/Magnitude",
+          "display": "0.3789",
+          "expected": 0.3788692886091601,
+          "pass": true
+        },
+        {
+          "name": "Table6/scGPT_to_GEARS/paired_delta",
+          "display": "-0.1239",
+          "expected": -0.1239035126832557,
+          "pass": true
+        },
+        {
+          "name": "Table6/scGPT_to_GEARS/interval",
+          "display": "[-0.2410, -0.0552]",
+          "pass": true
+        },
+        {
+          "name": "Table7/guide",
+          "display": "0.7113",
+          "expected": 0.7112946986099349,
+          "pass": true
+        },
+        {
+          "name": "Table7/cell",
+          "display": "0.8343",
+          "expected": 0.8343137534427231,
+          "pass": true
+        },
+        {
+          "name": "Table7/FrozenGuideEqualReference/delta",
+          "display": "0.1230",
+          "expected": 0.1230190548327881,
+          "pass": true
+        },
+        {
+          "name": "Table7/FrozenGuideEqualReference/interval",
+          "display": "[0.0561, 0.1986]",
+          "pass": true
+        },
+        {
+          "name": "Table7/NegativeHistorySupport/delta",
+          "display": "0.0072",
+          "expected": 0.0071848755137156,
+          "pass": true
+        },
+        {
+          "name": "Table7/NegativeHistorySupport/interval",
+          "display": "[-0.0391, 0.0553]",
+          "pass": true
+        }
+      ],
+      "hash_checks": [
+        {
+          "source": "common_gene_axis/results/MATRIX_MACRO_RESULTS.csv",
+          "pass": true
+        },
+        {
+          "source": "common_gene_axis/results/STRICT_FEEDBACK_MACRO.csv",
+          "pass": true
+        },
+        {
+          "source": "common_gene_axis/results/STRICT_FEEDBACK_INFORMATION_LEDGER.csv",
+          "pass": true
+        },
+        {
+          "source": "common_gene_axis/results/SUPPORT_CONTROL_MACRO.csv",
+          "pass": true
+        },
+        {
+          "source": "source_magnitude_comparator_completion_v1/ALL6_FIXED_PAIRED_COMPARATORS.csv",
+          "pass": true
+        },
+        {
+          "source": "source_biology_label_control_v1/PAIRED_METRICS.csv",
+          "pass": true
+        },
+        {
+          "source": "orion_preparation/actual_fixed_result_tables_v1/METHOD_METRIC_INTERVALS.csv",
+          "pass": true
+        },
+        {
+          "source": "orion_preparation/actual_fixed_result_tables_v1/ALL_PRESPECIFIED_PAIRED_COMPARISONS.csv",
+          "pass": true
+        },
+        {
+          "source": "orion_preparation/actual_fixed_result_tables_v1/COHORT_COVERAGE.csv",
+          "pass": true
+        },
+        {
+          "source": "common_gene_axis/results/official_pertema_adaptation/MACRO.csv",
+          "pass": true
+        },
+        {
+          "source": "common_gene_axis/results/native_control_pertema_adaptation/MACRO.csv",
+          "pass": true
+        },
+        {
+          "source": "frangieh_cross_family_v1/MACRO_RESULTS.csv",
+          "pass": true
+        },
+        {
+          "source": "frangieh_cross_family_v1/PAIRED_BOOTSTRAP.csv",
+          "pass": true
+        },
+        {
+          "source": "frangieh_cross_family_v1/UPSTREAM_COMPETENCE.csv",
+          "pass": true
+        },
+        {
+          "source": "frangieh_cross_family_v1/HISTORY_COVERAGE.csv",
+          "pass": true
+        },
+        {
+          "source": "frangieh_cross_family_v1/RidgeScoreRepair/MACRO_RESULTS.csv",
+          "pass": true
+        },
+        {
+          "source": "frangieh_cross_family_v1/RidgeScoreRepair/PAIRED_BOOTSTRAP.csv",
+          "pass": true
+        },
+        {
+          "source": "frangieh_cross_family_v1/RidgeScoreRepair/SCORE_REPAIR_LEDGER.csv",
+          "pass": true
+        },
+        {
+          "source": "common_gene_axis/reference_estimand_diagnostic/MACRO.csv",
+          "pass": true
+        },
+        {
+          "source": "common_gene_axis/reference_estimand_diagnostic/PAIRED_COMPARISONS.csv",
+          "pass": true
+        },
+        {
+          "source": "common_gene_axis/reference_estimand_risk_replay/MACRO.csv",
+          "pass": true
+        },
+        {
+          "source": "common_gene_axis/reference_estimand_risk_replay/PAIRED_COMPARISONS.csv",
+          "pass": true
+        }
+      ]
+    }
+  },
+  "paper_build_status": {
+    "binding": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/build/BUILD_STATUS.json",
+      "sha256": "b0ba123376db2d3f0856c465b06710fd3ed6a8fd486eb715fa4fc9657531a97c",
+      "bytes": 1891
+    },
+    "value": {
+      "manuscript_words": 7134,
+      "citation_keys": [
+        "cheng2025prescribe",
+        "cui2024scgpt",
+        "lahoti2023risk",
+        "lee2019settransformer",
+        "nicol2026spurious",
+        "roohani2024gears",
+        "shrestha2026pertema",
+        "wang2026reliable",
+        "wu2024perturbench",
+        "zaheer2017deepsets"
+      ],
+      "missing_citations": [],
+      "figures_generated": 6,
+      "latex_generated": true,
+      "latex_compiled": true,
+      "latex_engine": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/build/toolchain/tectonic",
+      "new_model_fits": 0,
+      "new_test_truth_reads": 0,
+      "paper_sha256": "baf972cce15ea896d13af49d0195d4c13d5ac340ece2b5cd2f8f02360f672415",
+      "supplement_sha256": "fe7304c25a8cd8c48b46647f14f86220217f3291da13784b2e96fae670e8f2dc",
+      "tectonic_bundle": "https://data1.fullyjustified.net/tlextras-2021.3r1.tar",
+      "compile_status": "FAILED",
+      "pdf_bytes": 190195,
+      "pdf_sha256": "8ad29200a2377606409f1f07e7e953cf6a6ec6893a6780a1d5d9a7c6c98094bc",
+      "compile_error": "Supplement compilation failed (exit 1)",
+      "compile_seconds": 12.44983720779419,
+      "compile_commands": [
+        [
+          "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/build/toolchain/tectonic",
+          "--keep-logs",
+          "--keep-intermediates",
+          "--outdir",
+          "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/build",
+          "--bundle",
+          "https://data1.fullyjustified.net/tlextras-2021.3r1.tar",
+          "main.tex"
+        ]
+      ],
+      "toolchain_cache_bytes": 45292352
+    }
+  },
+  "paper_pending_results": null,
+  "final_git_state": "PENDING_ROOT_VERIFICATION; reviewer did not run Git",
+  "feedback_reuse_rule": "Existing curves reusable only if final serving Public, P and shared-score version hashes are unchanged; changed combinations require same-split/same-budget reevaluation"
+}

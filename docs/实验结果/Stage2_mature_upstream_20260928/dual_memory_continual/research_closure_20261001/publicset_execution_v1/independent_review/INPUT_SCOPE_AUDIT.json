@@ -1,0 +1,100 @@
+{
+  "status": "METADATA_SCOPE_AUDIT_PASS_WITH_REQUIRED_SOURCE_CONTEXT_VIEWS",
+  "no_expression_or_prediction_arrays_read": true,
+  "mc_TEST_values_read": 0,
+  "model_fits": 0,
+  "source_exact_query_memory_units": 1808,
+  "source_equal_cell_count_units": 1808,
+  "source_equal_batch_count_units": 1808,
+  "source_legal_evaluation_edges": 4737,
+  "source_naive_all_context_query_supported": 376,
+  "source_naive_all_context_edges": 417,
+  "source_fit_parameter_scopes": 5,
+  "source_inference_history_views": 20,
+  "mc_dev_query_units": 542,
+  "mc_original_edges": 7157,
+  "mc_filtered_evaluation_edges": 6775,
+  "mc_bank_roles": {
+    "train": 6631,
+    "val": 542
+  },
+  "source_scope_interpretation": "Separate deployment episodes indexed by outer gene fold and evaluation context; other contexts are observed Public experiments in that episode. Parameters fit only non-evaluation genes and can be shared when the exact training data/preprocessor IDs match.",
+  "pca_rule": "Fit only unique history items actually referenced by permitted fitting queries; never fit every item in the permitted inference bank.",
+  "inner_rule": "Repeat experiment exclusions at each early-stop/OOF scope. Source inner validation is also split into context views; MC additionally removes every inner-validation experiment ID. Outer forbidden IDs remain excluded. Query features/conflict are rebuilt after history filtering.",
+  "derivative_rule": "Any future guide/plate/split-half record inherits the same canonical parent experiment key and is excluded with that parent. Current bank stores one row per canonical experiment.",
+  "source_identity_evidence": "Exact context-condition-gene join and matching treated-cell/batch counts for all 1808 queries, plus existing builder canonicalization across physical blind-view copies; no new cell-expression equality claim.",
+  "input_bindings": {
+    "source_queries": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TASKS.csv",
+      "sha256": "72c6620d797db9115e67f6c9067d54879950733827801190ea25161ee03a118d"
+    },
+    "source_bank_metadata": {
+      "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/public_memory.parquet",
+      "sha256": "fcfbd3300a012e3747c9642f5076d1407c509f46f66e4412522c5d9b8661c4bd"
+    },
+    "source_eligibility": {
+      "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/eligibility.parquet",
+      "sha256": "ef2391be1ce3d0a9ac0d613810f9bbfd314fd00d5631436edbb22bdcdb6fc497"
+    },
+    "source_pretruth_metadata": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/E201_txpert_multitarget_retraining_20260802/tables/E201_PRETRUTH_TASK_BASE.csv",
+      "sha256": "1d5f068fea76138ee9ba42d1e1a4f9674850fab923e36732d24aae73f8fcdab0"
+    },
+    "mc_dev_queries": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/VALIDATION_BIOLOGY_TASKS.csv",
+      "sha256": "7d8d8fa7e97ad64c483cb254c35a3eb5b43c7a3d32e7d757a94bdc95daefb9b3"
+    },
+    "mc_bank_metadata": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/public_mcfaline_trainval/public_memory.parquet",
+      "sha256": "a17798b8e3aaf0a5f26d1fcb18de871980a8e119640daebf4d411f0f77fff067"
+    }
+  },
+  "outputs": {
+    "source_identity": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/independent_review/SOURCE_QUERY_EXPERIMENT_MAPPING.csv",
+      "sha256": "6e79f45f73224a221075a71cc272b11c6ae8164b22aaa088f2a907e207f9c852",
+      "rows": 1808
+    },
+    "mc_identity": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/independent_review/MC_DEV_QUERY_EXPERIMENT_MAPPING.csv",
+      "sha256": "93456758519adadb4958809543bed1bcf895a1f80c0e1d877baa8dde08824068",
+      "rows": 542
+    },
+    "source_views": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/independent_review/SOURCE_SCOPE_COUNTS.csv",
+      "sha256": "665aa51ea5ad1f3a6290dbf0472c93939a0654f1744ab6483592e15f1492e20a",
+      "rows": 20
+    },
+    "source_naive_global": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/independent_review/SOURCE_ALL_CONTEXT_GLOBAL_EXCLUSION_DIAGNOSTIC.csv",
+      "sha256": "ba0dfecc1116d984f54c4dfe31177e28c0a53f7c393afb979edbcbf4e97d7dc5",
+      "rows": 5
+    },
+    "mc_views": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/independent_review/MC_SCOPE_COUNTS.csv",
+      "sha256": "1b232ed3b1fa7a89ea6a7a020ba97ad3ca264de38eb94a7795367aa350dd1622",
+      "rows": 5
+    },
+    "forbidden_ids": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/independent_review/FORBIDDEN_EXPERIMENT_IDS.csv",
+      "sha256": "9a453abb4e56bccc196b16abe0b1a93ea0bf7297f51fbcd7133de724bad332d2",
+      "rows": 2350
+    },
+    "allowed_ids": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/independent_review/ALLOWED_EXPERIMENT_IDS.csv",
+      "sha256": "59163651e202f50a03faf8e4d50113b1f55364d11e4858a95a368776cdebe475",
+      "rows": 73675
+    },
+    "preprocessor_fit_ids": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/independent_review/PREPROCESSOR_FIT_UNIQUE_HISTORY_IDS.csv",
+      "sha256": "c37dd9b7cd328cbe67d2e0a65090f0b6f93bb0f4eefb4a0e2fee625d116907ea",
+      "rows": 51736
+    },
+    "scoped_query_edges": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/publicset_execution_v1/independent_review/SCOPED_QUERY_HISTORY_EDGES.csv",
+      "sha256": "3f4bc8066bfe55e1def46f09170188c28da2a1d4b1dc315efbe226ab0fd9790e",
+      "rows": 115932
+    }
+  },
+  "audit_script_sha256": "ce69056cf76a450737e9cf89c3852dba96745a04e3b389da523267472cf88278"
+}
