@@ -1,0 +1,51 @@
+{
+  "scope": "fixedcomparator_next_action_review_and_approval_gated_DEV_preparation",
+  "no_scientific_run_occurred": true,
+  "files": [
+    {
+      "path": "tools/scripts/probe_safeconf_source_label_objective.py",
+      "bytes": 20644,
+      "sha256": "f77968fb5537c850b9812e58cd8d69eda904255babcec1a210eeddd3185be496"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/README.md",
+      "bytes": 7291,
+      "sha256": "5ab40bdef50016230b1ee02a5b230f1eb66a2b1750443c8f7229bc7d6cd7035b"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/OWNED_FILES.json",
+      "bytes": 743,
+      "sha256": "234bc8472a79d55ac007e4801622f733456c385d9aa278bc601b7158cef2cfd0"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/RESEARCH_LEAD_DECISION.md",
+      "bytes": 3349,
+      "sha256": "ac4a682d47bddab82fc9f5a01d26dec9cf386f8a44ff0f3e85fa71b719a4729a"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/APPROVAL_REQUEST.json",
+      "bytes": 4504,
+      "sha256": "512374a7fd0885bd6bbc63db22ebd4e544be72bc090ba6874ac0e8df1746810e"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_objective_probe_preparation_v1/ROOT_PREPARATION_REVIEW.json",
+      "bytes": 941,
+      "sha256": "8d3e825cb5598ce4b4fe63e144b04329e5ab8a98c4b579d5e9f52bda08d29d52"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/source_magnitude_comparator_completion_v1/NEXT_ACTION_SCIENTIFIC_REVIEW.md",
+      "bytes": 5392,
+      "sha256": "863da6416a4c84c2e2a5ae8f9e8994de63d6b8d2b021a72c9786879c2ec4ff47"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/RESULT_INDEX.csv",
+      "bytes": 416911,
+      "sha256": "ebe2d0e227518b47f638e4f533a36975c33e2261c3683f185e476a9edef8e192"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/EXECUTION_STATUS.json",
+      "bytes": 34484,
+      "sha256": "738d3b30cc3ccd4eb63e04c63536e89ee2bc13ceb5ecbf00b3f17c10d6ad7032"
+    }
+  ]
+}

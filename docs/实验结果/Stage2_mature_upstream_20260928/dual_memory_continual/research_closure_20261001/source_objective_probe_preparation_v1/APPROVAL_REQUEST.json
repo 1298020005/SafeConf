@@ -1,0 +1,89 @@
+{
+  "status": "NOT_AUTHORIZED_REQUEST_ONLY",
+  "script_sha256": "f77968fb5537c850b9812e58cd8d69eda904255babcec1a210eeddd3185be496",
+  "scope": {
+    "role": "SOURCE_DEV_LABEL_OBJECTIVE_DIAGNOSTIC",
+    "directions": [
+      "GAT_to_Exphormer",
+      "Exphormer_to_GAT"
+    ],
+    "outer_folds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "label_arms": [
+      "rank",
+      "raw_affine"
+    ],
+    "seed": 20260930,
+    "features": [
+      "predicted_magnitude",
+      "prediction_abs_mean",
+      "prediction_signed_mean",
+      "prediction_std",
+      "prediction_abs_q95",
+      "prediction_sparsity",
+      "prior_magnitude",
+      "prediction_prior_rmse",
+      "prediction_prior_cosine",
+      "prior_uncertainty",
+      "log_history_support",
+      "effective_sources",
+      "history_conflict"
+    ],
+    "source_files": 20,
+    "learned_feature_files": 10,
+    "manual_identity_only_files": 10,
+    "cdf_keys": [
+      "dataset_id",
+      "output_contract_id",
+      "upstream",
+      "model_version",
+      "target"
+    ],
+    "cluster_weights": "research.cluster_weights",
+    "prediction_clip": false,
+    "old_rank_clip_reference": true,
+    "zero_fit_rules": [
+      "Magnitude",
+      "Learned_DirectRMSE",
+      "Learned_WeightedHistoryDistance"
+    ],
+    "save_fit_models": true,
+    "freeze_scores_before_metrics": true,
+    "max_fits": 20,
+    "bootstrap_replicates": 0,
+    "parameter_search": false
+  },
+  "max_fits": 20,
+  "core_unchanged": true,
+  "no_external": true,
+  "output_dir": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_objective_probe_v1/approved_20261002_v1",
+  "source_input_paths": [
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_0_TxPert_GAT_Learned.parquet",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_0_TxPert_GAT_Manual.parquet",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_0_TxPert_Exphormer_Learned.parquet",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_0_TxPert_Exphormer_Manual.parquet",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_1_TxPert_GAT_Learned.parquet",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_1_TxPert_GAT_Manual.parquet",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_1_TxPert_Exphormer_Learned.parquet",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_1_TxPert_Exphormer_Manual.parquet",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_2_TxPert_GAT_Learned.parquet",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_2_TxPert_GAT_Manual.parquet",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_2_TxPert_Exphormer_Learned.parquet",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_2_TxPert_Exphormer_Manual.parquet",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_3_TxPert_GAT_Learned.parquet",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_3_TxPert_GAT_Manual.parquet",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_3_TxPert_Exphormer_Learned.parquet",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_3_TxPert_Exphormer_Manual.parquet",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_4_TxPert_GAT_Learned.parquet",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_4_TxPert_GAT_Manual.parquet",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_4_TxPert_Exphormer_Learned.parquet",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_4_TxPert_Exphormer_Manual.parquet"
+  ],
+  "source_reference_csv": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/MATRIX_TASK_PREDICTIONS.csv.gz",
+  "user_approval_reference": ""
+}

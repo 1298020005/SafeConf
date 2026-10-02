@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-02T05:38:37.910518+00:00",
+  "updated_utc": "2026-10-02T06:03:35.349559+00:00",
   "complete": [
     "five-fold nested public biology with four inner folds",
     "three-line sixteen-method matrix with three registered seeds",
@@ -78,7 +78,7 @@
   "new_large_upstream_training": 0,
   "new_download_gb": 0.04440246,
   "completion_claim": "goal active; meaningful diagnostics and registered matrices continue; manuscript prose deferred",
-  "current_work": "Both fixed comparator completions verified/integrated; no active fit/GPU/rawtruth reader. Independent next-action scientific review ongoing; method readiness NOT_YET_PROVEN; manuscript deferred.",
+  "current_work": "Source/E170 strongcomparators pushed0a0c30a; independent20fitDEVobjective hypothesis/code/selfcheck prepared, explicitlyNOT_RUN and awaitinguser exception to frozenCDF labels;0activefit/GPU/rawtruthreader.",
   "deferred_by_user": [
     "manuscript and supplement prose generation"
   ],
@@ -621,5 +621,13 @@
     "new_expression_downloads": 0,
     "new_upstream_attempts": 0
   },
-  "scientific_method_readiness": "NOT_YET_PROVEN"
+  "scientific_method_readiness": "NOT_YET_PROVEN",
+  "source_objective_probe": {
+    "status": "PREPARED_NOT_AUTHORIZED_NOT_RUN",
+    "max_fits": 20,
+    "script_sha256": "f77968fb5537c850b9812e58cd8d69eda904255babcec1a210eeddd3185be496",
+    "actual_fits": 0,
+    "external_scoring": false,
+    "permission_request_sent": true
+  }
 }

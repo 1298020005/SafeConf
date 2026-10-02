@@ -1,0 +1,26 @@
+{
+  "status": "PASS_PREPARATION_ONLY_NOT_APPROVED_OR_RUN",
+  "script_sha256_before_after": "f77968fb5537c850b9812e58cd8d69eda904255babcec1a210eeddd3185be496",
+  "independent_selfcheck": {
+    "status": "SELF_CHECK_PASS",
+    "synthetic_raw_mean_A_B": [
+      10.0,
+      2.0
+    ],
+    "synthetic_rank_mean_A_B": [
+      0.3,
+      0.7
+    ],
+    "positive_affine_slope": 0.011838732170259688,
+    "weighted_moments_matched": true,
+    "permission_rejection_verified": true,
+    "source_read_attempts": 0,
+    "actual_fits": 0,
+    "files_written": 0,
+    "hypothesis_is_possible_mismatch_not_established_root_cause": true
+  },
+  "reviewed_scope": "20fit_SourceDEV;same13features/params/weights;Source-only archive parsing;strongfixedrules;model/scorehashesbeforemetrics",
+  "frozen_external_scoring_forbidden": true,
+  "group_affine_changes_loss_weights_acknowledged": true,
+  "no_actual_source_or_target_data_read_for_preparation": true
+}
