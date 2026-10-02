@@ -1,0 +1,116 @@
+{
+  "schema": "safeconf_owned_files_v1",
+  "files": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_source_task_mean_regime_pilot_agent.py",
+      "bytes": 15594,
+      "sha256": "a0338923181271a9816413893bf1cc1d25f880bc5a46019d1af4356b405c6c1f"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_pilot_preparation_v1/CODE_PROPOSAL.py",
+      "bytes": 3343,
+      "sha256": "74698d54f19d1358f6df57074576af76001996dd317c0d4751038874db1a380c"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_pilot_preparation_v1/OWNED_FILES.json",
+      "bytes": 1048,
+      "sha256": "60d47daaa4fda00ec63273e0bbc1cef7964a9e61aae8c5b047315b614b092779"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_pilot_preparation_v1/PREPARATION.json",
+      "bytes": 15249,
+      "sha256": "0f9f5ac9963817e213096f9de1f82be85124c51dfd5196b323d2428bde169c55"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_pilot_preparation_v1/ROOT_AUTHORIZED_SOURCE_ONLY_MEAN_PILOT.json",
+      "bytes": 3283,
+      "sha256": "85ecb75c4f04477f5e9a21caf07d147f236710abac7f5a525e06f76b66b38d67"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_pilot_preparation_v1/SCOPE_TEMPLATE.json",
+      "bytes": 2828,
+      "sha256": "57c3e8c57ffd879c8e534cc97685237678764dffcc66fa29751829a54adf15ba"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_pilot_preparation_v1/SCOPE_TEMPLATE_FINAL.json",
+      "bytes": 3023,
+      "sha256": "712cfead19b2a3266e6d78bc3df34002272c853dfc07147258bac966b87a0af5"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_regime_pilot_v1/ACTUAL_ACCOUNTING.json",
+      "bytes": 2974,
+      "sha256": "18cdd0cf2cd3af438ae957f44f7634663c11d93a77d2bd755930c1c36b9b7a0d"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_regime_pilot_v1/ACTUAL_FORMAL_ATTEMPT_COUNTER_AND_STOP.json",
+      "bytes": 2487,
+      "sha256": "24eb7dfbce63f051cedd974a1c7cb0ca489fc0438a16abb2e1406e91b7a5f569"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_regime_pilot_v1/ALL_FIXED_CONTEXT_ERROR_RANK_CORRELATIONS.csv",
+      "bytes": 724,
+      "sha256": "a13eaee6713857c0312ee18b7d31b2aa42c20ae069ebc77e94e5d842f3471162"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_regime_pilot_v1/ALL_FIXED_CONTEXT_MAGNITUDE_RANGES.csv",
+      "bytes": 2705,
+      "sha256": "d983eb8bb834085897f4c8bdd7de9b7a38cd35afe9d8c9123a72a88f3d2df8a8"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_regime_pilot_v1/COST_MASTER_APPEND_ROWS.csv",
+      "bytes": 845,
+      "sha256": "dccbf0a185aa5eb72ace0bc10d8fe90ea715489ccfc8e679981b83e134b75c63"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_regime_pilot_v1/EXECUTION_STDOUT.log",
+      "bytes": 513,
+      "sha256": "a23be8f2521539cd362b2002d5e08bf75d01dd6de37bb7377093d675a9f3f4be"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_regime_pilot_v1/INFORMATION_BUDGET_APPEND_ROWS.csv",
+      "bytes": 841,
+      "sha256": "f36a539fbb0683475d6569109de0902f8b6829e0c5924c55e47af763032f2d0e"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_regime_pilot_v1/OWNED_FILES_FINAL.json",
+      "bytes": 6480,
+      "sha256": "2f229961a7b2cf570c383a0ac743c1af4cfcb5b01c063a9af780dc2c949b479c"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_regime_pilot_v1/PREDICTION_SEAL.json",
+      "bytes": 10071,
+      "sha256": "8f111652ce2450c5f227a04daba45433e48224ee55e22eea11fe0ea4e0b2e868"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_regime_pilot_v1/README.md",
+      "bytes": 3204,
+      "sha256": "8c6045618f80b04d7429d49200d9b3a35800c0ac5316a220d1b0cd15e601576c"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_regime_pilot_v1/RECEIPT.json",
+      "bytes": 28429,
+      "sha256": "270e3053cca10848bcb39ded1c8db092ea672b1e6fa6dc2972f57e3111ce1568"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_regime_pilot_v1/RESULT_INDEX_APPEND_ROWS.csv",
+      "bytes": 5511,
+      "sha256": "780b798ca4eae39ae505837145b0b11852e46cef3cef1cf0cfba127997cf4714"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_regime_pilot_v1/RUNTIME_ARTIFACT_INDEX.json",
+      "bytes": 3125,
+      "sha256": "a83e8e6b0147e7c189e310e05daaa8d1eb32cc4b47e5231571bc7822e73b7418"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_regime_pilot_v1/FINAL_INDEX_APPEND_ROWS.csv",
+      "bytes": 6691,
+      "sha256": "96cf01817e1aad93b9472dfcb0faf6a7e62e6f009d090b07c098a622725e5cab"
+    }
+  ],
+  "scope": "FrozenSource-only mean pilot code+prep/scope+small actual outputs/accounting/log; array/error matrices remain isolated runtime",
+  "prior_owned_manifest_preserved": true,
+  "terminal_hypothesis": "NOT_SUPPORTED",
+  "no_further_experiment_authorized": true,
+  "shared_tables_and_original_Source_untouched": true,
+  "use_final_index_instead_of_initial_index_to_avoid_duplicate_append": true
+}

@@ -1,0 +1,36 @@
+{
+  "schema": "safeconf_Source_mean_episode_terminal_accounting_v1",
+  "created_utc": "2026-10-02T00:54:23.555102+00:00",
+  "status": "COMPLETE_STOP_NO_FOLLOWUP_VARIANTS",
+  "hypothesis_adding_this_mean_baseline_fills_below_old_magnitude_gap": "NOT_SUPPORTED",
+  "basis": "All four Source context magnitudes remain within both old Source predictor ranges; all eight below-old-min/q05 fractions0. All eighterror-rank rho0.45–0.79 reported descriptively.",
+  "Root_registered_new_small_formal_attempts_actual": 2,
+  "prior_registered_attempt1": "Published Orion fixed linear upstream procedure, two context models; count basis inherited Root scope, not reread here.",
+  "this_attempt2": "One SourceDEV fixed task-mean procedure with20 analytic context/fold centroid parameters and1808 predictions.",
+  "mature_new_model_families_claimed": 0,
+  "third_attempt_or_mean_variant_authorized": false,
+  "shared_risk_Public_CDF_or_Orion_parameters_changed": false,
+  "SourceRisk_retrain_authorized": false,
+  "new_experiment_or_model_selection_followup": false,
+  "scope": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_pilot_preparation_v1/ROOT_AUTHORIZED_SOURCE_ONLY_MEAN_PILOT.json",
+    "bytes": 3283,
+    "sha256": "85ecb75c4f04477f5e9a21caf07d147f236710abac7f5a525e06f76b66b38d67"
+  },
+  "actual_receipt": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/source_task_mean_regime_pilot_20261002_v1/RECEIPT.json",
+    "bytes": 28429,
+    "sha256": "270e3053cca10848bcb39ded1c8db092ea672b1e6fa6dc2972f57e3111ce1568"
+  },
+  "runtime_stdout": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/SOURCE_TASK_MEAN_REGIME_PILOT_20261002_v1.log",
+    "bytes": 513,
+    "sha256": "a23be8f2521539cd362b2002d5e08bf75d01dd6de37bb7377093d675a9f3f4be"
+  },
+  "copied_stdout": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/source_task_mean_regime_pilot_v1/EXECUTION_STDOUT.log",
+    "bytes": 513,
+    "sha256": "a23be8f2521539cd362b2002d5e08bf75d01dd6de37bb7377093d675a9f3f4be"
+  },
+  "root_scientific_direction": "Retain this finished negative SourceDEV hypothesis diagnostic; do not retrain risk, search Mean variants or claim external/cross-family proof."
+}
