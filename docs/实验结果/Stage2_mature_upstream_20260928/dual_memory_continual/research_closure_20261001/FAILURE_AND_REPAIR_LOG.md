@@ -123,3 +123,7 @@ The30fixed SEEN target-risk controls initially had pairings only to learnedWeigh
 ## 2026-10-02: Public growth contract gap and coverage confounding
 
 Oldgrowth usednative/512gene outputs; canonical2840directory hadonlycontent. Reusedoriginalsupport-weighted/fixedHGB growthrecipe for25snapshots/275fits, thenfixed-task5000gene statistics. MC100−10delta+.680116CIpositive, SourcegrowthCIcross0; no newalgorithm/upstream/Oriontruth. Eachgene enterswithallrecords, so same-coveredtask distanceunchanged; across25snapshots commonhistory empty. Originaldistancecurves havechanging populations and low-n NAcontexts, hence cannot be interpreted as growing content quality. No formula/parameter repair or bestorderselection followed. A receipt label counted2bootstrapdata pools asstudies; separateSHA-bound semanticcorrection preserves originalcode/receipt andnumericresults.
+
+## 2026-10-02: physical-null reference replay codec repair and fixed diagnostic
+
+Preparationv1 acba failed firstexactencodedscorebit, while geometry/prior/weights matched. Preservedfailedcode+ABORT; isolatedv2 uses original17g/object pd.to_numeric codec (noformula/tolerancechange) and464replays PASS. Formalfixed5seed derangements swapactualvectors withrecipient supportfixed; all232tasks retained,3nonmovable notdropped. 15macroU20 differencespositive,4nominalpositiveintervals, allWeightedintervalscross0. No seed/group/caliper variants, noSourcefit orprimaryreplacement. Independentactualreview reproducesall315pairs/378intervals fromsame saved5000indices.

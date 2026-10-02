@@ -93,3 +93,13 @@ All150fixed macroU20 rule comparisons have nominal95%paired CIs crossing zero; n
 | TxPert_to_McFaline | +0.680116 | [0.522410, 0.786253] |
 
 Allfixedtasks HGB; sameSource labels100%, fivefixedorders. Coverage+representation/refit, not samegene content improvement; no PublicBiology update. FullMC risk remains below strongdistance.
+
+## SEEN Orion actual-versus-physical-history null
+
+| 原固定规则 | 真实U20 | 五次置换U20范围 | 名义正区间数／5 |
+|---|---:|---|---:|
+| Uniform_DirectRMSE | 0.262120 | [-0.095331, 0.130880] | 2/5 |
+| Manual_DirectRMSE | 0.244031 | [-0.176300, -0.007733] | 2/5 |
+| Manual_WeightedHistoryDistance | 0.186661 | [-0.039078, 0.179600] | 0/5 |
+
+All5seeds retained;15macro point differencespositive but4nominal CIs>0, weighted5allcrosszero. Not newconfirmation or originalgate repair.

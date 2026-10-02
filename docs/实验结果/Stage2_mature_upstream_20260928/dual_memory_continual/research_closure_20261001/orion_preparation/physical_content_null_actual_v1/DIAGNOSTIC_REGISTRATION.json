@@ -1,0 +1,144 @@
+{
+  "role": "SEEN_postconfirmation_fixed_physical_content_negative_control_not_confirmation",
+  "same_fixed232tasks144genes_and_original3rules": [
+    "Uniform_DirectRMSE",
+    "Manual_DirectRMSE",
+    "Manual_WeightedHistoryDistance"
+  ],
+  "permutation_seeds_all_retained": [
+    20260930,
+    20261001,
+    20261002,
+    20261003,
+    20261004
+  ],
+  "matching_group_columns": [
+    "original_study",
+    "context",
+    "perturbation_type",
+    "effect_contract_id",
+    "gene_space_id",
+    "control_source",
+    "n_batches",
+    "cell_support_quartile"
+  ],
+  "operation": "Cyclic derangement within each nonsingleton eligible Source group; actual effect vectors reassigned",
+  "support": "Recipient counts/batches/weights retained; donor counts quartile matched, not exact variance matched",
+  "query_exclusions": "No task or nonmovable history exclusion; original232query identity unchanged",
+  "fixed_paired_bootstrap": "Reuse saved5000canonical-sorted144gene indices; no new RNG for bootstrap",
+  "permutation_RNG_is_not_bootstrap_RNG": true,
+  "new_fits": 0,
+  "model_inference_calls": 0,
+  "Source_parameters_or_original13primary_changed": false,
+  "raw_expression_reads": 0,
+  "truth_scope": "Cached232alreadyopenedTESTerrors for statistics only after null score sealing",
+  "primary_change": false,
+  "causal_or_measurement_variance_isolation_claim": false,
+  "input_bindings": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_orion_fixed_physical_content_null.py",
+      "bytes": 15263,
+      "sha256": "9dcfe3ee508da55058a2b64556d36311a2ea16f7b6c091c5e69f722204a04150"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/prepare_safeconf_orion_physical_content_null_scorecodec_agent.py",
+      "bytes": 17799,
+      "sha256": "3898f0441c5ae97b2cd5d0dc9520ba17c33e15bc7b72f59b9128b59ea5a0aa5a"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/seal_safeconf_orion_source_risk_agent.py",
+      "bytes": 28837,
+      "sha256": "8b69e6ce29dc92aa34150b3b08aac62ce8333a10f84ec432a39d0e81ffc64482"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/evaluate_safeconf_orion_frozen_risk_agent.py",
+      "bytes": 22944,
+      "sha256": "dec8f056918ac5626eb12732eec3cc07041eb3680cc6addd6d9f18b32d1f486c"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/physical_content_null_preparation_v2/PREPARATION_RESULT.json",
+      "bytes": 11731,
+      "sha256": "9752fb0cd601c2f53f9d3ddf78f96e17038b909787ea7428d60c72332d66bc0b"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/physical_content_null_preparation_v2/FROZEN_RECIPIENT_GROUP_METADATA.csv",
+      "bytes": 1454065,
+      "sha256": "b14a985a6e8df1dbbb48adb2716e8336797249cd18beacf492ed909eb95334e3"
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/physical_content_null_preparation_v2/FIXED_PRIMARY_QUERY_IDENTITIES.csv",
+      "bytes": 17639,
+      "sha256": "818405653b525ebc486cb3b47b8abcaeb7edd1d945193e04a84629c8917c3143"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_existing_validation_risk_control_20261002_v1/BOOTSTRAP_GENE_INDICES.npy",
+      "bytes": 5760128,
+      "sha256": "be533a498413bf284e187faf2d8c3d103949f865ba9ef0765d71ef7925b9479c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_existing_validation_risk_control_20261002_v1/ALL_PRIMARY_PREDICTIONS.parquet",
+      "bytes": 91800,
+      "sha256": "e9a2a8ddbf5126d090cf58ebebaae2c250de9b43f5abc53d95dd5ee47ce0a17d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/registered_test_truth/TEST_TASK_ERRORS.parquet",
+      "bytes": 95565,
+      "sha256": "d6e50bf9c7f874af74f618cb7fdb820a4d31969701a2c70aaa6b87e27f12cb3e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_comparison/PRETRUTH_COMPARISON_SCORES.parquet",
+      "bytes": 712576,
+      "sha256": "c6e53eb32f6a4dfec6c40c9b6817f2c87d29ff47306fa1f219d28efc7a6c7e72"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v2/SOURCE_PUBLIC_MEMORY_METADATA.parquet",
+      "bytes": 144677,
+      "sha256": "8ebb862223c2dd6da85317787c818493fbc771f8445eae5528fcae00cb9e19fd"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v2/SOURCE_PUBLIC_EFFECTS.npy",
+      "bytes": 140992328,
+      "sha256": "2ff6ca2b1c9be2e9bee0791cdc9e23cf6f2b94084a2df737083621f7bc95de5c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_risk_seal/SOURCE_HISTORY_PAIR_FEATURES.parquet",
+      "bytes": 295659,
+      "sha256": "ceb9d409ababda701181911e085e710b2e1a90f5fcdb074a0f1702d868804968"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_risk_seal/Manual_P_PUBLIC_FEATURES.parquet",
+      "bytes": 788420,
+      "sha256": "3af3e52b582810d0de86d23c28be9e2b0d561de5c40e843022c4bc6133dc1a51"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_risk_seal/Uniform_P_PUBLIC_FEATURES.parquet",
+      "bytes": 781915,
+      "sha256": "f36fc042aa41457f00bea432d355c47df3a724869e2884d74da0927c6cfd3a44"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_risk_seal/Manual_PRIOR_EFFECTS.npy",
+      "bytes": 386736608,
+      "sha256": "67dc9bf2769421f5325e738dfcf35e01dec7aa1e889e6e7e220d8091f1c35f42"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_public_bank_extension_20261002_v4_partitioned/expanded_risk_seal/Uniform_PRIOR_EFFECTS.npy",
+      "bytes": 386736608,
+      "sha256": "c55d59d946ff88992a6e4279086d2ac1408ac7009814a0e499b2cd490d4a27c3"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HCT116/PREDICTIONS_DELTA.tsv.gz",
+      "bytes": 194230419,
+      "sha256": "c54137fc466b5def82045f5f1d94f59b002d96306a3da6e2adac8a2bc5c2206f"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HEK293T/PREDICTIONS_DELTA.tsv.gz",
+      "bytes": 195079951,
+      "sha256": "e4dc7e5446ff2654a8fcc48ef5fb3ecf11cf594b395390e253714daabf1628ba"
+    }
+  ],
+  "resources": {
+    "wall_cap_seconds": 1200,
+    "CPU_threads": 4,
+    "GPU_hours": 0
+  }
+}

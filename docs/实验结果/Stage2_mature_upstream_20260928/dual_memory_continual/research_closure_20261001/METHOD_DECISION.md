@@ -61,3 +61,7 @@ Arc/H1 的现有H5AD与旧E198输入SHA完全一致。E198已打开表达，并�
 ## 当前合同Public增长缺项已实际补齐
 
 275次原配方拟合和5000次同任务gene统计完成：MC全任务100%−10%公共覆盖ΔU20=+0.680116、CI[0.522410,0.786253]；Source两方向增长CI跨零。整gene加入全部history，所以已covered任务的直接距离逐值不变；低预算规则人群变化不算内容增益。MC full HGB仍低于同参照强距离；不得因此判Route B或普遍持续学习成熟。停止增长变体。下一项是已见Orion固定人工参照的物理内容负对照可行性/精确复算，0新增fit，不改变主方法。证据：`common_gene_axis/results/public_growth_uncertainty_v1/README.md`。
+
+## 第二研究的物理内容负对照已完成
+
+Orion原232任务/144gene、3固定无拟合规则、5实际效应置换、5000既有gene抽样完成。15宏U20点差均正但仅4名义CI>0；ManualWeighted全部跨零，HEK所有15CI跨零。与MC一致的描述性方向不等于稳定内容增量/测量因果或Source监督迁移；原13主结果和HCT失败不变。三不动query保留，不挑seed/caliper。停止null变体，下一项先审既有预测前target-gene control强简单规则的信息与覆盖合同。

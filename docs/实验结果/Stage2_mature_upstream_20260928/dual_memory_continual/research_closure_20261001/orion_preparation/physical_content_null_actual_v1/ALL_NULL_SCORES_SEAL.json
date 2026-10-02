@@ -1,0 +1,19 @@
+{
+  "scores": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_fixed_physical_content_null_20261002_v1/ALL_FIXED_ACTUAL_AND_NULL_RULE_SCORES.parquet",
+    "bytes": 59796,
+    "sha256": "8805916cfb857b381571ce554dd05464a0af9601b1920bc6c8b29eaf56b3846d"
+  },
+  "physical_donors": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_fixed_physical_content_null_20261002_v1/PHYSICAL_DONOR_ASSIGNMENTS.csv.gz",
+    "bytes": 589461,
+    "sha256": "7eb135f38db24952baf6fa112e05f6b5b8348841187a885d416dcf51451cd336"
+  },
+  "fixed_query_rows": 232,
+  "gene_clusters": 144,
+  "scores_count": 18,
+  "all_original_actual_rules_bits_match": true,
+  "all5nulls_saved_before_cached_truth_parse": true,
+  "new_fits": 0,
+  "new_confirmation": false
+}

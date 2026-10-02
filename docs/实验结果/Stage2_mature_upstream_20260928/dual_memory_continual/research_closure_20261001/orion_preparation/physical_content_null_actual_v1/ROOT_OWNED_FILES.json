@@ -1,0 +1,185 @@
+{
+  "scope": "FixedSEEN physical-content negativecontrol, original13methods unchanged; no Source training or newprimary",
+  "owned_files": [
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/physical_content_null_actual_v1/PHYSICAL_NULL_MOVEMENT_AND_SUPPORT_AUDIT.csv",
+      "bytes": 397,
+      "sha256": "fe74ae3ca61715b701630580f5f4a2a3c7d621e73b31e1c1f99dbdcb3d1c02b7"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/physical_content_null_actual_v1/ROOT_ACTUAL_STATISTICAL_VERIFICATION.json",
+      "bytes": 227,
+      "sha256": "1e50feb994c29c56ed5c71a659686057263f1bd4693a2e02dd8567c06f6b30ac"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/physical_content_null_actual_v1/DIAGNOSTIC_REGISTRATION.json",
+      "bytes": 7338,
+      "sha256": "4e0ca14d781e3daf443c60920b0378ff00cd7c73b56d11625e1ad4c5c926f25a"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/physical_content_null_actual_v1/QUERY_USED_DONOR_SUPPORT_RATIO_AUDIT.csv",
+      "bytes": 659,
+      "sha256": "2d8cacbf4bea3bef895970689a3185abab8e27f537ca415683a21847aff09604"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/physical_content_null_actual_v1/README.md",
+      "bytes": 3763,
+      "sha256": "89685c3cebb0dcaab45d83295b09dc77f6a7deb67fdf3fa9119f3c0719f715c3"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/physical_content_null_actual_v1/INDEPENDENT_ACTUAL_REVIEW.md",
+      "bytes": 6468,
+      "sha256": "d4322f3756e7ce8fd21126be7cf3f829b2d4c3c27fb83c3096786d3047cafb38"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/physical_content_null_actual_v1/RESULT_MANIFEST.json",
+      "bytes": 8036,
+      "sha256": "ce6ae55d0cf69d6aaba236e5e51b0ec375b36f7b1f58994fb588826d48837cd0"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/physical_content_null_actual_v1/ALL_NULL_SCORES_SEAL.json",
+      "bytes": 785,
+      "sha256": "b3794319cb8e55eca6bdd0671490b5fd0a9fe0aa8f0aab55b8af0e8c96bb915f"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/physical_content_null_actual_v1/ALL_ACTUAL_MINUS_PHYSICAL_NULL_PAIRED_INTERVALS.csv",
+      "bytes": 75563,
+      "sha256": "24d5b682a90431037ba192ba01a6a1059c1da7384211628c80a1e04c9ff97dd5"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/physical_content_null_actual_v1/ALL_ACTUAL_NULL_METRIC_INTERVALS.csv",
+      "bytes": 45687,
+      "sha256": "6ee4a887ae75eab32ac06b8c6f04aa4a68c20b289d6f3fa9cec0a8a7def46c0b"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/physical_content_null_preparation_v2/FIXED_PRIMARY_HISTORY_MOVABILITY.csv",
+      "bytes": 11426,
+      "sha256": "a55b8d74d776576a4ad55ca9556cb41ab5178a8a31662ae323ad73c10d08f85a"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/physical_content_null_preparation_v2/FIXED_PRIMARY_QUERY_IDENTITIES.csv",
+      "bytes": 17639,
+      "sha256": "818405653b525ebc486cb3b47b8abcaeb7edd1d945193e04a84629c8917c3143"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/physical_content_null_preparation_v2/README.md",
+      "bytes": 3925,
+      "sha256": "8e7bf819530dfc7ce33ebbf7b575b3231ab74fc117cfc5a2c189f3c892d1972b"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/physical_content_null_preparation_v2/OWNED_FILES.json",
+      "bytes": 4847,
+      "sha256": "ceaad4fd2d27b40418b5195eafccf7ae66597ac1cf3fee3baed47c56cedcc067"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/physical_content_null_preparation_v2/EXECUTION_REGISTRATION.json",
+      "bytes": 483,
+      "sha256": "0c61d3cd0dd84c129c7d791bb13b0dc9343256785ae9f18ff35ac9346a911795"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/physical_content_null_preparation_v2/PREPARATION_RESULT.json",
+      "bytes": 11731,
+      "sha256": "9752fb0cd601c2f53f9d3ddf78f96e17038b909787ea7428d60c72332d66bc0b"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/physical_content_null_preparation_v2/PHYSICAL_PERMUTATION_GROUP_FEASIBILITY.csv",
+      "bytes": 172865,
+      "sha256": "e213a2389051693bad1ae356c789af266e2fa06c39e2152b820c32de0f098766"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/physical_content_null_preparation_v2/EXACT_ORIGINAL_REFERENCE_REPLAY.csv",
+      "bytes": 44210,
+      "sha256": "4730afbdb1d2e6546991bbf0f09a56c88ea3220a4abe486928cd251c54701dd0"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/physical_content_null_preparation_v2/CODE_REVIEW_FORMAL_NULL.md",
+      "bytes": 3579,
+      "sha256": "d4dda08a6431c35c4b705f379b7df0946020cedcd37ae1e47af69550cbf05f7d"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/physical_content_null_preparation_v2/FROZEN_RECIPIENT_GROUP_METADATA.csv",
+      "bytes": 1454065,
+      "sha256": "b14a985a6e8df1dbbb48adb2716e8336797249cd18beacf492ed909eb95334e3"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/physical_content_null_preparation_v1/EXECUTION_REGISTRATION.json",
+      "bytes": 472,
+      "sha256": "df82c7d90374a78a9385901fed6d0227420bae22af0d9636b5e6ddb4229ba045"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/physical_content_null_preparation_v1/ABORT.json",
+      "bytes": 474,
+      "sha256": "daf5fdb7789e2195b40f4dcd8295eb6cb9c1608176a99078132a5676b0ff667c"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/physical_content_null_preparation_v1/EXECUTED_CODE_SNAPSHOT.py",
+      "bytes": 16995,
+      "sha256": "acba2dfa6657320cbf1a9d0fa06a91657471948e1c861e977cd53c7cab1cac7a"
+    },
+    {
+      "path": "tools/scripts/prepare_safeconf_orion_physical_content_null_agent.py",
+      "bytes": 16995,
+      "sha256": "acba2dfa6657320cbf1a9d0fa06a91657471948e1c861e977cd53c7cab1cac7a"
+    },
+    {
+      "path": "tools/scripts/prepare_safeconf_orion_physical_content_null_scorecodec_agent.py",
+      "bytes": 17799,
+      "sha256": "3898f0441c5ae97b2cd5d0dc9520ba17c33e15bc7b72f59b9128b59ea5a0aa5a"
+    },
+    {
+      "path": "tools/scripts/run_safeconf_orion_fixed_physical_content_null.py",
+      "bytes": 15263,
+      "sha256": "9dcfe3ee508da55058a2b64556d36311a2ea16f7b6c091c5e69f722204a04150"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/biological_target_control_baseline_readiness_v1/READINESS.md",
+      "bytes": 8511,
+      "sha256": "4670a3103b5839aa5bd4cce49bd56559e4a37f967c98e1fa913780e9a34095a2"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/EXPERIMENT_MASTER_TABLE.csv",
+      "bytes": 864559,
+      "sha256": "4e18826f1dd62e6bccb6afbd8026237f6270b69a3611fa82e1493b4a947b1ddf"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/COST_MASTER_TABLE.csv",
+      "bytes": 127405,
+      "sha256": "49f1e13849571e99a24bd4ed6af282b9227f84d4286b24c4e80c4cf66ae35047"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/INFORMATION_BUDGET_LEDGER.csv",
+      "bytes": 73765,
+      "sha256": "d8ee720d3c61dbb7ecbe28e75656081c416daadf222147623e684f481a892b2c"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/METHOD_DECISION.md",
+      "bytes": 9152,
+      "sha256": "09882b83c8cd6466814d3942ba5ae6adc6083847c45ea2191fd2964db9256bd7"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/CLAIM_EVIDENCE_MATRIX.md",
+      "bytes": 12624,
+      "sha256": "a2b940f2d317c6ee970d9b6c7ad6e838dfcc67cd4a59c91a90076f491978a7c8"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/FAILURE_AND_REPAIR_LOG.md",
+      "bytes": 19987,
+      "sha256": "5504affe23f1ae81a16e05ebe15f3bba99717001123ae47c8fe81b8e2d233b38"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/REPRODUCIBILITY_REPORT.md",
+      "bytes": 19723,
+      "sha256": "10e289d05c916888311bd8118d8868f285d00ad13ff5d4b4992f11cecba89271"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/PAPER_RESULT_TABLES.md",
+      "bytes": 6777,
+      "sha256": "bd7234553cde19314618fb1cc8933bee5ce6b4b74ad38895326ddd6bb6983c1b"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/EXECUTION_STATUS.json",
+      "bytes": 31754,
+      "sha256": "0de00865090f20985246e05377fe2c383321ff55b86f4d84ce4b5053eebcb210"
+    }
+  ]
+}

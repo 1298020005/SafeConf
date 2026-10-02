@@ -1,0 +1,7 @@
+{
+  "status": "ABORT",
+  "type": "RuntimeError",
+  "message": "Original exact reference reproduction failed: {\"query_id\": \"Huang2025_XAtlasOrion|ACIN1|HCT116\", \"reference\": \"Uniform\", \"checks\": {\"prior_bits\": true, \"weight_bits\": true, \"uncertainty_bits\": true, \"effective_sources_bits\": true, \"direct_feature_bits\": true, \"direct_score_bits\": false, \"weighted_frozen_feature_formula_bits\": true}}",
+  "query_truth_values_read": 0,
+  "new_fits": 0
+}
