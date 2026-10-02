@@ -1,0 +1,43 @@
+{
+  "scope": "PostsealSourceDEVbiological_reconstruction_only;notnewendpoint_selection",
+  "unique_evaluation_tasks": 680,
+  "unique_genes": 227,
+  "Source_prediction_error_labels_used": 0,
+  "new_fits": 0,
+  "new_RNG": 0,
+  "all3priorarms": "same2840axis/taskset/truth",
+  "macro_unit": "fourcontexts;notduplicateupstreamrows",
+  "saved_gene_draws": 5000,
+  "seconds": 0.19669326185248792,
+  "reproduction_recipe": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/ROOT_BIOLOGY_RECONSTRUCTION_RECIPE.py",
+    "sha256": "5d502d18bc1c76232fcc3f532a775c110ba15bcec12ea89c261a8c90df7b11eb"
+  },
+  "actual_recipe_replay": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2_ROOT_RECONSTRUCTION_REPLAY/ROOT_BIOLOGY_RECONSTRUCTION_STRATA.csv",
+      "sha256": "63caa7c5f81e60b665d04b85cb4570ec58e964046a7ef510c488213308aab2a1",
+      "bitwise_csv_equal": true
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2_ROOT_RECONSTRUCTION_REPLAY/ROOT_BIOLOGY_RECONSTRUCTION_MACRO.csv",
+      "sha256": "7111b9bfb2cf7aa375db7be263ba3029f593a8938c4a4b0816e8b9d4d4337940",
+      "bitwise_csv_equal": true
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2_ROOT_RECONSTRUCTION_REPLAY/ROOT_BIOLOGY_RECONSTRUCTION_INTERVALS.csv",
+      "sha256": "decdf3d1fba2240365716348434b7fba7320677124a83bb9ccd8775514f6b8b1",
+      "bitwise_csv_equal": true
+    }
+  ],
+  "task_count_column_interpretation": {
+    "CSV_legacy_column": "independent_biological_tasks",
+    "actual_meaning": "unique exact biological task IDs; not bootstrap-independent observations",
+    "OLD_ANCHOR_unique_tasks": 335,
+    "OLD_ANCHOR_independent_gene_clusters": 112,
+    "NEW_TASK_GATE_unique_tasks": 345,
+    "NEW_TASK_GATE_independent_gene_clusters": 115,
+    "joint_gene_clusters": 227,
+    "reason": "Same perturbation gene appears in multiple contexts; complete gene block is statistical sampling unit."
+  }
+}

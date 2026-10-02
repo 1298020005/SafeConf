@@ -1,0 +1,35 @@
+{
+  "passes": false,
+  "reasons": [
+    "new_task_u20_noninferiority_failed",
+    "high_risk_miss_rate_failed"
+  ],
+  "all_planned_strata_finite": true,
+  "release_metrics": {
+    "delta_u20_new_tasks": -0.014098703900323459,
+    "relative_aurc_degradation_anchor": -0.012285227955247453,
+    "miss_rate_degradation": 0.02545955882352942,
+    "nonnegative_strata_fraction": 0.625
+  },
+  "old_anchor_miss_rate_delta": -0.04549632352941177,
+  "new_task_miss_rate_delta": 0.02545955882352942,
+  "old_anchor_strata": 8,
+  "new_task_strata": 8,
+  "macro_unit": "equal upstream-by-context strata",
+  "gate_used_only_DEV_anchors": true,
+  "nonfinite_fail_closed": true,
+  "candidate_status": "REJECTED",
+  "serving_arm": "A_initial_learned",
+  "serving_bundle": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/serving_models/models/e8ee4fa060c339cee32a/790d6f54ba6f306e6597/artifact.joblib",
+    "sha256": "4ccf328ee1923ce5eaff6622f42774f50ffd94927bf869e457fa0c968d20b6e2",
+    "bytes": 739414
+  },
+  "serving_retrieval_bank_version": 1,
+  "serving_Bio_training_bank_version": 1,
+  "joint_Bio_risk_bank_recomputed_predictions_bitwise_equal": true,
+  "B_diagnostic_never_eligible_for_release": true,
+  "old_immutable_public_versions_and_formal_serving_untouched": true,
+  "new_data_remain_available_even_if_rejected": true,
+  "no_newfit_after_gate": true
+}

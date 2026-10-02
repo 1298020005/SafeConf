@@ -1,0 +1,6 @@
+{
+  "status": "ABORT",
+  "error": "AttributeError(\"'DataFrame' object has no attribute 'source_mean_delta_row'\")",
+  "elapsed_seconds": 1.3373137980233878,
+  "completed_fit_rows": []
+}

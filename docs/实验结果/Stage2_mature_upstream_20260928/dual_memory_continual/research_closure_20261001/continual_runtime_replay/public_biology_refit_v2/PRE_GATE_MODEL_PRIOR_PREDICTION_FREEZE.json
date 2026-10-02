@@ -1,0 +1,162 @@
+{
+  "models": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/A_initial_learned_BUNDLE.joblib",
+      "sha256": "4ccf328ee1923ce5eaff6622f42774f50ffd94927bf869e457fa0c968d20b6e2",
+      "bytes": 739414
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/B_updated_bank_errors_old_Bio_BUNDLE.joblib",
+      "sha256": "bc63138ef661993b2138f6612e3a8fd3b9e609a4099af935a1be856b99de9194",
+      "bytes": 757554
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/C_updated_bank_errors_refit_Bio_BUNDLE.joblib",
+      "sha256": "958ec6a72fb2fc088601fe6543ff803fe447c105d200c9136fdb6bcafbae7cdb",
+      "bytes": 1053202
+    }
+  ],
+  "biological_models": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/BIO_v1_OOF_hold2.joblib",
+      "sha256": "5c1cfa885a321b545adf9e17878414b3b10d7029be5c35b372272b99516f396d",
+      "bytes": 177842
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/BIO_v1_OOF_hold3.joblib",
+      "sha256": "15828c6288e6da6a8222f48d318dba856444d8337d3616a510b1577a376cc8e3",
+      "bytes": 174130
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/BIO_v1_FINAL.joblib",
+      "sha256": "acce92bbd7ade94c48a7d38db4edc53903c1085271066a7d66c787ceb0c6a53b",
+      "bytes": 180642
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/BIO_v2_OOF_hold2.joblib",
+      "sha256": "12f306f21b40a64bba1eacf73a363f87a7c694dd35006d13db24177348b42960",
+      "bytes": 209362
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/BIO_v2_OOF_hold3.joblib",
+      "sha256": "9794e31d0bbea217485a84b20154c0f1b855e339cf6358cea7c6a2ef82715d7f",
+      "bytes": 202914
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/BIO_v2_OOF_hold4.joblib",
+      "sha256": "d7e52f391bcab313709fed8a5a8ea39765d75256e3e216c6d387e7316bcc3c24",
+      "bytes": 202402
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/BIO_v2_FINAL.joblib",
+      "sha256": "bee2773da279144af4d6086b8c04243d7949857d12c0f1b19fbd6c1265137078",
+      "bytes": 207842
+    }
+  ],
+  "runtime_artifacts": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/B_updated_bank_errors_old_Bio_WEIGHTS.parquet",
+      "sha256": "1630681fc5b62c7616248ac9b7ec91c6851d9b324f5e507b8c9deb2d3995154a",
+      "bytes": 80302
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/C_updated_bank_errors_refit_Bio_FEATURES.parquet",
+      "sha256": "1030adc88b6179ba9182a1a63add98a512f1f98feeb840991197d5fec974a5f6",
+      "bytes": 285088
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/BIO_v1_FINAL.joblib",
+      "sha256": "acce92bbd7ade94c48a7d38db4edc53903c1085271066a7d66c787ceb0c6a53b",
+      "bytes": 180642
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/B_updated_bank_errors_old_Bio_PRIORS.npy",
+      "sha256": "6d1795f6d37174424f5d566f40fcadcfbf666ec7ad94b520a37e139c0fa6a8f1",
+      "bytes": 38601408
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/ALL_FROZEN_RISK_SCORES.parquet",
+      "sha256": "25ddfb62afe40146dc3ef2820529adbf16b6a07e741b48797a302eb91c00265d",
+      "bytes": 129527
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/BIO_v1_OOF_hold3.joblib",
+      "sha256": "15828c6288e6da6a8222f48d318dba856444d8337d3616a510b1577a376cc8e3",
+      "bytes": 174130
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/B_updated_bank_errors_old_Bio_FEATURES.parquet",
+      "sha256": "4d61c61e5a31c90b4775fa2405496c573f54fc8e30364ae8503aeccf91fafdda",
+      "bytes": 285088
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/B_updated_bank_errors_old_Bio_BUNDLE.joblib",
+      "sha256": "bc63138ef661993b2138f6612e3a8fd3b9e609a4099af935a1be856b99de9194",
+      "bytes": 757554
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/C_updated_bank_errors_refit_Bio_PRIORS.npy",
+      "sha256": "d1c3eb561e13c825a9d53289b3baad1206e7861ecaaefc0933ed806829346177",
+      "bytes": 38601408
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/A_initial_learned_FEATURES.parquet",
+      "sha256": "ec062e7b5d332ce5d03c7ff74edd4f9428f68955e83188fe18311f9a1f7c9391",
+      "bytes": 241085
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/BIO_v2_FINAL.joblib",
+      "sha256": "bee2773da279144af4d6086b8c04243d7949857d12c0f1b19fbd6c1265137078",
+      "bytes": 207842
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/BIO_v2_OOF_hold4.joblib",
+      "sha256": "d7e52f391bcab313709fed8a5a8ea39765d75256e3e216c6d387e7316bcc3c24",
+      "bytes": 202402
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/A_initial_learned_BUNDLE.joblib",
+      "sha256": "4ccf328ee1923ce5eaff6622f42774f50ffd94927bf869e457fa0c968d20b6e2",
+      "bytes": 739414
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/BIO_v2_OOF_hold2.joblib",
+      "sha256": "12f306f21b40a64bba1eacf73a363f87a7c694dd35006d13db24177348b42960",
+      "bytes": 209362
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/BIO_v2_OOF_hold3.joblib",
+      "sha256": "9794e31d0bbea217485a84b20154c0f1b855e339cf6358cea7c6a2ef82715d7f",
+      "bytes": 202914
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/A_initial_learned_WEIGHTS.parquet",
+      "sha256": "d949819617c3211496d2975a3203afc59313d6be82f8926fdbe0c92f2ae5c935",
+      "bytes": 34542
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/BIO_v1_OOF_hold2.joblib",
+      "sha256": "5c1cfa885a321b545adf9e17878414b3b10d7029be5c35b372272b99516f396d",
+      "bytes": 177842
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/C_updated_bank_errors_refit_Bio_WEIGHTS.parquet",
+      "sha256": "65c5d7be6b6962a2986fa11a4e2d1415305c43749589fac4ea6b42a32bc4051e",
+      "bytes": 80310
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/C_updated_bank_errors_refit_Bio_BUNDLE.joblib",
+      "sha256": "958ec6a72fb2fc088601fe6543ff803fe447c105d200c9136fdb6bcafbae7cdb",
+      "bytes": 1053202
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2/A_initial_learned_PRIORS.npy",
+      "sha256": "91a0e7f65ec8ad1a553a5c5f2a256b6c75bb9e19529813df5ae33aac0eff0f07",
+      "bytes": 38601408
+    }
+  ],
+  "all10fits_and3fullscorearms_sealed_before_query_gate_outcomes": true,
+  "joint_bio_risk_bank_reload_bitwise_equal_allarms": true,
+  "all_fixed_queries": 1699,
+  "all_predictor_query_records": 3398
+}

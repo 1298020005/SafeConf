@@ -1,0 +1,13 @@
+role,arm_a,arm_b,metric,point_difference,ci95_lower,ci95_upper,valid_draws,total_draws
+OLD_ANCHOR,C_updated_bank_errors_refit_Bio,A_initial_learned,rmse_mean,-0.01068201747343342,-0.011863054422861863,-0.009550188558981964,5000,5000
+OLD_ANCHOR,C_updated_bank_errors_refit_Bio,A_initial_learned,cosine_mean,0.07909527466154598,0.06997289841318495,0.08878228371846314,5000,5000
+OLD_ANCHOR,B_updated_bank_errors_old_Bio,A_initial_learned,rmse_mean,-0.010401763160192333,-0.011585918993765881,-0.00927366491265117,5000,5000
+OLD_ANCHOR,B_updated_bank_errors_old_Bio,A_initial_learned,cosine_mean,0.07533979568682075,0.06551713048110293,0.08589455049804766,5000,5000
+OLD_ANCHOR,C_updated_bank_errors_refit_Bio,B_updated_bank_errors_old_Bio,rmse_mean,-0.00028025431324108646,-0.0005384101333863543,-6.787435701874037e-05,5000,5000
+OLD_ANCHOR,C_updated_bank_errors_refit_Bio,B_updated_bank_errors_old_Bio,cosine_mean,0.0037554789747252237,0.0005523850919449889,0.007640858265975928,5000,5000
+NEW_TASK_GATE,C_updated_bank_errors_refit_Bio,A_initial_learned,rmse_mean,-0.011639280431280985,-0.012925913498103705,-0.010354724774779672,5000,5000
+NEW_TASK_GATE,C_updated_bank_errors_refit_Bio,A_initial_learned,cosine_mean,0.07159223658844038,0.06188011459216594,0.08184396237085104,5000,5000
+NEW_TASK_GATE,B_updated_bank_errors_old_Bio,A_initial_learned,rmse_mean,-0.011283856691255228,-0.01254006181879313,-0.010031523421086036,5000,5000
+NEW_TASK_GATE,B_updated_bank_errors_old_Bio,A_initial_learned,cosine_mean,0.06659840135908857,0.05665502730573241,0.07664528996714587,5000,5000
+NEW_TASK_GATE,C_updated_bank_errors_refit_Bio,B_updated_bank_errors_old_Bio,rmse_mean,-0.0003554237400257565,-0.000614478300336959,-0.00012240071650904184,5000,5000
+NEW_TASK_GATE,C_updated_bank_errors_refit_Bio,B_updated_bank_errors_old_Bio,cosine_mean,0.004993835229351817,0.0021119357610159483,0.008203825457737323,5000,5000

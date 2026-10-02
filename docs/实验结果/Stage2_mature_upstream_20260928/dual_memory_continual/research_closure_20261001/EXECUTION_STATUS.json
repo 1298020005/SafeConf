@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-02T04:14:12.623230+00:00",
+  "updated_utc": "2026-10-02T04:49:37.605984+00:00",
   "complete": [
     "five-fold nested public biology with four inner folds",
     "three-line sixteen-method matrix with three registered seeds",
@@ -66,7 +66,8 @@
     "Orion strong-simple completeness:30fixedtargetmodels vs5rules/3150pairedrows; all150macroU20CIs cross0; saved5000indices/no fits or newRNG",
     "Current2840Publicgrowth:25snapshots275fixedriskfits;75points reproduced;5000jointgene statistics,490curve/490contrastrows;coverage/confounding and allorderresults preserved",
     "Orion fixed3rule/5physical-content-null seeds:232tasks/144genes retained,5200historyrowsmoved;378metrics/315pairs exactindependentCIreview;no fits/newdraws/primarychange",
-    "Orion fullTRAINtarget-control scalar:232tasks144genes/38606input,modelbaseline/projectionbits exact;43paircomparators903rows924metrics fixed5000draws verified;no newfit/primarychange"
+    "Orion fullTRAINtarget-control scalar:232tasks144genes/38606input,modelbaseline/projectionbits exact;43paircomparators903rows924metrics fixed5000draws verified;no newfit/primarychange",
+    "ActualSourceDEV fullPublicBiologyrefit:7Bio+3risk,3fixedarms,106hashchecks,48points42CIs,reconstructedservingA kept;smallBioDEV gains butriskgate rejects"
   ],
   "pending": [
     "Scientific method increment/independent-study readiness remains unproven after strong baselines; no ready approved new-method/confirmation pair",
@@ -75,7 +76,7 @@
   "new_large_upstream_training": 0,
   "new_download_gb": 0.04440246,
   "completion_claim": "goal active; meaningful diagnostics and registered matrices continue; manuscript prose deferred",
-  "current_work": "Fixedtarget-control comparator complete and evidence/accounting close; no activefit/GPU/rawtruthreader. AllcurrentSource/public/feedback strongcomparators preserved; scientificmethod readiness remainsNOT_YET_PROVEN, no ready newmethod/freshconfirmation pair; manuscriptdeferred.",
+  "current_work": "SourceDEV PublicBiology full refit lifecycle complete and ROOT verified; fixed C rejected, isolatedA kept; no active fit/GPU/rawtruth reader. Biological reconstruction tiny DEV gain did not establishrisk increment; scientific method readiness remainsNOT_YET_PROVEN; manuscript deferred.",
   "deferred_by_user": [
     "manuscript and supplement prose generation"
   ],
@@ -594,5 +595,28 @@
     "paired_rows": 903,
     "allU20valid5000": true,
     "degenerate_Spearman_valid4352_preserved": true
+  },
+  "continual_public_biology_refit": {
+    "status": "COMPLETE_ACTUAL_SOURCE_DEV_PUBLIC_BIOLOGY_REFIT",
+    "runtime": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_public_biology_refit_20261002_v2",
+    "report": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2",
+    "actual_fits": 10,
+    "Bio_fits": 7,
+    "risk_fits": 3,
+    "candidate_status": "REJECTED",
+    "new_tasks_deltaU20": -0.014098703900323459,
+    "new_tasks_miss_delta": 0.02545955882352942,
+    "all6U20_CI_cross0": true,
+    "SourceDEV_Bio_refit_small_reconstruction_gain": true,
+    "Orion_or_McFaline_used": false,
+    "new_upstream_calls": 0,
+    "original_formal_models_changed": false
+  },
+  "metadata_alias_audit": {
+    "report": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/asset_alias_recheck_20261002_v1",
+    "GWT_is_previousE170": true,
+    "TFome_is_stoppedE247": true,
+    "new_expression_downloads": 0,
+    "new_upstream_attempts": 0
   }
 }

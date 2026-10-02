@@ -1,0 +1,80 @@
+{
+  "status": "COMPLETE_ACTUAL_SOURCE_DEV_PUBLIC_BIOLOGY_REFIT",
+  "candidate_status": "REJECTED",
+  "serving_arm": "A_initial_learned",
+  "actual_PublicBiology_fits": 7,
+  "actual_risk_fits": 3,
+  "actual_total_fits": 10,
+  "used_existing_immutable_ErrorMemory_realised_error_only": true,
+  "new_Error_OOF_fits": 0,
+  "tasks": 1699,
+  "gene_clusters": 563,
+  "predictor_task_records": 3398,
+  "evaluation_gene_clusters": 227,
+  "all_three_arms_retained": true,
+  "strata_rows": 48,
+  "macro_rows": 6,
+  "paired_rows": 42,
+  "new_bootstrap_draws": 0,
+  "saved_gene_draws": 5000,
+  "new_upstream_calls": 0,
+  "GPU_hours": 0,
+  "Orion_access": false,
+  "McFaline_access": false,
+  "formal_assets_before_after_unchanged": true,
+  "elapsed_seconds": 55.846118218963966,
+  "CPU_seconds": 64.176625761,
+  "peak_RSS_bytes": 758554624,
+  "output_bindings": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/ALL48_DEV_STRATA.csv",
+      "sha256": "286179a8052a67152be0c393ed152654ab4615f980ce0739f34160e21ff4a16f",
+      "bytes": 9690
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/PUBLIC_BIOLOGY_TRAINING_SCOPE.csv",
+      "sha256": "263b629a1722c9d84423062e52884f82462edf5bd67e70b0a54e58431f3404a7",
+      "bytes": 2190
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/PRE_GATE_MODEL_PRIOR_PREDICTION_FREEZE.json",
+      "sha256": "78fce298267b63033161c4ce4cd53fc9e70648b33cc7a00864047d98287ad409",
+      "bytes": 8272
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/C_VS_A_ACTUAL_DEV_GATE_METRICS.csv",
+      "sha256": "8624691ca6ba415f82601b78bd9d8ec90b8378d5762a7825047aef12e7a118c5",
+      "bytes": 5162
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/REGISTRATION.json",
+      "sha256": "8a8ceea26d5131ef0b43dc525f68ff370c50e0937475f7119885a5296c34bb05",
+      "bytes": 19335
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/ALL6_DEV_MACRO.csv",
+      "sha256": "a899b2f69cce4e5adbd8e01138a4123b4378fcb27c763f0d7d335e0b631aa738",
+      "bytes": 1239
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/CDF_ALLOWED_BUDGET_AUDIT.csv",
+      "sha256": "cef5180e30dea65ba6238837338acb3b2da3881db113b8196c79f1bea0bba0bb",
+      "bytes": 9593
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/ACTUAL_RELEASE_OR_RETAIN_DECISION.json",
+      "sha256": "95507558d233dcd287597d2982ef6a1c79ad2bdbd2da6f467c06fcd0e45bb022",
+      "bytes": 1414
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/FIT_COSTS.csv",
+      "sha256": "903a1b746b4055fe537aa45b56c13e693bb9898bfe93c9e4d616a32851764c1f",
+      "bytes": 779
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/ALL42_FIXED_PAIRED_INTERVALS.csv",
+      "sha256": "a8b547fcbbcc6549af896812cc81ba9e948d6538cd23a1dc989eb97f967be8c8",
+      "bytes": 6590
+    }
+  ]
+}

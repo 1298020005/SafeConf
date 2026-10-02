@@ -1,0 +1,216 @@
+{
+  "scientific_role": "FixedSourceDEV lifecycle and postsealbiologicalreconstruction;notnewconfirmation",
+  "historical_agent_snapshot_metadata_delta": "One ROOT receipt extended with replay/units; exact initial copied and lineage retained",
+  "files": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/CLAIM_EVIDENCE_MATRIX.md",
+      "sha256": "d0afd8e2fd7dc4cdd86ec21a989ca5cc2a3a269b5ec42c99fff1761a2e74d1f8",
+      "bytes": 13711
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/COST_MASTER_TABLE.csv",
+      "sha256": "bcf826101e97fbd03086234cdcab2fc8836b9bf53bcd0729cdb9fba403b69a89",
+      "bytes": 129437
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/EXECUTION_STATUS.json",
+      "sha256": "1c11b249639865994ff321022ea2c93830fea207a69f91f99c09c8402440f0eb",
+      "bytes": 33996
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/EXPERIMENT_MASTER_TABLE.csv",
+      "sha256": "6066e92f7763fe61c387e613b943fc6b5df2214c152a5890536b95a1ecff9032",
+      "bytes": 868527
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/FAILURE_AND_REPAIR_LOG.md",
+      "sha256": "b9c002a3acccf45ec0900aa19bdef1d1561b61546372136df98707d69416331e",
+      "bytes": 21193
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/INFORMATION_BUDGET_LEDGER.csv",
+      "sha256": "0b99a02723b641386d6d594a69db835c1af710239ef94a88b7b2e9b6cdb64789",
+      "bytes": 75763
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/METHOD_DECISION.md",
+      "sha256": "33a58c3c78ec3a4abdca86423aef49f4c1c512712e623a3e5a93ff4ac4d884b5",
+      "bytes": 10556
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/PAPER_RESULT_TABLES.md",
+      "sha256": "8647bde2f3744e67d93376815e23b8c0f63d4ccbd8abb76aca9f973594498c1c",
+      "bytes": 8148
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/REPRODUCIBILITY_REPORT.md",
+      "sha256": "2bda858072bc9f430e4db7889d9bc1a84776d86b772422c619e024cc1a4e6080",
+      "bytes": 21269
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/asset_alias_recheck_20261002_v1/README.md",
+      "sha256": "01854222dd0fa7846d50161228c12fcaea7dd6d6bccb5b0fdbf33f3afee6e0ed",
+      "bytes": 1450
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/asset_alias_recheck_20261002_v1/RECEIPT.json",
+      "sha256": "196d705fd094d04280f4c15ec4e94ffd6d82043adacd7d06b9f4ceb368bb6c62",
+      "bytes": 1562
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/asset_alias_recheck_20261002_v1/ZENODO_RECORD_15213619.json",
+      "sha256": "8f8c6c256f8286e2dcb398b6ace54edc7d1fa058fe6692a6142439accfb88772",
+      "bytes": 7253
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v1/ABORT.json",
+      "sha256": "186166781d4db467348c94510c464c5d4803790a999656eb84ccf7508477057c",
+      "bytes": 187
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v1/EXECUTED_CODE_SNAPSHOT.py",
+      "sha256": "4aeeafbea4535cdf9d61e3b587ac4e750574e593cd0867800beade006336a9f0",
+      "bytes": 28124
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v1/REGISTRATION.json",
+      "sha256": "6607838e7649bbb5fa9244ba934407c0b2e7e67e690d5030836e6ddf2829ca4b",
+      "bytes": 17336
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/ACTUAL_RELEASE_OR_RETAIN_DECISION.json",
+      "sha256": "95507558d233dcd287597d2982ef6a1c79ad2bdbd2da6f467c06fcd0e45bb022",
+      "bytes": 1414
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/ALL42_FIXED_PAIRED_INTERVALS.csv",
+      "sha256": "a8b547fcbbcc6549af896812cc81ba9e948d6538cd23a1dc989eb97f967be8c8",
+      "bytes": 6590
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/ALL48_DEV_STRATA.csv",
+      "sha256": "286179a8052a67152be0c393ed152654ab4615f980ce0739f34160e21ff4a16f",
+      "bytes": 9690
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/ALL6_DEV_MACRO.csv",
+      "sha256": "a899b2f69cce4e5adbd8e01138a4123b4378fcb27c763f0d7d335e0b631aa738",
+      "bytes": 1239
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/B_C_UPDATED_DATA_IDENTITY_PROOF.json",
+      "sha256": "1af7ffa4d14e2aa039eac923530b679db51573be3cd2a68a9827b90010e05131",
+      "bytes": 1144
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/CDF_ALLOWED_BUDGET_AUDIT.csv",
+      "sha256": "cef5180e30dea65ba6238837338acb3b2da3881db113b8196c79f1bea0bba0bb",
+      "bytes": 9593
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/COST_MASTER_APPEND_ROWS.csv",
+      "sha256": "bb2eda9e282f8898abb6eb37b31f6d1f88df0b22cdfb72835ef87698b68e21d1",
+      "bytes": 932
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/C_VS_A_ACTUAL_DEV_GATE_METRICS.csv",
+      "sha256": "8624691ca6ba415f82601b78bd9d8ec90b8378d5762a7825047aef12e7a118c5",
+      "bytes": 5162
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/FIT_COSTS.csv",
+      "sha256": "903a1b746b4055fe537aa45b56c13e693bb9898bfe93c9e4d616a32851764c1f",
+      "bytes": 779
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/OWNED_FILES.json",
+      "sha256": "1bee0273f4a15d359e2cdaeee87c1ae902e63c9b795a2474b4aefe09738a146a",
+      "bytes": 9760
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/PRE_GATE_MODEL_PRIOR_PREDICTION_FREEZE.json",
+      "sha256": "78fce298267b63033161c4ce4cd53fc9e70648b33cc7a00864047d98287ad409",
+      "bytes": 8272
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/PUBLIC_BIOLOGY_TRAINING_SCOPE.csv",
+      "sha256": "263b629a1722c9d84423062e52884f82462edf5bd67e70b0a54e58431f3404a7",
+      "bytes": 2190
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/README.md",
+      "sha256": "7f5173d4188cb48d3a92f0015e4cb1029d90b562026a568664fd7b574fe1e7c6",
+      "bytes": 6671
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/REGISTRATION.json",
+      "sha256": "8a8ceea26d5131ef0b43dc525f68ff370c50e0937475f7119885a5296c34bb05",
+      "bytes": 19335
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/RESULT_MANIFEST.json",
+      "sha256": "f73462b18e32efcca2c144b5d360d55e69424050b0c360631914ec4a024925cb",
+      "bytes": 4662
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/ROOT_ACTUAL_VERIFICATION.json",
+      "sha256": "002471ad608090743007834f7d83bf4b9d1db775d2ce7bbce92a58a75f6db366",
+      "bytes": 479
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/ROOT_BIOLOGY_DIAGNOSTIC_RECEIPT.json",
+      "sha256": "fb430fe1df384b4d049d85429a521b547aac723273fceeadfaa5d430b02a65e5",
+      "bytes": 2267
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/ROOT_BIOLOGY_DIAGNOSTIC_RECEIPT_initial.json",
+      "sha256": "f27f78bcbc4e33dc42ef146e9f78ab070b5bfbfb1e07182cbefced7e7b9cfba5",
+      "bytes": 392
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/ROOT_BIOLOGY_RECONSTRUCTION_INTERVALS.csv",
+      "sha256": "decdf3d1fba2240365716348434b7fba7320677124a83bb9ccd8775514f6b8b1",
+      "bytes": 1898
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/ROOT_BIOLOGY_RECONSTRUCTION_MACRO.csv",
+      "sha256": "7111b9bfb2cf7aa375db7be263ba3029f593a8938c4a4b0816e8b9d4d4337940",
+      "bytes": 574
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/ROOT_BIOLOGY_RECONSTRUCTION_RECIPE.py",
+      "sha256": "5d502d18bc1c76232fcc3f532a775c110ba15bcec12ea89c261a8c90df7b11eb",
+      "bytes": 4554
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/ROOT_BIOLOGY_RECONSTRUCTION_STRATA.csv",
+      "sha256": "63caa7c5f81e60b665d04b85cb4570ec58e964046a7ef510c488213308aab2a1",
+      "bytes": 2140
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/ROOT_CODE_SCOPE_REVIEW.md",
+      "sha256": "98d1bb69b401a67cc695eef618b9c042ad1f350ee71a8d38e56b76762e4331bc",
+      "bytes": 1963
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/ROOT_METADATA_ADDITION_LINEAGE.json",
+      "sha256": "d5848535b44f2d5929fb05cfea3d0c77e8b9bb67f1fbbf6672752f1a75778f0e",
+      "bytes": 708
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/public_biology_refit_v2/RUNTIME_ARTIFACT_HASHES.json",
+      "sha256": "5cdb913c8f2dee86ab9a0a32cf17becc7dc42b31a916a4255d5fe59ed6b57650",
+      "bytes": 7895
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_continual_public_biology_refit_agent.py",
+      "sha256": "4aeeafbea4535cdf9d61e3b587ac4e750574e593cd0867800beade006336a9f0",
+      "bytes": 28124
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_continual_public_biology_refit_v2_agent.py",
+      "sha256": "6f5b98430ca0bc18986eacd0cbcd4e39c3bb78dceb03d3eb04b507240397c4d5",
+      "bytes": 29542
+    }
+  ]
+}

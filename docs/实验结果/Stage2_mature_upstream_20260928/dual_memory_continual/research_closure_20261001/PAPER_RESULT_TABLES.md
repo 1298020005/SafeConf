@@ -115,3 +115,12 @@ All5seeds retained;15macro point differencespositive but4nominal CIs>0, weighted
 | B100_SharedTarget_ridge | 0.243019 | +0.164715 | [-0.120531, 0.423764] |
 
 ControlU20 .078304; all43macro paired superiorityintervals unsupported. Full38606controlinputbeyondP13, no newprimary.
+
+## Source DEV PublicBiology持续重训（三固定臂）
+
+| 开发评价角色 | 初始A U20 | 新bank/errors＋旧Bio B | 新bank/errors＋重训Bio C | C−B配对95%CI |
+|---|---:|---:|---:|---|
+| old anchor，335tasks/112genes |0.725469|0.760510|0.783727|[-0.028035,0.043883]|
+| new task gate，345tasks/115genes |0.759756|0.753450|0.745657|[-0.031081,0.038584]|
+
+只C为候选；C−A newgate −0.014099、miss＋0.025460使原门失败，服务保留A。C−B生物重建RMSE anchor −0.000280[-0.000538,-0.000068]、newgate −0.000355[-0.000614,-0.000122]；不把微小生物重建增益写作最终risk收益。SourceDEV观察性操作，原外部主结果不变。全48/6/42行及代码/失败在continual_runtime_replay/public_biology_refit_v2/。

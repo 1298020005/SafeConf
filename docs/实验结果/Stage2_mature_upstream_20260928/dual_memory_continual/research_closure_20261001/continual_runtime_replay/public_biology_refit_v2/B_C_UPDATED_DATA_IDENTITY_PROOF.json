@@ -1,0 +1,21 @@
+{
+  "status": "B_C_SAME_UPDATED_BANK_ERROR_BUDGET_CDF_AND_PHYSICAL_TASK_WEIGHTS_PASS",
+  "bank_binding": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/public_memory/versions/v0002/manifest.json",
+    "sha256": "645fa5c46a9534dd41b52d8581e17f3f15e09cec2be9dc45ab29ce9c336332b0",
+    "bytes": 3144
+  },
+  "risk_fit_folds": [
+    2,
+    3,
+    4
+  ],
+  "training_records_hash": "b5fd29ca64007d2905c90c83869c76ac353f3c8e4749aeccfd82c04e5d2e7116",
+  "training_genes_hash": "b11c254141015acb9ccb6cbedc53838260c7caaaf524930eef9b7be024b74e4e",
+  "identical_CDF_groups": 8,
+  "identical_sorted_training_errors_all_groups": true,
+  "identical3398_record_identity_order": true,
+  "cluster_weight_rule": "sameinverse records per gene,mean1onidentical2038trainingrecords",
+  "Public_Bio_training_information_change": "initial964pairs686tasks225genes to2737pairs1019tasks336genes; underlyingSourcebiologicaltruth alreadyopen, notindependentnewerrorlabels",
+  "C_minus_B_interpretation": "fixedPublicBiologyrefitoperation includingaddedBIOpairtraining; notpureoptimizationwithsameBIOsupervision"
+}

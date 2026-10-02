@@ -131,3 +131,7 @@ Preparationv1 acba failed firstexactencodedscorebit, while geometry/prior/weight
 ## 2026-10-02: target-control comparator unit and NA acceptance
 
 RootinitialCP10000message conflictedwithactualCP4000contract; correctedbeforeanyscores, no meanlog conversion/rawreread. 232full-control scoressealed, full38606and3285projectionbits matchoriginalbaseline. Fixedstatistics97.388s completed;Rootall-metrics5000validassertion was overstrict forconstant-scoreSpearman draws. Correctedonlyacceptance logic: HEK/macro P_only_hgbSpearman4352valid,648NA preserved, allU20still5000. Originalarrays/metrics/directions unmodified. All43macro superiorityintervals unsupported; no sign/parameter repairs follow.
+
+## PublicBiology refit闭环：一次技术修复与真实候选拒绝
+
+v1在TX_TASK_SPLIT缺source_mean_delta_row时0fit failclosed；源码4aee和ABORT原样保留。v2按task_id关联原primary metadata并完整核1808轴，恢复原math.log1p数值路径；未改公式/容差/任务/门。10fits最终完成，但原风险发布门拒绝C。ROOT生物重建诊断证实Bio小幅重建改善、风险增量不确定；不将Bio笼统归为失效，不扫描新参数/seed。新参数和bank2保留，实际serving为A+bank1；没有失败新版本发布或质量回滚的虚构叙事。

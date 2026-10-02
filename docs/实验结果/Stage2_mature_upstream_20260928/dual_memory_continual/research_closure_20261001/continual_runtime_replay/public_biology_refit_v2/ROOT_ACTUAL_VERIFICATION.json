@@ -1,0 +1,13 @@
+{
+  "status": "PASS_ROOT_INDEPENDENT_ACTUAL_RECOMPUTATION",
+  "hash_bindings_checked": 106,
+  "all48strata_recomputed_from_fixed_scores_and_query_errors": true,
+  "max_point_numeric_difference": 1.1102230246251565e-16,
+  "all42intervals_recomputed_from_saved_draws": true,
+  "max_CI_numeric_difference": 9.71445146547012e-17,
+  "B_C_training_id_CDF_exact": true,
+  "fixed1699tasks563genes3398rows": true,
+  "serving_keeps_A_exact_bundle": true,
+  "new_fits": 0,
+  "new_RNG": 0
+}

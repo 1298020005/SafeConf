@@ -69,3 +69,7 @@ Orion原232任务/144gene、3固定无拟合规则、5实际效应置换、5000�
 ## 完整TRAIN控制表达强简单对照已完成
 
 原232任务/144gene上固定单向target-control表达U20=0.078304，原学习式距离0.267066、HGB0.204835，差值区间均跨零。43宏U20对照均无正区间；仅数量规则相对control名义区间全负。它没有重现全部Public点差，但也不能排除control解释或建立Public/Source稳定增量。完整38606输入不同于原P13预算；145个target在3285外仍保留。停止该proxy的符号/参数变体，主结果不变。
+
+## PublicBiology真实重训与发布门已补齐
+
+原结构SourceDEV三臂已执行7Bio+3risk拟合：加入新bank/errors后，C重训Bio相对B旧Bio在335anchor tasks/112gene及345newgate tasks/115gene的生物重建RMSE分别降低0.000280/0.000355，名义5000gene CI均负；cosine也小幅改善。风险U20 C−B的两个区间均跨零，C−A newgate点差−0.014099、漏检率+0.025460，违反原发布门，真实isolated服务保留A。原模型/外部评价不变。此结果证明原Public学习器能够由新增监督微调生物参照，但未建立风险收益，不称自学习无效或跨域机制已定位，不继续追加refit变体。证据：continual_runtime_replay/public_biology_refit_v2/README.md。

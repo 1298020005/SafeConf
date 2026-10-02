@@ -1,0 +1,417 @@
+{
+  "schema": "safeconf_Source_DEV_PublicBiology_actual_refit_v1",
+  "pid": 886933,
+  "arms": [
+    "A_initial_learned",
+    "B_updated_bank_errors_old_Bio",
+    "C_updated_bank_errors_refit_Bio"
+  ],
+  "only_release_candidate": "C_updated_bank_errors_refit_Bio",
+  "diagnostic_only_arm": "B_updated_bank_errors_old_Bio",
+  "gene_axis": 2840,
+  "fixed_tasks": 1699,
+  "gene_clusters": 563,
+  "predictor_task_records": 3398,
+  "Public_parameters": {
+    "kind": "hgb",
+    "seed": 20260929,
+    "iterations": 200,
+    "learning_rate": 0.05,
+    "depth": 3,
+    "leaf": 20,
+    "L2": 10
+  },
+  "risk_seed": 20260930,
+  "Public_features": [
+    "log_source_cells",
+    "log_source_batches",
+    "control_rmse",
+    "control_cosine",
+    "source_effect_magnitude",
+    "source_effect_abs_mean",
+    "source_conflict",
+    "support_fraction",
+    "quality_missing"
+  ],
+  "risk_features": [
+    "predicted_magnitude",
+    "prediction_abs_mean",
+    "prediction_signed_mean",
+    "prediction_std",
+    "prediction_abs_q95",
+    "prediction_sparsity",
+    "prior_magnitude",
+    "prediction_prior_rmse",
+    "prediction_prior_cosine",
+    "prior_uncertainty",
+    "log_history_support",
+    "effective_sources",
+    "history_conflict"
+  ],
+  "learned_support_blend": 0.5,
+  "initial_Bio_OOF": "held2fit3;held3fit2;finalfit2,3",
+  "updated_Bio_OOF": "held2fit3,4;held3fit2,4;held4fit2,3;finalfit2,3,4",
+  "B_OOF": "reuseoldheld2/3learners onnewbank;fold4oldfinalfit2,3",
+  "fixed_gate": "original finite_release_gate CvsA; Bnoteligible; no winner selection",
+  "planned_fits": {
+    "PublicBiology": 7,
+    "risk": 3,
+    "total": 10
+  },
+  "ErrorMemory": "existingimmutableexactversion realised_error only; historicalshared/residual notused",
+  "initial_Error_folds": [
+    2,
+    3
+  ],
+  "updated_Error_folds": [
+    2,
+    3,
+    4
+  ],
+  "gate_labels_only_after_all_models_priors_scores_sealed": true,
+  "retrospective_study_provenance": "initialbiological/errortraining alreadycoversbothSource studies; notchronologicalstudytransfer",
+  "existing_source_predictors": 2,
+  "existing_source_families": 1,
+  "new_upstream_calls": 0,
+  "bootstrap": "reusefixed5000joint227gene countarray; noRNG; finiteonlyCIwithNApropagation",
+  "resources": {
+    "CPU_threads": 4,
+    "wall_cap_seconds": 1800,
+    "RSS_cap_bytes": 2147483648,
+    "GPU_hours": 0
+  },
+  "input_code_bindings": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_continual_public_biology_refit_v2_agent.py",
+      "sha256": "6f5b98430ca0bc18986eacd0cbcd4e39c3bb78dceb03d3eb04b507240397c4d5",
+      "bytes": 29542
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_continual_runtime_replay_agent.py",
+      "sha256": "c78badc41b9a910ade57ecf0bcadc36e792b17c9f30c6563858c004d9aa9e36c",
+      "bytes": 52250
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_dual_memory_txpert_public_biology.py",
+      "sha256": "fc2db4a07b6e360676c54b09c5bd5d893dc58aaef2c9426ac3da8df673cfaf63",
+      "bytes": 29386
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/learners.py",
+      "sha256": "33e3eba65e31cc8372a89ad6356c353d972ca03b105307c916addbebce98ee63",
+      "bytes": 6160
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/research.py",
+      "sha256": "22a02a79d59f1d852870efb9dc1afe229f150c5db75e5de735f7bfcc1f613887",
+      "bytes": 11094
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/versioned_runtime.py",
+      "sha256": "70c5cd8ce1a0dfd66deda2834e2806de71b16d58f2cad92c9a9dea9284affc0e",
+      "bytes": 34971
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/diagnose_safeconf_continual_components_agent.py",
+      "sha256": "21a57d4dc71d8b245a35c7bb5ad26e258659df5dd5978639b8318d62931df87d",
+      "bytes": 19617
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_source_scaling_uncertainty_agent.py",
+      "sha256": "46e4e48f0b767d4fc363da9884412973beee0407128377a184bc6992c0819c64",
+      "bytes": 18872
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/actual_v2/REGISTRATION.json",
+      "sha256": "3ea30e824a98c6bb6600c11ade442488848fc6fd87b5fe1e954d4d7d90bbc378",
+      "bytes": 7993
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/actual_v2/REAL_INGESTION_TRIGGER_RECEIPT.json",
+      "sha256": "2f66d7226660e88e23fad6d391fd1317256a23c04be11d72d3b41a478cda7781",
+      "bytes": 8494
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/continual_runtime_replay/actual_v2/FROZEN_TASK_ROLE_SCOPE.csv",
+      "sha256": "136918a3e6d8ce0f991bca68094952b29e0f714294be2deed2c728c6675ba563",
+      "bytes": 109581
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/FEATURES_PUBLIC_v1.parquet",
+      "sha256": "bf295f1faeab977bf62a1c73a717efcef8d24f5b33ce18b7bcfeefe616ba043c",
+      "bytes": 240041
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_component_diagnostic_20261002_v1/JOINT_GENE_BOOTSTRAP_COUNTS.npz",
+      "sha256": "c8225a012a313761eb251ef1cb64a661642c7c14c6ebad3cf558c695a1a23b84",
+      "bytes": 402398
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TRUE_EFFECTS.npy",
+      "sha256": "c2da8655e555ed55320d79c8d197fddf4365d57ae974c2dfd529c009af3d164c",
+      "bytes": 20539008
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/TX_TASK_SPLIT.csv",
+      "sha256": "350e53a18f54108eef56062b96875f5ca0ad3d1095eb155aa2303eb35422aa71",
+      "bytes": 56917
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TASKS.csv",
+      "sha256": "72c6620d797db9115e67f6c9067d54879950733827801190ea25161ee03a118d",
+      "bytes": 76894
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/GENE_IDS.json",
+      "sha256": "be612f9c4638146b41eee26f607ab12fbed53b524cda7a76eee36ca554c28f97",
+      "bytes": 26427
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/E201_txpert_multitarget_retraining_20260802/tables/E201_PRETRUTH_TASK_BASE.csv",
+      "sha256": "1d5f068fea76138ee9ba42d1e1a4f9674850fab923e36732d24aae73f8fcdab0",
+      "bytes": 316004
+    },
+    {
+      "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/gene_ids.json",
+      "sha256": "3a6c0ef75eef65b0f82286ee142bbb6c02a8b128cff8d3110b38661f74201c08",
+      "bytes": 44656
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_scaling_recheck/cache/source_Manual.parquet",
+      "sha256": "7f8e9bba115d76557d41027fe84d149521d82422c94adcfcc84315d761771273",
+      "bytes": 961735
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/public_memory/CURRENT.json",
+      "sha256": "37aa759d6eb5f5519a3f2f0dee023a1465d974ebcfc6cdafc3007a4d211206a5",
+      "bytes": 360
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/serving_models/SERVING_CURRENT.json",
+      "sha256": "d4540921217dce0934ed6edeb8646f87001160f19c7287287a1b38aa0efafe5d",
+      "bytes": 673
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/serving_models/model_registry.jsonl",
+      "sha256": "59c93d90e6587b0f6efd58b16d8bd9ca07e5805e912ee7f79bdb501722cd8a83",
+      "bytes": 1780
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/public_memory/versions/v0001/control_vectors.npy",
+      "sha256": "2ad1b3f4383a7b53faf90ca08eddcf44168d9ec823d74279787aefc3d9525162",
+      "bytes": 11894048
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/public_memory/versions/v0001/runtime_snapshot.json",
+      "sha256": "7636e7ee5a2e49473cff607be05720f26b40454f2cb54a097b7cdbf270bb7269",
+      "bytes": 1185
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/public_memory/versions/v0001/gene_ids.json",
+      "sha256": "124117bad50b0111a3f68e4fca87662d62e25ef29d79fe8c6d63c72c9e665360",
+      "bytes": 37809
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/public_memory/versions/v0001/CORE_CALL.json",
+      "sha256": "fb4c0ed302ef135113c0b7b8e4f6abc950c5d38bcce81ba889213eca7013495a",
+      "bytes": 1927
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/public_memory/versions/v0001/public_memory.parquet",
+      "sha256": "48459d50b7711a88cfbf7366dc4c12b58f472df65f902c25ecf046a33f40340c",
+      "bytes": 42264
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/public_memory/versions/v0001/eligibility.parquet",
+      "sha256": "765abb5bc5d0b89df887094cdaa94892f9126f12f84b49141c6fb66dd6743139",
+      "bytes": 21410
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/public_memory/versions/v0001/manifest.json",
+      "sha256": "057be7d60120d7cd5103ffdfe86a84d25b1541f95e746fec6b1c1a018d8cad9a",
+      "bytes": 1595
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/public_memory/versions/v0001/effect_vectors.npy",
+      "sha256": "a0b7220cd6063b497f1cd20fe34563a1bc8c643fd4a3f7ffea3b28a5445c2c42",
+      "bytes": 11894048
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/public_memory/versions/v0002/control_vectors.npy",
+      "sha256": "e89854646800594f826d85c4dc86a31d48197e5baa2f9a6d3a16f137dab09d25",
+      "bytes": 22811008
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/public_memory/versions/v0002/runtime_snapshot.json",
+      "sha256": "09280489926e1a081f47c174cc66d92465709901390c1562d968fb423b4e1cf3",
+      "bytes": 1182
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/public_memory/versions/v0002/gene_ids.json",
+      "sha256": "124117bad50b0111a3f68e4fca87662d62e25ef29d79fe8c6d63c72c9e665360",
+      "bytes": 37809
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/public_memory/versions/v0002/CORE_CALL.json",
+      "sha256": "b157b9c1fb49d5a63cc8b0bfc6af66590f64106fb9ca3aa494d4a41fd9a2483d",
+      "bytes": 3554
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/public_memory/versions/v0002/public_memory.parquet",
+      "sha256": "c99b5f3d418d0cbcf471eb8a3f9c0491c74ca0562838c90ac4c76149d4ed68ee",
+      "bytes": 59389
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/public_memory/versions/v0002/eligibility.parquet",
+      "sha256": "ef2391be1ce3d0a9ac0d613810f9bbfd314fd00d5631436edbb22bdcdb6fc497",
+      "bytes": 33289
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/public_memory/versions/v0002/manifest.json",
+      "sha256": "645fa5c46a9534dd41b52d8581e17f3f15e09cec2be9dc45ab29ce9c336332b0",
+      "bytes": 3144
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/continual_runtime_replay_20261002_v2/public_memory/versions/v0002/effect_vectors.npy",
+      "sha256": "9aa32e8172b7884f33c2c6b3f106015f1639b93b41c8be90f535f2f007cf41fa",
+      "bytes": 22811008
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TxPert_GAT_PREDICTED_EFFECTS.npy",
+      "sha256": "88fba0ba25493bcebaf5c702c5200f70d55433968ba532cd83dbb0ed77947a90",
+      "bytes": 20539008
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TxPert_Exphormer_PREDICTED_EFFECTS.npy",
+      "sha256": "97b24e3bb14c5e26bd36e71168a9c95f5ec04160d1799d5bba58e470286b5939",
+      "bytes": 20539008
+    },
+    {
+      "path": "/home/yyf/data/txpert_official_20260802/e201/pretruth_vectors/E201_CONTROL_CENTROIDS.npy",
+      "sha256": "c2d6f56bec576b5154d574d91f37b5fdbb036d869573cdbaf9fda0e544454d3e",
+      "bytes": 26923392
+    }
+  ],
+  "original_replay_bindings": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_scaling_recheck/cache/source_Manual.parquet",
+      "sha256": "7f8e9bba115d76557d41027fe84d149521d82422c94adcfcc84315d761771273",
+      "bytes": 961735
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/GENE_IDS.json",
+      "sha256": "be612f9c4638146b41eee26f607ab12fbed53b524cda7a76eee36ca554c28f97",
+      "bytes": 26427
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/TX_TASK_SPLIT.csv",
+      "sha256": "350e53a18f54108eef56062b96875f5ca0ad3d1095eb155aa2303eb35422aa71",
+      "bytes": 56917
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/history_provenance_check/TXPERT_CONTEXT_STUDY_PROVENANCE.csv",
+      "sha256": "4e8b6734b0374da58c47e9abd6ab003d1e4a2eb31afdf26f9e159e6bb83846df",
+      "bytes": 286
+    },
+    {
+      "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/public_memory.parquet",
+      "sha256": "fcfbd3300a012e3747c9642f5076d1407c509f46f66e4412522c5d9b8661c4bd",
+      "bytes": 58150
+    },
+    {
+      "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/eligibility.parquet",
+      "sha256": "ef2391be1ce3d0a9ac0d613810f9bbfd314fd00d5631436edbb22bdcdb6fc497",
+      "bytes": 33289
+    },
+    {
+      "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/manifest.json",
+      "sha256": "b56abbb63d5343244f00a6abe851acc28f9bc764c5ac1ff5c28ffe146075ed07",
+      "bytes": 1320
+    },
+    {
+      "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/gene_ids.json",
+      "sha256": "3a6c0ef75eef65b0f82286ee142bbb6c02a8b128cff8d3110b38661f74201c08",
+      "bytes": 44656
+    },
+    {
+      "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/effect_vectors.npy",
+      "sha256": "884a3b1a0b836f25af4e6f7e0df38a8eab4dfccfec49599c7478eccd4892dd92",
+      "bytes": 26923392
+    },
+    {
+      "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/control_vectors.npy",
+      "sha256": "1ad1cffb68b67c1976225a0efd747c0f5b7629a3c729c1f00d70088a6ec5ba06",
+      "bytes": 26923392
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_PUBLIC_EFFECTS.npy",
+      "sha256": "579b95ac834a36f1c6c3d12d25c3d607c9083a53c53b469e24d3c0be81d1e74e",
+      "bytes": 22811008
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_PUBLIC_CONTROLS.npy",
+      "sha256": "a59e8ed27adf1cb58090c2eb106a33136a07d5e6da1dc5a9f15180ef59628c24",
+      "bytes": 22811008
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TRUE_EFFECTS.npy",
+      "sha256": "c2da8655e555ed55320d79c8d197fddf4365d57ae974c2dfd529c009af3d164c",
+      "bytes": 20539008
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TxPert_GAT_PREDICTED_EFFECTS.npy",
+      "sha256": "88fba0ba25493bcebaf5c702c5200f70d55433968ba532cd83dbb0ed77947a90",
+      "bytes": 20539008
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TxPert_Exphormer_PREDICTED_EFFECTS.npy",
+      "sha256": "97b24e3bb14c5e26bd36e71168a9c95f5ec04160d1799d5bba58e470286b5939",
+      "bytes": 20539008
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_continual_runtime_replay_agent.py",
+      "sha256": "c78badc41b9a910ade57ecf0bcadc36e792b17c9f30c6563858c004d9aa9e36c",
+      "bytes": 52250
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/versioned_runtime.py",
+      "sha256": "70c5cd8ce1a0dfd66deda2834e2806de71b16d58f2cad92c9a9dea9284affc0e",
+      "bytes": 34971
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/memory.py",
+      "sha256": "9196ffca88372568e02ab959456da8d61dfda1c985188c0a00ac86b583df701a",
+      "bytes": 13125
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/update.py",
+      "sha256": "53e83199a40878b44452a2543c03abf46922f63f37b75ce538da88eb3a65fe60",
+      "bytes": 2269
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/research.py",
+      "sha256": "22a02a79d59f1d852870efb9dc1afe229f150c5db75e5de735f7bfcc1f613887",
+      "bytes": 11094
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/learners.py",
+      "sha256": "33e3eba65e31cc8372a89ad6356c353d972ca03b105307c916addbebce98ee63",
+      "bytes": 6160
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/contracts.py",
+      "sha256": "e7c4b329ec8a333dbbb7741707b229aa8e8df0290d15e8a2c0290c665daf4e06",
+      "bytes": 4021
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_dual_memory_txpert_public_biology.py",
+      "sha256": "fc2db4a07b6e360676c54b09c5bd5d893dc58aaef2c9426ac3da8df673cfaf63",
+      "bytes": 29386
+    },
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/safeconf_continual/orion_linear.R",
+      "sha256": "6f4f9dbdbe5d147019806b60a4aa6c2fe82d888d1e4d87d71b99807552129b25",
+      "bytes": 7251
+    }
+  ]
+}

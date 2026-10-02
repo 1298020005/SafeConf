@@ -1,0 +1,40 @@
+{
+  "retrieved_utc": "2026-10-02T04:32:36.177900+00:00",
+  "url": "https://zenodo.org/api/records/15213619",
+  "http_status": 200,
+  "response_bytes": 7253,
+  "response_sha256": "8f8c6c256f8286e2dcb398b6ace54edc7d1fa058fe6692a6142439accfb88772",
+  "title": "RPE1-CRISPRa-TFs",
+  "doi": "10.5281/zenodo.15213619",
+  "files": [
+    {
+      "key": "RPE1_CRISPRa_final_population.h5ad",
+      "size": 29749295165,
+      "checksum": "md5:d59ca3256032d814961f4773fc8ef1b6"
+    },
+    {
+      "key": "RPE1_CRISPRa_mean_pop.h5ad",
+      "size": 1897755232,
+      "checksum": "md5:eb1c17768c8c72d00ff4cc3953948d63"
+    },
+    {
+      "key": "RPE1_CRISPRa_final_population_singlets_normalized_log1p.h5ad",
+      "size": 11686518334,
+      "checksum": "md5:709b3cc4d3467407a31355746f70a623"
+    },
+    {
+      "key": "RPE1_CRISPRa_aggr_total_guide_umis.h5",
+      "size": 275410486,
+      "checksum": "md5:425f186e848b082b1b3747fc5f78a118"
+    }
+  ],
+  "new_expression_downloads": 0,
+  "new_numeric_expression_reads": 0,
+  "new_upstream_attempts": 0,
+  "selection": "NOT_SELECTED_EXISTING_STOPPED_E247_ALIAS",
+  "reason": "Same Southard RPE1 CRISPRa study as existing E247; smaller mean_pop is regression-reconstructed population, not raw cell experimental truth; no freshness or competence upgrade.",
+  "existing_E247_contract": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/E247_kaden_crispra_unseen_tf_20260924/FEASIBILITY_CONTRACT.md",
+    "sha256": "4195ed5a8687e2fb369e8266f247da993574f8a246c160ccfc01a67e42cabfc7"
+  }
+}

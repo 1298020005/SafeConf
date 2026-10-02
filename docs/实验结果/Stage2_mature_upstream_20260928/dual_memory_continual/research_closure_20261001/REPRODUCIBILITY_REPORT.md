@@ -111,3 +111,7 @@ Preparationv1 executedcodeacba andABORT preserved; v2 3898 originalscorecodec re
 ## Fixed TRAIN control-expression comparator
 
 Preparationb301 exports existingRDSbaseline (no fit/predict), comparesfull38606and3285projectionbitwise, freezes232CP4000scores beforecachederrornumerics. Evaluation3858 reusesControl33/StrongRef4draws andsame5000sorted144gene indices, computes6original+1control metrics, checksLearnedHGB anchor everydraw, retains924metric/903pairs. Completedfreshroots cannot overwrite. Independentreview reconstructsallintervals;648undefinedP_only_hgbHEK/macroSpearman draws keptNA. Extra full-control coordinatesandpreviousTarget budgets explicit; notSourceModel/Core change.
+
+## 持续PublicBiology重训的实际可复现链
+
+SourceDEV isolated v2保存7个原HGB Bio参数（2/3初始OOF+final，2/3/4更新OOF+final）及3jointRisk bundles。权重/先验/features/risk可从固定原预测/控制、版本bank及保存Bio重新生成并逐位一致。ROOT核106输入/输出/code哈希、48风险strata、42保存draw区间、B/C相同CDF/记录身份和实际服务A。ROOT_BIOLOGY_RECONSTRUCTION_RECIPE.py --output <新目录>从已保存先验及Source观测真值重放3张生物表，实际重放CSV逐字节一致；680unique tasks/227gene，macro按4context，非两个upstream重复。CSV legacy independent_biological_tasks列的335/345含义为unique task IDs，真正抽样单位112/115gene（并集227），更正记录在ROOT_BIOLOGY_DIAGNOSTIC_RECEIPT.json。原v1异常0fit留痕，原source/model/current及外部assets未变；成本55.846s、累计processCPU64.177s、peakRSS758554624B。

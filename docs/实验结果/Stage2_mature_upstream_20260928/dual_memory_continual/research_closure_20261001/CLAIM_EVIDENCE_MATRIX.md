@@ -77,3 +77,7 @@ Fivefixedphysical effect derangements complete on232tasks/144genes; sameSource s
 ## Full TRAIN target-control scalar comparator
 
 OnefixedCP4000positive-direction proxy onall232Orion tasks yieldsmacroU20 .078304CI[-.092418,.305068]. LearnedDirect-minus-control+.188762CI[-.171296,.461058],SourceLearnedHGB+.126532CI[-.216172,.416231],fullPublicTargetRidge+.200771CI[-.126186,.424130]. All43macrocomparisons lackpositiveCIlowerbounds. The full38606 controlinputisadditionalbiologybeyondP13; extraCerrortraining0doesnot eraseexisting30targetfitbudgets. No exclusion/signselection/Sourceparameterchange, no newconfirmation. Exactcontrol/modelbaseline checksandall903/924intervals independentlyverified.
+
+### 真实PublicBiology重训更新（Source DEV）
+
+7个PublicBio和3个Risk拟合、存储OOF/final参数、jointBioRisk-bank重建位级一致、原开发发布门拒绝C并保留A已完成。C−B的生物重建小幅收益有DEV名义区间支持；全部6风险U20差值CI跨零。680unique biological tasks按227gene抽样，不以两模型重复行计独立样本。该操作不是新外部确认，不证明单checkpoint ErrorAdapter或普遍增量改善。
