@@ -1,0 +1,88 @@
+{
+  "created_utc": "2026-10-02T12:38:46.905451+00:00",
+  "kind": "planning_feasibility_checks_only",
+  "model_training_started": false,
+  "attachment": "/home/yyf/.codex/attachments/4537a043-e7c2-46e8-ba57-255b238c6e03/已粘贴的文本.txt",
+  "hardware": {
+    "gpus": [
+      "Quadro RTX 6000 24576MiB",
+      "Quadro RTX 6000 24576MiB"
+    ],
+    "logical_cpus": 96,
+    "ram_kib": 131605172
+  },
+  "default_python": {
+    "torch": "2.11.0",
+    "cuda_build": "13.0",
+    "cuda_available": false,
+    "reason": "driver version reported12020 incompatible with current CUDA13 build"
+  },
+  "validated_gpu_python": "/home/yyf/.venvs/txpert-08d82eea/bin/python",
+  "validated_torch": "2.6.0+cu124",
+  "synthetic_forward_backward_passed": true,
+  "source_history_metadata": {
+    "tasks": 1808,
+    "genes": 575,
+    "edges": 4737,
+    "K_counts": {
+      "1": 132,
+      "2": 423,
+      "3": 1253
+    }
+  },
+  "MC_development_biology_metadata": {
+    "queries": 542,
+    "query_genes": 377,
+    "memory_records": 7173,
+    "memory_genes": 528,
+    "K_counts": {
+      "7": 1,
+      "9": 1,
+      "10": 3,
+      "11": 10,
+      "12": 69,
+      "13": 239,
+      "14": 219
+    }
+  },
+  "new_test_truth_reads": 0,
+  "new_source_or_public_models_fitted": 0,
+  "scope_notes": [
+    "K counts are distinct stored experiment IDs, not proof of biological independence",
+    "CPU study-error holdout must requalify teacher training exposure",
+    "No implementation or performance inference from synthetic GPU check"
+  ],
+  "evidence_files": [
+    {
+      "path": "/home/yyf/.codex/attachments/4537a043-e7c2-46e8-ba57-255b238c6e03/已粘贴的文本.txt",
+      "sha256": "445868ce3a8ddab2ff8566a52478d9a48ccbc7afe0949273585f50ee7c6c5990",
+      "bytes": 18771
+    },
+    {
+      "path": "/home/yyf/data/txpert_official_20260802/cache/E201_blind_K562/E201_BLIND_VIEW_MANIFEST.json",
+      "sha256": "8114be7febf1f166da729cf23cb9dc2356d7e54b6f255581b665997d7651265d",
+      "bytes": 1657
+    },
+    {
+      "path": "/home/yyf/data/txpert_official_20260802/cache/E201_blind_hepg2/E201_BLIND_VIEW_MANIFEST.json",
+      "sha256": "cf3b0ce0a93d669c7963b2198ce27dcf053249f1af0e0928777a4de4d84e2873",
+      "bytes": 1656
+    },
+    {
+      "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/eligibility.parquet",
+      "sha256": "ef2391be1ce3d0a9ac0d613810f9bbfd314fd00d5631436edbb22bdcdb6fc497",
+      "bytes": 33289
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_TASKS.csv",
+      "sha256": "72c6620d797db9115e67f6c9067d54879950733827801190ea25161ee03a118d",
+      "bytes": 76894
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/VALIDATION_BIOLOGY_TASKS.csv",
+      "sha256": "7d8d8fa7e97ad64c483cb254c35a3eb5b43c7a3d32e7d757a94bdc95daefb9b3",
+      "bytes": 30857
+    }
+  ],
+  "review_sha256": "b2be0121d6fbdd46e4cf1b68548862ac3342de725cf26743a3481fb6fc44536d"
+}
