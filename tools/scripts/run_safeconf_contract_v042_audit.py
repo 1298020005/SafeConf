@@ -271,6 +271,25 @@ def run(base: Path, out: Path) -> dict:
         raise ValueError(f"full system missing required score columns: {missing}")
     if full[list(required_scores)].isna().any().any():
         raise ValueError("full system has missing scores in a required candidate")
+    # The current 212-task holdout happens to have Public evidence for every
+    # task.  Record that fact explicitly instead of silently treating the
+    # amplitude fallback as if it had been exercised.  The fallback policy is
+    # still frozen and is tested below through the score interface audit.
+    if "simple_history_risk" in full:
+        has_public = full["simple_history_risk"].notna()
+    else:
+        has_public = full["PublicRule"].notna()
+    fallback_audit = pd.DataFrame([{
+        "cohort": "current_212_holdout",
+        "n_tasks": int(len(full)),
+        "n_public": int(has_public.sum()),
+        "n_amplitude_fallback": int((~has_public).sum()),
+        "fallback_policy": "amplitude_when_public_missing",
+        "ranking_includes_all_tasks": True,
+        "interpretation": "no missing-public task in this cohort; fallback policy is frozen but not empirically exercised here",
+    }])
+    full["has_public"] = has_public.astype(int)
+    full["evidence_status"] = np.where(has_public, "public", "amplitude_only")
 
     bootstrap = pd.read_csv(require(FULL_DIR / "bootstrap" / "BOOTSTRAP_SUMMARY.csv"))
     system = build_system_comparison(full, bootstrap)
@@ -281,6 +300,7 @@ def run(base: Path, out: Path) -> dict:
         raise RuntimeError("unified score interface audit failed")
 
     full.to_parquet(out / "PER_QUERY_RESULTS.parquet", index=False)
+    fallback_audit.to_csv(out / "NO_HISTORY_FALLBACK_AUDIT.csv", index=False)
     system.to_csv(out / "SYSTEM_COMPARISON.csv", index=False)
     ranks.to_csv(out / "UNIFIED_RANKING_AUDIT.csv", index=False)
     channel.to_csv(out / "CHANNEL_SCORE_CDF_AUDIT.csv", index=False)

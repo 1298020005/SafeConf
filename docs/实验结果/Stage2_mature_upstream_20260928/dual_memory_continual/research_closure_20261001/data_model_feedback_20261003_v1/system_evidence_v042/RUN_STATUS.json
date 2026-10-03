@@ -10,6 +10,7 @@
     "ERROR_LABEL_CDF_AUDIT.csv",
     "INFORMATION_BUDGET_LEDGER.csv",
     "MORNING_REPORT.md",
+    "NO_HISTORY_FALLBACK_AUDIT.csv",
     "PER_QUERY_RESULTS.parquet",
     "SYSTEM_COMPARISON.csv",
     "UNIFIED_RANKING_AUDIT.csv"
@@ -40,5 +41,5 @@
   },
   "sams_status": "TRAINING_RUNNING",
   "python": "3.12.4",
-  "git_commit": "6c40d00fc73aa9e92d17ac6f0aaa4ae54a187f12"
+  "git_commit": "626486f3ee11cf8e55a009b14e19af377bcb093e"
 }

@@ -1,0 +1,2 @@
+cohort,n_tasks,n_public,n_amplitude_fallback,fallback_policy,ranking_includes_all_tasks,interpretation
+current_212_holdout,212,212,0,amplitude_when_public_missing,True,no missing-public task in this cohort; fallback policy is frozen but not empirically exercised here
