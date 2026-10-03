@@ -253,6 +253,45 @@ def ranking_audit(full: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
+def actual_error_discovery(full: pd.DataFrame) -> pd.DataFrame:
+    """Translate the ranking into the fixed 20% review action."""
+    truth = full["true_error_rmse"].to_numpy(float)
+    ids = full["task_id"].astype(str).to_numpy()
+    k = int(np.ceil(0.2 * len(truth)))
+    oracle = np.lexsort((ids, -truth))[:k]
+    oracle_set = set(oracle)
+    methods = [c for c in full.columns if c in {
+        "Amplitude", "PublicRule", "SourceSharedRisk", "SourceRidge",
+        "TargetRidge50", "TargetH1F1_50", "SafeConf_no_target_feedback",
+        "SafeConf_target_feedback_50",
+    }]
+    rows = []
+    for method in methods:
+        score = full[method].to_numpy(float)
+        selected = np.lexsort((ids, -score))[:k]
+        remaining = float(np.delete(truth, selected).mean())
+        found = int(len(set(selected).intersection(oracle_set)))
+        rows.append({
+            "method": method,
+            "review_fraction": float(k / len(truth)),
+            "review_count": int(k),
+            "true_high_error_top20_count": int(k),
+            "true_high_error_found": found,
+            "true_high_error_hit_rate": float(found / k),
+            "remaining_mean_error": remaining,
+            "all_task_mean_error": float(truth.mean()),
+        })
+    out = pd.DataFrame(rows)
+    amp = out.loc[out.method.eq("Amplitude")].iloc[0]
+    out["additional_high_error_found_vs_amplitude"] = out.true_high_error_found - float(amp.true_high_error_found)
+    out["remaining_error_reduction_vs_amplitude"] = float(amp.remaining_mean_error) - out.remaining_mean_error
+    out["remaining_error_reduction_fraction_vs_amplitude"] = out.remaining_error_reduction_vs_amplitude / float(amp.remaining_mean_error)
+    public = out.loc[out.method.eq("PublicRule")].iloc[0]
+    out["additional_high_error_found_vs_public"] = out.true_high_error_found - float(public.true_high_error_found)
+    out["remaining_error_reduction_vs_public"] = float(public.remaining_mean_error) - out.remaining_mean_error
+    return out
+
+
 def write_text(path: Path, text: str) -> None:
     path.write_text(text.rstrip() + "\n")
 
@@ -295,6 +334,7 @@ def run(base: Path, out: Path) -> dict:
     system = build_system_comparison(full, bootstrap)
     channel, labels = normalize_channel_audits()
     ranks = ranking_audit(full)
+    discovery = actual_error_discovery(full)
     interface = interface_audit()
     if not interface["passed"]:
         raise RuntimeError("unified score interface audit failed")
@@ -303,6 +343,7 @@ def run(base: Path, out: Path) -> dict:
     fallback_audit.to_csv(out / "NO_HISTORY_FALLBACK_AUDIT.csv", index=False)
     system.to_csv(out / "SYSTEM_COMPARISON.csv", index=False)
     ranks.to_csv(out / "UNIFIED_RANKING_AUDIT.csv", index=False)
+    discovery.to_csv(out / "ACTUAL_ERROR_DISCOVERY.csv", index=False)
     channel.to_csv(out / "CHANNEL_SCORE_CDF_AUDIT.csv", index=False)
     labels.to_csv(out / "ERROR_LABEL_CDF_AUDIT.csv", index=False)
 

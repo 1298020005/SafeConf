@@ -4,6 +4,7 @@
   "target_artifact": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/target_ridge_fusion_v8",
   "full_system_artifact": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/full_system_current_v1",
   "files": {
+    "ACTUAL_ERROR_DISCOVERY.csv": "9da6c730cc28970894edb60cfef964b75a7b295ba0eb21c6e9e0e685b7ca4b93",
     "CHANNEL_SCORE_CDF_AUDIT.csv": "265d426ae1f5d0d6c81a946ae84c2b7847dab63adf9621f7318b8e51e25002ba",
     "CLAIM_EVIDENCE_MATRIX.csv": "154c63982b209962bc40813102a5f0fe2e31c02d27961daf24499b040268d780",
     "COMPONENT_DECISION.json": "ee0e004b8d85a5dd8a765c1f8e95f7ca826c24e79417d29b23ab96b7690c9018",
@@ -13,7 +14,7 @@
     "MORNING_REPORT.md": "8e4fe71e01f8d719965bc8ee846edc3a7d9a96ea2ee2134106098ae323a909a3",
     "NO_HISTORY_FALLBACK_AUDIT.csv": "5c287bb41c385e90dbd3fb8737de824def254477f17184c27ff36c08773d8c59",
     "PER_QUERY_RESULTS.parquet": "a7e7cbe71f173f33a32b8b4d9e28e74f1a7a1b325dad323bec5030d4ac66ce82",
-    "RUN_STATUS.json": "a58b3b0f4cf2e36b83e016efd2fe231d286f500c37a567e6e99582cafce0b217",
+    "RUN_STATUS.json": "28efffc965a8eee1feb015b1d2550281aa921985bdeb160e01bf4b41ae4de696",
     "SYSTEM_COMPARISON.csv": "48073f68f5ade218829b898cc943eaae37b2b2525670ed48b017f280e22f1257",
     "UNIFIED_RANKING_AUDIT.csv": "e4d630736c244957cf8e8000515b7dc04aa83e99fb84e86b978c4cfd8a7e8e10"
   }

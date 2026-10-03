@@ -3,6 +3,7 @@
   "contract": "SafeConf v0.4.2",
   "output_dir": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/system_evidence_v042",
   "required_outputs": [
+    "ACTUAL_ERROR_DISCOVERY.csv",
     "CHANNEL_SCORE_CDF_AUDIT.csv",
     "CLAIM_EVIDENCE_MATRIX.csv",
     "COMPONENT_DECISION.json",
@@ -41,5 +42,5 @@
   },
   "sams_status": "TRAINING_RUNNING",
   "python": "3.12.4",
-  "git_commit": "626486f3ee11cf8e55a009b14e19af377bcb093e"
+  "git_commit": "f473515a5cecc09e984d47904aabc80c1ef7cf69"
 }
