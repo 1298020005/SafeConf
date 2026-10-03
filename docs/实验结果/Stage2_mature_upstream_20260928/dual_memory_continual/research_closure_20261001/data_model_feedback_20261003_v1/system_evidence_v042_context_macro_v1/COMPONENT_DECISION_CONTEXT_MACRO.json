@@ -1,0 +1,25 @@
+{
+  "contract": "SafeConf v0.4.2",
+  "metric_amendment": "context_macro_primary",
+  "status": "COMPLETE_CURRENT_SYSTEM_CONTEXT_MACRO_AUDIT",
+  "default_configuration": "PublicRule_without_target_feedback",
+  "target_feedback_candidate": "FeedbackH1F1_50",
+  "decisions": {
+    "public_rule": "RETAIN_DEFAULT",
+    "feedback_h1_f1_50": "CONDITIONAL_NOT_DEFAULT_CI_CROSSES_ZERO_VS_PUBLIC",
+    "feedback_xgb_f1_50": "CONDITIONAL_BASELINE",
+    "source_ridge": "CONDITIONAL_NOT_DEFAULT",
+    "target_ridge_50": "CONDITIONAL_NOT_DEFAULT"
+  },
+  "reason": "PublicRule remains strong under the registered context-macro metric. H1_F1 has a small point gain over PublicRule but its paired 5000-gene bootstrap interval crosses zero; XGB is retained as a fair target learner comparator.",
+  "truth_contract": {
+    "n_tasks": 212,
+    "n_genes": 152,
+    "task_id_sha256": "0eaf3c899044966b1a1589939a550d71a184a2142a108de53dc2bcc14a66560a"
+  },
+  "source_artifacts": {
+    "current_system": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/full_system_current_v1",
+    "feedback": "/home/yyf/runtime_artifacts/safeconf_research_20261003/feedback_v1"
+  },
+  "paper": "PAUSED_BY_USER"
+}

@@ -17,3 +17,7 @@
 ## Continuing action
 
 SAMS training remains protected and active. Once it reaches a terminal checkpoint, run the registered truth-free generation, competence screen and bidirectional transfer protocol. No new network or Ridge search is opened by this audit.
+
+## Primary metric amendment
+
+The registered contract names context-macro U20 as primary. The separate `system_evidence_v042_context_macro_v1` audit recomputed all current candidates on the same 212-task/152-gene truth contract and retains pooled-task U20 only as a secondary diagnostic. PublicRule remains the default; TargetRidge50 and FeedbackH1F1_50 have small point gains but paired context-macro bootstrap intervals cross zero.

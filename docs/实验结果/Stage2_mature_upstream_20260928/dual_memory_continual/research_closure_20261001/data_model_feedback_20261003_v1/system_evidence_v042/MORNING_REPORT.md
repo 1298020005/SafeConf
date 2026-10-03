@@ -17,3 +17,7 @@
 ## Next action
 
 SAMS remains in the existing protected training process (`TRAINING_RUNNING`). When it terminates, complete its registered generation/competence/cross-family postprocess and update this evidence package. Papers and PDF remain paused.
+
+## Metric correction
+
+The registered primary is context-macro U20. On the same current holdout, PublicRule is 0.8377, TargetRidge50 is 0.8459 (paired 95% CI for delta vs PublicRule: -0.0865 to +0.0449), and fixed H1_F1 plus Public is 0.8399 (CI -0.0939 to +0.0545). The default therefore remains PublicRule. The prior pooled-task U20 is retained only as a secondary diagnostic.

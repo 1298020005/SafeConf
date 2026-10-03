@@ -1,0 +1,10 @@
+{
+  "contract": "SafeConf v0.4.2",
+  "primary_metric": "context_macro_u20",
+  "secondary_metric": "pooled_task_u20",
+  "status": "PRIMARY_METRIC_AMENDMENT_REGISTERED",
+  "context_macro_artifact": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/system_evidence_v042_context_macro_v1",
+  "context_macro_system_comparison": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/system_evidence_v042_context_macro_v1/SYSTEM_COMPARISON_CONTEXT_MACRO.csv",
+  "context_macro_paired_bootstrap": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/system_evidence_v042_context_macro_v1/PAIRED_BOOTSTRAP_CONTEXT_MACRO.csv",
+  "decision": "PublicRule remains default; target/source supervised candidates remain conditional because paired context-macro CIs cross zero or are negative."
+}

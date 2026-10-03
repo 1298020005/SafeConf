@@ -42,5 +42,9 @@
   },
   "sams_status": "TRAINING_RUNNING",
   "python": "3.12.4",
-  "git_commit": "adc120a4077b9b1fcee50dd832fd529aa93db3e2"
+  "git_commit": "adc120a4077b9b1fcee50dd832fd529aa93db3e2",
+  "primary_metric": "context_macro_u20",
+  "secondary_metric": "pooled_task_u20",
+  "primary_metric_amendment": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/system_evidence_v042/PRIMARY_METRIC_AMENDMENT.json",
+  "context_macro_audit": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/system_evidence_v042_context_macro_v1"
 }
