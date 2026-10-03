@@ -1,0 +1,56 @@
+{
+  "schema": "safeconf_perturbmap_qualification_v1",
+  "status": "QUALIFICATION_COMPLETE_NO_MODEL_FIT",
+  "decision": "REVISE_BEFORE_EXPERIMENT",
+  "public_history": {
+    "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/public_memory.parquet",
+    "sha256": "fcfbd3300a012e3747c9642f5076d1407c509f46f66e4412522c5d9b8661c4bd",
+    "bytes": 58150
+  },
+  "eligibility": {
+    "path": "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/eligibility.parquet",
+    "sha256": "ef2391be1ce3d0a9ac0d613810f9bbfd314fd00d5631436edbb22bdcdb6fc497",
+    "bytes": 33289
+  },
+  "e201_tasks": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/TX_TASK_SPLIT.csv",
+    "sha256": "350e53a18f54108eef56062b96875f5ca0ad3d1095eb155aa2303eb35422aa71",
+    "bytes": 56917
+  },
+  "orion_metadata": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_allowed_biology_20261002_v2/QUERY_METADATA_ONLY.csv",
+    "sha256": "8bf0eb5a394a4c9675409410e3b60e7c4220cf689da5ae3bbe7afc21fb9ab000",
+    "bytes": 2744495
+  },
+  "orion_manifest": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_allowed_biology_20261002_v2/BIOLOGY_MANIFEST.json",
+    "sha256": "be4113822254cfb0824a464bd87300d6ff33388069500e14f3229d8acc9fba16",
+    "bytes": 84010
+  },
+  "orion_axis": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_allowed_biology_20261002_v2/ENDPOINT_GENE_MANIFEST.csv",
+    "sha256": "c1c9c8041458275248514d960c6c263a72f43a12a8d48c16f77759d2342fa08f",
+    "bytes": 122617
+  },
+  "e201_tasks_total": 1808,
+  "e201_same_context_tasks": 1808,
+  "e201_natural_cross_only_tasks": 0,
+  "e201_no_history_tasks": 0,
+  "orion_roles": [
+    "TRAIN",
+    "TRAIN_CONTROL_SOURCE_SCOPE",
+    "VALIDATION"
+  ],
+  "orion_contexts": [
+    "HCT116",
+    "HEK293T"
+  ],
+  "orion_train_validation_units": 28945,
+  "orion_target_anchor_truth_opened_by_audit": false,
+  "permanent_test_truth_opened_by_audit": false,
+  "public_target_identity_overlap_E201_vs_Orion_endpoint3285": 228,
+  "gene_axis_overlap_E201_3352_vs_Orion_endpoint3285": 3285,
+  "e201_public_gene_axis": 3352,
+  "orion_endpoint_gene_axis": 3285,
+  "recommendation": "Do not run PerturbMap on E201 as natural missing-background claim; if pursued, use Orion TRAIN/VALIDATION anchors in an isolated retrospective DEV contract and report it as background-transfer development."
+}

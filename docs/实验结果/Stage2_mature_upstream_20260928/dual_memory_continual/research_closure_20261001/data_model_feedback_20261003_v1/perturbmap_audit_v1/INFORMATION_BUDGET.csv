@@ -1,0 +1,8 @@
+information,records,unique_targets,contexts,role,used_by_audit,unique_target_contexts,natural_cross_only_tasks,no_history_tasks
+E201_public_history,2008,580.0,4.0,source/query history,True,,,
+E201_eligibility_relation,5238,,,eligibility only,True,4.0,,
+E201_source_tasks,1808,,,query metadata only,True,,0.0,0.0
+Orion_train_validation_metadata,28945,14537.0,2.0,candidate target-background anchors; not read as mapping outputs,True,,,
+Orion_permanent_test_truth,0,,,protected,False,,,
+source_error_labels,0,,,not used by qualification audit,False,,,
+target_error_labels,0,,,not used by qualification audit,False,,,
