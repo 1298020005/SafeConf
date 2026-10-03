@@ -325,5 +325,11 @@
       "ci95_lower": 0.018516946024634235,
       "ci95_upper": 0.15744661520344586
     }
-  ]
+  ],
+  "coverage_amendment": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261003/gwps_v1/COVERAGE_AMENDMENT.json",
+    "bytes": 1191,
+    "sha256": "29406b3ee3c18aa2b366015ad9f3ebd8d6e79e97cd9b92b707fff5e3239f5ae1"
+  },
+  "coverage_semantics": "GWPS-only=1378; union old history + GWPS=1379; XRN1 is old non-K562 boundary"
 }

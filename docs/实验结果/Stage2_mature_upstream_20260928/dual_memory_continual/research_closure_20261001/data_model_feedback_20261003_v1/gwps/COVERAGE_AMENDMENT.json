@@ -1,0 +1,23 @@
+{
+  "schema": "gwps_coverage_amendment_v1",
+  "reason": "distinguish GWPS-only coverage from union of old history and GWPS",
+  "score_seal": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261003/gwps_v1/SCORE_SEAL.json",
+    "bytes": 2130,
+    "sha256": "787d43cb2c45e6b5eb56508316b1a0cdea528e32be76ca463c8bce65dc78d15b"
+  },
+  "evaluation_complete_before_amendment": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261003/gwps_v1/EVALUATION_COMPLETE.json",
+    "bytes": 9533,
+    "sha256": "3c2c31216207601f9fed4a546a49e1b53f081e01d29328d559b56fe504f489a4"
+  },
+  "old_covered_tasks": 232,
+  "gwps_only_covered_tasks": 1378,
+  "union_old_history_and_gwps_tasks": 1379,
+  "new_gwps_tasks_relative_to_old_all": 1147,
+  "old_history_and_gwps_overlap_tasks": 231,
+  "boundary_target": "XRN1",
+  "boundary_target_tasks": 1,
+  "boundary_detail": "XRN1 exists in old non-K562 records (RPE1/jurkat) and in GWPS; it contributes to the union and is not newly covered relative to old all-target history. Existing expanded scores retain the union definition. Duplicate old K562 records are not appended.",
+  "status": "COVERAGE_SEMANTICS_AMENDED_NO_SCORE_DATA_CHANGED"
+}

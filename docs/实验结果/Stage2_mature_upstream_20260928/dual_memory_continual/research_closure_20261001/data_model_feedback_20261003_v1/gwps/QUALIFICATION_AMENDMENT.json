@@ -1,0 +1,16 @@
+{
+  "schema": "gwps_qualification_amendment_v1",
+  "original_qualification": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261003/gwps_v1/QUALIFICATION.json",
+    "sha256": "2d838371d7e1d1d20c10ebdae07694101c91793bba69a5d20d4865032d9baa3f"
+  },
+  "contract_potential_gwps_coverage_tasks": 1378,
+  "measured_gwps_only_coverage_tasks": 1378,
+  "measured_union_old_and_gwps_tasks": 1379,
+  "measured_old_covered_tasks": 232,
+  "measured_new_gwps_tasks_relative_to_old_all": 1147,
+  "boundary_target": "XRN1",
+  "boundary_detail": "XRN1 exists in old non-K562 records (RPE1/jurkat) and in GWPS; it contributes to union old+GWPS, not to newly covered relative to old all-target history.",
+  "qualification_original_potential_expanded_tasks": 1379,
+  "status": "QUALIFICATION_SEMANTICS_AMENDED_NO_DATA_CHANGED"
+}
