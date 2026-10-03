@@ -1,0 +1,40 @@
+{
+  "schema": "safeconf_error_adapter_replay_v1",
+  "status": "REGISTERED_FIXED_DEV_REPLAY",
+  "upstream_model_id": "TxPert_GAT",
+  "model_version": "e201_official_frozen",
+  "output_contract_id": "E201_common2840gene_log1p_delta_v1",
+  "source_path": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/source_scaling_recheck/cache/source_Manual.parquet",
+    "sha256": "7f8e9bba115d76557d41027fe84d149521d82422c94adcfcc84315d761771273",
+    "bytes": 961735
+  },
+  "source_role": "DEV_SEEN_OOF_HELDOUT_ONLY",
+  "permanent_test_truth_read": false,
+  "feature_columns": [
+    "predicted_magnitude",
+    "prediction_abs_mean",
+    "prediction_signed_mean",
+    "prediction_std",
+    "prediction_abs_q95",
+    "prediction_sparsity",
+    "prior_magnitude",
+    "prediction_prior_rmse",
+    "prediction_prior_cosine",
+    "prior_uncertainty",
+    "log_history_support",
+    "effective_sources",
+    "history_conflict"
+  ],
+  "shared_train_fold": 2,
+  "feedback_batches": [
+    3,
+    4
+  ],
+  "new_feedback_gate_fold": 1,
+  "old_anchor_fold": 0,
+  "adapter_kind": "ridge",
+  "kappa": 50.0,
+  "release_gate": "train-only fixed thresholds; no permanent evaluation selection",
+  "seed": 20261003
+}

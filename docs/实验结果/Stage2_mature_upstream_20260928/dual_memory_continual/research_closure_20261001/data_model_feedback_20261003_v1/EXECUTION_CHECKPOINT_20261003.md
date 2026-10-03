@@ -41,6 +41,16 @@
 
 证据：`sams/TRAINING_STATUS.json`、`sams/PREDICTION_INPUT_TESTS.json`、`sams/READER_ISOLATION_TESTS.json`、`sams/INDEXING_SPEEDUP_RESULT.json`、`sams/ENGINEERING_REPAIR_*.json`。
 
+### ErrorResidualAdapter 生命周期（新增闭合）
+
+- 使用 `TxPert_GAT + e201_official_frozen` 的现有 Source DEV/SEEN 合法错误记录，未读取永久 TEST 真值。
+- Error Memory 依次追加两个 115 个扰动簇的反馈批次，形成两个不可变 revision；模型 ID、checkpoint、输出合同均严格隔离。
+- 用 fold 2 冻结 CDF 和共享风险尺度，训练 adapter-v1（361 行）与 adapter-v2（722 行），生成不可变 joblib artifact 并注册到 serving registry。
+- adapter-v2 在预先固定的 DEV gate 上被拒绝：新反馈 gate 的 U20 增量 −0.03586，非负 context 比例 0.5，漏检率门也未通过；系统保留 adapter-v1，未发布失败候选。
+- 重新从 CURRENT 指针加载 adapter-v1，预测字节级一致；因此“错误记忆写入→候选训练→发布/保留→服务重载”链路已实际闭合，但当前结果不支持宣称 ErrorResidualAdapter 带来性能增益。
+
+证据：`error_adapter_replay_v1/REGISTRATION.json`、`error_adapter_replay_v1/COMPLETION.json`、`error_adapter_replay_v1/METRICS.csv`、`error_adapter_replay_v1/INFORMATION_BUDGET_LEDGER.json`。
+
 ## 当前负责人决定
 
 1. 不再扩 DeepSets、Transformer、GNN 或门控结构；已有 Public 内容利用和 GWPS 覆盖证据足以支撑下一步判断。

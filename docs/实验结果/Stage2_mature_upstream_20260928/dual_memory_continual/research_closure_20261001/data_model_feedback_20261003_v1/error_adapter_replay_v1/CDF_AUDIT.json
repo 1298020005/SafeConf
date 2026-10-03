@@ -1,0 +1,11 @@
+{
+  "fit_role": "SHARED_TRAIN fold2 only",
+  "training_rows": 362,
+  "training_clusters": 115,
+  "unique_errors": 362,
+  "nominal_resolution": 0.0027624309392265192,
+  "feedback_batch_1_rows": 361,
+  "feedback_batch_2_rows": 361,
+  "cdf_sha256": "8b8328d0d96ba5f3e02d5d899a961aaf1cb1eb4d321e35c524c4aae75c8147a4",
+  "permanent_test_truth_read": false
+}

@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-02T07:46:36.917928+00:00",
+  "updated_utc": "2026-10-03T06:12:00+00:00",
   "complete": [
     "five-fold nested public biology with four inner folds",
     "three-line sixteen-method matrix with three registered seeds",
@@ -71,7 +71,8 @@
     "FixedSource6Magnitudecomparator completion:210pairs280intervals40pointreplay;allmacroCIcross0;ROOTactualPASS",
     "E170legacystrongrules:23macro276strata161pairs;1920targetvalidationbudget;oldGateunchanged;independentactualPASS",
     "SourceDEV objectiveprobe20cumulativefits/1codecfix/oldrankreplay/48context12macro240foldpoints;noPrimaryU20gain;variantstopped",
-    "Bounded6officialreleasefamilies and6localaliases audited;FrangiehSEENcorrected;no readyfreshexactSource3285predictionpackage;geneID/rolebindingsverified"
+    "Bounded6officialreleasefamilies and6localaliases audited;FrangiehSEENcorrected;no readyfreshexactSource3285predictionpackage;geneID/rolebindingsverified",
+    "Actual exact-version ErrorResidualAdapter lifecycle: two legal GAT/e201 error-memory appends, adapter v1/v2 registration, fixed DEV gate rejection, serving reload byte identity"
   ],
   "pending": [
     "Scientific method increment/independent-study readiness remains unproven after strong baselines; no ready approved new-method/confirmation pair",
@@ -645,5 +646,23 @@
     "new_numeric_asset_downloads": 0,
     "qualified_fresh_prediction_packages_identified": 0,
     "not_global_nonexistence_proof": true
+  },
+  "actual_error_adapter_lifecycle": {
+    "status": "COMPLETE_EXACT_VERSION_ERROR_ADAPTER_LIFECYCLE_CANDIDATE_REJECTED",
+    "evidence_role": "retrospective Source DEV/SEEN operational replay; no permanent TEST truth",
+    "upstream_model_id": "TxPert_GAT",
+    "model_version": "e201_official_frozen",
+    "error_memory_revisions": 2,
+    "feedback_batch_1_clusters": 115,
+    "feedback_batch_2_clusters": 115,
+    "adapter_v1_rows": 361,
+    "adapter_v2_rows": 722,
+    "candidate_status": "REJECTED",
+    "selected_serving_version": "adapter-v1",
+    "new_feedback_gate_delta_u20": -0.035860079192489236,
+    "serving_reload_prediction_byte_identical": true,
+    "error_memory_exact_version_isolation": true,
+    "permanent_test_truth_read": false,
+    "report": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/error_adapter_replay_v1/COMPLETION.json"
   }
 }
