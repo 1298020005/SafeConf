@@ -1,0 +1,329 @@
+{
+  "status": "SEEN_EVALUATION_COMPLETE",
+  "score_seal": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261003/gwps_v1/SCORE_SEAL.json",
+    "bytes": 2130,
+    "sha256": "787d43cb2c45e6b5eb56508316b1a0cdea528e32be76ca463c8bce65dc78d15b"
+  },
+  "cached_error_hash_unchanged": "d6e50bf9c7f874af74f618cb7fdb820a4d31969701a2c70aaa6b87e27f12cb3e",
+  "n_tasks": 2993,
+  "n_genes": 1750,
+  "source_fits": 6,
+  "new_upstream_fits": 0,
+  "new_GPU_hours": 0,
+  "raw_Orion_truth_reads": 0,
+  "old_data_or_frozen_models_changed": false,
+  "adoption_based_on_this_SEEN_evaluation": false,
+  "wall_seconds_evaluation": 462.0762813568581,
+  "peak_RSS_bytes": 350134272,
+  "macro_U20": [
+    {
+      "cohort": "old_covered",
+      "method": "Magnitude",
+      "point": 0.0771162528833989,
+      "ci95_lower": -0.11371881548453949,
+      "ci95_upper": 0.3074798285387155
+    },
+    {
+      "cohort": "old_covered",
+      "method": "Old_DirectDistance",
+      "point": 0.24403066166583504,
+      "ci95_lower": -0.041723988896915296,
+      "ci95_upper": 0.46533972468636825
+    },
+    {
+      "cohort": "old_covered",
+      "method": "Old_WeightedDistance",
+      "point": 0.1807745682354514,
+      "ci95_lower": -0.1158585101315851,
+      "ci95_upper": 0.4521489055687728
+    },
+    {
+      "cohort": "old_covered",
+      "method": "Old_NegativeSupport",
+      "point": -0.15628364184032234,
+      "ci95_lower": -0.3144285212200049,
+      "ci95_upper": 0.005975914536989759
+    },
+    {
+      "cohort": "old_covered",
+      "method": "Old_HGB",
+      "point": 0.32353953324626683,
+      "ci95_lower": 0.0028848827929752415,
+      "ci95_upper": 0.540337582748746
+    },
+    {
+      "cohort": "old_covered",
+      "method": "Old_NullHGB0",
+      "point": -0.1618651920806019,
+      "ci95_lower": -0.27493988341927544,
+      "ci95_upper": -0.009417318331976088
+    },
+    {
+      "cohort": "old_covered",
+      "method": "Old_NullHGB1",
+      "point": -0.025686644470072552,
+      "ci95_lower": -0.21420889456229905,
+      "ci95_upper": 0.17730862942248113
+    },
+    {
+      "cohort": "old_covered",
+      "method": "Old_NullHGB2",
+      "point": -0.07445785601436561,
+      "ci95_lower": -0.22853663855247525,
+      "ci95_upper": 0.1151684765608569
+    },
+    {
+      "cohort": "old_covered",
+      "method": "Old_NullHGB3",
+      "point": 0.1026672381764907,
+      "ci95_lower": -0.11441118331146649,
+      "ci95_upper": 0.35767461985237115
+    },
+    {
+      "cohort": "old_covered",
+      "method": "Old_NullHGB4",
+      "point": -0.06465850556310929,
+      "ci95_lower": -0.23602721158836387,
+      "ci95_upper": 0.08785778665648745
+    },
+    {
+      "cohort": "old_covered",
+      "method": "Expanded_DirectDistance",
+      "point": 0.4147046150044943,
+      "ci95_lower": 0.14882325110584302,
+      "ci95_upper": 0.6167629934683104
+    },
+    {
+      "cohort": "old_covered",
+      "method": "Expanded_WeightedDistance",
+      "point": 0.40682993535325074,
+      "ci95_lower": 0.13368428369138363,
+      "ci95_upper": 0.6087141818029452
+    },
+    {
+      "cohort": "old_covered",
+      "method": "Expanded_NegativeSupport",
+      "point": 0.21489296034874533,
+      "ci95_lower": -0.0037381886790723833,
+      "ci95_upper": 0.4256654476239521
+    },
+    {
+      "cohort": "old_covered",
+      "method": "Expanded_HGB",
+      "point": 0.33392251380107996,
+      "ci95_lower": 0.07105894957536116,
+      "ci95_upper": 0.5762730677056593
+    },
+    {
+      "cohort": "old_covered",
+      "method": "Expanded_NullHGB0",
+      "point": -0.26212355545013866,
+      "ci95_lower": -0.3980244214074228,
+      "ci95_upper": -0.13084988231072156
+    },
+    {
+      "cohort": "old_covered",
+      "method": "Expanded_NullHGB1",
+      "point": 0.024248976837901726,
+      "ci95_lower": -0.1494607330664862,
+      "ci95_upper": 0.24746194235793656
+    },
+    {
+      "cohort": "old_covered",
+      "method": "Expanded_NullHGB2",
+      "point": -0.04864931566906065,
+      "ci95_lower": -0.24283166989992405,
+      "ci95_upper": 0.1037545537995992
+    },
+    {
+      "cohort": "old_covered",
+      "method": "Expanded_NullHGB3",
+      "point": -0.03316434735699301,
+      "ci95_lower": -0.231478436444142,
+      "ci95_upper": 0.2383974758141682
+    },
+    {
+      "cohort": "old_covered",
+      "method": "Expanded_NullHGB4",
+      "point": -0.26128133273254806,
+      "ci95_lower": -0.402985425842469,
+      "ci95_upper": -0.05398806123273373
+    },
+    {
+      "cohort": "newly_covered",
+      "method": "Magnitude",
+      "point": 0.11370280619460495,
+      "ci95_lower": 0.02503213002212328,
+      "ci95_upper": 0.2032307265580785
+    },
+    {
+      "cohort": "newly_covered",
+      "method": "Expanded_DirectDistance",
+      "point": 0.12194850514557058,
+      "ci95_lower": 0.00962657937840093,
+      "ci95_upper": 0.21402178550780293
+    },
+    {
+      "cohort": "newly_covered",
+      "method": "Expanded_WeightedDistance",
+      "point": 0.12194850514557058,
+      "ci95_lower": 0.00962657937840093,
+      "ci95_upper": 0.21402178550780293
+    },
+    {
+      "cohort": "newly_covered",
+      "method": "Expanded_NegativeSupport",
+      "point": 0.0851323245728369,
+      "ci95_lower": -0.020337967050281357,
+      "ci95_upper": 0.17741000611202515
+    },
+    {
+      "cohort": "newly_covered",
+      "method": "Expanded_HGB",
+      "point": -0.005782761080306377,
+      "ci95_lower": -0.10827496571728736,
+      "ci95_upper": 0.10374592887732463
+    },
+    {
+      "cohort": "newly_covered",
+      "method": "Expanded_NullHGB0",
+      "point": 0.05425483721823692,
+      "ci95_lower": -0.045738728359101075,
+      "ci95_upper": 0.13825041169060567
+    },
+    {
+      "cohort": "newly_covered",
+      "method": "Expanded_NullHGB1",
+      "point": 0.04635730388464508,
+      "ci95_lower": -0.043652971721966916,
+      "ci95_upper": 0.15028885013030985
+    },
+    {
+      "cohort": "newly_covered",
+      "method": "Expanded_NullHGB2",
+      "point": -0.011320609124365735,
+      "ci95_lower": -0.1125845558161258,
+      "ci95_upper": 0.0923478154967275
+    },
+    {
+      "cohort": "newly_covered",
+      "method": "Expanded_NullHGB3",
+      "point": -0.03394955772205203,
+      "ci95_lower": -0.11742081402719366,
+      "ci95_upper": 0.06487032256322424
+    },
+    {
+      "cohort": "newly_covered",
+      "method": "Expanded_NullHGB4",
+      "point": -0.1923414274923912,
+      "ci95_lower": -0.2804051321038671,
+      "ci95_upper": -0.08683120693656413
+    },
+    {
+      "cohort": "expanded_covered",
+      "method": "Magnitude",
+      "point": 0.13458237547237606,
+      "ci95_lower": 0.053543530822384486,
+      "ci95_upper": 0.22151268232478813
+    },
+    {
+      "cohort": "expanded_covered",
+      "method": "Expanded_DirectDistance",
+      "point": 0.30792974846716803,
+      "ci95_lower": 0.20057427756311275,
+      "ci95_upper": 0.3946544997849678
+    },
+    {
+      "cohort": "expanded_covered",
+      "method": "Expanded_WeightedDistance",
+      "point": 0.30122169344023475,
+      "ci95_lower": 0.21272217373751393,
+      "ci95_upper": 0.40160428618520055
+    },
+    {
+      "cohort": "expanded_covered",
+      "method": "Expanded_NegativeSupport",
+      "point": 0.033400437633695504,
+      "ci95_lower": -0.058569847069511474,
+      "ci95_upper": 0.11538401778464617
+    },
+    {
+      "cohort": "expanded_covered",
+      "method": "Expanded_HGB",
+      "point": 0.21510716115519268,
+      "ci95_lower": 0.10178236342362941,
+      "ci95_upper": 0.3234738333806444
+    },
+    {
+      "cohort": "expanded_covered",
+      "method": "Expanded_NullHGB0",
+      "point": -0.05086721521367982,
+      "ci95_lower": -0.14009333093121126,
+      "ci95_upper": 0.03247262624234661
+    },
+    {
+      "cohort": "expanded_covered",
+      "method": "Expanded_NullHGB1",
+      "point": 0.04395755152754116,
+      "ci95_lower": -0.039133172564952405,
+      "ci95_upper": 0.13089764375335655
+    },
+    {
+      "cohort": "expanded_covered",
+      "method": "Expanded_NullHGB2",
+      "point": -0.01417139952885254,
+      "ci95_lower": -0.10312984913621677,
+      "ci95_upper": 0.08384500145885332
+    },
+    {
+      "cohort": "expanded_covered",
+      "method": "Expanded_NullHGB3",
+      "point": 0.1635855387945702,
+      "ci95_lower": 0.06053992419578608,
+      "ci95_upper": 0.262205079192543
+    },
+    {
+      "cohort": "expanded_covered",
+      "method": "Expanded_NullHGB4",
+      "point": -0.22749703549499797,
+      "ci95_lower": -0.30077263015312017,
+      "ci95_upper": -0.1445301248787913
+    },
+    {
+      "cohort": "all_eligible",
+      "method": "Magnitude",
+      "point": 0.11600518506361145,
+      "ci95_lower": 0.05599822708661148,
+      "ci95_upper": 0.1789088303285517
+    },
+    {
+      "cohort": "all_eligible",
+      "method": "Old_DistanceCDF_or_Magnitude",
+      "point": 0.1612323783217402,
+      "ci95_lower": 0.10438783189935787,
+      "ci95_upper": 0.22795694576470085
+    },
+    {
+      "cohort": "all_eligible",
+      "method": "Expanded_DistanceCDF_or_Magnitude",
+      "point": 0.22295057147492808,
+      "ci95_lower": 0.16093023422888372,
+      "ci95_upper": 0.2900716669425383
+    },
+    {
+      "cohort": "all_eligible",
+      "method": "Old_HGB_or_Magnitude",
+      "point": 0.1612323783217402,
+      "ci95_lower": 0.10438783189935831,
+      "ci95_upper": 0.22795694576470085
+    },
+    {
+      "cohort": "all_eligible",
+      "method": "Expanded_HGB_or_Magnitude",
+      "point": 0.09032893166613686,
+      "ci95_lower": 0.018516946024634235,
+      "ci95_upper": 0.15744661520344586
+    }
+  ]
+}

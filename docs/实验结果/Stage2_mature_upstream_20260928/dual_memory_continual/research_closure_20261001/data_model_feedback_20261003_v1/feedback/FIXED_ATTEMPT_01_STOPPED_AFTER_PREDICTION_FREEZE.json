@@ -1,0 +1,9 @@
+{
+  "status": "STOPPED_AFTER_PREDICTION_FREEZE",
+  "reason": "Initial scalar bootstrap was replaced by vectorized registered 5000-draw statistics; all frozen predictions were retained",
+  "prediction_freeze": "/home/yyf/runtime_artifacts/safeconf_research_20261003/feedback_v1/PREDICTION_FREEZE.json",
+  "replacement_statistics": "Vectorized run completed in FIXED_STATS_RUN.log",
+  "predictions_untouched": true,
+  "new_fit_count": 45,
+  "bootstrap_replicates": 5000
+}
