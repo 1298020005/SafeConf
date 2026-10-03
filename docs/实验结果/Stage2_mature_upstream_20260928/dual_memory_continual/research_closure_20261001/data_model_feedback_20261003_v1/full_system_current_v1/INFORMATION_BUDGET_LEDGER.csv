@@ -1,0 +1,4 @@
+method,config,label_source,target_errors_used_for_fit
+SafeConf_no_target_feedback,Source-supervised Ridge fallback PublicRule,E201 source errors only,0
+SafeConf_target_feedback_50,Target-supervised Ridge at 50% feedback; fallback SourceRidge/PublicRule,McFaline DEV errors,542
+PublicRule,simple current Public rule,none,0

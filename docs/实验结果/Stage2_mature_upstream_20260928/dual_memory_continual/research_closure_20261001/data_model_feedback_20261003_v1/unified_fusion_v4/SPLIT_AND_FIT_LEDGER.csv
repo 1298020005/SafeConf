@@ -1,0 +1,6 @@
+stage,fold,n_fit_rows,n_query_rows,fit_gene_count,query_gene_count,gene_disjoint,label_source,target_error_budget
+source_shared_oof,0,2892,724,460,115,True,SOURCE_RISK_MIDRANK_LABELS.npy,none
+source_shared_oof,1,2892,724,460,115,True,SOURCE_RISK_MIDRANK_LABELS.npy,none
+source_shared_oof,2,2892,724,460,115,True,SOURCE_RISK_MIDRANK_LABELS.npy,none
+source_shared_oof,3,2894,722,460,115,True,SOURCE_RISK_MIDRANK_LABELS.npy,none
+source_shared_oof,4,2894,722,460,115,True,SOURCE_RISK_MIDRANK_LABELS.npy,none

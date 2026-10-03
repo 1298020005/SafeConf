@@ -1,0 +1,16 @@
+budget,fold,n_fit,n_query,label_source,target_feedback_budget,base_scores_are_oof
+0.1,0,370,172,McFaline_DEV_true_error_rmse,0.1,True
+0.1,1,356,186,McFaline_DEV_true_error_rmse,0.1,True
+0.1,2,358,184,McFaline_DEV_true_error_rmse,0.1,True
+0.25,0,370,172,McFaline_DEV_true_error_rmse,0.25,True
+0.25,1,356,186,McFaline_DEV_true_error_rmse,0.25,True
+0.25,2,358,184,McFaline_DEV_true_error_rmse,0.25,True
+0.5,0,370,172,McFaline_DEV_true_error_rmse,0.5,True
+0.5,1,356,186,McFaline_DEV_true_error_rmse,0.5,True
+0.5,2,358,184,McFaline_DEV_true_error_rmse,0.5,True
+0.75,0,370,172,McFaline_DEV_true_error_rmse,0.75,True
+0.75,1,356,186,McFaline_DEV_true_error_rmse,0.75,True
+0.75,2,358,184,McFaline_DEV_true_error_rmse,0.75,True
+1.0,0,370,172,McFaline_DEV_true_error_rmse,1.0,True
+1.0,1,356,186,McFaline_DEV_true_error_rmse,1.0,True
+1.0,2,358,184,McFaline_DEV_true_error_rmse,1.0,True

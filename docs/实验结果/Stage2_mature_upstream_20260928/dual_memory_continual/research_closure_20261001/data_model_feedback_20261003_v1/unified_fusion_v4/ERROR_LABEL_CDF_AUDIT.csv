@@ -1,0 +1,2 @@
+label_type,label_source,n_rows,n_genes,target_error_used_for_fitting,target_feedback_budget,label_scale
+source_error,SOURCE_RISK_MIDRANK_LABELS.npy,3616,575,False,none,E201 per-upstream/context midrank CDF supplied by frozen source artifact

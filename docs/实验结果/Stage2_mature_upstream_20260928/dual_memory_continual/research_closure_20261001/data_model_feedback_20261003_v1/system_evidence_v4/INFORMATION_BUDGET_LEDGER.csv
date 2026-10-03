@@ -1,0 +1,6 @@
+information,purpose,rows,used_for_fit
+Public truth,GWPS reference and coverage,see GWPS manifest,True
+Source errors,SharedRisk and Source Ridge fusion,3616,True
+Target development errors,Target Ridge selection and fitting,542,True
+Target holdout errors,evaluation only,212,False
+Legacy matrix/PertEMA errors,alignment audit only,excluded after truth mismatch,False
