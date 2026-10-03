@@ -1,0 +1,33 @@
+{
+  "time_utc": "2026-10-02T18:47:31Z",
+  "status": "PASS",
+  "architecture": "official SAMS-VAE synthetic miniature; not a second upstream",
+  "generative_changed_expression_max_abs": 0.0,
+  "reconstruction_negative_control_max_abs": 0.06996035575866699,
+  "truth_removed_generation_finite": true,
+  "metadata_only_predictor_parameters": [
+    "model",
+    "task",
+    "n",
+    "seed",
+    "chunk"
+  ],
+  "forward_notes": "official forward computes discarded reconstruction/encoder terms; output samples prior and is expression-invariant",
+  "official_repo_commit": "c84038bc1ea409aa54f3832cfa6f34f5059adf0c",
+  "input_hashes": {
+    "/home/yyf/data/perturbench_mcfaline23_official/splits/mcfaline23_gxe_splits/full_covariate_split.csv": "08a6558a68599b3703f626c8da72a1603486edd94a3f34dfc9fa7c9b6181b091",
+    "/home/yyf/archive/external/PerturBench/src/perturbench/configs/experiment/neurips2025/mcfaline23/sams_best_params_mcfaline23_full.yaml": "cc417dbb98d1310d98acf3d68b7e125885f41f4c58194380a02d7883712ebb2b",
+    "/home/yyf/archive/external/PerturBench/src/perturbench/modelcore/models/sams_vae.py": "9f1a4cb4d760e4b7c38cc75823f867658d82a5617a6006e26db296f46ac9c612",
+    "/home/yyf/archive/external/PerturBench/src/perturbench/data/datasets/inmemory/sc_perturbation.py": "808c310873189003390aeffa3d517cf4a10a1caa3c944fe29b1ad4c4165f74e1"
+  },
+  "source_expression_accessed": false,
+  "cell_counts_by_role": {
+    "test": 69028,
+    "train": 738901,
+    "val": 70300
+  },
+  "n_genes": 15009,
+  "unknown_validation_conditions": [],
+  "rtol": 1e-05,
+  "atol": 1e-07
+}

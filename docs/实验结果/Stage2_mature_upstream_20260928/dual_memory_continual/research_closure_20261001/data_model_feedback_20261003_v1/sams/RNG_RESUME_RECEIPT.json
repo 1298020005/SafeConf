@@ -1,0 +1,9 @@
+{
+  "time_utc": "2026-10-03T04:58:59Z",
+  "status": "OFFICIAL_PARENT_HAS_NO_GLOBAL_RNG; FIXED_REGISTERED_CONTINUATION_SEED",
+  "global_step": 3684,
+  "epoch": 1,
+  "continuation_seed": 20261003,
+  "parent_checkpoint": "/home/yyf/runtime_artifacts/safeconf_research_20261003/sams_v1/checkpoints/exception_resumable.ckpt",
+  "bitwise_original_rng_trajectory_claimed": false
+}

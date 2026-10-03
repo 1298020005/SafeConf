@@ -1,0 +1,11 @@
+{
+  "status": "COMPLETE",
+  "new_model_fits": 0,
+  "new_GPU_hours": 0,
+  "role": "DEV_DIAGNOSTIC_NO_METHOD_SELECTION",
+  "primary_error_unchanged": true,
+  "bootstrap": 5000,
+  "wall_seconds": 31.24317937879823,
+  "wmse_is_explicitly_control_Welch_adaptation": true,
+  "all_preregistered_simple_scorers_reported": true
+}

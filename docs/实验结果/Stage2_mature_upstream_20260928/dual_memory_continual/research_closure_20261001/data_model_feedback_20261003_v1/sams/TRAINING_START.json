@@ -1,0 +1,13 @@
+{
+  "time_utc": "2026-10-03T04:58:55Z",
+  "status": "STARTED",
+  "pid": 2580457,
+  "physical_gpu": 0,
+  "parameters": 259890081,
+  "native_genes": 15009,
+  "train_steps_per_epoch": 2887,
+  "validation_steps": 275,
+  "resume": "/home/yyf/runtime_artifacts/safeconf_research_20261003/sams_v1/checkpoints/exception_resumable.ckpt",
+  "preparation_seconds": 6.695742607116699,
+  "read_only_inputs_unchanged": true
+}

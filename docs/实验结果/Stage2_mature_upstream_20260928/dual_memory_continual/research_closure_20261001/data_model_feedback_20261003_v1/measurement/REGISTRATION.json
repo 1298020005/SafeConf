@@ -1,0 +1,49 @@
+{
+  "role": "DEV_SEEN_MEASUREMENT_DIAGNOSTIC",
+  "modes": [
+    "guide",
+    "plate",
+    "cell"
+  ],
+  "minimum_treated_and_control_cells_per_half": 5,
+  "time_cap_seconds": 14400,
+  "primary_error_unchanged": true,
+  "new_model_fits": 0,
+  "wmse": "Published weighted-MSE and squared min-max abs-score weighting; Welch treated-v-control score adaptation, not full authors DEG preprocessing",
+  "official_source_url": "https://github.com/shiftbioscience/Perturbation-Models-Outperform-Baselines/blob/main/cellsimbench/core/data_manager.py",
+  "official_source_git_blob": "45ffda662e5be0bc4d4a086a6a363d985349015f",
+  "bindings": [
+    {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_measurement_diagnostic_v1.py",
+      "sha256": "bb41c191d018df66451a2082b0f1d7d58b9cd101365ab833695e42d6adef7e47"
+    },
+    {
+      "path": "/home/yyf/data/perturbench_mcfaline23_official/splits/mcfaline23_gxe_splits/full_covariate_split.csv",
+      "sha256": "08a6558a68599b3703f626c8da72a1603486edd94a3f34dfc9fa7c9b6181b091"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/VALIDATION_TASKS.csv",
+      "sha256": "eda4ca2d19d6bac834c9f1f895657ab86588f9693500740b6446068fd81d28c6"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/GENE_IDS.json",
+      "sha256": "be612f9c4638146b41eee26f607ab12fbed53b524cda7a76eee36ca554c28f97"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/VALIDATION_TRUE_EFFECTS.npy",
+      "sha256": "4c22b4ddfa2235de544a01629e1608e26d87f52f87cdf9ef4414e66845c8b490"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/VALIDATION_CALIBRATED_EFFECTS.npy",
+      "sha256": "6ef95d95a54bd13e3f196977183799389edac2a90fd13821af547b6372209914"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261003/measurement_v1/official_metric_sources/wmse.py",
+      "sha256": "a40155ce3520f492d31a3a41b6b7165379f1c4b669521ed414c7280aff9e208a"
+    }
+  ],
+  "h5_file_stat": {
+    "bytes": 27417399306,
+    "mtime_ns": 1790669043460240672
+  }
+}

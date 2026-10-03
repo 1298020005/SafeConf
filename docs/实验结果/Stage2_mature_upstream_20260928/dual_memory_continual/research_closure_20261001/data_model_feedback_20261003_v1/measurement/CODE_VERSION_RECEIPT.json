@@ -1,0 +1,8 @@
+{
+  "preparation_sha256": "bb41c191d018df66451a2082b0f1d7d58b9cd101365ab833695e42d6adef7e47",
+  "exact_original_source_restored": "/home/yyf/runtime_artifacts/safeconf_research_20261003/measurement_v1/PREPARE_SOURCE_FROZEN.py",
+  "current_evaluation_source_sha256": "d97d9f141d08c2c53d858d8fdd8b3a874eb1de29831f6070558de3b96ea1364b",
+  "evaluation_source_snapshot": "/home/yyf/runtime_artifacts/safeconf_research_20261003/measurement_v1/EVALUATION_SOURCE_FROZEN.py",
+  "engineering_repair": "Numeric HDF5 categorical category values converted with numpy.astype(str); first metadata-only failed attempt retained in run.log",
+  "outputs_and_primary_truth_unchanged": true
+}

@@ -1,0 +1,13 @@
+{
+  "time_utc": "2026-10-02T18:19:22Z",
+  "status": "FIXED_BEFORE_MODEL_INITIALIZATION",
+  "old_reader": "anndata.read_h5ad(backed=r)",
+  "observed_problem": "backed X mode still eagerly loads layers/counts, which includes SEEN test cells",
+  "stopped_pid": 1867669,
+  "training_steps_before_stop": 0,
+  "model_or_optimizer_initialized": false,
+  "selection_or_scoring_performed": false,
+  "new_reader": "metadata-only obs/var plus HDF5 X-only guarded train/val indexing",
+  "architecture_or_loss_change": false,
+  "counts_layer_not_used": "not consumed by training or scientific analysis; old preparatory process stopped during eager load"
+}

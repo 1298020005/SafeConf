@@ -1,0 +1,11 @@
+{
+  "time_utc": "2026-10-02T18:32:46Z",
+  "status": "FIXED_AND_SAVE_RELOAD_TESTED",
+  "problem": "Lightning CSV logger traverses official LinearModelPipeline dictionary subclass and fails YAML construction",
+  "old_pid": 1873867,
+  "training_steps_before_failure": 0,
+  "new_logger": "CSV metrics preserved; log_hyperparams skipped because exact JSON contract and official checkpoint preserve config/context/transform",
+  "test": "synthetic official model completed 2 fit steps; optimizer state saved; checkpoint reload produced matching predictions",
+  "model_or_loss_changes": false,
+  "gpu_setup_seconds_before_failure": 2
+}

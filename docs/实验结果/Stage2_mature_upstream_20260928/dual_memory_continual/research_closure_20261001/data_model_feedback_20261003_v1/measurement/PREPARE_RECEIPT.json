@@ -1,0 +1,18 @@
+{
+  "status": "COMPLETE",
+  "role": "DEV_ONLY",
+  "n_tasks": 542,
+  "n_genes": 377,
+  "selected_expression_rows": 96484,
+  "test_expression_rows_read": 0,
+  "primary_truth_max_absolute_difference": 1.2110001845755392e-07,
+  "wall_seconds": 120.9143358268775,
+  "arrays": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261003/measurement_v1/DEV_REPEAT_EFFECTS.npz",
+    "sha256": "caa1ebf0882415f587105ab287e4884d5ea60a0946e45dec77b8b385d11676e4"
+  },
+  "new_model_fits": 0,
+  "new_GPU_hours": 0,
+  "wmse_scope": "squared min-max abs Welch control score adaptation, diagnostic only",
+  "next_action": "Evaluate all preregistered feedback DEV scorers on primary and alternate repeat errors"
+}

@@ -1,0 +1,28 @@
+{
+  "time_utc": "2026-10-02T18:32:46Z",
+  "status": "FROZEN_BEFORE_FIRST_REAL_TRAIN_STEP",
+  "primary_competence_axis": 2840,
+  "secondary_original_competence_axis": 512,
+  "same_checkpoint_and_generated_samples": true,
+  "axis_cannot_switch_by_result": true,
+  "relative_error_margin": 0.02,
+  "strata_fraction_min": 0.6,
+  "bootstrap_draws": 5000,
+  "original_ci_rule": "bootstrap relative-gap lower <= .02",
+  "selection_metric": "official reconstruction val_loss; no SafeConf score used",
+  "risk_source_tasks": 331,
+  "risk_source_genes": 228,
+  "risk_eval_tasks": 212,
+  "risk_eval_genes": 152,
+  "source_error_shuffle_seeds": [
+    20261003,
+    20261004,
+    20261005,
+    20261006,
+    20261007
+  ],
+  "extra_no_train_control": "sqrt(mean(native generated sample variance on primary2840 axis))",
+  "extra_control_not_in_13_risk_features": true,
+  "extra_control_not_calibrated_UQ": true,
+  "script_sha256": "8665583c905b97fbb63df6ee622975ca8b2a4d32e4ca9fb9f4796522d5bd5d1b"
+}

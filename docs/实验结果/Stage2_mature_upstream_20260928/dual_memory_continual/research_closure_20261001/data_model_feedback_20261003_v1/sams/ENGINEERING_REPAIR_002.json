@@ -1,0 +1,12 @@
+{
+  "time_utc": "2026-10-02T18:22:34Z",
+  "status": "FIXED_BEFORE_MODEL_INITIALIZATION",
+  "problem": "official whole-training-row CSR materialization killed by systemd-oomd in preparation; no fit steps",
+  "old_pid": 1870019,
+  "training_steps_before_stop": 0,
+  "new_reader": "same eligible X rows streamed in 2048-row blocks into float32 CSR memmaps",
+  "scientific_changes": false,
+  "row_order_loss_architecture_optimizer_unchanged": true,
+  "test_expression_rows_requested": 0,
+  "reader_automatic_tests": "READER_ISOLATION_TESTS.json"
+}

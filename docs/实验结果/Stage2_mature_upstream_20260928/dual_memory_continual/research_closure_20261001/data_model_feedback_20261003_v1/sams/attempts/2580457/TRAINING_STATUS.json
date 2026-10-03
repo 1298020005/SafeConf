@@ -1,0 +1,28 @@
+{
+  "time_utc": "2026-10-03T04:59:23Z",
+  "status": "TRAINING_RUNNING",
+  "pid": 2580457,
+  "epoch": 1,
+  "global_step": 3884,
+  "elapsed_fit_seconds": 24.698256015777588,
+  "gpu_hours": 0.00686062667104933,
+  "initial_budget_gpu_hours": 24.0,
+  "rss_gib": 6.538166046142578,
+  "cuda_peak_allocated_gib": 4.873993396759033,
+  "metrics": {
+    "kld": 2.8857855796813965,
+    "kld_step": 2.8857855796813965,
+    "recon_loss": 656.5798950195312,
+    "recon_loss_step": 656.5798950195312,
+    "elbo": -659.4656982421875,
+    "elbo_step": -659.4656982421875
+  },
+  "best_checkpoint": "/home/yyf/runtime_artifacts/safeconf_research_20261003/sams_v1/checkpoints/epochepoch=000-stepstep=2887.ckpt",
+  "last_checkpoint": "/home/yyf/runtime_artifacts/safeconf_research_20261003/sams_v1/checkpoints/last.ckpt",
+  "validation_loss_is_reconstruction": true,
+  "upstream_competence_status": "PENDING_TRUE_GENERATION",
+  "segment_start_step": 3684,
+  "segment_train_steps": 200,
+  "seconds_per_train_step_so_far": 0.12349128007888793,
+  "first_epoch_seconds": null
+}

@@ -1,0 +1,269 @@
+{
+  "time_utc": "2026-10-02T18:39:54Z",
+  "status": "ADOPT_EQUIVALENT_OPTIMIZATION",
+  "checkpoint": "/home/yyf/runtime_artifacts/safeconf_research_20261003/sams_v1/checkpoints/recovery.ckpt",
+  "checkpoint_sha256": "1749cd51cff4defeb61ea34f6549945544d5521238bffe6b82318838fdade7cb",
+  "change": "m_t = m[z_p_index_pert] replaces row-wise mask indexing + torch.cat",
+  "official_source_file_modified": false,
+  "new_upstream_attempt": false,
+  "loss_original": 1711.224853515625,
+  "loss_vectorized": 1711.224853515625,
+  "loss_equal": true,
+  "gradient_equal": true,
+  "gradient_tolerance": {
+    "rtol": 0.0001,
+    "atol": 1e-05
+  },
+  "prediction_equal": true,
+  "prediction_tolerance": {
+    "rtol": 1e-05,
+    "atol": 1e-07
+  },
+  "gradient_details": [
+    {
+      "parameter": "m_logits",
+      "max_abs_gradient_difference": 1.862645149230957e-09,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_x.mlp.network.0.weight",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_x.mlp.network.0.bias",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_x.mlp.network.1.weight",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_x.mlp.network.1.bias",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_x.mlp.network.4.weight",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_x.mlp.network.4.bias",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_x.mlp.network.7.weight",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_x.mlp.network.7.bias",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_x.mlp.network.10.weight",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_x.mlp.network.10.bias",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_x.mlp.network.13.weight",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_x.mlp.network.13.bias",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_x.mlp.network.16.weight",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_x.mlp.network.16.bias",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_x.mu_x.weight",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_x.mu_x.bias",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_x.var_x.weight",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_x.var_x.bias",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_e.mlp.network.0.weight",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_e.mlp.network.0.bias",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_e.mlp.network.1.weight",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_e.mlp.network.1.bias",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_e.mlp.network.4.weight",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_e.mlp.network.4.bias",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_e.mlp.network.7.weight",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_e.mlp.network.7.bias",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_e.mlp.network.10.weight",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_e.mlp.network.10.bias",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_e.mlp.network.13.weight",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_e.mlp.network.13.bias",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_e.mu_x.weight",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_e.mu_x.bias",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_e.var_x.weight",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "encoder_e.var_x.bias",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "decoder.network.network.0.weight",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "decoder.network.network.0.bias",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "decoder.network.network.1.weight",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "decoder.network.network.1.bias",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "decoder.network.network.5.weight",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "decoder.network.network.5.bias",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "decoder.network.network.9.weight",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "decoder.network.network.9.bias",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "decoder.network.network.13.weight",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    },
+    {
+      "parameter": "decoder.network.network.13.bias",
+      "max_abs_gradient_difference": 0.0,
+      "pass": true
+    }
+  ],
+  "timing_seconds_per_forward_backward": {
+    "original": [
+      0.09358776807785034,
+      0.0985094428062439,
+      0.09854270219802856
+    ],
+    "vectorized": [
+      0.03702853918075562,
+      0.03850160837173462,
+      0.0374176025390625
+    ]
+  },
+  "median_original_seconds": 0.0985094428062439,
+  "median_vectorized_seconds": 0.0374176025390625,
+  "fraction_time_reduction": 0.6201622760910507,
+  "minimum_time_reduction": 0.15,
+  "benchmark_gpu_hours": 0.008879497448603313,
+  "physical_gpu": "1",
+  "script_sha256": "8d43c5d8ef0c7e395338cc5a4a91e82921262a1ca8c7634516e2b75f2b9327be",
+  "train_batch_row_hash": "ff04948a42aa555be94514f3790e7a6291ec9ba3128589be301be786b9cb2b0c"
+}

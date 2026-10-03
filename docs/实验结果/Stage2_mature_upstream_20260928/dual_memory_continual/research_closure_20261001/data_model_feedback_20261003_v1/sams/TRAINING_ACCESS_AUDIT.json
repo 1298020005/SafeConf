@@ -1,0 +1,26 @@
+{
+  "time_utc": "2026-10-03T04:58:53Z",
+  "status": "PASS",
+  "expression_reads": [
+    {
+      "role": "train",
+      "n_rows": 738901,
+      "row_index_sha256": "94485725cea94d01a39025ab2da037bb177a6aea805daa0d507e9ff8c3cf63c1"
+    },
+    {
+      "role": "val",
+      "n_rows": 70300,
+      "row_index_sha256": "801e1c87ed80191308a95b2c9685d164be4710948fa941ebc9fac641ae60fd3b"
+    }
+  ],
+  "test_expression_rows_read": 0,
+  "all_metadata_available_for_split_alignment": true,
+  "train_rows": 738901,
+  "validation_rows": 70300,
+  "native_genes": 15009,
+  "n_train_perts": 528,
+  "num_workers": 0,
+  "data_memory_bytes": 7643359520,
+  "reader": "HDF5 X-only guarded rows; layers/counts and TEST expression never opened",
+  "rss_gib": 1.5500831604003906
+}
