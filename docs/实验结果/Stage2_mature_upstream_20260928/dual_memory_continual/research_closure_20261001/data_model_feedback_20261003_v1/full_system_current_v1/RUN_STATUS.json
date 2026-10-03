@@ -1,0 +1,19 @@
+{
+  "status": "COMPLETE",
+  "n_tasks": 212,
+  "n_genes": 152,
+  "same_truth_contract": true,
+  "score_columns": [
+    "Amplitude",
+    "PublicRule",
+    "SourceSharedRisk",
+    "SourceRidge",
+    "TargetRidge50",
+    "TargetH1F1_50",
+    "SafeConf_no_target_feedback",
+    "SafeConf_target_feedback_50"
+  ],
+  "holdout": "/home/yyf/runtime_artifacts/safeconf_research_20261003/feedback_v1/HOLDOUT_FEATURES.parquet",
+  "source_scores": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/unified_fusion_v4/TARGET_SCORES.parquet",
+  "target_scores": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/target_ridge_fusion_v8/HOLDOUT_SCORES_B050.parquet"
+}

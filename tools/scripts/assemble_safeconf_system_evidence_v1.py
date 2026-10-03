@@ -14,10 +14,11 @@ DATA = BASE / "data_model_feedback_20261003_v1"
 DEFAULT_OUT = DATA / "system_evidence_v1"
 
 
-def run(out: Path, source_dir: Path | None = None, target_dir: Path | None = None):
+def run(out: Path, source_dir: Path | None = None, target_dir: Path | None = None, full_dir: Path | None = None):
     out.mkdir(parents=False, exist_ok=False)
     source_dir = source_dir or (DATA / "unified_fusion_v4")
     target_dir = target_dir or (DATA / "target_ridge_fusion_v8")
+    full_dir = full_dir or (DATA / "full_system_current_v1")
     rows = []
     # Current-contract public evidence; retain cohorts separately.
     pub = pd.read_csv(DATA / "gwps/ALL_METRICS.csv")
@@ -73,6 +74,23 @@ def run(out: Path, source_dir: Path | None = None, target_dir: Path | None = Non
             "target_errors_used_for_fit": r.method == "TargetRidge_fusion",
             "status": "current_candidate_point_estimate",
         })
+    full = pd.read_csv(full_dir / "SYSTEM_METRICS.csv")
+    for _, r in full.iterrows():
+        rows.append({
+            "line": "CompleteSystem",
+            "contract": "McFaline_current_212_same_truth",
+            "cohort": "212_holdout",
+            "method": r.method,
+            "budget": "50%" if "50" in r.method else "none",
+            "n_tasks": int(r.n_tasks),
+            "n_genes": 152,
+            "u20": r.u20,
+            "ci95_lower": None,
+            "ci95_upper": None,
+            "source_errors_used": "Source" in r.method or "SafeConf_no" in r.method,
+            "target_errors_used_for_fit": "Target" in r.method,
+            "status": "same_current_truth_contract",
+        })
     evidence = pd.DataFrame(rows)
     evidence.to_csv(out / "SYSTEM_COMPARISON.csv", index=False)
 
@@ -80,11 +98,14 @@ def run(out: Path, source_dir: Path | None = None, target_dir: Path | None = Non
     # cross-contract comparison is silently promoted to one table.
     src_boot = pd.read_csv(source_dir / "bootstrap/BOOTSTRAP_SUMMARY.csv")
     tgt_boot = pd.read_csv(target_dir / "bootstrap_b050/BOOTSTRAP_SUMMARY.csv")
+    full_boot = pd.read_csv(full_dir / "bootstrap/BOOTSTRAP_SUMMARY.csv")
     src_boot.insert(0, "line", "SourceFusion")
     src_boot.insert(1, "contract", "E201_source_to_McFaline_current_external")
     tgt_boot.insert(0, "line", "TargetFusion")
     tgt_boot.insert(1, "contract", "McFaline_DEV_to_current_212_holdout")
-    pd.concat([src_boot, tgt_boot], ignore_index=True).to_csv(out / "BOOTSTRAP_SUMMARY.csv", index=False)
+    full_boot.insert(0, "line", "CompleteSystem")
+    full_boot.insert(1, "contract", "McFaline_current_212_same_truth")
+    pd.concat([src_boot, tgt_boot, full_boot], ignore_index=True).to_csv(out / "BOOTSTRAP_SUMMARY.csv", index=False)
 
     claims = pd.DataFrame([
         {"claim": "Public history provides information beyond amplitude", "evidence": "gwps/ALL_METRICS.csv; public content null outputs", "status": "SUPPORTED_WITH_SCOPE", "decision": "retain Public module"},
@@ -92,7 +113,7 @@ def run(out: Path, source_dir: Path | None = None, target_dir: Path | None = Non
         {"claim": "Source-supervised Ridge adds beyond current public rule", "evidence": str(source_dir / "METRICS.csv") + "; " + str(source_dir / "bootstrap/BOOTSTRAP_SUMMARY.csv"), "status": "POINT_GAIN_CI_CROSSES_ZERO", "decision": "conditional candidate; do not promote"},
         {"claim": "Target Ridge is useful at a fixed feedback budget", "evidence": str(target_dir / "METRICS.csv") + "; " + str(target_dir / "bootstrap_b050/BOOTSTRAP_SUMMARY.csv"), "status": "NO_STABLE_GAIN_AT_50_PERCENT", "decision": "do not make default"},
         {"claim": "Legacy matrix/PertEMA scores are a same-task baseline", "evidence": str(source_dir / "LEGACY_ALIGNMENT_AUDIT.csv") + "; " + str(target_dir / "LEGACY_ALIGNMENT_AUDIT.csv"), "status": "REJECTED_TRUTH_CONTRACT_MISMATCH", "decision": "keep as SEEN audit only"},
-        {"claim": "Full SafeConf is ready for one combined ranking", "evidence": "unified scoring interface plus current module outputs", "status": "NOT_YET_CLOSED", "decision": "next action: regenerate all channels under one current truth contract"},
+        {"claim": "Full SafeConf is ready for one combined ranking", "evidence": str(full_dir / "SYSTEM_METRICS.csv") + "; " + str(full_dir / "bootstrap/BOOTSTRAP_SUMMARY.csv"), "status": "CURRENT_212_RANKING_COMPLETE_DEFAULT_PUBLIC", "decision": "current full ranking supports PublicRule default; Ridge candidates remain conditional"},
     ])
     claims.to_csv(out / "CLAIM_EVIDENCE_MATRIX.csv", index=False)
 
@@ -112,11 +133,12 @@ def run(out: Path, source_dir: Path | None = None, target_dir: Path | None = Non
         "target_ridge": {"decision": "CONDITIONAL_NOT_DEFAULT", "reason": "50% point gain over current simple rule but paired cluster CI crosses zero; no stable gain across budgets"},
         "deep_sets": "not promoted; prior decision retained",
         "sams": "existing training/postprocess remains separate and protected",
-        "same_task_full_system": "not closed because legacy scores fail current truth-contract alignment; regenerate before paper stage",
+        "same_task_full_system": "CURRENT_212_CLOSED; legacy scores remain excluded and the current 212 ranking is complete",
         "paper_work": "DEFERRED",
         "next_action": "build one current-contract combined score table from regenerated Public/Shared/Target channels, then run paired 5000-cluster system comparison",
         "source_artifact": str(source_dir),
         "target_artifact": str(target_dir),
+        "full_system_artifact": str(full_dir),
     }
     (out / "COMPONENT_DECISION.json").write_text(json.dumps(decision, indent=2, ensure_ascii=False))
     report = "# SafeConf 当前执行回执\n\n"
@@ -127,9 +149,9 @@ def run(out: Path, source_dir: Path | None = None, target_dir: Path | None = Non
     report += "- 完成5000次按基因簇配对bootstrap。\n"
     report += "- 检出旧矩阵/PertEMA结果与当前冻结特征的真实错误合同不一致，已排除出同任务指标。\n\n"
     report += "## 采用决定\n\n"
-    report += "Source Ridge和Target Ridge均暂不替换强公共规则：当前点估计有局部增量，但bootstrap区间跨零，且Target增量不跨反馈预算稳定。保留为条件候选。\n\n"
+    report += "在同一当前真值合同的212个任务上，PublicRule U20=0.6732；无目标反馈的SourceRidge U20=0.5099，5000次基因簇bootstrap相对PublicRule的差值区间为[-0.3914,-0.0519]，明确不采用。50%反馈TargetRidge U20=0.6914，点增量为+0.0182，但bootstrap差值区间为[-0.1128,0.0897]，暂不替换PublicRule。当前默认配置因此是原始强公共规则；Ridge保留为条件候选。\n\n"
     report += "## 未完成\n\n"
-    report += "完整SafeConf尚未形成同一当前真值合同下的单一全量排序。下一步必须重新生成与当前Public、Source、Target完全一致的任务表后，再做完整系统比较。SAMS作业继续按原合同运行。\n"
+    report += "McFaline当前212任务的完整统一排序已经闭合。SAMS跨模型后处理仍按原合同继续；论文阶段保持暂停。\n"
     (out / "MORNING_REPORT.md").write_text(report)
     return evidence
 
@@ -139,8 +161,9 @@ def main():
     parser.add_argument("--out", type=Path, default=DEFAULT_OUT)
     parser.add_argument("--source-dir", type=Path)
     parser.add_argument("--target-dir", type=Path)
+    parser.add_argument("--full-dir", type=Path)
     args = parser.parse_args()
-    print(run(args.out, args.source_dir, args.target_dir).to_string(index=False))
+    print(run(args.out, args.source_dir, args.target_dir, args.full_dir).to_string(index=False))
 
 
 if __name__ == "__main__":
