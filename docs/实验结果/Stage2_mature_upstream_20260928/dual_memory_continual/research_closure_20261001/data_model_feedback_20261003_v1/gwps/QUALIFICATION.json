@@ -1,0 +1,120 @@
+{
+  "schema": "gwps_public_extension_v1",
+  "status": "QUALIFIED_FOR_STREAMING_AGGREGATION",
+  "gwps_asset": {
+    "path": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/ReplogleWeissman2022_K562_gwps.h5ad",
+    "bytes": 8805466154,
+    "sha256": "d3269d9c863d96555eba768b42ab330cc1b57493cd33b4ac8fe7fbab8278f104"
+  },
+  "original_bank_manifest": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/public_source_history_expanded_20261002_v2/PUBLIC_BANK_MANIFEST.json",
+    "bytes": 12959,
+    "sha256": "8053a6118bc2e3cace841e1498cee3c1366ce5b49e9c79328e7cd34a180b6607"
+  },
+  "original_truth_receipt": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/registered_test_truth/TRUTH_READER_RECEIPT.json",
+    "bytes": 57256,
+    "sha256": "225458d4d05cc9e1b91a44b90cc9b1e9eb22c95b76c643e20a01a380d3fbd7fe"
+  },
+  "original_error_cache": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_registered_test_extendedbank_20261002_v1/registered_test_truth/TEST_TASK_ERRORS.parquet",
+    "sha256": "d6e50bf9c7f874af74f618cb7fdb820a4d31969701a2c70aaa6b87e27f12cb3e",
+    "values_read": false
+  },
+  "code": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_gwps_extension_v1.py",
+    "bytes": 36887,
+    "sha256": "7737e992a90294d733e369d1b7529b4dc4598ed81e2e7ef34cdc7cf281a6d7cf"
+  },
+  "cells": 1989578,
+  "raw_axis_genes": 8248,
+  "feature_genes": 3216,
+  "error_axis_genes_unchanged": 3285,
+  "controls": 75328,
+  "batches": 267,
+  "minimum_batch_control_cells": 27,
+  "eligible_perturbations_ge30": 9675,
+  "old_K562_targets_conservatively_deduplicated": 1056,
+  "eligible_new_K562_targets": 8619,
+  "old_bank_items": 5365,
+  "old_covered_tasks": 232,
+  "potential_expanded_tasks": 1379,
+  "normalization": "log1p(4000 * raw retained gene UMI / original UMI_count); no retained-axis renormalization",
+  "effect": "cell-equal treated mean minus NTC mean matched to treated batch frequencies",
+  "dedup": "same Replogle2022/K562/target treated as overlapping; keep original record, append only previously absent target",
+  "new_independent_studies": 0,
+  "sample_count_checks": [
+    {
+      "start": 0,
+      "n_rows": 16,
+      "full_total_min": 6585.0,
+      "retained_fraction_min": 0.9796657610932741,
+      "retained_fraction_max": 0.9870269784980025
+    },
+    {
+      "start": 497394,
+      "n_rows": 16,
+      "full_total_min": 3714.0,
+      "retained_fraction_min": 0.9799193412871786,
+      "retained_fraction_max": 0.9872173058013766
+    },
+    {
+      "start": 994789,
+      "n_rows": 16,
+      "full_total_min": 3994.0,
+      "retained_fraction_min": 0.9586880320480721,
+      "retained_fraction_max": 0.9885854400946986
+    },
+    {
+      "start": 1989562,
+      "n_rows": 16,
+      "full_total_min": 3224.0,
+      "retained_fraction_min": 0.9536768963520555,
+      "retained_fraction_max": 0.986545853926414
+    }
+  ],
+  "source_training_policy": "project original legal Source references to3216; do not introduce GWPS into Source feature training",
+  "source_error_target": "preserve original3285 errors and original per-source/context midrank CDF",
+  "test_policy": "SEEN cached2993 errors only after score sealing; no raw Orion truth reads",
+  "weight": "support weighted cell counts; quality audit separate, no new quality weight",
+  "source_reader": {
+    "hgb": {
+      "max_iter": 200,
+      "learning_rate": 0.05,
+      "max_depth": 3,
+      "min_samples_leaf": 20,
+      "l2_regularization": 10
+    },
+    "real_label_seed": 20260930,
+    "null_seeds": [
+      20260930,
+      20260931,
+      20260932,
+      20260933,
+      20260934
+    ]
+  },
+  "growth": {
+    "orders": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "fractions": [
+      0.1,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "hash_salt": "gwps-public-growth-v1",
+    "unit": "new K562 perturbation target"
+  },
+  "bootstrap": {
+    "replicates": 5000,
+    "seed": 20260930,
+    "unit": "biological gene; contexts paired"
+  }
+}

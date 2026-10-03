@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "tests": [
+    "full_library_normalization",
+    "grouped_aggregation",
+    "weighted_distance_identity",
+    "single_history_zero_dispersion",
+    "no_history_NA",
+    "U20_perfect_and_minimum_n",
+    "midrank_scoreCDF"
+  ]
+}

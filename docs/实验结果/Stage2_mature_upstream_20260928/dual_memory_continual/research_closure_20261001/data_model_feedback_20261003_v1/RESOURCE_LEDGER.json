@@ -1,0 +1,32 @@
+{
+  "status": "CONSERVATIVE_RESERVATION_ESTABLISHED",
+  "scope": "Active SafeConf Sept28-Oct03 approved execution lineage; old research checkpoints reused as existing assets; E208 old protected supervision separate",
+  "accounting_kind": "Historical intervals/caps reserved conservatively; not presented as measured GPU utilization",
+  "historical_reservation_GPU_hours": 37.76872016055556,
+  "reservation_components": {
+    "McFaline_two_GPUs_entire_launch_to_final_prediction_interval": 17.268720160555556,
+    "PublicSet_prototype_full_allocated_cap": 4.0,
+    "PublicSet_full_validation_full_allocated_cap": 12.0,
+    "PublicSet_nested_followup_full_allocated_cap": 2.0,
+    "PublicSet_frozen_null_inference_full_allocated_cap": 0.5,
+    "TabPFN_full_allocated_cap": 2.0
+  },
+  "mcfaline_interval_start_utc": "2026-09-29T08:14:55+00:00",
+  "mcfaline_interval_end_utc": "2026-09-29T16:52:58.696289+00:00",
+  "mcfaline_end_evidence": "/home/yyf/runtime_artifacts/safeconf_mcfaline23/test_pretruth_20260930/full_predictions/prediction_rank0_chunk_542.h5ad",
+  "mcfaline_end_evidence_mtime_ns": 1790700778696288716,
+  "global_GPU_hours_limit": 96,
+  "GPU_hours_available_after_historical_reservation": 58.23127983944444,
+  "SAMS_initial_allocation_GPU_hours": 24,
+  "SAMS_absolute_candidate_limit_GPU_hours": 48,
+  "new_large_upstream_attempts_authorized": 1,
+  "new_upstream": "SAMS-VAE",
+  "current_round_new_dataset_download_bytes": 0,
+  "historical_download_cost": "Existing local assets reused. No additional expression dataset download authorized by this receipt; original100GB overall ceiling retained.",
+  "update_rule": "Every new GPU job debit actual elapsed-device time; cap includes profiling, failures, inference and repair. Release historical reserve only with deduplicated run receipts.",
+  "paper_work": "DEFERRED",
+  "protected_existing_processes": [
+    1873824,
+    2428149
+  ]
+}
