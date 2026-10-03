@@ -1,0 +1,12 @@
+{
+  "status": "COMPLETE",
+  "bootstrap_replicates": 5000,
+  "unit": "biological gene cluster",
+  "paired_across_methods_budgets_seeds": true,
+  "prediction_freeze_before_statistics": true,
+  "leaf_split_diagnostic": "LEAF_SPLIT_DIAGNOSTIC.csv",
+  "curves": "UTILITY_CURVES.csv",
+  "selected_default": "SELECTED_DEFAULT.json",
+  "adoption_gates": "ADOPTION_GATES.csv",
+  "poison_invariance": "PASS"
+}

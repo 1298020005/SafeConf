@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "role": "SEEN_DEVELOPMENT_AND_FIXED_FEEDBACK",
+  "development_tasks": 542,
+  "development_error_rows_counted": 542,
+  "fixed_feedback_tasks": 331,
+  "fixed_evaluation_tasks": 212,
+  "query_experiment_ids_removed_globally_per_feature_build": true,
+  "training_own_experiment_removed": true,
+  "raw_expression_reads": 0,
+  "query_truth_used_in_public_feature_builder": false,
+  "target_labels": "measured validation/fixed feedback RMSE ranks only; budget-only per context",
+  "public_effect_rows": "cell-weighted public memory effects; same-context support; no zero fill",
+  "selection": "F1 only, equal budgets/folds/contexts, U20 tie 0.005 then AURC then cost",
+  "fixed_predictions_frozen_before_bootstrap": true
+}
