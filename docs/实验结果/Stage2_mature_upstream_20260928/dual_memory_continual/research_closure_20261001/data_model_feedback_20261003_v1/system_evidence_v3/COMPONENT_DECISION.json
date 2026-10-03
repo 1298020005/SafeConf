@@ -1,0 +1,19 @@
+{
+  "status": "PARTIAL_EXECUTION_COMPLETE",
+  "default_public": "current legal Public rule / weighted history contract",
+  "source_ridge": {
+    "decision": "CONDITIONAL_NOT_DEFAULT",
+    "reason": "point gain over current simple rule but 5000-cluster CI crosses zero"
+  },
+  "target_ridge": {
+    "decision": "CONDITIONAL_NOT_DEFAULT",
+    "reason": "50% point gain over current simple rule but paired cluster CI crosses zero; no stable gain across budgets"
+  },
+  "deep_sets": "not promoted; prior decision retained",
+  "sams": "existing training/postprocess remains separate and protected",
+  "same_task_full_system": "not closed because legacy scores fail current truth-contract alignment; regenerate before paper stage",
+  "paper_work": "DEFERRED",
+  "next_action": "build one current-contract combined score table from regenerated Public/Shared/Target channels, then run paired 5000-cluster system comparison",
+  "source_artifact": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/unified_fusion_v4",
+  "target_artifact": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/target_ridge_fusion_v8"
+}

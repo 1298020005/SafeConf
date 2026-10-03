@@ -1,0 +1,17 @@
+{
+  "status": "COMPLETE",
+  "n_source": 3616,
+  "n_target": 543,
+  "outputs": [
+    "CHANNEL_SCORE_CDF_AUDIT.csv",
+    "ERROR_LABEL_CDF_AUDIT.csv",
+    "FUSION_AUDIT.json",
+    "INFORMATION_BUDGET.csv",
+    "LEGACY_ALIGNMENT_AUDIT.csv",
+    "METRICS.csv",
+    "RUN_STATUS.json",
+    "SOURCE_OOF_CHANNELS.parquet",
+    "SPLIT_AND_FIT_LEDGER.csv",
+    "TARGET_SCORES.parquet"
+  ]
+}

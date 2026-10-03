@@ -1,0 +1,32 @@
+{
+  "status": "COMPLETE",
+  "development_tasks": 542,
+  "holdout_tasks": 212,
+  "budgets": [
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "target_errors_used_for_holdout_fit": 0,
+  "outputs": [
+    "CDF_AUDIT.csv",
+    "DEV_OOF_FUSION.parquet",
+    "FUSION_AUDIT_B010.json",
+    "FUSION_AUDIT_B025.json",
+    "FUSION_AUDIT_B050.json",
+    "FUSION_AUDIT_B075.json",
+    "FUSION_AUDIT_B100.json",
+    "HOLDOUT_SCORES_B010.parquet",
+    "HOLDOUT_SCORES_B025.parquet",
+    "HOLDOUT_SCORES_B050.parquet",
+    "HOLDOUT_SCORES_B075.parquet",
+    "HOLDOUT_SCORES_B100.parquet",
+    "INFORMATION_BUDGET.csv",
+    "LEGACY_ALIGNMENT_AUDIT.csv",
+    "METRICS.csv",
+    "RUN_STATUS.json",
+    "SPLIT_AND_FIT_LEDGER.csv"
+  ]
+}

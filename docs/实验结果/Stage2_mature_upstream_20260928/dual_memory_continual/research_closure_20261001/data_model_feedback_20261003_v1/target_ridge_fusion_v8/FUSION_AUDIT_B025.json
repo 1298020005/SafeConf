@@ -1,0 +1,37 @@
+[
+  {
+    "kind":"Ridge",
+    "alpha":10.0,
+    "channels":[
+      "amplitude_q",
+      "public_q",
+      "shared_q",
+      "target_q",
+      "has_public",
+      "has_shared",
+      "has_target"
+    ],
+    "n_fit":542,
+    "label_source":"McFaline_DEV_true_error_rmse",
+    "target_error_budget":"0.25",
+    "base_scores_are_oof":true,
+    "standardizer_has_missing_indicators":true,
+    "coefficients":[
+      0.0799004289,
+      0.1032445931,
+      0.0,
+      0.0830980559,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "intercept":0.5009225092
+  }
+]
