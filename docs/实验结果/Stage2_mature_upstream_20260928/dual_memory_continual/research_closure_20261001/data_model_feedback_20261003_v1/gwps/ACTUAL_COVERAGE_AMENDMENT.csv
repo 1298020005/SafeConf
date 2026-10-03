@@ -1,0 +1,5 @@
+coverage_definition,tasks,gene_set_rule,note
+old_history,232,target in old bank target set,historical score coverage
+GWPS_only,1378,target in GWPS metadata target set,registered potential GWPS coverage
+new_GWPS_relative_to_old_all,1147,target in GWPS and absent old all-target set,newly covered for expansion
+union_old_history_and_GWPS,1379,target in old all-target or GWPS set,expanded score cohort; includes XRN1 boundary task
