@@ -33,7 +33,7 @@ def main():
   sg=set(m.loc[m.context.eq(source),'perturbation_target'].astype(str))
   for target in sorted(o.context.astype(str).unique()):
    target_trainval=set(o.loc[(o.context.eq(target))&o.role.isin(['TRAIN','VALIDATION']),'gene'].astype(str))
-   routes.append({'source_context':source,'target_context':target,'source_records':int(m.context.eq(source).sum()),'source_unique_targets':len(sg),'target_train_validation_units':int(((o.context==target)&o.role.isin(['TRAIN','VALIDATION'])).sum()),'target_train_validation_unique_targets':len(target_trainval),'paired_target_identities':len(sg&target_trainval),'source_target_gene_metadata_overlap':len(sg&ogenes),'status':'QUALIFIED_METADATA_ONLY' if len(sg&target_trainval)>=60 else 'INSUFFICIENT_PAIRS'})
+   routes.append({'source_context':source,'target_context':target,'source_records':int(m.context.eq(source).sum()),'source_unique_targets':len(sg),'target_train_validation_units':int(((o.context==target)&o.role.isin(['TRAIN','VALIDATION'])).sum()),'target_train_validation_unique_targets':len(target_trainval),'paired_target_identities':len(sg&target_trainval),'source_target_gene_metadata_overlap':len(sg&ogenes),'status':'IDENTITY_ALIGNMENT_REQUIRED' if len(sg&target_trainval)>=60 else 'INSUFFICIENT_PAIRS'})
  pd.DataFrame(routes).to_csv(OUT/'PAIR_COVERAGE.csv',index=False)
  # Natural E201 queries: exact same-context public history availability.
  per=[]

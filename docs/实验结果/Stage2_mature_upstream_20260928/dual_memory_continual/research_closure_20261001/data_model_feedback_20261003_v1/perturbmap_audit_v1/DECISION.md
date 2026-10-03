@@ -9,12 +9,12 @@
 - E201 TxPert 公共库：2008 条历史、4 个背景、3352 基因轴。
 - E201 Source 任务：1808 个任务；1808 个任务都有同背景历史；自然 cross-only 查询数为 0；无历史查询数为 0。
 - 因此，PerturbMap 在 E201 上不能作为“自然缺失同背景历史”的主实验。若人为隐藏同背景历史，只能作为压力测试，不能当成自然缺失证据。
-- Orion TRAIN/VALIDATION 元数据包含 HCT116 和 HEK293T，合计 28945 个聚合单元。E201 历史到 Orion 目标背景的 8 条有向路线均有元数据配对身份：
+- Orion TRAIN/VALIDATION 元数据包含 HCT116 和 HEK293T，合计 28945 个聚合单元。E201 历史到 Orion 目标背景的 8 条有向路线均有原始 gene-string 元数据配对身份；这些数量尚未通过 endpoint gene identity 合同，不能直接作为合法配对数：
   - K562→HCT116：445；K562→HEK293T：437；
   - RPE1→HCT116：360；RPE1→HEK293T：351；
   - hepg2→HCT116：375；hepg2→HEK293T：369；
   - jurkat→HCT116：374；jurkat→HEK293T：371。
-- E201 3352 基因轴与 Orion endpoint 3285 轴的元数据交集为 3285；E201 公共库当前实际扰动目标与 Orion endpoint 的交集较小，不能把“轴交集”写成“可用配对身份”。
+- E201 3352 基因轴与 Orion endpoint 3285 轴的元数据交集为 3285；但 E201 公共库当前实际扰动目标与 Orion endpoint gene-name 字段的交集只有 228。必须先完成 gene identity 对齐，才能把原始配对数缩减为合法配对数；不能把“轴交集”或 raw gene-string overlap 写成“可用配对身份”。
 - Orion 的 TRAIN/VALIDATION target-background 数值资产已存在，但本次审计没有用它们拟合映射或打开永久 TEST 真值。
 
 ## 采用范围
