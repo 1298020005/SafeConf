@@ -12,5 +12,10 @@
   "boundary_target": "XRN1",
   "boundary_detail": "XRN1 exists in old non-K562 records (RPE1/jurkat) and in GWPS; it contributes to union old+GWPS, not to newly covered relative to old all-target history.",
   "qualification_original_potential_expanded_tasks": 1379,
-  "status": "QUALIFICATION_SEMANTICS_AMENDED_NO_DATA_CHANGED"
+  "status": "QUALIFICATION_SEMANTICS_AMENDED_NO_DATA_CHANGED",
+  "amended_code": {
+    "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/tools/scripts/run_safeconf_gwps_extension_v1.py",
+    "bytes": 41971,
+    "sha256": "f97d8aa6464cc442b5b2e376d4ef874f0c70c94e6ced076f711626032af92df7"
+  }
 }
