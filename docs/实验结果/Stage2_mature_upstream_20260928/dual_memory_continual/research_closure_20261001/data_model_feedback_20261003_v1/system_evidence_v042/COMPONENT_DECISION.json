@@ -1,0 +1,28 @@
+{
+  "contract": "SafeConf v0.4.2",
+  "status": "CURRENT_CONTRACT_AUDIT_COMPLETE_SAMS_PENDING",
+  "default_configuration": "PublicRule",
+  "rule_methods_preserved": [
+    "Amplitude",
+    "PublicRule"
+  ],
+  "source_supervised_candidate": "SourceRidge",
+  "target_supervised_candidate": "TargetRidge50",
+  "decisions": {
+    "public_rule": "RETAIN_DEFAULT",
+    "source_ridge": "CONDITIONAL_NOT_DEFAULT",
+    "target_ridge_50": "CONDITIONAL_NOT_DEFAULT",
+    "legacy_pertema": "EXCLUDED_TRUTH_CONTRACT_MISMATCH",
+    "sams": "CONTINUE_EXISTING_JOB"
+  },
+  "reason": "PublicRule has the current same-truth positive evidence; supervised candidates have point gains in some conditions but paired cluster CIs cross zero or are negative.",
+  "truth_contract": {
+    "same_task_truth_contract": true,
+    "n_tasks": 212,
+    "n_genes": 152,
+    "task_id_sha256": "0eaf3c899044966b1a1589939a550d71a184a2142a108de53dc2bcc14a66560a"
+  },
+  "sams_status": "TRAINING_RUNNING",
+  "paper": "PAUSED_BY_USER",
+  "created_by": "run_safeconf_contract_v042_audit.py"
+}

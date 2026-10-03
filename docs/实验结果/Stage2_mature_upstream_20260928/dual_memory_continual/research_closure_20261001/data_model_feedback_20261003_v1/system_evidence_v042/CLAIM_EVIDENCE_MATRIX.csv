@@ -1,0 +1,7 @@
+claim,evidence,status,decision
+Public history improves risk auditing over amplitude,full_system_current_v1 + paired 5000 gene-cluster bootstrap,SUPPORTED_WITH_SCOPE,retain PublicRule
+Source error supervision adds stable value beyond PublicRule,unified_fusion_v4 and full_system_current_v1,NOT_SUPPORTED_ON_CURRENT_212,conditional only
+Target feedback adds stable value at 50 percent budget,target_ridge_fusion_v8 and paired bootstrap,POINT_GAIN_CI_CROSSES_ZERO,conditional only
+Ridge may replace the original public rule,v0.4.2 unified ranking audit,REJECTED,keep original rule as baseline/default
+Legacy PertEMA is a fair current same-task comparator,LEGACY_ALIGNMENT_AUDIT.csv,REJECTED_TRUTH_CONTRACT_MISMATCH,retain as excluded audit
+SAMS cross-family evidence is complete,/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/sams/TRAINING_STATUS.json,PENDING_TRUE_GENERATION,continue protected training

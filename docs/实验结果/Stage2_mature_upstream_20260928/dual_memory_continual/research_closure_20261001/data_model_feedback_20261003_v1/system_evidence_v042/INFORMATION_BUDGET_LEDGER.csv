@@ -1,0 +1,10 @@
+method,method_class,public_truth,source_errors,target_errors,target_error_use,truth_contract
+Amplitude,rule,none,0,0,none,current_holdout
+PublicRule,rule,legal public history,0,0,none,current_holdout
+SourceSharedRisk,supervised_shared,legal public history,3616,0,evaluation only,current_holdout
+SourceRidge,source_supervised_fusion,legal public history,3616,0,forbidden,current_holdout
+TargetRidge50,target_supervised_fusion,legal public history,0,542,DEV fit and selection,current_holdout
+TargetH1F1_50,target_supervised,legal public history,0,542,DEV fit and selection,current_holdout
+SafeConf_no_target_feedback,complete_candidate,legal public history,3616,0,forbidden,current_holdout
+SafeConf_target_feedback_50,complete_candidate,legal public history,0,542,DEV fit and selection,current_holdout
+PertEMA_adapted_legacy,external_baseline,legacy public history,0,unknown,excluded after truth audit,excluded

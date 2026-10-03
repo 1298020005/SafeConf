@@ -1,0 +1,17 @@
+source_artifact,label_type,label_source,n_rows,n_genes,target_error_used_for_fitting,target_feedback_budget,label_scale,cdf_kind,budget,fold,channel,fit_rows,uses_target_error
+unified_fusion_v4,source_error,SOURCE_RISK_MIDRANK_LABELS.npy,3616.0,575.0,False,none,E201 per-upstream/context midrank CDF supplied by frozen source artifact,error_label,,,,,
+target_ridge_fusion_v8,,,,,,,,error_label,0.1,0.0,target_error,370.0,True
+target_ridge_fusion_v8,,,,,,,,error_label,0.1,1.0,target_error,356.0,True
+target_ridge_fusion_v8,,,,,,,,error_label,0.1,2.0,target_error,358.0,True
+target_ridge_fusion_v8,,,,,,,,error_label,0.25,0.0,target_error,370.0,True
+target_ridge_fusion_v8,,,,,,,,error_label,0.25,1.0,target_error,356.0,True
+target_ridge_fusion_v8,,,,,,,,error_label,0.25,2.0,target_error,358.0,True
+target_ridge_fusion_v8,,,,,,,,error_label,0.5,0.0,target_error,370.0,True
+target_ridge_fusion_v8,,,,,,,,error_label,0.5,1.0,target_error,356.0,True
+target_ridge_fusion_v8,,,,,,,,error_label,0.5,2.0,target_error,358.0,True
+target_ridge_fusion_v8,,,,,,,,error_label,0.75,0.0,target_error,370.0,True
+target_ridge_fusion_v8,,,,,,,,error_label,0.75,1.0,target_error,356.0,True
+target_ridge_fusion_v8,,,,,,,,error_label,0.75,2.0,target_error,358.0,True
+target_ridge_fusion_v8,,,,,,,,error_label,1.0,0.0,target_error,370.0,True
+target_ridge_fusion_v8,,,,,,,,error_label,1.0,1.0,target_error,356.0,True
+target_ridge_fusion_v8,,,,,,,,error_label,1.0,2.0,target_error,358.0,True

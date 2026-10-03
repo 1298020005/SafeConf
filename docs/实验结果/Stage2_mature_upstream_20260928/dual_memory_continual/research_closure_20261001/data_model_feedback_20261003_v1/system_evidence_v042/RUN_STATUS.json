@@ -1,0 +1,44 @@
+{
+  "status": "COMPLETE_WITH_SAMS_PENDING",
+  "contract": "SafeConf v0.4.2",
+  "output_dir": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/system_evidence_v042",
+  "required_outputs": [
+    "CHANNEL_SCORE_CDF_AUDIT.csv",
+    "CLAIM_EVIDENCE_MATRIX.csv",
+    "COMPONENT_DECISION.json",
+    "DIAGNOSIS_AND_ACTIONS.md",
+    "ERROR_LABEL_CDF_AUDIT.csv",
+    "INFORMATION_BUDGET_LEDGER.csv",
+    "MORNING_REPORT.md",
+    "PER_QUERY_RESULTS.parquet",
+    "SYSTEM_COMPARISON.csv",
+    "UNIFIED_RANKING_AUDIT.csv"
+  ],
+  "truth_contract": {
+    "same_task_truth_contract": true,
+    "n_tasks": 212,
+    "n_genes": 152,
+    "task_id_sha256": "0eaf3c899044966b1a1589939a550d71a184a2142a108de53dc2bcc14a66560a"
+  },
+  "interface_audit": {
+    "rule_dispatch": {
+      "risk_score": 0.7,
+      "has_public": 1,
+      "evidence_status": "public",
+      "version": "v0.4.2-rule-audit"
+    },
+    "ridge_dispatch": {
+      "risk_score": 0.16250000000000003,
+      "has_public": 1,
+      "evidence_status": "public_source_supervised",
+      "version": "v0.4.2-ridge-audit"
+    },
+    "rule_reads_truth": false,
+    "ridge_requires_oof": true,
+    "ridge_label_source": "SOURCE_ERROR_AUDIT_ONLY",
+    "passed": true
+  },
+  "sams_status": "TRAINING_RUNNING",
+  "python": "3.12.4",
+  "git_commit": "596ccad25d317824aff4729d2c1252fcb030d65f"
+}

@@ -1,0 +1,9 @@
+method,n_tasks,n_finite_scores,n_unique_score_values,n_unique_rank_positions,stable_task_id_tiebreak,truth_used_in_scoring,single_fixed_ranking
+Amplitude,212,212,212,212,True,False,True
+PublicRule,212,212,212,212,True,False,True
+SourceSharedRisk,212,212,102,212,True,False,True
+SourceRidge,212,212,211,212,True,False,True
+TargetRidge50,212,212,212,212,True,False,True
+TargetH1F1_50,212,212,211,212,True,False,True
+SafeConf_no_target_feedback,212,212,211,212,True,False,True
+SafeConf_target_feedback_50,212,212,212,212,True,False,True
