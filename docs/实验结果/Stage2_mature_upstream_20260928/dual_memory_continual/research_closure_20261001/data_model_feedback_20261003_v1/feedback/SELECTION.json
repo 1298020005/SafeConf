@@ -1,0 +1,18 @@
+{
+  "status": "COMPLETE",
+  "selected_feature_set": "F1",
+  "selected_learner": "H1",
+  "selector": "F1 only; equal budgets/folds/contexts; U20 tie 0.005 then AURC then measured cost",
+  "candidates_within_u20_tie": [
+    {
+      "learner": "H1",
+      "mean_u20": 0.7823111003067181,
+      "mean_aurc": 0.024752231554340996,
+      "mean_cost": 0.1320664435107675
+    }
+  ],
+  "mean_u20_best": 0.7823111003067181,
+  "all_fit_count": 270,
+  "dev_predictions": "/home/yyf/runtime_artifacts/safeconf_research_20261003/feedback_v1/DEV_PREDICTIONS.csv.gz",
+  "dev_features": "/home/yyf/runtime_artifacts/safeconf_research_20261003/feedback_v1/DEV_FEATURES.parquet"
+}

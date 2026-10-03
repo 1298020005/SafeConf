@@ -1,0 +1,51 @@
+{
+  "status": "FAIL",
+  "checks": [
+    {
+      "source": "TargetOnly_HGB",
+      "new": "H0_F0",
+      "rows_source": 3180,
+      "rows_new": 3180,
+      "same_ids": true,
+      "max_abs_risk_diff": 0.0
+    },
+    {
+      "source": "PublicTarget_HGB",
+      "new": "H0_F1",
+      "rows_source": 3180,
+      "rows_new": 3180,
+      "same_ids": true,
+      "max_abs_risk_diff": 0.365328682210606
+    },
+    {
+      "source": "SharedTarget_HGB",
+      "new": "Shared_Legacy_F2",
+      "rows_source": 3180,
+      "rows_new": 3180,
+      "same_ids": true,
+      "max_abs_risk_diff": 0.38211689847141517
+    },
+    {
+      "source": "PertEMA_P_adapted",
+      "new": "X0_F0",
+      "rows_source": 3180,
+      "rows_new": 3180,
+      "same_ids": true,
+      "max_abs_risk_diff": 0.0
+    },
+    {
+      "source": "PertEMA_Public_adapted",
+      "new": "X0_F1",
+      "rows_source": 3180,
+      "rows_new": 3180,
+      "same_ids": true,
+      "max_abs_risk_diff": 0.3857968598604203
+    }
+  ],
+  "source_bindings": {
+    "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/STRICT_FEEDBACK_TASK_PREDICTIONS.csv.gz": "a6f05dfd2e57a0794957a7ac062f606fbb43ccef5ab15ac2ea871c7beb95170d",
+    "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/official_pertema_adaptation/TASK_PREDICTIONS.csv.gz": "9cf2b2df0f9143fe26dc09e7870e98840cd746786d68dbe770f3fb557264dacd",
+    "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/\u5b9e\u9a8c\u7ed3\u679c/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/TASK_PREDICTIONS.csv.gz": "b9a69c0d414d0b72a32ee66334bd4b13e8e7695f7027ad3a633b322142ec2b3e"
+  },
+  "role": "EXACT_OLD_H0_X0_F0_F1_AND_LEGACY_SHARED_F2_REUSE"
+}

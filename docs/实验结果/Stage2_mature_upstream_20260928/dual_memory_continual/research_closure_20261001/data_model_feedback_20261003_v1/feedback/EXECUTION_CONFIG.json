@@ -1,0 +1,53 @@
+{
+  "version": "safeconf-target-feedback-20261003-v1",
+  "status": "CONFIG_FROZEN",
+  "tasks": 542,
+  "genes": 377,
+  "folds": 3,
+  "fold_hash_prefix": "SafeConf-target-dev-v1|",
+  "budgets_clusters": [
+    23,
+    57,
+    114,
+    171,
+    228
+  ],
+  "budgets": [
+    0,
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1
+  ],
+  "seeds": [
+    20260930,
+    20261001,
+    20261002
+  ],
+  "learners": {
+    "H0": {
+      "max_iter": 200,
+      "learning_rate": 0.05,
+      "max_depth": 3,
+      "min_samples_leaf": 20,
+      "l2_regularization": 10
+    },
+    "H1": {
+      "min_samples_leaf": "min(20,max(2,n_finite_fit_rows//10))"
+    },
+    "X0": {
+      "n_estimators": 300,
+      "max_depth": 6,
+      "learning_rate": 0.05,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "tree_method": "hist"
+    }
+  },
+  "input_bindings": {
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/VALIDATION_TASKS.csv": "eda4ca2d19d6bac834c9f1f895657ab86588f9693500740b6446068fd81d28c6",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/VALIDATION_CALIBRATED_EFFECTS.npy": "6ef95d95a54bd13e3f196977183799389edac2a90fd13821af547b6372209914"
+  },
+  "new_raw_expression_reads": 0
+}

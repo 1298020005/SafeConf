@@ -1,0 +1,65 @@
+{
+  "status": "SCORES_FROZEN_BEFORE_CACHED_ERRORS_READ",
+  "score_file": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261003/gwps_v1/FROZEN_SCORES_BEFORE_ERROR_OPEN.parquet",
+    "bytes": 208277,
+    "sha256": "2064edd56047abb0d2061650c596e2d3059da9fe54617758fbdf415bc0d0bb28"
+  },
+  "qualified_bank": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261003/gwps_v1/BANK_COMPLETE.json",
+    "bytes": 626,
+    "sha256": "1d3e1039ab195a4517788f2990c8f314ed370db88f76e8e168a4ce74aa54cce4"
+  },
+  "feature_axis": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261003/gwps_v1/COMMON_GENE_AXIS.csv",
+    "bytes": 150634,
+    "sha256": "a18a29b32dab8a8a93db32913f2d83c6993992016decfe79bc6fda4f7ff433b3"
+  },
+  "source_training": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261003/gwps_v1/SOURCE3216_TRAIN_FEATURES.parquet",
+    "bytes": 1040498,
+    "sha256": "664f1a542e6f072701beb27529414a86222b4ed6ad1c0b22ae2f53ad73860f92"
+  },
+  "source_labels_original3285_exact": true,
+  "n_source_fits": 6,
+  "no_GWPS_into_Source_training_references": true,
+  "null_audits": [
+    {
+      "shuffle_seed": 20260930,
+      "moved_clusters": 572,
+      "total_clusters": 575,
+      "moved_fraction": 0.9947826086956522
+    },
+    {
+      "shuffle_seed": 20260931,
+      "moved_clusters": 572,
+      "total_clusters": 575,
+      "moved_fraction": 0.9947826086956522
+    },
+    {
+      "shuffle_seed": 20260932,
+      "moved_clusters": 572,
+      "total_clusters": 575,
+      "moved_fraction": 0.9947826086956522
+    },
+    {
+      "shuffle_seed": 20260933,
+      "moved_clusters": 572,
+      "total_clusters": 575,
+      "moved_fraction": 0.9947826086956522
+    },
+    {
+      "shuffle_seed": 20260934,
+      "moved_clusters": 572,
+      "total_clusters": 575,
+      "moved_fraction": 0.9947826086956522
+    }
+  ],
+  "n_eligible_tasks": 2993,
+  "old_covered": 232,
+  "expanded_covered": 1379,
+  "newly_covered": 1147,
+  "score_CDF": "fixed Source prediction/reference features only; no Orion errors",
+  "candidate_selection_on_Orion": false,
+  "elapsed_seconds": 47.66993176098913
+}

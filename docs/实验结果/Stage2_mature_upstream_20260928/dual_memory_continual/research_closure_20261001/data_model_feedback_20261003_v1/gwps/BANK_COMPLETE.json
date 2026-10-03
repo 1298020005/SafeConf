@@ -1,0 +1,15 @@
+{
+  "status": "BANK_COMPLETE",
+  "normalized_rows": 1989578,
+  "n_bank_records": 9675,
+  "new_unique_K562_targets": 8619,
+  "min_retained_library_fraction": 0.7415320479416363,
+  "max_missing_gene_library_UMI": 4031.0,
+  "all_count_and_control_checks_passed": true,
+  "duplicate_K562_targets_not_double_counted": 1079,
+  "quality_guide_constructs_not_split_into_individual_sgRNA_tokens": true,
+  "batch_half_stability_is_technical_not_independent_study_reproducibility": true,
+  "biological_effect_truth_or_Orion_errors_used_to_select_history": false,
+  "elapsed_seconds": 1277.9539592950605,
+  "peak_RSS_bytes": 4054085632
+}

@@ -1,0 +1,12 @@
+{
+  "status": "COMPLETE",
+  "selected_feature_set": "F1",
+  "selected_learner": "H1",
+  "selection_locked_before_holdout": true,
+  "fixed_evaluation_tasks": 212,
+  "fixed_evaluation_genes": 152,
+  "bootstrap_replicates": 5000,
+  "predictions": "/home/yyf/runtime_artifacts/safeconf_research_20261003/feedback_v1/TASK_PREDICTIONS.csv.gz",
+  "metric_intervals": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/feedback/METRIC_INTERVALS.csv",
+  "adoption_gates": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/feedback/ADOPTION_GATES.csv"
+}
