@@ -148,7 +148,7 @@ def run_fixed(max_seconds=14400, bootstrap=5000):
     old_tab=pd.read_csv(old/'TASK_PREDICTIONS.csv.gz')
     for src,name in reuse_map.items():
         q=old_tab[old_tab.method==src].copy(); q=q[q.task_id.isin(hold.task_id)]
-        q['method']=name; q['lineage']='EXACT_REUSED_OLD_PUBLICSET_FEEDBACK_ALIGNMENT'; rows.append(q[['task_id','target','gene','fold','upstream','true_error_rmse','risk','method','seed','budget']])
+        q['method']=name; q['lineage']='EXACT_REUSED_OLD_PUBLICSET_FEEDBACK_ALIGNMENT'; rows.append(q[['task_id','target','gene','fold','upstream','true_error_rmse','risk','method','seed','budget','lineage']])
     new_specs=[('H1_F1',P+PUBLIC,'H1'),('H1_F2',P+PUBLIC+['shared_risk'],'H1'),('X0_F2',P+PUBLIC+['shared_risk'],'X0')]
     for budget,ncl in zip([.1,.25,.5,.75,1.],BUDGET_COUNTS):
         genes=set(ordered[:ncl]); fit=pool[pool.gene.isin(genes)].reset_index(drop=True); labels=_fixed_labels(fit)
@@ -157,7 +157,7 @@ def run_fixed(max_seconds=14400, bootstrap=5000):
                 if time.monotonic()-started>max_seconds: raise TimeoutError('fixed execution wall limit exceeded')
                 t0=time.monotonic(); model=fit_target_learner_weighted(fit,labels,cols,learner,seed); score=np.clip(model.predict(hold[cols].to_numpy(float)),0,1); joblib_path=OUT/'models'/method/f'budget{budget}'/f'seed{seed}.joblib'; joblib_path.parent.mkdir(parents=True,exist_ok=True)
                 import joblib; joblib.dump(model,joblib_path)
-                out=hold[['task_id','target','gene','fold','upstream','true_error_rmse']].copy(); out['risk']=score; out['method']=method; out['seed']=seed; out['budget']=budget; out['lineage']='NEW_REGISTERED_FIXED_FIT'; rows.append(out)
+                out=hold[['task_id','target','gene','fold','upstream','true_error_rmse']].copy(); out['risk']=score; out['method']=method; out['seed']=seed; out['budget']=budget; out['lineage']='NEW_REGISTERED_FIXED_FIT'; rows.append(out[['task_id','target','gene','fold','upstream','true_error_rmse','risk','method','seed','budget','lineage']])
                 fits.append({'method':method,'budget':budget,'seed':seed,'n_fit_rows':len(fit),'n_fit_genes':len(genes),'feature_columns':cols,'fit_seconds':time.monotonic()-t0,'model_path':str(joblib_path),'model_sha256':sha(joblib_path),'training_id_hash':hashlib.sha256('\\n'.join(sorted(fit.task_id)).encode()).hexdigest()})
     pred=pd.concat(rows,ignore_index=True); pred.to_csv(OUT/'TASK_PREDICTIONS.csv.gz',index=False,compression='gzip'); write_csv(DOC/'FIXED_FIT_LEDGER.csv',pd.DataFrame(fits)); write_json(OUT/'PREDICTION_FREEZE.json',{'status':'ALL_FIXED_PREDICTIONS_FROZEN_BEFORE_BOOTSTRAP','rows':len(pred),'new_fit_count':len(fits),'expected_new_fit_count':45,'task_predictions_sha256':sha(OUT/'TASK_PREDICTIONS.csv.gz'),'selection_lock_sha256':sha(DOC/'SELECTION_LOCKED_BEFORE_HOLDOUT.json')})
     # Paired gene bootstrap across methods/seeds. Save curves and adoption gates.
@@ -204,7 +204,7 @@ def macro_metrics(frame, scores):
 def run_dev(max_seconds=3600):
     started=time.monotonic(); OUT.mkdir(parents=True,exist_ok=True); DOC.mkdir(parents=True,exist_ok=True)
     write_json(OUT/'TRAINING_START.json',{'status':'RUNNING','phase':'DEV','pid':os.getpid(),'started_epoch':time.time(),'contract':str(DATA/'EXECUTION_CONTRACT.json'),'cpu_threads':4,'new_fit_cap':360,'replay_reserve':60})
-    frame,pred,truth,ordered=load_inputs(); feat,audit=build_public_features(frame,pred,row_exclude_own=False); write_csv(OUT/'DEV_FEATURE_AUDIT.csv.gz',audit); feat.to_parquet(OUT/'DEV_FEATURES.parquet',index=False)
+    frame,pred,truth,ordered=load_inputs(); feat,audit=build_public_features(frame,pred,row_exclude_own=True); write_csv(OUT/'DEV_FEATURE_AUDIT.csv.gz',audit); feat.to_parquet(OUT/'DEV_FEATURES.parquet',index=False)
     write_json(DOC/'DEV_FEATURES_INPUT_AUDIT.json',{'status':'PASS','tasks':len(feat),'genes':feat.gene.nunique(),'folds':3,'fold_hash_prefix':'SafeConf-target-dev-v1|','query_experiment_ids_removed_globally':True,'new_raw_expression_reads':0,'feature_hash':sha(OUT/'DEV_FEATURES.parquet')})
     allrows=[]; fitrows=[]; budget_rows=[]; nfit=0
     for held in range(3):
@@ -225,13 +225,13 @@ def run_dev(max_seconds=3600):
                         fitrows.append(row)
                         for i,t in enumerate(te.itertuples(index=False)):
                             allrows.append({'task_id':t.task_id,'gene':t.gene,'target':t.target,'heldout_fold':held,'budget_clusters':ncl,'feature_set':feature_name,'learner':learner,'seed':seed,'true_error_rmse':t.true_error_rmse,'risk':float(predscore[i])})
-            write_csv(OUT/'DEV_PREDICTIONS.csv.gz',pd.DataFrame(allrows)); write_csv(OUT/'DEV_FIT_LEDGER.csv',pd.DataFrame(fitrows)); write_csv(OUT/'DEV_BUDGET_LEDGER.csv',pd.DataFrame(budget_rows)); write_json(OUT/'TRAINING_STATUS.json',{'status':'RUNNING','phase':'DEV','pid':os.getpid(),'fits_completed':nfit,'expected_fits':90,'last_fold':held,'last_budget_clusters':ncl,'elapsed_seconds':time.monotonic()-started})
+            write_csv(OUT/'DEV_PREDICTIONS.csv.gz',pd.DataFrame(allrows)); write_csv(OUT/'DEV_FIT_LEDGER.csv',pd.DataFrame(fitrows)); write_csv(OUT/'DEV_BUDGET_LEDGER.csv',pd.DataFrame(budget_rows)); write_json(OUT/'TRAINING_STATUS.json',{'status':'RUNNING','phase':'DEV','pid':os.getpid(),'fits_completed':nfit,'expected_fits':270,'last_fold':held,'last_budget_clusters':ncl,'elapsed_seconds':time.monotonic()-started})
             print(json.dumps({'phase':'DEV','fold':held,'budget_clusters':ncl,'fits_completed':nfit}),flush=True)
     pred_df=pd.DataFrame(allrows); ledger=pd.DataFrame(fitrows)
     # Selector is registered on F1 only; equal folds and budgets, context macro metrics.
     f1=ledger[ledger.feature_set.eq('F1')].groupby(['learner','budget_clusters'],as_index=False)[['utility20','aurc','fit_seconds']].mean(); agg=f1.groupby('learner',as_index=False).agg(mean_u20=('utility20','mean'),mean_aurc=('aurc','mean'),mean_cost=('fit_seconds','mean')); best_u=agg.mean_u20.max(); candidates=agg[agg.mean_u20>=best_u-.005].sort_values(['mean_aurc','mean_cost','learner']).reset_index(drop=True); selected=str(candidates.iloc[0].learner)
     write_csv(DOC/'DEV_METRICS.csv',ledger); write_csv(DOC/'DEV_SELECTION_TABLE.csv',agg); write_json(DOC/'SELECTION.json',{'status':'COMPLETE','selected_feature_set':'F1','selected_learner':selected,'selector':'F1 only; equal budgets/folds/contexts; U20 tie 0.005 then AURC then measured cost','candidates_within_u20_tie':candidates.to_dict('records'),'mean_u20_best':float(best_u),'all_fit_count':nfit,'dev_predictions':str(OUT/'DEV_PREDICTIONS.csv.gz'),'dev_features':str(OUT/'DEV_FEATURES.parquet')})
-    write_json(OUT/'TRAINING_STATUS.json',{'status':'COMPLETE','phase':'DEV','pid':os.getpid(),'fits_completed':nfit,'expected_fits':90,'elapsed_seconds':time.monotonic()-started,'selection':str(DOC/'SELECTION.json'),'new_raw_expression_reads':0})
+    write_json(OUT/'TRAINING_STATUS.json',{'status':'COMPLETE','phase':'DEV','pid':os.getpid(),'fits_completed':nfit,'expected_fits':270,'elapsed_seconds':time.monotonic()-started,'selection':str(DOC/'SELECTION.json'),'new_raw_expression_reads':0})
     print(json.dumps({'status':'DEV_COMPLETE','fits':nfit,'selected':selected}),flush=True)
 
 def run_fixed_stats(bootstrap=5000):

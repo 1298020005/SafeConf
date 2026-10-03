@@ -49,5 +49,14 @@
     "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/VALIDATION_TASKS.csv": "eda4ca2d19d6bac834c9f1f895657ab86588f9693500740b6446068fd81d28c6",
     "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/VALIDATION_CALIBRATED_EFFECTS.npy": "6ef95d95a54bd13e3f196977183799389edac2a90fd13821af547b6372209914"
   },
-  "new_raw_expression_reads": 0
+  "new_raw_expression_reads": 0,
+  "public_query_experiments_forbidden_globally_per_fold": true,
+  "training_own_experiment_excluded": true,
+  "all_C_development_error_use_counted": true,
+  "poison_excluded_public_effect_rows": true,
+  "selector_frozen_before_fixed_holdout": true,
+  "selected_feature_set": "F1",
+  "selected_learner": "H1",
+  "X0_official_factory_source": "/home/yyf/runtime_artifacts/official_pertema_43c09a/src/pertema/run_estimator.py",
+  "X0_official_factory_sha256": "54aef0da2301a1d3d13c33fee231933878176941fdc5d64063a54ae09234ab06"
 }

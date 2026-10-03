@@ -1,0 +1,56 @@
+{
+  "schema": "gwps_public_growth_5_fixed_orders_v1",
+  "status": "PUBLIC_GROWTH_COMPLETE",
+  "source_qualification": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261003/gwps_v1/QUALIFICATION.json",
+    "bytes": 4113,
+    "sha256": "2d838371d7e1d1d20c10ebdae07694101c91793bba69a5d20d4865032d9baa3f"
+  },
+  "bank": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261003/gwps_v1/BANK_COMPLETE.json",
+    "bytes": 626,
+    "sha256": "1d3e1039ab195a4517788f2990c8f314ed370db88f76e8e168a4ce74aa54cce4"
+  },
+  "orders": [
+    {
+      "order": 0,
+      "candidate_genes": 8619,
+      "ordered_targets_sha256": "a9bcefbc5597ea394e9769b2b62e0e86e17c9e3234e4a157429f798cf4e993c7"
+    },
+    {
+      "order": 1,
+      "candidate_genes": 8619,
+      "ordered_targets_sha256": "a1a291fd40af530c783f1fb0ecbe7639517808db0defe322ecd7f6676f6ce631"
+    },
+    {
+      "order": 2,
+      "candidate_genes": 8619,
+      "ordered_targets_sha256": "0de05f79329053f698f27b7259e96391a66b1488dc0c617511017771ad4df8db"
+    },
+    {
+      "order": 3,
+      "candidate_genes": 8619,
+      "ordered_targets_sha256": "b2b28f61b12acb2cc39cef878c23856255ec8f46beae710a089c17a70a983845"
+    },
+    {
+      "order": 4,
+      "candidate_genes": 8619,
+      "ordered_targets_sha256": "6db3d87b59c175fcadc8ae8734a3eaa77ab5935810cb040d5d6e27cb12ca6510"
+    }
+  ],
+  "fractions": [
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "unit": "new K562 perturbation target",
+  "hash_salt": "gwps-public-growth-v1",
+  "n_snapshots": 25,
+  "new_fits": 0,
+  "GPU_hours": 0,
+  "raw_Orion_truth_reads": 0,
+  "score_or_error_data_changed": false,
+  "coverage_semantics": "GWPS-only coverage uses old K562 targets plus selected new targets; union also reports old all-target history."
+}

@@ -423,6 +423,17 @@ def scores():
           'score_CDF':'fixed Source prediction/reference features only; no Orion errors',
           'candidate_selection_on_Orion':False,'elapsed_seconds':time.monotonic()-started}
     write_json(RUNTIME/'SCORE_SEAL.json',seal);write_json(DOC/'SCORE_SEAL.json',seal)
+    # Coverage amendment keeps the registered GWPS-only count distinct from
+    # the union used for expanded historical features. XRN1 is the sole
+    # target present in old non-K562 history and in GWPS; it is retained as
+    # an old-history task while never double-counting an old K562 record.
+    old_targets=set(old.perturbation_target)
+    gwps_targets=set(pd.read_parquet(RUNTIME/'GWPS_PUBLIC_METADATA.parquet').perturbation_target)
+    gwps_only_tasks=int(queries.target_gene_symbol.isin(gwps_targets).sum())
+    union_tasks=int(queries.target_gene_symbol.isin(old_targets | gwps_targets).sum())
+    old_only_overlap=sorted(set(queries.loc[queries.target_gene_symbol.isin(old_targets & gwps_targets),'target_gene_symbol']))
+    amendment={'schema':'gwps_coverage_amendment_v1','reason':'distinguish GWPS-only coverage from union of old history and GWPS','score_seal':binding(RUNTIME/'SCORE_SEAL.json'),'old_covered_tasks':int((out.Old_n_history>0).sum()),'gwps_only_covered_tasks':gwps_only_tasks,'union_old_history_and_gwps_tasks':union_tasks,'new_gwps_tasks_relative_to_old_all':int(((out.Old_n_history==0)&out.Expanded_n_history.gt(0)).sum()),'old_history_and_gwps_overlap_targets':old_only_overlap,'old_k562_duplicate_records_retained':int((out.Old_n_history>0).sum()),'interpretation':'GWPS-only=1378; union=1379 because XRN1 is in old non-K562 history and GWPS. Existing expanded scores use union; duplicate old K562 records are not appended.'}
+    write_json(RUNTIME/'COVERAGE_AMENDMENT.json',amendment);write_json(DOC/'COVERAGE_AMENDMENT.json',amendment)
     event('scores_sealed',**{k:seal[k] for k in ['old_covered','expanded_covered','newly_covered','elapsed_seconds']})
 
 
@@ -522,6 +533,53 @@ def evaluate():
     event('evaluation_complete',macro=report['macro_U20'])
 
 
+def growth_summary():
+    """Five registered deterministic public-growth orders, metadata only."""
+    if (RUNTIME/'PUBLIC_GROWTH_COMPLETE.json').exists():
+        return json.loads((RUNTIME/'PUBLIC_GROWTH_COMPLETE.json').read_text())
+    q=qualify()
+    queries=pd.read_csv(RUNTIME/'FIXED_2993_COHORT_METADATA.csv')
+    old=pd.read_parquet(BANK/'SOURCE_PUBLIC_MEMORY_METADATA.parquet')
+    gwps=pd.read_parquet(RUNTIME/'GWPS_PUBLIC_METADATA.parquet')
+    old_targets=set(old.perturbation_target)
+    old_k562=set(old.loc[old.context.eq('K562'),'perturbation_target'])
+    # Eligible GWPS additions are target genes absent the old K562 bank; all
+    # five orders use the same SHA-defined order family and differ only by salt.
+    candidates=sorted(set(gwps.loc[gwps.eligible_for_extension,'perturbation_target']))
+    fractions=(.1,.25,.5,.75,1.)
+    rows=[]; order_receipts=[]
+    for order in range(5):
+        ordered=sorted(candidates,key=lambda g: hashlib.sha256(f'gwps-public-growth-v1|{order}|{g}'.encode()).hexdigest())
+        digest=hashlib.sha256('\n'.join(ordered).encode()).hexdigest()
+        order_receipts.append({'order':order,'candidate_genes':len(ordered),'ordered_targets_sha256':digest})
+        for fraction in fractions:
+            n=max(1,math.ceil(fraction*len(ordered))); selected=set(ordered[:n])
+            gwps_targets=old_k562|selected
+            gwps_mask=queries.target_gene_symbol.isin(gwps_targets)
+            union_mask=queries.target_gene_symbol.isin(old_targets|selected)
+            new_mask=(~queries.target_gene_symbol.isin(old_targets))&queries.target_gene_symbol.isin(selected)
+            rows.append({'order':order,'fraction':fraction,'selected_new_targets':n,
+                         'selected_target_set_sha256':hashlib.sha256('\n'.join(sorted(selected)).encode()).hexdigest(),
+                         'old_covered_tasks':int(queries.target_gene_symbol.isin(old_targets).sum()),
+                         'gwps_only_covered_tasks':int(gwps_mask.sum()),
+                         'union_old_and_growth_tasks':int(union_mask.sum()),
+                         'new_growth_tasks_relative_old_all':int(new_mask.sum()),
+                         'HCT116_gwps_only_tasks':int((gwps_mask&queries.context_id.eq('HCT116')).sum()),
+                         'HEK293T_gwps_only_tasks':int((gwps_mask&queries.context_id.eq('HEK293T')).sum())})
+    out=pd.DataFrame(rows)
+    out.to_csv(DOC/'PUBLIC_GROWTH_5_FIXED_ORDERS.csv',index=False)
+    out.to_csv(RUNTIME/'PUBLIC_GROWTH_5_FIXED_ORDERS.csv',index=False)
+    receipt={'schema':'gwps_public_growth_5_fixed_orders_v1','status':'PUBLIC_GROWTH_COMPLETE',
+             'source_qualification':binding(RUNTIME/'QUALIFICATION.json'),'bank':binding(RUNTIME/'BANK_COMPLETE.json'),
+             'orders':order_receipts,'fractions':list(fractions),'unit':'new K562 perturbation target',
+             'hash_salt':'gwps-public-growth-v1','n_snapshots':len(out),'new_fits':0,'GPU_hours':0,
+             'raw_Orion_truth_reads':0,'score_or_error_data_changed':False,
+             'coverage_semantics':'GWPS-only coverage uses old K562 targets plus selected new targets; union also reports old all-target history.'}
+    write_json(RUNTIME/'PUBLIC_GROWTH_COMPLETE.json',receipt);write_json(DOC/'PUBLIC_GROWTH_COMPLETE.json',receipt)
+    event('public_growth_complete',orders=5,snapshots=len(out),full_gwps_tasks=int(out.gwps_only_covered_tasks.max()))
+    return receipt
+
+
 def selftest():
     raw=np.array([[2,0,3],[0,4,1]],float);total=np.array([10,20.])
     assert np.allclose(normalized(raw,total,np.array([2,0])),np.log1p(4000*raw[:,[2,0]]/total[:,None]))
@@ -540,7 +598,7 @@ def selftest():
 
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--phase',choices=['qualify','bank','scores','evaluate','all','test'],default='all')
+    parser=argparse.ArgumentParser();parser.add_argument('--phase',choices=['qualify','bank','scores','evaluate','growth','all','test'],default='all')
     args=parser.parse_args();RUNTIME.mkdir(parents=True,exist_ok=True);DOC.mkdir(parents=True,exist_ok=True)
     start=time.monotonic();cpu=time.process_time()
     with threadpool_limits(limits=4):
@@ -550,6 +608,7 @@ def main():
         if args.phase in ['bank','scores','evaluate','all']:build_bank()
         if args.phase in ['scores','evaluate','all']:scores()
         if args.phase in ['evaluate','all']:evaluate()
+        if args.phase in ['growth','all']:growth_summary()
     write_json(RUNTIME/'LAST_COMMAND_RECEIPT.json',{'phase':args.phase,'pid':os.getpid(),'status':'COMPLETE',
                'wall_seconds':time.monotonic()-start,'CPU_seconds':time.process_time()-cpu,
                'peak_RSS_bytes':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss*1024,'GPU_hours':0})
