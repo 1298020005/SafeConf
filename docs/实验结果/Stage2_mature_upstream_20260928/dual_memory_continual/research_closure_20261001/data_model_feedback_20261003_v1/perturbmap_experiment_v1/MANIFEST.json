@@ -14,6 +14,10 @@
     "HCT116": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HCT116/PREDICTIONS_DELTA.tsv.gz",
     "HEK293T": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HEK293T/PREDICTIONS_DELTA.tsv.gz"
   },
+  "prediction_input_hashes": {
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HCT116/PREDICTIONS_DELTA.tsv.gz": "c54137fc466b5def82045f5f1d94f59b002d96306a3da6e2adac8a2bc5c2206f",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HEK293T/PREDICTIONS_DELTA.tsv.gz": "e4dc7e5446ff2654a8fcc48ef5fb3ecf11cf594b395390e253714daabf1628ba"
+  },
   "permanent_test_truth_used": false,
   "files": {
     "COMPONENT_DECISION.json": "cf1b922b6648372e625db6b1f203157fb771e3fe4db069ed50bc5b406789d21e",
@@ -26,6 +30,6 @@
     "RECONSTRUCTION_METRICS.csv": "7d2837e573cbcc7b50be889c824b8ff059417e100b7ae1f15a48775f1206533b",
     "RISK_METRICS.csv": "4eb9fcc142ad91bc872df99d22fcfe9c2bcc28d01b595b2f468dc919ec223d4e",
     "ROUTE_AUDIT.csv": "f16da6bdb61139ee563aedd793b29013597c276c817f2c93b5633a81a7a3a242",
-    "RUN_STATUS.json": "50f9b60e03722d9eb19e6e79da204de40ed6bf68f23c2afd266be3ba00505b0d"
+    "RUN_STATUS.json": "0d6325c047d6dd87afcbe8c2401fe2953c6b71a32b921b13e36db548d639c061"
   }
 }

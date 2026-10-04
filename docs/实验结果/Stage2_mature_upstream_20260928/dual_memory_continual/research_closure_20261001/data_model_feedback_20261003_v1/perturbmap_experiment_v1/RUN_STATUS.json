@@ -3,7 +3,7 @@
   "contract": "SafeConf v0.4.2",
   "new_gpu_hours": 0,
   "new_download_gb": 0,
-  "elapsed_seconds": 40.108986616134644,
+  "elapsed_seconds": 40.211503744125366,
   "routes": [
     {
       "source_context": "K562",
@@ -35,5 +35,5 @@
   "query_tasks": 53,
   "permanent_test_truth_used": false,
   "python": "3.12.4",
-  "git_commit": "0d33a74fd23f16ee44b7c367ff9b49d43fde1c80"
+  "git_commit": "7741a5511366a3d6667888df8a054b195a445b19"
 }
