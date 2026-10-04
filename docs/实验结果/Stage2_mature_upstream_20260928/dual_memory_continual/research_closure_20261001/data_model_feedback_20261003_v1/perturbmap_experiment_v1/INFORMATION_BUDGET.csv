@@ -1,0 +1,6 @@
+information,records,role,used_for_fit,used_for_query_truth
+E201_K562_public_effects,580,source history,True,False
+Orion_target_background_train_anchors,657,recipient mapping supervision,True,False
+Orion_validation_predictions,53,risk query prediction,False,False
+Orion_validation_errors,53,risk scoring only,False,True
+Orion_permanent_test_truth,0,protected,False,False
