@@ -28,6 +28,7 @@ DEFAULT_BASE = ROOT / (
 )
 DEFAULT_OUT = DEFAULT_BASE / "system_evidence_v042"
 SAMS_DIR = DEFAULT_BASE / "sams"
+PERTURBMAP_DIR = DEFAULT_BASE / "perturbmap_experiment_v1"
 
 
 def sha256(path: Path) -> str:
@@ -94,6 +95,18 @@ def update_claims(out: Path, sams_status: dict, cross_status: str) -> None:
             claims.loc[mask, "status"] = f"SAMS_POSTPROCESS_{cross_status}"
             claims.loc[mask, "decision"] = "retain status and continue only registered diagnostics"
         claims.loc[mask, "evidence"] = evidence
+    # Keep the background-transfer candidate separate from the current
+    # same-background system claim.  It is a development/SEEN result and
+    # must not silently become a promoted PublicRule claim.
+    if PERTURBMAP_DIR.exists():
+        claim = "PerturbMap background transfer improves SafeConf risk ranking"
+        if not claims["claim"].astype(str).eq(claim).any():
+            claims = pd.concat([claims, pd.DataFrame([{
+                "claim": claim,
+                "status": "CONDITIONAL_BACKGROUND_TRANSFER_DEVELOPMENT",
+                "evidence": str(PERTURBMAP_DIR),
+                "decision": "retain candidate; do not replace same-background PublicRule",
+            }])], ignore_index=True)
     claims.to_csv(path, index=False, lineterminator="\n")
 
 
@@ -120,6 +133,14 @@ def update_decision(out: Path, sams_status: dict, cross_status: str) -> None:
         decision["sams_conclusion"] = "SAMS post-processing status is recorded without promotion."
     decision["sams_status"] = sams_status.get("status")
     decision["sams_postprocess"] = sams_status
+    if PERTURBMAP_DIR.exists():
+        perturb_decision = PERTURBMAP_DIR / "COMPONENT_DECISION.json"
+        decision["perturbmap"] = {
+            "status": "CONDITIONAL_BACKGROUND_TRANSFER_DEVELOPMENT",
+            "artifact": str(PERTURBMAP_DIR),
+            "component_decision": read_json(perturb_decision) if perturb_decision.exists() else None,
+            "default_replacement": False,
+        }
     write_json(path, decision)
 
 
@@ -142,6 +163,14 @@ def attach_receipts(out: Path, sams: Path) -> list[str]:
     for name in names:
         if copy_if_present(sams / name, out / f"SAMS_{name}"):
             copied.append(name)
+    if PERTURBMAP_DIR.exists():
+        for name in [
+            "COMPONENT_DECISION.json", "DECISION.md", "RECONSTRUCTION_METRICS.csv",
+            "RISK_METRICS.csv", "PAIRED_BOOTSTRAP.csv", "ROUTE_AUDIT.csv",
+            "INFORMATION_BUDGET.csv",
+        ]:
+            if copy_if_present(PERTURBMAP_DIR / name, out / f"PERTURBMAP_{name}"):
+                copied.append(f"PERTURBMAP_{name}")
     return copied
 
 
