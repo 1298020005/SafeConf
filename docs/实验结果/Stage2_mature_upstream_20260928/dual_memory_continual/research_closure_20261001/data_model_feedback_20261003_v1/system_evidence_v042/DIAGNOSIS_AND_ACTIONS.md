@@ -14,9 +14,25 @@
 - Keep SourceRidge and TargetRidge50 as conditional candidates. Their point gains do not pass the paired bootstrap adoption gate on the current contract.
 - Keep the legacy PertEMA comparison as an excluded audit because its stored truth contract differs from the current holdout; do not describe it as a fair current score.
 
+## SAMS post-processing completed
+
+- Training stopped at the registered 24 GPU-hour budget and selected the
+  frozen reconstruction-validation checkpoint.
+- Metadata-only true generation passed the 2,840-gene and original 512-gene
+  operational competence gates. The validation seal records that the heldout
+  perturbation expression was not read during generation.
+- The bidirectional DecoderOnly/SAMS-VAE risk protocol completed with 331/228
+  source rows/genes, 212/152 query rows/genes, 14 risk fits, and 5,000 paired
+  bootstrap draws.
+- The result is retained as SEEN retrospective stress evidence. It does not
+  promote SourceRidge, replace PublicRule, or count as an independent
+  confirmation.
+
 ## Continuing action
 
-SAMS training remains protected and active. Once it reaches a terminal checkpoint, run the registered truth-free generation, competence screen and bidirectional transfer protocol. No new network or Ridge search is opened by this audit.
+No new network or Ridge search is opened by this audit. The current evidence
+package is complete for the approved v0.4.2 experiment scope; papers and PDF
+remain paused by the user.
 
 ## Primary metric amendment
 

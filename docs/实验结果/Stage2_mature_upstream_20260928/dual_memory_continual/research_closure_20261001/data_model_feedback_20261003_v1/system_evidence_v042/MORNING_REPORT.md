@@ -14,9 +14,21 @@
 - Target Ridge at 50%: point gain is small and its paired interval crosses zero; conditional only.
 - Legacy PertEMA: excluded from current same-task metrics after truth-contract mismatch audit.
 
+## SAMS cross-family stress evidence
+
+- The registered SAMS training stopped at the 24 GPU-hour budget using the
+  frozen best checkpoint.
+- Truth-free metadata-only generation passed on the 2,840-gene and original
+  512-gene competence contracts, with 5,000-cluster bootstrap audits.
+- DecoderOnly-to-SAMS and SAMS-to-DecoderOnly risk transfer completed with
+  14 registered fits and 5,000 paired bootstrap draws.
+- This is a SEEN retrospective stress result. It is retained as evidence that
+  the protocol runs across prediction mechanisms, not as an independent
+  confirmation or a replacement for the current PublicRule decision.
+
 ## Next action
 
-SAMS remains in the existing protected training process (`TRAINING_RUNNING`). When it terminates, complete its registered generation/competence/cross-family postprocess and update this evidence package. Papers and PDF remain paused.
+The v0.4.2 evidence package is post-processed and pushed. Papers and PDF remain paused by the user; any later writing must use the fixed component decisions and the explicit SEEN/conditional labels above.
 
 ## Metric correction
 
