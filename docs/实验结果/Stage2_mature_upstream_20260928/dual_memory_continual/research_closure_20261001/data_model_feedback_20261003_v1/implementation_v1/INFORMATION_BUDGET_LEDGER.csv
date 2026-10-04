@@ -4,5 +4,6 @@ Source errors,GAT/Exphormer nested cache,1808 rows; 575 gene clusters,Source gat
 Target development errors,McFaline DEV,542 tasks; 377 genes,H1/XGB/TabPFN selection,False,DEV only
 Target feedback errors,registered feedback pool,331 rows; 228 genes,current-truth feedback learner inputs,False,registered
 Current holdout truth,HOLDOUT_FEATURES.parquet,212 rows; 152 genes,fixed current-contract evaluation,True,SEEN holdout; no permanent TEST
+Mixed queue cached errors,GWPS score-sealed retrospective artifact,2993 tasks; 1750 genes,unified history/no-history ranking audit,True,SEEN only; no method selection or independent confirmation
 New download,none,0,resource cost,False,within budget
 Additional TabPFN GPU,fixed V2.0 target 50%,0.00128 GPU-hours,capacity audit,False,within 2 GPU-hour reserve

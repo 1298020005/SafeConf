@@ -1,0 +1,19 @@
+{
+  "status": "COMPLETE_SEEN_MIXED_QUEUE_AUDIT",
+  "n_tasks": 2993,
+  "n_genes": 1750,
+  "history_available_tasks": 1379,
+  "no_history_tasks": 1614,
+  "public_score": "Expanded_DistanceCDF_or_Magnitude; frozen public CDF for covered history and Magnitude_SourceScoreCDF fallback for no history",
+  "source_score": "Expanded_HGB_or_Magnitude; frozen source HGB with the same magnitude fallback",
+  "truth_role": "SEEN cached errors only; no raw truth read by this script",
+  "score_seal": {
+    "path": "/home/yyf/runtime_artifacts/safeconf_research_20261003/gwps_v1/SCORE_SEAL.json",
+    "sha256": "787d43cb2c45e6b5eb56508316b1a0cdea528e32be76ca463c8bce65dc78d15b",
+    "candidate_selection_on_mixed_queue": false
+  },
+  "evaluation_receipt": "/home/yyf/runtime_artifacts/safeconf_research_20261003/gwps_v1/EVALUATION_COMPLETE.json",
+  "bootstrap_draws": "/home/yyf/runtime_artifacts/safeconf_research_20261003/gwps_v1/all_eligible_BOOTSTRAP_DRAWS.npy",
+  "permanent_test_truth_opened": false,
+  "independent_confirmation": false
+}
