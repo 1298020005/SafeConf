@@ -28,7 +28,9 @@ DEFAULT_BASE = ROOT / (
 )
 DEFAULT_OUT = DEFAULT_BASE / "system_evidence_v042"
 SAMS_DIR = DEFAULT_BASE / "sams"
-PERTURBMAP_DIR = DEFAULT_BASE / "perturbmap_experiment_v1"
+# v1 remains preserved as the first prototype.  v2 is the corrected contract
+# readout and is the only PerturbMap artifact attached to the final package.
+PERTURBMAP_DIR = DEFAULT_BASE / "perturbmap_experiment_v2"
 
 
 def sha256(path: Path) -> str:
