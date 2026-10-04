@@ -154,11 +154,11 @@
         "data_exists": true,
         "frozen_prediction_found": false,
         "eligible_for_independent_score": false,
-        "status": "PENDING_PROTECTED_PRETRUTH_PREDICTION",
+        "status": "PREDICTOR_FAMILY_COMPETENCE_BLOCKED",
         "path": "/home/yyf/runtime_worktrees/e205_postprocess_20260915/docs/实验结果/E208_jiang24_external_confirmation_20260912",
         "files_checked": "E208_PREDICTION_MANIFEST_STATUS.json; E208_RISK_SEAL_QUEUE_STATUS.json; E208_FINALIZER_STATUS.json",
-        "reason": "224 tasks and 12 external contexts are registered; formal upstream training is complete, but protected prediction queue is waiting and target truth remains unauthorized",
-        "role": "priority independent confirmation asset; score only after frozen predictions and method hash"
+        "reason": "validation competence gate failed: latent mean task MSE 0.02351 and linear 0.01451 both exceed no-change MSE 0.000441; protected queue correctly refuses test prediction",
+        "role": "independent asset retained as a negative upstream-competence result; not scored"
       }
     ],
     "mixed_queue": {
@@ -290,7 +290,7 @@
       "pid": 1873824,
       "test_perturbed_expression_rows_read": 0,
       "target_truth_access": "NOT_AUTHORIZED",
-      "updated_at": "2026-10-05T02:34:05+08:00",
+      "updated_at": "2026-10-05T02:38:05+08:00",
       "predictions_ready": false,
       "source_cache_ready": true
     }
