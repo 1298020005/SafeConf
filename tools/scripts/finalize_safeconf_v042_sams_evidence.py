@@ -168,7 +168,7 @@ def attach_receipts(out: Path, sams: Path) -> list[str]:
     if PERTURBMAP_DIR.exists():
         for name in [
             "COMPONENT_DECISION.json", "DECISION.md", "RECONSTRUCTION_METRICS.csv",
-            "RISK_METRICS.csv", "PAIRED_BOOTSTRAP.csv", "ROUTE_AUDIT.csv",
+            "RISK_METRICS.csv", "RISK_LEARNER_METRICS.csv", "PAIRED_BOOTSTRAP.csv", "ROUTE_AUDIT.csv",
             "INFORMATION_BUDGET.csv",
         ]:
             if copy_if_present(PERTURBMAP_DIR / name, out / f"PERTURBMAP_{name}"):
