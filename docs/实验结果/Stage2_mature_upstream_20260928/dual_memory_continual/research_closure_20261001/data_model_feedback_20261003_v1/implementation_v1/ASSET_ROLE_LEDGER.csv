@@ -1,0 +1,8 @@
+asset,role,status
+PublicRule,reuse,frozen_default
+Source_nested_cache,reuse,1808_tasks_575_genes
+Target_feedback_pool,reuse,331_rows_228_genes
+Current_holdout,evaluation_only,212_rows_152_genes
+Source_TabPFN,reuse,DEV_COMPLETE
+Legacy_PertEMA,excluded_audit,truth_contract_mismatch
+E258_test,sealed,upstream_gate_not_passed

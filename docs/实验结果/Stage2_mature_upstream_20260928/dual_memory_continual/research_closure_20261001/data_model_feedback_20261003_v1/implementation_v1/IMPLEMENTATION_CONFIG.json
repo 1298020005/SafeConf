@@ -1,0 +1,163 @@
+{
+  "run_id": "safeconf_impl_20261004_v1",
+  "status": "COMPLETE_IMPLEMENTATION_EVIDENCE_WITH_PUBLICRULE_DEFAULT",
+  "configuration": {
+    "cpu_python": "/home/miniconda/bin/python",
+    "tabpfn_python": "/home/yyf/.venvs/safeconf-tabpfn-20261001/bin/python",
+    "source_dev_rows": 1808,
+    "source_dev_genes": 575,
+    "target_dev_rows": 542,
+    "target_dev_genes": 377,
+    "feedback_pool_rows": 331,
+    "feedback_pool_genes": 228,
+    "current_holdout_rows": 212,
+    "current_holdout_genes": 152,
+    "target_50_feedback_genes": 114,
+    "bootstrap_replicates": 5000,
+    "new_download_bytes": 0,
+    "new_large_upstream_training": false,
+    "permanent_test_truth_opened": false,
+    "source_gate_candidates": [
+      "always_public",
+      "source_top25_unreliable",
+      "source_top50_unreliable",
+      "source_top75_unreliable"
+    ],
+    "tabpfn_package": "tabpfn==9.0.0",
+    "tabpfn_checkpoint_sha256": "2ab5a07d5c41dfe6db9aa7ae106fc6de898326c2765be66505a07e2868c10736",
+    "pertema_commit": "43c09a32e23d0ee2ae5dfbab21b2deeab27f1803"
+  },
+  "preflight_status": "PASS",
+  "work_packages": {
+    "current_truth_pertema": {
+      "status": "COMPLETE",
+      "phase": "fit",
+      "fit_count": 30,
+      "budgets": [
+        0.1,
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "seeds": [
+        20260930,
+        20261001,
+        20261002
+      ],
+      "primary_score": "PertEMA_raw",
+      "isotonic_secondary": true,
+      "current_truth_contract": true,
+      "permanent_test_truth_opened": false
+    },
+    "public_reliability": {
+      "status": "PASS",
+      "meaning": "jackknife stability predicts held-out donor reference deviation",
+      "n_records": 1530,
+      "n_lines": 4,
+      "comparable_lines": 3,
+      "jackknife_better_than_support_lines": 3,
+      "selection_rule": ">=3 comparable lines and jackknife beats support in >=75% of them",
+      "test_truth_opened": false,
+      "e258_sha256": "ce1cb3fef4f19acfb4b7283dfac898a97aa3697e5e2b291c7d2cd154bb5371e3"
+    },
+    "source_gate": {
+      "status": "COMPLETE",
+      "source_metrics": "/home/yyf/runtime_artifacts/safeconf_impl_20261004_v1/source_gate_v3/SOURCE_GATE_METRICS.csv",
+      "candidate_set": [
+        "always_public",
+        "source_top25_unreliable",
+        "source_top50_unreliable",
+        "source_top75_unreliable"
+      ],
+      "shuffle_seeds": [
+        20260930,
+        20261001,
+        20261002,
+        20261003,
+        20261004
+      ]
+    },
+    "target_tabpfn": {
+      "status": "COMPLETE",
+      "role": "FROZEN_POST_DEV_GATE_HOLDOUT_SCORE",
+      "fit_rows": 164,
+      "fit_genes": 114,
+      "query_rows": 212,
+      "query_genes": 152,
+      "holdout_used_for_fit": false,
+      "dev_gate": "TabPFN_V2_F1_50_vs_H1_F1 point +0.0314, CI [-0.00438,+0.09005]",
+      "permanent_test_truth_opened": false
+    },
+    "system_freeze": {
+      "status": "COMPLETE",
+      "rows": 212,
+      "genes": 152,
+      "methods": [
+        "Amplitude",
+        "PublicRule",
+        "TargetH1F1_50",
+        "TargetX0F2_50",
+        "TargetTabPFN50",
+        "PertEMA_Native61_50",
+        "PertEMA_P6_50"
+      ],
+      "selected": "PublicRule"
+    }
+  },
+  "decision": {
+    "status": "COMPLETE",
+    "default_current": "PublicRule",
+    "selection_rule": "PublicRule retained unless candidate point delta >= .005 and CI lower >= -.005",
+    "candidates": [
+      {
+        "method": "Amplitude",
+        "pass_registered_gate": false,
+        "delta_u20": -1.047919812291878,
+        "ci95_lower": -1.2458297402582081,
+        "ci95_upper": -0.8748502778598666
+      },
+      {
+        "method": "TargetH1F1_50",
+        "pass_registered_gate": false,
+        "delta_u20": 0.0022432724405198425,
+        "ci95_lower": -0.09389617412681525,
+        "ci95_upper": 0.054529827341308575
+      },
+      {
+        "method": "TargetX0F2_50",
+        "pass_registered_gate": false,
+        "delta_u20": 0.02171598724389127,
+        "ci95_lower": -0.08728331567383112,
+        "ci95_upper": 0.052007822902891195
+      },
+      {
+        "method": "TargetTabPFN50",
+        "pass_registered_gate": false,
+        "delta_u20": -0.036752216669323524,
+        "ci95_lower": -0.09059963681424776,
+        "ci95_upper": 0.04776112219174888
+      },
+      {
+        "method": "PertEMA_Native61_50",
+        "pass_registered_gate": false,
+        "delta_u20": -0.7013465798619908,
+        "ci95_lower": -0.9533953190842334,
+        "ci95_upper": -0.5093225555155801
+      },
+      {
+        "method": "PertEMA_P6_50",
+        "pass_registered_gate": false,
+        "delta_u20": -0.8828465440062901,
+        "ci95_lower": -1.0494803103219945,
+        "ci95_upper": -0.599942654934232
+      }
+    ],
+    "source_gate_metrics_path": "/home/yyf/runtime_artifacts/safeconf_impl_20261004_v1/source_gate_v3/SOURCE_GATE_METRICS.csv",
+    "holdout_is_seen_current_contract": true,
+    "permanent_test_truth_opened": false
+  },
+  "permanent_test_truth_opened": false,
+  "new_large_upstream_training": false,
+  "new_download_bytes": 0
+}

@@ -1,0 +1,4 @@
+asset,eligible_for_independent_score,exists,path,reason,role
+E258_test_donor,False,True,/home/yyf/data/feng2025_candidate,qualification is metadata-only in preflight,sealed; upstream ability gate currently not passed
+Replogle_K562_GWPS,False,True,/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/ReplogleWeissman2022_K562_gwps.h5ad,qualification is metadata-only in preflight,requires frozen predictor audit
+Nadig_E239_seen,False,True,/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/E239_nadig_third_gene_confirmation_20260923,qualification is metadata-only in preflight,SEEN same-study robustness only

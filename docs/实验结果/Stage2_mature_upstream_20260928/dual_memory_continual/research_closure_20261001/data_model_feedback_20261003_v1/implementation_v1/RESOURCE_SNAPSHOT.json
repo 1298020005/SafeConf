@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "historical_resource_ledger": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/RESOURCE_LEDGER.json",
+  "new_download_bytes": 0,
+  "new_large_upstream_training": 0,
+  "protected_pids": [
+    1873824,
+    2428149
+  ],
+  "gpu_snapshot": {
+    "returncode": 0,
+    "text": "0, Quadro RTX 6000, 3 MiB, 24576 MiB, 0 %\n1, Quadro RTX 6000, 3 MiB, 24576 MiB, 0 %"
+  }
+}

@@ -1,0 +1,175 @@
+#!/usr/bin/env python3
+"""Assemble the implementation receipt without changing prior experiment data."""
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import shutil
+from pathlib import Path
+
+import pandas as pd
+
+ROOT = Path(__file__).resolve().parents[2]
+RUNTIME = Path("/home/yyf/runtime_artifacts/safeconf_impl_20261004_v1")
+DOC = ROOT / (
+    "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/"
+    "research_closure_20261001/data_model_feedback_20261003_v1/implementation_v1"
+)
+
+
+def load_json(path: Path, default=None):
+    if not path.exists():
+        return default
+    return json.loads(path.read_text())
+
+
+def write_json(path: Path, value):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_name(path.name + ".tmp")
+    tmp.write_text(json.dumps(value, indent=2, ensure_ascii=False, default=str) + "\n")
+    os.replace(tmp, path)
+
+
+def write_text(path: Path, text: str):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_name(path.name + ".tmp")
+    tmp.write_text(text)
+    os.replace(tmp, path)
+
+
+def write_csv(path: Path, frame: pd.DataFrame):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_name(path.name + ".tmp")
+    frame.to_csv(tmp, index=False)
+    os.replace(tmp, path)
+
+
+def copy_if_exists(src: Path, dst: Path):
+    if src.exists():
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(src, dst)
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--runtime", type=Path, default=RUNTIME)
+    args = ap.parse_args()
+    run = args.runtime.resolve()
+    preflight = load_json(run / "PREFLIGHT_MANIFEST.json", {})
+    rel = load_json(run / "public_reliability/E258_VALIDATION_DECISION.json", {})
+    target_tab = load_json(run / "tabpfn_target50/TABPFN_TARGET50_HOLDOUT_STATUS.json", {})
+    freeze = load_json(run / "system_freeze_v4/COMPONENT_DECISION.json", {})
+    source_metrics = pd.read_csv(run / "source_gate_v3/SOURCE_GATE_METRICS.csv") if (run / "source_gate_v3/SOURCE_GATE_METRICS.csv").exists() else pd.DataFrame()
+    pertema_status = load_json(run / "pertema_current_truth_v2/PERTEMA_CURRENT_RUN_STATUS.json", {})
+    system_status = load_json(run / "system_freeze_v4/RUN_STATUS.json", {})
+    system_comparison = pd.read_csv(run / "system_freeze_v4/SYSTEM_COMPARISON.csv")
+    implementation = {
+        "run_id": "safeconf_impl_20261004_v1",
+        "status": "COMPLETE_IMPLEMENTATION_EVIDENCE_WITH_PUBLICRULE_DEFAULT",
+        "configuration": {
+            "cpu_python": "/home/miniconda/bin/python",
+            "tabpfn_python": "/home/yyf/.venvs/safeconf-tabpfn-20261001/bin/python",
+            "source_dev_rows": 1808, "source_dev_genes": 575,
+            "target_dev_rows": 542, "target_dev_genes": 377,
+            "feedback_pool_rows": 331, "feedback_pool_genes": 228,
+            "current_holdout_rows": 212, "current_holdout_genes": 152,
+            "target_50_feedback_genes": 114, "bootstrap_replicates": 5000,
+            "new_download_bytes": 0, "new_large_upstream_training": False,
+            "permanent_test_truth_opened": False,
+            "source_gate_candidates": ["always_public", "source_top25_unreliable", "source_top50_unreliable", "source_top75_unreliable"],
+            "tabpfn_package": "tabpfn==9.0.0",
+            "tabpfn_checkpoint_sha256": "2ab5a07d5c41dfe6db9aa7ae106fc6de898326c2765be66505a07e2868c10736",
+            "pertema_commit": "43c09a32e23d0ee2ae5dfbab21b2deeab27f1803",
+        },
+        "preflight_status": preflight.get("status"),
+        "work_packages": {
+            "current_truth_pertema": pertema_status,
+            "public_reliability": rel,
+            "source_gate": {
+                "status": "COMPLETE" if not source_metrics.empty else "MISSING",
+                "source_metrics": str(run / "source_gate_v3/SOURCE_GATE_METRICS.csv"),
+                "candidate_set": ["always_public", "source_top25_unreliable", "source_top50_unreliable", "source_top75_unreliable"],
+                "shuffle_seeds": [20260930, 20261001, 20261002, 20261003, 20261004],
+            },
+            "target_tabpfn": target_tab,
+            "system_freeze": system_status,
+        },
+        "decision": freeze,
+        "permanent_test_truth_opened": False,
+        "new_large_upstream_training": False,
+        "new_download_bytes": 0,
+    }
+    write_json(DOC / "IMPLEMENTATION_CONFIG.json", implementation)
+    write_json(DOC / "IMPLEMENTATION_RUN_STATUS.json", implementation)
+    # Keep the reviewable audit bundle beside the receipt. Large raw artifacts
+    # remain under runtime_artifacts; only the compact 212-row ranking is copied.
+    for name in ("PREFLIGHT_MANIFEST.json", "ASSET_ROLE_LEDGER.csv", "RESOURCE_SNAPSHOT.json",
+                 "TRUTH_CONTRACT_AUDIT.csv", "INDEPENDENT_ASSET_AUDIT.csv"):
+        copy_if_exists(run / name, DOC / name)
+    copy_if_exists(run / "system_freeze_v4/COMPONENT_DECISION.json", DOC / "COMPONENT_DECISION.json")
+    copy_if_exists(run / "system_freeze_v4/SYSTEM_RANKING.parquet", DOC / "PER_QUERY_RESULTS.parquet")
+    copy_if_exists(run / "system_freeze_v4/SYSTEM_COMPARISON.csv", DOC / "SYSTEM_COMPARISON.csv")
+
+    ledger = pd.DataFrame([
+        {"information_or_cost": "Public truth", "source": "E258 validation + McFaline public history", "rows_or_units": "1530 validation records; 542 DEV tasks", "role": "reference and reliability estimation", "evaluation_truth_used": False, "status": "used"},
+        {"information_or_cost": "Source errors", "source": "GAT/Exphormer nested cache", "rows_or_units": "1808 rows; 575 gene clusters", "role": "Source gate training and label-shuffle mechanism test", "evaluation_truth_used": False, "status": "used"},
+        {"information_or_cost": "Target development errors", "source": "McFaline DEV", "rows_or_units": "542 tasks; 377 genes", "role": "H1/XGB/TabPFN selection", "evaluation_truth_used": False, "status": "DEV only"},
+        {"information_or_cost": "Target feedback errors", "source": "registered feedback pool", "rows_or_units": "331 rows; 228 genes", "role": "current-truth feedback learner inputs", "evaluation_truth_used": False, "status": "registered"},
+        {"information_or_cost": "Current holdout truth", "source": "HOLDOUT_FEATURES.parquet", "rows_or_units": "212 rows; 152 genes", "role": "fixed current-contract evaluation", "evaluation_truth_used": True, "status": "SEEN holdout; no permanent TEST"},
+        {"information_or_cost": "New download", "source": "none", "rows_or_units": 0, "role": "resource cost", "evaluation_truth_used": False, "status": "within budget"},
+        {"information_or_cost": "Additional TabPFN GPU", "source": "fixed V2.0 target 50%", "rows_or_units": "0.00128 GPU-hours", "role": "capacity audit", "evaluation_truth_used": False, "status": "within 2 GPU-hour reserve"},
+    ])
+    write_csv(DOC / "INFORMATION_BUDGET_LEDGER.csv", ledger)
+
+    claims = pd.DataFrame([
+        {"claim": "Public history adds risk information beyond amplitude", "status": "supported on current holdout", "evidence": "SYSTEM_COMPARISON.csv", "scope": "212 current-contract tasks; 152 gene clusters", "boundary": "SEEN, not independent confirmation"},
+        {"claim": "Jackknife stability predicts reference deviation", "status": rel.get("status", "unknown"), "evidence": "E258_VALIDATION_DECISION.json", "scope": "1530 E258 validation records", "boundary": "J is highly correlated with V; no default upgrade"},
+        {"claim": "Source error can complement Public under a source DEV contract", "status": "supported in nested source DEV", "evidence": "SOURCE_GATE_PAIRED_BOOTSTRAP.csv", "scope": "GAT/Exphormer bidirectional source cache", "boundary": "not a current McFaline holdout gain"},
+        {"claim": "Target feedback reliably improves the current system", "status": "not established", "evidence": "SYSTEM_PAIRED_BOOTSTRAP.csv", "scope": "212 current-contract tasks", "boundary": "XGB point gain CI crosses zero"},
+        {"claim": "TabPFN V2 improves the target learner", "status": "not adopted", "evidence": "TABPFN_TARGET50_RESULTS.csv and holdout predictions", "scope": "542 DEV plus one fixed 212-task score", "boundary": "fixed replacement only; not all algorithms"},
+        {"claim": "Current-truth PertEMA adaptation is competitive", "status": "not supported", "evidence": "PERTEMA_CURRENT_MACRO.csv", "scope": "P6/Native61 current adaptation", "boundary": "not a claim about the complete official PertEMA pipeline"},
+    ])
+    write_csv(DOC / "CLAIM_EVIDENCE_MATRIX.csv", claims)
+
+    failure_log = "# SafeConf implementation failure and action log\n\n"
+    failure_log += "- Source gate first run failed in summary index handling; aggregation was fixed and the complete real plus five shuffled-label pipelines were rerun in `source_gate_v3`.\n"
+    failure_log += "- Native61 contains non-finite `native_training_similarity`; the current-truth adaptation preserves task identity coverage and uses the fixed XGBoost missing-value path. It is reported separately from P6.\n"
+    failure_log += "- PublicMeanJackknife is complete for 210/212 holdout tasks. Missing values are not imputed; the system falls back to PublicRule and records the coverage failure.\n"
+    failure_log += "- Target TabPFN passed the DEV technical gate but lost on the frozen current holdout. It remains a capacity audit and does not replace H1/XGB or PublicRule.\n"
+    failure_log += "- Current-truth PertEMA P6 and Native61 are reproducible adaptations under the current truth contract; the result is not labelled as a complete official conformal PertEMA reproduction.\n"
+    failure_log += "- No permanent TEST truth was opened, no new download was made, and no E208 process was changed.\n"
+    write_text(DOC / "FAILURE_AND_ACTION_LOG.md", failure_log)
+    report = "# SafeConf implementation receipt\n\n"
+    report += "## 实际完成\n\n"
+    report += f"- Preflight: `{preflight.get('status')}`。\n"
+    report += f"- 当前 truth contract PertEMA: `{pertema_status.get('status', 'unknown')}`，P6 与 Native61 分开保存。\n"
+    report += f"- 公共可靠性：E258 jackknife 验证 `{rel.get('status', 'unknown')}`；McFaline 仅生成特征和开发比较。\n"
+    report += "- Source gate：完成 always-public、三种切换比例和五个置乱种子；真实标签 gate 相对 always-public 在两个方向均有正的 5000 次基因簇 bootstrap 区间。当前 source cache 没有实验级历史向量，因此 gate 使用既有 `prior_uncertainty`；E258 的 J 只作验证结果，未被冒充接入。\n"
+    report += f"- Target TabPFN：DEV gate 后完成当前 212 holdout 固定分数，状态 `{target_tab.get('status', 'unknown')}`。\n"
+    report += f"- 完整当前系统：`{system_status.get('status', 'unknown')}`。\n\n"
+    report += "## 采用决定\n\n"
+    report += f"- 当前默认保持 `{freeze.get('default_current', 'PublicRule')}`。\n"
+    report += "- Target XGB 的点估计高于 PublicRule，但配对区间跨零，未替换默认。\n"
+    report += "- PertEMA P6/Native61 当前适配低于 PublicRule，保留为公平适配结果，不宣称官方模型复现。\n"
+    report += "- TabPFN Target 50% 的 DEV 点增益未形成当前 holdout 的稳定收益，保留为固定学习器对照。\n"
+    report += "- Jackknife 能预测 E258 留出参照偏差，但与历史分散度高度相关，暂不升级为默认风险规则。\n\n"
+    report += "## 失败与修复\n\n"
+    report += "- Source gate 首次运行在汇总阶段出现索引错误；已修复指标聚合并在 `source_gate_v3` 完整重跑真实与置乱标签流程。\n"
+    report += "- Native61 的部分字段为 NaN；采用 XGBoost 原生缺失值路径，完整任务覆盖与有限字段覆盖分别登记。\n"
+    report += "- PublicMeanJackknife 有 210/212 个完整任务，系统排序未将缺失值伪造成零，回退并单列覆盖。\n\n"
+    report += "## 当前系统指标\n\n"
+    for _, row in system_comparison.iterrows():
+        report += f"- `{row['method']}`：U20={row['u20']:.6f}，AURC={row['aurc']:.6f}，有效 context={int(row['valid_contexts'])}/{int(row['contexts'])}。\n"
+    report += "\n"
+    report += "## 下一动作\n\n"
+    report += "1. 继续保留 PublicRule 作为当前系统默认。\n"
+    report += "2. 以 E258/J 与 Source gate 结果形成适用范围和机制证据，不继续扩网络。\n"
+    report += "3. 独立确认资产仍按资格表处理；当前没有打开永久测试真值。\n"
+    report += "4. 正文、PDF和投稿材料仍暂停。\n"
+    write_text(DOC / "MORNING_REPORT.md", report)
+    print(json.dumps({"status": implementation["status"], "doc": str(DOC)}, ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    main()

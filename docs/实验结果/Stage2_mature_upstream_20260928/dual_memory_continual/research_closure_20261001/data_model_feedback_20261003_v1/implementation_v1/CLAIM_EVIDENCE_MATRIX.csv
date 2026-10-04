@@ -1,0 +1,7 @@
+claim,status,evidence,scope,boundary
+Public history adds risk information beyond amplitude,supported on current holdout,SYSTEM_COMPARISON.csv,212 current-contract tasks; 152 gene clusters,"SEEN, not independent confirmation"
+Jackknife stability predicts reference deviation,PASS,E258_VALIDATION_DECISION.json,1530 E258 validation records,J is highly correlated with V; no default upgrade
+Source error can complement Public under a source DEV contract,supported in nested source DEV,SOURCE_GATE_PAIRED_BOOTSTRAP.csv,GAT/Exphormer bidirectional source cache,not a current McFaline holdout gain
+Target feedback reliably improves the current system,not established,SYSTEM_PAIRED_BOOTSTRAP.csv,212 current-contract tasks,XGB point gain CI crosses zero
+TabPFN V2 improves the target learner,not adopted,TABPFN_TARGET50_RESULTS.csv and holdout predictions,542 DEV plus one fixed 212-task score,fixed replacement only; not all algorithms
+Current-truth PertEMA adaptation is competitive,not supported,PERTEMA_CURRENT_MACRO.csv,P6/Native61 current adaptation,not a claim about the complete official PertEMA pipeline

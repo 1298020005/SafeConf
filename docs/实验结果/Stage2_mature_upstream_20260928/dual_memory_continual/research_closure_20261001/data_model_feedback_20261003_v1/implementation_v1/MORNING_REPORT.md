@@ -1,0 +1,41 @@
+# SafeConf implementation receipt
+
+## 实际完成
+
+- Preflight: `PASS`。
+- 当前 truth contract PertEMA: `COMPLETE`，P6 与 Native61 分开保存。
+- 公共可靠性：E258 jackknife 验证 `PASS`；McFaline 仅生成特征和开发比较。
+- Source gate：完成 always-public、三种切换比例和五个置乱种子；真实标签 gate 相对 always-public 在两个方向均有正的 5000 次基因簇 bootstrap 区间。当前 source cache 没有实验级历史向量，因此 gate 使用既有 `prior_uncertainty`；E258 的 J 只作验证结果，未被冒充接入。
+- Target TabPFN：DEV gate 后完成当前 212 holdout 固定分数，状态 `COMPLETE`。
+- 完整当前系统：`COMPLETE`。
+
+## 采用决定
+
+- 当前默认保持 `PublicRule`。
+- Target XGB 的点估计高于 PublicRule，但配对区间跨零，未替换默认。
+- PertEMA P6/Native61 当前适配低于 PublicRule，保留为公平适配结果，不宣称官方模型复现。
+- TabPFN Target 50% 的 DEV 点增益未形成当前 holdout 的稳定收益，保留为固定学习器对照。
+- Jackknife 能预测 E258 留出参照偏差，但与历史分散度高度相关，暂不升级为默认风险规则。
+
+## 失败与修复
+
+- Source gate 首次运行在汇总阶段出现索引错误；已修复指标聚合并在 `source_gate_v3` 完整重跑真实与置乱标签流程。
+- Native61 的部分字段为 NaN；采用 XGBoost 原生缺失值路径，完整任务覆盖与有限字段覆盖分别登记。
+- PublicMeanJackknife 有 210/212 个完整任务，系统排序未将缺失值伪造成零，回退并单列覆盖。
+
+## 当前系统指标
+
+- `Amplitude`：U20=-0.210252，AURC=0.029116，有效 context=3/3。
+- `PublicRule`：U20=0.837668，AURC=0.024944，有效 context=3/3。
+- `TargetH1F1_50`：U20=0.839911，AURC=0.025083，有效 context=3/3。
+- `TargetX0F2_50`：U20=0.859384，AURC=0.025108，有效 context=3/3。
+- `TargetTabPFN50`：U20=0.800915，AURC=0.024932，有效 context=3/3。
+- `PertEMA_Native61_50`：U20=0.136321，AURC=0.028264，有效 context=3/3。
+- `PertEMA_P6_50`：U20=-0.045179，AURC=0.028150，有效 context=3/3。
+
+## 下一动作
+
+1. 继续保留 PublicRule 作为当前系统默认。
+2. 以 E258/J 与 Source gate 结果形成适用范围和机制证据，不继续扩网络。
+3. 独立确认资产仍按资格表处理；当前没有打开永久测试真值。
+4. 正文、PDF和投稿材料仍暂停。

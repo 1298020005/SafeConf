@@ -1,0 +1,52 @@
+{
+  "status": "COMPLETE",
+  "default_current": "PublicRule",
+  "selection_rule": "PublicRule retained unless candidate point delta >= .005 and CI lower >= -.005",
+  "candidates": [
+    {
+      "method": "Amplitude",
+      "pass_registered_gate": false,
+      "delta_u20": -1.047919812291878,
+      "ci95_lower": -1.2458297402582081,
+      "ci95_upper": -0.8748502778598666
+    },
+    {
+      "method": "TargetH1F1_50",
+      "pass_registered_gate": false,
+      "delta_u20": 0.0022432724405198425,
+      "ci95_lower": -0.09389617412681525,
+      "ci95_upper": 0.054529827341308575
+    },
+    {
+      "method": "TargetX0F2_50",
+      "pass_registered_gate": false,
+      "delta_u20": 0.02171598724389127,
+      "ci95_lower": -0.08728331567383112,
+      "ci95_upper": 0.052007822902891195
+    },
+    {
+      "method": "TargetTabPFN50",
+      "pass_registered_gate": false,
+      "delta_u20": -0.036752216669323524,
+      "ci95_lower": -0.09059963681424776,
+      "ci95_upper": 0.04776112219174888
+    },
+    {
+      "method": "PertEMA_Native61_50",
+      "pass_registered_gate": false,
+      "delta_u20": -0.7013465798619908,
+      "ci95_lower": -0.9533953190842334,
+      "ci95_upper": -0.5093225555155801
+    },
+    {
+      "method": "PertEMA_P6_50",
+      "pass_registered_gate": false,
+      "delta_u20": -0.8828465440062901,
+      "ci95_lower": -1.0494803103219945,
+      "ci95_upper": -0.599942654934232
+    }
+  ],
+  "source_gate_metrics_path": "/home/yyf/runtime_artifacts/safeconf_impl_20261004_v1/source_gate_v3/SOURCE_GATE_METRICS.csv",
+  "holdout_is_seen_current_contract": true,
+  "permanent_test_truth_opened": false
+}

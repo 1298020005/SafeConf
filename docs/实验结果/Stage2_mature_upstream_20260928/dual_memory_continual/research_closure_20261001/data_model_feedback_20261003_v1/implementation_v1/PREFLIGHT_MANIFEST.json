@@ -1,0 +1,481 @@
+{
+  "run_id": "safeconf_impl_20261004_v1",
+  "created_utc": "2026-10-04T16:16:31.528713+00:00",
+  "worktree": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921",
+  "git_head": "97b4633bf865af458a3d7bf27e437677c532473a",
+  "git_status_returncode": 0,
+  "git_status": "## exp/e220-reviewer-closure-20260921\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/DUAL_MEMORY_CLAIM_EVIDENCE_MATRIX.md\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/DUAL_MEMORY_MANUSCRIPT_DRAFT.md\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/DUAL_MEMORY_METHOD_DECISION.md\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/PAPER_RESULT_TABLES.md\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/sams/INDEXING_APPLIED.json\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/sams/TRAINING_STATUS.json\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/sams/attempts/2580457/TRAINING_STATUS.json\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/bridge_fixture/README.md\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/AUTHOR_PLACEHOLDERS.md\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/CLAIM_EVIDENCE_MATRIX.csv\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/COVER_LETTER_DRAFT.txt\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/FIGURE_TABLE_PLAN.md\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/PAPER.md\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/README.md\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/REPRODUCIBILITY.md\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/SUPPLEMENT.md\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/build/BUILD_STATUS.json\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/build/main.out\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/build/main.pdf\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/build/main_pdf_text.txt\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/build/supplement.out\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/build/supplement.pdf\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/build_paper.py\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/evidence/RESULT_MANIFEST.json\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/evidence/reader_base_input_audit.json\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/figures/core_information.pdf\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/figures/feedback_information.pdf\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/figures/method_overview.pdf\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/main.tex\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/references.bib\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/refresh_paper_evidence.py\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/supplement.tex\"\n M \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/verify_paper.py\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/mcfaline_error_adaptation/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/INDEPENDENT_REVIEW/SYNTHETIC_PIPELINE/OWNED_FILES.json\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/common_gene_axis/results/source_scaling_uncertainty/OWNED_FILES.json\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/sams/CROSSFAMILY_STATUS.json\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/sams/HELDOUT_PREDICTION_SEAL.json\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/sams/TRAINING_COMPLETION.json\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/sams/VALIDATION_COMPETENCE.json\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/sams/VALIDATION_ORIGINAL_512_COMPETENCE.json\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/sams/VALIDATION_PREDICTION_SEAL.json\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/sams/attempts/2580457/TRAINING_COMPLETION.json\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/system_evidence_v042/SAMS_HELDOUT_PREDICTION_SEAL.json\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/system_evidence_v2/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/system_evidence_v4/public_core/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/target_ridge_fusion_v1/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/target_ridge_fusion_v2/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/target_ridge_fusion_v3/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/target_ridge_fusion_v4/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/target_ridge_fusion_v5/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/target_ridge_fusion_v6/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/target_ridge_fusion_v7/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/unified_fusion_v3/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/final_completion_audit/AUDIT.json\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/independent_asset_followup/ASSET_AGENT_AUDIT.validation_run.log\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/measurement_audit_agent/AUDIT_SUMMARY.md\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/measurement_audit_agent/EXECUTION_NOTES.json\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/actual_fixed_failure_diagnosis_v1/independent_review/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v1/unknown_authorized_token/metadata/HCT116_Batch1.parquet\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v1/unknown_authorized_token/metadata/HEK293T_Batch1.parquet\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v1/unknown_authorized_token/metadata/gene_metadata.parquet\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v1/unknown_authorized_token/must_not_commit.incomplete.102462/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v1/unknown_authorized_token/raw/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v1/v1.0_dictionary0/metadata/HCT116_Batch1.parquet\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v1/v1.0_dictionary0/metadata/HEK293T_Batch1.parquet\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v1/v1.0_dictionary0/metadata/gene_metadata.parquet\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v1/v1.0_dictionary0/raw/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v1/v2.0_dictionary1/metadata/HCT116_Batch1.parquet\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v1/v2.0_dictionary1/metadata/HEK293T_Batch1.parquet\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v1/v2.0_dictionary1/metadata/gene_metadata.parquet\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v1/v2.0_dictionary1/raw/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v2/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v3/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/synthetic_e2e_v4/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/train_pilot_synthetic_v1/fractional/metadata/gene_metadata.parquet\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/train_pilot_synthetic_v1/fractional/metadata/row_metadata.parquet\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/train_pilot_synthetic_v1/fractional/raw/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/train_pilot_synthetic_v1/valid/metadata/gene_metadata.parquet\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/train_pilot_synthetic_v1/valid/metadata/row_metadata.parquet\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/train_pilot_synthetic_v1/valid/raw/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/train_pilot_synthetic_v2/fractional/metadata/gene_metadata.parquet\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/train_pilot_synthetic_v2/fractional/metadata/row_metadata.parquet\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/train_pilot_synthetic_v2/fractional/raw/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/train_pilot_synthetic_v2/valid/metadata/gene_metadata.parquet\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/train_pilot_synthetic_v2/valid/metadata/row_metadata.parquet\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/train_pilot_synthetic_v2/valid/raw/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/vectorized_integration_v2/deadline_probe_v1/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/vectorized_integration_v2/synthetic_final_v2/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/vectorized_integration_v2/synthetic_final_v3/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/biology_loader/vectorized_integration_v2/synthetic_v1/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/historical_bank_v1/OWNED_FILES_PREFLIGHT.json\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/FETCH_RUNTIME_PACKAGES.py\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/RECOVER_MISSING_GCC.py\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/RUNTIME_OFFLINE_INSTALL.log\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/RUNTIME_RECOVERY_FETCH.log\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/RUNTIME_SYNTHETIC_FIXTURE.log\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/bridge_fixture/BUILD_AND_VERIFY_SYNTHETIC_BRIDGE.py\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/bridge_fixture/V3_NUMERIC_BACKEND_TECHNICAL_AMENDMENT.json\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/workflow_fixture/FIT.log\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/workflow_fixture/FULL_WORKFLOW.log\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/workflow_fixture/INPUT_GUARDS.log\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/workflow_fixture/RELOAD.log\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/workflow_fixture/ambiguous_target_rejection/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/workflow_fixture/first_pass_before_baseline_persistence/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/workflow_fixture/fit/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/workflow_fixture/guard_missing_actual_permit/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/workflow_fixture/guard_query_truth_column/POISON_TRAIN_X.rds\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/workflow_fixture/guard_query_truth_column/REJECTION.log\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/workflow_fixture/guard_validation_in_TRAIN/POISON_TRAIN_X.rds\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/workflow_fixture/guard_validation_in_TRAIN/REJECTION.log\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/workflow_fixture/inputs/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/workflow_fixture/reload/SYNTHETIC_HCT116/PREDICTIONS_DELTA.rds\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/workflow_fixture/reload/SYNTHETIC_HCT116/PREDICTIONS_DELTA.tsv.gz\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/workflow_fixture/reload/SYNTHETIC_HCT116/PREDICTIONS_TREATED.rds\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/workflow_fixture/reload/SYNTHETIC_HCT116/PREDICTIONS_TREATED.tsv.gz\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/workflow_fixture/reload/SYNTHETIC_HEK293T/PREDICTIONS_DELTA.rds\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/workflow_fixture/reload/SYNTHETIC_HEK293T/PREDICTIONS_DELTA.tsv.gz\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/workflow_fixture/reload/SYNTHETIC_HEK293T/PREDICTIONS_TREATED.rds\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/lm_core/workflow_fixture/reload/SYNTHETIC_HEK293T/PREDICTIONS_TREATED.tsv.gz\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/public_bank_extension/legacy_partition_recovery_v1/independent_review/OWNED_FILES.json\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_evaluation/synthetic_final_v3/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_evaluation/synthetic_final_v5/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_evaluation/synthetic_gate_v4/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_evaluation/synthetic_v1/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_evaluation/synthetic_v2/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_seal/synthetic_v1/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_seal/synthetic_v2/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_seal/synthetic_v3/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/risk_seal/synthetic_v4/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/test_open/extended_bank_operation_draft_v1/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/orion_preparation/test_open/synthetic/\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/BIBLIOGRAPHY_METADATA_RECEIPT.json\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/DATA_ACCESS.md\"\n?? \"docs/\\345\\256\\236\\351\\252\\214\\347\\273\\223\\346\\236\\234/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/paper/package_submission.py\"\n?? tools/scripts/run_mcfaline_error_memory_simulation.py\n?? tools/scripts/run_safeconf_feedback_fixed_eval_root_v1.py\n?? tools/scripts/run_safeconf_feedback_statistics_root_v1.py\n?? tools/scripts/run_safeconf_impl_preflight_v1.py",
+  "protected_processes": {
+    "protected_processes": {
+      "returncode": 1,
+      "text": "错误：进程编号列表语法错误\n\n用法：\n ps [选项]\n\n Try 'ps --help <simple|list|output|threads|misc|all>'\n  or 'ps --help <s|l|o|t|m|a>'\n for additional help text.\n\n如需了解更多细节，请阅读 ps(1)。"
+    },
+    "gpu": {
+      "returncode": 0,
+      "text": "0, Quadro RTX 6000, 3 MiB, 24576 MiB, 0 %\n1, Quadro RTX 6000, 3 MiB, 24576 MiB, 0 %"
+    }
+  },
+  "inputs": {
+    "holdout": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261003/feedback_v1/HOLDOUT_FEATURES.parquet",
+      "exists": true,
+      "rows": 212,
+      "task_id_unique": 212,
+      "gene_unique": 152,
+      "columns": [
+        "condition_index",
+        "perturbation",
+        "context",
+        "treatment",
+        "task_id",
+        "n_generated_prediction_cells",
+        "gene",
+        "target",
+        "fold",
+        "predicted_magnitude",
+        "prediction_abs_mean",
+        "prediction_signed_mean",
+        "prediction_std",
+        "prediction_abs_q95",
+        "prediction_sparsity",
+        "CellWeighted_prior_magnitude",
+        "CellWeighted_prediction_prior_rmse",
+        "CellWeighted_prediction_prior_cosine",
+        "CellWeighted_prior_uncertainty",
+        "CellWeighted_log_history_support",
+        "CellWeighted_effective_sources",
+        "CellWeighted_history_conflict",
+        "LearnedHGBRegularized_prior_magnitude",
+        "LearnedHGBRegularized_prediction_prior_rmse",
+        "LearnedHGBRegularized_prediction_prior_cosine",
+        "LearnedHGBRegularized_prior_uncertainty",
+        "LearnedHGBRegularized_log_history_support",
+        "LearnedHGBRegularized_effective_sources",
+        "LearnedHGBRegularized_history_conflict",
+        "true_error_rmse",
+        "dataset_id",
+        "upstream",
+        "model_version",
+        "output_contract_id",
+        "prior_magnitude",
+        "prediction_prior_rmse",
+        "prediction_prior_cosine",
+        "prior_uncertainty",
+        "log_history_support",
+        "effective_sources",
+        "history_conflict",
+        "shared_risk",
+        "simple_history_risk",
+        "support_risk"
+      ],
+      "truth_missing": 0
+    },
+    "feedback_pool": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261003/feedback_v1/FIXED_POOL_FEATURES.parquet",
+      "exists": true,
+      "rows": 331,
+      "task_id_unique": 331,
+      "gene_unique": 228,
+      "columns": [
+        "condition_index",
+        "perturbation",
+        "context",
+        "treatment",
+        "task_id",
+        "n_generated_prediction_cells",
+        "gene",
+        "target",
+        "fold",
+        "predicted_magnitude",
+        "prediction_abs_mean",
+        "prediction_signed_mean",
+        "prediction_std",
+        "prediction_abs_q95",
+        "prediction_sparsity",
+        "CellWeighted_prior_magnitude",
+        "CellWeighted_prediction_prior_rmse",
+        "CellWeighted_prediction_prior_cosine",
+        "CellWeighted_prior_uncertainty",
+        "CellWeighted_log_history_support",
+        "CellWeighted_effective_sources",
+        "CellWeighted_history_conflict",
+        "LearnedHGBRegularized_prior_magnitude",
+        "LearnedHGBRegularized_prediction_prior_rmse",
+        "LearnedHGBRegularized_prediction_prior_cosine",
+        "LearnedHGBRegularized_prior_uncertainty",
+        "LearnedHGBRegularized_log_history_support",
+        "LearnedHGBRegularized_effective_sources",
+        "LearnedHGBRegularized_history_conflict",
+        "true_error_rmse",
+        "dataset_id",
+        "upstream",
+        "model_version",
+        "output_contract_id",
+        "prior_magnitude",
+        "prediction_prior_rmse",
+        "prediction_prior_cosine",
+        "prior_uncertainty",
+        "log_history_support",
+        "effective_sources",
+        "history_conflict",
+        "shared_risk",
+        "simple_history_risk",
+        "support_risk"
+      ],
+      "truth_missing": 0
+    },
+    "native_control_features": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/native_control_reference/TASK_FEATURES.parquet",
+      "exists": true,
+      "rows": 543,
+      "task_id_unique": 543,
+      "gene_unique": 380,
+      "columns": [
+        "biological_task_key",
+        "perturbation",
+        "context",
+        "treatment",
+        "task_id",
+        "target",
+        "fold",
+        "predicted_magnitude",
+        "prediction_abs_mean",
+        "prediction_signed_mean",
+        "prediction_std",
+        "prediction_abs_q95",
+        "prediction_sparsity",
+        "CellWeighted_prior_magnitude",
+        "CellWeighted_prediction_prior_rmse",
+        "CellWeighted_prediction_prior_cosine",
+        "CellWeighted_prior_uncertainty",
+        "CellWeighted_log_history_support",
+        "CellWeighted_effective_sources",
+        "CellWeighted_history_conflict",
+        "LearnedHGBRegularized_prior_magnitude",
+        "LearnedHGBRegularized_prediction_prior_rmse",
+        "LearnedHGBRegularized_prediction_prior_cosine",
+        "LearnedHGBRegularized_prior_uncertainty",
+        "LearnedHGBRegularized_log_history_support",
+        "LearnedHGBRegularized_effective_sources",
+        "LearnedHGBRegularized_history_conflict",
+        "true_error_rmse",
+        "dataset_id",
+        "upstream",
+        "model_version",
+        "output_contract_id",
+        "gene",
+        "prior_magnitude",
+        "prediction_prior_rmse",
+        "prediction_prior_cosine",
+        "prior_uncertainty",
+        "log_history_support",
+        "effective_sources",
+        "history_conflict",
+        "native_prediction_abs_mean",
+        "native_control_baseline",
+        "native_control_dropout",
+        "native_control_plate_variance_proxy",
+        "native_state_0",
+        "native_state_1",
+        "native_state_2",
+        "native_state_3",
+        "native_state_4",
+        "native_state_5",
+        "native_embedding_0",
+        "native_embedding_1",
+        "native_embedding_2",
+        "native_embedding_3",
+        "native_embedding_4",
+        "native_embedding_5",
+        "native_embedding_6",
+        "native_embedding_7",
+        "native_embedding_8",
+        "native_embedding_9",
+        "native_embedding_10",
+        "native_embedding_11",
+        "native_embedding_12",
+        "native_embedding_13",
+        "native_embedding_14",
+        "native_embedding_15",
+        "native_embedding_16",
+        "native_embedding_17",
+        "native_embedding_18",
+        "native_embedding_19",
+        "native_embedding_20",
+        "native_embedding_21",
+        "native_embedding_22",
+        "native_embedding_23",
+        "native_embedding_24",
+        "native_embedding_25",
+        "native_embedding_26",
+        "native_embedding_27",
+        "native_embedding_28",
+        "native_embedding_29",
+        "native_embedding_30",
+        "native_embedding_31",
+        "native_embedding_32",
+        "native_embedding_33",
+        "native_embedding_34",
+        "native_embedding_35",
+        "native_embedding_36",
+        "native_embedding_37",
+        "native_embedding_38",
+        "native_embedding_39",
+        "native_embedding_40",
+        "native_embedding_41",
+        "native_embedding_42",
+        "native_embedding_43",
+        "native_embedding_44",
+        "native_embedding_45",
+        "native_embedding_46",
+        "native_embedding_47",
+        "native_embedding_48",
+        "native_embedding_49",
+        "native_training_similarity"
+      ],
+      "truth_missing": 0
+    },
+    "source_cache": {
+      "files": [
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_0_TxPert_Exphormer_Manual.parquet",
+          "rows": 1808,
+          "tasks": 1808,
+          "genes": 575,
+          "folds": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_0_TxPert_GAT_Manual.parquet",
+          "rows": 1808,
+          "tasks": 1808,
+          "genes": 575,
+          "folds": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_1_TxPert_Exphormer_Manual.parquet",
+          "rows": 1808,
+          "tasks": 1808,
+          "genes": 575,
+          "folds": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_1_TxPert_GAT_Manual.parquet",
+          "rows": 1808,
+          "tasks": 1808,
+          "genes": 575,
+          "folds": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_2_TxPert_Exphormer_Manual.parquet",
+          "rows": 1808,
+          "tasks": 1808,
+          "genes": 575,
+          "folds": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_2_TxPert_GAT_Manual.parquet",
+          "rows": 1808,
+          "tasks": 1808,
+          "genes": 575,
+          "folds": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_3_TxPert_Exphormer_Manual.parquet",
+          "rows": 1808,
+          "tasks": 1808,
+          "genes": 575,
+          "folds": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_3_TxPert_GAT_Manual.parquet",
+          "rows": 1808,
+          "tasks": 1808,
+          "genes": 575,
+          "folds": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_4_TxPert_Exphormer_Manual.parquet",
+          "rows": 1808,
+          "tasks": 1808,
+          "genes": 575,
+          "folds": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_4_TxPert_GAT_Manual.parquet",
+          "rows": 1808,
+          "tasks": 1808,
+          "genes": 575,
+          "folds": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      ],
+      "file_count": 10,
+      "expected_manual_nested_files": 10,
+      "expected_rows": 1808,
+      "expected_genes": 575
+    },
+    "system_manifest": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/system_evidence_v042/MANIFEST.json",
+      "exists": true,
+      "bytes": 4690,
+      "sha256": "f95a028f8a405168872de2a3b44a9df134bc62af88e0c70285b5aca5174e43d4"
+    },
+    "component_decision": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/system_evidence_v042/COMPONENT_DECISION.json",
+      "exists": true,
+      "bytes": 33065,
+      "sha256": "cfa16c96b38df9ce5bd0c49806ffda6b854df2a3466c78c6d683da430c150f04"
+    },
+    "resource_ledger": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/RESOURCE_LEDGER.json",
+      "exists": true,
+      "bytes": 1899,
+      "sha256": "312b0c48f1f50ab731d38592efd73c8230086c80d1668feab74e0ef23f2e0047"
+    },
+    "e258_contract": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/E258_feng2025_independent_confirmation_20260924/PREFLIGHT_AND_ANALYSIS_CONTRACT.md",
+      "exists": true,
+      "bytes": 21514,
+      "sha256": "d6e0b9a0d357fdffbd2217016c8e2dfb73f36dadb1b1628767ccb1d64bf4f535"
+    },
+    "e258_report": {
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/E258_feng2025_independent_confirmation_20260924/DEV_REPORT_20260925_历史何时有用.md",
+      "exists": true,
+      "bytes": 13584,
+      "sha256": "9dbefde87b9e49b1f467a0081d431839552b7e9682f8839246e027a339871c4b"
+    }
+  },
+  "tabpfn": {
+    "python": "/home/yyf/.venvs/safeconf-tabpfn-20261001/bin/python",
+    "checkpoint": {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/tabpfn_v2_probe/tabpfn-v2-regressor.ckpt",
+      "exists": true,
+      "bytes": 44390977,
+      "sha256": "2ab5a07d5c41dfe6db9aa7ae106fc6de898326c2765be66505a07e2868c10736"
+    },
+    "expected_checkpoint_sha256": "2ab5a07d5c41dfe6db9aa7ae106fc6de898326c2765be66505a07e2868c10736",
+    "version_probe": "9.0.0"
+  },
+  "pertema": {
+    "root": "/home/yyf/runtime_artifacts/official_pertema_43c09a",
+    "head": "43c09a32e23d0ee2ae5dfbab21b2deeab27f1803",
+    "expected_commit": "43c09a32e23d0ee2ae5dfbab21b2deeab27f1803",
+    "source": {
+      "path": "/home/yyf/runtime_artifacts/official_pertema_43c09a/src/pertema/run_estimator.py",
+      "exists": true,
+      "bytes": 9064,
+      "sha256": "54aef0da2301a1d3d13c33fee231933878176941fdc5d64063a54ae09234ab06"
+    }
+  },
+  "independent_assets": [
+    {
+      "asset": "E258_test_donor",
+      "path": "/home/yyf/data/feng2025_candidate",
+      "exists": true,
+      "role": "sealed; upstream ability gate currently not passed",
+      "eligible_for_independent_score": false,
+      "reason": "qualification is metadata-only in preflight"
+    },
+    {
+      "asset": "Replogle_K562_GWPS",
+      "path": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/ReplogleWeissman2022_K562_gwps.h5ad",
+      "exists": true,
+      "role": "requires frozen predictor audit",
+      "eligible_for_independent_score": false,
+      "reason": "qualification is metadata-only in preflight"
+    },
+    {
+      "asset": "Nadig_E239_seen",
+      "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/E239_nadig_third_gene_confirmation_20260923",
+      "exists": true,
+      "role": "SEEN same-study robustness only",
+      "eligible_for_independent_score": false,
+      "reason": "qualification is metadata-only in preflight"
+    }
+  ],
+  "permanent_test_truth_opened": false,
+  "new_download_bytes": 0,
+  "new_large_upstream_training": false,
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "holdout_shape",
+      "pass": true
+    },
+    {
+      "check": "feedback_pool_shape",
+      "pass": true
+    },
+    {
+      "check": "source_nested_cache",
+      "pass": true
+    },
+    {
+      "check": "tabpfn_checkpoint",
+      "pass": true
+    },
+    {
+      "check": "pertema_commit",
+      "pass": true
+    }
+  ]
+}
