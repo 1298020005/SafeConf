@@ -1,0 +1,72 @@
+{
+  "status": "QUALIFICATION_COMPLETE_CONTRACT_MISMATCH_NO_SCORING",
+  "asset_role": "locked predictor and truth-index candidate; not SafeConf score",
+  "e192_doc": "/home/yyf/proj/docs/实验结果/E192_adamson_to_replogle_rpe1_locked_transfer_20260729",
+  "panel_sha256": "0a042c341a0449b5b5e98263ac9e5824c22240713051872f472b39981de554e7",
+  "pretruth_predictions_sha256": "3997165fa1f112e1a030ac9c2d0772f53996370bfaa95384b6668f18ab40adbf",
+  "query_rows": 175,
+  "query_genes": 21,
+  "prediction_members": [
+    "GEARS_seed3407",
+    "GEARS_seed3408",
+    "GEARS_seed3409",
+    "scGPT_seed3407",
+    "scGPT_seed3408",
+    "scGPT_seed3409"
+  ],
+  "pretruth_target_truth_reads": 0,
+  "public_history_coverage": {
+    "E201_RPE1_same_context": 5,
+    "E201_all_contexts": 6,
+    "GWPS_K562_cross_context": 21,
+    "GWPS_RPE1_same_context": 0
+  },
+  "scale_audit": [
+    {
+      "matrix": "source_control",
+      "rows": 2613,
+      "columns": 512,
+      "minimum": 0.0,
+      "maximum": 7.002184867858887,
+      "mean": 1.5241434726443703,
+      "median": 1.3810300827026367,
+      "fraction_zero": 0.0828803697856869,
+      "all_finite": true,
+      "all_nonnegative": true
+    },
+    {
+      "matrix": "source_target",
+      "rows": 15349,
+      "columns": 512,
+      "minimum": 0.0,
+      "maximum": 6.9202375411987305,
+      "mean": 1.5250379757479884,
+      "median": 1.3832719326019287,
+      "fraction_zero": 0.0828248939263144,
+      "all_finite": true,
+      "all_nonnegative": true
+    },
+    {
+      "matrix": "target_control",
+      "rows": 1905,
+      "columns": 512,
+      "minimum": 0.0,
+      "maximum": 3.827755928039551,
+      "mean": 1.6425489685567845,
+      "median": 1.8502330780029297,
+      "fraction_zero": 0.1869361056430446,
+      "all_finite": true,
+      "all_nonnegative": true
+    }
+  ],
+  "contract": {
+    "E192_prediction_contract": "per-cell full-library scale to 10000 then log1p",
+    "E201_public_contract": "E201_log1p_matched_batch_delta_v1 (registered 4000-scale public pipeline)",
+    "GWPS_public_contract": "GWPS log1p(4000 * raw retained gene UMI / original UMI_count)",
+    "exact_contract_match": false,
+    "reason": "E192 prediction/effect scale is 10000 while available SafeConf public effects are registered at 4000; no scale-preserving adapter is frozen for this asset"
+  },
+  "target_truth_opened_by_this_script": false,
+  "permanent_test_truth_opened": false,
+  "next_action": "Either obtain a frozen 10000-scale public-effect source or implement and validate a pre-registered scale adapter on development data; do not score E192 under the current PublicRule contract before that."
+}

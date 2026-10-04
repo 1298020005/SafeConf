@@ -7,3 +7,4 @@ TabPFN V2 improves the target learner,not adopted,TABPFN_TARGET50_RESULTS.csv an
 Current-truth PertEMA adaptation is competitive,not supported,PERTEMA_CURRENT_MACRO.csv,P6/Native61 current adaptation,not a claim about the complete official PertEMA pipeline
 One public score can rank history-present and history-absent tasks together,supported in frozen SEEN queue,MIXED_QUEUE_SYSTEM_COMPARISON.csv and MIXED_QUEUE_ACTUAL_ERROR_DISCOVERY.csv,2993 GWPS tasks,retrospective cached-error audit; not independent confirmation
 Source HGB improves the mixed queue beyond the public fallback,not supported in mixed queue,MIXED_QUEUE_SYSTEM_COMPARISON.csv,2993 GWPS tasks,source candidate is retained as conditional evidence only
+E192 can provide an independent fixed-predictor confirmation,asset found but not score-eligible,E192_ASSET_STATUS.json,175 locked RPE1 tasks; 21 genes,10000-scale predictor vs 4000-scale public effects; adapter required

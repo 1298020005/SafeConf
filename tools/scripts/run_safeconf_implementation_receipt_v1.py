@@ -65,6 +65,10 @@ def main():
     system_status = load_json(run / "system_freeze_v4/RUN_STATUS.json", {})
     system_comparison = pd.read_csv(run / "system_freeze_v4/SYSTEM_COMPARISON.csv")
     independent_assets = pd.read_csv(run / "INDEPENDENT_ASSET_AUDIT.csv") if (run / "INDEPENDENT_ASSET_AUDIT.csv").exists() else pd.DataFrame()
+    mixed_audit = load_json(run / "mixed_queue/MIXED_QUEUE_AUDIT.json", {})
+    mixed_comparison = pd.read_csv(run / "mixed_queue/MIXED_QUEUE_SYSTEM_COMPARISON.csv") if (run / "mixed_queue/MIXED_QUEUE_SYSTEM_COMPARISON.csv").exists() else pd.DataFrame()
+    mixed_discovery = pd.read_csv(run / "mixed_queue/MIXED_QUEUE_ACTUAL_ERROR_DISCOVERY.csv") if (run / "mixed_queue/MIXED_QUEUE_ACTUAL_ERROR_DISCOVERY.csv").exists() else pd.DataFrame()
+    e192_audit = load_json(run / "e192_contract_audit/E192_ASSET_STATUS.json", {})
     implementation = {
         "run_id": "safeconf_impl_20261004_v1",
         "status": "COMPLETE_IMPLEMENTATION_EVIDENCE_WITH_PUBLICRULE_DEFAULT",
@@ -96,6 +100,8 @@ def main():
             "target_tabpfn": target_tab,
             "system_freeze": system_status,
             "independent_asset_audit": independent_assets.to_dict("records"),
+            "mixed_queue": mixed_audit,
+            "e192_contract_audit": e192_audit,
         },
         "decision": freeze,
         "permanent_test_truth_opened": False,
@@ -112,6 +118,13 @@ def main():
     copy_if_exists(run / "system_freeze_v4/COMPONENT_DECISION.json", DOC / "COMPONENT_DECISION.json")
     copy_if_exists(run / "system_freeze_v4/SYSTEM_RANKING.parquet", DOC / "PER_QUERY_RESULTS.parquet")
     copy_if_exists(run / "system_freeze_v4/SYSTEM_COMPARISON.csv", DOC / "SYSTEM_COMPARISON.csv")
+    for name in ("MIXED_QUEUE_AUDIT.json", "MIXED_QUEUE_SYSTEM_COMPARISON.csv",
+                 "MIXED_QUEUE_ACTUAL_ERROR_DISCOVERY.csv", "MIXED_QUEUE_COVERAGE.csv",
+                 "MIXED_QUEUE_PAIRED_BOOTSTRAP.csv", "MIXED_QUEUE_CONTRACT.md",
+                 "MIXED_QUEUE_SYSTEM_RANKING.parquet"):
+        copy_if_exists(run / "mixed_queue" / name, DOC / name)
+    for name in ("E192_INPUT_CONTRACT_AUDIT.json", "E192_PUBLIC_HISTORY_COVERAGE.csv", "E192_ASSET_STATUS.json"):
+        copy_if_exists(run / "e192_contract_audit" / name, DOC / name)
 
     ledger = pd.DataFrame([
         {"information_or_cost": "Public truth", "source": "E258 validation + McFaline public history", "rows_or_units": "1530 validation records; 542 DEV tasks", "role": "reference and reliability estimation", "evaluation_truth_used": False, "status": "used"},
@@ -119,6 +132,7 @@ def main():
         {"information_or_cost": "Target development errors", "source": "McFaline DEV", "rows_or_units": "542 tasks; 377 genes", "role": "H1/XGB/TabPFN selection", "evaluation_truth_used": False, "status": "DEV only"},
         {"information_or_cost": "Target feedback errors", "source": "registered feedback pool", "rows_or_units": "331 rows; 228 genes", "role": "current-truth feedback learner inputs", "evaluation_truth_used": False, "status": "registered"},
         {"information_or_cost": "Current holdout truth", "source": "HOLDOUT_FEATURES.parquet", "rows_or_units": "212 rows; 152 genes", "role": "fixed current-contract evaluation", "evaluation_truth_used": True, "status": "SEEN holdout; no permanent TEST"},
+        {"information_or_cost": "Mixed queue cached errors", "source": "GWPS score-sealed retrospective artifact", "rows_or_units": "2993 tasks; 1750 genes", "role": "unified history/no-history ranking audit", "evaluation_truth_used": True, "status": "SEEN only; no method selection or independent confirmation"},
         {"information_or_cost": "New download", "source": "none", "rows_or_units": 0, "role": "resource cost", "evaluation_truth_used": False, "status": "within budget"},
         {"information_or_cost": "Additional TabPFN GPU", "source": "fixed V2.0 target 50%", "rows_or_units": "0.00128 GPU-hours", "role": "capacity audit", "evaluation_truth_used": False, "status": "within 2 GPU-hour reserve"},
     ])
@@ -131,6 +145,9 @@ def main():
         {"claim": "Target feedback reliably improves the current system", "status": "not established", "evidence": "SYSTEM_PAIRED_BOOTSTRAP.csv", "scope": "212 current-contract tasks", "boundary": "XGB point gain CI crosses zero"},
         {"claim": "TabPFN V2 improves the target learner", "status": "not adopted", "evidence": "TABPFN_TARGET50_RESULTS.csv and holdout predictions", "scope": "542 DEV plus one fixed 212-task score", "boundary": "fixed replacement only; not all algorithms"},
         {"claim": "Current-truth PertEMA adaptation is competitive", "status": "not supported", "evidence": "PERTEMA_CURRENT_MACRO.csv", "scope": "P6/Native61 current adaptation", "boundary": "not a claim about the complete official PertEMA pipeline"},
+        {"claim": "One public score can rank history-present and history-absent tasks together", "status": "supported in frozen SEEN queue", "evidence": "MIXED_QUEUE_SYSTEM_COMPARISON.csv and MIXED_QUEUE_ACTUAL_ERROR_DISCOVERY.csv", "scope": "2993 GWPS tasks", "boundary": "retrospective cached-error audit; not independent confirmation"},
+        {"claim": "Source HGB improves the mixed queue beyond the public fallback", "status": "not supported in mixed queue", "evidence": "MIXED_QUEUE_SYSTEM_COMPARISON.csv", "scope": "2993 GWPS tasks", "boundary": "source candidate is retained as conditional evidence only"},
+        {"claim": "E192 can provide an independent fixed-predictor confirmation", "status": "asset found but not score-eligible", "evidence": "E192_ASSET_STATUS.json", "scope": "175 locked RPE1 tasks; 21 genes", "boundary": "10000-scale predictor vs 4000-scale public effects; adapter required"},
     ])
     write_csv(DOC / "CLAIM_EVIDENCE_MATRIX.csv", claims)
 
@@ -140,7 +157,7 @@ def main():
     failure_log += "- PublicMeanJackknife is complete for 210/212 holdout tasks. Missing values are not imputed; the system falls back to PublicRule and records the coverage failure.\n"
     failure_log += "- Target TabPFN passed the DEV technical gate but lost on the frozen current holdout. It remains a capacity audit and does not replace H1/XGB or PublicRule.\n"
     failure_log += "- Current-truth PertEMA P6 and Native61 are reproducible adaptations under the current truth contract; the result is not labelled as a complete official conformal PertEMA reproduction.\n"
-    failure_log += "- No permanent TEST truth was opened, no new download was made, and no E208 process was changed.\n"
+    failure_log += "- Mixed history/no-history ranking was completed from the pre-sealed 2,993-task score artifact. It is a SEEN retrospective audit, not independent confirmation; no permanent TEST truth was opened, no new download was made, and no E208 process was changed.\n"
     write_text(DOC / "FAILURE_AND_ACTION_LOG.md", failure_log)
     report = "# SafeConf implementation receipt\n\n"
     report += "## 实际完成\n\n"
@@ -156,7 +173,7 @@ def main():
     report += "- PertEMA P6/Native61 当前适配低于 PublicRule，保留为公平适配结果，不宣称官方模型复现。\n"
     report += "- TabPFN Target 50% 的 DEV 点增益未形成当前 holdout 的稳定收益，保留为固定学习器对照。\n"
     report += "- Jackknife 能预测 E258 留出参照偏差，但与历史分散度高度相关，暂不升级为默认风险规则。\n\n"
-    report += "- 独立资产核验：Replogle GWPS 有数据但没有合格冻结预测；Nadig 有预测但属于 SEEN 同研究；E258 仍封存。当前没有独立确认评分。\n\n"
+    report += "- 独立资产核验：Replogle GWPS 有数据但没有合格冻结预测；Nadig 有预测但属于 SEEN 同研究；E192 有 175 个冻结预测，但 10000/4000 effect contract 不一致，已拒绝计分；E258 仍封存。当前没有独立确认评分。\n\n"
     report += "## 失败与修复\n\n"
     report += "- Source gate 首次运行在汇总阶段出现索引错误；已修复指标聚合并在 `source_gate_v3` 完整重跑真实与置乱标签流程。\n"
     report += "- Native61 的部分字段为 NaN；采用 XGBoost 原生缺失值路径，完整任务覆盖与有限字段覆盖分别登记。\n"
@@ -164,6 +181,14 @@ def main():
     report += "## 当前系统指标\n\n"
     for _, row in system_comparison.iterrows():
         report += f"- `{row['method']}`：U20={row['u20']:.6f}，AURC={row['aurc']:.6f}，有效 context={int(row['valid_contexts'])}/{int(row['contexts'])}。\n"
+    if not mixed_comparison.empty:
+        report += "\n## 混合历史队列（SEEN）\n\n"
+        for _, row in mixed_comparison[mixed_comparison.context.eq("all")].iterrows():
+            report += f"- `{row['method']}`：U20={row['u20']:.6f}，复核20%发现 {int(row['true_top20_found'])}/{int(row['review_count'])} 个真实高误差任务，剩余平均误差={row['remaining_mean_error']:.6f}。\n"
+        if not mixed_discovery.empty:
+            pub = mixed_discovery.loc[mixed_discovery.method.eq("PublicRule_mixed")].iloc[0]
+            amp = mixed_discovery.loc[mixed_discovery.method.eq("Amplitude")].iloc[0]
+            report += f"- PublicRule_mixed 相对 Amplitude 多发现 {int(pub.true_high_error_found - amp.true_high_error_found)} 个高误差任务，剩余误差减少 {amp.remaining_mean_error - pub.remaining_mean_error:.6f}；这是冻结分数的 SEEN 回顾，不是独立确认。\n"
     report += "\n"
     report += "## 下一动作\n\n"
     report += "1. 继续保留 PublicRule 作为当前系统默认。\n"
