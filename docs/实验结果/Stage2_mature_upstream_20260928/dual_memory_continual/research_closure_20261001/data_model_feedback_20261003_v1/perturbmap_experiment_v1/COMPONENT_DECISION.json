@@ -1,0 +1,307 @@
+{
+  "schema": "safeconf_perturbmap_experiment_v1",
+  "status": "COMPLETE_DEV_VALIDATION_RISK_READOUT",
+  "default_method_changed": false,
+  "routes": [
+    {
+      "source_context": "K562",
+      "target_context": "HCT116",
+      "raw_pair_count": 331,
+      "independent_pair_genes": 331,
+      "rank": 8,
+      "source_response_axis": 2840,
+      "recipient_response_axis": 3285,
+      "mapping_axis": 2840,
+      "pair_identity_hash": "abd50c1e61e9d7a075a4da5177e4e5b516e90b8546f3684e6496bec94654475d",
+      "anchor_roles": "Orion TRAIN only",
+      "permanent_test_truth_used": false
+    },
+    {
+      "source_context": "K562",
+      "target_context": "HEK293T",
+      "raw_pair_count": 326,
+      "independent_pair_genes": 326,
+      "rank": 8,
+      "source_response_axis": 2840,
+      "recipient_response_axis": 3285,
+      "mapping_axis": 2840,
+      "pair_identity_hash": "38d2ad76964e426113e644cd691d648b13307b1fe63d95bc24bb40a5fc03e9e6",
+      "anchor_roles": "Orion TRAIN only",
+      "permanent_test_truth_used": false
+    }
+  ],
+  "recommendation": "RETAIN_EXISTING_PUBLIC_RULE_UNTIL_CROSS_BACKGROUND_RISK_GATE",
+  "reason": "This is a bounded K562-to-Orion background-transfer development readout. It does not replace the same-background public rule; adoption requires stable risk gain on a pre-registered independent route.",
+  "permanent_test_truth_used": false,
+  "query_truth_used_only_for_scoring": true,
+  "risk_metrics": [
+    {
+      "context": "HCT116",
+      "method": "Amplitude",
+      "n_tasks": 30,
+      "u20": -0.2708735441508962,
+      "aurc": 0.04172465101491232,
+      "spearman": -0.1479421579532814,
+      "selected_top20": 6,
+      "true_top20_found": 0,
+      "remaining_mean_error": 0.042003574407113685
+    },
+    {
+      "context": "HCT116",
+      "method": "ProjectedCopy",
+      "n_tasks": 30,
+      "u20": 0.6340982394409506,
+      "aurc": 0.03481617801939686,
+      "spearman": 0.3939933259176863,
+      "selected_top20": 6,
+      "true_top20_found": 4,
+      "remaining_mean_error": 0.0361737036321288
+    },
+    {
+      "context": "HCT116",
+      "method": "RawCopy",
+      "n_tasks": 30,
+      "u20": 0.8172976504756202,
+      "aurc": 0.03359296286429724,
+      "spearman": 0.5136818687430478,
+      "selected_top20": 6,
+      "true_top20_found": 5,
+      "remaining_mean_error": 0.03499352441356087
+    },
+    {
+      "context": "HCT116",
+      "method": "RecipientMean",
+      "n_tasks": 30,
+      "u20": 0.14483508872054432,
+      "aurc": 0.03739874241832903,
+      "spearman": 0.12747497219132367,
+      "selected_top20": 6,
+      "true_top20_found": 3,
+      "remaining_mean_error": 0.039325559850607726
+    },
+    {
+      "context": "HCT116",
+      "method": "RidgeTransport",
+      "n_tasks": 30,
+      "u20": 0.6017619501239746,
+      "aurc": 0.03454969119865811,
+      "spearman": 0.4460511679644049,
+      "selected_top20": 6,
+      "true_top20_found": 4,
+      "remaining_mean_error": 0.03638201552812215
+    },
+    {
+      "context": "HCT116",
+      "method": "ScalarAffine",
+      "n_tasks": 30,
+      "u20": 0.6114301453888429,
+      "aurc": 0.035191366128789925,
+      "spearman": 0.36284760845383757,
+      "selected_top20": 6,
+      "true_top20_found": 4,
+      "remaining_mean_error": 0.036319732559698774
+    },
+    {
+      "context": "HCT116",
+      "method": "ShuffledPairTransport",
+      "n_tasks": 30,
+      "u20": 0.4444721345629492,
+      "aurc": 0.03938612533457328,
+      "spearman": 0.13014460511679646,
+      "selected_top20": 6,
+      "true_top20_found": 3,
+      "remaining_mean_error": 0.03739528391457115
+    },
+    {
+      "context": "HEK293T",
+      "method": "Amplitude",
+      "n_tasks": 23,
+      "u20": -0.26913272311153724,
+      "aurc": 0.03233202599443568,
+      "spearman": 0.016798418972332016,
+      "selected_top20": 5,
+      "true_top20_found": 0,
+      "remaining_mean_error": 0.03317578326145923
+    },
+    {
+      "context": "HEK293T",
+      "method": "ProjectedCopy",
+      "n_tasks": 23,
+      "u20": -0.03443476668200826,
+      "aurc": 0.033178809602849434,
+      "spearman": -0.17786561264822134,
+      "selected_top20": 5,
+      "true_top20_found": 1,
+      "remaining_mean_error": 0.032608173651236166
+    },
+    {
+      "context": "HEK293T",
+      "method": "RawCopy",
+      "n_tasks": 23,
+      "u20": 0.06102421866491223,
+      "aurc": 0.03155743764032834,
+      "spearman": 0.011857707509881422,
+      "selected_top20": 5,
+      "true_top20_found": 1,
+      "remaining_mean_error": 0.032377309103928845
+    },
+    {
+      "context": "HEK293T",
+      "method": "RecipientMean",
+      "n_tasks": 23,
+      "u20": -0.16822722049698607,
+      "aurc": 0.032510185715870846,
+      "spearman": -0.042490118577075096,
+      "selected_top20": 5,
+      "true_top20_found": 1,
+      "remaining_mean_error": 0.03293174648380793
+    },
+    {
+      "context": "HEK293T",
+      "method": "RidgeTransport",
+      "n_tasks": 23,
+      "u20": -0.3949385443230934,
+      "aurc": 0.033121098053125776,
+      "spearman": -0.14031620553359686,
+      "selected_top20": 5,
+      "true_top20_found": 0,
+      "remaining_mean_error": 0.03348004067480883
+    },
+    {
+      "context": "HEK293T",
+      "method": "ScalarAffine",
+      "n_tasks": 23,
+      "u20": -0.03443476668200826,
+      "aurc": 0.03339669306739715,
+      "spearman": -0.24110671936758896,
+      "selected_top20": 5,
+      "true_top20_found": 1,
+      "remaining_mean_error": 0.032608173651236166
+    },
+    {
+      "context": "HEK293T",
+      "method": "ShuffledPairTransport",
+      "n_tasks": 23,
+      "u20": -0.5340332595967365,
+      "aurc": 0.03374317711360066,
+      "spearman": -0.3102766798418973,
+      "selected_top20": 5,
+      "true_top20_found": 0,
+      "remaining_mean_error": 0.03381643685959737
+    },
+    {
+      "context": "POOLED_COVERED",
+      "method": "Amplitude",
+      "n_tasks": 53,
+      "u20": -0.2160515618655097,
+      "aurc": 0.039922694647361374,
+      "spearman": -0.27052088372843086,
+      "selected_top20": 11,
+      "true_top20_found": 1,
+      "remaining_mean_error": 0.03794373547136813
+    },
+    {
+      "context": "POOLED_COVERED",
+      "method": "ProjectedCopy",
+      "n_tasks": 53,
+      "u20": 0.5432462154655358,
+      "aurc": 0.033995884918021815,
+      "spearman": 0.13554265441057894,
+      "selected_top20": 11,
+      "true_top20_found": 5,
+      "remaining_mean_error": 0.034284248344434054
+    },
+    {
+      "context": "POOLED_COVERED",
+      "method": "RawCopy",
+      "n_tasks": 53,
+      "u20": 0.6521181821564618,
+      "aurc": 0.03260278854321709,
+      "spearman": 0.25705531365908724,
+      "selected_top20": 11,
+      "true_top20_found": 6,
+      "remaining_mean_error": 0.033759532518200665
+    },
+    {
+      "context": "POOLED_COVERED",
+      "method": "RecipientMean",
+      "n_tasks": 53,
+      "u20": 0.291454605899591,
+      "aurc": 0.03377129497906326,
+      "spearman": 0.2808417997097242,
+      "selected_top20": 11,
+      "true_top20_found": 4,
+      "remaining_mean_error": 0.035497775081092545
+    },
+    {
+      "context": "POOLED_COVERED",
+      "method": "RidgeTransport",
+      "n_tasks": 53,
+      "u20": 0.41754327112242384,
+      "aurc": 0.033580460596836226,
+      "spearman": 0.25632962425415257,
+      "selected_top20": 11,
+      "true_top20_found": 4,
+      "remaining_mean_error": 0.03489008220879524
+    },
+    {
+      "context": "POOLED_COVERED",
+      "method": "ScalarAffine",
+      "n_tasks": 53,
+      "u20": 0.7084028373889785,
+      "aurc": 0.033876973292309466,
+      "spearman": 0.20924044508950165,
+      "selected_top20": 11,
+      "true_top20_found": 6,
+      "remaining_mean_error": 0.033488264805563175
+    },
+    {
+      "context": "POOLED_COVERED",
+      "method": "ShuffledPairTransport",
+      "n_tasks": 53,
+      "u20": 0.4096266917269518,
+      "aurc": 0.03468562321108644,
+      "spearman": 0.20077406869859699,
+      "selected_top20": 11,
+      "true_top20_found": 5,
+      "remaining_mean_error": 0.03492823670002648
+    }
+  ],
+  "reconstruction_mean_rmse": [
+    {
+      "method": "ProjectedCopy",
+      "rmse": 0.08535798282904687
+    },
+    {
+      "method": "RawCopy",
+      "rmse": 0.09247459976495676
+    },
+    {
+      "method": "RecipientMean",
+      "rmse": 0.08213965978867822
+    },
+    {
+      "method": "RidgeTransport",
+      "rmse": 0.08084966639802399
+    },
+    {
+      "method": "ScalarAffine",
+      "rmse": 0.0815716252648479
+    },
+    {
+      "method": "ShuffledPairTransport",
+      "rmse": 0.08221514413604265
+    }
+  ],
+  "outputs": [
+    "INFORMATION_BUDGET.csv",
+    "MAPPING_FIT_AUDIT.csv",
+    "PAIRED_BOOTSTRAP.csv",
+    "PAIR_ELIGIBILITY.csv",
+    "QUERY_REFERENCE_RESULTS.parquet",
+    "QUERY_RISK_SCORES.parquet",
+    "RECONSTRUCTION_METRICS.csv",
+    "RISK_METRICS.csv",
+    "ROUTE_AUDIT.csv"
+  ]
+}

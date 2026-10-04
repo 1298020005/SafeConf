@@ -1,0 +1,31 @@
+{
+  "contract": "SafeConf v0.4.2",
+  "status": "COMPLETE",
+  "input_hashes": {
+    "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/public_memory.parquet": "fcfbd3300a012e3747c9642f5076d1407c509f46f66e4412522c5d9b8661c4bd",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_PUBLIC_EFFECTS.npy": "579b95ac834a36f1c6c3d12d25c3d607c9083a53c53b469e24d3c0be81d1e74e",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/GENE_IDS.json": "be612f9c4638146b41eee26f607ab12fbed53b524cda7a76eee36ca554c28f97",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_allowed_biology_20261002_v2/QUERY_METADATA_ONLY.csv": "8bf0eb5a394a4c9675409410e3b60e7c4220cf689da5ae3bbe7afc21fb9ab000",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_allowed_biology_20261002_v2/ENDPOINT_GENE_MANIFEST.csv": "c1c9c8041458275248514d960c6c263a72f43a12a8d48c16f77759d2342fa08f",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_allowed_biology_20261002_v2/ENDPOINT3285_EFFECTS.npy": "3e753b1fbc79e4c8b13264a91318d2ba0887d083ffd728edbf35c9db1dcc0403",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v4_decimal_tokens/competence/VALIDATION_TASK_ERRORS.csv": "70bc1c639bddca4e39f4852397bfeff3f998382bd262332d989ddf8fbfc15f34"
+  },
+  "prediction_inputs": {
+    "HCT116": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HCT116/PREDICTIONS_DELTA.tsv.gz",
+    "HEK293T": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HEK293T/PREDICTIONS_DELTA.tsv.gz"
+  },
+  "permanent_test_truth_used": false,
+  "files": {
+    "COMPONENT_DECISION.json": "cf1b922b6648372e625db6b1f203157fb771e3fe4db069ed50bc5b406789d21e",
+    "INFORMATION_BUDGET.csv": "5fdbf3e9fb8573dae4da6d5dd1f94804caf4415f874f4d081d341c4c1eb08e87",
+    "MAPPING_FIT_AUDIT.csv": "c25fd7e23607573bfe6a2ccbc9b00c7b105152c543846b0d6cd12f600784c1b0",
+    "PAIRED_BOOTSTRAP.csv": "4a0f08b57826c0416825391784be4eaa5df08850c39ce79414b8b4ed44fb5d5b",
+    "PAIR_ELIGIBILITY.csv": "16679fb922fe29cc75ce7b138e092c081d6258a56304dd52668b8c60b73b72e9",
+    "QUERY_REFERENCE_RESULTS.parquet": "0be43ba78ac32b783a48d24bdf097d1a49492ba81b1e1ab72c28463abdc67971",
+    "QUERY_RISK_SCORES.parquet": "68876c0e7f30158e572229fd859d090f58103b6997b9914caac26c79a43202d4",
+    "RECONSTRUCTION_METRICS.csv": "7d2837e573cbcc7b50be889c824b8ff059417e100b7ae1f15a48775f1206533b",
+    "RISK_METRICS.csv": "4eb9fcc142ad91bc872df99d22fcfe9c2bcc28d01b595b2f468dc919ec223d4e",
+    "ROUTE_AUDIT.csv": "f16da6bdb61139ee563aedd793b29013597c276c817f2c93b5633a81a7a3a242",
+    "RUN_STATUS.json": "50f9b60e03722d9eb19e6e79da204de40ed6bf68f23c2afd266be3ba00505b0d"
+  }
+}
