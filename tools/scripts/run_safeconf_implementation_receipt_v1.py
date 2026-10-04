@@ -69,6 +69,8 @@ def main():
     mixed_comparison = pd.read_csv(run / "mixed_queue/MIXED_QUEUE_SYSTEM_COMPARISON.csv") if (run / "mixed_queue/MIXED_QUEUE_SYSTEM_COMPARISON.csv").exists() else pd.DataFrame()
     mixed_discovery = pd.read_csv(run / "mixed_queue/MIXED_QUEUE_ACTUAL_ERROR_DISCOVERY.csv") if (run / "mixed_queue/MIXED_QUEUE_ACTUAL_ERROR_DISCOVERY.csv").exists() else pd.DataFrame()
     e192_audit = load_json(run / "e192_contract_audit/E192_ASSET_STATUS.json", {})
+    e192_cross = load_json(run / "e192_crosscontext_v4/E192_CROSSCONTEXT_AUDIT.json", {})
+    e192_cross_results = pd.read_csv(run / "e192_crosscontext_v4/E192_CROSSCONTEXT_SYSTEM_COMPARISON.csv") if (run / "e192_crosscontext_v4/E192_CROSSCONTEXT_SYSTEM_COMPARISON.csv").exists() else pd.DataFrame()
     implementation = {
         "run_id": "safeconf_impl_20261004_v1",
         "status": "COMPLETE_IMPLEMENTATION_EVIDENCE_WITH_PUBLICRULE_DEFAULT",
@@ -102,6 +104,7 @@ def main():
             "independent_asset_audit": independent_assets.to_dict("records"),
             "mixed_queue": mixed_audit,
             "e192_contract_audit": e192_audit,
+            "e192_crosscontext": e192_cross,
         },
         "decision": freeze,
         "permanent_test_truth_opened": False,
@@ -125,6 +128,8 @@ def main():
         copy_if_exists(run / "mixed_queue" / name, DOC / name)
     for name in ("E192_INPUT_CONTRACT_AUDIT.json", "E192_PUBLIC_HISTORY_COVERAGE.csv", "E192_ASSET_STATUS.json"):
         copy_if_exists(run / "e192_contract_audit" / name, DOC / name)
+    for name in ("E192_CROSSCONTEXT_AUDIT.json", "E192_CROSSCONTEXT_SYSTEM_COMPARISON.csv", "E192_CROSSCONTEXT_PAIRED_BOOTSTRAP.csv"):
+        copy_if_exists(run / "e192_crosscontext_v4" / name, DOC / name)
 
     ledger = pd.DataFrame([
         {"information_or_cost": "Public truth", "source": "E258 validation + McFaline public history", "rows_or_units": "1530 validation records; 542 DEV tasks", "role": "reference and reliability estimation", "evaluation_truth_used": False, "status": "used"},
@@ -147,7 +152,7 @@ def main():
         {"claim": "Current-truth PertEMA adaptation is competitive", "status": "not supported", "evidence": "PERTEMA_CURRENT_MACRO.csv", "scope": "P6/Native61 current adaptation", "boundary": "not a claim about the complete official PertEMA pipeline"},
         {"claim": "One public score can rank history-present and history-absent tasks together", "status": "supported in frozen SEEN queue", "evidence": "MIXED_QUEUE_SYSTEM_COMPARISON.csv and MIXED_QUEUE_ACTUAL_ERROR_DISCOVERY.csv", "scope": "2993 GWPS tasks", "boundary": "retrospective cached-error audit; not independent confirmation"},
         {"claim": "Source HGB improves the mixed queue beyond the public fallback", "status": "not supported in mixed queue", "evidence": "MIXED_QUEUE_SYSTEM_COMPARISON.csv", "scope": "2993 GWPS tasks", "boundary": "source candidate is retained as conditional evidence only"},
-        {"claim": "E192 can provide an independent fixed-predictor confirmation", "status": "asset found but not score-eligible", "evidence": "E192_ASSET_STATUS.json", "scope": "175 locked RPE1 tasks; 21 genes", "boundary": "10000-scale predictor vs 4000-scale public effects; adapter required"},
+        {"claim": "E192 provides a cross-context public-risk audit", "status": "supported as SEEN same-study cross-context", "evidence": "E192_CROSSCONTEXT_SYSTEM_COMPARISON.csv + paired bootstrap", "scope": "173 scored RPE1 tasks; 20 gene clusters", "boundary": "not independent-study confirmation; intervals are wide"},
     ])
     write_csv(DOC / "CLAIM_EVIDENCE_MATRIX.csv", claims)
 
@@ -173,7 +178,7 @@ def main():
     report += "- PertEMA P6/Native61 当前适配低于 PublicRule，保留为公平适配结果，不宣称官方模型复现。\n"
     report += "- TabPFN Target 50% 的 DEV 点增益未形成当前 holdout 的稳定收益，保留为固定学习器对照。\n"
     report += "- Jackknife 能预测 E258 留出参照偏差，但与历史分散度高度相关，暂不升级为默认风险规则。\n\n"
-    report += "- 独立资产核验：Replogle GWPS 有数据但没有合格冻结预测；Nadig 有预测但属于 SEEN 同研究；E192 有 175 个冻结预测，但 10000/4000 effect contract 不一致，已拒绝计分；E258 仍封存。当前没有独立确认评分。\n\n"
+    report += "- 独立资产核验：Replogle GWPS 有数据但没有合格冻结预测；Nadig 有预测但属于 SEEN 同研究；E192 已用 10000-scale 公共效应完成 173 个任务的跨背景审计，但仍是同研究 SEEN 证据；E258 仍封存。当前没有独立研究确认评分。\n\n"
     report += "## 失败与修复\n\n"
     report += "- Source gate 首次运行在汇总阶段出现索引错误；已修复指标聚合并在 `source_gate_v3` 完整重跑真实与置乱标签流程。\n"
     report += "- Native61 的部分字段为 NaN；采用 XGBoost 原生缺失值路径，完整任务覆盖与有限字段覆盖分别登记。\n"
@@ -189,6 +194,13 @@ def main():
             pub = mixed_discovery.loc[mixed_discovery.method.eq("PublicRule_mixed")].iloc[0]
             amp = mixed_discovery.loc[mixed_discovery.method.eq("Amplitude")].iloc[0]
             report += f"- PublicRule_mixed 相对 Amplitude 多发现 {int(pub.true_high_error_found - amp.true_high_error_found)} 个高误差任务，剩余误差减少 {amp.remaining_mean_error - pub.remaining_mean_error:.6f}；这是冻结分数的 SEEN 回顾，不是独立确认。\n"
+    if not e192_cross_results.empty:
+        report += "\n## E192 跨背景审计（SEEN）\n\n"
+        for model, group in e192_cross_results.groupby("model", sort=True):
+            a = group.loc[group.method.eq("Amplitude")].iloc[0]
+            p = group.loc[group.method.str.startswith("PublicRule")].iloc[0]
+            report += f"- `{model}`：PublicRule U20={p.u20:.6f}，Amplitude U20={a.u20:.6f}，点差={p.u20-a.u20:.6f}。\n"
+        report += "- 20 个基因簇的 5000 次区间均跨零；该结果用于跨背景适用范围，不升级默认方法。\n"
     report += "\n"
     report += "## 下一动作\n\n"
     report += "1. 继续保留 PublicRule 作为当前系统默认。\n"

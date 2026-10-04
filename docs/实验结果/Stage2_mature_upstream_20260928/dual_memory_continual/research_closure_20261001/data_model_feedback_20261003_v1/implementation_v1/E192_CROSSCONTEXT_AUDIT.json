@@ -1,0 +1,30 @@
+{
+  "status": "COMPLETE_SEEN_SAME_STUDY_CROSS_CONTEXT",
+  "n_tasks": 175,
+  "scored_tasks": 173,
+  "n_genes": 21,
+  "source_context": "K562",
+  "target_context": "RPE1",
+  "effect_contract": "E192-compatible 10000 scale rebuilt from GWPS raw counts",
+  "target_truth_read": false,
+  "target_error_source": "pre-existing E192_TASK_METRICS.csv only",
+  "independent_study_confirmation": false,
+  "stream_audit": {
+    "reused_effect_artifact": true,
+    "effect_path": "/home/yyf/runtime_artifacts/safeconf_impl_20261004_v1/e192_crosscontext_v4/E192_K562_PUBLIC_EFFECTS_10000.npz",
+    "n_effects": 511,
+    "target_truth_read": false
+  },
+  "model_members": [
+    "scGPT_seed3407",
+    "GEARS_seed3407",
+    "scGPT_seed3408",
+    "GEARS_seed3408",
+    "scGPT_seed3409",
+    "GEARS_seed3409"
+  ],
+  "unscored_query_genes": [
+    "GMPPB"
+  ],
+  "permanent_test_truth_opened": false
+}

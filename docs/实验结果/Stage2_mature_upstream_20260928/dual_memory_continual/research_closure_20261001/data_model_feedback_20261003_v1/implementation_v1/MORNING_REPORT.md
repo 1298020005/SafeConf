@@ -17,7 +17,7 @@
 - TabPFN Target 50% 的 DEV 点增益未形成当前 holdout 的稳定收益，保留为固定学习器对照。
 - Jackknife 能预测 E258 留出参照偏差，但与历史分散度高度相关，暂不升级为默认风险规则。
 
-- 独立资产核验：Replogle GWPS 有数据但没有合格冻结预测；Nadig 有预测但属于 SEEN 同研究；E192 有 175 个冻结预测，但 10000/4000 effect contract 不一致，已拒绝计分；E258 仍封存。当前没有独立确认评分。
+- 独立资产核验：Replogle GWPS 有数据但没有合格冻结预测；Nadig 有预测但属于 SEEN 同研究；E192 已用 10000-scale 公共效应完成 173 个任务的跨背景审计，但仍是同研究 SEEN 证据；E258 仍封存。当前没有独立研究确认评分。
 
 ## 失败与修复
 
@@ -41,6 +41,16 @@
 - `PublicRule_mixed`：U20=0.231355，复核20%发现 187/599 个真实高误差任务，剩余平均误差=0.029555。
 - `SourceHGB_mixed`：U20=0.076827，复核20%发现 155/599 个真实高误差任务，剩余平均误差=0.029868。
 - PublicRule_mixed 相对 Amplitude 多发现 33 个高误差任务，剩余误差减少 0.000216；这是冻结分数的 SEEN 回顾，不是独立确认。
+
+## E192 跨背景审计（SEEN）
+
+- `GEARS_seed3407`：PublicRule U20=0.562103，Amplitude U20=0.702569，点差=-0.140466。
+- `GEARS_seed3408`：PublicRule U20=0.638821，Amplitude U20=0.674467，点差=-0.035646。
+- `GEARS_seed3409`：PublicRule U20=0.542807，Amplitude U20=0.695891，点差=-0.153083。
+- `scGPT_seed3407`：PublicRule U20=0.170629，Amplitude U20=0.122285，点差=0.048344。
+- `scGPT_seed3408`：PublicRule U20=0.219523，Amplitude U20=0.223864，点差=-0.004341。
+- `scGPT_seed3409`：PublicRule U20=0.215838，Amplitude U20=0.118049，点差=0.097788。
+- 20 个基因簇的 5000 次区间均跨零；该结果用于跨背景适用范围，不升级默认方法。
 
 ## 下一动作
 

@@ -143,11 +143,11 @@
         "data_exists": true,
         "frozen_prediction_found": true,
         "eligible_for_independent_score": false,
-        "status": "CONTRACT_MISMATCH_NO_SCORING",
+        "status": "SEEN_SAME_STUDY_CROSS_CONTEXT_SCORED",
         "path": "/home/yyf/proj/docs/实验结果/E192_adamson_to_replogle_rpe1_locked_transfer_20260729",
         "files_checked": "PRETRUTH_PREDICTIONS.npz; E192_TASK_METRICS.csv; GENE_PANEL.csv; PRETRUTH_INPUT_SCALE_AUDIT.csv; public history metadata",
-        "reason": "175 locked predictions and 21 genes are available; E192 uses 10000-scale log1p while current public effects are registered at 4000-scale, so no score was computed",
-        "role": "candidate independent predictor asset; requires a pre-registered scale adapter"
+        "reason": "10000-scale K562 public effects rebuilt; 173/175 RPE1 tasks scored. Same Replogle study and 20-gene bootstrap intervals cross zero, so this is robustness evidence, not independent confirmation",
+        "role": "cross-context robustness only; not independent-study confirmation"
       }
     ],
     "mixed_queue": {
@@ -240,6 +240,36 @@
       "target_truth_opened_by_this_script": false,
       "permanent_test_truth_opened": false,
       "next_action": "Either obtain a frozen 10000-scale public-effect source or implement and validate a pre-registered scale adapter on development data; do not score E192 under the current PublicRule contract before that."
+    },
+    "e192_crosscontext": {
+      "status": "COMPLETE_SEEN_SAME_STUDY_CROSS_CONTEXT",
+      "n_tasks": 175,
+      "scored_tasks": 173,
+      "n_genes": 21,
+      "source_context": "K562",
+      "target_context": "RPE1",
+      "effect_contract": "E192-compatible 10000 scale rebuilt from GWPS raw counts",
+      "target_truth_read": false,
+      "target_error_source": "pre-existing E192_TASK_METRICS.csv only",
+      "independent_study_confirmation": false,
+      "stream_audit": {
+        "reused_effect_artifact": true,
+        "effect_path": "/home/yyf/runtime_artifacts/safeconf_impl_20261004_v1/e192_crosscontext_v4/E192_K562_PUBLIC_EFFECTS_10000.npz",
+        "n_effects": 511,
+        "target_truth_read": false
+      },
+      "model_members": [
+        "scGPT_seed3407",
+        "GEARS_seed3407",
+        "scGPT_seed3408",
+        "GEARS_seed3408",
+        "scGPT_seed3409",
+        "GEARS_seed3409"
+      ],
+      "unscored_query_genes": [
+        "GMPPB"
+      ],
+      "permanent_test_truth_opened": false
     }
   },
   "decision": {
