@@ -148,6 +148,17 @@
         "files_checked": "PRETRUTH_PREDICTIONS.npz; E192_TASK_METRICS.csv; GENE_PANEL.csv; PRETRUTH_INPUT_SCALE_AUDIT.csv; public history metadata",
         "reason": "10000-scale K562 public effects rebuilt; 173/175 RPE1 tasks scored. Same Replogle study and 20-gene bootstrap intervals cross zero, so this is robustness evidence, not independent confirmation",
         "role": "cross-context robustness only; not independent-study confirmation"
+      },
+      {
+        "asset": "E208_Jiang24_external_confirmation",
+        "data_exists": true,
+        "frozen_prediction_found": false,
+        "eligible_for_independent_score": false,
+        "status": "PENDING_PROTECTED_PRETRUTH_PREDICTION",
+        "path": "/home/yyf/runtime_worktrees/e205_postprocess_20260915/docs/实验结果/E208_jiang24_external_confirmation_20260912",
+        "files_checked": "E208_PREDICTION_MANIFEST_STATUS.json; E208_RISK_SEAL_QUEUE_STATUS.json; E208_FINALIZER_STATUS.json",
+        "reason": "224 tasks and 12 external contexts are registered; formal upstream training is complete, but protected prediction queue is waiting and target truth remains unauthorized",
+        "role": "priority independent confirmation asset; score only after frozen predictions and method hash"
       }
     ],
     "mixed_queue": {
@@ -270,6 +281,18 @@
         "GMPPB"
       ],
       "permanent_test_truth_opened": false
+    },
+    "e208_independent_asset": {
+      "experiment": "E208_jiang24_external_confirmation",
+      "stage": "D1_PRETRUTH_RISK_SEAL_QUEUE",
+      "status": "WAITING_FOR_PREDICTIONS_AND_SOURCE_CACHE",
+      "started_at": "2026-09-21T12:10:10+08:00",
+      "pid": 1873824,
+      "test_perturbed_expression_rows_read": 0,
+      "target_truth_access": "NOT_AUTHORIZED",
+      "updated_at": "2026-10-05T02:34:05+08:00",
+      "predictions_ready": false,
+      "source_cache_ready": true
     }
   },
   "decision": {
