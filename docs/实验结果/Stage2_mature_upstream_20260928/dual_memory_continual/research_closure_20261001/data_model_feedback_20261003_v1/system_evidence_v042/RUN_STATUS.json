@@ -1,5 +1,5 @@
 {
-  "status": "COMPLETE_WITH_SAMS_PENDING",
+  "status": "COMPLETE_WITH_SAMS_POSTPROCESS",
   "contract": "SafeConf v0.4.2",
   "output_dir": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/system_evidence_v042",
   "required_outputs": [
@@ -40,11 +40,35 @@
     "ridge_label_source": "SOURCE_ERROR_AUDIT_ONLY",
     "passed": true
   },
-  "sams_status": "TRAINING_RUNNING",
+  "sams_status": "TRAINING_VALIDATED_EPOCH",
   "python": "3.12.4",
   "git_commit": "adc120a4077b9b1fcee50dd832fd529aa93db3e2",
   "primary_metric": "context_macro_u20",
   "secondary_metric": "pooled_task_u20",
   "primary_metric_amendment": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/system_evidence_v042/PRIMARY_METRIC_AMENDMENT.json",
-  "context_macro_audit": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/system_evidence_v042_context_macro_v1"
+  "context_macro_audit": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/system_evidence_v042_context_macro_v1",
+  "sams_crossfamily_status": "COMPLETE",
+  "sams_receipts": [
+    "TRAINING_COMPLETION.json",
+    "VALIDATION_PREDICTION_SEAL.json",
+    "VALIDATION_COMPETENCE.json",
+    "VALIDATION_ORIGINAL_512_COMPETENCE.json",
+    "CROSSFAMILY_STATUS.json",
+    "CROSSFAMILY_MACRO.csv",
+    "CROSSFAMILY_PAIRED_DIFFERENCES.csv",
+    "CROSSFAMILY_STRATA.csv",
+    "CROSSFAMILY_CDF_AUDIT.csv",
+    "CROSSFAMILY_SHUFFLE_AUDIT.csv",
+    "CROSSFAMILY_FIT_AUDIT.csv",
+    "HELDOUT_PREDICTION_SEAL.json",
+    "PERTURBMAP_COMPONENT_DECISION.json",
+    "PERTURBMAP_DECISION.md",
+    "PERTURBMAP_RECONSTRUCTION_METRICS.csv",
+    "PERTURBMAP_RISK_METRICS.csv",
+    "PERTURBMAP_RISK_LEARNER_METRICS.csv",
+    "PERTURBMAP_PAIRED_BOOTSTRAP.csv",
+    "PERTURBMAP_ROUTE_AUDIT.csv",
+    "PERTURBMAP_INFORMATION_BUDGET.csv"
+  ],
+  "sams_artifact": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/sams"
 }

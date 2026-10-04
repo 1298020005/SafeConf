@@ -1,0 +1,19 @@
+{
+  "time_utc": "2026-10-04T04:50:36Z",
+  "status": "OPERATIONAL_GATE_PASS",
+  "gene_axis": 512,
+  "n_tasks": 542,
+  "n_clusters": 377,
+  "strongest_simple_baseline": "train_state_mean_effect",
+  "model_mean_rmse": 0.022025657817721367,
+  "baseline_mean_rmse": 0.02203308536391412,
+  "relative_gap": -0.00033710876484494,
+  "bootstrap_ci95": [
+    -0.004900321601772472,
+    0.004143167516004563
+  ],
+  "noninferior_strata_fraction": 1.0,
+  "passes_original_operational_criteria": true,
+  "bootstrap_draws": 5000,
+  "role": "validation original contract; common2840 remains risk comparison axis"
+}

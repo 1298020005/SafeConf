@@ -1,0 +1,13 @@
+{
+  "time_utc": "2026-10-04T04:48:20Z",
+  "status": "TRAINING_STOPPED",
+  "epoch": 209,
+  "global_step": 600906,
+  "best_checkpoint": "/home/yyf/runtime_artifacts/safeconf_research_20261003/sams_v1/checkpoints/epochepoch=184-stepstep=534095.ckpt",
+  "final_checkpoint": "/home/yyf/runtime_artifacts/safeconf_research_20261003/sams_v1/checkpoints/final_resumable.ckpt",
+  "early_stop": false,
+  "budget_stop": true,
+  "elapsed_total_seconds": 85771.34532570839,
+  "best_val_reconstruction_loss": 574.2570190429688,
+  "competence_status": "PENDING_TRUE_GENERATION"
+}

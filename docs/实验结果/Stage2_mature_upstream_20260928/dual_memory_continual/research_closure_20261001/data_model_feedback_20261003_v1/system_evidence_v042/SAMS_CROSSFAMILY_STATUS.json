@@ -1,0 +1,19 @@
+{
+  "time_utc": "2026-10-04T04:53:01Z",
+  "status": "COMPLETE",
+  "risk_fits": 14,
+  "lines": [
+    "DecoderOnly_to_SAMS_VAE",
+    "SAMS_VAE_to_DecoderOnly"
+  ],
+  "source_errors_from": "frozen upstream heldout tasks only",
+  "source_train_rows": 331,
+  "source_train_genes": 228,
+  "query_rows": 212,
+  "query_genes": 152,
+  "gene_axis": 2840,
+  "bootstrap_draws": 5000,
+  "new_confirmation_claim": false,
+  "role": "SEEN_RETROSPECTIVE",
+  "upstream_validation_information": "Decoder uses legacy validation shrinkage; SAMS selected by reconstruction val_loss; no target risk errors in source fitting"
+}

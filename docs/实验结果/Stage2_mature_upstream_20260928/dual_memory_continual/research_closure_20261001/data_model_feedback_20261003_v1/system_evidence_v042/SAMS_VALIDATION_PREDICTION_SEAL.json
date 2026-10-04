@@ -1,0 +1,13 @@
+{
+  "time_utc": "2026-10-04T04:50:21Z",
+  "status": "PREDICTIONS_SAVED_BEFORE_SCORING",
+  "checkpoint": "/home/yyf/runtime_artifacts/safeconf_research_20261003/sams_v1/checkpoints/epochepoch=184-stepstep=534095.ckpt",
+  "checkpoint_sha256": "61b9ed8f43b05440abb7d535d24fc965b46a633f6bc7ce485a6120151817dc89",
+  "rows": 542,
+  "native_genes": 15009,
+  "generated_samples_per_task": 1000,
+  "prediction_sha256": "fd33f24a5bb1c7c27a7aace0795fa6eddb70636332c490d6a4317aea891a0d84",
+  "expression_input": "zeros; metadata only",
+  "test_expression_accessed": false,
+  "elapsed_generation_seconds": 116.62873816490173
+}
