@@ -48,5 +48,13 @@
   ],
   "source_gate_metrics_path": "/home/yyf/runtime_artifacts/safeconf_impl_20261004_v1/source_gate_v3/SOURCE_GATE_METRICS.csv",
   "holdout_is_seen_current_contract": true,
-  "permanent_test_truth_opened": false
+  "permanent_test_truth_opened": false,
+  "core_contribution_scope": "PublicRule is retained as a strong same-contract public-reference risk rule; transfer to E182/GSE225807 is an explicit negative boundary rather than a universal claim",
+  "independent_transfer_boundary": {
+    "asset": "E182_GSE225807",
+    "scored_tasks": 36,
+    "scored_genes": 18,
+    "public_rule_adopted_for_this_asset": false,
+    "reason": "PublicRule did not stably exceed amplitude and the bounded scalar response-scale repair did not yield a stable prospective gain"
+  }
 }
