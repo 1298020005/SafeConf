@@ -1,4 +1,4 @@
-asset,eligible_for_independent_score,exists,path,reason,role
-E258_test_donor,False,True,/home/yyf/data/feng2025_candidate,qualification is metadata-only in preflight,sealed; upstream ability gate currently not passed
-Replogle_K562_GWPS,False,True,/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/ReplogleWeissman2022_K562_gwps.h5ad,qualification is metadata-only in preflight,requires frozen predictor audit
-Nadig_E239_seen,False,True,/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/E239_nadig_third_gene_confirmation_20260923,qualification is metadata-only in preflight,SEEN same-study robustness only
+asset,data_exists,frozen_prediction_found,eligible_for_independent_score,status,path,files_checked,reason,role
+E258_test_donor,True,False,False,SEALED,/home/yyf/data/feng2025_candidate,metadata and qualification records,upstream ability gate is not passed; sealed test truth remains closed,sealed confirmation candidate
+Replogle_K562_GWPS,True,False,False,DATA_ONLY_NO_FROZEN_PREDICTION,/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/ReplogleWeissman2022_K562_gwps.h5ad,dataset path plus targeted runtime artifact prediction/checkpoint search,"GWPS exists, but no frozen SafeConf-eligible predictor/checkpoint was found in the audited paths",potential new public history; no independent scoring yet
+Nadig_E239_seen,True,True,False,SEEN_SAME_STUDY,/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/E239_nadig_third_gene_confirmation_20260923/Nadig_E239_disjoint,PREDICTION_RECORDS.csv; predicted_effects.npz; true_effects.npz,"prediction exists but this is a SEEN same-study robustness asset, not independent confirmation",seen robustness only
