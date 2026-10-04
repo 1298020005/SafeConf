@@ -485,6 +485,7 @@ def run(out: Path) -> dict:
         "contract": "SafeConf v0.4.2", "status": "COMPLETE",
         "input_hashes": {str(p): sha256(p) for p in [PUBLIC, SOURCE_EFFECTS, SOURCE_GENES, ORION_META, ORION_AXIS, ORION_EFFECTS, ORION_ERRORS]},
         "prediction_inputs": {ctx: str(PRED_ROOT / ctx / "PREDICTIONS_DELTA.tsv.gz") for ctx in TARGET_CONTEXTS},
+        "prediction_input_hashes": {str(PRED_ROOT / ctx / "PREDICTIONS_DELTA.tsv.gz"): sha256(PRED_ROOT / ctx / "PREDICTIONS_DELTA.tsv.gz") for ctx in TARGET_CONTEXTS},
         "permanent_test_truth_used": False,
         "files": {p.name: sha256(p) for p in sorted(out.iterdir()) if p.is_file() and p.name != "MANIFEST.json"},
     })
