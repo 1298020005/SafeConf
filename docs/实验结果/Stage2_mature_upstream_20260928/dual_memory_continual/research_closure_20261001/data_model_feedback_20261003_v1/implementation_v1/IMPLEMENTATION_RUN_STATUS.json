@@ -159,6 +159,17 @@
         "files_checked": "E208_PREDICTION_MANIFEST_STATUS.json; E208_RISK_SEAL_QUEUE_STATUS.json; E208_FINALIZER_STATUS.json",
         "reason": "validation competence gate failed: latent mean task MSE 0.02351 and linear 0.01451 both exceed no-change MSE 0.000441; protected queue correctly refuses test prediction",
         "role": "independent asset retained as a negative upstream-competence result; not scored"
+      },
+      {
+        "asset": "E182_GSE225807_locked_family",
+        "data_exists": true,
+        "frozen_prediction_found": true,
+        "eligible_for_independent_score": false,
+        "status": "PUBLIC_CONTRACT_UNVERIFIED",
+        "path": "/home/yyf/proj/docs/实验结果/E182_gse225807_registered_family_20260724",
+        "files_checked": "PRETRUTH_PREDICTIONS.npz; E182_EVALUATION_TASKS.csv; STATISTICAL_ANALYSIS_LOCK.json; public history metadata",
+        "reason": "40 frozen task rows and 20 evaluation genes; public history overlaps E201=4, GWPS=18, but E182 normalization scale is not registered for exact contract matching",
+        "role": "next independent-study candidate; score only after scale contract closure"
       }
     ],
     "mixed_queue": {
@@ -290,9 +301,27 @@
       "pid": 1873824,
       "test_perturbed_expression_rows_read": 0,
       "target_truth_access": "NOT_AUTHORIZED",
-      "updated_at": "2026-10-05T02:38:05+08:00",
+      "updated_at": "2026-10-05T02:41:05+08:00",
       "predictions_ready": false,
       "source_cache_ready": true
+    },
+    "e182_independent_asset": {
+      "status": "QUALIFICATION_COMPLETE_PUBLIC_CONTRACT_UNVERIFIED",
+      "asset": "E182_gse225807_registered_family",
+      "pretruth_prediction_path": "/home/yyf/proj/docs/实验结果/E182_gse225807_registered_family_20260724/pretruth_release/arrays/PRETRUTH_PREDICTIONS.npz",
+      "n_pretruth_rows": 152,
+      "n_evaluation_tasks": 40,
+      "n_evaluation_genes": 20,
+      "e201_history_gene_coverage": 4,
+      "gwps_history_gene_coverage": 18,
+      "missing_from_both": [
+        "CPEB2",
+        "MSI1"
+      ],
+      "effect_contract": "guide-level mean log1p-normalized expression minus pooled negative-guide control mean; scale factor not registered in E182 lock",
+      "safeconf_public_contract_match": false,
+      "target_expression_read_by_audit": false,
+      "next_action": "resolve E182 normalization scale against a matching public effect source before scoring; no score produced"
     }
   },
   "decision": {

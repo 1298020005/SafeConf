@@ -73,6 +73,7 @@ def main():
     e192_cross_results = pd.read_csv(run / "e192_crosscontext_v4/E192_CROSSCONTEXT_SYSTEM_COMPARISON.csv") if (run / "e192_crosscontext_v4/E192_CROSSCONTEXT_SYSTEM_COMPARISON.csv").exists() else pd.DataFrame()
     e208_status_path = Path("/home/yyf/data/perturbench_e208/pretruth_risk_seal_20260921/E208_RISK_SEAL_QUEUE_STATUS.json")
     e208_status = load_json(e208_status_path, {})
+    e182_audit = load_json(run / "e182_contract_audit/E182_ASSET_STATUS.json", {})
     implementation = {
         "run_id": "safeconf_impl_20261004_v1",
         "status": "COMPLETE_IMPLEMENTATION_EVIDENCE_WITH_PUBLICRULE_DEFAULT",
@@ -108,6 +109,7 @@ def main():
             "e192_contract_audit": e192_audit,
             "e192_crosscontext": e192_cross,
             "e208_independent_asset": e208_status,
+            "e182_independent_asset": e182_audit,
         },
         "decision": freeze,
         "permanent_test_truth_opened": False,
@@ -133,6 +135,7 @@ def main():
         copy_if_exists(run / "e192_contract_audit" / name, DOC / name)
     for name in ("E192_CROSSCONTEXT_AUDIT.json", "E192_CROSSCONTEXT_SYSTEM_COMPARISON.csv", "E192_CROSSCONTEXT_PAIRED_BOOTSTRAP.csv"):
         copy_if_exists(run / "e192_crosscontext_v4" / name, DOC / name)
+    copy_if_exists(run / "e182_contract_audit/E182_ASSET_STATUS.json", DOC / "E182_ASSET_STATUS.json")
 
     ledger = pd.DataFrame([
         {"information_or_cost": "Public truth", "source": "E258 validation + McFaline public history", "rows_or_units": "1530 validation records; 542 DEV tasks", "role": "reference and reliability estimation", "evaluation_truth_used": False, "status": "used"},
@@ -157,6 +160,7 @@ def main():
         {"claim": "Source HGB improves the mixed queue beyond the public fallback", "status": "not supported in mixed queue", "evidence": "MIXED_QUEUE_SYSTEM_COMPARISON.csv", "scope": "2993 GWPS tasks", "boundary": "source candidate is retained as conditional evidence only"},
         {"claim": "E192 provides a cross-context public-risk audit", "status": "supported as SEEN same-study cross-context", "evidence": "E192_CROSSCONTEXT_SYSTEM_COMPARISON.csv + paired bootstrap", "scope": "173 scored RPE1 tasks; 20 gene clusters", "boundary": "not independent-study confirmation; intervals are wide"},
         {"claim": "E208 supplies independent-study confirmation", "status": "not eligible: upstream competence gate failed", "evidence": "E208_VALIDATION_COMPETENCE_STATUS.json", "scope": "216 validation tasks; 12 contexts", "boundary": "negative upstream result retained; target truth remains closed"},
+        {"claim": "E182 can provide independent-study confirmation", "status": "asset found but public contract unverified", "evidence": "E182_ASSET_STATUS.json", "scope": "40 evaluation tasks; 20 genes", "boundary": "18/20 genes have GWPS history, but normalization scale is not registered"},
     ])
     write_csv(DOC / "CLAIM_EVIDENCE_MATRIX.csv", claims)
 
@@ -182,7 +186,7 @@ def main():
     report += "- PertEMA P6/Native61 当前适配低于 PublicRule，保留为公平适配结果，不宣称官方模型复现。\n"
     report += "- TabPFN Target 50% 的 DEV 点增益未形成当前 holdout 的稳定收益，保留为固定学习器对照。\n"
     report += "- Jackknife 能预测 E258 留出参照偏差，但与历史分散度高度相关，暂不升级为默认风险规则。\n\n"
-    report += "- 独立资产核验：Replogle GWPS 有数据但没有合格冻结预测；Nadig 有预测但属于 SEEN 同研究；E192 已用 10000-scale 公共效应完成 173 个任务的跨背景审计，但仍是同研究 SEEN 证据；E208 Jiang24 的两个上游家族均未通过 no-change competence gate，已保留为负结果，不绕过门生成测试预测。\n\n"
+    report += "- 独立资产核验：Replogle GWPS 有数据但没有合格冻结预测；Nadig 有预测但属于 SEEN 同研究；E192 已用 10000-scale 公共效应完成 173 个任务的跨背景审计，但仍是同研究 SEEN 证据；E208 Jiang24 两个上游家族未通过 no-change competence gate；E182 有 40 个独立评价任务，但公共效应归一化尺度尚未登记闭合。\n\n"
     report += "## 失败与修复\n\n"
     report += "- Source gate 首次运行在汇总阶段出现索引错误；已修复指标聚合并在 `source_gate_v3` 完整重跑真实与置乱标签流程。\n"
     report += "- Native61 的部分字段为 NaN；采用 XGBoost 原生缺失值路径，完整任务覆盖与有限字段覆盖分别登记。\n"

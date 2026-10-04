@@ -17,7 +17,7 @@
 - TabPFN Target 50% 的 DEV 点增益未形成当前 holdout 的稳定收益，保留为固定学习器对照。
 - Jackknife 能预测 E258 留出参照偏差，但与历史分散度高度相关，暂不升级为默认风险规则。
 
-- 独立资产核验：Replogle GWPS 有数据但没有合格冻结预测；Nadig 有预测但属于 SEEN 同研究；E192 已用 10000-scale 公共效应完成 173 个任务的跨背景审计，但仍是同研究 SEEN 证据；E208 Jiang24 的两个上游家族均未通过 no-change competence gate，已保留为负结果，不绕过门生成测试预测。
+- 独立资产核验：Replogle GWPS 有数据但没有合格冻结预测；Nadig 有预测但属于 SEEN 同研究；E192 已用 10000-scale 公共效应完成 173 个任务的跨背景审计，但仍是同研究 SEEN 证据；E208 Jiang24 两个上游家族未通过 no-change competence gate；E182 有 40 个独立评价任务，但公共效应归一化尺度尚未登记闭合。
 
 ## 失败与修复
 

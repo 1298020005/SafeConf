@@ -1,0 +1,18 @@
+{
+  "status": "QUALIFICATION_COMPLETE_PUBLIC_CONTRACT_UNVERIFIED",
+  "asset": "E182_gse225807_registered_family",
+  "pretruth_prediction_path": "/home/yyf/proj/docs/实验结果/E182_gse225807_registered_family_20260724/pretruth_release/arrays/PRETRUTH_PREDICTIONS.npz",
+  "n_pretruth_rows": 152,
+  "n_evaluation_tasks": 40,
+  "n_evaluation_genes": 20,
+  "e201_history_gene_coverage": 4,
+  "gwps_history_gene_coverage": 18,
+  "missing_from_both": [
+    "CPEB2",
+    "MSI1"
+  ],
+  "effect_contract": "guide-level mean log1p-normalized expression minus pooled negative-guide control mean; scale factor not registered in E182 lock",
+  "safeconf_public_contract_match": false,
+  "target_expression_read_by_audit": false,
+  "next_action": "resolve E182 normalization scale against a matching public effect source before scoring; no score produced"
+}

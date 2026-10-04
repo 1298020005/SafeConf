@@ -9,3 +9,4 @@ One public score can rank history-present and history-absent tasks together,supp
 Source HGB improves the mixed queue beyond the public fallback,not supported in mixed queue,MIXED_QUEUE_SYSTEM_COMPARISON.csv,2993 GWPS tasks,source candidate is retained as conditional evidence only
 E192 provides a cross-context public-risk audit,supported as SEEN same-study cross-context,E192_CROSSCONTEXT_SYSTEM_COMPARISON.csv + paired bootstrap,173 scored RPE1 tasks; 20 gene clusters,not independent-study confirmation; intervals are wide
 E208 supplies independent-study confirmation,not eligible: upstream competence gate failed,E208_VALIDATION_COMPETENCE_STATUS.json,216 validation tasks; 12 contexts,negative upstream result retained; target truth remains closed
+E182 can provide independent-study confirmation,asset found but public contract unverified,E182_ASSET_STATUS.json,40 evaluation tasks; 20 genes,"18/20 genes have GWPS history, but normalization scale is not registered"
