@@ -64,6 +64,7 @@ def main():
     pertema_status = load_json(run / "pertema_current_truth_v2/PERTEMA_CURRENT_RUN_STATUS.json", {})
     system_status = load_json(run / "system_freeze_v4/RUN_STATUS.json", {})
     system_comparison = pd.read_csv(run / "system_freeze_v4/SYSTEM_COMPARISON.csv")
+    independent_assets = pd.read_csv(run / "INDEPENDENT_ASSET_AUDIT.csv") if (run / "INDEPENDENT_ASSET_AUDIT.csv").exists() else pd.DataFrame()
     implementation = {
         "run_id": "safeconf_impl_20261004_v1",
         "status": "COMPLETE_IMPLEMENTATION_EVIDENCE_WITH_PUBLICRULE_DEFAULT",
@@ -94,6 +95,7 @@ def main():
             },
             "target_tabpfn": target_tab,
             "system_freeze": system_status,
+            "independent_asset_audit": independent_assets.to_dict("records"),
         },
         "decision": freeze,
         "permanent_test_truth_opened": False,
@@ -154,6 +156,7 @@ def main():
     report += "- PertEMA P6/Native61 当前适配低于 PublicRule，保留为公平适配结果，不宣称官方模型复现。\n"
     report += "- TabPFN Target 50% 的 DEV 点增益未形成当前 holdout 的稳定收益，保留为固定学习器对照。\n"
     report += "- Jackknife 能预测 E258 留出参照偏差，但与历史分散度高度相关，暂不升级为默认风险规则。\n\n"
+    report += "- 独立资产核验：Replogle GWPS 有数据但没有合格冻结预测；Nadig 有预测但属于 SEEN 同研究；E258 仍封存。当前没有独立确认评分。\n\n"
     report += "## 失败与修复\n\n"
     report += "- Source gate 首次运行在汇总阶段出现索引错误；已修复指标聚合并在 `source_gate_v3` 完整重跑真实与置乱标签流程。\n"
     report += "- Native61 的部分字段为 NaN；采用 XGBoost 原生缺失值路径，完整任务覆盖与有限字段覆盖分别登记。\n"

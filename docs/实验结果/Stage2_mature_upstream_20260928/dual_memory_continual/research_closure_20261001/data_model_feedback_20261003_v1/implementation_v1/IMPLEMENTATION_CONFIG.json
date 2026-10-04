@@ -103,7 +103,42 @@
         "PertEMA_P6_50"
       ],
       "selected": "PublicRule"
-    }
+    },
+    "independent_asset_audit": [
+      {
+        "asset": "E258_test_donor",
+        "data_exists": true,
+        "frozen_prediction_found": false,
+        "eligible_for_independent_score": false,
+        "status": "SEALED",
+        "path": "/home/yyf/data/feng2025_candidate",
+        "files_checked": "metadata and qualification records",
+        "reason": "upstream ability gate is not passed; sealed test truth remains closed",
+        "role": "sealed confirmation candidate"
+      },
+      {
+        "asset": "Replogle_K562_GWPS",
+        "data_exists": true,
+        "frozen_prediction_found": false,
+        "eligible_for_independent_score": false,
+        "status": "DATA_ONLY_NO_FROZEN_PREDICTION",
+        "path": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/ReplogleWeissman2022_K562_gwps.h5ad",
+        "files_checked": "dataset path plus targeted runtime artifact prediction/checkpoint search",
+        "reason": "GWPS exists, but no frozen SafeConf-eligible predictor/checkpoint was found in the audited paths",
+        "role": "potential new public history; no independent scoring yet"
+      },
+      {
+        "asset": "Nadig_E239_seen",
+        "data_exists": true,
+        "frozen_prediction_found": true,
+        "eligible_for_independent_score": false,
+        "status": "SEEN_SAME_STUDY",
+        "path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/E239_nadig_third_gene_confirmation_20260923/Nadig_E239_disjoint",
+        "files_checked": "PREDICTION_RECORDS.csv; predicted_effects.npz; true_effects.npz",
+        "reason": "prediction exists but this is a SEEN same-study robustness asset, not independent confirmation",
+        "role": "seen robustness only"
+      }
+    ]
   },
   "decision": {
     "status": "COMPLETE",
