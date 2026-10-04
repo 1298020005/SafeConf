@@ -17,7 +17,7 @@
 - TabPFN Target 50% 的 DEV 点增益未形成当前 holdout 的稳定收益，保留为固定学习器对照。
 - Jackknife 能预测 E258 留出参照偏差，但与历史分散度高度相关，暂不升级为默认风险规则。
 
-- 独立资产核验：Replogle GWPS 有数据但没有合格冻结预测；Nadig 有预测但属于 SEEN 同研究；E192 已用 10000-scale 公共效应完成 173 个任务的跨背景审计，但仍是同研究 SEEN 证据；E208 Jiang24 两个上游家族未通过 no-change competence gate；E182 有 40 个独立评价任务，但公共效应归一化尺度尚未登记闭合。
+- 独立资产核验：Replogle GWPS 有数据但没有合格冻结预测；Nadig 有预测但属于 SEEN 同研究；E192 已用 10000-scale 公共效应完成 173 个任务的跨背景审计，但仍是同研究 SEEN 证据；E208 Jiang24 两个上游家族未通过 no-change competence gate；E182 已按 1e4 公共效应契约完成 36/40 任务、18/20 基因的独立研究审计，结果作为公共规则的迁移边界保留。
 
 ## 失败与修复
 
@@ -51,6 +51,25 @@
 - `scGPT_seed3408`：PublicRule U20=0.219523，Amplitude U20=0.223864，点差=-0.004341。
 - `scGPT_seed3409`：PublicRule U20=0.215838，Amplitude U20=0.118049，点差=0.097788。
 - 20 个基因簇的 5000 次区间均跨零；该结果用于跨背景适用范围，不升级默认方法。
+
+## E182 独立研究审计
+
+- `GEARS_seed3407`：PublicRule U20=-0.082927，Amplitude U20=0.133291，点差=-0.216217。
+- `GEARS_seed3408`：PublicRule U20=-0.061152，Amplitude U20=-0.001128，点差=-0.060024。
+- `GEARS_seed3409`：PublicRule U20=-0.067956，Amplitude U20=-0.198653，点差=0.130697。
+- `GEARS_seed3410`：PublicRule U20=-0.042543，Amplitude U20=-0.084110，点差=0.041566。
+- `GEARS_seed3411`：PublicRule U20=0.022045，Amplitude U20=0.205821，点差=-0.183776。
+- `scGPT_seed3407`：PublicRule U20=-0.069099，Amplitude U20=-0.019038，点差=-0.050061。
+- `scGPT_seed3408`：PublicRule U20=-0.065019，Amplitude U20=-0.121778，点差=0.056759。
+- `scGPT_seed3409`：PublicRule U20=-0.197733，Amplitude U20=0.082040，点差=-0.279773。
+- `scGPT_seed3410`：PublicRule U20=-0.069943，Amplitude U20=0.347288，点差=-0.417231。
+- `scGPT_seed3411`：PublicRule U20=-0.071652，Amplitude U20=-0.028976，点差=-0.042675。
+- 配对bootstrap覆盖 18 个独立基因簇；PublicRule 相对Amplitude的区间均跨零，平均点差=-0.102074。该结果把公共参照的适用边界明确为当前Replogle/GWPS来源与契约条件下的证据，不把公共规则写成跨研究普遍成立。
+
+## E182 受限机制修复
+
+- 使用 E182 calibration split 拟合单一响应尺度，再在 prospective split 复核；10 个冻结预测器的尺度估计多数接近零或为负，说明当前公共响应与该研究的误差方向/尺度并不稳定。
+- ScalarPublicScale 相对 Amplitude 的 prospective 点差均值=-0.162436，没有形成稳定增量；修复停止，PublicRule 默认不变。
 
 ## 下一动作
 

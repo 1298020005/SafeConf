@@ -1,5 +1,5 @@
 {
-  "status": "QUALIFICATION_COMPLETE_PUBLIC_CONTRACT_UNVERIFIED",
+  "status": "QUALIFICATION_COMPLETE_AND_INDEPENDENT_PUBLIC_AUDIT_COMPLETE",
   "asset": "E182_gse225807_registered_family",
   "pretruth_prediction_path": "/home/yyf/proj/docs/实验结果/E182_gse225807_registered_family_20260724/pretruth_release/arrays/PRETRUTH_PREDICTIONS.npz",
   "n_pretruth_rows": 152,
@@ -11,8 +11,49 @@
     "CPEB2",
     "MSI1"
   ],
-  "effect_contract": "guide-level mean log1p-normalized expression minus pooled negative-guide control mean; scale factor not registered in E182 lock",
-  "safeconf_public_contract_match": false,
+  "effect_contract": "E182 guide-level log1p-normalized effects compared on a 506-gene common axis with Replogle K562 GWPS rebuilt at the registered 1e4 scale",
+  "safeconf_public_contract_match": true,
   "target_expression_read_by_audit": false,
-  "next_action": "resolve E182 normalization scale against a matching public effect source before scoring; no score produced"
+  "next_action": "retain the negative cross-study public-transfer boundary; do not replace the frozen PublicRule default",
+  "target_expression_read_by_mechanism_diagnostic": true,
+  "independent_public_audit": {
+    "status": "COMPLETE_INDEPENDENT_STUDY_SEEN_SCORE_AUDIT",
+    "study": "GSE225807",
+    "source_public": "Replogle2022_K562_GWPS",
+    "n_evaluation_tasks": 40,
+    "scored_tasks": 36,
+    "evaluation_genes": 20,
+    "scored_genes": 18,
+    "missing_public_history_genes": [
+      "CPEB2",
+      "MSI1"
+    ],
+    "effect_contract": "both E182 and rebuilt public effects use log1p 1e4 normalized panel effects",
+    "panel_axis_sha256": "a343cb3991f9cc51a7846520eb7ae98de53d2d058d26b5562e3946afc02e2be1",
+    "target_truth_read_by_this_script": false,
+    "target_error_source": "pre-existing E182_EVALUATION_TASKS.csv only",
+    "independent_study": true,
+    "stream_audit": {
+      "reused_effect_artifact": true,
+      "n_effects": 18,
+      "target_truth_read": false
+    },
+    "model_members": [
+      "GEARS_seed3407",
+      "GEARS_seed3408",
+      "GEARS_seed3409",
+      "GEARS_seed3410",
+      "GEARS_seed3411",
+      "GEARS_seed_mean",
+      "registered_family_centroid",
+      "scGPT_seed3407",
+      "scGPT_seed3408",
+      "scGPT_seed3409",
+      "scGPT_seed3410",
+      "scGPT_seed3411",
+      "scGPT_seed_mean"
+    ],
+    "permanent_test_truth_opened": false
+  },
+  "original_contract_audit_preserved": "/home/yyf/runtime_artifacts/safeconf_impl_20261004_v1/e182_contract_audit/E182_ASSET_STATUS.json"
 }

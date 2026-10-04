@@ -1,0 +1,31 @@
+{
+  "status": "COMPLETE_POST_FREEZE_MECHANISM_DIAGNOSTIC",
+  "study": "GSE225807",
+  "calibration_split": "E182 calibration_release; 19 target clusters / 38 tasks before public-history filtering",
+  "prospective_split": "E182 final_evaluation; 20 target clusters / 40 tasks before public-history filtering",
+  "target_truth_read": true,
+  "main_method_selection_changed": false,
+  "post_freeze": true,
+  "scale_correction": "one scalar alpha per frozen predictor member, fitted by least squares on calibration response vectors only",
+  "common_axis_genes": 506,
+  "panel_axis_sha256": "a343cb3991f9cc51a7846520eb7ae98de53d2d058d26b5562e3946afc02e2be1",
+  "n_public_effects": 34,
+  "missing_calibration_genes": [
+    "KHDRBS2",
+    "PABPC3",
+    "ZC3H10"
+  ],
+  "missing_prospective_genes": [
+    "CPEB2",
+    "MSI1"
+  ],
+  "n_calibration_scored_tasks": 32,
+  "n_prospective_scored_tasks": 36,
+  "stream_audit": {
+    "reused_effect_artifact": true,
+    "n_effects": 34,
+    "target_truth_read": false
+  },
+  "interpretation": "exploratory mechanism diagnosis; not used to replace the frozen PublicRule or to claim prospective confirmation",
+  "permanent_test_truth_opened": false
+}

@@ -61,8 +61,10 @@ def write_csv(path: Path, frame: pd.DataFrame) -> None:
     os.replace(tmp, path)
 
 
-def stream_k562_effects(panel: pd.DataFrame, output: Path) -> tuple[dict[str, np.ndarray], dict]:
+def stream_k562_effects(panel: pd.DataFrame, output: Path, target_genes: list[str] | None = None) -> tuple[dict[str, np.ndarray], dict]:
     panel_genes = panel.gene_name.astype(str).tolist()
+    panel_axis_sha256 = hashlib.sha256("\n".join(panel_genes).encode("utf-8")).hexdigest()
+    target_genes = panel_genes if target_genes is None else [str(g) for g in target_genes]
     with h5py.File(GWPS, "r") as f:
         raw_gene_names = h5col(f["var"], "gene_name").astype(str)
         mapping = {g: i for i, g in enumerate(raw_gene_names)}
@@ -78,10 +80,8 @@ def stream_k562_effects(panel: pd.DataFrame, output: Path) -> tuple[dict[str, np
         batch_codes, batch_levels = pd.factorize(batches, sort=False)
         control_code = int(np.flatnonzero(perturbation_levels == "control")[0])
         n_gene, n_batch, n_panel = len(perturbation_levels), len(batch_levels), len(used_panel_genes)
-        selected_codes = {g: int(np.flatnonzero(perturbation_levels == g)[0]) for g in used_panel_genes if g in set(perturbation_levels)}
-        missing_targets = sorted(set(used_panel_genes) - set(selected_codes))
-        if missing_targets:
-            raise RuntimeError(f"panel genes absent from GWPS observations: {missing_targets}")
+        selected_codes = {g: int(np.flatnonzero(perturbation_levels == g)[0]) for g in target_genes if g in set(perturbation_levels)}
+        missing_targets = sorted(set(target_genes) - set(selected_codes))
         gene_sum = np.zeros((n_gene, n_panel), dtype=np.float64)
         gene_count = np.zeros(n_gene, dtype=np.int64)
         gene_batch_counts = np.zeros((n_gene, n_batch), dtype=np.int64)
@@ -122,9 +122,9 @@ def stream_k562_effects(panel: pd.DataFrame, output: Path) -> tuple[dict[str, np
         effects[gene] = treated_mean - matched
     audit = {"normalization": "log1p(10000 * raw retained gene UMI / original UMI_count)",
              "effect": "cell-equal treated mean minus NTC mean matched to treated batch frequencies",
-             "n_panel_genes": len(panel_genes), "n_effects": len(effects),
+             "n_panel_genes": len(panel_genes), "n_target_genes_requested": len(target_genes), "n_effects": len(effects),
              "missing_panel_genes": missing,
-             "panel_axis_sha256": sha(E192 / "model_assets/GENE_PANEL.csv"),
+             "panel_axis_sha256": panel_axis_sha256,
              "gwps_sha256": sha(GWPS), "target_truth_read": False,
              "raw_target_perturbation_expression_read": False}
     np.savez_compressed(output, **effects)

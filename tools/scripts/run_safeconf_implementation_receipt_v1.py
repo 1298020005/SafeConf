@@ -74,6 +74,12 @@ def main():
     e208_status_path = Path("/home/yyf/data/perturbench_e208/pretruth_risk_seal_20260921/E208_RISK_SEAL_QUEUE_STATUS.json")
     e208_status = load_json(e208_status_path, {})
     e182_audit = load_json(run / "e182_contract_audit/E182_ASSET_STATUS.json", {})
+    e182_independent = load_json(run / "e182_independent_public_v3/E182_INDEPENDENT_PUBLIC_AUDIT.json", {})
+    e182_independent_results = pd.read_csv(run / "e182_independent_public_v3/E182_INDEPENDENT_PUBLIC_SYSTEM_COMPARISON.csv") if (run / "e182_independent_public_v3/E182_INDEPENDENT_PUBLIC_SYSTEM_COMPARISON.csv").exists() else pd.DataFrame()
+    e182_independent_bootstrap = pd.read_csv(run / "e182_independent_public_v3/E182_INDEPENDENT_PUBLIC_PAIRED_BOOTSTRAP.csv") if (run / "e182_independent_public_v3/E182_INDEPENDENT_PUBLIC_PAIRED_BOOTSTRAP.csv").exists() else pd.DataFrame()
+    e182_diagnostic = load_json(run / "e182_public_mechanism_diagnostic_v1/E182_PUBLIC_MECHANISM_DIAGNOSTIC.json", {})
+    e182_diagnostic_results = pd.read_csv(run / "e182_public_mechanism_diagnostic_v1/E182_PUBLIC_MECHANISM_DIAGNOSTIC.csv") if (run / "e182_public_mechanism_diagnostic_v1/E182_PUBLIC_MECHANISM_DIAGNOSTIC.csv").exists() else pd.DataFrame()
+    e182_diagnostic_bootstrap = pd.read_csv(run / "e182_public_mechanism_diagnostic_v1/E182_PUBLIC_MECHANISM_DIAGNOSTIC_BOOTSTRAP.csv") if (run / "e182_public_mechanism_diagnostic_v1/E182_PUBLIC_MECHANISM_DIAGNOSTIC_BOOTSTRAP.csv").exists() else pd.DataFrame()
     implementation = {
         "run_id": "safeconf_impl_20261004_v1",
         "status": "COMPLETE_IMPLEMENTATION_EVIDENCE_WITH_PUBLICRULE_DEFAULT",
@@ -110,6 +116,8 @@ def main():
             "e192_crosscontext": e192_cross,
             "e208_independent_asset": e208_status,
             "e182_independent_asset": e182_audit,
+            "e182_independent_public_audit": e182_independent,
+            "e182_public_mechanism_diagnostic": e182_diagnostic,
         },
         "decision": freeze,
         "permanent_test_truth_opened": False,
@@ -136,6 +144,22 @@ def main():
     for name in ("E192_CROSSCONTEXT_AUDIT.json", "E192_CROSSCONTEXT_SYSTEM_COMPARISON.csv", "E192_CROSSCONTEXT_PAIRED_BOOTSTRAP.csv"):
         copy_if_exists(run / "e192_crosscontext_v4" / name, DOC / name)
     copy_if_exists(run / "e182_contract_audit/E182_ASSET_STATUS.json", DOC / "E182_ASSET_STATUS.json")
+    if e182_independent:
+        e182_status = dict(e182_audit)
+        e182_status.update({
+            "status": "QUALIFICATION_COMPLETE_AND_INDEPENDENT_PUBLIC_AUDIT_COMPLETE",
+            "safeconf_public_contract_match": True,
+            "effect_contract": "E182 guide-level log1p-normalized effects compared on a 506-gene common axis with Replogle K562 GWPS rebuilt at the registered 1e4 scale",
+            "target_expression_read_by_mechanism_diagnostic": bool(e182_diagnostic.get("target_truth_read", False)),
+            "next_action": "retain the negative cross-study public-transfer boundary; do not replace the frozen PublicRule default",
+            "independent_public_audit": e182_independent,
+            "original_contract_audit_preserved": str(run / "e182_contract_audit/E182_ASSET_STATUS.json"),
+        })
+        write_json(DOC / "E182_ASSET_STATUS.json", e182_status)
+    for name in ("E182_INDEPENDENT_PUBLIC_AUDIT.json", "E182_INDEPENDENT_PUBLIC_SYSTEM_COMPARISON.csv", "E182_INDEPENDENT_PUBLIC_PAIRED_BOOTSTRAP.csv"):
+        copy_if_exists(run / "e182_independent_public_v3" / name, DOC / name)
+    for name in ("E182_PUBLIC_MECHANISM_DIAGNOSTIC.json", "E182_PUBLIC_MECHANISM_DIAGNOSTIC.csv", "E182_PUBLIC_MECHANISM_DIAGNOSTIC_BOOTSTRAP.csv"):
+        copy_if_exists(run / "e182_public_mechanism_diagnostic_v1" / name, DOC / name)
 
     ledger = pd.DataFrame([
         {"information_or_cost": "Public truth", "source": "E258 validation + McFaline public history", "rows_or_units": "1530 validation records; 542 DEV tasks", "role": "reference and reliability estimation", "evaluation_truth_used": False, "status": "used"},
@@ -143,6 +167,9 @@ def main():
         {"information_or_cost": "Target development errors", "source": "McFaline DEV", "rows_or_units": "542 tasks; 377 genes", "role": "H1/XGB/TabPFN selection", "evaluation_truth_used": False, "status": "DEV only"},
         {"information_or_cost": "Target feedback errors", "source": "registered feedback pool", "rows_or_units": "331 rows; 228 genes", "role": "current-truth feedback learner inputs", "evaluation_truth_used": False, "status": "registered"},
         {"information_or_cost": "Current holdout truth", "source": "HOLDOUT_FEATURES.parquet", "rows_or_units": "212 rows; 152 genes", "role": "fixed current-contract evaluation", "evaluation_truth_used": True, "status": "SEEN holdout; no permanent TEST"},
+        {"information_or_cost": "E182 independent-study calibration truth", "source": "E182 CALIBRATION_TRUTH.npz", "rows_or_units": "32 public-history-scored calibration rows; 16 target clusters after GWPS matching", "role": "post-freeze scalar public-response mechanism diagnostic only", "evaluation_truth_used": True, "status": "exploratory; not used to alter frozen system"},
+        {"information_or_cost": "E182 independent-study prospective errors", "source": "locked E182_EVALUATION_TASKS.csv error columns", "rows_or_units": "36 rows; 18 target clusters", "role": "independent-study PublicRule versus amplitude audit", "evaluation_truth_used": True, "status": "scored after main configuration freeze; no raw truth read by the main audit script"},
+        {"information_or_cost": "E182/GWPS public source effects", "source": "Replogle K562 GWPS rebuilt at E182 1e4 scale", "rows_or_units": "34 target perturbation effects; 506 common expression genes", "role": "independent public-reference transfer audit", "evaluation_truth_used": False, "status": "source-only; missing target histories retained"},
         {"information_or_cost": "Mixed queue cached errors", "source": "GWPS score-sealed retrospective artifact", "rows_or_units": "2993 tasks; 1750 genes", "role": "unified history/no-history ranking audit", "evaluation_truth_used": True, "status": "SEEN only; no method selection or independent confirmation"},
         {"information_or_cost": "New download", "source": "none", "rows_or_units": 0, "role": "resource cost", "evaluation_truth_used": False, "status": "within budget"},
         {"information_or_cost": "Additional TabPFN GPU", "source": "fixed V2.0 target 50%", "rows_or_units": "0.00128 GPU-hours", "role": "capacity audit", "evaluation_truth_used": False, "status": "within 2 GPU-hour reserve"},
@@ -160,7 +187,8 @@ def main():
         {"claim": "Source HGB improves the mixed queue beyond the public fallback", "status": "not supported in mixed queue", "evidence": "MIXED_QUEUE_SYSTEM_COMPARISON.csv", "scope": "2993 GWPS tasks", "boundary": "source candidate is retained as conditional evidence only"},
         {"claim": "E192 provides a cross-context public-risk audit", "status": "supported as SEEN same-study cross-context", "evidence": "E192_CROSSCONTEXT_SYSTEM_COMPARISON.csv + paired bootstrap", "scope": "173 scored RPE1 tasks; 20 gene clusters", "boundary": "not independent-study confirmation; intervals are wide"},
         {"claim": "E208 supplies independent-study confirmation", "status": "not eligible: upstream competence gate failed", "evidence": "E208_VALIDATION_COMPETENCE_STATUS.json", "scope": "216 validation tasks; 12 contexts", "boundary": "negative upstream result retained; target truth remains closed"},
-        {"claim": "E182 can provide independent-study confirmation", "status": "asset found but public contract unverified", "evidence": "E182_ASSET_STATUS.json", "scope": "40 evaluation tasks; 20 genes", "boundary": "18/20 genes have GWPS history, but normalization scale is not registered"},
+        {"claim": "E182 provides an independent-study public-risk audit", "status": "scored; PublicRule not adopted as universally transferable", "evidence": "E182_INDEPENDENT_PUBLIC_AUDIT.json + E182_INDEPENDENT_PUBLIC_SYSTEM_COMPARISON.csv + E182_INDEPENDENT_PUBLIC_PAIRED_BOOTSTRAP.csv", "scope": "GSE225807 K562; 36 scored tasks; 18 gene clusters; 10 frozen predictor members", "boundary": "18/20 target genes had matching GWPS history; PublicRule mean U20 delta versus amplitude was negative and all 18-gene paired CIs crossed zero; this is an independent-study audit, not an unseen prospective deployment"},
+        {"claim": "A single E182 calibration-scale correction rescues public transfer", "status": "not supported; exploratory repair stopped", "evidence": "E182_PUBLIC_MECHANISM_DIAGNOSTIC.csv + E182_PUBLIC_MECHANISM_DIAGNOSTIC_BOOTSTRAP.csv", "scope": "19 calibration target clusters and 18 prospective target clusters with public history", "boundary": "one scalar per frozen predictor was fitted on calibration responses after main freeze; prospective gains were not stable, so no correction entered the default system"},
     ])
     write_csv(DOC / "CLAIM_EVIDENCE_MATRIX.csv", claims)
 
@@ -171,6 +199,10 @@ def main():
     failure_log += "- Target TabPFN passed the DEV technical gate but lost on the frozen current holdout. It remains a capacity audit and does not replace H1/XGB or PublicRule.\n"
     failure_log += "- Current-truth PertEMA P6 and Native61 are reproducible adaptations under the current truth contract; the result is not labelled as a complete official conformal PertEMA reproduction.\n"
     failure_log += "- Mixed history/no-history ranking was completed from the pre-sealed 2,993-task score artifact. It is a SEEN retrospective audit, not independent confirmation; no permanent TEST truth was opened, no new download was made, and no E208 process was changed.\n"
+    if e182_independent:
+        failure_log += f"- E182 GSE225807 independent public audit completed on {e182_independent.get('scored_tasks', '?')}/{e182_independent.get('n_evaluation_tasks', '?')} tasks and {e182_independent.get('scored_genes', '?')}/{e182_independent.get('evaluation_genes', '?')} genes. The 1e4 public-effect contract was aligned, but PublicRule did not produce a stable gain over amplitude; the negative result is retained as a transfer boundary.\n"
+    if e182_diagnostic:
+        failure_log += "- E182 mechanism diagnosis fitted one scalar public-response scale per frozen predictor on the registered calibration split, then scored the prospective split once. Several fitted scales collapsed toward zero or negative values and no stable prospective gain appeared; this was a bounded repair and was not promoted to the default method.\n"
     write_text(DOC / "FAILURE_AND_ACTION_LOG.md", failure_log)
     report = "# SafeConf implementation receipt\n\n"
     report += "## 实际完成\n\n"
@@ -186,7 +218,7 @@ def main():
     report += "- PertEMA P6/Native61 当前适配低于 PublicRule，保留为公平适配结果，不宣称官方模型复现。\n"
     report += "- TabPFN Target 50% 的 DEV 点增益未形成当前 holdout 的稳定收益，保留为固定学习器对照。\n"
     report += "- Jackknife 能预测 E258 留出参照偏差，但与历史分散度高度相关，暂不升级为默认风险规则。\n\n"
-    report += "- 独立资产核验：Replogle GWPS 有数据但没有合格冻结预测；Nadig 有预测但属于 SEEN 同研究；E192 已用 10000-scale 公共效应完成 173 个任务的跨背景审计，但仍是同研究 SEEN 证据；E208 Jiang24 两个上游家族未通过 no-change competence gate；E182 有 40 个独立评价任务，但公共效应归一化尺度尚未登记闭合。\n\n"
+    report += "- 独立资产核验：Replogle GWPS 有数据但没有合格冻结预测；Nadig 有预测但属于 SEEN 同研究；E192 已用 10000-scale 公共效应完成 173 个任务的跨背景审计，但仍是同研究 SEEN 证据；E208 Jiang24 两个上游家族未通过 no-change competence gate；E182 已按 1e4 公共效应契约完成 36/40 任务、18/20 基因的独立研究审计，结果作为公共规则的迁移边界保留。\n\n"
     report += "## 失败与修复\n\n"
     report += "- Source gate 首次运行在汇总阶段出现索引错误；已修复指标聚合并在 `source_gate_v3` 完整重跑真实与置乱标签流程。\n"
     report += "- Native61 的部分字段为 NaN；采用 XGBoost 原生缺失值路径，完整任务覆盖与有限字段覆盖分别登记。\n"
@@ -209,6 +241,21 @@ def main():
             p = group.loc[group.method.str.startswith("PublicRule")].iloc[0]
             report += f"- `{model}`：PublicRule U20={p.u20:.6f}，Amplitude U20={a.u20:.6f}，点差={p.u20-a.u20:.6f}。\n"
         report += "- 20 个基因簇的 5000 次区间均跨零；该结果用于跨背景适用范围，不升级默认方法。\n"
+    if not e182_independent_results.empty:
+        report += "\n## E182 独立研究审计\n\n"
+        for model, group in e182_independent_results.groupby("model", sort=True):
+            amp = group.loc[group.method.eq("Amplitude")].iloc[0]
+            pub = group.loc[group.method.str.startswith("PublicRule")].iloc[0]
+            report += f"- `{model}`：PublicRule U20={pub.u20:.6f}，Amplitude U20={amp.u20:.6f}，点差={pub.u20-amp.u20:.6f}。\n"
+        if not e182_independent_bootstrap.empty:
+            report += f"- 配对bootstrap覆盖 {int(e182_independent_bootstrap.n_genes.max())} 个独立基因簇；PublicRule 相对Amplitude的区间均跨零，平均点差={e182_independent_bootstrap.point_delta.mean():.6f}。该结果把公共参照的适用边界明确为当前Replogle/GWPS来源与契约条件下的证据，不把公共规则写成跨研究普遍成立。\n"
+    if not e182_diagnostic_results.empty:
+        report += "\n## E182 受限机制修复\n\n"
+        prospective = e182_diagnostic_results.loc[e182_diagnostic_results.split.eq("prospective")]
+        scales = prospective.groupby("model", sort=True).alpha.first()
+        report += f"- 使用 E182 calibration split 拟合单一响应尺度，再在 prospective split 复核；{len(scales)} 个冻结预测器的尺度估计多数接近零或为负，说明当前公共响应与该研究的误差方向/尺度并不稳定。\n"
+        if not e182_diagnostic_bootstrap.empty:
+            report += f"- ScalarPublicScale 相对 Amplitude 的 prospective 点差均值={e182_diagnostic_bootstrap.point_delta.mean():.6f}，没有形成稳定增量；修复停止，PublicRule 默认不变。\n"
     report += "\n"
     report += "## 下一动作\n\n"
     report += "1. 继续保留 PublicRule 作为当前系统默认。\n"

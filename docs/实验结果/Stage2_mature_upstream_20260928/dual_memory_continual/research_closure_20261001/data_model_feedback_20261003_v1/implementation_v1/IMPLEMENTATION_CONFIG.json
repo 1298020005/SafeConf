@@ -164,12 +164,12 @@
         "asset": "E182_GSE225807_locked_family",
         "data_exists": true,
         "frozen_prediction_found": true,
-        "eligible_for_independent_score": false,
-        "status": "PUBLIC_CONTRACT_UNVERIFIED",
+        "eligible_for_independent_score": true,
+        "status": "INDEPENDENT_STUDY_SCORED_PUBLIC_NO_GAIN",
         "path": "/home/yyf/proj/docs/实验结果/E182_gse225807_registered_family_20260724",
-        "files_checked": "PRETRUTH_PREDICTIONS.npz; E182_EVALUATION_TASKS.csv; STATISTICAL_ANALYSIS_LOCK.json; public history metadata",
-        "reason": "40 frozen task rows and 20 evaluation genes; public history overlaps E201=4, GWPS=18, but E182 normalization scale is not registered for exact contract matching",
-        "role": "next independent-study candidate; score only after scale contract closure"
+        "files_checked": "PRETRUTH_PREDICTIONS.npz; E182_EVALUATION_TASKS.csv; E182_INDEPENDENT_PUBLIC_AUDIT.json; E182_INDEPENDENT_PUBLIC_SYSTEM_COMPARISON.csv; E182_INDEPENDENT_PUBLIC_PAIRED_BOOTSTRAP.csv",
+        "reason": "1e4 scale-aligned Replogle GWPS public effects scored on 36/40 E182 evaluation tasks across 18/20 genes; PublicRule did not stably exceed amplitude (mean point delta -0.1021; all paired 18-gene CIs cross zero); raw E182 target truth was not read by the audit script and the independent locked error table was used only after method freeze",
+        "role": "independent-study transfer audit; negative public-transfer boundary retained"
       }
     ],
     "mixed_queue": {
@@ -301,7 +301,7 @@
       "pid": 1873824,
       "test_perturbed_expression_rows_read": 0,
       "target_truth_access": "NOT_AUTHORIZED",
-      "updated_at": "2026-10-05T02:41:05+08:00",
+      "updated_at": "2026-10-05T03:32:05+08:00",
       "predictions_ready": false,
       "source_cache_ready": true
     },
@@ -322,6 +322,76 @@
       "safeconf_public_contract_match": false,
       "target_expression_read_by_audit": false,
       "next_action": "resolve E182 normalization scale against a matching public effect source before scoring; no score produced"
+    },
+    "e182_independent_public_audit": {
+      "status": "COMPLETE_INDEPENDENT_STUDY_SEEN_SCORE_AUDIT",
+      "study": "GSE225807",
+      "source_public": "Replogle2022_K562_GWPS",
+      "n_evaluation_tasks": 40,
+      "scored_tasks": 36,
+      "evaluation_genes": 20,
+      "scored_genes": 18,
+      "missing_public_history_genes": [
+        "CPEB2",
+        "MSI1"
+      ],
+      "effect_contract": "both E182 and rebuilt public effects use log1p 1e4 normalized panel effects",
+      "panel_axis_sha256": "a343cb3991f9cc51a7846520eb7ae98de53d2d058d26b5562e3946afc02e2be1",
+      "target_truth_read_by_this_script": false,
+      "target_error_source": "pre-existing E182_EVALUATION_TASKS.csv only",
+      "independent_study": true,
+      "stream_audit": {
+        "reused_effect_artifact": true,
+        "n_effects": 18,
+        "target_truth_read": false
+      },
+      "model_members": [
+        "GEARS_seed3407",
+        "GEARS_seed3408",
+        "GEARS_seed3409",
+        "GEARS_seed3410",
+        "GEARS_seed3411",
+        "GEARS_seed_mean",
+        "registered_family_centroid",
+        "scGPT_seed3407",
+        "scGPT_seed3408",
+        "scGPT_seed3409",
+        "scGPT_seed3410",
+        "scGPT_seed3411",
+        "scGPT_seed_mean"
+      ],
+      "permanent_test_truth_opened": false
+    },
+    "e182_public_mechanism_diagnostic": {
+      "status": "COMPLETE_POST_FREEZE_MECHANISM_DIAGNOSTIC",
+      "study": "GSE225807",
+      "calibration_split": "E182 calibration_release; 19 target clusters / 38 tasks before public-history filtering",
+      "prospective_split": "E182 final_evaluation; 20 target clusters / 40 tasks before public-history filtering",
+      "target_truth_read": true,
+      "main_method_selection_changed": false,
+      "post_freeze": true,
+      "scale_correction": "one scalar alpha per frozen predictor member, fitted by least squares on calibration response vectors only",
+      "common_axis_genes": 506,
+      "panel_axis_sha256": "a343cb3991f9cc51a7846520eb7ae98de53d2d058d26b5562e3946afc02e2be1",
+      "n_public_effects": 34,
+      "missing_calibration_genes": [
+        "KHDRBS2",
+        "PABPC3",
+        "ZC3H10"
+      ],
+      "missing_prospective_genes": [
+        "CPEB2",
+        "MSI1"
+      ],
+      "n_calibration_scored_tasks": 32,
+      "n_prospective_scored_tasks": 36,
+      "stream_audit": {
+        "reused_effect_artifact": true,
+        "n_effects": 34,
+        "target_truth_read": false
+      },
+      "interpretation": "exploratory mechanism diagnosis; not used to replace the frozen PublicRule or to claim prospective confirmation",
+      "permanent_test_truth_opened": false
     }
   },
   "decision": {

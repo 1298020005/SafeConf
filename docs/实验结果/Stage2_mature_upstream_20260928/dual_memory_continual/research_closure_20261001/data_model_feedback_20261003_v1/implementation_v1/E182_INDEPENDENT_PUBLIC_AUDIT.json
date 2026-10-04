@@ -1,0 +1,39 @@
+{
+  "status": "COMPLETE_INDEPENDENT_STUDY_SEEN_SCORE_AUDIT",
+  "study": "GSE225807",
+  "source_public": "Replogle2022_K562_GWPS",
+  "n_evaluation_tasks": 40,
+  "scored_tasks": 36,
+  "evaluation_genes": 20,
+  "scored_genes": 18,
+  "missing_public_history_genes": [
+    "CPEB2",
+    "MSI1"
+  ],
+  "effect_contract": "both E182 and rebuilt public effects use log1p 1e4 normalized panel effects",
+  "panel_axis_sha256": "a343cb3991f9cc51a7846520eb7ae98de53d2d058d26b5562e3946afc02e2be1",
+  "target_truth_read_by_this_script": false,
+  "target_error_source": "pre-existing E182_EVALUATION_TASKS.csv only",
+  "independent_study": true,
+  "stream_audit": {
+    "reused_effect_artifact": true,
+    "n_effects": 18,
+    "target_truth_read": false
+  },
+  "model_members": [
+    "GEARS_seed3407",
+    "GEARS_seed3408",
+    "GEARS_seed3409",
+    "GEARS_seed3410",
+    "GEARS_seed3411",
+    "GEARS_seed_mean",
+    "registered_family_centroid",
+    "scGPT_seed3407",
+    "scGPT_seed3408",
+    "scGPT_seed3409",
+    "scGPT_seed3410",
+    "scGPT_seed3411",
+    "scGPT_seed_mean"
+  ],
+  "permanent_test_truth_opened": false
+}
