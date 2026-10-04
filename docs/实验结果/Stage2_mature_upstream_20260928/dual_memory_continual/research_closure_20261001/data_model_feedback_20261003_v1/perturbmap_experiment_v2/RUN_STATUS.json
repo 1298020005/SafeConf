@@ -1,0 +1,39 @@
+{
+  "status": "COMPLETE",
+  "contract": "SafeConf v0.4.2",
+  "new_gpu_hours": 0,
+  "new_download_gb": 0,
+  "elapsed_seconds": 48.8089919090271,
+  "routes": [
+    {
+      "source_context": "K562",
+      "target_context": "HCT116",
+      "raw_pair_count": 331,
+      "independent_pair_genes": 331,
+      "rank": 8,
+      "source_response_axis": 2840,
+      "recipient_response_axis": 3285,
+      "mapping_axis": 2840,
+      "pair_identity_hash": "abd50c1e61e9d7a075a4da5177e4e5b516e90b8546f3684e6496bec94654475d",
+      "anchor_roles": "Orion TRAIN only",
+      "permanent_test_truth_used": false
+    },
+    {
+      "source_context": "K562",
+      "target_context": "HEK293T",
+      "raw_pair_count": 326,
+      "independent_pair_genes": 326,
+      "rank": 8,
+      "source_response_axis": 2840,
+      "recipient_response_axis": 3285,
+      "mapping_axis": 2840,
+      "pair_identity_hash": "38d2ad76964e426113e644cd691d648b13307b1fe63d95bc24bb40a5fc03e9e6",
+      "anchor_roles": "Orion TRAIN only",
+      "permanent_test_truth_used": false
+    }
+  ],
+  "query_tasks": 53,
+  "permanent_test_truth_used": false,
+  "python": "3.12.4",
+  "git_commit": "b7cad21f22db455fd6f9adc0aa3bc554e3e6d0d2"
+}

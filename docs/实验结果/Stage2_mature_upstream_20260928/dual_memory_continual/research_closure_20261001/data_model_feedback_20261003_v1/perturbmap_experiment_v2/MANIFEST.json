@@ -1,0 +1,37 @@
+{
+  "contract": "SafeConf v0.4.2",
+  "status": "COMPLETE",
+  "input_hashes": {
+    "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/public_memory.parquet": "fcfbd3300a012e3747c9642f5076d1407c509f46f66e4412522c5d9b8661c4bd",
+    "/home/yyf/data/safeconf_dual_memory_20260929/public_txpert_e201/eligibility.parquet": "ef2391be1ce3d0a9ac0d613810f9bbfd314fd00d5631436edbb22bdcdb6fc497",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/SOURCE_PUBLIC_EFFECTS.npy": "579b95ac834a36f1c6c3d12d25c3d607c9083a53c53b469e24d3c0be81d1e74e",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/GENE_IDS.json": "be612f9c4638146b41eee26f607ab12fbed53b524cda7a76eee36ca554c28f97",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_allowed_biology_20261002_v2/QUERY_METADATA_ONLY.csv": "8bf0eb5a394a4c9675409410e3b60e7c4220cf689da5ae3bbe7afc21fb9ab000",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_allowed_biology_20261002_v2/ENDPOINT_GENE_MANIFEST.csv": "c1c9c8041458275248514d960c6c263a72f43a12a8d48c16f77759d2342fa08f",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_allowed_biology_20261002_v2/ENDPOINT3285_EFFECTS.npy": "3e753b1fbc79e4c8b13264a91318d2ba0887d083ffd728edbf35c9db1dcc0403",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_postfit_followthrough_20261002_v4_decimal_tokens/competence/VALIDATION_TASK_ERRORS.csv": "70bc1c639bddca4e39f4852397bfeff3f998382bd262332d989ddf8fbfc15f34"
+  },
+  "prediction_inputs": {
+    "HCT116": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HCT116/PREDICTIONS_DELTA.tsv.gz",
+    "HEK293T": "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HEK293T/PREDICTIONS_DELTA.tsv.gz"
+  },
+  "prediction_input_hashes": {
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HCT116/PREDICTIONS_DELTA.tsv.gz": "c54137fc466b5def82045f5f1d94f59b002d96306a3da6e2adac8a2bc5c2206f",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/orion_published_lm_20261002_v3_decimal_tokens/HEK293T/PREDICTIONS_DELTA.tsv.gz": "e4dc7e5446ff2654a8fcc48ef5fb3ecf11cf594b395390e253714daabf1628ba"
+  },
+  "permanent_test_truth_used": false,
+  "files": {
+    "COMPONENT_DECISION.json": "cd33866194b4cb6fdbd7cc3fd8252a42eb2cb8070af9308c0c31e3b7497c63c5",
+    "INFORMATION_BUDGET.csv": "a5d28ea283991fbddc9ed5dc7afe2c99cf635a6276791450fb2e21bde1ad30d6",
+    "MAPPING_FIT_AUDIT.csv": "d749d36f7da66815479de0383a3576d6a2322f5ec9c3411d73b42ddb49fe42ec",
+    "PAIRED_BOOTSTRAP.csv": "9a87dc27c7041c610be12a8cd826cd561e8f3055757fb62a65032fe89f92749a",
+    "PAIR_ELIGIBILITY.csv": "552b067186515a72b9a6e1e81b06d3575bc380656e0989409a03f70b64fdfc5d",
+    "QUERY_REFERENCE_RESULTS.parquet": "a955ae9ada12b848bf97efb74ba0d632888b3199573bb68ae046d3911db1c619",
+    "QUERY_RISK_SCORES.parquet": "6fb111a971b4e558449a231512e01c79a7dc7f54273774a9a3edaa7940b9e77b",
+    "RECONSTRUCTION_METRICS.csv": "15e6c53f7afc40c9a8ba55885f1d3bb0e92264b0c13e9d2385d473c796e01cfe",
+    "RISK_LEARNER_METRICS.csv": "5327eb87393ed1245be1d8bea88d500b0508f5a8a1f9aa45605922f6641aa02f",
+    "RISK_METRICS.csv": "4461afb0fa2d0afb3237bd6d21559f701280fd3f2c64cabf2953ed9b1b98c793",
+    "ROUTE_AUDIT.csv": "f16da6bdb61139ee563aedd793b29013597c276c817f2c93b5633a81a7a3a242",
+    "RUN_STATUS.json": "ebef1590c13f5ab5b51d6582ead2e4d4513cc17812eecfb53414d8c57430340a"
+  }
+}
