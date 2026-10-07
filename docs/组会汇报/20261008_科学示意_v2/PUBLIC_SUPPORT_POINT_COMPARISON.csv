@@ -1,0 +1,4 @@
+method,u20,aurc,n_tasks,n_clusters,score_column
+NegativeHistorySupport,0.795264465432267,0.025117916162904968,212,152,support_risk
+PublicRule,0.8376675521178553,0.024943607247380654,212,152,simple_history_risk
+Magnitude,-0.21025226017402263,0.02911642545870502,212,152,predicted_magnitude

@@ -1,0 +1,55 @@
+{
+  "role": "original scientific concept diagrams for meeting",
+  "source_commit": "50ce0165b573802cb1e8c7351b674a8b3df76ed1",
+  "style_references_inspected": {
+    "scGPT.pdf": {
+      "path": "/home/yyf/师姐论文/scGPT.pdf",
+      "sha256": "a05bd9426e116584999a131ba9e9889d393beb9b732291237c64771542bcf80c",
+      "figure": "Fig. 1",
+      "pdf_page": 3
+    },
+    "scfoundation.pdf": {
+      "path": "/home/yyf/师姐论文/scfoundation.pdf",
+      "sha256": "b294c51b92dc2aa3bf25d4b3ec534f169a5ede2f769ad3451cd37ff6d182ba89",
+      "figure": "Fig. 1",
+      "pdf_page": 3
+    },
+    "C.Origami.pdf": {
+      "path": "/home/yyf/师姐论文/C.Origami.pdf",
+      "sha256": "76cbf98655d38da9ae9ada9d20ad17232892886c5a77a544fc94ba39da8bf456",
+      "figure": "Fig. 1",
+      "pdf_page": 2
+    }
+  },
+  "reference_figures_not_redistributed": true,
+  "illustrative_profiles_and_cells_not_empirical_results": true,
+  "old_result_plots_unchanged": {
+    "MEETING_RESULTS.png": "cd9b470132239f7dbba4b291c2a8178a8de623a14b4d3690eccd6a58b286d6eb",
+    "MEETING_RESULTS.svg": "89e684e265193a48aa464e060865833fe0b746897f604a80214b4e4d33ae26f7",
+    "03_SOURCE_RESULT.png": "1cf4b9682defe5e94e28ad1846c302487cd5d4463952a37d74ddcb8a6f3a9cbe",
+    "03_SOURCE_RESULT.svg": "7e45d347085b10d7a5976de2f109d3fa2f23c8d6962a5a8c3a0435c9480b758a",
+    "04_TARGET_RESULT.png": "a623d743a455e17dbc8114de302141c188b8d0e1e08f038f6be469baabe890fb",
+    "04_TARGET_RESULT.svg": "5f3bedc655ac8682a8216a2e708fe9afc24d7dd60e6902bf852b2def74106b9d",
+    "05_REVIEW_RESULT.png": "4c41e8803f2a68dd1f5b44491c4b7d58fc3fe3db214fc194de968d1986a27d71",
+    "05_REVIEW_RESULT.svg": "4b473e9eb78cbbbea718f0fd6b07150dba415fbb0819be7af73af892a48439d2"
+  },
+  "script_sha256": "b5947c9d0cab0ec40482a9508e6dac0cf9925fcdb362ffaa019c74dad8189752",
+  "outputs": {
+    "03_SOURCE_RESULT.png": "1cf4b9682defe5e94e28ad1846c302487cd5d4463952a37d74ddcb8a6f3a9cbe",
+    "APPENDIX_STRONG_BASELINES.svg": "0b84a3cca609d5d6c3bbb9eb7e63074c4ca05001aa4063631a3aace4ba2f3d8c",
+    "METHOD_OVERVIEW_ZH.png": "7685402799cfc86b34ceb8680e9e4eead1e7966147e47b4ca1ef42fab76661fa",
+    "METHOD_OVERVIEW.png": "b6ccf6365aa5db9d5b1499a2364523c68700ccd5041e4ffbccb30954f249ce64",
+    "EVIDENCE_DRIVEN_EVOLUTION.png": "90eb3a10b26435e6a88a3c0c110f06f7194f1757791a22def2ad5ba3b5ed9e3f",
+    "04_TARGET_RESULT.svg": "5f3bedc655ac8682a8216a2e708fe9afc24d7dd60e6902bf852b2def74106b9d",
+    "03_SOURCE_RESULT.svg": "7e45d347085b10d7a5976de2f109d3fa2f23c8d6962a5a8c3a0435c9480b758a",
+    "04_TARGET_RESULT.png": "a623d743a455e17dbc8114de302141c188b8d0e1e08f038f6be469baabe890fb",
+    "MEETING_RESULTS.png": "cd9b470132239f7dbba4b291c2a8178a8de623a14b4d3690eccd6a58b286d6eb",
+    "MEETING_RESULTS.svg": "89e684e265193a48aa464e060865833fe0b746897f604a80214b4e4d33ae26f7",
+    "05_REVIEW_RESULT.png": "4c41e8803f2a68dd1f5b44491c4b7d58fc3fe3db214fc194de968d1986a27d71",
+    "APPENDIX_STRONG_BASELINES.png": "0d67da8ec854432ad0865a946a0099d2be4b8a1898829c832512acc98081b1ae",
+    "METHOD_OVERVIEW.svg": "743355d36229d2db4422c14ab0a3fade483be29c9e4252b82b6afd31fd45a2ad",
+    "EVIDENCE_DRIVEN_EVOLUTION.svg": "ea6361e3cc67cb29f4f43ff3983cd61824b1ac1d0c67b962e4103ec7249a06a2",
+    "METHOD_OVERVIEW_ZH.svg": "a912da8421f69d3a72d457f4c9aba05217c2231f918613d1a77abacbbebdcd36",
+    "05_REVIEW_RESULT.svg": "4b473e9eb78cbbbea718f0fd6b07150dba415fbb0819be7af73af892a48439d2"
+  }
+}

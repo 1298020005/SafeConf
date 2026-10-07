@@ -1,0 +1,29 @@
+{
+  "role": "already-seen meeting completeness audit; no model fitting or configuration selection",
+  "source_bootstrap_replicates": 5000,
+  "bootstrap_unit": "gene cluster, shared across target contexts",
+  "truth_contract_exact_match": true,
+  "new_model_fits": 0,
+  "new_download_bytes": 0,
+  "new_gpu_hours": 0,
+  "permanent_test_truth_opened": false,
+  "wall_seconds": 20.849948986899108,
+  "source_scores": "frozen v4 train-OOF channel ranks",
+  "magnitude_scores": "raw predicted magnitude from the exact target-model fold cache",
+  "support_score": "pre-existing support_risk; no sign selection on evaluation results",
+  "inputs": {
+    "/home/yyf/runtime_artifacts/safeconf_impl_20261004_v1/source_gate_v4/SOURCE_GATE_TASK_PREDICTIONS.csv": "ac0d3d281b93e14974a9b17fdc093dca32f3f2ccbacfe5fb54f73571e4647ad9",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_0_TxPert_GAT_Manual.parquet": "5fa3d8ee38498cb78b5439f90cdfc6b10afd4596728e8bdee5443c1f540f599c",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_1_TxPert_GAT_Manual.parquet": "5fa3d8ee38498cb78b5439f90cdfc6b10afd4596728e8bdee5443c1f540f599c",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_2_TxPert_GAT_Manual.parquet": "5fa3d8ee38498cb78b5439f90cdfc6b10afd4596728e8bdee5443c1f540f599c",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_3_TxPert_GAT_Manual.parquet": "5fa3d8ee38498cb78b5439f90cdfc6b10afd4596728e8bdee5443c1f540f599c",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_4_TxPert_GAT_Manual.parquet": "5fa3d8ee38498cb78b5439f90cdfc6b10afd4596728e8bdee5443c1f540f599c",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_0_TxPert_Exphormer_Manual.parquet": "7a8f0b85b07af76528943c5783b6f76f32ea16ac005755332c9d5cc8d3b78bf8",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_1_TxPert_Exphormer_Manual.parquet": "7a8f0b85b07af76528943c5783b6f76f32ea16ac005755332c9d5cc8d3b78bf8",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_2_TxPert_Exphormer_Manual.parquet": "7a8f0b85b07af76528943c5783b6f76f32ea16ac005755332c9d5cc8d3b78bf8",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_3_TxPert_Exphormer_Manual.parquet": "7a8f0b85b07af76528943c5783b6f76f32ea16ac005755332c9d5cc8d3b78bf8",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache/nested_4_TxPert_Exphormer_Manual.parquet": "7a8f0b85b07af76528943c5783b6f76f32ea16ac005755332c9d5cc8d3b78bf8",
+    "/home/yyf/runtime_artifacts/safeconf_research_20261003/feedback_v1/HOLDOUT_FEATURES.parquet": "42b83d50752c935746ad1e2118e21849e8e1197c2ac94be100f2cf111b8d6f57",
+    "/home/yyf/runtime_artifacts/safeconf_impl_20261004_v1/system_freeze_v4/SYSTEM_RANKING.parquet": "279597446a4a9e8bf1be907a17e82d6b8493de6e231537bd91f863ba18ad1cd7"
+  }
+}
