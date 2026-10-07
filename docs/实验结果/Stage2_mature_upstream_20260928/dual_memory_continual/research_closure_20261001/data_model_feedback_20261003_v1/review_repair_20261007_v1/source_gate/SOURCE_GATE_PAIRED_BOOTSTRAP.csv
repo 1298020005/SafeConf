@@ -1,0 +1,5 @@
+source,target,method,comparison,delta_utility20,bootstrap_mean_delta,ci95_lower,ci95_upper,n_tasks,n_clusters,bootstrap_replicates
+TxPert_Exphormer,TxPert_GAT,selected_gate,vs_always_public,0.15497455079517777,0.15900647596442088,0.10617535124715134,0.2130433803993865,1808,575,5000
+TxPert_Exphormer,TxPert_GAT,always_source,vs_always_public,0.20245643342837547,0.207633209984061,0.1494164929596879,0.2690207598677541,1808,575,5000
+TxPert_GAT,TxPert_Exphormer,selected_gate,vs_always_public,0.1688148303769818,0.1636699352344257,0.11008334589589946,0.21796553378389708,1808,575,5000
+TxPert_GAT,TxPert_Exphormer,always_source,vs_always_public,0.22934707213707933,0.21834142564701378,0.1579488476370055,0.27976765342956783,1808,575,5000

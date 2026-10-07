@@ -1,0 +1,41 @@
+{
+  "default_still_PublicRule": true,
+  "target_error_record_union": 331,
+  "target_error_gene_union": 228,
+  "existing_DEV_selection_cost_separate": "542 tasks/377 genes, already counted in historical ledger",
+  "new_preparation_error_rows": 0,
+  "feedback_pool_used_for": "label CDF, full/inner fit, OOF isotonic",
+  "native_feature_fitting_error_labels": 0,
+  "holdout_truth_role": "scoring only; 212 SEEN tasks not candidate selection",
+  "source_gate_mcfaline_target_labels_used": 0,
+  "native_run_cost": {
+    "status": "COMPLETE",
+    "configs": 30,
+    "xgb_fits": 120,
+    "budgets": [
+      0.1,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "seeds": [
+      20260930,
+      20261001,
+      20261002
+    ],
+    "bootstrap_replicates": 5000,
+    "pool_rows": 331,
+    "holdout_rows": 212,
+    "holdout_genes": 152,
+    "wall_seconds": 74.64430050598457,
+    "cpu_seconds": 220.24185043100002,
+    "new_gpu_hours": 0,
+    "new_download_bytes": 0,
+    "permanent_test_truth_opened": false,
+    "complete_official_conformal_pipeline": false,
+    "default_unchanged": "PublicRule"
+  },
+  "new_download_bytes": 0,
+  "new_gpu_hours": 0
+}

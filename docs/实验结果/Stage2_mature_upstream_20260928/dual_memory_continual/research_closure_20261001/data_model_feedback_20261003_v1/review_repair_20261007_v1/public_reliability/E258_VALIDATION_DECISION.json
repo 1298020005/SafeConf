@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "meaning": "jackknife stability predicts held-out donor reference deviation",
+  "n_records": 1530,
+  "n_lines": 4,
+  "comparable_lines": 3,
+  "jackknife_better_than_support_lines": 3,
+  "selection_rule": ">=3 comparable lines and jackknife beats support in >=75% of them",
+  "test_truth_opened": false,
+  "e258_sha256": "ce1cb3fef4f19acfb4b7283dfac898a97aa3697e5e2b291c7d2cd154bb5371e3"
+}

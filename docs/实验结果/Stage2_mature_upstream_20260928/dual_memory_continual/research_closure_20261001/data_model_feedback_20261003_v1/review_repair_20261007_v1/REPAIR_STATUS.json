@@ -1,0 +1,20 @@
+{
+  "status": "REVIEW_REPAIRS_COMPLETE_RESEARCH_CONTINUES",
+  "default_current": "PublicRule",
+  "default_selection_changed_using_holdout": false,
+  "source_gate_decision": "retain as conditional diagnostic; always_source scores higher on this same-family source DEV",
+  "jackknife_decision": "formula and response/reference contracts repaired; J predicts reference deviation but largely duplicates V",
+  "pertema_decision": "Native61_Public clearly exceeds same-learner Native61; does not displace no-feedback PublicRule",
+  "evidence_identity": "current McFaline and Source are DEV/SEEN; E182 is an independent-study retrospective boundary",
+  "full_official_pertema_reproduced": false,
+  "new_download_bytes": 0,
+  "new_gpu_hours": 0,
+  "permanent_test_truth_opened": false,
+  "paper_pdf_work_started": false,
+  "next_priority": "test reusable error supervision across a competent independent predictor/study after corrected source configuration freeze; preserve all negative transfer evidence",
+  "source_gate": "/home/yyf/runtime_artifacts/safeconf_impl_20261004_v1/source_gate_v4",
+  "public_reliability": "/home/yyf/runtime_artifacts/safeconf_impl_20261004_v1/public_reliability_v3",
+  "native_public": "/home/yyf/runtime_artifacts/safeconf_impl_20261004_v1/native_public_current_20261007_v1",
+  "reporting_date": "2026-10-08",
+  "incomplete_prior_supervision_admitted": true
+}

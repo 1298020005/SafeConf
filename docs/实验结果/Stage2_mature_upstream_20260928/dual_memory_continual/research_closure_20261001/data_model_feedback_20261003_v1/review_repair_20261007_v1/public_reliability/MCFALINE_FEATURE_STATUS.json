@@ -1,0 +1,8 @@
+{
+  "status": "COMPLETE",
+  "dev_rows": 542,
+  "holdout_rows": 212,
+  "holdout_scores_only": true,
+  "holdout_metrics_used_for_selection": false,
+  "method": "weighted experiment-record delete-one jackknife"
+}

@@ -14,7 +14,9 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
-from tools.safeconf_continual.research import P, PUBLIC, SEEDS, bootstrap_u20, fit_risk, rank_labels
+from tools.safeconf_continual.research import (
+    P, PUBLIC, SEEDS, bootstrap_u20, fit_risk, rank_labels, shuffled_labels,
+)
 
 RISK_CACHE = Path("/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/risk_cache")
 OUT_DEFAULT = Path("/home/yyf/runtime_artifacts/safeconf_impl_20261004_v1/source_gate")
@@ -63,13 +65,34 @@ def macro_metric(frame: pd.DataFrame, score: np.ndarray) -> tuple[float, float]:
     return float(np.nanmean(arr[:, 0])), float(np.nanmean(arr[:, 1]))
 
 
+def fit_rank_reference(values: np.ndarray) -> np.ndarray:
+    """Freeze an empirical mid-rank scale on training-side scores only."""
+    values = np.asarray(values, float)
+    return np.sort(values[np.isfinite(values)])
+
+
+def transform_rank(values: np.ndarray, reference: np.ndarray) -> np.ndarray:
+    values = np.asarray(values, float)
+    out = np.full(len(values), np.nan, float)
+    valid = np.isfinite(values) & (len(reference) > 0)
+    if valid.any():
+        left = np.searchsorted(reference, values[valid], side="left")
+        right = np.searchsorted(reference, values[valid], side="right")
+        out[valid] = (left + right) / (2.0 * len(reference))
+    return out
+
+
 def gate_score(public: np.ndarray, source: np.ndarray, bad: np.ndarray,
-               threshold: float | None) -> np.ndarray:
+               threshold: float | None, public_reference: np.ndarray,
+               source_reference: np.ndarray) -> np.ndarray:
+    """Combine channels after each has its own training-only rank scale."""
+    public_rank = transform_rank(public, public_reference)
+    source_rank = transform_rank(source, source_reference)
     if threshold is None:
-        return public.copy()
+        return public_rank
     use_source = np.isfinite(bad) & (bad >= threshold)
-    out = public.copy()
-    out[use_source] = source[use_source]
+    out = public_rank.copy()
+    out[use_source] = source_rank[use_source]
     return out
 
 
@@ -95,11 +118,9 @@ def inner_oof(train: pd.DataFrame, seed: int, shuffle: bool) -> tuple[pd.DataFra
         fit = train[train.gene.astype(str).map(assignment).ne(held)].reset_index(drop=True)
         val = train[train.gene.astype(str).map(assignment).eq(held)].reset_index(drop=True)
         labels, _ = rank_labels(fit, f"source_gate/inner/{seed}/{held}")
+        shuffle_audit = {"moved_clusters": 0, "total_clusters": int(fit.gene.nunique()), "moved_fraction": 0.0}
         if shuffle:
-            rng = np.random.default_rng(seed + held)
-            labels = labels.copy()
-            valid = np.isfinite(labels)
-            labels[valid] = labels[valid][rng.permutation(valid.sum())]
+            labels, shuffle_audit = shuffled_labels(fit, labels, seed + held)
         model = fit_risk(fit, labels, P + PUBLIC, "hgb", seed=seed, weighted=True)
         out = val[["task_id", "target", "gene", "true_error_rmse",
                    "prior_uncertainty", "prediction_prior_rmse"]].copy()
@@ -110,21 +131,27 @@ def inner_oof(train: pd.DataFrame, seed: int, shuffle: bool) -> tuple[pd.DataFra
         out["inner_fold"] = held
         chunks.append(out)
     return pd.concat(chunks, ignore_index=True), {"seed": seed, "shuffle": shuffle,
-        "n_rows": len(train), "n_genes": train.gene.nunique()}
+        "n_rows": len(train), "n_genes": train.gene.nunique(),
+        "shuffle_audits": shuffle_audit}
 
 
-def select_candidate(oof: pd.DataFrame, train_bad: np.ndarray) -> tuple[str, dict, pd.DataFrame]:
+def select_candidate(oof: pd.DataFrame, train_bad: np.ndarray) -> tuple[str, dict, pd.DataFrame, dict]:
     th = thresholds(train_bad)
+    scales = {
+        "public": fit_rank_reference(oof.public_score.to_numpy(float)),
+        "source": fit_rank_reference(oof.source_score.to_numpy(float)),
+    }
     rows = []
     for name in GATE_CANDIDATES:
         score = gate_score(oof.public_score.to_numpy(float), oof.source_score.to_numpy(float),
-                           oof.gate_feature.to_numpy(float), th[name])
+                           oof.gate_feature.to_numpy(float), th[name],
+                           scales["public"], scales["source"])
         u, a = macro_metric(oof, score)
         rows.append({"candidate": name, "threshold": th[name], "u20": u, "aurc": a,
                      "n_source_selected": int(np.isfinite(oof.gate_feature).sum()) if name != "always_public" else 0})
     table = pd.DataFrame(rows).sort_values(["u20", "aurc", "candidate"], ascending=[False, True, True])
     selected = str(table.iloc[0].candidate)
-    return selected, th, table
+    return selected, th, table, scales
 
 
 def run_direction(source: str, target: str, out: Path, shuffle: bool = False,
@@ -140,21 +167,25 @@ def run_direction(source: str, target: str, out: Path, shuffle: bool = False,
         if set(train.gene.astype(str)) & set(query.gene.astype(str)):
             raise RuntimeError("Source gate crossed outer gene split")
         oof, audit = inner_oof(train, shuffle_seed, shuffle)
-        selected, th, selection = select_candidate(oof, train.prior_uncertainty.to_numpy(float))
+        selected, th, selection, scales = select_candidate(oof, oof.gate_feature.to_numpy(float))
         chosen_threshold = th[selected]
         labels, cdf = rank_labels(train, f"source_gate/outer/{source}/{target}/{fold}/{shuffle}/{shuffle_seed}")
+        outer_shuffle_audit = {"moved_clusters": 0, "total_clusters": int(train.gene.nunique()), "moved_fraction": 0.0}
         if shuffle:
-            rng = np.random.default_rng(shuffle_seed + 1000 + fold)
-            valid = np.isfinite(labels)
-            labels = labels.copy(); labels[valid] = labels[valid][rng.permutation(valid.sum())]
+            labels, outer_shuffle_audit = shuffled_labels(train, labels, shuffle_seed + 1000 + fold)
         model = fit_risk(train, labels, P + PUBLIC, "hgb", seed=shuffle_seed, weighted=True)
         public = np.sqrt(np.maximum(query.prediction_prior_rmse.to_numpy(float) ** 2 + query.prior_uncertainty.to_numpy(float) ** 2, 0.0))
         source_score = model.predict(query)
-        score = gate_score(public, source_score, query.prior_uncertainty.to_numpy(float), chosen_threshold)
-        for method, values in [("always_public", public), ("always_source", source_score),
+        public_rank = transform_rank(public, scales["public"])
+        source_rank = transform_rank(source_score, scales["source"])
+        score = gate_score(public, source_score, query.prior_uncertainty.to_numpy(float), chosen_threshold,
+                           scales["public"], scales["source"])
+        for method, values in [("always_public", public_rank), ("always_source", source_rank),
                                ("selected_gate", score)]:
             part = query[["task_id", "target", "gene", "fold", "upstream", "true_error_rmse"]].copy()
-            part["risk"] = values; part["method"] = method; part["source"] = source
+            part["risk"] = values; part["public_raw"] = public; part["source_raw"] = source_score
+            part["public_rank"] = public_rank; part["source_rank"] = source_rank
+            part["method"] = method; part["source"] = source
             part["target_model"] = target; part["outer_fold"] = fold
             part["shuffle"] = shuffle; part["shuffle_seed"] = shuffle_seed
             part["selected_candidate"] = selected; part["threshold"] = chosen_threshold
@@ -167,6 +198,9 @@ def run_direction(source: str, target: str, out: Path, shuffle: bool = False,
                        "train_id_hash": ids_hash(train.task_id),
                        "query_id_hash": ids_hash(query.task_id),
                        "selection_table": selection.to_dict("records"),
+                       "channel_scale": "training-inner-OOF empirical midrank",
+                       "public_reference_n": len(scales["public"]), "source_reference_n": len(scales["source"]),
+                       "outer_shuffle_audit": outer_shuffle_audit,
                        "cdf_groups": len(cdf)})
     return records, audits
 
@@ -184,6 +218,8 @@ def main() -> int:
             "status": "PASS", "gate_candidates": GATE_CANDIDATES,
             "source_cache": str(args.source_cache), "no_holdout_truth_opened": True,
             "learner": "fixed HGB P+PUBLIC", "shuffle_seeds": SHUFFLE_SEEDS,
+            "channel_scale": "independent training-inner-OOF empirical midrank before gate merge",
+            "shuffle_unit": "complete gene-cluster label blocks within compatible CDF/layout signatures",
         })
         print(json.dumps({"status": "PASS", "output": str(out)})); return 0
     all_records, all_audits = [], []
@@ -227,6 +263,8 @@ def main() -> int:
         "learner": "HistGradientBoostingRegressor fixed P+PUBLIC",
         "gate_feature": "prior_uncertainty",
         "gate_feature_reason": "source nested cache has no experiment-level history vectors for PublicMeanJackknife; E258 J is retained as a validation-only reliability result",
+        "channel_scale": "independent training-inner-OOF empirical midrank before gate merge",
+        "shuffle_unit": "complete gene-cluster label blocks within compatible CDF/layout signatures",
         "reliability_root": str(args.reliability_root) if args.reliability_root else None,
         "bootstrap_replicates": 5000,
     })

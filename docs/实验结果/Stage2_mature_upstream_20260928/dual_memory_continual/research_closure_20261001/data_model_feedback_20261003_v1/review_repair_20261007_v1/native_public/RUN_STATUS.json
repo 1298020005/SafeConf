@@ -1,0 +1,28 @@
+{
+  "status": "COMPLETE",
+  "configs": 30,
+  "xgb_fits": 120,
+  "budgets": [
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "seeds": [
+    20260930,
+    20261001,
+    20261002
+  ],
+  "bootstrap_replicates": 5000,
+  "pool_rows": 331,
+  "holdout_rows": 212,
+  "holdout_genes": 152,
+  "wall_seconds": 74.64430050598457,
+  "cpu_seconds": 220.24185043100002,
+  "new_gpu_hours": 0,
+  "new_download_bytes": 0,
+  "permanent_test_truth_opened": false,
+  "complete_official_conformal_pipeline": false,
+  "default_unchanged": "PublicRule"
+}

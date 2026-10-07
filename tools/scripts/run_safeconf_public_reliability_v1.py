@@ -82,7 +82,11 @@ def jackknife_mean(history: np.ndarray, weights: np.ndarray) -> tuple[float, flo
             return np.nan, np.nan, "degenerate_leave_one_out"
         loo.append((weights[keep] @ history[keep]) / denom)
     loo = np.asarray(loo)
-    j2 = (len(history) - 1) / len(history) * np.mean(np.mean((loo - mean) ** 2, axis=1))
+    # Delete-one jackknife variance is the outer coefficient times the
+    # *sum* of leave-one-out deviations.  The previous implementation took
+    # an additional mean over records, shrinking J by a factor of m and
+    # making tasks with many experiments look spuriously stable.
+    j2 = (len(history) - 1) / len(history) * np.sum(np.mean((loo - mean) ** 2, axis=1))
     return float(np.sqrt(np.mean(mean * mean))), float(np.sqrt(max(j2, 0.0))), "ok"
 
 
@@ -160,18 +164,33 @@ def e258_validation(out: Path) -> dict:
 
 def task_jackknife_features(frame: pd.DataFrame, out: Path, label: str) -> pd.DataFrame:
     memory_path = COMMON / "public_mcfaline_trainval/public_memory.parquet"
-    effects_path = COMMON / "public_mcfaline_trainval/effect_vectors.npy"
+    # Match the exact reference estimand of the cached distance. DEV uses
+    # the all-DEV-query-excluded guide-effect bank; the fixed feedback/holdout
+    # contract uses the later cell-weighted aligned bank.
+    is_fixed_holdout = label == 'MCFALINE_HOLDOUT'
+    effects_path = (COMMON / 'reference_estimand_diagnostic/CELL_WEIGHTED_PUBLIC_EFFECTS.npy'
+                    if is_fixed_holdout else COMMON / 'public_mcfaline_trainval/effect_vectors.npy')
     memory = pd.read_parquet(memory_path).sort_values("effect_vector_row").reset_index(drop=True)
+    if memory.experiment_id.duplicated().any():
+        raise ValueError('duplicate public experiment units')
     effects = np.asarray(np.load(effects_path, mmap_mode="r"), float)
     by_gene = memory.groupby("perturbation_target", sort=False).indices
+    prohibited = set('McFaline23::' + frame.task_id.astype(str))
+    global_allowed = ~memory.experiment_id.astype(str).isin(prohibited).to_numpy()
     records = []
     for row in frame.itertuples(index=False):
         idx = np.asarray(by_gene.get(str(row.gene), []), int)
         if not len(idx):
             records.append({"task_id": row.task_id, "status": "no_history"})
             continue
+        idx = idx[global_allowed[idx]]
         query_id = f"McFaline23::{row.task_id}"
         idx = idx[memory.iloc[idx].experiment_id.astype(str).to_numpy() != query_id]
+        if is_fixed_holdout:
+            query_condition = str(getattr(row, 'treatment', getattr(row, 'condition', '')))
+            mm = memory.iloc[idx]
+            idx = idx[~((mm.context.astype(str) == str(row.context)) &
+                        (mm.condition.astype(str) == query_condition)).to_numpy()]
         if not len(idx):
             records.append({"task_id": row.task_id, "status": "no_history_after_query_exclusion"})
             continue
@@ -192,6 +211,8 @@ def task_jackknife_features(frame: pd.DataFrame, out: Path, label: str) -> pd.Da
         pred = np.asarray([getattr(row, "prediction_prior_rmse", np.nan)])
         d2 = float(getattr(row, "prediction_prior_rmse", np.nan)) ** 2
         v2 = float(np.sum(w * np.mean((h - mu) ** 2, axis=1)))
+        if not np.isclose(np.sqrt(v2), float(row.prior_uncertainty), rtol=1e-5, atol=1e-8):
+            raise ValueError(f'reliability reference does not match cached distance for {row.task_id}')
         _, j, status = jackknife_mean(h, w)
         records.append({
             "task_id": row.task_id, "status": status, "n_history_records": len(h),
@@ -202,6 +223,8 @@ def task_jackknife_features(frame: pd.DataFrame, out: Path, label: str) -> pd.Da
             "public_rule": float(np.sqrt(max(d2 + v2, 0.0))),
             "public_mean_jackknife": float(np.sqrt(max(d2 + j * j, 0.0))) if np.isfinite(j) else np.nan,
             "history_context_match": bool(same.any()),
+            "history_experiment_ids_hash": hashlib.sha256('\n'.join(sorted(m.experiment_id.astype(str))).encode()).hexdigest(),
+            "effect_estimand": 'cell-weighted' if is_fixed_holdout else 'registered DEV guide-effect',
         })
     result = pd.DataFrame(records)
     write_csv(out / f"{label}_JACKKNIFE_FEATURES.csv", result)

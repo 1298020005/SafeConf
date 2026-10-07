@@ -1,0 +1,35 @@
+{
+  "status": "COMPLETE",
+  "directions": [
+    [
+      "TxPert_GAT",
+      "TxPert_Exphormer"
+    ],
+    [
+      "TxPert_Exphormer",
+      "TxPert_GAT"
+    ]
+  ],
+  "candidate_set": [
+    "always_public",
+    "source_top25_unreliable",
+    "source_top50_unreliable",
+    "source_top75_unreliable"
+  ],
+  "shuffle_seeds": [
+    20260930,
+    20261001,
+    20261002,
+    20261003,
+    20261004
+  ],
+  "rows": 65088,
+  "permanent_test_truth_opened": false,
+  "learner": "HistGradientBoostingRegressor fixed P+PUBLIC",
+  "gate_feature": "prior_uncertainty",
+  "gate_feature_reason": "source nested cache has no experiment-level history vectors for PublicMeanJackknife; E258 J is retained as a validation-only reliability result",
+  "channel_scale": "independent training-inner-OOF empirical midrank before gate merge",
+  "shuffle_unit": "complete gene-cluster label blocks within compatible CDF/layout signatures",
+  "reliability_root": "/home/yyf/runtime_artifacts/safeconf_impl_20261004_v1/public_reliability_v2",
+  "bootstrap_replicates": 5000
+}
