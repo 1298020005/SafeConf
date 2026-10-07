@@ -1,0 +1,49 @@
+{
+  "source_revision": "3314f0752ff9a8dabe4c836a4b945bccd9114116",
+  "purpose": "meeting evolution and architecture; no new fitting or truth opening",
+  "original_result_figures_unchanged": {
+    "MEETING_RESULTS.png": "cd9b470132239f7dbba4b291c2a8178a8de623a14b4d3690eccd6a58b286d6eb",
+    "MEETING_RESULTS.svg": "89e684e265193a48aa464e060865833fe0b746897f604a80214b4e4d33ae26f7"
+  },
+  "input_files": {
+    "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/review_repair_20261007_v1/SOURCE_REAL_COMPARISON.csv": "42058a7569173aa593cb08f22b6bc17acbeb6e60021f8b6a5c7609bb0bf65d88",
+    "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/review_repair_20261007_v1/NATIVE_PUBLIC_BUDGET_TABLE.csv": "7ea0cd5eb110b0a4a924f08b2d92d15f41542d0e21153c41efbd674182b5dc78",
+    "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/review_repair_20261007_v1/GLOBAL_20_PERCENT_REVIEW.csv": "73da0788f0bba3e086699a6dad14054f0280f8fc4d2625e921d82223c0b37c3a",
+    "docs/实验结果/E201_txpert_multitarget_retraining_20260802/formal_core_evaluation/tables/E201_RISK_ASSOCIATIONS.csv": "f811e2b742e5a93f8b6aa2c33987be26430c973953c01a9d4c3de0d49c8da3b2",
+    "docs/实验结果/E201_txpert_multitarget_retraining_20260802/formal_core_evaluation/tables/E201_PARTIAL_ASSOCIATIONS.csv": "2a082f60a21d5849cb6809c2553e1445c4647971154e111623356919b81e9160",
+    "docs/实验结果/E201_txpert_multitarget_retraining_20260802/formal_core_evaluation/tables/E201_REVIEW_UTILITY.csv": "fb54eded0eca189bc9ee2fd44be38b8d6fa12c0737c97a9d9770464413cbb16d",
+    "docs/实验结果/E201_txpert_multitarget_retraining_20260802/formal_core_evaluation/tables/E201_INCREMENTAL_TESTS.csv": "aaf18b2c2d506c04e49e47e1279081a76a3c8b1a4e54341f3d2533aa1f03878f",
+    "/home/yyf/.codex/attachments/3d36bc69-c573-44c2-821b-6795c42ac3fc/pasted-text.txt": "9c52397452d7f54b6ae21eda9cbdc8344d29c515ee5ac41ff3db0f72e1fc6a32",
+    "docs/实验结果/E189_primary_cd4_formal_cartesian_20260729/reports/E189_INTERPRETATION.md": "94c0b8e98c00dfded047acd1f3b20b3b6c01b9693a1916090c12ef316cded4ea",
+    "docs/实验结果/E90_gene_hard_setting_matrix_20260712/reports/E90_REPORT.md": "f1614adbdbba7ecdfb9d2337090a1bba64d119b3f09b3414b81e9662aec32eab",
+    "docs/实验结果/E172_primary_cd4_fresh_targets_20260718/postgate_release/reports/E172_JOINT_POSTGATE_REPORT.md": "e7875dea365f1acccbbc680918fdcf2bee63a1f3d9f15371fefcbe27f3bd2976",
+    "docs/实验结果/E181_registered_family_hilbert_certificate_20260724/reports/E181_REPORT.md": "3fe1875b76bf8589590c5c770f4c96a33c307625dc9fc89b9719a171f4f2e883",
+    "docs/组会汇报_20260913.md": "44f6279eec6dc6ab62647e8dea9de814714e5f2b59b1620fe609a3e2671cb728",
+    "/home/yyf/runtime_artifacts/official_pertema_43c09a/README.md": "5f25ced098e5c5ed450a6f05a20a4c5c9c9daba731c451640ec7832c116ca7ba",
+    "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/FINAL_EXPERIMENTAL_DECISION.md": "67fd0dc0a19871c188515f69ce8d6a5fc6f2b5fa8d4b7702e24b6af72201fcfa",
+    "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/review_repair_20261007_v1/source_gate/SOURCE_GATE_PAIRED_BOOTSTRAP.csv": "f563596bd0b8b76150bd9a96ce0dc3a92f163a78a980e5741811eca6175c1198",
+    "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/review_repair_20261007_v1/SOURCE_SHUFFLED_SUMMARY.csv": "1a4875baf6b7e16d20fb051e1ca190e6b4da8c5138892b37c15688715d2f78e4",
+    "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/review_repair_20261007_v1/native_public/PAIRED_BOOTSTRAP.csv": "663161d55b8fdca3dd61db3d55b81411d69b9787c5b1ef933636d38036413261",
+    "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/review_repair_20261007_v1/REPORT_FOR_20261008.md": "2b2ce768e4c8e9619d9bda8a16bbe2035bb5426e3ac9603e332c68db36a6e8c5"
+  },
+  "figures": {
+    "01_RESEARCH_EVOLUTION.png": "15b93660e786491c0ba6947067152b49fb9a51d9b1a7b8465652e3da69c01d72",
+    "01_RESEARCH_EVOLUTION.svg": "6c5065b9784a6cb7831809b679fc1e42cacf282b033167a2531b204cf7523ad6",
+    "02_CURRENT_ARCHITECTURE.png": "6acfa6302ffab032b9e315496016f6889dd618d65a2114c09f638b7a2e40ebdf",
+    "02_CURRENT_ARCHITECTURE.svg": "129e8597b4f3680ec69ecd9623e17e8c12256b9e667a543f9efc4c2faeb79d02",
+    "03_SOURCE_RESULT.png": "1cf4b9682defe5e94e28ad1846c302487cd5d4463952a37d74ddcb8a6f3a9cbe",
+    "03_SOURCE_RESULT.svg": "7e45d347085b10d7a5976de2f109d3fa2f23c8d6962a5a8c3a0435c9480b758a",
+    "04_TARGET_RESULT.png": "a623d743a455e17dbc8114de302141c188b8d0e1e08f038f6be469baabe890fb",
+    "04_TARGET_RESULT.svg": "5f3bedc655ac8682a8216a2e708fe9afc24d7dd60e6902bf852b2def74106b9d",
+    "05_REVIEW_RESULT.png": "4c41e8803f2a68dd1f5b44491c4b7d58fc3fe3db214fc194de968d1986a27d71",
+    "05_REVIEW_RESULT.svg": "4b473e9eb78cbbbea718f0fd6b07150dba415fbb0819be7af73af892a48439d2",
+    "APPENDIX_E201_TURNING_POINT.png": "c1515302f35a66d1753ef75e297d383310e6ba2397591e040b854889fdace898",
+    "APPENDIX_E201_TURNING_POINT.svg": "78e7f72241121db772d0d4096a518433ff8e93d312b1e7d4803c55dac2ad8e65",
+    "APPENDIX_HARD_SETTINGS.png": "eb0c4aa94d22e358236d879849a6e8703123eb7423c4001c8378e2407bf39a98",
+    "APPENDIX_HARD_SETTINGS.svg": "a72697d69c79e6c6c0e0fba00e69b59e7e1a913f89619c38215c2c16709d7333",
+    "MEETING_RESULTS.png": "cd9b470132239f7dbba4b291c2a8178a8de623a14b4d3690eccd6a58b286d6eb",
+    "MEETING_RESULTS.svg": "89e684e265193a48aa464e060865833fe0b746897f604a80214b4e4d33ae26f7"
+  },
+  "script_sha256": "e21a6935cf6137bdd16281efe5e6732a736cb26923895458c8402f9507783821",
+  "evidence_contracts_separate": true
+}
