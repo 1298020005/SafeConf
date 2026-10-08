@@ -1,0 +1,20 @@
+{
+  "reason": "measured international transfer speed makes whole-object download costly; use immutable official HDF5 with metered Range cache",
+  "cohort_gene_cap": 1500,
+  "cohort_min_cells_each_of_three_states": 20,
+  "cohort_hash_prefix": "SafeConf-Gladstone-v21-cohort",
+  "split_hash_prefix": "SafeConf-Gladstone-v21-split",
+  "fraction": [
+    0.5,
+    0.25,
+    0.25
+  ],
+  "expected_confirmation_gene_clusters_at_cap": 375,
+  "selection_uses_error_or_response_values": false,
+  "control_pseudobulk_cap_per_donor_state": 64,
+  "control_selection": "fixed hash of observation identity",
+  "primary_effect": "pooled common-axis raw counts; log1p CP10k perturbation minus matched-context NTC; same construction for GWPS",
+  "target_numeric_expression_read_so_far": false,
+  "partial_downloads_preserved": true,
+  "measured_payload_reserved_so_far": 8917090304
+}

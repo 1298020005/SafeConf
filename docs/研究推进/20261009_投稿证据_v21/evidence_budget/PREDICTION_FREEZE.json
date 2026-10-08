@@ -1,0 +1,11 @@
+{
+  "prediction_sha256": "8bab84905d52ad370b4b979470f122f4978f72b4af592cea8a41deb5d0456741",
+  "config_sha256": "5626bba7a6cfa1e89734a40470932a7d3c98afc202462c4de18b917145bc9411",
+  "fits": 738,
+  "new_gpu_hours": 0,
+  "wall_seconds": 237.0703190539498,
+  "cpu_seconds": 905.587526095,
+  "default": "PublicRule",
+  "role": "SEEN same-task descriptive comparison, no holdout selection",
+  "labels": "budget-only compatible-group midrank CDF; same labels/weights across three XGB inputs"
+}

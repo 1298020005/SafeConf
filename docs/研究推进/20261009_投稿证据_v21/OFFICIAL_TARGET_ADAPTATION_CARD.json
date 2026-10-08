@@ -1,0 +1,24 @@
+{
+  "reason": "official estimator learns untransformed realized error; prior experiments used a CDF adaptation. Complete the raw-current-RMSE recipe alongside the preserved CDF result, with identical features/rows/weights/parameters.",
+  "scope": "Target learners only; Source CDF contract unchanged",
+  "target_endpoint": "current RMSE",
+  "models": "same official XGBoost factory",
+  "feature_sets": [
+    "P6",
+    "Native61",
+    "Native61+Public"
+  ],
+  "budgets": [
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "orders": 10,
+  "seeds": 3,
+  "maximum_new_fits": 900,
+  "not_a_parameter_search": true,
+  "prior_CDF_results_preserved": true,
+  "public_default_changed": false
+}

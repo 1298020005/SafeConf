@@ -1,0 +1,47 @@
+[
+  {
+    "artifact": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/evidence_budget_raw_rmse/MACRO_PER_RUN.csv",
+    "bytes": 2491528,
+    "sha256": "67b35078504d2c50d1db9f2b59bb455fb8cdfaeca16286123d58ccd15bdc4c73"
+  },
+  {
+    "artifact": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/evidence_budget_raw_rmse/ALL_METRICS.csv",
+    "bytes": 9755547,
+    "sha256": "442520e29e36af77c6788d45b31bceaa6e7525ad8769c7abc4c38314053815ca"
+  },
+  {
+    "artifact": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/evidence_budget_raw_rmse/FEEDBACK_ORDER_STABILITY.csv",
+    "bytes": 825749,
+    "sha256": "728660c6dbfebcdc997fccb8e2aaaf026a1b7df9ab560003d6dd2b5b85363d65"
+  },
+  {
+    "artifact": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/evidence_budget/MACRO_PER_RUN.csv",
+    "bytes": 2402460,
+    "sha256": "28f5fc3e5975a8b76afdab3cb2d1780586cff4456fbd4840c5f06f61768c7ec5"
+  },
+  {
+    "artifact": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/evidence_budget/ALL_METRICS.csv",
+    "bytes": 9429318,
+    "sha256": "c7ec3c8ec15aa377bb5bef4d73959bf4bc1b55038718e49721aafdf8b223d05d"
+  },
+  {
+    "artifact": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/evidence_budget/FEEDBACK_ORDER_STABILITY.csv",
+    "bytes": 792001,
+    "sha256": "6f3402bf74e1f1d4087caa0dd96e14c92812a1f1e862bba95961f1d2c0b97b27"
+  },
+  {
+    "artifact": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/support_information_diagnostic/MACRO_PER_RUN.csv",
+    "bytes": 1736113,
+    "sha256": "0b90e9edc09eeff932f54f840e4e15b00c943ab75d46870560eb563257bf4b0b"
+  },
+  {
+    "artifact": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/support_information_diagnostic/ALL_METRICS.csv",
+    "bytes": 6858505,
+    "sha256": "7c81b04e7793335ba78623876eea91bd21545aacc7b0e67bbe55d47bbd0aab53"
+  },
+  {
+    "artifact": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/support_information_diagnostic/FEEDBACK_ORDER_STABILITY.csv",
+    "bytes": 582856,
+    "sha256": "b593fec8ee99cd4a0c000f00d4f5bfa1662cc0a944d2e428d5fc81136514728d"
+  }
+]

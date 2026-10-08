@@ -1,10 +1,14 @@
 # SafeConf 当前入口
 
-更新：2026-10-08。研究分支为 `exp/e220-reviewer-closure-20260921`。
+更新：2026-10-09。研究分支为 `exp/e220-reviewer-closure-20260921`。
 
 GitHub默认展示的`master`仍是8月20日的轻量快照。查看当前研究请进入[研究分支](https://github.com/1298020005/SafeConf/tree/exp/e220-reviewer-closure-20260921)。
 
-## 现在看这三份
+## 现在看这里
+
+- [v2.1实际执行与新结果](docs/研究推进/20261009_投稿证据_v21/PROGRESS_REPORT.md)：标签效率、20次内容归因、Source固定修复及外部真实作业状态。
+
+## 既有汇报与历史安排
 
 1. [本周周报](docs/周报_20261008.md)：四条简短说明。
 2. [下一阶段实验工作单](docs/研究推进/20261008_下一阶段/EXECUTION_PLAN.md)：已启动的统计、后续实验、采用条件及资源。

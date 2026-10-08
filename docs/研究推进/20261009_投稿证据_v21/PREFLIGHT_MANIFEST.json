@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "assets": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261003/feedback_v1/FIXED_POOL_FEATURES.parquet",
+      "bytes": 119151,
+      "sha256": "23e2800ba46b8aa0d0992150d3c0f78c3bb9eb1899b21e6a6365806821b5e4cb"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261003/feedback_v1/HOLDOUT_FEATURES.parquet",
+      "bytes": 87421,
+      "sha256": "42b83d50752c935746ad1e2118e21849e8e1197c2ac94be100f2cf111b8d6f57"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/native_control_reference/TASK_FEATURES.parquet",
+      "bytes": 368913,
+      "sha256": "e0c706d2c627452e7a71b59375bfacf1cb39071f8f7274534d96943fbb01b9c2"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/public_mcfaline_trainval/public_memory.parquet",
+      "bytes": 432777,
+      "sha256": "a17798b8e3aaf0a5f26d1fcb18de871980a8e119640daebf4d411f0f77fff067"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/reference_estimand_diagnostic/CELL_WEIGHTED_PUBLIC_EFFECTS.npy",
+      "bytes": 162970688,
+      "sha256": "5d197bbfbc8e2826e093ede5024cce73f14d52cfc0ba5728abefd1881eec6a46"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261003/sams_v1/DecoderOnly_RISK_FEATURES.parquet",
+      "bytes": 173020,
+      "sha256": "c5135d6f71aa3df4ab685a94813f52f92ea8cc561727918b8be965d909427641"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_research_20261003/sams_v1/SAMS_VAE_RISK_FEATURES.parquet",
+      "bytes": 172995,
+      "sha256": "9e8189eb92cf385bd90caae97009bf062c0a75826a07e369e7754f6b533ec8d7"
+    }
+  ],
+  "official_commit": "43c09a32e23d0ee2ae5dfbab21b2deeab27f1803",
+  "pool": {
+    "rows": 331,
+    "genes": 228
+  },
+  "evaluation": {
+    "rows": 212,
+    "genes": 152,
+    "role": "SEEN"
+  },
+  "protected_pids_alive": {
+    "1873824": true,
+    "2428149": true
+  },
+  "unrelated_worktree_files_not_staged": true,
+  "permanent_test_truth_read": false,
+  "own_script_sha256": "d42c3e9c5f24be94640a59b84ec45ead3af5e74f1b8441b70a036e2147523d18",
+  "config_sha256": "5626bba7a6cfa1e89734a40470932a7d3c98afc202462c4de18b917145bc9411"
+}

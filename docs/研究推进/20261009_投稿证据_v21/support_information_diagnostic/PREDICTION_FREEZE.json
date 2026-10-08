@@ -1,0 +1,11 @@
+{
+  "prediction_sha256": "02065b37efe69e090ecbb861ae34e8c4daac7e92aef77aed353c10a410fb1548",
+  "config_sha256": "5626bba7a6cfa1e89734a40470932a7d3c98afc202462c4de18b917145bc9411",
+  "fits": 492,
+  "new_gpu_hours": 0,
+  "wall_seconds": 108.0730429191608,
+  "cpu_seconds": 408.961523939,
+  "default": "PublicRule",
+  "role": "SEEN same-task descriptive comparison, no holdout selection",
+  "labels": "raw current RMSE, official error-regression recipe adaptation"
+}

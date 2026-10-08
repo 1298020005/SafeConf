@@ -1,0 +1,9 @@
+predictor,target_method,definition,reference,budget,right_censored,tested_budget_upper,error_rows_min,error_rows_median,error_rows_max,gene_clusters,preparation_cost_rows_separate,aurc_is_definition_condition,ci_conditions_on_fitted_algorithm_runs
+DecoderOnly,Native61_Public_SelectedSupport_RawRMSE,primary_nominal_95,PublicRule zero target-error risk training,,True,1.0,331,331.0,331,228,542,False,True
+DecoderOnly,Native61_Public_SelectedSupport_RawRMSE,sensitivity_five_budget_bonferroni,PublicRule zero target-error risk training,,True,1.0,331,331.0,331,228,542,False,True
+DecoderOnly,Native61_SelectedSupport_RawRMSE,primary_nominal_95,PublicRule zero target-error risk training,,True,1.0,331,331.0,331,228,542,False,True
+DecoderOnly,Native61_SelectedSupport_RawRMSE,sensitivity_five_budget_bonferroni,PublicRule zero target-error risk training,,True,1.0,331,331.0,331,228,542,False,True
+SAMS_VAE,Native61_Public_SelectedSupport_RawRMSE,primary_nominal_95,PublicRule zero target-error risk training,,True,1.0,331,331.0,331,228,542,False,True
+SAMS_VAE,Native61_Public_SelectedSupport_RawRMSE,sensitivity_five_budget_bonferroni,PublicRule zero target-error risk training,,True,1.0,331,331.0,331,228,542,False,True
+SAMS_VAE,Native61_SelectedSupport_RawRMSE,primary_nominal_95,PublicRule zero target-error risk training,,True,1.0,331,331.0,331,228,542,False,True
+SAMS_VAE,Native61_SelectedSupport_RawRMSE,sensitivity_five_budget_bonferroni,PublicRule zero target-error risk training,,True,1.0,331,331.0,331,228,542,False,True

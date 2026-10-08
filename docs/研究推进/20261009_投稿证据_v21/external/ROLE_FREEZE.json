@@ -1,0 +1,17 @@
+{
+  "status": "FROZEN_BEFORE_TARGET_NUMERIC_READ",
+  "task_roles_sha256": "f2ddb1488dce07bf7443adc61e060dfd48e4eb4025af3ef9c706a4d5e29b0750",
+  "obs_roles_sha256": "a691389faeabf8407823eacce8b0851583431654f2b43389db32c0789e048bc8",
+  "cohort_genes": 1500,
+  "confirmation_genes": 375,
+  "control_pseudobulks": 768,
+  "selection_uses_error_values": false,
+  "planned_contexts": [
+    "Rest",
+    "Stim8hr",
+    "Stim48hr"
+  ],
+  "target_numeric_values_read": false,
+  "source_gene_axis_sha256": "1310cf354e62359daabb725204d6b4cff19a7d1dd68ac62e04bfa3d4ea976c58",
+  "target_gene_axis_sha256": "9c77bf5ce84e2a815ad0d65b780dffc0118221a587a3bf8d00fd2cb1238dc42d"
+}

@@ -1,0 +1,115 @@
+{
+  "run_id": "safeconf_submission_evidence_20261009_v21",
+  "baseline_commit": "280f631",
+  "contract": "v2.1",
+  "feedback_budgets": [
+    0.0,
+    0.1,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "review_budgets": [
+    0.05,
+    0.1,
+    0.2,
+    0.3
+  ],
+  "feedback_order_seeds": [
+    2026101001,
+    2026101002,
+    2026101003,
+    2026101004,
+    2026101005,
+    2026101006,
+    2026101007,
+    2026101008,
+    2026101009,
+    2026101010
+  ],
+  "learner_seeds": [
+    20260930,
+    20261001,
+    20261002
+  ],
+  "content_permutation_seeds": [
+    2026100901,
+    2026100902,
+    2026100903,
+    2026100904,
+    2026100905,
+    2026100906,
+    2026100907,
+    2026100908,
+    2026100909,
+    2026100910,
+    2026100911,
+    2026100912,
+    2026100913,
+    2026100914,
+    2026100915,
+    2026100916,
+    2026100917,
+    2026100918,
+    2026100919,
+    2026100920
+  ],
+  "bootstrap_replicates": 5000,
+  "bootstrap_unit": "perturbation_gene_cluster",
+  "algorithm_runs_are_biological_samples": false,
+  "risk_direction": "higher is more dangerous",
+  "primary_endpoint": "delta_rmse",
+  "secondary_endpoints": [
+    "pearson_error",
+    "effect_top200_rmse"
+  ],
+  "label_equivalent_margin": -0.005,
+  "label_equivalent_ci": "paired_cluster_95_lower",
+  "multiplicity_sensitivity": "five-budget Bonferroni, per-budget 99% intervals",
+  "competence_gate": {
+    "mean_relative_rmse_max": 0.02,
+    "ci95_upper_max": 0.02,
+    "noninferior_strata_min": 0.6,
+    "valid_strata_min": 0.8,
+    "predicted_variance_ratio_min": 0.01
+  },
+  "external_split": {
+    "predictor_train": 0.5,
+    "feedback": 0.25,
+    "confirmation": 0.25,
+    "hash_prefix": "SafeConf-Gladstone-v21-split"
+  },
+  "external_predictors": {
+    "ridge": {
+      "alpha": 100
+    },
+    "mlp": {
+      "hidden": 256,
+      "epochs": 30,
+      "lr": 0.001,
+      "batch_size": 2048,
+      "device": "cpu",
+      "per_context_training": true
+    }
+  },
+  "public_default": "PublicRule",
+  "target_development_preparation": {
+    "rows": 542,
+    "genes": 377
+  },
+  "zero_target_error_supervision_scope": "risk layer fitting/selection/calibration, upstream costs separate",
+  "paper_pdf": "PAUSED",
+  "protected_pids": [
+    1873824,
+    2428149
+  ],
+  "resources": {
+    "threads": 4,
+    "memory_target_GiB": 16,
+    "new_large_upstream": 0,
+    "gpu_training": 0,
+    "original_cumulative_download_cap_bytes": 100000000000,
+    "original_cumulative_gpu_cap_hours": 96
+  }
+}

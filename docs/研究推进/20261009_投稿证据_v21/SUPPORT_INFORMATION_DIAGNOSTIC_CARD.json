@@ -1,0 +1,10 @@
+{
+  "hypothesis": "original log_history_support counts all eligible contexts, while the strong matched support baseline uses the actual same-context selected histories. This omits relevant metadata from the Target inputs.",
+  "evidence_source": "542 DEV matched-content audit, not 212 evaluation selection",
+  "repair": "explicitly give Native61 the selected-history support; pair with/without response content",
+  "fixed": "same official XGBoost, raw RMSE labels, weights, budgets, 10 orders, three seeds",
+  "maximum_new_fits": 600,
+  "Source_feature_engineering_changed": false,
+  "public_default_changed": false,
+  "candidate_is_SEEN_diagnostic": true
+}

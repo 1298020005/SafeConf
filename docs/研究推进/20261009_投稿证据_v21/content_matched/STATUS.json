@@ -1,0 +1,16 @@
+{
+  "status": "COMPLETE",
+  "n_tasks": 542,
+  "n_clusters": 377,
+  "permutations": 20,
+  "effective_permutations": 20,
+  "public_utility20": 0.8611639849246485,
+  "null_utility20_median": 0.8426445863987324,
+  "randomization_p_nominal": 0.2857142857142857,
+  "nulls_were_not_selected_by_performance": true,
+  "new_fits": 0,
+  "new_gpu_hours": 0,
+  "wall_seconds": 143.60444350214675,
+  "cpu_seconds": 143.565154846,
+  "permanent_test_truth_opened": false
+}

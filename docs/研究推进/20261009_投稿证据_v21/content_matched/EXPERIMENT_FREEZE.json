@@ -1,0 +1,40 @@
+{
+  "seeds": [
+    2026100901,
+    2026100902,
+    2026100903,
+    2026100904,
+    2026100905,
+    2026100906,
+    2026100907,
+    2026100908,
+    2026100909,
+    2026100910,
+    2026100911,
+    2026100912,
+    2026100913,
+    2026100914,
+    2026100915,
+    2026100916,
+    2026100917,
+    2026100918,
+    2026100919,
+    2026100920
+  ],
+  "support_log_bin_base": 1.1,
+  "minimum_moved_fraction": 0.6,
+  "strata": [
+    "study",
+    "context",
+    "condition",
+    "perturbation_type",
+    "effect_contract",
+    "gene_axis",
+    "support_bin"
+  ],
+  "block": "perturbation within compatible stratum, equal layout/size",
+  "selection_uses_query_truth": false,
+  "current_scores_reproduced": true,
+  "risk_builder_error_labels": 0,
+  "input_sha256": "e768ac8709297021de538f7e399b74cd3c6b2d9491f6321416e5806225777ad4"
+}
