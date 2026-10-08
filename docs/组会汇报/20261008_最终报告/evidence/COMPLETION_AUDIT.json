@@ -1,7 +1,7 @@
 {
   "status": "REPORT_PACKAGE_READY",
   "scope": "research evolution, publication decision, two Markdown documents and separate figures",
-  "utc_verified": "2026-10-08T03:36:56.113575+00:00",
+  "utc_verified": "2026-10-08T03:39:52.049789+00:00",
   "mainline": "experimental-reference risk auditing; TCBB submission direction",
   "current_default": "PublicRule on the registered McFaline contract",
   "source_role": "compatible-predictor shared learning with explicit strong-baseline comparisons",
@@ -56,7 +56,7 @@
   },
   "document_sha256": {
     "SafeConf_名词与图解.md": "03ab2a4b616dc9dc27a150f8722a46ab8e9b69e79ed2fa040e72ac705cac30e5",
-    "SafeConf_研究主线与汇报.md": "ccc6c95ee5bc28f69738cb90d8bdbbb8b78add76861b4747b1db6827b4d24bc7"
+    "SafeConf_研究主线与汇报.md": "a143de484bcd3c7b6196e4ae525498b5125e26e56404ac64e13e1ea8cb9e10ef"
   },
   "script_sha256": {
     "tools/scripts/build_safeconf_final_report_figures_v1.py": "44f20f3468a23e1c83b53af8e132ba1b31063e4ae59efeacfcba540b316c3388",
