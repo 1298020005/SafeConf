@@ -1,0 +1,128 @@
+#!/usr/bin/env python3
+"""Collect compatible v2.1 evidence; long external work stays unfinished."""
+from __future__ import annotations
+import os
+for key in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS'):os.environ[key]='4'
+import json,sys,time,shutil
+from pathlib import Path
+import numpy as np,pandas as pd
+ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT))
+from tools.scripts.run_safeconf_submission_evidence_v21 import RUN,DOC,selected_support
+from tools.safeconf_continual.submission_evidence import write_json,sha,point_metrics,ClusterBootstrap,summarize_draws
+from tools.safeconf_continual.frozen_scoring import score_task
+
+
+def load(path,default=None):return json.loads(path.read_text()) if path.exists() else default
+
+
+def main():
+    compare=[];rankings=[];pairs=[];reference_ledger=[]
+    source=pd.read_csv('/home/yyf/runtime_artifacts/safeconf_research_20261003/sams_v1/CROSSFAMILY_TASK_PREDICTIONS.csv.gz')
+    for predictor in ['DecoderOnly','SAMS_VAE']:
+        root=RUN/'evidence_budget_raw_rmse';frame=pd.read_parquet(root/f'{predictor}_TASKS.parquet');errors=dict(np.load(root/f'{predictor}_ENDPOINTS.npz'))
+        if 'selected_support_log' not in frame:frame['selected_support_log']=selected_support(frame)
+        line='SAMS_VAE_to_DecoderOnly' if predictor=='DecoderOnly' else 'DecoderOnly_to_SAMS_VAE'
+        shared=source[(source.line==line)&(source.method=='Source_hgb')].set_index('task_id').loc[frame.task_id].risk.to_numpy(float)
+        scores={'Magnitude':frame.predicted_magnitude.to_numpy(float),'HistorySupport_all':frame.support_risk.to_numpy(float),
+            'HistorySupport_selected':-frame.selected_support_log.to_numpy(float),'PublicRule':frame.simple_history_risk.to_numpy(float),'SourceRisk_frozen':shared}
+        pd.DataFrame({'task_id':frame.task_id,**scores}).to_parquet(root/f'{predictor}_STRONG_BASELINE_SCORES.parquet',index=False)
+        f=frame[['task_id','gene','target']].copy();boot=ClusterBootstrap(f,errors['delta_rmse'])
+        def macro(e,s):return np.mean([point_metrics(e[ix],s[ix],frame.task_id.to_numpy()[ix])['utility'] for ix in frame.groupby('target').indices.values()])
+        for method,risk in scores.items():
+            for endpoint,error in errors.items():
+                for review in [.05,.1,.2,.3]:
+                    global_result=point_metrics(error,risk,frame.task_id,review)
+                    compare.append({'predictor':predictor,'method':method,'role':'BASELINE_OR_FROZEN_SOURCE','endpoint':endpoint,'review':review,
+                        'feedback_budget':0.,'scope':'global','n_gene_clusters':frame.gene.nunique(),**global_result})
+                    compare.append({'predictor':predictor,'method':method,'role':'BASELINE_OR_FROZEN_SOURCE','endpoint':endpoint,'review':review,
+                        'feedback_budget':0.,'scope':'context_macro','utility':macro(error,risk),'n_tasks':len(frame)})
+            point=macro(errors['delta_rmse'],risk)-macro(errors['delta_rmse'],scores['PublicRule'])
+            pairs.append({'predictor':predictor,'method':method,'reference':'PublicRule',**summarize_draws(boot.difference(risk,scores['PublicRule']),point)})
+        # The adopted original rule has no training-error inputs. This table
+        # does not silently turn a rule into a learned score fusion.
+        cfg={'method':'FrozenDirectRule','version':'v21::legacy-PublicRule::'+sha(root/f'{predictor}_TASKS.parquet')[:16]}
+        final=[score_task({'frozen_rule_score':value,'evidence_status':'LEGAL_HISTORY'},cfg) for value in scores['PublicRule']]
+        q=f.copy();q['predictor']=predictor;q['risk']=[r[0] for r in final];q['evidence_status']=[r[1] for r in final];q['version']=[r[2] for r in final]
+        q['rank']=pd.Series(np.lexsort((q.task_id.to_numpy(str),-q.risk.to_numpy())).argsort()+1,index=q.index)
+        rankings.append(q)
+        own=[r for r in compare if r['predictor']==predictor and r['method']=='PublicRule']
+        compare.extend([dict(r,method='FinalSafeConf',role='ADOPTED_IDENTICAL_TO_PUBLICRULE') for r in own])
+        reference_ledger.append({'predictor':predictor,'risk_method':'FinalSafeConf','current_risk_fit_error_rows':0,
+            'source_errors_for_this_default':0,'target_feedback_errors_for_this_default':0,'historical_target_DEV_preparation_rows':542,
+            'default_selection_scope':'previous selected PublicRule retained; current SEEN comparisons not fresh confirmation',
+            'Source_enabled':False,'Target_enabled':False,'all_212_tasks_have_history':True})
+    # Candidate averages are explicitly averages of actual model runs; the
+    # chosen system above is a real fixed score vector, not their maximum.
+    for package in ['evidence_budget','evidence_budget_raw_rmse','support_information_diagnostic']:
+        table=pd.read_csv(RUN/package/'ALL_METRICS.csv')
+        table=table[(table.feedback_budget>0)&table.scope.eq('global')]
+        cols=['utility','aurc','spearman','high_error_found','high_error_recall','high_risk_miss_rate','remaining_mean_error','n_tasks']
+        summary=table.groupby(['predictor','method','endpoint','feedback_budget','review_fraction'],as_index=False)[cols].mean()
+        summary=summary.rename(columns={'review_fraction':'review'});summary['scope']='global';summary['role']='UNADOPTED_CANDIDATE_MEAN_OVER_FIXED_RUNS';summary['package']=package
+        compare.extend(summary.to_dict('records'))
+    pd.DataFrame(compare).to_csv(RUN/'SYSTEM_COMPARISON.csv',index=False)
+    pd.concat(rankings,ignore_index=True).to_parquet(RUN/'SYSTEM_RANKING.parquet',index=False)
+    pd.DataFrame(pairs).to_csv(RUN/'STRONG_BASELINE_PAIRED_BOOTSTRAP.csv',index=False)
+    pd.DataFrame(reference_ledger).to_csv(RUN/'DEFAULT_SYSTEM_INFORMATION_LEDGER.csv',index=False)
+    content=pd.read_csv(RUN/'content_matched/RESULTS.csv');q=content[content.endpoint.eq('delta_rmse')]
+    real=float(q[q.method.eq('PublicRule')].utility20_macro.iloc[0]);null=q[q.method.str.startswith('ContentNull_')].utility20_macro.to_numpy()
+    external=load(RUN/'external/CONFIRMATION_COMPLETE.json');watch=load(RUN/'SUPERVISOR_STATE.json',{})
+    claims=[
+        {'question':'RQ1 risk audit starts without fitting target errors','evidence':'212-task fixed SEEN Public/Amplitude/Support comparisons','status':'SEEN_EVIDENCE_INDEPENDENT_CONFIRMATION_PENDING'},
+        {'question':'RQ1 matched biological content increment','evidence':f'20 valid nulls; true U20 {real:.6f}; nominal p {(1+(null>=real).sum())/21:.6f}','status':'STRICT_CONTENT_INCREMENT_NOT_ESTABLISHED'},
+        {'question':'RQ2 target-label equivalent budget','evidence':'10 orders x3 seeds x5 budgets x2 predictors; Public noninferiority threshold -.005','status':'RIGHT_CENSORED_NO_FINITE_TESTED_BUDGET'},
+        {'question':'feedback value for a single mixed-context ranking','evidence':'Raw Native+Public full feedback finds about31 severe tasks vs Public22/24; global paired CI positive; context-macro increment limited','status':'POSITIVE_SEEN_GLOBAL_INCREMENT_CONFIRMATION_PENDING'},
+        {'question':'Source explicit final Public score','evidence':'108 fits including5 whole-gene-label selection controls; two gates keep Public','status':'NOT_ADOPTED_SOURCE_ENGINEERING_ENDED'},
+        {'question':'cross-study replication','evidence':'Adamson48 genes / two24 panels / GEARS+scGPT / native512 truth','status':'SMALL_SEEN_REPLICATION_WIDE_INTERVALS'},
+        {'question':'RQ3 qualified frozen external confirmation','evidence':'Gladstone750train/375development/375confirmation,3states,7615-axis; gate before truth','status':'COMPLETE' if external else watch.get('status','RUNNING')}
+    ];pd.DataFrame(claims).to_csv(RUN/'CLAIM_EVIDENCE_MATRIX.csv',index=False)
+    write_json(RUN/'COMPONENT_DECISION.json',{'default':'PublicRule','Source_enabled':False,'Target_enabled':False,
+        'support_is_required_strong_baseline':True,'target_error_unit_repair':load(RUN/'target_error_units_dev/DECISION.json'),
+        'rule_and_supervised_score_paths_are_separate':True,'external_confirmation':external or {'status':watch.get('status','RUNNING')},
+        'feedback_candidate':'Native control + Public, raw-error XGBoost; global benefit distinct from macro gate',
+        'execution_contract_complete':bool(external and len(external['predictors'])==2),'research_complete':False,'manuscript_pdf':'PAUSED',
+        'next_action':'external competence/freeze/confirmation; backup if fewer than two pass'})
+    rows=pd.DataFrame(compare);report=['# SafeConf v2.1：实际结果与接续','',f'更新UTC：{time.strftime("%Y-%m-%d %H:%M:%S",time.gmtime())}。正文、PDF暂停。','',
+        '## 已完成','', '- 两种预测器的标签效率曲线、严格20次匹配内容置乱、Source108次固定消融、Adamson两个24任务面板均已实际执行。',
+        '- 公平PertEMA配方同时保留P6、Native61、Native61+Public，以及CDF/原始RMSE两个适配。未完成完整conformal流程，不把适配称为完整官方区间复现。',
+        '- 登记标签等效成本以背景宏平均U20为主；Target-only没有预算通过非劣门，保持右删失。单一全局排序另作事先要求的实际收益及敏感性分析，两者分列。',
+        f'- 严格内容置乱主端点：Public={real:.4f}，null中位数={np.median(null):.4f}，名义p={(1+(null>=real).sum())/21:.4f}。历史支持量和历史效应能量为必报强对照。',
+        '- 已完成支持字段修复诊断、原始误差单位诊断。单位修正DEV增量0.0073，但CI较宽且分层未过门，未采用，不继续扫描。','', '## 真实20%复核收益','']
+    for predictor in ['DecoderOnly','SAMS_VAE']:
+        z=rows[(rows.predictor==predictor)&rows.endpoint.eq('delta_rmse')&rows.scope.eq('global')&rows.review.eq(.2)&rows.feedback_budget.eq(0)]
+        a=z[z.method.eq('Magnitude')].iloc[0];p=z[z.method.eq('PublicRule')].iloc[0];s=z[z.method.eq('HistorySupport_selected')].iloc[0]
+        report.append(f'- {predictor}：同样复核43/212项，Public发现{int(p.high_error_found)}个真实高误差任务，幅度发现{int(a.high_error_found)}个；剩余平均误差相对幅度降低{100*(1-p.remaining_mean_error/a.remaining_mean_error):.2f}%。实际入选历史支持量发现{int(s.high_error_found)}个。')
+        augmented=rows[(rows.predictor==predictor)&rows.method.eq('PertEMA_Native61_Public_RawRMSE')&rows.endpoint.eq('delta_rmse')&rows.scope.eq('global')&rows.review.eq(.2)&rows.feedback_budget.eq(1.)].iloc[0]
+        report.append(f'  全部登记反馈下，Native+Public平均发现{augmented.high_error_found:.2f}个，global U20={augmented.utility:.4f}。该收益不能写成每个背景内部排序都改善。')
+    if (RUN/'context_calibration_diagnostic/GLOBAL_BUDGET_PAIRED_BOOTSTRAP.csv').exists():
+        report+=['','## 已落实的全量排序诊断','',
+            '- 充分反馈Native+Public相对Public的全局U20增量：DecoderOnly +0.1982，95%CI[0.0807,0.3023]；SAMS +0.1406，CI[0.0406,0.2738]。',
+            '- 25%反馈时两个方向仍为正增量：+0.1728/[0.0369,0.2639]及+0.1068/[0.0016,0.2131]。这属于全局实际排序收益，登记宏平均主端点不替换。',
+            '- 只学习各背景平均误差的同预算规则，global U20约0.51/0.50，没有达到Public水平；更完整反馈模型的收益并非仅由背景平均值决定。',
+            '- 本次结果支持继续验证“无当前错误时启动审核，少量反馈改善跨背景风险尺度”；当前服务配置不由SEEN表里选最高值自动替换。']
+    report+=['','## 当前采用与正在运行','', '- 完整系统明确采用PublicRule；Source和Target候选与采用系统分列。MC整批212任务全部有历史；外部队列另验证自然混合覆盖和固定CDF回退。',
+        f'- Gladstone状态：{watch.get("status","RUNNING")}；当前pipeline PID={watch.get("pipeline_pid")}，监督PID={watch.get("supervisor_pid")}。训练/开发读取中，最终确认是否开启={watch.get("confirmation_truth_opened",False)}。',
+        '- 原累计下载/GPU预算继续扣减；E208两个受保护进程保留。外部worker通过能力门后自动冻结分数、读取确认真值、统计；科学门失败保持确认封存并登记备用资产。',
+        '- 备用CM4AI作者文件清单与两个pilot元数据已核准；pilot仅98/108个目标名称，不能把guide数当作≥150个确认基因。大文件公开下载端TLS故障记录在资产回执中。',
+        '- 独立确认仍在运行时，本轮研究不标为完成；自动监督保存真实PID、日志、失败回执和恢复点。','', '## 复现与事实入口','',
+        f'- 运行目录：{RUN}',f'- 状态：{RUN}/SUPERVISOR_STATE.json',f'- 逐任务采用排序：{RUN}/SYSTEM_RANKING.parquet',
+        '- 代码：run_safeconf_submission_evidence_v21.py / run_safeconf_content_matched_v21.py / run_safeconf_source_explicit_public_v21.py / run_safeconf_adamson_replication_v21.py / run_safeconf_gladstone_v21.py。','']
+    (RUN/'MORNING_REPORT.md').write_text('\n'.join(report))
+    DOC.mkdir(parents=True,exist_ok=True)
+    for name in ['SYSTEM_COMPARISON.csv','STRONG_BASELINE_PAIRED_BOOTSTRAP.csv','DEFAULT_SYSTEM_INFORMATION_LEDGER.csv','CLAIM_EVIDENCE_MATRIX.csv','COMPONENT_DECISION.json','MORNING_REPORT.md','NUMERICAL_VALIDATION.json','TARGET_LEARNER_TREE_DIAGNOSTIC.csv']:
+        if (RUN/name).exists():shutil.copy2(RUN/name,DOC/name)
+    for package,files in {
+        'content_matched':['DISTANCE_COMPONENT_DIAGNOSTIC.csv','DIAGNOSTIC_CARD.json'],
+        'source_explicit_public':['BIOLOGICAL_BOOTSTRAP_COVERAGE_RECHECK.csv','BOOTSTRAP_COVERAGE_RECHECK.json'],
+        'adamson_replication':['STATUS.json','EXPERIMENT_FREEZE.json','RESULTS.csv','PAIRED_CLUSTER_BOOTSTRAP.csv','PANEL_EQUAL_PAIRED_RESULTS.csv'],
+        'target_error_units_dev':['EXPERIMENT_CARD.json','DECISION.json','NATIVE_DEV_FEATURE_AUDIT.json','STRATA_METRICS.csv','FIT_AND_TRANSFORM_LEDGER.csv'],
+        'backup_asset':['BACKUP_ASSET_QUALIFICATION.csv','BACKUP_ACCESS_RECEIPT.json'],
+        'context_calibration_diagnostic':['EXPERIMENT_CARD.json','GLOBAL_BUDGET_PAIRED_BOOTSTRAP.csv','GLOBAL_LABEL_EQUIVALENT_SENSITIVITY.csv','TARGET_STATE_MEAN_METRICS.csv','STATUS.json'],
+    }.items():
+        (DOC/package).mkdir(exist_ok=True)
+        for name in files:
+            if (RUN/package/name).exists():shutil.copy2(RUN/package/name,DOC/package/name)
+    shutil.copy2(RUN/'MORNING_REPORT.md',DOC/'PROGRESS_REPORT.md')
+    print(json.dumps({'collected':True,'external_complete':bool(external),'default':'PublicRule','report':str(DOC/'PROGRESS_REPORT.md')}))
+
+if __name__=='__main__':main()

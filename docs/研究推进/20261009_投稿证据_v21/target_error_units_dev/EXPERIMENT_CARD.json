@@ -1,0 +1,18 @@
+{
+  "trigger": "raw-error fitted trees have many unsplit leaves; compare numerical units on DEV",
+  "rows": 542,
+  "genes": 377,
+  "folds": 3,
+  "budget_feedback_genes_each_fold": 114,
+  "learner": "same official XGBoost 300/depth6/lr0.05/row-col0.8",
+  "seed": 20260930,
+  "features": "Native61 only, no learned Public inputs",
+  "methods": [
+    "raw_rmse",
+    "affine_standardized_raw_rmse"
+  ],
+  "evaluation_212_used": false,
+  "no_new_algorithm": true,
+  "fit_upper_bound": 6,
+  "adoption": "DEV paired U20 >=.005; CI lower >=-.005; 60% strata nonnegative; AURC degradation <=5%"
+}

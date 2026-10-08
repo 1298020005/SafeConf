@@ -1,0 +1,19 @@
+{
+  "status": "COMPLETE",
+  "adopt_affine_error_units": false,
+  "delta_point": 0.007337917569865767,
+  "bootstrap_mean_delta": 0.0022905134899466714,
+  "ci95_lower": -0.09820505347575696,
+  "ci95_upper": 0.09669045325246355,
+  "ci99_lower": -0.12776292529063005,
+  "ci99_upper": 0.13644020473904747,
+  "bootstrap_valid_draws": 5000,
+  "bootstrap_replicates": 5000,
+  "nonnegative_strata_fraction": 0.5555555555555556,
+  "aurc_relative_change": -0.0018945010831705744,
+  "fits": 6,
+  "wall_seconds": 2.260330912191421,
+  "cpu_seconds": 7.499705613,
+  "decision_uses_only_542_DEV": true,
+  "next_action": "retain raw RMSE and CDF recipes; no further unit search"
+}

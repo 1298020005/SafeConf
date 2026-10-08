@@ -1,0 +1,7 @@
+{
+  "hypothesis": "strong support-matched nulls may preserve historical response energy; decompose weighted history distance to locate useful terms",
+  "identity": "R^2=prediction_energy+history_energy-2*cross_term",
+  "new_model_fits": 0,
+  "scores_are_diagnostics_not_adopted_candidates": true,
+  "input_history_contract_unchanged": true
+}

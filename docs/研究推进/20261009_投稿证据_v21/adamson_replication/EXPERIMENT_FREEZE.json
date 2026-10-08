@@ -1,0 +1,44 @@
+{
+  "role": "SEEN_CROSS_STUDY_REPLICATION",
+  "panels": {
+    "panel1": {
+      "tasks": 24,
+      "predictors": [
+        "GEARS",
+        "scGPT"
+      ],
+      "original_error_axis": 512,
+      "public_common_axis": 505,
+      "history_targets": 23,
+      "upstream_training_biological_tasks_for_score_scale": 48,
+      "prediction_sha256": "7e78ed24dc9fef7dbe023065c39a8e994e4c296713356f79d9340b15c2417690",
+      "truth_sha256": "ff6652a3a44c166c56309ec51e9008c215849f3c36a0c5b746cb54e12f55b52e",
+      "status": "SEEN_REPLICATION_NOT_NEW_CONFIRMATION"
+    },
+    "panel2": {
+      "tasks": 24,
+      "predictors": [
+        "GEARS",
+        "scGPT"
+      ],
+      "original_error_axis": 512,
+      "public_common_axis": 505,
+      "history_targets": 23,
+      "upstream_training_biological_tasks_for_score_scale": 48,
+      "prediction_sha256": "39a4daefc40a54cbef7f017cabddbd9a5d24c8bc151c244fb6f673149e4c3ab7",
+      "truth_sha256": "dc4e5479d8f2218f295cf6b014ce1c24e04cc72e71c6a84a5906ebd81bd3129e",
+      "status": "SEEN_REPLICATION_NOT_NEW_CONFIRMATION"
+    }
+  },
+  "training_error_labels_used": 0,
+  "source_study": "ReplogleWeissman2022_K562_GWPS",
+  "target_study_in_public": false,
+  "source_normalization": "per-cell log1p(CP10k using full stored 8248-gene count library), then cell mean minus controls",
+  "target_normalization": "frozen Adamson processed expression cell mean minus controls; unchanged",
+  "denominator_difference": "stored source gene universe differs from original Adamson preprocessing; cross-study scale caveat retained",
+  "query_truth_used_for_score_calibration": false,
+  "score_scale_preparation": "Adamson upstream-training biological effects used as proxy predictions; errors never read",
+  "source_file": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/ReplogleWeissman2022_K562_gwps.h5ad",
+  "source_bytes": 8805466154,
+  "output_axis_hash": "52560ba86ba56506585559af05c174231cc0f2a02e89a7089990bca1053f5f5a"
+}

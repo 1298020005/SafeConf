@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-09",
+  "author_record": "https://api.figshare.com/v2/articles/27261219",
+  "author_license": "CC BY 4.0",
+  "metadata_verified": true,
+  "pilot_gene_counts": [
+    98,
+    108
+  ],
+  "pilots_below_confirmation_threshold": true,
+  "full_genome_bytes": 189393177972,
+  "strong_genome_bytes": 46718752086,
+  "strong_subset_selected_by_authors_response_strength": true,
+  "larger_files_expression_read": false,
+  "direct_download_transport": "repeated SSL EOF before HEAD metadata",
+  "public_mirror_checked": true,
+  "mirror_author_MD5_text_matches": true,
+  "mirror_data_head_transport": "SSL EOF",
+  "frozen_prediction_asset_found": false,
+  "next_action": "Retry metadata-only larger-file access if Gladstone competence fails; verify physical selected-column cost before any numeric read",
+  "research_confirmation_not_replaced_by_pilot_guide_counts": true
+}

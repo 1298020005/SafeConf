@@ -1,0 +1,16 @@
+{
+  "supervisor_pid": 2982982,
+  "pipeline_pid": 3008026,
+  "technical_restarts": 0,
+  "status": "RUNNING",
+  "last_update_utc": "2026-10-08T21:44:29Z",
+  "wall_seconds_supervised": 1620.6255115477834,
+  "log": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/gladstone_preconfirmation.log",
+  "new_payload_bytes": 38064162142,
+  "confirmation_truth_opened": false,
+  "cohort_frozen": true,
+  "predictors_frozen": false,
+  "risk_scores_frozen": false,
+  "next_action": "Complete registered extraction → predictor gate → risk freeze → conditional confirmation",
+  "protected_processes_touched": false
+}

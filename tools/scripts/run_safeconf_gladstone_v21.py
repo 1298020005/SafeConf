@@ -8,7 +8,7 @@ from __future__ import annotations
 import os
 for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS'):os.environ[k]='4'
 os.environ['CUDA_VISIBLE_DEVICES']=''
-import argparse,hashlib,json,math,sys,time,importlib.util,concurrent.futures
+import argparse,hashlib,json,math,sys,time,importlib.util,concurrent.futures,fcntl
 from pathlib import Path
 import h5py,numpy as np,pandas as pd
 from scipy import sparse
@@ -21,6 +21,7 @@ from tools.safeconf_continual.submission_evidence import (
     BUDGETS,ORDERS,MODEL_SEEDS,REVIEWS,summarize_draws)
 from tools.safeconf_continual.research import P,PUBLIC,cluster_weights,rank_labels
 from tools.scripts.run_safeconf_submission_evidence_v21 import RUN,native_x,official_gbt,CONFIG
+from tools.safeconf_continual.frozen_scoring import score_task
 
 OUT=RUN/'external';URL='https://genome-scale-tcell-perturb-seq.s3.amazonaws.com/marson2025_data/GWCD4i.pseudobulk_merged.h5ad'
 GWPS=Path('/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/ReplogleWeissman2022_K562_gwps.h5ad')
@@ -32,7 +33,11 @@ def remote():
 
 
 def metadata():
-    if (OUT/'TASK_ROLES.parquet').exists():return
+    if (OUT/'ROLE_FREEZE.json').exists():
+        frozen=json.loads((OUT/'ROLE_FREEZE.json').read_text())
+        if sha(OUT/'TASK_ROLES.parquet')!=frozen['task_roles_sha256'] or sha(OUT/'OBS_ROLE_REGISTRY.parquet')!=frozen['obs_roles_sha256']:
+            raise RuntimeError('frozen external role registry changed')
+        return
     io=remote()
     with h5py.File(io,'r') as h:
         columns=['_index','culture_condition','donor_id','guide_id','guide_type','n_cells','perturbed_gene_id','total_counts']
@@ -103,25 +108,37 @@ remains exactly the same as the frozen role registry.
         for row in rows:
             begin,end=int(pointer[row]),int(pointer[row+1])
             if end>begin:chunks.update(range(begin//step,(end-1)//step+1))
-        for chunk in sorted(chunks):
-            info=dataset.id.get_chunk_info_by_coord((chunk*step,))
-            if info.byte_offset is None:continue
+        def accept(info):
+            chunk=int(info.chunk_offset[0])//step
+            if chunk not in chunks or info.byte_offset is None:return
             begin,end=info.byte_offset,info.byte_offset+info.size
             blocks.update(range(begin//io.block,(end-1)//io.block+1))
+        if hasattr(dataset.id,'chunk_iter'):
+            dataset.id.chunk_iter(accept)
+        else:
+            for n,chunk in enumerate(sorted(chunks)):
+                accept(dataset.id.get_chunk_info_by_coord((chunk*step,)))
+                if n%1000==0:print(json.dumps({'chunk_offsets':n,'total':len(chunks),'dataset':name}),flush=True)
     missing=[i for i in sorted(blocks) if not (io.cache/f'{i:08d}.bin').exists()]
+    runs=[]
+    for number in missing:
+        if runs and number==runs[-1][-1]+1 and len(runs[-1])<8:runs[-1].append(number)
+        else:runs.append([number])
     write_json(OUT/'PREFETCH_ALLOWED_STORAGE_PLAN.json',{'roles':roles,'logical_rows_hash':digest_ids(rows),
         'logical_rows':len(rows),'opaque_blocks':len(blocks),'missing_blocks':len(missing),
-        'maximum_incremental_payload_bytes':len(missing)*io.block,'workers':4,
+        'maximum_incremental_payload_bytes':len(missing)*io.block,'workers':4,'http_requests':len(runs),'max_request_blocks':8,
         'numeric_confirmation_rows_materialized':0})
     print(json.dumps({'prefetch_blocks':len(missing),'max_payload_GB':len(missing)*io.block/1e9,'roles':roles}),flush=True)
-    def fetch_block(i):
-        io._block(i)
+    def fetch_block(run):
+        io.prefetch_blocks(run)
         return None  # Futures must not retain the entire multi-GB payload.
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
-        futures=[executor.submit(fetch_block,i) for i in missing]
+        futures={executor.submit(fetch_block,run):len(run) for run in runs}
+        completed=0
         for n,future in enumerate(concurrent.futures.as_completed(futures),1):
             future.result()
-            if n%100==0:print(json.dumps({'opaque_blocks_prefetched':n,'total':len(missing)}),flush=True)
+            completed+=futures[future]
+            if n%100==0:print(json.dumps({'opaque_blocks_prefetched':completed,'total':len(missing),'requests_done':n,'requests_planned':len(runs)}),flush=True)
 
 
 def prepare_target(roles):
@@ -170,12 +187,23 @@ def prepare_target(roles):
             if not np.array_equal(previous[key],value):raise RuntimeError('frozen control data changed')
     else:np.savez(OUT/'CONTROL_COUNTS.npz',**control_payload)
     write_json(OUT/f'{name}_READ_RECEIPT.json',{'roles':roles,'query_rows':len(selected),
-        'logical_pseudobulk_rows_read':len(rows),'forbidden_confirmation_rows_read':0 if 'confirmation' not in roles else None,
+        'logical_pseudobulk_rows_read':len(rows),'forbidden_query_rows_read':0,
+        'forbidden_confirmation_rows_read':0,
+        'authorized_confirmation_query_rows':len(selected) if 'confirmation' in roles else 0,
         'effect_contract_sha256':sha(OUT/'OUTPUT_CONTRACT.json'),'effects_sha256':sha(OUT/f'{name}_EFFECTS.npy')})
+    ledger_path=OUT/'DOWNLOAD_RESOURCE_LEDGER.json'
+    with ledger_path.with_suffix('.lock').open('a') as lock:
+        fcntl.flock(lock.fileno(),fcntl.LOCK_EX)
+        ledger=json.loads(ledger_path.read_text())
+        ledger.pop('target_truth_read',None)
+        ledger['training_development_truth_materialized']=(OUT/'TRAIN_FEEDBACK_READ_RECEIPT.json').exists()
+        ledger['confirmation_truth_materialized']='confirmation' in roles
+        ledger['materialization_status_source']='role-scoped read receipts, not opaque cache bytes'
+        write_json(ledger_path,ledger)
 
 
 def prepare_public():
-    if (OUT/'PUBLIC_COUNTS_EFFECTS.npz').exists():return
+    if (OUT/'PUBLIC_COUNTS_EFFECTS.npz').exists() and (OUT/'PUBLIC_SNAPSHOT.json').exists():return
     tasks=pd.read_parquet(OUT/'TASK_ROLES.parquet');genes=sorted(tasks.gene.unique());gi={g:i for i,g in enumerate(genes)}
     axis=json.loads((OUT/'OUTPUT_CONTRACT.json').read_text())['gene_ids']
     sums=np.zeros((len(genes)+1,len(axis)),float);cell_counts=np.zeros(len(genes)+1,np.int64)
@@ -253,7 +281,9 @@ def competence_gate(tasks,prediction,truth,baseline):
 
 
 def train_predictors():
-    if (OUT/'PREDICTOR_FREEZE.json').exists():return
+    if (OUT/'PREDICTOR_FREEZE.json').exists():
+        if not (OUT/'PREDICTION_INPUT_ISOLATION.json').exists():raise RuntimeError('predictor freeze lacks input isolation receipt')
+        return
     import torch
     torch.set_num_threads(4)
     control_features();tasks=pd.read_parquet(OUT/'TRAIN_FEEDBACK_TASKS.parquet')
@@ -296,10 +326,6 @@ def train_predictors():
     for name,p in prediction.items():np.save(OUT/f'{name}_ALL_PREDICTIONS.npy',p)
     np.save(OUT/'CONDITION_MEAN_ALL_PREDICTIONS.npy',mean_prediction)
     write_json(OUT/'PREDICTOR_FIT_LEDGER.json',fit_records)
-    write_json(OUT/'PREDICTOR_FREEZE.json',{'status':'FROZEN','fit_role':'predictor_train',
-        'predictor_parameters':CONFIG['external_predictors'],'confirmation_truth_read':False,
-        'prediction_sha256':{name:sha(OUT/f'{name}_ALL_PREDICTIONS.npy') for name in prediction},
-        'task_roles_sha256':sha(OUT/'TASK_ROLES.parquet'),'MLP_primary':'three-seed ensemble; seeds not independent biology'})
     # Actual reload/inference with removed and poisoned extra truth columns.
     for name in prediction:
         subset=target_tasks.iloc[:20].copy()
@@ -310,6 +336,11 @@ def train_predictors():
     write_json(OUT/'PREDICTION_INPUT_ISOLATION.json',{'input_fields':['gene','context'],
         'perturbed_query_expression_supplied':False,'confirmation_expression_rows_read_before_prediction_freeze':0,
         'training_matrix_roles':['predictor_train'],'metadata_extra_truth_columns_ignored':True})
+    write_json(OUT/'PREDICTOR_FREEZE.json',{'status':'FROZEN','fit_role':'predictor_train',
+        'predictor_parameters':CONFIG['external_predictors'],'confirmation_truth_read':False,
+        'prediction_sha256':{name:sha(OUT/f'{name}_ALL_PREDICTIONS.npy') for name in prediction},
+        'task_roles_sha256':sha(OUT/'TASK_ROLES.parquet'),'MLP_primary':'three-seed ensemble; seeds not independent biology',
+        'input_isolation_sha256':sha(OUT/'PREDICTION_INPUT_ISOLATION.json')})
 
 
 def frozen_predict(name,metadata):
@@ -404,6 +435,7 @@ def risk_freeze():
     if (OUT/'RISK_FREEZE.json').exists():return
     decision=json.loads((OUT/'EXTERNAL_DECISION.json').read_text());passed=decision['passed_predictors']
     if not passed:
+        stress_test_development()
         write_json(OUT/'PIPELINE_STATUS.json',{'status':'COMPETENCE_FAILED_BACKUP_REQUIRED',
             'confirmation_truth_read':False,'stress_test_scope':'development only','research_complete':False})
         return
@@ -427,15 +459,17 @@ def risk_freeze():
         sim_train=native_train[:,-1];sim_query=native_query[:,-1]
         sim_cdf=ecdf_fit(sim_train);transformations['Similarity']=sim_cdf
         np.savez(OUT/f'{name}_CHANNEL_CDFS.npz',**transformations)
-        available=q.public_available.to_numpy();amp_q=ecdf_apply(amp,q.predicted_magnitude)
-        rules={'Magnitude':amp_q,'Similarity':ecdf_apply(sim_cdf,sim_query),
-            'HistorySupport':np.where(available,ecdf_apply(support,q.support_raw),amp_q),
-            'PublicRule':np.where(available,ecdf_apply(pub,q.public_raw),amp_q)}
+        q['similarity_raw']=sim_query
+        rules={};states={};version=name+'::v21::'+source_snap[:16]
+        for method in ['Magnitude','Similarity','HistorySupport','PublicRule']:
+            cfg={'method':method,'version':version,'channel_cdfs':transformations}
+            result=[score_task(row,cfg) for row in q.to_dict('records')]
+            rules[method]=np.asarray([r[0] for r in result]);states[method]=[r[1] for r in result]
         q[['task_id','gene','context','target','role','evidence_status','public_available']].to_parquet(OUT/f'{name}_CONFIRM_QUERY_METADATA.parquet',index=False)
         for method,score in rules.items():
             if not np.isfinite(score).all():raise RuntimeError('nonfinite rule score on full confirmation cohort')
             part=q[['task_id']].copy();part['predictor']=name;part['method']=method;part['feedback_budget']=0.
-            part['order_seed']=-1;part['learner_seed']=-1;part['risk']=score;all_scores.append(part)
+            part['order_seed']=-1;part['learner_seed']=-1;part['risk']=score;part['evidence_status']=states[method];part['scorer_version']=version;all_scores.append(part)
             channel_audit.append({'predictor':name,'method':method,'cdf_role':'feedback features only',
                 'cdf_error_labels_used':0,'qualification_error_rows_separate':len(train),
                 'target_error_risk_training_rows':0,'n_fit_score_rows':len(train)})
@@ -457,7 +491,11 @@ def risk_freeze():
                             dest=OUT/f'RISK_{name}_{method}_o{order_seed}_b{budget}_s{seed}.json';model.get_booster().save_model(dest)
                             models_written.append({'path':str(dest),'sha256':sha(dest)})
                         part=q[['task_id']].copy();part['predictor']=name;part['method']=method;part['feedback_budget']=budget
-                        part['order_seed']=order_seed;part['learner_seed']=seed;part['risk']=cache[key];all_scores.append(part)
+                        part['order_seed']=order_seed;part['learner_seed']=seed
+                        cfg={'method':'FrozenSupervised','version':version+'::'+method}
+                        result=[score_task({'frozen_model_score':value,'evidence_status':state},cfg)
+                            for value,state in zip(cache[key],q.evidence_status)]
+                        part['risk']=[r[0] for r in result];part['evidence_status']=[r[1] for r in result];part['scorer_version']=cfg['version'];all_scores.append(part)
                         ledger.append({'predictor':name,'method':method,'feedback_budget':budget,'order_seed':order_seed,
                             'learner_seed':seed,'risk_training_error_rows':len(fit),'risk_training_gene_clusters':len(genes),
                             'qualification_error_rows_preparation':len(train),'qualification_gene_clusters':train.gene.nunique(),
@@ -474,7 +512,39 @@ def risk_freeze():
         'configuration_sha256':sha(RUN/'CONFIG.json'),'cohort_protocol_sha256':sha(OUT/'COHORT_AND_ACCESS_PROTOCOL.json'),
         'risk_models':models_written,'confirmation_truth_read':False,
         'zero_target_error_supervision_scope':'PublicRule risk fitting/selection/calibration',
+        'adopted_system':{'method':'PublicRule','no_history':'training-feature CDF Amplitude fallback','Source_enabled':False,'Target_enabled':False},
+        'scoring_entrypoint_sha256':sha(ROOT/'tools/safeconf_continual/frozen_scoring.py'),
         'qualification_error_use_separate':True,'source_study_is_other_study':True})
+
+
+def stress_test_development():
+    """Keep an actual DEV stress result if both predictors fail, TEST sealed."""
+    if (OUT/'DEVELOPMENT_STRESS_RESULTS.csv').exists():return
+    task=pd.read_parquet(OUT/'TRAIN_FEEDBACK_TASKS.parquet');truth=np.load(OUT/'TRAIN_FEEDBACK_EFFECTS.npy')
+    all_tasks=pd.read_parquet(OUT/'PREDICTION_TASKS.parquet').reset_index().set_index('task_id')
+    train=task[task.role.eq('predictor_train')].reset_index();dev=task[task.role.eq('feedback')].reset_index()
+    rows=[];paired=[]
+    for name in ['ridge','mlp']:
+        p=np.load(OUT/f'{name}_ALL_PREDICTIONS.npy');ti=all_tasks.loc[train.task_id,'index'].to_numpy(int);di=all_tasks.loc[dev.task_id,'index'].to_numpy(int)
+        fit=features(train,p[ti]);q=features(dev,p[di]);ep=endpoint_arrays(p[di],truth[dev['index'].to_numpy(int)])
+        transforms={'Amplitude':ecdf_fit(fit.predicted_magnitude),'Public':ecdf_fit(fit.public_raw),'Support':ecdf_fit(fit.support_raw)}
+        scores={}
+        for method in ['Magnitude','HistorySupport','PublicRule']:
+            cfg={'method':method,'version':name+'::DEV_STRESS_ONLY','channel_cdfs':transforms}
+            scores[method]=np.asarray([score_task(r,cfg)[0] for r in q.to_dict('records')])
+            for endpoint,error in ep.items():
+                for review in REVIEWS:
+                    for scope,ix in [('global',np.arange(len(q)))]+list(q.groupby('context').indices.items()):
+                        rows.append({'predictor':name,'method':method,'endpoint':endpoint,'review':review,'scope':scope,
+                            'evidence_role':'FAILED_COMPETENCE_DEV_STRESS_ONLY','confirmation_truth_read':False,
+                            **point_metrics(error[ix],scores[method][ix],q.task_id.to_numpy(str)[ix],review)})
+        boot=ClusterBootstrap(q,ep['delta_rmse'])
+        def macro(s):return np.mean([point_metrics(ep['delta_rmse'][ix],s[ix],q.task_id.to_numpy(str)[ix])['utility'] for ix in q.groupby('context').indices.values()])
+        for reference in ['Magnitude','HistorySupport']:
+            paired.append({'predictor':name,'comparison':'PublicRule-minus-'+reference,
+                **summarize_draws(boot.difference(scores['PublicRule'],scores[reference]),macro(scores['PublicRule'])-macro(scores[reference]))})
+    pd.DataFrame(rows).to_csv(OUT/'DEVELOPMENT_STRESS_RESULTS.csv',index=False)
+    pd.DataFrame(paired).to_csv(OUT/'DEVELOPMENT_STRESS_PAIRED_BOOTSTRAP.csv',index=False)
 
 
 def confirmation():
@@ -486,7 +556,7 @@ def confirmation():
         write_json(OUT/'CONFIRMATION_EVALUATION_OPEN_EVENT.json',{'time_utc':pd.Timestamp.now(tz='UTC').isoformat(),
             'risk_freeze_sha256':sha(OUT/'RISK_FREEZE.json'),'authorized_by':'user v2.1 fixed final confirmation protocol',
             'roles':['confirmation'],'purpose':'scoring only; no refitting/selection'})
-    if not (OUT/'CONFIRMATION_EFFECTS.npy').exists():prepare_target(['confirmation'])
+    if not (OUT/'CONFIRMATION_READ_RECEIPT.json').exists():prepare_target(['confirmation'])
     task=pd.read_parquet(OUT/'CONFIRMATION_TASKS.parquet');truth=np.load(OUT/'CONFIRMATION_EFFECTS.npy')
     all_tasks=pd.read_parquet(OUT/'PREDICTION_TASKS.parquet').reset_index().set_index('task_id')
     ix=all_tasks.loc[task.task_id,'index'].to_numpy(int);scores=pd.read_parquet(OUT/'FROZEN_CONFIRMATION_SCORES.parquet')
@@ -529,7 +599,7 @@ def main():
     a=ap.parse_args();OUT.mkdir(parents=True,exist_ok=True)
     if a.phase in ['metadata','all-preconfirmation','complete']:metadata()
     if a.phase in ['prepare','all-preconfirmation','complete']:
-        if not (OUT/'TRAIN_FEEDBACK_EFFECTS.npy').exists():prepare_target(['predictor_train','feedback'])
+        if not (OUT/'TRAIN_FEEDBACK_READ_RECEIPT.json').exists():prepare_target(['predictor_train','feedback'])
         prepare_public();control_features()
     if a.phase in ['predictors','all-preconfirmation','complete']:train_predictors()
     if a.phase in ['qualification','all-preconfirmation','complete']:qualification()

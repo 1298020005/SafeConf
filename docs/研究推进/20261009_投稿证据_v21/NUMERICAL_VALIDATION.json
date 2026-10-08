@@ -1,0 +1,26 @@
+[
+  {
+    "test": "test_coalesced_range_boundaries_reuse_and_unexpected_full_response",
+    "status": "PASS"
+  },
+  {
+    "test": "test_count_bootstrap_matches_explicit_cluster_copies_with_score_ties",
+    "status": "PASS"
+  },
+  {
+    "test": "test_external_gate_rejects_constant_mean_even_with_zero_relative_gap",
+    "status": "PASS"
+  },
+  {
+    "test": "test_fixed_twenty_percent_severe_set_at_other_review_budgets",
+    "status": "PASS"
+  },
+  {
+    "test": "test_frozen_score_interface_missing_history_and_truth_isolation",
+    "status": "PASS"
+  },
+  {
+    "test": "test_top200_is_actual_truth_effect_order_not_prediction_order",
+    "status": "PASS"
+  }
+]

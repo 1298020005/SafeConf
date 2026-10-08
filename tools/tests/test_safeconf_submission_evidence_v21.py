@@ -53,3 +53,39 @@ def test_external_gate_rejects_constant_mean_even_with_zero_relative_gap():
     assert constant['relative_gap']==0 and constant['status']=='FAIL'
     accurate=competence_gate(tasks,.99*truth,truth,mean)
     assert accurate['status']=='PASS' and accurate['ci95'][1]<=.02
+
+
+def test_frozen_score_interface_missing_history_and_truth_isolation():
+    from tools.safeconf_continual.frozen_scoring import score_task
+    cfg={'method':'PublicRule','version':'frozen-test','channel_cdfs':{'Amplitude':[1.,2.,3.],'Public':[.1,.2,.3]}}
+    task={'predicted_magnitude':2.,'public_available':False,'public_raw':np.nan}
+    score,state,version=score_task(task,cfg)
+    assert score==.5 and state=='NO_HISTORY_AMPLITUDE_FALLBACK' and version=='frozen-test'
+    assert score_task(dict(task,true_error_rmse=999.,query_truth=-99.),cfg)==(score,state,version)
+    legal=dict(task,public_available=True,public_raw=.3)
+    assert score_task(legal,cfg)[0]==5/6
+    supervised={'method':'FrozenSupervised','version':'source-only'}
+    assert score_task({'frozen_model_score':.7,'true_error_rmse':-99.},supervised)[0]==.7
+
+
+def test_coalesced_range_boundaries_reuse_and_unexpected_full_response():
+    import tempfile,threading,json
+    from pathlib import Path
+    from unittest.mock import Mock
+    from tools.safeconf_continual.range_h5 import MeteredHTTPFile
+    with tempfile.TemporaryDirectory() as tmp:
+        p=Path(tmp);reader=object.__new__(MeteredHTTPFile)
+        reader.cache=p;reader.block=8;reader.size=24;reader.reserved=0;reader.cap=100000
+        reader.ledger=p/'ledger.json';reader.sessions=threading.local();reader.url='fake'
+        response=Mock();response.status_code=206;response.headers={'Content-Range':'bytes 0-15/24'}
+        response.content=b'abcdefghijklmnop';response.__enter__=Mock(return_value=response);response.__exit__=Mock(return_value=False)
+        reader.sessions.session=Mock();reader.sessions.session.get.return_value=response
+        reader.prefetch_blocks([0,1])
+        assert (p/'00000000.bin').read_bytes()==b'abcdefgh' and (p/'00000001.bin').read_bytes()==b'ijklmnop'
+        assert json.loads(reader.ledger.read_text())['this_run_network_payload_bytes']==16
+        reader.prefetch_blocks([0,1]);assert reader.sessions.session.get.call_count==1
+        assert reader.sessions.session.get.call_args.kwargs['stream'] is True
+        response.status_code=200
+        try:reader.prefetch_blocks([2])
+        except RuntimeError as err:assert 'Range response mismatch' in str(err)
+        else:raise AssertionError('must refuse a full-object response to a Range request')

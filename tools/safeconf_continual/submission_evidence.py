@@ -148,7 +148,9 @@ Every method uses the same draws; order/learner seeds are not resampled.
         scores = np.asarray(scores, float)
         if scores.ndim == 1: scores = scores[None, :]
         draws = np.asarray([self.utility(s, review) for s in scores])
-        return np.nanmean(draws, axis=0)-self.utility(baseline, review)
+        n=np.isfinite(draws).sum(0)
+        mean=np.divide(np.nansum(draws,axis=0),n,out=np.full(self.replicates,np.nan),where=n>0)
+        return mean-self.utility(baseline, review)
 
 
 def summarize_draws(draws, point):

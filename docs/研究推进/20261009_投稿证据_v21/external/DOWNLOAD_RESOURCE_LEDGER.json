@@ -3,7 +3,7 @@
   "historical_download_reservation_bytes": 38000000000,
   "historical_is_reservation_not_measured": true,
   "reservation_basis": "Oct03 ledger reported no new dataset download; reserve additionally for Orion 18.138GB and unmetered earlier receipts; no budget reset",
-  "this_run_network_payload_bytes": 9792731252,
+  "this_run_network_payload_bytes": 38064162142,
   "files": {
     "GWCD4i.DE_stats.h5ad": {
       "received_bytes": 1962934272,
@@ -15,5 +15,5 @@
   "restart_reason": "four HTTP Range workers; existing bytes preserved and metered",
   "full_file_download_status": "PAUSED_RESUMABLE_PARTS_PRESERVED",
   "access_optimization": "metered HDF5 Range access; cohort frozen before target numeric reads",
-  "range_access_payload_bytes": 875640948
+  "range_access_payload_bytes": 29147071838
 }

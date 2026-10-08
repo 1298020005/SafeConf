@@ -1,0 +1,12 @@
+{
+  "review_budget": 0.2,
+  "point_review_count": 43,
+  "point_tasks": 212,
+  "biological_gene_clusters": 152,
+  "replicates": 5000,
+  "macro_primary_label_equivalent_unchanged": true,
+  "bootstrap_review_count": "ceil(0.2 * resampled task copies)",
+  "algorithm_seeds_not_biological_units": true,
+  "full_ranking_scope_is_not_context_macro": "both reported separately",
+  "new_model_fits": 0
+}

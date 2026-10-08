@@ -1,0 +1,8 @@
+{
+  "source": "frozen train-NTC CONTROL_REFERENCE, not TEST task lookup",
+  "feature_effect_labels_used": 0,
+  "feature_error_labels_used": 0,
+  "mapped_control_gene_task_fraction": 0.9612546125461254,
+  "mapped_state_fraction": 1.0,
+  "missing_gene_feature_behavior": "official XGBoost native NaN path"
+}

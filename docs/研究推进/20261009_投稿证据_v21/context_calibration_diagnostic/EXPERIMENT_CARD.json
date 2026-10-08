@@ -1,0 +1,22 @@
+{
+  "trigger": "Native+Public improves whole-cohort review despite limited macro increment",
+  "role": "SEEN diagnostic, no evaluation-selected deployment",
+  "primary_context_macro_label_equivalent_unchanged": true,
+  "secondary_endpoint": "global U20 at20% review; exact same full cohort",
+  "simple_baseline": "budget-only Target state mean of raw RMSE",
+  "source_diagnostic": "other qualified predictor context mean error; not a new Source feature learner",
+  "new_model_fits": 0,
+  "orders": [
+    2026101001,
+    2026101002,
+    2026101003,
+    2026101004,
+    2026101005,
+    2026101006,
+    2026101007,
+    2026101008,
+    2026101009,
+    2026101010
+  ],
+  "bootstrap_genes": 5000
+}

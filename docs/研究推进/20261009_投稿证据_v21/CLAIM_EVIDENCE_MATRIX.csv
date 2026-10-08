@@ -1,0 +1,8 @@
+question,evidence,status
+RQ1 risk audit starts without fitting target errors,212-task fixed SEEN Public/Amplitude/Support comparisons,SEEN_EVIDENCE_INDEPENDENT_CONFIRMATION_PENDING
+RQ1 matched biological content increment,20 valid nulls; true U20 0.861164; nominal p 0.285714,STRICT_CONTENT_INCREMENT_NOT_ESTABLISHED
+RQ2 target-label equivalent budget,10 orders x3 seeds x5 budgets x2 predictors; Public noninferiority threshold -.005,RIGHT_CENSORED_NO_FINITE_TESTED_BUDGET
+feedback value for a single mixed-context ranking,Raw Native+Public full feedback finds about31 severe tasks vs Public22/24; global paired CI positive; context-macro increment limited,POSITIVE_SEEN_GLOBAL_INCREMENT_CONFIRMATION_PENDING
+Source explicit final Public score,108 fits including5 whole-gene-label selection controls; two gates keep Public,NOT_ADOPTED_SOURCE_ENGINEERING_ENDED
+cross-study replication,Adamson48 genes / two24 panels / GEARS+scGPT / native512 truth,SMALL_SEEN_REPLICATION_WIDE_INTERVALS
+RQ3 qualified frozen external confirmation,"Gladstone750train/375development/375confirmation,3states,7615-axis; gate before truth",RUNNING

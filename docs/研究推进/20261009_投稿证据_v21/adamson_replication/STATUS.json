@@ -1,0 +1,14 @@
+{
+  "status": "COMPLETE",
+  "role": "SEEN_REPLICATION",
+  "independent_gene_clusters": 48,
+  "prediction_rows": 96,
+  "risk_training_error_labels": 0,
+  "new_upstream_fits": 0,
+  "new_gpu_hours": 0,
+  "all_tasks_included": true,
+  "native_truth_axis_unchanged": true,
+  "fallback_tasks_per_panel": 1,
+  "score_scales_use_training_biological_proxies": true,
+  "training_proxy_cost_is_not_zero_target_data": true
+}

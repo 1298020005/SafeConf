@@ -1,0 +1,3 @@
+predictor,risk_method,current_risk_fit_error_rows,source_errors_for_this_default,target_feedback_errors_for_this_default,historical_target_DEV_preparation_rows,default_selection_scope,Source_enabled,Target_enabled,all_212_tasks_have_history
+DecoderOnly,FinalSafeConf,0,0,0,542,previous selected PublicRule retained; current SEEN comparisons not fresh confirmation,False,False,True
+SAMS_VAE,FinalSafeConf,0,0,0,542,previous selected PublicRule retained; current SEEN comparisons not fresh confirmation,False,False,True

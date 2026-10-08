@@ -1,0 +1,15 @@
+{
+  "roles": [
+    "predictor_train",
+    "feedback"
+  ],
+  "logical_rows_hash": "5f2141c4651df6ef628163f131a1c04830365788ecea96962735f00965b3592c",
+  "logical_rows": 25371,
+  "opaque_blocks": 26733,
+  "missing_blocks": 20362,
+  "maximum_incremental_payload_bytes": 21351104512,
+  "workers": 4,
+  "http_requests": 6722,
+  "max_request_blocks": 8,
+  "numeric_confirmation_rows_materialized": 0
+}
