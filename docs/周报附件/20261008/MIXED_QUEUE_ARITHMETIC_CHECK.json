@@ -1,0 +1,10 @@
+{
+  "source_values": {
+    "amplitude_remaining_mean": 0.029770904500523835,
+    "public_remaining_mean": 0.029555220398453683
+  },
+  "absolute_error_decrease": 0.00021568410207015165,
+  "relative_error_decrease": 0.00724479506715547,
+  "relative_error_decrease_percent": 0.724479506715547,
+  "old_source_column_note": "remaining_error_reduction_vs_amplitude stores absolute mean-error difference; week report recomputes the relative decrease from the saved means. Original source is unchanged."
+}

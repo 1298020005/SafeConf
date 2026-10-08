@@ -1,0 +1,4 @@
+method,n_tasks,review_count,review_fraction,true_high_error_found,true_high_error_hit_rate,remaining_mean_error,all_task_mean_error,additional_high_error_found_vs_amplitude,remaining_error_reduction_vs_amplitude,additional_high_error_found_vs_public,remaining_error_reduction_vs_public,truth_role
+Amplitude,2993,599,0.20013364517206816,154,0.2570951585976628,0.029770904500523835,0.030023462983236007,0,0.0,-33,-0.00021568410207015165,SEEN_cached_error_only_for_scoring
+PublicRule_mixed,2993,599,0.20013364517206816,187,0.3121869782971619,0.029555220398453683,0.030023462983236007,33,0.00021568410207015165,0,0.0,SEEN_cached_error_only_for_scoring
+SourceHGB_mixed,2993,599,0.20013364517206816,155,0.2587646076794658,0.029867972159976653,0.030023462983236007,1,-9.706765945281803e-05,-32,-0.0003127517615229697,SEEN_cached_error_only_for_scoring

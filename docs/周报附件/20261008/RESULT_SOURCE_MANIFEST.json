@@ -1,0 +1,97 @@
+{
+  "period": "2026-10-05 to 2026-10-08, week-to-date",
+  "timezone": "Asia/Shanghai",
+  "baseline_commit": "96ca81118fceb4283a7510e30608dd7236d0af16",
+  "new_experiments_run_for_week_report": false,
+  "historical_results_not_counted_as_new_upstream_training": true,
+  "new_gpu_hours_for_week_report": 0,
+  "new_download_bytes_for_week_report": 0,
+  "weekly_report_sha256": "beb0da38c0280aaa1f3e4337d5766f3c01e4cfd7167a0a87007c34ad73eab6e0",
+  "source_tables": [
+    {
+      "role": "本周修正来源比较",
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/review_repair_20261007_v1/SOURCE_REAL_COMPARISON.csv",
+      "snapshot": "周报附件/20261008/01_SOURCE_REAL_COMPARISON.csv",
+      "sha256": "42058a7569173aa593cb08f22b6bc17acbeb6e60021f8b6a5c7609bb0bf65d88"
+    },
+    {
+      "role": "来源相对幅度配对统计",
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/组会汇报/20261008_科学示意_v2/SOURCE_MAGNITUDE_PAIRED_BOOTSTRAP.csv",
+      "snapshot": "周报附件/20261008/02_SOURCE_MAGNITUDE_PAIRED_BOOTSTRAP.csv",
+      "sha256": "30af87e5a9a35e7d62f425b851058396e78db3e0bacdf887b915a43fccbaac27"
+    },
+    {
+      "role": "本周补齐反馈信息对照",
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/review_repair_20261007_v1/NATIVE_PUBLIC_BUDGET_TABLE.csv",
+      "snapshot": "周报附件/20261008/03_NATIVE_PUBLIC_BUDGET_TABLE.csv",
+      "sha256": "7ea0cd5eb110b0a4a924f08b2d92d15f41542d0e21153c41efbd674182b5dc78"
+    },
+    {
+      "role": "固定43项复核结果",
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/review_repair_20261007_v1/GLOBAL_20_PERCENT_REVIEW.csv",
+      "snapshot": "周报附件/20261008/04_GLOBAL_20_PERCENT_REVIEW.csv",
+      "sha256": "73da0788f0bba3e086699a6dad14054f0280f8fc4d2625e921d82223c0b37c3a"
+    },
+    {
+      "role": "本周公共内容对照",
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/组会汇报/20261008_最终报告/evidence/current_public_content/RESULTS.csv",
+      "snapshot": "周报附件/20261008/05_RESULTS.csv",
+      "sha256": "eb9fa8ee7f9f21eb05319c0d3b7e0cc3819d4181ea1284c0202a970687ce35dd"
+    },
+    {
+      "role": "本周内容置乱有效率",
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/组会汇报/20261008_最终报告/evidence/current_public_content/PERMUTATION_AUDIT.csv",
+      "snapshot": "周报附件/20261008/06_PERMUTATION_AUDIT.csv",
+      "sha256": "9c669ac489ed8ca8a427947c242ae833d26781a5ec19b23a840cb7f67711241f"
+    },
+    {
+      "role": "本周相似度修复开发结果",
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/组会汇报/20261008_最终报告/evidence/native_similarity_dev/SUMMARY.csv",
+      "snapshot": "周报附件/20261008/07_SUMMARY.csv",
+      "sha256": "3c3d0be12c4e151e55d22f4bf95a6b0e4dcb02e28c9e9df4ff7711eb16f5530f"
+    },
+    {
+      "role": "混合队列覆盖",
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/implementation_v1/MIXED_QUEUE_COVERAGE.csv",
+      "snapshot": "周报附件/20261008/08_MIXED_QUEUE_COVERAGE.csv",
+      "sha256": "6b1b5b313424c9c52bad8dbd235bdc879901401a56afd2b9c61f307da3466af9"
+    },
+    {
+      "role": "混合队列复核收益",
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/implementation_v1/MIXED_QUEUE_ACTUAL_ERROR_DISCOVERY.csv",
+      "snapshot": "周报附件/20261008/09_MIXED_QUEUE_ACTUAL_ERROR_DISCOVERY.csv",
+      "sha256": "a344750deb57a010fa2aa1a12441e0ffe7b3881e30f39b7ebf7aaab7f8a49f57"
+    },
+    {
+      "role": "外研究E182审计",
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/implementation_v1/E182_INDEPENDENT_PUBLIC_SYSTEM_COMPARISON.csv",
+      "snapshot": "周报附件/20261008/10_E182_INDEPENDENT_PUBLIC_SYSTEM_COMPARISON.csv",
+      "sha256": "14953239fcca5cdaaf5ef0b788c5f080c9e2d0fa3855d15c9b256b0ddb275779"
+    },
+    {
+      "role": "前期重复测量指标本周复核",
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/measurement/simple_risk_sensitivity_v1/MACRO_METRICS.csv",
+      "snapshot": "周报附件/20261008/11_MACRO_METRICS.csv",
+      "sha256": "f00c189b26c8538c7682ad15ffaadf011c24a09e15ace3ca630b6b4d230840b1"
+    },
+    {
+      "role": "前期重复测量排名本周复核",
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/measurement/simple_risk_sensitivity_v1/REPEAT_RANK_INTERVALS.csv",
+      "snapshot": "周报附件/20261008/12_REPEAT_RANK_INTERVALS.csv",
+      "sha256": "860fd9bc9f084290e8cbdb3cc9d3cc4035463d0c71e520e95e1001462de2cf8f"
+    },
+    {
+      "role": "前期SAMS跨模型结果本周复用",
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/system_evidence_v042/SAMS_CROSSFAMILY_MACRO.csv",
+      "snapshot": "周报附件/20261008/13_SAMS_CROSSFAMILY_MACRO.csv",
+      "sha256": "3c5568c7ecee543cc0cc74dc25858d088f1698e392ad67b301829349fbca5067"
+    },
+    {
+      "role": "本周方法决定",
+      "source": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/review_repair_20261007_v1/COMPONENT_DECISION_CORRECTED.json",
+      "snapshot": "周报附件/20261008/14_COMPONENT_DECISION_CORRECTED.json",
+      "sha256": "0e670221bea7e05e6b8be177f5faf8ab789f61a7f7d8710ef2df89a840af7aa3"
+    }
+  ],
+  "mixed_queue_relative_error_decrease": 0.00724479506715547
+}
