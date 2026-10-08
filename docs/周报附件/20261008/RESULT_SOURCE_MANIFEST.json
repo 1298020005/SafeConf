@@ -6,7 +6,7 @@
   "historical_results_not_counted_as_new_upstream_training": true,
   "new_gpu_hours_for_week_report": 0,
   "new_download_bytes_for_week_report": 0,
-  "weekly_report_sha256": "57c10022b3403e5cd380521bfedf90a102904379b94f71dabbbfed266465f90e",
+  "weekly_report_sha256": "fd484c95bfb2aeeeff00ea6db3707ac232add5cc9b2d712f8f6a80f16757412a",
   "source_tables": [
     {
       "role": "本周修正来源比较",
@@ -96,5 +96,5 @@
   "mixed_queue_relative_error_decrease": 0.00724479506715547,
   "detailed_results_report": "周报附件/20261008/详细结果.md",
   "detailed_results_report_sha256": "beb0da38c0280aaa1f3e4337d5766f3c01e4cfd7167a0a87007c34ad73eab6e0",
-  "weekly_format": "two content bullets and two next-week bullets, matching the user template"
+  "weekly_format": "user four-bullet template, conversational research chronology, parenthetical technical terms, postponed advisor report context"
 }
