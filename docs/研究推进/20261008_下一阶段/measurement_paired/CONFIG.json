@@ -1,0 +1,40 @@
+{
+  "run_id": "safeconf_nextphase_20261008_v1_measurement_paired",
+  "role": "DEV/SEEN diagnosis, frozen scores; no method selection",
+  "n_tasks": 542,
+  "n_genes": 377,
+  "primary_endpoint": "true_error_rmse",
+  "diagnostic_endpoints": [
+    "guide_0_rmse",
+    "guide_1_rmse",
+    "plate_0_rmse",
+    "plate_1_rmse",
+    "cell_0_rmse",
+    "cell_1_rmse",
+    "WMSE_Welch_control_adaptation"
+  ],
+  "primary_comparison": "Public_R_history minus NegativeSupport",
+  "secondary_comparison": "Public_R_history minus Magnitude",
+  "methods": [
+    "Public_R_history",
+    "NegativeSupport",
+    "Magnitude"
+  ],
+  "bootstrap_replicates": 5000,
+  "bootstrap_seed": 20260930,
+  "resampling": "paired gene clusters, all contexts of a sampled gene together",
+  "aggregation": "context-equal macro; endpoints never pooled together",
+  "missingness": "common finite rows per endpoint, fixed independently of scores",
+  "repeat_scope": "registered guide/plate/cell splits; biological independence not inferred from labels",
+  "wmse_scope": "existing Welch-control adaptation; diagnostic endpoint only",
+  "new_model_fits": 0,
+  "new_gpu_hours": 0,
+  "new_download_bytes": 0,
+  "permanent_test_truth_opened": false,
+  "input_hashes": {
+    "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/measurement/simple_risk_sensitivity_v1/FROZEN_SIMPLE_RISKS.csv.gz": "e768ac8709297021de538f7e399b74cd3c6b2d9491f6321416e5806225777ad4",
+    "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/measurement/DEV_REPEAT_TASK_ERRORS.csv.gz": "7c73b4c16b7053f2abb2fb0e446bad70267adb300829eb394b60cc95b6d89767",
+    "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/data_model_feedback_20261003_v1/measurement/simple_risk_sensitivity_v1/HISTORY_DEPENDENCY_AUDIT.csv": "4b040a54ab273e8a827e44c523af2c6a00c667cfb59dcfe415b6ba02cd5f84e3"
+  },
+  "script_sha256": "e0964f2b14f77eea355f31c2b92499463a038d9a24dbfee11077128ffa3dfd43"
+}

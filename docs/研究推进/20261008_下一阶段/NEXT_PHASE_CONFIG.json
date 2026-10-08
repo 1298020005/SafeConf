@@ -1,0 +1,145 @@
+{
+  "run_id": "safeconf_nextphase_20261008_v1",
+  "baseline_commit": "43da20f17a5220b72962f43ec34149ab2609477b",
+  "objective": "publication-oriented causal evidence, compatible external replication and one source-reader representation repair",
+  "parallel_agents": 0,
+  "public_default_retained": "PublicRule",
+  "norman_gwps_decision": "remove from same-intervention main comparison: CRISPRa versus CRISPRi",
+  "measurement": {
+    "phase_a0": "COMPLETE",
+    "tasks": 542,
+    "gene_clusters": 377,
+    "contexts": 3,
+    "bootstrap": 5000,
+    "seed": 20260930,
+    "phase_a1": "NEXT",
+    "support_log_bin_base": 1.1,
+    "minimum_effective_permutation_fraction": 0.6,
+    "permutation_seeds": [
+      20260930,
+      20261001,
+      20261002,
+      20261003,
+      20261004
+    ]
+  },
+  "external": {
+    "main_candidate": "Adamson CRISPRi predictions with Replogle GWPS CRISPRi history",
+    "panels": [
+      {
+        "panel": "E65_scgpt_formal_fixed_panel_20260711",
+        "task_rows": 24,
+        "prediction_records": 48,
+        "predictors": [
+          "GEARS_3seed_ensemble_E60_subset512",
+          "scGPT_official_tutorial_finetuned_subset512"
+        ],
+        "output_genes": 512,
+        "normalization_ids": [
+          "adamson_mean_expression_minus_ctrl_shared512_v1"
+        ],
+        "effect_definitions": [
+          "mean_diff"
+        ],
+        "role": "SEEN cross-study candidate; scalar summaries not newly scored",
+        "status": "PREDICTIONS_PRESENT_EFFECT_AND_COMPETENCE_AUDIT_NEXT",
+        "files": {
+          "/home/yyf/proj/docs/实验结果/E65_scgpt_formal_fixed_panel_20260711/tables/PREDICTION_RECORDS.csv": {
+            "bytes": 31651,
+            "sha256": "e374a3288db3ccda94c9ac7821a0d5d9d3271215bdef56b02fad16bfea5648da"
+          },
+          "/home/yyf/proj/docs/实验结果/E65_scgpt_formal_fixed_panel_20260711/arrays/predicted_effects.npz": {
+            "bytes": 105243,
+            "sha256": "7e78ed24dc9fef7dbe023065c39a8e994e4c296713356f79d9340b15c2417690"
+          },
+          "/home/yyf/proj/docs/实验结果/E65_scgpt_formal_fixed_panel_20260711/tables/E65_GENE_PANEL.csv": {
+            "bytes": 31917,
+            "sha256": "e6d4ffbc784aec1823384a109269bedbb2b934746c22c759778a8226fffb86e8"
+          }
+        }
+      },
+      {
+        "panel": "E76a_adamson_scgpt_panel2_20260711",
+        "task_rows": 24,
+        "prediction_records": 48,
+        "predictors": [
+          "GEARS_3seed_ensemble_E75a_subset512",
+          "scGPT_official_tutorial_finetuned_subset512"
+        ],
+        "output_genes": 512,
+        "normalization_ids": [
+          "adamson_mean_expression_minus_ctrl_shared512_v1"
+        ],
+        "effect_definitions": [
+          "mean_diff"
+        ],
+        "role": "SEEN cross-study candidate; scalar summaries not newly scored",
+        "status": "PREDICTIONS_PRESENT_EFFECT_AND_COMPETENCE_AUDIT_NEXT",
+        "files": {
+          "/home/yyf/proj/docs/实验结果/E76a_adamson_scgpt_panel2_20260711/tables/PREDICTION_RECORDS.csv": {
+            "bytes": 32082,
+            "sha256": "f9cae88b229c29f3d897f04fae0c590e8b00f23200510af8483ceb4db7bec23a"
+          },
+          "/home/yyf/proj/docs/实验结果/E76a_adamson_scgpt_panel2_20260711/arrays/predicted_effects.npz": {
+            "bytes": 105436,
+            "sha256": "39a4daefc40a54cbef7f017cabddbd9a5d24c8bc151c244fb6f673149e4c3ab7"
+          },
+          "/home/yyf/proj/docs/实验结果/E76a_adamson_scgpt_panel2_20260711/tables/E76a_GENE_PANEL.csv": {
+            "bytes": 31889,
+            "sha256": "0e275b26a0265d6fa1028e38219435759d536c71bbbf689bc9f2ab55e032fe31"
+          }
+        }
+      }
+    ],
+    "unique_perturbation_labels_across_panels": 48,
+    "new_raw_test_truth_opening": false,
+    "effect_axis_and_control_contract_closed": false
+  },
+  "source_repair": {
+    "candidate": "P+PUBLIC+simple_history_risk",
+    "comparator_inputs": [
+      "P",
+      "P+PUBLIC"
+    ],
+    "source_models": [
+      "DecoderOnly",
+      "SAMS_VAE"
+    ],
+    "source_pool_per_model": {
+      "rows": 331,
+      "genes": 228
+    },
+    "fixed_evaluation": {
+      "rows": 212,
+      "genes": 152
+    },
+    "source_only_development_folds": 3,
+    "shuffle_seeds": [
+      20260930,
+      20261001,
+      20261002,
+      20261003,
+      20261004
+    ],
+    "maximum_new_fits": 120,
+    "HGB": {
+      "max_iter": 200,
+      "learning_rate": 0.05,
+      "max_depth": 3,
+      "min_samples_leaf": 20,
+      "l2_regularization": 10
+    },
+    "target_errors_for_development": false
+  },
+  "resources": {
+    "max_cpu_threads": 4,
+    "max_cpu_core_hours": 24,
+    "target_memory_GiB": 16,
+    "new_gpu_training_hours": 0,
+    "new_download_bytes": 0,
+    "new_large_upstream_training": 0,
+    "original_cumulative_caps_not_reset": true
+  },
+  "paper_pdf_status": "PAUSED_BY_USER",
+  "plan_sha256": "82116078c4d46b3383994834ee4ac59a47e60fe174d613893c0363d805974c05"
+}

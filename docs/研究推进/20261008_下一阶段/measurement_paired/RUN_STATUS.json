@@ -1,0 +1,21 @@
+{
+  "status": "COMPLETE",
+  "completed_endpoints": [
+    "true_error_rmse",
+    "guide_0_rmse",
+    "guide_1_rmse",
+    "plate_0_rmse",
+    "plate_1_rmse",
+    "cell_0_rmse",
+    "cell_1_rmse",
+    "WMSE_Welch_control_adaptation"
+  ],
+  "wall_seconds": 53.496388864004984,
+  "cpu_seconds": 53.492460633,
+  "new_model_fits": 0,
+  "new_gpu_hours": 0,
+  "new_download_bytes": 0,
+  "permanent_test_truth_opened": false,
+  "old_point_estimates_reproduced": true,
+  "default_changed": false
+}
