@@ -1,0 +1,7 @@
+role,target,rows,genes,missing_control_embedding_rows,missing_control_embedding_genes,exact_states
+feedback_pool,a172,115,115,5,5,1
+feedback_pool,t98g,114,114,6,6,1
+feedback_pool,u87mg,102,102,4,4,1
+seen_holdout,a172,74,74,3,3,1
+seen_holdout,t98g,63,63,2,2,1
+seen_holdout,u87mg,75,75,2,2,1

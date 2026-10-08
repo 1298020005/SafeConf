@@ -1,0 +1,7 @@
+source,target,shuffle,shuffle_seed,method,u20,aurc,rows,genes
+TxPert_Exphormer,TxPert_GAT,False,20260930,always_public,0.5774709404846385,0.0525323104759673,1808,575
+TxPert_Exphormer,TxPert_GAT,False,20260930,always_source,0.779927373913014,0.0476566409209443,1808,575
+TxPert_Exphormer,TxPert_GAT,False,20260930,selected_gate,0.7324454912798164,0.0514103221498227,1808,575
+TxPert_GAT,TxPert_Exphormer,False,20260930,always_public,0.5566745363089444,0.0520606278409924,1808,575
+TxPert_GAT,TxPert_Exphormer,False,20260930,always_source,0.7860216084460236,0.0477393826913986,1808,575
+TxPert_GAT,TxPert_Exphormer,False,20260930,selected_gate,0.7254893666859261,0.0509916043108259,1808,575

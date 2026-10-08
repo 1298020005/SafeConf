@@ -1,0 +1,26 @@
+{
+  "time_utc": "2026-10-04T04:50:31Z",
+  "status": "OPERATIONAL_GATE_PASS",
+  "primary_gene_contract": "same existing McFaline common gene axis",
+  "n_tasks": 542,
+  "n_clusters": 377,
+  "n_strata": 3,
+  "model_mean_rmse": 0.0281123835593462,
+  "nochange_mean_rmse": 0.029494456946849823,
+  "state_mean_rmse": 0.028149768710136414,
+  "strongest_simple_baseline_fixed_before_bootstrap": "state_mean_rmse",
+  "relative_gap_to_strong_simple": -0.0013280510902404785,
+  "relative_gap_cluster_bootstrap_95ci": [
+    -0.003469031747791837,
+    0.0007966920918387797
+  ],
+  "fraction_strata_within_2pct": 1.0,
+  "all_finite": true,
+  "prediction_effect_rms": 0.00967517588287592,
+  "across_task_prediction_std": 0.004541590344160795,
+  "bootstrap_draws": 5000,
+  "full_original_ci_gate_review_required": false,
+  "passes_original_operational_criteria": true,
+  "original_gate_formula": "gap <= .02 and strata_fraction >= .60 and bootstrap_ci95_lower <= .02",
+  "validation_reconstruction_not_used_as_competence": true
+}

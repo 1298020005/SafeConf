@@ -1,0 +1,22 @@
+{
+  "role": "SEEN current-default mechanism audit; not parameter selection",
+  "n_tasks": 212,
+  "n_genes": 152,
+  "policy": "exclude all current query experimental IDs and exact state; prefer same context",
+  "permutation": "same study/axis/context/condition/support quartile; unchanged recipient counts/weights",
+  "seeds": [
+    20260930,
+    20260931,
+    20260932,
+    20260933,
+    20260934
+  ],
+  "fits": 0,
+  "new_gpu_hours": 0,
+  "new_download_bytes": 0,
+  "current_query_units_in_bank": 0,
+  "current_true_score_reproduced": true,
+  "scoring_truth": "already opened HOLDOUT_FEATURES error only; no raw test truth arrays",
+  "method_changed": false,
+  "support_matching_is_quartile_not_exact_count": true
+}

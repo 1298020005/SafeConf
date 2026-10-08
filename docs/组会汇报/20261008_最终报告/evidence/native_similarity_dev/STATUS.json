@@ -1,0 +1,16 @@
+{
+  "status": "COMPLETE",
+  "fits": 36,
+  "wall_seconds": 24.21100752404891,
+  "cpu_seconds": 97.989527941,
+  "new_gpu_hours": 0,
+  "new_download_bytes": 0,
+  "permanent_test_truth_opened": false,
+  "evaluation_212_read": false,
+  "default_changed": false,
+  "target_errors_used": 331,
+  "target_gene_clusters": 228,
+  "role": "DEV diagnostic; no automatic adoption",
+  "pool_sha256": "23e2800ba46b8aa0d0992150d3c0f78c3bb9eb1899b21e6a6365806821b5e4cb",
+  "script_sha256": "beb1f3baa5f94281d722d1867ad6576ca21f17cb3c0a85c00cde5d3baf6cd3c3"
+}

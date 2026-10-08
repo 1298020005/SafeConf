@@ -1,0 +1,950 @@
+[
+  {
+    "figure": "02_METHOD_EN",
+    "label": "a"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "New prediction"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "b"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "Reference-aware risk"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "c"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "Prioritise review"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "Perturbation + context"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "C"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "Frozen predictor"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "Predicted effect $\\hat{y}_C$"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "?"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "Outcome not yet observed"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "Public historical reference · default"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "Matched histories across experiments"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "$\\Delta$"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "Genes"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "Reference"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "Prediction"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "Support · conflict · history variation"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "$D, V$"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "R"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "Risk"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "SafeConf"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "$R=\\sqrt{D^2+V}$"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "A"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "B"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "Predictions + errors"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "Source\nconditional"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "Transfer"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "Risk ranking"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "Review top 20%"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "High → low risk"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "Observed C errors"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "Target · feedback candidate"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "Solid: public reference pathway   Dashed: optional learnt risk readers"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "Current McFaline default: PublicRule"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "Parallel family certificate"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "$D_F \\leq E_F$"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "Registered family spread → error lower bound"
+  },
+  {
+    "figure": "02_METHOD_EN",
+    "label": "Separate from ranking"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "a"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "新预测器与未知结果"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "b"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "以公共参照判断风险"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "c"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "有限复核与反馈"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "扰动与细胞背景"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "C"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "冻结预测器"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "预测生物效应"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "?"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "当前任务真值未知"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "公共历史参照 · 当前默认"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "匹配扰动的历史响应"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "$\\Delta$"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "Genes"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "Reference"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "Prediction"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "支持量 · 冲突 · 历史分散度"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "$D, V$"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "R"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "Risk"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "SafeConf"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "$R=\\sqrt{D^2+V}$"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "A"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "B"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "旧模型预测及真实错误"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "Source\n条件增量"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "经验迁移"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "唯一风险排序"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "复核前 20%"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "高风险 → 低风险"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "C 的真实错误反馈"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "Target · 有反馈的候选"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "实线：公共参照主干　虚线：可选的风险学习器"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "当前 McFaline 默认：PublicRule"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "并行家族证书"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "$D_F \\leq E_F$"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "注册家族的分歧 → 家族误差下界"
+  },
+  {
+    "figure": "02_METHOD_ZH",
+    "label": "与经验排序分开"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "a"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "Does disagreement\nsurvive shift?"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "b"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "Does the\nscore beat magnitude?"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "c"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "Does better\ncorrelation improve review?"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "d"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "What can be reused\nfor a new model?"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "Random pair"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "0.37 to 0.41"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "Unseen perturbation"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "0.21 to 0.25"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "Unseen context"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "-0.10 to -0.01"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "Double unseen"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "-0.35 to -0.24"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "E189 · ρ range across support budgets"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "0.408"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "Old score"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "0.619"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "Magnitude"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "E201 · family RMS error"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "Partial ρ | magnitude = 0.250"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "SafeConf-M: 0.8Q(M) + 0.2Q(S)"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "ΔSpearman"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "+0.0183; CI [+0.0091, +0.0271]"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "ΔU20"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "+0.0134; CI [-0.0139, +0.0520]"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "Sept. DEV · observed paired increments"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "After reviewing PertEMA"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "C"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "Own errors → post-hoc learner"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "A"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "B"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "Public experiments + other-model errors"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "Disagreement is setting-dependent"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "明确误差对象与适用设置"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "Magnitude becomes the anchor"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "保留幅度，研究额外信息怎样使用"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "Correlation and review differ"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "固定复核收益单独验收"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "Test cross-predictor information"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "分别计量 Public / Source / Target"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "Parallel since July: registered-family bounds"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "E181: 2,393 tasks, zero lower-bound violations · E182 upper-bound gate FAIL"
+  },
+  {
+    "figure": "01_EVOLUTION",
+    "label": "Each panel uses its own registered cohort and error target. a: support-budget ranges; c: 95% paired CIs."
+  },
+  {
+    "figure": "03_SOURCE",
+    "label": "0.577"
+  },
+  {
+    "figure": "03_SOURCE",
+    "label": "0.557"
+  },
+  {
+    "figure": "03_SOURCE",
+    "label": "0.749"
+  },
+  {
+    "figure": "03_SOURCE",
+    "label": "0.746"
+  },
+  {
+    "figure": "03_SOURCE",
+    "label": "0.780"
+  },
+  {
+    "figure": "03_SOURCE",
+    "label": "0.786"
+  },
+  {
+    "figure": "03_SOURCE",
+    "label": "0.732"
+  },
+  {
+    "figure": "03_SOURCE",
+    "label": "0.725"
+  },
+  {
+    "figure": "03_SOURCE",
+    "label": "Exphormer → GAT"
+  },
+  {
+    "figure": "03_SOURCE",
+    "label": "GAT → Exphormer"
+  },
+  {
+    "figure": "03_SOURCE",
+    "label": "Context-macro U20"
+  },
+  {
+    "figure": "03_SOURCE",
+    "label": "0.0"
+  },
+  {
+    "figure": "03_SOURCE",
+    "label": "0.2"
+  },
+  {
+    "figure": "03_SOURCE",
+    "label": "0.4"
+  },
+  {
+    "figure": "03_SOURCE",
+    "label": "0.6"
+  },
+  {
+    "figure": "03_SOURCE",
+    "label": "0.8"
+  },
+  {
+    "figure": "03_SOURCE",
+    "label": "1.0"
+  },
+  {
+    "figure": "03_SOURCE",
+    "label": "1.2"
+  },
+  {
+    "figure": "03_SOURCE",
+    "label": "来源错误迁移与强预测侧基线\n1,808 tasks / 575 gene clusters · DEV/SEEN"
+  },
+  {
+    "figure": "03_SOURCE",
+    "label": "Public rank"
+  },
+  {
+    "figure": "03_SOURCE",
+    "label": "Magnitude"
+  },
+  {
+    "figure": "03_SOURCE",
+    "label": "Source HGB"
+  },
+  {
+    "figure": "03_SOURCE",
+    "label": "Selected gate"
+  },
+  {
+    "figure": "04_TARGET",
+    "label": "Feedback gene budget (%)"
+  },
+  {
+    "figure": "04_TARGET",
+    "label": "10"
+  },
+  {
+    "figure": "04_TARGET",
+    "label": "25"
+  },
+  {
+    "figure": "04_TARGET",
+    "label": "50"
+  },
+  {
+    "figure": "04_TARGET",
+    "label": "75"
+  },
+  {
+    "figure": "04_TARGET",
+    "label": "100"
+  },
+  {
+    "figure": "04_TARGET",
+    "label": "Context-macro U20 · three-seed mean"
+  },
+  {
+    "figure": "04_TARGET",
+    "label": "-0.2"
+  },
+  {
+    "figure": "04_TARGET",
+    "label": "0.0"
+  },
+  {
+    "figure": "04_TARGET",
+    "label": "0.2"
+  },
+  {
+    "figure": "04_TARGET",
+    "label": "0.4"
+  },
+  {
+    "figure": "04_TARGET",
+    "label": "0.6"
+  },
+  {
+    "figure": "04_TARGET",
+    "label": "0.8"
+  },
+  {
+    "figure": "04_TARGET",
+    "label": "1.0"
+  },
+  {
+    "figure": "04_TARGET",
+    "label": "1.2"
+  },
+  {
+    "figure": "04_TARGET",
+    "label": "公共输入增强目标错误学习\n212 tasks / 152 gene clusters · current adaptation"
+  },
+  {
+    "figure": "04_TARGET",
+    "label": "Native61 adaptation"
+  },
+  {
+    "figure": "04_TARGET",
+    "label": "Native61 + Public"
+  },
+  {
+    "figure": "04_TARGET",
+    "label": "PublicRule · no new feedback"
+  },
+  {
+    "figure": "05_REVIEW",
+    "label": "4"
+  },
+  {
+    "figure": "05_REVIEW",
+    "label": "22"
+  },
+  {
+    "figure": "05_REVIEW",
+    "label": "19"
+  },
+  {
+    "figure": "05_REVIEW",
+    "label": "Random expectation: 8.72"
+  },
+  {
+    "figure": "05_REVIEW",
+    "label": "Amplitude"
+  },
+  {
+    "figure": "05_REVIEW",
+    "label": "PublicRule"
+  },
+  {
+    "figure": "05_REVIEW",
+    "label": "Native61 + Public\n50% feedback"
+  },
+  {
+    "figure": "05_REVIEW",
+    "label": "True high-error tasks discovered"
+  },
+  {
+    "figure": "05_REVIEW",
+    "label": "0"
+  },
+  {
+    "figure": "05_REVIEW",
+    "label": "5"
+  },
+  {
+    "figure": "05_REVIEW",
+    "label": "10"
+  },
+  {
+    "figure": "05_REVIEW",
+    "label": "15"
+  },
+  {
+    "figure": "05_REVIEW",
+    "label": "20"
+  },
+  {
+    "figure": "05_REVIEW",
+    "label": "25"
+  },
+  {
+    "figure": "05_REVIEW",
+    "label": "30"
+  },
+  {
+    "figure": "05_REVIEW",
+    "label": "同样复核43项预测，公共规则多发现18项大误差\n43 / 212 reviewed tasks · fixed first seed"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "0.577"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "0.557"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "0.749"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "0.746"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "0.780"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "0.786"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "Δ Source − magnitude: +0.031\n95% CI [-0.016, +0.059]"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "Δ Source − magnitude: +0.040\n95% CI [-0.001, +0.076]"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "Exphormer → GAT"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "GAT → Exphormer"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "Context-macro U20"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "0.0"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "0.2"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "0.4"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "0.6"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "0.8"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "1.0"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "1.2"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "a  Source versus the strong prediction baseline"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "Public rank"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "Magnitude"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "SourceHGB"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "0.795"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "0.838"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "212 McFaline tasks / 152 gene clusters\nPoint comparison; support is not experimental quality"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "History support"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "PublicRule"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "Context-macro U20"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "0.0"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "0.2"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "0.4"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "0.6"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "0.8"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "1.0"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "1.2"
+  },
+  {
+    "figure": "06_STRONG_BASELINES",
+    "label": "b  Public reference versus support"
+  },
+  {
+    "figure": "07_CONTENT_MECHANISM",
+    "label": "Order 1"
+  },
+  {
+    "figure": "07_CONTENT_MECHANISM",
+    "label": "Order 2"
+  },
+  {
+    "figure": "07_CONTENT_MECHANISM",
+    "label": "Order 3"
+  },
+  {
+    "figure": "07_CONTENT_MECHANISM",
+    "label": "Order 4"
+  },
+  {
+    "figure": "07_CONTENT_MECHANISM",
+    "label": "Order 5"
+  },
+  {
+    "figure": "07_CONTENT_MECHANISM",
+    "label": "ΔU20 · real minus shuffled content"
+  },
+  {
+    "figure": "07_CONTENT_MECHANISM",
+    "label": "-0.05"
+  },
+  {
+    "figure": "07_CONTENT_MECHANISM",
+    "label": "0.00"
+  },
+  {
+    "figure": "07_CONTENT_MECHANISM",
+    "label": "0.05"
+  },
+  {
+    "figure": "07_CONTENT_MECHANISM",
+    "label": "0.10"
+  },
+  {
+    "figure": "07_CONTENT_MECHANISM",
+    "label": "0.15"
+  },
+  {
+    "figure": "07_CONTENT_MECHANISM",
+    "label": "0.20"
+  },
+  {
+    "figure": "07_CONTENT_MECHANISM",
+    "label": "0.25"
+  },
+  {
+    "figure": "07_CONTENT_MECHANISM",
+    "label": "0.30"
+  },
+  {
+    "figure": "07_CONTENT_MECHANISM",
+    "label": "0.35"
+  },
+  {
+    "figure": "07_CONTENT_MECHANISM",
+    "label": "0.40"
+  },
+  {
+    "figure": "07_CONTENT_MECHANISM",
+    "label": "当前默认：真实历史与支持匹配内容置乱\n212 tasks / 152 gene clusters · all five fixed orders"
+  }
+]

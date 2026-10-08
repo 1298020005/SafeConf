@@ -1,0 +1,6 @@
+{
+  "source_path": "/home/yyf/runtime_worktrees/e220_reviewer_closure_20260921/docs/实验结果/E172_primary_cd4_fresh_targets_20260718/postgate_release/reports/E172_JOINT_POSTGATE_REPORT.md",
+  "source_sha256": "e7875dea365f1acccbbc680918fdcf2bee63a1f3d9f15371fefcbe27f3bd2976",
+  "role": "read-only historical report snapshot, not a new manuscript",
+  "source_text": "# E172｜修正 seed gate 后的未读目标确认\n\n正式判定：**NO_TARGET_REPLICATION**。\n\nE172 新 800 targets、12 个 panel×state 等权的 Δ(AURC_magnitude−AURC_SafeConf)=-0.000284818，95% CI [-0.00239393, 0.00180507]，单侧置换 p=0.550964。\n\nseen 640 targets 的 Δ=0.000255214，95% CI [-0.00124212, 0.001611]，p=0.457435。12 个 panel×state 中 3 个点估计为正。\n\n所有先前选择的目标均未进入本次推断。四个面板提高的是同一 test donor/study 内的目标层面精度，不能当成四个新供体或独立研究；结果不形成部署或临床授权。\n"
+}

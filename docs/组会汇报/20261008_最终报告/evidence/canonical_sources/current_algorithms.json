@@ -1,0 +1,127 @@
+{
+  "version": "safeconf-experimental-selection-20261002-v1",
+  "created_utc": "2026-10-02T15:45:22.179479+00:00",
+  "status": "EXPERIMENTAL_CONFIGURATION_SELECTED; not a new untouched confirmation",
+  "paper_work": "DEFERRED_BY_USER",
+  "structure": [
+    "Prediction evidence including magnitude",
+    "Eligible aligned Public reference plus support/quality/conflict audit",
+    "Registered source-supervised reader where its transfer contract is validated",
+    "Target-specific candidate updates, guarded by training-only update validation"
+  ],
+  "public": {
+    "default_rule": "SameContextSupport",
+    "weights": "cell support on eligible same-context experiments if present; otherwise all eligible histories",
+    "effect_estimand": "must match unchanged evaluation truth; cell-weighted delta in current common2840 MC bank",
+    "risk_rule": "sqrt(weighted squared prediction-to-history distance per shared output gene); retain raw conflict separately",
+    "history_count_unit": "actual experimental unit, not individual cell",
+    "history_eligibility": "Excludes exact task/experimental duplicates/forbidden query truth; training-bank lineage and fold restrictions retained",
+    "no_history": "Return prediction magnitude with explicit no-history status; no automatic safety claim",
+    "quality": "Measured reproducibility remains distinct from cell/guide/plate counts; counts are support",
+    "public_learning_incumbent": "B1_HGB retained as existing builder in its registered TxPert reader profile, not asserted universally best",
+    "neural_decision": "B2 and B3 not promoted as replacement; preserve biological-content positive control and all failures"
+  },
+  "source_reader": {
+    "status": "OPTIONAL_CONTRACT_SCOPED_COMPONENT",
+    "incumbent": "B1 public builder plus HGB reader",
+    "default_cross_study_override": false,
+    "features_P": [
+      "predicted_magnitude",
+      "prediction_abs_mean",
+      "prediction_signed_mean",
+      "prediction_std",
+      "prediction_abs_q95",
+      "prediction_sparsity"
+    ],
+    "features_PUBLIC": [
+      "prior_magnitude",
+      "prediction_prior_rmse",
+      "prediction_prior_cosine",
+      "prior_uncertainty",
+      "log_history_support",
+      "effective_sources",
+      "history_conflict"
+    ],
+    "configuration": {
+      "max_iter": 200,
+      "learning_rate": 0.05,
+      "max_depth": 3,
+      "min_samples_leaf": 20,
+      "l2_regularization": 10
+    },
+    "teacher_scope": "Registered same-context source checkpoint excludes evaluation-context treated experiments; no other-context teacher pooling",
+    "CDF": "Budget-limited source training errors only; model/version/context/contract group labels; target error absent from source fit",
+    "identity_fields": "Used for provenance, grouping and compatibility checks only, never risk feature columns",
+    "scores": "Ranking scores, not calibrated error probabilities or actual target-model percentiles",
+    "foreign_family_status": "Frangieh native512 retrospective stress test, not default activation evidence",
+    "profile_version": "registered_universal_v1",
+    "P_semantics": {
+      "prediction_sparsity": "mean(abs(prediction)<=1e-8)",
+      "prediction_abs_q95": "raw quantile(abs(prediction),.95), no floor",
+      "old_relative_sparsity_160_fits": "Archived; not selected profile"
+    }
+  },
+  "target_updates": {
+    "preferred_candidate": "Direct Public+Target HGB; Shared score only separately registered candidate",
+    "automatic_enable_by_feedback_count": false,
+    "release": "Compare on training-side held-out development/anchor tasks under original fixed release gates; permanent evaluation truth cannot publish or select parameters",
+    "current_mc_decision": "Retain strong simple public score as incumbent; none of the fixed target-feedback budgets established a stable improvement over it",
+    "tiny_budget_behavior": "Do not publish root-only HGB as a learned ranking; 37 rows below 2*20 leaf requirement observed in10%budget",
+    "error_memory_isolation": "upstream_model_id plus checkpoint/version; no unqualified cross-model error-bank sharing",
+    "old_shared_score": "Original guide-prior shared score reused only as explicitly legacy frozen feedback control; not proof for the new prior"
+  },
+  "continuous_update": {
+    "public_data": "Append aligned eligible observations; recompute/update candidate references; keep versioned lineage",
+    "error_feedback": "Append legal frozen-model held-out errors; retrain candidate with train-only CDF and same information ledger",
+    "publication": "Keep incumbent if guard fails; keep new data in memory; version and rollback logs persist",
+    "claim": "System update capability distinct from monotonic performance growth"
+  },
+  "decisions_are_based_on": [
+    "paired fixed DEV builder comparisons",
+    "registered nested HGB results",
+    "physical-content null controls",
+    "fixed affected feedback rerun",
+    "no holdout-specific architecture winners"
+  ],
+  "new_architectures_authorized": false,
+  "evidence_bindings": [
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/statistics_v1/MC_DATA_ALIGNMENT_COMPARISONS.csv",
+      "sha256": "683dcfc46b4f0ccfeae394854b56faaa0b148e9a71c2f825ec5bf5d6454e2ee6"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/statistics_v1/STRONG_SIMPLE_COMPARISONS.csv",
+      "sha256": "9cf9a5cd016b0a0c74e4920e7fe52a6c2e2cc9ec08766e9993e81d58453d4d69"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/FIXED_ADOPTION_GATES.csv",
+      "sha256": "271952a16e1b00010bf5a662fd846b9220f02409beeb7577c8010466e1ec3534"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/risk_followup_v1/registered_universal_v1/content_null_v1/FIXED_ADOPTION_GATES.csv",
+      "sha256": "9500c5108e2d1475ccafc9334b9db2d187ea784692d9c9aca1fe4013d75beec0"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/STATISTICS_RECEIPT.json",
+      "sha256": "0541eee123ef9e887b6382a59f5bef262ae1c8b60e1ad64ccc8621bf36e42485"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/PREDICTION_FREEZE.json",
+      "sha256": "1048bd31a4386000e62bb0dae002e60396ae9df0c29c3a8d6050dc0177b368bc"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/feedback_alignment_v1/ADAPTATION_VS_SIMPLE_DIAGNOSTIC.csv",
+      "sha256": "76fa7cab03bf93638c8975718d38d856f8ce750d0dc4c0e02418d4e9fceb0c69"
+    },
+    {
+      "path": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/reference_headroom_v1/RESULT_MANIFEST.json",
+      "sha256": "4308a00a4d448ed29c011afdd93f0f52d5ded4db584b5ee95c1be5762979df33"
+    }
+  ],
+  "release_gate_technical_repair": {
+    "reject_nonfinite_metrics": true,
+    "scientific_thresholds_changed": false,
+    "receipt": "docs/实验结果/Stage2_mature_upstream_20260928/dual_memory_continual/research_closure_20261001/publicset_execution_v1/final_requirement_audit/RELEASE_GATE_REPAIR.json",
+    "sha256": "1deea80a978dbb13c24c96348e1f42fbd917ba0df1ccddc035e2d8553bcaf148"
+  }
+}

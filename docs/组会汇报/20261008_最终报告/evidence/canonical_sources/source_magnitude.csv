@@ -1,0 +1,3 @@
+source,target,comparison,delta_utility20,bootstrap_mean_delta,ci95_lower,ci95_upper,n_tasks,n_clusters,bootstrap_replicates
+TxPert_Exphormer,TxPert_GAT,SourceHGB-minus-Magnitude,0.031119800782303586,0.01832338081009517,-0.015981849235439795,0.05905091799331782,1808,575,5000
+TxPert_GAT,TxPert_Exphormer,SourceHGB-minus-Magnitude,0.03976892173680405,0.03443980309661023,-0.0008514701200880576,0.07575501656333665,1808,575,5000
