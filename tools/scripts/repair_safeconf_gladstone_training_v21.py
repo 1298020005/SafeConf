@@ -40,17 +40,28 @@ def prepare():
     p=OUT/'REPAIR_EXPERIMENT_CARD.json'
     if p.exists() and json.loads(p.read_text())!=card:raise RuntimeError('different repair configuration at fixed run id')
     write_json(p,card)
+    input_sources={}
     for name in ['TASK_ROLES.parquet','OBS_ROLE_REGISTRY.parquet','ROLE_FREEZE.json','OUTPUT_CONTRACT.json',
                  'TRAIN_FEEDBACK_TASKS.parquet','TRAIN_FEEDBACK_EFFECTS.npy','TRAIN_FEEDBACK_READ_RECEIPT.json',
                  'CONTROL_COUNTS.npz','CONTROL_FEATURES.npz','CONTROL_FEATURE_AUDIT.json',
                  'PUBLIC_COUNTS_EFFECTS.npz','PUBLIC_SNAPSHOT.json']:
         src=ORIGINAL/name;dst=OUT/name
-        if not src.exists():raise RuntimeError(f'missing shared input: {src}')
-        if dst.exists() and dst.resolve()!=src.resolve():raise RuntimeError('repair input does not refer to original frozen data')
-        if not dst.exists():dst.symlink_to(src)
+        # KOLF is a separate frozen study root. Its role registry, public
+        # snapshot, and control features are owned regular files, not links to
+        # the earlier CD4 study. Accept them only in the already materialized
+        # run root and bind their hashes below. Missing legacy-only control
+        # arrays are not needed by the repair path.
+        if dst.exists():
+            input_sources[name]={'path':str(dst),'kind':'owned_frozen_file','sha256':sha(dst)}
+            continue
+        if not src.exists():
+            if name=='CONTROL_COUNTS.npz':continue
+            raise RuntimeError(f'missing shared input: {src}')
+        dst.symlink_to(src)
+        input_sources[name]={'path':str(dst),'kind':'shared_immutable_symlink','sha256':sha(dst)}
     write_json(OUT/'SHARED_RESOURCE_CACHE.json',{'cache':str(ORIGINAL/'range_cache/pseudobulk'),
         'ledger':str(ORIGINAL/'DOWNLOAD_RESOURCE_LEDGER.json'),'budget_restarted':False})
-    write_json(OUT/'REPAIR_INPUT_MANIFEST.json',{'inputs':{p.name:sha(p) for p in OUT.iterdir() if p.is_symlink()},
+    write_json(OUT/'REPAIR_INPUT_MANIFEST.json',{'inputs':input_sources,
         'selection_truth_role':'predictor_train only; feedback error used only for unchanged qualification',
         'original_competence_sha256':sha(ORIGINAL/'PREDICTOR_COMPETENCE.json')})
     base.OUT=OUT
