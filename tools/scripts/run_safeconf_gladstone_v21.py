@@ -641,16 +641,34 @@ def confirmation():
     all_tasks=pd.read_parquet(OUT/'PREDICTION_TASKS.parquet').reset_index().set_index('task_id')
     ix=all_tasks.loc[task.task_id,'index'].to_numpy(int);scores=pd.read_parquet(OUT/'FROZEN_CONFIRMATION_SCORES.parquet')
     rows=[];paired=[]
+    coverage_rows=[];fallback_rows=[]
     for name in freeze['passed_predictors']:
         prediction=np.load(OUT/f'{name}_ALL_PREDICTIONS.npy')[ix];endpoints=endpoint_arrays(prediction,truth)
         np.savez(OUT/f'{name}_CONFIRMATION_ENDPOINTS.npz',**endpoints)
+        metadata_path=OUT/f'{name}_CONFIRM_QUERY_METADATA.parquet'
+        if not metadata_path.exists():raise RuntimeError('frozen query evidence metadata is missing')
+        meta=pd.read_parquet(metadata_path).set_index('task_id').loc[task.task_id]
+        available=meta.public_available.to_numpy(bool)
+        evidence_status=meta.evidence_status.to_numpy(str)
+        coverage_rows += [
+            {'predictor':name,'scope':'full_deployment','n_tasks':len(task),'n_supported':int(available.sum()),
+             'n_no_history':int((~available).sum()),'coverage_fraction':float(available.mean()),
+             'confirmation_truth_read':True},
+            {'predictor':name,'scope':'public_supported','n_tasks':int(available.sum()),'n_supported':int(available.sum()),
+             'n_no_history':0,'coverage_fraction':1.0 if available.any() else np.nan,'confirmation_truth_read':True},
+            {'predictor':name,'scope':'no_history_fallback','n_tasks':int((~available).sum()),'n_supported':0,
+             'n_no_history':int((~available).sum()),'coverage_fraction':0.0 if (~available).any() else np.nan,
+             'confirmation_truth_read':True}]
         by_method={}
         for (method,budget,order,seed),q in scores[scores.predictor.eq(name)].groupby(['method','feedback_budget','order_seed','learner_seed']):
             risk=q.set_index('task_id').loc[task.task_id].risk.to_numpy(float)
             by_method.setdefault((method,budget),[]).append(risk)
             for endpoint,error in endpoints.items():
                 for review in REVIEWS:
-                    for scope,use in [('global',np.arange(len(task)))]+[(c,v) for c,v in task.groupby('context').indices.items()]:
+                    scopes=[('global',np.arange(len(task))),('full_deployment',np.arange(len(task))),
+                            ('public_supported',np.flatnonzero(available)),('no_history_fallback',np.flatnonzero(~available))]
+                    scopes += [(c,v) for c,v in task.groupby('context').indices.items()]
+                    for scope,use in scopes:
                         rows.append({'predictor':name,'method':method,'feedback_budget':budget,'order_seed':order,
                             'learner_seed':seed,'endpoint':endpoint,'scope':scope,
                             **point_metrics(error[use],risk[use],task.task_id.to_numpy(str)[use],review)})
@@ -661,8 +679,25 @@ def confirmation():
             values=np.asarray(values);point=float(np.mean([macro(s) for s in values])-macro(reference))
             paired.append({'predictor':name,'method':method,'feedback_budget':budget,'comparison':'method-minus-PublicRule',
                 **summarize_draws(engine.difference(values,reference),point)})
+        # In the no-history stratum PublicRule must be exactly its registered
+        # Magnitude fallback. This is a deployment sanity check, not a result
+        # chosen after seeing the confirmation errors.
+        if (~available).any():
+            public_score=by_method[('PublicRule',0.)][0][~available]
+            magnitude_score=by_method[('Magnitude',0.)][0][~available]
+            fallback_rows.append({'predictor':name,'n_no_history':int((~available).sum()),
+                'max_abs_difference_public_vs_magnitude':float(np.max(np.abs(public_score-magnitude_score))),
+                'exact_equal':bool(np.array_equal(public_score,magnitude_score)),
+                'evidence_status_values':sorted(set(evidence_status[~available]))})
     pd.DataFrame(rows).to_csv(OUT/'CONFIRMATION_METRICS.csv',index=False)
+    pd.DataFrame(rows).to_csv(OUT/'FINAL_KOLF_RESULT_TABLE.csv',index=False)
     pd.DataFrame(paired).to_csv(OUT/'CONFIRMATION_PAIRED_BOOTSTRAP.csv',index=False)
+    pd.DataFrame(paired).to_csv(OUT/'FINAL_KOLF_PAIRED_BOOTSTRAP.csv',index=False)
+    pd.DataFrame(coverage_rows).to_csv(OUT/'PUBLIC_COVERAGE_REPORT.csv',index=False)
+    write_json(OUT/'PUBLIC_FALLBACK_SANITY.json',{'status':'PASS' if all(r['exact_equal'] for r in fallback_rows) else 'FAIL',
+        'rows':fallback_rows,'public_memory_excludes_target_study':True,'target_error_labels_used_by_public':0})
+    if (OUT/'INFORMATION_BUDGET_LEDGER.csv').exists():
+        pd.read_csv(OUT/'INFORMATION_BUDGET_LEDGER.csv').to_csv(OUT/'FINAL_INFORMATION_BUDGET_LEDGER.csv',index=False)
     label=[]
     for (name,method),q in pd.DataFrame(paired).query('feedback_budget > 0').groupby(['predictor','method']):
         for kind,col in [('primary_95','ci95_lower'),('five_budget_sensitivity','ci99_lower')]:

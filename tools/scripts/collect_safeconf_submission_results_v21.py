@@ -153,6 +153,8 @@ def main():
         'REPAIR_EXPERIMENT_CARD.json','REPAIR_INPUT_MANIFEST.json','TRAINING_REPAIR_RESOURCE_COST.json',
         'PIPELINE_STATUS.json','DEVELOPMENT_STRESS_RESULTS.csv','DEVELOPMENT_STRESS_PAIRED_BOOTSTRAP.csv',
         'CONFIRMATION_COMPLETE.json','CONFIRMATION_PAIRED_BOOTSTRAP.csv','CONFIRMATION_LABEL_EQUIVALENT.csv']
+    external_files += ['FINAL_KOLF_RESULT_TABLE.csv','FINAL_KOLF_PAIRED_BOOTSTRAP.csv','FINAL_INFORMATION_BUDGET_LEDGER.csv',
+        'PUBLIC_COVERAGE_REPORT.csv','PUBLIC_FALLBACK_SANITY.json','ROLE_FREEZE.json','OUTPUT_CONTRACT.json']
     for directory in ['external','external_predictor_training_repair_v1']:
         for name in external_files:
             src=RUN/directory/name
