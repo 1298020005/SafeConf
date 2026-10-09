@@ -1,0 +1,18 @@
+{
+  "title": "Public perturbation evidence enables cold-start risk auditing for single-cell perturbation prediction",
+  "authors": [
+    {
+      "name": "AUTHOR_1",
+      "affiliation": "AFFILIATION_1",
+      "orcid": "",
+      "email": ""
+    }
+  ],
+  "corresponding_author": "AUTHOR_1",
+  "funding_statement": "TO_BE_FILLED",
+  "conflict_of_interest": "The authors declare no competing interests.",
+  "data_availability": "Frozen task tables, source data summaries, hashes, figures, and reproduction commands are included in the SafeConf evidence package. Raw public datasets remain available from their original repositories under their original terms.",
+  "code_availability": "The repository branch contains the scoring, audit, rendering, and reproduction entry points bound to the frozen evidence manifest.",
+  "ethics_statement": "This computational study uses public processed perturbation datasets and does not generate new human or animal data.",
+  "status": "AUTHOR_INPUT_REQUIRED"
+}

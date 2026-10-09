@@ -43,4 +43,5 @@
 3. 用 `FIGURE_LEGENDS.md` 统一图注，保持 global 与 macro 术语一致。
 4. 将 Supplement 索引中的表格和审计文件挂到正文主张。
 5. [x] 生成完整主文 PDF、补充材料 PDF 和投稿包；生成前再次核对 `ARTIFACT_MANIFEST.json` 的输入 hash。
-6. [ ] 套用目标期刊官方模板并填写作者、通讯作者、基金和数据声明；这一步不改变冻结结果。
+6. [x] 生成作者信息模板和 scope-accurate cover letter 草稿。
+7. [ ] 填写作者、通讯作者、基金和数据声明并套用目标期刊官方模板；这一步不改变冻结结果。

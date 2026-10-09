@@ -24,6 +24,8 @@ Public perturbation history can start post-hoc risk auditing before target-scree
 - `RED_TEAM_AUDIT.md`: claim-level wording audit against the frozen evidence matrix.
 - `REVIEW_PACKET_V2.pdf`: readable internal review PDF regenerated from the current draft and evidence figures.
 - `MANUSCRIPT_SUBMISSION.pdf` and `SUPPLEMENT_SUBMISSION.pdf`: searchable complete manuscript and supplement PDFs.
+- `AUTHOR_METADATA_TEMPLATE.json`: author, funding, and declaration fields to fill before submission.
+- `COVER_LETTER_DRAFT.md`: scope-accurate TCBB cover letter.
 - `DRAFT_MANIFEST.json`: hashes and evidence-package linkage.
 
 The source evidence and reproducibility commands remain in the sibling `evidence_freeze_v1` directory. Do not edit frozen result files while revising prose.
