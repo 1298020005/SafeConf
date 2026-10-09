@@ -22,6 +22,7 @@ Public perturbation history can start post-hoc risk auditing before target-scree
 - `SUBMISSION_CHECKLIST.md`: pre-submission verification list.
 - `EXTERNAL_ASSET_DECISION.md`: metadata-only decision on whether another independent study is worth opening.
 - `RED_TEAM_AUDIT.md`: claim-level wording audit against the frozen evidence matrix.
+- `REVIEW_PACKET_V2.pdf`: readable internal review PDF regenerated from the current draft and evidence figures.
 - `DRAFT_MANIFEST.json`: hashes and evidence-package linkage.
 
 The source evidence and reproducibility commands remain in the sibling `evidence_freeze_v1` directory. Do not edit frozen result files while revising prose.
