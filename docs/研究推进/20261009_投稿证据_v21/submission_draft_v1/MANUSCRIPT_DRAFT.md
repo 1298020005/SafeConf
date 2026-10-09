@@ -1,0 +1,79 @@
+# Public perturbation evidence enables target-error-free risk auditing for single-cell perturbation prediction
+
+## Abstract
+
+Single-cell perturbation predictors are usually evaluated after the experiment has been performed, while practical use requires deciding which predictions deserve limited experimental review. Existing post-hoc reliability methods learn from the target predictor's own out-of-fold errors. This creates a cold-start problem: a new predictor has no target-screen error history when its first predictions need to be audited. We introduce SafeConf, a risk-auditing framework that uses legally matched public perturbation experiments as an external evidence layer and adds predictor-specific feedback only when it is available. The public layer produces a frozen risk ranking without fitting target-screen error labels; source-model errors and target feedback are tracked as separate information budgets and are not forced into the default system.
+
+On a fixed McFaline benchmark, public experimental evidence identified 22 and 24 of the 43 most erroneous predictions for two different predictors, compared with 4 and 5 using prediction magnitude alone. The remaining mean error after the same review budget was reduced by 7.07% and 6.84%. In a retrospective Frangieh cross-family stress test, public evidence improved risk utility over magnitude in both GEARS-to-scGPT and scGPT-to-GEARS directions, with paired U20 increments of 0.460 and 0.309 respectively. A frozen KOLF study supplied an independent confirmation contract with 600 upstream-training, 300 development, and 300 confirmation genes. One predictor passed the pre-registered competence gate; the public rule covered 228 of 300 confirmation tasks and used a deterministic magnitude fallback for the remaining tasks. The external point estimate favored public evidence over magnitude, while the gene-cluster interval remained wide. These results support public perturbation history as a practical cold-start risk layer and define the conditions under which predictor-specific adaptation should be used.
+
+## 1. Introduction
+
+Perturbation prediction is increasingly used to prioritize biological hypotheses before experimental validation. A prediction error is therefore not only a model-quality statistic; it is also a resource-allocation problem. When only a fraction of predictions can be checked experimentally, a useful reliability layer should place the most likely failures near the top of the review queue.
+
+Post-hoc reliability estimators such as PertEMA learn a mapping from predictor outputs and historical errors to a later risk score. This is appropriate after a screen has accumulated enough out-of-fold errors, but it leaves a practical gap for a new predictor or a new screen. The first predictions of a new screen must be reviewed before the target model has produced the error labels required to fit a target-specific estimator.
+
+SafeConf addresses this gap by treating public perturbation experiments as evidence available before target-screen errors. The public evidence layer is model-independent: it summarizes legally usable historical responses, their support, and their distance from the current prediction. When target errors become available, a target learner can use the same evidence, but its gain is evaluated under the same task and feedback budget rather than assumed. Errors from another predictor are tracked as a separate source of supervision and are retained only when they add information beyond strong public baselines.
+
+The paper asks three questions. First, can public experiments start risk auditing without fitting target-model error labels? Second, how much does predictor-specific feedback add after this public audit has started? Third, does the public signal survive a change of predictor family or study context? The experiments are designed so that each question has a corresponding information ledger, strong simple baselines, and a separate failure boundary.
+
+## 2. SafeConf framework
+
+For a query perturbation, let (p) be the frozen prediction and let (h_1,ldots,h_m) be legal public responses. The public layer forms a response-space reference from the historical effects and computes a prediction-to-history distance. Support, historical energy, conflict, and missing-history status remain separate fields. A task without a legal history does not receive a fabricated zero-effect reference; it receives the registered magnitude fallback.
+
+All channels are converted with training-side empirical CDFs so that tasks with and without history can enter one risk ranking. The CDF transforms scores only; it does not estimate channel weights from target errors. The adopted default is the public rule. Source and target learners are evaluated as supervised candidates with their own error-label budgets.
+
+The system has a single scoring interface but two kinds of scoring logic. Rule-based scores preserve the zero target-error supervision property. Supervised scores use fold-out predictions and registered source or target errors. A final ranking is produced only after its configuration, score hashes, missing-history behavior, and feedback budget are frozen.
+
+## 3. Results
+
+### 3.1 Public evidence starts the audit
+
+We first evaluated two frozen predictors on 212 McFaline tasks spanning 152 perturbation gene clusters. A review budget of 20% corresponds to 43 tasks. For DecoderOnly, PublicRule selected 22 of the 43 tasks in the true highest-error set, whereas prediction magnitude selected 4. For SAMS-VAE, the corresponding counts were 24 and 5. After removing the reviewed predictions, the remaining mean error was 7.07% lower than the magnitude baseline for DecoderOnly and 6.84% lower for SAMS-VAE.
+
+The public result is not explained by a single score interpretation. Support-only, history-energy, magnitude, direct distance, and content-matched permutation controls were reported separately. In the strict 20-permutation content analysis, the nominal randomization result did not establish a gene-specific content increment beyond the registered controls. This negative result is retained because it identifies a measurement and representation boundary rather than allowing a post-hoc mechanism claim.
+
+### 3.2 Feedback improves some global rankings but does not replace the public start
+
+We compared prediction-only, Native control, Native plus Public, and feedback learners at 10%, 25%, 50%, 75%, and 100% feedback budgets. Ten feedback orders and three learner seeds were treated as algorithmic stability variation; the biological bootstrap unit remained the perturbation gene cluster.
+
+On the pooled McFaline ranking, Native plus Public improved over Public at the registered feedback budgets in the global diagnostic. At full feedback, the global U20 increments were 0.198 for DecoderOnly and 0.141 for SAMS-VAE, with paired 95% intervals above zero. The registered context-macro primary endpoint was reported separately and did not justify replacing the no-error-label public rule. Target-only did not reach the public rule's non-inferiority level at any tested budget, so the label-equivalent budget remains right-censored rather than being converted into an interpolated saving.
+
+This distinction matters operationally. Public evidence can start the audit immediately. Feedback can improve a particular pooled ranking, but the improvement depends on task aggregation and is not guaranteed to dominate the public rule in every context.
+
+### 3.3 Cross-family stress evidence
+
+The Frangieh native512 retrospective analysis used the same task truth for GEARS and scGPT and tested both directions of error transfer. PublicHGB exceeded magnitude on all-test risk utility by 0.460 (95% CI 0.317–0.704) for GEARS-to-scGPT and 0.309 (0.079–0.440) for scGPT-to-GEARS. Heldout-context summaries showed the same direction.
+
+All six upstream predictor competence checks failed the registered predictor-quality gate. We therefore use Frangieh as a cross-family stress analysis, not as a qualified independent confirmation. The result demonstrates that the public signal can remain informative across predictor families under a fixed response contract; it does not prove that an unqualified upstream predictor is suitable for deployment.
+
+### 3.4 Independent KOLF confirmation
+
+KOLF2.1J was frozen before reading confirmation responses with 600 upstream-training genes, 300 feedback/development genes, 300 confirmation genes, and a source-defined 1,400-gene response panel. Ridge passed the predictor competence gate. The MLP failed the variance gate because its predicted between-task variance was too small; the failure was retained and no threshold was relaxed to force a second predictor into confirmation.
+
+Risk scores were frozen before confirmation values were read. Public history excluded the KOLF study. The Replogle GWPS contained 1,366 of the 1,400 requested response coordinates; the missing 34 coordinates were recorded explicitly and were not zero-filled. Public comparison was performed on the actual common axis with the same NTC normalization view for prediction and history.
+
+Public history was available for 228 of 300 confirmation tasks. The other 72 tasks used the pre-registered magnitude fallback, and the fallback scores were exactly identical to the magnitude scores. At 20% review, PublicRule had a U20 of 0.184 versus 0.048 for magnitude; the point difference was 0.136 with a 95% gene-cluster interval of approximately -0.048 to 0.366. Both methods selected 17 of the 60 true highest-error tasks. The external result therefore confirms the feasibility and information accounting of the public cold-start audit, while preserving uncertainty about a universal superiority claim.
+
+Native plus Public had a positive point increment over Native at full KOLF feedback, but its 95% interval crossed zero. This result prevents us from presenting target feedback as an externally confirmed replacement for the public rule.
+
+## 4. Discussion
+
+The main contribution of SafeConf is an evidence protocol for risk auditing under cold-start supervision. Public perturbation history can be used before the current predictor has generated a screen-specific error memory. The same protocol also makes clear when supervised extensions add information and when they merely change the learner or the score scale.
+
+Three design choices support this interpretation. First, public evidence, source errors, and target errors are kept in separate information ledgers. Second, all no-history behavior is part of the full ranking rather than being silently excluded from evaluation. Third, predictor competence is checked before an external risk result is treated as a confirmation claim.
+
+The experiments also set limits. Public history is not automatically independent biological truth: one screen is one historical unit, and a large cell count does not create independent screens. Frangieh shows strong cross-family stress evidence but fails the upstream predictor gate. KOLF supplies a qualified predictor and a frozen confirmation contract, yet its public-versus-magnitude interval remains broad. These limits define the conditions under which SafeConf should be used and motivate future larger independent studies.
+
+SafeConf is therefore best understood as a reliability layer and evaluation framework rather than a replacement perturbation predictor. It turns public experimental history into an actionable review ranking, keeps target feedback optional, and reports the cost and boundary of every additional source of supervision.
+
+## 5. Data and code availability
+
+All frozen task tables, score hashes, information ledgers, figures, source data, and reproduction commands are archived in `evidence_freeze_v1`. The default system is PublicRule with an empirical-CDF magnitude fallback for missing history. The repository branch and final commit are recorded in the project entrypoint.
+
+## References to insert during final formatting
+
+1. PertEMA official repository and paper.
+2. The Frangieh GEARS and scGPT predictor papers and released assets.
+3. The KOLF2.1J study and raw-count contract.
+4. The Replogle GWPS public perturbation resource.
+5. Recent work on single-cell perturbation evaluation noise and reliability.
