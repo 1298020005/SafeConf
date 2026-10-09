@@ -1,6 +1,6 @@
 # SafeConf submission draft v1
 
-This directory is the first manuscript package built from the frozen evidence package. It is a research draft, not a typeset journal submission.
+This directory is the manuscript package built from the frozen evidence package. The rendered PDFs are complete review manuscripts; applying the target journal's official template remains a formatting step.
 
 ## Main claim
 
@@ -23,6 +23,7 @@ Public perturbation history can start post-hoc risk auditing before target-scree
 - `EXTERNAL_ASSET_DECISION.md`: metadata-only decision on whether another independent study is worth opening.
 - `RED_TEAM_AUDIT.md`: claim-level wording audit against the frozen evidence matrix.
 - `REVIEW_PACKET_V2.pdf`: readable internal review PDF regenerated from the current draft and evidence figures.
+- `MANUSCRIPT_SUBMISSION.pdf` and `SUPPLEMENT_SUBMISSION.pdf`: searchable complete manuscript and supplement PDFs.
 - `DRAFT_MANIFEST.json`: hashes and evidence-package linkage.
 
 The source evidence and reproducibility commands remain in the sibling `evidence_freeze_v1` directory. Do not edit frozen result files while revising prose.

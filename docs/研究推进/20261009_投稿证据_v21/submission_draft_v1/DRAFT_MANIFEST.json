@@ -3,9 +3,10 @@
   "status": "draft_from_frozen_evidence",
   "evidence_freeze": "../evidence_freeze_v1",
   "default_system": "PublicRule_with_magnitude_fallback",
-  "independent_confirmation": "KOLF2.1J",
+  "independent_evaluation": "KOLF2.1J",
   "stress_analysis": "Frangieh_native512",
-  "typeset_submission": false,
+  "rendered_manuscript_pdf": true,
+  "journal_template_applied": false,
   "files": [
     "MANUSCRIPT_DRAFT.md",
     "SUPPLEMENT_DRAFT.md",
@@ -16,7 +17,9 @@
     "README.md",
     "EXTERNAL_ASSET_DECISION.md",
     "RED_TEAM_AUDIT.md",
-    "REVIEW_PACKET_V2.pdf"
+    "REVIEW_PACKET_V2.pdf",
+    "MANUSCRIPT_SUBMISSION.pdf",
+    "SUPPLEMENT_SUBMISSION.pdf"
   ],
   "draft_base_commit": "7bd6174",
   "notes": [
