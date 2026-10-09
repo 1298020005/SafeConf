@@ -22,11 +22,43 @@ The paper asks three questions. First, can public experiments start risk auditin
 
 ## 2. SafeConf framework
 
-For a query perturbation, let (p) be the frozen prediction and let (h_1,ldots,h_m) be legal public responses. The public layer forms a response-space reference from the historical effects and computes a prediction-to-history distance. Support, historical energy, conflict, and missing-history status remain separate fields. A task without a legal history does not receive a fabricated zero-effect reference; it receives the registered magnitude fallback.
+For a query perturbation, let (p) be the frozen prediction and let (h_1,ldots,h_m) be eligible public responses. The public layer forms a response-space reference from the historical effects and computes a prediction-to-history distance. Support, historical energy, conflict, and missing-history status remain separate fields. A task without an eligible history does not receive a fabricated zero-effect reference; it receives the registered magnitude fallback.
 
 All channels are converted with training-side empirical CDFs so that tasks with and without history can enter one risk ranking. The CDF transforms scores only; it does not estimate channel weights from target errors. The adopted default is the public rule. Source and target learners are evaluated as supervised candidates with their own error-label budgets.
 
 The system has a single scoring interface but two kinds of scoring logic. Rule-based scores preserve the zero target-error supervision property. Supervised scores use fold-out predictions and registered source or target errors. A final ranking is produced only after its configuration, score hashes, missing-history behavior, and feedback budget are frozen.
+
+### 2.1 Information contracts and splits
+
+We separated three information ledgers. Public biological evidence records the study, context, perturbation identity, control source, response contract, independent experimental unit, support, and conflict. Source supervision records the upstream predictor version and its legal held-out errors. Target supervision records the current predictor's feedback records and every use made of them for fitting, calibration, selection, or release. A record used to evaluate a task was excluded from the corresponding fitting or selection path. Public histories from the target study were excluded from the target-study public memory.
+
+The primary McFaline analysis used 212 evaluation tasks grouped into 152 perturbation-gene clusters. The feedback pool contained 331 records from 228 clusters, and the separate 542-task development pool was counted as preparation cost. DecoderOnly and SAMS-VAE predictions were frozen before risk scoring. Feedback budgets were 10%, 25%, 50%, 75%, and 100%, with ten pre-fixed feedback orders and three learner seeds. These repeated runs measure algorithmic stability; they are not independent biological samples.
+
+The KOLF2.1J evaluation used a fixed 600-gene predictor-training partition, 300-gene development/feedback partition, and 300-gene evaluation partition. A competence gate was applied before evaluation responses were opened. Risk scores and all configuration hashes were frozen before the evaluation truth was read. This ordering distinguishes predictor preparation, risk-layer development, and final scoring.
+
+### 2.2 Public reference and score construction
+
+For a task with eligible historical responses (h_i), we constructed a weighted response reference and computed the prediction-to-history distance
+
+\[
+D(p,h)=\sqrt{\sum_i w_i\,\mathrm{mean}_g\{p_g-h_{ig}\}^2}.
+\]
+
+The weights and aggregation object were fixed in the data contract. Historical support, response energy, conflict, and missingness were retained as separate fields. The adopted PublicRule uses the registered distance and its history-dispersion term; it is not a learned error regressor. A single history has zero empirical dispersion by definition, which is recorded rather than interpreted as proof of experimental reliability.
+
+To combine tasks with and without history in one review queue, PublicRule and magnitude scores were transformed by empirical CDFs fitted only on the relevant training side. The CDF is a scale transformation, not a learned risk weight. A task with no legal history receives the magnitude channel and an explicit `NO_HISTORY_AMPLITUDE_FALLBACK` status. It never receives a fabricated zero-effect history. For KOLF, the registered prediction axis had 1,400 coordinates, while the Replogle public resource supplied 1,366 common coordinates. The Public comparison used the explicit common axis with identical normalization and no zero filling.
+
+### 2.3 Supervised extensions and PertEMA comparison
+
+Source and Target learners were evaluated as separate candidates rather than forced into the default. The Target candidate used the fixed PertEMA XGBoost recipe with the available prediction, control, similarity, and Public additions. It is reported as a PertEMA-aligned/native-feature adaptation because the complete official calibration and conformal interval workflow was not reproduced. Every supervised training score was generated out of fold; target error labels were never used by the PublicRule arm.
+
+The primary comparison is the same task, predictor, error target, feedback budget, and cluster weighting across all arms. We report prediction magnitude, support and history-energy controls, PublicRule, Target-only, Native plus Public, and the fixed PertEMA-aligned candidate. Source errors are listed separately and are not silently merged with Target errors.
+
+### 2.4 Evaluation and uncertainty
+
+The primary practical endpoint is utility at a 20% review budget. We also report 5%, 10%, and 30% review budgets, AURC, Spearman association, high-risk miss rate, selected-task error, and remaining mean error. The true highest-error set is defined from evaluation truth only; it never enters a score or model input. EffectTop200-RMSE is a secondary evaluation endpoint whose 200 genes are selected from truth only at scoring time.
+
+All confidence intervals use 5,000 paired bootstrap draws with perturbation-gene cluster as the resampling unit. The same draws are applied to every method in a comparison. Feedback-order and learner-seed variation are reported separately from biological uncertainty. Point estimates and bootstrap means are not conflated. Results from McFaline and Frangieh are marked SEEN; KOLF is a frozen independent evaluation, not a claim that superiority was established in every external setting.
 
 ## 3. Results
 
