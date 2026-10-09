@@ -13,9 +13,11 @@
     "REFERENCES.bib",
     "REFERENCES_TO_INSERT.md",
     "SUBMISSION_CHECKLIST.md",
-    "README.md"
+    "README.md",
+    "EXTERNAL_ASSET_DECISION.md",
+    "RED_TEAM_AUDIT.md"
   ],
-  "generated_from_commit": "b59e8d1",
+  "draft_base_commit": "7bd6174",
   "notes": [
     "All reported values are copied from the evidence freeze and are not reselected in this directory.",
     "The KOLF interval is broad; the draft does not claim universal superiority.",

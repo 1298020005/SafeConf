@@ -16,7 +16,7 @@ Native control features, Public additions, target error budgets, source/target e
 
 Frangieh GEARS↔scGPT direction tables, 15 risk strata, paired gene-cluster bootstrap, and the six failed upstream competence gates.
 
-## S5. KOLF independent confirmation
+## S5. KOLF frozen independent evaluation
 
 Role registry, 1,400-axis contract, 1,366-coordinate public adapter, predictor gate, risk-score hash, coverage report, no-history fallback check, and confirmation metrics.
 

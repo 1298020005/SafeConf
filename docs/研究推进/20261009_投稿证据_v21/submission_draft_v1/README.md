@@ -10,7 +10,7 @@ Public perturbation history can start post-hoc risk auditing before target-scree
 
 - McFaline supplies the primary two-predictor comparison and the feedback-budget analysis.
 - Frangieh is retained as retrospective cross-family stress evidence because the registered upstream competence gate failed.
-- KOLF2.1J is the independent frozen confirmation contract; one predictor passed the gate and the public-versus-magnitude interval remains broad.
+- KOLF2.1J is a frozen independent evaluation contract; one predictor passed the gate and the public-versus-magnitude interval remains broad.
 - The default adopted system is `PublicRule` with the registered magnitude fallback for missing history.
 
 ## Files
@@ -20,6 +20,8 @@ Public perturbation history can start post-hoc risk auditing before target-scree
 - `FIGURE_LEGENDS.md`: figure captions tied to the evidence freeze.
 - `REFERENCES.bib`: primary literature and method references.
 - `SUBMISSION_CHECKLIST.md`: pre-submission verification list.
+- `EXTERNAL_ASSET_DECISION.md`: metadata-only decision on whether another independent study is worth opening.
+- `RED_TEAM_AUDIT.md`: claim-level wording audit against the frozen evidence matrix.
 - `DRAFT_MANIFEST.json`: hashes and evidence-package linkage.
 
 The source evidence and reproducibility commands remain in the sibling `evidence_freeze_v1` directory. Do not edit frozen result files while revising prose.

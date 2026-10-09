@@ -12,7 +12,7 @@ Two predictors are evaluated on the same 212 tasks. Bars show the fraction of th
 
 The upper panels show pooled-task U20 as feedback genes are added. The lower panels show the registered context-macro endpoint. Native-only, Native plus Public, and prediction-only target learners are compared with the frozen zero-error public rule. Curves are not forced to be monotone.
 
-## Figure 4. KOLF independent confirmation
+## Figure 4. KOLF frozen independent evaluation
 
 KOLF uses 600 upstream-training, 300 development, and 300 confirmation genes. The predictor gate is evaluated before confirmation values are read. The left panel shows Public, Native plus Target, and Native plus Public plus Target. The right panel shows paired gene-cluster intervals for public rule versus magnitude, support, and history energy. The MLP gate failure is retained in the supplement.
 
