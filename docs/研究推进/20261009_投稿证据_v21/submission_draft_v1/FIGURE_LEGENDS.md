@@ -2,7 +2,7 @@
 
 ## Figure 1. SafeConf starts risk auditing from public perturbation evidence
 
-The pipeline begins with a frozen perturbation predictor and a public experimental bank. Legal histories produce a response reference, support and conflict fields, and a single ranking that includes tasks with and without history. Target feedback and source-model errors enter as separately budgeted optional channels.
+The pipeline begins with a frozen perturbation predictor and a public experimental bank. Eligible protocol-compatible histories produce a response reference, support and conflict fields, and a single ranking that includes tasks with and without history. Target feedback and source-model errors enter as separately budgeted optional channels.
 
 ## Figure 2. Public evidence improves limited review on the McFaline benchmark
 
