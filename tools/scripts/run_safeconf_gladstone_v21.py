@@ -450,8 +450,9 @@ def qualification():
     feedback=tasks[tasks.role.eq('feedback')].reset_index()
     ii=all_tasks.loc[feedback.task_id,'index'].to_numpy(int);yt=truth[feedback['index'].to_numpy(int)]
     baseline=np.load(OUT/'CONDITION_MEAN_ALL_PREDICTIONS.npy')[ii]
+    names=list(freeze['prediction_sha256'])
     gates={}
-    for name in ['ridge','mlp']:
+    for name in names:
         p=np.load(OUT/f'{name}_ALL_PREDICTIONS.npy')[ii]
         gates[name]=competence_gate(feedback,p,yt,baseline)
     write_json(OUT/'PREDICTOR_COMPETENCE.json',gates)
@@ -525,7 +526,7 @@ def risk_freeze():
     native +=[f'native_state_{i}' for i in range(len(CONTEXTS))]+[f'native_embedding_{i}' for i in range(50)]+['native_training_similarity']
     if CONTEXTS==['KOLF2.1J']:
         native=P+['native_control_baseline','native_control_dropout','native_control_donor_variance']+[f'native_state_{i}' for i in range(len(CONTEXTS))]+[f'native_embedding_{i}' for i in range(50)]+['native_training_similarity']
-    all_scores=[];ledger=[];channel_audit=[];models_written=[];source_snap=sha(OUT/'PUBLIC_COUNTS_EFFECTS.npz')
+    all_scores=[];ledger=[];channel_audit=[];models_written=[];precoverage=[];presanity=[];source_snap=sha(OUT/'PUBLIC_COUNTS_EFFECTS.npz')
     for name in passed:
         p=np.load(OUT/f'{name}_ALL_PREDICTIONS.npy');train=features(feedback,p[feedback_idx]);q=features(query,p[query_idx])
         yy=y[np.asarray([truth_index[t] for t in train.task_id])]
@@ -546,6 +547,18 @@ def risk_freeze():
             cfg={'method':method,'version':version,'channel_cdfs':transformations}
             result=[score_task(row,cfg) for row in q.to_dict('records')]
             rules[method]=np.asarray([r[0] for r in result]);states[method]=[r[1] for r in result]
+        available=q.public_available.to_numpy(bool)
+        precoverage.append({'predictor':name,'scope':'confirmation_full_deployment','n_tasks':len(q),
+            'n_supported':int(available.sum()),'n_no_history':int((~available).sum()),
+            'coverage_fraction':float(available.mean()),'confirmation_truth_read':False})
+        if (~available).any():
+            delta=float(np.max(np.abs(rules['PublicRule'][~available]-rules['Magnitude'][~available])))
+            presanity.append({'predictor':name,'n_no_history':int((~available).sum()),
+                'max_abs_difference_public_vs_magnitude':delta,'exact_equal':bool(delta==0.0),
+                'evidence_status_values':sorted(set(q.evidence_status.to_numpy(str)[~available]))})
+        else:
+            presanity.append({'predictor':name,'n_no_history':0,'max_abs_difference_public_vs_magnitude':0.0,
+                'exact_equal':True,'evidence_status_values':[]})
         q[['task_id','gene','context','target','role','evidence_status','public_available']].to_parquet(OUT/f'{name}_CONFIRM_QUERY_METADATA.parquet',index=False)
         for method,score in rules.items():
             if not np.isfinite(score).all():raise RuntimeError('nonfinite rule score on full confirmation cohort')
@@ -587,11 +600,17 @@ def risk_freeze():
     pd.concat(all_scores,ignore_index=True).to_parquet(OUT/'FROZEN_CONFIRMATION_SCORES.parquet',index=False)
     pd.DataFrame(ledger).to_csv(OUT/'INFORMATION_BUDGET_LEDGER.csv',index=False)
     pd.DataFrame(channel_audit).to_csv(OUT/'CHANNEL_SCORE_CDF_AUDIT.csv',index=False)
+    pd.DataFrame(precoverage).to_csv(OUT/'PUBLIC_COVERAGE_PRECONFIRMATION.csv',index=False)
+    write_json(OUT/'PUBLIC_FALLBACK_PRECHECK.json',{'status':'PASS' if all(r['exact_equal'] for r in presanity) else 'FAIL',
+        'rows':presanity,'confirmation_truth_read':False,'public_memory_excludes_target_study':True,
+        'target_error_labels_used_by_public':0})
     write_json(OUT/'RISK_FREEZE.json',{'status':'FROZEN_BEFORE_CONFIRMATION_TRUTH',
         'passed_predictors':passed,'confirmation_score_sha256':sha(OUT/'FROZEN_CONFIRMATION_SCORES.parquet'),
         'predictor_freeze_sha256':sha(OUT/'PREDICTOR_FREEZE.json'),'public_snapshot_sha256':source_snap,
         'configuration_sha256':sha(RUN/'CONFIG.json'),'cohort_protocol_sha256':sha(OUT/'COHORT_AND_ACCESS_PROTOCOL.json'),
         'risk_models':models_written,'confirmation_truth_read':False,
+        'public_coverage_preconfirmation_sha256':sha(OUT/'PUBLIC_COVERAGE_PRECONFIRMATION.csv'),
+        'public_fallback_precheck_sha256':sha(OUT/'PUBLIC_FALLBACK_PRECHECK.json'),
         'zero_target_error_supervision_scope':'PublicRule risk fitting/selection/calibration',
         'adopted_system':{'method':'PublicRule','no_history':'training-feature CDF Amplitude fallback','Source_enabled':False,'Target_enabled':False},
         'scoring_entrypoint_sha256':sha(ROOT/'tools/safeconf_continual/frozen_scoring.py'),
@@ -633,6 +652,14 @@ def confirmation():
     freeze=json.loads((OUT/'RISK_FREEZE.json').read_text())
     if sha(OUT/'FROZEN_CONFIRMATION_SCORES.parquet')!=freeze['confirmation_score_sha256']:
         raise RuntimeError('confirmation scores changed after freeze')
+    precoverage=OUT/'PUBLIC_COVERAGE_PRECONFIRMATION.csv'
+    precheck=OUT/'PUBLIC_FALLBACK_PRECHECK.json'
+    if not precoverage.exists() or sha(precoverage)!=freeze.get('public_coverage_preconfirmation_sha256'):
+        raise RuntimeError('pre-confirmation public coverage receipt missing or changed')
+    if not precheck.exists() or sha(precheck)!=freeze.get('public_fallback_precheck_sha256'):
+        raise RuntimeError('pre-confirmation fallback sanity receipt missing or changed')
+    if json.loads(precheck.read_text()).get('status')!='PASS':
+        raise RuntimeError('registered no-history PublicRule fallback sanity failed before truth access')
     if not (OUT/'CONFIRMATION_EVALUATION_OPEN_EVENT.json').exists():
         write_json(OUT/'CONFIRMATION_EVALUATION_OPEN_EVENT.json',{'time_utc':pd.Timestamp.now(tz='UTC').isoformat(),
             'risk_freeze_sha256':sha(OUT/'RISK_FREEZE.json'),'authorized_by':'user v2.1 fixed final confirmation protocol',
@@ -641,7 +668,7 @@ def confirmation():
     task=pd.read_parquet(OUT/'CONFIRMATION_TASKS.parquet');truth=np.load(OUT/'CONFIRMATION_EFFECTS.npy')
     all_tasks=pd.read_parquet(OUT/'PREDICTION_TASKS.parquet').reset_index().set_index('task_id')
     ix=all_tasks.loc[task.task_id,'index'].to_numpy(int);scores=pd.read_parquet(OUT/'FROZEN_CONFIRMATION_SCORES.parquet')
-    rows=[];paired=[]
+    rows=[];paired=[];native_public_paired=[]
     coverage_rows=[];fallback_rows=[]
     for name in freeze['passed_predictors']:
         prediction=np.load(OUT/f'{name}_ALL_PREDICTIONS.npy')[ix];endpoints=endpoint_arrays(prediction,truth)
@@ -680,6 +707,24 @@ def confirmation():
             values=np.asarray(values);point=float(np.mean([macro(s) for s in values])-macro(reference))
             paired.append({'predictor':name,'method':method,'feedback_budget':budget,'comparison':'method-minus-PublicRule',
                 **summarize_draws(engine.difference(values,reference),point)})
+        # Controlled same-budget comparison requested for the complete native
+        # feature adaptation.  The two score arrays use identical task rows,
+        # gene-cluster bootstrap draws, feedback orders and learner seeds.
+        native_key=('PertEMA_native_control',)
+        public_key=('PertEMA_native_control_Public',)
+        for budget in sorted({b for (m,b) in by_method if m in {native_key[0],public_key[0]}}):
+            left=np.asarray(by_method.get((public_key[0],budget),[]),float)
+            right=np.asarray(by_method.get((native_key[0],budget),[]),float)
+            if left.size==0 or right.size==0:continue
+            n=min(len(left),len(right));left=left[:n];right=right[:n]
+            left_draw=np.asarray([engine.utility(s) for s in left])
+            right_draw=np.asarray([engine.utility(s) for s in right])
+            diffs=np.nanmean(left_draw-right_draw,axis=0)
+            left_point=float(np.nanmean([macro(s) for s in left]))
+            right_point=float(np.nanmean([macro(s) for s in right]))
+            native_public_paired.append({'predictor':name,'feedback_budget':budget,
+                'comparison':'PertEMA_native_control_Public-minus-PertEMA_native_control',
+                **summarize_draws(diffs,left_point-right_point)})
         # In the no-history stratum PublicRule must be exactly its registered
         # Magnitude fallback. This is a deployment sanity check, not a result
         # chosen after seeing the confirmation errors.
@@ -694,9 +739,13 @@ def confirmation():
     pd.DataFrame(rows).to_csv(OUT/'FINAL_KOLF_RESULT_TABLE.csv',index=False)
     pd.DataFrame(paired).to_csv(OUT/'CONFIRMATION_PAIRED_BOOTSTRAP.csv',index=False)
     pd.DataFrame(paired).to_csv(OUT/'FINAL_KOLF_PAIRED_BOOTSTRAP.csv',index=False)
+    pd.DataFrame(native_public_paired).to_csv(OUT/'CONFIRMATION_NATIVE_PUBLIC_PAIRED_BOOTSTRAP.csv',index=False)
     pd.DataFrame(coverage_rows).to_csv(OUT/'PUBLIC_COVERAGE_REPORT.csv',index=False)
-    write_json(OUT/'PUBLIC_FALLBACK_SANITY.json',{'status':'PASS' if all(r['exact_equal'] for r in fallback_rows) else 'FAIL',
+    fallback_status='PASS' if all(r['exact_equal'] for r in fallback_rows) else 'FAIL'
+    write_json(OUT/'PUBLIC_FALLBACK_SANITY.json',{'status':fallback_status,
         'rows':fallback_rows,'public_memory_excludes_target_study':True,'target_error_labels_used_by_public':0})
+    if fallback_status!='PASS':
+        raise RuntimeError('no-history PublicRule fallback differs from registered Magnitude fallback')
     if (OUT/'INFORMATION_BUDGET_LEDGER.csv').exists():
         pd.read_csv(OUT/'INFORMATION_BUDGET_LEDGER.csv').to_csv(OUT/'FINAL_INFORMATION_BUDGET_LEDGER.csv',index=False)
     label=[]

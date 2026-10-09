@@ -144,3 +144,36 @@ def test_csc_reader_gathers_only_allowed_count_bytes():
                     rows,observed=permitted_csc_column(raw,h['counts'],sparse.indptr,column,role_codes)
                     np.testing.assert_array_equal(rows,np.arange(3))
                     np.testing.assert_array_equal(observed,matrix[:3,column])
+
+
+def test_bounded_knn_fallback_is_leave_one_gene_out_and_deterministic():
+    from tools.scripts.run_safeconf_kolf_knn_fallback_v1 import _fit_predict, _normalised
+    x = _normalised(np.asarray([[1.,0.],[0.,1.],[1.,1.]]))
+    y = np.asarray([[1.,0.],[0.,1.],[10.,10.]])
+    ids = np.asarray(['a','b','c'])
+    q = x[:2]
+    first = _fit_predict(x,y,q,1,leave_ids=np.asarray(['a','b']),train_ids=ids)
+    second = _fit_predict(x,y,q,1,leave_ids=np.asarray(['a','b']),train_ids=ids)
+    np.testing.assert_array_equal(first,second)
+    # The own response is excluded: a would otherwise return [1,0], b [0,1].
+    np.testing.assert_array_equal(first[0],y[2])
+    np.testing.assert_array_equal(first[1],y[2])
+
+
+def test_kolf_fallback_guard_rejects_existing_confirmation_event():
+    import tempfile
+    from pathlib import Path
+    from tools.scripts import run_safeconf_kolf_knn_fallback_v1 as fallback
+    with tempfile.TemporaryDirectory() as tmp:
+        original = fallback.OUT
+        try:
+            fallback.OUT = Path(tmp)
+            (fallback.OUT/'CONFIRMATION_EVALUATION_OPEN_EVENT.json').write_text('{}')
+            try:
+                fallback._require_preconditions()
+            except RuntimeError as exc:
+                assert 'confirmation truth access' in str(exc)
+            else:
+                raise AssertionError('fallback must be sealed after confirmation access')
+        finally:
+            fallback.OUT = original
