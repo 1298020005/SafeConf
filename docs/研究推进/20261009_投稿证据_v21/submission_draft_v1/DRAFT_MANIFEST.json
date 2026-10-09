@@ -6,6 +6,7 @@
   "independent_evaluation": "KOLF2.1J",
   "stress_analysis": "Frangieh_native512",
   "rendered_manuscript_pdf": true,
+  "ieee_double_column_pdf": true,
   "journal_template_applied": false,
   "files": [
     "MANUSCRIPT_DRAFT.md",
@@ -21,7 +22,15 @@
     "MANUSCRIPT_SUBMISSION.pdf",
     "SUPPLEMENT_SUBMISSION.pdf",
     "AUTHOR_METADATA_TEMPLATE.json",
-    "COVER_LETTER_DRAFT.md"
+    "COVER_LETTER_DRAFT.md",
+    "IEEE_SUBMISSION/SafeConf_TCBB_IEEE.pdf",
+    "IEEE_SUBMISSION/main.tex",
+    "IEEE_SUBMISSION/IEEEtran.cls",
+    "IEEE_SUBMISSION/FIG1_ZERO_ERROR.png",
+    "IEEE_SUBMISSION/FIG2_CONTENT.png",
+    "IEEE_SUBMISSION/FIG3_FEEDBACK.png",
+    "IEEE_SUBMISSION/FIG4_KOLF.png",
+    "IEEE_SUBMISSION/FIG5_FRANGIEH_STRESS.png"
   ],
   "draft_base_commit": "7bd6174",
   "notes": [
