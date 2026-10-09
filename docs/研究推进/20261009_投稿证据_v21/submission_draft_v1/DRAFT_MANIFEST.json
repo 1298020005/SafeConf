@@ -1,0 +1,24 @@
+{
+  "package_id": "safeconf_submission_draft_v1",
+  "status": "draft_from_frozen_evidence",
+  "evidence_freeze": "../evidence_freeze_v1",
+  "default_system": "PublicRule_with_magnitude_fallback",
+  "independent_confirmation": "KOLF2.1J",
+  "stress_analysis": "Frangieh_native512",
+  "typeset_submission": false,
+  "files": [
+    "MANUSCRIPT_DRAFT.md",
+    "SUPPLEMENT_DRAFT.md",
+    "FIGURE_LEGENDS.md",
+    "REFERENCES.bib",
+    "REFERENCES_TO_INSERT.md",
+    "SUBMISSION_CHECKLIST.md",
+    "README.md"
+  ],
+  "generated_from_commit": "b59e8d1",
+  "notes": [
+    "All reported values are copied from the evidence freeze and are not reselected in this directory.",
+    "The KOLF interval is broad; the draft does not claim universal superiority.",
+    "PertEMA comparison is described as a current adaptation unless the complete official conformal workflow is separately reproduced."
+  ]
+}

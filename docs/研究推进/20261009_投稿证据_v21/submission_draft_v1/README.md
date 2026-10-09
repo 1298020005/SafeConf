@@ -1,0 +1,25 @@
+# SafeConf submission draft v1
+
+This directory is the first manuscript package built from the frozen evidence package. It is a research draft, not a typeset journal submission.
+
+## Main claim
+
+Public perturbation history can start post-hoc risk auditing before target-screen error labels are available. Target feedback is treated as an optional, budgeted extension rather than a guaranteed replacement for the public rule.
+
+## Evidence boundary
+
+- McFaline supplies the primary two-predictor comparison and the feedback-budget analysis.
+- Frangieh is retained as retrospective cross-family stress evidence because the registered upstream competence gate failed.
+- KOLF2.1J is the independent frozen confirmation contract; one predictor passed the gate and the public-versus-magnitude interval remains broad.
+- The default adopted system is `PublicRule` with the registered magnitude fallback for missing history.
+
+## Files
+
+- `MANUSCRIPT_DRAFT.md`: main text draft.
+- `SUPPLEMENT_DRAFT.md`: methods, negative results, and audit details.
+- `FIGURE_LEGENDS.md`: figure captions tied to the evidence freeze.
+- `REFERENCES.bib`: primary literature and method references.
+- `SUBMISSION_CHECKLIST.md`: pre-submission verification list.
+- `DRAFT_MANIFEST.json`: hashes and evidence-package linkage.
+
+The source evidence and reproducibility commands remain in the sibling `evidence_freeze_v1` directory. Do not edit frozen result files while revising prose.
