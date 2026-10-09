@@ -282,6 +282,7 @@ def competence_gate(tasks,prediction,truth,baseline):
     pass_gate=(np.isfinite(prediction).all() and overall<=.02 and ci[1]<=.02 and fraction>=.6
         and len(valid)/len(CONTEXTS)>=.8 and all(s['prediction_variance_ratio']>=.01 for s in valid))
     return {'status':'PASS' if pass_gate else 'FAIL','relative_gap':overall,'ci95':ci.tolist(),
+        'mean_model_rmse':float(model_error.mean()),'mean_condition_mean_rmse':float(base_error.mean()),
         'noninferior_strata_fraction':float(fraction),'valid_strata_fraction':len(valid)/len(CONTEXTS),
         'strata':strata,'qualification_error_rows':len(tasks),'qualification_gene_clusters':len(genes),
         'qualification_errors_not_risk_training_labels':True}
@@ -456,7 +457,7 @@ def qualification():
     write_json(OUT/'PREDICTOR_COMPETENCE.json',gates)
     passed=[name for name,g in gates.items() if g['status']=='PASS']
     write_json(OUT/'EXTERNAL_DECISION.json',{'passed_predictors':passed,
-        'role':'DUAL_MECHANISM_CONFIRMATION_READY' if len(passed)==2 else 'SINGLE_MECHANISM_CONFIRMATION_AND_BACKUP_REQUIRED' if passed else 'RELIABILITY_STRESS_TEST_BACKUP_REQUIRED',
+        'role':'DUAL_MECHANISM_CONFIRMATION_READY' if len(passed)==2 else 'SINGLE_MECHANISM_CONFIRMATION_READY' if passed else 'RELIABILITY_STRESS_TEST_BACKUP_REQUIRED',
         'confirmation_truth_read':False,'risk_algorithm_changed_using_qualification_errors':False})
     print(json.dumps({'competence':{k:{'status':v['status'],'gap':v['relative_gap'],'ci':v['ci95']} for k,v in gates.items()}}),flush=True)
 

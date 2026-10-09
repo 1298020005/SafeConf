@@ -73,6 +73,16 @@ def configure():
         'selection_uses_error_values':False,'panel_selected_before_target_effects':True})
     write_json(OUT/'SHARED_RESOURCE_CACHE.json',{'cache':str(RAW_PREFLIGHT/'range_cache'),
         'ledger':str(RUN/'external/DOWNLOAD_RESOURCE_LEDGER.json'),'budget_restarted':False})
+    protocol={'role_registry_sha256':sha(role),'output_contract_sha256':sha(p),
+        'preexisting_experiment_card_sha256':sha(c),'upstream_training_genes':600,'feedback_genes':300,'confirmation_genes':300,
+        'public_target_study_rows_allowed':0,'preconfirmation_count_roles':['predictor_train','feedback','NTC'],
+        'sparse_row_indices':'storage locators only; never predictor/risk features',
+        'forbidden_count_value_materialization':False,'confirmation_open_requires_risk_freeze_and_score_hash':True,
+        'risk_error_labels':'feedback role only; qualification preparation cost separately charged',
+        'scope':'registered Source-defined1400-gene panel; no legacy endpoint modification'}
+    pp=OUT/'COHORT_AND_ACCESS_PROTOCOL.json'
+    if pp.exists() and json.loads(pp.read_text())!=protocol:raise RuntimeError('changed frozen KOLF access protocol')
+    write_json(pp,protocol)
     base.OUT=OUT;base.CONTEXTS=[CONTEXT];base.remote=remote;base.features=native_features
     base.CONFIG=dict(base.CONFIG,external_predictors=card)
     repair.OUT=OUT
@@ -103,6 +113,13 @@ def permitted_csc_column(io,group,pointer,column,row_codes):
 
 
 def prepare(roles):
+    if roles==['confirmation']:
+        freeze_path=OUT/'RISK_FREEZE.json'
+        if not freeze_path.exists():raise RuntimeError('confirmation requires frozen risk scores')
+        frozen=json.loads(freeze_path.read_text())
+        if not frozen['passed_predictors']:raise RuntimeError('confirmation requires a qualified predictor')
+        if sha(OUT/'FROZEN_CONFIRMATION_SCORES.parquet')!=frozen['confirmation_score_sha256']:
+            raise RuntimeError('confirmation risk scores changed after freeze')
     name='CONFIRMATION' if roles==['confirmation'] else 'TRAIN_FEEDBACK'
     if (OUT/f'{name}_READ_RECEIPT.json').exists():return
     tasks=pd.read_parquet(OUT/'TASK_ROLES.parquet');chosen=tasks[tasks.role.isin(roles)].reset_index(drop=True)
