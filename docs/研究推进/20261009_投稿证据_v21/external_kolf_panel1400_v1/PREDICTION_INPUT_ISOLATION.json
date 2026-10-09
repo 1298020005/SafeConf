@@ -1,0 +1,15 @@
+{
+  "input_fields": [
+    "gene",
+    "context"
+  ],
+  "perturbed_query_expression_supplied": false,
+  "confirmation_expression_rows_read_before_prediction_freeze": 0,
+  "training_matrix_roles": [
+    "predictor_train"
+  ],
+  "metadata_extra_truth_columns_ignored": true,
+  "inference_precision": "float64 computation / float32 saved outputs",
+  "all_context_role_groups_checked": true,
+  "numerical_recovery_sha256": "af6922ac128d53844b01c0725637e3f14e4d7cb1445841f429a4a2098f626874"
+}

@@ -1,0 +1,6 @@
+predictor,method,cdf_role,cdf_error_labels_used,qualification_error_rows_separate,target_error_risk_training_rows,n_fit_score_rows
+ridge,Magnitude,feedback features only,0,300,0,300
+ridge,Similarity,feedback features only,0,300,0,300
+ridge,HistorySupport,feedback features only,0,300,0,300
+ridge,PublicRule,feedback features only,0,300,0,300
+ridge,HistoryEnergy,feedback features only,0,300,0,300

@@ -1,0 +1,28 @@
+{
+  "cause": "float32 MLP matrix reductions differ by query batch size",
+  "action": "canonical float64 CPU inference from unchanged saved float32 parameters; outputs cast once to float32",
+  "new_fits": 0,
+  "confirmation_expression_rows_read": 0,
+  "predictor_artifact_sha256": {
+    "PREDICTOR_FIT_LEDGER.json": "dd9a2ee92fed9f052a43cbfbfc16fb2b5e33dea8925045ce9a9aa0fcf4161489",
+    "CONTROL_FEATURES.npz": "bfd7583555ca7c144b46184362beeb2899989b1876c85f140c585456df6155fd",
+    "MLP_KOLF2.1J_20260930.pt": "edd53fac971919d95b4d0f85f3e2c98ad96380607822ee669321cb525891ca38",
+    "MLP_KOLF2.1J_20261001.pt": "6256ba5cdc163e73d78a099b179f769434a979f48c1047937f2a715a9b71680d",
+    "MLP_KOLF2.1J_20261002.pt": "0e2427fc28b796743ac978bd4009d29de9a3e482e4d61f02351a0f581fb16f89",
+    "RIDGE_KOLF2.1J.npz": "b40cc3bf44534431768626e31a91faadd0a94ed97193f04e8f4abb7a56e3e057"
+  },
+  "reload_rtol": 1e-05,
+  "reload_atol": 1e-07,
+  "prediction_audits": {
+    "ridge": {
+      "canonical_subset_reload_max_abs_difference": 0.0,
+      "poisoned_truth_exact_equal": true,
+      "checked_rows": 60
+    },
+    "mlp": {
+      "canonical_subset_reload_max_abs_difference": 0.0,
+      "poisoned_truth_exact_equal": true,
+      "checked_rows": 60
+    }
+  }
+}

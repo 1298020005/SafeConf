@@ -1,0 +1,24 @@
+{
+  "default": "PublicRule",
+  "Source_enabled": false,
+  "Target_default_enabled": false,
+  "external_predictors": [
+    "ridge"
+  ],
+  "MLP": "competence_failed_variance_gate",
+  "KNN_fallback_executed": false,
+  "external_evaluation_complete": true,
+  "publication_objective_complete": false,
+  "adopted_config_unchanged_after_confirmation": true,
+  "KOLF_public_supported": 228,
+  "KOLF_no_history": 72,
+  "external_primary_delta_public_minus_magnitude": 0.1359924823778199,
+  "external_primary_ci95": [
+    -0.0484395205321055,
+    0.3663536191646932
+  ],
+  "external_severe_hits_gain": 0.0,
+  "Target_increase_on_independent_study": "not established; same-budget native/Public intervals cross zero",
+  "stop_unregistered_method_search": true,
+  "next_scientific_gap": "predictor-specific benefit beyond support/history-energy on a qualified independent study"
+}

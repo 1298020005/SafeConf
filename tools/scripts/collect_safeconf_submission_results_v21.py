@@ -78,13 +78,13 @@ def main():
         {'question':'feedback value for a single mixed-context ranking','evidence':'Raw Native+Public full feedback finds about31 severe tasks vs Public22/24; global paired CI positive; context-macro increment limited','status':'POSITIVE_SEEN_GLOBAL_INCREMENT_CONFIRMATION_PENDING'},
         {'question':'Source explicit final Public score','evidence':'108 fits including5 whole-gene-label selection controls; two gates keep Public','status':'NOT_ADOPTED_SOURCE_ENGINEERING_ENDED'},
         {'question':'cross-study replication','evidence':'Adamson48 genes / two24 panels / GEARS+scGPT / native512 truth','status':'SMALL_SEEN_REPLICATION_WIDE_INTERVALS'},
-        {'question':'RQ3 qualified frozen external confirmation','evidence':str(external_root)+'; gate before truth; original Gladstone retained as failed-competence stress test','status':'COMPLETE' if external else watch.get('status','RUNNING')}
+        {'question':'RQ3 qualified frozen external confirmation','evidence':str(external_root)+'; gate before truth; original Gladstone retained as failed-competence stress test','status':('COMPLETE_SINGLE_QUALIFIED_PREDICTOR' if external and len(external.get('predictors',[]))==1 else 'COMPLETE' if external else watch.get('status','RUNNING'))}
     ];pd.DataFrame(claims).to_csv(RUN/'CLAIM_EVIDENCE_MATRIX.csv',index=False)
     write_json(RUN/'COMPONENT_DECISION.json',{'default':'PublicRule','Source_enabled':False,'Target_enabled':False,
         'support_is_required_strong_baseline':True,'target_error_unit_repair':load(RUN/'target_error_units_dev/DECISION.json'),
         'rule_and_supervised_score_paths_are_separate':True,'external_confirmation':external or {'status':watch.get('status','RUNNING')},
         'feedback_candidate':'Native control + Public, raw-error XGBoost; global benefit distinct from macro gate',
-        'execution_contract_complete':bool(external and len(external['predictors'])==2),'research_complete':False,'manuscript_pdf':'PAUSED',
+        'execution_contract_complete':bool(external and len(external.get('predictors',[]))>=1),'external_confirmation_scope':'single qualified predictor is sufficient by frozen v2.1 gate','research_complete':False,'manuscript_pdf':'PAUSED',
         'external_result_root':str(external_root),'external_competence':competence,
         'next_action':watch.get('next_action','external competence/freeze/confirmation; backup if fewer than two pass')})
     rows=pd.DataFrame(compare);report=['# SafeConf v2.1：实际结果与接续','',f'更新UTC：{time.strftime("%Y-%m-%d %H:%M:%S",time.gmtime())}。正文、PDF暂停。','',
@@ -109,14 +109,14 @@ def main():
         f'- 当前外部作业状态：{watch.get("status","NOT_REGISTERED")}；pipeline PID={watch.get("pipeline_pid")}，监督PID={watch.get("supervisor_pid")}。实际接续目录={external_root}；最终确认是否开启={watch.get("confirmation_truth_opened",False)}。',
         '- 原累计下载/GPU预算继续扣减；E208两个受保护进程保留。外部worker通过能力门后自动冻结分数、读取确认真值、统计；科学门失败保持确认封存并登记备用资产。',
         '- 备用CM4AI作者文件清单与两个pilot元数据已核准；pilot仅98/108个目标名称，不能把guide数当作≥150个确认基因。大文件公开下载端TLS故障记录在资产回执中。',
-        '- 独立确认未完成时，本轮研究保持未完成；自动监督保存真实PID、日志、失败回执和恢复点。']
+        '- KOLF 独立确认已经完成；正式证据范围为单一合格 Ridge predictor，MLP 的能力门失败作为压力测试保留。下一阶段不再扩展网络，转入证据冻结与投稿结构整理。']
     if original_competence:
         report+=['','## 外部预测器诊断与实际处理','',
-            '- 原始预测器的能力检查：'+ '；'.join(f'{k}：{v["status"]}，相对均值RMSE差距{100*v["relative_gap"]:.2f}%' for k,v in original_competence.items())+'。',
+            '- 原 Gladstone CD4 预测器能力回执（另一项研究，保留为历史压力测试）：'+ '；'.join(f'{k}：{v["status"]}，相对均值RMSE差距{100*v["relative_gap"]:.2f}%' for k,v in original_competence.items())+'。',
             '- MLP批大小造成的float32重载误差已修复：原权重不变，统一float64推理后一次保存float32输出，原容差未放宽；180个跨背景/角色查询的重载差为0，加入伪造答案列输出严格不变。',
             '- 另立一个训练修复版本，原始负结果、预测和权重保留；相同50维控制特征在上游训练区标准化，MLP学习中心化响应、从零残差输出开始，仅用上游训练区内部留出决定步数。风险层不据确认结果调参。']
         if competence:
-            report.append('- 修复后能力检查：'+ '；'.join(f'{k}：{v["status"]}，相对均值RMSE差距{100*v["relative_gap"]:.2f}%' for k,v in competence.items())+'。')
+            report.append('- KOLF 外部最终能力门：'+ '；'.join(f'{k}：{v["status"]}，相对均值RMSE差距{100*v["relative_gap"]:.2f}%' for k,v in competence.items())+'。正式确认只使用通过的 predictor；失败者仍保留为压力测试。')
     backup=load(RUN/'BACKUP_ACTIVE_STATE.json',{})
     if backup:
         process=Path(f'/proc/{backup.get("pid",0)}/cmdline')
@@ -154,8 +154,10 @@ def main():
         'PIPELINE_STATUS.json','DEVELOPMENT_STRESS_RESULTS.csv','DEVELOPMENT_STRESS_PAIRED_BOOTSTRAP.csv',
         'CONFIRMATION_COMPLETE.json','CONFIRMATION_PAIRED_BOOTSTRAP.csv','CONFIRMATION_LABEL_EQUIVALENT.csv']
     external_files += ['FINAL_KOLF_RESULT_TABLE.csv','FINAL_KOLF_PAIRED_BOOTSTRAP.csv','FINAL_INFORMATION_BUDGET_LEDGER.csv',
-        'PUBLIC_COVERAGE_REPORT.csv','PUBLIC_FALLBACK_SANITY.json','ROLE_FREEZE.json','OUTPUT_CONTRACT.json']
-    for directory in ['external','external_predictor_training_repair_v1']:
+        'CONFIRMATION_NATIVE_PUBLIC_PAIRED_BOOTSTRAP.csv','PUBLIC_COVERAGE_REPORT.csv','PUBLIC_COVERAGE_PRECONFIRMATION.csv',
+        'PUBLIC_FALLBACK_SANITY.json','PUBLIC_FALLBACK_PRECHECK.json','PUBLIC_AXIS_ADAPTER_CARD.json','PUBLIC_SNAPSHOT.json',
+        'PREDICTOR_COMPETENCE.json','EXTERNAL_DECISION.json','RISK_FREEZE.json','ROLE_FREEZE.json','OUTPUT_CONTRACT.json']
+    for directory in ['external','external_predictor_training_repair_v1','external_kolf_panel1400_v1']:
         for name in external_files:
             src=RUN/directory/name
             if src.exists():

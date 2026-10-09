@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "rows": [
+    {
+      "predictor": "ridge",
+      "n_no_history": 72,
+      "max_abs_difference_public_vs_magnitude": 0.0,
+      "exact_equal": true,
+      "evidence_status_values": [
+        "NO_LEGAL_HISTORY_AMPLITUDE_FALLBACK"
+      ]
+    }
+  ],
+  "confirmation_truth_read": false,
+  "public_memory_excludes_target_study": true,
+  "target_error_labels_used_by_public": 0
+}

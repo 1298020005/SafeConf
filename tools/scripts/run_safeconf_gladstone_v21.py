@@ -22,6 +22,7 @@ from tools.safeconf_continual.submission_evidence import (
 from tools.safeconf_continual.research import P,PUBLIC,cluster_weights,rank_labels
 from tools.scripts.run_safeconf_submission_evidence_v21 import RUN,native_x,official_gbt,CONFIG
 from tools.safeconf_continual.frozen_scoring import score_task
+from tools.safeconf_continual.public_axis import common_axis_effect
 
 OUT=RUN/'external';URL='https://genome-scale-tcell-perturb-seq.s3.amazonaws.com/marson2025_data/GWCD4i.pseudobulk_merged.h5ad'
 GWPS=Path('/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/ReplogleWeissman2022_K562_gwps.h5ad')
@@ -412,13 +413,23 @@ def freeze_saved_predictors():
 
 def frozen_predict(name,metadata):
     import torch
-    if name not in ['ridge','mlp']:raise ValueError('unregistered frozen predictor')
+    if name not in ['ridge','mlp','knn']:raise ValueError('unregistered frozen predictor')
     if not {'gene','context'}.issubset(metadata.columns) or not metadata.context.isin(CONTEXTS).all():
         raise ValueError('query must contain registered gene/context metadata')
     torch.set_num_threads(4)
     z=np.load(OUT/'CONTROL_FEATURES.npz');emb={str(g):e for g,e in zip(z['genes'],z['embedding'])}
     n_genes=json.loads((OUT/'OUTPUT_CONTRACT.json').read_text())['n_output_genes']
     result=np.empty((len(metadata),n_genes),np.float32)
+    if name=='knn':
+        from tools.scripts.run_safeconf_kolf_knn_fallback_v1 import _normalised,_fit_predict
+        if CONTEXTS!=['KOLF2.1J']:raise ValueError('KNN fallback is registered only for KOLF')
+        model=np.load(OUT/'KNN_MODEL.npz');result[:]=model['responses'].mean(0)
+        ix=np.asarray([i for i,g in enumerate(metadata.gene.astype(str)) if g in emb],int)
+        if len(ix):
+            query=_normalised(np.asarray([emb[str(metadata.iloc[i].gene)] for i in ix]))
+            result[ix]=_fit_predict(model['embedding'],model['responses'],query,int(model['k'][0]),
+                leave_ids=metadata.iloc[ix].gene.astype(str).to_numpy(),train_ids=model['genes'])
+        return result
     for c in CONTEXTS:
         selected=np.flatnonzero(metadata.context.eq(c).to_numpy())
         if not len(selected):continue
@@ -481,12 +492,21 @@ def features(tasks,prediction):
     bank=np.load(OUT/'PUBLIC_COUNTS_EFFECTS.npz');hist_index={str(g):i for i,g in enumerate(bank['genes'])}
     hi=np.asarray([hist_index.get(str(g),-1) for g in f.gene]);hist=np.full_like(p,np.nan)
     ok=hi>=0;hist[ok]=bank['effects'][hi[ok]]
-    available=np.isfinite(hist).all(1)&(bank['n_cells'][np.maximum(hi,0)]>0)
+    axis_mask=bank['axis_mask'].astype(bool) if 'axis_mask' in bank.files else np.ones(p.shape[1],bool)
+    f['public_axis_genes']=int(axis_mask.sum())
+    if not axis_mask.all():
+        ctrl=np.load(OUT/'CONTROL_PANEL_REFERENCE.npz')['baseline']
+        p_public,clipped=common_axis_effect(p,ctrl,axis_mask)
+        f['public_projection_clipped_fraction']=clipped
+    else:
+        p_public=p;f['public_projection_clipped_fraction']=0.
+    hist=hist[:,axis_mask]
+    available=ok&np.isfinite(hist).all(1)&(bank['n_cells'][np.maximum(hi,0)]>0)
     prior_mag=np.full(len(f),np.nan);distance=np.full(len(f),np.nan);cosine=np.full(len(f),np.nan)
     prior_mag[available]=np.sqrt(np.mean(hist[available]**2,1))
-    distance[available]=np.sqrt(np.mean((p[available]-hist[available])**2,1))
-    den=np.sqrt(np.sum(p[available]**2,1)*np.sum(hist[available]**2,1))
-    cosine[available]=np.divide(np.sum(p[available]*hist[available],1),den,
+    distance[available]=np.sqrt(np.mean((p_public[available]-hist[available])**2,1))
+    den=np.sqrt(np.sum(p_public[available]**2,1)*np.sum(hist[available]**2,1))
+    cosine[available]=np.divide(np.sum(p_public[available]*hist[available],1),den,
         out=np.full(int(available.sum()),np.nan),where=den>1e-12)
     f['prior_magnitude']=prior_mag;f['prediction_prior_rmse']=distance;f['prediction_prior_cosine']=cosine
     f['prior_uncertainty']=np.where(available,0.,np.nan)
@@ -716,7 +736,7 @@ def confirmation():
             left=np.asarray(by_method.get((public_key[0],budget),[]),float)
             right=np.asarray(by_method.get((native_key[0],budget),[]),float)
             if left.size==0 or right.size==0:continue
-            n=min(len(left),len(right));left=left[:n];right=right[:n]
+            if left.shape!=right.shape:raise RuntimeError('native/Public paired algorithm runs differ')
             left_draw=np.asarray([engine.utility(s) for s in left])
             right_draw=np.asarray([engine.utility(s) for s in right])
             diffs=np.nanmean(left_draw-right_draw,axis=0)

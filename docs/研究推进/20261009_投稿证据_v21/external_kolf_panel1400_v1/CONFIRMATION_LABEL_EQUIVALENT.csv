@@ -1,0 +1,9 @@
+predictor,method,definition,budget,right_censored
+ridge,PertEMA_native_control,primary_95,,True
+ridge,PertEMA_native_control,five_budget_sensitivity,,True
+ridge,PertEMA_native_control_Public,primary_95,,True
+ridge,PertEMA_native_control_Public,five_budget_sensitivity,,True
+ridge,PertEMA_native_control_Support,primary_95,,True
+ridge,PertEMA_native_control_Support,five_budget_sensitivity,,True
+ridge,Target_P6,primary_95,,True
+ridge,Target_P6,five_budget_sensitivity,,True

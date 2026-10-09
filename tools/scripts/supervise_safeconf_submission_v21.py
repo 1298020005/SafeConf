@@ -19,12 +19,23 @@ LOG=RUN/'gladstone_preconfirmation.log'
 def alive_owned(pid,script=SCRIPT):
     try:
         fields=Path(f'/proc/{pid}/cmdline').read_bytes().split(b'\0')
-        return any(str(script).encode()==x for x in fields)
+        target=Path(script).resolve()
+        for field in fields:
+            if not field:continue
+            try:
+                if Path(field.decode()).resolve()==target:return True
+            except (OSError,UnicodeDecodeError):
+                pass
+        return False
     except FileNotFoundError:return False
 
 
 def load(path,default=None):
     return json.loads(path.read_text()) if path.exists() else default
+
+
+def pipeline_command(script,outroot):
+    return [PY,str(script),'--result-root',str(outroot)] if script==FALLBACK else [PY,str(script),'--phase','complete']
 
 
 def main():
@@ -86,7 +97,7 @@ def main():
                 fallback_decision=outroot/'KNN_FALLBACK_DECISION.json'
                 fallback_failure=outroot/'KNN_FALLBACK_FAILURE_RECEIPT.json'
                 event=outroot/'CONFIRMATION_EVALUATION_OPEN_EVENT.json'
-                if not fallback_decision.exists() and not fallback_failure.exists() and not event.exists():
+                if outroot.name=='external_kolf_panel1400_v1' and not fallback_decision.exists() and not fallback_failure.exists() and not event.exists():
                     with LOG.open('a') as out:
                         out.write('\nSUPERVISOR starting bounded KNN upstream-predictor fallback\n');out.flush()
                         child=subprocess.Popen([PY,str(FALLBACK),'--result-root',str(outroot)],cwd=ROOT,stdout=out,stderr=subprocess.STDOUT,start_new_session=True)
@@ -99,12 +110,17 @@ def main():
                 write_json(RUN/'SUPERVISOR_STATE.json',state)
                 subprocess.run([PY,str(ROOT/'tools/scripts/collect_safeconf_submission_results_v21.py')],cwd=ROOT,check=True)
                 break
-            transport=any(t in tail for t in ['ReadTimeout','ConnectTimeout','ConnectionError','RemoteDisconnected','HTTPError','URLError','SSLError','IncompleteRead'])
-            budget=any(t in tail for t in ['cumulative download allowance reached','budget limit'])
+            receipt=load(outroot/('KNN_FALLBACK_FAILURE_RECEIPT.json' if active_script==FALLBACK else 'FAILURE_RECEIPT.json'),{})
+            latest_type=receipt.get('error_type','')
+            # Inspect the latest failure receipt, never an older traceback in
+            # the shared append-only log.  A stale SSL error must not cause a
+            # new KeyError or data-contract fault to be retried as transport.
+            transport=latest_type in ['ReadTimeout','ConnectTimeout','ConnectionError','RemoteDisconnected','HTTPError','URLError','SSLError','IncompleteRead']
+            budget=any(t in receipt.get('error','') for t in ['cumulative download allowance reached','budget limit'])
             if transport and not budget and retries<3:
                 with LOG.open('a') as out:
                     out.write(f'\nSUPERVISOR technical resume {retries+1}, same roles/cache/config\n');out.flush()
-                    child=subprocess.Popen([PY,str(script),'--phase','complete'],cwd=ROOT,stdout=out,stderr=subprocess.STDOUT,start_new_session=True)
+                    child=subprocess.Popen(pipeline_command(active_script,outroot),cwd=ROOT,stdout=out,stderr=subprocess.STDOUT,start_new_session=True)
                 pid=child.pid;retries+=1;state.update(status='TECHNICAL_RESUME',pipeline_pid=pid,technical_restarts=retries)
             else:
                 state.update(status='BUDGET_LIMIT' if budget else 'IMPLEMENTATION_FAILURE_REQUIRES_REPAIR',failure_tail=tail,

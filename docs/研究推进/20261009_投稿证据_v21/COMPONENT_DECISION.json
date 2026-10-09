@@ -24,13 +24,127 @@
   },
   "rule_and_supervised_score_paths_are_separate": true,
   "external_confirmation": {
-    "status": "RUNNING"
+    "status": "COMPLETE",
+    "n_tasks": 300,
+    "n_clusters": 300,
+    "predictors": [
+      "ridge"
+    ],
+    "risk_configuration_changed_after_confirmation": false,
+    "new_gpu_hours": 0,
+    "final_truth_role": "scoring only",
+    "label_equivalent": [
+      {
+        "predictor": "ridge",
+        "method": "PertEMA_native_control",
+        "definition": "primary_95",
+        "budget": null,
+        "right_censored": true
+      },
+      {
+        "predictor": "ridge",
+        "method": "PertEMA_native_control",
+        "definition": "five_budget_sensitivity",
+        "budget": null,
+        "right_censored": true
+      },
+      {
+        "predictor": "ridge",
+        "method": "PertEMA_native_control_Public",
+        "definition": "primary_95",
+        "budget": null,
+        "right_censored": true
+      },
+      {
+        "predictor": "ridge",
+        "method": "PertEMA_native_control_Public",
+        "definition": "five_budget_sensitivity",
+        "budget": null,
+        "right_censored": true
+      },
+      {
+        "predictor": "ridge",
+        "method": "PertEMA_native_control_Support",
+        "definition": "primary_95",
+        "budget": null,
+        "right_censored": true
+      },
+      {
+        "predictor": "ridge",
+        "method": "PertEMA_native_control_Support",
+        "definition": "five_budget_sensitivity",
+        "budget": null,
+        "right_censored": true
+      },
+      {
+        "predictor": "ridge",
+        "method": "Target_P6",
+        "definition": "primary_95",
+        "budget": null,
+        "right_censored": true
+      },
+      {
+        "predictor": "ridge",
+        "method": "Target_P6",
+        "definition": "five_budget_sensitivity",
+        "budget": null,
+        "right_censored": true
+      }
+    ]
   },
   "feedback_candidate": "Native control + Public, raw-error XGBoost; global benefit distinct from macro gate",
-  "execution_contract_complete": false,
+  "execution_contract_complete": true,
+  "external_confirmation_scope": "single qualified predictor is sufficient by frozen v2.1 gate",
   "research_complete": false,
   "manuscript_pdf": "PAUSED",
   "external_result_root": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1",
-  "external_competence": {},
-  "next_action": "Complete registered extraction → predictor gate → risk freeze → conditional confirmation"
+  "external_competence": {
+    "ridge": {
+      "status": "PASS",
+      "relative_gap": -0.005769193172454834,
+      "ci95": [
+        -0.012660375883989838,
+        0.000978825263918126
+      ],
+      "mean_model_rmse": 0.12409454584121704,
+      "mean_condition_mean_rmse": 0.12481462210416794,
+      "noninferior_strata_fraction": 1.0,
+      "valid_strata_fraction": 1.0,
+      "strata": [
+        {
+          "context": "KOLF2.1J",
+          "valid": true,
+          "relative_gap": -0.005769193172454834,
+          "prediction_variance_ratio": 0.05128805711865425
+        }
+      ],
+      "qualification_error_rows": 300,
+      "qualification_gene_clusters": 300,
+      "qualification_errors_not_risk_training_labels": true
+    },
+    "mlp": {
+      "status": "FAIL",
+      "relative_gap": -0.0030038952827453613,
+      "ci95": [
+        -0.004175083804856763,
+        -0.0018340466291046481
+      ],
+      "mean_model_rmse": 0.12443969398736954,
+      "mean_condition_mean_rmse": 0.12481462210416794,
+      "noninferior_strata_fraction": 1.0,
+      "valid_strata_fraction": 1.0,
+      "strata": [
+        {
+          "context": "KOLF2.1J",
+          "valid": true,
+          "relative_gap": -0.0030038952827453613,
+          "prediction_variance_ratio": 0.001102673588320613
+        }
+      ],
+      "qualification_error_rows": 300,
+      "qualification_gene_clusters": 300,
+      "qualification_errors_not_risk_training_labels": true
+    }
+  },
+  "next_action": "Integrate frozen confirmation statistics and component decision"
 }

@@ -1,0 +1,2 @@
+predictor,scope,n_tasks,n_supported,n_no_history,coverage_fraction,confirmation_truth_read
+ridge,confirmation_full_deployment,300,228,72,0.76,False

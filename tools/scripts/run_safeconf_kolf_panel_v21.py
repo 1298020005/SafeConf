@@ -181,10 +181,29 @@ def public():
     tasks=pd.read_parquet(OUT/'TASK_ROLES.parquet');axis=json.loads((OUT/'OUTPUT_CONTRACT.json').read_text())
     stable=pd.read_parquet(OUT/'PERTURBATION_STABLE_IDS.parquet');by_symbol=stable.set_index('gene').ensembl_id.to_dict()
     keys=sorted(tasks.gene.unique());code={by_symbol[g]:i for i,g in enumerate(keys)}
-    sums=np.zeros((len(keys)+1,len(axis['gene_ids'])),float);counts=np.zeros(len(keys)+1,int)
+    sums=None;counts=np.zeros(len(keys)+1,int)
     with h5py.File(base.GWPS,'r') as h:
         var=h5_column(h['var'],'ensembl_id').astype(str);vi={g:i for i,g in enumerate(var)}
-        cols=np.asarray([vi[g] for g in axis['source_ensembl_ids']]);ids=h5_column(h['obs'],'gene_id').astype(str)
+        requested=np.asarray(axis['source_ensembl_ids'],dtype=str)
+        present=np.asarray([g in vi for g in requested],dtype=bool)
+        if int(present.sum()) < 2:
+            raise RuntimeError('public common axis has fewer than two response coordinates')
+        cols=np.asarray([vi[g] for g in requested[present]],dtype=int);ids=h5_column(h['obs'],'gene_id').astype(str)
+        sums=np.zeros((len(keys)+1,int(present.sum())),float)
+        adapter={'status':'FIXED_BEFORE_PREDICTOR_FIT_AND_CONFIRMATION',
+            'reason':'34 frozen response IDs absent from actual GWPS expression matrix; no symbol aliases found',
+            'main_predictor_output_axis_genes':len(requested),'public_comparison_axis_genes':int(present.sum()),
+            'main_endpoint_or_competence_gate_changed':False,'axis_mask':present.tolist(),
+            'missing_source_ensembl_ids':requested[~present].tolist(),
+            'common_axis_ids_hash':digest_ids(requested[present]),'missing_genes_zero_filled':False,
+            'public_normalization':'pooled raw counts on actual common axis, log1p CP10k minus NTC',
+            'prediction_view':'inverse log of frozen delta+NTC, clip negative log levels at physical zero, renormalize treated and NTC on same common axis',
+            'projection_does_not_modify_original_prediction':True,'projection_fraction_saved_as_diagnostic':True,
+            'confirmation_truth_used':False}
+        adapter_path=OUT/'PUBLIC_AXIS_ADAPTER_CARD.json'
+        if adapter_path.exists() and json.loads(adapter_path.read_text())!=adapter:
+            raise RuntimeError('public axis adapter changed within fixed run')
+        write_json(adapter_path,adapter)
         nperts=h5_column(h['obs'],'nperts').astype(str);groups=pd.Series(ids).map(code).fillna(-1).to_numpy(int)
         groups[nperts!='1']=-1;groups[nperts=='0']=len(keys)
         matrix=h['X']
@@ -196,17 +215,23 @@ def public():
             sort=np.argsort(g[ok],kind='stable');unique,first=np.unique(g[ok][sort],return_index=True)
             sums[unique]+=np.add.reduceat(block[sort],first,axis=0);counts+=np.bincount(g[ok],minlength=len(keys)+1)
     ctrl=np.log1p(1e4*sums[-1]/sums[-1].sum());ok=sums[:-1].sum(1)>0
-    effect=np.full_like(sums[:-1],np.nan,dtype=np.float32)
-    effect[ok]=np.log1p(sums[:-1][ok]*(1e4/sums[:-1][ok].sum(1))[:,None])-ctrl
-    np.savez(OUT/'PUBLIC_COUNTS_EFFECTS.npz',genes=np.asarray(keys),effects=effect,n_cells=counts[:-1])
+    effect_common=np.full_like(sums[:-1],np.nan,dtype=np.float32)
+    effect_common[ok]=np.log1p(sums[:-1][ok]*(1e4/sums[:-1][ok].sum(1))[:,None])-ctrl
+    effect=np.full((len(keys),len(axis['gene_ids'])),np.nan,dtype=np.float32)
+    effect[:,present]=effect_common
+    np.savez(OUT/'PUBLIC_COUNTS_EFFECTS.npz',genes=np.asarray(keys),effects=effect,n_cells=counts[:-1],
+        axis_mask=present,source_ensembl_ids=requested)
     write_json(OUT/'PUBLIC_SNAPSHOT.json',{'source':'Replogle K562 GWPS','target_study_rows_used':0,
-        'n_supported_genes':int(ok.sum()),'normalization_denominator':'same frozen1400-gene panel',
+        'n_supported_genes':int(ok.sum()),'normalization_denominator':'actual common1366 axis; predictor comparison view renormalized identically',
         'response_axis_hash':axis['gene_axis_hash'],'snapshot_sha256':sha(OUT/'PUBLIC_COUNTS_EFFECTS.npz'),
-        'single_history_dispersion':0,'independent_unit':'one screen/background effect per perturbation'})
+        'single_history_dispersion':0,'independent_unit':'one screen/background effect per perturbation',
+        'n_requested_output_genes':int(len(requested)),'n_public_axis_genes':int(present.sum()),
+        'missing_source_ensembl_ids':requested[~present].tolist(),'missing_genes_zero_filled':False,
+        'public_axis_adapter_sha256':sha(OUT/'PUBLIC_AXIS_ADAPTER_CARD.json')})
 
 
 def gene_features():
-    if (OUT/'CONTROL_FEATURES.npz').exists():return
+    if (OUT/'CONTROL_FEATURES.npz').exists() and (OUT/'NATIVE_CONTROL_FEATURES.npz').exists() and (OUT/'CONTROL_FEATURE_AUDIT.json').exists():return
     tasks=pd.read_parquet(OUT/'TASK_ROLES.parquet');ctrl=np.load(OUT/'CONTROL_PANEL_REFERENCE.npz')
     vocab=json.loads((CHECKPOINT/'vocab.json').read_text());state=torch.load(CHECKPOINT/'best_model.pt',map_location='cpu',weights_only=True)
     weights=state['encoder.embedding.weight'].numpy();genes=sorted(set(tasks.gene)|set(ctrl['genes']))

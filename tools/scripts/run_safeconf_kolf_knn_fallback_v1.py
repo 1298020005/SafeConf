@@ -13,7 +13,6 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import math
 import shutil
 import sys
 from pathlib import Path
@@ -82,6 +81,9 @@ def _require_preconditions():
     decision = json.loads(decision_path.read_text())
     if decision.get("passed_predictors"):
         raise RuntimeError("fallback is only allowed when all original predictors fail")
+    competence=json.loads((OUT/'PREDICTOR_COMPETENCE.json').read_text())
+    if any(competence.get(name,{}).get('status')!='FAIL' for name in ['ridge','mlp']):
+        raise RuntimeError('both original predictor competence failures must be explicit')
     for p in [OUT / "PREDICTOR_FREEZE.json", OUT / "PREDICTOR_FREEZE_PRE_KNN.json"]:
         if p.exists() and p.name == "PREDICTOR_FREEZE_PRE_KNN.json":
             raise RuntimeError("KNN fallback has already been applied")
@@ -96,6 +98,11 @@ def _require_preconditions():
 def run():
     # Rebind all shared globals to the KOLF root without touching raw data.
     kolf.configure()
+    if (OUT/'RISK_FREEZE.json').exists():
+        frozen=json.loads((OUT/'RISK_FREEZE.json').read_text())
+        if 'knn' not in frozen.get('passed_predictors',[]):
+            raise RuntimeError('fallback resume requires a qualified frozen KNN predictor')
+        kolf.prepare(['confirmation']);base.confirmation();return
     _require_preconditions()
     write_json(OUT / "KNN_FALLBACK_CONTINUATION_CARD.json", {
         "run_id": OUT.name,
@@ -110,9 +117,11 @@ def run():
         "fallback_does_not_modify_original_predictors": True,
     })
     pre = OUT / "PREDICTOR_FREEZE_PRE_KNN.json"
-    shutil.copy2(OUT / "PREDICTOR_FREEZE.json", pre)
+    for original_name in ['PREDICTOR_FREEZE.json','PREDICTOR_COMPETENCE.json','EXTERNAL_DECISION.json']:
+        original_path=OUT/original_name
+        backup=OUT/(original_path.stem+'_PRE_KNN'+original_path.suffix)
+        if not backup.exists():shutil.copy2(original_path,backup)
 
-    roles = pd.read_parquet(OUT / "TASK_ROLES.parquet")
     fit_tasks = pd.read_parquet(OUT / "TRAIN_FEEDBACK_TASKS.parquet").reset_index(drop=True)
     y_all = np.load(OUT / "TRAIN_FEEDBACK_EFFECTS.npy").astype(np.float64)
     z = np.load(OUT / "CONTROL_FEATURES.npz")
@@ -152,7 +161,7 @@ def run():
     preds[qknown] = fitted
     np.save(OUT / "knn_ALL_PREDICTIONS.npy", preds.astype(np.float32))
     model_payload = {
-        "genes": train.gene.astype(str).to_numpy(), "embedding": x.astype(np.float32),
+        "genes": train.gene.astype(str).to_numpy(), "embedding": x,
         "responses": y.astype(np.float32), "k": np.asarray([chosen], dtype=np.int64),
     }
     np.savez(OUT / "KNN_MODEL.npz", **model_payload)

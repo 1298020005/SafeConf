@@ -1,0 +1,1994 @@
+{
+  "status": "FROZEN_BEFORE_CONFIRMATION_TRUTH",
+  "passed_predictors": [
+    "ridge"
+  ],
+  "confirmation_score_sha256": "ae5b03a2f1a858409ee66856a75cdd48271143b5d039cd2d371feed861f4d341",
+  "predictor_freeze_sha256": "7b87071773c9238087c6fa13b209a4a883bb02b8578550c514fbd2cfb9e98157",
+  "public_snapshot_sha256": "ce7d7a749694f5300b132f30973ea005b8e1437997d0bd32c1a4f542856db768",
+  "configuration_sha256": "5626bba7a6cfa1e89734a40470932a7d3c98afc202462c4de18b917145bc9411",
+  "cohort_protocol_sha256": "6e7200c74c7e56d8d9c57d6d29b70820318dc3283579ce40b944994da85b382e",
+  "risk_models": [
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101001_b0.1_s20260930.json",
+      "sha256": "4e651854759dfbf7e662ce270dd8bf3fcb1e28954ed4985016a3e829d720a33a"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101001_b0.1_s20261001.json",
+      "sha256": "a876d9891cca70f7a72cb68bc4e09becc3fb236bae71c4c3c5b9d9e1727acf25"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101001_b0.1_s20261002.json",
+      "sha256": "dcf5d4c8834962508d29e607527e5dea699f3cfc21624bfa2d1a810a1fc7ca11"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101001_b0.1_s20260930.json",
+      "sha256": "7167640734a6acd3a744e2880ef4206c48b87e14a5a29e1cd6fdda55ac84b382"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101001_b0.1_s20261001.json",
+      "sha256": "e69430f1cc4cb288fe7de9b51fbde473bd9301cbf0528158b4f727efdcda8a88"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101001_b0.1_s20261002.json",
+      "sha256": "6761b8735bab1f6b6c511676277e8bd179e8692fa1afc95e59b1f6baf9fb3b7e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101001_b0.1_s20260930.json",
+      "sha256": "393b2f5280bc4d10c41c36b27c6834072467434c6b46532475630a6c4fab82c4"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101001_b0.1_s20261001.json",
+      "sha256": "177c8b886c11b61fcd7a36934aa5638c7bfe37e742855cea954826414ea4eb7e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101001_b0.1_s20261002.json",
+      "sha256": "96b92d0fb5f0f578b23361e89ae7f084b71cad369e70d813d3b75c1c9c0fbd20"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101001_b0.1_s20260930.json",
+      "sha256": "e615f82021563e47d756d3c0bd714eb806a5c478b2c97df69e9e22cf5cb20438"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101001_b0.1_s20261001.json",
+      "sha256": "8e5a18a86fcce5f03f5e4aa30d8a01c8fc79dc9728903f6bbd41e179510ec1ef"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101001_b0.1_s20261002.json",
+      "sha256": "4fc56b1b42c5086b8cf05709ee523f19aa5acf821782938be876c69e4ef67253"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101001_b0.25_s20260930.json",
+      "sha256": "171ac1568667b25d3fd58ad1df3c5a18f8cf61a45063f9b06258c65be69467ee"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101001_b0.25_s20261001.json",
+      "sha256": "a70c71557aef51fb40ddf62d23b70218f3c1c28a2173ccc933a7920f4fd120ba"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101001_b0.25_s20261002.json",
+      "sha256": "95f2a9f331967b161bbfe6fde813968c33bac1cc5bbfd82aeaf560b2cc1ed62f"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101001_b0.25_s20260930.json",
+      "sha256": "a30a01e32e1e372bc844309af26e12136f8390d75eda5a64980d00f5e6cd81c9"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101001_b0.25_s20261001.json",
+      "sha256": "0c6a6e513a4c524d362539cf95f83a785d43a08e0fdc3e358f915f59f17b130e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101001_b0.25_s20261002.json",
+      "sha256": "1a68e2b9568fafdb52b04299140a82a3cfea2fd0032afb0b2dfa55929c70cb95"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101001_b0.25_s20260930.json",
+      "sha256": "9960af678f28550fec77902191cf7c8392530c8ddac3a9354838af9fd7625df8"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101001_b0.25_s20261001.json",
+      "sha256": "c086bb36e30f3a99bec1caf9bee4f3769188796420cb2f30ef249db154a6a736"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101001_b0.25_s20261002.json",
+      "sha256": "4998102f2ec10776696ca7edecff0edabb8bdae8df97a9079233c05783165976"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101001_b0.25_s20260930.json",
+      "sha256": "9511459853dcf1e4ee9e983eff1833fa72d35b0ce2aa20d8267b56d938998239"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101001_b0.25_s20261001.json",
+      "sha256": "554004c260424ca4f09ecd2be4842aca8a4f1740c8b34a33eb1cb1413fe60d3d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101001_b0.25_s20261002.json",
+      "sha256": "ae6beb16352fdb3d0dd860f0f0307e37e908ebfb7efd114380b858cc35c5e92b"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101001_b0.5_s20260930.json",
+      "sha256": "03d9c13c5aeecb72489d9751b26846bc06fba29dc215395fa60b529921e1a10b"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101001_b0.5_s20261001.json",
+      "sha256": "921f167af69e11ad6de96aee670f085a9f1de04cb9b1143e28c3235d65085038"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101001_b0.5_s20261002.json",
+      "sha256": "a8ba630bf8eae340ea38e320714559ed329b3ad27002b754561b81f608a1b5db"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101001_b0.5_s20260930.json",
+      "sha256": "541590407713716ab5e90fb1ce6be3a97d122f2be62059bb40f11a2f06072aeb"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101001_b0.5_s20261001.json",
+      "sha256": "e3f4144c1e19c8c3c6b468d9bea44f33e55f384eec4ca534a51801bce6f5ed4e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101001_b0.5_s20261002.json",
+      "sha256": "7d3a0051de81479aaa1ed54a3349eb3027e89fe3e5995c5192c9db841a63773f"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101001_b0.5_s20260930.json",
+      "sha256": "879129316ccd10ea03620d322ab791529561d29589182c83c04853ab8c4539d3"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101001_b0.5_s20261001.json",
+      "sha256": "5deb52042229a50046d89a4b6379df8173d3ae3c800d58ec3e349ff019c4a635"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101001_b0.5_s20261002.json",
+      "sha256": "8cde266a4ae6c7a3c8a0718df090399581dbf15e9857e8feed6a263c9c0313dc"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101001_b0.5_s20260930.json",
+      "sha256": "6b38391c423151a50d0979e097fafa2c7f2ecf6dc2322d414e6c73c21122b15f"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101001_b0.5_s20261001.json",
+      "sha256": "59027cb06da56c6dd93beab7a8fff28bcd1b6ecf6f5dd25b3c9b84368eeceabd"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101001_b0.5_s20261002.json",
+      "sha256": "76f98e6dd49108d098f773ae05a0b7f1172ca910949684e2e5eef6c9a1c7a701"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101001_b0.75_s20260930.json",
+      "sha256": "2f8a14f0be1087c2e1c12e649bd961c16cc5f290aaa9e36e13e318d32fd34dfa"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101001_b0.75_s20261001.json",
+      "sha256": "808809b00b3a77e335cffb9dfb00722815820a0f78f0bdf50d1028fcf3e6ff03"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101001_b0.75_s20261002.json",
+      "sha256": "1080c048dd40e4249b37be9d7887202d4c4030f6d71619b77888f084bb0fe3c2"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101001_b0.75_s20260930.json",
+      "sha256": "0aea45f14e208fdf4b54d46664a8dca34f013cbc98dbf01dd27ba90756b07899"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101001_b0.75_s20261001.json",
+      "sha256": "63de760842a43575ca4efbaa805074a94997c864d0b1668d46ebb3c904b1ec72"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101001_b0.75_s20261002.json",
+      "sha256": "e8dcd9491535b08261b6e5bec4ea0a14d591ff9ded931f5a42362af0552e2a1e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101001_b0.75_s20260930.json",
+      "sha256": "dc6d5f047a7814bdb0ce04a2ab0c8a3567d90d76412d7abf96164646a7937851"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101001_b0.75_s20261001.json",
+      "sha256": "b863bbb30b8e96ace1f5ecbf8b897b2e34c0a122811d87a3f1123c6178b82f4a"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101001_b0.75_s20261002.json",
+      "sha256": "7c026b0162a989d8b89a8a6a73bce0b4732ef27f8676a61cbe607ca72e14daad"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101001_b0.75_s20260930.json",
+      "sha256": "b877b85c048ff441ca065bef73d3dba3c55354f6f719449826ea1ddd62f6f844"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101001_b0.75_s20261001.json",
+      "sha256": "21f8a71b2b6210d5b58a8e2a596720d40b87bdc03e0ce3de1ebc2f42d8a88564"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101001_b0.75_s20261002.json",
+      "sha256": "5dde5b49b8948b8cefbeb5fa0f0ae657b542526594d7462d3d87e4b73cdc0ee0"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101001_b1.0_s20260930.json",
+      "sha256": "fbd541b39c39d42bc9d0a454302e3a37c59c6fcc3f1e6dbb95297fd609b644c6"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101001_b1.0_s20261001.json",
+      "sha256": "5e158af161c182c46cc429771e2937529a059a7dbce1008d8c50c7bad76ed2b4"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101001_b1.0_s20261002.json",
+      "sha256": "042eaaca0b4d9e1e768c8798de4c1ba18baa07def6086d8cddef20f4265c7490"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101001_b1.0_s20260930.json",
+      "sha256": "01c2efa6aeb845e7ae579409ad5349bf81695c10f765794e6a98264f0fbfaed9"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101001_b1.0_s20261001.json",
+      "sha256": "fe99b21996d199740e7d7bde0225c9d6ca6129eb4eb07e820acf782aa5061f93"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101001_b1.0_s20261002.json",
+      "sha256": "ac2709c7aa939892cdf69fe914d7f31fee50e4222fcd4d95303a0f6e0afb972f"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101001_b1.0_s20260930.json",
+      "sha256": "e7b0a02eaf1a2d6ec3016a007fa33efd5a198ca2e752d761d31368903551e035"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101001_b1.0_s20261001.json",
+      "sha256": "6b9fed25b5fbf27dd3e187d41e17812f930d5216ac1e384980a9d5b3f673b07d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101001_b1.0_s20261002.json",
+      "sha256": "f985409e8515f3444481d5e50ee925e6b188075020d2d391709d102310d23380"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101001_b1.0_s20260930.json",
+      "sha256": "7ca5b7bde400185a36f8dec316936452acdb4994259537e6ac353cb06a9bdb3d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101001_b1.0_s20261001.json",
+      "sha256": "5aed37196d8b4cad592b9b6d75dc1c1664c73374b2f8e6b6addfbe12edee2a9b"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101001_b1.0_s20261002.json",
+      "sha256": "72f87e4a58d7b131a1f3a5bc4e13504b1389811939809b28bea494347be1443c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101002_b0.1_s20260930.json",
+      "sha256": "6ad2941a28b69bc747964a6b6bf0e594227e36f2a264e3b8adb9fb9600471a01"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101002_b0.1_s20261001.json",
+      "sha256": "962423a444194ad6a80b5577ed78e993be965e729ca798f380d9d4417cfc6df1"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101002_b0.1_s20261002.json",
+      "sha256": "02233d7497cccf47d8a454838cb2cf29b92113188353590973542e1cb227705d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101002_b0.1_s20260930.json",
+      "sha256": "dd4d02f104227072a146f0d7b7fb96ac38e3417c04bc7b4aa1d928baeef2a22e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101002_b0.1_s20261001.json",
+      "sha256": "611e5ce5a32cb3aebcd57fb41e6001f88a942e86af507e6afafacefdc8979fdb"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101002_b0.1_s20261002.json",
+      "sha256": "ab48cef42b1f45aaf9bdcb5b74516c6caea4df56d7c1e3844cc726bb113bee09"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101002_b0.1_s20260930.json",
+      "sha256": "2c67d08a6debe73539cf97f6ca7ab5944e36e57bd57f98dd23b4bf56a60b388c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101002_b0.1_s20261001.json",
+      "sha256": "76ad98ab1957de3017c9688220791c19d7c15974422f325770d6e1d826f1e724"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101002_b0.1_s20261002.json",
+      "sha256": "03140cd1e634108ebe0738ad3e6b91f25a8e8081c2ae172e9370f66509843032"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101002_b0.1_s20260930.json",
+      "sha256": "175d728885f26305755b7f7e6b9f69a0851cfffb498036b4260d8706d31f3208"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101002_b0.1_s20261001.json",
+      "sha256": "c56d5634dfb9eb9cd729581cc93d552a5cb9815085281151b985a511f4e326e3"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101002_b0.1_s20261002.json",
+      "sha256": "3adfe977152714bada91e170e1980167ceb48561fa982c0cb22dc9d95e948d44"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101002_b0.25_s20260930.json",
+      "sha256": "0a8e3cef31fa11e2c95f587cfd78b843ba2a0a015d259ab80ac1971bc4b654fe"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101002_b0.25_s20261001.json",
+      "sha256": "a51cabce9d4f08f5a122c9931e115d528f720a5860def0405d927eec6b533cb1"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101002_b0.25_s20261002.json",
+      "sha256": "3572472e02dfb69f3d3f15de564e8eb8460b06df348c986637d9a3638d721d0d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101002_b0.25_s20260930.json",
+      "sha256": "25d3300b3d6e507c9a92d58ec074de327c97caa367fbe4635ea4489cd54f83b2"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101002_b0.25_s20261001.json",
+      "sha256": "c7da22677049bf19341eb5fdbc52d8aa788d194ebdebfae73ca91a3b314b50c3"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101002_b0.25_s20261002.json",
+      "sha256": "35151bcada630949649f8c8320b2aab54d5f9d8542b54253195fb55bbd54e6ce"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101002_b0.25_s20260930.json",
+      "sha256": "848e3824eeee5844a819e28d3676cc5754ff084558d33c246c38e1edb6a65d21"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101002_b0.25_s20261001.json",
+      "sha256": "c0fed7cfff9e3be1dbc1802eac8abdbd4a2302b3546fb91c02838f383a12c5bb"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101002_b0.25_s20261002.json",
+      "sha256": "737d4649e82bab3f8395f33853c6b48a2d5a24b3b8afe1945e6423c9a7a5a37e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101002_b0.25_s20260930.json",
+      "sha256": "be2b7783e83b18ce506f1e8d2adab9cda23d5a4711c06e32281cc5929231a926"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101002_b0.25_s20261001.json",
+      "sha256": "35f913679ec604e02d0fcee882c0fac33aaf9d1c31055810005bc1f86a66025e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101002_b0.25_s20261002.json",
+      "sha256": "8ab4b2b40ad66f306d18fd5e7009d1d8dbef4f8f4df99835ca45f97b73e519fe"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101002_b0.5_s20260930.json",
+      "sha256": "b054a744b2d795929d70fbad0be035329db6289a564b6e88171841d6f8d8f4e1"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101002_b0.5_s20261001.json",
+      "sha256": "3415c59a8011f4945ae206beecdc3e19fd54874c34bef229c2edcc2133ec19da"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101002_b0.5_s20261002.json",
+      "sha256": "877ef3191370dbb1cff58534e69b6a01e7d40023e394bb5d5f31bd884f55e4f3"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101002_b0.5_s20260930.json",
+      "sha256": "965853777be39a11f4dafa1934e7c09fff3345ece5740b25ac5a7ff848f0e809"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101002_b0.5_s20261001.json",
+      "sha256": "798558775ce4342b2cb03e236e55e315851f4576737a2ac336aec68aaf2fb3bc"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101002_b0.5_s20261002.json",
+      "sha256": "ac6ad6ec64dad5eef1dc598667579c47f0466c4254b64a9142a53e581833d572"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101002_b0.5_s20260930.json",
+      "sha256": "0b3db80b898e18f9b378268de215ab0a94cf1451d71c33864c0c7bf1861fbc00"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101002_b0.5_s20261001.json",
+      "sha256": "91573ab4f56ee68a40b0f75cce7b2da2a441814e6571a3194ed75d3edebf3b32"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101002_b0.5_s20261002.json",
+      "sha256": "642e82468100840b3a4a616ba6049439d53a08e30614cd5519b0121a37a6ab90"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101002_b0.5_s20260930.json",
+      "sha256": "4759c132a658772e8abc520952a1cad1c5307b837bafdb277632cee5f094fd9d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101002_b0.5_s20261001.json",
+      "sha256": "0d5c9981a01460e478506e54d9f856f1ce50afef86ed4e06f423b480090039a6"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101002_b0.5_s20261002.json",
+      "sha256": "22632ff5f89e08637d08695e657b084be3d3c7108d2b56b7c752854818f8fb50"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101002_b0.75_s20260930.json",
+      "sha256": "07fad89214d8596e768f260493684a765950bf0e684e28aaedeef3e49c73672b"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101002_b0.75_s20261001.json",
+      "sha256": "0ad71f6a9692bdf0a4da8e754402a7ae6383ad86c90c789fdb671be99fbbc64d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101002_b0.75_s20261002.json",
+      "sha256": "4782ff657de04669b55b7b494588975d8ca3ef492b8c915f2da16cd412c53c19"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101002_b0.75_s20260930.json",
+      "sha256": "adc8365cf25e4ff96ebba3f5e856a2d78ed067721ec9ccf84b3fcfdb82661808"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101002_b0.75_s20261001.json",
+      "sha256": "ac47ab6f88ebef3350d33a357fb78479e263bc6a3483db9a423532beaef30144"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101002_b0.75_s20261002.json",
+      "sha256": "c12f5ab838b97485d814322ea1d42dafc015394cbad5421eba208c121f5e0bc6"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101002_b0.75_s20260930.json",
+      "sha256": "d891d6f6ab50a8c698cda118c79c4470cc2bd3bf63fcfc5b3923b9debec435db"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101002_b0.75_s20261001.json",
+      "sha256": "d31ff6481a8faedd40ad6bc21f54e2fe586ff1742a5a8be6ad08aa741212fa9a"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101002_b0.75_s20261002.json",
+      "sha256": "4b722eba9aba0186fc57b6fe92c12bb435c9c08144cb5916784478becec5a74f"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101002_b0.75_s20260930.json",
+      "sha256": "b6375cd13dc7acd6936bb34f882e8b83c490638a5b0af47bb57914ace55acf7a"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101002_b0.75_s20261001.json",
+      "sha256": "7643e9b8c49cc294bbc16a0ef5c372ad82fe2b5006c30952009323d0c264ce0f"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101002_b0.75_s20261002.json",
+      "sha256": "2e2f611694daca6b40e72727dd28965dc97b50f0e7e6cd43732a256e119f1014"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101003_b0.1_s20260930.json",
+      "sha256": "113407e2bdea0bfed8c17d01fe344ee020789835c9a995c50f783123112980fe"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101003_b0.1_s20261001.json",
+      "sha256": "01f30a2243f84ce6538b4b563d18e43cecff93038a24c2ecec50f83914538761"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101003_b0.1_s20261002.json",
+      "sha256": "31788c871c6adfcb2b92fbd1781cc5055efe38410fa1157e942e1f94cbb4737a"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101003_b0.1_s20260930.json",
+      "sha256": "b68da5f6427437a8c061ab7a0a1fdacd46467b8e1ea06a05d2a8acc35426d9ab"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101003_b0.1_s20261001.json",
+      "sha256": "f5fa48e711bf363e8654278250fbf04afc995d8dde4bd01ddb3d027a96bdec11"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101003_b0.1_s20261002.json",
+      "sha256": "74cf5cb6b84f733d7ca80cb5929f354958201f48c67486f8c5b3075eb473a3b1"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101003_b0.1_s20260930.json",
+      "sha256": "592c5d2338c7e7bcea7f0118b6a6c69f52141972bc6b0b7847a3e4302877c5cd"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101003_b0.1_s20261001.json",
+      "sha256": "cad8d71720093086f2947385632444a17c27c30954dad833a9159977a7ba0d1d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101003_b0.1_s20261002.json",
+      "sha256": "6fde3e9b39d1d78727772e0026c99e7f0d8537f2967dc864a89974ebfc4f2ba3"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101003_b0.1_s20260930.json",
+      "sha256": "7a90cfdc41df42173a72656248b71c281442c456503f86e3352414869db1da78"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101003_b0.1_s20261001.json",
+      "sha256": "d8075edbfa4e311a0d99ffe3a19f2b592af92f69c247b7d0f2127b421118a972"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101003_b0.1_s20261002.json",
+      "sha256": "a853af00d839fd8a1eac171342c0f39b6ad0c1dff0f97b6bf70ae0a267b03597"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101003_b0.25_s20260930.json",
+      "sha256": "125dcf5dad50693397f104711005a8fc036cd640c38eef4297f373630a976b7c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101003_b0.25_s20261001.json",
+      "sha256": "08e6731bef18e969415e101dbd5526b9076bedeb504676202a863bc6b05344d9"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101003_b0.25_s20261002.json",
+      "sha256": "63531b6bfd71bdcaa5cd347fe72ed58abdaf06c80c34651b8da647c8985a79f6"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101003_b0.25_s20260930.json",
+      "sha256": "ad39a50c5dac6b22f6d291be11a21de6249874b802390b2b574eaa858b3aa148"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101003_b0.25_s20261001.json",
+      "sha256": "abafa06e43b261d2ab9ec3134f1df8fff7bc3b3204d7c4996c12c0d2445e68f0"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101003_b0.25_s20261002.json",
+      "sha256": "d149acc99fa36dc6df2d2d7014c3684863b50f1395e86136c049eb3d530c9e7a"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101003_b0.25_s20260930.json",
+      "sha256": "042963e0b00ab356f451cea71b4398019177123156012101bc6e264a331dff4b"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101003_b0.25_s20261001.json",
+      "sha256": "5f4f5cd4f01af2a5a06b3a06c79386248fcd2943f12a2bf8584960d2dfa21fca"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101003_b0.25_s20261002.json",
+      "sha256": "433e026f9dc08e6d8f70f76b227d78a4ed46278cb2c790a307e1682834b37e3d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101003_b0.25_s20260930.json",
+      "sha256": "4fc86853b7d4986c76e8ad7f9d8552a1c0f72fe0292a2e15e50a93168f87aab1"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101003_b0.25_s20261001.json",
+      "sha256": "1480db684dd6cefd7733298c97d50954b6e48231a081c74cc61b62b45b1cc879"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101003_b0.25_s20261002.json",
+      "sha256": "49090b88710ff70e1e8bfd1e6b26176e70650b08961e0b09b446e0a335c3e35c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101003_b0.5_s20260930.json",
+      "sha256": "21295f0edeb0c36cb526923cb9c694fb4ef3aa4cb80ab12b40fcabda336d3d7b"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101003_b0.5_s20261001.json",
+      "sha256": "d55b77361edb3bad355241e09e4eda58bbad441f015567eebd4bf787689c3f59"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101003_b0.5_s20261002.json",
+      "sha256": "de25df5062ea6675083a72fd0855239d08edbdc9da8072ea32c703cbea8d1fd4"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101003_b0.5_s20260930.json",
+      "sha256": "64fda3dee4773a0e41ec11dd47b00494ab90d149b0581e151fe5f05b6c818e81"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101003_b0.5_s20261001.json",
+      "sha256": "d4076ee8d33de9382d88e2b9644312eeb527436c082811d5c9e014f49a724737"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101003_b0.5_s20261002.json",
+      "sha256": "50e2b6948c944bd5ac1051c86bc5e35839239972e44b23b8e85c1de84b2627b6"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101003_b0.5_s20260930.json",
+      "sha256": "0d8ce9a5a1529c71588461159049f9aad9e8d9cfa944c8d188b4e4bc86a7e703"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101003_b0.5_s20261001.json",
+      "sha256": "a212a9ae5602ca3fd996f560556a1b5a9d9c1044c85564e8ceb3dcbc39ca8ac6"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101003_b0.5_s20261002.json",
+      "sha256": "8004ace3e23c595cc67a7b16ba1d36e35cd9c880db91ed469918b53e10296f2c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101003_b0.5_s20260930.json",
+      "sha256": "3f48f89e7b33bcba590bdb5149373066722656e0de61b1c24a1f802f84655f12"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101003_b0.5_s20261001.json",
+      "sha256": "3da40b5db357389f0e3c99cb7312ffc913b7d3e6433ad773c8f0756e8d45bee5"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101003_b0.5_s20261002.json",
+      "sha256": "83072203a752ceabf5bdc6c174b88887c3f392e9f49413f0e0f3db9f704345b6"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101003_b0.75_s20260930.json",
+      "sha256": "7cb70367623cff701a48241b4fa2228181e860d2211c0989826552faee2ae91a"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101003_b0.75_s20261001.json",
+      "sha256": "019dc8d0737db05030a1af9ced78c36ae4b96173688b57cb8556675b09fbd193"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101003_b0.75_s20261002.json",
+      "sha256": "8c3510462bb402a96030bbd0f0f42082e8d1164cecf4a6e4a1c55490d1f45d3b"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101003_b0.75_s20260930.json",
+      "sha256": "4e355ccbcdc89bf037d0a4cce7c50d0a5aeb6058c8ab8ffcb5b14c4a992fc131"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101003_b0.75_s20261001.json",
+      "sha256": "441ec7603b504ce12c72190c98725211153f9ba6af6a977ec91125bd4fa371c4"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101003_b0.75_s20261002.json",
+      "sha256": "b7b5b4b2273d1e39389d81a897537a3eab6249f54912ec9fda819ece7751e4f5"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101003_b0.75_s20260930.json",
+      "sha256": "1ac933a710cffa02e72bdb75c365e0df2ad880ef7514b8f5a21347badd1562f5"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101003_b0.75_s20261001.json",
+      "sha256": "0270237b68cc569880b314696adc8939a722e56563816743b924a3cfb6d7e3b1"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101003_b0.75_s20261002.json",
+      "sha256": "d4728393bd6bbe8e7246618fa0e59a02a6e79b26320d967c1ea04e14a28ef36b"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101003_b0.75_s20260930.json",
+      "sha256": "14558e14bd0cf5f74b584880a9639732e5b438d02ab815316ddd921c349dd2f9"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101003_b0.75_s20261001.json",
+      "sha256": "d00aa7506c85a81dbaae916d5dfb6f773811460fb454dba602ab65f2554b0c4f"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101003_b0.75_s20261002.json",
+      "sha256": "ddbe5a840930403e52b77f5e9a0634b8754977221d71c677bfd31ee60055e1ee"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101004_b0.1_s20260930.json",
+      "sha256": "6a375784574bbf50739250abbb90b324d979f0e5a319853eab8a7b1de4a43bb3"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101004_b0.1_s20261001.json",
+      "sha256": "03d394860f948f567d88cae816e62b2032ca3daf140042af233450cae780bea2"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101004_b0.1_s20261002.json",
+      "sha256": "b4da892ab8f5e018ba9d35632b5a35f9136278df186a7f17c8ff0fa918809cef"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101004_b0.1_s20260930.json",
+      "sha256": "46e59926e7373e142998d751d6e12074700e518420000312499fffef7f5cc1e6"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101004_b0.1_s20261001.json",
+      "sha256": "7c0d3b38ec4926a9b9c13984846625b47a1059a4fadad8f6d9e8071157a076dd"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101004_b0.1_s20261002.json",
+      "sha256": "b2fc08e8d71b34e9a5c95f3b8a0570fabd0bced2999d09e433f1a58fc997f3fc"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101004_b0.1_s20260930.json",
+      "sha256": "da6460b70a655bca6f53fd49f72c8adc09d2c7117037da2c17b4d79555c47bc2"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101004_b0.1_s20261001.json",
+      "sha256": "66fea92ce2417a4c8e8e5af1964927f1ae663232caef37c21e044c50862f1aae"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101004_b0.1_s20261002.json",
+      "sha256": "d2c2b8912cb447b66b51b5489fee9c31c50f27f3a81fa7239b35e56f51c2c1ea"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101004_b0.1_s20260930.json",
+      "sha256": "f5929ca33350e71cc8d1515c76ce23364b9780e646f88eb1b43bfaa498a210a6"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101004_b0.1_s20261001.json",
+      "sha256": "8199d6307231c13ba9c611582dca3d1fe2c2f188d343dbfcd987d0f69dc35a36"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101004_b0.1_s20261002.json",
+      "sha256": "787c936fd6076bc7d6c09b583c9dc1a041a59bc61f7323a65e0f10fe67670dc6"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101004_b0.25_s20260930.json",
+      "sha256": "e58fd2725307c63991785aa5ca6b3d983277ed5cf53ccb175a5bd32312105b56"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101004_b0.25_s20261001.json",
+      "sha256": "84b263d3f9e5dfb1c06cdcae7a63c7d8ab2c0b83d624ffb3ad1260166e9a01af"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101004_b0.25_s20261002.json",
+      "sha256": "31c05640e23018c9dad4239764942f71c7424f7367b47e64a65eea5b47fabef0"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101004_b0.25_s20260930.json",
+      "sha256": "3ec844dd414583a5fc46230ce0196e48cf87210e7559c8a03f0c83c95fe59594"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101004_b0.25_s20261001.json",
+      "sha256": "d1a899eb5a6bcfe736262ace6558c8990e2eda3fb5174cd5613dce16b039a446"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101004_b0.25_s20261002.json",
+      "sha256": "e8329b36d4a8ddfb8970efb956a5b4c607065cb0be3ff01b555e0df9f6b872c5"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101004_b0.25_s20260930.json",
+      "sha256": "989fdb87fa8c654b258aa18d7ecdf3002b9fc652d10df19b9395a53729a77bca"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101004_b0.25_s20261001.json",
+      "sha256": "038c136b848bf9d9e295a875b0956f159b3f63d01fc3918bbfa69e338efd2323"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101004_b0.25_s20261002.json",
+      "sha256": "96ea9d8d26a072ca42e2b684b8f6aaedb4c2a2d7ac632137b9c1a7a2b33eaa8b"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101004_b0.25_s20260930.json",
+      "sha256": "2b717b878940357f6af1af0553fc75b5aeb68b4e977729ce35ab1772e22b9ca7"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101004_b0.25_s20261001.json",
+      "sha256": "8fe64118de1f7b081c79b15aa038934503c2edebda645e9a35d1539aeb2ca0e1"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101004_b0.25_s20261002.json",
+      "sha256": "b29940ce1ab5cea9dfc53ec2c17e82d84f357da2fd8c0c98e3ae11615ce7d0cd"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101004_b0.5_s20260930.json",
+      "sha256": "0b7f3277089ad638a43d5b1ddc1f393aeb56866c727277f9ce499c69f8423743"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101004_b0.5_s20261001.json",
+      "sha256": "896e15d456b2c47d050efd751e7d1e4b72773f079318ec20cad76bff9ab4d92a"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101004_b0.5_s20261002.json",
+      "sha256": "bd8a6b7585b84b2e52f686fef721e8ea1ad479361d3da371d02a2653140b4141"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101004_b0.5_s20260930.json",
+      "sha256": "48447113a69df3af97f03457292280895f0f44c9c205ae0ea6570f7929453418"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101004_b0.5_s20261001.json",
+      "sha256": "0cd4e1849c02531a7e775609256bee1b9b2080b460e28785f6813f1dce8e382d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101004_b0.5_s20261002.json",
+      "sha256": "dc75121c6107c3a312caeeaef2f02cb11992905f0bbd243342d32e18afd3e37e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101004_b0.5_s20260930.json",
+      "sha256": "506ab968c37c21bbb7acc1c2f2f5f188a1d57acc04c90cb20ed6ecc3eb13f135"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101004_b0.5_s20261001.json",
+      "sha256": "638dec3bb4b2eb57679fb1d6c4998b93cdbd5e21ac8a30f6a98130298e55555f"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101004_b0.5_s20261002.json",
+      "sha256": "88e7500bb9d8a3dfa6c6c8573fe65a2eda944833b814eb27aee4acfd7bebcb8c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101004_b0.5_s20260930.json",
+      "sha256": "932fbcf63fe4748098a1488a25d1220f47b508f5d610e0b433efd86ec1b35365"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101004_b0.5_s20261001.json",
+      "sha256": "a53964936319b01de72a76c177fcd7908cff01ce6b86260b75551d39188b319c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101004_b0.5_s20261002.json",
+      "sha256": "14bcb5019e75e1ca65b2feb304961f8f2b59ae01e35ce42e2814fcb8099cb1f8"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101004_b0.75_s20260930.json",
+      "sha256": "e69814782dd523e4ce648a085a5cbd50b0bd0b4a17857fa738955b316761906a"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101004_b0.75_s20261001.json",
+      "sha256": "73623db1d3f3818db30ace1fba8dbb3a2095c3a276bd4718110fd7932c457d3d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101004_b0.75_s20261002.json",
+      "sha256": "e95ac0f897aacde0692e99a68032b01b13f24035bde89b0bef1e4afde527c1df"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101004_b0.75_s20260930.json",
+      "sha256": "a1b847b31cd4cc4b5a772bfe96f2832abb2a03d8c4f7a0eb397c4d79dcbd4a77"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101004_b0.75_s20261001.json",
+      "sha256": "80530d32b5159153519ec3264de3c73c9cd9ae66038f987835204664f8985395"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101004_b0.75_s20261002.json",
+      "sha256": "ae6f3d188e0cb4a3cba7884d0bbf693406aee288cb7cc3a01e7508ef0080eb0c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101004_b0.75_s20260930.json",
+      "sha256": "91f9c61fc365697491de8971e8aa5f899a110bb98e5a99c93450b922e3b46296"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101004_b0.75_s20261001.json",
+      "sha256": "a9b8c2d61d0cd3e774086ab1e90f56257319cdd7cfb0cd4951198e59acbf2924"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101004_b0.75_s20261002.json",
+      "sha256": "780dad1debe616bd81c832185e41779d01fd1e68ecec669497333aac74ca8f7b"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101004_b0.75_s20260930.json",
+      "sha256": "80d75ec336f19c5518a3083576ba32fb067eb9ec65947176ec25438d813edeba"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101004_b0.75_s20261001.json",
+      "sha256": "305f491c7e141dc19ec15b1b8fc9e25c11e9b989bc03c3e7fb8fcf21358e0f46"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101004_b0.75_s20261002.json",
+      "sha256": "ad4265a49fd13ca3b4261e8b8ce0b5f4810164f8d62fe31e993a057c5b533b77"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101005_b0.1_s20260930.json",
+      "sha256": "95220bbf55bb08ce4efd1d7d57763b919c19cd96cb7794c9ca7f66b889ddf85f"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101005_b0.1_s20261001.json",
+      "sha256": "1d59594b23e69cfc78a36d1272b8ef853ffa75dcb141dd470c7cd5ce5502996a"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101005_b0.1_s20261002.json",
+      "sha256": "0a114f4ff31dd416919d99a9b63aabeffb4dead58b9904dedb8c6dc41b1fe638"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101005_b0.1_s20260930.json",
+      "sha256": "9ff3e0b563eb8e7f54e4e93aa19efe57ff3ddea327ac8681829da5d1ec4d4ae6"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101005_b0.1_s20261001.json",
+      "sha256": "816fbb9c731c000448bbeccb5b1a5c361a17045bfe2719149fbd44619161d471"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101005_b0.1_s20261002.json",
+      "sha256": "e9756bdbb765dcada092940f2e985be9199f65869fa944a6534c9c730a93ed51"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101005_b0.1_s20260930.json",
+      "sha256": "545da51a77f3f082b085dfdb35619cdd97f276153736826d486968694e17716a"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101005_b0.1_s20261001.json",
+      "sha256": "57a87fe80a83440f514de1b0985de9d5c4a5b00ad37f21d05c2e4f78f6fde868"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101005_b0.1_s20261002.json",
+      "sha256": "abdd09dac9d08f19dcc6906f0a6c7a461e731c8e2af2a9eb91d34a323693ea39"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101005_b0.1_s20260930.json",
+      "sha256": "05456f8671910252fdf892f156c7c77ef45a075db94cbbc139c1371c855424e4"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101005_b0.1_s20261001.json",
+      "sha256": "19d52d501457f6238d3f66dfa2f3f255c1887da27c9bbe6985eebf848162dc55"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101005_b0.1_s20261002.json",
+      "sha256": "16663438a4195bf5d2188aa433cad84bd927d50464066a818941347945f11188"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101005_b0.25_s20260930.json",
+      "sha256": "c4300e52a9853de42e80f147a5a3bbbc5a58ad94ac299e217c7ce8fe30de80dc"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101005_b0.25_s20261001.json",
+      "sha256": "ef26ef21e525bf6b1b902ceda54b0b5225aa7ab2fa524ac323ff9492cf28aecc"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101005_b0.25_s20261002.json",
+      "sha256": "97699fddff9579d7d391122c925f8229114da260c46cbe4e77c7d28962404dda"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101005_b0.25_s20260930.json",
+      "sha256": "1a1755d7382ad70c01cdae4f4932f2f0599020e878fd98aa47c9359e52d4aa9c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101005_b0.25_s20261001.json",
+      "sha256": "438d2d06a453399a1c47a83288e7fc4364fecc5fda5d9e19bb6e3b6a7ef2b40e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101005_b0.25_s20261002.json",
+      "sha256": "0f52e9519d33722742cba02215441e16ccc6a61b0ae5ea538199ee732589fce0"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101005_b0.25_s20260930.json",
+      "sha256": "001640947bb18dc65813f7e1f239043ebdaf6d9784b3486e90f1e5f3fa891f8d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101005_b0.25_s20261001.json",
+      "sha256": "42cd822525a2699cb09724a6a97557f99d6fb8370482ad3dd013883a07961d55"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101005_b0.25_s20261002.json",
+      "sha256": "17e3b33c3ba7845285328e2eccdc23014f5bcbaf65169d7ad4f1b09bf0d4bd69"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101005_b0.25_s20260930.json",
+      "sha256": "06d3570b20aa715e22bd2759442995dbdf231c2d74efb7d765b65e98427461b3"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101005_b0.25_s20261001.json",
+      "sha256": "fa4477b747e67eb9a74214ff99aa4ffafb3a7e2347164922ac8295233f15f5cd"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101005_b0.25_s20261002.json",
+      "sha256": "007c9ad0a7b54498a798704a7570532ac0cebcc2e6623000d56f30598732af2b"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101005_b0.5_s20260930.json",
+      "sha256": "9d744c1ddb4ef209ecf51f98c32414df808d1cc02d87c586e469b6e2c8bd0976"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101005_b0.5_s20261001.json",
+      "sha256": "393d7992807b2b53acfbaeee0210fca5ec69d72e4f7d9bb4bf485b7da483a85b"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101005_b0.5_s20261002.json",
+      "sha256": "97b09f9ae2ede7bdf4d8d470d1cb9d5cdf1d719902b37f5d0ac19e67953f3b49"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101005_b0.5_s20260930.json",
+      "sha256": "4623e40dc9dc6af99cbec4513fa737967bb4ccab9d1636319479fc1dddc57482"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101005_b0.5_s20261001.json",
+      "sha256": "c0e6b805afe24ae758cf28b292d79ef4d75be754319e2d8b95c764fcc76bd678"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101005_b0.5_s20261002.json",
+      "sha256": "cac052deb4e58266d7ca3ece4d813ebb25d8b01379288dfec1997d03157720bb"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101005_b0.5_s20260930.json",
+      "sha256": "9257b156c9ba08341f9f8e81bbea0c8f9a2500f51718a8e1feb88c756e800fd4"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101005_b0.5_s20261001.json",
+      "sha256": "899a66e0e9e6fce551b0c87e7c02385afd2e8ac6529c9d894f288719bba7e3fc"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101005_b0.5_s20261002.json",
+      "sha256": "5224faccb9325d4d7bfbc2ad96681b33d6e10b4da515b7efcf8cf8b61f07e3b5"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101005_b0.5_s20260930.json",
+      "sha256": "4621aae84f82e297f548669f72d1cdda9f4798e236b62dd5cfa32e1abe6cfbd0"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101005_b0.5_s20261001.json",
+      "sha256": "55e456eab0330a7d0458c285481f11f7b0b0a8fd47807a39b087cec7a27efd2d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101005_b0.5_s20261002.json",
+      "sha256": "ec7f1bdc7f83451a45d6d73b3aef7ec14cd855df658f8020e85ba9944782de2f"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101005_b0.75_s20260930.json",
+      "sha256": "86f305d42247c0b6ff7f95d57390e88c21c37e97202a1294b73c4d691c523e7e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101005_b0.75_s20261001.json",
+      "sha256": "77513e90f1da99297c53dc40bd996001ce3c606d2d4efbe5ad237e60a1fc6704"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101005_b0.75_s20261002.json",
+      "sha256": "1882728871b3b2850c23ab4c464769ccb837c69ab246f9349f8f3d1c0a4b3af1"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101005_b0.75_s20260930.json",
+      "sha256": "1d25bb372da315876519ca2a1c5caf1b77cae2374a63ffefbb5fc6469e808813"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101005_b0.75_s20261001.json",
+      "sha256": "8ca21d23f13540922722d9404e69a440e2b0daeeb96a3d3d6b7119e2d1270c10"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101005_b0.75_s20261002.json",
+      "sha256": "0428e00e6eb31c41fe8c4e8c290084587f124356c78114ac6c6cb4ed71a60bbf"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101005_b0.75_s20260930.json",
+      "sha256": "9ab182b8bb6aad0239cab11b66e11cbda1c89aed2d49d2daba28f1ede292b1e5"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101005_b0.75_s20261001.json",
+      "sha256": "2692c4a4970ba3213626981c598234572725c54bebaf41a5cd90351c9f759e72"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101005_b0.75_s20261002.json",
+      "sha256": "58abacb21d48d34e45137d311c3a75e83912d67908459d2d14faae6c52775d71"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101005_b0.75_s20260930.json",
+      "sha256": "c6be61f8474a2c9f7d8dd3c095c60cfa37f549f38149ac399e1642b10b78ad17"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101005_b0.75_s20261001.json",
+      "sha256": "2a3cf63994d8559bec2edff9a2ec5840fca9caa7b5c8806a9e20b775001350b0"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101005_b0.75_s20261002.json",
+      "sha256": "8ef4fceb5045772b9d57654187b2e000b6776f7cf1f1fd713412e470387c13ff"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101006_b0.1_s20260930.json",
+      "sha256": "2b76efde982669ed7fa0c7324d1aab77a1728e9bc4066711d8f2fdd611a9f6ab"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101006_b0.1_s20261001.json",
+      "sha256": "18daf8cb1759819de8c5e6b923f6ab35e2cfd9ea47bb88ada4a5b7b16cad3e01"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101006_b0.1_s20261002.json",
+      "sha256": "a534bc0f4b32d15d0bef5ef1a4c03aabecd86fb196c5732db3fabd8dd270ac4d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101006_b0.1_s20260930.json",
+      "sha256": "ae1ad5fc146eb070b10e538f5d35658c02e6a5de3b5b1df0a94c1c245812f072"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101006_b0.1_s20261001.json",
+      "sha256": "e23f658d5e9c1f1a13f58770cfebfecc78cfbc183770fcd1f374671bc5869bfd"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101006_b0.1_s20261002.json",
+      "sha256": "ce41a08d6c26fac44aef6ffd454666d0de3096661412817c8330b01a4f334760"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101006_b0.1_s20260930.json",
+      "sha256": "11179b5a937d2dda4a3baed3b08d01116c4610f08052b5e51dc8390464727752"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101006_b0.1_s20261001.json",
+      "sha256": "809ecd119b4abb62963bf1676343495cd1e07feaf1762ec55ef47162368260ce"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101006_b0.1_s20261002.json",
+      "sha256": "e191b3816fb077c25c06d0d8f154ab7e71a2625d6426a8056aadac97b1a77ac0"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101006_b0.1_s20260930.json",
+      "sha256": "cf427819838e65762fafffece3c21f7a54e184f1bff0c7f74b4919b507d0c5fb"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101006_b0.1_s20261001.json",
+      "sha256": "f45c90d68244da01a4138bbaf5efb6cf8203c9882e14c5765350433be64cb3bf"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101006_b0.1_s20261002.json",
+      "sha256": "49b03581d7d654b6b0fedc8d1f4fc7af411385a565c18fe86673beb2a5c4f832"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101006_b0.25_s20260930.json",
+      "sha256": "53dbb821f71cfe1dbf09719581f5fa80f012846c4a2fcac49a62b417acee6f61"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101006_b0.25_s20261001.json",
+      "sha256": "f3fde90587194d0c4a04946900bbb7d47fa3c04df5a7863cbff4cfa7b82010bd"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101006_b0.25_s20261002.json",
+      "sha256": "5be92e0917c67cc8fcbca266e48dea7d693a61b41036a3450ccc532df961868b"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101006_b0.25_s20260930.json",
+      "sha256": "93e07ab63be5fd9011d7808980a05f62b4612060fde40973db9f86b8d5c87286"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101006_b0.25_s20261001.json",
+      "sha256": "72569a7e1bc2933283f28a6d0ee62b80635dd224b34e1e37a6443e300eaed8b8"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101006_b0.25_s20261002.json",
+      "sha256": "261e6c2beddecd7e24c825b2fe11ffb767f877aec004cbace9355b44f895ff1d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101006_b0.25_s20260930.json",
+      "sha256": "64b5cfcc571caac3a4835948af64f02701a52136b18eb943e5f76fa05edc2518"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101006_b0.25_s20261001.json",
+      "sha256": "5ecefd2af7e9335353ab16dfb265eca7c36bec91b8c6c495bd5166c3c974a58d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101006_b0.25_s20261002.json",
+      "sha256": "4f2fa1cff93d3d0981e21c6e8d09baad09bcdf867690a75aff3ca71cdef60037"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101006_b0.25_s20260930.json",
+      "sha256": "b7ef21941904db8ba29422a23bb858c3a2e0a4152be11a296b58fd4e96693bde"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101006_b0.25_s20261001.json",
+      "sha256": "86cff37d6106cc40f971ec0d6f51171c9c215275ce6548952eeff148810eb3bd"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101006_b0.25_s20261002.json",
+      "sha256": "2cc819a542b16b5a4c0618984715b4f2174a66bd7c7e842b44ed8b6798456abb"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101006_b0.5_s20260930.json",
+      "sha256": "aea5d5c3f885dcf69b044c59f57ad54c788b6ef5764ae6c0ef2d61f56fb33bcb"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101006_b0.5_s20261001.json",
+      "sha256": "f28e88c2389ea17cad505db5043b36b277cfcd20e2239829fc0e04dbc87f02fe"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101006_b0.5_s20261002.json",
+      "sha256": "c11b8e2ae986abefdc5d2c1af3972b9b6fb5d9558ad0230984b24d1cb4ab1982"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101006_b0.5_s20260930.json",
+      "sha256": "6da3048f9949fec219d0dcd61422a78a51af2c318438a627e66a76ce4deb67c5"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101006_b0.5_s20261001.json",
+      "sha256": "069d6c4e229f837791bf0ccc9fc25cd90891b08583586f26156e11afb8e22344"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101006_b0.5_s20261002.json",
+      "sha256": "cb6eb293a483209098c1ffec5a52d9bfe245222485e54f665e3e0be7b86f7488"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101006_b0.5_s20260930.json",
+      "sha256": "774a67ea4f225eb27343f8b49e352445a0903b4b06cb977d1d95852d4d644372"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101006_b0.5_s20261001.json",
+      "sha256": "89265e8ace0a8c3779c5bddcd96d0cce63faad005492052e2e8fd60c2915ce80"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101006_b0.5_s20261002.json",
+      "sha256": "0e0c45286003b250b0758f9927f87bd1ae78bd89080a15e6feedf97d1ba2c5a3"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101006_b0.5_s20260930.json",
+      "sha256": "d30fb0481edddb37da9a45a175ef632c4354f10681f6e3d98017dfb87b02d775"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101006_b0.5_s20261001.json",
+      "sha256": "0525f6bd326bf20a36f755c47f25f783033a432172404be71775d41334440405"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101006_b0.5_s20261002.json",
+      "sha256": "88ea68072d0469da6535263c5b26148130173812ff935ecf78079b729d26d5d8"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101006_b0.75_s20260930.json",
+      "sha256": "840c3d21258775e355b43ebbdded15524c9931a25ba20812adf5b3fe193a405f"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101006_b0.75_s20261001.json",
+      "sha256": "41313497f6cd56f301c90cc5cba33a72acc3ec8ade2d69fff6a5584037942f65"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101006_b0.75_s20261002.json",
+      "sha256": "ac7c48db0ea8d0d6cee59a1b3b8c7607fa20fb96619afb4e993c7a3ed7aa2864"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101006_b0.75_s20260930.json",
+      "sha256": "98bffd56004a07388bf699ba36cc4e7f1914e9a6e00949a697bf5b1fce3a8828"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101006_b0.75_s20261001.json",
+      "sha256": "ca5488d74ede6266f0b7156a312e35e7fa3dfa99b175aca9a812c4193574bde8"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101006_b0.75_s20261002.json",
+      "sha256": "6c49d0bfc9b1a34fb8c1d64b96c77c809047641bf4252a92d1919aaf5b7c2981"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101006_b0.75_s20260930.json",
+      "sha256": "cb74d582367c011908e12a879f0323b67497765ac3c7bba5c052fc527dfe144e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101006_b0.75_s20261001.json",
+      "sha256": "a2dafce19d26b15acc53fd36db15c6500bb90d867f0ddfabcb1516cb88a42f63"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101006_b0.75_s20261002.json",
+      "sha256": "1c68d6f90991f3e73302aca6fabc778b874c277ccb4ab9680640c47a7301c7b9"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101006_b0.75_s20260930.json",
+      "sha256": "64704446ec12612daf7baec2dcf9ccf756de9418925b06ca8c836447ca5ca4f5"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101006_b0.75_s20261001.json",
+      "sha256": "c54f477409246ebfd8a14c513f916e3479e5c048799b0a6c2c171e44a7e35328"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101006_b0.75_s20261002.json",
+      "sha256": "11998977083e75dacde50fc11942ae1549250cee4fa9cee7f90989fc8eeef20a"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101007_b0.1_s20260930.json",
+      "sha256": "175a421ecb9b2127fb4e38c5b139b52c6a84e7878b641c66986b0829fa20dad7"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101007_b0.1_s20261001.json",
+      "sha256": "04a31fc08c8f2669e4b688a9ec86fa7651b920a6c22ec7facaf37c8cf5dfd0e6"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101007_b0.1_s20261002.json",
+      "sha256": "445d8c9968c1eb9e01624688887c0e16da2cdc7b2231d95c4597cd63e8cbdb00"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101007_b0.1_s20260930.json",
+      "sha256": "16d6358cf3cfe0b3c83ca04086c6e68cd0cab3e692c53de8f69eed14aa8f655a"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101007_b0.1_s20261001.json",
+      "sha256": "082a358fa424e7cf401db76f76ec076411b6f635ccc0479ccdf72a55c948c03d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101007_b0.1_s20261002.json",
+      "sha256": "93ba27dd34db86ad93d98ff4ec00802f359bc18b650b70053d38d9da648fd171"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101007_b0.1_s20260930.json",
+      "sha256": "20bfcf1838d86fb6da7e27be6bfa7ef9600bd77ebe0b3afb4b12a853a0178559"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101007_b0.1_s20261001.json",
+      "sha256": "e30cc3a9be03bbfc3272b6f9ed89136252a65b44eca4ef1cb01c10176af0b6db"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101007_b0.1_s20261002.json",
+      "sha256": "aee852d8f149edf5b680168081ddee6ba4c9121c529a2e0b4725eab70738076b"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101007_b0.1_s20260930.json",
+      "sha256": "cb687930cc534eaf0a4233eed36de9d7f3edba3bb89ff0e39ab12fd611b61ecd"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101007_b0.1_s20261001.json",
+      "sha256": "06a4c56015676440e7b79b114010387ae03f0f4860e1ccb0d0c4f2a7b6e15645"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101007_b0.1_s20261002.json",
+      "sha256": "2b88e736a5579b711cd55a82021342b5fa939115dd83fe14b7f832c40f861560"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101007_b0.25_s20260930.json",
+      "sha256": "fc957f8f302f47213dba0b0dc31d21e41451589c542a8adcfe1c3d13e3ab7512"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101007_b0.25_s20261001.json",
+      "sha256": "28ddd840c84b5cb74c49cd8a68501aacdf0b4e0a9ac592fc158f564485da44f3"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101007_b0.25_s20261002.json",
+      "sha256": "672b0fb2523f712857cdf34c6dc8f4977a3516e9054891662919edf40bf30de8"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101007_b0.25_s20260930.json",
+      "sha256": "fbc279571bcc94879e90173c444280bf9f3f0dd7e078cce6a5af0546deb0a9f5"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101007_b0.25_s20261001.json",
+      "sha256": "1df34366ccdcdd241e9bb632cb882b56aaa20a4417c55b382d92b325d636854c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101007_b0.25_s20261002.json",
+      "sha256": "2558baa46e5378297b8ea2bc4063d94b08c72013f5e8385ddfe3a99e7c68c03b"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101007_b0.25_s20260930.json",
+      "sha256": "342b3ebc9ba442572b2395688b151d753c23b88116875b8c021773f5f04d37ea"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101007_b0.25_s20261001.json",
+      "sha256": "63334c7eac910050840f73962a0928215df18e598097fc19a401ee9a0b662267"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101007_b0.25_s20261002.json",
+      "sha256": "98c6a964c2e9aa4b242158967d6d472bc9d57674c434ee70ea90fc9dfe961cb8"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101007_b0.25_s20260930.json",
+      "sha256": "dc13fcfc49eb373a48191233ab39227812eb28360db966c002797ca02c069c5c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101007_b0.25_s20261001.json",
+      "sha256": "c6361458b95b899036db054b098347f348070327c34a99a10af3d42d1b01151d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101007_b0.25_s20261002.json",
+      "sha256": "dfbca91e71d3c4b728f3a1d506ceff723c9232187393b246a24c9d9eb49c5b69"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101007_b0.5_s20260930.json",
+      "sha256": "32b5aba7710e5908f1741857dc78bd5e8c7f6430290a6ea605b2f08ae2a8cda0"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101007_b0.5_s20261001.json",
+      "sha256": "ca2447e95486853ce75ea1dd49b136b5d7b7b158ef920755a6f3b56107ea2df9"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101007_b0.5_s20261002.json",
+      "sha256": "889adc98187bc15c2d6fd7a6e7ead6650fc4d379ead3e9456eeebf106b9289ab"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101007_b0.5_s20260930.json",
+      "sha256": "af5dac2c2cd8f0ab2d8446eb8848c873ebc4f19d0accae9ef0b7bcee0bf61f69"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101007_b0.5_s20261001.json",
+      "sha256": "13d3f154ab873ad22a1b960eba60114676236d17fe8bddb091a9d9f7d4a258a9"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101007_b0.5_s20261002.json",
+      "sha256": "b60eb30eee88e344a91ebd617c0655efcee7a3f53049df962bb1428466f1e2c3"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101007_b0.5_s20260930.json",
+      "sha256": "58d145d3fd43ee4a16eca26686da007b0626313ebde6771e1c00cf891c91c100"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101007_b0.5_s20261001.json",
+      "sha256": "f4e96c53d76fae361908925d82aed2fb34dcde0909b390b74a9b4833c79ed09d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101007_b0.5_s20261002.json",
+      "sha256": "5860c11462c01fce867bac89981efb40c96c94c577651adcc20a6a4563b9dd3a"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101007_b0.5_s20260930.json",
+      "sha256": "7098160299904ebdb5c7b1c526c80b8ca53bf1bb7fa0b095ec1a21e06ccc3935"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101007_b0.5_s20261001.json",
+      "sha256": "8e82e2fd9f78b0c23ae37c7f1dc62e5da540af285ba78489f9c455070e12a024"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101007_b0.5_s20261002.json",
+      "sha256": "ff24180b906e445dfb16dbd874c6cb1d0bf9d129849f66ad9b53dfb620695ecf"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101007_b0.75_s20260930.json",
+      "sha256": "23971d57253da22dd1a11031b21ffe30215d4a98c35224730dd40897c836cee1"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101007_b0.75_s20261001.json",
+      "sha256": "255b52a391e74db2552712c4358ebdafa38bcea8b208cc92f13966187d334c6c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101007_b0.75_s20261002.json",
+      "sha256": "bcb43dd02c6fa2320fb79b0cffa713c8f35e3b53676a6e101b9e40f6332a1a16"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101007_b0.75_s20260930.json",
+      "sha256": "ea8a8de0c7bed417feeec6d77e9de5c845bd28ef5d2f5912147a37789e5426e4"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101007_b0.75_s20261001.json",
+      "sha256": "f3f5869b2b9bb57964cec571fa4dbf37f1c380c1c3897b792257adc22824433d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101007_b0.75_s20261002.json",
+      "sha256": "c6fb1bedb6cf558dbc1fa8290e5d2904dd0ed86a953df67375a5adfae13c49a0"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101007_b0.75_s20260930.json",
+      "sha256": "046b37e23d7d709207169f65aefdad3b028188746e0b21f4f0b56476ca0441f4"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101007_b0.75_s20261001.json",
+      "sha256": "f517e1ff02da449f433a382866ce531703bf94eadcd9059b7de2ad7bafe3922b"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101007_b0.75_s20261002.json",
+      "sha256": "c7c4ce2301e0132fdb1da20a1ace587f383182fa283f0041b47c6fcd623fec51"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101007_b0.75_s20260930.json",
+      "sha256": "0cefbcd4afd85dfbd4ef7df725bb6ed38a45f9ce0118fc56c287c7de022e48da"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101007_b0.75_s20261001.json",
+      "sha256": "778f0dffbdd6bbc026c7574a27dad6b858ea97209daaedaf2bdc03881dfcb2fc"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101007_b0.75_s20261002.json",
+      "sha256": "a94d3252432b7238b76627e1a891f768ffefe733adc34f3bfa7249cf68ed9285"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101008_b0.1_s20260930.json",
+      "sha256": "4c58b8baaed1c7eec34709a77db93fb102c24e5e9942c1b3c8004969a164a204"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101008_b0.1_s20261001.json",
+      "sha256": "c903d9d4ba96e9fe08dba7f8ca96ce17af59b6c7635f2f1fb3eddca1e8831bcd"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101008_b0.1_s20261002.json",
+      "sha256": "ea2e26360e25bbada70ddd4292c1cd39f780d3c5be41687fca24bd3aa521d240"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101008_b0.1_s20260930.json",
+      "sha256": "816bfd56b466dbff9154baa94e2e7b17cd23518fd94df149619dbc16769145c9"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101008_b0.1_s20261001.json",
+      "sha256": "8095d62cc527f42d17a079374073b3833983ff2553fcd844422208630508f3bc"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101008_b0.1_s20261002.json",
+      "sha256": "750a62adb3b0573d52b9e760a55bcddc858382e95476201fe2fb97db0d21b5f1"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101008_b0.1_s20260930.json",
+      "sha256": "bd7ebc0d701537726e264ead313e4167f562cb6dec9bac9ec120a917b59246f2"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101008_b0.1_s20261001.json",
+      "sha256": "26077c23be151033de59e29569f443e0b7047f959c927f98974fed11f478fa1e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101008_b0.1_s20261002.json",
+      "sha256": "e66e0f3ac3dd38a4758c642aa23a767ec3c709cda2a4a6f13d79b097aaeef6e8"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101008_b0.1_s20260930.json",
+      "sha256": "df61fc171f025b970a12dfda774995d77b9a4368e727143847d957e1da02f672"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101008_b0.1_s20261001.json",
+      "sha256": "1e7606fe628971296c2c7687e3624d674a9e05f8e5ca39e187693b84c2c3bb8c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101008_b0.1_s20261002.json",
+      "sha256": "88702408ac1dac337a8d63c41fbd5f5d8c8eaabbedddf8cfdb3db214faf4d06d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101008_b0.25_s20260930.json",
+      "sha256": "381f3b779620f176b32a557cd63888a20667deb6ae292d3349cee37990139556"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101008_b0.25_s20261001.json",
+      "sha256": "a862549ccff2df2f38073c08831166fcf020000787dbb858d8a386d150bf94bf"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101008_b0.25_s20261002.json",
+      "sha256": "fe07dacb8d8452313cc22b18117f0e78f96a7b27488854ba45139f816a6f70bc"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101008_b0.25_s20260930.json",
+      "sha256": "846f4a71f7b7df8f233bb839daafd799fb376511bfd10adc56f8ddca17d27253"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101008_b0.25_s20261001.json",
+      "sha256": "d14c712e08693d9669139feedb1c3ed1ba8af6d9415be655cccdc42c7f50e10d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101008_b0.25_s20261002.json",
+      "sha256": "76ae5b944b1f441e8dac5f804c9bdb224ac94e2264c0be7abab64015b3e1e658"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101008_b0.25_s20260930.json",
+      "sha256": "4409434767b2c15a471b2abbf157ffe3ddc7cf63049b485490b78041c69f50e8"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101008_b0.25_s20261001.json",
+      "sha256": "9fc89bfce8dcad3452a3cfd1ccb092b2b5ffa39e88eafb3a5c9dc19bcf776505"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101008_b0.25_s20261002.json",
+      "sha256": "51782c98360479f13f834c5b11d35547e47d083f2546c1e3200d159e5150f8a0"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101008_b0.25_s20260930.json",
+      "sha256": "ac15db3547ee1dc2e05e3c15df14a38fed962a94dc68722abe6ef4036583baeb"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101008_b0.25_s20261001.json",
+      "sha256": "9806f1df82ba7a1a2e6427f7cae33e11547c778a9ee3a22adf42f15252329a78"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101008_b0.25_s20261002.json",
+      "sha256": "a6bae44d3ae1c0fcad1b85ec993e76995a2b6f47939ac82a94d77c09469b610c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101008_b0.5_s20260930.json",
+      "sha256": "df3193c8da424c2a5ff035f6c975ba3041a5ae21bd3ff75161ce832cb5eac09d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101008_b0.5_s20261001.json",
+      "sha256": "d2521caa958cb4c1425e839c246c6ec56f809ec056df47d432326a5fc0f7d444"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101008_b0.5_s20261002.json",
+      "sha256": "f68293ee20e29a96b7e54d2a93c0e12549db6505bd79f9910d29a72bc07dff47"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101008_b0.5_s20260930.json",
+      "sha256": "1f05136d487852b6755ebd6eaf0186b9f77b19381d7149afa46bb6a428233316"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101008_b0.5_s20261001.json",
+      "sha256": "fa7f48d3a1ab069b434cd024ea02fc536caecac4dae8e7416fd0def9007fb89d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101008_b0.5_s20261002.json",
+      "sha256": "07194205f1c3b28757b6b7e8a003d9b414e528560653b9f535fa2385cceb269e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101008_b0.5_s20260930.json",
+      "sha256": "1c8359844fc25352895141ade20f57e750fe669b069717bfcae0a76d3865d327"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101008_b0.5_s20261001.json",
+      "sha256": "4c310fc9c52c32236da01125da3488998165a679ed46e4fb2dff802077d7007e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101008_b0.5_s20261002.json",
+      "sha256": "9c7f56ca5c7c78e610c05fe1a870c35421aa9658b0f82951fb5f6d4ccea57d7c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101008_b0.5_s20260930.json",
+      "sha256": "edd1cf1a72890505d3aaee2cbf5abed1a9b681b47135fe6ee654c73ddc54796e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101008_b0.5_s20261001.json",
+      "sha256": "ed1ea9ac0faea4ef61e99f562d07106d30becde571392397e4bbbd5a8f6ce913"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101008_b0.5_s20261002.json",
+      "sha256": "52acdb07dbd168273a9034aea69e95a03d3854ec0ce19c15a7d80f120ab7697f"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101008_b0.75_s20260930.json",
+      "sha256": "3976db61e8a5f664211b2345d20925ffce46b0a5492450541c2797bcac8222bb"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101008_b0.75_s20261001.json",
+      "sha256": "d91b4ad0f34c2c11711bf34af20240f23db6a0fc426a10b69a2526ae6fef9164"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101008_b0.75_s20261002.json",
+      "sha256": "e0d5ae2edbb2567623ff8ba7ef7b008e04040cfd5d6a41a37d5fd41d9e453e37"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101008_b0.75_s20260930.json",
+      "sha256": "67dc169d8ca70d5ae3c465f38f413cf5ad9a903b81c72a9196acaf87f6a29c0c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101008_b0.75_s20261001.json",
+      "sha256": "2f440d9fdda88660c4195dacf94511063214659b92ba53a0f3230d8d9e01b035"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101008_b0.75_s20261002.json",
+      "sha256": "444fe71986a883e52f81bca567289701e2848854d52778006adbf7dc2c7068f1"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101008_b0.75_s20260930.json",
+      "sha256": "01a4897983b5d1a156c0c19879c330d28baba4cd36274164a8ab07b6013ba6c3"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101008_b0.75_s20261001.json",
+      "sha256": "07a9988ffcb866ced2a93543d80f9dfa0c52ef756d84cddacc7db4f071f9bea1"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101008_b0.75_s20261002.json",
+      "sha256": "1a1e353dcebb75d65bea4017763a4a4f5dbebdaa03ef052d8f6b9461c3d598ca"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101008_b0.75_s20260930.json",
+      "sha256": "dc14198d08b56e953f05562c0a9159229d65114cf8b87da8483bdda57570ab06"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101008_b0.75_s20261001.json",
+      "sha256": "57c64a31b30fb285a44c6ee74635da77fe9ec5432ecc056021b6fdc792c4150c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101008_b0.75_s20261002.json",
+      "sha256": "4c52b8354e21ca766c422dbe6969a8efe41f6f76a9ac5eb477ab3e5823a6e523"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101009_b0.1_s20260930.json",
+      "sha256": "cacb52fa0e6144507bb8d5c3952e415ba5aac20b95300fa6d19469a4d379806c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101009_b0.1_s20261001.json",
+      "sha256": "c75a72ce4ae3bf652bab8cdfa19ef605ccdb9300a0bac783b114bce44aa65818"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101009_b0.1_s20261002.json",
+      "sha256": "5d806facda12d8be287e1c7c34ee860dd55c9c4f34d7adcebafc6c4b023d1e96"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101009_b0.1_s20260930.json",
+      "sha256": "2ff8287c5cb8d9087ec1c18e4586827838eb2e66587244082b09509be6641c29"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101009_b0.1_s20261001.json",
+      "sha256": "f6eaf85c25351f9552571532bd2f258ed9aaf638be2796c61d0ca94d432c5830"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101009_b0.1_s20261002.json",
+      "sha256": "b848926f9ab6654013ebb31f3acd57c1116bf76200ecb6ff84eed4e7624fcfe4"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101009_b0.1_s20260930.json",
+      "sha256": "c6b5a22cefef69a90c849f82ae67f73ae2f9a3a11a12d10562e314e69eec90b2"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101009_b0.1_s20261001.json",
+      "sha256": "1973e8209f1b7b8ba4ea6a1afd9384b54d963fd26dd77a0de03fdf486f2a6762"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101009_b0.1_s20261002.json",
+      "sha256": "92e617b1f07318aa95d2d9ad690f94ef4f92c6cead9c8e5c6cac243da4cc4f47"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101009_b0.1_s20260930.json",
+      "sha256": "c42702fd8503a5b66872f8daf9394672dbea3ab659d6e7012f83affd633a7c28"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101009_b0.1_s20261001.json",
+      "sha256": "d9874d8e97a52d0de7bb90fcc6dbd037474a8d7f4369d2ce9ee0046a16beb4e9"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101009_b0.1_s20261002.json",
+      "sha256": "9cfbf9751ffdb6632870b3113187893e09ef3da74ce1a765e1401205cbb29e11"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101009_b0.25_s20260930.json",
+      "sha256": "bc34c76058de87e786cd1748edb80c05435aaf8602a818e5452a56105b812c6e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101009_b0.25_s20261001.json",
+      "sha256": "8097f1d401e2e62117f1baae236e9f1a7bf8db05a6c1c5780bd60b691ca1bbb0"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101009_b0.25_s20261002.json",
+      "sha256": "199f094a3169846896d4110ba5bad5af237f5bf925ee4366bf1850a4a6b6ad48"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101009_b0.25_s20260930.json",
+      "sha256": "64aec323a483590f4215769e1d4a1d459bae3cee906919f9791eaefea495e187"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101009_b0.25_s20261001.json",
+      "sha256": "bc76576025a0af576bac53aba9e64666aaa80a04146a2d462d7bf32d1d4543d6"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101009_b0.25_s20261002.json",
+      "sha256": "2e62897acb6d251f44f4597d35f972d87467a8bc086606b26f9d9b1fca5c76c9"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101009_b0.25_s20260930.json",
+      "sha256": "bcc88b1f39cee7198d78bc49fcc4831333b763278c21fd055730b08046fae90c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101009_b0.25_s20261001.json",
+      "sha256": "23a51964c42c5f34f7f10b3b19e441cf438048784205579ec5a82f0fa6b523da"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101009_b0.25_s20261002.json",
+      "sha256": "ffe34062142662a25b783d8d515656a8115e5d2e9fa024ce6fdb8dac36699d2d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101009_b0.25_s20260930.json",
+      "sha256": "9e1cb037ed5e3aca38aa239dec43ab3963fcdcb9ffc80f5d518ceb9b96e3f1d5"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101009_b0.25_s20261001.json",
+      "sha256": "19878c70ebfd5411bc5c69306afd0d084c5064fd5c91b00e825a71b97366d722"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101009_b0.25_s20261002.json",
+      "sha256": "a3619ceb8cacae1b9e17d31a1babe323327fc3a69c745ae3caa9f1aa692f29c1"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101009_b0.5_s20260930.json",
+      "sha256": "ebcc0dc901b1b1e2e7d35be5088f6b7f5ba5ed36e3b969e7d271f61676fd0657"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101009_b0.5_s20261001.json",
+      "sha256": "36af25e4111cf202cc9980ee2b490c2dd30e7b53ea33c789fbf474cec1fbf705"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101009_b0.5_s20261002.json",
+      "sha256": "0f6f2412eb9cf002e5df32a314497957f76c659b4f75ed1b4f7ba0c805b1a792"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101009_b0.5_s20260930.json",
+      "sha256": "1331be5836af0919d4b7c47c60080c66a18fa9c7fd534e3766d867115ec62609"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101009_b0.5_s20261001.json",
+      "sha256": "fb8d11448e178762038e17f849643008171558dfcc269bf98248e9bc321725db"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101009_b0.5_s20261002.json",
+      "sha256": "0d1b097cbd5f9c225333cd18d263da8f3467d7b0222c46a2311f45a7f4b6a683"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101009_b0.5_s20260930.json",
+      "sha256": "63b74d7cc71686641eaa0cbb327ceff247200d4cd9d441c7de4f01df4a3f2bd6"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101009_b0.5_s20261001.json",
+      "sha256": "2b3d54344d18eb816da7bc5c45731a20be558e98d0afdf86d0d30670ffb4f50e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101009_b0.5_s20261002.json",
+      "sha256": "6183cebddda8d4de3277d6d024c240e899292a67a0a364fadb606c5e13b06fc5"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101009_b0.5_s20260930.json",
+      "sha256": "f063c16c86c7aefc3312ca51c059ccc3f3aeda627876d8154570dbe96296d259"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101009_b0.5_s20261001.json",
+      "sha256": "6998216876340fd89d182a25455254d24f8d9c86de6794ea192305a78e809a17"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101009_b0.5_s20261002.json",
+      "sha256": "8c34e154e69bab01afa609836db3cf5f05117485cbad3f116654584a2f9f6e85"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101009_b0.75_s20260930.json",
+      "sha256": "ea483c0fb1fb59d550d7d25b8895df5b2a3288cc5e719b6244fcbe36be863833"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101009_b0.75_s20261001.json",
+      "sha256": "c23e48d4bdf478d9511690d9d8eebac8a74935b5fc36fb7e2f443af14192a330"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101009_b0.75_s20261002.json",
+      "sha256": "201ecf084696b03ce0cc1c6e1e568d9cdee4376759203c7e17063749e6146cc3"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101009_b0.75_s20260930.json",
+      "sha256": "ecd4d2396684910dd6457e84f7c6d34be0efbc0f7bec1204aea15e6a96ca627e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101009_b0.75_s20261001.json",
+      "sha256": "dc00e6caf10989fefa15bf5c0151d8f6c7349e306f0ae2424a8165f91aad032a"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101009_b0.75_s20261002.json",
+      "sha256": "fb1e0fb6edf11aafff5ea3bac7810e5c497a83271b5569053f59a9cb354887f8"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101009_b0.75_s20260930.json",
+      "sha256": "c9dbc08ae4b19fc4c8cc371dc62715450bf134da9edcf5fc602bd6f5c4df11da"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101009_b0.75_s20261001.json",
+      "sha256": "10711d2a0d44634e598f3217e627abd82a26942f9f52854d3b592983cc243791"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101009_b0.75_s20261002.json",
+      "sha256": "2fcf4e7899986852657adb521d3e08d50e4b0da13eff8501cb624109c2a67818"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101009_b0.75_s20260930.json",
+      "sha256": "4ffb86ff1cb3527c2867676b22f3b8dc79e77b9cb71f8ab775a062387ddef5ef"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101009_b0.75_s20261001.json",
+      "sha256": "e92d92fd6aa8cd3a2ac2ef9bdc274ae4148d80d671b217d93a5b84e3ffe46e30"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101009_b0.75_s20261002.json",
+      "sha256": "cf40d22ba3505c7d9dfbe23eabe5c53aad5e2c4678571e4accfc09dff7e52df3"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101010_b0.1_s20260930.json",
+      "sha256": "ac361474e76e0923d5a1a17038c7182b3b8e43bf5f7a57a5aa51676ac8b91c61"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101010_b0.1_s20261001.json",
+      "sha256": "249bfce30cd222f36789d54c2aa158e6dd771f45b91684ada592d252caa04543"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101010_b0.1_s20261002.json",
+      "sha256": "487ad99565b0633ac6a31b14bc6cf59040ab1dfdfdeb14ab50f2f68455f83805"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101010_b0.1_s20260930.json",
+      "sha256": "be3fa3ca590e69cd17acb43267686d39d76ce831246b15bbfd57e789f544b721"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101010_b0.1_s20261001.json",
+      "sha256": "bd30c194e567cec8084f43b1fb41c2205b6d47b7a1366ec0278f49e23e78011c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101010_b0.1_s20261002.json",
+      "sha256": "cb726f492e0c099aa874f08a7440abba4a019fc6b609d5be90338e401b9a31b7"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101010_b0.1_s20260930.json",
+      "sha256": "e08f1b7b004c133ca9e19e7931e5e6bbe5de4ca71381e79a85f097c4b87c1970"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101010_b0.1_s20261001.json",
+      "sha256": "9f8d34dc5c3962cd31e0693b915028fbe9f65ae51ad807097f911bceaf7c888a"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101010_b0.1_s20261002.json",
+      "sha256": "8ee714ba5de8b013da026bb3295c4a4d35eca7aebfb6c8bd91ea20e8b2f5b405"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101010_b0.1_s20260930.json",
+      "sha256": "d36efe92afa0e5d60bd49827854f83d8c495c7e31b213f02ace98e5a48250bdf"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101010_b0.1_s20261001.json",
+      "sha256": "82b4707904439c01efdf8854991f68b772ebbbb3f27c575627bed19f760b897c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101010_b0.1_s20261002.json",
+      "sha256": "834cbe2fba72f839d2353b38f0fa4c9ae24f9697198f7cfb906e981466eed83b"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101010_b0.25_s20260930.json",
+      "sha256": "2d6fe5a3fa6957525a5055cd1b037380e6b61d2b77cf1b2f0e878bd500ce1843"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101010_b0.25_s20261001.json",
+      "sha256": "ac7f1da3fa82c6c0700b1e4cf1d9cb238d0d5ce0d051d02d4456ab9644d3fcf7"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101010_b0.25_s20261002.json",
+      "sha256": "c4b73cb574eb857f576c25427b1b5a10d1e4216c88c5670f0e54dd4b4a18b4a4"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101010_b0.25_s20260930.json",
+      "sha256": "0344f29ff3df90d13d8ced370def78683d05c2dd5920c98ce1a1c27824a7f629"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101010_b0.25_s20261001.json",
+      "sha256": "e430209fce18eb4ffc1df8fd194c7388f899edbb1b8f2c9becbc43c5fe1c6111"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101010_b0.25_s20261002.json",
+      "sha256": "efb13748e03b013bcc44471c0a8ec1e635c1240758af0e4c7f69ae59c883387a"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101010_b0.25_s20260930.json",
+      "sha256": "20591a121f5ea49b50eb1bcf9327b3c2778d6c152ee6a86513c2477b30e6b2d5"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101010_b0.25_s20261001.json",
+      "sha256": "f7721262c9ee4027ff72be160e9d00a5f7ae6bad9319d3886e1e6a1dfd1613b3"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101010_b0.25_s20261002.json",
+      "sha256": "34fd677bb2f13456b01a574339c522c4c0f461327c06b28299909eb815dd317a"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101010_b0.25_s20260930.json",
+      "sha256": "559dec6479e66a9165703a027f22f9e3e2c7eca2f6e6c2d502118d8658a3f860"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101010_b0.25_s20261001.json",
+      "sha256": "0d833aedb2a642a148fac0852fae6011f3ee3a9a26dd0987b308effc88e940b0"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101010_b0.25_s20261002.json",
+      "sha256": "0cc3f8a71fd46f44fb953b5ee94b74d809dbd86f117b4d8490d2583c57ba9034"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101010_b0.5_s20260930.json",
+      "sha256": "57ab3262c5d99c779845bc02ed7612b03f39b55a8827b1cb6d184b67dbdee0ac"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101010_b0.5_s20261001.json",
+      "sha256": "8aab74628ac829a3894beec843fa9f406a09c2c2d1b023ba7947a6229378f392"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101010_b0.5_s20261002.json",
+      "sha256": "2deb55f65e8f8eb64dbb159a1ad866ee794b88370f2b291d48289d4ead38c7e8"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101010_b0.5_s20260930.json",
+      "sha256": "4ff5e265ab17e444d867a2673d7d6c36e13605dfb20710a211b2e9c4f453793c"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101010_b0.5_s20261001.json",
+      "sha256": "e19ae6eedd9804f9371fd12ac676d193558e6cfe3fbfc007e6b4f50c87191f1e"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101010_b0.5_s20261002.json",
+      "sha256": "6a022478d38d7ae6fdc30d03f5925551a8a2375b56a25d4c988a2ff1cd7e3b6f"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101010_b0.5_s20260930.json",
+      "sha256": "5f7eb4a6f6f2570798b8063cd290b1949a99130927d476c3f83245c96d10ec4d"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101010_b0.5_s20261001.json",
+      "sha256": "f4812130eb6b2c722e53a7a0ab4b4254236a54840900324e3fa7e2333e126ac3"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101010_b0.5_s20261002.json",
+      "sha256": "7a0bb453edc36039cab11967fd42aa727a218f23b6a39d570df21fd349697ea6"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101010_b0.5_s20260930.json",
+      "sha256": "0e4833c6e971b996d0af48bbb755acf9d98c727be678925c0119d876270867dd"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101010_b0.5_s20261001.json",
+      "sha256": "e063f2b08aa5136ba9eba27633395087b4b2301a0743ee22d062e4f8882ccd1b"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101010_b0.5_s20261002.json",
+      "sha256": "b472fd47cfe024474af46e2714748c6a3332aae5826f2342f7975ee0f296a638"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101010_b0.75_s20260930.json",
+      "sha256": "9f90d75ca862f6aff8b09638e92a9e6c445ba98d8639997415e134802123a1e8"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101010_b0.75_s20261001.json",
+      "sha256": "80648ae1b1a5c4e5dc8a1f2d4010d5a02b4b1ba8f07e4a7e2d27846cb7619cc1"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_Target_P6_o2026101010_b0.75_s20261002.json",
+      "sha256": "c7bba1214c823fa8c0512a7060e2ae69459c401a2b58dccb245fe5a57362970a"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101010_b0.75_s20260930.json",
+      "sha256": "8f893f243cc606076b6f642d56b0fb4f0a16ab7ac5fa610a0ab23fe0edfa5327"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101010_b0.75_s20261001.json",
+      "sha256": "5e268a7b0ce05053c7fbe00bcedf909d011a799a65538534ba2f1e5d69a9263b"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_o2026101010_b0.75_s20261002.json",
+      "sha256": "8dceb53cf3ebf74cf45bb02db4560661d1be6b4700fa8ace0c65bca483dd4ed5"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101010_b0.75_s20260930.json",
+      "sha256": "4bb4b4fbaba10fcd20d03c5e6c61746c8eff2d345b5656c4d1acf9d0faa75576"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101010_b0.75_s20261001.json",
+      "sha256": "6522d53d36eebba50191eb908ed76423bc65715190a5fa433fea0638170fb67a"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Public_o2026101010_b0.75_s20261002.json",
+      "sha256": "509cabd53a1d0395ec8a357273a195b2e261c28ae29648b5d8c12a3e4aa5972f"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101010_b0.75_s20260930.json",
+      "sha256": "b8c206261be6f5cc58363c352acce55ce97644321b4ed7109940922d99a239b5"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101010_b0.75_s20261001.json",
+      "sha256": "27d958564e44d5d4d78566193a34cd3d0f95c18360b5a8c8997f96fffe2e9599"
+    },
+    {
+      "path": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1/RISK_ridge_PertEMA_native_control_Support_o2026101010_b0.75_s20261002.json",
+      "sha256": "2574d9aa1c2bdd16044f0bfbb7cf5482553ff96c2aab013d79bbb941ac252f29"
+    }
+  ],
+  "confirmation_truth_read": false,
+  "public_coverage_preconfirmation_sha256": "dfb30d600b2a38c4e3130ae47f568d33f2beacfcc45912171e6d70c2cc5db28e",
+  "public_fallback_precheck_sha256": "48a568959667a2789a64885445f3031fe75695ce0eba0bfa07025ec39de07365",
+  "zero_target_error_supervision_scope": "PublicRule risk fitting/selection/calibration",
+  "adopted_system": {
+    "method": "PublicRule",
+    "no_history": "training-feature CDF Amplitude fallback",
+    "Source_enabled": false,
+    "Target_enabled": false
+  },
+  "scoring_entrypoint_sha256": "3390f3441d061d9f6cc69c1afcb0a5c9cf7b1347d7d2224b8e7f34d9365201d0",
+  "qualification_error_use_separate": true,
+  "source_study_is_other_study": true
+}

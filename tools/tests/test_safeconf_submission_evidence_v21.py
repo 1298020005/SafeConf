@@ -177,3 +177,34 @@ def test_kolf_fallback_guard_rejects_existing_confirmation_event():
                 raise AssertionError('fallback must be sealed after confirmation access')
         finally:
             fallback.OUT = original
+
+
+def test_common_public_axis_matches_raw_count_reconstruction_without_zero_filling():
+    from tools.safeconf_continual.public_axis import common_axis_effect
+    control=np.asarray([17.,31.,9.,43.])
+    treated=np.asarray([[7.,13.,21.,37.],[41.,6.,18.,25.]])
+    baseline=np.log1p(1e4*control/control.sum())
+    prediction=np.log1p(1e4*treated/treated.sum(1,keepdims=True))-baseline
+    original=prediction.copy();mask=np.asarray([True,False,True,True])
+    actual,clipped=common_axis_effect(prediction,baseline,mask)
+    expected=np.log1p(1e4*treated[:,mask]/treated[:,mask].sum(1,keepdims=True))
+    expected-=np.log1p(1e4*control[mask]/control[mask].sum())
+    np.testing.assert_allclose(actual,expected,atol=1e-12,rtol=1e-12)
+    np.testing.assert_array_equal(prediction,original)
+    np.testing.assert_array_equal(clipped,[0.,0.])
+    assert actual.shape==(2,3)
+
+
+def test_supervisor_recognizes_owned_relative_script_path():
+    import sys,subprocess
+    from pathlib import Path
+    from tools.scripts.supervise_safeconf_submission_v21 import alive_owned
+    root=Path(__file__).resolve().parents[2]
+    relative=Path('tools/safeconf_continual/submission_evidence.py')
+    child=subprocess.Popen([sys.executable,'-c','import time; print("ready",flush=True); time.sleep(10)',str(relative)],cwd=root,stdout=subprocess.PIPE,text=True)
+    try:
+        assert child.stdout.readline().strip()=='ready'
+        assert alive_owned(child.pid,root/relative)
+        assert not alive_owned(child.pid,root/'tools/scripts/run_safeconf_gladstone_v21.py')
+    finally:
+        child.terminate();child.wait(timeout=5)

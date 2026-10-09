@@ -1,0 +1,45 @@
+{
+  "status": "FROZEN",
+  "fit_role": "predictor_train",
+  "predictor_parameters": {
+    "run_id": "external_kolf_panel1400_v1",
+    "public_error_supervision": 0,
+    "source_error_model_enabled": false,
+    "new_large_upstream_training": 0,
+    "new_gpu_hours": 0,
+    "cpu_threads": 4,
+    "predictors": "fixed frozen scGPT gene embeddings → training-gene PCA50 → Ridge100 / centered MLP50-256-output",
+    "pretrained_gene_embeddings_are_not_full_scGPT_perturbation_predictions": true,
+    "ridge_alpha": 100,
+    "mlp_lr": 0.001,
+    "max_optimizer_steps": 300,
+    "stopping": "upstream-only10% gene holdout; patience30",
+    "checkpoint_path": "/home/yyf/archive/code/20260519_0958_home_cleanup/moved_top_level/codex_scgpt_attnres_workspace/checkpoints/whole-human",
+    "checkpoint_sha256": "6cb5d451ab5c4b33eb673adbe4fddc61d2389df1b89b7651a9fe2e557572b922",
+    "vocabulary_sha256": "acca93d114ca62c3f0f50debbd23e8c87f0714f4737764454f6b2b13f2e8580f",
+    "checkpoint_finetuning": false,
+    "fresh_role_hash": "45f3cdd8b9e78acaada37c64810679a3880a9461c4bdb307290a7bee7868de14",
+    "output_contract_sha256": "aa4a77d6b44f57f0d0698608482aa64a44395b00d9a40cd3158e24fb13c348d1",
+    "gene_clusters": 1200,
+    "competence_gate": "original v2.1 unchanged,95%upper<=2%; per-state prediction variance>=1%",
+    "confirmation_before_risk_freeze": false,
+    "target_capability_error_cost_separate": true,
+    "sparse_locator_rows_used_for_role_mask_only": true
+  },
+  "confirmation_truth_read": false,
+  "prediction_sha256": {
+    "ridge": "223fb07f3f73964fd7741817993c3215ce12b8bada5bb728f372c7fb7687775b",
+    "mlp": "cbfadcbd97b367624dfe616a46f2072692ba52578b788c8f4b81ad96b5165f56"
+  },
+  "predictor_artifact_sha256": {
+    "PREDICTOR_FIT_LEDGER.json": "dd9a2ee92fed9f052a43cbfbfc16fb2b5e33dea8925045ce9a9aa0fcf4161489",
+    "CONTROL_FEATURES.npz": "bfd7583555ca7c144b46184362beeb2899989b1876c85f140c585456df6155fd",
+    "MLP_KOLF2.1J_20260930.pt": "edd53fac971919d95b4d0f85f3e2c98ad96380607822ee669321cb525891ca38",
+    "MLP_KOLF2.1J_20261001.pt": "6256ba5cdc163e73d78a099b179f769434a979f48c1047937f2a715a9b71680d",
+    "MLP_KOLF2.1J_20261002.pt": "0e2427fc28b796743ac978bd4009d29de9a3e482e4d61f02351a0f581fb16f89",
+    "RIDGE_KOLF2.1J.npz": "b40cc3bf44534431768626e31a91faadd0a94ed97193f04e8f4abb7a56e3e057"
+  },
+  "task_roles_sha256": "45f3cdd8b9e78acaada37c64810679a3880a9461c4bdb307290a7bee7868de14",
+  "MLP_primary": "three-seed ensemble; seeds not independent biology",
+  "input_isolation_sha256": "bcf92ae183824ab9db4960bcddd3d9f6f59c2c0255085dec46c1e2e49d8eae59"
+}

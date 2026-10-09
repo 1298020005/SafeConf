@@ -1,0 +1,69 @@
+{
+  "status": "COMPLETE",
+  "n_tasks": 300,
+  "n_clusters": 300,
+  "predictors": [
+    "ridge"
+  ],
+  "risk_configuration_changed_after_confirmation": false,
+  "new_gpu_hours": 0,
+  "final_truth_role": "scoring only",
+  "label_equivalent": [
+    {
+      "predictor": "ridge",
+      "method": "PertEMA_native_control",
+      "definition": "primary_95",
+      "budget": null,
+      "right_censored": true
+    },
+    {
+      "predictor": "ridge",
+      "method": "PertEMA_native_control",
+      "definition": "five_budget_sensitivity",
+      "budget": null,
+      "right_censored": true
+    },
+    {
+      "predictor": "ridge",
+      "method": "PertEMA_native_control_Public",
+      "definition": "primary_95",
+      "budget": null,
+      "right_censored": true
+    },
+    {
+      "predictor": "ridge",
+      "method": "PertEMA_native_control_Public",
+      "definition": "five_budget_sensitivity",
+      "budget": null,
+      "right_censored": true
+    },
+    {
+      "predictor": "ridge",
+      "method": "PertEMA_native_control_Support",
+      "definition": "primary_95",
+      "budget": null,
+      "right_censored": true
+    },
+    {
+      "predictor": "ridge",
+      "method": "PertEMA_native_control_Support",
+      "definition": "five_budget_sensitivity",
+      "budget": null,
+      "right_censored": true
+    },
+    {
+      "predictor": "ridge",
+      "method": "Target_P6",
+      "definition": "primary_95",
+      "budget": null,
+      "right_censored": true
+    },
+    {
+      "predictor": "ridge",
+      "method": "Target_P6",
+      "definition": "five_budget_sensitivity",
+      "budget": null,
+      "right_censored": true
+    }
+  ]
+}

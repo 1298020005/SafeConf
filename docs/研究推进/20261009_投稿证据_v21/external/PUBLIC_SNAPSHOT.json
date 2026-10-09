@@ -1,0 +1,12 @@
+{
+  "source_study": "ReplogleWeissman2022_K562_gwps",
+  "target_study_rows": 0,
+  "source_path": "/home/yyf/data/singlecell_perturbation_atlas/official_scperturb/ReplogleWeissman2022_K562_gwps.h5ad",
+  "source_bytes": 8805466154,
+  "output_contract_sha256": "6e50894247637bb1a0c1f5592f4e454d82d072cbf414004934aca5faa8e303c4",
+  "independent_record": "one screen/context effect per gene; guides are not independent experiments",
+  "n_supported_genes": 1099,
+  "single_history_dispersion": 0,
+  "wall_seconds": 589.0420436209533,
+  "snapshot_sha256": "8985daf69a5c805f9f414fc47d92345632ccfd7d0dc764eff3c9701eb72f0aef"
+}
