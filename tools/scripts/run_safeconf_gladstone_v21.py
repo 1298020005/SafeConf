@@ -8,7 +8,7 @@ from __future__ import annotations
 import os
 for k in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS'):os.environ[k]='4'
 os.environ['CUDA_VISIBLE_DEVICES']=''
-import argparse,hashlib,json,math,sys,time,importlib.util,concurrent.futures,fcntl
+import argparse,hashlib,json,math,sys,time,importlib.util,concurrent.futures,fcntl,shutil
 from pathlib import Path
 import h5py,numpy as np,pandas as pd
 from scipy import sparse
@@ -29,7 +29,14 @@ CONTEXTS=['Rest','Stim8hr','Stim48hr']
 
 
 def remote():
-    return MeteredHTTPFile(URL,OUT/'range_cache/pseudobulk',OUT/'DOWNLOAD_RESOURCE_LEDGER.json')
+    shared=OUT/'SHARED_RESOURCE_CACHE.json'
+    paths=json.loads(shared.read_text()) if shared.exists() else {}
+    return MeteredHTTPFile(URL,paths.get('cache',OUT/'range_cache/pseudobulk'),resource_ledger_path())
+
+
+def resource_ledger_path():
+    shared=OUT/'SHARED_RESOURCE_CACHE.json'
+    return Path(json.loads(shared.read_text())['ledger']) if shared.exists() else OUT/'DOWNLOAD_RESOURCE_LEDGER.json'
 
 
 def metadata():
@@ -191,7 +198,7 @@ def prepare_target(roles):
         'forbidden_confirmation_rows_read':0,
         'authorized_confirmation_query_rows':len(selected) if 'confirmation' in roles else 0,
         'effect_contract_sha256':sha(OUT/'OUTPUT_CONTRACT.json'),'effects_sha256':sha(OUT/f'{name}_EFFECTS.npy')})
-    ledger_path=OUT/'DOWNLOAD_RESOURCE_LEDGER.json'
+    ledger_path=resource_ledger_path()
     with ledger_path.with_suffix('.lock').open('a') as lock:
         fcntl.flock(lock.fileno(),fcntl.LOCK_EX)
         ledger=json.loads(ledger_path.read_text())
@@ -284,6 +291,11 @@ def train_predictors():
     if (OUT/'PREDICTOR_FREEZE.json').exists():
         if not (OUT/'PREDICTION_INPUT_ISOLATION.json').exists():raise RuntimeError('predictor freeze lacks input isolation receipt')
         return
+    # Completed fits precede prediction QA. Resume from their saved weights,
+    # rather than retraining all models after an inference-only fault.
+    if (OUT/'PREDICTOR_FIT_LEDGER.json').exists():
+        freeze_saved_predictors()
+        return
     import torch
     torch.set_num_threads(4)
     control_features();tasks=pd.read_parquet(OUT/'TRAIN_FEEDBACK_TASKS.parquet')
@@ -326,25 +338,83 @@ def train_predictors():
     for name,p in prediction.items():np.save(OUT/f'{name}_ALL_PREDICTIONS.npy',p)
     np.save(OUT/'CONDITION_MEAN_ALL_PREDICTIONS.npy',mean_prediction)
     write_json(OUT/'PREDICTOR_FIT_LEDGER.json',fit_records)
-    # Actual reload/inference with removed and poisoned extra truth columns.
-    for name in prediction:
-        subset=target_tasks.iloc[:20].copy()
+    freeze_saved_predictors()
+
+
+def freeze_saved_predictors():
+    """Canonical inference from existing weights, without reading query truth.
+
+    Float32 BLAS uses different reduction orders for different batch sizes.
+    Evaluate the saved float32 parameters in float64 and cast the output once;
+    retain the original bulk predictions and quantify that numerical change.
+    The registered input-isolation/reload tolerance remains unchanged.
+    """
+    import torch
+    torch.set_num_threads(4)
+    target_tasks=pd.read_parquet(OUT/'TASK_ROLES.parquet')
+    fit_tasks=pd.read_parquet(OUT/'TRAIN_FEEDBACK_TASKS.parquet')
+    records=json.loads((OUT/'PREDICTOR_FIT_LEDGER.json').read_text())
+    z=np.load(OUT/'CONTROL_FEATURES.npz');known_genes=set(z['genes'].astype(str))
+    if len(records)!=len(CONTEXTS)*len(MODEL_SEEDS):raise RuntimeError('incomplete saved MLP fit ledger')
+    artifacts=[OUT/'PREDICTOR_FIT_LEDGER.json',OUT/'CONTROL_FEATURES.npz']
+    for c in CONTEXTS:
+        known=fit_tasks[fit_tasks.context.eq(c)&fit_tasks.role.eq('predictor_train')&fit_tasks.gene.isin(known_genes)]
+        for seed in MODEL_SEEDS:
+            match=[r for r in records if r['context']==c and r['seed']==seed]
+            if len(match)!=1 or match[0]['fit_gene_hash']!=digest_ids(known.gene):
+                raise RuntimeError('saved predictor training identities do not match frozen roles')
+            artifacts.append(OUT/f'MLP_{c}_{seed}.pt')
+        artifacts.append(OUT/f'RIDGE_{c}.npz')
+    artifact_hashes={p.name:sha(p) for p in artifacts}
+    archive=OUT/'prefreeze_float32_predictions';archive.mkdir(exist_ok=True)
+    audits={}
+    for name in ['ridge','mlp']:
+        path=OUT/f'{name}_ALL_PREDICTIONS.npy';original=archive/path.name
+        if path.exists() and not original.exists():shutil.copy2(path,original)
+        prediction=frozen_predict(name,target_tasks[['gene','context']])
+        if not np.isfinite(prediction).all():raise RuntimeError('nonfinite canonical predictor output')
+        np.save(path,prediction)
+        # Check every context/role, including confirmation metadata, without
+        # supplying or loading any confirmation expression.
+        subset=target_tasks.groupby(['context','role'],sort=False).head(20)
         clean=frozen_predict(name,subset[['gene','context']])
         poisoned=frozen_predict(name,subset.assign(query_truth=1000.,true_error_rmse=-99.))
-        np.testing.assert_allclose(clean,poisoned,rtol=1e-5,atol=1e-7)
-        np.testing.assert_allclose(clean,prediction[name][:20],rtol=1e-5,atol=1e-7)
+        np.testing.assert_array_equal(clean,poisoned)
+        np.testing.assert_allclose(clean,prediction[subset.index],rtol=1e-5,atol=1e-7)
+        audit={'canonical_subset_reload_max_abs_difference':float(np.max(np.abs(clean-prediction[subset.index]))),
+               'poisoned_truth_exact_equal':True,'checked_rows':len(subset)}
+        if original.exists():
+            old=np.load(original);delta=np.abs(old-prediction)
+            audit.update(original_prediction_sha256=sha(original),original_archive=str(original),
+                float32_to_canonical_max_abs_difference=float(delta.max()),
+                float32_to_canonical_rmse=float(np.sqrt(np.mean(delta.astype(float)**2))))
+        audits[name]=audit
+    for p in artifacts:
+        if sha(p)!=artifact_hashes[p.name]:raise RuntimeError('predictor parameters changed during inference-only recovery')
+    target_tasks.to_parquet(OUT/'PREDICTION_TASKS.parquet',index=False)
+    write_json(OUT/'PREDICTOR_NUMERICAL_RECOVERY.json',{'cause':'float32 MLP matrix reductions differ by query batch size',
+        'action':'canonical float64 CPU inference from unchanged saved float32 parameters; outputs cast once to float32',
+        'new_fits':0,'confirmation_expression_rows_read':0,'predictor_artifact_sha256':artifact_hashes,
+        'reload_rtol':1e-5,'reload_atol':1e-7,'prediction_audits':audits})
     write_json(OUT/'PREDICTION_INPUT_ISOLATION.json',{'input_fields':['gene','context'],
         'perturbed_query_expression_supplied':False,'confirmation_expression_rows_read_before_prediction_freeze':0,
-        'training_matrix_roles':['predictor_train'],'metadata_extra_truth_columns_ignored':True})
+        'training_matrix_roles':['predictor_train'],'metadata_extra_truth_columns_ignored':True,
+        'inference_precision':'float64 computation / float32 saved outputs','all_context_role_groups_checked':True,
+        'numerical_recovery_sha256':sha(OUT/'PREDICTOR_NUMERICAL_RECOVERY.json')})
     write_json(OUT/'PREDICTOR_FREEZE.json',{'status':'FROZEN','fit_role':'predictor_train',
         'predictor_parameters':CONFIG['external_predictors'],'confirmation_truth_read':False,
-        'prediction_sha256':{name:sha(OUT/f'{name}_ALL_PREDICTIONS.npy') for name in prediction},
+        'prediction_sha256':{name:sha(OUT/f'{name}_ALL_PREDICTIONS.npy') for name in ['ridge','mlp']},
+        'predictor_artifact_sha256':artifact_hashes,
         'task_roles_sha256':sha(OUT/'TASK_ROLES.parquet'),'MLP_primary':'three-seed ensemble; seeds not independent biology',
         'input_isolation_sha256':sha(OUT/'PREDICTION_INPUT_ISOLATION.json')})
 
 
 def frozen_predict(name,metadata):
     import torch
+    if name not in ['ridge','mlp']:raise ValueError('unregistered frozen predictor')
+    if not {'gene','context'}.issubset(metadata.columns) or not metadata.context.isin(CONTEXTS).all():
+        raise ValueError('query must contain registered gene/context metadata')
+    torch.set_num_threads(4)
     z=np.load(OUT/'CONTROL_FEATURES.npz');emb={str(g):e for g,e in zip(z['genes'],z['embedding'])}
     n_genes=json.loads((OUT/'OUTPUT_CONTRACT.json').read_text())['n_output_genes']
     result=np.empty((len(metadata),n_genes),np.float32)
@@ -354,19 +424,26 @@ def frozen_predict(name,metadata):
         ridge=np.load(OUT/f'RIDGE_{c}.npz');result[selected]=ridge['mean']
         known=np.asarray([i for i in selected if metadata.iloc[i].gene in emb],int)
         if not len(known):continue
-        x=np.asarray([emb[metadata.iloc[i].gene] for i in known],np.float32)
-        if name=='ridge':result[known]=x@ridge['coef'].T+ridge['intercept']
+        x=np.asarray([emb[metadata.iloc[i].gene] for i in known],np.float64)
+        if 'x_mean' in ridge.files:x=(x-ridge['x_mean'])/ridge['x_scale']
+        if name=='ridge':result[known]=x@ridge['coef'].astype(np.float64).T+ridge['intercept'].astype(np.float64)
         else:
             predictions=[]
             for seed in MODEL_SEEDS:
                 net=torch.nn.Sequential(torch.nn.Linear(50,256),torch.nn.ReLU(),torch.nn.Linear(256,n_genes))
-                net.load_state_dict(torch.load(OUT/f'MLP_{c}_{seed}.pt',map_location='cpu',weights_only=True));net.eval()
+                net.load_state_dict(torch.load(OUT/f'MLP_{c}_{seed}.pt',map_location='cpu',weights_only=True));net.double().eval()
                 with torch.no_grad():predictions.append(net(torch.tensor(x)).numpy())
-            result[known]=np.mean(predictions,axis=0)
+            result[known]=np.mean(predictions,axis=0)+(ridge['mean'] if 'x_mean' in ridge.files else 0.)
     return result
 
 
 def qualification():
+    freeze=json.loads((OUT/'PREDICTOR_FREEZE.json').read_text())
+    if sha(OUT/'TASK_ROLES.parquet')!=freeze['task_roles_sha256']:raise RuntimeError('predictor query roles changed after freeze')
+    for name,digest in freeze['prediction_sha256'].items():
+        if sha(OUT/f'{name}_ALL_PREDICTIONS.npy')!=digest:raise RuntimeError('frozen predictor outputs changed')
+    for name,digest in freeze['predictor_artifact_sha256'].items():
+        if sha(OUT/name)!=digest:raise RuntimeError('frozen predictor fit artifacts changed')
     tasks=pd.read_parquet(OUT/'TRAIN_FEEDBACK_TASKS.parquet');truth=np.load(OUT/'TRAIN_FEEDBACK_EFFECTS.npy')
     all_tasks=pd.read_parquet(OUT/'PREDICTION_TASKS.parquet').reset_index().set_index('task_id')
     feedback=tasks[tasks.role.eq('feedback')].reset_index()
@@ -444,7 +521,9 @@ def risk_freeze():
     query=task[task.role.eq('confirmation')].reset_index(drop=True);feedback=task[task.role.eq('feedback')].reset_index(drop=True)
     feedback_idx=task.index[task.role.eq('feedback')].to_numpy(int);query_idx=task.index[task.role.eq('confirmation')].to_numpy(int)
     native=['native_prediction_abs_mean','native_control_baseline','native_control_dropout','native_control_donor_variance']
-    native +=[f'native_state_{i}' for i in range(3)]+[f'native_embedding_{i}' for i in range(50)]+['native_training_similarity']
+    native +=[f'native_state_{i}' for i in range(len(CONTEXTS))]+[f'native_embedding_{i}' for i in range(50)]+['native_training_similarity']
+    if CONTEXTS==['KOLF2.1J']:
+        native=P+['native_control_baseline','native_control_dropout','native_control_donor_variance']+[f'native_state_{i}' for i in range(len(CONTEXTS))]+[f'native_embedding_{i}' for i in range(50)]+['native_training_similarity']
     all_scores=[];ledger=[];channel_audit=[];models_written=[];source_snap=sha(OUT/'PUBLIC_COUNTS_EFFECTS.npz')
     for name in passed:
         p=np.load(OUT/f'{name}_ALL_PREDICTIONS.npy');train=features(feedback,p[feedback_idx]);q=features(query,p[query_idx])
@@ -454,6 +533,7 @@ def risk_freeze():
         amp=ecdf_fit(train.predicted_magnitude)
         pub=ecdf_fit(train.public_raw);support=ecdf_fit(train.support_raw)
         transformations={'Amplitude':amp,'Public':pub,'Support':support}
+        if CONTEXTS==['KOLF2.1J']:transformations['HistoryEnergy']=ecdf_fit(train.prior_magnitude)
         native_train, native_query=native_x(train,q,native)
         # training prototypes for the unsupervised similarity heuristic
         sim_train=native_train[:,-1];sim_query=native_query[:,-1]
@@ -461,7 +541,7 @@ def risk_freeze():
         np.savez(OUT/f'{name}_CHANNEL_CDFS.npz',**transformations)
         q['similarity_raw']=sim_query
         rules={};states={};version=name+'::v21::'+source_snap[:16]
-        for method in ['Magnitude','Similarity','HistorySupport','PublicRule']:
+        for method in ['Magnitude','Similarity','HistorySupport','PublicRule']+(['HistoryEnergy'] if CONTEXTS==['KOLF2.1J'] else []):
             cfg={'method':method,'version':version,'channel_cdfs':transformations}
             result=[score_task(row,cfg) for row in q.to_dict('records')]
             rules[method]=np.asarray([r[0] for r in result]);states[method]=[r[1] for r in result]

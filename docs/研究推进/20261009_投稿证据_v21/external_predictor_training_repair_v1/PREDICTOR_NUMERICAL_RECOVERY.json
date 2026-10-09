@@ -1,0 +1,36 @@
+{
+  "cause": "float32 MLP matrix reductions differ by query batch size",
+  "action": "canonical float64 CPU inference from unchanged saved float32 parameters; outputs cast once to float32",
+  "new_fits": 0,
+  "confirmation_expression_rows_read": 0,
+  "predictor_artifact_sha256": {
+    "PREDICTOR_FIT_LEDGER.json": "8e2d4f8080f08212887ae3c08bf99b70ecf242e8d14e409284a8942f179fddd3",
+    "CONTROL_FEATURES.npz": "65d2925adee1fafaf550af702f6c2c6798676369d157a946f6a4e2e702ca4119",
+    "MLP_Rest_20260930.pt": "4d402ec977f84da783a68e53755ce25053d6bbfddc5232fab54c736cced4cb11",
+    "MLP_Rest_20261001.pt": "f4284803c99a412228ca34f5deff115d47b4f10668656072605e9cdd042f724b",
+    "MLP_Rest_20261002.pt": "6a96661e4198178e667445a269732bfa10234c15175d01b671e0092a5738cbe0",
+    "RIDGE_Rest.npz": "ae18bbbacbcd6b3d48cb2c7e929e749f525930758e2a5a00597cb5bf70ad5862",
+    "MLP_Stim8hr_20260930.pt": "3d612ec66f50429af6767fc90a45b129078ad3e6989c2913ae314801f3b1f401",
+    "MLP_Stim8hr_20261001.pt": "23c4e5ddbf67ff16e37a9a0a9450952eded14e9646a68d962d855ed07fb4c0fb",
+    "MLP_Stim8hr_20261002.pt": "bcc10e12c09e4435390d2916d5c421897645a220eb6f4906c228dcb5c7dfe437",
+    "RIDGE_Stim8hr.npz": "ab8c065b460692119488d35c93941e513c2fff3e947e19efc37e8d34a353dc09",
+    "MLP_Stim48hr_20260930.pt": "46d28f8dd0eb5c8e18c1f06e485a95aabbd8ff336af4fbd377eb03f60ea9dfe7",
+    "MLP_Stim48hr_20261001.pt": "7b7fcb36150cb957d874709928fa317a8aeaec5974e002f6f8eb4226ec23011c",
+    "MLP_Stim48hr_20261002.pt": "ff856bc7a23c63c5dd444ae0f6fa5f9aa02589427fed4117a6a3ef9a00f1ebb0",
+    "RIDGE_Stim48hr.npz": "067cec291d8c834c07895fc6045b9aab0243726ebba4c78f9c6b69ba03559afc"
+  },
+  "reload_rtol": 1e-05,
+  "reload_atol": 1e-07,
+  "prediction_audits": {
+    "ridge": {
+      "canonical_subset_reload_max_abs_difference": 0.0,
+      "poisoned_truth_exact_equal": true,
+      "checked_rows": 180
+    },
+    "mlp": {
+      "canonical_subset_reload_max_abs_difference": 0.0,
+      "poisoned_truth_exact_equal": true,
+      "checked_rows": 180
+    }
+  }
+}

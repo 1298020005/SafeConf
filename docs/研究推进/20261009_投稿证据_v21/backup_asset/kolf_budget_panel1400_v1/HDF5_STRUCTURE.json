@@ -1,0 +1,59 @@
+{
+  "obs_keys": [
+    "_index",
+    "batch",
+    "celltype",
+    "channel",
+    "gRNA",
+    "gene_target",
+    "gene_target_ensembl_id",
+    "log1p_n_genes_by_counts",
+    "log1p_total_counts",
+    "log1p_total_counts_hb",
+    "log1p_total_counts_mt",
+    "log1p_total_counts_ribo",
+    "n_UMI_counts",
+    "n_gRNA",
+    "n_gRNA_UMIs",
+    "n_genes",
+    "n_genes_by_counts",
+    "outlier",
+    "pct_counts_hb",
+    "pct_counts_in_top_20_genes",
+    "pct_counts_mt",
+    "pct_counts_ribo",
+    "perturbation",
+    "perturbation_type",
+    "perturbed",
+    "total_counts",
+    "total_counts_hb",
+    "total_counts_mt",
+    "total_counts_ribo"
+  ],
+  "var_keys": [
+    "_index",
+    "feature_types",
+    "gene_ids",
+    "hb",
+    "log1p_mean_counts",
+    "log1p_total_counts",
+    "mean_counts",
+    "mt",
+    "n_UMI_counts",
+    "n_cells",
+    "n_cells_by_counts",
+    "pct_dropout_by_counts",
+    "ribo",
+    "total_counts"
+  ],
+  "layer_keys": [
+    "counts"
+  ],
+  "X_attrs": {
+    "encoding-type": "csc_matrix",
+    "encoding-version": "0.1.0",
+    "shape": "[2659209   37567]"
+  },
+  "source_bytes": 189393177972,
+  "response_values_read": false
+}

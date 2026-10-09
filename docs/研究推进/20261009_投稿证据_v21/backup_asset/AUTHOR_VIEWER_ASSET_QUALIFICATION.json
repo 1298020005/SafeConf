@@ -1,0 +1,19 @@
+{
+  "primary_author_url": "https://y-doctor.github.io/KOLF2.1J_Perturbation_Cell_Atlas/",
+  "primary_metadata_url": "https://y-doctor.github.io/KOLF2.1J_Perturbation_Cell_Atlas/data/panel/all/meta.json?v=36",
+  "n_unique_perturbations": 10167,
+  "n_output_genes": 38606,
+  "author_basic_qc_universe_not_strong_perturbation_subset": true,
+  "response_representation": "int8 quantized mean NTC z scores",
+  "response_scale": 0.04,
+  "numeric_perturbation_response_read": false,
+  "query_response_rows_downloaded": 0,
+  "primary_confirmation_qualification": "REJECT_QUANTIZED_VIEWER_AS_PRIMARY_TRUTH",
+  "reason": "Int8 quantization/clipping and NTC z-score endpoints are not the frozen counts-delta RMSE truth. Viewer proves identifiers and row-addressability, not a substitute high-precision confirmation.",
+  "next_action": "Read only raw-author HDF5 metadata and counts-layer chunk offsets; estimate cost on a predeclared output axis before any response read.",
+  "local_metadata_files": {
+    "AUTHOR_VIEWER_INDEX.html": 15860,
+    "AUTHOR_VIEWER_MAIN.js": 59971,
+    "AUTHOR_PANEL_METADATA.json": 603279
+  }
+}

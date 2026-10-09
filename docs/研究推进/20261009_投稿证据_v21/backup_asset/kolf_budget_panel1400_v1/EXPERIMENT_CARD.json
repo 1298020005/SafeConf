@@ -1,0 +1,18 @@
+{
+  "author_record": "https://api.figshare.com/v2/articles/27261219",
+  "author_file_id": 64650261,
+  "author_MD5": "afd30fde1e6ad32969c29868394385d1",
+  "source_url": "https://ndownloader.figshare.com/files/64650261",
+  "only_basic_qc_not_response_strength_filter": true,
+  "response_values_read": false,
+  "metadata_budget_bytes": 268435456,
+  "wall_seconds_cap": 600,
+  "source_output_axis": "/home/yyf/runtime_artifacts/safeconf_research_20261001/common_gene_axis/GENE_IDS.json",
+  "source_output_axis_sha256": "be612f9c4638146b41eee26f607ab12fbed53b524cda7a76eee36ca554c28f97",
+  "source_defined_panel_size": 1400,
+  "panel_selection": "SHA256(SafeConf-v21-KOLF-resource-panel|gene); no target effects/errors",
+  "cohort_gene_cap": 1200,
+  "gene_min_cells": 20,
+  "download_budget_not_restarted": true,
+  "numeric_confirmation_not_authorized_by_this_preflight": true
+}

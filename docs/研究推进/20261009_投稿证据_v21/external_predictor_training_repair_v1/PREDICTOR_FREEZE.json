@@ -1,0 +1,58 @@
+{
+  "status": "FROZEN",
+  "fit_role": "predictor_train",
+  "predictor_parameters": {
+    "status": "FIXED_BEFORE_REPAIR_DEV_SCORING",
+    "reason": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external/PREDICTOR_FIRST_FAILURE_DIAGNOSIS.json",
+    "original_package": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external",
+    "original_predictors_and_failure_preserved": true,
+    "repair_number": 1,
+    "new_architectures": 0,
+    "new_downloads": 0,
+    "new_gpu_hours": 0,
+    "fixed_inputs": "same 50-dimensional control-only embedding",
+    "ridge": {
+      "alpha": 100,
+      "input_standardization": "training genes only"
+    },
+    "mlp": {
+      "hidden": 256,
+      "learning_rate": 0.001,
+      "max_optimizer_steps": 300,
+      "patience": 30,
+      "initial_last_layer": "zero",
+      "target": "response minus upstream-training context mean",
+      "stopping": "first 10% of upstream gene hashes only, including step-zero baseline",
+      "full_refit": "all allowed upstream genes; chosen step count; three original seeds"
+    },
+    "competence_gate": "unchanged user v2.1; no variance or error tolerance changes",
+    "confirmation_truth_stays_sealed_until_capability_and_risk_freeze": true,
+    "cpu_thread_cap": 4,
+    "wall_seconds_cap": 1800,
+    "sample_or_axis_filtering_after_results": false
+  },
+  "confirmation_truth_read": false,
+  "prediction_sha256": {
+    "ridge": "85cbf32c5360117a47a89f986a5ce545aba9e851dd9bbc607c460439ced8307d",
+    "mlp": "31099e9ce0814bf95cd6c903bb15c887a0f8cfd38293a4173b2b4cf0083ba9bb"
+  },
+  "predictor_artifact_sha256": {
+    "PREDICTOR_FIT_LEDGER.json": "8e2d4f8080f08212887ae3c08bf99b70ecf242e8d14e409284a8942f179fddd3",
+    "CONTROL_FEATURES.npz": "65d2925adee1fafaf550af702f6c2c6798676369d157a946f6a4e2e702ca4119",
+    "MLP_Rest_20260930.pt": "4d402ec977f84da783a68e53755ce25053d6bbfddc5232fab54c736cced4cb11",
+    "MLP_Rest_20261001.pt": "f4284803c99a412228ca34f5deff115d47b4f10668656072605e9cdd042f724b",
+    "MLP_Rest_20261002.pt": "6a96661e4198178e667445a269732bfa10234c15175d01b671e0092a5738cbe0",
+    "RIDGE_Rest.npz": "ae18bbbacbcd6b3d48cb2c7e929e749f525930758e2a5a00597cb5bf70ad5862",
+    "MLP_Stim8hr_20260930.pt": "3d612ec66f50429af6767fc90a45b129078ad3e6989c2913ae314801f3b1f401",
+    "MLP_Stim8hr_20261001.pt": "23c4e5ddbf67ff16e37a9a0a9450952eded14e9646a68d962d855ed07fb4c0fb",
+    "MLP_Stim8hr_20261002.pt": "bcc10e12c09e4435390d2916d5c421897645a220eb6f4906c228dcb5c7dfe437",
+    "RIDGE_Stim8hr.npz": "ab8c065b460692119488d35c93941e513c2fff3e947e19efc37e8d34a353dc09",
+    "MLP_Stim48hr_20260930.pt": "46d28f8dd0eb5c8e18c1f06e485a95aabbd8ff336af4fbd377eb03f60ea9dfe7",
+    "MLP_Stim48hr_20261001.pt": "7b7fcb36150cb957d874709928fa317a8aeaec5974e002f6f8eb4226ec23011c",
+    "MLP_Stim48hr_20261002.pt": "ff856bc7a23c63c5dd444ae0f6fa5f9aa02589427fed4117a6a3ef9a00f1ebb0",
+    "RIDGE_Stim48hr.npz": "067cec291d8c834c07895fc6045b9aab0243726ebba4c78f9c6b69ba03559afc"
+  },
+  "task_roles_sha256": "f2ddb1488dce07bf7443adc61e060dfd48e4eb4025af3ef9c706a4d5e29b0750",
+  "MLP_primary": "three-seed ensemble; seeds not independent biology",
+  "input_isolation_sha256": "d90f6db448ff6f72a8c5d7833259951b6c60b20bb31e095d15289648470dd653"
+}

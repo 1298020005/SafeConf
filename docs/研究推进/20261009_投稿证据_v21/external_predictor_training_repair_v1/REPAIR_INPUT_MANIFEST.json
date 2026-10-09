@@ -1,0 +1,18 @@
+{
+  "inputs": {
+    "OBS_ROLE_REGISTRY.parquet": "a691389faeabf8407823eacce8b0851583431654f2b43389db32c0789e048bc8",
+    "TRAIN_FEEDBACK_READ_RECEIPT.json": "412f5a51d21fce0f377ec9bbfc83ae062d7a2f8aa370cb0af216678d969c157f",
+    "CONTROL_FEATURE_AUDIT.json": "840fd777b9f56501b6776c68bd287cc9e4e8c505db382b5e835b96790d6cb452",
+    "CONTROL_FEATURES.npz": "65d2925adee1fafaf550af702f6c2c6798676369d157a946f6a4e2e702ca4119",
+    "TASK_ROLES.parquet": "f2ddb1488dce07bf7443adc61e060dfd48e4eb4025af3ef9c706a4d5e29b0750",
+    "PUBLIC_SNAPSHOT.json": "30d443b41ac8a27d831cfb95019e51443add2f3c9afdd8142f8695793175bfab",
+    "OUTPUT_CONTRACT.json": "6e50894247637bb1a0c1f5592f4e454d82d072cbf414004934aca5faa8e303c4",
+    "TRAIN_FEEDBACK_EFFECTS.npy": "988bcef94e28ffde022cac6f4ed8aa30da68f86645fbf9c1b796d1e37d2aa619",
+    "PUBLIC_COUNTS_EFFECTS.npz": "8985daf69a5c805f9f414fc47d92345632ccfd7d0dc764eff3c9701eb72f0aef",
+    "TRAIN_FEEDBACK_TASKS.parquet": "f6377fca95ee9484e5579e15e7c91f9f74fa3ce46fc8e03dd2ca5d4366482b5c",
+    "CONTROL_COUNTS.npz": "8110b14f29490e3f11155d142756c51b5ac0b82ea705a0a55b957c0c3cbf96a9",
+    "ROLE_FREEZE.json": "61905d71670935b1a9c45e145e019cde21916df8fe3b5c7056ac06f32b5187cb"
+  },
+  "selection_truth_role": "predictor_train only; feedback error used only for unchanged qualification",
+  "original_competence_sha256": "971d9b12453b8819a883949440fb1c3b58038b5bbe9bcf14141faace25ffef7b"
+}

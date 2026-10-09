@@ -89,3 +89,58 @@ def test_coalesced_range_boundaries_reuse_and_unexpected_full_response():
         try:reader.prefetch_blocks([2])
         except RuntimeError as err:assert 'Range response mismatch' in str(err)
         else:raise AssertionError('must refuse a full-object response to a Range request')
+
+
+def test_saved_predictor_batch_reload_and_truth_independence():
+    import tempfile
+    from pathlib import Path
+    import torch
+    from tools.scripts import run_safeconf_gladstone_v21 as m
+    torch.set_num_threads(4);rng=np.random.default_rng(57);original=m.OUT
+    with tempfile.TemporaryDirectory() as tmp:
+        try:
+            m.OUT=Path(tmp);genes=np.asarray([f'g{i:03d}' for i in range(37)])
+            np.savez(m.OUT/'CONTROL_FEATURES.npz',genes=genes,embedding=rng.normal(0,6,(37,50)).astype(np.float32))
+            (m.OUT/'OUTPUT_CONTRACT.json').write_text('{"n_output_genes":64}')
+            for c in m.CONTEXTS:
+                np.savez(m.OUT/f'RIDGE_{c}.npz',coef=rng.normal(size=(64,50)).astype(np.float32),
+                    intercept=np.zeros(64,np.float32),mean=np.ones(64,np.float32),
+                    x_mean=np.zeros(50,np.float32),x_scale=np.full(50,2.,np.float32))
+                for seed in m.MODEL_SEEDS:
+                    torch.manual_seed(seed);net=torch.nn.Sequential(torch.nn.Linear(50,256),torch.nn.ReLU(),torch.nn.Linear(256,64))
+                    torch.save(net.state_dict(),m.OUT/f'MLP_{c}_{seed}.pt')
+            tasks=pd.DataFrame([{'gene':g,'context':c} for g in [*genes,'unknown'] for c in m.CONTEXTS])
+            for name in ['ridge','mlp']:
+                bulk=m.frozen_predict(name,tasks)
+                ix=np.asarray([0,3,6,17,20,41,88,111,112,113]);subset=tasks.iloc[ix]
+                split=m.frozen_predict(name,subset)
+                np.testing.assert_allclose(split,bulk[ix],rtol=1e-5,atol=1e-7)
+                np.testing.assert_array_equal(split,m.frozen_predict(name,subset.assign(query_truth=999.,true_error_rmse=-8.)))
+                np.testing.assert_array_equal(bulk[-3:],np.ones((3,64),np.float32))
+            try:m.frozen_predict('mlp',pd.DataFrame([{'gene':'g001','context':'unregistered'}]))
+            except ValueError:pass
+            else:raise AssertionError('unknown context must not return uninitialized outputs')
+        finally:m.OUT=original
+
+
+def test_csc_reader_gathers_only_allowed_count_bytes():
+    import tempfile,h5py
+    from pathlib import Path
+    from scipy.sparse import csc_matrix
+    from tools.scripts.run_safeconf_kolf_panel_v21 import permitted_csc_column
+    matrix=np.arange(1,46,dtype=np.float32).reshape(9,5)
+    role_codes=np.asarray([0,1,2,-1,-1,-1,-1,-1,-1])
+    with tempfile.TemporaryDirectory() as tmp:
+        for poison in [False,True]:
+            values=matrix.copy()
+            if poison:values[3:]+=10000
+            sparse=csc_matrix(values);path=Path(tmp)/f'counts_{poison}.h5'
+            with h5py.File(path,'w') as h:
+                g=h.create_group('counts');g.create_dataset('data',data=sparse.data,chunks=(8,))
+                g.create_dataset('indices',data=sparse.indices.astype(np.int64),chunks=(8,))
+                g.create_dataset('indptr',data=sparse.indptr.astype(np.int64))
+            with h5py.File(path,'r') as h,path.open('rb') as raw:
+                for column in range(5):
+                    rows,observed=permitted_csc_column(raw,h['counts'],sparse.indptr,column,role_codes)
+                    np.testing.assert_array_equal(rows,np.arange(3))
+                    np.testing.assert_array_equal(observed,matrix[:3,column])

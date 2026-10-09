@@ -30,5 +30,7 @@
   "execution_contract_complete": false,
   "research_complete": false,
   "manuscript_pdf": "PAUSED",
-  "next_action": "external competence/freeze/confirmation; backup if fewer than two pass"
+  "external_result_root": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external_kolf_panel1400_v1",
+  "external_competence": {},
+  "next_action": "Complete registered extraction → predictor gate → risk freeze → conditional confirmation"
 }

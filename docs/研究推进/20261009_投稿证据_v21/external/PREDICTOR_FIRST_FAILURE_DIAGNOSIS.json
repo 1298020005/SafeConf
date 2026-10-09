@@ -1,0 +1,132 @@
+{
+  "rows": [
+    {
+      "predictor": "ridge",
+      "role": "feedback",
+      "context": "Rest",
+      "n": 375,
+      "model_rmse": 0.04843669697189368,
+      "baseline_rmse": 0.04611499317013698,
+      "relative_gap": 0.05034596434159688,
+      "prediction_var_ratio": 0.07397092809770438
+    },
+    {
+      "predictor": "ridge",
+      "role": "feedback",
+      "context": "Stim48hr",
+      "n": 375,
+      "model_rmse": 0.04104091107900152,
+      "baseline_rmse": 0.03907114138770816,
+      "relative_gap": 0.05041495132550833,
+      "prediction_var_ratio": 0.08137247632937741
+    },
+    {
+      "predictor": "ridge",
+      "role": "feedback",
+      "context": "Stim8hr",
+      "n": 375,
+      "model_rmse": 0.041532460786621546,
+      "baseline_rmse": 0.039455564842852564,
+      "relative_gap": 0.052638859741104715,
+      "prediction_var_ratio": 0.08267259720848069
+    },
+    {
+      "predictor": "ridge",
+      "role": "predictor_train",
+      "context": "Rest",
+      "n": 750,
+      "model_rmse": 0.045774351646058684,
+      "baseline_rmse": 0.04703780821635509,
+      "relative_gap": -0.026860447333876825,
+      "prediction_var_ratio": 0.06998575341703125
+    },
+    {
+      "predictor": "ridge",
+      "role": "predictor_train",
+      "context": "Stim48hr",
+      "n": 750,
+      "model_rmse": 0.039286685673282855,
+      "baseline_rmse": 0.04040760537326835,
+      "relative_gap": -0.027740314963752843,
+      "prediction_var_ratio": 0.07242308287954402
+    },
+    {
+      "predictor": "ridge",
+      "role": "predictor_train",
+      "context": "Stim8hr",
+      "n": 750,
+      "model_rmse": 0.039887812748638264,
+      "baseline_rmse": 0.04104893386485859,
+      "relative_gap": -0.028286267313128555,
+      "prediction_var_ratio": 0.07149338305794892
+    },
+    {
+      "predictor": "mlp",
+      "role": "feedback",
+      "context": "Rest",
+      "n": 375,
+      "model_rmse": 0.1312529682810501,
+      "baseline_rmse": 0.04611499317013698,
+      "relative_gap": 1.8462102942703358,
+      "prediction_var_ratio": 6.344929600409894
+    },
+    {
+      "predictor": "mlp",
+      "role": "feedback",
+      "context": "Stim48hr",
+      "n": 375,
+      "model_rmse": 0.12824376527465228,
+      "baseline_rmse": 0.03907114138770816,
+      "relative_gap": 2.2823142790243125,
+      "prediction_var_ratio": 8.995047000556829
+    },
+    {
+      "predictor": "mlp",
+      "role": "feedback",
+      "context": "Stim8hr",
+      "n": 375,
+      "model_rmse": 0.12835986394082477,
+      "baseline_rmse": 0.039455564842852564,
+      "relative_gap": 2.253276551788546,
+      "prediction_var_ratio": 9.029516610134928
+    },
+    {
+      "predictor": "mlp",
+      "role": "predictor_train",
+      "context": "Rest",
+      "n": 750,
+      "model_rmse": 0.12558885557089694,
+      "baseline_rmse": 0.04703780821635509,
+      "relative_gap": 1.669955517341252,
+      "prediction_var_ratio": 5.449524812279617
+    },
+    {
+      "predictor": "mlp",
+      "role": "predictor_train",
+      "context": "Stim48hr",
+      "n": 750,
+      "model_rmse": 0.12296637290688044,
+      "baseline_rmse": 0.04040760537326835,
+      "relative_gap": 2.0431492232951975,
+      "prediction_var_ratio": 7.3667042859155245
+    },
+    {
+      "predictor": "mlp",
+      "role": "predictor_train",
+      "context": "Stim8hr",
+      "n": 750,
+      "model_rmse": 0.12311109389284348,
+      "baseline_rmse": 0.04104893386485859,
+      "relative_gap": 1.9991301186566783,
+      "prediction_var_ratio": 7.265592429087759
+    }
+  ],
+  "embedding_feature_std_min": 1.495867751882225,
+  "embedding_feature_std_max": 8.10110127471552,
+  "embedding_max_abs": 24.939208984375,
+  "query_missing_embedding_fraction": 0.033777777777777775,
+  "input_fit_standardization_used": false,
+  "mlp_updates_per_seed": 30,
+  "final_truth_read": false,
+  "diagnosis": "Control-expression similarity is not guaranteed to encode perturbation mechanism; MLP has only30 optimizer updates and random output scale, training MSE remains above the mean baseline."
+}

@@ -1,0 +1,30 @@
+{
+  "status": "FIXED_BEFORE_REPAIR_DEV_SCORING",
+  "reason": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external/PREDICTOR_FIRST_FAILURE_DIAGNOSIS.json",
+  "original_package": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external",
+  "original_predictors_and_failure_preserved": true,
+  "repair_number": 1,
+  "new_architectures": 0,
+  "new_downloads": 0,
+  "new_gpu_hours": 0,
+  "fixed_inputs": "same 50-dimensional control-only embedding",
+  "ridge": {
+    "alpha": 100,
+    "input_standardization": "training genes only"
+  },
+  "mlp": {
+    "hidden": 256,
+    "learning_rate": 0.001,
+    "max_optimizer_steps": 300,
+    "patience": 30,
+    "initial_last_layer": "zero",
+    "target": "response minus upstream-training context mean",
+    "stopping": "first 10% of upstream gene hashes only, including step-zero baseline",
+    "full_refit": "all allowed upstream genes; chosen step count; three original seeds"
+  },
+  "competence_gate": "unchanged user v2.1; no variance or error tolerance changes",
+  "confirmation_truth_stays_sealed_until_capability_and_risk_freeze": true,
+  "cpu_thread_cap": 4,
+  "wall_seconds_cap": 1800,
+  "sample_or_axis_filtering_after_results": false
+}

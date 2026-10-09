@@ -1,0 +1,68 @@
+{
+  "ridge": {
+    "status": "FAIL",
+    "relative_gap": 0.04126715660095215,
+    "ci95": [
+      0.03589199178315724,
+      0.0471538501758817
+    ],
+    "noninferior_strata_fraction": 0.0,
+    "valid_strata_fraction": 1.0,
+    "strata": [
+      {
+        "context": "Rest",
+        "valid": true,
+        "relative_gap": 0.040822505950927734,
+        "prediction_variance_ratio": 0.05895723029971123
+      },
+      {
+        "context": "Stim8hr",
+        "valid": true,
+        "relative_gap": 0.042583584785461426,
+        "prediction_variance_ratio": 0.06580647081136703
+      },
+      {
+        "context": "Stim48hr",
+        "valid": true,
+        "relative_gap": 0.040462493896484375,
+        "prediction_variance_ratio": 0.06455834954977036
+      }
+    ],
+    "qualification_error_rows": 1125,
+    "qualification_gene_clusters": 375,
+    "qualification_errors_not_risk_training_labels": true
+  },
+  "mlp": {
+    "status": "FAIL",
+    "relative_gap": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "noninferior_strata_fraction": 1.0,
+    "valid_strata_fraction": 1.0,
+    "strata": [
+      {
+        "context": "Rest",
+        "valid": true,
+        "relative_gap": 0.0,
+        "prediction_variance_ratio": 1.3616150850055686e-13
+      },
+      {
+        "context": "Stim8hr",
+        "valid": true,
+        "relative_gap": 0.0,
+        "prediction_variance_ratio": 3.1871272114514237e-13
+      },
+      {
+        "context": "Stim48hr",
+        "valid": true,
+        "relative_gap": 0.0,
+        "prediction_variance_ratio": 2.352049490502578e-13
+      }
+    ],
+    "qualification_error_rows": 1125,
+    "qualification_gene_clusters": 375,
+    "qualification_errors_not_risk_training_labels": true
+  }
+}

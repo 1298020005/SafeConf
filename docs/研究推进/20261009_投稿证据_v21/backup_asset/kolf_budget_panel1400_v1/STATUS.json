@@ -1,0 +1,37 @@
+{
+  "status": "RAW_ASSET_METADATA_AND_COST_QUALIFIED",
+  "role_counts": {
+    "confirmation": 300,
+    "feedback": 300,
+    "predictor_train": 600
+  },
+  "gene_targets_total": 11688,
+  "cohort_gene_clusters": 1200,
+  "control_cells": 146747,
+  "allowed_numeric_candidate_cells": 342898,
+  "n_output_genes": 1400,
+  "counts_encoding": "csc_matrix",
+  "count_chunks": {
+    "data": {
+      "payload_bytes_upper_bound": 4948944000,
+      "chunks": 10300,
+      "estimation": "unfiltered_chunk_payload_upper_bound"
+    },
+    "indices": {
+      "payload_bytes_upper_bound": 9297288000,
+      "chunks": 19350,
+      "estimation": "unfiltered_chunk_payload_upper_bound"
+    }
+  },
+  "physical_payload_upper_estimate": 14246232000,
+  "payload_estimate_plus10percent_margin": 15670855200.000002,
+  "remaining_cumulative_payload_allowance": 23671536680,
+  "response_values_read": false,
+  "confirmation_truth_read": false,
+  "has_frozen_predictor": false,
+  "author_quantized_viewer_not_used_as_truth": true,
+  "cohort_roles_sha256": "f5cc22b254b5589ae14f2caa27eef186831de34614e2f2a3620c0a89638f974b",
+  "next_action": "Define role-guarded counts extraction and fixed reused-gene-embedding Ridge/MLP predictors; capability gate before confirmation",
+  "wall_seconds": 5.613172559067607,
+  "metadata_payload_bytes": 0
+}

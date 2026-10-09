@@ -1,0 +1,14 @@
+{
+  "status": "READING_PERMITTED_COUNTS",
+  "roles": [
+    "predictor_train",
+    "feedback"
+  ],
+  "columns_complete": 30,
+  "columns_planned": 1400,
+  "wall_seconds": 349.4870230827946,
+  "forbidden_count_values_decoded": 0,
+  "locator_indices_not_given_to_predictors": true,
+  "confirmation_role_numeric_read": false,
+  "pid": 3300037
+}

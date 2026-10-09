@@ -22,5 +22,13 @@
   {
     "test": "test_top200_is_actual_truth_effect_order_not_prediction_order",
     "status": "PASS"
+  },
+  {
+    "test": "test_saved_predictor_batch_reload_and_truth_independence",
+    "status": "PASS"
+  },
+  {
+    "test": "test_csc_reader_gathers_only_allowed_count_bytes",
+    "status": "PASS"
   }
 ]

@@ -1,0 +1,44 @@
+{
+  "cause": "float32 MLP matrix reductions differ by query batch size",
+  "action": "canonical float64 CPU inference from unchanged saved float32 parameters; outputs cast once to float32",
+  "new_fits": 0,
+  "confirmation_expression_rows_read": 0,
+  "predictor_artifact_sha256": {
+    "PREDICTOR_FIT_LEDGER.json": "6258624fd3275b81f0df1198901d96e64ef4e99026454a518fb59a92c0318d94",
+    "CONTROL_FEATURES.npz": "65d2925adee1fafaf550af702f6c2c6798676369d157a946f6a4e2e702ca4119",
+    "MLP_Rest_20260930.pt": "40891c0f890d7a71a4992acbda915a0a8f814699b093f26a9d1e2ea08a33eebc",
+    "MLP_Rest_20261001.pt": "c323b86c20938d386d61da3514ae978c92f022c7af5bd02dc592ccc291cd0d75",
+    "MLP_Rest_20261002.pt": "44fbf187a09be9efe048f12aba97e3cbfac1822309756df079f8b7a6492a8b0a",
+    "RIDGE_Rest.npz": "d92633c02e409d5ffe1a87f922609c6b8e38f0e3f9e7ad9863bf44f5596c6612",
+    "MLP_Stim8hr_20260930.pt": "db1c665726305f13a6a165f1ce886ba92a94d18045be59c7370c271e8ea5599c",
+    "MLP_Stim8hr_20261001.pt": "2ed857b00fd791f06ffc209cce7b37cb620d199733ca11ef9c8805aded024f73",
+    "MLP_Stim8hr_20261002.pt": "876daa98a3c4fcd677f95171537e16e7680d9144c4c30cdb8ece8661933d932d",
+    "RIDGE_Stim8hr.npz": "80767d8e5f2e50b091d4f093ce13937dd3614ec8e7764fe4e88472554d001848",
+    "MLP_Stim48hr_20260930.pt": "8b9d238c2de762f44736874d019b82f927c370d9e5b33d0c6cb95fade1abc413",
+    "MLP_Stim48hr_20261001.pt": "f13c63e37c0572039fbd94949df588bdf0bd51899a50e83f03a85b5cd8fb6fdc",
+    "MLP_Stim48hr_20261002.pt": "706eaf53e67af6c17b14f8e7d582c4744618a85663adeb2ad496cdcffcdbb603",
+    "RIDGE_Stim48hr.npz": "602b420da8fef0ac9f3f9a55f8eb11f3e43f332c919e682c91cb6ee37dd76ab6"
+  },
+  "reload_rtol": 1e-05,
+  "reload_atol": 1e-07,
+  "prediction_audits": {
+    "ridge": {
+      "canonical_subset_reload_max_abs_difference": 0.0,
+      "poisoned_truth_exact_equal": true,
+      "checked_rows": 180,
+      "original_prediction_sha256": "51486ccb573cdeaccb24e68cf1c8332d4d4e6a71793136838c7f50a82937abb2",
+      "original_archive": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external/prefreeze_float32_predictions/ridge_ALL_PREDICTIONS.npy",
+      "float32_to_canonical_max_abs_difference": 1.1920928955078125e-07,
+      "float32_to_canonical_rmse": 1.896700997819485e-09
+    },
+    "mlp": {
+      "canonical_subset_reload_max_abs_difference": 0.0,
+      "poisoned_truth_exact_equal": true,
+      "checked_rows": 180,
+      "original_prediction_sha256": "0c57a9d5dadc80d278b95e0e437dfc7118feec553451583d3f86b4d66356abfd",
+      "original_archive": "/home/yyf/runtime_artifacts/safeconf_submission_evidence_20261009_v21/external/prefreeze_float32_predictions/mlp_ALL_PREDICTIONS.npy",
+      "float32_to_canonical_max_abs_difference": 4.76837158203125e-07,
+      "float32_to_canonical_rmse": 5.810144269124374e-08
+    }
+  }
+}

@@ -23,10 +23,11 @@ model, with its training provenance bound in ``frozen_config``.
         value=float(task['frozen_rule_score']);state=str(task.get('evidence_status','FROZEN_DIRECT_RULE'))
     elif method=='FrozenSupervised':
         value=float(task['frozen_model_score']);state=str(task.get('evidence_status','FROZEN_SUPERVISED'))
-    elif method=='Magnitude' or not available and method in ['PublicRule','HistorySupport']:
+    elif method=='Magnitude' or not available and method in ['PublicRule','HistorySupport','HistoryEnergy']:
         value=transform('Amplitude',task['predicted_magnitude'])
     elif method=='PublicRule':value=transform('Public',task['public_raw'])
     elif method=='HistorySupport':value=transform('Support',task['support_raw'])
+    elif method=='HistoryEnergy':value=transform('HistoryEnergy',task['prior_magnitude'])
     elif method=='Similarity':
         similarity=float(task['similarity_raw'])
         if np.isfinite(similarity):value=transform('Similarity',similarity)

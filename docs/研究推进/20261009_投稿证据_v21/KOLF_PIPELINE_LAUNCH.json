@@ -1,0 +1,15 @@
+{
+  "pipeline_pid": 3300037,
+  "supervisor_pid": 3300038,
+  "time_utc": "2026-10-09T02:36:27Z",
+  "study": "CM4AI KOLF2.1J",
+  "output_scope": "registered Source-only1400-gene panel, fixed before target values",
+  "train_genes": 600,
+  "feedback_genes": 300,
+  "confirmation_genes": 300,
+  "resource_budget_restarted": false,
+  "confirmation_truth_opened": false,
+  "frozen_pretrained_gene_embeddings_not_full_scGPT_predictions": true,
+  "new_gpu_hours": 0,
+  "new_large_upstream": 0
+}

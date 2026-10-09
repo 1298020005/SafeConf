@@ -1,0 +1,36 @@
+{
+  "encoding": "csc_matrix",
+  "arrays": {
+    "data": {
+      "shape": [
+        7872183461
+      ],
+      "dtype": "float32",
+      "chunks": [
+        120120
+      ],
+      "filter_count": 0
+    },
+    "indices": {
+      "shape": [
+        7872183461
+      ],
+      "dtype": "int64",
+      "chunks": [
+        60060
+      ],
+      "filter_count": 0
+    },
+    "indptr": {
+      "shape": [
+        37568
+      ],
+      "dtype": "int64",
+      "chunks": [
+        1174
+      ],
+      "filter_count": 0
+    }
+  },
+  "response_values_read": false
+}
